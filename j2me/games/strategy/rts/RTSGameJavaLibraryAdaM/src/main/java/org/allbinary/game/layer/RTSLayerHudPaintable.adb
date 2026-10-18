@@ -63,8 +63,8 @@ package body org.allbinary.game.layer.RTSLayerHudPaintable_Package is
    procedure updateSelectionInfo (This : in out RTSLayerHudPaintable) is
       partInterface : BasicWeaponPart_Access;
    begin
-        This.setName (This.getRtsLayer.getName);
-        partInterface := BasicWeaponPart_Access (This.getRtsLayer.getPartInterfaceArray (0));
+        RTSLayerHudPaintable'Class (This).setName (RTSLayerHudPaintable'Class (This).getRtsLayer.getName);
+        partInterface := BasicWeaponPart_Access (RTSLayerHudPaintable'Class (This).getRtsLayer.getPartInterfaceArray (0));
         This.weaponProperties := partInterface.getWeaponProperties.toStringArray;
         This.myFontProcessor := This.updateMyFontProcessor;
    end updateSelectionInfo;

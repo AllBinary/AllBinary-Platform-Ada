@@ -28,7 +28,7 @@ package body org.allbinary.animation.image.AdjustedImageArrayAnimation_Package i
    begin
         ImageArrayAnimation_Package.Initialize (This, imageArray, animationBehavior);
         Initialize_Fields (This);
-        This.init (dx, dy);
+        AdjustedImageArrayAnimation'Class (This).init (dx, dy);
    end Initialize;
 
    function Create (imageArray : Image_Access_Array_Access; dx : Integer; dy : Integer; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class) return AdjustedImageArrayAnimation_Access is
@@ -41,8 +41,8 @@ package body org.allbinary.animation.image.AdjustedImageArrayAnimation_Package i
    --  throws Exception
    procedure init (This : in out AdjustedImageArrayAnimation; dx : Integer; dy : Integer) is
    begin
-        This.setDx (dx);
-        This.setDy (dy);
+        AdjustedImageArrayAnimation'Class (This).setDx (dx);
+        AdjustedImageArrayAnimation'Class (This).setDy (dy);
    end init;
 
    procedure paintXY (This : in out AdjustedImageArrayAnimation; graphics_Param : access Graphics_Package.Graphics'Class; x : Integer; y : Integer) is

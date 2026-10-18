@@ -42,9 +42,9 @@ package body org.allbinary.game.ag.ai.sequence.NumberLayersSequenceAI_Package is
    procedure processAI (This : in out NumberLayersSequenceAI; allBinaryLayerManager_Param : access AllBinaryLayerManager_Package.AllBinaryLayerManager'Class) is
       allBinaryLayerManager : constant AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (allBinaryLayerManager_Param);
    begin
-        if (This.getIndex) = (0) then
+        if (NumberLayersSequenceAI'Class (This).getIndex) = (0) then
             if (allBinaryLayerManager.getSize) < (This.numberOfLayersLeft) then
-                This.setIndex (1);
+                NumberLayersSequenceAI'Class (This).setIndex (1);
             end if;
         end if;
         SequenceAI (This).processAI (allBinaryLayerManager);

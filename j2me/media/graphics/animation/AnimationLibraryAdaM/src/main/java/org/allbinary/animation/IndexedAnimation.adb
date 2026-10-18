@@ -47,7 +47,7 @@ package body org.allbinary.animation.IndexedAnimation_Package is
    procedure reset (This : in out IndexedAnimation) is
    begin
         This.animationBehaviorP.reset;
-        This.setFrame (0);
+        IndexedAnimation'Class (This).setFrame (0);
    end reset;
 
    procedure setFrame (This : in out IndexedAnimation; index : Integer) is
@@ -64,6 +64,7 @@ package body org.allbinary.animation.IndexedAnimation_Package is
    function getAnimationSize (This : in out IndexedAnimation) return Integer is
    begin
         Java_Throw (Java_New_Exception ("Exception", This.commonStrings.NOT_IMPLEMENTED));
+        return 0;
    end getAnimationSize;
 
    function getSize (This : in out IndexedAnimation) return Integer is
@@ -78,7 +79,7 @@ package body org.allbinary.animation.IndexedAnimation_Package is
 
    function isLastFrame (This : in out IndexedAnimation) return Boolean is
    begin
-        if (This.getFrame) = ((This.getSize) - (1)) then
+        if (IndexedAnimation'Class (This).getFrame) = ((IndexedAnimation'Class (This).getSize) - (1)) then
             return True;
         else
             return False;
@@ -98,9 +99,9 @@ package body org.allbinary.animation.IndexedAnimation_Package is
    procedure setState (This : in out IndexedAnimation; indexedAnimation_Param : access IndexedAnimation_Package.IndexedAnimation'Class) is
       indexedAnimation : constant IndexedAnimation_Access := IndexedAnimation_Access (indexedAnimation_Param);
    begin
-        This.setFrame (indexedAnimation.getFrame);
-        This.setDx (indexedAnimation.getDx);
-        This.setDy (indexedAnimation.getDy);
+        IndexedAnimation'Class (This).setFrame (indexedAnimation.getFrame);
+        IndexedAnimation'Class (This).setDx (indexedAnimation.getDx);
+        IndexedAnimation'Class (This).setDy (indexedAnimation.getDy);
    end setState;
 
    function getWidth (This : in out IndexedAnimation) return Integer is

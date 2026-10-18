@@ -77,7 +77,7 @@ package body admin.tags.CustomLoaderTag_Package is
             end if;
             if (This.command) /= (Null_Unbounded_String) then
                 if (This.command.compareTo (GLOBALS2.SET)) = (0) then
-                    This.setCustomLoaderWebappPath;
+                    CustomLoaderTag'Class (This).setCustomLoaderWebappPath;
                 end if;
             end if;
             return SKIP_BODY;

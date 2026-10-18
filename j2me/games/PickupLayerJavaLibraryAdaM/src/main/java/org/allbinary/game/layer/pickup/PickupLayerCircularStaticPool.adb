@@ -45,7 +45,7 @@ package body org.allbinary.game.layer.pickup.PickupLayerCircularStaticPool_Packa
       pickedUpLayerInterfaceFactoryInterface : constant PickedUpLayerInterfaceFactoryInterface_Access := PickedUpLayerInterfaceFactoryInterface_Access (pickedUpLayerInterfaceFactoryInterface_Param);
       pickupLayer : PickupLayer_Access;
    begin
-        pickupLayer := PickupLayer_Access (This.getNextInstance);
+        pickupLayer := PickupLayer_Access (PickupLayerCircularStaticPool'Class (This).getNextInstance);
         pickupLayer.initXYZ (x, y, z);
         pickupLayer.init (pickedUpLayerInterfaceFactoryInterface, pickedUpLayerInterfaceFactoryInterface.getAnimationInterface);
         return pickupLayer;

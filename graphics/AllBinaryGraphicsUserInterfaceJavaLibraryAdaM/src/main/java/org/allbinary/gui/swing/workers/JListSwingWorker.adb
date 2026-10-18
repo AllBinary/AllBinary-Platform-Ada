@@ -29,8 +29,8 @@ package body org.allbinary.gui.swing.workers.JListSwingWorker_Package is
    begin
       SwingWorker_Package.Initialize (This);
       Initialize_Fields (This);
-        This.setJList (jList);
-        This.setListModel (listModel);
+        JListSwingWorker'Class (This).setJList (jList);
+        JListSwingWorker'Class (This).setListModel (listModel);
    end Initialize;
 
    function Create (jList_Param : access JList_Package.JList'Class; listModel_Param : access ListModel_Package.ListModel'Class) return JListSwingWorker_Access is
@@ -47,7 +47,7 @@ package body org.allbinary.gui.swing.workers.JListSwingWorker_Package is
 
    procedure done (This : in out JListSwingWorker) is
    begin
-        This.getJList.setModel (This.getListModel);
+        JListSwingWorker'Class (This).getJList.setModel (JListSwingWorker'Class (This).getListModel);
    end done;
 
    function getJList (This : in out JListSwingWorker) return JList_Access is

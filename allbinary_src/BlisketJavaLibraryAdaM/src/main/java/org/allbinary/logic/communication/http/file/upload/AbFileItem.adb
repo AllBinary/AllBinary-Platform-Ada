@@ -45,6 +45,7 @@ package body org.allbinary.logic.communication.http.file.upload.AbFileItem_Packa
    function getInputStream (This : in out AbFileItem) return InputStream_Access is
    begin
         Java_Throw (Java_New_Exception ("IOException", This.commonStrings.NOT_IMPLEMENTED));
+        return null;
    end getInputStream;
 
    function getContentType (This : in out AbFileItem) return Unbounded_String is
@@ -142,11 +143,13 @@ package body org.allbinary.logic.communication.http.file.upload.AbFileItem_Packa
    function getOutputStream (This : in out AbFileItem) return OutputStream_Access is
    begin
         Java_Throw (Java_New_Exception ("IOException", This.commonStrings.NOT_IMPLEMENTED));
+        return null;
    end getOutputStream;
 
    function getHeaders (This : in out AbFileItem) return FileItemHeaders_Access is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException", This.commonStrings.NOT_IMPLEMENTED));
+        return null;
    end getHeaders;
 
    procedure setHeaders (This : in out AbFileItem; fih_Param : access FileItemHeaders_Package.FileItemHeaders'Class) is

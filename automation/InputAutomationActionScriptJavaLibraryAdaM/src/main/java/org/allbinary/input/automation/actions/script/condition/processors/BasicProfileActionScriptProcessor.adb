@@ -52,8 +52,8 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
    begin
         ProfileActionScriptItem (This).actionPerformed (actionEvent);
         if (actionEvent.getActionCommand.compareTo (DELETE)) = (0) then
-            if (This.getParent.all in ProfileActionScriptConditionInterface_Package.ProfileActionScriptConditionInterface'Class) then
-                profileActionScriptConditionInterface := ProfileActionScriptConditionInterface_Access (This.getParent);
+            if (BasicProfileActionScriptProcessor'Class (This).getParent.all in ProfileActionScriptConditionInterface_Package.ProfileActionScriptConditionInterface'Class) then
+                profileActionScriptConditionInterface := ProfileActionScriptConditionInterface_Access (BasicProfileActionScriptProcessor'Class (This).getParent);
                 profileActionScriptConditionInterface.removeProcessor (ProfileActionScriptProcessorInterface_Access (BasicProfileActionScriptProcessor_Access'(This'Unchecked_Access)));
                 JTreeInterfaceFactory_Package.getInstance.getJTreeInterface.updateJTree;
             end if;

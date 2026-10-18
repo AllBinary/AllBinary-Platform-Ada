@@ -20,8 +20,8 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
---  with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
+with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
 with org.allbinary.graphics.Anchor_Package; use org.allbinary.graphics.Anchor_Package;
 with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
 with org.allbinary.graphics.color.BasicColorSetUtil_Package; use org.allbinary.graphics.color.BasicColorSetUtil_Package;
@@ -31,6 +31,8 @@ with org.allbinary.media.image.ImageCreationUtil_Package; use org.allbinary.medi
 
 package org.allbinary.media.image.ImageCopyUtil_Package is
 
+   package Graphics_Package renames Standard.javax.microedition.lcdui.Graphics_Package;
+   package Image_Package renames Standard.javax.microedition.lcdui.Image_Package;
    package Anchor_Package renames Standard.org.allbinary.graphics.Anchor_Package;
    package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
    package BasicColorSetUtil_Package renames Standard.org.allbinary.graphics.color.BasicColorSetUtil_Package;

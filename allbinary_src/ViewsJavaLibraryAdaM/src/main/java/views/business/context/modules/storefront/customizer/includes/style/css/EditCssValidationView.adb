@@ -41,7 +41,7 @@ package body views.business.context.modules.storefront.customizer.includes.style
       isValid : Boolean;
    begin
         begin
-            document := CustomizerUtil_Package.getInstance.getViewDataForComponentsInObjectConfig (This.getTransformInfoInterface);
+            document := CustomizerUtil_Package.getInstance.getViewDataForComponentsInObjectConfig (EditCssValidationView'Class (This).getTransformInfoInterface);
             This.styleValidationInterface := GenericCssStyleValidation_Package.Create (document);
             isValid := This.styleValidationInterface.isValid;
             return isValid;

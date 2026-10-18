@@ -48,17 +48,17 @@ package body org.allbinary.physics.movement.XYOscillateVelocityMovement_Package 
         BasicConstantVelocityMovement (This).process (layer);
         if (This.oscillate) < (This.oscillateMin) then
             This.oscillatePositive := True;
-            This.getVelocityProperties.getVelocityYBasicDecimalP.addint (3000);
+            XYOscillateVelocityMovement'Class (This).getVelocityProperties.getVelocityYBasicDecimalP.addint (3000);
         elsif (This.oscillate) > (This.oscillateMax) then
             This.oscillatePositive := False;
-            This.getVelocityProperties.getVelocityYBasicDecimalP.subtractint (3000);
+            XYOscillateVelocityMovement'Class (This).getVelocityProperties.getVelocityYBasicDecimalP.subtractint (3000);
         end if;
         if This.oscillatePositive then
             This.oscillate := This.oscillate + 1;
-            This.getVelocityProperties.getVelocityXBasicDecimalP.addint (5000);
+            XYOscillateVelocityMovement'Class (This).getVelocityProperties.getVelocityXBasicDecimalP.addint (5000);
         else
             This.oscillate := This.oscillate - 1;
-            This.getVelocityProperties.getVelocityXBasicDecimalP.subtractint (5000);
+            XYOscillateVelocityMovement'Class (This).getVelocityProperties.getVelocityXBasicDecimalP.subtractint (5000);
         end if;
    end process;
 

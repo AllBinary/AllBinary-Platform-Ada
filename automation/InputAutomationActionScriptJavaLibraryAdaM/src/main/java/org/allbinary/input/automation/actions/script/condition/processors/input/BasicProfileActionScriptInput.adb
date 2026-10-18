@@ -39,11 +39,11 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
         timeNode := DomSearchHelper_Package.getNodeNoThrow (GenericProfileActionScriptInputData_Package.DELAY_Id, node.getChildNodes);
         if (timeNode) /= (null) then
             delayString := DomNodeHelper_Package.getTextNodeValue (timeNode);
-            This.setTime (To_Unbounded_String (Java_Image (delayString)).intValue);
+            BasicProfileActionScriptInput'Class (This).setTime (To_Unbounded_String (Java_Image (delayString)).intValue);
         else
-            This.setTime (0);
+            BasicProfileActionScriptInput'Class (This).setTime (0);
         end if;
-        This.setInputRobotInterface (InputRobotFactory_Package.getInstance.get (inputTypeString));
+        BasicProfileActionScriptInput'Class (This).setInputRobotInterface (InputRobotFactory_Package.getInstance.get (inputTypeString));
    end Initialize;
 
    function Create (label : Unbounded_String; node_Param : access Node_Package.Node'Class) return BasicProfileActionScriptInput_Access is
@@ -66,8 +66,8 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
         hashtable := ABHashtable_Access (inputRobotFactory.get);
         set := hashtable.keySet;
         iterator := set.iterator;
-        This.setInputRobotInterface (inputRobotFactory.get (Unbounded_String (iterator.next)));
-        This.setTime (0);
+        BasicProfileActionScriptInput'Class (This).setInputRobotInterface (inputRobotFactory.get (Java_Unbox (iterator.next)));
+        BasicProfileActionScriptInput'Class (This).setTime (0);
    end Initialize;
 
    function Create (label : Unbounded_String) return BasicProfileActionScriptInput_Access is
@@ -91,8 +91,8 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
       hashMap : HashMap_Access;
    begin
         hashMap := StdUtil_Package.getInstance.createHashMap;
-        hashMap.put (GenericProfileActionScriptInputData_Package.TYPE_Id, This.getInputRobotInterface.getName);
-        hashMap.put (GenericProfileActionScriptInputData_Package.DELAY_Id, To_Unbounded_String (Java_Image (This.getTime)));
+        hashMap.put (GenericProfileActionScriptInputData_Package.TYPE_Id, Java_Box (BasicProfileActionScriptInput'Class (This).getInputRobotInterface.getName));
+        hashMap.put (GenericProfileActionScriptInputData_Package.DELAY_Id, Java_Box (To_Unbounded_String (Java_Image (BasicProfileActionScriptInput'Class (This).getTime))));
         This.logUtil.putF (To_Unbounded_String ("HashMap: ") & hashMap.toString, BasicProfileActionScriptInput_Access'(This'Unchecked_Access), To_Unbounded_String ("toHashMap()"));
         return hashMap;
    end BasicProfileActionScriptInput_toHashMap;
@@ -102,7 +102,7 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
       document : constant Document_Access := Document_Access (document_Param);
       node : Node_Access;
    begin
-        node := ModDomHelper_Package.createNodeWithValueNodes (document, GenericProfileActionScriptInputData_Package.NAME, This.BasicProfileActionScriptInput_toHashMap);
+        node := ModDomHelper_Package.createNodeWithValueNodes (document, GenericProfileActionScriptInputData_Package.NAME, BasicProfileActionScriptInput'Class (This).BasicProfileActionScriptInput_toHashMap);
         return node;
    end toXmlNode;
 
@@ -123,13 +123,13 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
         stringBuffer := StringMaker_Package.Create;
         stringBuffer.append (BasicProfileActionScriptProcessor (This).toString);
         stringBuffer.append (To_Unbounded_String (" Input Type: "));
-        if (This.getInputRobotInterface) /= (null) then
-            stringBuffer.append (This.getInputRobotInterface.getName);
+        if (BasicProfileActionScriptInput'Class (This).getInputRobotInterface) /= (null) then
+            stringBuffer.append (BasicProfileActionScriptInput'Class (This).getInputRobotInterface.getName);
         else
             stringBuffer.append (StringUtil_Package.getInstance.NULL_STRING);
         end if;
         stringBuffer.append (To_Unbounded_String (" Time: "));
-        stringBuffer.appendlong (Long_Long_Integer (This.getTime));
+        stringBuffer.appendlong (Long_Long_Integer (BasicProfileActionScriptInput'Class (This).getTime));
         return stringBuffer.toString;
    end toString;
 

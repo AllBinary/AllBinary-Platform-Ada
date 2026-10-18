@@ -45,7 +45,7 @@ package body org.allbinary.game.ag.ai.ScrollOverAtHalfAI_Package is
       halfHeight : Integer;
       displayInfo : DisplayInfoSingleton_Access;
    begin
-        ownerLayerInterface := This.getOwnerLayerInterface;
+        ownerLayerInterface := ScrollOverAtHalfAI'Class (This).getOwnerLayerInterface;
         x := ownerLayerInterface.getXP;
         y := ownerLayerInterface.getYP;
         halfWidth := ownerLayerInterface.getHalfWidth;

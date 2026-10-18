@@ -35,7 +35,7 @@ package body views.admin.orderhistory.UserNameOrderHistoryView_Package is
    begin
         HttpStoreComponentView_Package.Initialize (This, transformInfoInterface);
         Initialize_Fields (This);
-        This.request := HttpServletRequest_Access (This.getPageContext.getRequest);
+        This.request := HttpServletRequest_Access (UserNameOrderHistoryView'Class (This).getPageContext.getRequest);
         This.userName := This.request.getParameter (UserData_Package.USERNAME);
         This.preprocessing := This.request.getParameter (OrderHistoryData_Package.PREPROCESSINGNAME);
         This.shipped := This.request.getParameter (OrderHistoryData_Package.SHIPPEDNAME);
@@ -53,14 +53,14 @@ package body views.admin.orderhistory.UserNameOrderHistoryView_Package is
 
    procedure addDomNodeInterfaces (This : in out UserNameOrderHistoryView) is
    begin
-        This.addDomNodeInterface (DomNodeInterface_Access (UserNameOrderHistoryView_Access'(This'Unchecked_Access)));
+        UserNameOrderHistoryView'Class (This).addDomNodeInterface (DomNodeInterface_Access (UserNameOrderHistoryView_Access'(This'Unchecked_Access)));
    end addDomNodeInterfaces;
 
    --  throws Exception
    function view (This : in out UserNameOrderHistoryView) return Unbounded_String is
    begin
         begin
-            This.addDomNodeInterfaces;
+            UserNameOrderHistoryView'Class (This).addDomNodeInterfaces;
             return HttpStoreComponentView (This).view;
         exception
             when Java_Occurrence : others =>

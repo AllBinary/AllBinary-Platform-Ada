@@ -33,7 +33,7 @@ package body org.allbinary.logic.communication.http.file.upload.HttpFilePermissi
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
             This.logUtil.putF (To_Unbounded_String ("Loading Privileges: ") & Java_Image (fullPath.toFileSystemString), HttpFilePermissions_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         end if;
-        if This.isFile then
+        if HttpFilePermissions'Class (This).isFile then
             This.userRoles.add (BasicUserRoleFactory_Package.getInstance.ADMINISTRATOR);
         end if;
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then

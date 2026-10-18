@@ -82,7 +82,7 @@ package body org.allbinary.game.layer.pickup.PickupBehavior_Package is
             pickedUpLayerType := pickedUpLayerInterfaceFactoryInterface.getPickedUpLayerType;
             pickedUpLayerTypeFactory := PickedUpLayerTypeFactory_Package.getInstance;
             if ((((pickedUpLayerType) = (pickedUpLayerTypeFactory.BEAM)) or else ((pickedUpLayerType) = (pickedUpLayerTypeFactory.MINE))) or else ((pickedUpLayerType) = (pickedUpLayerTypeFactory.PROJECTILE))) or else ((pickedUpLayerType) = (pickedUpLayerTypeFactory.ENHANCEMENT)) then
-                This.add (CountedPickedUpLayerInterfaceFactoryInterface_Access (pickedUpLayerInterfaceFactoryInterface));
+                PickupBehavior'Class (This).add (CountedPickedUpLayerInterfaceFactoryInterface_Access (pickedUpLayerInterfaceFactoryInterface));
             elsif (pickedUpLayerInterfaceFactoryInterface.getPickedUpLayerType) = (pickedUpLayerTypeFactory.PART) then
                 collidableDestroyableDamageableLayer := CollidableDestroyableDamageableLayer_Access (This.ownerLayerInterface);
                 collidableDestroyableDamageableLayer.addPart (pickedUpLayerInterfaceFactoryInterface);
@@ -90,7 +90,7 @@ package body org.allbinary.game.layer.pickup.PickupBehavior_Package is
                 null;
             else
                 pickupProcessorInterface := PickupProcessorInterface_Access (pickedUpLayerInterfaceFactoryInterface);
-                This.doPickup (pickupProcessorInterface);
+                PickupBehavior'Class (This).doPickup (pickupProcessorInterface);
             end if;
             pickupLayerInterface.setPickedUp;
         exception
@@ -109,7 +109,7 @@ package body org.allbinary.game.layer.pickup.PickupBehavior_Package is
       partIndex : Integer;
    begin
         partIndex := (countedPickedUpLayerInterfaceFactoryInterface.getId) + (This.countedIndex);
-        This.addAt (countedPickedUpLayerInterfaceFactoryInterface, partIndex);
+        PickupBehavior'Class (This).addAt (countedPickedUpLayerInterfaceFactoryInterface, partIndex);
    end add;
 
    procedure addAt (This : in out PickupBehavior; countedPickedUpLayerInterfaceFactoryInterface_Param : access CountedPickedUpLayerInterfaceFactoryInterface_Package.CountedPickedUpLayerInterfaceFactoryInterface'Class; partIndex : Integer) is

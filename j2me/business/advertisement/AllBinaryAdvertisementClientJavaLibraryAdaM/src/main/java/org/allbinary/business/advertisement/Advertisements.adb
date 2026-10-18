@@ -122,8 +122,8 @@ package body org.allbinary.business.advertisement.Advertisements_Package is
 
    procedure stopAll (This : in out Advertisements) is
    begin
-        This.stopAllBanner;
-        This.stopAllPage;
+        Advertisements'Class (This).stopAllBanner;
+        Advertisements'Class (This).stopAllPage;
    end stopAll;
 
    procedure getBanner (This : in out Advertisements; index : Integer) is

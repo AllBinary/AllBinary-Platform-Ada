@@ -80,7 +80,7 @@ package body org.allbinary.logic.communication.smtp.configuration.user.UserEmail
         emailConfigurationMapping := UserEmailConfigurationMapping_Package.Create (This.userEmailConfigurationInterface);
         hashMap := emailConfigurationMapping.toHashMap;
         node := ModDomHelper_Package.createNameValueNodes (document, UserEmailConfigurationData_Package.NAME, hashMap);
-        userEmailConfigurationInterface := This.getEmailConfigurationInterface;
+        userEmailConfigurationInterface := UserEmailConfigurationView'Class (This).getEmailConfigurationInterface;
         userEmailEventsConfigurationInterface := userEmailConfigurationInterface.getUserEmailEventsConfigurationInterface;
         userEmailEventsConfigurationView := UserEmailEventsConfigurationView_Package.Create (userEmailEventsConfigurationInterface);
         node.appendChild (userEmailEventsConfigurationView.toXmlNode (document));

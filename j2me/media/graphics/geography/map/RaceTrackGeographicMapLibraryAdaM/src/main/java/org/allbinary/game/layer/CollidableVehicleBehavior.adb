@@ -53,7 +53,7 @@ package body org.allbinary.game.layer.CollidableVehicleBehavior_Package is
         elsif (collisionType) = (collisionTypeFactory.COLLISION) then
             CollidableDestroyableDamageableBehavior (This).collide (ownerLayer, collidableInterfaceCompositeInterface);
         else
-            This.collideVehicle (ownerLayer, VehiclePropertiesCompositeInterface_Access (collidableInterfaceCompositeInterface));
+            CollidableVehicleBehavior'Class (This).collideVehicle (ownerLayer, VehiclePropertiesCompositeInterface_Access (collidableInterfaceCompositeInterface));
         end if;
    end collide;
 
@@ -92,8 +92,8 @@ package body org.allbinary.game.layer.CollidableVehicleBehavior_Package is
         else
             null;
         end if;
-        This.collideFriction (ownerVehicleLayerInterface);
-        This.collideFriction (vehiclePropertiesCompositeInterface);
+        CollidableVehicleBehavior'Class (This).collideFriction (ownerVehicleLayerInterface);
+        CollidableVehicleBehavior'Class (This).collideFriction (vehiclePropertiesCompositeInterface);
         This.totalImpactVelocity := (impactVelocityX) + (impactVelocityY);
    end collideVehicle;
 

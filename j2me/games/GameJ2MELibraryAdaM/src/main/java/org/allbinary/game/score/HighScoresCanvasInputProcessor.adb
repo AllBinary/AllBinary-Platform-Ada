@@ -51,21 +51,21 @@ package body org.allbinary.game.score.HighScoresCanvasInputProcessor_Package is
       gameKeyEvent : constant GameKeyEvent_Access := GameKeyEvent_Access (gameKeyEvent_Param);
    begin
         PlayerGameInput (This).onPressGameKeyEvent (gameKeyEvent);
-        This.update;
+        HighScoresCanvasInputProcessor'Class (This).update;
    end onPressGameKeyEvent;
 
    procedure onDownGameKeyEvent (This : in out HighScoresCanvasInputProcessor; gameKeyEvent_Param : access GameKeyEvent_Package.GameKeyEvent'Class) is
       gameKeyEvent : constant GameKeyEvent_Access := GameKeyEvent_Access (gameKeyEvent_Param);
    begin
         PlayerGameInput (This).onDownGameKeyEvent (gameKeyEvent);
-        This.update;
+        HighScoresCanvasInputProcessor'Class (This).update;
    end onDownGameKeyEvent;
 
    procedure onUpGameKeyEvent (This : in out HighScoresCanvasInputProcessor; gameKeyEvent_Param : access GameKeyEvent_Package.GameKeyEvent'Class) is
       gameKeyEvent : constant GameKeyEvent_Access := GameKeyEvent_Access (gameKeyEvent_Param);
    begin
         PlayerGameInput (This).onUpGameKeyEvent (gameKeyEvent);
-        This.update;
+        HighScoresCanvasInputProcessor'Class (This).update;
    end onUpGameKeyEvent;
 
    procedure paint (This : in out HighScoresCanvasInputProcessor; graphics_Param : access Graphics_Package.Graphics'Class) is

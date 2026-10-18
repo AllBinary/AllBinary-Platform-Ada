@@ -77,7 +77,7 @@ package body org.allbinary.graphics.GPoint_Package is
 
    function toString (This : in out GPoint) return Unbounded_String is
    begin
-        return GPoint_Package.toStringStatic (This.getX, This.getY, This.getZ);
+        return GPoint_Package.toStringStatic (GPoint'Class (This).getX, GPoint'Class (This).getY, GPoint'Class (This).getZ);
    end toString;
 
    function toStringStatic (x : Integer; y : Integer; z : Integer) return Unbounded_String is

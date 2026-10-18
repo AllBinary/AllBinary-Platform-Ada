@@ -56,7 +56,7 @@ package body org.allbinary.logic.system.security.licensing.LicenseUtil_Package i
    function shouldWait (This : in out LicenseUtil; commandListener_Param : access CommandListener_Package.CommandListener'Class) return Boolean is
       commandListener : constant CommandListener_Access := CommandListener_Access (commandListener_Param);
    begin
-        return This.isRunning;
+        return LicenseUtil'Class (This).isRunning;
    end shouldWait;
 
    procedure shouldWait (This : in out LicenseUtil; commandListener_Param : access CommandListener_Package.CommandListener'Class) is

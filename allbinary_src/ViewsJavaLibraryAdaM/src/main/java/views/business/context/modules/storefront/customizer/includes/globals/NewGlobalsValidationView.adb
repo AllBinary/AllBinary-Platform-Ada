@@ -46,7 +46,7 @@ package body views.business.context.modules.storefront.customizer.includes.globa
    begin
         begin
             begin
-                CustomizerUtil_Package.getInstance.insert (This.getTransformInfoInterface, DomNodeInterface_Access (NewGlobalsValidationView_Access'(This'Unchecked_Access)));
+                CustomizerUtil_Package.getInstance.insert (NewGlobalsValidationView'Class (This).getTransformInfoInterface, DomNodeInterface_Access (NewGlobalsValidationView_Access'(This'Unchecked_Access)));
             end;
             return True;
         exception

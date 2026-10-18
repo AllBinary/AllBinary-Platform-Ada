@@ -32,7 +32,7 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
       JPanel_Package.Initialize (This);
       Initialize_Fields (This);
         This.logUtil.putF (This.commonStrings.START, GenericProfileActionScriptJPanel_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
-        This.initComponents;
+        GenericProfileActionScriptJPanel'Class (This).initComponents;
    end Initialize;
 
    function Create return GenericProfileActionScriptJPanel_Access is
@@ -45,9 +45,9 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
    procedure updateJTree (This : in out GenericProfileActionScriptJPanel) is
       defaultTreeModel : DefaultTreeModel_Access;
    begin
-        defaultTreeModel := DefaultTreeModel_Package.Create (This.getGenericProfileActionScript);
-        This.getActionScriptJTree.setModel (defaultTreeModel);
-        This.repaint;
+        defaultTreeModel := DefaultTreeModel_Package.Create (GenericProfileActionScriptJPanel'Class (This).getGenericProfileActionScript);
+        GenericProfileActionScriptJPanel'Class (This).getActionScriptJTree.setModel (defaultTreeModel);
+        GenericProfileActionScriptJPanel'Class (This).repaint;
         This.logUtil.putF (To_Unbounded_String ("Updated UI"), GenericProfileActionScriptJPanel_Access'(This'Unchecked_Access), To_Unbounded_String ("updateJTree"));
    end updateJTree;
 
@@ -77,24 +77,24 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
    begin
         This.jScrollPane1 := JScrollPane_Package.Create;
         This.actionScriptJTree := JTree_Package.Create;
-        This.setLayout (GridLayout_Package.Create (1, 0));
+        GenericProfileActionScriptJPanel'Class (This).setLayout (GridLayout_Package.Create (1, 0));
         This.actionScriptJTree.setPreferredSize (Dimension_Package.Create (500, 500));
         This.actionScriptJTree.addMouseListener (MouseAdapter_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
 --     procedure mouseClicked (This : in out ; evt_Param : access MouseEvent_Package.MouseEvent'Class) is
 --        evt : constant MouseEvent_Access := MouseEvent_Access (evt_Param);
 --     begin
---                  This.actionScriptJTreeMouseClicked (evt);
+--                  GenericProfileActionScriptJPanel'Class (This).actionScriptJTreeMouseClicked (evt);
 --     end mouseClicked;
 --              
 --     procedure mouseReleased (This : in out ; evt_Param : access MouseEvent_Package.MouseEvent'Class) is
 --        evt : constant MouseEvent_Access := MouseEvent_Access (evt_Param);
 --     begin
---                  This.actionScriptJTreeMouseReleased (evt);
+--                  GenericProfileActionScriptJPanel'Class (This).actionScriptJTreeMouseReleased (evt);
 --     end mouseReleased;
 );
         This.jScrollPane1.setViewportView (This.actionScriptJTree);
-        This.add (This.jScrollPane1);
+        GenericProfileActionScriptJPanel'Class (This).add (This.jScrollPane1);
    end initComponents;
 
    procedure actionScriptJTreeMouseReleased (This : in out GenericProfileActionScriptJPanel; evt_Param : access MouseEvent_Package.MouseEvent'Class) is
@@ -107,7 +107,7 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
    begin
         button := evt.getButton;
         if (button) = (MouseEvent_Package.BUTTON3) then
-            treePath := This.getActionScriptJTree.getSelectionPath;
+            treePath := GenericProfileActionScriptJPanel'Class (This).getActionScriptJTree.getSelectionPath;
             if (treePath) /= (null) then
                 anyType := treePath.getLastPathComponent;
                 if (anyType.all in CustomTreeNodeInterface_Package.CustomTreeNodeInterface'Class) then

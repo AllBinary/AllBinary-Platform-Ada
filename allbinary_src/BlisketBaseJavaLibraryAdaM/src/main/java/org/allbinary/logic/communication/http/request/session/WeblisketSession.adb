@@ -46,8 +46,8 @@ package body org.allbinary.logic.communication.http.request.session.WeblisketSes
         propertiesHashMap := hashMap;
         request := httpServletRequest;
         This.session := request.getSession (True);
-        if (This.getStoreName) = (null) then
-            This.setStoreName (Unbounded_String (propertiesHashMap.get (StoreFrontData_Package.getInstance.NAME)));
+        if (WeblisketSession'Class (This).getStoreName) = (null) then
+            WeblisketSession'Class (This).setStoreName (Java_Unbox (propertiesHashMap.get (StoreFrontData_Package.getInstance.NAME)));
         end if;
    end Initialize;
 
@@ -106,27 +106,27 @@ package body org.allbinary.logic.communication.http.request.session.WeblisketSes
 
    function getWebAppPath (This : in out WeblisketSession) return Unbounded_String is
    begin
-        return Unbounded_String (This.session.getAttribute (org_Package.allbinary.globals.GLOBALS2.WEBAPPPATH));
+        return Java_Unbox (This.session.getAttribute (org_Package.allbinary.globals.GLOBALS2.WEBAPPPATH));
    end getWebAppPath;
 
    function getUserName (This : in out WeblisketSession) return Unbounded_String is
    begin
-        return Unbounded_String (This.session.getAttribute (UserData_Package.USERNAME));
+        return Java_Unbox (This.session.getAttribute (UserData_Package.USERNAME));
    end getUserName;
 
    function getPassword (This : in out WeblisketSession) return Unbounded_String is
    begin
-        return Unbounded_String (This.session.getAttribute (UserData_Package.PASSWORD));
+        return Java_Unbox (This.session.getAttribute (UserData_Package.PASSWORD));
    end getPassword;
 
    function getPaymentMethod (This : in out WeblisketSession) return Unbounded_String is
    begin
-        return Unbounded_String (This.session.getAttribute (PaymentGatewayData_Package.NAME.toString));
+        return Java_Unbox (This.session.getAttribute (PaymentGatewayData_Package.NAME.toString));
    end getPaymentMethod;
 
    function getAuthentication (This : in out WeblisketSession) return Unbounded_String is
    begin
-        return Unbounded_String (This.session.getAttribute (WeblisketSessionData_Package.AUTHENTICATED));
+        return Java_Unbox (This.session.getAttribute (WeblisketSessionData_Package.AUTHENTICATED));
    end getAuthentication;
 
    function getAttempts (This : in out WeblisketSession) return Integer is
@@ -136,12 +136,12 @@ package body org.allbinary.logic.communication.http.request.session.WeblisketSes
 
    function getTimeout (This : in out WeblisketSession) return Unbounded_String is
    begin
-        return Unbounded_String (This.session.getAttribute (WeblisketSessionData_Package.TIMEOUT));
+        return Java_Unbox (This.session.getAttribute (WeblisketSessionData_Package.TIMEOUT));
    end getTimeout;
 
    function getStoreName (This : in out WeblisketSession) return Unbounded_String is
    begin
-        return Unbounded_String (This.session.getAttribute (StoreFrontData_Package.getInstance.NAME));
+        return Java_Unbox (This.session.getAttribute (StoreFrontData_Package.getInstance.NAME));
    end getStoreName;
 
    --  throws Exception
@@ -162,7 +162,7 @@ package body org.allbinary.logic.communication.http.request.session.WeblisketSes
       basketName : Unbounded_String;
       orderInterface : OrderInterface_Access;
    begin
-        storeFrontInterface := StoreFrontFactory_Package.getInstance (This.getStoreName);
+        storeFrontInterface := StoreFrontFactory_Package.getInstance (WeblisketSession'Class (This).getStoreName);
         basketName := storeFrontInterface.getBasketName;
         if not (StringValidationUtil_Package.getInstance.isEmpty (basketName)) then
             orderInterface := OrderInterface_Access (This.session.getAttribute (basketName));
@@ -203,7 +203,7 @@ package body org.allbinary.logic.communication.http.request.session.WeblisketSes
       storeFrontInterface : StoreFrontInterface_Access;
       basketName : Unbounded_String;
    begin
-        storeFrontInterface := StoreFrontFactory_Package.getInstance (This.getStoreName);
+        storeFrontInterface := StoreFrontFactory_Package.getInstance (WeblisketSession'Class (This).getStoreName);
         basketName := storeFrontInterface.getBasketName;
         if not (StringValidationUtil_Package.getInstance.isEmpty (basketName)) then
             This.session.removeAttribute (basketName);

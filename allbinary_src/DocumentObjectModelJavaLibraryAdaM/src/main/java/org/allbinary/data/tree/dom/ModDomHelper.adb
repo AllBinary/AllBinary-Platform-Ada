@@ -128,13 +128,13 @@ package body org.allbinary.data.tree.dom.ModDomHelper_Package is
         size := keyArray'Length;
         for i in 0 .. (size) - 1 loop
             objectKey := keyArray (i);
-            name := Unbounded_String (objectKey);
+            name := Java_Unbox (objectKey);
             anyType := Java_Object_Access (hashMap.get (objectKey));
             if (anyType) = (null) then
                 value := stringUtil.EMPTY_STRING;
                 node.appendChild (ModDomHelper_Package.createNameValueNodes (document, name, value));
             elsif (anyType.all in String_Package.String'Class) then
-                value := stringUtil.getNonNull (Unbounded_String (anyType));
+                value := stringUtil.getNonNull (Java_Unbox (anyType));
                 node.appendChild (ModDomHelper_Package.createNameValueNodes (document, name, value));
             elsif (anyType.all in HashMap_Package.HashMap'Class) then
                 node.appendChild (ModDomHelper_Package.createNameValueNodes (document, name, hashMap));
@@ -159,7 +159,7 @@ package body org.allbinary.data.tree.dom.ModDomHelper_Package is
         node := document.createElement (rootNodeName);
         size := valueVector.size;
         for i in 0 .. (size) - 1 loop
-            value := stringUtil.getNonNull (Unbounded_String (valueVector.get (i)));
+            value := stringUtil.getNonNull (Java_Unbox (valueVector.get (i)));
             node.appendChild (ModDomHelper_Package.createNameValueNodes (document, duplicateNodeName, value));
         end loop;
         return node;
@@ -179,7 +179,7 @@ package body org.allbinary.data.tree.dom.ModDomHelper_Package is
         node := document.createElement (rootNodeName);
         size := valueVector.size;
         for index in 0 .. (size) - 1 loop
-            value := stringUtil.getNonNull (Unbounded_String (valueVector.get (index)));
+            value := stringUtil.getNonNull (Java_Unbox (valueVector.get (index)));
             node.appendChild (ModDomHelper_Package.createNameValueIndexNodes (document, duplicateNodeName, index, value));
         end loop;
         return node;
@@ -214,9 +214,9 @@ package body org.allbinary.data.tree.dom.ModDomHelper_Package is
         keyArray := keySet.toArray;
         size := keyArray'Length;
         for i in 0 .. (size) - 1 loop
-            name := Unbounded_String (keyArray (i));
-            anyType := Java_Object_Access (hashMap.get (name));
-            value := stringUtil.getNonNull (Unbounded_String (anyType));
+            name := Java_Unbox (keyArray (i));
+            anyType := Java_Object_Access (hashMap.get (Java_Box (name)));
+            value := stringUtil.getNonNull (Java_Unbox (anyType));
             node.appendChild (ModDomHelper_Package.createTextNode (document, name, value));
         end loop;
         return node;

@@ -63,22 +63,22 @@ package body org.allbinary.animation.vector.VectorCenterGenerator_Package is
         for index in 0 .. (size) - 1 loop
             item := GraphicItemInterface_Access (hashMap.get (graphicItemArray (index)));
             if (item.getName) = (LinesGraphicItem_Package.getStaticName) then
-                This.getInstance (item.getPointsInterface.getPoints);
+                VectorCenterGenerator'Class (This).getInstance (item.getPointsInterface.getPoints);
             end if;
         end loop;
         This.logUtil.putF (To_Unbounded_String ("minX: ") & Java_Image (This.minX) & To_Unbounded_String (" minY: ") & Java_Image (This.minY) & To_Unbounded_String (" maxX: ") & Java_Image (This.maxX) & To_Unbounded_String (" maxY: ") & Java_Image (This.maxY), VectorCenterGenerator_Access'(This'Unchecked_Access), This.commonStrings.GET_INSTANCE);
-        This.setWidth ((This.maxX) - (This.minX));
-        This.setHeight ((This.maxY) - (This.minY));
-        max := This.getWidth;
-        if (This.getHeight) > (max) then
-            max := This.getHeight;
+        VectorCenterGenerator'Class (This).setWidth ((This.maxX) - (This.minX));
+        VectorCenterGenerator'Class (This).setHeight ((This.maxY) - (This.minY));
+        max := VectorCenterGenerator'Class (This).getWidth;
+        if (VectorCenterGenerator'Class (This).getHeight) > (max) then
+            max := VectorCenterGenerator'Class (This).getHeight;
         end if;
         middle := (max) / (2);
         commonLabels := CommonLabels_Package.getInstance;
-        s := StringMaker_Package.Create.append (commonLabels.WIDTH_LABEL).appendint (This.getWidth).append (commonLabels.HEIGHT_LABEL).appendint (This.getHeight).append (To_Unbounded_String (" max: ")).appendint (max).append (To_Unbounded_String (" middle: ")).appendint (middle).toString;
+        s := StringMaker_Package.Create.append (commonLabels.WIDTH_LABEL).appendint (VectorCenterGenerator'Class (This).getWidth).append (commonLabels.HEIGHT_LABEL).appendint (VectorCenterGenerator'Class (This).getHeight).append (To_Unbounded_String (" max: ")).appendint (max).append (To_Unbounded_String (" middle: ")).appendint (middle).toString;
         This.logUtil.putF (s, VectorCenterGenerator_Access'(This'Unchecked_Access), This.commonStrings.GET_INSTANCE);
-        currentMiddleX := (This.minX) + ((This.getWidth) / (2));
-        currentMiddleY := (This.minY) + ((This.getHeight) / (2));
+        currentMiddleX := (This.minX) + ((VectorCenterGenerator'Class (This).getWidth) / (2));
+        currentMiddleY := (This.minY) + ((VectorCenterGenerator'Class (This).getHeight) / (2));
         This.dx := (middle) - (currentMiddleX);
         This.dy := (middle) - (currentMiddleY);
    end calculate;
@@ -93,7 +93,7 @@ package body org.allbinary.animation.vector.VectorCenterGenerator_Package is
       newPoints : Points_Access;
       index : Integer;
    begin
-        This.calculate (hashMap);
+        VectorCenterGenerator'Class (This).calculate (hashMap);
         This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String (" dx: ")).appendint (This.dx).append (To_Unbounded_String (" dy: ")).appendint (This.dy).toString, VectorCenterGenerator_Access'(This'Unchecked_Access), This.commonStrings.GET_INSTANCE);
         graphicItemArray := hashMap.keySet.toArray;
         size := graphicItemArray'Length;

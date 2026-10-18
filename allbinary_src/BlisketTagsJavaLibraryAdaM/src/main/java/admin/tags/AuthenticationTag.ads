@@ -21,7 +21,7 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.lang.reflect.Method_Package; use java.lang.reflect.Method_Package;
---  with java.util.HashMap_Package; use java.util.HashMap_Package;
+with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 --  with javax.servlet.http.HttpServletRequest_Package; use javax.servlet.http.HttpServletRequest_Package;
@@ -40,6 +40,7 @@ with tags.CustomTagSupport_Package; use tags.CustomTagSupport_Package;
 
 package admin.tags.AuthenticationTag_Package is
 
+   package HashMap_Package renames Standard.java.util.HashMap_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
    package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    package AuthenticationHelperFactory_Package renames Standard.admin.taghelpers.AuthenticationHelperFactory_Package;
@@ -63,7 +64,7 @@ package admin.tags.AuthenticationTag_Package is
       command : Unbounded_String;
       userName : Unbounded_String;
       password : Unbounded_String;
-      newPassword : Unbounded_String;
+      newPassword_Field : Unbounded_String;
       roles : BasicArrayList_Access;
       propertiesHashMap : HashMap_Access;
    end record;

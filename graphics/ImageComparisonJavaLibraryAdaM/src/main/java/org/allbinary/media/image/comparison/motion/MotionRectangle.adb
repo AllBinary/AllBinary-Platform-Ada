@@ -27,8 +27,8 @@ package body org.allbinary.media.image.comparison.motion.MotionRectangle_Package
       rectangle : constant Rectangle_Access := Rectangle_Access (rectangle_Param);
    begin
       Initialize_Fields (This);
-        This.setRectangle (rectangle);
-        This.setPixelDeltaVector (BasicArrayListD_Package.Create);
+        MotionRectangle'Class (This).setRectangle (rectangle);
+        MotionRectangle'Class (This).setPixelDeltaVector (BasicArrayListD_Package.Create);
    end Initialize;
 
    function Create (rectangle_Param : access Rectangle_Package.Rectangle'Class) return MotionRectangle_Access is
@@ -63,8 +63,8 @@ package body org.allbinary.media.image.comparison.motion.MotionRectangle_Package
    function clone (This : in out MotionRectangle) return Java_Object_Access is
       motionRectangle : MotionRectangle_Access;
    begin
-        motionRectangle := MotionRectangle_Package.Create (Rectangle_Access (This.getRectangle.clone));
-        motionRectangle.setPixelDeltaVector (BasicArrayList_Access (This.getPixelDeltaVector.clone));
+        motionRectangle := MotionRectangle_Package.Create (Rectangle_Access (MotionRectangle'Class (This).getRectangle.clone));
+        motionRectangle.setPixelDeltaVector (BasicArrayList_Access (MotionRectangle'Class (This).getPixelDeltaVector.clone));
         return motionRectangle;
    end clone;
 

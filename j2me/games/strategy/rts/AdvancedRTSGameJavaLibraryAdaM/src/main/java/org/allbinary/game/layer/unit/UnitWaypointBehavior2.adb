@@ -87,9 +87,9 @@ package body org.allbinary.game.layer.unit.UnitWaypointBehavior2_Package is
             if (This.waypointPathsListP) /= (UnitWaypointBehavior2_Package.runningWaypointPathList) then
                 This.waypointPathRunnable.setRunning (False);
                 if This.waitingOnTargetPath then
-                    This.setTargetPath;
+                    UnitWaypointBehavior2'Class (This).setTargetPath;
                 elsif This.waitingOnWaypointPath then
-                    This.setWaypointPath (AdvancedRTSGameLayer_Access (This.waypointPathRunnable.getTargetLayer));
+                    UnitWaypointBehavior2'Class (This).setWaypointPath (AdvancedRTSGameLayer_Access (This.waypointPathRunnable.getTargetLayer));
                 else
                     Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Should not happen")));
                 end if;
@@ -97,19 +97,19 @@ package body org.allbinary.game.layer.unit.UnitWaypointBehavior2_Package is
                 return;
             end if;
         end if;
-        This.processTargetList;
+        UnitWaypointBehavior2'Class (This).processTargetList;
         if not (This.waypointPathRunnable.isRunning) then
-            This.processWaypoint;
+            UnitWaypointBehavior2'Class (This).processWaypoint;
         else
             return;
         end if;
         if not (This.waypointPathRunnable.isRunning) then
-            This.processTargeting;
+            UnitWaypointBehavior2'Class (This).processTargeting;
         else
             return;
         end if;
         if not (This.waypointPathRunnable.isRunning) then
-            This.teleportIfNoProgress;
+            UnitWaypointBehavior2'Class (This).teleportIfNoProgress;
         else
             return;
         end if;
@@ -122,9 +122,9 @@ package body org.allbinary.game.layer.unit.UnitWaypointBehavior2_Package is
    begin
         anotherTargetDistance := This.layerDistanceUtil.getDistance (This.associatedAdvancedRTSGameLayer, layerInterface);
         if (layerInterface) = (This.currentTargetLayerInterfaceP) then
-            This.setCurrentTargetDistance (anotherTargetDistance);
+            UnitWaypointBehavior2'Class (This).setCurrentTargetDistance (anotherTargetDistance);
         else
-            This.processPossibleTarget (layerInterface, anotherTargetDistance);
+            UnitWaypointBehavior2'Class (This).processPossibleTarget (layerInterface, anotherTargetDistance);
         end if;
    end onEnemyMovement;
 
@@ -134,15 +134,15 @@ package body org.allbinary.game.layer.unit.UnitWaypointBehavior2_Package is
       isShorterThanCurrentTargetDistance : Boolean;
       isCurrentTargetDestroyed : Boolean;
    begin
-        isShorterThanCurrentTargetDistance := (This.getCurrentTargetDistance) > (anotherTargetDistance);
+        isShorterThanCurrentTargetDistance := (UnitWaypointBehavior2'Class (This).getCurrentTargetDistance) > (anotherTargetDistance);
         isCurrentTargetDestroyed := ((This.currentTargetLayerInterfaceP) /= (CollidableDestroyableDamageableLayer_Package.getNullInstance)) and then (This.currentTargetLayerInterfaceP.isDestroyed);
         This.associatedAdvancedRTSGameLayer.waypoint2LogHelperP.processPossibleTarget (This.associatedAdvancedRTSGameLayer, UnitWaypointBehavior2_Access'(This'Unchecked_Access), layerInterface, anotherTargetDistance, isShorterThanCurrentTargetDistance, isCurrentTargetDestroyed);
-        if ((This.isWaypointListEmptyOrOnlyTargets) and then (This.isInSensorRange (layerInterface, anotherTargetDistance))) and then (((isShorterThanCurrentTargetDistance) or else (isCurrentTargetDestroyed))) then
+        if ((UnitWaypointBehavior2'Class (This).isWaypointListEmptyOrOnlyTargets) and then (UnitWaypointBehavior2'Class (This).isInSensorRange (layerInterface, anotherTargetDistance))) and then (((isShorterThanCurrentTargetDistance) or else (isCurrentTargetDestroyed))) then
             This.associatedAdvancedRTSGameLayer.waypoint2LogHelperP.processSetTarget (This.associatedAdvancedRTSGameLayer, UnitWaypointBehavior2_Access'(This'Unchecked_Access), layerInterface, anotherTargetDistance);
-            This.setTarget (layerInterface, anotherTargetDistance);
-        elsif (This.isCloseRange (layerInterface, anotherTargetDistance)) and then (((isShorterThanCurrentTargetDistance) or else (isCurrentTargetDestroyed))) then
+            UnitWaypointBehavior2'Class (This).setTarget (layerInterface, anotherTargetDistance);
+        elsif (UnitWaypointBehavior2'Class (This).isCloseRange (layerInterface, anotherTargetDistance)) and then (((isShorterThanCurrentTargetDistance) or else (isCurrentTargetDestroyed))) then
             This.associatedAdvancedRTSGameLayer.waypoint2LogHelperP.processPossibleTargetCloser (This.associatedAdvancedRTSGameLayer, UnitWaypointBehavior2_Access'(This'Unchecked_Access), layerInterface, anotherTargetDistance);
-            This.setTarget (layerInterface, anotherTargetDistance);
+            UnitWaypointBehavior2'Class (This).setTarget (layerInterface, anotherTargetDistance);
         end if;
    end processPossibleTarget;
 
@@ -150,11 +150,11 @@ package body org.allbinary.game.layer.unit.UnitWaypointBehavior2_Package is
    procedure teleportIfNoProgress (This : in out UnitWaypointBehavior2) is
       geographicMapCellPosition : GeographicMapCellPosition_Access;
    begin
-        if (This.isTrackingWaypoint) or else (This.associatedAdvancedRTSGameLayer.getParentLayer.isDestroyed) then
+        if (UnitWaypointBehavior2'Class (This).isTrackingWaypoint) or else (This.associatedAdvancedRTSGameLayer.getParentLayer.isDestroyed) then
             if (This.progressTimeDelayHelper.isTimeTNT) and then ((This.nextUnvisitedPathGeographicMapCellPosition) /= (SimpleGeographicMapCellPositionFactory_Package.NULL_GEOGRAPHIC_MAP_CELL_POSITION)) then
                 This.associatedAdvancedRTSGameLayer.teleportTo (This.nextUnvisitedPathGeographicMapCellPosition);
             end if;
-            if This.getCompleteTimeDelayHelper.isTimeTNT then
+            if UnitWaypointBehavior2'Class (This).getCompleteTimeDelayHelper.isTimeTNT then
                 geographicMapCellPosition := GeographicMapCellPosition_Access (This.currentGeographicMapCellHistoryP.getTracked.get ((This.currentGeographicMapCellHistoryP.getSize) - (1)));
                 This.associatedAdvancedRTSGameLayer.teleportTo (geographicMapCellPosition);
             end if;
@@ -172,20 +172,20 @@ package body org.allbinary.game.layer.unit.UnitWaypointBehavior2_Package is
         This.associatedAdvancedRTSGameLayer.waypoint2LogHelperP.setTarget (This.associatedAdvancedRTSGameLayer, UnitWaypointBehavior2_Access'(This'Unchecked_Access), layerInterface, anotherTargetDistance);
         This.associatedAdvancedRTSGameLayer.getCaptionAnimationHelper.update (This.unitWaypointStrings.TARGET, BasicColorFactory_Package.getInstance.GREEN);
         This.associatedAdvancedRTSGameLayer.setLoad (0);
-        This.setCurrentTargetDistance (anotherTargetDistance);
-        This.setCurrentTargetLayerInterface (layerInterface);
-        This.setTrackingWaypoint (False);
+        UnitWaypointBehavior2'Class (This).setCurrentTargetDistance (anotherTargetDistance);
+        UnitWaypointBehavior2'Class (This).setCurrentTargetLayerInterface (layerInterface);
+        UnitWaypointBehavior2'Class (This).setTrackingWaypoint (False);
         This.targetList.clear;
-        if (not (This.isCloseRange (layerInterface, anotherTargetDistance))) and then (This.canInsertWaypoint (0, This.currentTargetLayerInterfaceP)) then
+        if (not (UnitWaypointBehavior2'Class (This).isCloseRange (layerInterface, anotherTargetDistance))) and then (UnitWaypointBehavior2'Class (This).canInsertWaypoint (0, This.currentTargetLayerInterfaceP)) then
             geographicMapCellPosition := This.associatedAdvancedRTSGameLayer.getCurrentGeographicMapCellPosition;
             pathFindingLayerInterface := (PathFindingLayerInterface_Access (This.currentTargetLayerInterfaceP));
             waypoint := pathFindingLayerInterface.getWaypointBehavior.getWaypoint;
             list := waypoint.getPathsListFromCacheOnly (geographicMapCellPosition);
-            This.setWaypointPathsList (list);
+            UnitWaypointBehavior2'Class (This).setWaypointPathsList (list);
             if (This.waypointPathsListP) = (null) then
                 This.targetWithoutCachedPathLayerInterface := This.currentTargetLayerInterfaceP;
             elsif (This.waypointPathsListP.size) /= (0) then
-                This.setTargetPath;
+                UnitWaypointBehavior2'Class (This).setTargetPath;
             end if;
         end if;
    end setTarget;
@@ -197,13 +197,13 @@ package body org.allbinary.game.layer.unit.UnitWaypointBehavior2_Package is
             if This.currentTargetLayerInterfaceP.isDestroyed then
                 This.associatedAdvancedRTSGameLayer.waypoint2LogHelperP.setTargetPath (This.associatedAdvancedRTSGameLayer);
                 This.associatedAdvancedRTSGameLayer.getCaptionAnimationHelper.update (This.unitWaypointStrings.KILL, This.basicColorFactory.ORANGE);
-                This.clearTarget;
+                UnitWaypointBehavior2'Class (This).clearTarget;
                 return;
             end if;
             if (This.currentTargetLayerInterfaceP) = (This.waypointPathRunnable.getTargetLayer) then
                 This.associatedAdvancedRTSGameLayer.waypoint2LogHelperP.setTargetPathIgnoreNewPath (This.associatedAdvancedRTSGameLayer, UnitWaypointBehavior2_Access'(This'Unchecked_Access));
-                This.insertWaypoint (0, This.currentTargetLayerInterfaceP);
-                This.setRandomGeographicMapCellHistory (This.waypointPathsListP);
+                UnitWaypointBehavior2'Class (This).insertWaypoint (0, This.currentTargetLayerInterfaceP);
+                UnitWaypointBehavior2'Class (This).setRandomGeographicMapCellHistory (This.waypointPathsListP);
             end if;
         end if;
    end setTargetPath;
@@ -212,7 +212,7 @@ package body org.allbinary.game.layer.unit.UnitWaypointBehavior2_Package is
    procedure setGeographicMapCellHistoryPath (This : in out UnitWaypointBehavior2; geographicMapCellPositionBasicArrayList_Param : access BasicArrayList_Package.BasicArrayList'Class) is
       geographicMapCellPositionBasicArrayList : constant BasicArrayList_Access := BasicArrayList_Access (geographicMapCellPositionBasicArrayList_Param);
    begin
-        This.setCurrentPathGeographicMapCellPosition (SimpleGeographicMapCellPositionFactory_Package.NULL_GEOGRAPHIC_MAP_CELL_POSITION);
+        UnitWaypointBehavior2'Class (This).setCurrentPathGeographicMapCellPosition (SimpleGeographicMapCellPositionFactory_Package.NULL_GEOGRAPHIC_MAP_CELL_POSITION);
         This.nextUnvisitedPathGeographicMapCellPosition := SimpleGeographicMapCellPositionFactory_Package.NULL_GEOGRAPHIC_MAP_CELL_POSITION;
         UnitWaypointBehavior (This).setGeographicMapCellHistoryPath (geographicMapCellPositionBasicArrayList);
    end setGeographicMapCellHistoryPath;
@@ -231,30 +231,30 @@ package body org.allbinary.game.layer.unit.UnitWaypointBehavior2_Package is
             This.associatedAdvancedRTSGameLayer.waypoint2LogHelperP.processWaypoint (This.associatedAdvancedRTSGameLayer, UnitWaypointBehavior2_Access'(This'Unchecked_Access), targetLayer, size);
             if targetLayer.isDestroyed then
                 This.associatedAdvancedRTSGameLayer.getCaptionAnimationHelper.update (This.unitWaypointStrings.WAYPOINT_DESTROYED_SHORT, This.basicColorFactory.YELLOW);
-                This.removeWaypoint (targetLayer, This.unitWaypointStrings.WAYPOINT_DESTROYED);
+                UnitWaypointBehavior2'Class (This).removeWaypoint (targetLayer, This.unitWaypointStrings.WAYPOINT_DESTROYED);
             else
                 geographicMapCellPosition := This.associatedAdvancedRTSGameLayer.getCurrentGeographicMapCellPosition;
-                if This.isTrackingWaypoint then
+                if UnitWaypointBehavior2'Class (This).isTrackingWaypoint then
                     This.associatedAdvancedRTSGameLayer.waypoint2LogHelperP.processWaypointTracked (This.associatedAdvancedRTSGameLayer, UnitWaypointBehavior2_Access'(This'Unchecked_Access));
-                    if This.visitIfAtMidPoint (geographicMapCellPosition) then
+                    if UnitWaypointBehavior2'Class (This).visitIfAtMidPoint (geographicMapCellPosition) then
                         This.associatedAdvancedRTSGameLayer.waypoint2LogHelperP.processWaypointTrackedVisit (This.associatedAdvancedRTSGameLayer, geographicMapCellPosition);
                     end if;
                     if (This.currentGeographicMapCellHistoryP.isAllVisited2) and then ((This.currentTargetLayerInterfaceP) /= (CollidableDestroyableDamageableLayer_Package.getNullInstance)) then
                         oldWaypointLayer := AdvancedRTSGameLayer_Access (This.currentTargetLayerInterfaceP);
                         oldWaypointLayer.getWaypointBehavior.getWaypoint.visit (This.associatedAdvancedRTSGameLayer);
                         This.associatedAdvancedRTSGameLayer.getCaptionAnimationHelper.update (This.unitWaypointStrings.ALL_VISITED_SHORT, This.basicColorFactory.GREEN);
-                        This.removeWaypoint (AdvancedRTSGameLayer_Access (This.currentTargetLayerInterfaceP), This.unitWaypointStrings.ALL_VISITED);
+                        UnitWaypointBehavior2'Class (This).removeWaypoint (AdvancedRTSGameLayer_Access (This.currentTargetLayerInterfaceP), This.unitWaypointStrings.ALL_VISITED);
                     end if;
                 elsif ((This.currentTargetLayerInterfaceP) = (null)) or else (This.waypointOverridesAttacking) then
                     list := targetLayer.getWaypointBehavior.getWaypoint.getPathsListFromCacheOnly (geographicMapCellPosition);
-                    This.setWaypointPathsList (list);
+                    UnitWaypointBehavior2'Class (This).setWaypointPathsList (list);
                     if (This.waypointPathsListP) = (null) then
                         This.waitingOnWaypointPath := True;
                         This.associatedAdvancedRTSGameLayer.getCaptionAnimationHelper.update (This.unitWaypointStrings.THINKING, This.basicColorFactory.GREEN);
-                        This.runWaypointPathTask (targetLayer);
+                        UnitWaypointBehavior2'Class (This).runWaypointPathTask (targetLayer);
                         return;
                     end if;
-                    This.setWaypointPath (targetLayer);
+                    UnitWaypointBehavior2'Class (This).setWaypointPath (targetLayer);
                 end if;
             end if;
         end if;
@@ -268,10 +268,10 @@ package body org.allbinary.game.layer.unit.UnitWaypointBehavior2_Package is
             This.associatedAdvancedRTSGameLayer.getCaptionAnimationHelper.update (This.unitWaypointStrings.WANDERING, This.basicColorFactory.RED);
             This.wanderPathsList.clear;
             This.wanderPathsList.add (This.associatedAdvancedRTSGameLayer.getSurroundingGeographicMapCellPositionList);
-            This.setRandomGeographicMapCellHistory (This.wanderPathsList);
+            UnitWaypointBehavior2'Class (This).setRandomGeographicMapCellHistory (This.wanderPathsList);
         end if;
-        This.visitIfAtMidPoint (This.getCurrentPathGeographicMapCellPosition);
-        This.updateCurrentPathGeographicMapCellPosition;
+        UnitWaypointBehavior2'Class (This).visitIfAtMidPoint (UnitWaypointBehavior2'Class (This).getCurrentPathGeographicMapCellPosition);
+        UnitWaypointBehavior2'Class (This).updateCurrentPathGeographicMapCellPosition;
         This.associatedAdvancedRTSGameLayer.trackTo (This.unitWaypointStrings.NEXT_PATH_NODE);
    end wander;
 
@@ -322,20 +322,20 @@ package body org.allbinary.game.layer.unit.UnitWaypointBehavior2_Package is
       index : Integer;
    begin
         This.targetWithoutCachedPathLayerInterface := CollidableDestroyableDamageableLayer_Package.getNullInstance;
-        for index in reverse 0 .. (This.getPossibleTargetList.size) - (1) loop
-            layerInterface := AdvancedRTSGameLayer_Access (This.getPossibleTargetList.get (index));
+        for index in reverse 0 .. (UnitWaypointBehavior2'Class (This).getPossibleTargetList.size) - (1) loop
+            layerInterface := AdvancedRTSGameLayer_Access (UnitWaypointBehavior2'Class (This).getPossibleTargetList.get (index));
             if layerInterface.isDestroyed then
-                This.getPossibleTargetList.remove (layerInterface);
+                UnitWaypointBehavior2'Class (This).getPossibleTargetList.remove (layerInterface);
             else
-                This.onEnemyMovement (layerInterface);
+                UnitWaypointBehavior2'Class (This).onEnemyMovement (layerInterface);
             end if;
         end loop;
         if (This.targetWithoutCachedPathLayerInterface) /= (CollidableDestroyableDamageableLayer_Package.getNullInstance) then
             This.waitingOnTargetPath := True;
             This.associatedAdvancedRTSGameLayer.getCaptionAnimationHelper.update (This.unitWaypointStrings.THINKING_ABOUT_TARGET, This.basicColorFactory.GREEN);
-            This.runWaypointPathTask (AdvancedRTSGameLayer_Access (This.currentTargetLayerInterfaceP));
+            UnitWaypointBehavior2'Class (This).runWaypointPathTask (AdvancedRTSGameLayer_Access (This.currentTargetLayerInterfaceP));
         end if;
-        This.getPossibleTargetList.clear;
+        UnitWaypointBehavior2'Class (This).getPossibleTargetList.clear;
    end processTargetList;
 
    --  throws Exception
@@ -344,17 +344,17 @@ package body org.allbinary.game.layer.unit.UnitWaypointBehavior2_Package is
       dy : Integer;
       point : GPoint_Access;
    begin
-        if ((This.currentTargetLayerInterfaceP) /= (CollidableDestroyableDamageableLayer_Package.getNullInstance)) and then (((This.isInSensorRange (This.currentTargetLayerInterfaceP, This.getCurrentTargetDistance)) or else (This.isTrackingWaypoint))) then
+        if ((This.currentTargetLayerInterfaceP) /= (CollidableDestroyableDamageableLayer_Package.getNullInstance)) and then (((UnitWaypointBehavior2'Class (This).isInSensorRange (This.currentTargetLayerInterfaceP, UnitWaypointBehavior2'Class (This).getCurrentTargetDistance)) or else (UnitWaypointBehavior2'Class (This).isTrackingWaypoint))) then
             if This.currentTargetLayerInterfaceP.isDestroyed then
                 This.associatedAdvancedRTSGameLayer.waypoint2LogHelperP.targetDestroyed (This.associatedAdvancedRTSGameLayer);
                 This.associatedAdvancedRTSGameLayer.getCaptionAnimationHelper.update (This.unitWaypointStrings.KILL, This.basicColorFactory.ORANGE);
-                This.clearTarget;
+                UnitWaypointBehavior2'Class (This).clearTarget;
                 return;
             end if;
             dx := 0;
             dy := 0;
-            if This.isTrackingWaypoint then
-                This.updateCurrentPathGeographicMapCellPosition;
+            if UnitWaypointBehavior2'Class (This).isTrackingWaypoint then
+                UnitWaypointBehavior2'Class (This).updateCurrentPathGeographicMapCellPosition;
                 point := This.nextUnvisitedPathGeographicMapCellPosition.getMidPoint;
                 dx := ((This.associatedAdvancedRTSGameLayer.getXP) + (This.associatedAdvancedRTSGameLayer.getHalfWidth)) - (point.getX);
                 dy := ((This.associatedAdvancedRTSGameLayer.getYP) + (This.associatedAdvancedRTSGameLayer.getHalfHeight)) - (point.getY);
@@ -367,7 +367,7 @@ package body org.allbinary.game.layer.unit.UnitWaypointBehavior2_Package is
             This.associatedAdvancedRTSGameLayer.trackToDXY (dx, dy);
         else
             if This.associatedAdvancedRTSGameLayer.getParentLayer.isDestroyed then
-                This.wander;
+                UnitWaypointBehavior2'Class (This).wander;
             else
                 if This.associatedAdvancedRTSGameLayer.showMoreCaptionStates then
                     This.associatedAdvancedRTSGameLayer.getCaptionAnimationHelper.update (This.unitWaypointStrings.STOP, This.basicColorFactory.YELLOW);
@@ -379,11 +379,11 @@ package body org.allbinary.game.layer.unit.UnitWaypointBehavior2_Package is
 
    procedure updateCurrentPathGeographicMapCellPosition (This : in out UnitWaypointBehavior2) is
    begin
-        This.setLastPathGeographicMapCellPosition (This.getCurrentPathGeographicMapCellPosition);
-        This.setCurrentPathGeographicMapCellPosition (This.nextUnvisitedPathGeographicMapCellPosition);
+        UnitWaypointBehavior2'Class (This).setLastPathGeographicMapCellPosition (UnitWaypointBehavior2'Class (This).getCurrentPathGeographicMapCellPosition);
+        UnitWaypointBehavior2'Class (This).setCurrentPathGeographicMapCellPosition (This.nextUnvisitedPathGeographicMapCellPosition);
         This.nextUnvisitedPathGeographicMapCellPosition := This.currentGeographicMapCellHistoryP.getFirstUnvisited;
         This.afterNextUnvisitedPathGeographicMapCellPosition := This.currentGeographicMapCellHistoryP.getAfterIfNotLast (This.nextUnvisitedPathGeographicMapCellPosition);
-        if (This.getCurrentPathGeographicMapCellPosition) /= (This.nextUnvisitedPathGeographicMapCellPosition) then
+        if (UnitWaypointBehavior2'Class (This).getCurrentPathGeographicMapCellPosition) /= (This.nextUnvisitedPathGeographicMapCellPosition) then
             This.progressTimeDelayHelper.setStartTimeTNT;
         end if;
    end updateCurrentPathGeographicMapCellPosition;
@@ -394,14 +394,14 @@ package body org.allbinary.game.layer.unit.UnitWaypointBehavior2_Package is
       MAX : Integer;
    begin
         if (This.waypointPathsListP.size) /= (0) then
-            This.setCurrentTargetLayerInterface (waypointLayer);
+            UnitWaypointBehavior2'Class (This).setCurrentTargetLayerInterface (waypointLayer);
             MAX := Integer_Package.MAX_VALUE;
-            This.setCurrentTargetDistance (MAX);
-            This.setRandomGeographicMapCellHistory (This.waypointPathsListP);
+            UnitWaypointBehavior2'Class (This).setCurrentTargetDistance (MAX);
+            UnitWaypointBehavior2'Class (This).setRandomGeographicMapCellHistory (This.waypointPathsListP);
         else
             waypointLayer.getWaypointBehavior.getWaypoint.visit (This.associatedAdvancedRTSGameLayer);
             This.associatedAdvancedRTSGameLayer.getCaptionAnimationHelper.update (This.unitWaypointStrings.ALREADY_THERE_SHORT, This.basicColorFactory.YELLOW);
-            This.removeWaypoint (waypointLayer, This.unitWaypointStrings.ALREADY_THERE);
+            UnitWaypointBehavior2'Class (This).removeWaypoint (waypointLayer, This.unitWaypointStrings.ALREADY_THERE);
         end if;
    end setWaypointPath;
 
@@ -409,7 +409,7 @@ package body org.allbinary.game.layer.unit.UnitWaypointBehavior2_Package is
    procedure runWaypointPathTask (This : in out UnitWaypointBehavior2; waypointLayer_Param : access AdvancedRTSGameLayer_Package.AdvancedRTSGameLayer'Class) is
       waypointLayer : constant AdvancedRTSGameLayer_Access := AdvancedRTSGameLayer_Access (waypointLayer_Param);
    begin
-        This.setWaypointPathsList (UnitWaypointBehavior2_Package.runningWaypointPathList);
+        UnitWaypointBehavior2'Class (This).setWaypointPathsList (UnitWaypointBehavior2_Package.runningWaypointPathList);
         if This.waypointPathRunnable.isRunning then
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Should never be running here")));
         end if;
@@ -428,7 +428,7 @@ package body org.allbinary.game.layer.unit.UnitWaypointBehavior2_Package is
         This.associatedAdvancedRTSGameLayer.waypoint2LogHelperP.removeWaypointList (This.associatedAdvancedRTSGameLayer, UnitWaypointBehavior2_Access'(This'Unchecked_Access), This.targetList);
         if (This.currentTargetLayerInterfaceP) = (waypointLayer) then
             This.associatedAdvancedRTSGameLayer.waypoint2LogHelperP.removeWaypointClear (This.associatedAdvancedRTSGameLayer);
-            This.clearTarget;
+            UnitWaypointBehavior2'Class (This).clearTarget;
         end if;
    end removeWaypoint;
 
@@ -437,10 +437,10 @@ package body org.allbinary.game.layer.unit.UnitWaypointBehavior2_Package is
       MAX : Integer;
    begin
         This.associatedAdvancedRTSGameLayer.waypoint2LogHelperP.clearTarget (This.associatedAdvancedRTSGameLayer);
-        This.setCurrentTargetLayerInterface (CollidableDestroyableDamageableLayer_Package.getNullInstance);
-        This.setTrackingWaypoint (False);
+        UnitWaypointBehavior2'Class (This).setCurrentTargetLayerInterface (CollidableDestroyableDamageableLayer_Package.getNullInstance);
+        UnitWaypointBehavior2'Class (This).setTrackingWaypoint (False);
         MAX := Integer_Package.MAX_VALUE;
-        This.setCurrentTargetDistance (MAX);
+        UnitWaypointBehavior2'Class (This).setCurrentTargetDistance (MAX);
         TrackingEventHandler_Package.getInstance.fireEvent (This.associatedAdvancedRTSGameLayer.getTrackingEvent);
    end clearTarget;
 
@@ -485,7 +485,7 @@ package body org.allbinary.game.layer.unit.UnitWaypointBehavior2_Package is
             stringBuffer.append (To_Unbounded_String (" with "));
             stringBuffer.append (UnitWaypointBehavior2_Package.TARGET_DISTANCE);
             stringBuffer.append (This.commonSeps.SPACE);
-            stringBuffer.appendint (Integer (This.getCurrentTargetDistance));
+            stringBuffer.appendint (Integer (UnitWaypointBehavior2'Class (This).getCurrentTargetDistance));
         end if;
         return stringBuffer.toString;
    end getCurrentTargetingStateString;
@@ -500,7 +500,7 @@ package body org.allbinary.game.layer.unit.UnitWaypointBehavior2_Package is
         This.associatedAdvancedRTSGameLayer.waypoint2LogHelperP.addWaypointFromUser (This.associatedAdvancedRTSGameLayer, advancedRTSGameLayer);
         This.targetList.clear;
         This.targetList.add (advancedRTSGameLayer);
-        This.clearTarget;
+        UnitWaypointBehavior2'Class (This).clearTarget;
    end addWaypointFromUser;
 
    --  throws Exception
@@ -512,8 +512,8 @@ package body org.allbinary.game.layer.unit.UnitWaypointBehavior2_Package is
             This.buildingSteeringVisitor.getList.add (allbinaryLayer);
             This.buildingSteeringVisitor.getPositionList.add (cellPosition);
         end if;
-        if not (This.getSteeringVisitorList.contains (This.buildingSteeringVisitor)) then
-            This.getSteeringVisitorList.add (This.buildingSteeringVisitor);
+        if not (UnitWaypointBehavior2'Class (This).getSteeringVisitorList.contains (This.buildingSteeringVisitor)) then
+            UnitWaypointBehavior2'Class (This).getSteeringVisitorList.add (This.buildingSteeringVisitor);
         end if;
    end addBuildingChase;
 
@@ -594,12 +594,12 @@ package body org.allbinary.game.layer.unit.BuildingSteeringVisitor_Package is
    begin
             logUtil := LogUtil_Package.getInstance;
             begin
-                if (This.getList.size) > (0) then
-                    allbinaryLayer := AllBinaryLayer_Access (This.getList.get (0));
-                    cellPosition := GeographicMapCellPosition_Access (This.getPositionList.get (0));
-                    clear := This.buildingChase (allbinaryLayer, cellPosition);
+                if (UnitWaypointBehavior2'Class (This).getList.size) > (0) then
+                    allbinaryLayer := AllBinaryLayer_Access (UnitWaypointBehavior2'Class (This).getList.get (0));
+                    cellPosition := GeographicMapCellPosition_Access (UnitWaypointBehavior2'Class (This).getPositionList.get (0));
+                    clear := UnitWaypointBehavior2'Class (This).buildingChase (allbinaryLayer, cellPosition);
                     if clear then
-                        This.getList.clear;
+                        UnitWaypointBehavior2'Class (This).getList.clear;
                         This.positionList.clear;
                         return NullUtil_Package.getInstance.NULL_OBJECT;
                     end if;

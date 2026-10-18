@@ -28,7 +28,7 @@ package body org.allbinary.media.image.comparison.ImageComparisonResultsEvent_Pa
    begin
         AllBinaryEventObject_Package.Initialize (This, anyType);
         Initialize_Fields (This);
-        This.setImageComparisonResult (imageComparisonInfo);
+        ImageComparisonResultsEvent'Class (This).setImageComparisonResult (imageComparisonInfo);
    end Initialize;
 
    function Create (anyType_Param : access Java_Object'Class; imageComparisonInfo_Param : access ImageComparisonResult_Package.ImageComparisonResult'Class) return ImageComparisonResultsEvent_Access is

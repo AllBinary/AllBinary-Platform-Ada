@@ -57,9 +57,9 @@ package body org.allbinary.data.resource.ResourceUtil_Package is
    begin
         inputStream := resource.all'Tag.getResourceAsStream (resource);
         if (inputStream) = (null) then
-            inputStream := This.getResourceAsStreamAtStart (resource, 2);
+            inputStream := ResourceUtil'Class (This).getResourceAsStreamAtStart (resource, 2);
             if (inputStream) = (null) then
-                inputStream := This.getResourceAsStreamAtStart (resource, 1);
+                inputStream := ResourceUtil'Class (This).getResourceAsStreamAtStart (resource, 1);
                 if (inputStream) = (null) then
                     stringMaker := StringMaker_Package.Create;
                     index := resource.lastIndexOf ('/');
@@ -119,7 +119,7 @@ package body org.allbinary.data.resource.ResourceUtil_Package is
       inputStream : InputStream_Access;
    begin
         stringMaker := StringMaker_Package.Create;
-        index := (Index (resource, To_String (CommonSeps_Package.getInstance.COLON)) - 1);
+        index := (Index (resource, Java_Image (CommonSeps_Package.getInstance.COLON)) - 1);
         resourcePath := Unbounded_Slice (resource, ((index) + (startIndex)) + 1, Length (resource));
         inputStream := resource.all'Tag.getResourceAsStream (resourcePath);
         if (inputStream) /= (null) then

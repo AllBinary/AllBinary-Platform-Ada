@@ -60,7 +60,7 @@ package body admin.tags.MultipartRequestParamForwardTag_Package is
       multipartRequestParamForwardHelper : MultipartRequestParamForwardHelper_Access;
    begin
         begin
-            parentTag := HelperTag_Access (This.getParent);
+            parentTag := HelperTag_Access (MultipartRequestParamForwardTag'Class (This).getParent);
             ParentInventoryTagHelper_Package.getInstance.isValid (MultipartRequestParamForwardTag_Access'(This'Unchecked_Access), parentTag);
             hashMap := StdUtil_Package.getInstance.createHashMap;
             hashMap.put (AbTagData_Package.PARENT, parentTag);

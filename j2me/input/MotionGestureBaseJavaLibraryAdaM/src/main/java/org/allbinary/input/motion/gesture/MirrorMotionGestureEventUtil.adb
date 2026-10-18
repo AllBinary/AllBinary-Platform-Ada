@@ -46,8 +46,8 @@ package body org.allbinary.input.motion.gesture.MirrorMotionGestureEventUtil_Pac
       mirroredCurrentPoint : GPoint_Access;
    begin
         event := This.motionEventCircularPool.getInstance (motionGestureEvent.getMotionGesture);
-        previousNewX := This.getNewX (motionGestureEvent.getPreviousPoint.getX, halfWidth);
-        currentNewX := This.getNewX (motionGestureEvent.getCurrentPoint.getX, halfWidth);
+        previousNewX := MirrorMotionGestureEventUtil'Class (This).getNewX (motionGestureEvent.getPreviousPoint.getX, halfWidth);
+        currentNewX := MirrorMotionGestureEventUtil'Class (This).getNewX (motionGestureEvent.getCurrentPoint.getX, halfWidth);
         pointFactory := PointFactory_Package.getInstance;
         mirroredPreviousPoint := pointFactory.createXY (previousNewX, motionGestureEvent.getPreviousPoint.getY);
         mirroredCurrentPoint := pointFactory.createXY (currentNewX, motionGestureEvent.getCurrentPoint.getY);

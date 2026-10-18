@@ -31,7 +31,7 @@ package body org.allbinary.game.layer.AllBinaryJ2METiledLayer_Package is
         Initialize_Fields (This);
         This.tiledLayerP := tiledLayer;
         This.debugColor := debugColor;
-        This.setCells (mapTwoDArray);
+        AllBinaryJ2METiledLayer'Class (This).setCells (mapTwoDArray);
    end Initialize;
 
    function Create (dataId : Integer; tiledLayer_Param : access TiledLayer_Package.TiledLayer'Class; mapTwoDArray : Integer_Array_Access_Array_Access; debugColor : Integer) return AllBinaryJ2METiledLayer_Access is

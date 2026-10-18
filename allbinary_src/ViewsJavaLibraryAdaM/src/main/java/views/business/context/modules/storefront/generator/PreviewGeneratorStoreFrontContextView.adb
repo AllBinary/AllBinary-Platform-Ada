@@ -41,9 +41,9 @@ package body views.business.context.modules.storefront.generator.PreviewGenerato
       httpTransformInfoInterface : TransformInfoHttpInterface_Access;
    begin
         begin
-            httpTransformInfoInterface := TransformInfoHttpInterface_Access (This.getTransformInfoInterface);
+            httpTransformInfoInterface := TransformInfoHttpInterface_Access (PreviewGeneratorStoreFrontContextView'Class (This).getTransformInfoInterface);
             httpTransformInfoInterface.getPropertiesHashMap.put (TransformInfoData_Package.getInstance.PARTIAL, (CommonSeps_Package.getInstance.SPACE) + (TransformInfosData_Package.getInstance.PREVIEW));
-            return This.view (TransformInfosData_Package.getInstance.PREVIEW);
+            return PreviewGeneratorStoreFrontContextView'Class (This).view (TransformInfosData_Package.getInstance.PREVIEW);
         exception
             when Java_Occurrence : others =>
                 declare

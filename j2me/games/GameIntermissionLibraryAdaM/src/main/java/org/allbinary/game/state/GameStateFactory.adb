@@ -19,10 +19,10 @@ package body org.allbinary.game.state.GameStateFactory_Package is
    begin
       null;
       This.index := 0;
-      This.NO_GAME_STATE := This.createGameState (To_Unbounded_String ("NO_GAME_STATE"));
-      This.PLAYING_GAME_STATE := This.createGameState (To_Unbounded_String ("PLAYING_GAME_STATE"));
-      This.SHOW_END_RESULT_GAME_STATE := This.createGameState (To_Unbounded_String ("SHOW_END_RESULT_GAME_STATE"));
-      This.SHOW_HIGH_SCORE_GAME_STATE := This.createGameState (To_Unbounded_String ("SHOW_HIGH_SCORE_GAME_STATE"));
+      This.NO_GAME_STATE := GameStateFactory'Class (This).createGameState (To_Unbounded_String ("NO_GAME_STATE"));
+      This.PLAYING_GAME_STATE := GameStateFactory'Class (This).createGameState (To_Unbounded_String ("PLAYING_GAME_STATE"));
+      This.SHOW_END_RESULT_GAME_STATE := GameStateFactory'Class (This).createGameState (To_Unbounded_String ("SHOW_END_RESULT_GAME_STATE"));
+      This.SHOW_HIGH_SCORE_GAME_STATE := GameStateFactory'Class (This).createGameState (To_Unbounded_String ("SHOW_HIGH_SCORE_GAME_STATE"));
    end Initialize_Fields;
 
 

@@ -20,8 +20,8 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
---  with javax.microedition.lcdui.ImageItem_Package; use javax.microedition.lcdui.ImageItem_Package;
+with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
+with javax.microedition.lcdui.ImageItem_Package; use javax.microedition.lcdui.ImageItem_Package;
 with org.allbinary.game.layer.RTSGameStrings_Package; use org.allbinary.game.layer.RTSGameStrings_Package;
 with org.allbinary.game.layer.item.LayerInterfaceFactoryImageItem_Package; use org.allbinary.game.layer.item.LayerInterfaceFactoryImageItem_Package;
 with org.allbinary.game.layer.item.RTSLayerTextAnimation_Package; use org.allbinary.game.layer.item.RTSLayerTextAnimation_Package;
@@ -40,6 +40,8 @@ with org.allbinary.layer.LayerInterfaceFactoryInterface_Package; use org.allbina
 
 package org.allbinary.game.layer.unit.UnitItemArrayFactory_Package is
 
+   package Image_Package renames Standard.javax.microedition.lcdui.Image_Package;
+   package ImageItem_Package renames Standard.javax.microedition.lcdui.ImageItem_Package;
    package RTSGameStrings_Package renames Standard.org.allbinary.game.layer.RTSGameStrings_Package;
    package LayerInterfaceFactoryImageItem_Package renames Standard.org.allbinary.game.layer.item.LayerInterfaceFactoryImageItem_Package;
    package RTSLayerTextAnimation_Package renames Standard.org.allbinary.game.layer.item.RTSLayerTextAnimation_Package;

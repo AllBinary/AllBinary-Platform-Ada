@@ -26,7 +26,7 @@ package body org.allbinary.data.tables.log.LogTableEntity_Package is
    begin
         AbSqlBean_Package.Initialize (This, LogDbInitInfo_Package.Create);
         Initialize_Fields (This);
-        This.setTableName (This.tableName);
+        LogTableEntity'Class (This).setTableName (This.tableName);
    end Initialize;
 
    function Create return LogTableEntity_Access is
@@ -48,7 +48,7 @@ package body org.allbinary.data.tables.log.LogTableEntity_Package is
 
    function createTable (This : in out LogTableEntity) return Unbounded_String is
    begin
-        return AbSqlBean (This).createTable (This.createTableStatement);
+        return AbSqlBean (This).createTable (LogTableEntity'Class (This).createTableStatement);
    end createTable;
 
 end org.allbinary.data.tables.log.LogTableEntity_Package;

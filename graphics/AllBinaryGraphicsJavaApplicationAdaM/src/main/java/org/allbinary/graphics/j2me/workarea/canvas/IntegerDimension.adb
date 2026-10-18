@@ -26,8 +26,8 @@ package body org.allbinary.graphics.j2me.workarea.canvas.IntegerDimension_Packag
    procedure Initialize (This : in out IntegerDimension'Class; width : Integer; height : Integer) is
    begin
       Initialize_Fields (This);
-        This.setWidth (width);
-        This.setHeight (height);
+        IntegerDimension'Class (This).setWidth (width);
+        IntegerDimension'Class (This).setHeight (height);
    end Initialize;
 
    function Create (width : Integer; height : Integer) return IntegerDimension_Access is

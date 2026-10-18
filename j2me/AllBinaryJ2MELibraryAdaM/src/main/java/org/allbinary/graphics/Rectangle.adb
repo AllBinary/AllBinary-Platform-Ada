@@ -85,17 +85,17 @@ package body org.allbinary.graphics.Rectangle_Package is
       stringBuffer : StringMaker_Access;
    begin
         stringBuffer := StringMaker_Package.Create;
-        stringBuffer.append (This.getPoint.toString);
+        stringBuffer.append (Rectangle'Class (This).getPoint.toString);
         stringBuffer.append (CommonSeps_Package.getInstance.SPACE);
         stringBuffer.append (CommonLabels_Package.getInstance.WIDTH_LABEL);
-        stringBuffer.appendint (This.getWidth);
+        stringBuffer.appendint (Rectangle'Class (This).getWidth);
         stringBuffer.append (CommonSeps_Package.getInstance.SPACE);
         stringBuffer.append (CommonLabels_Package.getInstance.HEIGHT_LABEL);
-        stringBuffer.appendint (This.getHeight);
+        stringBuffer.appendint (Rectangle'Class (This).getHeight);
         stringBuffer.append (To_Unbounded_String (" MaxX: "));
-        stringBuffer.appendint (This.getMaxX);
+        stringBuffer.appendint (Rectangle'Class (This).getMaxX);
         stringBuffer.append (To_Unbounded_String (" MaxY: "));
-        stringBuffer.appendint (This.getMaxY);
+        stringBuffer.appendint (Rectangle'Class (This).getMaxY);
         return stringBuffer.toString;
    end toString;
 

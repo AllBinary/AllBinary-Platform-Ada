@@ -51,49 +51,49 @@ package body org.allbinary.input.motion.gesture.observer.ReleaseControlledMotion
    procedure onUpMotionGestureEvent (This : in out ReleaseControlledMotionGestureListener; ev_Param : access MotionGestureEvent_Package.MotionGestureEvent'Class) is
       ev : constant MotionGestureEvent_Access := MotionGestureEvent_Access (ev_Param);
    begin
-        This.onMotionGestureEvent (ev);
+        ReleaseControlledMotionGestureListener'Class (This).onMotionGestureEvent (ev);
    end onUpMotionGestureEvent;
 
    procedure onDownMotionGestureEvent (This : in out ReleaseControlledMotionGestureListener; ev_Param : access MotionGestureEvent_Package.MotionGestureEvent'Class) is
       ev : constant MotionGestureEvent_Access := MotionGestureEvent_Access (ev_Param);
    begin
-        This.onMotionGestureEvent (ev);
+        ReleaseControlledMotionGestureListener'Class (This).onMotionGestureEvent (ev);
    end onDownMotionGestureEvent;
 
    procedure onLeftMotionGestureEvent (This : in out ReleaseControlledMotionGestureListener; ev_Param : access MotionGestureEvent_Package.MotionGestureEvent'Class) is
       ev : constant MotionGestureEvent_Access := MotionGestureEvent_Access (ev_Param);
    begin
-        This.onMotionGestureEvent (ev);
+        ReleaseControlledMotionGestureListener'Class (This).onMotionGestureEvent (ev);
    end onLeftMotionGestureEvent;
 
    procedure onRightMotionGestureEvent (This : in out ReleaseControlledMotionGestureListener; ev_Param : access MotionGestureEvent_Package.MotionGestureEvent'Class) is
       ev : constant MotionGestureEvent_Access := MotionGestureEvent_Access (ev_Param);
    begin
-        This.onMotionGestureEvent (ev);
+        ReleaseControlledMotionGestureListener'Class (This).onMotionGestureEvent (ev);
    end onRightMotionGestureEvent;
 
    procedure onDiagonalDownRightMotionGestureEvent (This : in out ReleaseControlledMotionGestureListener; ev_Param : access MotionGestureEvent_Package.MotionGestureEvent'Class) is
       ev : constant MotionGestureEvent_Access := MotionGestureEvent_Access (ev_Param);
    begin
-        This.onMotionGestureEvent (ev);
+        ReleaseControlledMotionGestureListener'Class (This).onMotionGestureEvent (ev);
    end onDiagonalDownRightMotionGestureEvent;
 
    procedure onDiagonalDownLeftMotionGestureEvent (This : in out ReleaseControlledMotionGestureListener; ev_Param : access MotionGestureEvent_Package.MotionGestureEvent'Class) is
       ev : constant MotionGestureEvent_Access := MotionGestureEvent_Access (ev_Param);
    begin
-        This.onMotionGestureEvent (ev);
+        ReleaseControlledMotionGestureListener'Class (This).onMotionGestureEvent (ev);
    end onDiagonalDownLeftMotionGestureEvent;
 
    procedure onDiagonalUpRightMotionGestureEvent (This : in out ReleaseControlledMotionGestureListener; ev_Param : access MotionGestureEvent_Package.MotionGestureEvent'Class) is
       ev : constant MotionGestureEvent_Access := MotionGestureEvent_Access (ev_Param);
    begin
-        This.onMotionGestureEvent (ev);
+        ReleaseControlledMotionGestureListener'Class (This).onMotionGestureEvent (ev);
    end onDiagonalUpRightMotionGestureEvent;
 
    procedure onDiagonalUpLeftMotionGestureEvent (This : in out ReleaseControlledMotionGestureListener; ev_Param : access MotionGestureEvent_Package.MotionGestureEvent'Class) is
       ev : constant MotionGestureEvent_Access := MotionGestureEvent_Access (ev_Param);
    begin
-        This.onMotionGestureEvent (ev);
+        ReleaseControlledMotionGestureListener'Class (This).onMotionGestureEvent (ev);
    end onDiagonalUpLeftMotionGestureEvent;
 
    procedure onPressedMotionGestureEvent (This : in out ReleaseControlledMotionGestureListener; ev_Param : access MotionGestureEvent_Package.MotionGestureEvent'Class) is
@@ -101,7 +101,7 @@ package body org.allbinary.input.motion.gesture.observer.ReleaseControlledMotion
    begin
         This.isMouseGestureOccurring := True;
         This.currentMotionGesture := TouchMotionGestureFactory_Package.getInstance.NO_MOTION;
-        This.onMotionGestureEvent (ev);
+        ReleaseControlledMotionGestureListener'Class (This).onMotionGestureEvent (ev);
    end onPressedMotionGestureEvent;
 
    procedure onScrolledMotionGestureEvent (This : in out ReleaseControlledMotionGestureListener; motionGestureEvent_Param : access MotionGestureEvent_Package.MotionGestureEvent'Class) is
@@ -139,9 +139,9 @@ package body org.allbinary.input.motion.gesture.observer.ReleaseControlledMotion
         end if;
         motionGestureInput := ev.getMotionGesture;
         if (motionGestureInput) = (TouchMotionGestureFactory_Package.getInstance.PRESSED) then
-            This.onPressedMotionGestureEvent (ev);
+            ReleaseControlledMotionGestureListener'Class (This).onPressedMotionGestureEvent (ev);
         elsif (motionGestureInput) = (TouchMotionGestureFactory_Package.getInstance.RELEASED) then
-            This.released (ev);
+            ReleaseControlledMotionGestureListener'Class (This).released (ev);
         else
             if (This.currentMotionGesture) /= (motionGestureInput) then
                 This.currentMotionGesture := motionGestureInput;

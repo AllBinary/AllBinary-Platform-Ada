@@ -39,13 +39,13 @@ package body tags.generic_Id.order.OrderTag_Package is
    function doStartTag (This : in out OrderTag) return Integer is
    begin
         begin
-            This.setName (To_Unbounded_String ("Basic Order View"));
-            This.setObjectFile (To_Unbounded_String ("views.generic.order.ValidationView"));
-            if (This.getCommand) /= (null) then
-                if (This.getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.VIEW)) = (0) then
+            OrderTag'Class (This).setName (To_Unbounded_String ("Basic Order View"));
+            OrderTag'Class (This).setObjectFile (To_Unbounded_String ("views.generic.order.ValidationView"));
+            if (OrderTag'Class (This).getCommand) /= (null) then
+                if (OrderTag'Class (This).getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.VIEW)) = (0) then
                     null;
                 else
-                    Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("No Such View Command: ") & Java_Image (This.getCommand)));
+                    Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("No Such View Command: ") & Java_Image (OrderTag'Class (This).getCommand)));
                 end if;
                 return StoreValidationTransformTag (This).doStartTag;
             end if;

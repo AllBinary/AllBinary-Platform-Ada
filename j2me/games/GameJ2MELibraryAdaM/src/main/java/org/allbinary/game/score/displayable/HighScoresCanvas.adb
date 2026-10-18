@@ -48,14 +48,14 @@ package body org.allbinary.game.score.displayable.HighScoresCanvas_Package is
         This.highScoresCanvasInputProcessor := highScoresCanvasInputProcessorFactoryInterface.getInstance (HighScoresCanvas_Access'(This'Unchecked_Access));
         This.gameInfo := gameInfo;
         This.waitPaintable.setBasicColorP (allBinaryGameLayerManager.getForegroundBasicColor);
-        This.getHighScoresPaintable.setBasicColorP (allBinaryGameLayerManager.getForegroundBasicColor);
+        HighScoresCanvas'Class (This).getHighScoresPaintable.setBasicColorP (allBinaryGameLayerManager.getForegroundBasicColor);
         This.colorFillPaintable := ColorFillPaintableFactory_Package.getInstance.getInstance (allBinaryGameLayerManager.getBackgroundBasicColor, False);
         if (This.highScoresHelper.getHighScoresArray) = (NoHighScoresFactory_Package.getInstance.NO_HIGH_SCORES) then
-            This.setPaintable (This.waitPaintable);
+            HighScoresCanvas'Class (This).setPaintable (This.waitPaintable);
         else
             This.logUtil.putF (To_Unbounded_String ("Show HighScores that are already loaded"), HighScoresCanvas_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
-            This.updateCommand (This.currentCommand);
-            This.setPaintable (This.getHighScoresPaintable);
+            HighScoresCanvas'Class (This).updateCommand (This.currentCommand);
+            HighScoresCanvas'Class (This).setPaintable (HighScoresCanvas'Class (This).getHighScoresPaintable);
         end if;
         --  Java nested class HighScoreRunnable: move it to its own package
         SecondaryThreadPool_Package.getInstance.runTask (HighScoreRunnable_Package.Create (HighScoresCanvas_Access'(This'Unchecked_Access)));
@@ -71,9 +71,9 @@ package body org.allbinary.game.score.displayable.HighScoresCanvas_Package is
    procedure initCommands (This : in out HighScoresCanvas; cmdListener_Param : access CommandListener_Package.CommandListener'Class) is
       cmdListener : constant CommandListener_Access := CommandListener_Access (cmdListener_Param);
    begin
-        This.removeAllCommands;
-        This.addCommand (GameCommandsFactory_Package.getInstance.CLOSE_AND_SHOW_GAME_CANVAS);
-        This.setCommandListener (cmdListener);
+        HighScoresCanvas'Class (This).removeAllCommands;
+        HighScoresCanvas'Class (This).addCommand (GameCommandsFactory_Package.getInstance.CLOSE_AND_SHOW_GAME_CANVAS);
+        HighScoresCanvas'Class (This).setCommandListener (cmdListener);
    end initCommands;
 
    procedure open (This : in out HighScoresCanvas) is
@@ -104,7 +104,7 @@ package body org.allbinary.game.score.displayable.HighScoresCanvas_Package is
    procedure executeUpdate (This : in out HighScoresCanvas) is
    begin
         begin
-            This.highScoresFactoryInterface.fetchHighScores (This.getGameInfo, HighScoresCanvas_Access'(This'Unchecked_Access));
+            This.highScoresFactoryInterface.fetchHighScores (HighScoresCanvas'Class (This).getGameInfo, HighScoresCanvas_Access'(This'Unchecked_Access));
         exception
             when Java_Occurrence : others =>
                 declare
@@ -129,8 +129,8 @@ package body org.allbinary.game.score.displayable.HighScoresCanvas_Package is
                 This.logUtil.putF (This.commonStrings.START, HighScoresCanvas_Access'(This'Unchecked_Access), To_Unbounded_String ("setHighScoresArray"));
             end if;
             This.highScoresHelper.setHighScoresArray (highScoresArray);
-            This.updateCommand (This.currentCommand);
-            This.setPaintable (This.getHighScoresPaintable);
+            HighScoresCanvas'Class (This).updateCommand (This.currentCommand);
+            HighScoresCanvas'Class (This).setPaintable (HighScoresCanvas'Class (This).getHighScoresPaintable);
         exception
             when Java_Occurrence : others =>
                 declare
@@ -159,20 +159,20 @@ package body org.allbinary.game.score.displayable.HighScoresCanvas_Package is
                 nextIndex := 0;
             end if;
             if (highScoresArray'Length) > (0) then
-                This.getHighScoresPaintable.setHighScores (highScoresArray (index));
+                HighScoresCanvas'Class (This).getHighScoresPaintable.setHighScores (highScoresArray (index));
             else
-                This.getHighScoresPaintable.setHighScores (NullHighScoresSingletonFactory_Package.getInstance);
+                HighScoresCanvas'Class (This).getHighScoresPaintable.setHighScores (NullHighScoresSingletonFactory_Package.getInstance);
             end if;
             if (index) /= (nextIndex) then
-                This.removeAllCommands;
-                This.addCommand (gameCommandsFactory.CLOSE_AND_SHOW_GAME_CANVAS);
-                This.addCommand (This.highScoreCommandsFactory.HIGH_SCORE_COMMANDS (nextIndex));
+                HighScoresCanvas'Class (This).removeAllCommands;
+                HighScoresCanvas'Class (This).addCommand (gameCommandsFactory.CLOSE_AND_SHOW_GAME_CANVAS);
+                HighScoresCanvas'Class (This).addCommand (This.highScoreCommandsFactory.HIGH_SCORE_COMMANDS (nextIndex));
             end if;
         end if;
         This.currentCommand := command;
-        This.close;
+        HighScoresCanvas'Class (This).close;
         GameCommandCanvas (This).initMenu;
-        This.open;
+        HighScoresCanvas'Class (This).open;
         This.repaintBehavior.onChangeRepaint (HighScoresCanvas_Access'(This'Unchecked_Access));
    end updateCommand;
 

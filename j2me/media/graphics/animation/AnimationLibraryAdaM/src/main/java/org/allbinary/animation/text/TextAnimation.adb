@@ -33,7 +33,7 @@ package body org.allbinary.animation.text.TextAnimation_Package is
    begin
         IndexedAnimation_Package.Initialize (This, animationBehavior);
         Initialize_Fields (This);
-        This.setText (text);
+        TextAnimation'Class (This).setText (text);
    end Initialize;
 
    function Create (text : Unbounded_String; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class) return TextAnimation_Access is
@@ -67,7 +67,7 @@ package body org.allbinary.animation.text.TextAnimation_Package is
       graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
         This.myFontProcessor.process (graphics);
-        This.paintXYNoUpdate (graphics, x, y);
+        TextAnimation'Class (This).paintXYNoUpdate (graphics, x, y);
    end paintXY;
 
    procedure paintXYNoUpdate (This : in out TextAnimation; graphics_Param : access Graphics_Package.Graphics'Class; x : Integer; y : Integer) is
@@ -75,7 +75,7 @@ package body org.allbinary.animation.text.TextAnimation_Package is
       size : Integer;
       index : Integer;
    begin
-        This.basicSetColorUtil.setBasicColorP3 (graphics, This.getBasicColorP, This.getColor);
+        This.basicSetColorUtil.setBasicColorP3 (graphics, TextAnimation'Class (This).getBasicColorP, TextAnimation'Class (This).getColor);
         size := This.textArrayP'Length;
         for index in 0 .. (size) - 1 loop
             graphics.drawString (This.textArrayP (index), x, ((y) + (This.offsetY)) + (((index) * (This.fontHeight))), This.anchor);
@@ -85,7 +85,7 @@ package body org.allbinary.animation.text.TextAnimation_Package is
    procedure setTextWithOnMeasure (This : in out TextAnimation; text : Unbounded_String; textChangeListener_Param : access TextChangeListener_Package.TextChangeListener'Class) is
       textChangeListener : constant TextChangeListener_Access := TextChangeListener_Access (textChangeListener_Param);
    begin
-        This.setText (text);
+        TextAnimation'Class (This).setText (text);
         This.textChangeListener := textChangeListener;
    end setTextWithOnMeasure;
 
@@ -120,7 +120,7 @@ package body org.allbinary.animation.text.TextAnimation_Package is
             textArray := new Unbounded_String_Array'(0 .. (list.size) - 1 => Null_Unbounded_String);
             size := list.size;
             for index in 0 .. (size) - 1 loop
-                textArray (index) := Unbounded_String (list.get (index));
+                textArray (index) := Java_Unbox (list.get (index));
             end loop;
             This.textArrayP := textArray;
         else

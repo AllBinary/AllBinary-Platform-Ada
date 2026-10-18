@@ -40,6 +40,7 @@ package body org.allbinary.media.graphics.geography.pathfinding.GeographicPathFi
       endPathFindingNodeList : constant BasicArrayList_Access := BasicArrayList_Access (endPathFindingNodeList_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return null;
    end searchTotalPath;
 
    --  throws Exception
@@ -49,6 +50,7 @@ package body org.allbinary.media.graphics.geography.pathfinding.GeographicPathFi
       multipassState : constant MultipassState_Access := MultipassState_Access (multipassState_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return null;
    end searchTotalPathN;
 
    procedure searchTotalPath (This : in out GeographicPathFinderBase; startPathFindingNodeList_Param : access BasicArrayList_Package.BasicArrayList'Class; endPathFindingNodeList_Param : access BasicArrayList_Package.BasicArrayList'Class; totalPaths : Integer) is

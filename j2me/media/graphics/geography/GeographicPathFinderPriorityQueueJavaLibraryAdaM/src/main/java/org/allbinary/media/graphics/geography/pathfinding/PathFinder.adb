@@ -77,7 +77,7 @@ package body org.allbinary.media.graphics.geography.pathfinding.PathFinder_Packa
       commonStrings : CommonStrings_Access;
    begin
         begin
-            return This.search (PathFindingNode_Access (startPathFindingNodeList.get (0)), PathFindingNode_Access (endPathFindingNodeList.get (0)));
+            return PathFinder'Class (This).search (PathFindingNode_Access (startPathFindingNodeList.get (0)), PathFindingNode_Access (endPathFindingNodeList.get (0)));
         exception
             when Java_Occurrence : others =>
                 declare
@@ -99,9 +99,9 @@ package body org.allbinary.media.graphics.geography.pathfinding.PathFinder_Packa
         if (multipassState.step) = (0) then
             multipassState.step := multipassState.step + 1;
         elsif (multipassState.step) = (1) then
-            This.searchStart (PathFindingNode_Access (startPathFindingNodeList.get (0)), PathFindingNode_Access (endPathFindingNodeList.get (0)), multipassState);
+            PathFinder'Class (This).searchStart (PathFindingNode_Access (startPathFindingNodeList.get (0)), PathFindingNode_Access (endPathFindingNodeList.get (0)), multipassState);
         elsif (multipassState.step) = (2) then
-            return This.searchN (PathFindingNode_Access (startPathFindingNodeList.get (0)), PathFindingNode_Access (endPathFindingNodeList.get (0)), multipassState);
+            return PathFinder'Class (This).searchN (PathFindingNode_Access (startPathFindingNodeList.get (0)), PathFindingNode_Access (endPathFindingNodeList.get (0)), multipassState);
         end if;
         return This.basicArrayListUtil.getImmutableInstance;
    end searchTotalPathN;
@@ -113,7 +113,7 @@ package body org.allbinary.media.graphics.geography.pathfinding.PathFinder_Packa
       list : BasicArrayList_Access;
       pathList : BasicArrayList_Access;
    begin
-        list := This.findPath (startPathFindingNode.geographicMapCellPosition, endPathFindingNode.geographicMapCellPosition);
+        list := PathFinder'Class (This).findPath (startPathFindingNode.geographicMapCellPosition, endPathFindingNode.geographicMapCellPosition);
         pathList := BasicArrayListD_Package.Create;
         pathList.add (list);
         return pathList;
@@ -125,7 +125,7 @@ package body org.allbinary.media.graphics.geography.pathfinding.PathFinder_Packa
       endPathFindingNode : constant PathFindingNode_Access := PathFindingNode_Access (endPathFindingNode_Param);
       multipassState : constant MultipassState_Access := MultipassState_Access (multipassState_Param);
    begin
-        This.findPathStart (startPathFindingNode.geographicMapCellPosition, endPathFindingNode.geographicMapCellPosition, multipassState);
+        PathFinder'Class (This).findPathStart (startPathFindingNode.geographicMapCellPosition, endPathFindingNode.geographicMapCellPosition, multipassState);
    end searchStart;
 
    --  throws Exception
@@ -136,7 +136,7 @@ package body org.allbinary.media.graphics.geography.pathfinding.PathFinder_Packa
       list : BasicArrayList_Access;
       pathList : BasicArrayList_Access;
    begin
-        list := This.findPathEnd (startPathFindingNode.geographicMapCellPosition, endPathFindingNode.geographicMapCellPosition, multipassState);
+        list := PathFinder'Class (This).findPathEnd (startPathFindingNode.geographicMapCellPosition, endPathFindingNode.geographicMapCellPosition, multipassState);
         if (list) = (null) then
             return This.basicArrayListUtil.getImmutableInstance;
         end if;
@@ -196,7 +196,7 @@ package body org.allbinary.media.graphics.geography.pathfinding.PathFinder_Packa
             current := This.openPriorityQueue.poll;
             This.closedSet.add (current);
             if current.equals (targetNode) then
-                return This.extractPath (start, current);
+                return PathFinder'Class (This).extractPath (start, current);
             end if;
             neighbor := null;
             neighborInfo := null;
@@ -291,7 +291,7 @@ package body org.allbinary.media.graphics.geography.pathfinding.PathFinder_Packa
             current := This.openPriorityQueue.poll;
             This.closedSet.add (current);
             if current.equals (targetNode) then
-                return This.extractPath (start, current);
+                return PathFinder'Class (This).extractPath (start, current);
             end if;
             neighbor := null;
             neighborInfo := null;

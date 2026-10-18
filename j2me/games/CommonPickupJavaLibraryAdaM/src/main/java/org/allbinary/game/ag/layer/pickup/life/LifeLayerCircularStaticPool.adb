@@ -43,7 +43,7 @@ package body org.allbinary.game.ag.layer.pickup.life.LifeLayerCircularStaticPool
       lifeInterfaceCompositeInterface : LifeInterfaceCompositeInterface_Access;
       lifeInterface : Life_Access;
    begin
-        lifeLayer := LifeLayer_Access (This.getNextInstance);
+        lifeLayer := LifeLayer_Access (LifeLayerCircularStaticPool'Class (This).getNextInstance);
         lifeInterfaceCompositeInterface := LifeInterfaceCompositeInterface_Access (sourceLayerInterface);
         lifeInterface := lifeInterfaceCompositeInterface.getLifeInterface;
         lifeLayer.visit (lifeInterface);

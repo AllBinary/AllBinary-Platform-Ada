@@ -30,7 +30,7 @@ package body views.generic_Id.address.shipping.ShippingAddressView_Package is
    begin
         HttpStoreComponentView_Package.Initialize (This, transformInfoInterface);
         Initialize_Fields (This);
-        httpTransformInfoInterface := TransformInfoHttpInterface_Access (This.getTransformInfoInterface);
+        httpTransformInfoInterface := TransformInfoHttpInterface_Access (ShippingAddressView'Class (This).getTransformInfoInterface);
         This.request := HttpServletRequest_Access (httpTransformInfoInterface.getPageContext.getRequest);
    end Initialize;
 
@@ -70,15 +70,15 @@ package body views.generic_Id.address.shipping.ShippingAddressView_Package is
 
    procedure addDomNodeInterfaces (This : in out ShippingAddressView) is
    begin
-        This.addDomNodeInterface (DomNodeInterface_Access (ShippingAddressView_Access'(This'Unchecked_Access)));
-        This.addDomNodeInterface (DomNodeInterface_Access (StatesView_Package.Create));
+        ShippingAddressView'Class (This).addDomNodeInterface (DomNodeInterface_Access (ShippingAddressView_Access'(This'Unchecked_Access)));
+        ShippingAddressView'Class (This).addDomNodeInterface (DomNodeInterface_Access (StatesView_Package.Create));
    end addDomNodeInterfaces;
 
    --  throws Exception
    function view (This : in out ShippingAddressView) return Unbounded_String is
    begin
         begin
-            This.addDomNodeInterfaces;
+            ShippingAddressView'Class (This).addDomNodeInterfaces;
             return HttpStoreComponentView (This).view;
         exception
             when Java_Occurrence : others =>

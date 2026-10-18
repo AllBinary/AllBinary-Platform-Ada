@@ -41,7 +41,7 @@ package body org.allbinary.input.automation.actions.script.condition.AlwaysActio
                 childNode := nodeList.item (index);
                 if (childNode.getNodeName.compareTo (AlwaysActionScriptConditionData_Package.IS_ON)) = (0) then
                     booleanString := DomNodeHelper_Package.getTextNodeValue (childNode);
-                    This.setIsOn (booleanString.booleanValue);
+                    AlwaysActionScriptCondition'Class (This).setIsOn (booleanString.booleanValue);
                 else
                     Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Action Script Condition Unknown Node")));
                 end if;
@@ -49,7 +49,7 @@ package body org.allbinary.input.automation.actions.script.condition.AlwaysActio
         else
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Action Script Condition Node Null")));
         end if;
-        This.init;
+        AlwaysActionScriptCondition'Class (This).init;
    end Initialize;
 
    function Create (node_Param : access Node_Package.Node'Class) return AlwaysActionScriptCondition_Access is
@@ -63,7 +63,7 @@ package body org.allbinary.input.automation.actions.script.condition.AlwaysActio
    begin
         BasicProfileActionScriptCondition_Package.Initialize (This, AlwaysActionScriptCondition_Package.NAME);
         Initialize_Fields (This);
-        This.init;
+        AlwaysActionScriptCondition'Class (This).init;
    end Initialize;
 
    function Create return AlwaysActionScriptCondition_Access is
@@ -97,7 +97,7 @@ package body org.allbinary.input.automation.actions.script.condition.AlwaysActio
       hashMap : HashMap_Access;
    begin
         hashMap := StdUtil_Package.getInstance.createHashMap;
-        hashMap.put (AlwaysActionScriptConditionData_Package.IS_ON, To_Unbounded_String (Java_Image (This.isIsOn)));
+        hashMap.put (AlwaysActionScriptConditionData_Package.IS_ON, Java_Box (To_Unbounded_String (Java_Image (AlwaysActionScriptCondition'Class (This).isIsOn))));
         This.logUtil.putF (To_Unbounded_String ("HashMap: ") & hashMap.toString, AlwaysActionScriptCondition_Access'(This'Unchecked_Access), To_Unbounded_String ("toHashMap()"));
         return hashMap;
    end toHashMap;
@@ -108,14 +108,14 @@ package body org.allbinary.input.automation.actions.script.condition.AlwaysActio
       node : Node_Access;
    begin
         node := BasicProfileActionScriptCondition (This).toXmlNode (document);
-        node.appendChild (ModDomHelper_Package.createNodeWithValueNodes (document, AlwaysActionScriptConditionData_Package.NAME, This.toHashMap));
+        node.appendChild (ModDomHelper_Package.createNodeWithValueNodes (document, AlwaysActionScriptConditionData_Package.NAME, AlwaysActionScriptCondition'Class (This).toHashMap));
         return node;
    end toXmlNode;
 
    --  throws Exception
    function shouldProcess (This : in out AlwaysActionScriptCondition; frame : Long_Long_Integer) return Boolean is
    begin
-        if This.isIsOn then
+        if AlwaysActionScriptCondition'Class (This).isIsOn then
             return BasicProfileActionScriptCondition (This).shouldProcess (frame);
         end if;
         return False;
@@ -123,7 +123,7 @@ package body org.allbinary.input.automation.actions.script.condition.AlwaysActio
 
    procedure log (This : in out AlwaysActionScriptCondition) is
    begin
-        This.logUtil.putF (To_Unbounded_String ("Is On: ") & Java_Image (This.isIsOn), AlwaysActionScriptCondition_Access'(This'Unchecked_Access), To_Unbounded_String ("log"));
+        This.logUtil.putF (To_Unbounded_String ("Is On: ") & Java_Image (AlwaysActionScriptCondition'Class (This).isIsOn), AlwaysActionScriptCondition_Access'(This'Unchecked_Access), To_Unbounded_String ("log"));
    end log;
 
    procedure toXmlNode (This : in out AlwaysActionScriptCondition; document_Param : access Document_Package.Document'Class) is

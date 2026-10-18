@@ -20,16 +20,20 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with javax.microedition.khronos.opengles.GL_Package; use javax.microedition.khronos.opengles.GL_Package;
---  with javax.microedition.lcdui.ChoiceGroupImageFactory_Package; use javax.microedition.lcdui.ChoiceGroupImageFactory_Package;
---  with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
---  with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
+with javax.microedition.khronos.opengles.GL_Package; use javax.microedition.khronos.opengles.GL_Package;
+with javax.microedition.lcdui.ChoiceGroupImageFactory_Package; use javax.microedition.lcdui.ChoiceGroupImageFactory_Package;
+with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
 with org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package; use org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package;
 with org.allbinary.game.configuration.feature.Features_Package; use org.allbinary.game.configuration.feature.Features_Package;
 with org.allbinary.image.PreResourceImageUtil_Package; use org.allbinary.image.PreResourceImageUtil_Package;
 
 package org.allbinary.image.ChoiceGroupImageUtil_Package is
 
+   package GL_Package renames Standard.javax.microedition.khronos.opengles.GL_Package;
+   package ChoiceGroupImageFactory_Package renames Standard.javax.microedition.lcdui.ChoiceGroupImageFactory_Package;
+   package Graphics_Package renames Standard.javax.microedition.lcdui.Graphics_Package;
+   package Image_Package renames Standard.javax.microedition.lcdui.Image_Package;
    package OpenGLFeatureFactory_Package renames Standard.org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package;
    package Features_Package renames Standard.org.allbinary.game.configuration.feature.Features_Package;
 

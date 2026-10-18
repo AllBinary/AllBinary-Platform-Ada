@@ -20,12 +20,13 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with javax.microedition.lcdui.Displayable_Package; use javax.microedition.lcdui.Displayable_Package;
+with javax.microedition.lcdui.Displayable_Package; use javax.microedition.lcdui.Displayable_Package;
 with org.allbinary.canvas.Processor_Package; use org.allbinary.canvas.Processor_Package;
 with org.allbinary.graphics.displayable.screen.ScreenRepaintUtil_Package; use org.allbinary.graphics.displayable.screen.ScreenRepaintUtil_Package;
 
 package org.allbinary.graphics.displayable.screen.ScreenRepaintProcessor_Package is
 
+   package Displayable_Package renames Standard.javax.microedition.lcdui.Displayable_Package;
    package Processor_Package renames Standard.org.allbinary.canvas.Processor_Package;
 
    type ScreenRepaintProcessor is tagged;

@@ -26,7 +26,7 @@ package body org.allbinary.input.automation.configuration.InputAutomationConfigu
       inputAutomationModuleConfiguration : constant InputAutomationModuleConfiguration_Access := InputAutomationModuleConfiguration_Access (inputAutomationModuleConfiguration_Param);
    begin
       Initialize_Fields (This);
-        This.setInputAutomationModuleConfiguration (inputAutomationModuleConfiguration);
+        InputAutomationConfigurationModuleChangeEvent'Class (This).setInputAutomationModuleConfiguration (inputAutomationModuleConfiguration);
    end Initialize;
 
    function Create (inputAutomationModuleConfiguration_Param : access InputAutomationModuleConfiguration_Package.InputAutomationModuleConfiguration'Class) return InputAutomationConfigurationModuleChangeEvent_Access is

@@ -44,8 +44,8 @@ package body org.allbinary.business.user.modules.configuration.UserConfiguration
    begin
       Initialize_Fields (This);
         This.userEmailConfigurationInterface := UserEmailConfigurationInterface_Access (UserEmailConfiguration_Package.Create (hashMap));
-        This.timeCreated := TimeCreated_Package.Create (Unbounded_String (hashMap.get (EntryData_Package.getInstance.TIMECREATED)));
-        This.timeLastModified := TimeLastModified_Package.Create (Unbounded_String (hashMap.get (EntryData_Package.getInstance.LASTMODIFIED)));
+        This.timeCreated := TimeCreated_Package.Create (Java_Unbox (hashMap.get (EntryData_Package.getInstance.TIMECREATED)));
+        This.timeLastModified := TimeLastModified_Package.Create (Java_Unbox (hashMap.get (EntryData_Package.getInstance.LASTMODIFIED)));
    end Initialize;
 
    function Create (hashMap_Param : access HashMap_Package.HashMap'Class) return UserConfiguration_Access is

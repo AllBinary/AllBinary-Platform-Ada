@@ -42,7 +42,7 @@ package body org.allbinary.resources.KeyValueFactory_Package is
    function get (This : in out KeyValueFactory; key : Unbounded_String) return Unbounded_String is
       value : Unbounded_String;
    begin
-        value := Unbounded_String (This.MAP.get (Java_Object_Access (key)));
+        value := Java_Unbox (This.MAP.get (Java_Box (key)));
         if (value) = (Null_Unbounded_String) then
             return key;
         end if;

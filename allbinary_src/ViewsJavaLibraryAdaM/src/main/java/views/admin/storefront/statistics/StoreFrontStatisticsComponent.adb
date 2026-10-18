@@ -30,7 +30,7 @@ package body views.admin.storefront.statistics.StoreFrontStatisticsComponent_Pac
         HttpStoreComponentView_Package.Initialize (This, transformInfoInterface);
         Initialize_Fields (This);
         This.newStoreFrontInterface := StoreFrontInterface_Access (StoreFrontFactory_Package.getInstance (transformInfoInterface.getStoreName));
-        This.domNodeInterface := RealTimeStoreFrontStatisticsView_Package.Create (RealTimeStoreFrontStatistics_Package.Create (This.newStoreFrontInterface), This.getWeblisketSession.getRole);
+        This.domNodeInterface := RealTimeStoreFrontStatisticsView_Package.Create (RealTimeStoreFrontStatistics_Package.Create (This.newStoreFrontInterface), StoreFrontStatisticsComponent'Class (This).getWeblisketSession.getRole);
    end Initialize;
 
    function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return StoreFrontStatisticsComponent_Access is
@@ -42,14 +42,14 @@ package body views.admin.storefront.statistics.StoreFrontStatisticsComponent_Pac
 
    procedure addDomNodeInterfaces (This : in out StoreFrontStatisticsComponent) is
    begin
-        This.addDomNodeInterface (DomNodeInterface_Access (This.domNodeInterface));
+        StoreFrontStatisticsComponent'Class (This).addDomNodeInterface (DomNodeInterface_Access (This.domNodeInterface));
    end addDomNodeInterfaces;
 
    --  throws Exception
    function view (This : in out StoreFrontStatisticsComponent) return Unbounded_String is
    begin
         begin
-            This.addDomNodeInterfaces;
+            StoreFrontStatisticsComponent'Class (This).addDomNodeInterfaces;
             return HttpStoreComponentView (This).view;
         exception
             when Java_Occurrence : others =>

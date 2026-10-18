@@ -36,9 +36,9 @@ package body org.allbinary.game.ag.ai.HorizontaRotationManeuverAI_Package is
    begin
         BasicAI_Package.Initialize (This, ownerLayerInterface, gameInput);
         Initialize_Fields (This);
-        rotationAnimationInterfaceCompositeInterface := RotationAnimationInterfaceCompositeInterface_Access (This.getOwnerLayerInterface);
+        rotationAnimationInterfaceCompositeInterface := RotationAnimationInterfaceCompositeInterface_Access (HorizontaRotationManeuverAI'Class (This).getOwnerLayerInterface);
         This.rotationAnimationInterface := rotationAnimationInterfaceCompositeInterface.getRotationAnimationInterface;
-        velocityInterfaceCompositeInterface := VelocityInterfaceCompositeInterface_Access (This.getOwnerLayerInterface);
+        velocityInterfaceCompositeInterface := VelocityInterfaceCompositeInterface_Access (HorizontaRotationManeuverAI'Class (This).getOwnerLayerInterface);
         This.baseVelocityInterface := velocityInterfaceCompositeInterface.getVelocityProperties;
         This.velocityInterface := VelocityInterface_Access (This.baseVelocityInterface);
         rotationAnimationInterface := RotationAnimationInterface_Access (This.rotationAnimationInterface);
@@ -61,9 +61,9 @@ package body org.allbinary.game.ag.ai.HorizontaRotationManeuverAI_Package is
    begin
         rotationAnimationInterface := RotationAnimationInterface_Access (This.rotationAnimationInterface);
         angleIncrementInfo := rotationAnimationInterface.getAngleInfoP.getAngleIncrementInfo;
-        rotationAnimationInterfaceCompositeInterface := RotationAnimationInterfaceCompositeInterface_Access (This.getOwnerLayerInterface);
+        rotationAnimationInterfaceCompositeInterface := RotationAnimationInterfaceCompositeInterface_Access (HorizontaRotationManeuverAI'Class (This).getOwnerLayerInterface);
         rotationAnimationInterfaceCompositeInterface.setFrame (angleIncrementInfo.RIGHT_FRAME.intValue);
-        allbinaryLayer := This.getOwnerLayerInterface;
+        allbinaryLayer := HorizontaRotationManeuverAI'Class (This).getOwnerLayerInterface;
         allbinaryLayer.setPosition (allbinaryLayer.getXP, 1, allbinaryLayer.getZP);
    end transition;
 
@@ -80,16 +80,16 @@ package body org.allbinary.game.ag.ai.HorizontaRotationManeuverAI_Package is
         rotationAnimationInterface := (RotationAnimationInterface_Access (This.rotationAnimationInterface));
         angleIncrementInfo := rotationAnimationInterface.getAngleInfoP.getAngleIncrementInfo;
         frame := This.rotationAnimationInterface.getFrame;
-        ownerLayerInterface := This.getOwnerLayerInterface;
+        ownerLayerInterface := HorizontaRotationManeuverAI'Class (This).getOwnerLayerInterface;
         if (((ownerLayerInterface.getXP) - (ownerLayerInterface.getWidth)) <= (0)) and then ((frame) = (angleIncrementInfo.LEFT_FRAME.intValue)) then
-            This.reverse_Id;
-            This.drop;
+            HorizontaRotationManeuverAI'Class (This).reverse_Id;
+            HorizontaRotationManeuverAI'Class (This).drop;
         end if;
         displayInfo := DisplayInfoSingleton_Package.getInstance;
         if (((ownerLayerInterface.getX2) + (ownerLayerInterface.getWidth)) > (displayInfo.getLastWidth)) and then ((frame) = (angleIncrementInfo.RIGHT_FRAME.intValue)) then
-            This.reverse_Id;
-            This.accelerate;
-            This.drop;
+            HorizontaRotationManeuverAI'Class (This).reverse_Id;
+            HorizontaRotationManeuverAI'Class (This).accelerate;
+            HorizontaRotationManeuverAI'Class (This).drop;
         end if;
         index := This.circularIndexUtil.getIndex;
         if (((index) rem (This.currentSpeedDivisor)) = (0)) and then (((index) rem (2)) = (0)) then
@@ -114,11 +114,11 @@ package body org.allbinary.game.ag.ai.HorizontaRotationManeuverAI_Package is
         angleIncrementInfo := rotationAnimationInterface.getAngleInfoP.getAngleIncrementInfo;
         frame := This.rotationAnimationInterface.getFrame;
         if (frame) = (angleIncrementInfo.LEFT_FRAME.intValue) then
-            rotationAnimationInterfaceCompositeInterface := RotationAnimationInterfaceCompositeInterface_Access (This.getOwnerLayerInterface);
+            rotationAnimationInterfaceCompositeInterface := RotationAnimationInterfaceCompositeInterface_Access (HorizontaRotationManeuverAI'Class (This).getOwnerLayerInterface);
             rotationAnimationInterfaceCompositeInterface.setFrame (angleIncrementInfo.RIGHT_FRAME.intValue);
             This.baseVelocityInterface.zero;
         elsif (frame) = (angleIncrementInfo.RIGHT_FRAME.intValue) then
-            rotationAnimationInterfaceCompositeInterface := RotationAnimationInterfaceCompositeInterface_Access (This.getOwnerLayerInterface);
+            rotationAnimationInterfaceCompositeInterface := RotationAnimationInterfaceCompositeInterface_Access (HorizontaRotationManeuverAI'Class (This).getOwnerLayerInterface);
             rotationAnimationInterfaceCompositeInterface.setFrame (angleIncrementInfo.LEFT_FRAME.intValue);
             This.baseVelocityInterface.zero;
         end if;
@@ -137,7 +137,7 @@ package body org.allbinary.game.ag.ai.HorizontaRotationManeuverAI_Package is
       y : Integer;
    begin
         displayInfo := DisplayInfoSingleton_Package.getInstance;
-        ownerLayerInterface := This.getOwnerLayerInterface;
+        ownerLayerInterface := HorizontaRotationManeuverAI'Class (This).getOwnerLayerInterface;
         y := ownerLayerInterface.getYP;
         if ((ownerLayerInterface.getY2) + (ownerLayerInterface.getHeight)) > (displayInfo.getLastHeight) then
             y := 0;

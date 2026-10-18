@@ -43,7 +43,7 @@ package body tags.StoreWorkFlowTag_Package is
    procedure setName (This : in out StoreWorkFlowTag; value : Unbounded_String) is
    begin
         This.viewName := value;
-        This.getPropertiesHashMap.put (TransformInfoData_Package.getInstance.NAME, This.viewName);
+        StoreWorkFlowTag'Class (This).getPropertiesHashMap.put (TransformInfoData_Package.getInstance.NAME, This.viewName);
    end setName;
 
    --  throws Exception
@@ -56,9 +56,9 @@ package body tags.StoreWorkFlowTag_Package is
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAG) then
                 This.logUtil.putF (This.commonStrings.START, StoreWorkFlowTag_Access'(This'Unchecked_Access), This.commonStrings.PROCESS);
             end if;
-            helperClass := This.getHelper.all'Tag;
+            helperClass := StoreWorkFlowTag'Class (This).getHelper.all'Tag;
             method := helperClass.getMethod (This.commonStrings.PROCESS, null);
-            result := Integer (method.invoke (This.getHelper, null));
+            result := Integer (method.invoke (StoreWorkFlowTag'Class (This).getHelper, null));
             return result.intValue;
         exception
             when Java_Occurrence : others =>
@@ -80,8 +80,8 @@ package body tags.StoreWorkFlowTag_Package is
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAG) then
                 This.logUtil.putF (This.commonStrings.START, StoreWorkFlowTag_Access'(This'Unchecked_Access), This.tagStrings.DO_START_TAG);
             end if;
-            This.setHelper;
-            return This.process;
+            StoreWorkFlowTag'Class (This).setHelper;
+            return StoreWorkFlowTag'Class (This).process;
         exception
             when Java_Occurrence : others =>
                 declare

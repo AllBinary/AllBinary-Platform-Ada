@@ -31,10 +31,10 @@ package body views.business.context.modules.storefront.customizer.hedges.header.
    begin
         TopBarView_Package.Initialize (This, transformInfoInterface);
         Initialize_Fields (This);
-        multipartRequestHashMap := MultipartRequestParams_Package.Create (This.getPageContext).toHashMap;
-        storeFrontInterface := StoreFrontFactory_Package.getInstance (This.getWeblisketSession.getStoreName);
+        multipartRequestHashMap := MultipartRequestParams_Package.Create (InsertHeaderValidationView'Class (This).getPageContext).toHashMap;
+        storeFrontInterface := StoreFrontFactory_Package.getInstance (InsertHeaderValidationView'Class (This).getWeblisketSession.getStoreName);
         fullPath := Java_Image ((URLGLOBALS.getWebappPath) + (storeFrontInterface.getCurrentHostNamePath)) & This.LOGOPATH;
-        multipartRequestHashMap.put (LogoData_Package.getInstance.IMAGEPATH, fullPath);
+        multipartRequestHashMap.put (LogoData_Package.getInstance.IMAGEPATH, Java_Box (fullPath));
         This.heading := HeadingValidation_Package.Create (multipartRequestHashMap);
    end Initialize;
 
@@ -60,7 +60,7 @@ package body views.business.context.modules.storefront.customizer.hedges.header.
             end if;
             isValid := This.heading.isValid;
             if (isValid) = (True) then
-                CustomizerUtil_Package.getInstance.insert (This.getTransformInfoInterface, DomNodeInterface_Access (InsertHeaderValidationView_Access'(This'Unchecked_Access)));
+                CustomizerUtil_Package.getInstance.insert (InsertHeaderValidationView'Class (This).getTransformInfoInterface, DomNodeInterface_Access (InsertHeaderValidationView_Access'(This'Unchecked_Access)));
             end if;
             return isValid;
         exception

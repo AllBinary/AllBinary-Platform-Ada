@@ -51,7 +51,7 @@ package body org.allbinary.game.ag.layer.hud.basic.notification.GameNotification
             This.lastGameNotificationEvent := gameNotificationEvent;
             This.logUtil.putF (gameNotificationEvent.getString, GameNotificationHud_Access'(This'Unchecked_Access), This.METHOD_NAME);
         end if;
-        This.add (gameNotificationEvent.getString, gameNotificationEvent.getSeconds, gameNotificationEvent.getBasicColorP, gameNotificationEvent.getPermanent);
+        GameNotificationHud'Class (This).add (gameNotificationEvent.getString, gameNotificationEvent.getSeconds, gameNotificationEvent.getBasicColorP, gameNotificationEvent.getPermanent);
    end onGameNotificationEvent;
 
    procedure add (This : in out GameNotificationHud; string_Id : Unbounded_String; seconds : Integer; basicColor_Param : access BasicColor_Package.BasicColor'Class; permanent : Boolean) is

@@ -28,7 +28,7 @@ package body org.allbinary.game.tracking.TrackingEvent_Package is
         AllBinaryEventObject_Package.Initialize (This, allBinaryLayerInterface);
         Initialize_Fields (This);
         if (allBinaryLayerInterface) /= (TrackingEventHandler_Package.getInstance) then
-            This.setLayerInterface (AllBinaryLayer_Access (allBinaryLayerInterface));
+            TrackingEvent'Class (This).setLayerInterface (AllBinaryLayer_Access (allBinaryLayerInterface));
         end if;
    end Initialize;
 
@@ -42,7 +42,7 @@ package body org.allbinary.game.tracking.TrackingEvent_Package is
    procedure init (This : in out TrackingEvent; anyType_Param : access Java_Object'Class) is
       anyType : constant Java_Object_Access := Java_Object_Access (anyType_Param);
    begin
-        This.setSource (anyType);
+        TrackingEvent'Class (This).setSource (anyType);
    end init;
 
    function getLayerInterface (This : in out TrackingEvent) return AllBinaryLayer_Access is

@@ -55,7 +55,7 @@ package body org.allbinary.animation.text.CustomTextBoxIndexedAnimation_Package 
    procedure setTextWithOnMeasure (This : in out CustomTextBoxIndexedAnimation; text : Unbounded_String; textChangeListener_Param : access TextChangeListener_Package.TextChangeListener'Class) is
       textChangeListener : constant TextChangeListener_Access := TextChangeListener_Access (textChangeListener_Param);
    begin
-        This.setText (text);
+        CustomTextBoxIndexedAnimation'Class (This).setText (text);
         This.textChangeListener := textChangeListener;
    end setTextWithOnMeasure;
 

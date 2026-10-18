@@ -50,13 +50,13 @@ package body org.allbinary.business.user.modules.admin.store.customer.CustomerSt
       weblisketSession : constant WeblisketSessionInterface_Access := WeblisketSessionInterface_Access (weblisketSession_Param);
    begin
         User (This).validateSession (weblisketSession);
-        This.updateSession (weblisketSession);
+        CustomerStoreAdminUser'Class (This).updateSession (weblisketSession);
    end validateSession;
 
    procedure updateSession (This : in out CustomerStoreAdminUser; weblisketSession_Param : access WeblisketSessionInterface_Package.WeblisketSessionInterface'Class) is
       weblisketSession : constant WeblisketSessionInterface_Access := WeblisketSessionInterface_Access (weblisketSession_Param);
    begin
-        weblisketSession.setStoreName (This.getPermissions);
+        weblisketSession.setStoreName (CustomerStoreAdminUser'Class (This).getPermissions);
    end updateSession;
 
 end org.allbinary.business.user.modules.admin.store.customer.CustomerStoreAdminUser_Package;

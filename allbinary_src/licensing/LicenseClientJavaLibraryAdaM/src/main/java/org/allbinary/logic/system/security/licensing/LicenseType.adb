@@ -25,7 +25,7 @@ package body org.allbinary.logic.system.security.licensing.LicenseType_Package i
    procedure Initialize (This : in out LicenseType'Class; name : Unbounded_String) is
    begin
       Initialize_Fields (This);
-        This.setName (name);
+        LicenseType'Class (This).setName (name);
    end Initialize;
 
    function Create (name : Unbounded_String) return LicenseType_Access is

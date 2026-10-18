@@ -20,10 +20,11 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.util.HashMap_Package; use java.util.HashMap_Package;
+with java.util.HashMap_Package; use java.util.HashMap_Package;
 
 package org.allbinary.business.installer.Portion_Package is
 
+   package HashMap_Package renames Standard.java.util.HashMap_Package;
 
    type Portion is tagged;
    type Portion_Access is access all Portion'Class;

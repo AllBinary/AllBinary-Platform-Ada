@@ -78,12 +78,12 @@ package body org.allbinary.game.rts.technology.RepairTechnology_Package is
 
    function getUpgradeCost (This : in out RepairTechnology) return Integer is
    begin
-        return (((This.getLevel) * (This.getLevel))) * (1000);
+        return (((RepairTechnology'Class (This).getLevel) * (RepairTechnology'Class (This).getLevel))) * (1000);
    end getUpgradeCost;
 
    function isUpgradeable (This : in out RepairTechnology) return Boolean is
    begin
-        if (This.getLevel) < (This.getMaxLevel) then
+        if (RepairTechnology'Class (This).getLevel) < (RepairTechnology'Class (This).getMaxLevel) then
             return True;
         else
             return False;
@@ -95,7 +95,7 @@ package body org.allbinary.game.rts.technology.RepairTechnology_Package is
    begin
         This.level := This.level + 1;
         unitTechnologySingletonFactory := UnitTechnologySingletonFactory_Package.getInstance;
-        unitTechnologySingletonFactory.setRepair ((unitTechnologySingletonFactory.getRepair) + (((This.getLevel) * (10))));
+        unitTechnologySingletonFactory.setRepair ((unitTechnologySingletonFactory.getRepair) + (((RepairTechnology'Class (This).getLevel) * (10))));
    end upgrade;
 
    function isSelfUpgradeable (This : in out RepairTechnology) return Boolean is

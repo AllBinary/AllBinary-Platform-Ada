@@ -44,8 +44,8 @@ package body org.allbinary.game.init.CommonGameInitialization_Package is
    begin
         BaseGameInitialization (This).init (abeClientInformation, commandListener, level);
         resourceLoadingLevelFactory := ResourceLoadingLevelFactory_Package.getInstance;
-        if (not (This.isGameInitialized)) and then ((level) = (resourceLoadingLevelFactory.LOAD_ALL.getLevel)) then
-            This.setGameInitialized (True);
+        if (not (CommonGameInitialization'Class (This).isGameInitialized)) and then ((level) = (resourceLoadingLevelFactory.LOAD_ALL.getLevel)) then
+            CommonGameInitialization'Class (This).setGameInitialized (True);
             progressCanvas := ProgressCanvasFactory_Package.getInstance;
             SmallIntegerSingletonFactory_Package.getInstance.init;
             progressCanvas.addNormalPortion (50, To_Unbounded_String ("Integers"));
@@ -53,7 +53,7 @@ package body org.allbinary.game.init.CommonGameInitialization_Package is
             progressCanvas.addNormalPortion (50, To_Unbounded_String ("Points"));
             AngleFactory_Package.getInstance;
             progressCanvas.addNormalPortion (50, To_Unbounded_String ("Angles"));
-            This.initGame;
+            CommonGameInitialization'Class (This).initGame;
             This.resourceInitializationArray (This.GAME_RESOURCES).init;
         end if;
         BaseGameInitialization (This).resourceInitialization (level);

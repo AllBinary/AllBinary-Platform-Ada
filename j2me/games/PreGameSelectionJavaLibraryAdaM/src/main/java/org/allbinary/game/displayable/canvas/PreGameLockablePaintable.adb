@@ -42,8 +42,8 @@ package body org.allbinary.game.displayable.canvas.PreGameLockablePaintable_Pack
    procedure paint (This : in out PreGameLockablePaintable; graphics_Param : access Graphics_Package.Graphics'Class; currentIndex : Integer; x : Integer; y : Integer) is
       graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
-        if (LockedUtil_Package.getInstance.isLocked) and then ((This.getPaintableForm.getSelectedIndex) >= (This.getLockedIndex)) then
-            This.getAnimation.paintXY (graphics, (This.getPaintableForm.getDx) - (This.halfWidth), (This.getPaintableForm.getDy) + (34));
+        if (LockedUtil_Package.getInstance.isLocked) and then ((PreGameLockablePaintable'Class (This).getPaintableForm.getSelectedIndex) >= (PreGameLockablePaintable'Class (This).getLockedIndex)) then
+            PreGameLockablePaintable'Class (This).getAnimation.paintXY (graphics, (PreGameLockablePaintable'Class (This).getPaintableForm.getDx) - (This.halfWidth), (PreGameLockablePaintable'Class (This).getPaintableForm.getDy) + (34));
         end if;
    end paint;
 

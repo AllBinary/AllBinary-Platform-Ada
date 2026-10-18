@@ -33,7 +33,7 @@ package body admin.taghelpers.OrderItemsRequestHelper_Package is
       TagHelper_Package.Initialize (This);
       Initialize_Fields (This);
         This.request := HttpServletRequest_Access (pageContext.getRequest);
-        This.getFormData;
+        OrderItemsRequestHelper'Class (This).getFormData;
    end Initialize;
 
    function Create (hashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) return OrderItemsRequestHelper_Access is

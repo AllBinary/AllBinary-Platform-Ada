@@ -25,8 +25,8 @@ package body admin.tags.XmlOptionItemsTag_Package is
    begin
       TableTag_Package.Initialize (This);
       Initialize_Fields (This);
-        This.setTagHelperFactory (XmlOptionItemsHelperFactory_Package.Create);
-        This.setTagRequestHelperFactory (XmlOptionItemsRequestHelperFactory_Package.Create);
+        XmlOptionItemsTag'Class (This).setTagHelperFactory (XmlOptionItemsHelperFactory_Package.Create);
+        XmlOptionItemsTag'Class (This).setTagRequestHelperFactory (XmlOptionItemsRequestHelperFactory_Package.Create);
    end Initialize;
 
    function Create return XmlOptionItemsTag_Access is

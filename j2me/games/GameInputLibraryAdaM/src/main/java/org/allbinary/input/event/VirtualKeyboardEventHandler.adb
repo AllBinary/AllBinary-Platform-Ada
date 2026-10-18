@@ -56,7 +56,7 @@ package body org.allbinary.input.event.VirtualKeyboardEventHandler_Package is
    begin
         begin
             Java_Sleep (120);
-            This.fireEvent (This.SHOW_EVENT);
+            VirtualKeyboardEventHandler'Class (This).fireEvent (This.SHOW_EVENT);
         exception
             when Java_Occurrence : others =>
                 declare
@@ -72,7 +72,7 @@ package body org.allbinary.input.event.VirtualKeyboardEventHandler_Package is
    begin
         begin
             Java_Sleep (120);
-            This.fireEvent (This.HIDE_EVENT);
+            VirtualKeyboardEventHandler'Class (This).fireEvent (This.HIDE_EVENT);
         exception
             when Java_Occurrence : others =>
                 declare

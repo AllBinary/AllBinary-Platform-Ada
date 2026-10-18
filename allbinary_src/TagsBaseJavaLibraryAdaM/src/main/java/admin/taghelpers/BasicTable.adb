@@ -38,24 +38,28 @@ package body admin.taghelpers.BasicTable_Package is
    function drop (This : in out BasicTable) return Unbounded_String is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return Null_Unbounded_String;
    end drop;
 
    --  throws Exception
    function create (This : in out BasicTable) return Unbounded_String is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return Null_Unbounded_String;
    end create;
 
    --  throws Exception
    function restore (This : in out BasicTable) return Unbounded_String is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return Null_Unbounded_String;
    end restore;
 
    --  throws Exception
    function backup (This : in out BasicTable) return Unbounded_String is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return Null_Unbounded_String;
    end backup;
 
 end admin.taghelpers.BasicTable_Package;

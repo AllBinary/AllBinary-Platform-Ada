@@ -67,7 +67,7 @@ package body org.allbinary.logic.io.BufferedWriterUtil_Package is
                 This.logUtil.putF (stringBuilder.append (This.commonLabels.RESULT_U).appendboolean (result).toString, BufferedWriterUtil_Access'(This'Unchecked_Access), This.commonStrings.CREATE);
             end if;
         end if;
-        This.write (abFile, data);
+        BufferedWriterUtil'Class (This).write (abFile, data);
    end overwrite;
 
    --  throws Exception
@@ -94,7 +94,7 @@ package body org.allbinary.logic.io.BufferedWriterUtil_Package is
                 This.logUtil.putF (stringBuilder.append (This.commonLabels.RESULT_U).appendboolean (result).toString, BufferedWriterUtil_Access'(This'Unchecked_Access), This.commonStrings.CREATE);
             end if;
         end if;
-        This.write (abFile, data);
+        BufferedWriterUtil'Class (This).write (abFile, data);
    end overwrite;
 
    --  throws Exception

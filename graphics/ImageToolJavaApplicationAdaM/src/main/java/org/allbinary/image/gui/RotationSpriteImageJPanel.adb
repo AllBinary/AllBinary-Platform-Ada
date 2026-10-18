@@ -41,7 +41,7 @@ package body org.allbinary.image.gui.RotationSpriteImageJPanel_Package is
    begin
         JPanel_Package.Initialize (This);
         Initialize_Fields (This);
-        This.initComponents;
+        RotationSpriteImageJPanel'Class (This).initComponents;
         This.imageProcessorInput := imageProcessorInput;
    end Initialize;
 
@@ -72,18 +72,18 @@ package body org.allbinary.image.gui.RotationSpriteImageJPanel_Package is
 --                  logUtil := LogUtil_Package.getInstance;
 --                  begin
 --                      generatedBufferedImageArray := null;
---                      imageProcessorInput := This.getImageProcessorInput;
+--                      imageProcessorInput := RotationSpriteImageJPanel'Class (This).getImageProcessorInput;
 --                      bufferedImageArray := imageProcessorInput.getBufferedImageArray;
 --                      for index in 0 .. (bufferedImageArray'Length) - 1 loop
---                          totalFrames := To_Unbounded_String (Java_Image (Unbounded_String (This.totalFramesJComboBox.getSelectedItem)));
---                          totalAngle := To_Unbounded_String (Java_Image (Unbounded_String (This.totalAngleJComboBox.getSelectedItem)));
+--                          totalFrames := To_Unbounded_String (Java_Image (Java_Unbox (This.totalFramesJComboBox.getSelectedItem)));
+--                          totalAngle := To_Unbounded_String (Java_Image (Java_Unbox (This.totalAngleJComboBox.getSelectedItem)));
 --                          generatedBufferedImageArray := ImageJ2SERotationUtil_Package.getInstance.getRotatedImages (bufferedImageArray (index), totalFrames, totalAngle);
 --                          This.result := ImageJ2SERotationUtil_Package.getInstance.createSpriteImage (generatedBufferedImageArray);
---                          This.getParent.repaint;
+--                          RotationSpriteImageJPanel'Class (This).getParent.repaint;
 --                          file := imageProcessorInput.getFiles (index);
 --                          if not (This.writeOverOriginalJCheckBox.isSelected) then
 --                              filePath := file.getAbsolutePath;
---                              extensionIndex := (Index (filePath, To_String (This.imageStrings.PNG_EXTENSION)) - 1);
+--                              extensionIndex := (Index (filePath, Java_Image (This.imageStrings.PNG_EXTENSION)) - 1);
 --                              filePath := StringMaker_Package.Create.append (Unbounded_Slice (filePath, (0) + 1, extensionIndex)).append (CommonSeps_Package.getInstance.UNDERSCORE).append (To_Unbounded_String ("sprite")).append (This.imageStrings.PNG_EXTENSION).toString;
 --                              logUtil.putF (To_Unbounded_String ("New File Path: ") & filePath, RotationSpriteImageJPanel_Access'(This'Unchecked_Access), This.commonStrings.RUN);
 --                              file := File_Package.Create (filePath);
@@ -140,7 +140,7 @@ package body org.allbinary.image.gui.RotationSpriteImageJPanel_Package is
 --     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
 --        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
---                  This.generateJButtonActionPerformed (evt);
+--                  RotationSpriteImageJPanel'Class (This).generateJButtonActionPerformed (evt);
 --     end actionPerformed;
 );
         This.totalAngleJComboBox.setModel (DefaultComboBoxModel_Package.Create (new Unbounded_String_Array'(To_Unbounded_String ("360"), To_Unbounded_String ("90"))));
@@ -149,7 +149,7 @@ package body org.allbinary.image.gui.RotationSpriteImageJPanel_Package is
 --     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
 --        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
---                  This.totalAngleJComboBoxActionPerformed (evt);
+--                  RotationSpriteImageJPanel'Class (This).totalAngleJComboBoxActionPerformed (evt);
 --     end actionPerformed;
 );
         This.jLabel3.setText (To_Unbounded_String ("Total Angle:"));
@@ -164,7 +164,7 @@ package body org.allbinary.image.gui.RotationSpriteImageJPanel_Package is
         jPanel3Layout.setHorizontalGroup (jPanel3Layout.createParallelGroup (org_Package.jdesktop.layout.GroupLayout.LEADING).add (jPanel3Layout.createSequentialGroup.add (This.jLabel2).addContainerGap (377, Short_Package.MAX_VALUE)));
         jPanel3Layout.setVerticalGroup (jPanel3Layout.createParallelGroup (org_Package.jdesktop.layout.GroupLayout.LEADING).add (This.jLabel2));
         layout := GroupLayout_Package.Create (RotationSpriteImageJPanel_Access'(This'Unchecked_Access));
-        This.setLayout (layout);
+        RotationSpriteImageJPanel'Class (This).setLayout (layout);
         layout.setHorizontalGroup (layout.createParallelGroup (org_Package.jdesktop.layout.GroupLayout.LEADING).add (org_Package.jdesktop.layout.GroupLayout.TRAILING, This.jPanel2, org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short_Package.MAX_VALUE).add (layout.createSequentialGroup.addContainerGap.add (This.jPanel3, org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short_Package.MAX_VALUE).addContainerGap).add (This.jPanel1, org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short_Package.MAX_VALUE));
         layout.setVerticalGroup (layout.createParallelGroup (org_Package.jdesktop.layout.GroupLayout.LEADING).add (layout.createSequentialGroup.add (This.jPanel2, org_Package.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org_Package.jdesktop.layout.GroupLayout.PREFERRED_SIZE).addPreferredGap (org_Package.jdesktop.layout.LayoutStyle.UNRELATED).add (This.jPanel3, org_Package.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org_Package.jdesktop.layout.GroupLayout.PREFERRED_SIZE).addPreferredGap (org_Package.jdesktop.layout.LayoutStyle.RELATED).add (This.jPanel1, org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short_Package.MAX_VALUE)));
    end initComponents;
@@ -172,7 +172,7 @@ package body org.allbinary.image.gui.RotationSpriteImageJPanel_Package is
    procedure generateJButtonActionPerformed (This : in out RotationSpriteImageJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
       evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
-        This.process;
+        RotationSpriteImageJPanel'Class (This).process;
    end generateJButtonActionPerformed;
 
    procedure totalAngleJComboBoxActionPerformed (This : in out RotationSpriteImageJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class) is

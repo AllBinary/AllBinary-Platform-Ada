@@ -59,7 +59,7 @@ package body org.allbinary.game.layer.WaypointPathRunnableBase_Package is
       waypointLayer : constant PathFindingLayerInterface_Access := PathFindingLayerInterface_Access (waypointLayer_Param);
    begin
         This.targetPathFindingLayer := waypointLayer;
-        This.setPriority;
+        WaypointPathRunnableBase'Class (This).setPriority;
    end setTargetLayer;
 
    procedure setPriority (This : in out WaypointPathRunnableBase) is

@@ -51,7 +51,7 @@ package body org.allbinary.input.automation.module.MotionRectangleConstraints_Pa
    function isTooSmall (This : in out MotionRectangleConstraints; rectangle_Param : access Rectangle_Package.Rectangle'Class) return Boolean is
       rectangle : constant Rectangle_Access := Rectangle_Access (rectangle_Param);
    begin
-        if ((rectangle.width) < (This.getMinDimension.width)) or else ((rectangle.height) < (This.getMinDimension.height)) then
+        if ((rectangle.width) < (MotionRectangleConstraints'Class (This).getMinDimension.width)) or else ((rectangle.height) < (MotionRectangleConstraints'Class (This).getMinDimension.height)) then
             return True;
         else
             return False;
@@ -61,7 +61,7 @@ package body org.allbinary.input.automation.module.MotionRectangleConstraints_Pa
    function isAreaTooSmall (This : in out MotionRectangleConstraints; rectangle_Param : access Rectangle_Package.Rectangle'Class) return Boolean is
       rectangle : constant Rectangle_Access := Rectangle_Access (rectangle_Param);
    begin
-        if ((rectangle.width) * (rectangle.height)) < (This.getMinArea) then
+        if ((rectangle.width) * (rectangle.height)) < (MotionRectangleConstraints'Class (This).getMinArea) then
             return True;
         else
             return False;
@@ -71,7 +71,7 @@ package body org.allbinary.input.automation.module.MotionRectangleConstraints_Pa
    function isTooBig (This : in out MotionRectangleConstraints; rectangle_Param : access Rectangle_Package.Rectangle'Class) return Boolean is
       rectangle : constant Rectangle_Access := Rectangle_Access (rectangle_Param);
    begin
-        if ((rectangle.width) > (This.getMaxDimension.width)) or else ((rectangle.height) > (This.getMaxDimension.height)) then
+        if ((rectangle.width) > (MotionRectangleConstraints'Class (This).getMaxDimension.width)) or else ((rectangle.height) > (MotionRectangleConstraints'Class (This).getMaxDimension.height)) then
             return True;
         else
             return False;
@@ -84,6 +84,7 @@ package body org.allbinary.input.automation.module.MotionRectangleConstraints_Pa
       rectangle : constant Rectangle_Access := Rectangle_Access (rectangle_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return False;
    end isValid;
 
    procedure setMinDimension (This : in out MotionRectangleConstraints; minDimension_Param : access Dimension_Package.Dimension'Class) is

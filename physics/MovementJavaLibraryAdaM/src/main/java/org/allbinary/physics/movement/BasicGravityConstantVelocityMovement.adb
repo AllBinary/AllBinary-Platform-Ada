@@ -41,7 +41,7 @@ package body org.allbinary.physics.movement.BasicGravityConstantVelocityMovement
       layer : constant AllBinaryGameLayer_Access := AllBinaryGameLayer_Access (layer_Param);
    begin
         BasicConstantVelocityMovement (This).process (layer);
-        This.gravityUtil.process (This.getVelocityProperties, This.gravityUtil.GAME_GRAVITY_VELOCITY);
+        This.gravityUtil.process (BasicGravityConstantVelocityMovement'Class (This).getVelocityProperties, This.gravityUtil.GAME_GRAVITY_VELOCITY);
    end process;
 
 end org.allbinary.physics.movement.BasicGravityConstantVelocityMovement_Package;

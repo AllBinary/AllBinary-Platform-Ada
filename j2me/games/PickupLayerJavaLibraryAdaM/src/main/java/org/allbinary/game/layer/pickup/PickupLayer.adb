@@ -33,10 +33,10 @@ package body org.allbinary.game.layer.pickup.PickupLayer_Package is
    begin
         MultiPlayerGameLayer_Package.Initialize (This, remoteInfo, BasicGroupFactory_Package.getInstance.NONE_ARRAY, name, rectangle, viewPosition);
         Initialize_Fields (This);
-        This.setCollidableInferface (CollidableAlwaysPickupNeverCollideBehaviorFactory_Package.getInstance.createBehavior);
-        This.setLayerWidth (10);
-        This.setLayerHeight (10);
-        This.init (pickedUpLayerInterfaceFactoryInterface, animationInterface);
+        PickupLayer'Class (This).setCollidableInferface (CollidableAlwaysPickupNeverCollideBehaviorFactory_Package.getInstance.createBehavior);
+        PickupLayer'Class (This).setLayerWidth (10);
+        PickupLayer'Class (This).setLayerHeight (10);
+        PickupLayer'Class (This).init (pickedUpLayerInterfaceFactoryInterface, animationInterface);
    end Initialize;
 
    function Create (name : Unbounded_String; remoteInfo_Param : access RemoteInfo_Package.RemoteInfo'Class; total : Integer; pickedUpLayerInterfaceFactoryInterface_Param : access PickedUpLayerInterfaceFactoryInterface_Package.PickedUpLayerInterfaceFactoryInterface'Class; animationInterface_Param : access Animation_Package.Animation'Class; rectangle_Param : access Rectangle_Package.Rectangle'Class; viewPosition_Param : access ViewPositionBase_Package.ViewPositionBase'Class) return PickupLayer_Access is
@@ -52,12 +52,12 @@ package body org.allbinary.game.layer.pickup.PickupLayer_Package is
    begin
         This.pickedUpLayerInterfaceFactoryInterface := pickedUpLayerInterfaceFactoryInterface;
         This.animationInterface := animationInterface;
-        This.setDestroyed (False);
+        PickupLayer'Class (This).setDestroyed (False);
    end init;
 
    procedure initXYZ (This : in out PickupLayer; x : Integer; y : Integer; z : Integer) is
    begin
-        This.setPosition (x, y, z);
+        PickupLayer'Class (This).setPosition (x, y, z);
    end initXYZ;
 
    procedure paint (This : in out PickupLayer; graphics_Param : access Graphics_Package.Graphics'Class) is
@@ -66,7 +66,7 @@ package body org.allbinary.game.layer.pickup.PickupLayer_Package is
       viewX : Integer;
       viewY : Integer;
    begin
-        viewPosition := This.getViewPosition;
+        viewPosition := PickupLayer'Class (This).getViewPosition;
         viewX := viewPosition.getX;
         viewY := viewPosition.getY;
         This.animationInterface.paintXY (graphics, viewX, viewY);
@@ -78,7 +78,7 @@ package body org.allbinary.game.layer.pickup.PickupLayer_Package is
       viewX : Integer;
       viewY : Integer;
    begin
-        viewPosition := This.getViewPosition;
+        viewPosition := PickupLayer'Class (This).getViewPosition;
         viewX := viewPosition.getX;
         viewY := viewPosition.getY;
         This.animationInterface.paintThreedXYZ (graphics, viewX, viewY, 3);
@@ -91,7 +91,7 @@ package body org.allbinary.game.layer.pickup.PickupLayer_Package is
 
    procedure setPickedUp (This : in out PickupLayer) is
    begin
-        This.setDestroyed (True);
+        PickupLayer'Class (This).setDestroyed (True);
    end setPickedUp;
 
    function isDestroyed (This : in out PickupLayer) return Boolean is
@@ -102,7 +102,7 @@ package body org.allbinary.game.layer.pickup.PickupLayer_Package is
    procedure setDestroyed (This : in out PickupLayer; destroyed : Boolean) is
    begin
         This.destroyed := destroyed;
-        if This.isDestroyed then
+        if PickupLayer'Class (This).isDestroyed then
             DestroyedLayerProcessor_Package.getInstance.add (PickupLayer_Access'(This'Unchecked_Access));
         end if;
    end setDestroyed;

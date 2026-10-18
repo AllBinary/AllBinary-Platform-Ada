@@ -49,8 +49,8 @@ package body org.allbinary.logic.io.SmallDelete_Package is
         begin
             beginIndex := 0;
             endIndex := 0;
-            beginIndex := (Index (This.string_Id, To_String (start)) - 1);
-            endIndex := (Index (This.string_Id, To_String (end_Id)) - 1);
+            beginIndex := (Index (This.string_Id, Java_Image (start)) - 1);
+            endIndex := (Index (This.string_Id, Java_Image (end_Id)) - 1);
             if (((((endIndex) > (beginIndex)) and then ((beginIndex) >= (0))) and then ((endIndex) >= (0))) and then ((beginIndex) < (10))) and then ((endIndex) < (525)) then
                 text := Unbounded_Slice (This.string_Id, (endIndex) + 1, Length (This.string_Id));
                 idFile := FileOutputStream_Package.Create (This.fileName);
@@ -83,8 +83,8 @@ package body org.allbinary.logic.io.SmallDelete_Package is
         begin
             beginIndex := 0;
             endIndex := 0;
-            beginIndex := (Index (This.string_Id, To_String (start)) - 1);
-            endIndex := (Index (This.string_Id, To_String (end_Id)) - 1);
+            beginIndex := (Index (This.string_Id, Java_Image (start)) - 1);
+            endIndex := (Index (This.string_Id, Java_Image (end_Id)) - 1);
             if (((((endIndex) > (beginIndex)) and then ((beginIndex) >= (0))) and then ((endIndex) >= (0))) and then ((beginIndex) < (50))) and then ((endIndex) < (425)) then
                 newStart := Unbounded_Slice (This.string_Id, (0) + 1, beginIndex);
                 text := Unbounded_Slice (This.string_Id, ((endIndex) + (Length (end_Id))) + 1, Length (This.string_Id));

@@ -54,7 +54,7 @@ package body org.allbinary.game.layer.waypoint.WaypointCellPositionHistory_Packa
       index : Integer;
    begin
         for index in reverse 0 .. (list.size) - (1) loop
-            This.add (CellPosition_Access (list.get (index)), layerInterface);
+            WaypointCellPositionHistory'Class (This).add (CellPosition_Access (list.get (index)), layerInterface);
         end loop;
    end addList;
 
@@ -100,7 +100,7 @@ package body org.allbinary.game.layer.waypoint.WaypointCellPositionHistory_Packa
       index : Integer;
    begin
         for index in reverse 0 .. (list.size) - (1) loop
-            if This.isCellPositionWithDrop (CellPosition_Access (list.get (index))) then
+            if WaypointCellPositionHistory'Class (This).isCellPositionWithDrop (CellPosition_Access (list.get (index))) then
                 return True;
             end if;
         end loop;

@@ -43,7 +43,7 @@ package body views.business.context.modules.storefront.generator.GeneratorStoreF
    function view (This : in out GeneratorStoreFrontContextView; group : Unbounded_String) return Unbounded_String is
       result : Unbounded_String;
    begin
-        result := TransformsGeneratorUtil_Package.getInstance.generateComponentsFromObjectConfig (This.abeClientInformation, This.getTransformInfoInterface, group);
+        result := TransformsGeneratorUtil_Package.getInstance.generateComponentsFromObjectConfig (This.abeClientInformation, GeneratorStoreFrontContextView'Class (This).getTransformInfoInterface, group);
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPEXTRAOUTPUT) then
             return result;
         else
@@ -55,7 +55,7 @@ package body views.business.context.modules.storefront.generator.GeneratorStoreF
    function view (This : in out GeneratorStoreFrontContextView) return Unbounded_String is
    begin
         begin
-            return This.view (TransformInfosData_Package.getInstance.ALL_Id);
+            return GeneratorStoreFrontContextView'Class (This).view (TransformInfosData_Package.getInstance.ALL_Id);
         exception
             when Java_Occurrence : others =>
                 declare

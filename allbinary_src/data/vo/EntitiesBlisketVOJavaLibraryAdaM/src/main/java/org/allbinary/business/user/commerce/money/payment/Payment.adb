@@ -34,7 +34,7 @@ package body org.allbinary.business.user.commerce.money.payment.Payment_Package 
       
       
       
-      This.isDefault := False;
+      This.isDefault_Field := False;
    end Initialize_Fields;
 
 
@@ -43,28 +43,28 @@ package body org.allbinary.business.user.commerce.money.payment.Payment_Package 
       def : Unbounded_String;
    begin
       Initialize_Fields (This);
-        This.name := Unbounded_String (payment.get (PaymentData_Package.NAME));
-        This.type_Id := Unbounded_String (payment.get (PaymentData_Package.TYPE_Id));
-        This.expiration := Unbounded_String (payment.get (PaymentData_Package.EXPIRATION));
-        This.encryption := Unbounded_String (payment.get (EntryData_Package.getInstance.ENCRYPTION));
-        This.number := Unbounded_String (SuperCrypt_Package.Create (This.encryption.intValue).decrypt (Unbounded_String (payment.get (PaymentData_Package.NUMBER))));
-        This.id := Unbounded_String (payment.get (PaymentData_Package.ID));
-        def := Unbounded_String (payment.get (EntryData_Package.getInstance.DEFAULT));
+        This.name := Java_Unbox (payment.get (PaymentData_Package.NAME));
+        This.type_Id := Java_Unbox (payment.get (PaymentData_Package.TYPE_Id));
+        This.expiration := Java_Unbox (payment.get (PaymentData_Package.EXPIRATION));
+        This.encryption := Java_Unbox (payment.get (EntryData_Package.getInstance.ENCRYPTION));
+        This.number := Java_Unbox (SuperCrypt_Package.Create (This.encryption.intValue).decrypt (Java_Unbox (payment.get (PaymentData_Package.NUMBER))));
+        This.id := Java_Unbox (payment.get (PaymentData_Package.ID));
+        def := Java_Unbox (payment.get (EntryData_Package.getInstance.DEFAULT));
         if ((def) /= (Null_Unbounded_String)) and then ((def.compareTo (EntryData_Package.getInstance.DEFAULT)) = (0)) then
-            This.isDefault := True;
+            This.isDefault_Field := True;
         else
-            This.isDefault := False;
+            This.isDefault_Field := False;
         end if;
-        This.tenderType := Unbounded_String (payment.get (PaymentData_Package.TENDERTYPE));
-        This.transactionType := Unbounded_String (payment.get (PaymentData_Package.TRANSACTIONTYPE));
-        This.aba := Unbounded_String (payment.get (PaymentData_Package.ABA));
-        This.account := Unbounded_String (payment.get (PaymentData_Package.ACCOUNT));
-        This.accountType := Unbounded_String (payment.get (PaymentData_Package.ACCOUNTTYPE));
-        This.authorizationCode := Unbounded_String (payment.get (PaymentData_Package.AUTHORIZATIONCODE));
-        This.checkNumber := Unbounded_String (payment.get (PaymentData_Package.CHECKNUMBER));
-        This.checkType := Unbounded_String (payment.get (PaymentData_Package.CHECKTYPE));
-        This.driversLicense := Unbounded_String (payment.get (PaymentData_Package.DRIVERSLICENSE));
-        This.magneticInkCheckReader := Unbounded_String (payment.get (PaymentData_Package.MAGNETICINKCHECKREADER));
+        This.tenderType := Java_Unbox (payment.get (PaymentData_Package.TENDERTYPE));
+        This.transactionType := Java_Unbox (payment.get (PaymentData_Package.TRANSACTIONTYPE));
+        This.aba := Java_Unbox (payment.get (PaymentData_Package.ABA));
+        This.account := Java_Unbox (payment.get (PaymentData_Package.ACCOUNT));
+        This.accountType := Java_Unbox (payment.get (PaymentData_Package.ACCOUNTTYPE));
+        This.authorizationCode := Java_Unbox (payment.get (PaymentData_Package.AUTHORIZATIONCODE));
+        This.checkNumber := Java_Unbox (payment.get (PaymentData_Package.CHECKNUMBER));
+        This.checkType := Java_Unbox (payment.get (PaymentData_Package.CHECKTYPE));
+        This.driversLicense := Java_Unbox (payment.get (PaymentData_Package.DRIVERSLICENSE));
+        This.magneticInkCheckReader := Java_Unbox (payment.get (PaymentData_Package.MAGNETICINKCHECKREADER));
    end Initialize;
 
    function Create (payment_Param : access HashMap_Package.HashMap'Class) return Payment_Access is
@@ -294,27 +294,27 @@ package body org.allbinary.business.user.commerce.money.payment.Payment_Package 
 
    function isDefault (This : in out Payment) return Boolean is
    begin
-        return This.isDefault;
+        return This.isDefault_Field;
    end isDefault;
 
    function toHashMap (This : in out Payment) return HashMap_Access is
       hashMap : HashMap_Access;
    begin
         hashMap := StdUtil_Package.getInstance.createHashMap;
-        hashMap.put (PaymentData_Package.NAME, This.name);
-        hashMap.put (PaymentData_Package.TYPE_Id, This.type_Id);
-        hashMap.put (PaymentData_Package.EXPIRATION, This.expiration);
-        hashMap.put (PaymentData_Package.NUMBER, This.getLastFour);
-        hashMap.put (PaymentData_Package.TENDERTYPE, This.tenderType);
-        hashMap.put (PaymentData_Package.TRANSACTIONTYPE, This.transactionType);
-        hashMap.put (PaymentData_Package.ABA, This.aba);
-        hashMap.put (PaymentData_Package.ACCOUNT, This.account);
-        hashMap.put (PaymentData_Package.ACCOUNTTYPE, This.accountType);
-        hashMap.put (PaymentData_Package.AUTHORIZATIONCODE, This.authorizationCode);
-        hashMap.put (PaymentData_Package.CHECKNUMBER, This.checkNumber);
-        hashMap.put (PaymentData_Package.DRIVERSLICENSE, This.driversLicense);
-        hashMap.put (PaymentData_Package.MAGNETICINKCHECKREADER, This.magneticInkCheckReader);
-        if This.isDefault then
+        hashMap.put (PaymentData_Package.NAME, Java_Box (This.name));
+        hashMap.put (PaymentData_Package.TYPE_Id, Java_Box (This.type_Id));
+        hashMap.put (PaymentData_Package.EXPIRATION, Java_Box (This.expiration));
+        hashMap.put (PaymentData_Package.NUMBER, Payment'Class (This).getLastFour);
+        hashMap.put (PaymentData_Package.TENDERTYPE, Java_Box (This.tenderType));
+        hashMap.put (PaymentData_Package.TRANSACTIONTYPE, Java_Box (This.transactionType));
+        hashMap.put (PaymentData_Package.ABA, Java_Box (This.aba));
+        hashMap.put (PaymentData_Package.ACCOUNT, Java_Box (This.account));
+        hashMap.put (PaymentData_Package.ACCOUNTTYPE, Java_Box (This.accountType));
+        hashMap.put (PaymentData_Package.AUTHORIZATIONCODE, Java_Box (This.authorizationCode));
+        hashMap.put (PaymentData_Package.CHECKNUMBER, Java_Box (This.checkNumber));
+        hashMap.put (PaymentData_Package.DRIVERSLICENSE, Java_Box (This.driversLicense));
+        hashMap.put (PaymentData_Package.MAGNETICINKCHECKREADER, Java_Box (This.magneticInkCheckReader));
+        if This.isDefault_Field then
             hashMap.put (EntryData_Package.getInstance.DEFAULT, EntryData_Package.getInstance.DEFAULT);
         else
             hashMap.put (EntryData_Package.getInstance.DEFAULT, StringUtil_Package.getInstance.EMPTY_STRING);
@@ -328,7 +328,7 @@ package body org.allbinary.business.user.commerce.money.payment.Payment_Package 
       hashMap : HashMap_Access;
       node : Node_Access;
    begin
-        hashMap := This.toHashMap;
+        hashMap := Payment'Class (This).toHashMap;
         node := ModDomHelper_Package.createNameValueNodes (document, PaymentData_Package.PAYMENT, hashMap);
         return node;
    end toXmlNode;

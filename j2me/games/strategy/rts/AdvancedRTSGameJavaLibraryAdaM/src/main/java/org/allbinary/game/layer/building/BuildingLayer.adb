@@ -58,18 +58,18 @@ package body org.allbinary.game.layer.building.BuildingLayer_Package is
    begin
         AdvancedRTSGameLayer_Package.Initialize (This, remoteInfo, NullPathFindingLayer_Package.NULL_PATH_FINDING_LAYER, advancedRTSProperties, groupInterface, rootName, name, healthInterface, rtsFormInput, animationInterfaceFactoryInterface, emptyAnimationInterfaceFactoryInterface, baseAnimationInterfaceFactoryInterface, buildAnimationInterfaceFactoryInterface, verticleBuildAnimationInterfaceFactoryInterface, proceduralAnimationInterfaceFactoryInterface, rectangle, x, y, TileLayerPositionIntoViewPosition_Package.Create);
         Initialize_Fields (This);
-        This.setCollidableInferface (CollidableRTSBehavior_Package.Create (True));
-        This.getWaypointBehavior.setWaypoint (Waypoint_Package.Create (BuildingLayer_Access'(This'Unchecked_Access), SelectSound_Package.getInstance));
+        BuildingLayer'Class (This).setCollidableInferface (CollidableRTSBehavior_Package.Create (True));
+        BuildingLayer'Class (This).getWaypointBehavior.setWaypoint (Waypoint_Package.Create (BuildingLayer_Access'(This'Unchecked_Access), SelectSound_Package.getInstance));
         This.damageFloaters := buildingPropertiesFactory.getDamageFloaters (BuildingLayer_Access'(This'Unchecked_Access));
         This.damageFloatersPaintableInterface := buildingPropertiesFactory.damageFloatersPaintableInterface;
         This.healthBar := buildingPropertiesFactory.getHealthBar (BuildingLayer_Access'(This'Unchecked_Access));
         This.pathsHashtable := buildingPropertiesFactory.getHashtable;
-        This.setMaxLevel (30);
-        This.setProductivity (1);
-        This.setEfficiency (This.calculateEfficiency);
+        BuildingLayer'Class (This).setMaxLevel (30);
+        BuildingLayer'Class (This).setProductivity (1);
+        BuildingLayer'Class (This).setEfficiency (BuildingLayer'Class (This).calculateEfficiency);
         This.efficiencyPerLevel := buildingPropertiesFactory.getEfficiencyPerLevel (BuildingLayer_Access'(This'Unchecked_Access));
         This.efficiency := This.efficiencyPerLevel;
-        This.generateMoveOutOfBuildAreaPaths;
+        BuildingLayer'Class (This).generateMoveOutOfBuildAreaPaths;
         This.trackingEvent := buildingPropertiesFactory.getTrackingEvent (BuildingLayer_Access'(This'Unchecked_Access));
    end Initialize;
 
@@ -87,7 +87,7 @@ package body org.allbinary.game.layer.building.BuildingLayer_Package is
         advancedRTSPlayerLayerInterface := AdvancedRTSPlayerLayerInterface_Access (rtsPlayerLayerInterface);
         if advancedRTSPlayerLayerInterface.isLocalPlayer then
             This.local := True;
-            This.addVisibility;
+            BuildingLayer'Class (This).addVisibility;
         else
             This.local := False;
         end if;
@@ -108,7 +108,7 @@ package body org.allbinary.game.layer.building.BuildingLayer_Package is
    begin
         begin
             layerInterface := AdvancedRTSGameLayer_Access (trackingEvent.getLayerInterface);
-            if (layerInterface.getGroupInterface (0)) /= (This.getGroupInterface (0)) then
+            if (layerInterface.getGroupInterface (0)) /= (BuildingLayer'Class (This).getGroupInterface (0)) then
                 layerInterface.onMovementFound (This.trackingEvent);
             end if;
         exception
@@ -127,27 +127,27 @@ package body org.allbinary.game.layer.building.BuildingLayer_Package is
       currentFrame : Integer;
       size : Integer;
    begin
-        if This.getHealthInterface.isDamaged then
-            This.setAnimationInterface (This.destroyAnimationInterface);
+        if BuildingLayer'Class (This).getHealthInterface.isDamaged then
+            BuildingLayer'Class (This).setAnimationInterface (This.destroyAnimationInterface);
         end if;
-        if not (This.getHealthInterface.isAlive) then
-            if This.isReadyForExplosion then
+        if not (BuildingLayer'Class (This).getHealthInterface.isAlive) then
+            if BuildingLayer'Class (This).isReadyForExplosion then
                 currentFrame := This.destroyAnimationInterface.getFrame;
                 size := (This.destroyAnimationInterface.getSize) - (1);
                 if ((currentFrame) = (size)) and then (not (This.timeDelayHelper.isTimeTNT)) then
-                    if not (This.getHealthInterface.isAlive) then
-                        This.setDestroyed (True);
+                    if not (BuildingLayer'Class (This).getHealthInterface.isAlive) then
+                        BuildingLayer'Class (This).setDestroyed (True);
                     end if;
                 else
                     This.destroyAnimationInterface.nextFrame;
                 end if;
             else
-                This.setAnimationInterface (This.destroyAnimationInterface);
+                BuildingLayer'Class (This).setAnimationInterface (This.destroyAnimationInterface);
                 SecondaryPlayerQueueFactory_Package.getInstance.add (ExplosionBasicSound_Package.getInstance);
                 This.shakeListener.onSmallShakeEvent;
                 This.vibration.vibrate (This.duration, 0, 0);
                 This.timeDelayHelper.setStartTimeTNT;
-                This.setReadyForExplosion (True);
+                BuildingLayer'Class (This).setReadyForExplosion (True);
             end if;
         else
             AdvancedRTSGameLayer (This).processBuiltTick (allBinaryLayerManager);
@@ -163,14 +163,14 @@ package body org.allbinary.game.layer.building.BuildingLayer_Package is
    function getCost (This : in out BuildingLayer) return Integer is
       total : Long_Long_Integer;
    begin
-        total := RTSLayerUtil_Package.getInstance.getCostExponential (Long_Long_Integer (((This.getLevel) * (This.getBuildingLevelCost))));
+        total := RTSLayerUtil_Package.getInstance.getCostExponential (Long_Long_Integer (((BuildingLayer'Class (This).getLevel) * (BuildingLayer'Class (This).getBuildingLevelCost))));
         return Integer (total);
    end getCost;
 
    function getDowngradeCost (This : in out BuildingLayer) return Integer is
       downgradeCost : Long_Long_Integer;
    begin
-        downgradeCost := RTSLayerUtil_Package.getInstance.getCostExponential (Long_Long_Integer (((((This.getLevel) - (1))) * (This.getBuildingLevelCost))));
+        downgradeCost := RTSLayerUtil_Package.getInstance.getCostExponential (Long_Long_Integer (((((BuildingLayer'Class (This).getLevel) - (1))) * (BuildingLayer'Class (This).getBuildingLevelCost))));
         This.logUtil.putF (To_Unbounded_String ("Cost: ") & Java_Image (downgradeCost), BuildingLayer_Access'(This'Unchecked_Access), To_Unbounded_String ("getDowngradeCost"));
         return ((Integer (downgradeCost)) * (9)) / (10);
    end getDowngradeCost;
@@ -178,24 +178,24 @@ package body org.allbinary.game.layer.building.BuildingLayer_Package is
    function getUpgradeCost (This : in out BuildingLayer) return Integer is
       upgradeCost : Long_Long_Integer;
    begin
-        upgradeCost := RTSLayerUtil_Package.getInstance.getCostExponential (Long_Long_Integer (((((This.getLevel) + (1))) * (This.getBuildingLevelCost))));
+        upgradeCost := RTSLayerUtil_Package.getInstance.getCostExponential (Long_Long_Integer (((((BuildingLayer'Class (This).getLevel) + (1))) * (BuildingLayer'Class (This).getBuildingLevelCost))));
         return Integer (upgradeCost);
    end getUpgradeCost;
 
    procedure downgrade (This : in out BuildingLayer) is
    begin
         AdvancedRTSGameLayer (This).downgrade;
-        This.setProductivity ((This.getProductivity) - (1));
-        This.setEfficiency ((This.getEfficiency) - (This.calculateEfficiency));
-        This.getHealthInterface.setMaxHealth ((This.getHealthInterface.getMaxHealth) - (((((This.getLevel) + (1))) * (100))));
+        BuildingLayer'Class (This).setProductivity ((BuildingLayer'Class (This).getProductivity) - (1));
+        BuildingLayer'Class (This).setEfficiency ((BuildingLayer'Class (This).getEfficiency) - (BuildingLayer'Class (This).calculateEfficiency));
+        BuildingLayer'Class (This).getHealthInterface.setMaxHealth ((BuildingLayer'Class (This).getHealthInterface.getMaxHealth) - (((((BuildingLayer'Class (This).getLevel) + (1))) * (100))));
    end downgrade;
 
    procedure upgrade (This : in out BuildingLayer) is
    begin
         AdvancedRTSGameLayer (This).upgrade;
-        This.setProductivity ((This.getProductivity) + (1));
-        This.setEfficiency ((This.getEfficiency) + (This.calculateEfficiency));
-        This.getHealthInterface.setMaxHealth ((This.getHealthInterface.getMaxHealth) + (((This.getLevel) * (100))));
+        BuildingLayer'Class (This).setProductivity ((BuildingLayer'Class (This).getProductivity) + (1));
+        BuildingLayer'Class (This).setEfficiency ((BuildingLayer'Class (This).getEfficiency) + (BuildingLayer'Class (This).calculateEfficiency));
+        BuildingLayer'Class (This).getHealthInterface.setMaxHealth ((BuildingLayer'Class (This).getHealthInterface.getMaxHealth) + (((BuildingLayer'Class (This).getLevel) * (100))));
    end upgrade;
 
    function getBuildingLevelCost (This : in out BuildingLayer) return Integer is
@@ -285,7 +285,7 @@ package body org.allbinary.game.layer.building.BuildingLayer_Package is
    procedure paint (This : in out BuildingLayer; graphics_Param : access Graphics_Package.Graphics'Class) is
       graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
-        if This.isVisible then
+        if BuildingLayer'Class (This).isVisible then
             AdvancedRTSGameLayer (This).paint (graphics);
             This.damageFloatersPaintableInterface.paint (graphics);
             This.healthBar.paint (graphics);
@@ -298,7 +298,7 @@ package body org.allbinary.game.layer.building.BuildingLayer_Package is
         AdvancedRTSGameLayer (This).damage (damage, damageType);
         This.damageFloaters.add (damage);
         if (damage) > (0) then
-            This.getHealthInterface.damage (damage);
+            BuildingLayer'Class (This).getHealthInterface.damage (damage);
         end if;
    end damage;
 
@@ -335,14 +335,14 @@ package body org.allbinary.game.layer.building.BuildingLayer_Package is
       damage : Integer;
    begin
         AdvancedRTSGameLayer (This).setDestroyed (destroyed);
-        if This.isDestroyed then
+        if BuildingLayer'Class (This).isDestroyed then
             DropCellPositionHistory_Package.getInstance.removeAll (BuildingLayer_Access'(This'Unchecked_Access));
             TrackingEventHandler_Package.getInstance.removeListener (BuildingLayer_Access'(This'Unchecked_Access));
             if This.local then
-                This.removeVisibility;
+                BuildingLayer'Class (This).removeVisibility;
             end if;
-            if not (This.getHealthInterface.isAlive) then
-                damage := This.getHealthInterface.getMaxHealth;
+            if not (BuildingLayer'Class (This).getHealthInterface.isAlive) then
+                damage := BuildingLayer'Class (This).getHealthInterface.getMaxHealth;
                 if (damage) > (10) then
                     SecondaryPlayerQueueFactory_Package.getInstance.add (ExplosionBasicSound_Package.getInstance);
                     if (damage) < (100) then

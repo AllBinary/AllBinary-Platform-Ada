@@ -42,14 +42,14 @@ package body org.allbinary.logic.io.file.directory.Directory_Package is
    function create (This : in out Directory; directoryAbPath_Param : access AbPath_Package.AbPath'Class) return Boolean is
       directoryAbPath : constant AbPath_Access := AbPath_Access (directoryAbPath_Param);
    begin
-        return This.create (directoryAbPath.toFileSystemString);
+        return Directory'Class (This).create (directoryAbPath.toFileSystemString);
    end create;
 
    --  throws Exception
    procedure remove (This : in out Directory; existingDirectoryAbPath_Param : access AbPath_Package.AbPath'Class) is
       existingDirectoryAbPath : constant AbPath_Access := AbPath_Access (existingDirectoryAbPath_Param);
    begin
-        This.remove (existingDirectoryAbPath.toFileSystemString);
+        Directory'Class (This).remove (existingDirectoryAbPath.toFileSystemString);
    end remove;
 
    function create (This : in out Directory; directory : Unbounded_String) return Boolean is
@@ -95,7 +95,7 @@ package body org.allbinary.logic.io.file.directory.Directory_Package is
       fileFilter : constant FileFilter_Access := FileFilter_Access (fileFilter_Param);
       file : constant AbFile_Access := AbFile_Access (file_Param);
    begin
-        return This.search (fileFilter, file, False);
+        return Directory'Class (This).search (fileFilter, file, False);
    end search;
 
    function search (This : in out Directory; fileFilter_Param : access FileFilter_Package.FileFilter'Class; file_Param : access AbFile_Package.AbFile'Class; isRecursiveSearch : Boolean) return BasicArrayList_Access is
@@ -123,7 +123,7 @@ package body org.allbinary.logic.io.file.directory.Directory_Package is
             for index in 0 .. (size) - 1 loop
                 fileList.add (files (index));
                 if isRecursiveSearch then
-                    recursiveFileList := This.search (fileFilter, files (index), isRecursiveSearch);
+                    recursiveFileList := Directory'Class (This).search (fileFilter, files (index), isRecursiveSearch);
                     fileList.addAllList (recursiveFileList);
                 end if;
             end loop;
@@ -134,7 +134,7 @@ package body org.allbinary.logic.io.file.directory.Directory_Package is
    function search (This : in out Directory; file_Param : access AbFile_Package.AbFile'Class) return BasicArrayList_Access is
       file : constant AbFile_Access := AbFile_Access (file_Param);
    begin
-        return This.search (file, False);
+        return Directory'Class (This).search (file, False);
    end search;
 
    function search (This : in out Directory; file_Param : access AbFile_Package.AbFile'Class; isRecursiveSearch : Boolean) return BasicArrayList_Access is
@@ -159,7 +159,7 @@ package body org.allbinary.logic.io.file.directory.Directory_Package is
             for index in 0 .. (files'Length) - 1 loop
                 fileList.add (files (index));
                 if isRecursiveSearch then
-                    recursiveFileList := This.search (files (index), isRecursiveSearch);
+                    recursiveFileList := Directory'Class (This).search (files (index), isRecursiveSearch);
                     fileList.addAllList (recursiveFileList);
                 end if;
             end loop;
@@ -170,7 +170,7 @@ package body org.allbinary.logic.io.file.directory.Directory_Package is
    function search (This : in out Directory; searchValue : Unbounded_String; file_Param : access AbFile_Package.AbFile'Class) return BasicArrayList_Access is
       file : constant AbFile_Access := AbFile_Access (file_Param);
    begin
-        return This.search (searchValue, file, False);
+        return Directory'Class (This).search (searchValue, file, False);
    end search;
 
    function search (This : in out Directory; searchValue : Unbounded_String; file_Param : access AbFile_Package.AbFile'Class; isRecursiveSearch : Boolean) return BasicArrayList_Access is
@@ -197,7 +197,7 @@ package body org.allbinary.logic.io.file.directory.Directory_Package is
                     fileList.add (files (index));
                 end if;
                 if isRecursiveSearch then
-                    recursiveFileList := This.search (searchValue, files (index), isRecursiveSearch);
+                    recursiveFileList := Directory'Class (This).search (searchValue, files (index), isRecursiveSearch);
                     fileList.addAllList (recursiveFileList);
                 end if;
             end loop;
@@ -208,7 +208,7 @@ package body org.allbinary.logic.io.file.directory.Directory_Package is
    function search (This : in out Directory; level : Integer; file_Param : access AbFile_Package.AbFile'Class) return BasicArrayList_Access is
       file : constant AbFile_Access := AbFile_Access (file_Param);
    begin
-        return This.search (level, file, False);
+        return Directory'Class (This).search (level, file, False);
    end search;
 
    function search (This : in out Directory; level : Integer; file_Param : access AbFile_Package.AbFile'Class; isRecursiveSearch : Boolean) return BasicArrayList_Access is
@@ -235,7 +235,7 @@ package body org.allbinary.logic.io.file.directory.Directory_Package is
                 if (level) <= (0) then
                     return fileList;
                 end if;
-                recursiveFileList := This.search ((level) - (1), files (index), isRecursiveSearch);
+                recursiveFileList := Directory'Class (This).search ((level) - (1), files (index), isRecursiveSearch);
                 fileList.addAllList (recursiveFileList);
             end loop;
         end if;

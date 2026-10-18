@@ -20,9 +20,9 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with javax.microedition.lcdui.ChoiceGroup_Package; use javax.microedition.lcdui.ChoiceGroup_Package;
---  with javax.microedition.lcdui.Item_Package; use javax.microedition.lcdui.Item_Package;
---  with javax.microedition.lcdui.ItemStateListener_Package; use javax.microedition.lcdui.ItemStateListener_Package;
+with javax.microedition.lcdui.ChoiceGroup_Package; use javax.microedition.lcdui.ChoiceGroup_Package;
+with javax.microedition.lcdui.Item_Package; use javax.microedition.lcdui.Item_Package;
+with javax.microedition.lcdui.ItemStateListener_Package; use javax.microedition.lcdui.ItemStateListener_Package;
 with org.allbinary.game.configuration.GameConfigurationGauge_Package; use org.allbinary.game.configuration.GameConfigurationGauge_Package;
 with org.allbinary.game.configuration.GameConfigurationUtil_Package; use org.allbinary.game.configuration.GameConfigurationUtil_Package;
 with org.allbinary.game.configuration.GameOptionsForm_Package; use org.allbinary.game.configuration.GameOptionsForm_Package;
@@ -38,6 +38,9 @@ with org.allbinary.game.configuration.feature.GameFeatureUtil_Package; use org.a
 
 package org.allbinary.game.configuration.feature.GameFeatureItemStateListener_Package is
 
+   package ChoiceGroup_Package renames Standard.javax.microedition.lcdui.ChoiceGroup_Package;
+   package Item_Package renames Standard.javax.microedition.lcdui.Item_Package;
+   package ItemStateListener_Package renames Standard.javax.microedition.lcdui.ItemStateListener_Package;
    package GameConfigurationGauge_Package renames Standard.org.allbinary.game.configuration.GameConfigurationGauge_Package;
    package GameConfigurationUtil_Package renames Standard.org.allbinary.game.configuration.GameConfigurationUtil_Package;
    package GameOptionsForm_Package renames Standard.org.allbinary.game.configuration.GameOptionsForm_Package;

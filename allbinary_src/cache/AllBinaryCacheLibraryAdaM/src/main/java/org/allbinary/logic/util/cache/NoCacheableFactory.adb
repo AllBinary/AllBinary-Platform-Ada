@@ -39,6 +39,7 @@ package body org.allbinary.logic.util.cache.NoCacheableFactory_Package is
       key : constant Java_Object_Access := Java_Object_Access (key_Param);
    begin
         Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("This Factory Does Not")));
+        return null;
    end getInstance;
 
    procedure getInstance (This : in out NoCacheableFactory; key_Param : access Java_Object'Class) is

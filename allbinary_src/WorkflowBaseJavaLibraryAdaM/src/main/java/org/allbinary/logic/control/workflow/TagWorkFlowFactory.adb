@@ -52,9 +52,9 @@ package body org.allbinary.logic.control.workflow.TagWorkFlowFactory_Package is
       commonStrings : CommonStrings_Access;
    begin
         begin
-            workFlowClassName := Unbounded_String (propertiesHashMap.get (DynamicObjectData_Package.NAME));
+            workFlowClassName := Java_Unbox (propertiesHashMap.get (DynamicObjectData_Package.NAME));
             params := new Java_Object_Access_Array'(0 .. (2) - 1 => null);
-            classes := new Ada_Tags_Tag_Array'(0 .. (2) - 1 => null);
+            classes := new Ada_Tags_Tag_Array'(0 .. (2) - 1 => Ada.Tags.No_Tag);
             classes (0) := propertiesHashMap.all'Tag;
             classes (1) := AbeFactory_Package.getInstance.getClass (abeClientInformation, To_Unbounded_String ("javax.servlet.jsp.PageContext"));
             params (0) := Java_Object_Access (propertiesHashMap);
@@ -66,7 +66,7 @@ package body org.allbinary.logic.control.workflow.TagWorkFlowFactory_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPERFACTORYERROR) then
-                workFlowClassName := Unbounded_String (propertiesHashMap.get (DynamicObjectData_Package.NAME));
+                workFlowClassName := Java_Unbox (propertiesHashMap.get (DynamicObjectData_Package.NAME));
                 stringBuffer := StringMaker_Package.Create;
                 stringBuffer.append (To_Unbounded_String ("Failed To Get Instance: "));
                 stringBuffer.append (workFlowClassName);

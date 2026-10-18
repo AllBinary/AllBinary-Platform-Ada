@@ -45,11 +45,11 @@ package body org.allbinary.game.layer.unit.UnitItemArrayFactory_Package is
       index : Integer;
    begin
         name := flagResources.NAME;
-        index := (Index (name, To_String (This.commonSeps.SPACE)) - 1);
+        index := (Index (name, Java_Image (This.commonSeps.SPACE)) - 1);
         if (index) >= (0) then
             name := Unbounded_Slice (name, (index) + 1, Length (name));
         end if;
-        return This.createNamedFlagItem (flagResources, name, layerInterfaceFactoryInterface);
+        return UnitItemArrayFactory'Class (This).createNamedFlagItem (flagResources, name, layerInterfaceFactoryInterface);
    end createFlagItem;
 
    --  throws Exception

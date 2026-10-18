@@ -176,7 +176,7 @@ package body org.allbinary.media.image.ImageModifierUtil_Package is
                 return;
             end if;
         end if;
-        This.setAlphaSWT (image, alphaInt);
+        ImageModifierUtil'Class (This).setAlphaSWT (image, alphaInt);
    end setAlpha;
 
    procedure setAlphaSWT (This : in out ImageModifierUtil; image_Param : access Image_Package.Image'Class; alphaInt : Integer) is

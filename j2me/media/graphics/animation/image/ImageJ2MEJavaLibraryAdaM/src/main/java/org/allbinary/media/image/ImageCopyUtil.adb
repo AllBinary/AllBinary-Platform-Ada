@@ -50,7 +50,7 @@ package body org.allbinary.media.image.ImageCopyUtil_Package is
    function createImageForRotation (This : in out ImageCopyUtil; originalImage_Param : access Image_Package.Image'Class) return Image_Access is
       originalImage : constant Image_Access := Image_Access (originalImage_Param);
    begin
-        return This.createImage (originalImage);
+        return ImageCopyUtil'Class (This).createImage (originalImage);
    end createImageForRotation;
 
    --  throws Exception

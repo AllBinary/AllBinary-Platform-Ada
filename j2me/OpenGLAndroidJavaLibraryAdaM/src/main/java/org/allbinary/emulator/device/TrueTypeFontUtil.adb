@@ -98,7 +98,7 @@ package body org.allbinary.emulator.device.TrueTypeFontUtil_Package is
             cellsPerRow6 := (This.CELLS_PER_ROW) * (6);
             cellsPerRow7 := (This.CELLS_PER_ROW) * (7);
             typeface := Typeface_Package.DEFAULT;
-            textureSize := This.getAsTextureSize ((This.CELLS_PER_ROW) * (cellSize));
+            textureSize := TrueTypeFontUtil'Class (This).getAsTextureSize ((This.CELLS_PER_ROW) * (cellSize));
             bitmap := Bitmap_Package.createBitmap (textureSize, textureSize, Bitmap_Package.Config.ARGB_8888);
             canvas := Canvas_Package.Create (bitmap);
             paint := Paint_Package.Create;

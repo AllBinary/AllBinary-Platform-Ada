@@ -58,7 +58,7 @@ package body org.allbinary.game.layer.waypoint.Waypoint_Package is
         end if;
         This.endList := This.ownerLayer.getEndGeographicMapCellPositionList;
         This.paths := new BasicArrayList_Access_Array_Access_Array'(0 .. (tiledLayer.getColumns) - 1 => new BasicArrayList_Access_Array'(0 .. (tiledLayer.getRows) - 1 => null));
-        This.clearPaths;
+        Waypoint'Class (This).clearPaths;
    end setAllBinaryGameLayerManager;
 
    procedure releaseCachedPaths (This : in out Waypoint) is
@@ -92,7 +92,7 @@ package body org.allbinary.game.layer.waypoint.Waypoint_Package is
    begin
         pathsList := This.paths (geographicMapCellPosition.getColumn) (geographicMapCellPosition.getRow);
         if (pathsList) = (This.basicArrayListUtil.getImmutableInstance) then
-            pathsList := This.createPaths (geographicMapCellPosition);
+            pathsList := Waypoint'Class (This).createPaths (geographicMapCellPosition);
             This.paths (geographicMapCellPosition.getColumn) (geographicMapCellPosition.getRow) := pathsList;
         end if;
         return pathsList;
@@ -131,7 +131,7 @@ package body org.allbinary.game.layer.waypoint.Waypoint_Package is
         if (This.endList.size) = (0) then
             return This.basicArrayListUtil.getImmutableInstance;
         end if;
-        endGeographicMapCellPosition := This.getEndGeographicMapCellPosition (startGeographicMapCellPosition);
+        endGeographicMapCellPosition := Waypoint'Class (This).getEndGeographicMapCellPosition (startGeographicMapCellPosition);
         if (endGeographicMapCellPosition) = (null) then
             return This.basicArrayListUtil.getImmutableInstance;
         end if;
@@ -169,7 +169,7 @@ package body org.allbinary.game.layer.waypoint.Waypoint_Package is
    procedure onBuildingEvent (This : in out Waypoint; event_Param : access RTSLayerEvent_Package.RTSLayerEvent'Class) is
       event : constant RTSLayerEvent_Access := RTSLayerEvent_Access (event_Param);
    begin
-        This.clearPaths;
+        Waypoint'Class (This).clearPaths;
    end onBuildingEvent;
 
    procedure clearPaths (This : in out Waypoint) is
@@ -187,8 +187,8 @@ package body org.allbinary.game.layer.waypoint.Waypoint_Package is
 
    procedure reset (This : in out Waypoint) is
    begin
-        This.getConnectedWaypointList.clear;
-        This.releaseCachedPaths;
+        Waypoint'Class (This).getConnectedWaypointList.clear;
+        Waypoint'Class (This).releaseCachedPaths;
    end reset;
 
    --  throws Exception
@@ -201,13 +201,13 @@ package body org.allbinary.game.layer.waypoint.Waypoint_Package is
         if (unitLayer.getGroupInterface (0)) /= (This.ownerLayer.getGroupInterface (0)) then
             return;
         end if;
-        size := This.getConnectedWaypointList.size;
+        size := Waypoint'Class (This).getConnectedWaypointList.size;
         if (size) > (0) then
             unitWaypointBehavior := UnitWaypointBehavior_Access (unitLayer.getWaypointBehavior);
-            while (This.getConnectedWaypointList.size) > (0) loop
-                rtsLayer := CollidableDestroyableDamageableLayer_Access (This.getConnectedWaypointList.get (0));
+            while (Waypoint'Class (This).getConnectedWaypointList.size) > (0) loop
+                rtsLayer := CollidableDestroyableDamageableLayer_Access (Waypoint'Class (This).getConnectedWaypointList.get (0));
                 if rtsLayer.isDestroyed then
-                    This.getConnectedWaypointList.remove (rtsLayer);
+                    Waypoint'Class (This).getConnectedWaypointList.remove (rtsLayer);
                 else
                     unitLayer.handleCost (This.ownerLayer);
                     unitWaypointBehavior.insertWaypoint (0, rtsLayer);

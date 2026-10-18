@@ -53,21 +53,21 @@ package body views.business.context.OverrideObjectConfigRootContextView_Package 
    begin
         begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-                This.logUtil.putF (To_Unbounded_String ("View Name: ") & This.getTransformInfoInterface.getName, OverrideObjectConfigRootContextView_Access'(This'Unchecked_Access), To_Unbounded_String ("view()"));
+                This.logUtil.putF (To_Unbounded_String ("View Name: ") & OverrideObjectConfigRootContextView'Class (This).getTransformInfoInterface.getName, OverrideObjectConfigRootContextView_Access'(This'Unchecked_Access), To_Unbounded_String ("view()"));
             end if;
-            rootTransformInfoInterface := TransformInfoInterface_Access (TransformInfoHttp_Package.Create (TransformInfoHttp_Access (This.getTransformInfoInterface)));
+            rootTransformInfoInterface := TransformInfoInterface_Access (TransformInfoHttp_Package.Create (TransformInfoHttp_Access (OverrideObjectConfigRootContextView'Class (This).getTransformInfoInterface)));
             stringBuffer := StringMaker_Package.Create;
-            stringBuffer.append (This.getTransformInfoInterface.getStoreName);
+            stringBuffer.append (OverrideObjectConfigRootContextView'Class (This).getTransformInfoInterface.getStoreName);
             stringBuffer.append (CommonSeps_Package.getInstance.SPACE);
             nameStart := stringBuffer.toString;
-            if (This.getTransformInfoInterface.getName.indexOf (GeneratorTransformInfoData_Package.NAME)) > (0) then
+            if (OverrideObjectConfigRootContextView'Class (This).getTransformInfoInterface.getName.indexOf (GeneratorTransformInfoData_Package.NAME)) > (0) then
                 rootTransformInfoInterface.setName (nameStart & Java_Image (GeneratorTransformInfoData_Package.NAME));
-            elsif (This.getTransformInfoInterface.getName.indexOf (RootTransformInfoData_Package.NAME)) > (0) then
+            elsif (OverrideObjectConfigRootContextView'Class (This).getTransformInfoInterface.getName.indexOf (RootTransformInfoData_Package.NAME)) > (0) then
                 rootTransformInfoInterface.setName (nameStart & Java_Image (RootTransformInfoData_Package.NAME));
             else
                 Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Override Currently Not Supported")));
             end if;
-            overrideObjectConfigDocument := This.getTransformInfoInterface.getObjectConfigInterface.toXmlDoc;
+            overrideObjectConfigDocument := OverrideObjectConfigRootContextView'Class (This).getTransformInfoInterface.getObjectConfigInterface.toXmlDoc;
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
                 This.logUtil.putF (To_Unbounded_String ("Retrieved OverrideObjectConfig: ") & XmlDocumentHelper_Package.toString (overrideObjectConfigDocument), OverrideObjectConfigRootContextView_Access'(This'Unchecked_Access), To_Unbounded_String ("view()"));
             end if;

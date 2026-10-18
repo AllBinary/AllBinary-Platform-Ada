@@ -44,15 +44,15 @@ package body org.allbinary.image.ImageCache_Package is
       foundIndex : Integer;
       image : Image_Access;
    begin
-        foundIndex := This.getIndexWH (width, height);
-        image := This.getFromAvailable (foundIndex, width, height);
+        foundIndex := ImageCache'Class (This).getIndexWH (width, height);
+        image := ImageCache'Class (This).getFromAvailable (foundIndex, width, height);
         if (image) = (NullImage_Package.NULL_IMAGE) then
             This.volume := (This.volume) + ((width) * (height));
             if (This.volume) > (32000) then
                 This.tsUtil.gc;
                 This.volume := 0;
             end if;
-            image := This.createImage (caller, width, height);
+            image := ImageCache'Class (This).createImage (caller, width, height);
             if (foundIndex) = (-(1)) then
                 foundIndex := This.nextIndex;
                 This.widths (This.nextIndex) := width;
@@ -73,13 +73,13 @@ package body org.allbinary.image.ImageCache_Package is
       inputStream : InputStream_Access;
    begin
         resourceUtil := ResourceUtil_Package.getInstance;
-        resourceId := resourceUtil.getResourceId (Unbounded_String (key));
-        image := This.getImage (resourceId);
+        resourceId := resourceUtil.getResourceId (Java_Unbox (key));
+        image := ImageCache'Class (This).getImage (resourceId);
         if (image) = (NullImage_Package.NULL_IMAGE) then
             inputStream := null;
             begin
                 This.logUtil.putF (Memory_Package.getInfo, ImageCache_Access'(This'Unchecked_Access), This.commonStrings.GET);
-                image := This.createImage (key, inputStream);
+                image := ImageCache'Class (This).createImage (key, inputStream);
             exception
                 when Java_Occurrence : others =>
                     declare
@@ -91,7 +91,7 @@ package body org.allbinary.image.ImageCache_Package is
                 This.tsUtil.gc;
                 This.logUtil.putF (Memory_Package.getInfo, ImageCache_Access'(This'Unchecked_Access), This.commonStrings.GET);
                 Java_Sleep (100);
-                image := This.createImage (key, inputStream);
+                image := ImageCache'Class (This).createImage (key, inputStream);
                     end;
             end;
             This.hashtable.put (resourceId, image);
@@ -123,12 +123,13 @@ package body org.allbinary.image.ImageCache_Package is
       key : constant Java_Object_Access := Java_Object_Access (key_Param);
       inputStream : constant InputStream_Access := InputStream_Access (inputStream_Param);
    begin
-        return Image_Package.createImageLater (Unbounded_String (key), -(1), -(1));
+        return Image_Package.createImageLater (Java_Unbox (key), -(1), -(1));
    end createImage;
 
    function isLazy (This : in out ImageCache) return Boolean is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return False;
    end isLazy;
 
    procedure get (This : in out ImageCache; caller : Unbounded_String; width : Integer; height : Integer) is

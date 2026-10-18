@@ -38,6 +38,8 @@ package org.allbinary.TsUtil_Package is
    function hashCode (This : in out TsUtil; anyType_Param : access Java_Object'Class) return Integer;
    procedure hashCode (This : in out TsUtil; anyType_Param : access Java_Object'Class);
    procedure waitFor (This : in out TsUtil; any_Param : access Java_Object'Class; timeoutMillis : Long_Long_Integer);
+   function compareTo (This : in out TsUtil; a : Unbounded_String; b : Unbounded_String) return Integer;
+   procedure compareTo (This : in out TsUtil; a : Unbounded_String; b : Unbounded_String);
 
 end org.allbinary.TsUtil_Package;
 

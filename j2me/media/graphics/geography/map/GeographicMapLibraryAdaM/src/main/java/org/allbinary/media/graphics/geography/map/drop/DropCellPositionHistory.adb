@@ -55,7 +55,7 @@ package body org.allbinary.media.graphics.geography.map.drop.DropCellPositionHis
       index : Integer;
    begin
         for index in reverse 0 .. (list.size) - (1) loop
-            This.add (CellPosition_Access (list.get (index)), layerInterface);
+            DropCellPositionHistory'Class (This).add (CellPosition_Access (list.get (index)), layerInterface);
         end loop;
    end addAll;
 
@@ -101,7 +101,7 @@ package body org.allbinary.media.graphics.geography.map.drop.DropCellPositionHis
       index : Integer;
    begin
         for index in reverse 0 .. (list.size) - (1) loop
-            if This.isCellPositionWithDrop (CellPosition_Access (list.get (index))) then
+            if DropCellPositionHistory'Class (This).isCellPositionWithDrop (CellPosition_Access (list.get (index))) then
                 return True;
             end if;
         end loop;
@@ -116,7 +116,7 @@ package body org.allbinary.media.graphics.geography.map.drop.DropCellPositionHis
         cellPosition := null;
         for index in reverse 0 .. (list.size) - (1) loop
             cellPosition := CellPosition_Access (list.get (index));
-            if This.isCellPositionWithDrop (cellPosition) then
+            if DropCellPositionHistory'Class (This).isCellPositionWithDrop (cellPosition) then
                 return cellPosition;
             end if;
         end loop;

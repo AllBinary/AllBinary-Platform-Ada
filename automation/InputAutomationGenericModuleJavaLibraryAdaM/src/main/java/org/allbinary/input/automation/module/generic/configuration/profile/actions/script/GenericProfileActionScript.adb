@@ -36,14 +36,14 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
         DefaultMutableTreeNode_Package.Initialize (This, NAME);
         Initialize_Fields (This);
         This.genericProfileActionJPanel := genericProfileActionJPanel;
-        This.setProfileActionConditionInterfaceVector (BasicArrayListD_Package.Create);
+        GenericProfileActionScript'Class (This).setProfileActionConditionInterfaceVector (BasicArrayListD_Package.Create);
         actionScriptNode := DomSearchHelper_Package.getNode (GenericProfileActionData_Package.SCRIPT, node.getChildNodes);
         if (actionScriptNode) /= (null) then
             nodeList := actionScriptNode.getChildNodes;
             for index in 0 .. (nodeList.getLength) - 1 loop
                 actionConditionNode := nodeList.item (index);
                 if (actionConditionNode.getNodeType) = (Node_Package.ELEMENT_NODE) then
-                    This.addCondition (ProfileActionScriptConditionFactory_Package.getInstance (actionConditionNode));
+                    GenericProfileActionScript'Class (This).addCondition (ProfileActionScriptConditionFactory_Package.getInstance (actionConditionNode));
                 end if;
             end loop;
         else
@@ -64,7 +64,7 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
       DefaultMutableTreeNode_Package.Initialize (This);
       Initialize_Fields (This);
         This.genericProfileActionJPanel := genericProfileActionJPanel;
-        This.setProfileActionConditionInterfaceVector (BasicArrayListD_Package.Create);
+        GenericProfileActionScript'Class (This).setProfileActionConditionInterfaceVector (BasicArrayListD_Package.Create);
    end Initialize;
 
    function Create (genericProfileActionJPanel_Param : access GenericProfileActionJPanel_Package.GenericProfileActionJPanel'Class) return GenericProfileActionScript_Access is
@@ -78,16 +78,16 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
       profileActionScriptNodeInterface : constant ProfileActionScriptNodeInterface_Access := ProfileActionScriptNodeInterface_Access (profileActionScriptNodeInterface_Param);
    begin
         This.logUtil.putF (This.commonStrings.START, GenericProfileActionScript_Access'(This'Unchecked_Access), To_Unbounded_String ("addCondition"));
-        This.getProfileActionConditionInterfaceVector.add (profileActionScriptNodeInterface);
-        This.add (profileActionScriptNodeInterface);
+        GenericProfileActionScript'Class (This).getProfileActionConditionInterfaceVector.add (profileActionScriptNodeInterface);
+        GenericProfileActionScript'Class (This).add (profileActionScriptNodeInterface);
    end addCondition;
 
    procedure removeCondition (This : in out GenericProfileActionScript; profileActionScriptNodeInterface_Param : access ProfileActionScriptNodeInterface_Package.ProfileActionScriptNodeInterface'Class) is
       profileActionScriptNodeInterface : constant ProfileActionScriptNodeInterface_Access := ProfileActionScriptNodeInterface_Access (profileActionScriptNodeInterface_Param);
    begin
         This.logUtil.putF (This.commonStrings.START, GenericProfileActionScript_Access'(This'Unchecked_Access), To_Unbounded_String ("removeCondition"));
-        This.getProfileActionConditionInterfaceVector.remove (profileActionScriptNodeInterface);
-        This.remove (profileActionScriptNodeInterface);
+        GenericProfileActionScript'Class (This).getProfileActionConditionInterfaceVector.remove (profileActionScriptNodeInterface);
+        GenericProfileActionScript'Class (This).remove (profileActionScriptNodeInterface);
    end removeCondition;
 
    function toHashMap (This : in out GenericProfileActionScript) return HashMap_Access is
@@ -119,7 +119,7 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
       index : Integer;
    begin
         node := document.createElement (GenericProfileActionData_Package.SCRIPT);
-        vector := This.getProfileActionConditionInterfaceVector;
+        vector := GenericProfileActionScript'Class (This).getProfileActionConditionInterfaceVector;
         size := vector.size;
         for index in 0 .. (size) - 1 loop
             profileActionConditionInterface := ProfileActionScriptConditionInterface_Access (vector.get (index));

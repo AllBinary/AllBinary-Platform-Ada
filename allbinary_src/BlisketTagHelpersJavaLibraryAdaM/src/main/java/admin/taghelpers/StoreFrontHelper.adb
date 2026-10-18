@@ -32,7 +32,7 @@ package body admin.taghelpers.StoreFrontHelper_Package is
    begin
       TagHelper_Package.Initialize (This);
       Initialize_Fields (This);
-        storeName := Unbounded_String (hashMap.get (StoreFrontData_Package.getInstance.NAME));
+        storeName := Java_Unbox (hashMap.get (StoreFrontData_Package.getInstance.NAME));
         if (storeName) /= (Null_Unbounded_String) then
             This.storeFrontInterface := StoreFrontFactory_Package.getInstance (storeName);
             This.currentLocation := Replace_Package.Create (CommonSeps_Package.getInstance.SPACE, To_Unbounded_String ("%20")).all_Id ((This.storeFrontInterface.getCurrentHostName) + (This.storeFrontInterface.getCurrentHostNamePath));

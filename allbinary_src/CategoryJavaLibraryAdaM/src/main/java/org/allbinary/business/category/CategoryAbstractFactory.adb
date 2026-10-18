@@ -39,18 +39,21 @@ package body org.allbinary.business.category.CategoryAbstractFactory_Package is
    function getRootInstance (This : in out CategoryAbstractFactory) return CategoryInterface_Access is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return null;
    end getRootInstance;
 
    function getRootInstance (This : in out CategoryAbstractFactory; categoryAbPath_Param : access AbPath_Package.AbPath'Class) return CategoryInterface_Access is
       categoryAbPath : constant AbPath_Access := AbPath_Access (categoryAbPath_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return null;
    end getRootInstance;
 
    function getRootInstanceFromNode (This : in out CategoryAbstractFactory; node_Param : access Node_Package.Node'Class) return CategoryInterface_Access is
       node : constant Node_Access := Node_Access (node_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return null;
    end getRootInstanceFromNode;
 
    function getInstance (This : in out CategoryAbstractFactory; categoryName : Unbounded_String) return CategoryInterface_Access is

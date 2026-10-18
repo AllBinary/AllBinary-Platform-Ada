@@ -20,10 +20,10 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with javax.microedition.lcdui.Command_Package; use javax.microedition.lcdui.Command_Package;
---  with javax.microedition.lcdui.CommandListener_Package; use javax.microedition.lcdui.CommandListener_Package;
---  with javax.microedition.lcdui.Form_Package; use javax.microedition.lcdui.Form_Package;
---  with javax.microedition.lcdui.NullCommandListener_Package; use javax.microedition.lcdui.NullCommandListener_Package;
+with javax.microedition.lcdui.Command_Package; use javax.microedition.lcdui.Command_Package;
+with javax.microedition.lcdui.CommandListener_Package; use javax.microedition.lcdui.CommandListener_Package;
+with javax.microedition.lcdui.Form_Package; use javax.microedition.lcdui.Form_Package;
+with javax.microedition.lcdui.NullCommandListener_Package; use javax.microedition.lcdui.NullCommandListener_Package;
 with org.allbinary.canvas.Processor_Package; use org.allbinary.canvas.Processor_Package;
 with org.allbinary.game.displayable.canvas.MenuListener_Package; use org.allbinary.game.displayable.canvas.MenuListener_Package;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
@@ -39,6 +39,10 @@ with org.allbinary.graphics.displayable.screen.ScreenRepaintProcessorFactory_Pac
 
 package org.allbinary.graphics.displayable.screen.CommandForm_Package is
 
+   package Command_Package renames Standard.javax.microedition.lcdui.Command_Package;
+   package CommandListener_Package renames Standard.javax.microedition.lcdui.CommandListener_Package;
+   package Form_Package renames Standard.javax.microedition.lcdui.Form_Package;
+   package NullCommandListener_Package renames Standard.javax.microedition.lcdui.NullCommandListener_Package;
    package Processor_Package renames Standard.org.allbinary.canvas.Processor_Package;
    package MenuListener_Package renames Standard.org.allbinary.game.displayable.canvas.MenuListener_Package;
    package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;

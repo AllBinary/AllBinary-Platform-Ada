@@ -81,19 +81,19 @@ package body org.allbinary.logic.system.hardware.linux.PCComponentFactory_Packag
 
    function getComponentType (This : in out PCComponentFactory; component : Unbounded_String) return Unbounded_String is
    begin
-        if ((Index (component, To_String (This.componentFactory.ETHERNET.toString)) - 1)) >= (0) then
+        if ((Index (component, Java_Image (This.componentFactory.ETHERNET.toString)) - 1)) >= (0) then
             return This.componentFactory.ETHERNET.toString;
-        elsif ((Index (component, To_String (This.componentFactory.BRIDGE.toString)) - 1)) >= (0) then
+        elsif ((Index (component, Java_Image (This.componentFactory.BRIDGE.toString)) - 1)) >= (0) then
             return This.componentFactory.BRIDGE.toString;
-        elsif ((Index (component, To_String (This.componentFactory.IDE.toString)) - 1)) >= (0) then
+        elsif ((Index (component, Java_Image (This.componentFactory.IDE.toString)) - 1)) >= (0) then
             return This.componentFactory.IDE.toString;
-        elsif ((Index (component, To_String (This.componentFactory.MULTIMEDIA.toString)) - 1)) >= (0) then
+        elsif ((Index (component, Java_Image (This.componentFactory.MULTIMEDIA.toString)) - 1)) >= (0) then
             return This.componentFactory.MULTIMEDIA.toString;
-        elsif ((Index (component, To_String (This.componentFactory.SCSI.toString)) - 1)) >= (0) then
+        elsif ((Index (component, Java_Image (This.componentFactory.SCSI.toString)) - 1)) >= (0) then
             return This.componentFactory.SCSI.toString;
-        elsif ((Index (component, To_String (This.componentFactory.USB.toString)) - 1)) >= (0) then
+        elsif ((Index (component, Java_Image (This.componentFactory.USB.toString)) - 1)) >= (0) then
             return This.componentFactory.USB.toString;
-        elsif ((Index (component, To_String (This.componentFactory.VGA.toString)) - 1)) >= (0) then
+        elsif ((Index (component, Java_Image (This.componentFactory.VGA.toString)) - 1)) >= (0) then
             return This.componentFactory.VGA.toString;
         elsif (component.compareTo (This.componentFactory.PCI.toString)) = (0) then
             return This.componentFactory.PCI.toString;

@@ -61,7 +61,7 @@ package body org.allbinary.logic.io.path.AbPathData_Package is
       indexOfFileExtensionDelmiter : Integer;
       extension : Unbounded_String;
    begin
-        indexOfFileExtensionDelmiter := This.getExtensionIndex (filePath);
+        indexOfFileExtensionDelmiter := AbPathData'Class (This).getExtensionIndex (filePath);
         extension := StringUtil_Package.getInstance.EMPTY_STRING;
         if (indexOfFileExtensionDelmiter) >= (0) then
             extension := Unbounded_Slice (filePath, (indexOfFileExtensionDelmiter) + 1, Length (filePath));
@@ -73,7 +73,7 @@ package body org.allbinary.logic.io.path.AbPathData_Package is
       indexOfFileExtensionDelmiter : Integer;
       extension : Unbounded_String;
    begin
-        indexOfFileExtensionDelmiter := This.getExtensionIndex (filePath);
+        indexOfFileExtensionDelmiter := AbPathData'Class (This).getExtensionIndex (filePath);
         extension := StringUtil_Package.getInstance.EMPTY_STRING;
         if (indexOfFileExtensionDelmiter) >= (0) then
             extension := Unbounded_Slice (filePath, ((indexOfFileExtensionDelmiter) + (1)) + 1, Length (filePath));
@@ -94,7 +94,7 @@ package body org.allbinary.logic.io.path.AbPathData_Package is
         end if;
         if (Length (path)) = ((endIndex) + (1)) then
             categoryName := Unbounded_Slice (path, (0) + 1, endIndex);
-            return This.getNameFromPath (categoryName);
+            return AbPathData'Class (This).getNameFromPath (categoryName);
         else
             categoryName := Unbounded_Slice (path, ((endIndex) + (1)) + 1, Length (path));
             return categoryName;
@@ -113,7 +113,7 @@ package body org.allbinary.logic.io.path.AbPathData_Package is
             return StringUtil_Package.getInstance.EMPTY_STRING;
         end if;
         if (Length (path)) = ((endIndex) + (1)) then
-            return This.removeNameFromPath (Unbounded_Slice (path, (0) + 1, (endIndex) - (1)));
+            return AbPathData'Class (This).removeNameFromPath (Unbounded_Slice (path, (0) + 1, (endIndex) - (1)));
         else
             pathWithoutName := Unbounded_Slice (path, (0) + 1, endIndex);
             return pathWithoutName;

@@ -27,12 +27,12 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoHttpSearch_P
    begin
         TransformInfoHttp_Package.Initialize (This, searchRequest.getPropertiesHashMap, searchRequest.getPageContext);
         if (searchRequest.getStoreFront.getName) /= (Null_Unbounded_String) then
-            This.setStoreName (searchRequest.getStoreFront.getName);
+            TransformInfoHttpSearch'Class (This).setStoreName (searchRequest.getStoreFront.getName);
         else
-            This.setStoreName (StringUtil_Package.getInstance.EMPTY_STRING);
+            TransformInfoHttpSearch'Class (This).setStoreName (StringUtil_Package.getInstance.EMPTY_STRING);
         end if;
         dataFileName := searchRequest.getXslFile;
-        This.setTemplateFile (dataFileName);
+        TransformInfoHttpSearch'Class (This).setTemplateFile (dataFileName);
    end Initialize;
 
    function Create (searchRequest_Param : access SearchRequest_Package.SearchRequest'Class) return TransformInfoHttpSearch_Access is
@@ -49,7 +49,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoHttpSearch_P
         stringBuffer := StringMaker_Package.Create;
         stringBuffer.append (URLGLOBALS.getMainPath);
         stringBuffer.append (FREEBLISKET_PATH_GLOBALS.getInstance.XSLPATH);
-        stringBuffer.append (This.getStoreName);
+        stringBuffer.append (TransformInfoHttpSearch'Class (This).getStoreName);
         stringBuffer.append (AbPathData_Package.getInstance.SEPARATOR);
         return stringBuffer.toString;
    end getPath;
@@ -57,19 +57,19 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoHttpSearch_P
    --  throws Exception
    function getTemplateFilePath (This : in out TransformInfoHttpSearch) return AbPath_Access is
    begin
-        return AbPath_Package.Create (This.getPath, This.getTemplateFile);
+        return AbPath_Package.Create (TransformInfoHttpSearch'Class (This).getPath, TransformInfoHttpSearch'Class (This).getTemplateFile);
    end getTemplateFilePath;
 
    --  throws Exception
    function getObjectConfigFilePath (This : in out TransformInfoHttpSearch) return AbPath_Access is
    begin
-        return AbPath_Package.Create (This.getPath, This.getObjectConfigFile);
+        return AbPath_Package.Create (TransformInfoHttpSearch'Class (This).getPath, TransformInfoHttpSearch'Class (This).getObjectConfigFile);
    end getObjectConfigFilePath;
 
    --  throws Exception
    function getDataFilePath (This : in out TransformInfoHttpSearch) return AbPath_Access is
    begin
-        return AbPath_Package.Create (This.getPath, This.getDataFile);
+        return AbPath_Package.Create (TransformInfoHttpSearch'Class (This).getPath, TransformInfoHttpSearch'Class (This).getDataFile);
    end getDataFilePath;
 
 end org.allbinary.logic.visual.transform.info.TransformInfoHttpSearch_Package;

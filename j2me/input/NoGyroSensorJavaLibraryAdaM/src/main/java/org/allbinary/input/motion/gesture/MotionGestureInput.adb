@@ -26,7 +26,7 @@ package body org.allbinary.input.motion.gesture.MotionGestureInput_Package is
    begin
         Input_Package.Initialize (This, id, name);
         inputFactory := InputFactory_Package.getInstance;
-        inputFactory.add (This.getId, MotionGestureInput_Access'(This'Unchecked_Access));
+        inputFactory.add (MotionGestureInput'Class (This).getId, MotionGestureInput_Access'(This'Unchecked_Access));
    end Initialize;
 
    function Create (id : Integer; name : Unbounded_String) return MotionGestureInput_Access is

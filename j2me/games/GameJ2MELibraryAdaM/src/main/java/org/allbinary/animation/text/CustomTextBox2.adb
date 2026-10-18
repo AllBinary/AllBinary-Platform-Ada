@@ -28,7 +28,7 @@ package body org.allbinary.animation.text.CustomTextBox2_Package is
       foregroundBasicColor : constant BasicColor_Access := BasicColor_Access (foregroundBasicColor_Param);
    begin
         CustomTextBox_Package.Initialize (This, cmdListener, label, text, maxSize, constraints, font, backgroundBasicColor, foregroundBasicColor);
-        This.getTextFieldItem.setFocus (True);
+        CustomTextBox2'Class (This).getTextFieldItem.setFocus (True);
    end Initialize;
 
    function Create (cmdListener_Param : access CommandListener_Package.CommandListener'Class; label : Unbounded_String; text : Unbounded_String; maxSize : Integer; constraints : Integer; font_Param : access Font_Package.Font'Class; backgroundBasicColor_Param : access BasicColor_Package.BasicColor'Class; foregroundBasicColor_Param : access BasicColor_Package.BasicColor'Class) return CustomTextBox2_Access is

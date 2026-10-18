@@ -21,7 +21,7 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.util.Date_Package; use java.util.Date_Package;
---  with java.util.HashMap_Package; use java.util.HashMap_Package;
+with java.util.HashMap_Package; use java.util.HashMap_Package;
 --  with java.util.Set_Package; use java.util.Set_Package;
 with org.allbinary.business.context.modules.storefront.StoreFrontData_Package; use org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
 with org.allbinary.business.entry_Id.EntryData_Package; use org.allbinary.business.entry_Id.EntryData_Package;
@@ -48,6 +48,7 @@ with org.allbinary.business.user.commerce.inventory.order.OrderHistoryData_Packa
 package org.allbinary.business.user.commerce.inventory.order.OrderHistory_Package is
 
    package Date_Package renames Standard.java.util.Date_Package;
+   package HashMap_Package renames Standard.java.util.HashMap_Package;
    package StoreFrontData_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
    package EntryData_Package renames Standard.org.allbinary.business.entry_Id.EntryData_Package;
    package UserData_Package renames Standard.org.allbinary.business.user.UserData_Package;

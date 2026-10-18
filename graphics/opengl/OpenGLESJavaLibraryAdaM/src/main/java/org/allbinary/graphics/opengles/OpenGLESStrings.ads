@@ -20,12 +20,15 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with javax.microedition.khronos.opengles.GL10_Package; use javax.microedition.khronos.opengles.GL10_Package;
---  with javax.microedition.lcdui.Font_Package; use javax.microedition.lcdui.Font_Package;
---  with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.khronos.opengles.GL10_Package; use javax.microedition.khronos.opengles.GL10_Package;
+with javax.microedition.lcdui.Font_Package; use javax.microedition.lcdui.Font_Package;
+with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
 
 package org.allbinary.graphics.opengles.OpenGLESStrings_Package is
 
+   package GL10_Package renames Standard.javax.microedition.khronos.opengles.GL10_Package;
+   package Font_Package renames Standard.javax.microedition.lcdui.Font_Package;
+   package Graphics_Package renames Standard.javax.microedition.lcdui.Graphics_Package;
 
    type OpenGLESStrings is tagged;
    type OpenGLESStrings_Access is access all OpenGLESStrings'Class;

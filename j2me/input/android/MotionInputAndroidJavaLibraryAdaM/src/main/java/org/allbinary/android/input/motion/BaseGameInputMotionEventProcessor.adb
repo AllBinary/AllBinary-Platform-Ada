@@ -28,7 +28,7 @@ package body org.allbinary.android.input.motion.BaseGameInputMotionEventProcesso
       MotionEventProcessor_Package.Initialize (This);
       Initialize_Fields (This);
         This.gameMotionGestureListener := GameMotionGestureListener_Package.Create (MotionGestureReceiveInterfaceFactory_Package.getInstance);
-        This.addListener;
+        BaseGameInputMotionEventProcessor'Class (This).addListener;
    end Initialize;
 
    function Create return BaseGameInputMotionEventProcessor_Access is

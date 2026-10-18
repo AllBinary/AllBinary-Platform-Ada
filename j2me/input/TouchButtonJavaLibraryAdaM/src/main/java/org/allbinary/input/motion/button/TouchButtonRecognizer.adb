@@ -69,7 +69,7 @@ package body org.allbinary.input.motion.button.TouchButtonRecognizer_Package is
         touchButtonInput := This.lastPressedTouchButtonInput;
         if This.currentlyPressedTouchButtonSingleton.contains (touchButtonInput) then
             This.lastPressedTouchButtonInput := BasicTouchInputFactory_Package.getInstance.NONE;
-            This.processRelease (touchButtonInput, deviceId);
+            TouchButtonRecognizer'Class (This).processRelease (touchButtonInput, deviceId);
             return True;
         else
             list := TouchButtonFactory_Package.getInstance.getList;
@@ -82,7 +82,7 @@ package body org.allbinary.input.motion.button.TouchButtonRecognizer_Package is
                 point := rectangle.getPoint;
                 if This.rectangleCollisionUtil.isInside (point.getX, point.getY, rectangle.getMaxX, rectangle.getMaxY, x, y) then
                     touchButtonInput := touchButton.getTouchButtonInput;
-                    This.processRelease (touchButtonInput, deviceId);
+                    TouchButtonRecognizer'Class (This).processRelease (touchButtonInput, deviceId);
                     return True;
                 end if;
             end loop;

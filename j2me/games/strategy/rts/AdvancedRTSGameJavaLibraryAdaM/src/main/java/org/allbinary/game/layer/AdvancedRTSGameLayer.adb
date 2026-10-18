@@ -53,12 +53,12 @@ package body org.allbinary.game.layer.AdvancedRTSGameLayer_Package is
    begin
         RTSLayer_Package.Initialize (This, remoteInfo, groupInterface, rootName, name, healthInterface, rtsFormInput, animationInterfaceFactoryInterface, emptyAnimationInterfaceFactoryInterface, baseAnimationInterfaceFactoryInterface, buildAnimationInterfaceFactoryInterface, verticleBuildAnimationInterfaceFactoryInterface, proceduralAnimationInterfaceFactoryInterface, rectangle, x, y, viewPosition);
         Initialize_Fields (This);
-        This.setVisible (False);
-        This.setWaypointBehavior (WaypointBehaviorBase_Package.Create);
+        AdvancedRTSGameLayer'Class (This).setVisible (False);
+        AdvancedRTSGameLayer'Class (This).setWaypointBehavior (WaypointBehaviorBase_Package.Create);
         This.shakeListener := advancedRTSProperties.shakeListener;
         This.vibration := advancedRTSProperties.vibration;
         This.duration := advancedRTSProperties.duration;
-        This.setParentLayer (parentLayer);
+        AdvancedRTSGameLayer'Class (This).setParentLayer (parentLayer);
    end Initialize;
 
    function Create (remoteInfo_Param : access RemoteInfo_Package.RemoteInfo'Class; parentLayer_Param : access PathFindingLayerInterface_Package.PathFindingLayerInterface'Class; advancedRTSProperties_Param : access AdvancedRTSProperties_Package.AdvancedRTSProperties'Class; groupInterface : Group_Access_Array_Access; rootName : Unbounded_String; name : Unbounded_String; healthInterface_Param : access Health_Package.Health'Class; rtsFormInput_Param : access RTSFormInput_Package.RTSFormInput'Class; animationInterfaceFactoryInterface_Param : access AnimationInterfaceFactoryInterface_Package.AnimationInterfaceFactoryInterface'Class; emptyAnimationInterfaceFactoryInterface_Param : access AnimationInterfaceFactoryInterface_Package.AnimationInterfaceFactoryInterface'Class; baseAnimationInterfaceFactoryInterface_Param : access AnimationInterfaceFactoryInterface_Package.AnimationInterfaceFactoryInterface'Class; buildAnimationInterfaceFactoryInterface_Param : access AnimationInterfaceFactoryInterface_Package.AnimationInterfaceFactoryInterface'Class; verticleBuildAnimationInterfaceFactoryInterface_Param : access AnimationInterfaceFactoryInterface_Package.AnimationInterfaceFactoryInterface'Class; proceduralAnimationInterfaceFactoryInterface_Param : access ProceduralAnimationInterfaceFactoryInterface_Package.ProceduralAnimationInterfaceFactoryInterface'Class; rectangle_Param : access Rectangle_Package.Rectangle'Class; x : Integer; y : Integer; viewPosition_Param : access ViewPositionBase_Package.ViewPositionBase'Class) return AdvancedRTSGameLayer_Access is
@@ -73,7 +73,7 @@ package body org.allbinary.game.layer.AdvancedRTSGameLayer_Package is
       geographicMapInterface : constant BasicGeographicMap_Access := BasicGeographicMap_Access (geographicMapInterface_Param);
    begin
         RTSLayer (This).updateWaypointBehavior (geographicMapInterface);
-        This.getWaypointBehavior.getWaypoint.setAllBinaryGameLayerManager (This.allBinaryGameLayerManagerP);
+        AdvancedRTSGameLayer'Class (This).getWaypointBehavior.getWaypoint.setAllBinaryGameLayerManager (This.allBinaryGameLayerManagerP);
    end updateWaypointBehavior;
 
    procedure initVisibility (This : in out AdvancedRTSGameLayer; rtsPlayerLayerInterface_Param : access RTSPlayerLayerInterface_Package.RTSPlayerLayerInterface'Class) is
@@ -82,9 +82,9 @@ package body org.allbinary.game.layer.AdvancedRTSGameLayer_Package is
    begin
         advancedRTSPlayerLayerInterface := AdvancedRTSPlayerLayerInterface_Access (rtsPlayerLayerInterface);
         if (advancedRTSPlayerLayerInterface.isLocalPlayer) or else ((advancedRTSPlayerLayerInterface.getGameType) = (GameTypeFactory_Package.getInstance.BOT)) then
-            This.setVisible (True);
+            AdvancedRTSGameLayer'Class (This).setVisible (True);
         else
-            This.setVisible (False);
+            AdvancedRTSGameLayer'Class (This).setVisible (False);
         end if;
    end initVisibility;
 
@@ -93,19 +93,19 @@ package body org.allbinary.game.layer.AdvancedRTSGameLayer_Package is
       rtsPlayerLayerInterface : constant RTSPlayerLayerInterface_Access := RTSPlayerLayerInterface_Access (rtsPlayerLayerInterface_Param);
    begin
         RTSLayer (This).construct (rtsPlayerLayerInterface);
-        This.initVisibility (rtsPlayerLayerInterface);
-        BuildingEventHandler_Package.getInstance.addListenerInterface (This.getWaypointBehavior.getWaypoint);
+        AdvancedRTSGameLayer'Class (This).initVisibility (rtsPlayerLayerInterface);
+        BuildingEventHandler_Package.getInstance.addListenerInterface (AdvancedRTSGameLayer'Class (This).getWaypointBehavior.getWaypoint);
    end construct;
 
    --  throws Exception
    procedure setDestroyed (This : in out AdvancedRTSGameLayer; destroyed : Boolean) is
    begin
         RTSLayer (This).setDestroyed (destroyed);
-        if This.isDestroyed then
-            BuildingEventHandler_Package.getInstance.removeListener (This.getWaypointBehavior.getWaypoint);
+        if AdvancedRTSGameLayer'Class (This).isDestroyed then
+            BuildingEventHandler_Package.getInstance.removeListener (AdvancedRTSGameLayer'Class (This).getWaypointBehavior.getWaypoint);
             BuildingEventHandler_Package.getInstance.removeListener (AdvancedRTSGameLayer_Access'(This'Unchecked_Access));
             DestroyedEventHandler_Package.getInstance.addListener (AdvancedRTSGameLayer_Access'(This'Unchecked_Access));
-            RTSLayerUtil_Package.getInstance.destroyAndClear (This.getWaypointBehavior.getOwnedWaypointList);
+            RTSLayerUtil_Package.getInstance.destroyAndClear (AdvancedRTSGameLayer'Class (This).getWaypointBehavior.getOwnedWaypointList);
         end if;
    end setDestroyed;
 
@@ -160,7 +160,7 @@ package body org.allbinary.game.layer.AdvancedRTSGameLayer_Package is
 
    function isWaypointListEmptyOrOnlyTargets (This : in out AdvancedRTSGameLayer) return Boolean is
    begin
-        if (This.getType) /= (UnitLayer_Package.getStaticType) then
+        if (AdvancedRTSGameLayer'Class (This).getType) /= (UnitLayer_Package.getStaticType) then
             return True;
         end if;
         return False;
@@ -176,22 +176,22 @@ package body org.allbinary.game.layer.AdvancedRTSGameLayer_Package is
       angle : Integer;
       gameKeyEventFactory : GameKeyEventFactory_Access;
    begin
-        geographicMapCellPosition := This.getCurrentGeographicMapCellPosition;
+        geographicMapCellPosition := AdvancedRTSGameLayer'Class (This).getCurrentGeographicMapCellPosition;
         buildingDirection := GeographicMapDirectionUtil_Package.getInstance.getDirectionFromCellPositionToAdjacentCellPosition (geographicMapCellPosition, cellPosition);
-        angleInfo := This.getRotationAnimationInterface.getAngleInfoP;
+        angleInfo := AdvancedRTSGameLayer'Class (This).getRotationAnimationInterface.getAngleInfoP;
         angle := FrameUtil_Package.getInstance.adjustAngleToFrameAngle ((angleInfo.getAngle) + (90));
         gameKeyEventFactory := GameKeyEventFactory_Package.getInstance;
         if (buildingDirection) = (DirectionFactory_Package.getInstance.UP) then
             This.rtsLayer2LogHelper.buildingAbove (AdvancedRTSGameLayer_Access'(This'Unchecked_Access));
             if ((angle) > (180)) and then ((angle) < (360)) then
                 This.rtsLayer2LogHelper.buildingChaseLeft (AdvancedRTSGameLayer_Access'(This'Unchecked_Access), angle);
-                This.getGameKeyEventList.add (gameKeyEventFactory.getInstanceForKey (AdvancedRTSGameLayer_Access'(This'Unchecked_Access), Canvas_Package.LEFT));
+                AdvancedRTSGameLayer'Class (This).getGameKeyEventList.add (gameKeyEventFactory.getInstanceForKey (AdvancedRTSGameLayer_Access'(This'Unchecked_Access), Canvas_Package.LEFT));
                 if (angle) <= (190) then
                     return True;
                 end if;
             else
                 This.rtsLayer2LogHelper.buildingChaseRight (AdvancedRTSGameLayer_Access'(This'Unchecked_Access), angle);
-                This.getGameKeyEventList.add (gameKeyEventFactory.getInstanceForKey (AdvancedRTSGameLayer_Access'(This'Unchecked_Access), Canvas_Package.RIGHT));
+                AdvancedRTSGameLayer'Class (This).getGameKeyEventList.add (gameKeyEventFactory.getInstanceForKey (AdvancedRTSGameLayer_Access'(This'Unchecked_Access), Canvas_Package.RIGHT));
                 if (angle) >= (170) then
                     return True;
                 end if;
@@ -200,13 +200,13 @@ package body org.allbinary.game.layer.AdvancedRTSGameLayer_Package is
             This.rtsLayer2LogHelper.buildingDown (AdvancedRTSGameLayer_Access'(This'Unchecked_Access));
             if ((angle) > (180)) and then ((angle) < (360)) then
                 This.rtsLayer2LogHelper.buildingChaseLeft (AdvancedRTSGameLayer_Access'(This'Unchecked_Access), angle);
-                This.getGameKeyEventList.add (gameKeyEventFactory.getInstanceForKey (AdvancedRTSGameLayer_Access'(This'Unchecked_Access), Canvas_Package.RIGHT));
+                AdvancedRTSGameLayer'Class (This).getGameKeyEventList.add (gameKeyEventFactory.getInstanceForKey (AdvancedRTSGameLayer_Access'(This'Unchecked_Access), Canvas_Package.RIGHT));
                 if (angle) > (315) then
                     return True;
                 end if;
             else
                 This.rtsLayer2LogHelper.buildingChaseRight (AdvancedRTSGameLayer_Access'(This'Unchecked_Access), angle);
-                This.getGameKeyEventList.add (gameKeyEventFactory.getInstanceForKey (AdvancedRTSGameLayer_Access'(This'Unchecked_Access), Canvas_Package.LEFT));
+                AdvancedRTSGameLayer'Class (This).getGameKeyEventList.add (gameKeyEventFactory.getInstanceForKey (AdvancedRTSGameLayer_Access'(This'Unchecked_Access), Canvas_Package.LEFT));
                 if (angle) < (45) then
                     return True;
                 end if;
@@ -215,13 +215,13 @@ package body org.allbinary.game.layer.AdvancedRTSGameLayer_Package is
             This.rtsLayer2LogHelper.buildingLeft;
             if ((angle) > (90)) and then ((angle) < (270)) then
                 This.rtsLayer2LogHelper.buildingChaseDown (AdvancedRTSGameLayer_Access'(This'Unchecked_Access), angle);
-                This.getGameKeyEventList.add (gameKeyEventFactory.getInstanceForKey (AdvancedRTSGameLayer_Access'(This'Unchecked_Access), Canvas_Package.LEFT));
+                AdvancedRTSGameLayer'Class (This).getGameKeyEventList.add (gameKeyEventFactory.getInstanceForKey (AdvancedRTSGameLayer_Access'(This'Unchecked_Access), Canvas_Package.LEFT));
                 if (angle) < (135) then
                     return True;
                 end if;
             else
                 This.rtsLayer2LogHelper.buildingChaseUp (AdvancedRTSGameLayer_Access'(This'Unchecked_Access), angle);
-                This.getGameKeyEventList.add (gameKeyEventFactory.getInstanceForKey (AdvancedRTSGameLayer_Access'(This'Unchecked_Access), Canvas_Package.RIGHT));
+                AdvancedRTSGameLayer'Class (This).getGameKeyEventList.add (gameKeyEventFactory.getInstanceForKey (AdvancedRTSGameLayer_Access'(This'Unchecked_Access), Canvas_Package.RIGHT));
                 if (angle) > (45) then
                     return True;
                 end if;
@@ -230,13 +230,13 @@ package body org.allbinary.game.layer.AdvancedRTSGameLayer_Package is
             This.rtsLayer2LogHelper.buildingRight;
             if ((angle) > (90)) and then ((angle) < (270)) then
                 This.rtsLayer2LogHelper.buildingChaseDown (AdvancedRTSGameLayer_Access'(This'Unchecked_Access), angle);
-                This.getGameKeyEventList.add (gameKeyEventFactory.getInstanceForKey (AdvancedRTSGameLayer_Access'(This'Unchecked_Access), Canvas_Package.RIGHT));
+                AdvancedRTSGameLayer'Class (This).getGameKeyEventList.add (gameKeyEventFactory.getInstanceForKey (AdvancedRTSGameLayer_Access'(This'Unchecked_Access), Canvas_Package.RIGHT));
                 if (angle) > (225) then
                     return True;
                 end if;
             else
                 This.rtsLayer2LogHelper.buildingChaseUp (AdvancedRTSGameLayer_Access'(This'Unchecked_Access), angle);
-                This.getGameKeyEventList.add (gameKeyEventFactory.getInstanceForKey (AdvancedRTSGameLayer_Access'(This'Unchecked_Access), Canvas_Package.LEFT));
+                AdvancedRTSGameLayer'Class (This).getGameKeyEventList.add (gameKeyEventFactory.getInstanceForKey (AdvancedRTSGameLayer_Access'(This'Unchecked_Access), Canvas_Package.LEFT));
                 if ((angle) < (315)) and then ((angle) > (180)) then
                     return True;
                 end if;
@@ -283,7 +283,7 @@ package body org.allbinary.game.layer.AdvancedRTSGameLayer_Package is
             layerInterface := destroyedEvent.getLayerInterface;
             if (layerInterface) = (AdvancedRTSGameLayer_Access'(This'Unchecked_Access)) then
                 DestroyedEventHandler_Package.getInstance.removeListener (AdvancedRTSGameLayer_Access'(This'Unchecked_Access));
-                waypoint := WaypointBase_Access (This.getWaypointBehavior.getWaypoint);
+                waypoint := WaypointBase_Access (AdvancedRTSGameLayer'Class (This).getWaypointBehavior.getWaypoint);
                 waypoint.reset;
             end if;
         exception

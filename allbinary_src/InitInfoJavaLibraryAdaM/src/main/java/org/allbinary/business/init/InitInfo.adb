@@ -83,9 +83,9 @@ package body org.allbinary.business.init.InitInfo_Package is
       hashMap : constant HashMap_Access := HashMap_Access (hashMap_Param);
    begin
         begin
-            This.testing_Case := Unbounded_String (hashMap.get (This.TESTING));
-            This.mainPath_Case := AbPath_Package.Create (Unbounded_String (hashMap.get (This.MAINPATH)), StringUtil_Package.getInstance.EMPTY_STRING);
-            This.testHtmlPath_Case := AbPath_Package.Create (Unbounded_String (hashMap.get (This.TESTHTMLPATH)), StringUtil_Package.getInstance.EMPTY_STRING);
+            This.testing_Case := Java_Unbox (hashMap.get (Java_Box (This.TESTING)));
+            This.mainPath_Case := AbPath_Package.Create (Java_Unbox (hashMap.get (Java_Box (This.MAINPATH))), StringUtil_Package.getInstance.EMPTY_STRING);
+            This.testHtmlPath_Case := AbPath_Package.Create (Java_Unbox (hashMap.get (Java_Box (This.TESTHTMLPATH))), StringUtil_Package.getInstance.EMPTY_STRING);
         exception
             when Java_Occurrence : others =>
                 declare
@@ -130,7 +130,7 @@ package body org.allbinary.business.init.InitInfo_Package is
         begin
             if not (This.hasRead) then
                 This.hasRead := True;
-                This.get;
+                InitInfo'Class (This).get;
             end if;
         exception
             when Java_Occurrence : others =>
@@ -148,7 +148,7 @@ package body org.allbinary.business.init.InitInfo_Package is
    function isTesting (This : in out InitInfo) return Boolean is
    begin
         begin
-            This.updateIfNeeded;
+            InitInfo'Class (This).updateIfNeeded;
             return BooleanUtil_Package.getInstance.getFromString (This.testing_Case);
         exception
             when Java_Occurrence : others =>
@@ -165,13 +165,13 @@ package body org.allbinary.business.init.InitInfo_Package is
 
    function getTesting (This : in out InitInfo) return Unbounded_String is
    begin
-        This.updateIfNeeded;
+        InitInfo'Class (This).updateIfNeeded;
         return This.testing_Case;
    end getTesting;
 
    function getTestHtmlPath (This : in out InitInfo) return Unbounded_String is
    begin
-        This.updateIfNeeded;
+        InitInfo'Class (This).updateIfNeeded;
         if (This.testHtmlPath_Case) /= (null) then
             return This.testHtmlPath_Case.toString;
         else
@@ -181,7 +181,7 @@ package body org.allbinary.business.init.InitInfo_Package is
 
    function getMainPath (This : in out InitInfo) return Unbounded_String is
    begin
-        This.updateIfNeeded;
+        InitInfo'Class (This).updateIfNeeded;
         if (This.mainPath_Case) /= (null) then
             return This.mainPath_Case.toString;
         else
@@ -228,9 +228,9 @@ package body org.allbinary.business.init.InitInfo_Package is
       hashMap : HashMap_Access;
    begin
         hashMap := StdUtil_Package.getInstance.createHashMap;
-        hashMap.put (This.TESTING, This.getTesting);
-        hashMap.put (This.MAINPATH, This.getMainPath);
-        hashMap.put (This.TESTHTMLPATH, This.getTestHtmlPath);
+        hashMap.put (Java_Box (This.TESTING), InitInfo'Class (This).getTesting);
+        hashMap.put (Java_Box (This.MAINPATH), InitInfo'Class (This).getMainPath);
+        hashMap.put (Java_Box (This.TESTHTMLPATH), InitInfo'Class (This).getTestHtmlPath);
         return hashMap;
    end toHashMap;
 

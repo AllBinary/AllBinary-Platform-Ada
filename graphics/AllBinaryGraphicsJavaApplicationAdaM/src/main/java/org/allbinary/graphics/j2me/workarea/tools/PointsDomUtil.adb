@@ -81,10 +81,10 @@ package body org.allbinary.graphics.j2me.workarea.tools.PointsDomUtil_Package is
             lineNode := Node_Access (document.createElement (This.LINE));
             rotatedSecondPoint := GPoint_Access (tempPointVector.get (index));
             secondPoint := GPoint_Access (pointVector.get (index));
-            pointOneNode := This.getPointNode (firstPoint, This.POINTONE);
-            pointTwoNode := This.getPointNode (secondPoint, This.POINTTWO);
-            rotatedPointOneNode := This.getPointNode (rotatedFirstPoint, This.ROTATEDPOINTONE);
-            rotatedPointTwoNode := This.getPointNode (rotatedSecondPoint, This.ROTATEDPOINTTWO);
+            pointOneNode := PointsDomUtil'Class (This).getPointNode (firstPoint, This.POINTONE);
+            pointTwoNode := PointsDomUtil'Class (This).getPointNode (secondPoint, This.POINTTWO);
+            rotatedPointOneNode := PointsDomUtil'Class (This).getPointNode (rotatedFirstPoint, This.ROTATEDPOINTONE);
+            rotatedPointTwoNode := PointsDomUtil'Class (This).getPointNode (rotatedSecondPoint, This.ROTATEDPOINTTWO);
             lineNode.appendChild (pointOneNode);
             lineNode.appendChild (pointTwoNode);
             lineNode.appendChild (rotatedPointOneNode);

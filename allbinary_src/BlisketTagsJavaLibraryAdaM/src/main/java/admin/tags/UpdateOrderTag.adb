@@ -25,8 +25,8 @@ package body admin.tags.UpdateOrderTag_Package is
    begin
       TableTag_Package.Initialize (This);
       Initialize_Fields (This);
-        This.setTagHelperFactory (UpdateOrderHelperFactory_Package.Create);
-        This.setTagRequestHelperFactory (UpdateOrderHelperFactory_Package.Create);
+        UpdateOrderTag'Class (This).setTagHelperFactory (UpdateOrderHelperFactory_Package.Create);
+        UpdateOrderTag'Class (This).setTagRequestHelperFactory (UpdateOrderHelperFactory_Package.Create);
    end Initialize;
 
    function Create return UpdateOrderTag_Access is

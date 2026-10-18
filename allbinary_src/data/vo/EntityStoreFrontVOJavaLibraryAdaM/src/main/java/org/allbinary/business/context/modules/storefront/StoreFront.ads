@@ -21,7 +21,7 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.util.Calendar_Package; use java.util.Calendar_Package;
---  with java.util.HashMap_Package; use java.util.HashMap_Package;
+with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 --  with javax.servlet.http.HttpServletRequest_Package; use javax.servlet.http.HttpServletRequest_Package;
@@ -61,6 +61,7 @@ with org.allbinary.business.context.modules.storefront.StoreFrontData_Package; u
 package org.allbinary.business.context.modules.storefront.StoreFront_Package is
 
    package Calendar_Package renames Standard.java.util.Calendar_Package;
+   package HashMap_Package renames Standard.java.util.HashMap_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
    package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    package ContextConfiguration_Package renames Standard.org.allbinary.business.context.configuration.ContextConfiguration_Package;

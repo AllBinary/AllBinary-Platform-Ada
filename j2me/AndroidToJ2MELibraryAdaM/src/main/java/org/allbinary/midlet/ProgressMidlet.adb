@@ -28,7 +28,7 @@ package body org.allbinary.midlet.ProgressMidlet_Package is
       AllBinaryMidlet_Package.Initialize (This);
       Initialize_Fields (This);
         Globals_Package.getInstance.init (TsUtil_Package.getInstance.getClassClassLoader (ProgressMidlet_Access'(This'Unchecked_Access)), StringUtil_Package.getInstance.EMPTY_STRING);
-        This.preInit;
+        ProgressMidlet'Class (This).preInit;
         This.abeClientInformation := clientInformationFactory.getInstance;
    end Initialize;
 

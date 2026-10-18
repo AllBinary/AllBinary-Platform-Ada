@@ -50,7 +50,7 @@ package body org.allbinary.game.configuration.feature.Feature_Package is
 
    function toString (This : in out Feature) return Unbounded_String is
    begin
-        return This.getName;
+        return Feature'Class (This).getName;
    end toString;
 
    function getName (This : in out Feature) return Unbounded_String is

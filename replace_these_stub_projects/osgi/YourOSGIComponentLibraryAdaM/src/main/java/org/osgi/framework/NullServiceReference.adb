@@ -47,6 +47,7 @@ package body org.osgi.framework.NullServiceReference_Package is
       o : constant Java_Object_Access := Java_Object_Access (o_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return 0;
    end compareTo;
 
    procedure getProperty (This : in out NullServiceReference; key : Unbounded_String) is

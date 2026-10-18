@@ -46,8 +46,8 @@ package body org.allbinary.game.displayable.canvas.ImmediateCommandFormInputProc
         begin
             CommandFormInputProcessor (This).onPressGameKeyEvent (gameKeyEvent);
             if This.timeHelper.isTimeTNT then
-                This.processInputList;
-                This.gameCommandCanvas.repaintBehavior.onChangeRepaint (This.getCanvas);
+                ImmediateCommandFormInputProcessor'Class (This).processInputList;
+                This.gameCommandCanvas.repaintBehavior.onChangeRepaint (ImmediateCommandFormInputProcessor'Class (This).getCanvas);
             end if;
         exception
             when Java_Occurrence : others =>
@@ -65,8 +65,8 @@ package body org.allbinary.game.displayable.canvas.ImmediateCommandFormInputProc
         begin
             CommandFormInputProcessor (This).onDownGameKeyEvent (gameKeyEvent);
             if This.timeHelper.isTimeTNT then
-                This.processInputList;
-                This.gameCommandCanvas.repaintBehavior.onChangeRepaint (This.getCanvas);
+                ImmediateCommandFormInputProcessor'Class (This).processInputList;
+                This.gameCommandCanvas.repaintBehavior.onChangeRepaint (ImmediateCommandFormInputProcessor'Class (This).getCanvas);
             end if;
         exception
             when Java_Occurrence : others =>
@@ -84,8 +84,8 @@ package body org.allbinary.game.displayable.canvas.ImmediateCommandFormInputProc
         begin
             CommandFormInputProcessor (This).onUpGameKeyEvent (gameKeyEvent);
             if This.timeHelper.isTimeTNT then
-                This.processInputList;
-                This.gameCommandCanvas.repaintBehavior.onChangeRepaint (This.getCanvas);
+                ImmediateCommandFormInputProcessor'Class (This).processInputList;
+                This.gameCommandCanvas.repaintBehavior.onChangeRepaint (ImmediateCommandFormInputProcessor'Class (This).getCanvas);
             end if;
         exception
             when Java_Occurrence : others =>
@@ -103,8 +103,8 @@ package body org.allbinary.game.displayable.canvas.ImmediateCommandFormInputProc
         begin
             CommandFormInputProcessor (This).onMotionGestureEvent (motionGestureEvent);
             if This.timeHelper.isTimeTNT then
-                This.processInputList;
-                This.gameCommandCanvas.repaintBehavior.onChangeRepaint (This.getCanvas);
+                ImmediateCommandFormInputProcessor'Class (This).processInputList;
+                This.gameCommandCanvas.repaintBehavior.onChangeRepaint (ImmediateCommandFormInputProcessor'Class (This).getCanvas);
             end if;
         exception
             when Java_Occurrence : others =>

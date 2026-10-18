@@ -37,6 +37,7 @@ package body org.allbinary.game.input.RTSLayerFormFactory_Package is
       rtsLayer : constant RTSLayer_Access := RTSLayer_Access (rtsLayer_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return null;
    end getInstance;
 
    procedure getInstance (This : in out RTSLayerFormFactory; rtsLayer_Param : access RTSLayer_Package.RTSLayer'Class) is

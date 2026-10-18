@@ -21,7 +21,7 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.io.File_Package; use java.io.File_Package;
---  with java.util.HashMap_Package; use java.util.HashMap_Package;
+with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.data.tree.dom.XslHelper_Package; use org.allbinary.data.tree.dom.XslHelper_Package;
 with org.allbinary.dom.DomHelper_Package; use org.allbinary.dom.DomHelper_Package;
 with org.allbinary.graphics.j2me.dialog.NewWorkAreaJDialog_Package; use org.allbinary.graphics.j2me.dialog.NewWorkAreaJDialog_Package;
@@ -51,6 +51,7 @@ with org.allbinary.graphics.j2me.JPanel_Package; use org.allbinary.graphics.j2me
 
 package org.allbinary.graphics.j2me.MyFrame_Package is
 
+   package HashMap_Package renames Standard.java.util.HashMap_Package;
    package XslHelper_Package renames Standard.org.allbinary.data.tree.dom.XslHelper_Package;
    package DomHelper_Package renames Standard.org.allbinary.dom.DomHelper_Package;
    package NewWorkAreaJDialog_Package renames Standard.org.allbinary.graphics.j2me.dialog.NewWorkAreaJDialog_Package;

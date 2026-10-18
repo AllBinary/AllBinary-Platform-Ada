@@ -58,7 +58,7 @@ package body org.allbinary.game.score.displayable.HighScoreUtil_Package is
    begin
         This.highScoresArray := highScoresArray;
         This.firstTime := False;
-        This.saveHighScore;
+        HighScoreUtil'Class (This).saveHighScore;
    end setHighScoresArray;
 
    procedure update (This : in out HighScoreUtil; name : Unbounded_String) is

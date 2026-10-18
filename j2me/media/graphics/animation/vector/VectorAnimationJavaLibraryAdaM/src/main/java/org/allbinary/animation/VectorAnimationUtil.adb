@@ -54,7 +54,7 @@ package body org.allbinary.animation.VectorAnimationUtil_Package is
         framePoints := null;
         for index in 0 .. (size) - 1 loop
             nextBasicArrayList := BasicArrayList_Access (vector.objectArray (index));
-            framePoints := This.toFrameArrayFromPointBasicArrayList (nextBasicArrayList);
+            framePoints := VectorAnimationUtil'Class (This).toFrameArrayFromPointBasicArrayList (nextBasicArrayList);
             for pointIndex in 0 .. (framePoints'Length) - 1 loop
                 points (index) (pointIndex) (0) := framePoints (pointIndex) (0);
                 points (index) (pointIndex) (1) := framePoints (pointIndex) (1);
@@ -78,7 +78,7 @@ package body org.allbinary.animation.VectorAnimationUtil_Package is
         framePoints := null;
         for index in 0 .. (size) - 1 loop
             nextBasicArrayList := BasicArrayList_Access (vector.objectArray (index));
-            framePoints := This.toFrameArrayFromPointBasicArrayList (nextBasicArrayList);
+            framePoints := VectorAnimationUtil'Class (This).toFrameArrayFromPointBasicArrayList (nextBasicArrayList);
             points (index) := new Integer_Array_Access_Array'(0 .. (framePoints'Length) - 1 => new Integer_Array'(0 .. (2) - 1 => 0));
             for pointIndex in 0 .. (framePoints'Length) - 1 loop
                 points (index) (pointIndex) (0) := framePoints (pointIndex) (0);

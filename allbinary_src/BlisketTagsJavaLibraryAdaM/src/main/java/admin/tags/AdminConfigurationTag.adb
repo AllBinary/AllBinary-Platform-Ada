@@ -25,8 +25,8 @@ package body admin.tags.AdminConfigurationTag_Package is
    begin
       TableTag_Package.Initialize (This);
       Initialize_Fields (This);
-        This.setTagHelperFactory (AdminConfigurationHelperFactory_Package.Create);
-        This.setTagRequestHelperFactory (AdminConfigurationRequestHelperFactory_Package.Create);
+        AdminConfigurationTag'Class (This).setTagHelperFactory (AdminConfigurationHelperFactory_Package.Create);
+        AdminConfigurationTag'Class (This).setTagRequestHelperFactory (AdminConfigurationRequestHelperFactory_Package.Create);
    end Initialize;
 
    function Create return AdminConfigurationTag_Access is

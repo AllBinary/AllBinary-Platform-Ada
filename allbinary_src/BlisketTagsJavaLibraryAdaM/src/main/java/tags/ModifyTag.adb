@@ -47,9 +47,9 @@ package body tags.ModifyTag_Package is
       error : Unbounded_String;
    begin
         begin
-            helperClass := This.getHelper.all'Tag;
+            helperClass := ModifyTag'Class (This).getHelper.all'Tag;
             method := helperClass.getMethod (To_Unbounded_String ("insert"), null);
-            result := Unbounded_String (method.invoke (This.getHelper, null));
+            result := Java_Unbox (method.invoke (ModifyTag'Class (This).getHelper, null));
             return result;
         exception
             when Java_Occurrence : others =>
@@ -73,9 +73,9 @@ package body tags.ModifyTag_Package is
       error : Unbounded_String;
    begin
         begin
-            helperClass := This.getHelper.all'Tag;
+            helperClass := ModifyTag'Class (This).getHelper.all'Tag;
             method := helperClass.getMethod (This.commonStrings.delete, null);
-            result := Unbounded_String (method.invoke (This.getHelper, null));
+            result := Java_Unbox (method.invoke (ModifyTag'Class (This).getHelper, null));
             return result;
         exception
             when Java_Occurrence : others =>
@@ -99,9 +99,9 @@ package body tags.ModifyTag_Package is
       error : Unbounded_String;
    begin
         begin
-            helperClass := This.getHelper.all'Tag;
+            helperClass := ModifyTag'Class (This).getHelper.all'Tag;
             method := helperClass.getMethod (To_Unbounded_String ("update"), null);
-            result := Unbounded_String (method.invoke (This.getHelper, null));
+            result := Java_Unbox (method.invoke (ModifyTag'Class (This).getHelper, null));
             return result;
         exception
             when Java_Occurrence : others =>
@@ -129,7 +129,7 @@ package body tags.ModifyTag_Package is
                 request := HttpServletRequest_Access (This.pageContext.getRequest);
                 stringBuffer := StringMaker_Package.Create;
                 stringBuffer.append (To_Unbounded_String ("Command: "));
-                stringBuffer.append (This.getCommand);
+                stringBuffer.append (ModifyTag'Class (This).getCommand);
                 stringBuffer.append (To_Unbounded_String (" Request URI: "));
                 stringBuffer.append (request.getRequestURI);
                 This.logUtil.putF (stringBuffer.toString, ModifyTag_Access'(This'Unchecked_Access), This.tagStrings.DO_START_TAG);
@@ -137,21 +137,21 @@ package body tags.ModifyTag_Package is
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAG) then
                 null;
             end if;
-            if (This.getCommand) /= (null) then
-                This.setHelper;
+            if (ModifyTag'Class (This).getCommand) /= (null) then
+                ModifyTag'Class (This).setHelper;
                 commonStrings := CommonStrings_Package.getInstance;
-                if (This.getCommand.compareTo (commonStrings.INSERT)) = (0) then
-                    output := This.insert;
+                if (ModifyTag'Class (This).getCommand.compareTo (commonStrings.INSERT)) = (0) then
+                    output := ModifyTag'Class (This).insert;
                     if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAGEXTRAOUTPUT) then
                         This.pageContext.getOut.print (output & To_Unbounded_String ("<br />"));
                     end if;
-                elsif (This.getCommand.compareTo (commonStrings.DELETE)) = (0) then
-                    output := This.delete;
+                elsif (ModifyTag'Class (This).getCommand.compareTo (commonStrings.DELETE)) = (0) then
+                    output := ModifyTag'Class (This).delete;
                     if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAGEXTRAOUTPUT) then
                         This.pageContext.getOut.print (output & To_Unbounded_String ("<br />"));
                     end if;
-                elsif (This.getCommand.compareTo (commonStrings.UPDATE)) = (0) then
-                    output := This.update;
+                elsif (ModifyTag'Class (This).getCommand.compareTo (commonStrings.UPDATE)) = (0) then
+                    output := ModifyTag'Class (This).update;
                     if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAGEXTRAOUTPUT) then
                         This.pageContext.getOut.print (output & To_Unbounded_String ("<br />"));
                     end if;

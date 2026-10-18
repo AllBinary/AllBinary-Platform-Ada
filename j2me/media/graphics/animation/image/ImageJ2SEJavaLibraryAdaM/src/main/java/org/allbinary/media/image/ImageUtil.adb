@@ -55,7 +55,7 @@ package body org.allbinary.media.image.ImageUtil_Package is
    function create (This : in out ImageUtil; width : Integer; height : Integer) return BufferedImage_Access is
       graphicsConfiguration : GraphicsConfiguration_Access;
    begin
-        graphicsConfiguration := This.getDefaultConfiguration;
+        graphicsConfiguration := ImageUtil'Class (This).getDefaultConfiguration;
         return graphicsConfiguration.createCompatibleImage (width, height, Transparency_Package.TRANSLUCENT);
    end create;
 
@@ -75,7 +75,7 @@ package body org.allbinary.media.image.ImageUtil_Package is
             bufferedImage := bufferedImageArray (index);
             newWidth := Integer ((((bufferedImage.getWidth) * (percent)) / (100)));
             newHeight := Integer ((((bufferedImage.getHeight) * (percent)) / (100)));
-            scaledBufferedImageArray (index) := This.createBufferedImage (bufferedImage, newWidth, newHeight, scale);
+            scaledBufferedImageArray (index) := ImageUtil'Class (This).createBufferedImage (bufferedImage, newWidth, newHeight, scale);
         end loop;
         return scaledBufferedImageArray;
    end createBufferedImageForResize;
@@ -96,7 +96,7 @@ package body org.allbinary.media.image.ImageUtil_Package is
             bufferedImage := bufferedImageArray (index);
             newWidth := Integer (((bufferedImage.getWidth) * (percent)));
             newHeight := Integer (((bufferedImage.getHeight) * (percent)));
-            scaledBufferedImageArray (index) := This.createBufferedImage (bufferedImage, newWidth, newHeight, scale);
+            scaledBufferedImageArray (index) := ImageUtil'Class (This).createBufferedImage (bufferedImage, newWidth, newHeight, scale);
         end loop;
         return scaledBufferedImageArray;
    end createBufferedImage2;
@@ -110,7 +110,7 @@ package body org.allbinary.media.image.ImageUtil_Package is
         size := bufferedImageArray'Length;
         scaledBufferedImageArray := new BufferedImage_Access_Array'(0 .. (size) - 1 => null);
         for index in 0 .. (size) - 1 loop
-            scaledBufferedImageArray (index) := This.createBufferedImage (bufferedImageArray (index), width, height, scale);
+            scaledBufferedImageArray (index) := ImageUtil'Class (This).createBufferedImage (bufferedImageArray (index), width, height, scale);
         end loop;
         return scaledBufferedImageArray;
    end createBufferedImage3;
@@ -119,14 +119,14 @@ package body org.allbinary.media.image.ImageUtil_Package is
    function createBufferedImageForSave (This : in out ImageUtil; bufferedImage_Param : access BufferedImage_Package.BufferedImage'Class; newWidth : Integer; newHeight : Integer) return BufferedImage_Access is
       bufferedImage : constant BufferedImage_Access := BufferedImage_Access (bufferedImage_Param);
    begin
-        return This.createBufferedImage (bufferedImage, newWidth, newHeight, True);
+        return ImageUtil'Class (This).createBufferedImage (bufferedImage, newWidth, newHeight, True);
    end createBufferedImageForSave;
 
    --  throws Exception
    function createBufferedImage (This : in out ImageUtil; bufferedImage_Param : access BufferedImage_Package.BufferedImage'Class; newWidth : Integer; newHeight : Integer; scale : Boolean) return BufferedImage_Access is
       bufferedImage : constant BufferedImage_Access := BufferedImage_Access (bufferedImage_Param);
    begin
-        return This.createBufferedImageAllowTranslate (bufferedImage, newWidth, newHeight, scale, False);
+        return ImageUtil'Class (This).createBufferedImageAllowTranslate (bufferedImage, newWidth, newHeight, scale, False);
    end createBufferedImage;
 
    --  throws Exception

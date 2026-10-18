@@ -40,7 +40,7 @@ package body org.allbinary.physics.movement.SimpleGravityVelocityMovement_Packag
    procedure process (This : in out SimpleGravityVelocityMovement; layer_Param : access AllBinaryGameLayer_Package.AllBinaryGameLayer'Class) is
       layer : constant AllBinaryGameLayer_Access := AllBinaryGameLayer_Access (layer_Param);
    begin
-        This.gravityUtil.process (This.getVelocityProperties, This.gravityUtil.GAME_GRAVITY_VELOCITY);
+        This.gravityUtil.process (SimpleGravityVelocityMovement'Class (This).getVelocityProperties, This.gravityUtil.GAME_GRAVITY_VELOCITY);
         BasicConstantVelocityMovement (This).process (layer);
    end process;
 

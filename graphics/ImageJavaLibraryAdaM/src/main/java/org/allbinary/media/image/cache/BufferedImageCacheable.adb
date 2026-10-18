@@ -28,7 +28,7 @@ package body org.allbinary.media.image.cache.BufferedImageCacheable_Package is
    begin
       Initialize_Fields (This);
         This.key := key;
-        This.setBufferedImage (BufferedImage_Package.Create (key.getWidth, key.getHeight, key.getType));
+        BufferedImageCacheable'Class (This).setBufferedImage (BufferedImage_Package.Create (key.getWidth, key.getHeight, key.getType));
    end Initialize;
 
    function Create (key_Param : access BufferedImageInfo_Package.BufferedImageInfo'Class) return BufferedImageCacheable_Access is
@@ -60,7 +60,7 @@ package body org.allbinary.media.image.cache.BufferedImageCacheable_Package is
         stringBuffer := StringMaker_Package.Create;
         stringBuffer.append (To_Unbounded_String (Ada.Tags.Expanded_Name (This.all'Tag)));
         stringBuffer.append (To_Unbounded_String (" "));
-        stringBuffer.append (This.getKey.toString);
+        stringBuffer.append (BufferedImageCacheable'Class (This).getKey.toString);
         return stringBuffer.toString;
    end toString;
 

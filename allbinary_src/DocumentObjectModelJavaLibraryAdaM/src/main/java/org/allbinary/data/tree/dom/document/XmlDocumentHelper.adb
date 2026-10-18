@@ -32,7 +32,7 @@ package body org.allbinary.data.tree.dom.document.XmlDocumentHelper_Package is
    procedure Initialize (This : in out XmlDocumentHelper'Class) is
    begin
       Initialize_Fields (This);
-        This.init (4, True);
+        XmlDocumentHelper'Class (This).init (4, True);
    end Initialize;
 
    function Create return XmlDocumentHelper_Access is

@@ -49,6 +49,7 @@ package body org.allbinary.logic.util.cache.AbstractArrayListPool_Package is
       key : constant Java_Object_Access := Java_Object_Access (key_Param);
    begin
         Java_Throw (Java_New_Exception ("Exception", This.commonStrings.NOT_IMPLEMENTED));
+        return null;
    end remove;
 
    --  throws Exception

@@ -43,13 +43,13 @@ package body tags.generic_Id.GenericViewTag_Package is
    procedure setOutput (This : in out GenericViewTag; value : Unbounded_String) is
    begin
         This.output := value;
-        This.getPropertiesHashMap.put (InputOutputTypeData_Package.getInstance.NAME, This.output);
+        GenericViewTag'Class (This).getPropertiesHashMap.put (InputOutputTypeData_Package.getInstance.NAME, This.output);
    end setOutput;
 
    procedure setFile (This : in out GenericViewTag; value : Unbounded_String) is
    begin
         This.file := value;
-        This.getPropertiesHashMap.put (InputOutputTypeData_Package.getInstance.FILE, This.file);
+        GenericViewTag'Class (This).getPropertiesHashMap.put (InputOutputTypeData_Package.getInstance.FILE, This.file);
    end setFile;
 
 end tags.generic_Id.GenericViewTag_Package;

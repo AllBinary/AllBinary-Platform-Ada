@@ -41,11 +41,11 @@ package body org.allbinary.game.ag.layer.hud.basic.health.HealthHudWidget_Packag
         This.healthInterface := healthInterface;
         This.healthInterface.addListener (HealthHudWidget_Access'(This'Unchecked_Access));
         This.healthScale := (((This.healthInterface.getMaxHealth) / (6))) + (1);
-        This.onHealthChange;
+        HealthHudWidget'Class (This).onHealthChange;
         This.updateMaxWidth := (healthInterface.getMaxHealth) * (16);
         This.updateMaxHeight := 16;
         This.xArray := new Integer_Array'(0 .. (30) - 1 => 0);
-        This.update;
+        HealthHudWidget'Class (This).update;
    end Initialize;
 
    function Create (animationInterface_Param : access Animation_Package.Animation'Class; healthInterface_Param : access Health_Package.Health'Class; location : Integer; direction : Integer) return HealthHudWidget_Access is
@@ -60,7 +60,7 @@ package body org.allbinary.game.ag.layer.hud.basic.health.HealthHudWidget_Packag
    begin
         if (This.xArray) /= (null) then
             for index in 0 .. (This.xArray'Length) - 1 loop
-                This.xArray (index) := (This.getX) + (((index) * (16)));
+                This.xArray (index) := (HealthHudWidget'Class (This).getX) + (((index) * (16)));
             end loop;
         end if;
    end update;
@@ -68,7 +68,7 @@ package body org.allbinary.game.ag.layer.hud.basic.health.HealthHudWidget_Packag
    procedure setX (This : in out HealthHudWidget; x : Integer) is
    begin
         BasicHud (This).setX (x);
-        This.update;
+        HealthHudWidget'Class (This).update;
    end setX;
 
    procedure onHealthChange (This : in out HealthHudWidget) is
@@ -94,7 +94,7 @@ package body org.allbinary.game.ag.layer.hud.basic.health.HealthHudWidget_Packag
         This.myFontProcessor.process (graphics);
         for index in 0 .. (This.max) - 1 loop
             if This.timeDelayHelper.isTime (This.gameTickTimeDelayHelper.startTime) then
-                This.animationInterface.paintXY (graphics, This.xArray (index), This.getY);
+                This.animationInterface.paintXY (graphics, This.xArray (index), HealthHudWidget'Class (This).getY);
             end if;
         end loop;
    end paint;

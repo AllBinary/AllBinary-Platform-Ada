@@ -29,7 +29,7 @@ package body org.allbinary.logic.math.permutations.IntPermutationVisitor_Package
       anyType : constant Java_Object_Access := Java_Object_Access (anyType_Param);
    begin
         This.stringBuilder.delete (0, This.stringBuilder.length);
-        This.print (This.data, This.stringBuilder);
+        IntPermutationVisitor'Class (This).print (This.data, This.stringBuilder);
         return NullUtil_Package.getInstance.NULL_OBJECT;
    end visit;
 
@@ -37,7 +37,7 @@ package body org.allbinary.logic.math.permutations.IntPermutationVisitor_Package
       stringBuilder : StringMaker_Access;
    begin
         stringBuilder := StringMaker_Package.Create;
-        This.print (data, stringBuilder);
+        IntPermutationVisitor'Class (This).print (data, stringBuilder);
    end print;
 
    procedure print (This : in out IntPermutationVisitor; data : Integer_Array_Access; stringBuilder_Param : access StringMaker_Package.StringMaker'Class) is

@@ -20,8 +20,8 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
---  with javax.microedition.lcdui.game.Sprite_Package; use javax.microedition.lcdui.game.Sprite_Package;
+with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
+with javax.microedition.lcdui.game.Sprite_Package; use javax.microedition.lcdui.game.Sprite_Package;
 with org.allbinary.animation.AnimationBehavior_Package; use org.allbinary.animation.AnimationBehavior_Package;
 with org.allbinary.direction.Direction_Package; use org.allbinary.direction.Direction_Package;
 with org.allbinary.math.Angle_Package; use org.allbinary.math.Angle_Package;
@@ -31,6 +31,8 @@ with org.allbinary.animation.image.sprite.HackRotationSpriteIndexedAnimation_Pac
 
 package org.allbinary.animation.image.sprite.AllBinarySpriteRotationAnimation_Package is
 
+   package Image_Package renames Standard.javax.microedition.lcdui.Image_Package;
+   package Sprite_Package renames Standard.javax.microedition.lcdui.game.Sprite_Package;
    package AnimationBehavior_Package renames Standard.org.allbinary.animation.AnimationBehavior_Package;
    package Direction_Package renames Standard.org.allbinary.direction.Direction_Package;
    package Angle_Package renames Standard.org.allbinary.math.Angle_Package;

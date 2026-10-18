@@ -21,13 +21,14 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.util.Collection_Package; use java.util.Collection_Package;
---  with java.util.Map_Package; use java.util.Map_Package;
+with java.util.Map_Package; use java.util.Map_Package;
 --  with java.util.Set_Package; use java.util.Set_Package;
 with org.osgi.framework.ServiceReference_Package; use org.osgi.framework.ServiceReference_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 
 package bundle.input.automation.ServiceReferenceMap_Package is
 
+   package Map_Package renames Standard.java.util.Map_Package;
    package ServiceReference_Package renames Standard.org.osgi.framework.ServiceReference_Package;
    package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
 

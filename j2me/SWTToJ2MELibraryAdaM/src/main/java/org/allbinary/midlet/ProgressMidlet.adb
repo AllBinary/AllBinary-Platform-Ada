@@ -28,7 +28,7 @@ package body org.allbinary.midlet.ProgressMidlet_Package is
    begin
       AllBinaryMidlet_Package.Initialize (This);
       Initialize_Fields (This);
-        This.preInit;
+        ProgressMidlet'Class (This).preInit;
         This.abeClientInformation := clientInformationFactory.getInstance;
    end Initialize;
 

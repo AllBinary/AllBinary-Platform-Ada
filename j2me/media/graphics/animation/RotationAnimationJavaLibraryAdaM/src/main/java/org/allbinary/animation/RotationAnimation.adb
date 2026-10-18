@@ -86,24 +86,24 @@ package body org.allbinary.animation.RotationAnimation_Package is
       angle : Angle_Access;
    begin
         angle := This.directionUtil.getFrameAngle (direction);
-        This.adjustFrameToAngle (angle);
+        RotationAnimation'Class (This).adjustFrameToAngle (angle);
    end setFrameByDirection;
 
    procedure setFrameToAngle (This : in out RotationAnimation; angle_Param : access Angle_Package.Angle'Class) is
       angle : constant Angle_Access := Angle_Access (angle_Param);
    begin
-        This.adjustFrameToAngle (angle);
+        RotationAnimation'Class (This).adjustFrameToAngle (angle);
    end setFrameToAngle;
 
    procedure adjustFrameToAngle (This : in out RotationAnimation; angle_Param : access Angle_Package.Angle'Class) is
       angle : constant Angle_Access := Angle_Access (angle_Param);
    begin
-        This.adjustFrame (angle.getValue);
+        RotationAnimation'Class (This).adjustFrame (angle.getValue);
    end adjustFrameToAngle;
 
    procedure adjustFrame (This : in out RotationAnimation; angle : Short_Integer) is
    begin
-        This.setFrame (This.frameUtil.getFrameForAngle (angle, Integer (This.angleInfo.getAngleIncrementInfo.getAngleIncrement)));
+        RotationAnimation'Class (This).setFrame (This.frameUtil.getFrameForAngle (angle, Integer (This.angleInfo.getAngleIncrementInfo.getAngleIncrement)));
    end adjustFrame;
 
    function getFrame (This : in out RotationAnimation) return Integer is

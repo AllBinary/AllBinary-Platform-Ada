@@ -50,7 +50,7 @@ package body org.allbinary.business.user.modules.configuration.UserConfiguration
    --  throws Exception
    function toDomDocumentString (This : in out UserConfigurationDomDocumentMapping) return Unbounded_String is
    begin
-        return XmlDocumentHelper_Package.toString (This.toXmlDoc);
+        return XmlDocumentHelper_Package.toString (UserConfigurationDomDocumentMapping'Class (This).toXmlDoc);
    end toDomDocumentString;
 
 end org.allbinary.business.user.modules.configuration.UserConfigurationDomDocumentMapping_Package;

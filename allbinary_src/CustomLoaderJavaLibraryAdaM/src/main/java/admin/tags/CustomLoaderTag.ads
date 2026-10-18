@@ -21,7 +21,7 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.lang.reflect.Method_Package; use java.lang.reflect.Method_Package;
---  with java.util.HashMap_Package; use java.util.HashMap_Package;
+with java.util.HashMap_Package; use java.util.HashMap_Package;
 --  with javax.servlet.jsp.JspTagException_Package; use javax.servlet.jsp.JspTagException_Package;
 with admin.taghelpers.CustomLoaderHelperFactory_Package; use admin.taghelpers.CustomLoaderHelperFactory_Package;
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
@@ -32,6 +32,7 @@ with tags.CustomTagSupport_Package; use tags.CustomTagSupport_Package;
 
 package admin.tags.CustomLoaderTag_Package is
 
+   package HashMap_Package renames Standard.java.util.HashMap_Package;
    package CustomLoaderHelperFactory_Package renames Standard.admin.taghelpers.CustomLoaderHelperFactory_Package;
    package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    package AbResponseHandler_Package renames Standard.org.allbinary.logic.communication.http.request.AbResponseHandler_Package;

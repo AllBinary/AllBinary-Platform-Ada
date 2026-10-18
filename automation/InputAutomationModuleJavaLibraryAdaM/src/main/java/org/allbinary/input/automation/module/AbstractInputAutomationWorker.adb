@@ -63,7 +63,7 @@ package body org.allbinary.input.automation.module.AbstractInputAutomationWorker
 
    function isAnyDataWorkerRunning (This : in out AbstractInputAutomationWorker) return Boolean is
    begin
-        if ((This.captureThread) /= (null)) and then (((((This.captureThread.isAlive) or else (This.getCaptureWorker.isRunning)) or else (This.getMotionRectanglesWorker.isRunning)) or else (This.getImageComparisonWorker.isRunning))) then
+        if ((This.captureThread) /= (null)) and then (((((This.captureThread.isAlive) or else (AbstractInputAutomationWorker'Class (This).getCaptureWorker.isRunning)) or else (AbstractInputAutomationWorker'Class (This).getMotionRectanglesWorker.isRunning)) or else (AbstractInputAutomationWorker'Class (This).getImageComparisonWorker.isRunning))) then
             return True;
         end if;
         return False;
@@ -72,8 +72,8 @@ package body org.allbinary.input.automation.module.AbstractInputAutomationWorker
    --  throws Exception
    procedure startDataWorkers (This : in out AbstractInputAutomationWorker) is
    begin
-        if not (This.isAnyDataWorkerRunning) then
-            This.captureThread := Thread_Package.Create (This.getCaptureWorker);
+        if not (AbstractInputAutomationWorker'Class (This).isAnyDataWorkerRunning) then
+            This.captureThread := Thread_Package.Create (AbstractInputAutomationWorker'Class (This).getCaptureWorker);
             This.logUtil.putF (To_Unbounded_String ("Starting CaptureWorkers - Need more images - Thread State: ") & This.captureThread.getState.toString, AbstractInputAutomationWorker_Access'(This'Unchecked_Access), To_Unbounded_String ("startCaptureWorkers"));
             This.captureThread.start;
         end if;
@@ -82,7 +82,7 @@ package body org.allbinary.input.automation.module.AbstractInputAutomationWorker
    --  throws Exception
    procedure waitForDataWorkers (This : in out AbstractInputAutomationWorker) is
    begin
-        while This.isAnyDataWorkerRunning loop
+        while AbstractInputAutomationWorker'Class (This).isAnyDataWorkerRunning loop
             This.logUtil.putF (To_Unbounded_String ("Waiting"), AbstractInputAutomationWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN);
             Java_Sleep (250);
         end loop;
@@ -91,7 +91,7 @@ package body org.allbinary.input.automation.module.AbstractInputAutomationWorker
    --  throws Exception
    procedure stopDataWorkers (This : in out AbstractInputAutomationWorker) is
    begin
-        This.getCaptureWorker.setRunning (False);
+        AbstractInputAutomationWorker'Class (This).getCaptureWorker.setRunning (False);
    end stopDataWorkers;
 
    --  throws Exception
@@ -105,16 +105,16 @@ package body org.allbinary.input.automation.module.AbstractInputAutomationWorker
    begin
         begin
             This.logUtil.putF (This.commonStrings.START, AbstractInputAutomationWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN);
-            This.setRunning (True);
+            AbstractInputAutomationWorker'Class (This).setRunning (True);
             timeHelper := TimeDelayHelper_Package.Create (1000);
-            while This.isRunning loop
+            while AbstractInputAutomationWorker'Class (This).isRunning loop
                 timeHelper.setStartTimeTNT;
-                This.process;
+                AbstractInputAutomationWorker'Class (This).process;
                 This.index := This.index + 1;
                 This.logUtil.putF (Java_Image ((CommonLabels_Package.getInstance.ELAPSED) + (timeHelper.getElapsedTNT)) & To_Unbounded_String (" Index: ") & Java_Image (This.index), AbstractInputAutomationWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN);
             end loop;
-            This.stopDataWorkers;
-            This.waitForDataWorkers;
+            AbstractInputAutomationWorker'Class (This).stopDataWorkers;
+            AbstractInputAutomationWorker'Class (This).waitForDataWorkers;
             This.logUtil.putF (This.commonStrings.END_Id, AbstractInputAutomationWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN);
         exception
             when Java_Occurrence : others =>

@@ -27,7 +27,7 @@ package body org.allbinary.data.tables.user.commerce.money.payment.transaction.T
    begin
         AbSqlBean_Package.Initialize (This, UserDbInitInfo_Package.Create);
         Initialize_Fields (This);
-        This.setTableName (This.tableName);
+        TransactionEntity'Class (This).setTableName (This.tableName);
    end Initialize;
 
    function Create return TransactionEntity_Access is
@@ -42,8 +42,8 @@ package body org.allbinary.data.tables.user.commerce.money.payment.transaction.T
    begin
         begin
             whereHashMap := StdUtil_Package.getInstance.createHashMap;
-            whereHashMap.put (OrderData_Package.ID, Unbounded_String (orderNumber));
-            whereHashMap.put (UserData_Package.USERNAME, userName);
+            whereHashMap.put (OrderData_Package.ID, orderNumber);
+            whereHashMap.put (UserData_Package.USERNAME, Java_Box (userName));
             AbSqlBean (This).deleteWhere (whereHashMap);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
                 This.logUtil.putF (This.commonStrings.SUCCESS, TransactionEntity_Access'(This'Unchecked_Access), To_Unbounded_String ("remove"));
@@ -106,7 +106,7 @@ package body org.allbinary.data.tables.user.commerce.money.payment.transaction.T
 
    function createTable (This : in out TransactionEntity) return Unbounded_String is
    begin
-        return AbSqlBean (This).createTable (This.createTableStatement);
+        return AbSqlBean (This).createTable (TransactionEntity'Class (This).createTableStatement);
    end createTable;
 
    function dropTable (This : in out TransactionEntity) return Unbounded_String is

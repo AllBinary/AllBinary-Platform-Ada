@@ -35,7 +35,7 @@ package body org.allbinary.logic.math.BasicDecimal_Package is
    begin
       Initialize_Fields (This);
         This.units := units;
-        This.updateScaled;
+        BasicDecimal'Class (This).updateScaled;
    end Initialize;
 
    function Create (units : Long_Long_Integer) return BasicDecimal_Access is
@@ -48,96 +48,96 @@ package body org.allbinary.logic.math.BasicDecimal_Package is
    procedure setint (This : in out BasicDecimal; value : Integer) is
    begin
         This.units := Long_Long_Integer (value);
-        This.updateScaled;
+        BasicDecimal'Class (This).updateScaled;
    end setint;
 
    procedure setlong (This : in out BasicDecimal; value : Long_Long_Integer) is
    begin
         This.units := value;
-        This.updateScaled;
+        BasicDecimal'Class (This).updateScaled;
    end setlong;
 
    procedure set (This : in out BasicDecimal; bigDecimal_Param : access BasicDecimal_Package.BasicDecimal'Class) is
       bigDecimal : constant BasicDecimal_Access := BasicDecimal_Access (bigDecimal_Param);
    begin
         This.units := bigDecimal.getUnscaled;
-        This.updateScaled;
+        BasicDecimal'Class (This).updateScaled;
    end set;
 
    procedure addint (This : in out BasicDecimal; value : Integer) is
    begin
         This.units := (This.units) + (Long_Long_Integer (value));
-        This.updateScaled;
+        BasicDecimal'Class (This).updateScaled;
    end addint;
 
    procedure addlong (This : in out BasicDecimal; value : Long_Long_Integer) is
    begin
         This.units := (This.units) + (value);
-        This.updateScaled;
+        BasicDecimal'Class (This).updateScaled;
    end addlong;
 
    procedure add (This : in out BasicDecimal; bigDecimal_Param : access BasicDecimal_Package.BasicDecimal'Class) is
       bigDecimal : constant BasicDecimal_Access := BasicDecimal_Access (bigDecimal_Param);
    begin
         This.units := (This.units) + (bigDecimal.getUnscaled);
-        This.updateScaled;
+        BasicDecimal'Class (This).updateScaled;
    end add;
 
    procedure subtractint (This : in out BasicDecimal; value : Integer) is
    begin
         This.units := (This.units) - (Long_Long_Integer (value));
-        This.updateScaled;
+        BasicDecimal'Class (This).updateScaled;
    end subtractint;
 
    procedure subtractlong (This : in out BasicDecimal; value : Long_Long_Integer) is
    begin
         This.units := (This.units) - (value);
-        This.updateScaled;
+        BasicDecimal'Class (This).updateScaled;
    end subtractlong;
 
    procedure subtract (This : in out BasicDecimal; bigDecimal_Param : access BasicDecimal_Package.BasicDecimal'Class) is
       bigDecimal : constant BasicDecimal_Access := BasicDecimal_Access (bigDecimal_Param);
    begin
         This.units := (This.units) - (bigDecimal.getUnscaled);
-        This.updateScaled;
+        BasicDecimal'Class (This).updateScaled;
    end subtract;
 
    procedure multiplyint (This : in out BasicDecimal; value : Integer) is
    begin
         This.units := (This.units) * (Long_Long_Integer (value));
-        This.updateScaled;
+        BasicDecimal'Class (This).updateScaled;
    end multiplyint;
 
    procedure multiplylong (This : in out BasicDecimal; value : Long_Long_Integer) is
    begin
         This.units := (This.units) * (value);
-        This.updateScaled;
+        BasicDecimal'Class (This).updateScaled;
    end multiplylong;
 
    procedure multiply (This : in out BasicDecimal; bigDecimal_Param : access BasicDecimal_Package.BasicDecimal'Class) is
       bigDecimal : constant BasicDecimal_Access := BasicDecimal_Access (bigDecimal_Param);
    begin
         This.units := (This.units) * (bigDecimal.getUnscaled);
-        This.updateScaled;
+        BasicDecimal'Class (This).updateScaled;
    end multiply;
 
    procedure divideint (This : in out BasicDecimal; value : Integer) is
    begin
         This.units := (This.units) / (Long_Long_Integer (value));
-        This.updateScaled;
+        BasicDecimal'Class (This).updateScaled;
    end divideint;
 
    procedure dividelong (This : in out BasicDecimal; value : Long_Long_Integer) is
    begin
         This.units := (This.units) / (value);
-        This.updateScaled;
+        BasicDecimal'Class (This).updateScaled;
    end dividelong;
 
    procedure divide (This : in out BasicDecimal; bigDecimal_Param : access BasicDecimal_Package.BasicDecimal'Class) is
       bigDecimal : constant BasicDecimal_Access := BasicDecimal_Access (bigDecimal_Param);
    begin
         This.units := (This.units) / (bigDecimal.getUnscaled);
-        This.updateScaled;
+        BasicDecimal'Class (This).updateScaled;
    end divide;
 
    function getUnscaled (This : in out BasicDecimal) return Long_Long_Integer is

@@ -57,17 +57,17 @@ package body org.allbinary.view.ViewPosition_Package is
 
    function getX2 (This : in out ViewPosition) return Integer is
    begin
-        return (This.getX) + (This.allbinaryLayer.getWidth);
+        return (ViewPosition'Class (This).getX) + (This.allbinaryLayer.getWidth);
    end getX2;
 
    function getY2 (This : in out ViewPosition) return Integer is
    begin
-        return (This.getY) + (This.allbinaryLayer.getHeight);
+        return (ViewPosition'Class (This).getY) + (This.allbinaryLayer.getHeight);
    end getY2;
 
    function getZ2 (This : in out ViewPosition) return Integer is
    begin
-        return Integer (((This.getZ) + (This.allbinaryLayer.getDepth)));
+        return Integer (((ViewPosition'Class (This).getZ) + (This.allbinaryLayer.getDepth)));
    end getZ2;
 
    procedure setAllbinaryLayer (This : in out ViewPosition; allbinaryLayer_Param : access Java_Object'Class) is

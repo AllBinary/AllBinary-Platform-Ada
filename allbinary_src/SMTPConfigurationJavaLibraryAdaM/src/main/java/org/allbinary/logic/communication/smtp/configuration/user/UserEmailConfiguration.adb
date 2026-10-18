@@ -30,7 +30,7 @@ package body org.allbinary.logic.communication.smtp.configuration.user.UserEmail
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.EMAILLOGGING) then
             This.logUtil.putF (This.commonStrings.CONSTRUCTOR, UserEmailConfiguration_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         end if;
-        This.setUserEmailEventsConfigurationInterface (UserEmailEventsConfiguration_Package.Create);
+        UserEmailConfiguration'Class (This).setUserEmailEventsConfigurationInterface (UserEmailEventsConfiguration_Package.Create);
    end Initialize;
 
    function Create return UserEmailConfiguration_Access is
@@ -47,7 +47,7 @@ package body org.allbinary.logic.communication.smtp.configuration.user.UserEmail
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.EMAILLOGGING) then
             This.logUtil.putF (This.commonStrings.CONSTRUCTOR, UserEmailConfiguration_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         end if;
-        This.setUserEmailEventsConfigurationInterface (UserEmailEventsConfiguration_Package.Create (hashMap));
+        UserEmailConfiguration'Class (This).setUserEmailEventsConfigurationInterface (UserEmailEventsConfiguration_Package.Create (hashMap));
    end Initialize;
 
    function Create (hashMap_Param : access HashMap_Package.HashMap'Class) return UserEmailConfiguration_Access is

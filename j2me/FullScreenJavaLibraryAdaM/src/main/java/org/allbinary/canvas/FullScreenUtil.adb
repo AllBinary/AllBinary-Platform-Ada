@@ -45,7 +45,7 @@ package body org.allbinary.canvas.FullScreenUtil_Package is
    begin
         (RunnableCanvas_Access (fullScreenInterface)).waitOnNotify (0);
         if (commandListener) /= (null) then
-            This.init (fullScreenInterface);
+            FullScreenUtil'Class (This).init (fullScreenInterface);
         end if;
    end initOnRun;
 
@@ -78,7 +78,7 @@ package body org.allbinary.canvas.FullScreenUtil_Package is
    function isScreenChangeCanvas (This : in out FullScreenUtil; fullScreenInterface_Param : access Canvas_Package.Canvas'Class) return Boolean is
       fullScreenInterface : constant Canvas_Access := Canvas_Access (fullScreenInterface_Param);
    begin
-        return This.isScreenChange (fullScreenInterface.isFullScreenMode);
+        return FullScreenUtil'Class (This).isScreenChange (fullScreenInterface.isFullScreenMode);
    end isScreenChangeCanvas;
 
    procedure isScreenChange (This : in out FullScreenUtil; isFullScreen : Boolean) is

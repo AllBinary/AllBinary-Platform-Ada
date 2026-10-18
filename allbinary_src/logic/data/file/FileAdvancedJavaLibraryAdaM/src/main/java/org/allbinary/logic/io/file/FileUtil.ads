@@ -20,8 +20,8 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.io.InputStream_Package; use java.io.InputStream_Package;
---  with java.io.OutputStream_Package; use java.io.OutputStream_Package;
+with java.io.InputStream_Package; use java.io.InputStream_Package;
+with java.io.OutputStream_Package; use java.io.OutputStream_Package;
 with org.allbinary.globals.URLGLOBALS_Package; use org.allbinary.globals.URLGLOBALS_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
@@ -48,6 +48,8 @@ with org.allbinary.logic.io.file.FileUtil2_Package; use org.allbinary.logic.io.f
 
 package org.allbinary.logic.io.file.FileUtil_Package is
 
+   package InputStream_Package renames Standard.java.io.InputStream_Package;
+   package OutputStream_Package renames Standard.java.io.OutputStream_Package;
    package URLGLOBALS_Package renames Standard.org.allbinary.globals.URLGLOBALS_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;

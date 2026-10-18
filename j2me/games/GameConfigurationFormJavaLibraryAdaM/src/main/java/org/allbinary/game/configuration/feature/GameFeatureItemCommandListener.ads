@@ -20,9 +20,9 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with javax.microedition.lcdui.Command_Package; use javax.microedition.lcdui.Command_Package;
---  with javax.microedition.lcdui.Item_Package; use javax.microedition.lcdui.Item_Package;
---  with javax.microedition.lcdui.ItemCommandListener_Package; use javax.microedition.lcdui.ItemCommandListener_Package;
+with javax.microedition.lcdui.Command_Package; use javax.microedition.lcdui.Command_Package;
+with javax.microedition.lcdui.Item_Package; use javax.microedition.lcdui.Item_Package;
+with javax.microedition.lcdui.ItemCommandListener_Package; use javax.microedition.lcdui.ItemCommandListener_Package;
 with org.allbinary.game.configuration.GameConfigurationGauge_Package; use org.allbinary.game.configuration.GameConfigurationGauge_Package;
 with org.allbinary.game.configuration.GameConfigurationUtil_Package; use org.allbinary.game.configuration.GameConfigurationUtil_Package;
 with org.allbinary.game.configuration.GameOptionsForm_Package; use org.allbinary.game.configuration.GameOptionsForm_Package;
@@ -34,6 +34,9 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 
 package org.allbinary.game.configuration.feature.GameFeatureItemCommandListener_Package is
 
+   package Command_Package renames Standard.javax.microedition.lcdui.Command_Package;
+   package Item_Package renames Standard.javax.microedition.lcdui.Item_Package;
+   package ItemCommandListener_Package renames Standard.javax.microedition.lcdui.ItemCommandListener_Package;
    package GameConfigurationGauge_Package renames Standard.org.allbinary.game.configuration.GameConfigurationGauge_Package;
    package GameConfigurationUtil_Package renames Standard.org.allbinary.game.configuration.GameConfigurationUtil_Package;
    package GameOptionsForm_Package renames Standard.org.allbinary.game.configuration.GameOptionsForm_Package;

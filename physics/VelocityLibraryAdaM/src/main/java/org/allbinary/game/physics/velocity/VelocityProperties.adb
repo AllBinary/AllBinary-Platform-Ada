@@ -27,8 +27,8 @@ package body org.allbinary.game.physics.velocity.VelocityProperties_Package is
    begin
       BasicVelocityProperties_Package.Initialize (This);
       Initialize_Fields (This);
-        This.setMaxForwardVelocity (maxForwardVelocity);
-        This.setMaxReverseVelocity (maxReverseVelocity);
+        VelocityProperties'Class (This).setMaxForwardVelocity (maxForwardVelocity);
+        VelocityProperties'Class (This).setMaxReverseVelocity (maxReverseVelocity);
    end Initialize;
 
    function Create (maxForwardVelocity : Integer; maxReverseVelocity : Integer) return VelocityProperties_Access is
@@ -60,54 +60,54 @@ package body org.allbinary.game.physics.velocity.VelocityProperties_Package is
 
    procedure limitMaxXYForwardVelocity (This : in out VelocityProperties) is
    begin
-        This.limitMaxXYVelocity (This.getMaxForwardVelocity);
+        VelocityProperties'Class (This).limitMaxXYVelocity (VelocityProperties'Class (This).getMaxForwardVelocity);
    end limitMaxXYForwardVelocity;
 
    procedure limitMaxXYReverseVelocity (This : in out VelocityProperties) is
    begin
-        This.limitMaxXYVelocity (This.getMaxReverseVelocity);
+        VelocityProperties'Class (This).limitMaxXYVelocity (VelocityProperties'Class (This).getMaxReverseVelocity);
    end limitMaxXYReverseVelocity;
 
    procedure limitMaxYForwardVelocity (This : in out VelocityProperties) is
    begin
-        This.limitMaxYVelocity (This.getMaxForwardVelocity);
+        VelocityProperties'Class (This).limitMaxYVelocity (VelocityProperties'Class (This).getMaxForwardVelocity);
    end limitMaxYForwardVelocity;
 
    procedure limitMaxYReverseVelocity (This : in out VelocityProperties) is
    begin
-        This.limitMaxYVelocity (This.getMaxReverseVelocity);
+        VelocityProperties'Class (This).limitMaxYVelocity (VelocityProperties'Class (This).getMaxReverseVelocity);
    end limitMaxYReverseVelocity;
 
    procedure limitMaxXForwardVelocity (This : in out VelocityProperties) is
    begin
-        This.limitMaxXVelocity (This.getMaxForwardVelocity);
+        VelocityProperties'Class (This).limitMaxXVelocity (VelocityProperties'Class (This).getMaxForwardVelocity);
    end limitMaxXForwardVelocity;
 
    procedure limitMaxXReverseVelocity (This : in out VelocityProperties) is
    begin
-        This.limitMaxXVelocity (This.getMaxReverseVelocity);
+        VelocityProperties'Class (This).limitMaxXVelocity (VelocityProperties'Class (This).getMaxReverseVelocity);
    end limitMaxXReverseVelocity;
 
    function isOverXYMaxForwardVelocity (This : in out VelocityProperties) return Boolean is
    begin
-        return This.isOverXYMaxVelocity (This.getMaxForwardVelocity);
+        return VelocityProperties'Class (This).isOverXYMaxVelocity (VelocityProperties'Class (This).getMaxForwardVelocity);
    end isOverXYMaxForwardVelocity;
 
    function isOverXYMaxReverseVelocity (This : in out VelocityProperties) return Boolean is
    begin
-        return This.isOverXYMaxVelocity (This.getMaxReverseVelocity);
+        return VelocityProperties'Class (This).isOverXYMaxVelocity (VelocityProperties'Class (This).getMaxReverseVelocity);
    end isOverXYMaxReverseVelocity;
 
    procedure limitXYToForwardAndReverseMaxVelocity (This : in out VelocityProperties) is
    begin
-        This.limitMaxXYForwardVelocity;
-        This.limitMaxXYReverseVelocity;
+        VelocityProperties'Class (This).limitMaxXYForwardVelocity;
+        VelocityProperties'Class (This).limitMaxXYReverseVelocity;
    end limitXYToForwardAndReverseMaxVelocity;
 
    procedure limitMaxXYVelocity (This : in out VelocityProperties; maxVelocity : Integer) is
    begin
-        This.limitMaxXVelocity (maxVelocity);
-        This.limitMaxYVelocity (maxVelocity);
+        VelocityProperties'Class (This).limitMaxXVelocity (maxVelocity);
+        VelocityProperties'Class (This).limitMaxYVelocity (maxVelocity);
    end limitMaxXYVelocity;
 
    procedure limitMaxPositiveYVelocity (This : in out VelocityProperties; maxVelocity : Integer) is
@@ -126,8 +126,8 @@ package body org.allbinary.game.physics.velocity.VelocityProperties_Package is
 
    procedure limitMaxYVelocity (This : in out VelocityProperties; maxVelocity : Integer) is
    begin
-        This.limitMaxPositiveYVelocity (maxVelocity);
-        This.limitMaxNegativeYVelocity (maxVelocity);
+        VelocityProperties'Class (This).limitMaxPositiveYVelocity (maxVelocity);
+        VelocityProperties'Class (This).limitMaxNegativeYVelocity (maxVelocity);
    end limitMaxYVelocity;
 
    procedure limitMaxXVelocity (This : in out VelocityProperties; maxVelocity : Integer) is
@@ -160,13 +160,13 @@ package body org.allbinary.game.physics.velocity.VelocityProperties_Package is
    procedure setVelocityi (This : in out VelocityProperties; magnitude : Long_Long_Integer; angle : Integer; otherAngle : Integer) is
    begin
         BasicVelocityProperties (This).setVelocityi (magnitude, angle, otherAngle);
-        This.limitXYToForwardAndReverseMaxVelocity;
+        VelocityProperties'Class (This).limitXYToForwardAndReverseMaxVelocity;
    end setVelocityi;
 
    procedure addVelocityi (This : in out VelocityProperties; magnitude : Long_Long_Integer; angle : Integer; otherAngle : Integer) is
    begin
         BasicVelocityProperties (This).addVelocityi (magnitude, angle, otherAngle);
-        This.limitXYToForwardAndReverseMaxVelocity;
+        VelocityProperties'Class (This).limitXYToForwardAndReverseMaxVelocity;
    end addVelocityi;
 
    procedure isOverXYMaxVelocity (This : in out VelocityProperties; maxVelocity : Integer) is

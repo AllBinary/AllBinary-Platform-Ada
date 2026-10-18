@@ -46,7 +46,7 @@ package body org.allbinary.logic.system.loader.AbeFactory_Package is
       abeClientInformation : constant AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
    begin
         begin
-            return This.getClass (abeClientInformation, className).newInstance;
+            return AbeFactory'Class (This).getClass (abeClientInformation, className).newInstance;
         exception
             when Java_Occurrence : others =>
                 declare

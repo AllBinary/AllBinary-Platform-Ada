@@ -36,6 +36,7 @@ package body org.allbinary.PostGameCommandFactory_Package is
    function getInstance return PostGameCommandFactory_Access is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return null;
    end getInstance;
 
    procedure addCommands (This : in out PostGameCommandFactory; canvas_Param : access Canvas_Package.Canvas'Class) is

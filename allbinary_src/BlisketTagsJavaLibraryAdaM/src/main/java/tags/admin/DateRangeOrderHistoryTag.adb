@@ -48,13 +48,13 @@ package body tags.admin.DateRangeOrderHistoryTag_Package is
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAG) then
                 This.logUtil.putF (To_Unbounded_String ("Tag Start"), DateRangeOrderHistoryTag_Access'(This'Unchecked_Access), This.tagStrings.DO_START_TAG);
             end if;
-            This.setName (To_Unbounded_String ("Range Order History View"));
-            This.setObjectFile (To_Unbounded_String ("views.admin.orderhistory.DateRangeOrderHistoryView"));
-            if (This.getCommand) /= (null) then
-                if (This.getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.VIEW)) = (0) then
+            DateRangeOrderHistoryTag'Class (This).setName (To_Unbounded_String ("Range Order History View"));
+            DateRangeOrderHistoryTag'Class (This).setObjectFile (To_Unbounded_String ("views.admin.orderhistory.DateRangeOrderHistoryView"));
+            if (DateRangeOrderHistoryTag'Class (This).getCommand) /= (null) then
+                if (DateRangeOrderHistoryTag'Class (This).getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.VIEW)) = (0) then
                     null;
                 else
-                    Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("No Such View Command: ") & Java_Image (This.getCommand)));
+                    Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("No Such View Command: ") & Java_Image (DateRangeOrderHistoryTag'Class (This).getCommand)));
                 end if;
                 return StoreValidationTransformTag (This).doStartTag;
             end if;

@@ -20,10 +20,10 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with javax.microedition.lcdui.CommandListener_Package; use javax.microedition.lcdui.CommandListener_Package;
---  with javax.microedition.lcdui.Font_Package; use javax.microedition.lcdui.Font_Package;
---  with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
---  with javax.microedition.lcdui.TextField_Package; use javax.microedition.lcdui.TextField_Package;
+with javax.microedition.lcdui.CommandListener_Package; use javax.microedition.lcdui.CommandListener_Package;
+with javax.microedition.lcdui.Font_Package; use javax.microedition.lcdui.Font_Package;
+with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.TextField_Package; use javax.microedition.lcdui.TextField_Package;
 with org.allbinary.PostGameCommandFactory_Package; use org.allbinary.PostGameCommandFactory_Package;
 with org.allbinary.game.GameInfo_Package; use org.allbinary.game.GameInfo_Package;
 with org.allbinary.game.score.HighScore_Package; use org.allbinary.game.score.HighScore_Package;
@@ -44,6 +44,10 @@ with org.allbinary.game.score.displayable.HighScoreUtil_Package; use org.allbina
 
 package org.allbinary.game.score.displayable.HighScoreTextBox_Package is
 
+   package CommandListener_Package renames Standard.javax.microedition.lcdui.CommandListener_Package;
+   package Font_Package renames Standard.javax.microedition.lcdui.Font_Package;
+   package Graphics_Package renames Standard.javax.microedition.lcdui.Graphics_Package;
+   package TextField_Package renames Standard.javax.microedition.lcdui.TextField_Package;
    package PostGameCommandFactory_Package renames Standard.org.allbinary.PostGameCommandFactory_Package;
    package GameInfo_Package renames Standard.org.allbinary.game.GameInfo_Package;
    package HighScore_Package renames Standard.org.allbinary.game.score.HighScore_Package;

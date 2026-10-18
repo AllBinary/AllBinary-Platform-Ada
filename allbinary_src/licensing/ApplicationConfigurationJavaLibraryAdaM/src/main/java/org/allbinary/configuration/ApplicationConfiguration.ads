@@ -9,8 +9,8 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.io.Closeable_Package; use java.io.Closeable_Package;
---  with java.io.InputStream_Package; use java.io.InputStream_Package;
---  with java.io.OutputStream_Package; use java.io.OutputStream_Package;
+with java.io.InputStream_Package; use java.io.InputStream_Package;
+with java.io.OutputStream_Package; use java.io.OutputStream_Package;
 with org.allbinary.game.configuration.feature.Feature_Package; use org.allbinary.game.configuration.feature.Feature_Package;
 with org.allbinary.game.configuration.feature.Features_Package; use org.allbinary.game.configuration.feature.Features_Package;
 with org.allbinary.game.configuration.feature.MainFeatureFactory_Package; use org.allbinary.game.configuration.feature.MainFeatureFactory_Package;
@@ -28,6 +28,8 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 
 package org.allbinary.configuration.ApplicationConfiguration_Package is
 
+   package InputStream_Package renames Standard.java.io.InputStream_Package;
+   package OutputStream_Package renames Standard.java.io.OutputStream_Package;
    package Feature_Package renames Standard.org.allbinary.game.configuration.feature.Feature_Package;
    package Features_Package renames Standard.org.allbinary.game.configuration.feature.Features_Package;
    package MainFeatureFactory_Package renames Standard.org.allbinary.game.configuration.feature.MainFeatureFactory_Package;

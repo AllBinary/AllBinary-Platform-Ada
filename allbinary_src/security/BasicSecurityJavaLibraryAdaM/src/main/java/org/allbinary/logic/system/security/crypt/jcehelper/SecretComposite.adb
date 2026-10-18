@@ -47,7 +47,7 @@ package body org.allbinary.logic.system.security.crypt.jcehelper.SecretComposite
    function encrypt (This : in out SecretComposite; array_Id_Param : Short_Short_Integer_Array_Access) return Short_Short_Integer_Array_Access is
       array_Id : Short_Short_Integer_Array_Access := array_Id_Param;
    begin
-        array_Id := This.mutilate (array_Id);
+        array_Id := SecretComposite'Class (This).mutilate (array_Id);
         This.cipher.init (Cipher_Package.ENCRYPT_MODE, This.secretKey);
         return This.cipher.doFinal (array_Id);
    end encrypt;
@@ -56,7 +56,7 @@ package body org.allbinary.logic.system.security.crypt.jcehelper.SecretComposite
    function decrypt (This : in out SecretComposite; array_Id : Short_Short_Integer_Array_Access) return Short_Short_Integer_Array_Access is
    begin
         This.cipher.init (Cipher_Package.DECRYPT_MODE, This.secretKey);
-        return This.mutilate (This.cipher.doFinal (array_Id));
+        return SecretComposite'Class (This).mutilate (This.cipher.doFinal (array_Id));
    end decrypt;
 
    function mutilate (This : in out SecretComposite; array_Id_Param : Short_Short_Integer_Array_Access) return Short_Short_Integer_Array_Access is

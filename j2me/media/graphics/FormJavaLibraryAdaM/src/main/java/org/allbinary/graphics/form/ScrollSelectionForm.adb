@@ -153,13 +153,13 @@ package body org.allbinary.graphics.form.ScrollSelectionForm_Package is
    function getSelectedIndexForPointVerticalDx (This : in out ScrollSelectionForm; index : Integer; item_Param : access ABCustomItem_Package.ABCustomItem'Class; dx : Integer; dy : Integer) return Integer is
       item : constant ABCustomItem_Access := ABCustomItem_Access (item_Param);
    begin
-        return (dx) + (This.getDiffX (item));
+        return (dx) + (ScrollSelectionForm'Class (This).getDiffX (item));
    end getSelectedIndexForPointVerticalDx;
 
    function getSelectedIndexForPointTempHorizontalDx (This : in out ScrollSelectionForm; index : Integer; item_Param : access ABCustomItem_Package.ABCustomItem'Class; dx : Integer; dy : Integer) return Integer is
       item : constant ABCustomItem_Access := ABCustomItem_Access (item_Param);
    begin
-        return (dx) + (This.getDiffX (item));
+        return (dx) + (ScrollSelectionForm'Class (This).getDiffX (item));
    end getSelectedIndexForPointTempHorizontalDx;
 
    function append (This : in out ScrollSelectionForm; item_Param : access ABCustomItem_Package.ABCustomItem'Class) return Integer is
@@ -173,9 +173,9 @@ package body org.allbinary.graphics.form.ScrollSelectionForm_Package is
       point : constant GPoint_Access := GPoint_Access (point_Param);
       index : Integer;
    begin
-        index := This.getSelectedIndexForPoint (point);
+        index := ScrollSelectionForm'Class (This).getSelectedIndexForPoint (point);
         if (index) /= (-(1)) then
-            return This.get (index);
+            return ScrollSelectionForm'Class (This).get (index);
         else
             return ABCustomItem_Package.getNullInstance;
         end if;
@@ -189,9 +189,9 @@ package body org.allbinary.graphics.form.ScrollSelectionForm_Package is
       index : Integer;
    begin
         nextItem := null;
-        size := This.size;
+        size := ScrollSelectionForm'Class (This).size;
         for index in 0 .. (size) - 1 loop
-            nextItem := ABCustomItem_Access (This.get (index));
+            nextItem := ABCustomItem_Access (ScrollSelectionForm'Class (This).get (index));
             if (nextItem) = (item) then
                 return index;
             end if;
@@ -220,10 +220,10 @@ package body org.allbinary.graphics.form.ScrollSelectionForm_Package is
       diffX : Integer;
       index : Integer;
    begin
-        start := This.getStartIndex;
-        size := This.size;
-        dx := This.getDx;
-        dy := This.getDy;
+        start := ScrollSelectionForm'Class (This).getStartIndex;
+        size := ScrollSelectionForm'Class (This).size;
+        dx := ScrollSelectionForm'Class (This).getDx;
+        dy := ScrollSelectionForm'Class (This).getDy;
         formTypeFactory := FormTypeFactory_Package.getInstance;
         commonLabels := CommonLabels_Package.getInstance;
         stringBuffer := StringMaker_Package.Create;
@@ -238,7 +238,7 @@ package body org.allbinary.graphics.form.ScrollSelectionForm_Package is
         height := 0;
         diffX := 0;
         for index in start .. (size) - 1 loop
-            item := This.get (index);
+            item := ScrollSelectionForm'Class (This).get (index);
             width := item.getMinimumWidth;
             height := item.getMinimumHeight;
             diffX := This.formTypeItemIndexDx.getDx (index, item, dx, dy);
@@ -278,10 +278,10 @@ package body org.allbinary.graphics.form.ScrollSelectionForm_Package is
       max : Integer;
    begin
         formTypeFactory := FormTypeFactory_Package.getInstance;
-        if (This.size) = (0) then
+        if (ScrollSelectionForm'Class (This).size) = (0) then
             return -(1);
         end if;
-        index := This.getSelectedIndex;
+        index := ScrollSelectionForm'Class (This).getSelectedIndex;
         if ((This.formType) = (formTypeFactory.HORIZONTAL_FORM)) or else ((This.formType) = (formTypeFactory.TEMP_HORIZONTAL_FORM)) then
             if (gameKeyCode) = (Canvas_Package.RIGHT) then
                 index := index + 1;
@@ -299,13 +299,13 @@ package body org.allbinary.graphics.form.ScrollSelectionForm_Package is
         else
             Java_Throw (Java_New_Exception ("Exception", formTypeFactory.UNK));
         end if;
-        max := (This.size) - (1);
+        max := (ScrollSelectionForm'Class (This).size) - (1);
         if (index) < (0) then
-            This.setSelectedIndex (0);
+            ScrollSelectionForm'Class (This).setSelectedIndex (0);
         elsif (index) > (max) then
-            This.setSelectedIndex (max);
+            ScrollSelectionForm'Class (This).setSelectedIndex (max);
         else
-            This.setSelectedIndex (index);
+            ScrollSelectionForm'Class (This).setSelectedIndex (index);
         end if;
         return -(1);
    end processInputKey;
@@ -331,7 +331,7 @@ package body org.allbinary.graphics.form.ScrollSelectionForm_Package is
         item.paintXY (graphics, x, y);
         width := item.getMinimumWidth;
         height := item.getMinimumHeight;
-        graphics.setColor (This.getButtonBasicColor.intValue);
+        graphics.setColor (ScrollSelectionForm'Class (This).getButtonBasicColor.intValue);
         adjustedBorder := 3;
         graphics.drawRect (((x) - (This.halfBorder)) - (adjustedBorder), ((y) - (This.halfBorder)) - (adjustedBorder), ((width) + (This.border)) + (This.adjustedExtraBorder), ((height) + (This.border)) + (This.adjustedExtraBorder));
         return This.scrollSelectionFormFormTypeItemIndexPaintable.paint (graphics, index, item, x, y);
@@ -342,7 +342,7 @@ package body org.allbinary.graphics.form.ScrollSelectionForm_Package is
       graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
       item : constant ABCustomItem_Access := ABCustomItem_Access (item_Param);
    begin
-        graphics.setColor (This.getButtonBasicColor.intValue);
+        graphics.setColor (ScrollSelectionForm'Class (This).getButtonBasicColor.intValue);
         item.paintUnselected (graphics, x, y);
         return This.scrollSelectionFormFormTypeItemIndexPaintable.paint (graphics, index, item, x, y);
    end paintUnselectedItem;

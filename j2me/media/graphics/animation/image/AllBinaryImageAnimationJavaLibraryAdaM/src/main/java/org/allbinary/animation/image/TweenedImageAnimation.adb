@@ -50,7 +50,7 @@ package body org.allbinary.animation.image.TweenedImageAnimation_Package is
    --  throws Exception
    function getAnimationSize (This : in out TweenedImageAnimation) return Integer is
    begin
-        return This.getSize;
+        return TweenedImageAnimation'Class (This).getSize;
    end getAnimationSize;
 
    procedure nextFrame (This : in out TweenedImageAnimation) is
@@ -94,7 +94,7 @@ package body org.allbinary.animation.image.TweenedImageAnimation_Package is
       currentX : Integer;
       currentY : Integer;
    begin
-        frame := This.getFrame;
+        frame := TweenedImageAnimation'Class (This).getFrame;
         currentX := (This.dx) * (frame);
         currentY := (This.dy) * (frame);
         graphics.drawImage (This.image, (x) + (currentX), (y) + (currentY), This.anchor);

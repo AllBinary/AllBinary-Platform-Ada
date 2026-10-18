@@ -25,8 +25,8 @@ package body admin.tags.PermissionItemsTag_Package is
    begin
       TableTag_Package.Initialize (This);
       Initialize_Fields (This);
-        This.setTagHelperFactory (PermissionItemsHelperFactory_Package.Create);
-        This.setTagRequestHelperFactory (PermissionItemsRequestHelperFactory_Package.Create);
+        PermissionItemsTag'Class (This).setTagHelperFactory (PermissionItemsHelperFactory_Package.Create);
+        PermissionItemsTag'Class (This).setTagRequestHelperFactory (PermissionItemsRequestHelperFactory_Package.Create);
    end Initialize;
 
    function Create return PermissionItemsTag_Access is

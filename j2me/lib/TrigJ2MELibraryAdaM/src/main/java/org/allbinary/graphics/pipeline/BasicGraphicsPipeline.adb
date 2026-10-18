@@ -75,7 +75,7 @@ package body org.allbinary.graphics.pipeline.BasicGraphicsPipeline_Package is
    procedure rotateToAngle (This : in out BasicGraphicsPipeline; angle_Param : access Angle_Package.Angle'Class) is
       angle : constant Angle_Access := Angle_Access (angle_Param);
    begin
-        This.rotate (Integer (angle.getValue));
+        BasicGraphicsPipeline'Class (This).rotate (Integer (angle.getValue));
    end rotateToAngle;
 
    --  throws Exception

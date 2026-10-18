@@ -52,7 +52,7 @@ package body org.allbinary.game.layer.geographic.map.ImageMiniMapLayer_Package i
       graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
         graphics.drawImage (This.image, This.x, This.y, This.anchor);
-        This.paintDots (graphics);
+        ImageMiniMapLayer'Class (This).paintDots (graphics);
    end paint;
 
 end org.allbinary.game.layer.geographic.map.ImageMiniMapLayer_Package;

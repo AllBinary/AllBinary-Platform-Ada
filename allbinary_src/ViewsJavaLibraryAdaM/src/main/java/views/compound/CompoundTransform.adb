@@ -30,13 +30,13 @@ package body views.compound.CompoundTransform_Package is
    begin
         AbTransformer_Package.Initialize (This, transformInfoInterface);
         Initialize_Fields (This);
-        This.setURIResolver (URIResolver_Access (StoreUriResolver_Package.Create (This.getTransformInfoInterface, BasicUriResolver_Access (This.getURIResolver))));
-        objectConfig := CompoundContextTransformInfoObjectConfig_Package.Create (This.abeClientInformation, This.getTransformInfoInterface, This.getTransformInfoInterface.getObjectConfigInterface.toXmlDoc);
+        CompoundTransform'Class (This).setURIResolver (URIResolver_Access (StoreUriResolver_Package.Create (CompoundTransform'Class (This).getTransformInfoInterface, BasicUriResolver_Access (CompoundTransform'Class (This).getURIResolver))));
+        objectConfig := CompoundContextTransformInfoObjectConfig_Package.Create (This.abeClientInformation, CompoundTransform'Class (This).getTransformInfoInterface, CompoundTransform'Class (This).getTransformInfoInterface.getObjectConfigInterface.toXmlDoc);
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
             This.logUtil.putF (To_Unbounded_String ("" & ASCII.LF & "ObjectConfig: " & ASCII.LF & "") & objectConfig.toString, CompoundTransform_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         end if;
         templateInputStream := objectConfig.createInputStream;
-        This.setInputStream (templateInputStream);
+        CompoundTransform'Class (This).setInputStream (templateInputStream);
    end Initialize;
 
    function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return CompoundTransform_Access is

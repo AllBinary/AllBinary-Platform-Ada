@@ -106,7 +106,7 @@ package body views.admin.inventory.InventoryUploadMediaUtil_Package is
             This.logUtil.putF (stringBuffer.toString, InventoryUploadMediaUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("saveFiles()"));
         end if;
         defaultMediaData := MediaData_Package.getDefault;
-        This.setFileNames (fileName);
+        InventoryUploadMediaUtil'Class (This).setFileNames (fileName);
         if isMediaSupported then
             isMediaResizable := uploadMedia.isWriterMedia (mediaData.getName, MediaTypeData_Package.getInstance.RESIZABLE_MEDIA);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.CATEGORY) then

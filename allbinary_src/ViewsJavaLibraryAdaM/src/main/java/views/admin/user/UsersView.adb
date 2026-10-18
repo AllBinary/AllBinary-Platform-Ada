@@ -73,14 +73,14 @@ package body views.admin.user.UsersView_Package is
 
    procedure addDomNodeInterfaces (This : in out UsersView) is
    begin
-        This.addDomNodeInterface (DomNodeInterface_Access (UsersView_Access'(This'Unchecked_Access)));
+        UsersView'Class (This).addDomNodeInterface (DomNodeInterface_Access (UsersView_Access'(This'Unchecked_Access)));
    end addDomNodeInterfaces;
 
    --  throws Exception
    function view (This : in out UsersView) return Unbounded_String is
    begin
         begin
-            This.addDomNodeInterfaces;
+            UsersView'Class (This).addDomNodeInterfaces;
             return HttpContextView (This).view;
         exception
             when Java_Occurrence : others =>

@@ -43,17 +43,17 @@ package body org.allbinary.business.advertisement.campaign.AdvertisementCampaign
 
    function getName (This : in out AdvertisementCampaign) return Unbounded_String is
    begin
-        return Unbounded_String (This.hashMap.get (AdvertisementCampaignData_Package.getInstance.NAME));
+        return Java_Unbox (This.hashMap.get (AdvertisementCampaignData_Package.getInstance.NAME));
    end getName;
 
    procedure setComponentName (This : in out AdvertisementCampaign; name : Unbounded_String) is
    begin
-        This.hashMap.put (DynamicObjectData_Package.NAME, name);
+        This.hashMap.put (DynamicObjectData_Package.NAME, Java_Box (name));
    end setComponentName;
 
    procedure setName (This : in out AdvertisementCampaign; name : Unbounded_String) is
    begin
-        This.hashMap.put (AdvertisementCampaignData_Package.getInstance.NAME, name);
+        This.hashMap.put (AdvertisementCampaignData_Package.getInstance.NAME, Java_Box (name));
    end setName;
 
    function search (This : in out AdvertisementCampaign; advertisementSearchInterface_Param : access AdvertisementSearchInterface_Package.AdvertisementSearchInterface'Class) return AdvertisementsInterface_Access is

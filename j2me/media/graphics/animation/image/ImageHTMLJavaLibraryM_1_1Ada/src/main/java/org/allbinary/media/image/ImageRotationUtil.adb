@@ -52,8 +52,8 @@ package body org.allbinary.media.image.ImageRotationUtil_Package is
             canvasImage := CanvasImage_Access (htmlImage.getImage);
             canvasSurface := htmlImage.getCanvasSurface (canvasImage);
             canvasSurface.translate ((originalImage.getWidth) / (2), (originalImage.getHeight) / (2));
-            image2 := This.rotateImageCanvasSurface (originalImage, image, canvasSurface, totalAngle);
-            This.drawImage (originalImage, image, canvasSurface);
+            image2 := ImageRotationUtil'Class (This).rotateImageCanvasSurface (originalImage, image, canvasSurface, totalAngle);
+            ImageRotationUtil'Class (This).drawImage (originalImage, image, canvasSurface);
             return image2;
         else
             return null;
@@ -69,7 +69,7 @@ package body org.allbinary.media.image.ImageRotationUtil_Package is
             canvasSurface.translate ((-(originalImage.getWidth)) / (2), (-(originalImage.getHeight)) / (2));
             canvasSurface.clear;
             canvasSurface.translate ((originalImage.getWidth) / (2), (originalImage.getHeight) / (2));
-            return This.rotateImageCanvasSurface (originalImage, image, canvasSurface, totalAngle);
+            return ImageRotationUtil'Class (This).rotateImageCanvasSurface (originalImage, image, canvasSurface, totalAngle);
         else
             return null;
         end if;
@@ -113,7 +113,7 @@ package body org.allbinary.media.image.ImageRotationUtil_Package is
       rotatedImage : Image_Access;
    begin
         image := ImageCreationUtil_Package.getInstance.createImageWH (originalImage.getWidth, originalImage.getHeight);
-        rotatedImage := This.rotateImage (originalImage, image, rotationInDegrees);
+        rotatedImage := ImageRotationUtil'Class (This).rotateImage (originalImage, image, rotationInDegrees);
         if (rotatedImage) = (null) then
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Not Mutable")));
         end if;

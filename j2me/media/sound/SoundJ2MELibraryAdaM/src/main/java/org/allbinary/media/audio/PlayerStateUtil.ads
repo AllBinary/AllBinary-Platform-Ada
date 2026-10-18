@@ -20,11 +20,12 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with javax.microedition.media.Player_Package; use javax.microedition.media.Player_Package;
+with javax.microedition.media.Player_Package; use javax.microedition.media.Player_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 
 package org.allbinary.media.audio.PlayerStateUtil_Package is
 
+   package Player_Package renames Standard.javax.microedition.media.Player_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type PlayerStateUtil is tagged;

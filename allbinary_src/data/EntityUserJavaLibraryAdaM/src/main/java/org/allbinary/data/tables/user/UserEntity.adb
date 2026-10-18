@@ -34,7 +34,7 @@ package body org.allbinary.data.tables.user.UserEntity_Package is
    begin
         AbSqlBean_Package.Initialize (This, UserDbInitInfo_Package.Create);
         Initialize_Fields (This);
-        This.setTableName (This.tableName);
+        UserEntity'Class (This).setTableName (This.tableName);
    end Initialize;
 
    function Create return UserEntity_Access is
@@ -67,7 +67,7 @@ package body org.allbinary.data.tables.user.UserEntity_Package is
    --  throws Exception
    function getAdministrators (This : in out UserEntity) return BasicArrayList_Access is
    begin
-        return This.getUsersWithRole (UserRoleFactory_Package.getInstance.ADMINISTRATOR);
+        return UserEntity'Class (This).getUsersWithRole (UserRoleFactory_Package.getInstance.ADMINISTRATOR);
    end getAdministrators;
 
    --  throws Exception
@@ -82,8 +82,8 @@ package body org.allbinary.data.tables.user.UserEntity_Package is
    begin
         keysAndValues := StdUtil_Package.getInstance.createHashMap;
         usersVector := BasicArrayListD_Package.Create;
-        keysAndValues.put (UserRoleData_Package.NAME.toString, UserRoleFactory_Package.getInstance.STOREMANAGER.toString);
-        keysAndValues.put (UserData_Package.PERMISSIONS, storeFrontInterface.getName);
+        keysAndValues.put (Java_Box (UserRoleData_Package.NAME.toString), Java_Box (UserRoleFactory_Package.getInstance.STOREMANAGER.toString));
+        keysAndValues.put (UserData_Package.PERMISSIONS, Java_Box (storeFrontInterface.getName));
         usersHashMapVector := AbSqlBean (This).getRows (keysAndValues);
         size := usersHashMapVector.size;
         for i in 0 .. (size) - 1 loop
@@ -98,7 +98,7 @@ package body org.allbinary.data.tables.user.UserEntity_Package is
    --  throws Exception
    function getCustomers (This : in out UserEntity) return BasicArrayList_Access is
    begin
-        return This.getUsersWithRole (UserRoleFactory_Package.getInstance.CUSTOMER);
+        return UserEntity'Class (This).getUsersWithRole (UserRoleFactory_Package.getInstance.CUSTOMER);
    end getCustomers;
 
    --  throws Exception
@@ -113,7 +113,7 @@ package body org.allbinary.data.tables.user.UserEntity_Package is
    begin
         keysAndValues := StdUtil_Package.getInstance.createHashMap;
         usersVector := BasicArrayListD_Package.Create;
-        keysAndValues.put (UserRoleData_Package.NAME.toString, userRole.toString);
+        keysAndValues.put (Java_Box (UserRoleData_Package.NAME.toString), Java_Box (userRole.toString));
         usersHashMapVector := AbSqlBean (This).getRows (keysAndValues);
         size := usersHashMapVector.size;
         for index in 0 .. (size) - 1 loop
@@ -137,7 +137,7 @@ package body org.allbinary.data.tables.user.UserEntity_Package is
    begin
         keysAndValues := StdUtil_Package.getInstance.createHashMap;
         usersVector := BasicArrayListD_Package.Create;
-        keysAndValues.put (StoreFrontData_Package.getInstance.NAME, storeFrontInterface.getName);
+        keysAndValues.put (StoreFrontData_Package.getInstance.NAME, Java_Box (storeFrontInterface.getName));
         usersHashMapVector := AbSqlBean (This).getRows (keysAndValues);
         size := usersHashMapVector.size;
         for index in 0 .. (size) - 1 loop
@@ -155,7 +155,7 @@ package body org.allbinary.data.tables.user.UserEntity_Package is
       userHashMap : HashMap_Access;
    begin
         row := StdUtil_Package.getInstance.createHashMap;
-        row.put (UserData_Package.USERNAME, userName);
+        row.put (UserData_Package.USERNAME, Java_Box (userName));
         userHashMap := AbSqlBean (This).getRow (row);
         if (userHashMap) /= (null) then
             return CreateUserFactory_Package.getInstance (userHashMap);
@@ -263,7 +263,7 @@ package body org.allbinary.data.tables.user.UserEntity_Package is
 
    function createTable (This : in out UserEntity) return Unbounded_String is
    begin
-        return AbSqlBean (This).createTable (This.createTableStatement);
+        return AbSqlBean (This).createTable (UserEntity'Class (This).createTableStatement);
    end createTable;
 
    procedure getStoreManagers (This : in out UserEntity; storeFrontInterface_Param : access StoreFrontInterface_Package.StoreFrontInterface'Class) is

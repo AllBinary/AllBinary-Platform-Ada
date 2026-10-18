@@ -27,7 +27,7 @@ package body org.allbinary.logic.system.loader.NativeLibraryHelperWrapper_Packag
    procedure Initialize (This : in out NativeLibraryHelperWrapper'Class; libraryName : Unbounded_String) is
    begin
       Initialize_Fields (This);
-        This.setLibraryName (libraryName);
+        NativeLibraryHelperWrapper'Class (This).setLibraryName (libraryName);
    end Initialize;
 
    function Create (libraryName : Unbounded_String) return NativeLibraryHelperWrapper_Access is
@@ -47,9 +47,9 @@ package body org.allbinary.logic.system.loader.NativeLibraryHelperWrapper_Packag
       method : Method_Access;
    begin
         params := new Java_Object_Access_Array'(0 .. (1) - 1 => null);
-        params (0) := This.getLibraryName;
-        classes := new Ada_Tags_Tag_Array'(0 .. (1) - 1 => null);
-        classes (0) := This.getLibraryName.all'Tag;
+        params (0) := NativeLibraryHelperWrapper'Class (This).getLibraryName;
+        classes := new Ada_Tags_Tag_Array'(0 .. (1) - 1 => Ada.Tags.No_Tag);
+        classes (0) := NativeLibraryHelperWrapper'Class (This).getLibraryName.all'Tag;
         This.loader := NativeLibraryClassLoader_Package.Create (This.all'Tag.getClassLoader);
         myClass := This.loader.loadClass (To_Unbounded_String ("dynamic.NativeLibraryHelper"));
         constructor := myClass.getConstructor (classes);
@@ -69,7 +69,7 @@ package body org.allbinary.logic.system.loader.NativeLibraryHelperWrapper_Packag
 
    function toString (This : in out NativeLibraryHelperWrapper) return Unbounded_String is
    begin
-        return To_Unbounded_String ("Library: ") & Java_Image (This.getLibraryName);
+        return To_Unbounded_String ("Library: ") & Java_Image (NativeLibraryHelperWrapper'Class (This).getLibraryName);
    end toString;
 
    function getLibraryName (This : in out NativeLibraryHelperWrapper) return Unbounded_String is

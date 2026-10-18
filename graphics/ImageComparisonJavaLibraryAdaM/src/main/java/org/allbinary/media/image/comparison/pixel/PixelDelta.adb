@@ -29,9 +29,9 @@ package body org.allbinary.media.image.comparison.pixel.PixelDelta_Package is
       colorDelta : constant ColorDelta_Access := ColorDelta_Access (colorDelta_Param);
    begin
       Initialize_Fields (This);
-        This.setPoint (point);
-        This.setColorDelta (colorDelta);
-        This.key := PixelDelta_Package.getKey (This.getPoint, This.getColorDelta);
+        PixelDelta'Class (This).setPoint (point);
+        PixelDelta'Class (This).setColorDelta (colorDelta);
+        This.key := PixelDelta_Package.getKey (PixelDelta'Class (This).getPoint, PixelDelta'Class (This).getColorDelta);
    end Initialize;
 
    function Create (point_Param : access GPoint_Package.GPoint'Class; colorDelta_Param : access ColorDelta_Package.ColorDelta'Class) return PixelDelta_Access is

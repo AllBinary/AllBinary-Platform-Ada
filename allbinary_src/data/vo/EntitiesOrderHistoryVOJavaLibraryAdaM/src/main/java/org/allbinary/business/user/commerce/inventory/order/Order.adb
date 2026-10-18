@@ -68,7 +68,7 @@ package body org.allbinary.business.user.commerce.inventory.order.Order_Package 
 
    function isIdValid (This : in out Order) return Boolean is
    begin
-        if ((((This.getId) = (null)) or else ((This.getId.compareTo (StringUtil_Package.getInstance.EMPTY_STRING)) = (0))) or else ((This.getId.length) > (OrderHistoryData_Package.MAXIDLEN))) or else (not (StringValidationUtil_Package.getInstance.isNumber (This.getId))) then
+        if ((((Order'Class (This).getId) = (null)) or else ((Order'Class (This).getId.compareTo (StringUtil_Package.getInstance.EMPTY_STRING)) = (0))) or else ((Order'Class (This).getId.length) > (OrderHistoryData_Package.MAXIDLEN))) or else (not (StringValidationUtil_Package.getInstance.isNumber (Order'Class (This).getId))) then
             return False;
         end if;
         return True;
@@ -83,7 +83,7 @@ package body org.allbinary.business.user.commerce.inventory.order.Order_Package 
       EMPTY_STRING : Unbounded_String;
    begin
         EMPTY_STRING := StringUtil_Package.getInstance.EMPTY_STRING;
-        if ((((This.getId) = (null)) or else ((This.getId.compareTo (EMPTY_STRING)) = (0))) or else ((This.getId.length) > (OrderHistoryData_Package.MAXIDLEN))) or else (not (StringValidationUtil_Package.getInstance.isNumber (This.getId))) then
+        if ((((Order'Class (This).getId) = (null)) or else ((Order'Class (This).getId.compareTo (EMPTY_STRING)) = (0))) or else ((Order'Class (This).getId.length) > (OrderHistoryData_Package.MAXIDLEN))) or else (not (StringValidationUtil_Package.getInstance.isNumber (Order'Class (This).getId))) then
             return To_Unbounded_String ("Please enter a valid order Id < ") & Java_Image (OrderHistoryData_Package.MAXIDLEN) & To_Unbounded_String (" digits in length.<br>");
         end if;
         return EMPTY_STRING;
@@ -204,15 +204,15 @@ package body org.allbinary.business.user.commerce.inventory.order.Order_Package 
       hashMap : HashMap_Access;
    begin
         hashMap := StdUtil_Package.getInstance.createHashMap;
-        hashMap.put (PaymentData_Package.METHOD, This.paymentMethod);
-        hashMap.put (ShippingMethodData_Package.NAME, This.shippingType);
-        hashMap.put (StoreFrontData_Package.getInstance.NAME, This.storeName);
-        hashMap.put (EntryData_Package.getInstance.SPECIAL, This.special);
-        hashMap.put (OrderData_Package.ID, This.id);
-        hashMap.put (OrderData_Package.CUSTOMERCOMMENT, This.userComment);
-        hashMap.put (OrderData_Package.CUSTOMERCANCELCOMMENT, This.userCancelComment);
-        hashMap.put (OrderData_Package.STORECOMMENT, This.storeComment);
-        hashMap.put (OrderData_Package.STORECANCELCOMMENT, This.storeCancelComment);
+        hashMap.put (PaymentData_Package.METHOD, Java_Box (This.paymentMethod));
+        hashMap.put (ShippingMethodData_Package.NAME, Java_Box (This.shippingType));
+        hashMap.put (StoreFrontData_Package.getInstance.NAME, Java_Box (This.storeName));
+        hashMap.put (EntryData_Package.getInstance.SPECIAL, Java_Box (This.special));
+        hashMap.put (OrderData_Package.ID, Java_Box (This.id));
+        hashMap.put (OrderData_Package.CUSTOMERCOMMENT, Java_Box (This.userComment));
+        hashMap.put (OrderData_Package.CUSTOMERCANCELCOMMENT, Java_Box (This.userCancelComment));
+        hashMap.put (OrderData_Package.STORECOMMENT, Java_Box (This.storeComment));
+        hashMap.put (OrderData_Package.STORECANCELCOMMENT, Java_Box (This.storeCancelComment));
         return hashMap;
    end toHashMapOrder;
 
@@ -228,14 +228,14 @@ package body org.allbinary.business.user.commerce.inventory.order.Order_Package 
       value : Unbounded_String;
       i : Integer;
    begin
-        hashMap := This.toHashMapOrder;
+        hashMap := Order'Class (This).toHashMapOrder;
         keySet := hashMap.keySet;
         keyArray := keySet.toArray;
         size := keyArray'Length;
         node := document.createElement (OrderData_Package.ORDER);
         for i in 0 .. (size) - 1 loop
-            name := Unbounded_String (keyArray (i));
-            value := Unbounded_String (hashMap.get (name));
+            name := Java_Unbox (keyArray (i));
+            value := Java_Unbox (hashMap.get (Java_Box (name)));
             value := StringUtil_Package.getInstance.getNonNull (value);
             node.appendChild (ModDomHelper_Package.createNameValueNodes (document, name, value));
         end loop;

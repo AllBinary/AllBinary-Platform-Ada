@@ -44,7 +44,7 @@ package body org.allbinary.game.input.GameInputProcessorComposite_Package is
       list : BasicArrayList_Access;
    begin
         begin
-            list := This.getGameKeyEventList;
+            list := GameInputProcessorComposite'Class (This).getGameKeyEventList;
             This.gameInputProcessorInterface.onInput (list);
         exception
             when Java_Occurrence : others =>

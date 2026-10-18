@@ -20,7 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.util.HashMap_Package; use java.util.HashMap_Package;
+with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.business.entry_Id.EntryData_Package; use org.allbinary.business.entry_Id.EntryData_Package;
 with org.allbinary.business.time.created.TimeCreated_Package; use org.allbinary.business.time.created.TimeCreated_Package;
 with org.allbinary.business.time.modified.TimeLastModified_Package; use org.allbinary.business.time.modified.TimeLastModified_Package;
@@ -30,6 +30,7 @@ with org.allbinary.business.user.modules.configuration.UserConfigurationInterfac
 
 package org.allbinary.business.user.modules.configuration.UserConfiguration_Package is
 
+   package HashMap_Package renames Standard.java.util.HashMap_Package;
    package EntryData_Package renames Standard.org.allbinary.business.entry_Id.EntryData_Package;
    package TimeCreated_Package renames Standard.org.allbinary.business.time.created.TimeCreated_Package;
    package TimeLastModified_Package renames Standard.org.allbinary.business.time.modified.TimeLastModified_Package;

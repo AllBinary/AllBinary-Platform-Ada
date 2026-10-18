@@ -32,8 +32,8 @@ package body org.allbinary.graphics.Line_Package is
       Initialize_Fields (This);
         This.p1 := PointFactory_Package.getInstance.ZERO_ZERO;
         This.p2 := This.p1;
-        This.setP1 (p1);
-        This.setP2 (p2);
+        Line'Class (This).setP1 (p1);
+        Line'Class (This).setP2 (p2);
    end Initialize;
 
    function Create (p1_Param : access GPoint_Package.GPoint'Class; p2_Param : access GPoint_Package.GPoint'Class) return Line_Access is
@@ -45,13 +45,13 @@ package body org.allbinary.graphics.Line_Package is
 
    function getGradient (This : in out Line) return Long_Float is
    begin
-        return (This.getDeltaY) / (This.getDeltaX);
+        return (Line'Class (This).getDeltaY) / (Line'Class (This).getDeltaX);
    end getGradient;
 
    procedure update (This : in out Line) is
    begin
-        This.deltaX := (Long_Float (This.getP1.getX)) - (This.getP2.getX);
-        This.deltaY := (Long_Float (This.getP1.getY)) - (This.getP2.getY);
+        This.deltaX := (Long_Float (Line'Class (This).getP1.getX)) - (Line'Class (This).getP2.getX);
+        This.deltaY := (Long_Float (Line'Class (This).getP1.getY)) - (Line'Class (This).getP2.getY);
    end update;
 
    function getDeltaX (This : in out Line) return Long_Float is
@@ -78,14 +78,14 @@ package body org.allbinary.graphics.Line_Package is
       p1 : constant GPoint_Access := GPoint_Access (p1_Param);
    begin
         This.p1 := p1;
-        This.update;
+        Line'Class (This).update;
    end setP1;
 
    procedure setP2 (This : in out Line; p2_Param : access GPoint_Package.GPoint'Class) is
       p2 : constant GPoint_Access := GPoint_Access (p2_Param);
    begin
         This.p2 := p2;
-        This.update;
+        Line'Class (This).update;
    end setP2;
 
 end org.allbinary.graphics.Line_Package;

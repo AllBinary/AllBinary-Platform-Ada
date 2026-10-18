@@ -63,37 +63,37 @@ package body org.allbinary.game.displayable.canvas.GameInputMappingCanvas_Packag
         This.paintable.process;
         This.selectedGameKey := This.NONE;
         This.selectedInput := This.NONE;
-        This.update;
+        GameInputMappingCanvas'Class (This).update;
    end close;
 
    procedure initCommands (This : in out GameInputMappingCanvas; cmdListener_Param : access CommandListener_Package.CommandListener'Class) is
       cmdListener : constant CommandListener_Access := CommandListener_Access (cmdListener_Param);
    begin
-        This.removeAllCommands;
-        This.addCommand (GameCommandsFactory_Package.getInstance.CLOSE_AND_SHOW_GAME_CANVAS);
-        This.addCommand (GameInputMappingCanvas_Package.DEFAULT);
-        This.addCommand (GameInputMappingInstructionsCanvas_Package.DISPLAY);
-        This.setCommandListener (cmdListener);
+        GameInputMappingCanvas'Class (This).removeAllCommands;
+        GameInputMappingCanvas'Class (This).addCommand (GameCommandsFactory_Package.getInstance.CLOSE_AND_SHOW_GAME_CANVAS);
+        GameInputMappingCanvas'Class (This).addCommand (GameInputMappingCanvas_Package.DEFAULT);
+        GameInputMappingCanvas'Class (This).addCommand (GameInputMappingInstructionsCanvas_Package.DISPLAY);
+        GameInputMappingCanvas'Class (This).setCommandListener (cmdListener);
    end initCommands;
 
    procedure keyPressed (This : in out GameInputMappingCanvas; keyCode : Integer) is
    begin
-        This.keyPressedByDevice (keyCode, 0);
+        GameInputMappingCanvas'Class (This).keyPressedByDevice (keyCode, 0);
    end keyPressed;
 
    procedure keyReleased (This : in out GameInputMappingCanvas; keyCode : Integer) is
    begin
-        This.keyReleasedByDevice (keyCode, 0);
+        GameInputMappingCanvas'Class (This).keyReleasedByDevice (keyCode, 0);
    end keyReleased;
 
    procedure keyRepeated (This : in out GameInputMappingCanvas; keyCode : Integer) is
    begin
-        This.keyRepeatedByDevice (keyCode, 0);
+        GameInputMappingCanvas'Class (This).keyRepeatedByDevice (keyCode, 0);
    end keyRepeated;
 
    procedure keyPressedByDevice (This : in out GameInputMappingCanvas; keyCode : Integer; deviceId : Integer) is
    begin
-        This.addGameKey (keyCode, False);
+        GameInputMappingCanvas'Class (This).addGameKey (keyCode, False);
         GameCommandCanvas (This).keyPressedByDevice (keyCode, 0);
    end keyPressedByDevice;
 
@@ -105,7 +105,7 @@ package body org.allbinary.game.displayable.canvas.GameInputMappingCanvas_Packag
             This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Raw Device Key Code: ")).append (To_Unbounded_String (Java_To_Unsigned_String (keyCode, 16))).toString, GameInputMappingCanvas_Access'(This'Unchecked_Access), This.gameInputStrings.ADD_KEY_EVENT);
             gameKey := This.inputToGameKeyMapping.getInstanceForCanvas (GameInputMappingCanvas_Access'(This'Unchecked_Access), keyCode);
             input := This.inputFactory.getInstanceById (keyCode);
-            This.processInputMapping (gameKey, input);
+            GameInputMappingCanvas'Class (This).processInputMapping (gameKey, input);
         exception
             when Java_Occurrence : others =>
                 declare
@@ -129,9 +129,9 @@ package body org.allbinary.game.displayable.canvas.GameInputMappingCanvas_Packag
         stringBuffer.append (This.stringUtil.toString (input));
         This.logUtil.putF (stringBuffer.toString, GameInputMappingCanvas_Access'(This'Unchecked_Access), This.commonStrings.PROCESS);
         if (This.selectedGameKey) /= (This.NONE) then
-            This.gameActionCrud (gameKey, input);
+            GameInputMappingCanvas'Class (This).gameActionCrud (gameKey, input);
         else
-            This.setSelectedAction (gameKey);
+            GameInputMappingCanvas'Class (This).setSelectedAction (gameKey);
         end if;
    end processInputMapping;
 
@@ -168,12 +168,12 @@ package body org.allbinary.game.displayable.canvas.GameInputMappingCanvas_Packag
                 This.helpPaintable.update (This.selectedGameKey, This.selectedInput);
                 This.repaintBehavior.onChangeRepaint (GameInputMappingCanvas_Access'(This'Unchecked_Access));
             else
-                This.addNewMapping (gameKey, input);
+                GameInputMappingCanvas'Class (This).addNewMapping (gameKey, input);
             end if;
         elsif This.inputMapping.isDelete (input) then
-            This.deleteCurrentMapping;
+            GameInputMappingCanvas'Class (This).deleteCurrentMapping;
         else
-            This.setSelectedAction (gameKey);
+            GameInputMappingCanvas'Class (This).setSelectedAction (gameKey);
         end if;
    end gameActionCrud;
 
@@ -197,10 +197,10 @@ package body org.allbinary.game.displayable.canvas.GameInputMappingCanvas_Packag
             This.logUtil.putF (stringBuffer.toString, GameInputMappingCanvas_Access'(This'Unchecked_Access), METHOD_NAME);
             This.inputMapping.getInputMapping.add (This.selectedGameKey, input);
             This.selectedInput := input;
-            This.update;
+            GameInputMappingCanvas'Class (This).update;
         else
             This.logUtil.putF (To_Unbounded_String ("Unable to add Mapping since one already exists or is MENU, HOME, or BACK key and setting selected action to what it is already mapped to"), GameInputMappingCanvas_Access'(This'Unchecked_Access), METHOD_NAME);
-            This.setSelectedAction (gameKey);
+            GameInputMappingCanvas'Class (This).setSelectedAction (gameKey);
         end if;
    end addNewMapping;
 
@@ -222,7 +222,7 @@ package body org.allbinary.game.displayable.canvas.GameInputMappingCanvas_Packag
             This.logUtil.putF (stringBuffer.toString, GameInputMappingCanvas_Access'(This'Unchecked_Access), METHOD_NAME);
             This.inputMapping.getInputMapping.remove (This.selectedGameKey, This.selectedInput);
             This.selectedInput := This.NONE;
-            This.update;
+            GameInputMappingCanvas'Class (This).update;
         else
             This.logUtil.putF (To_Unbounded_String ("Can't Remove Last Key Mapping"), GameInputMappingCanvas_Access'(This'Unchecked_Access), METHOD_NAME);
         end if;

@@ -70,7 +70,7 @@ package body org.allbinary.animation.VectorMirrorGenerator_Package is
                 pointsBasicArrayList.add (pointBasicArrayList);
             end loop;
             for index in 0 .. (points'Length) - 1 loop
-                pointsBasicArrayList.add (This.getInstance (BasicArrayList_Access (pointsBasicArrayList.objectArray (index)), width));
+                pointsBasicArrayList.add (VectorMirrorGenerator'Class (This).getInstance (BasicArrayList_Access (pointsBasicArrayList.objectArray (index)), width));
             end loop;
             newPoints := This.vectorAnimationUtil.toAnimationArrayFromListOfPointList (pointsBasicArrayList);
             return newPoints;

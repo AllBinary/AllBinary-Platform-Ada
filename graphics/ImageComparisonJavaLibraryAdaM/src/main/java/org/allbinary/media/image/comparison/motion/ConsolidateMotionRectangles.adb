@@ -37,7 +37,7 @@ package body org.allbinary.media.image.comparison.motion.ConsolidateMotionRectan
             motionRectangle := MotionRectangle_Access (vector.get (index));
             vector.add (motionRectangle.clone);
         end loop;
-        This.consolidateMotionRectangles;
+        ConsolidateMotionRectangles'Class (This).consolidateMotionRectangles;
    end Initialize;
 
    function Create (motionRectangles_Param : access MotionRectangles_Package.MotionRectangles'Class) return ConsolidateMotionRectangles_Access is
@@ -62,7 +62,7 @@ package body org.allbinary.media.image.comparison.motion.ConsolidateMotionRectan
       i : Integer;
       index : Integer;
    begin
-        vector := This.getVector;
+        vector := ConsolidateMotionRectangles'Class (This).getVector;
         This.logUtil.putF (To_Unbounded_String ("Start - Size Before: ") & Java_Image (vector.size), ConsolidateMotionRectangles_Access'(This'Unchecked_Access), To_Unbounded_String ("consolidateMotionRectangleConstraints"));
         removeVector := BasicArrayListD_Package.Create;
         size := vector.size;
@@ -81,7 +81,7 @@ package body org.allbinary.media.image.comparison.motion.ConsolidateMotionRectan
                 end if;
             end loop;
         end loop;
-        This.remove (removeVector);
+        ConsolidateMotionRectangles'Class (This).remove (removeVector);
    end consolidateMotionRectangles;
 
    procedure remove (This : in out ConsolidateMotionRectangles; removeVector_Param : access BasicArrayList_Package.BasicArrayList'Class) is
@@ -90,7 +90,7 @@ package body org.allbinary.media.image.comparison.motion.ConsolidateMotionRectan
       size : Integer;
       index : Integer;
    begin
-        vector := This.getVector;
+        vector := ConsolidateMotionRectangles'Class (This).getVector;
         size := removeVector.size;
         for index in 0 .. (size) - 1 loop
             vector.remove (removeVector.get (index));

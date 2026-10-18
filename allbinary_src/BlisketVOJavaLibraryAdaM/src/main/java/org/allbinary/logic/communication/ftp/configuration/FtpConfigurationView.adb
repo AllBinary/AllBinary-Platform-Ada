@@ -31,16 +31,16 @@ package body org.allbinary.logic.communication.ftp.configuration.FtpConfiguratio
       path : Unbounded_String;
    begin
       Initialize_Fields (This);
-        This.setFtpConfigurationInterface (FtpConfigurationInterface_Access (FtpConfiguration_Package.Create));
+        FtpConfigurationView'Class (This).setFtpConfigurationInterface (FtpConfigurationInterface_Access (FtpConfiguration_Package.Create));
         chileNodeList := node.getChildNodes;
         server := DomNodeHelper_Package.getTextNodeValue (FtpConfigurationData_Package.SERVER, chileNodeList);
-        This.getFtpConfigurationInterface.setServer (server);
+        FtpConfigurationView'Class (This).getFtpConfigurationInterface.setServer (server);
         userName := DomNodeHelper_Package.getTextNodeValue (FtpConfigurationData_Package.USERNAME, chileNodeList);
-        This.getFtpConfigurationInterface.setUserName (userName);
+        FtpConfigurationView'Class (This).getFtpConfigurationInterface.setUserName (userName);
         password := DomNodeHelper_Package.getTextNodeValue (FtpConfigurationData_Package.PASSWORD, chileNodeList);
-        This.getFtpConfigurationInterface.setPassword (password);
+        FtpConfigurationView'Class (This).getFtpConfigurationInterface.setPassword (password);
         path := DomNodeHelper_Package.getTextNodeValue (FtpConfigurationData_Package.PATH, chileNodeList);
-        This.getFtpConfigurationInterface.setPath (path);
+        FtpConfigurationView'Class (This).getFtpConfigurationInterface.setPath (path);
    end Initialize;
 
    function Create (node_Param : access Node_Package.Node'Class) return FtpConfigurationView_Access is
@@ -54,7 +54,7 @@ package body org.allbinary.logic.communication.ftp.configuration.FtpConfiguratio
       ftpConfigurationInterface : constant FtpConfigurationInterface_Access := FtpConfigurationInterface_Access (ftpConfigurationInterface_Param);
    begin
       Initialize_Fields (This);
-        This.setFtpConfigurationInterface (ftpConfigurationInterface);
+        FtpConfigurationView'Class (This).setFtpConfigurationInterface (ftpConfigurationInterface);
    end Initialize;
 
    function Create (ftpConfigurationInterface_Param : access FtpConfigurationInterface_Package.FtpConfigurationInterface'Class) return FtpConfigurationView_Access is
@@ -71,7 +71,7 @@ package body org.allbinary.logic.communication.ftp.configuration.FtpConfiguratio
       hashMap : HashMap_Access;
       node : Node_Access;
    begin
-        ftpConfigurationMapping := FtpConfigurationMapping_Package.Create (This.getFtpConfigurationInterface);
+        ftpConfigurationMapping := FtpConfigurationMapping_Package.Create (FtpConfigurationView'Class (This).getFtpConfigurationInterface);
         hashMap := ftpConfigurationMapping.toHashMap;
         node := ModDomHelper_Package.createNameValueNodes (document, FtpConfigurationData_Package.NAME, hashMap);
         return node;

@@ -45,7 +45,7 @@ package body org.allbinary.logic.communication.http.request.NameSpaceRequestPara
         This.nameSpaceVector := BasicArrayListD_Package.Create;
         This.nameSpacePropertiesHashMap := StdUtil_Package.getInstance.createHashMap;
         This.value := value;
-        beginIndex := (Index (nameSpace, To_String (NameSpaceRequestParamData_Package.NAME)) - 1);
+        beginIndex := (Index (nameSpace, Java_Image (NameSpaceRequestParamData_Package.NAME)) - 1);
         if (beginIndex) < (0) then
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Not a NameSpaceRequest")));
         end if;
@@ -61,22 +61,22 @@ package body org.allbinary.logic.communication.http.request.NameSpaceRequestPara
         index := 0;
         size := nameSpaceWithPropertiesVector.size;
         while (index) < (size) loop
-            nameSpaceWithProperties := Unbounded_String (nameSpaceWithPropertiesVector.get (Java_Post_Increment (index)));
+            nameSpaceWithProperties := Java_Unbox (nameSpaceWithPropertiesVector.get (Java_Post_Increment (index)));
             list.clear;
             nameSpaceAndPropertiesVector := nameSpaceAndPropertiesTokenizer.getTokensFromString (nameSpaceWithProperties, list);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.HTTPREQUEST) then
                 This.logUtil.putF (To_Unbounded_String ("" & ASCII.LF & "PackageName and PackageName Properties Tokens: ") & nameSpaceAndPropertiesVector.toString, NameSpaceRequestParam_Access'(This'Unchecked_Access), To_Unbounded_String ("NameSpaceRequestParam()"));
             end if;
             if (nameSpaceAndPropertiesVector.size) > (0) then
-                packageName := Unbounded_String (nameSpaceAndPropertiesVector.get (0));
+                packageName := Java_Unbox (nameSpaceAndPropertiesVector.get (0));
                 if (packageName) = (Null_Unbounded_String) then
                     Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Package Name Is Null")));
                 end if;
                 This.nameSpaceVector.add (packageName);
                 if (nameSpaceAndPropertiesVector.size) > (1) then
-                    properties := Unbounded_String (nameSpaceAndPropertiesVector.get (1));
-                    packagePropertiesHashMap := This.generatePackagePropertiesHashMap (properties);
-                    This.nameSpacePropertiesHashMap.put (To_Unbounded_String (Java_Image (packageIndex)), packagePropertiesHashMap);
+                    properties := Java_Unbox (nameSpaceAndPropertiesVector.get (1));
+                    packagePropertiesHashMap := NameSpaceRequestParam'Class (This).generatePackagePropertiesHashMap (properties);
+                    This.nameSpacePropertiesHashMap.put (Java_Box (To_Unbounded_String (Java_Image (packageIndex))), packagePropertiesHashMap);
                 end if;
                 packageIndex := packageIndex + 1;
             end if;
@@ -104,7 +104,7 @@ package body org.allbinary.logic.communication.http.request.NameSpaceRequestPara
    function getPackageProperties (This : in out NameSpaceRequestParam; packageIndex : Integer) return HashMap_Access is
       packagePropertiesHashMap : HashMap_Access;
    begin
-        packagePropertiesHashMap := HashMap_Access (This.nameSpacePropertiesHashMap.get (To_Unbounded_String (Java_Image (packageIndex))));
+        packagePropertiesHashMap := HashMap_Access (This.nameSpacePropertiesHashMap.get (Java_Box (To_Unbounded_String (Java_Image (packageIndex)))));
         if (packagePropertiesHashMap) = (null) then
             packagePropertiesHashMap := StdUtil_Package.getInstance.createHashMap;
         end if;
@@ -145,20 +145,20 @@ package body org.allbinary.logic.communication.http.request.NameSpaceRequestPara
         index := 0;
         size := propertyVector.size;
         while (index) < (size) loop
-            property := Unbounded_String (propertyVector.get (index));
+            property := Java_Unbox (propertyVector.get (index));
             list.clear;
             propertyNameValueVector := propertyTokenizer.getTokensFromString (property, list);
             index2 := 0;
             while (index2) < (propertyNameValueVector.size) loop
-                propertyName := Unbounded_String (propertyNameValueVector.get (Java_Post_Increment (index2)));
+                propertyName := Java_Unbox (propertyNameValueVector.get (Java_Post_Increment (index2)));
                 if (propertyNameValueVector.size) > (1) then
-                    propertyValue := Unbounded_String (propertyNameValueVector.get (Java_Post_Increment (index2)));
+                    propertyValue := Java_Unbox (propertyNameValueVector.get (Java_Post_Increment (index2)));
                     if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.HTTPREQUEST) then
                         This.logUtil.putF (To_Unbounded_String ("" & ASCII.LF & "Property Name: ") & propertyName & To_Unbounded_String ("" & ASCII.LF & "Property Value: ") & propertyValue, NameSpaceRequestParam_Access'(This'Unchecked_Access), To_Unbounded_String ("generatePackagePropertiesHashMap()"));
                     end if;
-                    packagePropertiesHashMap.put (propertyName, propertyValue);
+                    packagePropertiesHashMap.put (Java_Box (propertyName), Java_Box (propertyValue));
                 else
-                    packagePropertiesHashMap.put (propertyName, StringUtil_Package.getInstance.EMPTY_STRING);
+                    packagePropertiesHashMap.put (Java_Box (propertyName), StringUtil_Package.getInstance.EMPTY_STRING);
                 end if;
             end loop;
         end loop;

@@ -25,7 +25,7 @@ package body org.allbinary.media.image.comparison.motion.AllMotionRectangles_Pac
       imageComparisonResult : constant ImageComparisonResult_Access := ImageComparisonResult_Access (imageComparisonResult_Param);
    begin
         MotionRectangles_Package.Initialize (This, NAME, imageComparisonResult);
-        This.createMotionRectangles (imageComparisonResult);
+        AllMotionRectangles'Class (This).createMotionRectangles (imageComparisonResult);
    end Initialize;
 
    function Create (imageComparisonResult_Param : access ImageComparisonResult_Package.ImageComparisonResult'Class) return AllMotionRectangles_Access is
@@ -47,7 +47,7 @@ package body org.allbinary.media.image.comparison.motion.AllMotionRectangles_Pac
         size := vector.size;
         for index in 0 .. (size) - 1 loop
             pixelDelta := PixelDelta_Access (vector.get (index));
-            This.addPixelDeltaToAMotionRectangle (pixelDelta);
+            AllMotionRectangles'Class (This).addPixelDeltaToAMotionRectangle (pixelDelta);
         end loop;
    end createMotionRectangles;
 
@@ -61,11 +61,11 @@ package body org.allbinary.media.image.comparison.motion.AllMotionRectangles_Pac
       newHeight : Integer;
       index : Integer;
    begin
-        vector := This.getVector;
+        vector := AllMotionRectangles'Class (This).getVector;
         size := vector.size;
         for index in 0 .. (size) - 1 loop
             motionRectangle := MotionRectangle_Access (vector.get (index));
-            if This.shouldPixelDeltaPartOfMotionRectangle (motionRectangle, pixelDelta) then
+            if AllMotionRectangles'Class (This).shouldPixelDeltaPartOfMotionRectangle (motionRectangle, pixelDelta) then
                 newWidth := (pixelDelta.getPoint.getX) - (motionRectangle.getRectangle.x);
                 newHeight := (pixelDelta.getPoint.getY) - (motionRectangle.getRectangle.y);
                 if (newWidth) < (motionRectangle.getRectangle.width) then
@@ -87,11 +87,11 @@ package body org.allbinary.media.image.comparison.motion.AllMotionRectangles_Pac
       newRectangle : Rectangle_Access;
       motionRectangle : MotionRectangle_Access;
    begin
-        if not (This.addPixelDeltaToExistingMotionRectangle (pixelDelta)) then
+        if not (AllMotionRectangles'Class (This).addPixelDeltaToExistingMotionRectangle (pixelDelta)) then
             newRectangle := Rectangle_Package.Create (pixelDelta.getPoint.getX, pixelDelta.getPoint.getY, 1, 1);
             motionRectangle := MotionRectangle_Package.Create (newRectangle);
             motionRectangle.getPixelDeltaVector.add (pixelDelta);
-            This.getVector.add (motionRectangle);
+            AllMotionRectangles'Class (This).getVector.add (motionRectangle);
         end if;
    end addPixelDeltaToAMotionRectangle;
 
@@ -109,7 +109,7 @@ package body org.allbinary.media.image.comparison.motion.AllMotionRectangles_Pac
             isPixelLeftOfTheRectangle := True;
         end if;
         if not (isPixelLeftOfTheRectangle) then
-            return This.isPixelDeltaLikelyPartOfMotionRectangle (motionRectangle, pixelDelta);
+            return AllMotionRectangles'Class (This).isPixelDeltaLikelyPartOfMotionRectangle (motionRectangle, pixelDelta);
         end if;
         return False;
    end shouldPixelDeltaPartOfMotionRectangle;

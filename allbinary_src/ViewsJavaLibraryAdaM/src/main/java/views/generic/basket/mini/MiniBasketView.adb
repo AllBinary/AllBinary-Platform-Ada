@@ -49,7 +49,7 @@ package body views.generic_Id.basket.mini.MiniBasketView_Package is
       subTotalTextNode : Node_Access;
    begin
         begin
-            basketInterface := This.getWeblisketSession.getOrder.getBasket;
+            basketInterface := MiniBasketView'Class (This).getWeblisketSession.getOrder.getBasket;
             basketNode := document.createElement (BasketData_Package.BASKET);
             totalNumberNode := document.createElement (SearchData_Package.TOTAL_NUMBER_ITEMS);
             totalNumberTextNode := document.createTextNode (basketInterface.getNumberOfItems.toString);
@@ -79,14 +79,14 @@ package body views.generic_Id.basket.mini.MiniBasketView_Package is
 
    procedure addDomNodeInterfaces (This : in out MiniBasketView) is
    begin
-        This.addDomNodeInterface (DomNodeInterface_Access (MiniBasketView_Access'(This'Unchecked_Access)));
+        MiniBasketView'Class (This).addDomNodeInterface (DomNodeInterface_Access (MiniBasketView_Access'(This'Unchecked_Access)));
    end addDomNodeInterfaces;
 
    --  throws Exception
    function view (This : in out MiniBasketView) return Unbounded_String is
    begin
         begin
-            This.addDomNodeInterfaces;
+            MiniBasketView'Class (This).addDomNodeInterfaces;
             return HttpStoreComponentView (This).view;
         exception
             when Java_Occurrence : others =>

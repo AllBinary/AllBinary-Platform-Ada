@@ -33,7 +33,7 @@ package body views.generic_Id.order.history.OrderHistoryView_Package is
    begin
         HttpStoreComponentView_Package.Initialize (This, transformInfoInterface);
         Initialize_Fields (This);
-        This.request := HttpServletRequest_Access (This.getPageContext.getRequest);
+        This.request := HttpServletRequest_Access (OrderHistoryView'Class (This).getPageContext.getRequest);
         This.preprocessing := This.request.getParameter (OrderHistoryData_Package.PREPROCESSINGNAME);
         This.shipped := This.request.getParameter (OrderHistoryData_Package.SHIPPEDNAME);
         This.partiallyShipped := This.request.getParameter (OrderHistoryData_Package.PARTIALLYSHIPPEDNAME);
@@ -63,7 +63,7 @@ package body views.generic_Id.order.history.OrderHistoryView_Package is
         begin
             node := document.createElement (OrderData_Package.ORDERS);
             orderHistoryEntity := OrderHistoryEntity_Package.Create;
-            orderReviewVector := orderHistoryEntity.getOrders (This.getWeblisketSession.getUserName);
+            orderReviewVector := orderHistoryEntity.getOrders (OrderHistoryView'Class (This).getWeblisketSession.getUserName);
             size := orderReviewVector.size;
             for index in 0 .. (size) - 1 loop
                 orderHistory := OrderHistory_Access (orderReviewVector.get (index));
@@ -96,14 +96,14 @@ package body views.generic_Id.order.history.OrderHistoryView_Package is
 
    procedure addDomNodeInterfaces (This : in out OrderHistoryView) is
    begin
-        This.addDomNodeInterface (DomNodeInterface_Access (OrderHistoryView_Access'(This'Unchecked_Access)));
+        OrderHistoryView'Class (This).addDomNodeInterface (DomNodeInterface_Access (OrderHistoryView_Access'(This'Unchecked_Access)));
    end addDomNodeInterfaces;
 
    --  throws Exception
    function view (This : in out OrderHistoryView) return Unbounded_String is
    begin
         begin
-            This.addDomNodeInterfaces;
+            OrderHistoryView'Class (This).addDomNodeInterfaces;
             return HttpStoreComponentView (This).view;
         exception
             when Java_Occurrence : others =>

@@ -20,11 +20,13 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with javax.microedition.lcdui.Command_Package; use javax.microedition.lcdui.Command_Package;
---  with javax.microedition.lcdui.CommandListener_Package; use javax.microedition.lcdui.CommandListener_Package;
+with javax.microedition.lcdui.Command_Package; use javax.microedition.lcdui.Command_Package;
+with javax.microedition.lcdui.CommandListener_Package; use javax.microedition.lcdui.CommandListener_Package;
 
 package org.allbinary.graphics.displayable.DisplayableInterface_Package is
 
+   package Command_Package renames Standard.javax.microedition.lcdui.Command_Package;
+   package CommandListener_Package renames Standard.javax.microedition.lcdui.CommandListener_Package;
 
    type DisplayableInterface is interface;
    type DisplayableInterface_Access is access all DisplayableInterface'Class;

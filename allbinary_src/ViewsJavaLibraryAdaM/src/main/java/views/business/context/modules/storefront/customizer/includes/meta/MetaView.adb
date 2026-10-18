@@ -28,7 +28,7 @@ package body views.business.context.modules.storefront.customizer.includes.meta.
    begin
         HttpStoreComponentView_Package.Initialize (This, transformInfoInterface);
         Initialize_Fields (This);
-        This.metasValidation := MetasValidation_Package.Create (This.getWeblisketSession.getStoreName);
+        This.metasValidation := MetasValidation_Package.Create (MetaView'Class (This).getWeblisketSession.getStoreName);
    end Initialize;
 
    function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return MetaView_Access is
@@ -40,7 +40,7 @@ package body views.business.context.modules.storefront.customizer.includes.meta.
 
    procedure addDomNodeInterfaces (This : in out MetaView) is
    begin
-        This.addDomNodeInterface (DomNodeInterface_Access (This.metasValidation));
+        MetaView'Class (This).addDomNodeInterface (DomNodeInterface_Access (This.metasValidation));
    end addDomNodeInterfaces;
 
    --  throws Exception
@@ -66,7 +66,7 @@ package body views.business.context.modules.storefront.customizer.includes.meta.
    function view (This : in out MetaView) return Unbounded_String is
    begin
         begin
-            This.addDomNodeInterfaces;
+            MetaView'Class (This).addDomNodeInterfaces;
             return HttpStoreComponentView (This).view;
         exception
             when Java_Occurrence : others =>

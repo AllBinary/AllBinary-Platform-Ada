@@ -24,8 +24,8 @@ package body org.allbinary.logic.visual.dhtml.html.input.HtmlTextInput_Package i
    procedure Initialize (This : in out HtmlTextInput'Class; before : Unbounded_String; name : Unbounded_String; value : Unbounded_String; after : Unbounded_String) is
    begin
         HtmlLengthInput_Package.Initialize (This, before, HtmlInputData_Package.getInstance.TEXT, name, value, after);
-        This.setSize (19);
-        This.setMaxLength (60);
+        HtmlTextInput'Class (This).setSize (19);
+        HtmlTextInput'Class (This).setMaxLength (60);
    end Initialize;
 
    function Create (before : Unbounded_String; name : Unbounded_String; value : Unbounded_String; after : Unbounded_String) return HtmlTextInput_Access is

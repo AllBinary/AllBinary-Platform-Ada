@@ -20,13 +20,14 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.util.HashMap_Package; use java.util.HashMap_Package;
+with java.util.HashMap_Package; use java.util.HashMap_Package;
 --  with java.util.Set_Package; use java.util.Set_Package;
 with org.allbinary.business.user.commerce.money.Money_Package; use org.allbinary.business.user.commerce.money.Money_Package;
 with org.allbinary.business.user.commerce.money.MoneyException_Package; use org.allbinary.business.user.commerce.money.MoneyException_Package;
 
 package org.allbinary.business.user.commerce.inventory.basket.BasketInterface_Package is
 
+   package HashMap_Package renames Standard.java.util.HashMap_Package;
    package Money_Package renames Standard.org.allbinary.business.user.commerce.money.Money_Package;
    package MoneyException_Package renames Standard.org.allbinary.business.user.commerce.money.MoneyException_Package;
 

@@ -20,11 +20,12 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
+with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
 
 package org.allbinary.media.image.ImageModifierUtil_Package is
 
+   package Image_Package renames Standard.javax.microedition.lcdui.Image_Package;
    package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
 
    type ImageModifierUtil is tagged;

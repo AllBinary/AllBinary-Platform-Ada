@@ -20,10 +20,10 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with javax.microedition.lcdui.Choice_Package; use javax.microedition.lcdui.Choice_Package;
---  with javax.microedition.lcdui.ChoiceGroup_Package; use javax.microedition.lcdui.ChoiceGroup_Package;
---  with javax.microedition.lcdui.CommandListener_Package; use javax.microedition.lcdui.CommandListener_Package;
---  with javax.microedition.lcdui.NullImage_Package; use javax.microedition.lcdui.NullImage_Package;
+with javax.microedition.lcdui.Choice_Package; use javax.microedition.lcdui.Choice_Package;
+with javax.microedition.lcdui.ChoiceGroup_Package; use javax.microedition.lcdui.ChoiceGroup_Package;
+with javax.microedition.lcdui.CommandListener_Package; use javax.microedition.lcdui.CommandListener_Package;
+with javax.microedition.lcdui.NullImage_Package; use javax.microedition.lcdui.NullImage_Package;
 with org.allbinary.game.commands.GameCommandsFactory_Package; use org.allbinary.game.commands.GameCommandsFactory_Package;
 with org.allbinary.game.configuration.persistance.GameDifficultyFactory_Package; use org.allbinary.game.configuration.persistance.GameDifficultyFactory_Package;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
@@ -35,6 +35,10 @@ with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArra
 
 package org.allbinary.game.configuration.GameDifficultyOptions_Package is
 
+   package Choice_Package renames Standard.javax.microedition.lcdui.Choice_Package;
+   package ChoiceGroup_Package renames Standard.javax.microedition.lcdui.ChoiceGroup_Package;
+   package CommandListener_Package renames Standard.javax.microedition.lcdui.CommandListener_Package;
+   package NullImage_Package renames Standard.javax.microedition.lcdui.NullImage_Package;
    package GameCommandsFactory_Package renames Standard.org.allbinary.game.commands.GameCommandsFactory_Package;
    package GameDifficultyFactory_Package renames Standard.org.allbinary.game.configuration.persistance.GameDifficultyFactory_Package;
    package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;

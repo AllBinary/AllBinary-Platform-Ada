@@ -56,6 +56,7 @@ package body org.allbinary.game.score.HighScoresHelperBase_Package is
    function isAnyHighScores (This : in out HighScoresHelperBase) return Boolean is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return False;
    end isAnyHighScores;
 
    procedure setSelectedHighScores (This : in out HighScoresHelperBase; selectedHighScores_Param : access HighScores_Package.HighScores'Class) is

@@ -96,8 +96,8 @@ package body org.allbinary.business.user.commerce.inventory.item.download.Downlo
         nameArray := keySet.toArray;
         size := nameArray'Length;
         for index in 0 .. (size) - 1 loop
-            name := Unbounded_String (nameArray (index));
-            value := Unbounded_String (hashMap.get (name));
+            name := Java_Unbox (nameArray (index));
+            value := Java_Unbox (hashMap.get (Java_Box (name)));
             value := stringUtil.getNonNull (value);
             node.appendChild (ModDomHelper_Package.createNameValueNodes (document, name, value));
         end loop;

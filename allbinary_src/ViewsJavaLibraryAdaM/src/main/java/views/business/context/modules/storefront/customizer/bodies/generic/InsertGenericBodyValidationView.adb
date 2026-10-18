@@ -28,7 +28,7 @@ package body views.business.context.modules.storefront.customizer.bodies.generic
    begin
         GenericBodyCustomizerView_Package.Initialize (This, transformInfoInterface);
         Initialize_Fields (This);
-        requestHashMap := RequestParams_Package.Create (This.getPageContext).toHashMap;
+        requestHashMap := RequestParams_Package.Create (InsertGenericBodyValidationView'Class (This).getPageContext).toHashMap;
         This.body_Id := GenericBodyValidation_Package.Create (requestHashMap);
    end Initialize;
 
@@ -54,7 +54,7 @@ package body views.business.context.modules.storefront.customizer.bodies.generic
             end if;
             isValid := This.body_Id.isValid;
             if (isValid) = (True) then
-                CustomizerUtil_Package.getInstance.insert (This.getTransformInfoInterface, DomNodeInterface_Access (This.body_Id));
+                CustomizerUtil_Package.getInstance.insert (InsertGenericBodyValidationView'Class (This).getTransformInfoInterface, DomNodeInterface_Access (This.body_Id));
             end if;
             return isValid;
         exception
@@ -105,7 +105,7 @@ package body views.business.context.modules.storefront.customizer.bodies.generic
    function view (This : in out InsertGenericBodyValidationView) return Unbounded_String is
    begin
         begin
-            return StoreCustomizerComponentUtil_Package.getInstance.generate (This.abeClientInformation, This.getTransformInfoInterface);
+            return StoreCustomizerComponentUtil_Package.getInstance.generate (This.abeClientInformation, InsertGenericBodyValidationView'Class (This).getTransformInfoInterface);
         exception
             when Java_Occurrence : others =>
                 declare

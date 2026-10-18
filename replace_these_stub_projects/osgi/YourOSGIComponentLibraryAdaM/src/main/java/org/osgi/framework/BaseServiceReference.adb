@@ -36,17 +36,20 @@ package body org.osgi.framework.BaseServiceReference_Package is
    function getProperty (This : in out BaseServiceReference; key : Unbounded_String) return Java_Object_Access is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return null;
    end getProperty;
 
    function getPropertyKeys (This : in out BaseServiceReference) return Unbounded_String_Array_Access is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return null;
    end getPropertyKeys;
 
    function compareTo (This : in out BaseServiceReference; o_Param : access Java_Object'Class) return Integer is
       o : constant Java_Object_Access := Java_Object_Access (o_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return 0;
    end compareTo;
 
    procedure getProperty (This : in out BaseServiceReference; key : Unbounded_String) is

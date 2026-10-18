@@ -43,7 +43,7 @@ package body org.allbinary.business.init.db.InitDbHelperFactory_Package is
       anyType : Java_Object_Access;
    begin
         params := new Java_Object_Access_Array'(0 .. (1) - 1 => null);
-        classes := new Ada_Tags_Tag_Array'(0 .. (1) - 1 => null);
+        classes := new Ada_Tags_Tag_Array'(0 .. (1) - 1 => Ada.Tags.No_Tag);
         classes (0) := DatabaseConnectionInfoInterface_Package.DatabaseConnectionInfoInterface'Tag;
         params (0) := Java_Object_Access (databaseConnectionInfoInterface);
         anyType := AbeFactory_Package.getInstance.getInstance (abeClientInformation, CLASSNAME, classes, params);

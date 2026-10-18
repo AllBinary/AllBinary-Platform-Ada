@@ -27,7 +27,7 @@ package body org.allbinary.data.tables.user.commerce.money.payment.PaymentEntity
    begin
         AbSqlBean_Package.Initialize (This, UserDbInitInfo_Package.Create);
         Initialize_Fields (This);
-        This.setTableName (This.tableName);
+        PaymentEntity'Class (This).setTableName (This.tableName);
    end Initialize;
 
    function Create return PaymentEntity_Access is
@@ -50,15 +50,15 @@ package body org.allbinary.data.tables.user.commerce.money.payment.PaymentEntity
         begin
             updateKeyAndValue := StdUtil_Package.getInstance.createHashMap;
             whereKeyAndValue := StdUtil_Package.getInstance.createHashMap;
-            whereKeyAndValue.put (UserData_Package.USERNAME, userName);
-            paymentInterface := This.getDefault (userName);
+            whereKeyAndValue.put (UserData_Package.USERNAME, Java_Box (userName));
+            paymentInterface := PaymentEntity'Class (This).getDefault (userName);
             if (paymentInterface) /= (null) then
                 updateKeyAndValue.put (EntryData_Package.getInstance.DEFAULT, StringUtil_Package.getInstance.EMPTY_STRING);
                 whereKeyAndValue.put (PaymentData_Package.ID, paymentInterface.getId);
                 AbSqlBean (This).updateWhere (whereKeyAndValue, updateKeyAndValue);
             end if;
             updateKeyAndValue.put (EntryData_Package.getInstance.DEFAULT, EntryData_Package.getInstance.DEFAULT);
-            whereKeyAndValue.put (PaymentData_Package.ID, index.toString);
+            whereKeyAndValue.put (PaymentData_Package.ID, Java_Box (index.toString));
             AbSqlBean (This).updateWhere (whereKeyAndValue, updateKeyAndValue);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
                 This.logUtil.putF (This.commonStrings.SUCCESS, PaymentEntity_Access'(This'Unchecked_Access), To_Unbounded_String ("setDefault"));
@@ -87,7 +87,7 @@ package body org.allbinary.data.tables.user.commerce.money.payment.PaymentEntity
         begin
             paymentVector := BasicArrayListD_Package.Create;
             keyAndValue := StdUtil_Package.getInstance.createHashMap;
-            keyAndValue.put (UserData_Package.USERNAME, userName);
+            keyAndValue.put (UserData_Package.USERNAME, Java_Box (userName));
             paymentList := AbSqlBean (This).getRows (keyAndValue);
             size := paymentList.size;
             for index in 0 .. (size) - 1 loop
@@ -120,7 +120,7 @@ package body org.allbinary.data.tables.user.commerce.money.payment.PaymentEntity
             paymentHashMap := StdUtil_Package.getInstance.createHashMap;
             updateKeyAndValue := StdUtil_Package.getInstance.createHashMap;
             updateKeyAndValue.put (EntryData_Package.getInstance.DEFAULT, EntryData_Package.getInstance.DEFAULT);
-            updateKeyAndValue.put (UserData_Package.USERNAME, userName);
+            updateKeyAndValue.put (UserData_Package.USERNAME, Java_Box (userName));
             paymentHashMap := AbSqlBean (This).getRow (updateKeyAndValue);
             if (paymentHashMap) /= (null) then
                 payment := Payment_Package.Create (paymentHashMap);
@@ -149,8 +149,8 @@ package body org.allbinary.data.tables.user.commerce.money.payment.PaymentEntity
    begin
         begin
             whereHashMap := StdUtil_Package.getInstance.createHashMap;
-            whereHashMap.put (UserData_Package.USERNAME, userName);
-            whereHashMap.put (PaymentData_Package.ID, Unbounded_String (index.toString));
+            whereHashMap.put (UserData_Package.USERNAME, Java_Box (userName));
+            whereHashMap.put (PaymentData_Package.ID, index.toString);
             AbSqlBean (This).deleteWhere (whereHashMap);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
                 This.logUtil.putF (This.commonStrings.SUCCESS, PaymentEntity_Access'(This'Unchecked_Access), To_Unbounded_String ("remove"));
@@ -216,7 +216,7 @@ package body org.allbinary.data.tables.user.commerce.money.payment.PaymentEntity
 
    function createTable (This : in out PaymentEntity) return Unbounded_String is
    begin
-        return AbSqlBean (This).createTable (This.createTableStatement);
+        return AbSqlBean (This).createTable (PaymentEntity'Class (This).createTableStatement);
    end createTable;
 
    function drop (This : in out PaymentEntity) return Unbounded_String is

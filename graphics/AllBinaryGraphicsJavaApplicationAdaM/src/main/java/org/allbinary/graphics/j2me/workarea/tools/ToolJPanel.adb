@@ -43,7 +43,7 @@ package body org.allbinary.graphics.j2me.workarea.tools.ToolJPanel_Package is
    begin
       JPanel_Package.Initialize (This);
       Initialize_Fields (This);
-        This.initComponents;
+        ToolJPanel'Class (This).initComponents;
    end Initialize;
 
    function Create return ToolJPanel_Access is
@@ -73,7 +73,7 @@ package body org.allbinary.graphics.j2me.workarea.tools.ToolJPanel_Package is
         This.dottedFillRountRectJButton := JButton_Package.Create;
         This.colorJPanel := JPanel_Package.Create;
         This.colorJList := JList_Package.Create;
-        This.setLayout (GridLayout_Package.Create (17, 1));
+        ToolJPanel'Class (This).setLayout (GridLayout_Package.Create (17, 1));
         This.lineJButton.setFont (Font_Package.Create (To_Unbounded_String ("Dialog"), 0, 10));
         This.lineJButton.setText (LinesGraphicItem_Package.getStaticName);
         This.lineJButton.addMouseListener (MouseAdapter_Package.Create  --  Java anonymous class body: implement it as a named type
@@ -81,10 +81,10 @@ package body org.allbinary.graphics.j2me.workarea.tools.ToolJPanel_Package is
 --     procedure mouseClicked (This : in out ; evt_Param : access MouseEvent_Package.MouseEvent'Class) is
 --        evt : constant MouseEvent_Access := MouseEvent_Access (evt_Param);
 --     begin
---                  This.lineJButtonMouseClicked (evt);
+--                  ToolJPanel'Class (This).lineJButtonMouseClicked (evt);
 --     end mouseClicked;
 );
-        This.add (This.lineJButton);
+        ToolJPanel'Class (This).add (This.lineJButton);
         This.rectJButton.setFont (Font_Package.Create (To_Unbounded_String ("Dialog"), 0, 10));
         This.rectJButton.setText (To_Unbounded_String ("Rect"));
         This.rectJButton.addMouseListener (MouseAdapter_Package.Create  --  Java anonymous class body: implement it as a named type
@@ -92,10 +92,10 @@ package body org.allbinary.graphics.j2me.workarea.tools.ToolJPanel_Package is
 --     procedure mouseClicked (This : in out ; evt_Param : access MouseEvent_Package.MouseEvent'Class) is
 --        evt : constant MouseEvent_Access := MouseEvent_Access (evt_Param);
 --     begin
---                  This.rectJButtonMouseClicked (evt);
+--                  ToolJPanel'Class (This).rectJButtonMouseClicked (evt);
 --     end mouseClicked;
 );
-        This.add (This.rectJButton);
+        ToolJPanel'Class (This).add (This.rectJButton);
         This.arcJButton.setFont (Font_Package.Create (To_Unbounded_String ("Dialog"), 0, 10));
         This.arcJButton.setText (To_Unbounded_String ("Arc"));
         This.arcJButton.addMouseListener (MouseAdapter_Package.Create  --  Java anonymous class body: implement it as a named type
@@ -103,10 +103,10 @@ package body org.allbinary.graphics.j2me.workarea.tools.ToolJPanel_Package is
 --     procedure mousePressed (This : in out ; evt_Param : access MouseEvent_Package.MouseEvent'Class) is
 --        evt : constant MouseEvent_Access := MouseEvent_Access (evt_Param);
 --     begin
---                  This.arcJButtonMousePressed (evt);
+--                  ToolJPanel'Class (This).arcJButtonMousePressed (evt);
 --     end mousePressed;
 );
-        This.add (This.arcJButton);
+        ToolJPanel'Class (This).add (This.arcJButton);
         This.stringJButton.setFont (Font_Package.Create (To_Unbounded_String ("Dialog"), 0, 10));
         This.stringJButton.setText (To_Unbounded_String ("String"));
         This.stringJButton.addMouseListener (MouseAdapter_Package.Create  --  Java anonymous class body: implement it as a named type
@@ -114,10 +114,10 @@ package body org.allbinary.graphics.j2me.workarea.tools.ToolJPanel_Package is
 --     procedure mousePressed (This : in out ; evt_Param : access MouseEvent_Package.MouseEvent'Class) is
 --        evt : constant MouseEvent_Access := MouseEvent_Access (evt_Param);
 --     begin
---                  This.stringJButtonMousePressed (evt);
+--                  ToolJPanel'Class (This).stringJButtonMousePressed (evt);
 --     end mousePressed;
 );
-        This.add (This.stringJButton);
+        ToolJPanel'Class (This).add (This.stringJButton);
         This.charJButton.setFont (Font_Package.Create (To_Unbounded_String ("Dialog"), 0, 10));
         This.charJButton.setText (To_Unbounded_String ("Char"));
         This.charJButton.addMouseListener (MouseAdapter_Package.Create  --  Java anonymous class body: implement it as a named type
@@ -125,10 +125,10 @@ package body org.allbinary.graphics.j2me.workarea.tools.ToolJPanel_Package is
 --     procedure mousePressed (This : in out ; evt_Param : access MouseEvent_Package.MouseEvent'Class) is
 --        evt : constant MouseEvent_Access := MouseEvent_Access (evt_Param);
 --     begin
---                  This.charJButtonMousePressed (evt);
+--                  ToolJPanel'Class (This).charJButtonMousePressed (evt);
 --     end mousePressed;
 );
-        This.add (This.charJButton);
+        ToolJPanel'Class (This).add (This.charJButton);
         This.roundRectJButton.setFont (Font_Package.Create (To_Unbounded_String ("Dialog"), 0, 10));
         This.roundRectJButton.setText (To_Unbounded_String ("Round Rect"));
         This.roundRectJButton.addMouseListener (MouseAdapter_Package.Create  --  Java anonymous class body: implement it as a named type
@@ -136,10 +136,10 @@ package body org.allbinary.graphics.j2me.workarea.tools.ToolJPanel_Package is
 --     procedure mousePressed (This : in out ; evt_Param : access MouseEvent_Package.MouseEvent'Class) is
 --        evt : constant MouseEvent_Access := MouseEvent_Access (evt_Param);
 --     begin
---                  This.roundRectJButtonMousePressed (evt);
+--                  ToolJPanel'Class (This).roundRectJButtonMousePressed (evt);
 --     end mousePressed;
 );
-        This.add (This.roundRectJButton);
+        ToolJPanel'Class (This).add (This.roundRectJButton);
         This.imageJButton.setFont (Font_Package.Create (To_Unbounded_String ("Dialog"), 0, 10));
         This.imageJButton.setText (To_Unbounded_String ("Image"));
         This.imageJButton.addMouseListener (MouseAdapter_Package.Create  --  Java anonymous class body: implement it as a named type
@@ -147,10 +147,10 @@ package body org.allbinary.graphics.j2me.workarea.tools.ToolJPanel_Package is
 --     procedure mousePressed (This : in out ; evt_Param : access MouseEvent_Package.MouseEvent'Class) is
 --        evt : constant MouseEvent_Access := MouseEvent_Access (evt_Param);
 --     begin
---                  This.imageJButtonMousePressed (evt);
+--                  ToolJPanel'Class (This).imageJButtonMousePressed (evt);
 --     end mousePressed;
 );
-        This.add (This.imageJButton);
+        ToolJPanel'Class (This).add (This.imageJButton);
         This.fillArcJButton.setFont (Font_Package.Create (To_Unbounded_String ("Dialog"), 0, 10));
         This.fillArcJButton.setText (To_Unbounded_String ("Fill Arc"));
         This.fillArcJButton.addMouseListener (MouseAdapter_Package.Create  --  Java anonymous class body: implement it as a named type
@@ -158,10 +158,10 @@ package body org.allbinary.graphics.j2me.workarea.tools.ToolJPanel_Package is
 --     procedure mousePressed (This : in out ; evt_Param : access MouseEvent_Package.MouseEvent'Class) is
 --        evt : constant MouseEvent_Access := MouseEvent_Access (evt_Param);
 --     begin
---                  This.fillArcJButtonMousePressed (evt);
+--                  ToolJPanel'Class (This).fillArcJButtonMousePressed (evt);
 --     end mousePressed;
 );
-        This.add (This.fillArcJButton);
+        ToolJPanel'Class (This).add (This.fillArcJButton);
         This.fillRectJButton.setFont (Font_Package.Create (To_Unbounded_String ("Dialog"), 0, 10));
         This.fillRectJButton.setText (To_Unbounded_String ("Fill Rect"));
         This.fillRectJButton.addMouseListener (MouseAdapter_Package.Create  --  Java anonymous class body: implement it as a named type
@@ -169,10 +169,10 @@ package body org.allbinary.graphics.j2me.workarea.tools.ToolJPanel_Package is
 --     procedure mousePressed (This : in out ; evt_Param : access MouseEvent_Package.MouseEvent'Class) is
 --        evt : constant MouseEvent_Access := MouseEvent_Access (evt_Param);
 --     begin
---                  This.fillRectJButtonMousePressed (evt);
+--                  ToolJPanel'Class (This).fillRectJButtonMousePressed (evt);
 --     end mousePressed;
 );
-        This.add (This.fillRectJButton);
+        ToolJPanel'Class (This).add (This.fillRectJButton);
         This.fillRoundRectJButton.setFont (Font_Package.Create (To_Unbounded_String ("Dialog"), 0, 10));
         This.fillRoundRectJButton.setText (To_Unbounded_String ("Fill Rnd Rect"));
         This.fillRoundRectJButton.addMouseListener (MouseAdapter_Package.Create  --  Java anonymous class body: implement it as a named type
@@ -180,10 +180,10 @@ package body org.allbinary.graphics.j2me.workarea.tools.ToolJPanel_Package is
 --     procedure mousePressed (This : in out ; evt_Param : access MouseEvent_Package.MouseEvent'Class) is
 --        evt : constant MouseEvent_Access := MouseEvent_Access (evt_Param);
 --     begin
---                  This.fillRoundRectJButtonMousePressed (evt);
+--                  ToolJPanel'Class (This).fillRoundRectJButtonMousePressed (evt);
 --     end mousePressed;
 );
-        This.add (This.fillRoundRectJButton);
+        ToolJPanel'Class (This).add (This.fillRoundRectJButton);
         This.dottedLineJButton.setFont (Font_Package.Create (To_Unbounded_String ("Dialog"), 0, 10));
         This.dottedLineJButton.setText (To_Unbounded_String ("Dot Line"));
         This.dottedLineJButton.addMouseListener (MouseAdapter_Package.Create  --  Java anonymous class body: implement it as a named type
@@ -191,10 +191,10 @@ package body org.allbinary.graphics.j2me.workarea.tools.ToolJPanel_Package is
 --     procedure mousePressed (This : in out ; evt_Param : access MouseEvent_Package.MouseEvent'Class) is
 --        evt : constant MouseEvent_Access := MouseEvent_Access (evt_Param);
 --     begin
---                  This.dottedLineJButtonMousePressed (evt);
+--                  ToolJPanel'Class (This).dottedLineJButtonMousePressed (evt);
 --     end mousePressed;
 );
-        This.add (This.dottedLineJButton);
+        ToolJPanel'Class (This).add (This.dottedLineJButton);
         This.dottedRectButton.setFont (Font_Package.Create (To_Unbounded_String ("Dialog"), 0, 10));
         This.dottedRectButton.setText (To_Unbounded_String ("Dot Rect"));
         This.dottedRectButton.addMouseListener (MouseAdapter_Package.Create  --  Java anonymous class body: implement it as a named type
@@ -202,10 +202,10 @@ package body org.allbinary.graphics.j2me.workarea.tools.ToolJPanel_Package is
 --     procedure mousePressed (This : in out ; evt_Param : access MouseEvent_Package.MouseEvent'Class) is
 --        evt : constant MouseEvent_Access := MouseEvent_Access (evt_Param);
 --     begin
---                  This.dottedRectButtonMousePressed (evt);
+--                  ToolJPanel'Class (This).dottedRectButtonMousePressed (evt);
 --     end mousePressed;
 );
-        This.add (This.dottedRectButton);
+        ToolJPanel'Class (This).add (This.dottedRectButton);
         This.dottedArcJButton.setFont (Font_Package.Create (To_Unbounded_String ("Dialog"), 0, 10));
         This.dottedArcJButton.setText (To_Unbounded_String ("Dot Arc"));
         This.dottedArcJButton.addMouseListener (MouseAdapter_Package.Create  --  Java anonymous class body: implement it as a named type
@@ -213,10 +213,10 @@ package body org.allbinary.graphics.j2me.workarea.tools.ToolJPanel_Package is
 --     procedure mousePressed (This : in out ; evt_Param : access MouseEvent_Package.MouseEvent'Class) is
 --        evt : constant MouseEvent_Access := MouseEvent_Access (evt_Param);
 --     begin
---                  This.dottedArcJButtonMousePressed (evt);
+--                  ToolJPanel'Class (This).dottedArcJButtonMousePressed (evt);
 --     end mousePressed;
 );
-        This.add (This.dottedArcJButton);
+        ToolJPanel'Class (This).add (This.dottedArcJButton);
         This.dottedFillRectJButton.setFont (Font_Package.Create (To_Unbounded_String ("Dialog"), 0, 10));
         This.dottedFillRectJButton.setText (To_Unbounded_String ("Dot Fill Rect"));
         This.dottedFillRectJButton.addMouseListener (MouseAdapter_Package.Create  --  Java anonymous class body: implement it as a named type
@@ -224,10 +224,10 @@ package body org.allbinary.graphics.j2me.workarea.tools.ToolJPanel_Package is
 --     procedure mousePressed (This : in out ; evt_Param : access MouseEvent_Package.MouseEvent'Class) is
 --        evt : constant MouseEvent_Access := MouseEvent_Access (evt_Param);
 --     begin
---                  This.dottedFillRectJButtonMousePressed (evt);
+--                  ToolJPanel'Class (This).dottedFillRectJButtonMousePressed (evt);
 --     end mousePressed;
 );
-        This.add (This.dottedFillRectJButton);
+        ToolJPanel'Class (This).add (This.dottedFillRectJButton);
         This.dottedFillArcJButton.setFont (Font_Package.Create (To_Unbounded_String ("Dialog"), 0, 10));
         This.dottedFillArcJButton.setText (To_Unbounded_String ("Dot Fill Arc"));
         This.dottedFillArcJButton.addMouseListener (MouseAdapter_Package.Create  --  Java anonymous class body: implement it as a named type
@@ -235,10 +235,10 @@ package body org.allbinary.graphics.j2me.workarea.tools.ToolJPanel_Package is
 --     procedure mousePressed (This : in out ; evt_Param : access MouseEvent_Package.MouseEvent'Class) is
 --        evt : constant MouseEvent_Access := MouseEvent_Access (evt_Param);
 --     begin
---                  This.dottedFillArcJButtonMousePressed (evt);
+--                  ToolJPanel'Class (This).dottedFillArcJButtonMousePressed (evt);
 --     end mousePressed;
 );
-        This.add (This.dottedFillArcJButton);
+        ToolJPanel'Class (This).add (This.dottedFillArcJButton);
         This.dottedFillRountRectJButton.setFont (Font_Package.Create (To_Unbounded_String ("Dialog"), 0, 10));
         This.dottedFillRountRectJButton.setText (To_Unbounded_String ("Dot Fill Rnd Rect"));
         This.dottedFillRountRectJButton.addMouseListener (MouseAdapter_Package.Create  --  Java anonymous class body: implement it as a named type
@@ -246,13 +246,13 @@ package body org.allbinary.graphics.j2me.workarea.tools.ToolJPanel_Package is
 --     procedure mousePressed (This : in out ; evt_Param : access MouseEvent_Package.MouseEvent'Class) is
 --        evt : constant MouseEvent_Access := MouseEvent_Access (evt_Param);
 --     begin
---                  This.dottedFillRountRectJButtonMousePressed (evt);
+--                  ToolJPanel'Class (This).dottedFillRountRectJButtonMousePressed (evt);
 --     end mousePressed;
 );
-        This.add (This.dottedFillRountRectJButton);
+        ToolJPanel'Class (This).add (This.dottedFillRountRectJButton);
         This.colorJPanel.setLayout (GridLayout_Package.Create (1, 1));
         This.colorJPanel.add (This.colorJList);
-        This.add (This.colorJPanel);
+        ToolJPanel'Class (This).add (This.colorJPanel);
    end initComponents;
 
    procedure dottedFillRountRectJButtonMousePressed (This : in out ToolJPanel; evt_Param : access MouseEvent_Package.MouseEvent'Class) is

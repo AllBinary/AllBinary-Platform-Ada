@@ -43,7 +43,7 @@ package body org.allbinary.logic.string_Id.StringValidationUtil_Package is
 
    function containsSpaces (This : in out StringValidationUtil; value : Unbounded_String) return Boolean is
    begin
-        if ((Index (value, To_String (' ')) - 1)) >= (0) then
+        if ((Index (value, Java_Image (' ')) - 1)) >= (0) then
             return True;
         end if;
         return False;
@@ -57,7 +57,7 @@ package body org.allbinary.logic.string_Id.StringValidationUtil_Package is
         numberOfDecimalPoints := 0;
         for index in 0 .. (Length (value)) - 1 loop
             digit := Element (value, (index) + 1);
-            if (not (This.isNumberFromChar (digit))) and then ((digit) /= ('.')) then
+            if (not (StringValidationUtil'Class (This).isNumberFromChar (digit))) and then ((digit) /= ('.')) then
                 return False;
             end if;
             if (digit) = ('.') then
@@ -88,10 +88,10 @@ package body org.allbinary.logic.string_Id.StringValidationUtil_Package is
 
    function isValidRequiredNumber (This : in out StringValidationUtil; value : Unbounded_String; min : Integer; max : Integer) return Boolean is
    begin
-        if ((This.isEmpty (value)) or else ((Length (value)) < (min))) or else ((Length (value)) > (max)) then
+        if ((StringValidationUtil'Class (This).isEmpty (value)) or else ((Length (value)) < (min))) or else ((Length (value)) > (max)) then
             return False;
         end if;
-        if not (This.isNumber (value)) then
+        if not (StringValidationUtil'Class (This).isNumber (value)) then
             return False;
         end if;
         return True;
@@ -113,7 +113,7 @@ package body org.allbinary.logic.string_Id.StringValidationUtil_Package is
             if (((This.tsUtil.compareTo (value, This.stringUtil.NULL_STRING)) = (0)) or else ((Length (value)) < (min))) or else ((Length (value)) > (max)) then
                 return False;
             end if;
-            if not (This.isNumber (value)) then
+            if not (StringValidationUtil'Class (This).isNumber (value)) then
                 return False;
             end if;
         end if;

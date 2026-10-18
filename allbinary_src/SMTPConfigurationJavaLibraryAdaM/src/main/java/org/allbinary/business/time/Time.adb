@@ -60,7 +60,7 @@ package body org.allbinary.business.time.Time_Package is
 
    function toString (This : in out Time) return Unbounded_String is
    begin
-        return This.getLong.toString;
+        return Time'Class (This).getLong.toString;
    end toString;
 
 end org.allbinary.business.time.Time_Package;

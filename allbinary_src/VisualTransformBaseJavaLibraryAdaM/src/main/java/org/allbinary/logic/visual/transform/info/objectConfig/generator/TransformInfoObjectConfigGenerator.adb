@@ -38,6 +38,7 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.generator.Tr
    function process (This : in out TransformInfoObjectConfigGenerator; input : Unbounded_String) return Unbounded_String is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return Null_Unbounded_String;
    end process;
 
    procedure process (This : in out TransformInfoObjectConfigGenerator; input : Unbounded_String) is

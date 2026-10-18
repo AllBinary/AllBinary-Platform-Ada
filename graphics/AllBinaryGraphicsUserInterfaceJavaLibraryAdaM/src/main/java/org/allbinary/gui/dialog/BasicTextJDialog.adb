@@ -29,8 +29,8 @@ package body org.allbinary.gui.dialog.BasicTextJDialog_Package is
    begin
         JDialog_Package.Initialize (This, parent, modal);
         Initialize_Fields (This);
-        This.initComponents;
-        This.setText (text);
+        BasicTextJDialog'Class (This).initComponents;
+        BasicTextJDialog'Class (This).setText (text);
    end Initialize;
 
    function Create (parent_Param : access Frame_Package.Frame'Class; modal : Boolean; text : Unbounded_String) return BasicTextJDialog_Access is
@@ -55,7 +55,7 @@ package body org.allbinary.gui.dialog.BasicTextJDialog_Package is
    begin
       JDialog_Package.Initialize (This);
       Initialize_Fields (This);
-        This.initComponents;
+        BasicTextJDialog'Class (This).initComponents;
         This.textJLabel.setText (text);
    end Initialize;
 
@@ -71,28 +71,28 @@ package body org.allbinary.gui.dialog.BasicTextJDialog_Package is
    begin
         This.jButton1 := JButton_Package.Create;
         This.textJLabel := JLabel_Package.Create;
-        This.setDefaultCloseOperation (javax_Package.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        BasicTextJDialog'Class (This).setDefaultCloseOperation (javax_Package.swing.WindowConstants.DISPOSE_ON_CLOSE);
         This.jButton1.setText (To_Unbounded_String ("OK"));
         This.jButton1.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
 --     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
 --        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
---                  This.jButton1ActionPerformed (evt);
+--                  BasicTextJDialog'Class (This).jButton1ActionPerformed (evt);
 --     end actionPerformed;
 );
         This.textJLabel.setText (To_Unbounded_String ("No Text Set"));
-        layout := GroupLayout_Package.Create (This.getContentPane);
-        This.getContentPane.setLayout (layout);
+        layout := GroupLayout_Package.Create (BasicTextJDialog'Class (This).getContentPane);
+        BasicTextJDialog'Class (This).getContentPane.setLayout (layout);
         layout.setHorizontalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (layout.createSequentialGroup.addGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (layout.createSequentialGroup.addGap (80, 80, 80).addComponent (This.jButton1)).addGroup (layout.createSequentialGroup.addContainerGap.addComponent (This.textJLabel, javax_Package.swing.GroupLayout.DEFAULT_SIZE, 184, Short_Package.MAX_VALUE))).addContainerGap));
         layout.setVerticalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (layout.createSequentialGroup.addGap (20, 20, 20).addComponent (This.textJLabel, javax_Package.swing.GroupLayout.PREFERRED_SIZE, 20, javax_Package.swing.GroupLayout.PREFERRED_SIZE).addGap (30, 30, 30).addComponent (This.jButton1)));
-        This.pack;
+        BasicTextJDialog'Class (This).pack;
    end initComponents;
 
    procedure jButton1ActionPerformed (This : in out BasicTextJDialog; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
       evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
-        This.setVisible (False);
+        BasicTextJDialog'Class (This).setVisible (False);
         if (This.closeListenerInterface) /= (null) then
             This.closeListenerInterface.onClose;
         end if;

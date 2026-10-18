@@ -38,7 +38,7 @@ package body org.allbinary.business.category.properties.root.RootCategoryPropert
 
    function getKey (This : in out RootCategoryPropertiesAbstract) return Java_Object_Access is
    begin
-        return Java_Object_Access (This.getValue);
+        return Java_Object_Access (RootCategoryPropertiesAbstract'Class (This).getValue);
    end getKey;
 
    function getValue (This : in out RootCategoryPropertiesAbstract) return Unbounded_String is
@@ -69,18 +69,21 @@ package body org.allbinary.business.category.properties.root.RootCategoryPropert
    function getRootFilePath (This : in out RootCategoryPropertiesAbstract) return AbPath_Access is
    begin
         Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("No Value Allowed")));
+        return null;
    end getRootFilePath;
 
    --  throws Exception
    function isRealRoot (This : in out RootCategoryPropertiesAbstract) return Boolean is
    begin
         Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("No A Real Root")));
+        return False;
    end isRealRoot;
 
    --  throws Exception
    function isRoot (This : in out RootCategoryPropertiesAbstract) return Boolean is
    begin
         Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Root but not implemented")));
+        return False;
    end isRoot;
 
    --  throws Exception
@@ -88,6 +91,7 @@ package body org.allbinary.business.category.properties.root.RootCategoryPropert
       categoryHierarchyInterface : constant CategoryHierarchyInterface_Access := CategoryHierarchyInterface_Access (categoryHierarchyInterface_Param);
    begin
         Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Not Root")));
+        return Null_Unbounded_String;
    end getWebAppPath;
 
    function getPath (This : in out RootCategoryPropertiesAbstract; categoryHierarchyInterface_Param : access CategoryHierarchyInterface_Package.CategoryHierarchyInterface'Class) return AbPath_Access is
@@ -110,7 +114,7 @@ package body org.allbinary.business.category.properties.root.RootCategoryPropert
       categoryHashMap : HashMap_Access;
    begin
         categoryHashMap := StdUtil_Package.getInstance.createHashMap;
-        categoryHashMap.put (CategoryData_Package.getInstance.NAME, This.category);
+        categoryHashMap.put (CategoryData_Package.getInstance.NAME, Java_Box (This.category));
         return categoryHashMap;
    end toHashMap;
 

@@ -20,9 +20,9 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with javax.microedition.khronos.opengles.GL10_Package; use javax.microedition.khronos.opengles.GL10_Package;
---  with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
---  with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
+with javax.microedition.khronos.opengles.GL10_Package; use javax.microedition.khronos.opengles.GL10_Package;
+with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
 with org.eclipse.swt.SWT_Package; use org.eclipse.swt.SWT_Package;
 with org.eclipse.swt.graphics.ImageData_Package; use org.eclipse.swt.graphics.ImageData_Package;
 with org.eclipse.swt.graphics.ImageLoader_Package; use org.eclipse.swt.graphics.ImageLoader_Package;
@@ -44,6 +44,9 @@ with org.allbinary.emulator.device.TrueTypeFontUtilBase_Package; use org.allbina
 
 package org.allbinary.emulator.device.TrueTypeFontUtil_Package is
 
+   package GL10_Package renames Standard.javax.microedition.khronos.opengles.GL10_Package;
+   package Graphics_Package renames Standard.javax.microedition.lcdui.Graphics_Package;
+   package Image_Package renames Standard.javax.microedition.lcdui.Image_Package;
    package SWT_Package renames Standard.org.eclipse.swt.SWT_Package;
    package ImageData_Package renames Standard.org.eclipse.swt.graphics.ImageData_Package;
    package ImageLoader_Package renames Standard.org.eclipse.swt.graphics.ImageLoader_Package;

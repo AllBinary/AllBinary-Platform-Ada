@@ -20,11 +20,12 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with javax.microedition.lcdui.Canvas_Package; use javax.microedition.lcdui.Canvas_Package;
+with javax.microedition.lcdui.Canvas_Package; use javax.microedition.lcdui.Canvas_Package;
 with org.allbinary.game.input.GameInputStrings_Package; use org.allbinary.game.input.GameInputStrings_Package;
 
 package org.allbinary.game.input.InputProcessor_Package is
 
+   package Canvas_Package renames Standard.javax.microedition.lcdui.Canvas_Package;
 
    type InputProcessor is tagged;
    type InputProcessor_Access is access all InputProcessor'Class;

@@ -43,7 +43,7 @@ package body org.allbinary.logic.visual.theme.ThemeValidation_Package is
         This.categoryAbPath := pathUtil.removeNameFromPath (categoryThemePath);
         This.themeName := pathData.getNameFromPath (categoryThemePath);
         This.styleValidationInterface := cssStyleValidation;
-        This.init;
+        ThemeValidation'Class (This).init;
    end Initialize;
 
    function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class; cssStyleValidation_Param : access CssStyleValidation_Package.CssStyleValidation'Class; categoryThemePath : Unbounded_String) return ThemeValidation_Access is
@@ -63,7 +63,7 @@ package body org.allbinary.logic.visual.theme.ThemeValidation_Package is
    begin
       Initialize_Fields (This);
         This.transformInfoInterface := transformInfoInterface;
-        categoryThemeAbPath := AbPath_Package.Create (Unbounded_String (hashMap.get (ThemeData_Package.getInstance.PATH)), StringUtil_Package.getInstance.EMPTY_STRING);
+        categoryThemeAbPath := AbPath_Package.Create (Java_Unbox (hashMap.get (ThemeData_Package.getInstance.PATH)), StringUtil_Package.getInstance.EMPTY_STRING);
         pathData := AbPathData_Package.getInstance;
         pathUtil := PathUtil_Package.getInstance;
         This.categoryAbPath := pathUtil.removeNameFromPath (categoryThemeAbPath.toString);
@@ -78,7 +78,7 @@ package body org.allbinary.logic.visual.theme.ThemeValidation_Package is
             stringBuffer.append (This.themeName);
             This.logUtil.putF (To_Unbounded_String ("Http Request Constructor"), ThemeValidation_Access'(This'Unchecked_Access), stringBuffer.toString);
         end if;
-        This.init;
+        ThemeValidation'Class (This).init;
    end Initialize;
 
    function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class; hashMap_Param : access HashMap_Package.HashMap'Class) return ThemeValidation_Access is
@@ -106,7 +106,7 @@ package body org.allbinary.logic.visual.theme.ThemeValidation_Package is
         previewImageNameValueNode := DomSearchHelper_Package.getNode (DomData_Package.VALUE, previewImageNameNode.getChildNodes);
         This.themePreviewImageName := DomNodeHelper_Package.getTextNodeValue (previewImageNameValueNode);
         This.webAppAbPath := storeThemeCategoryInterface.getWebAppPath;
-        This.init (storeThemeCategoryInterface);
+        ThemeValidation'Class (This).init (storeThemeCategoryInterface);
    end Initialize;
 
    function Create (storeThemeCategoryInterface_Param : access StoreThemeCategoryInterface_Package.StoreThemeCategoryInterface'Class; node_Param : access Node_Package.Node'Class) return ThemeValidation_Access is
@@ -122,10 +122,10 @@ package body org.allbinary.logic.visual.theme.ThemeValidation_Package is
       categoryLoaderInterface : CategoryLoaderInterface_Access;
       rootStoreThemeCategoryInterface : StoreThemeCategoryInterface_Access;
    begin
-        categoryFactoryInterface := StoreThemeCategoryFactory_Package.Create (This.getTransformInfoInterface);
+        categoryFactoryInterface := StoreThemeCategoryFactory_Package.Create (ThemeValidation'Class (This).getTransformInfoInterface);
         categoryLoaderInterface := CategoryLoaderFactory_Package.getInstance (categoryFactoryInterface);
         rootStoreThemeCategoryInterface := StoreThemeCategoryInterface_Access (categoryFactoryInterface.getRootInstance);
-        This.init (rootStoreThemeCategoryInterface);
+        ThemeValidation'Class (This).init (rootStoreThemeCategoryInterface);
    end init;
 
    --  throws Exception
@@ -191,7 +191,7 @@ package body org.allbinary.logic.visual.theme.ThemeValidation_Package is
             if not (StringValidationUtil_Package.getInstance.isValidRequired (This.themeName, AbSqlData_Package.MINSTRING, AbSqlData_Package.MAXSTRING)) then
                 isValid := False;
             end if;
-            if not (This.getCssStyleValidation.isValid.booleanValue) then
+            if not (ThemeValidation'Class (This).getCssStyleValidation.isValid.booleanValue) then
                 isValid := False;
             end if;
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
@@ -244,17 +244,17 @@ package body org.allbinary.logic.visual.theme.ThemeValidation_Package is
 
    function getKey (This : in out ThemeValidation) return Java_Object_Access is
    begin
-        return Java_Object_Access (This.getName);
+        return Java_Box (ThemeValidation'Class (This).getName);
    end getKey;
 
    function toVector (This : in out ThemeValidation) return BasicArrayList_Access is
       vector : BasicArrayList_Access;
    begin
         vector := BasicArrayListD_Package.Create;
-        vector.add (This.getName);
-        vector.add (This.getPath);
-        vector.add (This.getPreviewImageName);
-        vector.add (This.getPreviewImagePath);
+        vector.add (ThemeValidation'Class (This).getName);
+        vector.add (ThemeValidation'Class (This).getPath);
+        vector.add (ThemeValidation'Class (This).getPreviewImageName);
+        vector.add (ThemeValidation'Class (This).getPreviewImagePath);
         return vector;
    end toVector;
 
@@ -264,10 +264,10 @@ package body org.allbinary.logic.visual.theme.ThemeValidation_Package is
    begin
         themeData := ThemeData_Package.getInstance;
         hashMap := StdUtil_Package.getInstance.createHashMap;
-        hashMap.put (themeData.NAME, This.getName);
-        hashMap.put (themeData.PATH, This.getPath);
-        hashMap.put (themeData.PREVIEW_IMAGE_NAME, This.getPreviewImageName);
-        hashMap.put (themeData.PREVIEW_IMAGE_PATH, This.getPreviewImagePath);
+        hashMap.put (themeData.NAME, Java_Box (ThemeValidation'Class (This).getName));
+        hashMap.put (themeData.PATH, ThemeValidation'Class (This).getPath);
+        hashMap.put (themeData.PREVIEW_IMAGE_NAME, ThemeValidation'Class (This).getPreviewImageName);
+        hashMap.put (themeData.PREVIEW_IMAGE_PATH, ThemeValidation'Class (This).getPreviewImagePath);
         return hashMap;
    end toHashMap;
 
@@ -277,8 +277,8 @@ package body org.allbinary.logic.visual.theme.ThemeValidation_Package is
       node : Node_Access;
       domNodeInterface : DomNodeInterface_Access;
    begin
-        node := ModDomHelper_Package.createNameValueNodes (document, ThemeData_Package.getInstance.NAME, This.toHashMap);
-        domNodeInterface := DomNodeInterface_Access (This.getCssStyleValidation);
+        node := ModDomHelper_Package.createNameValueNodes (document, ThemeData_Package.getInstance.NAME, ThemeValidation'Class (This).toHashMap);
+        domNodeInterface := DomNodeInterface_Access (ThemeValidation'Class (This).getCssStyleValidation);
         node.appendChild (domNodeInterface.toXmlNode (document));
         return node;
    end toXmlNode;

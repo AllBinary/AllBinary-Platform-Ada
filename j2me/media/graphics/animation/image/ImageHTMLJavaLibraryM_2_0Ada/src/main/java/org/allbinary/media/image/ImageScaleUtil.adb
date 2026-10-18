@@ -45,7 +45,7 @@ package body org.allbinary.media.image.ImageScaleUtil_Package is
       imageCache : constant ImageCache_Access := ImageCache_Access (imageCache_Param);
       originalImage : constant Image_Access := Image_Access (originalImage_Param);
    begin
-        return This.createImage3 (imageCache, originalImage, scaleNominatorX, scaleDenominatorX, scaleNominatorY, scaleDenominatorY, cached, True);
+        return ImageScaleUtil'Class (This).createImage3 (imageCache, originalImage, scaleNominatorX, scaleDenominatorX, scaleNominatorY, scaleDenominatorY, cached, True);
    end createImage2;
 
    --  throws Exception
@@ -57,7 +57,7 @@ package body org.allbinary.media.image.ImageScaleUtil_Package is
    begin
         scaleX := (scaleNominatorX) / (scaleDenominatorX);
         scaleY := (scaleNominatorY) / (scaleDenominatorY);
-        return This.createImage (imageCache, originalImage, scaleX, scaleY, cached);
+        return ImageScaleUtil'Class (This).createImage (imageCache, originalImage, scaleX, scaleY, cached);
    end createImage3;
 
    --  throws Exception
@@ -65,7 +65,7 @@ package body org.allbinary.media.image.ImageScaleUtil_Package is
       imageCache : constant ImageCache_Access := ImageCache_Access (imageCache_Param);
       originalImage : constant Image_Access := Image_Access (originalImage_Param);
    begin
-        return This.createImageInternal (originalImage, scaleX, scaleY);
+        return ImageScaleUtil'Class (This).createImageInternal (originalImage, scaleX, scaleY);
    end createImage;
 
    --  throws Exception

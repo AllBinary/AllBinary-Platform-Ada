@@ -63,7 +63,7 @@ package body views.business.context.modules.storefront.customizer.StoreCustomize
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
                 This.logUtil.putF (To_Unbounded_String ("View or component that was modified by a Customizer: ") & nextTransformInfoInterface.getName, StoreCustomizerComponentUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("generateModifiedViews()"));
             end if;
-            This.generate (abeClientInformation, transformInfoInterface, allViewsToBeModified);
+            StoreCustomizerComponentUtil'Class (This).generate (abeClientInformation, transformInfoInterface, allViewsToBeModified);
         end loop;
         return StringUtil_Package.getInstance.EMPTY_STRING;
    end generate;

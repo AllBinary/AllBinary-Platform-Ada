@@ -50,7 +50,7 @@ package body org.allbinary.logic.visual.transform.template.customizer.widgets.ti
             This.title := TitleView_Package.NAME;
         end if;
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-            This.logUtil.putF (To_Unbounded_String ("Title: ") & Java_Image (This.getTitle), TitleView_Access'(This'Unchecked_Access), To_Unbounded_String ("Consructor()"));
+            This.logUtil.putF (To_Unbounded_String ("Title: ") & Java_Image (TitleView'Class (This).getTitle), TitleView_Access'(This'Unchecked_Access), To_Unbounded_String ("Consructor()"));
         end if;
    end Initialize;
 
@@ -68,7 +68,7 @@ package body org.allbinary.logic.visual.transform.template.customizer.widgets.ti
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
             This.logUtil.putF (To_Unbounded_String ("HashMap: ") & hashMap.toString, TitleView_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         end if;
-        This.getFormData (hashMap);
+        TitleView'Class (This).getFormData (hashMap);
    end Initialize;
 
    function Create (hashMap_Param : access HashMap_Package.HashMap'Class) return TitleView_Access is
@@ -86,7 +86,7 @@ package body org.allbinary.logic.visual.transform.template.customizer.widgets.ti
    procedure getFormData (This : in out TitleView; hashMap_Param : access HashMap_Package.HashMap'Class) is
       hashMap : constant HashMap_Access := HashMap_Access (hashMap_Param);
    begin
-        This.title := Unbounded_String (hashMap.get (TitleData_Package.getInstance.TEXT));
+        This.title := Java_Unbox (hashMap.get (TitleData_Package.getInstance.TEXT));
         if StringValidationUtil_Package.getInstance.isEmpty (This.title) then
             This.title := TitleView_Package.NAME;
         end if;
@@ -96,7 +96,7 @@ package body org.allbinary.logic.visual.transform.template.customizer.widgets.ti
       hashMap : HashMap_Access;
    begin
         hashMap := StdUtil_Package.getInstance.createHashMap;
-        hashMap.put (TitleData_Package.getInstance.TEXT, This.getTitle);
+        hashMap.put (TitleData_Package.getInstance.TEXT, TitleView'Class (This).getTitle);
         return hashMap;
    end toHashMap;
 
@@ -105,7 +105,7 @@ package body org.allbinary.logic.visual.transform.template.customizer.widgets.ti
       document : constant Document_Access := Document_Access (document_Param);
       hashMap : HashMap_Access;
    begin
-        hashMap := This.toHashMap;
+        hashMap := TitleView'Class (This).toHashMap;
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
             This.logUtil.putF (To_Unbounded_String ("TitleView HashMap: ") & hashMap.toString, TitleView_Access'(This'Unchecked_Access), To_Unbounded_String ("toXmlNode()"));
         end if;

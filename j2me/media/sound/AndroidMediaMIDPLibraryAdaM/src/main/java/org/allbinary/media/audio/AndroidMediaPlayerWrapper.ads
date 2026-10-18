@@ -20,9 +20,9 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with javax.microedition.media.MediaException_Package; use javax.microedition.media.MediaException_Package;
---  with javax.microedition.media.Player_Package; use javax.microedition.media.Player_Package;
---  with javax.microedition.media.PlayerListener_Package; use javax.microedition.media.PlayerListener_Package;
+with javax.microedition.media.MediaException_Package; use javax.microedition.media.MediaException_Package;
+with javax.microedition.media.Player_Package; use javax.microedition.media.Player_Package;
+with javax.microedition.media.PlayerListener_Package; use javax.microedition.media.PlayerListener_Package;
 with android.media.MediaPlayer_Package; use android.media.MediaPlayer_Package;
 with org.allbinary.android.NullAndroidCanvas_Package; use org.allbinary.android.NullAndroidCanvas_Package;
 with org.allbinary.data.resource.ResourceUtil_Package; use org.allbinary.data.resource.ResourceUtil_Package;
@@ -34,6 +34,9 @@ with org.allbinary.media.audio.BasicPlayer_Package; use org.allbinary.media.audi
 
 package org.allbinary.media.audio.AndroidMediaPlayerWrapper_Package is
 
+   package MediaException_Package renames Standard.javax.microedition.media.MediaException_Package;
+   package Player_Package renames Standard.javax.microedition.media.Player_Package;
+   package PlayerListener_Package renames Standard.javax.microedition.media.PlayerListener_Package;
    package MediaPlayer_Package renames Standard.android.media.MediaPlayer_Package;
    package NullAndroidCanvas_Package renames Standard.org.allbinary.android.NullAndroidCanvas_Package;
    package ResourceUtil_Package renames Standard.org.allbinary.data.resource.ResourceUtil_Package;

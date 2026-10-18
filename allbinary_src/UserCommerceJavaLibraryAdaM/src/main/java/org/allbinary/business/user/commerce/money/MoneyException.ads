@@ -12,28 +12,9 @@
 --  
 --  Generated Code Do Not Modify
 
-with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
-with Ada.Strings.Maps.Constants;
-with Ada.Characters.Handling;
-with Ada.Exceptions;
-with Ada.Numerics.Long_Elementary_Functions;
-with Ada.Tags;
-with Ada.Text_IO;
-with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.business.user.commerce.money.Exception_Package; use org.allbinary.business.user.commerce.money.Exception_Package;
-
 package org.allbinary.business.user.commerce.money.MoneyException_Package is
 
-
-   type MoneyException is tagged;
-   type MoneyException_Access is access all MoneyException'Class;
-   type MoneyException_Access_Array is array (Natural range <>) of MoneyException_Access;
-   type MoneyException_Access_Array_Access is access all MoneyException_Access_Array;
-
-   type MoneyException is new Exception with null record;
-
-   procedure Initialize (This : in out MoneyException'Class);
-   function Create return MoneyException_Access;
+   --  Java exception MoneyException extends Exception. Java exceptions are AllBinary_Java.Java_Throwable with the Java class name.
 
 end org.allbinary.business.user.commerce.money.MoneyException_Package;
 

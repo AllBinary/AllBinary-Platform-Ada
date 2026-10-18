@@ -30,8 +30,8 @@ package body org.allbinary.media.graphics.geography.map.GeographicMapCellPositio
    begin
         CellPosition_Package.Initialize (This, column, row, columns, rows);
         Initialize_Fields (This);
-        x := (This.getColumn) * (width);
-        y := (This.getRow) * (height);
+        x := (GeographicMapCellPosition'Class (This).getColumn) * (width);
+        y := (GeographicMapCellPosition'Class (This).getRow) * (height);
         pointFactory := PointFactory_Package.getInstance;
         This.point := pointFactory.createXY (x, y);
         This.midPoint := pointFactory.createXY ((x) + ((Java_Shift_Right_Arithmetic (width, 1))), (y) + ((Java_Shift_Right_Arithmetic (height, 1))));

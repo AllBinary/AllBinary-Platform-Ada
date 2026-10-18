@@ -39,7 +39,7 @@ package body org.allbinary.game.layer.item.RTSLayerCostAnimation_Package is
       Initialize_Fields (This);
         This.image := image;
         This.layerInterfaceFactoryInterface := layerInterfaceFactoryInterface;
-        This.update;
+        RTSLayerCostAnimation'Class (This).update;
    end Initialize;
 
    function Create (image_Param : access Image_Package.Image'Class; layerInterfaceFactoryInterface_Param : access CostLayerInterfaceFactoryInterface_Package.CostLayerInterfaceFactoryInterface'Class) return RTSLayerCostAnimation_Access is
@@ -70,7 +70,7 @@ package body org.allbinary.game.layer.item.RTSLayerCostAnimation_Package is
       commonStrings : CommonStrings_Access;
    begin
         begin
-            This.update;
+            RTSLayerCostAnimation'Class (This).update;
         exception
             when Java_Occurrence : others =>
                 declare

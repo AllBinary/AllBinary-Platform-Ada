@@ -48,7 +48,7 @@ package body views.business.context.modules.storefront.customizer.includes.style
    begin
         begin
             isValid := True;
-            categoryFactoryInterface := StoreThemeCategoryFactory_Package.Create (This.getTransformInfoInterface);
+            categoryFactoryInterface := StoreThemeCategoryFactory_Package.Create (EditThemeValidationView'Class (This).getTransformInfoInterface);
             categoryLoaderInterface := CategoryLoaderFactory_Package.getInstance (categoryFactoryInterface);
             rootStoreThemeCategoryInterface := StoreThemeCategoryInterface_Access (categoryFactoryInterface.getRootInstance);
             storeThemeCategoryInterface := StoreThemeCategoryInterface_Access (categoryLoaderInterface.getAll (CategoryInterface_Access (rootStoreThemeCategoryInterface)));
@@ -61,7 +61,7 @@ package body views.business.context.modules.storefront.customizer.includes.style
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
                 This.logUtil.putF (To_Unbounded_String ("Setting Data: ") & documentString, EditThemeValidationView_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
             end if;
-            This.getTransformInfoInterface.setData (documentString);
+            EditThemeValidationView'Class (This).getTransformInfoInterface.setData (documentString);
             return isValid;
         exception
             when Java_Occurrence : others =>

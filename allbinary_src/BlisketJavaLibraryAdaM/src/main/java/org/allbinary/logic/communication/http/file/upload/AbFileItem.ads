@@ -22,8 +22,8 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.io.File_Package; use java.io.File_Package;
 --  with java.io.IOException_Package; use java.io.IOException_Package;
---  with java.io.InputStream_Package; use java.io.InputStream_Package;
---  with java.io.OutputStream_Package; use java.io.OutputStream_Package;
+with java.io.InputStream_Package; use java.io.InputStream_Package;
+with java.io.OutputStream_Package; use java.io.OutputStream_Package;
 --  with java.io.UnsupportedEncodingException_Package; use java.io.UnsupportedEncodingException_Package;
 with org.allbinary.logic.communication.log.ForcedLogUtil_Package; use org.allbinary.logic.communication.log.ForcedLogUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
@@ -37,6 +37,8 @@ with org.apache.commons.fileupload.FileItemUtil_Package; use org.apache.commons.
 
 package org.allbinary.logic.communication.http.file.upload.AbFileItem_Package is
 
+   package InputStream_Package renames Standard.java.io.InputStream_Package;
+   package OutputStream_Package renames Standard.java.io.OutputStream_Package;
    package ForcedLogUtil_Package renames Standard.org.allbinary.logic.communication.log.ForcedLogUtil_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package AbFile_Package renames Standard.org.allbinary.logic.io.file.AbFile_Package;

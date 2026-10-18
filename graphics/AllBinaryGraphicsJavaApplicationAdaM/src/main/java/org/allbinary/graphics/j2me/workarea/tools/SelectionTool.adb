@@ -133,9 +133,9 @@ package body org.allbinary.graphics.j2me.workarea.tools.SelectionTool_Package is
       item : GraphicItemInterface_Access;
       index : Integer;
    begin
-        xRect := This.getXRect;
+        xRect := SelectionTool'Class (This).getXRect;
         xRect2 := (abs ((This.endPoint.getX) - (This.startPoint.getX))) + (xRect);
-        yRect := This.getYRect;
+        yRect := SelectionTool'Class (This).getYRect;
         yRect2 := (abs ((This.endPoint.getY) - (This.startPoint.getY))) + (yRect);
         hashMap := This.canvasJPanel.getGraphicItemHashMap;
         graphicItemArray := hashMap.keySet.toArray;
@@ -187,9 +187,9 @@ package body org.allbinary.graphics.j2me.workarea.tools.SelectionTool_Package is
       height : Integer;
    begin
         g.setColor (This.rectColor);
-        xRect := This.getXRect;
+        xRect := SelectionTool'Class (This).getXRect;
         width := abs ((This.endPoint.getX) - (This.startPoint.getX));
-        yRect := This.getYRect;
+        yRect := SelectionTool'Class (This).getYRect;
         height := abs ((This.endPoint.getY) - (This.startPoint.getY));
         g.drawRect (xRect, yRect, width, height);
    end paint;
@@ -260,7 +260,7 @@ package body org.allbinary.graphics.j2me.workarea.tools.SelectionTool_Package is
         This.logUtil.putF (This.commonStrings.START, SelectionTool_Access'(This'Unchecked_Access), MouseStrings_Package.getInstance.MOUSE_RELEASED);
         This.endPoint := PointFactory_Package.getInstance.createXY (mouseEvent.getX, mouseEvent.getY);
         This.active := False;
-        This.makeSelection;
+        SelectionTool'Class (This).makeSelection;
    end mouseReleased;
 
    procedure mouseDragged (This : in out SelectionTool; mouseEvent_Param : access MouseEvent_Package.MouseEvent'Class; xPixelsPerCell : Integer; yPixelsPerCell : Integer) is

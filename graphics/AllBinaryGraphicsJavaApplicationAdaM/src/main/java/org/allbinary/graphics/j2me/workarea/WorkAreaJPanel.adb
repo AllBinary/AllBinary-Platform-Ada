@@ -25,7 +25,7 @@ package body org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package is
       This.selectedFrame := 0;
       This.propertiesJPanel := null;
       This.workAreaJTreeJPanel := null;
-      This.isPlaying := False;
+      This.isPlaying_Field := False;
       This.innerJPanel := null;
    end Initialize_Fields;
 
@@ -37,11 +37,11 @@ package body org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package is
       JPanel_Package.Initialize (This);
       Initialize_Fields (This);
         begin
-            This.initComponents;
+            WorkAreaJPanel'Class (This).initComponents;
             This.name := name;
-            This.initMyComponents (dimension);
+            WorkAreaJPanel'Class (This).initMyComponents (dimension);
             This.workAreaJTreeJPanel := WorkAreaJTreeJPanel_Package.Create (This.name);
-            canvasJPanel := CanvasJPanel_Package.Create (This.workAreaJTreeJPanel, This.getSize, x, y);
+            canvasJPanel := CanvasJPanel_Package.Create (This.workAreaJTreeJPanel, WorkAreaJPanel'Class (This).getSize, x, y);
             This.canvasJPanelList.add (canvasJPanel);
             This.selectedFrame := 0;
             This.propertiesJPanel.set (This.workAreaJTreeJPanel);
@@ -75,18 +75,18 @@ package body org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package is
       JPanel_Package.Initialize (This);
       Initialize_Fields (This);
         begin
-            This.initComponents;
+            WorkAreaJPanel'Class (This).initComponents;
             This.name := workAreaDom.getName;
-            This.initMyComponents (dimension);
+            WorkAreaJPanel'Class (This).initMyComponents (dimension);
             canvasNodeList := workAreaDom.getCanvasNodes;
             numberOfFrames := canvasNodeList.size;
             for index in 0 .. (numberOfFrames) - 1 loop
                 node := Node_Access (canvasNodeList.get (index));
-                canvasJPanel := CanvasJPanel_Package.Create (This.workAreaJTreeJPanel, This.getSize, CanvasDom_Package.Create (node));
+                canvasJPanel := CanvasJPanel_Package.Create (This.workAreaJTreeJPanel, WorkAreaJPanel'Class (This).getSize, CanvasDom_Package.Create (node));
                 This.canvasJPanelList.add (canvasJPanel);
             end loop;
             This.selectedFrame := 0;
-            This.canvasHolderJPanel.add (Component_Access (This.getCurrentFrame));
+            This.canvasHolderJPanel.add (Component_Access (WorkAreaJPanel'Class (This).getCurrentFrame));
             This.propertiesJPanel.set (This.workAreaJTreeJPanel);
         exception
             when Java_Occurrence : others =>
@@ -118,7 +118,7 @@ package body org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package is
         This.canvasHolderJPanel := JPanel_Package.Create;
         This.canvasHolderJPanel.setSize (dimension);
         This.canvasHolderJPanel.setLayout (GridLayout_Package.Create (1, 1));
-        This.setSize (dimension);
+        WorkAreaJPanel'Class (This).setSize (dimension);
         This.canvasJPanelList := LinkedList_Package.Create;
         gridBagLayout := GridBagLayout_Package.Create;
         gridBagConstraints := GridBagConstraints_Package.Create;
@@ -171,17 +171,17 @@ package body org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package is
 
    procedure play (This : in out WorkAreaJPanel) is
    begin
-        This.isPlaying := True;
+        This.isPlaying_Field := True;
    end play;
 
    procedure stop (This : in out WorkAreaJPanel) is
    begin
-        This.isPlaying := False;
+        This.isPlaying_Field := False;
    end stop;
 
    function isPlaying (This : in out WorkAreaJPanel) return Boolean is
    begin
-        return This.isPlaying;
+        return This.isPlaying_Field;
    end isPlaying;
 
    function getName (This : in out WorkAreaJPanel) return Unbounded_String is
@@ -201,7 +201,7 @@ package body org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package is
 
    procedure enableCanvas (This : in out WorkAreaJPanel) is
    begin
-        This.canvasHolderJPanel.add (Component_Access (This.getCurrentFrame));
+        This.canvasHolderJPanel.add (Component_Access (WorkAreaJPanel'Class (This).getCurrentFrame));
    end enableCanvas;
 
    procedure deselect (This : in out WorkAreaJPanel) is
@@ -243,7 +243,7 @@ package body org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package is
    begin
         if (newCanvasJPanel) /= (null) then
             This.canvasJPanelList.add (newCanvasJPanel);
-            This.select_Id ((This.canvasJPanelList.size) - (1));
+            WorkAreaJPanel'Class (This).select_Id ((This.canvasJPanelList.size) - (1));
         end if;
    end initDuplicate;
 
@@ -254,11 +254,11 @@ package body org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package is
       frameInteger : Integer;
       canvasJPanel : CanvasJPanel_Access;
    begin
-        canvasJPanelHashMap := This.getCanvasHashMap;
+        canvasJPanelHashMap := WorkAreaJPanel'Class (This).getCanvasHashMap;
         if canvasJPanelHashMap.containsKey (treeNode) then
             frameInteger := Integer (canvasJPanelHashMap.get (treeNode));
             canvasJPanel := CanvasJPanel_Access (This.canvasJPanelList.get (frameInteger.intValue));
-            This.initDuplicate (canvasJPanel.duplicate);
+            WorkAreaJPanel'Class (This).initDuplicate (canvasJPanel.duplicate);
         end if;
    end duplicate;
 
@@ -271,17 +271,17 @@ package body org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package is
    begin
         incrementAngle := ((totalAngle) / (increments));
         for index in 1 .. (increments) - 1 loop
-            canvasJPanel := CanvasJPanel_Access (This.getCurrentFrame);
+            canvasJPanel := CanvasJPanel_Access (WorkAreaJPanel'Class (This).getCurrentFrame);
             newCanvasJPanel := canvasJPanel.duplicate;
             newCanvasJPanel.setAngle ((incrementAngle) * (index));
-            This.initDuplicate (newCanvasJPanel);
+            WorkAreaJPanel'Class (This).initDuplicate (newCanvasJPanel);
         end loop;
    end autoRotate;
 
    procedure explodeAll (This : in out WorkAreaJPanel) is
       canvasJPanel : CanvasJPanel_Access;
    begin
-        canvasJPanel := CanvasJPanel_Access (This.getCurrentFrame);
+        canvasJPanel := CanvasJPanel_Access (WorkAreaJPanel'Class (This).getCurrentFrame);
         canvasJPanel.explodeAll;
    end explodeAll;
 
@@ -292,10 +292,10 @@ package body org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package is
       index : Integer;
    begin
         for index in 1 .. (numberOfFrames) - 1 loop
-            canvasJPanel := CanvasJPanel_Access (This.getCurrentFrame);
+            canvasJPanel := CanvasJPanel_Access (WorkAreaJPanel'Class (This).getCurrentFrame);
             newCanvasJPanel := canvasJPanel.duplicate;
             newCanvasJPanel.explode ((index) + (1), explodeType);
-            This.initDuplicate (newCanvasJPanel);
+            WorkAreaJPanel'Class (This).initDuplicate (newCanvasJPanel);
         end loop;
    end autoExplode;
 
@@ -304,10 +304,10 @@ package body org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package is
       canvasJPanel : CanvasJPanel_Access;
       newCanvasJPanel : CanvasJPanel_Access;
    begin
-        canvasJPanel := CanvasJPanel_Access (This.getCurrentFrame);
+        canvasJPanel := CanvasJPanel_Access (WorkAreaJPanel'Class (This).getCurrentFrame);
         newCanvasJPanel := canvasJPanel.duplicate;
         newCanvasJPanel.mirror;
-        This.initDuplicate (newCanvasJPanel);
+        WorkAreaJPanel'Class (This).initDuplicate (newCanvasJPanel);
    end autoMirror;
 
    procedure select_Id (This : in out WorkAreaJPanel; index : Integer) is
@@ -331,10 +331,10 @@ package body org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package is
       canvasJPanelHashMap : HashMap_Access;
       frameInteger : Integer;
    begin
-        canvasJPanelHashMap := This.getCanvasHashMap;
+        canvasJPanelHashMap := WorkAreaJPanel'Class (This).getCanvasHashMap;
         frameInteger := Integer (canvasJPanelHashMap.get (treeNode));
         if (frameInteger) /= (null) then
-            This.select_Id (frameInteger.intValue);
+            WorkAreaJPanel'Class (This).select_Id (frameInteger.intValue);
         end if;
    end select_Id;
 
@@ -373,28 +373,28 @@ package body org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package is
    procedure initComponents (This : in out WorkAreaJPanel) is
    begin
         This.innerJPanel := JPanel_Package.Create;
-        This.setLayout (GridLayout_Package.Create (1, 1));
+        WorkAreaJPanel'Class (This).setLayout (GridLayout_Package.Create (1, 1));
         This.innerJPanel.addKeyListener (KeyAdapter_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
 --     procedure keyTyped (This : in out ; evt_Param : access KeyEvent_Package.KeyEvent'Class) is
 --        evt : constant KeyEvent_Access := KeyEvent_Access (evt_Param);
 --     begin
---                  This.innerJPanelKeyTyped (evt);
+--                  WorkAreaJPanel'Class (This).innerJPanelKeyTyped (evt);
 --     end keyTyped;
 --              
 --     procedure keyPressed (This : in out ; evt_Param : access KeyEvent_Package.KeyEvent'Class) is
 --        evt : constant KeyEvent_Access := KeyEvent_Access (evt_Param);
 --     begin
---                  This.innerJPanelKeyPressed (evt);
+--                  WorkAreaJPanel'Class (This).innerJPanelKeyPressed (evt);
 --     end keyPressed;
 --              
 --     procedure keyReleased (This : in out ; evt_Param : access KeyEvent_Package.KeyEvent'Class) is
 --        evt : constant KeyEvent_Access := KeyEvent_Access (evt_Param);
 --     begin
---                  This.innerJPanelKeyReleased (evt);
+--                  WorkAreaJPanel'Class (This).innerJPanelKeyReleased (evt);
 --     end keyReleased;
 );
-        This.add (This.innerJPanel);
+        WorkAreaJPanel'Class (This).add (This.innerJPanel);
    end initComponents;
 
    procedure innerJPanelKeyReleased (This : in out WorkAreaJPanel; evt_Param : access KeyEvent_Package.KeyEvent'Class) is
@@ -418,7 +418,7 @@ package body org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package is
    procedure keyPressed (This : in out WorkAreaJPanel; keyEvent_Param : access KeyEvent_Package.KeyEvent'Class) is
       keyEvent : constant KeyEvent_Access := KeyEvent_Access (keyEvent_Param);
    begin
-        This.getCurrentFrame.keyPressed (keyEvent);
+        WorkAreaJPanel'Class (This).getCurrentFrame.keyPressed (keyEvent);
    end keyPressed;
 
    procedure keyReleased (This : in out WorkAreaJPanel; keyEvent_Param : access KeyEvent_Package.KeyEvent'Class) is
@@ -438,12 +438,12 @@ package body org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package is
       canvasJPanelHashMap : HashMap_Access;
       frameInt : Integer;
    begin
-        canvasJPanelHashMap := This.getCanvasHashMap;
+        canvasJPanelHashMap := WorkAreaJPanel'Class (This).getCanvasHashMap;
         if canvasJPanelHashMap.containsKey (evt.getTreeNode) then
             This.canvasHolderJPanel.removeAll;
             frameInt := Integer (canvasJPanelHashMap.get (evt.getTreeNode));
             This.canvasJPanelList.remove (frameInt.intValue);
-            This.select_Id (frameInt.intValue);
+            WorkAreaJPanel'Class (This).select_Id (frameInt.intValue);
         end if;
    end delete;
 
@@ -451,13 +451,13 @@ package body org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package is
    procedure duplicate (This : in out WorkAreaJPanel; evt_Param : access MyCanvasEvent_Package.MyCanvasEvent'Class) is
       evt : constant MyCanvasEvent_Access := MyCanvasEvent_Access (evt_Param);
    begin
-        This.duplicate (evt.getTreeNode);
+        WorkAreaJPanel'Class (This).duplicate (evt.getTreeNode);
    end duplicate;
 
    procedure select_Id (This : in out WorkAreaJPanel; evt_Param : access MyCanvasEvent_Package.MyCanvasEvent'Class) is
       evt : constant MyCanvasEvent_Access := MyCanvasEvent_Access (evt_Param);
    begin
-        This.select_Id (evt.getTreeNode);
+        WorkAreaJPanel'Class (This).select_Id (evt.getTreeNode);
         StatusFactory_Package.getInstance.setStatus (To_Unbounded_String ("Frame Selected"));
    end select_Id;
 
@@ -468,13 +468,13 @@ package body org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package is
       frameInt : Integer;
       canvasJPanel : CanvasJPanel_Access;
    begin
-        canvasJPanelHashMap := This.getCanvasHashMap;
+        canvasJPanelHashMap := WorkAreaJPanel'Class (This).getCanvasHashMap;
         treeNode := evt.getTreeNode;
         frameInt := Integer (canvasJPanelHashMap.get (evt.getTreeNode));
         canvasJPanel := CanvasJPanel_Access (This.canvasJPanelList.get (frameInt.intValue));
         if (canvasJPanel) /= (null) then
             canvasJPanel.addAngle (evt.getAngle);
-            This.select_Id (frameInt.intValue);
+            WorkAreaJPanel'Class (This).select_Id (frameInt.intValue);
         end if;
         StatusFactory_Package.getInstance.setStatus (To_Unbounded_String ("Canvas Rotated"));
    end rotate;
@@ -482,21 +482,21 @@ package body org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package is
    procedure explode (This : in out WorkAreaJPanel; evt_Param : access MyCanvasEvent_Package.MyCanvasEvent'Class) is
       evt : constant MyCanvasEvent_Access := MyCanvasEvent_Access (evt_Param);
    begin
-        This.explodeAll;
+        WorkAreaJPanel'Class (This).explodeAll;
    end explode;
 
    --  throws Exception
    procedure autoExplode (This : in out WorkAreaJPanel; evt_Param : access MyCanvasEvent_Package.MyCanvasEvent'Class) is
       evt : constant MyCanvasEvent_Access := MyCanvasEvent_Access (evt_Param);
    begin
-        This.autoExplode (10, 0);
+        WorkAreaJPanel'Class (This).autoExplode (10, 0);
    end autoExplode;
 
    --  throws Exception
    procedure center (This : in out WorkAreaJPanel) is
       canvasJPanel : CanvasJPanel_Access;
    begin
-        canvasJPanel := CanvasJPanel_Access (This.getCurrentFrame);
+        canvasJPanel := CanvasJPanel_Access (WorkAreaJPanel'Class (This).getCurrentFrame);
         canvasJPanel.center;
    end center;
 
@@ -504,7 +504,7 @@ package body org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package is
    procedure center (This : in out WorkAreaJPanel; evt_Param : access MyCanvasEvent_Package.MyCanvasEvent'Class) is
       evt : constant MyCanvasEvent_Access := MyCanvasEvent_Access (evt_Param);
    begin
-        This.center;
+        WorkAreaJPanel'Class (This).center;
    end center;
 
    procedure run (This : in out WorkAreaJPanel) is
@@ -513,13 +513,13 @@ package body org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package is
    begin
         begin
             while True loop
-                if This.isPlaying then
+                if WorkAreaJPanel'Class (This).isPlaying then
                     size := This.canvasJPanelList.size;
                     for index in 0 .. (size) - 1 loop
-                        if not (This.isPlaying) then
+                        if not (WorkAreaJPanel'Class (This).isPlaying) then
                             exit;
                         end if;
-                        This.select_Id (index);
+                        WorkAreaJPanel'Class (This).select_Id (index);
                         Java_Sleep (100);
                     end loop;
                 else

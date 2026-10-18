@@ -70,7 +70,7 @@ package body org.allbinary.input.gyro.SensorGameUpdateProcessor_Package is
 
    procedure setNoSensors (This : in out SensorGameUpdateProcessor) is
    begin
-        This.setInputSensor (NoAllBinarySensor_Package.getInstance);
+        SensorGameUpdateProcessor'Class (This).setInputSensor (NoAllBinarySensor_Package.getInstance);
    end setNoSensors;
 
 end org.allbinary.input.gyro.SensorGameUpdateProcessor_Package;

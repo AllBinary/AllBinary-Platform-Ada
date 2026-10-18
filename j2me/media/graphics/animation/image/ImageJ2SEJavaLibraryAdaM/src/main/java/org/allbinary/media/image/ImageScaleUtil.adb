@@ -47,7 +47,7 @@ package body org.allbinary.media.image.ImageScaleUtil_Package is
       imageCache : constant ImageCache_Access := ImageCache_Access (imageCache_Param);
       originalImage : constant Image_Access := Image_Access (originalImage_Param);
    begin
-        return This.createImage3 (imageCache, originalImage, scaleNominatorX, scaleDenominatorX, scaleNominatorY, scaleDenominatorY, cached, True);
+        return ImageScaleUtil'Class (This).createImage3 (imageCache, originalImage, scaleNominatorX, scaleDenominatorX, scaleNominatorY, scaleDenominatorY, cached, True);
    end createImage2;
 
    --  throws Exception
@@ -70,7 +70,7 @@ package body org.allbinary.media.image.ImageScaleUtil_Package is
         else
             image := imageCache.get (To_Unbounded_String ("createImage"), Integer (((Float (width)) * (scaleX))), Integer (((Float (height)) * (scaleY))));
         end if;
-        This.scale (originalImage, image, scaleX, scaleY, True);
+        ImageScaleUtil'Class (This).scale (originalImage, image, scaleX, scaleY, True);
         return image;
    end createImage3;
 
@@ -81,7 +81,7 @@ package body org.allbinary.media.image.ImageScaleUtil_Package is
         if (((maxScaleX) * (originalImage.getWidth)) > (originalImageArray (0).getWidth)) or else (((maxScaleY) * (originalImage.getHeight)) > (originalImageArray (0).getHeight)) then
             originalImageArray (0) := This.imageCreationUtil.createImage (originalImage.getWidth, originalImage.getHeight, maxScaleX, maxScaleY);
         end if;
-        This.scale (originalImage, originalImageArray (0), scaleX, scaleY, False);
+        ImageScaleUtil'Class (This).scale (originalImage, originalImageArray (0), scaleX, scaleY, False);
    end scale2;
 
    procedure scale (This : in out ImageScaleUtil; originalImage_Param : access Image_Package.Image'Class; newMaxSizeImage_Param : access Image_Package.Image'Class; scaleX : Float; scaleY : Float; clear : Boolean) is

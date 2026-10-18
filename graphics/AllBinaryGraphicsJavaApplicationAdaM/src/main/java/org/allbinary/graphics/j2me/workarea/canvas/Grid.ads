@@ -33,8 +33,8 @@ package org.allbinary.graphics.j2me.workarea.canvas.Grid_Package is
 
    type Grid is new Java_Object with record
       grid : GPoint_Access;
-      isGridOn : Boolean;
-      isGridPossible : Boolean;
+      isGridOn_Field : Boolean;
+      isGridPossible_Field : Boolean;
       zoom : Integer;
       isChanged : Boolean;
    end record;

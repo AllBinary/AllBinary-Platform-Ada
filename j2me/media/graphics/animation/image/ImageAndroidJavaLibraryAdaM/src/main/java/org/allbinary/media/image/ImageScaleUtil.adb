@@ -51,7 +51,7 @@ package body org.allbinary.media.image.ImageScaleUtil_Package is
       imageCache : constant ImageCache_Access := ImageCache_Access (imageCache_Param);
       originalImage : constant Image_Access := Image_Access (originalImage_Param);
    begin
-        return This.createImage3 (imageCache, originalImage, scaleNominatorX, scaleDenominatorX, scaleNominatorY, scaleDenominatorY, cached, True);
+        return ImageScaleUtil'Class (This).createImage3 (imageCache, originalImage, scaleNominatorX, scaleDenominatorX, scaleNominatorY, scaleDenominatorY, cached, True);
    end createImage2;
 
    --  throws Exception
@@ -63,7 +63,7 @@ package body org.allbinary.media.image.ImageScaleUtil_Package is
    begin
         scaleX := (scaleNominatorX) / (scaleDenominatorX);
         scaleY := (scaleNominatorY) / (scaleDenominatorY);
-        return This.createImage (imageCache, originalImage, scaleX, scaleY, cached);
+        return ImageScaleUtil'Class (This).createImage (imageCache, originalImage, scaleX, scaleY, cached);
    end createImage3;
 
    --  throws Exception
@@ -100,7 +100,7 @@ package body org.allbinary.media.image.ImageScaleUtil_Package is
         if alreadyAvailable then
             return Image_Access (This.scaledImageBasicArrayList.get (index));
         else
-            scaledImage := This.getScaledImage (imageCache, originalImage, scaleX, scaleY, width, height, cached);
+            scaledImage := ImageScaleUtil'Class (This).getScaledImage (imageCache, originalImage, scaleX, scaleY, width, height, cached);
             This.imageBasicArrayList.add (originalImage);
             This.scaledImageBasicArrayList.add (scaledImage);
             This.scaleXBasicArrayList.add (scaleX);
@@ -124,7 +124,7 @@ package body org.allbinary.media.image.ImageScaleUtil_Package is
         end if;
         if image.isMutable then
             matrix := Matrix_Package.Create;
-            This.scale (image, matrix, scaleX, scaleY);
+            ImageScaleUtil'Class (This).scale (image, matrix, scaleX, scaleY);
             image.getGraphics.drawImage (originalImage, 0, 0, This.anchor);
             return image;
         else

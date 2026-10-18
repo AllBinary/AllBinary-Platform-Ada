@@ -20,7 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.util.HashMap_Package; use java.util.HashMap_Package;
+with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.business.user.role.UserRole_Package; use org.allbinary.business.user.role.UserRole_Package;
 with org.allbinary.business.user.role.UserRoleB_Package; use org.allbinary.business.user.role.UserRoleB_Package;
 with org.allbinary.business.user.role.UserRoleData_Package; use org.allbinary.business.user.role.UserRoleData_Package;
@@ -29,6 +29,7 @@ with org.allbinary.business.user.UserInterface_Package; use org.allbinary.busine
 
 package org.allbinary.business.user.CreateUserFactory_Package is
 
+   package HashMap_Package renames Standard.java.util.HashMap_Package;
    package UserRole_Package renames Standard.org.allbinary.business.user.role.UserRole_Package;
    package UserRoleB_Package renames Standard.org.allbinary.business.user.role.UserRoleB_Package;
    package UserRoleData_Package renames Standard.org.allbinary.business.user.role.UserRoleData_Package;

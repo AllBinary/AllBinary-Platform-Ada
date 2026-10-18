@@ -46,10 +46,10 @@ package body views.business.context.RootContextView_Package is
    begin
         begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-                This.logUtil.putF (To_Unbounded_String ("View Name: ") & This.getTransformInfoInterface.getName, RootContextView_Access'(This'Unchecked_Access), To_Unbounded_String ("view()"));
+                This.logUtil.putF (To_Unbounded_String ("View Name: ") & RootContextView'Class (This).getTransformInfoInterface.getName, RootContextView_Access'(This'Unchecked_Access), To_Unbounded_String ("view()"));
             end if;
-            viewName := This.getName;
-            componentInterface := TransformFactory_Package.getInstance.getInstance (This.abeClientInformation, viewName, This.getTransformInfoInterface);
+            viewName := RootContextView'Class (This).getName;
+            componentInterface := TransformFactory_Package.getInstance.getInstance (This.abeClientInformation, viewName, RootContextView'Class (This).getTransformInfoInterface);
             return componentInterface.view;
         exception
             when Java_Occurrence : others =>
@@ -72,7 +72,7 @@ package body views.business.context.RootContextView_Package is
       viewName : Unbounded_String;
    begin
         begin
-            objectConfig := NoTemplateTransformInfoObjectConfig_Package.Create (This.getTransformInfoInterface, This.getTransformInfoInterface.getObjectConfigInterface.toXmlDoc);
+            objectConfig := NoTemplateTransformInfoObjectConfig_Package.Create (RootContextView'Class (This).getTransformInfoInterface, RootContextView'Class (This).getTransformInfoInterface.getObjectConfigInterface.toXmlDoc);
             componentsVector := objectConfig.getTransforms;
             if (componentsVector.size) = (0) then
                 Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Template View Not Set - No Components")));

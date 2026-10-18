@@ -36,6 +36,7 @@ package body org.allbinary.system.Memory_Package is
    function getInfo return Unbounded_String is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return Null_Unbounded_String;
    end getInfo;
 
 end org.allbinary.system.Memory_Package;

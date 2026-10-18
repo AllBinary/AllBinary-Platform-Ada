@@ -47,7 +47,7 @@ package body org.allbinary.animation.image.ImageAnimationFactory_Package is
       scaledImage : Image_Access;
       openGLUtil : OpenGLUtil_Access;
    begin
-        scaledImage := This.animationFactoryImageScaleUtil.createImage (This.getImage, This.animationFactoryInitializationVisitor.width, This.animationFactoryInitializationVisitor.height, This.scaleProperties.scaleWidth, This.scaleProperties.scaleHeight);
+        scaledImage := This.animationFactoryImageScaleUtil.createImage (ImageAnimationFactory'Class (This).getImage, This.animationFactoryInitializationVisitor.width, This.animationFactoryInitializationVisitor.height, This.scaleProperties.scaleWidth, This.scaleProperties.scaleHeight);
         openGLUtil := OpenGLUtil_Package.getInstance;
         scaledImage := openGLUtil.addImage (scaledImage);
         if ((This.animationFactoryInitializationVisitor.dx) /= (0)) or else ((This.animationFactoryInitializationVisitor.dy) /= (0)) then

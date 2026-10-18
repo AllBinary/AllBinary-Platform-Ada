@@ -39,12 +39,12 @@ package body tags.admin.payment.gateways.ViewUnusedTag_Package is
    function doStartTag (This : in out ViewUnusedTag) return Integer is
    begin
         begin
-            if (This.getCommand) /= (null) then
-                if (This.getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.VIEW)) = (0) then
-                    This.setName (To_Unbounded_String ("Validation User View"));
-                    This.setObjectFile (To_Unbounded_String ("views.admin.payment.gateways.SelectNewValidationView"));
+            if (ViewUnusedTag'Class (This).getCommand) /= (null) then
+                if (ViewUnusedTag'Class (This).getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.VIEW)) = (0) then
+                    ViewUnusedTag'Class (This).setName (To_Unbounded_String ("Validation User View"));
+                    ViewUnusedTag'Class (This).setObjectFile (To_Unbounded_String ("views.admin.payment.gateways.SelectNewValidationView"));
                 else
-                    Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("No Such View Command: ") & Java_Image (This.getCommand)));
+                    Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("No Such View Command: ") & Java_Image (ViewUnusedTag'Class (This).getCommand)));
                 end if;
                 return StoreValidationTransformTag (This).doStartTag;
             end if;

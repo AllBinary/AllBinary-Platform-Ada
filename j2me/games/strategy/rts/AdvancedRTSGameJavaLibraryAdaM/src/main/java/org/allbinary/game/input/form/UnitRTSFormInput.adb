@@ -32,7 +32,7 @@ package body org.allbinary.game.input.form.UnitRTSFormInput_Package is
         basicColorFactory := BasicColorFactory_Package.getInstance;
         This.noMoneyGameNotificationEvent := GameNotificationEvent_Package.Create (UnitRTSFormInput_Access'(This'Unchecked_Access), RTSGameStrings_Package.getInstance.NO_MONEY, smallIntegerSingletonFactory.getAt (2), basicColorFactory.WHITE, BooleanFactory_Package.getInstance.FALSE);
         This.newUnitGameNotificationEvent := GameNotificationEvent_Package.Create (UnitRTSFormInput_Access'(This'Unchecked_Access), RTSGameStrings_Package.getInstance.NEW_UNIT, smallIntegerSingletonFactory.getAt (2), basicColorFactory.WHITE, BooleanFactory_Package.getInstance.FALSE);
-        This.getHashtable.put (WorkWaypoint_Package.ID, smallIntegerSingletonFactory.getAt (50));
+        UnitRTSFormInput'Class (This).getHashtable.put (WorkWaypoint_Package.ID, smallIntegerSingletonFactory.getAt (50));
    end Initialize;
 
    function Create (groupInterface : Group_Access_Array_Access) return UnitRTSFormInput_Access is
@@ -73,10 +73,10 @@ package body org.allbinary.game.input.form.UnitRTSFormInput_Package is
         associatedRtsLayer2 := RTSLayer_Access (associatedRtsLayer);
         geographicMapCellPositionArea := associatedRtsLayer2.geographicMapCellPositionAreaBase;
         geographicMapCellPosition := geographicMapCellPositionArea.getNextSurroundingGeographicMapCellPosition;
-        This.getHashtable.put (Layer_Package.ID, associatedRtsLayer);
-        This.getHashtable.put (UnitRTSFormInput_Package.DECAL_ID, (AdvancedRTSPlayerLayerInterface_Access (rtsPlayerLayerInterface)).getDecalBasicColor);
+        UnitRTSFormInput'Class (This).getHashtable.put (Layer_Package.ID, associatedRtsLayer);
+        UnitRTSFormInput'Class (This).getHashtable.put (UnitRTSFormInput_Package.DECAL_ID, (AdvancedRTSPlayerLayerInterface_Access (rtsPlayerLayerInterface)).getDecalBasicColor);
         if (This.newUnconstructedRTSLayerInterfaceArray (itemIndex)) = (CollidableDestroyableDamageableLayer_Package.getNullInstance) then
-            This.newUnconstructedRTSLayerInterfaceArray (itemIndex) := This.getInstance (layerManager, item, geographicMapCellPosition);
+            This.newUnconstructedRTSLayerInterfaceArray (itemIndex) := UnitRTSFormInput'Class (This).getInstance (layerManager, item, geographicMapCellPosition);
         else
             cellPoint := geographicMapCellPosition.getPoint;
             rtsLayer := RTSLayer_Access (This.newUnconstructedRTSLayerInterfaceArray (itemIndex));
@@ -88,7 +88,7 @@ package body org.allbinary.game.input.form.UnitRTSFormInput_Package is
         cellPoint := geographicMapCellPosition.getMidPoint;
         rtsLayer := RTSLayer_Access (This.newUnconstructedRTSLayerInterfaceArray (itemIndex));
         rtsLayer.setPosition ((cellPoint.getX) - (rtsLayer.getHalfWidth), (cellPoint.getY) - (rtsLayer.getHalfHeight), rtsLayer.getZP);
-        This.attemptBuild (associatedRtsLayer2, rtsPlayerLayerInterface, layerManager, RTSLayer_Access (rtsLayer), itemIndex);
+        UnitRTSFormInput'Class (This).attemptBuild (associatedRtsLayer2, rtsPlayerLayerInterface, layerManager, RTSLayer_Access (rtsLayer), itemIndex);
    end processGameSpecific;
 
    --  throws Exception

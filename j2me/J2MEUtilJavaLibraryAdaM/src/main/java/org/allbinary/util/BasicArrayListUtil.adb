@@ -45,7 +45,7 @@ package body org.allbinary.util.BasicArrayListUtil_Package is
       list : constant BasicArrayList_Access := BasicArrayList_Access (list_Param);
       i_random : Integer;
    begin
-        i_random := This.getRandomIndex (list);
+        i_random := BasicArrayListUtil'Class (This).getRandomIndex (list);
         return list.objectArray (i_random);
    end getRandom;
 

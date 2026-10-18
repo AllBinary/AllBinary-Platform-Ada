@@ -23,13 +23,14 @@ with AllBinary_Java; use AllBinary_Java;
 --  with java.io.FileNotFoundException_Package; use java.io.FileNotFoundException_Package;
 --  with java.io.FileOutputStream_Package; use java.io.FileOutputStream_Package;
 --  with java.io.IOException_Package; use java.io.IOException_Package;
---  with java.io.OutputStream_Package; use java.io.OutputStream_Package;
+with java.io.OutputStream_Package; use java.io.OutputStream_Package;
 --  with java.nio.channels.FileChannel_Package; use java.nio.channels.FileChannel_Package;
 with org.allbinary.logic.io.file.AbFile_Package; use org.allbinary.logic.io.file.AbFile_Package;
 with org.allbinary.logic.io.file.AbFileNativeUtil_Package; use org.allbinary.logic.io.file.AbFileNativeUtil_Package;
 
 package org.allbinary.logic.io.AbFileOutputStream_Package is
 
+   package OutputStream_Package renames Standard.java.io.OutputStream_Package;
    package AbFile_Package renames Standard.org.allbinary.logic.io.file.AbFile_Package;
    package AbFileNativeUtil_Package renames Standard.org.allbinary.logic.io.file.AbFileNativeUtil_Package;
 

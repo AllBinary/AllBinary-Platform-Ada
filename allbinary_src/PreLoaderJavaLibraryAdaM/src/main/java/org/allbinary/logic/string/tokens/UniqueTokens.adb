@@ -79,22 +79,22 @@ package body org.allbinary.logic.string_Id.tokens.UniqueTokens_Package is
             index := 0;
             commonSeps := CommonSeps_Package.getInstance;
             while (index) < (stringVector.size) loop
-                keywords := Unbounded_String (stringVector.get (index));
+                keywords := Java_Unbox (stringVector.get (index));
                 tokenizer := Tokenizer_Package.Create (commonSeps.COMMA);
                 keywordVector := tokenizer.getTokensFromString (keywords, BasicArrayListD_Package.Create);
                 for forIndex in 0 .. (keywordVector.size) - 1 loop
-                    cleanString := Unbounded_String (keywordVector.get (forIndex));
+                    cleanString := Java_Unbox (keywordVector.get (forIndex));
                     cleanString := Trim (cleanString, Ada.Strings.Both);
-                    if ((Index (cleanString, To_String ('-')) - 1)) /= (-(1)) then
+                    if ((Index (cleanString, Java_Image ('-')) - 1)) /= (-(1)) then
                         cleanString := Replace_Package.Create (To_Unbounded_String ("-"), commonSeps.SPACE).all_Id (cleanString);
                     end if;
                     hashSet.add (cleanString);
-                    if ((Index (cleanString, To_String (' ')) - 1)) /= (-(1)) then
+                    if ((Index (cleanString, Java_Image (' ')) - 1)) /= (-(1)) then
                         spaceTokenizer := Tokenizer_Package.Create (commonSeps.SPACE);
                         subKeywordVector := spaceTokenizer.getTokensFromString (cleanString, BasicArrayListD_Package.Create);
                         for spaceIndex in 0 .. (subKeywordVector.size) - 1 loop
-                            subCleanString := Unbounded_String (subKeywordVector.get (spaceIndex));
-                            if (not (This.isSpecialCharacter (subCleanString))) and then (not (This.numberOnly (subCleanString))) then
+                            subCleanString := Java_Unbox (subKeywordVector.get (spaceIndex));
+                            if (not (UniqueTokens'Class (This).isSpecialCharacter (subCleanString))) and then (not (UniqueTokens'Class (This).numberOnly (subCleanString))) then
                                 hashSet.add (subCleanString);
                             end if;
                         end loop;
@@ -132,7 +132,7 @@ package body org.allbinary.logic.string_Id.tokens.UniqueTokens_Package is
       index : Integer;
    begin
         for index in 0 .. (This.specialCharacters.size) - 1 loop
-            if (subCleaningString.compareTo (Unbounded_String (This.specialCharacters.get (index)))) = (0) then
+            if (subCleaningString.compareTo (Java_Unbox (This.specialCharacters.get (index)))) = (0) then
                 return True;
             end if;
         end loop;

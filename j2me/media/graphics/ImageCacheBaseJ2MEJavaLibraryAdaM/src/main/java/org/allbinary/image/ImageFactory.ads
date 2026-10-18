@@ -20,11 +20,13 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.io.InputStream_Package; use java.io.InputStream_Package;
---  with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
+with java.io.InputStream_Package; use java.io.InputStream_Package;
+with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
 
 package org.allbinary.image.ImageFactory_Package is
 
+   package InputStream_Package renames Standard.java.io.InputStream_Package;
+   package Image_Package renames Standard.javax.microedition.lcdui.Image_Package;
 
    type ImageFactory is tagged;
    type ImageFactory_Access is access all ImageFactory'Class;

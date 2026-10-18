@@ -27,8 +27,8 @@ package body org.allbinary.media.image.comparison.color.ColorDelta_Package is
    procedure Initialize (This : in out ColorDelta'Class; rgb1 : Integer; rgb2 : Integer) is
    begin
       Initialize_Fields (This);
-        This.setRgb1 (rgb1);
-        This.setRgb2 (rgb2);
+        ColorDelta'Class (This).setRgb1 (rgb1);
+        ColorDelta'Class (This).setRgb2 (rgb2);
         This.key := ColorDelta_Package.getKey (rgb1, rgb2);
    end Initialize;
 
@@ -71,7 +71,7 @@ package body org.allbinary.media.image.comparison.color.ColorDelta_Package is
 
    function toString (This : in out ColorDelta) return Unbounded_String is
    begin
-        return StringMaker_Package.Create.append (To_Unbounded_String ("ColorDelta: ")).append (StringUtil_Package.getInstance.toString (This.getKey)).append (To_Unbounded_String (" RGB1: ")).appendint (This.getRgb1).append (To_Unbounded_String (" RGB2: ")).appendint (This.getRgb2).toString;
+        return StringMaker_Package.Create.append (To_Unbounded_String ("ColorDelta: ")).append (StringUtil_Package.getInstance.toString (ColorDelta'Class (This).getKey)).append (To_Unbounded_String (" RGB1: ")).appendint (ColorDelta'Class (This).getRgb1).append (To_Unbounded_String (" RGB2: ")).appendint (ColorDelta'Class (This).getRgb2).toString;
    end toString;
 
    procedure getKey (rgb1 : Integer; rgb2 : Integer) is

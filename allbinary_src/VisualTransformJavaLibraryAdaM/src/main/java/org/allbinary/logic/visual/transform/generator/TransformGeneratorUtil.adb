@@ -58,7 +58,7 @@ package body org.allbinary.logic.visual.transform.generator.TransformGeneratorUt
             result := componentInterface.view;
             httpTransformInfoInterface := TransformInfoHttpInterface_Access (componentInterface.getTransformInfoInterface);
             inputOutputTypeData := InputOutputTypeData_Package.getInstance;
-            if ((Index (result, To_String (To_Unbounded_String ("<HTML>"))) - 1)) >= (0) then
+            if ((Index (result, Java_Image (To_Unbounded_String ("<HTML>"))) - 1)) >= (0) then
                 httpTransformInfoInterface.getPropertiesHashMap.put (inputOutputTypeData.NAME, inputOutputTypeData.DEFAULT);
             else
                 httpTransformInfoInterface.getPropertiesHashMap.put (inputOutputTypeData.NAME, inputOutputTypeData.DEFAULT_FRAGMENT);
@@ -83,7 +83,7 @@ package body org.allbinary.logic.visual.transform.generator.TransformGeneratorUt
       transformInfoDomNode : constant TransformInfoDomNode_Access := TransformInfoDomNode_Access (transformInfoDomNode_Param);
       ownerTransformInfoInterface : constant TransformInfoInterface_Access := TransformInfoInterface_Access (ownerTransformInfoInterface_Param);
    begin
-        This.generate (abeClientInformation, transformInfoDomNode.getTransformInfoInterface, ownerTransformInfoInterface);
+        TransformGeneratorUtil'Class (This).generate (abeClientInformation, transformInfoDomNode.getTransformInfoInterface, ownerTransformInfoInterface);
    end generate;
 
 begin

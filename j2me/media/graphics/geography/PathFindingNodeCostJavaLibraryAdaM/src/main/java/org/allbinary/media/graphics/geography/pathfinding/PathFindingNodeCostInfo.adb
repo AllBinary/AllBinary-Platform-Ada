@@ -30,7 +30,7 @@ package body org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeC
       Initialize_Fields (This);
         This.costFromStartP := costFromStart;
         This.costToEndP := costToGoal;
-        This.setCalculatedTotalCost;
+        PathFindingNodeCostInfo'Class (This).setCalculatedTotalCost;
    end Initialize;
 
    function Create (costFromStart : Long_Long_Integer; costToGoal : Long_Long_Integer) return PathFindingNodeCostInfo_Access is

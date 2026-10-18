@@ -45,9 +45,9 @@ package body org.allbinary.animation.image.ImageRotationAnimationFactory_Package
    begin
         if ((This.animationFactoryInitializationVisitor.dx) /= (0)) or else ((This.animationFactoryInitializationVisitor.dy) /= (0)) then
             This.animationFactoryImageScaleUtil.processAdjust (ImageRotationAnimationFactory_Access'(This'Unchecked_Access));
-            return AdjustedImageBaseRotationAnimation_Package.Create (This.getImage, AngleInfo_Package.getInstance (This.angleIncrement), AngleFactory_Package.getInstance.TOTAL_ANGLE, This.animationFactoryInitializationVisitor.dx, This.animationFactoryInitializationVisitor.dy, This.animationBehaviorFactory.getOrCreateInstance);
+            return AdjustedImageBaseRotationAnimation_Package.Create (ImageRotationAnimationFactory'Class (This).getImage, AngleInfo_Package.getInstance (This.angleIncrement), AngleFactory_Package.getInstance.TOTAL_ANGLE, This.animationFactoryInitializationVisitor.dx, This.animationFactoryInitializationVisitor.dy, This.animationBehaviorFactory.getOrCreateInstance);
         else
-            return ImageBaseRotationAnimation_Package.Create (This.getImage, AngleInfo_Package.getInstance (This.angleIncrement), AngleFactory_Package.getInstance.TOTAL_ANGLE, This.animationBehaviorFactory.getOrCreateInstance);
+            return ImageBaseRotationAnimation_Package.Create (ImageRotationAnimationFactory'Class (This).getImage, AngleInfo_Package.getInstance (This.angleIncrement), AngleFactory_Package.getInstance.TOTAL_ANGLE, This.animationBehaviorFactory.getOrCreateInstance);
         end if;
    end getInstance;
 

@@ -22,8 +22,8 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.io.File_Package; use java.io.File_Package;
 --  with java.io.FileOutputStream_Package; use java.io.FileOutputStream_Package;
---  with javax.microedition.khronos.opengles.GL10_Package; use javax.microedition.khronos.opengles.GL10_Package;
---  with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
+with javax.microedition.khronos.opengles.GL10_Package; use javax.microedition.khronos.opengles.GL10_Package;
+with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
 with android.graphics.Bitmap_Package; use android.graphics.Bitmap_Package;
 with android.graphics.Canvas_Package; use android.graphics.Canvas_Package;
 with android.graphics.Paint_Package; use android.graphics.Paint_Package;
@@ -43,6 +43,8 @@ with org.allbinary.emulator.device.TrueTypeFontUtilBase_Package; use org.allbina
 
 package org.allbinary.emulator.device.TrueTypeFontUtil_Package is
 
+   package GL10_Package renames Standard.javax.microedition.khronos.opengles.GL10_Package;
+   package Image_Package renames Standard.javax.microedition.lcdui.Image_Package;
    package Bitmap_Package renames Standard.android.graphics.Bitmap_Package;
    package Canvas_Package renames Standard.android.graphics.Canvas_Package;
    package Paint_Package renames Standard.android.graphics.Paint_Package;

@@ -27,7 +27,7 @@ package body org.allbinary.data.tables.advertisement.sales.AffiliateSalesEntity_
    begin
         AbSqlBean_Package.Initialize (This, UserDbInitInfo_Package.Create);
         Initialize_Fields (This);
-        This.setTableName (This.tableName);
+        AffiliateSalesEntity'Class (This).setTableName (This.tableName);
    end Initialize;
 
    function Create return AffiliateSalesEntity_Access is
@@ -63,7 +63,7 @@ package body org.allbinary.data.tables.advertisement.sales.AffiliateSalesEntity_
         entryData := EntryData_Package.getInstance;
         stringBuffer := StringMaker_Package.Create;
         stringBuffer.append (This.sqlStrings.CREATE_TABLE);
-        stringBuffer.append (This.getTableName);
+        stringBuffer.append (AffiliateSalesEntity'Class (This).getTableName);
         stringBuffer.append (This.sqlStrings.START);
         stringBuffer.append (entryData.ID).append (This.sqlTypeStrings.MAX_BIG_INT_UNSIGNED_NOT_NULL).append (StoreFrontData_Package.getInstance.NAME).append (This.sqlTypeStrings.MAX_CHAR_COLUMN_NOT_NULL).append (GroupData_Package.NAME).append (This.sqlTypeStrings.MAX_CHAR_COLUMN_NOT_NULL).append (DynamicObjectData_Package.NAME).append (This.sqlTypeStrings.MAX_CHAR_COLUMN_NOT_NULL).append (entryData.TIMECREATED).append (This.sqlTypeStrings.MAX_BIG_INT_UNSIGNED_NOT_NULL).append (entryData.LASTMODIFIED).append (This.sqlTypeStrings.MAX_BIG_INT_UNSIGNED_NOT_NULL).append (This.sqlStrings.PRIMARY_KEY).append (entryData.ID).append (This.sqlStrings.END_Id);
         return stringBuffer.toString;
@@ -72,14 +72,14 @@ package body org.allbinary.data.tables.advertisement.sales.AffiliateSalesEntity_
    function createTable (This : in out AffiliateSalesEntity) return Unbounded_String is
       returnStr : Unbounded_String;
    begin
-        returnStr := AbSqlBean (This).createTable (This.createTableStatement);
+        returnStr := AbSqlBean (This).createTable (AffiliateSalesEntity'Class (This).createTableStatement);
         return returnStr;
    end createTable;
 
    procedure update (This : in out AffiliateSalesEntity; updatedValues_Param : access HashMap_Package.HashMap'Class) is
       updatedValues : constant HashMap_Access := HashMap_Access (updatedValues_Param);
    begin
-        AbSqlBean (This).updateWhere (EntryData_Package.getInstance.ID, Unbounded_String (updatedValues.get (EntryData_Package.getInstance.ID)), updatedValues);
+        AbSqlBean (This).updateWhere (EntryData_Package.getInstance.ID, Java_Unbox (updatedValues.get (EntryData_Package.getInstance.ID)), updatedValues);
    end update;
 
    function dropTable (This : in out AffiliateSalesEntity) return Unbounded_String is

@@ -53,13 +53,13 @@ package body org.allbinary.input.media.image.capture.SaveCapturedImageWorker_Pac
       capturedImageEvent : constant CapturedImageWorkerResultsEvent_Access := CapturedImageWorkerResultsEvent_Access (capturedImageEvent_Param);
    begin
         This.capturedImageWorkerResultsEventVector.add (capturedImageEvent);
-        This.run;
+        SaveCapturedImageWorker'Class (This).run;
    end onCaptureEvent;
 
    procedure onEvent (This : in out SaveCapturedImageWorker; allBinaryEventObject_Param : access AllBinaryEventObject_Package.AllBinaryEventObject'Class) is
       allBinaryEventObject : constant AllBinaryEventObject_Access := AllBinaryEventObject_Access (allBinaryEventObject_Param);
    begin
-        This.onCaptureEvent (CapturedImageWorkerResultsEvent_Access (allBinaryEventObject));
+        SaveCapturedImageWorker'Class (This).onCaptureEvent (CapturedImageWorkerResultsEvent_Access (allBinaryEventObject));
    end onEvent;
 
    procedure run (This : in out SaveCapturedImageWorker) is
@@ -69,7 +69,7 @@ package body org.allbinary.input.media.image.capture.SaveCapturedImageWorker_Pac
    begin
         begin
             This.logUtil.putF (This.commonStrings.START, SaveCapturedImageWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN);
-            This.setRunning (True);
+            SaveCapturedImageWorker'Class (This).setRunning (True);
             timeHelper := TimeDelayHelper_Package.Create (1000);
             timeHelper.setStartTimeTNT;
             capturedImageWorkerResultsEvent := (CapturedImageWorkerResultsEvent_Access (This.capturedImageWorkerResultsEventVector.get (0)));
@@ -77,7 +77,7 @@ package body org.allbinary.input.media.image.capture.SaveCapturedImageWorker_Pac
             CapturedImageInputOutput_Package.Create.save (screenBufferedImage, capturedImageWorkerResultsEvent.getFrame);
             This.capturedImageWorkerResultsEventVector.remove (capturedImageWorkerResultsEvent);
             This.logUtil.putF ((CommonLabels_Package.getInstance.ELAPSED) + (timeHelper.getElapsedTNT), SaveCapturedImageWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN);
-            This.setRunning (False);
+            SaveCapturedImageWorker'Class (This).setRunning (False);
             This.logUtil.putF (This.commonStrings.END_Id, SaveCapturedImageWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN);
         exception
             when Java_Occurrence : others =>

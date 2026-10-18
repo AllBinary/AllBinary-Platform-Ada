@@ -54,7 +54,7 @@ package body org.allbinary.business.user.commerce.money.Money_Package is
    begin
       Initialize_Fields (This);
         if ((usDollarStr) /= (Null_Unbounded_String)) and then (StringValidationUtil_Package.getInstance.isNumber (usDollarStr)) then
-            This.units := This.convertUsdToUnits (usDollarStr);
+            This.units := Money'Class (This).convertUsdToUnits (usDollarStr);
         end if;
    end Initialize;
 
@@ -90,17 +90,17 @@ package body org.allbinary.business.user.commerce.money.Money_Package is
    procedure add (This : in out Money; moreMoney_Param : access Money_Package.Money'Class) is
       moreMoney : constant Money_Access := Money_Access (moreMoney_Param);
    begin
-        This.add (moreMoney.toString);
+        Money'Class (This).add (moreMoney.toString);
    end add;
 
    procedure add (This : in out Money; usDollarStr : Unbounded_String) is
    begin
-        This.units := (This.units.longValue) + (This.convertUsdToUnits (usDollarStr));
+        This.units := (This.units.longValue) + (Money'Class (This).convertUsdToUnits (usDollarStr));
    end add;
 
    procedure subtract (This : in out Money; usDollarStr : Unbounded_String) is
    begin
-        This.units := (This.units.longValue) - (This.convertUsdToUnits (usDollarStr));
+        This.units := (This.units.longValue) - (Money'Class (This).convertUsdToUnits (usDollarStr));
    end subtract;
 
    procedure multiply (This : in out Money; multiplier : Float) is
@@ -140,7 +140,7 @@ package body org.allbinary.business.user.commerce.money.Money_Package is
       centsStr : Unbounded_String;
    begin
         localUnit := 0;
-        index := (Index (usDollarStr, To_String (AbPathData_Package.getInstance.EXTENSION_SEP)) - 1);
+        index := (Index (usDollarStr, Java_Image (AbPathData_Package.getInstance.EXTENSION_SEP)) - 1);
         stringUtil := StringUtil_Package.getInstance;
         dollarStr := stringUtil.EMPTY_STRING;
         centsStr := stringUtil.EMPTY_STRING;
@@ -168,7 +168,7 @@ package body org.allbinary.business.user.commerce.money.Money_Package is
 
    function toString (This : in out Money) return Unbounded_String is
    begin
-        return Java_New_String (This.convertUnitsTo (This.DEFAULT_CURRENCY));
+        return Java_New_String (Money'Class (This).convertUnitsTo (This.DEFAULT_CURRENCY));
    end toString;
 
    procedure convertUnitsTo (This : in out Money; currency : Unbounded_String) is

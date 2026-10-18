@@ -27,8 +27,8 @@ package body org.allbinary.game.health.Health_Package is
    procedure Initialize (This : in out Health'Class; maxHealth : Integer) is
    begin
       Initialize_Fields (This);
-        This.setMaxHealth (maxHealth);
-        This.setHealth (maxHealth);
+        Health'Class (This).setMaxHealth (maxHealth);
+        Health'Class (This).setHealth (maxHealth);
    end Initialize;
 
    function Create (maxHealth : Integer) return Health_Access is
@@ -41,22 +41,22 @@ package body org.allbinary.game.health.Health_Package is
    procedure heal (This : in out Health; ahealth : Integer) is
       newHealth : Integer;
    begin
-        newHealth := (This.getHealth) + (ahealth);
-        if (newHealth) > (This.getMaxHealth) then
-            This.setHealth (This.getMaxHealth);
+        newHealth := (Health'Class (This).getHealth) + (ahealth);
+        if (newHealth) > (Health'Class (This).getMaxHealth) then
+            Health'Class (This).setHealth (Health'Class (This).getMaxHealth);
         else
-            This.setHealth (newHealth);
+            Health'Class (This).setHealth (newHealth);
         end if;
    end heal;
 
    procedure healMax (This : in out Health) is
    begin
-        This.setHealth (This.getMaxHealth);
+        Health'Class (This).setHealth (Health'Class (This).getMaxHealth);
    end healMax;
 
    function isDamaged (This : in out Health) return Boolean is
    begin
-        if (This.getHealth) /= (This.getMaxHealth) then
+        if (Health'Class (This).getHealth) /= (Health'Class (This).getMaxHealth) then
             return True;
         else
             return False;
@@ -72,17 +72,17 @@ package body org.allbinary.game.health.Health_Package is
             stringBuffer.append (To_Unbounded_String ("******* Trying to heal when damaging. Damage: "));
             stringBuffer.appendint (ahealth);
             stringBuffer.append (CommonSeps_Package.getInstance.SPACE);
-            stringBuffer.append (This.toString);
+            stringBuffer.append (Health'Class (This).toString);
             ForcedLogUtil_Package.log (stringBuffer.toString, Health_Access'(This'Unchecked_Access));
             return;
         end if;
-        health := (This.getHealth) - (ahealth);
-        This.setHealth (health);
+        health := (Health'Class (This).getHealth) - (ahealth);
+        Health'Class (This).setHealth (health);
    end damage;
 
    function isAlive (This : in out Health) return Boolean is
    begin
-        if (This.getHealth) <= (0) then
+        if (Health'Class (This).getHealth) <= (0) then
             return False;
         else
             return True;
@@ -101,8 +101,8 @@ package body org.allbinary.game.health.Health_Package is
 
    procedure setHealth (This : in out Health; health : Integer) is
    begin
-        if (health) > (This.getMaxHealth) then
-            This.health := This.getMaxHealth;
+        if (health) > (Health'Class (This).getMaxHealth) then
+            This.health := Health'Class (This).getMaxHealth;
         elsif (health) < (0) then
             This.health := 0;
         else

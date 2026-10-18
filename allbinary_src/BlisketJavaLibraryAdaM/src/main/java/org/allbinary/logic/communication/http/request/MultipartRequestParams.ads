@@ -20,7 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.util.HashMap_Package; use java.util.HashMap_Package;
+with java.util.HashMap_Package; use java.util.HashMap_Package;
 --  with java.util.List_Package; use java.util.List_Package;
 --  with javax.servlet.http.HttpServletRequest_Package; use javax.servlet.http.HttpServletRequest_Package;
 --  with javax.servlet.jsp.PageContext_Package; use javax.servlet.jsp.PageContext_Package;
@@ -34,6 +34,7 @@ with org.allbinary.logic.communication.http.request.RequestParams_Package; use o
 
 package org.allbinary.logic.communication.http.request.MultipartRequestParams_Package is
 
+   package HashMap_Package renames Standard.java.util.HashMap_Package;
    package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    package AbFileUploadFactory_Package renames Standard.org.allbinary.logic.communication.http.file.upload.AbFileUploadFactory_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;

@@ -30,9 +30,9 @@ package body org.allbinary.game.input.CompleteMotionGestureInputEvent_Package is
    begin
         AllBinaryEventObject_Package.Initialize (This, motionGestureInput);
         Initialize_Fields (This);
-        This.setName (name);
+        CompleteMotionGestureInputEvent'Class (This).setName (name);
         begin
-            This.setMotionGestureInput (motionGestureInput);
+            CompleteMotionGestureInputEvent'Class (This).setMotionGestureInput (motionGestureInput);
         exception
             when Java_Occurrence : others =>
                 declare

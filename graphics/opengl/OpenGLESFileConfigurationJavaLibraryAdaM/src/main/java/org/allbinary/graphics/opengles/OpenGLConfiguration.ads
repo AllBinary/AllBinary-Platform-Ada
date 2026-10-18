@@ -21,9 +21,9 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.io.Closeable_Package; use java.io.Closeable_Package;
---  with java.io.DataInputStream_Package; use java.io.DataInputStream_Package;
---  with java.io.InputStream_Package; use java.io.InputStream_Package;
---  with java.io.OutputStream_Package; use java.io.OutputStream_Package;
+with java.io.DataInputStream_Package; use java.io.DataInputStream_Package;
+with java.io.InputStream_Package; use java.io.InputStream_Package;
+with java.io.OutputStream_Package; use java.io.OutputStream_Package;
 with org.allbinary.TsUtil_Package; use org.allbinary.TsUtil_Package;
 with org.allbinary.logic.io.AbDataOutputStream_Package; use org.allbinary.logic.io.AbDataOutputStream_Package;
 with org.allbinary.logic.io.FileStreamFactory_Package; use org.allbinary.logic.io.FileStreamFactory_Package;
@@ -45,6 +45,9 @@ with org.allbinary.graphics.opengles.OpenGLFeature_Package; use org.allbinary.gr
 
 package org.allbinary.graphics.opengles.OpenGLConfiguration_Package is
 
+   package DataInputStream_Package renames Standard.java.io.DataInputStream_Package;
+   package InputStream_Package renames Standard.java.io.InputStream_Package;
+   package OutputStream_Package renames Standard.java.io.OutputStream_Package;
    package TsUtil_Package renames Standard.org.allbinary.TsUtil_Package;
    package AbDataOutputStream_Package renames Standard.org.allbinary.logic.io.AbDataOutputStream_Package;
    package FileStreamFactory_Package renames Standard.org.allbinary.logic.io.FileStreamFactory_Package;

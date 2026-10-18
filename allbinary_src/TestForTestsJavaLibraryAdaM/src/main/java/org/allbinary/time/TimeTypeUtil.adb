@@ -31,7 +31,7 @@ package body org.allbinary.time.TimeTypeUtil_Package is
    function isNight (This : in out TimeTypeUtil) return Boolean is
       hoursOfDay : Integer;
    begin
-        hoursOfDay := This.getHourOfDay;
+        hoursOfDay := TimeTypeUtil'Class (This).getHourOfDay;
         return ((hoursOfDay) < (6)) or else ((hoursOfDay) > (18));
    end isNight;
 
@@ -44,7 +44,7 @@ package body org.allbinary.time.TimeTypeUtil_Package is
 
    function getNightOrDay (This : in out TimeTypeUtil) return Unbounded_String is
    begin
-        return (if This.isNight then This.NIGHT else This.DAY);
+        return (if TimeTypeUtil'Class (This).isNight then This.NIGHT else This.DAY);
    end getNightOrDay;
 
    function getHourOfDay (This : in out TimeTypeUtil; timeInMillis : Long_Long_Integer) return Integer is
@@ -58,13 +58,13 @@ package body org.allbinary.time.TimeTypeUtil_Package is
    function isNight (This : in out TimeTypeUtil; timeInMillis : Long_Long_Integer) return Boolean is
       hoursOfDay : Integer;
    begin
-        hoursOfDay := This.getHourOfDay (timeInMillis);
+        hoursOfDay := TimeTypeUtil'Class (This).getHourOfDay (timeInMillis);
         return ((hoursOfDay) < (6)) or else ((hoursOfDay) > (18));
    end isNight;
 
    function getNightOrDay (This : in out TimeTypeUtil; timeInMillis : Long_Long_Integer) return Unbounded_String is
    begin
-        return (if This.isNight (timeInMillis) then This.NIGHT else This.DAY);
+        return (if TimeTypeUtil'Class (This).isNight (timeInMillis) then This.NIGHT else This.DAY);
    end getNightOrDay;
 
    procedure getHourOfDay (This : in out TimeTypeUtil; timeInMillis : Long_Long_Integer) is

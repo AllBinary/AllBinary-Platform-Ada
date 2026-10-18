@@ -46,7 +46,7 @@ package body org.allbinary.business.category.store.theme.StoreThemeCategoryPathV
       i : Integer;
    begin
         node := CategoryView (This).toXmlNode (document);
-        storeThemeCategoryInterface := StoreThemeCategoryInterface_Access (This.getCategoryInterface);
+        storeThemeCategoryInterface := StoreThemeCategoryInterface_Access (StoreThemeCategoryPathView'Class (This).getCategoryInterface);
         themeArray := storeThemeCategoryInterface.getThemes.toArray;
         size := themeArray'Length;
         for i in 0 .. (size) - 1 loop

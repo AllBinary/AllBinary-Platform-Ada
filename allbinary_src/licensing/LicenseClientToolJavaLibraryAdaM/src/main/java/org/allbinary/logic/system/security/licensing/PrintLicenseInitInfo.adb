@@ -54,7 +54,7 @@ package body org.allbinary.logic.system.security.licensing.PrintLicenseInitInfo_
       index : Integer;
    begin
         begin
-            licenseInitInfo := This.getLicenseInitInfo;
+            licenseInitInfo := PrintLicenseInitInfo'Class (This).getLicenseInitInfo;
             Ada.Text_IO.Put_Line (Java_Image (To_Unbounded_String ("License ID: ") & Java_Image (licenseInitInfo.getLicenseId)));
             list := licenseInitInfo.getServerList;
             size := list.size;

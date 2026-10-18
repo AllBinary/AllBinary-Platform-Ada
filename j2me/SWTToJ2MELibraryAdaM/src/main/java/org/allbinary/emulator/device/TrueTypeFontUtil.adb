@@ -100,7 +100,7 @@ package body org.allbinary.emulator.device.TrueTypeFontUtil_Package is
       imageLoader : ImageLoader_Access;
       imageData : ImageData_Access;
    begin
-        image := This.getFontBitmap (null, This.cellSize, BasicColorFactory_Package.getInstance.WHITE);
+        image := TrueTypeFontUtil'Class (This).getFontBitmap (null, This.cellSize, BasicColorFactory_Package.getInstance.WHITE);
         imageLoader := ImageLoader_Package.Create;
         imageData := (SwtMutableImage_Access (image)).image.getImageData;
         imageData.transparentPixel := imageData.getPixel (0, 0);

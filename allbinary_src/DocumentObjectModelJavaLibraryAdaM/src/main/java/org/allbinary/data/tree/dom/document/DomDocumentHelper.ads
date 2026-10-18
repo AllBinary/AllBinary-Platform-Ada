@@ -20,7 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.io.InputStream_Package; use java.io.InputStream_Package;
+with java.io.InputStream_Package; use java.io.InputStream_Package;
 --  with java.io.StringBufferInputStream_Package; use java.io.StringBufferInputStream_Package;
 --  with javax.xml.parsers.DocumentBuilder_Package; use javax.xml.parsers.DocumentBuilder_Package;
 --  with javax.xml.parsers.DocumentBuilderFactory_Package; use javax.xml.parsers.DocumentBuilderFactory_Package;
@@ -28,6 +28,7 @@ with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 
 package org.allbinary.data.tree.dom.document.DomDocumentHelper_Package is
 
+   package InputStream_Package renames Standard.java.io.InputStream_Package;
    package Document_Package renames Standard.org.w3c.dom.Document_Package;
 
    type DomDocumentHelper is tagged;

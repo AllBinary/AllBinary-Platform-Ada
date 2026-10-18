@@ -49,7 +49,7 @@ package body org.allbinary.opengles.GLUtil_Package is
         buffer.put (p_a);
         buffer.put (p_b);
         buffer.put (p_c);
-        This.position (buffer, 0);
+        GLUtil'Class (This).position (buffer, 0);
         return buffer;
    end makeFloatBuffer3;
 
@@ -64,7 +64,7 @@ package body org.allbinary.opengles.GLUtil_Package is
         buffer.put (p_b);
         buffer.put (p_c);
         buffer.put (p_d);
-        This.position (buffer, 0);
+        GLUtil'Class (This).position (buffer, 0);
         return buffer;
    end makeFloatBuffer4;
 
@@ -85,7 +85,7 @@ package body org.allbinary.opengles.GLUtil_Package is
             v := ((Float (unsigned))) / (255.0);
             buffer.put (v);
         end loop;
-        This.position (buffer, 0);
+        GLUtil'Class (This).position (buffer, 0);
         return buffer;
    end makeFloatBuffer;
 

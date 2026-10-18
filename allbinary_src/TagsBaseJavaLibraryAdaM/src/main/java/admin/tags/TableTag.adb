@@ -111,10 +111,10 @@ package body admin.tags.TableTag_Package is
       error : Unbounded_String;
    begin
         begin
-            anyType := This.getTagHelperFactoryInterface.getInstance (This.getPropertiesHashMap, This.pageContext);
+            anyType := TableTag'Class (This).getTagHelperFactoryInterface.getInstance (TableTag'Class (This).getPropertiesHashMap, This.pageContext);
             addressHelperClass := anyType.all'Tag;
             method := addressHelperClass.getMethod (To_Unbounded_String ("drop"), null);
-            result := Unbounded_String (method.invoke (anyType, null));
+            result := Java_Unbox (method.invoke (anyType, null));
             return result;
         exception
             when Java_Occurrence : others =>
@@ -139,10 +139,10 @@ package body admin.tags.TableTag_Package is
       error : Unbounded_String;
    begin
         begin
-            anyType := This.getTagHelperFactoryInterface.getInstance (This.getPropertiesHashMap, This.pageContext);
+            anyType := TableTag'Class (This).getTagHelperFactoryInterface.getInstance (TableTag'Class (This).getPropertiesHashMap, This.pageContext);
             addressHelperClass := anyType.all'Tag;
             method := addressHelperClass.getMethod (To_Unbounded_String ("create"), null);
-            result := Unbounded_String (method.invoke (anyType, null));
+            result := Java_Unbox (method.invoke (anyType, null));
             return result;
         exception
             when Java_Occurrence : others =>
@@ -167,10 +167,10 @@ package body admin.tags.TableTag_Package is
       error : Unbounded_String;
    begin
         begin
-            anyType := This.getTagHelperFactoryInterface.getInstance (This.getPropertiesHashMap, This.pageContext);
+            anyType := TableTag'Class (This).getTagHelperFactoryInterface.getInstance (TableTag'Class (This).getPropertiesHashMap, This.pageContext);
             addressHelperClass := anyType.all'Tag;
             method := addressHelperClass.getMethod (To_Unbounded_String ("restore"), null);
-            result := Unbounded_String (method.invoke (anyType, null));
+            result := Java_Unbox (method.invoke (anyType, null));
             return result;
         exception
             when Java_Occurrence : others =>
@@ -195,10 +195,10 @@ package body admin.tags.TableTag_Package is
       error : Unbounded_String;
    begin
         begin
-            anyType := This.getTagHelperFactoryInterface.getInstance (This.getPropertiesHashMap, This.pageContext);
+            anyType := TableTag'Class (This).getTagHelperFactoryInterface.getInstance (TableTag'Class (This).getPropertiesHashMap, This.pageContext);
             addressHelperClass := anyType.all'Tag;
             method := addressHelperClass.getMethod (To_Unbounded_String ("backup"), null);
-            result := Unbounded_String (method.invoke (anyType, null));
+            result := Java_Unbox (method.invoke (anyType, null));
             return result;
         exception
             when Java_Occurrence : others =>
@@ -224,7 +224,7 @@ package body admin.tags.TableTag_Package is
         begin
             helperClass := This.requestObject.all'Tag;
             method := helperClass.getMethod (To_Unbounded_String ("insert"), null);
-            result := Unbounded_String (method.invoke (This.requestObject, null));
+            result := Java_Unbox (method.invoke (This.requestObject, null));
             return result;
         exception
             when Java_Occurrence : others =>
@@ -250,7 +250,7 @@ package body admin.tags.TableTag_Package is
         begin
             helperClass := This.requestObject.all'Tag;
             method := helperClass.getMethod (This.commonStrings.delete, null);
-            result := Unbounded_String (method.invoke (This.requestObject, null));
+            result := Java_Unbox (method.invoke (This.requestObject, null));
             return result;
         exception
             when Java_Occurrence : others =>
@@ -276,7 +276,7 @@ package body admin.tags.TableTag_Package is
         begin
             helperClass := This.requestObject.all'Tag;
             method := helperClass.getMethod (To_Unbounded_String ("update"), null);
-            result := Unbounded_String (method.invoke (This.requestObject, null));
+            result := Java_Unbox (method.invoke (This.requestObject, null));
             return result;
         exception
             when Java_Occurrence : others =>
@@ -303,14 +303,14 @@ package body admin.tags.TableTag_Package is
                 request := HttpServletRequest_Access (This.pageContext.getRequest);
                 stringBuffer := StringMaker_Package.Create;
                 stringBuffer.append (To_Unbounded_String ("TableTag Helper: "));
-                stringBuffer.append (To_Unbounded_String (Ada.Tags.Expanded_Name (This.getTagHelperFactoryInterface.all'Tag)));
+                stringBuffer.append (To_Unbounded_String (Ada.Tags.Expanded_Name (TableTag'Class (This).getTagHelperFactoryInterface.all'Tag)));
                 stringBuffer.append (To_Unbounded_String (" Request URI: "));
                 stringBuffer.append (request.getRequestURI);
                 This.logUtil.putF (stringBuffer.toString, TableTag_Access'(This'Unchecked_Access), This.tagStrings.DO_START_TAG);
             end if;
-            if (This.getTagRequestHelperFactoryInterface) /= (null) then
+            if (TableTag'Class (This).getTagRequestHelperFactoryInterface) /= (null) then
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAG) then
-                    This.logUtil.putF (To_Unbounded_String ("TableTag RequestHelper: ") & To_Unbounded_String (Ada.Tags.Expanded_Name (This.getTagRequestHelperFactoryInterface.all'Tag)), TableTag_Access'(This'Unchecked_Access), This.tagStrings.DO_START_TAG);
+                    This.logUtil.putF (To_Unbounded_String ("TableTag RequestHelper: ") & To_Unbounded_String (Ada.Tags.Expanded_Name (TableTag'Class (This).getTagRequestHelperFactoryInterface.all'Tag)), TableTag_Access'(This'Unchecked_Access), This.tagStrings.DO_START_TAG);
                 end if;
             else
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAG) then
@@ -318,58 +318,58 @@ package body admin.tags.TableTag_Package is
                 end if;
             end if;
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAG) then
-                This.logUtil.putF (To_Unbounded_String ("TableTag this.getCommand(): ") & Java_Image (This.getCommand), TableTag_Access'(This'Unchecked_Access), This.tagStrings.DO_START_TAG);
+                This.logUtil.putF (To_Unbounded_String ("TableTag this.getCommand(): ") & Java_Image (TableTag'Class (This).getCommand), TableTag_Access'(This'Unchecked_Access), This.tagStrings.DO_START_TAG);
             end if;
-            if This.isEnabled then
-                if (This.getCommand) /= (null) then
-                    if (((((This.getCommand.compareTo (This.commonStrings.INSERT)) = (0)) or else ((This.getCommand.compareTo (SqlStrings_Package.getInstance.INSERT_INTO)) = (0))) or else ((This.getCommand.compareTo (This.commonStrings.DELETE)) = (0))) or else ((This.getCommand.compareTo (This.commonStrings.UPDATE)) = (0))) or else ((This.getCommand.compareTo (SqlStrings_Package.getInstance.UPDATE)) = (0)) then
-                        This.requestObject := This.getTagRequestHelperFactoryInterface.getInstance (This.getPropertiesHashMap, This.pageContext);
+            if TableTag'Class (This).isEnabled then
+                if (TableTag'Class (This).getCommand) /= (null) then
+                    if (((((TableTag'Class (This).getCommand.compareTo (This.commonStrings.INSERT)) = (0)) or else ((TableTag'Class (This).getCommand.compareTo (SqlStrings_Package.getInstance.INSERT_INTO)) = (0))) or else ((TableTag'Class (This).getCommand.compareTo (This.commonStrings.DELETE)) = (0))) or else ((TableTag'Class (This).getCommand.compareTo (This.commonStrings.UPDATE)) = (0))) or else ((TableTag'Class (This).getCommand.compareTo (SqlStrings_Package.getInstance.UPDATE)) = (0)) then
+                        This.requestObject := TableTag'Class (This).getTagRequestHelperFactoryInterface.getInstance (TableTag'Class (This).getPropertiesHashMap, This.pageContext);
                     end if;
-                    if ((This.getCommand.compareTo (This.commonStrings.INSERT)) = (0)) or else ((This.getCommand.compareTo (SqlStrings_Package.getInstance.INSERT_INTO)) = (0)) then
-                        This.insert;
-                    elsif (This.getCommand.compareTo (This.commonStrings.DELETE)) = (0) then
-                        This.delete;
-                    elsif ((This.getCommand.compareTo (This.commonStrings.UPDATE)) = (0)) or else ((This.getCommand.compareTo (SqlStrings_Package.getInstance.UPDATE)) = (0)) then
-                        This.update;
+                    if ((TableTag'Class (This).getCommand.compareTo (This.commonStrings.INSERT)) = (0)) or else ((TableTag'Class (This).getCommand.compareTo (SqlStrings_Package.getInstance.INSERT_INTO)) = (0)) then
+                        TableTag'Class (This).insert;
+                    elsif (TableTag'Class (This).getCommand.compareTo (This.commonStrings.DELETE)) = (0) then
+                        TableTag'Class (This).delete;
+                    elsif ((TableTag'Class (This).getCommand.compareTo (This.commonStrings.UPDATE)) = (0)) or else ((TableTag'Class (This).getCommand.compareTo (SqlStrings_Package.getInstance.UPDATE)) = (0)) then
+                        TableTag'Class (This).update;
                     end if;
-                    if (This.getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.BACKUP)) = (0) then
-                        output := This.backup;
+                    if (TableTag'Class (This).getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.BACKUP)) = (0) then
+                        output := TableTag'Class (This).backup;
                         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAGEXTRAOUTPUT) then
                             This.pageContext.getOut.print (output & To_Unbounded_String ("<br />"));
                         end if;
                         return SKIP_BODY;
-                    elsif (This.getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.RESTORE)) = (0) then
-                        This.getPropertiesHashMap.put (To_Unbounded_String ("current"), This.getCurrent);
-                        This.getPropertiesHashMap.put (To_Unbounded_String ("total"), This.getTotal);
-                        output := This.restore;
+                    elsif (TableTag'Class (This).getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.RESTORE)) = (0) then
+                        TableTag'Class (This).getPropertiesHashMap.put (To_Unbounded_String ("current"), TableTag'Class (This).getCurrent);
+                        TableTag'Class (This).getPropertiesHashMap.put (To_Unbounded_String ("total"), TableTag'Class (This).getTotal);
+                        output := TableTag'Class (This).restore;
                         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAGEXTRAOUTPUT) then
                             This.pageContext.getOut.print (output & To_Unbounded_String ("<br />"));
                         end if;
                         return SKIP_BODY;
-                    elsif (This.getCommand.compareTo (This.commonStrings.DROP)) = (0) then
-                        output := This.drop;
+                    elsif (TableTag'Class (This).getCommand.compareTo (This.commonStrings.DROP)) = (0) then
+                        output := TableTag'Class (This).drop;
                         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAGEXTRAOUTPUT) then
                             This.pageContext.getOut.print (output & To_Unbounded_String ("<br />"));
                         end if;
                         return SKIP_BODY;
-                    elsif (This.getCommand.compareTo (This.commonStrings.CREATE)) = (0) then
-                        output := This.create;
+                    elsif (TableTag'Class (This).getCommand.compareTo (This.commonStrings.CREATE)) = (0) then
+                        output := TableTag'Class (This).create;
                         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAGEXTRAOUTPUT) then
                             This.pageContext.getOut.print (output & To_Unbounded_String ("<br />"));
                         end if;
                         return SKIP_BODY;
-                    elsif (This.getCommand.compareTo (This.commonStrings.INSERT)) = (0) then
-                        output := This.insert;
+                    elsif (TableTag'Class (This).getCommand.compareTo (This.commonStrings.INSERT)) = (0) then
+                        output := TableTag'Class (This).insert;
                         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAGEXTRAOUTPUT) then
                             This.pageContext.getOut.print (output & To_Unbounded_String ("<br />"));
                         end if;
-                    elsif (This.getCommand.compareTo (This.commonStrings.DELETE)) = (0) then
-                        output := This.delete;
+                    elsif (TableTag'Class (This).getCommand.compareTo (This.commonStrings.DELETE)) = (0) then
+                        output := TableTag'Class (This).delete;
                         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAGEXTRAOUTPUT) then
                             This.pageContext.getOut.print (output & To_Unbounded_String ("<br />"));
                         end if;
-                    elsif (This.getCommand.compareTo (This.commonStrings.UPDATE)) = (0) then
-                        output := This.update;
+                    elsif (TableTag'Class (This).getCommand.compareTo (This.commonStrings.UPDATE)) = (0) then
+                        output := TableTag'Class (This).update;
                         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAGEXTRAOUTPUT) then
                             This.pageContext.getOut.print (output & To_Unbounded_String ("<br />"));
                         end if;

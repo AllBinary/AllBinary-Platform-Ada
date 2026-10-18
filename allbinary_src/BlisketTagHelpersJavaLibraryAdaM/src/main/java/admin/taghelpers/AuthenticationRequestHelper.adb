@@ -99,7 +99,7 @@ package body admin.taghelpers.AuthenticationRequestHelper_Package is
                     return False;
                 end if;
             end if;
-            newPassword := This.generateNewPassword;
+            newPassword := AuthenticationRequestHelper'Class (This).generateNewPassword;
             userInterface.setPassword (newPassword);
             newPasswordHashMap := userInterface.toPasswordHashMap;
             UserEntityFactory_Package.getInstance.update (userName, newPasswordHashMap);

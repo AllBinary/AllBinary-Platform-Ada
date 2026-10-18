@@ -53,10 +53,10 @@ package body org.allbinary.physics.movement.OscillateVelocityMovement_Package is
         end if;
         if This.oscillatePositive then
             This.oscillate := This.oscillate + 1;
-            This.getVelocityProperties.getVelocityXBasicDecimalP.addint (2000);
+            OscillateVelocityMovement'Class (This).getVelocityProperties.getVelocityXBasicDecimalP.addint (2000);
         else
             This.oscillate := This.oscillate - 1;
-            This.getVelocityProperties.getVelocityXBasicDecimalP.subtractint (2000);
+            OscillateVelocityMovement'Class (This).getVelocityProperties.getVelocityXBasicDecimalP.subtractint (2000);
         end if;
    end process;
 

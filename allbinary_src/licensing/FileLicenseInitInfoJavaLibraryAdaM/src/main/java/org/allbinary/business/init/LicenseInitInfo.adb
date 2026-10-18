@@ -43,7 +43,7 @@ package body org.allbinary.business.init.LicenseInitInfo_Package is
 
    function getServer (This : in out LicenseInitInfo; index : Integer) return Unbounded_String is
    begin
-        return Unbounded_String (This.serverVector.objectArray (index));
+        return Java_Unbox (This.serverVector.objectArray (index));
    end getServer;
 
    function getNumberOfServers (This : in out LicenseInitInfo) return Integer is

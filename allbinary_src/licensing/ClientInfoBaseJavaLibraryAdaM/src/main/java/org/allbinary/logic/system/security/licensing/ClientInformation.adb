@@ -37,7 +37,7 @@ package body org.allbinary.logic.system.security.licensing.ClientInformation_Pac
         This.version := version;
         This.specialName := specialName;
         This.shortName := StringMaker_Package.Create.append (shortName).append (CommonSeps_Package.getInstance.UNDERSCORE).append (version).toString;
-        This.init;
+        ClientInformation'Class (This).init;
    end Initialize;
 
    function Create (name : Unbounded_String; version : Unbounded_String; specialName : Unbounded_String; shortName : Unbounded_String) return ClientInformation_Access is
@@ -84,7 +84,7 @@ package body org.allbinary.logic.system.security.licensing.ClientInformation_Pac
 
    function getLicenseServer (This : in out ClientInformation; index : Integer) return Unbounded_String is
    begin
-        return Unbounded_String (This.licenseServers.objectArray (index));
+        return Java_Unbox (This.licenseServers.objectArray (index));
    end getLicenseServer;
 
    function getNumberOfLicenseServers (This : in out ClientInformation) return Integer is
@@ -100,12 +100,12 @@ package body org.allbinary.logic.system.security.licensing.ClientInformation_Pac
       hardwareString : Unbounded_String;
    begin
         abeClientInformationData := AbeClientInformationData_Package.getInstance;
-        genericOperatingSystem := This.getOperatingSystemInterface;
+        genericOperatingSystem := ClientInformation'Class (This).getOperatingSystemInterface;
         clientInfoHashtable := StdUtil_Package.getInstance.createHashtable;
         clientInfoHashtable.put (abeClientInformationData.NAME, This.name);
         clientInfoHashtable.put (abeClientInformationData.VERSION, This.version);
         clientInfoHashtable.put (abeClientInformationData.SPECIALNAME, This.specialName);
-        clientInfoHashtable.put (abeClientInformationData.LICENSEID, This.getLicenseId);
+        clientInfoHashtable.put (abeClientInformationData.LICENSEID, ClientInformation'Class (This).getLicenseId);
         clientInfoHashtable.put (abeClientInformationData.OSNAME, genericOperatingSystem.getName);
         clientInfoHashtable.put (abeClientInformationData.OSARCH, genericOperatingSystem.getArch);
         clientInfoHashtable.put (abeClientInformationData.OSVERSION, genericOperatingSystem.getVersion);
@@ -118,7 +118,7 @@ package body org.allbinary.logic.system.security.licensing.ClientInformation_Pac
 
    function isSameId (This : in out ClientInformation; alicenseId : Unbounded_String) return Boolean is
    begin
-        if (This.tsUtil.compareTo (This.getLicenseId, alicenseId)) = (0) then
+        if (This.tsUtil.compareTo (ClientInformation'Class (This).getLicenseId, alicenseId)) = (0) then
             return True;
         else
             return False;
@@ -140,9 +140,9 @@ package body org.allbinary.logic.system.security.licensing.ClientInformation_Pac
             return True;
         end if;
         for index in reverse 0 .. size loop
-            newServerName := Unbounded_String (list.objectArray (index));
+            newServerName := Java_Unbox (list.objectArray (index));
             for index2 in reverse 0 .. currentSize loop
-                nextOldServerName := Unbounded_String (This.licenseServers.objectArray (index));
+                nextOldServerName := Java_Unbox (This.licenseServers.objectArray (index));
                 if (This.tsUtil.compareTo (newServerName, nextOldServerName)) /= (0) then
                     return True;
                 end if;

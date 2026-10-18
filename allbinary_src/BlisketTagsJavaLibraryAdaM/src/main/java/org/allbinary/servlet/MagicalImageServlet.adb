@@ -80,7 +80,7 @@ package body org.allbinary.servlet.MagicalImageServlet_Package is
       request : constant HttpServletRequest_Access := HttpServletRequest_Access (request_Param);
       response : constant HttpServletResponse_Access := HttpServletResponse_Access (response_Param);
    begin
-        This.processRequest (request, response);
+        MagicalImageServlet'Class (This).processRequest (request, response);
    end doGet;
 
    --  throws ServletException, IOException
@@ -88,7 +88,7 @@ package body org.allbinary.servlet.MagicalImageServlet_Package is
       request : constant HttpServletRequest_Access := HttpServletRequest_Access (request_Param);
       response : constant HttpServletResponse_Access := HttpServletResponse_Access (response_Param);
    begin
-        This.processRequest (request, response);
+        MagicalImageServlet'Class (This).processRequest (request, response);
    end doPost;
 
    function getServletInfo (This : in out MagicalImageServlet) return Unbounded_String is

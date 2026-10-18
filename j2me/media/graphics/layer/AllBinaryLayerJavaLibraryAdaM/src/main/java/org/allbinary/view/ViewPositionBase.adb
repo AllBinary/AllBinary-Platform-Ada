@@ -35,17 +35,17 @@ package body org.allbinary.view.ViewPositionBase_Package is
 
    function getX2 (This : in out ViewPositionBase) return Integer is
    begin
-        return This.getX;
+        return ViewPositionBase'Class (This).getX;
    end getX2;
 
    function getY2 (This : in out ViewPositionBase) return Integer is
    begin
-        return This.getY;
+        return ViewPositionBase'Class (This).getY;
    end getY2;
 
    function getZ2 (This : in out ViewPositionBase) return Integer is
    begin
-        return This.getZ;
+        return ViewPositionBase'Class (This).getZ;
    end getZ2;
 
    procedure setAllbinaryLayer (This : in out ViewPositionBase; allbinaryLayer_Param : access Java_Object'Class) is

@@ -46,7 +46,7 @@ package body org.allbinary.business.advertisement.GameAdStateBase_Package is
    procedure onStart (This : in out GameAdStateBase; anyType_Param : access Java_Object'Class) is
       anyType : constant Java_Object_Access := Java_Object_Access (anyType_Param);
    begin
-        This.init;
+        GameAdStateBase'Class (This).init;
    end onStart;
 
    procedure init (This : in out GameAdStateBase) is

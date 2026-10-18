@@ -65,7 +65,7 @@ package body org.allbinary.graphics.j2me.workarea.canvas.CanvasDom_Package is
             angleNode := DomHelper_Package.getInstance.searchNodeList (ROTATE, canvasNode.getChildNodes);
             angleTextNode := angleNode.getFirstChild;
             angle := angleTextNode.getNodeValue.doubleValue;
-            This.setAngle (angle);
+            CanvasDom'Class (This).setAngle (angle);
             sizeNode := DomHelper_Package.getInstance.searchNodeList (SIZE, canvasNode.getChildNodes);
             xNode := DomHelper_Package.getInstance.searchNodeList (X, sizeNode.getChildNodes);
             xTextNode := xNode.getFirstChild;
@@ -73,7 +73,7 @@ package body org.allbinary.graphics.j2me.workarea.canvas.CanvasDom_Package is
             yNode := DomHelper_Package.getInstance.searchNodeList (Y, sizeNode.getChildNodes);
             yTextNode := yNode.getFirstChild;
             y_Case := yTextNode.getNodeValue.intValue;
-            This.setWorkArea (x_Case, y_Case);
+            CanvasDom'Class (This).setWorkArea (x_Case, y_Case);
             zoomNode := DomHelper_Package.getInstance.searchNodeList (ZOOM, canvasNode.getChildNodes);
             zoomTextNode := zoomNode.getFirstChild;
             This.grid_Case.setZoom (zoomTextNode.getNodeValue.intValue);
@@ -85,7 +85,7 @@ package body org.allbinary.graphics.j2me.workarea.canvas.CanvasDom_Package is
             gridYNode := DomHelper_Package.getInstance.searchNodeList (Y, gridSizeNode.getChildNodes);
             gridYTextNode := gridYNode.getFirstChild;
             gridY := gridYTextNode.getNodeValue.intValue;
-            This.setGrid (gridX, gridY);
+            CanvasDom'Class (This).setGrid (gridX, gridY);
             enableNode := DomHelper_Package.getInstance.searchNodeList (ENABLED, gridNode.getChildNodes);
             enableTextNode := enableNode.getFirstChild;
             This.grid_Case.showGrid (enableTextNode.getNodeValue.booleanValue);
@@ -144,7 +144,7 @@ package body org.allbinary.graphics.j2me.workarea.canvas.CanvasDom_Package is
    --  throws Exception
    procedure setWorkArea (This : in out CanvasDom; x_Case : Integer; y_Case : Integer) is
    begin
-        This.setDimension (IntegerDimension_Package.Create (x_Case, y_Case));
+        CanvasDom'Class (This).setDimension (IntegerDimension_Package.Create (x_Case, y_Case));
    end setWorkArea;
 
    --  throws Exception
@@ -205,26 +205,26 @@ package body org.allbinary.graphics.j2me.workarea.canvas.CanvasDom_Package is
         document := WorkAreaJPanel_Package.getDocument;
         frameNode := Node_Access (document.createElement (FRAME));
         angleNode := Node_Access (document.createElement (ROTATE));
-        angleTextNode := Node_Access (document.createTextNode (This.getAngle.toString));
+        angleTextNode := Node_Access (document.createTextNode (CanvasDom'Class (This).getAngle.toString));
         angleNode.appendChild (angleTextNode);
-        sizeNode := Node_Access (This.getPointNode (PointFactory_Package.getInstance.createXY (This.getDimension.getWidth, This.getDimension.getHeight), SIZE));
+        sizeNode := Node_Access (CanvasDom'Class (This).getPointNode (PointFactory_Package.getInstance.createXY (CanvasDom'Class (This).getDimension.getWidth, CanvasDom'Class (This).getDimension.getHeight), SIZE));
         zoomNode := Node_Access (document.createElement (ZOOM));
-        zoomTextNode := Node_Access (document.createTextNode (This.getGrid.getZoom.toString));
+        zoomTextNode := Node_Access (document.createTextNode (CanvasDom'Class (This).getGrid.getZoom.toString));
         zoomNode.appendChild (zoomTextNode);
         gridNode := Node_Access (document.createElement (GRID));
-        gridSizeNode := Node_Access (This.getPointNode (This.getGrid.grid_Case, SIZE));
+        gridSizeNode := Node_Access (CanvasDom'Class (This).getPointNode (CanvasDom'Class (This).getGrid.grid_Case, SIZE));
         gridNode.appendChild (gridSizeNode);
         enableNode := Node_Access (document.createElement (ENABLED));
-        enableTextNode := Node_Access (document.createTextNode (This.getGrid.isGridOn.toString));
+        enableTextNode := Node_Access (document.createTextNode (CanvasDom'Class (This).getGrid.isGridOn.toString));
         enableNode.appendChild (enableTextNode);
         gridNode.appendChild (enableNode);
         possibleNode := Node_Access (document.createElement (POSSIBLE));
-        possibleTextNode := Node_Access (document.createTextNode (This.getGrid.isGridPossible.toString));
+        possibleTextNode := Node_Access (document.createTextNode (CanvasDom'Class (This).getGrid.isGridPossible.toString));
         possibleNode.appendChild (possibleTextNode);
         gridNode.appendChild (possibleNode);
         realSizeNode := Node_Access (document.createElement (REAL_SIZE));
         vectorCenterGenerator := VectorCenterGenerator_Package.Create;
-        vectorCenterGenerator.calculate (This.getGraphicItemHashMap);
+        vectorCenterGenerator.calculate (CanvasDom'Class (This).getGraphicItemHashMap);
         widthNode := Node_Access (document.createElement (This.graphicsStrings.WIDTH));
         widthTextNode := Node_Access (document.createTextNode (To_Unbounded_String (Java_Image (vectorCenterGenerator.getWidth))));
         widthNode.appendChild (widthTextNode);
@@ -239,7 +239,7 @@ package body org.allbinary.graphics.j2me.workarea.canvas.CanvasDom_Package is
         frameNode.appendChild (gridNode);
         frameNode.appendChild (realSizeNode);
         graphicItemNode := Node_Access (document.createElement (GRAPHICITEMS));
-        graphicItemArray := This.getGraphicItemHashMap.keySet.toArray;
+        graphicItemArray := CanvasDom'Class (This).getGraphicItemHashMap.keySet.toArray;
         size_Case := graphicItemArray'Length;
         for index in 0 .. (size_Case) - 1 loop
             item := GraphicItemInterface_Access (This.graphicItemHashMap.get (graphicItemArray (index)));

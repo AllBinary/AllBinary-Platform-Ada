@@ -49,7 +49,7 @@ package body org.allbinary.game.ag.ai.StopAtEdgeAI_Package is
       height : Integer;
       displayInfo : DisplayInfoSingleton_Access;
    begin
-        ownerLayerInterface := This.getOwnerLayerInterface;
+        ownerLayerInterface := StopAtEdgeAI'Class (This).getOwnerLayerInterface;
         velocityInterfaceCompositeInterface := (VelocityInterfaceCompositeInterface_Access (ownerLayerInterface));
         velocityProperties := velocityInterfaceCompositeInterface.getVelocityProperties;
         x := ownerLayerInterface.getXP;

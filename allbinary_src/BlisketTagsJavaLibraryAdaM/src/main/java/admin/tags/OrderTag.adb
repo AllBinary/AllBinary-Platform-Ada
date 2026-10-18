@@ -61,7 +61,7 @@ package body admin.tags.OrderTag_Package is
             anyType := OrderHelperFactory_Package.Create.getInstance (This.propertiesHashMap, This.pageContext);
             helperClass := anyType.all'Tag;
             method := helperClass.getMethod (This.commonStrings.PROCESS, null);
-            result := Unbounded_String (method.invoke (anyType, null));
+            result := Java_Unbox (method.invoke (anyType, null));
             return result;
         exception
             when Java_Occurrence : others =>
@@ -103,11 +103,11 @@ package body admin.tags.OrderTag_Package is
         begin
             if (This.command) /= (Null_Unbounded_String) then
                 This.propertiesHashMap := StdUtil_Package.getInstance.createHashMap;
-                This.propertiesHashMap.put (StoreFrontData_Package.getInstance.NAME, This.storeName);
+                This.propertiesHashMap.put (StoreFrontData_Package.getInstance.NAME, Java_Box (This.storeName));
                 if (This.command.compareTo (org_Package.allbinary.globals.GLOBALS2.PROCESS)) = (0) then
-                    This.process;
+                    OrderTag'Class (This).process;
                 elsif (This.command.compareTo (PaymentGatewayData_Package.NAME.toString)) = (0) then
-                    if (This.setPaymentGateway) = (True) then
+                    if (OrderTag'Class (This).setPaymentGateway) = (True) then
                         return TagSupport_Package.EVAL_BODY_INCLUDE;
                     end if;
                 end if;

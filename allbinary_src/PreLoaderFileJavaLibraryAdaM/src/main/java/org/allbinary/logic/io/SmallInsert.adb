@@ -69,7 +69,7 @@ package body org.allbinary.logic.io.SmallInsert_Package is
       idOutData : DataOutputStream_Access;
    begin
         begin
-            index := (Index (This.string_Id, To_String (after)) - 1);
+            index := (Index (This.string_Id, Java_Image (after)) - 1);
             if (index) < (0) then
                 Ada.Text_IO.Put_Line (Java_Image (To_Unbounded_String ("No such start: ") & after & To_Unbounded_String (" in: ") & This.string_Id));
                 return False;

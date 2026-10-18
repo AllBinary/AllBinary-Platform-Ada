@@ -39,9 +39,9 @@ package body org.allbinary.game.combat.weapon.SimpleWeaponProperties_Package is
    procedure set (This : in out SimpleWeaponProperties; simpleWeaponProperties_Param : access SimpleWeaponProperties_Package.SimpleWeaponProperties'Class) is
       simpleWeaponProperties : constant SimpleWeaponProperties_Access := SimpleWeaponProperties_Access (simpleWeaponProperties_Param);
    begin
-        This.setDamage (simpleWeaponProperties.getDamage);
-        This.setDissipation (simpleWeaponProperties.getDissipation);
-        This.setRange (simpleWeaponProperties.getRange);
+        SimpleWeaponProperties'Class (This).setDamage (simpleWeaponProperties.getDamage);
+        SimpleWeaponProperties'Class (This).setDissipation (simpleWeaponProperties.getDissipation);
+        SimpleWeaponProperties'Class (This).setRange (simpleWeaponProperties.getRange);
    end set;
 
    procedure setDamage (This : in out SimpleWeaponProperties; damage : Integer) is

@@ -48,7 +48,7 @@ package body org.allbinary.input.automation.module.actions.script.condition.proc
             childNode := nodeList.item (index);
             if (childNode.getNodeName.compareTo (ImageActionScriptOutputData_Package.TYPE_Id)) = (0) then
                 nextImageTypeString := DomNodeHelper_Package.getTextNodeValue (childNode);
-                This.getVector.add (InputImageType_Package.getInstance (nextImageTypeString));
+                ImageTypes'Class (This).getVector.add (InputImageType_Package.getInstance (nextImageTypeString));
             else
                 Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("ImageTypes Unknown Node")));
             end if;
@@ -69,7 +69,7 @@ package body org.allbinary.input.automation.module.actions.script.condition.proc
    begin
         imageTypes := ImageTypes_Package.Create;
         for index in 0 .. (anyType'Length) - 1 loop
-            imageType := InputImageType_Package.getInstance (Unbounded_String (anyType (index)));
+            imageType := InputImageType_Package.getInstance (Java_Unbox (anyType (index)));
             imageTypes.getVector.add (imageType);
         end loop;
         return imageTypes;

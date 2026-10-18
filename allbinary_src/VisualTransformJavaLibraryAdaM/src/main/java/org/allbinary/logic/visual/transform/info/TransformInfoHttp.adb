@@ -33,7 +33,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoHttp_Package
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
             This.logUtil.putF (To_Unbounded_String ("Properties HashMap: ") & propertiesHashMap.toString, TransformInfoHttp_Access'(This'Unchecked_Access), To_Unbounded_String ("Constructor(HashMap, PageContext, boolean)"));
         end if;
-        This.override (propertiesHashMap);
+        TransformInfoHttp'Class (This).override (propertiesHashMap);
    end Initialize;
 
    function Create (propertiesHashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class; crud : Boolean) return TransformInfoHttp_Access is
@@ -54,8 +54,8 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoHttp_Package
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
             This.logUtil.putF (To_Unbounded_String ("Properties HashMap: ") & propertiesHashMap.toString, TransformInfoHttp_Access'(This'Unchecked_Access), To_Unbounded_String ("Constructor(HttpServletRequest, HashMap, PageContext)"));
         end if;
-        This.set (RequestParams_Package.Create (HttpServletRequest_Access (request)).toHashMap);
-        This.override (propertiesHashMap);
+        TransformInfoHttp'Class (This).set (RequestParams_Package.Create (HttpServletRequest_Access (request)).toHashMap);
+        TransformInfoHttp'Class (This).override (propertiesHashMap);
    end Initialize;
 
    function Create (request_Param : access HttpServletRequest_Package.HttpServletRequest'Class; propertiesHashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) return TransformInfoHttp_Access is
@@ -76,7 +76,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoHttp_Package
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
             This.logUtil.putF (To_Unbounded_String ("Properties HashMap: ") & propertiesHashMap.toString, TransformInfoHttp_Access'(This'Unchecked_Access), To_Unbounded_String ("Constructor(HashMap, HashMap, PageContext)"));
         end if;
-        This.set (databaseHashMap);
+        TransformInfoHttp'Class (This).set (databaseHashMap);
    end Initialize;
 
    function Create (databaseHashMap_Param : access HashMap_Package.HashMap'Class; propertiesHashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) return TransformInfoHttp_Access is
@@ -96,7 +96,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoHttp_Package
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
             This.logUtil.putF (To_Unbounded_String ("Properties HashMap: ") & propertiesHashMap.toString, TransformInfoHttp_Access'(This'Unchecked_Access), To_Unbounded_String ("Constructor(HashMap, PageContext)"));
         end if;
-        This.set (propertiesHashMap);
+        TransformInfoHttp'Class (This).set (propertiesHashMap);
    end Initialize;
 
    function Create (propertiesHashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) return TransformInfoHttp_Access is
@@ -132,26 +132,26 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoHttp_Package
             This.logUtil.putF (To_Unbounded_String ("Properties HashMap: ") & hashMap.toString, TransformInfoHttp_Access'(This'Unchecked_Access), To_Unbounded_String ("set()"));
         end if;
         transformInfoData := TransformInfoData_Package.getInstance;
-        This.setName (Unbounded_String (hashMap.get (transformInfoData.NAME)));
-        This.setStoreName (Unbounded_String (hashMap.get (StoreFrontData_Package.getInstance.NAME)));
-        This.setObjectFile (Unbounded_String (hashMap.get (transformInfoData.OBJECTFILENAME)));
-        This.setObject (Unbounded_String (hashMap.get (transformInfoData.OBJECT)));
+        TransformInfoHttp'Class (This).setName (Java_Unbox (hashMap.get (transformInfoData.NAME)));
+        TransformInfoHttp'Class (This).setStoreName (Java_Unbox (hashMap.get (StoreFrontData_Package.getInstance.NAME)));
+        TransformInfoHttp'Class (This).setObjectFile (Java_Unbox (hashMap.get (transformInfoData.OBJECTFILENAME)));
+        TransformInfoHttp'Class (This).setObject (Java_Unbox (hashMap.get (transformInfoData.OBJECT)));
         stringValidationUtil := StringValidationUtil_Package.getInstance;
-        objectConfigString := Unbounded_String (hashMap.get (transformInfoData.OBJECTCONFIG));
+        objectConfigString := Java_Unbox (hashMap.get (transformInfoData.OBJECTCONFIG));
         if stringValidationUtil.isValidRequired (objectConfigString, 10, AbSqlData_Package.MAXBLOB) then
-            This.setObjectConfig (objectConfigString);
+            TransformInfoHttp'Class (This).setObjectConfig (objectConfigString);
         else
-            This.setObjectConfig (TransformInfoObjectConfig_Package.Create (TransformInfoHttp_Access'(This'Unchecked_Access)).toString);
+            TransformInfoHttp'Class (This).setObjectConfig (TransformInfoObjectConfig_Package.Create (TransformInfoHttp_Access'(This'Unchecked_Access)).toString);
         end if;
-        if not (stringValidationUtil.isEmpty (Unbounded_String (hashMap.get (transformInfoData.OBJECTCONFIGFILENAME)))) then
-            This.setObjectConfigFile (Unbounded_String (hashMap.get (transformInfoData.OBJECTCONFIGFILENAME)));
+        if not (stringValidationUtil.isEmpty (Java_Unbox (hashMap.get (transformInfoData.OBJECTCONFIGFILENAME)))) then
+            TransformInfoHttp'Class (This).setObjectConfigFile (Java_Unbox (hashMap.get (transformInfoData.OBJECTCONFIGFILENAME)));
         end if;
-        This.setTemplateFile (Unbounded_String (hashMap.get (transformInfoData.TEMPLATEFILENAME)));
-        This.setTemplate (Unbounded_String (hashMap.get (transformInfoData.TEMPLATE)));
-        This.setDataFile (Unbounded_String (hashMap.get (transformInfoData.DATAFILENAME)));
-        This.setData (Unbounded_String (hashMap.get (transformInfoData.DATA)));
+        TransformInfoHttp'Class (This).setTemplateFile (Java_Unbox (hashMap.get (transformInfoData.TEMPLATEFILENAME)));
+        TransformInfoHttp'Class (This).setTemplate (Java_Unbox (hashMap.get (transformInfoData.TEMPLATE)));
+        TransformInfoHttp'Class (This).setDataFile (Java_Unbox (hashMap.get (transformInfoData.DATAFILENAME)));
+        TransformInfoHttp'Class (This).setData (Java_Unbox (hashMap.get (transformInfoData.DATA)));
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPERFACTORY) then
-            This.logUtil.putF (This.log, TransformInfoHttp_Access'(This'Unchecked_Access), To_Unbounded_String ("set()"));
+            This.logUtil.putF (TransformInfoHttp'Class (This).log, TransformInfoHttp_Access'(This'Unchecked_Access), To_Unbounded_String ("set()"));
         end if;
    end set;
 
@@ -173,19 +173,19 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoHttp_Package
    --  throws Exception
    function getTemplateFilePath (This : in out TransformInfoHttp) return AbPath_Access is
    begin
-        return AbPath_Package.Create ((URLGLOBALS.getMainPath) + (FREEBLISKET_PATH_GLOBALS.getInstance.XSLPATH), This.getTemplateFile);
+        return AbPath_Package.Create ((URLGLOBALS.getMainPath) + (FREEBLISKET_PATH_GLOBALS.getInstance.XSLPATH), TransformInfoHttp'Class (This).getTemplateFile);
    end getTemplateFilePath;
 
    --  throws Exception
    function getObjectConfigFilePath (This : in out TransformInfoHttp) return AbPath_Access is
    begin
-        return AbPath_Package.Create ((URLGLOBALS.getMainPath) + (FREEBLISKET_PATH_GLOBALS.getInstance.XSLPATH), This.getObjectConfigFile);
+        return AbPath_Package.Create ((URLGLOBALS.getMainPath) + (FREEBLISKET_PATH_GLOBALS.getInstance.XSLPATH), TransformInfoHttp'Class (This).getObjectConfigFile);
    end getObjectConfigFilePath;
 
    --  throws Exception
    function getDataFilePath (This : in out TransformInfoHttp) return AbPath_Access is
    begin
-        return AbPath_Package.Create ((URLGLOBALS.getMainPath) + (FREEBLISKET_PATH_GLOBALS.getInstance.XSLPATH), This.getDataFile);
+        return AbPath_Package.Create ((URLGLOBALS.getMainPath) + (FREEBLISKET_PATH_GLOBALS.getInstance.XSLPATH), TransformInfoHttp'Class (This).getDataFile);
    end getDataFilePath;
 
 end org.allbinary.logic.visual.transform.info.TransformInfoHttp_Package;

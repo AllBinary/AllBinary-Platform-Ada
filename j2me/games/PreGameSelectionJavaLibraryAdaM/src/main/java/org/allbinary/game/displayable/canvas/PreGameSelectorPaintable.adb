@@ -55,7 +55,7 @@ package body org.allbinary.game.displayable.canvas.PreGameSelectorPaintable_Pack
    begin
         graphics.setColor (BasicColorFactory_Package.getInstance.WHITE.intValue);
         This.canvasDrawLineString.paint (graphics, This.title, 0);
-        This.getPreGameSelectionForm.paint (graphics);
+        PreGameSelectorPaintable'Class (This).getPreGameSelectionForm.paint (graphics);
    end paint;
 
    function getPreGameSelectionForm (This : in out PreGameSelectorPaintable) return PreGameScrollSelectionForm_Access is

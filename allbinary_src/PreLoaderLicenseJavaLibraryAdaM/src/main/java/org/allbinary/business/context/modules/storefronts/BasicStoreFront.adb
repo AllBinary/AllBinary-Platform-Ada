@@ -68,34 +68,34 @@ package body org.allbinary.business.context.modules.storefronts.BasicStoreFront_
    begin
       Initialize_Fields (This);
         storeFrontData := StoreFrontData_Package.getInstance;
-        This.name := Unbounded_String (storeHashMap.get (storeFrontData.NAME));
-        This.userName := Unbounded_String (storeHashMap.get (UserData_Package.USERNAME));
-        This.basketName := Unbounded_String (storeHashMap.get (storeFrontData.NAME));
-        This.homeHostName := Unbounded_String (storeHashMap.get (storeFrontData.HOMEHOSTNAME));
-        This.homeHostNamePath := Unbounded_String (storeHashMap.get (storeFrontData.HOMEHOSTNAMEPATH));
-        This.hostName := Unbounded_String (storeHashMap.get (storeFrontData.HOSTNAME));
-        This.hostNamePath := Unbounded_String (storeHashMap.get (storeFrontData.HOSTNAMEPATH));
-        This.testHomeHostName := Unbounded_String (storeHashMap.get (storeFrontData.TESTHOMEHOSTNAME));
-        This.testHomeHostNamePath := Unbounded_String (storeHashMap.get (storeFrontData.TESTHOMEHOSTNAMEPATH));
-        This.testHostName := Unbounded_String (storeHashMap.get (storeFrontData.TESTHOSTNAME));
-        This.testHostNamePath := Unbounded_String (storeHashMap.get (storeFrontData.TESTHOSTNAMEPATH));
-        This.imagePath := Unbounded_String (storeHashMap.get (storeFrontData.IMAGEPATH));
-        This.staticPath := Unbounded_String (storeHashMap.get (storeFrontData.STATICPATH));
-        This.categoryPath := Unbounded_String (storeHashMap.get (storeFrontData.CATEGORYPATH));
-        This.inventoryControl := Unbounded_String (storeHashMap.get (storeFrontData.INVENTORYCONTROL));
-        This.subStores := Unbounded_String (storeHashMap.get (storeFrontData.SUBSTORES));
-        This.tagLocation := Unbounded_String (storeHashMap.get (storeFrontData.TAGLOCATION));
-        This.packageLocation := Unbounded_String (storeHashMap.get (storeFrontData.PACKAGELOCATION));
-        This.ftp := Unbounded_String (storeHashMap.get (storeFrontData.FTP));
-        This.ftpPath := Unbounded_String (storeHashMap.get (storeFrontData.FTPPATH));
-        This.ftpUserName := Unbounded_String (storeHashMap.get (storeFrontData.FTPUSERNAME));
-        This.ftpPassword := Unbounded_String (storeHashMap.get (storeFrontData.FTPPASSWORD));
-        This.testFtp := Unbounded_String (storeHashMap.get (storeFrontData.TESTFTP));
-        This.testFtpPath := Unbounded_String (storeHashMap.get (storeFrontData.TESTFTPPATH));
-        This.testFtpUserName := Unbounded_String (storeHashMap.get (storeFrontData.TESTFTPUSERNAME));
-        This.testFtpPassword := Unbounded_String (storeHashMap.get (storeFrontData.TESTFTPPASSWORD));
-        This.timeCreated := Unbounded_String (storeHashMap.get (EntryData_Package.getInstance.TIMECREATED));
-        This.lastModified := Unbounded_String (storeHashMap.get (EntryData_Package.getInstance.LASTMODIFIED));
+        This.name := Java_Unbox (storeHashMap.get (storeFrontData.NAME));
+        This.userName := Java_Unbox (storeHashMap.get (UserData_Package.USERNAME));
+        This.basketName := Java_Unbox (storeHashMap.get (storeFrontData.NAME));
+        This.homeHostName := Java_Unbox (storeHashMap.get (storeFrontData.HOMEHOSTNAME));
+        This.homeHostNamePath := Java_Unbox (storeHashMap.get (storeFrontData.HOMEHOSTNAMEPATH));
+        This.hostName := Java_Unbox (storeHashMap.get (storeFrontData.HOSTNAME));
+        This.hostNamePath := Java_Unbox (storeHashMap.get (storeFrontData.HOSTNAMEPATH));
+        This.testHomeHostName := Java_Unbox (storeHashMap.get (storeFrontData.TESTHOMEHOSTNAME));
+        This.testHomeHostNamePath := Java_Unbox (storeHashMap.get (storeFrontData.TESTHOMEHOSTNAMEPATH));
+        This.testHostName := Java_Unbox (storeHashMap.get (storeFrontData.TESTHOSTNAME));
+        This.testHostNamePath := Java_Unbox (storeHashMap.get (storeFrontData.TESTHOSTNAMEPATH));
+        This.imagePath := Java_Unbox (storeHashMap.get (storeFrontData.IMAGEPATH));
+        This.staticPath := Java_Unbox (storeHashMap.get (storeFrontData.STATICPATH));
+        This.categoryPath := Java_Unbox (storeHashMap.get (storeFrontData.CATEGORYPATH));
+        This.inventoryControl := Java_Unbox (storeHashMap.get (storeFrontData.INVENTORYCONTROL));
+        This.subStores := Java_Unbox (storeHashMap.get (storeFrontData.SUBSTORES));
+        This.tagLocation := Java_Unbox (storeHashMap.get (storeFrontData.TAGLOCATION));
+        This.packageLocation := Java_Unbox (storeHashMap.get (storeFrontData.PACKAGELOCATION));
+        This.ftp := Java_Unbox (storeHashMap.get (storeFrontData.FTP));
+        This.ftpPath := Java_Unbox (storeHashMap.get (storeFrontData.FTPPATH));
+        This.ftpUserName := Java_Unbox (storeHashMap.get (storeFrontData.FTPUSERNAME));
+        This.ftpPassword := Java_Unbox (storeHashMap.get (storeFrontData.FTPPASSWORD));
+        This.testFtp := Java_Unbox (storeHashMap.get (storeFrontData.TESTFTP));
+        This.testFtpPath := Java_Unbox (storeHashMap.get (storeFrontData.TESTFTPPATH));
+        This.testFtpUserName := Java_Unbox (storeHashMap.get (storeFrontData.TESTFTPUSERNAME));
+        This.testFtpPassword := Java_Unbox (storeHashMap.get (storeFrontData.TESTFTPPASSWORD));
+        This.timeCreated := Java_Unbox (storeHashMap.get (EntryData_Package.getInstance.TIMECREATED));
+        This.lastModified := Java_Unbox (storeHashMap.get (EntryData_Package.getInstance.LASTMODIFIED));
    end Initialize;
 
    function Create (storeHashMap_Param : access HashMap_Package.HashMap'Class) return BasicStoreFront_Access is
@@ -107,7 +107,7 @@ package body org.allbinary.business.context.modules.storefronts.BasicStoreFront_
 
    function getTestHtmlPath (This : in out BasicStoreFront) return Unbounded_String is
    begin
-        return (org_Package.allbinary.globals.URLGLOBALS.getTestHtmlPath) + (This.getCurrentHostNamePath);
+        return (org_Package.allbinary.globals.URLGLOBALS.getTestHtmlPath) + (BasicStoreFront'Class (This).getCurrentHostNamePath);
    end getTestHtmlPath;
 
    function getCurrentHostName (This : in out BasicStoreFront) return Unbounded_String is
@@ -115,9 +115,9 @@ package body org.allbinary.business.context.modules.storefronts.BasicStoreFront_
    begin
         location := Null_Unbounded_String;
         if org_Package.allbinary.globals.URLGLOBALS.isTestingMode then
-            location := This.getTestHostName;
+            location := BasicStoreFront'Class (This).getTestHostName;
         else
-            location := This.getHostName;
+            location := BasicStoreFront'Class (This).getHostName;
         end if;
         return location;
    end getCurrentHostName;
@@ -127,9 +127,9 @@ package body org.allbinary.business.context.modules.storefronts.BasicStoreFront_
    begin
         location := Null_Unbounded_String;
         if org_Package.allbinary.globals.URLGLOBALS.isTestingMode then
-            location := This.getTestHostNamePath;
+            location := BasicStoreFront'Class (This).getTestHostNamePath;
         else
-            location := This.getHostNamePath;
+            location := BasicStoreFront'Class (This).getHostNamePath;
         end if;
         return location;
    end getCurrentHostNamePath;
@@ -139,9 +139,9 @@ package body org.allbinary.business.context.modules.storefronts.BasicStoreFront_
    begin
         location := Null_Unbounded_String;
         if org_Package.allbinary.globals.URLGLOBALS.isTestingMode then
-            location := This.getTestHomeHostName;
+            location := BasicStoreFront'Class (This).getTestHomeHostName;
         else
-            location := This.getHomeHostName;
+            location := BasicStoreFront'Class (This).getHomeHostName;
         end if;
         return location;
    end getCurrentHomeHostName;
@@ -151,9 +151,9 @@ package body org.allbinary.business.context.modules.storefronts.BasicStoreFront_
    begin
         location := Null_Unbounded_String;
         if org_Package.allbinary.globals.URLGLOBALS.isTestingMode then
-            location := This.getTestHomeHostNamePath;
+            location := BasicStoreFront'Class (This).getTestHomeHostNamePath;
         else
-            location := This.getHomeHostNamePath;
+            location := BasicStoreFront'Class (This).getHomeHostNamePath;
         end if;
         return location;
    end getCurrentHomeHostNamePath;

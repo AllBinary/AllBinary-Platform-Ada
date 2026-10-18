@@ -95,7 +95,7 @@ package body org.allbinary.data.tree.dom.XslHelper_Package is
    begin
         begin
             outputStream := ByteArrayOutputStream_Package.Create;
-            return This.translate (xsltStreamSource, StreamSource_Package.Create (StringBufferInputStream_Package.Create (XmlDocumentHelper_Package.toString (xmlDocument))), StreamResult_Package.Create (outputStream)).toString;
+            return XslHelper'Class (This).translate (xsltStreamSource, StreamSource_Package.Create (StringBufferInputStream_Package.Create (XmlDocumentHelper_Package.toString (xmlDocument))), StreamResult_Package.Create (outputStream)).toString;
         exception
             when Java_Occurrence : others =>
                 declare
@@ -114,7 +114,7 @@ package body org.allbinary.data.tree.dom.XslHelper_Package is
    begin
         begin
             outputStream := ByteArrayOutputStream_Package.Create;
-            return This.translate (xsltStreamSource, xmlStreamSource, StreamResult_Package.Create (outputStream)).toString;
+            return XslHelper'Class (This).translate (xsltStreamSource, xmlStreamSource, StreamResult_Package.Create (outputStream)).toString;
         exception
             when Java_Occurrence : others =>
                 declare
@@ -134,7 +134,7 @@ package body org.allbinary.data.tree.dom.XslHelper_Package is
    begin
         begin
             outputStream := ByteArrayOutputStream_Package.Create;
-            return This.translate (resolver, xsltStreamSource, xmlStreamSource, StreamResult_Package.Create (outputStream)).toString;
+            return XslHelper'Class (This).translate (resolver, xsltStreamSource, xmlStreamSource, StreamResult_Package.Create (outputStream)).toString;
         exception
             when Java_Occurrence : others =>
                 declare
@@ -152,7 +152,7 @@ package body org.allbinary.data.tree.dom.XslHelper_Package is
    begin
         begin
             outputFile.createNewFile;
-            This.translate (StreamSource_Package.Create (xsltFilePath), StreamSource_Package.Create (StringBufferInputStream_Package.Create (XmlDocumentHelper_Package.toString (xmlDocument))), StreamResult_Package.Create (outputFile));
+            XslHelper'Class (This).translate (StreamSource_Package.Create (xsltFilePath), StreamSource_Package.Create (StringBufferInputStream_Package.Create (XmlDocumentHelper_Package.toString (xmlDocument))), StreamResult_Package.Create (outputFile));
         exception
             when Java_Occurrence : others =>
                 declare

@@ -8,7 +8,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with javax.microedition.media.PlayerListener_Package; use javax.microedition.media.PlayerListener_Package;
+with javax.microedition.media.PlayerListener_Package; use javax.microedition.media.PlayerListener_Package;
 with android.media.MediaPlayer_Package; use android.media.MediaPlayer_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
@@ -18,6 +18,7 @@ with org.allbinary.media.audio.AndroidMediaPlayerWrapper_Package; use org.allbin
 
 package org.allbinary.media.audio.AndroidMediaPlayerWrapperListener_Package is
 
+   package PlayerListener_Package renames Standard.javax.microedition.media.PlayerListener_Package;
    package MediaPlayer_Package renames Standard.android.media.MediaPlayer_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
@@ -52,7 +53,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with javax.microedition.media.PlayerListener_Package; use javax.microedition.media.PlayerListener_Package;
+with javax.microedition.media.PlayerListener_Package; use javax.microedition.media.PlayerListener_Package;
 with android.media.MediaPlayer_Package; use android.media.MediaPlayer_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
@@ -62,6 +63,7 @@ with org.allbinary.media.audio.AndroidMediaPlayerWrapper_Package; use org.allbin
 
 package org.allbinary.media.audio.MediaPlayerOnBufferingUpdateListener_Package is
 
+   package PlayerListener_Package renames Standard.javax.microedition.media.PlayerListener_Package;
    package MediaPlayer_Package renames Standard.android.media.MediaPlayer_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
@@ -89,7 +91,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with javax.microedition.media.PlayerListener_Package; use javax.microedition.media.PlayerListener_Package;
+with javax.microedition.media.PlayerListener_Package; use javax.microedition.media.PlayerListener_Package;
 with android.media.MediaPlayer_Package; use android.media.MediaPlayer_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
@@ -99,6 +101,7 @@ with org.allbinary.media.audio.AndroidMediaPlayerWrapper_Package; use org.allbin
 
 package org.allbinary.media.audio.MediaPlayerOnPreparedListener_Package is
 
+   package PlayerListener_Package renames Standard.javax.microedition.media.PlayerListener_Package;
    package MediaPlayer_Package renames Standard.android.media.MediaPlayer_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
@@ -126,7 +129,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with javax.microedition.media.PlayerListener_Package; use javax.microedition.media.PlayerListener_Package;
+with javax.microedition.media.PlayerListener_Package; use javax.microedition.media.PlayerListener_Package;
 with android.media.MediaPlayer_Package; use android.media.MediaPlayer_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
@@ -136,6 +139,7 @@ with org.allbinary.media.audio.AndroidMediaPlayerWrapper_Package; use org.allbin
 
 package org.allbinary.media.audio.MediaPlayerOnErrorListener_Package is
 
+   package PlayerListener_Package renames Standard.javax.microedition.media.PlayerListener_Package;
    package MediaPlayer_Package renames Standard.android.media.MediaPlayer_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
@@ -164,7 +168,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with javax.microedition.media.PlayerListener_Package; use javax.microedition.media.PlayerListener_Package;
+with javax.microedition.media.PlayerListener_Package; use javax.microedition.media.PlayerListener_Package;
 with android.media.MediaPlayer_Package; use android.media.MediaPlayer_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
@@ -174,6 +178,7 @@ with org.allbinary.media.audio.AndroidMediaPlayerWrapper_Package; use org.allbin
 
 package org.allbinary.media.audio.MediaPlayerOnCompletionListener_Package is
 
+   package PlayerListener_Package renames Standard.javax.microedition.media.PlayerListener_Package;
    package MediaPlayer_Package renames Standard.android.media.MediaPlayer_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
@@ -201,7 +206,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with javax.microedition.media.PlayerListener_Package; use javax.microedition.media.PlayerListener_Package;
+with javax.microedition.media.PlayerListener_Package; use javax.microedition.media.PlayerListener_Package;
 with android.media.MediaPlayer_Package; use android.media.MediaPlayer_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
@@ -211,6 +216,7 @@ with org.allbinary.media.audio.AndroidMediaPlayerWrapper_Package; use org.allbin
 
 package org.allbinary.media.audio.AndroidMediaPlayerOnBufferingUpdateListener_Package is
 
+   package PlayerListener_Package renames Standard.javax.microedition.media.PlayerListener_Package;
    package MediaPlayer_Package renames Standard.android.media.MediaPlayer_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
@@ -241,7 +247,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with javax.microedition.media.PlayerListener_Package; use javax.microedition.media.PlayerListener_Package;
+with javax.microedition.media.PlayerListener_Package; use javax.microedition.media.PlayerListener_Package;
 with android.media.MediaPlayer_Package; use android.media.MediaPlayer_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
@@ -251,6 +257,7 @@ with org.allbinary.media.audio.AndroidMediaPlayerWrapper_Package; use org.allbin
 
 package org.allbinary.media.audio.AndroidMediaPlayerOnPreparedListener_Package is
 
+   package PlayerListener_Package renames Standard.javax.microedition.media.PlayerListener_Package;
    package MediaPlayer_Package renames Standard.android.media.MediaPlayer_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
@@ -281,7 +288,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with javax.microedition.media.PlayerListener_Package; use javax.microedition.media.PlayerListener_Package;
+with javax.microedition.media.PlayerListener_Package; use javax.microedition.media.PlayerListener_Package;
 with android.media.MediaPlayer_Package; use android.media.MediaPlayer_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
@@ -291,6 +298,7 @@ with org.allbinary.media.audio.AndroidMediaPlayerWrapper_Package; use org.allbin
 
 package org.allbinary.media.audio.AndroidMediaPlayerOnErrorListener_Package is
 
+   package PlayerListener_Package renames Standard.javax.microedition.media.PlayerListener_Package;
    package MediaPlayer_Package renames Standard.android.media.MediaPlayer_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
@@ -322,7 +330,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with javax.microedition.media.PlayerListener_Package; use javax.microedition.media.PlayerListener_Package;
+with javax.microedition.media.PlayerListener_Package; use javax.microedition.media.PlayerListener_Package;
 with android.media.MediaPlayer_Package; use android.media.MediaPlayer_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
@@ -332,6 +340,7 @@ with org.allbinary.media.audio.AndroidMediaPlayerWrapper_Package; use org.allbin
 
 package org.allbinary.media.audio.AndroidMediaPlayerOnCompletionListener_Package is
 
+   package PlayerListener_Package renames Standard.javax.microedition.media.PlayerListener_Package;
    package MediaPlayer_Package renames Standard.android.media.MediaPlayer_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;

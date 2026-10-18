@@ -20,11 +20,13 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with javax.microedition.khronos.egl.EGLConfig_Package; use javax.microedition.khronos.egl.EGLConfig_Package;
---  with javax.microedition.khronos.opengles.GL10_Package; use javax.microedition.khronos.opengles.GL10_Package;
+with javax.microedition.khronos.egl.EGLConfig_Package; use javax.microedition.khronos.egl.EGLConfig_Package;
+with javax.microedition.khronos.opengles.GL10_Package; use javax.microedition.khronos.opengles.GL10_Package;
 
 package min3d.core.Renderer_Package is
 
+   package EGLConfig_Package renames Standard.javax.microedition.khronos.egl.EGLConfig_Package;
+   package GL10_Package renames Standard.javax.microedition.khronos.opengles.GL10_Package;
 
    type Renderer is interface;
    type Renderer_Access is access all Renderer'Class;

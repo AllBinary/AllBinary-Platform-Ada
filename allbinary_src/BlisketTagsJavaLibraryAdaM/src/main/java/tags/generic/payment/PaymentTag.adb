@@ -39,19 +39,19 @@ package body tags.generic_Id.payment.PaymentTag_Package is
    function doStartTag (This : in out PaymentTag) return Integer is
    begin
         begin
-            This.setName (To_Unbounded_String ("Basic Payment View"));
-            This.setObjectFile (To_Unbounded_String ("views.generic.payment.ValidationView"));
-            if (This.getCommand) /= (null) then
-                if (((This.getCommand.compareTo (PaymentData_Package.VIEW)) = (0)) or else ((This.getCommand.compareTo (PaymentData_Package.CHANGE)) = (0))) or else ((This.getCommand.compareTo (PaymentData_Package.ADDNEW)) = (0)) then
+            PaymentTag'Class (This).setName (To_Unbounded_String ("Basic Payment View"));
+            PaymentTag'Class (This).setObjectFile (To_Unbounded_String ("views.generic.payment.ValidationView"));
+            if (PaymentTag'Class (This).getCommand) /= (null) then
+                if (((PaymentTag'Class (This).getCommand.compareTo (PaymentData_Package.VIEW)) = (0)) or else ((PaymentTag'Class (This).getCommand.compareTo (PaymentData_Package.CHANGE)) = (0))) or else ((PaymentTag'Class (This).getCommand.compareTo (PaymentData_Package.ADDNEW)) = (0)) then
                     null;
-                elsif (This.getCommand.compareTo (This.commonStrings.INSERT)) = (0) then
+                elsif (PaymentTag'Class (This).getCommand.compareTo (This.commonStrings.INSERT)) = (0) then
                     null;
-                elsif (This.getCommand.compareTo (This.commonStrings.DELETE)) = (0) then
+                elsif (PaymentTag'Class (This).getCommand.compareTo (This.commonStrings.DELETE)) = (0) then
                     return This.EVAL_BODY_INCLUDE;
-                elsif (This.getCommand.compareTo (PaymentData_Package.SELECT_Id)) = (0) then
+                elsif (PaymentTag'Class (This).getCommand.compareTo (PaymentData_Package.SELECT_Id)) = (0) then
                     return This.EVAL_BODY_INCLUDE;
                 else
-                    Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("No Such View Command: ") & Java_Image (This.getCommand)));
+                    Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("No Such View Command: ") & Java_Image (PaymentTag'Class (This).getCommand)));
                 end if;
                 return StoreValidationTransformTag (This).doStartTag;
             end if;

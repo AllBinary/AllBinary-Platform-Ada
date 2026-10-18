@@ -35,17 +35,17 @@ package body org.allbinary.view.StaticViewPosition_Package is
 
    function getX (This : in out StaticViewPosition) return Integer is
    begin
-        return This.getRawX;
+        return StaticViewPosition'Class (This).getRawX;
    end getX;
 
    function getY (This : in out StaticViewPosition) return Integer is
    begin
-        return This.getRawY;
+        return StaticViewPosition'Class (This).getRawY;
    end getY;
 
    function getZ (This : in out StaticViewPosition) return Integer is
    begin
-        return This.getRawZ;
+        return StaticViewPosition'Class (This).getRawZ;
    end getZ;
 
 end org.allbinary.view.StaticViewPosition_Package;

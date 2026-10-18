@@ -42,8 +42,8 @@ package body views.compound.CompoundComponentView_Package is
       result : Unbounded_String;
    begin
         begin
-            success := XmlDocumentHelper_Package.toString (This.getDoc);
-            result := CompoundTransform_Package.Create (This.getTransformInfoInterface).translate (success);
+            success := XmlDocumentHelper_Package.toString (CompoundComponentView'Class (This).getDoc);
+            result := CompoundTransform_Package.Create (CompoundComponentView'Class (This).getTransformInfoInterface).translate (success);
             return result;
         exception
             when Java_Occurrence : others =>

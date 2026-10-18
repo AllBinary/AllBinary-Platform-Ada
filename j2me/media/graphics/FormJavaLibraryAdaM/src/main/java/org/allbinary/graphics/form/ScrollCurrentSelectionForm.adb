@@ -90,11 +90,11 @@ package body org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package is
       index : Integer;
       maxTitleHeight : Integer;
    begin
-        size := This.size;
+        size := ScrollCurrentSelectionForm'Class (This).size;
         totalWidth := 0;
         item := null;
         for index in 0 .. (size) - 1 loop
-            item := This.get (index);
+            item := ScrollCurrentSelectionForm'Class (This).get (index);
             totalWidth := (totalWidth) + ((item.getMinimumWidth) + (This.border));
         end loop;
         This.dx := ((This.x) + ((Java_Shift_Right_Arithmetic (This.rectangle.getWidth, 1)))) - ((Java_Shift_Right_Arithmetic (totalWidth, 1)));
@@ -115,17 +115,17 @@ package body org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package is
       maxTitleHeight : Integer;
    begin
         totalHeight := 0;
-        size := This.size;
+        size := ScrollCurrentSelectionForm'Class (This).size;
         item2 := null;
         for index in 0 .. (size) - 1 loop
-            item2 := This.get (index);
+            item2 := ScrollCurrentSelectionForm'Class (This).get (index);
             if (This.maxWidth) < (item2.getMinimumWidth) then
                 This.maxWidth := item2.getMinimumWidth;
             end if;
             totalHeight := (totalHeight) + ((item2.getMinimumHeight) + (This.border));
         end loop;
         This.dx := ((((This.rectangle.getWidth) - (This.maxWidth))) / (2));
-        if (This.size) > (0) then
+        if (ScrollCurrentSelectionForm'Class (This).size) > (0) then
             This.dy := (This.y) + (((((This.rectangle.getHeight) - (totalHeight))) / (2)));
             if This.moveForSmallScreen then
                 maxTitleHeight := 175;
@@ -141,7 +141,7 @@ package body org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package is
    function getXTempHorizontalForm (This : in out ScrollCurrentSelectionForm; index : Integer; item_Param : access ABCustomItem_Package.ABCustomItem'Class; dx : Integer; dy : Integer) return Integer is
       item : constant ABCustomItem_Access := ABCustomItem_Access (item_Param);
    begin
-        return This.getDiffX (item);
+        return ScrollCurrentSelectionForm'Class (This).getDiffX (item);
    end getXTempHorizontalForm;
 
    function getXHorizontalForm (This : in out ScrollCurrentSelectionForm; index : Integer; item_Param : access ABCustomItem_Package.ABCustomItem'Class; dx : Integer; dy : Integer) return Integer is
@@ -153,7 +153,7 @@ package body org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package is
    function getXVerticalForm (This : in out ScrollCurrentSelectionForm; index : Integer; item_Param : access ABCustomItem_Package.ABCustomItem'Class; dx : Integer; dy : Integer) return Integer is
       item : constant ABCustomItem_Access := ABCustomItem_Access (item_Param);
    begin
-        return (This.getDiffX (item)) + (This.halfBorder);
+        return (ScrollCurrentSelectionForm'Class (This).getDiffX (item)) + (This.halfBorder);
    end getXVerticalForm;
 
    function getDiffX (This : in out ScrollCurrentSelectionForm; item_Param : access ABCustomItem_Package.ABCustomItem'Class) return Integer is
@@ -186,19 +186,19 @@ package body org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package is
         begin
             This.processor.process;
             delta_Id := 0;
-            deltaX := This.getDx;
-            deltaY := This.getDy;
-            size := This.size;
+            deltaX := ScrollCurrentSelectionForm'Class (This).getDx;
+            deltaY := ScrollCurrentSelectionForm'Class (This).getDy;
+            size := ScrollCurrentSelectionForm'Class (This).size;
             formTypeFactory := FormTypeFactory_Package.getInstance;
             item := null;
             for index in 0 .. (size) - 1 loop
-                item := This.get (index);
+                item := ScrollCurrentSelectionForm'Class (This).get (index);
                 diffX := This.preItemIndexDx.getDx (index, item, This.dx, This.dy);
-                if (index) = (This.getSelectedIndex) then
-                    delta_Id := This.paintItem (graphics, index, item, (deltaX) + (diffX), deltaY);
+                if (index) = (ScrollCurrentSelectionForm'Class (This).getSelectedIndex) then
+                    delta_Id := ScrollCurrentSelectionForm'Class (This).paintItem (graphics, index, item, (deltaX) + (diffX), deltaY);
                     This.paintable.paint (graphics, index, (deltaX) + (diffX), deltaY);
                 else
-                    delta_Id := This.paintUnselectedItem (graphics, index, item, (deltaX) + (diffX), deltaY);
+                    delta_Id := ScrollCurrentSelectionForm'Class (This).paintUnselectedItem (graphics, index, item, (deltaX) + (diffX), deltaY);
                     This.paintable.paint (graphics, index, (deltaX) + (diffX), deltaY);
                 end if;
                 if (This.formType) = (formTypeFactory.TEMP_HORIZONTAL_FORM) then

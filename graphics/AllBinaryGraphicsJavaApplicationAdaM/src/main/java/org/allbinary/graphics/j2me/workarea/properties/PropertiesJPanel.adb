@@ -38,7 +38,7 @@ package body org.allbinary.graphics.j2me.workarea.properties.PropertiesJPanel_Pa
    begin
       JPanel_Package.Initialize (This);
       Initialize_Fields (This);
-        This.initComponents;
+        PropertiesJPanel'Class (This).initComponents;
    end Initialize;
 
    function Create return PropertiesJPanel_Access is
@@ -52,7 +52,7 @@ package body org.allbinary.graphics.j2me.workarea.properties.PropertiesJPanel_Pa
       panel : constant JPanel_Access := JPanel_Access (panel_Param);
    begin
         This.workAreaPropertiesJPanel.add (panel);
-        This.repaint;
+        PropertiesJPanel'Class (This).repaint;
    end set;
 
    procedure initComponents (This : in out PropertiesJPanel) is
@@ -70,9 +70,9 @@ package body org.allbinary.graphics.j2me.workarea.properties.PropertiesJPanel_Pa
         This.jPanel8 := JPanel_Package.Create;
         This.leftJButton := JButton_Package.Create;
         This.rightJButton := JButton_Package.Create;
-        This.setLayout (GridLayout_Package.Create (2, 1));
+        PropertiesJPanel'Class (This).setLayout (GridLayout_Package.Create (2, 1));
         This.workAreaPropertiesJPanel.setLayout (GridLayout_Package.Create);
-        This.add (This.workAreaPropertiesJPanel);
+        PropertiesJPanel'Class (This).add (This.workAreaPropertiesJPanel);
         This.modifierJPanel.setLayout (GridLayout_Package.Create (6, 0));
         This.copyVerticalJButton.setFont (Font_Package.Create (To_Unbounded_String ("Dialog"), 0, 10));
         This.copyVerticalJButton.setText (To_Unbounded_String ("Copy Vertical"));
@@ -103,7 +103,7 @@ package body org.allbinary.graphics.j2me.workarea.properties.PropertiesJPanel_Pa
         This.rightJButton.setText (To_Unbounded_String ("Right"));
         This.jPanel8.add (This.rightJButton);
         This.modifierJPanel.add (This.jPanel8);
-        This.add (This.modifierJPanel);
+        PropertiesJPanel'Class (This).add (This.modifierJPanel);
    end initComponents;
 
 end org.allbinary.graphics.j2me.workarea.properties.PropertiesJPanel_Package;

@@ -34,7 +34,7 @@ package body org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeC
         if (This.geographicMapCellPosition) = (null) then
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("No GeographicMapCellPosition")));
         end if;
-        if (This.getPathFindingNodeCostInfo) = (null) then
+        if (PathFindingNodeCost'Class (This).getPathFindingNodeCostInfo) = (null) then
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("No PathFindingNodeCostInfo")));
         end if;
    end Initialize;
@@ -70,7 +70,7 @@ package body org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeC
         stringBuffer := StringMaker_Package.Create;
         stringBuffer.append (To_Unbounded_String (Ada.Tags.Expanded_Name (This.all'Tag)));
         stringBuffer.append (CommonLabels_Package.getInstance.COLON_SEP);
-        stringBuffer.append (This.getPathFindingNodeCostInfo.toString);
+        stringBuffer.append (PathFindingNodeCost'Class (This).getPathFindingNodeCostInfo.toString);
         stringBuffer.append (To_Unbounded_String (" Path: "));
         stringBuffer.append (This.geographicMapCellPosition.toString);
         pathFindingNode := PathFindingNode_Access (This.parent);

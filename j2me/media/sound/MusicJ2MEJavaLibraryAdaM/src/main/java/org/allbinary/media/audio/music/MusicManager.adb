@@ -24,7 +24,7 @@ package body org.allbinary.media.audio.music.MusicManager_Package is
       
       This.currentSongSound := NoSound_Package.getInstance;
       This.nextSongSound := NoSound_Package.getInstance;
-      This.reset := False;
+      This.reset_Field := False;
       This.noDuration := False;
       This.stopped := True;
    end Initialize_Fields;
@@ -49,9 +49,9 @@ package body org.allbinary.media.audio.music.MusicManager_Package is
    begin
         if (This.nextSongSound) = (NoSound_Package.getInstance) then
             randomSongSound := Sound_Access (This.basicArrayListUtil.getRandom (This.songList));
-            This.nextSong (randomSongSound, 0, 0);
+            MusicManager'Class (This).nextSong (randomSongSound, 0, 0);
         end if;
-        This.process;
+        MusicManager'Class (This).process;
    end startNewSong;
 
    procedure nextSong (This : in out MusicManager; nextSongSound_Param : access Sound_Package.Sound'Class; leftVolume : Integer; rightVolume : Integer) is
@@ -59,13 +59,13 @@ package body org.allbinary.media.audio.music.MusicManager_Package is
    begin
         PreLogUtil_Package.put (StringMaker_Package.Create.append (This.NEXT_SONG).append (nextSongSound.getResource).toString, MusicManager_Access'(This'Unchecked_Access), This.commonStrings.PROCESS);
         This.nextSongSound := nextSongSound;
-        This.reset;
+        MusicManager'Class (This).reset;
         This.stopped := False;
    end nextSong;
 
    procedure reset (This : in out MusicManager) is
    begin
-        This.reset := True;
+        This.reset_Field := True;
    end reset;
 
    procedure process (This : in out MusicManager) is
@@ -83,8 +83,8 @@ package body org.allbinary.media.audio.music.MusicManager_Package is
             if (This.songList.size) = (0) then
                 return;
             end if;
-            if (((This.timeDelayHelper.isTime (This.gameTickTimeDelayHelper.startTime)) and then (not (This.noDuration)))) or else (This.reset) then
-                This.reset := False;
+            if (((This.timeDelayHelper.isTime (This.gameTickTimeDelayHelper.startTime)) and then (not (This.noDuration)))) or else (This.reset_Field) then
+                This.reset_Field := False;
                 This.noDuration := False;
                 endingCurrentSongSound := This.currentSongSound;
                 nextSongSound := This.nextSongSound;
@@ -108,12 +108,12 @@ package body org.allbinary.media.audio.music.MusicManager_Package is
                         PreLogUtil_Package.put (StringMaker_Package.Create.append (This.ALREADY_PLAYING).append (endingCurrentSongSound.getResource).toString, MusicManager_Access'(This'Unchecked_Access), This.commonStrings.PROCESS);
                         PreLogUtil_Package.put (StringMaker_Package.Create.append (This.STOPPING).append (endingCurrentSongSound.getResource).append (This.SONG).appendlong (duration).toString, MusicManager_Access'(This'Unchecked_Access), This.commonStrings.PROCESS);
                         endingCurrentSongSound.getPlayerP.stop;
-                        This.waitForStateChange (endingCurrentSongSound, startingCurrentSongSound);
+                        MusicManager'Class (This).waitForStateChange (endingCurrentSongSound, startingCurrentSongSound);
                     else
                         if (endingCurrentSongSound.getPlayerP.getState) = (Player_Package.STARTED) then
                             PreLogUtil_Package.put (StringMaker_Package.Create.append (This.STOPPING).append (endingCurrentSongSound.getResource).append (This.SONG).appendlong (duration).toString, MusicManager_Access'(This'Unchecked_Access), This.commonStrings.PROCESS);
                             endingCurrentSongSound.getPlayerP.stop;
-                            This.waitForStateChange (endingCurrentSongSound, startingCurrentSongSound);
+                            MusicManager'Class (This).waitForStateChange (endingCurrentSongSound, startingCurrentSongSound);
                         else
                             PreLogUtil_Package.put (StringMaker_Package.Create.append (This.ALREADY_ENDED).append (This.PLAY).append (startingCurrentSongSound.getResource).toString, MusicManager_Access'(This'Unchecked_Access), This.commonStrings.PROCESS);
                             if AvianUtil_Package.isAvian then
@@ -212,7 +212,7 @@ package body org.allbinary.media.audio.music.MusicManagerPlayerListener_Package 
    begin
             PreLogUtil_Package.put (event, MusicManager_Access'(This'Unchecked_Access), This.commonStrings.PROCESS);
             if (((event) = (PlayerListener_Package.END_OF_MEDIA)) or else ((event) = (PlayerListener_Package.STOPPED))) or else ((event) = (PlayerListener_Package.CLOSED)) then
-                This.reset;
+                MusicManager'Class (This).reset;
             end if;
    end playerUpdate;
 

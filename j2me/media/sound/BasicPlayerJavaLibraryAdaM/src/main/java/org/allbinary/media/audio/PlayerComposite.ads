@@ -20,10 +20,10 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with javax.microedition.media.Control_Package; use javax.microedition.media.Control_Package;
---  with javax.microedition.media.Controllable_Package; use javax.microedition.media.Controllable_Package;
---  with javax.microedition.media.Player_Package; use javax.microedition.media.Player_Package;
---  with javax.microedition.media.PlayerListener_Package; use javax.microedition.media.PlayerListener_Package;
+with javax.microedition.media.Control_Package; use javax.microedition.media.Control_Package;
+with javax.microedition.media.Controllable_Package; use javax.microedition.media.Controllable_Package;
+with javax.microedition.media.Player_Package; use javax.microedition.media.Player_Package;
+with javax.microedition.media.PlayerListener_Package; use javax.microedition.media.PlayerListener_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.time.GameTickTimeDelayHelper_Package; use org.allbinary.time.GameTickTimeDelayHelper_Package;
@@ -33,6 +33,10 @@ with org.allbinary.media.audio.Controllable2_Package; use org.allbinary.media.au
 
 package org.allbinary.media.audio.PlayerComposite_Package is
 
+   package Control_Package renames Standard.javax.microedition.media.Control_Package;
+   package Controllable_Package renames Standard.javax.microedition.media.Controllable_Package;
+   package Player_Package renames Standard.javax.microedition.media.Player_Package;
+   package PlayerListener_Package renames Standard.javax.microedition.media.PlayerListener_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    package GameTickTimeDelayHelper_Package renames Standard.org.allbinary.time.GameTickTimeDelayHelper_Package;

@@ -30,8 +30,8 @@ package body org.allbinary.business.category.hierarchy.CategoryHierarchy_Package
    begin
       Initialize_Fields (This);
         This.level := 0;
-        This.setRoot (rootCategoryInterface);
-        This.setParent (parentCategoryInterface);
+        CategoryHierarchy'Class (This).setRoot (rootCategoryInterface);
+        CategoryHierarchy'Class (This).setParent (parentCategoryInterface);
    end Initialize;
 
    function Create (rootCategoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class; parentCategoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class) return CategoryHierarchy_Access is
@@ -47,8 +47,8 @@ package body org.allbinary.business.category.hierarchy.CategoryHierarchy_Package
    begin
       Initialize_Fields (This);
         This.level := level;
-        This.setRoot (rootCategoryInterface);
-        This.setParent (parentCategoryInterface);
+        CategoryHierarchy'Class (This).setRoot (rootCategoryInterface);
+        CategoryHierarchy'Class (This).setParent (parentCategoryInterface);
    end Initialize;
 
    function Create (rootCategoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class; parentCategoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class; level : Integer) return CategoryHierarchy_Access is
@@ -65,10 +65,10 @@ package body org.allbinary.business.category.hierarchy.CategoryHierarchy_Package
       levelString : Unbounded_String;
    begin
       Initialize_Fields (This);
-        levelString := StringUtil_Package.getInstance.getNonNull (Unbounded_String (categoryPropertiesHashMap.get (CategoryData_Package.getInstance.LEVEL)));
+        levelString := StringUtil_Package.getInstance.getNonNull (Java_Unbox (categoryPropertiesHashMap.get (CategoryData_Package.getInstance.LEVEL)));
         This.level := To_Unbounded_String (Java_Image (levelString)).intValue;
-        This.setRoot (rootCategoryInterface);
-        This.setParent (parentCategoryInterface);
+        CategoryHierarchy'Class (This).setRoot (rootCategoryInterface);
+        CategoryHierarchy'Class (This).setParent (parentCategoryInterface);
    end Initialize;
 
    function Create (rootCategoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class; parentCategoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class; categoryPropertiesHashMap_Param : access HashMap_Package.HashMap'Class) return CategoryHierarchy_Access is

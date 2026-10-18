@@ -72,9 +72,9 @@ package body org.allbinary.direction.Direction_Package is
    begin
         stringBuffer := StringMaker_Package.Create;
         stringBuffer.append (To_Unbounded_String ("Direction: "));
-        stringBuffer.append (This.getName);
+        stringBuffer.append (Direction'Class (This).getName);
         stringBuffer.append (To_Unbounded_String (" Or: "));
-        stringBuffer.append (This.getOtherName);
+        stringBuffer.append (Direction'Class (This).getOtherName);
         stringBuffer.append (To_Unbounded_String (" Value: "));
         stringBuffer.appendint (This.value);
         return stringBuffer.toString;

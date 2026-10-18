@@ -73,8 +73,8 @@ package body org.allbinary.logic.io.file.directory.DirectoryOrIncludeFileExtensi
    begin
         filePath := file.getPath;
         if IncludeFileExtensionsBooleanFileVisitor (This).visit (file, fileNameString) then
-            if not (((((Index (filePath, To_String (This.trackedStrings.APPLICATION)) > 0)) or else ((Index (filePath, To_String (This.trackedStrings.APP)) > 0))) or else ((Index (filePath, To_String (This.trackedStrings.HTML_TEMP)) > 0)))) then
-                if not ((((Index (filePath, To_String (This.trackedStrings.TARGET_PATH_WINDOWS)) > 0)) or else ((Index (filePath, To_String (This.trackedStrings.TARGET_PATH_UNIX)) > 0)))) then
+            if not (((((Index (filePath, Java_Image (This.trackedStrings.APPLICATION)) > 0)) or else ((Index (filePath, Java_Image (This.trackedStrings.APP)) > 0))) or else ((Index (filePath, Java_Image (This.trackedStrings.HTML_TEMP)) > 0)))) then
+                if not ((((Index (filePath, Java_Image (This.trackedStrings.TARGET_PATH_WINDOWS)) > 0)) or else ((Index (filePath, Java_Image (This.trackedStrings.TARGET_PATH_UNIX)) > 0)))) then
                     if This.gitProcessHelper.isTracked (file) then
                         return True;
                     else

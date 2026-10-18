@@ -20,12 +20,14 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with javax.microedition.lcdui.Displayable_Package; use javax.microedition.lcdui.Displayable_Package;
---  with javax.microedition.midlet.MIDlet_Package; use javax.microedition.midlet.MIDlet_Package;
+with javax.microedition.lcdui.Displayable_Package; use javax.microedition.lcdui.Displayable_Package;
+with javax.microedition.midlet.MIDlet_Package; use javax.microedition.midlet.MIDlet_Package;
 with org.allbinary.midlet.AllBinaryMidlet_Package; use org.allbinary.midlet.AllBinaryMidlet_Package;
 
 package org.allbinary.midlet.MidletCompositeInterface_Package is
 
+   package Displayable_Package renames Standard.javax.microedition.lcdui.Displayable_Package;
+   package MIDlet_Package renames Standard.javax.microedition.midlet.MIDlet_Package;
 
    type MidletCompositeInterface is interface;
    type MidletCompositeInterface_Access is access all MidletCompositeInterface'Class;

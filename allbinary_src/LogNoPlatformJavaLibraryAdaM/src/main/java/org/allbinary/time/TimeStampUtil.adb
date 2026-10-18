@@ -42,6 +42,7 @@ package body org.allbinary.time.TimeStampUtil_Package is
    function getAsString (This : in out TimeStampUtil) return Unbounded_String is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return Null_Unbounded_String;
    end getAsString;
 
 begin

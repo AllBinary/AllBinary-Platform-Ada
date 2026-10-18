@@ -53,7 +53,7 @@ package body org.allbinary.game.displayable.canvas.PopupMenuInputProcessor_Packa
       gameCanvas : AllBinaryGameCanvas_Access;
    begin
         if (key) = (Canvas_Package.KEY_STAR) then
-            gameCanvas := AllBinaryGameCanvas_Access (This.getCanvas);
+            gameCanvas := AllBinaryGameCanvas_Access (PopupMenuInputProcessor'Class (This).getCanvas);
             gameCanvas.toggleMenu;
             return 1;
         end if;
@@ -70,8 +70,8 @@ package body org.allbinary.game.displayable.canvas.PopupMenuInputProcessor_Packa
       index : Integer;
    begin
         begin
-            motionInputsIndex := This.processMotionInputs;
-            list := This.getGameKeyEventList;
+            motionInputsIndex := PopupMenuInputProcessor'Class (This).processMotionInputs;
+            list := PopupMenuInputProcessor'Class (This).getGameKeyEventList;
             size := list.size;
             key := 0;
             gameKeyEvent := null;
@@ -79,12 +79,12 @@ package body org.allbinary.game.displayable.canvas.PopupMenuInputProcessor_Packa
                 gameKeyEvent := GameKeyEvent_Access (list.objectArray (index));
                 if (gameKeyEvent) /= (null) then
                     key := gameKeyEvent.getKey;
-                    if (This.processInput (key)) = (1) then
+                    if (PopupMenuInputProcessor'Class (This).processInput (key)) = (1) then
                         exit;
                     end if;
                 end if;
             end loop;
-            This.clear;
+            PopupMenuInputProcessor'Class (This).clear;
             if ((size) > (0)) or else ((motionInputsIndex) >= (0)) then
                 return 1;
             else
@@ -109,7 +109,7 @@ package body org.allbinary.game.displayable.canvas.PopupMenuInputProcessor_Packa
         lastIndex := (This.motionGestureEventList.size) - (1);
         if (lastIndex) >= (0) then
             motionGestureEvent := MotionGestureEvent_Access (This.motionGestureEventList.objectArray (lastIndex));
-            This.processMotionInput (motionGestureEvent);
+            PopupMenuInputProcessor'Class (This).processMotionInput (motionGestureEvent);
         end if;
         This.motionGestureEventList.clear;
         return lastIndex;
@@ -135,7 +135,7 @@ package body org.allbinary.game.displayable.canvas.PopupMenuInputProcessor_Packa
             rectPoint := This.rectangle.getPoint;
             if This.rectangleCollisionUtil.isInside (rectPoint.getX, rectPoint.getY, (This.rectangle.getMaxX) + (20), This.rectangle.getMaxY, point.getX, point.getY) then
                 if This.clickTimeHelper.isTimeTNT then
-                    gameCanvas := AllBinaryGameCanvas_Access (This.getCanvas);
+                    gameCanvas := AllBinaryGameCanvas_Access (PopupMenuInputProcessor'Class (This).getCanvas);
                     gameCanvas.toggleMenu;
                 end if;
             end if;

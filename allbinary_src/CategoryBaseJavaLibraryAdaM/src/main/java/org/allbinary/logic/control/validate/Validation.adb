@@ -38,6 +38,7 @@ package body org.allbinary.logic.control.validate.Validation_Package is
    function isValid (This : in out Validation) return Boolean is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return null;
    end isValid;
 
    --  throws Exception
@@ -45,18 +46,21 @@ package body org.allbinary.logic.control.validate.Validation_Package is
       document : constant Document_Access := Document_Access (document_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return null;
    end toValidationInfoNode;
 
    --  throws Exception
    function toValidationInfoDoc (This : in out Validation) return Document_Access is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return null;
    end toValidationInfoDoc;
 
    --  throws Exception
    function validationInfo (This : in out Validation) return Unbounded_String is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return Null_Unbounded_String;
    end validationInfo;
 
    procedure toValidationInfoNode (This : in out Validation; document_Param : access Document_Package.Document'Class) is

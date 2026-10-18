@@ -63,8 +63,8 @@ package body org.allbinary.layer.AllBinaryLayerManager_Package is
    procedure append (This : in out AllBinaryLayerManager; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class) is
       layerInterface : constant AllBinaryLayer_Access := AllBinaryLayer_Access (layerInterface_Param);
    begin
-        if not (This.contains (layerInterface)) then
-            This.appendProcessors (layerInterface);
+        if not (AllBinaryLayerManager'Class (This).contains (layerInterface)) then
+            AllBinaryLayerManager'Class (This).appendProcessors (layerInterface);
             LayerManager (This).append (layerInterface);
         end if;
    end append;
@@ -73,8 +73,8 @@ package body org.allbinary.layer.AllBinaryLayerManager_Package is
    procedure appendAt (This : in out AllBinaryLayerManager; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; index : Integer) is
       layerInterface : constant AllBinaryLayer_Access := AllBinaryLayer_Access (layerInterface_Param);
    begin
-        if not (This.contains (layerInterface)) then
-            This.appendProcessors (layerInterface);
+        if not (AllBinaryLayerManager'Class (This).contains (layerInterface)) then
+            AllBinaryLayerManager'Class (This).appendProcessors (layerInterface);
             LayerManager (This).appendAt (layerInterface, index);
         end if;
    end appendAt;

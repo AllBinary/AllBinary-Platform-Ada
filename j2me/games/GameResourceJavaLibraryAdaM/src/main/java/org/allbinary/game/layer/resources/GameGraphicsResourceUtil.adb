@@ -38,7 +38,7 @@ package body org.allbinary.game.layer.resources.GameGraphicsResourceUtil_Package
    begin
       Initialize_Fields (This);
         begin
-            This.name := This.getString;
+            This.name := GameGraphicsResourceUtil'Class (This).getString;
         exception
             when Java_Occurrence : others =>
                 declare
@@ -75,7 +75,7 @@ package body org.allbinary.game.layer.resources.GameGraphicsResourceUtil_Package
         elsif features.isFeature (graphicsFeatureFactory.IMAGE_ROTATION_ON_THE_FLY) then
             graphicsFeature := graphicsFeatureFactory.IMAGE_ROTATION_ON_THE_FLY;
         end if;
-        return This.getStringForFeature (graphicsFeature);
+        return GameGraphicsResourceUtil'Class (This).getStringForFeature (graphicsFeature);
    end getString;
 
    --  throws Exception

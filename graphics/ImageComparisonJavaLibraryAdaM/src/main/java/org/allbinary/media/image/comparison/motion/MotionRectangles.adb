@@ -30,8 +30,8 @@ package body org.allbinary.media.image.comparison.motion.MotionRectangles_Packag
    begin
       Initialize_Fields (This);
         This.name := name;
-        This.setImageComparisonResult (imageComparisonResult);
-        This.setVector (BasicArrayListD_Package.Create);
+        MotionRectangles'Class (This).setImageComparisonResult (imageComparisonResult);
+        MotionRectangles'Class (This).setVector (BasicArrayListD_Package.Create);
    end Initialize;
 
    function Create (name : Unbounded_String; imageComparisonResult_Param : access ImageComparisonResult_Package.ImageComparisonResult'Class) return MotionRectangles_Access is

@@ -73,11 +73,11 @@ package body org.allbinary.game.ag.life.Life_Package is
 
    procedure add (This : in out Life; lives : Short_Integer) is
    begin
-        if not (This.reachedLimit) then
-            if ((This.lives) + (lives)) <= (Integer (This.getMaxlives)) then
+        if not (Life'Class (This).reachedLimit) then
+            if ((This.lives) + (lives)) <= (Integer (Life'Class (This).getMaxlives)) then
                 This.lives := Short_Integer (((This.lives) + (lives)));
             else
-                This.lives := This.getMaxlives;
+                This.lives := Life'Class (This).getMaxlives;
             end if;
         end if;
    end add;
@@ -107,7 +107,7 @@ package body org.allbinary.game.ag.life.Life_Package is
 
    procedure deaths (This : in out Life; lives : Short_Integer) is
    begin
-        if not (This.reachedLimit) then
+        if not (Life'Class (This).reachedLimit) then
             if ((This.lives) - (lives)) >= (0) then
                 This.lives := Short_Integer (((This.lives) - (lives)));
             else

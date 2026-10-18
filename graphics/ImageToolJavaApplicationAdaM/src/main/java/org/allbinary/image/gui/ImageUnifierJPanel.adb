@@ -57,8 +57,8 @@ package body org.allbinary.image.gui.ImageUnifierJPanel_Package is
    begin
       JPanel_Package.Initialize (This);
       Initialize_Fields (This);
-        This.initComponents;
-        This.setImageProcessorInput (imageProcessorInput);
+        ImageUnifierJPanel'Class (This).initComponents;
+        ImageUnifierJPanel'Class (This).setImageProcessorInput (imageProcessorInput);
    end Initialize;
 
    function Create (imageProcessorInput_Param : access ImageProcessorInput_Package.ImageProcessorInput'Class) return ImageUnifierJPanel_Access is
@@ -81,7 +81,7 @@ package body org.allbinary.image.gui.ImageUnifierJPanel_Package is
       index : Integer;
    begin
         begin
-            imageProcessorInput := This.getImageProcessorInput;
+            imageProcessorInput := ImageUnifierJPanel'Class (This).getImageProcessorInput;
             bufferedImageArray := imageProcessorInput.getBufferedImageArray;
             This.icon := new ImageIconUnique_Access_Array'(0 .. (bufferedImageArray'Length) - 1 => null);
             defaultListModel := DefaultListModel_Package.Create;
@@ -96,7 +96,7 @@ package body org.allbinary.image.gui.ImageUnifierJPanel_Package is
                 defaultListModel.addElement (This.icon (index));
             end loop;
             This.imageJList.setModel (defaultListModel);
-            This.updateOnPropertiesChange;
+            ImageUnifierJPanel'Class (This).updateOnPropertiesChange;
         exception
             when Java_Occurrence : others =>
                 declare
@@ -118,7 +118,7 @@ package body org.allbinary.image.gui.ImageUnifierJPanel_Package is
       averageRatioString : Unbounded_String;
    begin
         begin
-            bufferedImageArray := This.getImageProcessorInput.getBufferedImageArray;
+            bufferedImageArray := ImageUnifierJPanel'Class (This).getImageProcessorInput.getBufferedImageArray;
             tempBufferedImageArray := new BufferedImage_Access_Array'(0 .. (bufferedImageArray'Length) - 1 => null);
             for index in 0 .. (bufferedImageArray'Length) - 1 loop
                 indexedImageIcon := ImageIconUnique_Access (This.imageJList.getModel.getElementAt (index));
@@ -138,7 +138,7 @@ package body org.allbinary.image.gui.ImageUnifierJPanel_Package is
                     This.fudgeItJButton.setEnabled (True);
                 end if;
             end if;
-            This.updateImage (tempBufferedImageArray);
+            ImageUnifierJPanel'Class (This).updateImage (tempBufferedImageArray);
         exception
             when Java_Occurrence : others =>
                 declare
@@ -160,7 +160,7 @@ package body org.allbinary.image.gui.ImageUnifierJPanel_Package is
       fudgedBufferedImageArray : BufferedImage_Access_Array_Access;
    begin
         begin
-            bufferedImageArray := This.getImageProcessorInput.getBufferedImageArray;
+            bufferedImageArray := ImageUnifierJPanel'Class (This).getImageProcessorInput.getBufferedImageArray;
             tempBufferedImageArray := new BufferedImage_Access_Array'(0 .. (bufferedImageArray'Length) - 1 => null);
             for index in 0 .. (bufferedImageArray'Length) - 1 loop
                 indexedImageIcon := ImageIconUnique_Access (This.imageJList.getModel.getElementAt (index));
@@ -170,7 +170,7 @@ package body org.allbinary.image.gui.ImageUnifierJPanel_Package is
             totalImages := (This.imageUnifierProperties.getRows) * (This.imageUnifierProperties.getColumns);
             averageRatio := This.imagesRatioUtil.getAverage (tempBufferedImageArray, totalImages);
             fudgedBufferedImageArray := This.imagesRatioUtil.fudge (tempBufferedImageArray, totalImages, averageRatio);
-            This.updateImage (fudgedBufferedImageArray);
+            ImageUnifierJPanel'Class (This).updateImage (fudgedBufferedImageArray);
         exception
             when Java_Occurrence : others =>
                 declare
@@ -189,7 +189,7 @@ package body org.allbinary.image.gui.ImageUnifierJPanel_Package is
         image := ImageIcon_Package.Create (This.result);
         label := JLabel_Package.Create (image);
         This.jScrollPane2.getViewport.add (label);
-        This.updateUI;
+        ImageUnifierJPanel'Class (This).updateUI;
    end updateImage;
 
    procedure updateOnPropertiesChange (This : in out ImageUnifierJPanel) is
@@ -209,7 +209,7 @@ package body org.allbinary.image.gui.ImageUnifierJPanel_Package is
                 cellRatioString := Unbounded_Slice (cellRatioString, (0) + 1, 4);
             end if;
             This.cellRatioJTextField.setText (cellRatioString);
-            This.updateImage;
+            ImageUnifierJPanel'Class (This).updateImage;
         end if;
    end updateOnPropertiesChange;
 
@@ -241,8 +241,8 @@ package body org.allbinary.image.gui.ImageUnifierJPanel_Package is
         This.avgRatioJTextField := JTextField_Package.Create;
         This.jButton2 := JButton_Package.Create;
         This.jButtonOrder := JButton_Package.Create;
-        This.setMinimumSize (Dimension_Package.Create (500, 375));
-        This.setPreferredSize (Dimension_Package.Create (0, 0));
+        ImageUnifierJPanel'Class (This).setMinimumSize (Dimension_Package.Create (500, 375));
+        ImageUnifierJPanel'Class (This).setPreferredSize (Dimension_Package.Create (0, 0));
         This.imageJList.setMinimumSize (Dimension_Package.Create (50, 0));
         This.jScrollPane1.setViewportView (This.imageJList);
         This.jButton1.setText (To_Unbounded_String ("Save"));
@@ -251,7 +251,7 @@ package body org.allbinary.image.gui.ImageUnifierJPanel_Package is
 --     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
 --        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
---                  This.jButton1ActionPerformed (evt);
+--                  ImageUnifierJPanel'Class (This).jButton1ActionPerformed (evt);
 --     end actionPerformed;
 );
         This.upJButton.setText (To_Unbounded_String ("Up"));
@@ -260,7 +260,7 @@ package body org.allbinary.image.gui.ImageUnifierJPanel_Package is
 --     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
 --        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
---                  This.upJButtonActionPerformed (evt);
+--                  ImageUnifierJPanel'Class (This).upJButtonActionPerformed (evt);
 --     end actionPerformed;
 );
         This.downJButton.setText (To_Unbounded_String ("Down"));
@@ -269,7 +269,7 @@ package body org.allbinary.image.gui.ImageUnifierJPanel_Package is
 --     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
 --        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
---                  This.downJButtonActionPerformed (evt);
+--                  ImageUnifierJPanel'Class (This).downJButtonActionPerformed (evt);
 --     end actionPerformed;
 );
         This.fudgeItJButton.setText (To_Unbounded_String ("Fudge It!"));
@@ -278,7 +278,7 @@ package body org.allbinary.image.gui.ImageUnifierJPanel_Package is
 --     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
 --        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
---                  This.fudgeItJButtonActionPerformed (evt);
+--                  ImageUnifierJPanel'Class (This).fudgeItJButtonActionPerformed (evt);
 --     end actionPerformed;
 );
         This.jLabel2.setText (To_Unbounded_String ("Columns:"));
@@ -288,7 +288,7 @@ package body org.allbinary.image.gui.ImageUnifierJPanel_Package is
 --     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
 --        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
---                  This.columnsJTextFieldActionPerformed (evt);
+--                  ImageUnifierJPanel'Class (This).columnsJTextFieldActionPerformed (evt);
 --     end actionPerformed;
 );
         This.columnsJTextField.addPropertyChangeListener (PropertyChangeListener_Package.Create  --  Java anonymous class body: implement it as a named type
@@ -296,7 +296,7 @@ package body org.allbinary.image.gui.ImageUnifierJPanel_Package is
 --     procedure propertyChange (This : in out ; evt_Param : access PropertyChangeEvent_Package.PropertyChangeEvent'Class) is
 --        evt : constant PropertyChangeEvent_Access := PropertyChangeEvent_Access (evt_Param);
 --     begin
---                  This.columnsJTextFieldPropertyChange (evt);
+--                  ImageUnifierJPanel'Class (This).columnsJTextFieldPropertyChange (evt);
 --     end propertyChange;
 );
         This.columnsJTextField.addKeyListener (KeyAdapter_Package.Create  --  Java anonymous class body: implement it as a named type
@@ -304,13 +304,13 @@ package body org.allbinary.image.gui.ImageUnifierJPanel_Package is
 --     procedure keyPressed (This : in out ; evt_Param : access KeyEvent_Package.KeyEvent'Class) is
 --        evt : constant KeyEvent_Access := KeyEvent_Access (evt_Param);
 --     begin
---                  This.columnsJTextFieldKeyPressed (evt);
+--                  ImageUnifierJPanel'Class (This).columnsJTextFieldKeyPressed (evt);
 --     end keyPressed;
 --              
 --     procedure keyTyped (This : in out ; evt_Param : access KeyEvent_Package.KeyEvent'Class) is
 --        evt : constant KeyEvent_Access := KeyEvent_Access (evt_Param);
 --     begin
---                  This.columnsJTextFieldKeyTyped (evt);
+--                  ImageUnifierJPanel'Class (This).columnsJTextFieldKeyTyped (evt);
 --     end keyTyped;
 );
         This.jLabel1.setText (To_Unbounded_String ("Rows:"));
@@ -320,7 +320,7 @@ package body org.allbinary.image.gui.ImageUnifierJPanel_Package is
 --     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
 --        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
---                  This.rowsJTextFieldActionPerformed (evt);
+--                  ImageUnifierJPanel'Class (This).rowsJTextFieldActionPerformed (evt);
 --     end actionPerformed;
 );
         This.jLabel3.setText (To_Unbounded_String ("Cell Width:"));
@@ -330,7 +330,7 @@ package body org.allbinary.image.gui.ImageUnifierJPanel_Package is
 --     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
 --        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
---                  This.cellWidthJTextFieldActionPerformed (evt);
+--                  ImageUnifierJPanel'Class (This).cellWidthJTextFieldActionPerformed (evt);
 --     end actionPerformed;
 );
         This.jLabel4.setText (To_Unbounded_String ("Cell Height:"));
@@ -340,7 +340,7 @@ package body org.allbinary.image.gui.ImageUnifierJPanel_Package is
 --     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
 --        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
---                  This.cellHeightJTextFieldActionPerformed (evt);
+--                  ImageUnifierJPanel'Class (This).cellHeightJTextFieldActionPerformed (evt);
 --     end actionPerformed;
 );
         This.jLabel5.setText (To_Unbounded_String ("Cell Ratio:"));
@@ -353,7 +353,7 @@ package body org.allbinary.image.gui.ImageUnifierJPanel_Package is
 --     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
 --        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
---                  This.jButton2ActionPerformed (evt);
+--                  ImageUnifierJPanel'Class (This).jButton2ActionPerformed (evt);
 --     end actionPerformed;
 );
         This.jButtonOrder.setText (To_Unbounded_String ("Order"));
@@ -362,7 +362,7 @@ package body org.allbinary.image.gui.ImageUnifierJPanel_Package is
 --     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
 --        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
---                  This.jButtonOrderActionPerformed (evt);
+--                  ImageUnifierJPanel'Class (This).jButtonOrderActionPerformed (evt);
 --     end actionPerformed;
 );
         jPanel1Layout := GroupLayout_Package.Create (This.jPanel1);
@@ -370,7 +370,7 @@ package body org.allbinary.image.gui.ImageUnifierJPanel_Package is
         jPanel1Layout.setHorizontalGroup (jPanel1Layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (javax_Package.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup.addContainerGap.addGroup (jPanel1Layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.TRAILING).addComponent (This.jButton1, javax_Package.swing.GroupLayout.DEFAULT_SIZE, 151, Short_Package.MAX_VALUE).addGroup (jPanel1Layout.createSequentialGroup.addComponent (This.upJButton, javax_Package.swing.GroupLayout.PREFERRED_SIZE, 71, javax_Package.swing.GroupLayout.PREFERRED_SIZE).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short_Package.MAX_VALUE).addComponent (This.downJButton, javax_Package.swing.GroupLayout.PREFERRED_SIZE, 70, javax_Package.swing.GroupLayout.PREFERRED_SIZE)).addComponent (This.fudgeItJButton, javax_Package.swing.GroupLayout.Alignment.LEADING, javax_Package.swing.GroupLayout.DEFAULT_SIZE, 151, Short_Package.MAX_VALUE).addGroup (javax_Package.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup.addComponent (This.jLabel3).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED, 99, javax_Package.swing.GroupLayout.PREFERRED_SIZE)).addGroup (javax_Package.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup.addComponent (This.jLabel4).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED, 96, javax_Package.swing.GroupLayout.PREFERRED_SIZE)).addComponent (This.avgRatioJTextField, javax_Package.swing.GroupLayout.Alignment.LEADING, javax_Package.swing.GroupLayout.DEFAULT_SIZE, 151, Short_Package.MAX_VALUE).addComponent (This.jLabel6, javax_Package.swing.GroupLayout.Alignment.LEADING, javax_Package.swing.GroupLayout.DEFAULT_SIZE, 151, Short_Package.MAX_VALUE).addComponent (This.cellRatioJTextField, javax_Package.swing.GroupLayout.Alignment.LEADING, javax_Package.swing.GroupLayout.DEFAULT_SIZE, 151, Short_Package.MAX_VALUE).addComponent (This.jLabel5, javax_Package.swing.GroupLayout.Alignment.LEADING, javax_Package.swing.GroupLayout.DEFAULT_SIZE, 151, Short_Package.MAX_VALUE).addComponent (This.cellHeightJTextField, javax_Package.swing.GroupLayout.Alignment.LEADING, javax_Package.swing.GroupLayout.DEFAULT_SIZE, 151, Short_Package.MAX_VALUE).addComponent (This.cellWidthJTextField, javax_Package.swing.GroupLayout.Alignment.LEADING, javax_Package.swing.GroupLayout.DEFAULT_SIZE, 151, Short_Package.MAX_VALUE).addComponent (This.jButton2, javax_Package.swing.GroupLayout.Alignment.LEADING, javax_Package.swing.GroupLayout.DEFAULT_SIZE, 151, Short_Package.MAX_VALUE).addGroup (javax_Package.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup.addGroup (jPanel1Layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addComponent (This.jLabel2).addComponent (This.jLabel1)).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addGroup (jPanel1Layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addComponent (This.rowsJTextField, javax_Package.swing.GroupLayout.DEFAULT_SIZE, 103, Short_Package.MAX_VALUE).addGroup (jPanel1Layout.createSequentialGroup.addComponent (This.columnsJTextField, javax_Package.swing.GroupLayout.DEFAULT_SIZE, 102, Short_Package.MAX_VALUE).addGap (1, 1, 1)))).addComponent (This.jButtonOrder, javax_Package.swing.GroupLayout.DEFAULT_SIZE, 151, Short_Package.MAX_VALUE)).addContainerGap));
         jPanel1Layout.setVerticalGroup (jPanel1Layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (jPanel1Layout.createSequentialGroup.addContainerGap.addComponent (This.jButton1).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addGroup (jPanel1Layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.BASELINE).addComponent (This.upJButton).addComponent (This.downJButton)).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent (This.jButtonOrder).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent (This.fudgeItJButton).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addGroup (jPanel1Layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.BASELINE).addComponent (This.jLabel2).addComponent (This.columnsJTextField, javax_Package.swing.GroupLayout.PREFERRED_SIZE, javax_Package.swing.GroupLayout.DEFAULT_SIZE, javax_Package.swing.GroupLayout.PREFERRED_SIZE)).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addGroup (jPanel1Layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.BASELINE).addComponent (This.jLabel1).addComponent (This.rowsJTextField, javax_Package.swing.GroupLayout.PREFERRED_SIZE, javax_Package.swing.GroupLayout.DEFAULT_SIZE, javax_Package.swing.GroupLayout.PREFERRED_SIZE)).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent (This.jLabel3).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent (This.cellWidthJTextField, javax_Package.swing.GroupLayout.PREFERRED_SIZE, javax_Package.swing.GroupLayout.DEFAULT_SIZE, javax_Package.swing.GroupLayout.PREFERRED_SIZE).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent (This.jLabel4).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent (This.cellHeightJTextField, javax_Package.swing.GroupLayout.PREFERRED_SIZE, javax_Package.swing.GroupLayout.DEFAULT_SIZE, javax_Package.swing.GroupLayout.PREFERRED_SIZE).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent (This.jButton2).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent (This.jLabel5).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED, javax_Package.swing.GroupLayout.DEFAULT_SIZE, Short_Package.MAX_VALUE).addComponent (This.cellRatioJTextField, javax_Package.swing.GroupLayout.PREFERRED_SIZE, javax_Package.swing.GroupLayout.DEFAULT_SIZE, javax_Package.swing.GroupLayout.PREFERRED_SIZE).addGap (7, 7, 7).addComponent (This.jLabel6).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent (This.avgRatioJTextField, javax_Package.swing.GroupLayout.PREFERRED_SIZE, javax_Package.swing.GroupLayout.DEFAULT_SIZE, javax_Package.swing.GroupLayout.PREFERRED_SIZE).addGap (66, 66, 66)));
         layout := GroupLayout_Package.Create (ImageUnifierJPanel_Access'(This'Unchecked_Access));
-        This.setLayout (layout);
+        ImageUnifierJPanel'Class (This).setLayout (layout);
         layout.setHorizontalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (layout.createSequentialGroup.addComponent (This.jScrollPane1, javax_Package.swing.GroupLayout.PREFERRED_SIZE, 84, javax_Package.swing.GroupLayout.PREFERRED_SIZE).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent (This.jPanel1, javax_Package.swing.GroupLayout.PREFERRED_SIZE, javax_Package.swing.GroupLayout.DEFAULT_SIZE, javax_Package.swing.GroupLayout.PREFERRED_SIZE).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent (This.jScrollPane2, javax_Package.swing.GroupLayout.DEFAULT_SIZE, 527, Short_Package.MAX_VALUE)));
         layout.setVerticalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (javax_Package.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup.addGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.TRAILING).addComponent (This.jPanel1, javax_Package.swing.GroupLayout.Alignment.LEADING, 0, 445, Short_Package.MAX_VALUE).addComponent (This.jScrollPane2, javax_Package.swing.GroupLayout.Alignment.LEADING, javax_Package.swing.GroupLayout.DEFAULT_SIZE, 445, Short_Package.MAX_VALUE).addComponent (This.jScrollPane1, javax_Package.swing.GroupLayout.Alignment.LEADING, javax_Package.swing.GroupLayout.DEFAULT_SIZE, 445, Short_Package.MAX_VALUE)).addContainerGap));
    end initComponents;
@@ -378,7 +378,7 @@ package body org.allbinary.image.gui.ImageUnifierJPanel_Package is
    procedure jButton2ActionPerformed (This : in out ImageUnifierJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
       evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
-        This.updateOnPropertiesChange;
+        ImageUnifierJPanel'Class (This).updateOnPropertiesChange;
    end jButton2ActionPerformed;
 
    procedure columnsJTextFieldKeyPressed (This : in out ImageUnifierJPanel; evt_Param : access KeyEvent_Package.KeyEvent'Class) is
@@ -402,31 +402,31 @@ package body org.allbinary.image.gui.ImageUnifierJPanel_Package is
    procedure fudgeItJButtonActionPerformed (This : in out ImageUnifierJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
       evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
-        This.updateImageWithFudgedImages;
+        ImageUnifierJPanel'Class (This).updateImageWithFudgedImages;
    end fudgeItJButtonActionPerformed;
 
    procedure cellHeightJTextFieldActionPerformed (This : in out ImageUnifierJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
       evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
-        This.updateOnPropertiesChange;
+        ImageUnifierJPanel'Class (This).updateOnPropertiesChange;
    end cellHeightJTextFieldActionPerformed;
 
    procedure cellWidthJTextFieldActionPerformed (This : in out ImageUnifierJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
       evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
-        This.updateOnPropertiesChange;
+        ImageUnifierJPanel'Class (This).updateOnPropertiesChange;
    end cellWidthJTextFieldActionPerformed;
 
    procedure columnsJTextFieldActionPerformed (This : in out ImageUnifierJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
       evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
-        This.updateOnPropertiesChange;
+        ImageUnifierJPanel'Class (This).updateOnPropertiesChange;
    end columnsJTextFieldActionPerformed;
 
    procedure rowsJTextFieldActionPerformed (This : in out ImageUnifierJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
       evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
-        This.updateOnPropertiesChange;
+        ImageUnifierJPanel'Class (This).updateOnPropertiesChange;
    end rowsJTextFieldActionPerformed;
 
    procedure jButton1ActionPerformed (This : in out ImageUnifierJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
@@ -441,7 +441,7 @@ package body org.allbinary.image.gui.ImageUnifierJPanel_Package is
             fileArray := This.imageProcessorInput.getFiles;
             file := fileArray (0);
             filePath := file.getAbsolutePath;
-            extensionIndex := (Index (filePath, To_String (This.imageStrings.PNG_EXTENSION)) - 1);
+            extensionIndex := (Index (filePath, Java_Image (This.imageStrings.PNG_EXTENSION)) - 1);
             filePath := StringMaker_Package.Create.append (Unbounded_Slice (filePath, (0) + 1, extensionIndex)).append (CommonSeps_Package.getInstance.UNDERSCORE).appendint (Integer (This.imageUnifierProperties.getColumns)).append (To_Unbounded_String ("_By_")).appendint (Integer (This.imageUnifierProperties.getRows)).append (To_Unbounded_String ("_Unified")).append (This.imageStrings.PNG_EXTENSION).toString;
             This.logUtil.putF (To_Unbounded_String ("New File Path: ") & filePath, ImageUnifierJPanel_Access'(This'Unchecked_Access), StringUtil_Package.getInstance.EMPTY_STRING);
             outputFile := File_Package.Create (filePath);
@@ -468,7 +468,7 @@ package body org.allbinary.image.gui.ImageUnifierJPanel_Package is
             indexedImageIcon := ImageIconUnique_Access (defaultListModel.remove (index));
             defaultListModel.insertElementAt (indexedImageIcon, (index) + (1));
             This.imageJList.setSelectedIndex ((index) + (1));
-            This.updateImage;
+            ImageUnifierJPanel'Class (This).updateImage;
         end if;
    end downJButtonActionPerformed;
 
@@ -484,7 +484,7 @@ package body org.allbinary.image.gui.ImageUnifierJPanel_Package is
             indexedImageIcon := ImageIconUnique_Access (defaultListModel.remove (index));
             defaultListModel.insertElementAt (indexedImageIcon, (index) - (1));
             This.imageJList.setSelectedIndex ((index) - (1));
-            This.updateImage;
+            ImageUnifierJPanel'Class (This).updateImage;
         end if;
    end upJButtonActionPerformed;
 
@@ -505,7 +505,7 @@ package body org.allbinary.image.gui.ImageUnifierJPanel_Package is
         end loop;
         if (size) > (0) then
             This.imageJList.setSelectedIndex (0);
-            This.updateImage;
+            ImageUnifierJPanel'Class (This).updateImage;
         end if;
    end jButtonOrderActionPerformed;
 
@@ -518,7 +518,7 @@ package body org.allbinary.image.gui.ImageUnifierJPanel_Package is
       imageProcessorInput : constant ImageProcessorInput_Access := ImageProcessorInput_Access (imageProcessorInput_Param);
    begin
         This.imageProcessorInput := imageProcessorInput;
-        This.init;
+        ImageUnifierJPanel'Class (This).init;
    end setImageProcessorInput;
 
 end org.allbinary.image.gui.ImageUnifierJPanel_Package;

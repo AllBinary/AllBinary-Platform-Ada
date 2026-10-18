@@ -79,42 +79,50 @@ package body org.allbinary.game.layer.WaypointBehaviorBase_Package is
    function getMovementLogicAsString (This : in out WaypointBehaviorBase) return Unbounded_String is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return Null_Unbounded_String;
    end getMovementLogicAsString;
 
    function isWaypointListEmptyOrOnlyTargets (This : in out WaypointBehaviorBase) return Boolean is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return False;
    end isWaypointListEmptyOrOnlyTargets;
 
    function isInSensorRange (This : in out WaypointBehaviorBase; layerInterface_Param : access CollidableDestroyableDamageableLayer_Package.CollidableDestroyableDamageableLayer'Class; targetDistance : Integer) return Boolean is
       layerInterface : constant CollidableDestroyableDamageableLayer_Access := CollidableDestroyableDamageableLayer_Access (layerInterface_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return False;
    end isInSensorRange;
 
    function getCurrentTargetLayerInterface (This : in out WaypointBehaviorBase) return CollidableDestroyableDamageableLayer_Access is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return null;
    end getCurrentTargetLayerInterface;
 
    function getCurrentTargetingStateString (This : in out WaypointBehaviorBase) return Unbounded_String is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return Null_Unbounded_String;
    end getCurrentTargetingStateString;
 
    function isTrackingWaypoint (This : in out WaypointBehaviorBase) return Boolean is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return False;
    end isTrackingWaypoint;
 
    function getCurrentPathGeographicMapCellPosition (This : in out WaypointBehaviorBase) return GeographicMapCellPosition_Access is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return null;
    end getCurrentPathGeographicMapCellPosition;
 
    function getCurrentGeographicMapCellHistory (This : in out WaypointBehaviorBase) return GeographicMapCellHistory_Access is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return null;
    end getCurrentGeographicMapCellHistory;
 
    function isWaypointOverridesAttacking (This : in out WaypointBehaviorBase) return Boolean is
@@ -125,11 +133,13 @@ package body org.allbinary.game.layer.WaypointBehaviorBase_Package is
    function getNextUnvisitedPathGeographicMapCellPosition (This : in out WaypointBehaviorBase) return GeographicMapCellPosition_Access is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return null;
    end getNextUnvisitedPathGeographicMapCellPosition;
 
    function needToMove (This : in out WaypointBehaviorBase) return Boolean is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return False;
    end needToMove;
 
    procedure setWaypointPathsList (This : in out WaypointBehaviorBase; waypointPathsList_Param : access BasicArrayList_Package.BasicArrayList'Class) is
@@ -141,6 +151,7 @@ package body org.allbinary.game.layer.WaypointBehaviorBase_Package is
    function getWaypointPathsList (This : in out WaypointBehaviorBase) return BasicArrayList_Access is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return null;
    end getWaypointPathsList;
 
    --  throws Exception

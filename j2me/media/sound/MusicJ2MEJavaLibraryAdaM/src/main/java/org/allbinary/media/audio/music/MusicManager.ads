@@ -9,8 +9,8 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.thread.ARunnable_Package; use org.allbinary.thread.ARunnable_Package;
---  with javax.microedition.media.Player_Package; use javax.microedition.media.Player_Package;
---  with javax.microedition.media.PlayerListener_Package; use javax.microedition.media.PlayerListener_Package;
+with javax.microedition.media.Player_Package; use javax.microedition.media.Player_Package;
+with javax.microedition.media.PlayerListener_Package; use javax.microedition.media.PlayerListener_Package;
 with org.allbinary.AvianUtil_Package; use org.allbinary.AvianUtil_Package;
 with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
@@ -30,6 +30,8 @@ with org.allbinary.util.BasicArrayListUtil_Package; use org.allbinary.util.Basic
 package org.allbinary.media.audio.music.MusicManager_Package is
 
    package ARunnable_Package renames Standard.org.allbinary.thread.ARunnable_Package;
+   package Player_Package renames Standard.javax.microedition.media.Player_Package;
+   package PlayerListener_Package renames Standard.javax.microedition.media.PlayerListener_Package;
    package AvianUtil_Package renames Standard.org.allbinary.AvianUtil_Package;
    package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
    package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
@@ -70,7 +72,7 @@ package org.allbinary.media.audio.music.MusicManager_Package is
       songList : BasicArrayList_Access;
       currentSongSound : Sound_Access;
       nextSongSound : Sound_Access;
-      reset : Boolean;
+      reset_Field : Boolean;
       noDuration : Boolean;
       stopped : Boolean;
    end record;
@@ -95,8 +97,8 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.thread.ARunnable_Package; use org.allbinary.thread.ARunnable_Package;
---  with javax.microedition.media.Player_Package; use javax.microedition.media.Player_Package;
---  with javax.microedition.media.PlayerListener_Package; use javax.microedition.media.PlayerListener_Package;
+with javax.microedition.media.Player_Package; use javax.microedition.media.Player_Package;
+with javax.microedition.media.PlayerListener_Package; use javax.microedition.media.PlayerListener_Package;
 with org.allbinary.AvianUtil_Package; use org.allbinary.AvianUtil_Package;
 with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
@@ -116,6 +118,8 @@ with org.allbinary.util.BasicArrayListUtil_Package; use org.allbinary.util.Basic
 package org.allbinary.media.audio.music.MusicManagerPlayerListener_Package is
 
    package ARunnable_Package renames Standard.org.allbinary.thread.ARunnable_Package;
+   package Player_Package renames Standard.javax.microedition.media.Player_Package;
+   package PlayerListener_Package renames Standard.javax.microedition.media.PlayerListener_Package;
    package AvianUtil_Package renames Standard.org.allbinary.AvianUtil_Package;
    package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
    package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;

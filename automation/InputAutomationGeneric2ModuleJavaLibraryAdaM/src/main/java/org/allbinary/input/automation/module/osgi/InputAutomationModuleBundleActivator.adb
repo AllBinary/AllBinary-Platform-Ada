@@ -28,7 +28,7 @@ package body org.allbinary.input.automation.module.osgi.InputAutomationModuleBun
    procedure Initialize (This : in out InputAutomationModuleBundleActivator'Class) is
    begin
       Initialize_Fields (This);
-        This.init;
+        InputAutomationModuleBundleActivator'Class (This).init;
    end Initialize;
 
    function Create return InputAutomationModuleBundleActivator_Access is
@@ -71,10 +71,10 @@ package body org.allbinary.input.automation.module.osgi.InputAutomationModuleBun
    begin
         begin
             This.logUtil.putF (This.commonStrings.START, InputAutomationModuleBundleActivator_Access'(This'Unchecked_Access), To_Unbounded_String ("addModules"));
-            inputAutomationConfigurationModuleChangeListener := This.getInputAutomationConfigurationModuleChangeListener (context);
+            inputAutomationConfigurationModuleChangeListener := InputAutomationModuleBundleActivator'Class (This).getInputAutomationConfigurationModuleChangeListener (context);
             if (inputAutomationConfigurationModuleChangeListener) /= (null) then
-                for index in 0 .. (This.getInputAutomationModuleInterface'Length) - 1 loop
-                    inputAutomationConfigurationModuleChangeEvent := InputAutomationConfigurationUtil_Package.getChangeEvent (This.getInputAutomationModuleInterface (index));
+                for index in 0 .. (InputAutomationModuleBundleActivator'Class (This).getInputAutomationModuleInterface'Length) - 1 loop
+                    inputAutomationConfigurationModuleChangeEvent := InputAutomationConfigurationUtil_Package.getChangeEvent (InputAutomationModuleBundleActivator'Class (This).getInputAutomationModuleInterface (index));
                     inputAutomationConfigurationModuleChangeListener.onAdd (inputAutomationConfigurationModuleChangeEvent);
                 end loop;
             end if;
@@ -92,7 +92,7 @@ package body org.allbinary.input.automation.module.osgi.InputAutomationModuleBun
    procedure registerAsService (This : in out InputAutomationModuleBundleActivator; bundleContext_Param : access BundleContext_Package.BundleContext'Class) is
       bundleContext : constant BundleContext_Access := BundleContext_Access (bundleContext_Param);
    begin
-        OSGIActivatorUtil_Package.registerAsService (bundleContext, This.getServiceFactory, InputAutomationModuleServiceInterface_Package.InputAutomationModuleServiceInterface'Tag.getName);
+        OSGIActivatorUtil_Package.registerAsService (bundleContext, InputAutomationModuleBundleActivator'Class (This).getServiceFactory, InputAutomationModuleServiceInterface_Package.InputAutomationModuleServiceInterface'Tag.getName);
    end registerAsService;
 
    procedure removeModules (This : in out InputAutomationModuleBundleActivator; context_Param : access BundleContext_Package.BundleContext'Class) is
@@ -103,10 +103,10 @@ package body org.allbinary.input.automation.module.osgi.InputAutomationModuleBun
    begin
         begin
             This.logUtil.putF (This.commonStrings.START, InputAutomationModuleBundleActivator_Access'(This'Unchecked_Access), To_Unbounded_String ("removeModules"));
-            inputAutomationConfigurationModuleChangeListener := This.getInputAutomationConfigurationModuleChangeListener (context);
+            inputAutomationConfigurationModuleChangeListener := InputAutomationModuleBundleActivator'Class (This).getInputAutomationConfigurationModuleChangeListener (context);
             if (inputAutomationConfigurationModuleChangeListener) /= (null) then
-                for index in 0 .. (This.getInputAutomationModuleInterface'Length) - 1 loop
-                    inputAutomationConfigurationModuleChangeEvent := InputAutomationConfigurationUtil_Package.getChangeEvent (This.getInputAutomationModuleInterface (index));
+                for index in 0 .. (InputAutomationModuleBundleActivator'Class (This).getInputAutomationModuleInterface'Length) - 1 loop
+                    inputAutomationConfigurationModuleChangeEvent := InputAutomationConfigurationUtil_Package.getChangeEvent (InputAutomationModuleBundleActivator'Class (This).getInputAutomationModuleInterface (index));
                     inputAutomationConfigurationModuleChangeListener.onRemove (inputAutomationConfigurationModuleChangeEvent);
                 end loop;
             end if;
@@ -125,8 +125,8 @@ package body org.allbinary.input.automation.module.osgi.InputAutomationModuleBun
       context : constant BundleContext_Access := BundleContext_Access (context_Param);
    begin
         This.logUtil.putF (This.commonStrings.START, InputAutomationModuleBundleActivator_Access'(This'Unchecked_Access), This.commonStrings.START);
-        This.addModules (context);
-        This.registerAsService (context);
+        InputAutomationModuleBundleActivator'Class (This).addModules (context);
+        InputAutomationModuleBundleActivator'Class (This).registerAsService (context);
    end start;
 
    --  throws Exception
@@ -134,7 +134,7 @@ package body org.allbinary.input.automation.module.osgi.InputAutomationModuleBun
       context : constant BundleContext_Access := BundleContext_Access (context_Param);
    begin
         This.logUtil.putF (This.commonStrings.START, InputAutomationModuleBundleActivator_Access'(This'Unchecked_Access), To_Unbounded_String ("stop"));
-        This.removeModules (context);
+        InputAutomationModuleBundleActivator'Class (This).removeModules (context);
    end stop;
 
    function getInputAutomationModuleInterface (This : in out InputAutomationModuleBundleActivator) return InputAutomationModuleFactoryInterface_Access_Array_Access is

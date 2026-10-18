@@ -45,7 +45,7 @@ package body org.allbinary.animation.VectorRotationGenerator_Package is
    function getInstance (This : in out VectorRotationGenerator; vectorRotationInfo_Param : access VectorInfo_Package.VectorInfo'Class) return Integer_Array_Access_Array_Access_Array_Access is
       vectorRotationInfo : constant VectorInfo_Access := VectorInfo_Access (vectorRotationInfo_Param);
    begin
-        return This.getInstanceFrames (vectorRotationInfo.getWidth, vectorRotationInfo.getHeight, vectorRotationInfo.getPoints, vectorRotationInfo.getTotalFrames);
+        return VectorRotationGenerator'Class (This).getInstanceFrames (vectorRotationInfo.getWidth, vectorRotationInfo.getHeight, vectorRotationInfo.getPoints, vectorRotationInfo.getTotalFrames);
    end getInstance;
 
    function getInstanceFrames (This : in out VectorRotationGenerator; width : Integer; height : Integer; points : Integer_Array_Access_Array_Access; frames : Integer) return Integer_Array_Access_Array_Access_Array_Access is
@@ -71,7 +71,7 @@ package body org.allbinary.animation.VectorRotationGenerator_Package is
             end loop;
             index := 0;
             while (index) < (Integer (totalAngle)) loop
-                pointsBasicArrayList.add (This.getListAtAngle (width, height, pointBasicArrayList, This.angleFactory.getAt (index)));
+                pointsBasicArrayList.add (VectorRotationGenerator'Class (This).getListAtAngle (width, height, pointBasicArrayList, This.angleFactory.getAt (index)));
                 index := (index) + (angleIncrement);
             end loop;
             newPoints := This.vectorAnimationUtil.toAnimationArrayFromListOfPointListWithPointsPerFrame (pointsBasicArrayList, pointBasicArrayList.size);

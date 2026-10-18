@@ -41,7 +41,7 @@ package body org.allbinary.business.user.CreateUserFactory_Package is
       role : UserRole_Access;
    begin
         if (hashMap) /= (null) then
-            roleString := Unbounded_String (hashMap.get (UserRoleData_Package.NAME.toString));
+            roleString := Java_Unbox (hashMap.get (Java_Box (UserRoleData_Package.NAME.toString)));
             if not (StringValidationUtil_Package.getInstance.isEmpty (roleString)) then
                 role := UserRoleB_Package.getRole (roleString);
                 return role.getUserFactory.getInstance (hashMap);

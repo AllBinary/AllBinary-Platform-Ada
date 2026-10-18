@@ -67,10 +67,10 @@ package body org.allbinary.business.user.commerce.inventory.order.OrderHistory_P
         This.shippingCost := orderHistory.getShippingCost;
         This.taxes := orderHistory.getTaxes;
         This.total := orderHistory.getTotal;
-        Order (This).setUserComments (Unbounded_String (orderHistory.getUserComments));
-        Order (This).setUserCancelComments (Unbounded_String (orderHistory.getUserCancelComments));
-        Order (This).setStoreComments (Unbounded_String (orderHistory.getStoreComments));
-        Order (This).setStoreCancelComments (Unbounded_String (orderHistory.getStoreCancelComments));
+        Order (This).setUserComments (Java_Unbox (orderHistory.getUserComments));
+        Order (This).setUserCancelComments (Java_Unbox (orderHistory.getUserCancelComments));
+        Order (This).setStoreComments (Java_Unbox (orderHistory.getStoreComments));
+        Order (This).setStoreCancelComments (Java_Unbox (orderHistory.getStoreCancelComments));
    end Initialize;
 
    function Create (basketInterface_Param : access BasketInterface_Package.BasketInterface'Class; orderHistory_Param : access OrderHistory_Package.OrderHistory'Class) return OrderHistory_Access is
@@ -84,25 +84,25 @@ package body org.allbinary.business.user.commerce.inventory.order.OrderHistory_P
       basketInterface : constant BasketInterface_Access := BasketInterface_Access (basketInterface_Param);
       orderHistoryHashMap : constant HashMap_Access := HashMap_Access (orderHistoryHashMap_Param);
    begin
-        Order_Package.Initialize (This, Unbounded_String (orderHistoryHashMap.get (StoreFrontData_Package.getInstance.NAME)), basketInterface, Unbounded_String (orderHistoryHashMap.get (OrderData_Package.ID)), Unbounded_String (orderHistoryHashMap.get (ShippingMethodData_Package.NAME)), Unbounded_String (orderHistoryHashMap.get (EntryData_Package.getInstance.SPECIAL)), Unbounded_String (orderHistoryHashMap.get (PaymentData_Package.METHOD)));
+        Order_Package.Initialize (This, Java_Unbox (orderHistoryHashMap.get (StoreFrontData_Package.getInstance.NAME)), basketInterface, Java_Unbox (orderHistoryHashMap.get (OrderData_Package.ID)), Java_Unbox (orderHistoryHashMap.get (ShippingMethodData_Package.NAME)), Java_Unbox (orderHistoryHashMap.get (EntryData_Package.getInstance.SPECIAL)), Java_Unbox (orderHistoryHashMap.get (PaymentData_Package.METHOD)));
         Initialize_Fields (This);
-        This.shippingAddress := StreetAddress_Package.Create (Unbounded_String (orderHistoryHashMap.get (ShippingAddressData_Package.NAME)), Unbounded_String (orderHistoryHashMap.get (ShippingAddressData_Package.STREET)), Unbounded_String (orderHistoryHashMap.get (ShippingAddressData_Package.CITY)), Unbounded_String (orderHistoryHashMap.get (ShippingAddressData_Package.STATE)), Unbounded_String (orderHistoryHashMap.get (ShippingAddressData_Package.CODE)), Unbounded_String (orderHistoryHashMap.get (ShippingAddressData_Package.COUNTRY)));
-        This.billingAddress := StreetAddress_Package.Create (Unbounded_String (orderHistoryHashMap.get (BillingAddressData_Package.NAME)), Unbounded_String (orderHistoryHashMap.get (BillingAddressData_Package.STREET)), Unbounded_String (orderHistoryHashMap.get (BillingAddressData_Package.CITY)), Unbounded_String (orderHistoryHashMap.get (BillingAddressData_Package.STATE)), Unbounded_String (orderHistoryHashMap.get (BillingAddressData_Package.CODE)), Unbounded_String (orderHistoryHashMap.get (BillingAddressData_Package.COUNTRY)));
+        This.shippingAddress := StreetAddress_Package.Create (Java_Unbox (orderHistoryHashMap.get (ShippingAddressData_Package.NAME)), Java_Unbox (orderHistoryHashMap.get (ShippingAddressData_Package.STREET)), Java_Unbox (orderHistoryHashMap.get (ShippingAddressData_Package.CITY)), Java_Unbox (orderHistoryHashMap.get (ShippingAddressData_Package.STATE)), Java_Unbox (orderHistoryHashMap.get (ShippingAddressData_Package.CODE)), Java_Unbox (orderHistoryHashMap.get (ShippingAddressData_Package.COUNTRY)));
+        This.billingAddress := StreetAddress_Package.Create (Java_Unbox (orderHistoryHashMap.get (BillingAddressData_Package.NAME)), Java_Unbox (orderHistoryHashMap.get (BillingAddressData_Package.STREET)), Java_Unbox (orderHistoryHashMap.get (BillingAddressData_Package.CITY)), Java_Unbox (orderHistoryHashMap.get (BillingAddressData_Package.STATE)), Java_Unbox (orderHistoryHashMap.get (BillingAddressData_Package.CODE)), Java_Unbox (orderHistoryHashMap.get (BillingAddressData_Package.COUNTRY)));
         This.payment := Payment_Package.Create (orderHistoryHashMap);
-        This.userName := Unbounded_String (orderHistoryHashMap.get (UserData_Package.USERNAME));
-        This.orderDate := Unbounded_String (orderHistoryHashMap.get (OrderHistoryData_Package.ORDERDATE));
-        This.shipDate := Unbounded_String (orderHistoryHashMap.get (OrderHistoryData_Package.SHIPPEDDATE));
-        This.transDate := Unbounded_String (orderHistoryHashMap.get (OrderHistoryData_Package.TRANSDATE));
-        This.cancelDate := Unbounded_String (orderHistoryHashMap.get (OrderHistoryData_Package.CANCELDATE));
-        This.status := Unbounded_String (orderHistoryHashMap.get (OrderHistoryData_Package.STATUS));
-        This.subTotal := Money_Package.Create (Unbounded_String (orderHistoryHashMap.get (OrderHistoryData_Package.SUBTOTAL)));
-        This.total := Money_Package.Create (Unbounded_String (orderHistoryHashMap.get (OrderHistoryData_Package.TOTAL)));
-        This.shippingCost := Money_Package.Create (Unbounded_String (orderHistoryHashMap.get (OrderHistoryData_Package.SHIPPINGCOST)));
-        This.taxes := Money_Package.Create (Unbounded_String (orderHistoryHashMap.get (OrderHistoryData_Package.TAX)));
-        Order (This).setUserComments (Unbounded_String (orderHistoryHashMap.get (OrderData_Package.CUSTOMERCOMMENT)));
-        Order (This).setUserCancelComments (Unbounded_String (orderHistoryHashMap.get (OrderData_Package.CUSTOMERCANCELCOMMENT)));
-        Order (This).setStoreComments (Unbounded_String (orderHistoryHashMap.get (OrderData_Package.STORECOMMENT)));
-        Order (This).setStoreCancelComments (Unbounded_String (orderHistoryHashMap.get (OrderData_Package.STORECANCELCOMMENT)));
+        This.userName := Java_Unbox (orderHistoryHashMap.get (UserData_Package.USERNAME));
+        This.orderDate := Java_Unbox (orderHistoryHashMap.get (OrderHistoryData_Package.ORDERDATE));
+        This.shipDate := Java_Unbox (orderHistoryHashMap.get (OrderHistoryData_Package.SHIPPEDDATE));
+        This.transDate := Java_Unbox (orderHistoryHashMap.get (OrderHistoryData_Package.TRANSDATE));
+        This.cancelDate := Java_Unbox (orderHistoryHashMap.get (OrderHistoryData_Package.CANCELDATE));
+        This.status := Java_Unbox (orderHistoryHashMap.get (OrderHistoryData_Package.STATUS));
+        This.subTotal := Money_Package.Create (Java_Unbox (orderHistoryHashMap.get (OrderHistoryData_Package.SUBTOTAL)));
+        This.total := Money_Package.Create (Java_Unbox (orderHistoryHashMap.get (OrderHistoryData_Package.TOTAL)));
+        This.shippingCost := Money_Package.Create (Java_Unbox (orderHistoryHashMap.get (OrderHistoryData_Package.SHIPPINGCOST)));
+        This.taxes := Money_Package.Create (Java_Unbox (orderHistoryHashMap.get (OrderHistoryData_Package.TAX)));
+        Order (This).setUserComments (Java_Unbox (orderHistoryHashMap.get (OrderData_Package.CUSTOMERCOMMENT)));
+        Order (This).setUserCancelComments (Java_Unbox (orderHistoryHashMap.get (OrderData_Package.CUSTOMERCANCELCOMMENT)));
+        Order (This).setStoreComments (Java_Unbox (orderHistoryHashMap.get (OrderData_Package.STORECOMMENT)));
+        Order (This).setStoreCancelComments (Java_Unbox (orderHistoryHashMap.get (OrderData_Package.STORECANCELCOMMENT)));
    end Initialize;
 
    function Create (basketInterface_Param : access BasketInterface_Package.BasketInterface'Class; orderHistoryHashMap_Param : access HashMap_Package.HashMap'Class) return OrderHistory_Access is
@@ -253,20 +253,20 @@ package body org.allbinary.business.user.commerce.inventory.order.OrderHistory_P
       hashMap : HashMap_Access;
    begin
         hashMap := StdUtil_Package.getInstance.createHashMap;
-        hashMap.put (UserData_Package.USERNAME, This.userName);
-        hashMap.put (OrderHistoryData_Package.ORDERDATE, This.orderDate);
-        hashMap.put (OrderHistoryData_Package.SHIPPEDDATE, This.shipDate);
-        hashMap.put (OrderHistoryData_Package.TRANSDATE, This.transDate);
-        hashMap.put (OrderHistoryData_Package.CANCELDATE, This.cancelDate);
-        hashMap.put (OrderHistoryData_Package.ORDERDATEFORMATTED, Date_Package.Create (This.orderDate.longValue).toString);
-        hashMap.put (OrderHistoryData_Package.SHIPPEDDATEFORMATTED, Date_Package.Create (This.shipDate.longValue).toString);
-        hashMap.put (OrderHistoryData_Package.TRANSDATEFORMATTED, Date_Package.Create (This.transDate.longValue).toString);
-        hashMap.put (OrderHistoryData_Package.CANCELDATEFORMATTED, Date_Package.Create (This.cancelDate.longValue).toString);
-        hashMap.put (OrderHistoryData_Package.STATUS, This.status);
-        hashMap.put (OrderHistoryData_Package.SUBTOTAL, This.subTotal.toString);
-        hashMap.put (OrderHistoryData_Package.TOTAL, This.total.toString);
-        hashMap.put (OrderHistoryData_Package.SHIPPINGCOST, This.shippingCost.toString);
-        hashMap.put (OrderHistoryData_Package.TAX, This.taxes.toString);
+        hashMap.put (UserData_Package.USERNAME, Java_Box (This.userName));
+        hashMap.put (OrderHistoryData_Package.ORDERDATE, Java_Box (This.orderDate));
+        hashMap.put (OrderHistoryData_Package.SHIPPEDDATE, Java_Box (This.shipDate));
+        hashMap.put (OrderHistoryData_Package.TRANSDATE, Java_Box (This.transDate));
+        hashMap.put (OrderHistoryData_Package.CANCELDATE, Java_Box (This.cancelDate));
+        hashMap.put (OrderHistoryData_Package.ORDERDATEFORMATTED, Java_Box (Date_Package.Create (This.orderDate.longValue).toString));
+        hashMap.put (OrderHistoryData_Package.SHIPPEDDATEFORMATTED, Java_Box (Date_Package.Create (This.shipDate.longValue).toString));
+        hashMap.put (OrderHistoryData_Package.TRANSDATEFORMATTED, Java_Box (Date_Package.Create (This.transDate.longValue).toString));
+        hashMap.put (OrderHistoryData_Package.CANCELDATEFORMATTED, Java_Box (Date_Package.Create (This.cancelDate.longValue).toString));
+        hashMap.put (OrderHistoryData_Package.STATUS, Java_Box (This.status));
+        hashMap.put (OrderHistoryData_Package.SUBTOTAL, Java_Box (This.subTotal.toString));
+        hashMap.put (OrderHistoryData_Package.TOTAL, Java_Box (This.total.toString));
+        hashMap.put (OrderHistoryData_Package.SHIPPINGCOST, Java_Box (This.shippingCost.toString));
+        hashMap.put (OrderHistoryData_Package.TAX, Java_Box (This.taxes.toString));
         return hashMap;
    end toHashMap;
 
@@ -284,7 +284,7 @@ package body org.allbinary.business.user.commerce.inventory.order.OrderHistory_P
       value : Unbounded_String;
       i : Integer;
    begin
-        hashMap := This.toHashMap;
+        hashMap := OrderHistory'Class (This).toHashMap;
         keySet := hashMap.keySet;
         keyArray := keySet.toArray;
         size := keyArray'Length;
@@ -298,8 +298,8 @@ package body org.allbinary.business.user.commerce.inventory.order.OrderHistory_P
         node.appendChild (shippingAddressNode);
         node.appendChild (This.payment.toXmlNode (document));
         for i in 0 .. (size) - 1 loop
-            name := Unbounded_String (keyArray (i));
-            value := Unbounded_String (hashMap.get (name));
+            name := Java_Unbox (keyArray (i));
+            value := Java_Unbox (hashMap.get (Java_Box (name)));
             value := StringUtil_Package.getInstance.getNonNull (value);
             node.appendChild (ModDomHelper_Package.createNameValueNodes (document, name, value));
         end loop;

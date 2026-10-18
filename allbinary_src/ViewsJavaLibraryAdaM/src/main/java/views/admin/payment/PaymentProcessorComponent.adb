@@ -41,18 +41,18 @@ package body views.admin.payment.PaymentProcessorComponent_Package is
       paymentProcessorInterface : PaymentProcessorInterface_Access;
       httpTransformInfoInterface : TransformInfoHttpInterface_Access;
    begin
-        paymentProcessorInterface := PaymentProcessorInterfaceFactory_Package.getInstance.getInstance (This.getTransformInfoInterface);
+        paymentProcessorInterface := PaymentProcessorInterfaceFactory_Package.getInstance.getInstance (PaymentProcessorComponent'Class (This).getTransformInfoInterface);
         paymentProcessorInterface.process;
-        httpTransformInfoInterface := TransformInfoHttpInterface_Access (This.getTransformInfoInterface);
+        httpTransformInfoInterface := TransformInfoHttpInterface_Access (PaymentProcessorComponent'Class (This).getTransformInfoInterface);
         httpTransformInfoInterface.getWeblisketSession.removeBasket;
-        This.addDomNodeInterface (DomNodeInterface_Access (paymentProcessorInterface));
+        PaymentProcessorComponent'Class (This).addDomNodeInterface (DomNodeInterface_Access (paymentProcessorInterface));
    end addDomNodeInterfaces;
 
    --  throws Exception
    function view (This : in out PaymentProcessorComponent) return Unbounded_String is
    begin
         begin
-            This.addDomNodeInterfaces;
+            PaymentProcessorComponent'Class (This).addDomNodeInterfaces;
             return HttpStoreComponentView (This).view;
         exception
             when Java_Occurrence : others =>

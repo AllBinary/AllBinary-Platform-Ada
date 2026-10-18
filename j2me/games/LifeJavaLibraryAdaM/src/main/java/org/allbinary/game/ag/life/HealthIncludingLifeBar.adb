@@ -47,7 +47,7 @@ package body org.allbinary.game.ag.life.HealthIncludingLifeBar_Package is
         This.life := life;
         This.healthInterface := healthInterface;
         This.healthInterface.addListener (HealthIncludingLifeBar_Access'(This'Unchecked_Access));
-        This.onHealthChange;
+        HealthIncludingLifeBar'Class (This).onHealthChange;
    end Initialize;
 
    function Create (layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; life_Param : access Life_Package.Life'Class; healthInterface_Param : access Health_Package.Health'Class; animationInterface_Param : access HealthBarAnimation_Package.HealthBarAnimation'Class; direction : Integer) return HealthIncludingLifeBar_Access is

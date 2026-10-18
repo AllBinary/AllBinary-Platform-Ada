@@ -27,7 +27,7 @@ package body org.allbinary.data.tables.user.commerce.money.payment.gateway.Payme
    begin
         AbSqlBean_Package.Initialize (This, UserDbInitInfo_Package.Create);
         Initialize_Fields (This);
-        This.setTableName (This.tableName);
+        PaymentGatewayEntity'Class (This).setTableName (This.tableName);
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
             This.logUtil.putF (This.commonStrings.CONSTRUCTOR, PaymentGatewayEntity_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         end if;
@@ -85,8 +85,8 @@ package body org.allbinary.data.tables.user.commerce.money.payment.gateway.Payme
             time := Java_New_String (calendar.getTimeInMillis.toString);
             paymentGatewayInterface.setLastModified (time);
             whereKeyValuePairs := StdUtil_Package.getInstance.createHashMap;
-            whereKeyValuePairs.put (StoreFrontData_Package.getInstance.NAME.toString, paymentGatewayInterface.getStoreName);
-            whereKeyValuePairs.put (PaymentGatewayData_Package.NAME.toString, paymentGatewayInterface.getName);
+            whereKeyValuePairs.put (Java_Box (StoreFrontData_Package.getInstance.NAME.toString), paymentGatewayInterface.getStoreName);
+            whereKeyValuePairs.put (Java_Box (PaymentGatewayData_Package.NAME.toString), Java_Box (paymentGatewayInterface.getName));
             if (whereKeyValuePairs.get (EntryData_Package.getInstance.TIMECREATED)) /= (null) then
                 Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Don't update TimeCreated for update")));
             end if;
@@ -128,33 +128,33 @@ package body org.allbinary.data.tables.user.commerce.money.payment.gateway.Payme
         begin
             paymentGatewayHashMap := StdUtil_Package.getInstance.createHashMap;
             whereKeyAndValue := StdUtil_Package.getInstance.createHashMap;
-            whereKeyAndValue.put (StoreFrontData_Package.getInstance.NAME.toString, storeName);
-            whereKeyAndValue.put (PaymentGatewayData_Package.NAME.toString, paymentType.getName);
+            whereKeyAndValue.put (Java_Box (StoreFrontData_Package.getInstance.NAME.toString), Java_Box (storeName));
+            whereKeyAndValue.put (Java_Box (PaymentGatewayData_Package.NAME.toString), Java_Box (paymentType.getName));
             paymentGatewayHashMap := AbSqlBean (This).getRow (whereKeyAndValue);
             if (paymentGatewayHashMap) /= (null) then
-                userName := Unbounded_String (paymentGatewayHashMap.get (UserData_Package.USERNAME.toString));
-                password := Unbounded_String (paymentGatewayHashMap.get (UserData_Package.PASSWORD.toString));
-                special1 := Unbounded_String (paymentGatewayHashMap.get (PaymentGatewayData_Package.SPECIAL1.toString));
-                special2 := Unbounded_String (paymentGatewayHashMap.get (PaymentGatewayData_Package.SPECIAL2.toString));
-                special3 := Unbounded_String (paymentGatewayHashMap.get (PaymentGatewayData_Package.SPECIAL3.toString));
-                special4 := Unbounded_String (paymentGatewayHashMap.get (PaymentGatewayData_Package.SPECIAL4.toString));
-                special5 := Unbounded_String (paymentGatewayHashMap.get (PaymentGatewayData_Package.SPECIAL5.toString));
-                special6 := Unbounded_String (paymentGatewayHashMap.get (PaymentGatewayData_Package.SPECIAL6.toString));
-                special7 := Unbounded_String (paymentGatewayHashMap.get (PaymentGatewayData_Package.SPECIAL7.toString));
-                special8 := Unbounded_String (paymentGatewayHashMap.get (PaymentGatewayData_Package.SPECIAL8.toString));
-                special9 := Unbounded_String (paymentGatewayHashMap.get (PaymentGatewayData_Package.SPECIAL9.toString));
+                userName := Java_Unbox (paymentGatewayHashMap.get (Java_Box (UserData_Package.USERNAME.toString)));
+                password := Java_Unbox (paymentGatewayHashMap.get (Java_Box (UserData_Package.PASSWORD.toString)));
+                special1 := Java_Unbox (paymentGatewayHashMap.get (Java_Box (PaymentGatewayData_Package.SPECIAL1.toString)));
+                special2 := Java_Unbox (paymentGatewayHashMap.get (Java_Box (PaymentGatewayData_Package.SPECIAL2.toString)));
+                special3 := Java_Unbox (paymentGatewayHashMap.get (Java_Box (PaymentGatewayData_Package.SPECIAL3.toString)));
+                special4 := Java_Unbox (paymentGatewayHashMap.get (Java_Box (PaymentGatewayData_Package.SPECIAL4.toString)));
+                special5 := Java_Unbox (paymentGatewayHashMap.get (Java_Box (PaymentGatewayData_Package.SPECIAL5.toString)));
+                special6 := Java_Unbox (paymentGatewayHashMap.get (Java_Box (PaymentGatewayData_Package.SPECIAL6.toString)));
+                special7 := Java_Unbox (paymentGatewayHashMap.get (Java_Box (PaymentGatewayData_Package.SPECIAL7.toString)));
+                special8 := Java_Unbox (paymentGatewayHashMap.get (Java_Box (PaymentGatewayData_Package.SPECIAL8.toString)));
+                special9 := Java_Unbox (paymentGatewayHashMap.get (Java_Box (PaymentGatewayData_Package.SPECIAL9.toString)));
                 superCrypt := SuperCrypt_Package.Create (PaymentGatewayData_Package.CRYPTNUM);
-                paymentGatewayHashMap.put (UserData_Package.USERNAME.toString, superCrypt.decrypt (userName));
-                paymentGatewayHashMap.put (UserData_Package.PASSWORD.toString, superCrypt.decrypt (password));
-                paymentGatewayHashMap.put (PaymentGatewayData_Package.SPECIAL1.toString, superCrypt.decrypt (special1));
-                paymentGatewayHashMap.put (PaymentGatewayData_Package.SPECIAL2.toString, superCrypt.decrypt (special2));
-                paymentGatewayHashMap.put (PaymentGatewayData_Package.SPECIAL3.toString, superCrypt.decrypt (special3));
-                paymentGatewayHashMap.put (PaymentGatewayData_Package.SPECIAL4.toString, superCrypt.decrypt (special4));
-                paymentGatewayHashMap.put (PaymentGatewayData_Package.SPECIAL5.toString, superCrypt.decrypt (special5));
-                paymentGatewayHashMap.put (PaymentGatewayData_Package.SPECIAL6.toString, superCrypt.decrypt (special6));
-                paymentGatewayHashMap.put (PaymentGatewayData_Package.SPECIAL7.toString, superCrypt.decrypt (special7));
-                paymentGatewayHashMap.put (PaymentGatewayData_Package.SPECIAL8.toString, superCrypt.decrypt (special8));
-                paymentGatewayHashMap.put (PaymentGatewayData_Package.SPECIAL9.toString, superCrypt.decrypt (special9));
+                paymentGatewayHashMap.put (Java_Box (UserData_Package.USERNAME.toString), superCrypt.decrypt (userName));
+                paymentGatewayHashMap.put (Java_Box (UserData_Package.PASSWORD.toString), superCrypt.decrypt (password));
+                paymentGatewayHashMap.put (Java_Box (PaymentGatewayData_Package.SPECIAL1.toString), superCrypt.decrypt (special1));
+                paymentGatewayHashMap.put (Java_Box (PaymentGatewayData_Package.SPECIAL2.toString), superCrypt.decrypt (special2));
+                paymentGatewayHashMap.put (Java_Box (PaymentGatewayData_Package.SPECIAL3.toString), superCrypt.decrypt (special3));
+                paymentGatewayHashMap.put (Java_Box (PaymentGatewayData_Package.SPECIAL4.toString), superCrypt.decrypt (special4));
+                paymentGatewayHashMap.put (Java_Box (PaymentGatewayData_Package.SPECIAL5.toString), superCrypt.decrypt (special5));
+                paymentGatewayHashMap.put (Java_Box (PaymentGatewayData_Package.SPECIAL6.toString), superCrypt.decrypt (special6));
+                paymentGatewayHashMap.put (Java_Box (PaymentGatewayData_Package.SPECIAL7.toString), superCrypt.decrypt (special7));
+                paymentGatewayHashMap.put (Java_Box (PaymentGatewayData_Package.SPECIAL8.toString), superCrypt.decrypt (special8));
+                paymentGatewayHashMap.put (Java_Box (PaymentGatewayData_Package.SPECIAL9.toString), superCrypt.decrypt (special9));
                 paymentGatewayInterface := PaymentGatewayInterfaceFactory_Package.Create.getInstance (paymentGatewayHashMap);
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
                     This.logUtil.putF (This.commonStrings.SUCCESS, PaymentGatewayEntity_Access'(This'Unchecked_Access), To_Unbounded_String ("getPaymentGatewayInterface()"));
@@ -191,7 +191,7 @@ package body org.allbinary.data.tables.user.commerce.money.payment.gateway.Payme
                 paymentGatewayVector := BasicArrayListD_Package.Create;
                 size := paymentGatewayNameVector.size;
                 for i in 0 .. (size) - 1 loop
-                    paymentTypeString := Unbounded_String (paymentGatewayNameVector.get (i));
+                    paymentTypeString := Java_Unbox (paymentGatewayNameVector.get (i));
                     paymentType := BasicPaymentTypeUtil_Package.getInstance.get (paymentTypeString);
                     paymentGatewayVector.add (paymentType);
                 end loop;
@@ -221,8 +221,8 @@ package body org.allbinary.data.tables.user.commerce.money.payment.gateway.Payme
    begin
         begin
             whereHashMap := StdUtil_Package.getInstance.createHashMap;
-            whereHashMap.put (StoreFrontData_Package.getInstance.NAME.toString, storeName);
-            whereHashMap.put (PaymentGatewayData_Package.NAME.toString, paymentType.getName);
+            whereHashMap.put (Java_Box (StoreFrontData_Package.getInstance.NAME.toString), Java_Box (storeName));
+            whereHashMap.put (Java_Box (PaymentGatewayData_Package.NAME.toString), Java_Box (paymentType.getName));
             AbSqlBean (This).deleteWhere (whereHashMap);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
                 This.logUtil.putF (This.commonStrings.SUCCESS, PaymentGatewayEntity_Access'(This'Unchecked_Access), To_Unbounded_String ("remove"));
@@ -324,7 +324,7 @@ package body org.allbinary.data.tables.user.commerce.money.payment.gateway.Payme
 
    function createTable (This : in out PaymentGatewayEntity) return Unbounded_String is
    begin
-        return AbSqlBean (This).createTable (This.createTableStatement);
+        return AbSqlBean (This).createTable (PaymentGatewayEntity'Class (This).createTableStatement);
    end createTable;
 
    function dropTable (This : in out PaymentGatewayEntity) return Unbounded_String is

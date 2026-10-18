@@ -26,8 +26,8 @@ package body admin.tags.BasicGroupItemsTag_Package is
    begin
       TableTag_Package.Initialize (This);
       Initialize_Fields (This);
-        This.setTagHelperFactory (BasicGroupItemsHelperFactory_Package.Create);
-        This.setTagRequestHelperFactory (BasicGroupItemsRequestHelperFactory_Package.Create);
+        BasicGroupItemsTag'Class (This).setTagHelperFactory (BasicGroupItemsHelperFactory_Package.Create);
+        BasicGroupItemsTag'Class (This).setTagRequestHelperFactory (BasicGroupItemsRequestHelperFactory_Package.Create);
    end Initialize;
 
    function Create return BasicGroupItemsTag_Access is

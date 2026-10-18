@@ -27,7 +27,7 @@ package body org.allbinary.input.automation.AbstractInputRobot_Package is
       helpSet : constant HelpSet_Access := HelpSet_Access (helpSet_Param);
    begin
       Initialize_Fields (This);
-        This.setHelpSet (helpSet);
+        AbstractInputRobot'Class (This).setHelpSet (helpSet);
    end Initialize;
 
    function Create (helpSet_Param : access HelpSet_Package.HelpSet'Class) return AbstractInputRobot_Access is
@@ -45,7 +45,7 @@ package body org.allbinary.input.automation.AbstractInputRobot_Package is
    procedure mouseMove (This : in out AbstractInputRobot; point_Param : access Point_Package.Point'Class) is
       point : constant Point_Access := Point_Access (point_Param);
    begin
-        This.mouseMove (point.x, point.y);
+        AbstractInputRobot'Class (This).mouseMove (point.x, point.y);
         This.logUtil.putF (To_Unbounded_String ("Moved Mouse To: x: ") & Java_Image (point.x) & To_Unbounded_String (" y: ") & Java_Image (point.y), AbstractInputRobot_Access'(This'Unchecked_Access), To_Unbounded_String ("moveMouse"));
    end mouseMove;
 
@@ -55,7 +55,7 @@ package body org.allbinary.input.automation.AbstractInputRobot_Package is
       point : Point_Access;
    begin
         point := PointHelper_Package.getCenterPoint (rectangle);
-        This.mouseMove ((point.x) + (x), (point.y) + (y));
+        AbstractInputRobot'Class (This).mouseMove ((point.x) + (x), (point.y) + (y));
         This.logUtil.putF (To_Unbounded_String ("Moved Mouse To: x: ") & Java_Image (point.x) & To_Unbounded_String (" y: ") & Java_Image (point.y) & To_Unbounded_String (" in the middle of: ") & Java_Image (rectangle), AbstractInputRobot_Access'(This'Unchecked_Access), To_Unbounded_String ("moveMouseToTarget"));
    end mouseMoveToTarget;
 
@@ -63,7 +63,7 @@ package body org.allbinary.input.automation.AbstractInputRobot_Package is
    procedure mouseMoveToTarget (This : in out AbstractInputRobot; rectangle_Param : access Rectangle_Package.Rectangle'Class) is
       rectangle : constant Rectangle_Access := Rectangle_Access (rectangle_Param);
    begin
-        This.mouseMoveToTarget (rectangle, 0, 0);
+        AbstractInputRobot'Class (This).mouseMoveToTarget (rectangle, 0, 0);
    end mouseMoveToTarget;
 
    procedure mouseMove (This : in out AbstractInputRobot; x : Integer; y : Integer) is

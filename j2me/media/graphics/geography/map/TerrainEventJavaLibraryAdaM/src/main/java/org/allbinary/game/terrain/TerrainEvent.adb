@@ -27,7 +27,7 @@ package body org.allbinary.game.terrain.TerrainEvent_Package is
    begin
         AllBinaryEventObject_Package.Initialize (This, basicTerrainInfo);
         Initialize_Fields (This);
-        This.setBasicTerrainInfo (This.basicTerrainInfo);
+        TerrainEvent'Class (This).setBasicTerrainInfo (This.basicTerrainInfo);
    end Initialize;
 
    function Create (basicTerrainInfo_Param : access Java_Object'Class) return TerrainEvent_Access is

@@ -27,8 +27,8 @@ package body org.allbinary.util.CircularIndexUtil_Package is
    procedure Initialize (This : in out CircularIndexUtil'Class; index : Integer; size : Integer) is
    begin
       Initialize_Fields (This);
-        This.setSize (size);
-        This.setIndex (index);
+        CircularIndexUtil'Class (This).setSize (size);
+        CircularIndexUtil'Class (This).setIndex (index);
    end Initialize;
 
    function Create (index : Integer; size : Integer) return CircularIndexUtil_Access is

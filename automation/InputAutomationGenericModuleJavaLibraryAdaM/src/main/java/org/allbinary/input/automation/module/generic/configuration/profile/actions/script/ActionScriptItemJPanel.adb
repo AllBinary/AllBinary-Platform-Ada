@@ -30,7 +30,7 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
    begin
       JPanel_Package.Initialize (This);
       Initialize_Fields (This);
-        This.initComponents;
+        ActionScriptItemJPanel'Class (This).initComponents;
    end Initialize;
 
    function Create return ActionScriptItemJPanel_Access is
@@ -114,7 +114,7 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
         This.removeJPanel.setLayout (GridLayout_Package.Create (1, 1));
         This.removeJPanel.setMinimumSize (Dimension_Package.Create (30, 20));
         layout := GroupLayout_Package.Create (ActionScriptItemJPanel_Access'(This'Unchecked_Access));
-        This.setLayout (layout);
+        ActionScriptItemJPanel'Class (This).setLayout (layout);
         layout.setHorizontalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (layout.createSequentialGroup.addComponent (This.scriptItemJPanel, javax_Package.swing.GroupLayout.PREFERRED_SIZE, 167, javax_Package.swing.GroupLayout.PREFERRED_SIZE).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent (This.removeJPanel, javax_Package.swing.GroupLayout.DEFAULT_SIZE, 56, Short_Package.MAX_VALUE)).addComponent (This.newActionScriptInputJPanel, javax_Package.swing.GroupLayout.DEFAULT_SIZE, 229, Short_Package.MAX_VALUE).addComponent (This.newActionScriptConditionJPanel, javax_Package.swing.GroupLayout.DEFAULT_SIZE, 229, Short_Package.MAX_VALUE).addComponent (This.childActionScriptConditionJPanel, javax_Package.swing.GroupLayout.DEFAULT_SIZE, javax_Package.swing.GroupLayout.DEFAULT_SIZE, Short_Package.MAX_VALUE));
         layout.setVerticalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (layout.createSequentialGroup.addGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addComponent (This.scriptItemJPanel, javax_Package.swing.GroupLayout.DEFAULT_SIZE, 31, Short_Package.MAX_VALUE).addComponent (This.removeJPanel, javax_Package.swing.GroupLayout.Alignment.TRAILING, javax_Package.swing.GroupLayout.DEFAULT_SIZE, 31, Short_Package.MAX_VALUE)).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent (This.childActionScriptConditionJPanel, javax_Package.swing.GroupLayout.PREFERRED_SIZE, javax_Package.swing.GroupLayout.DEFAULT_SIZE, javax_Package.swing.GroupLayout.PREFERRED_SIZE).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent (This.newActionScriptConditionJPanel, javax_Package.swing.GroupLayout.PREFERRED_SIZE, 28, javax_Package.swing.GroupLayout.PREFERRED_SIZE).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent (This.newActionScriptInputJPanel, javax_Package.swing.GroupLayout.PREFERRED_SIZE, 30, javax_Package.swing.GroupLayout.PREFERRED_SIZE)));
    end initComponents;

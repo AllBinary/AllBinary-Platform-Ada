@@ -20,7 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.util.HashMap_Package; use java.util.HashMap_Package;
+with java.util.HashMap_Package; use java.util.HashMap_Package;
 --  with javax.servlet.http.HttpServletRequest_Package; use javax.servlet.http.HttpServletRequest_Package;
 with org.allbinary.business.user.username.UserName_Package; use org.allbinary.business.user.username.UserName_Package;
 with org.allbinary.data.tables.user.UserEntityFactory_Package; use org.allbinary.data.tables.user.UserEntityFactory_Package;
@@ -35,6 +35,7 @@ with views.admin.user.UserView_Package; use views.admin.user.UserView_Package;
 
 package views.admin.user.EditValidationUserView_Package is
 
+   package HashMap_Package renames Standard.java.util.HashMap_Package;
    package UserName_Package renames Standard.org.allbinary.business.user.username.UserName_Package;
    package UserEntityFactory_Package renames Standard.org.allbinary.data.tables.user.UserEntityFactory_Package;
    package RequestParams_Package renames Standard.org.allbinary.logic.communication.http.request.RequestParams_Package;

@@ -59,7 +59,7 @@ package body org.allbinary.game.input.form.VisibleCellPositionsSingleton_Package
         This.stationaryVisibleCellPositions := new Short_Integer_Array_Access_Array'(0 .. (rows) - 1 => new Short_Integer_Array'(0 .. (columns) - 1 => 0));
         This.visibleCellPositions := new Short_Integer_Array_Access_Array'(0 .. (rows) - 1 => new Short_Integer_Array'(0 .. (columns) - 1 => 0));
         This.currentlyVisibleCellPositions := new Short_Integer_Array_Access_Array'(0 .. (rows) - 1 => new Short_Integer_Array'(0 .. (columns) - 1 => 0));
-        This.setSimpleTiledLayer (simpleTiledLayer);
+        VisibleCellPositionsSingleton'Class (This).setSimpleTiledLayer (simpleTiledLayer);
    end init;
 
    procedure onEvent (This : in out VisibleCellPositionsSingleton; eventObject_Param : access AllBinaryEventObject_Package.AllBinaryEventObject'Class) is
@@ -79,7 +79,7 @@ package body org.allbinary.game.input.form.VisibleCellPositionsSingleton_Package
    procedure onMoveEvent (This : in out VisibleCellPositionsSingleton; scrollMapEvent_Param : access ScrollMapEvent_Package.ScrollMapEvent'Class) is
       scrollMapEvent : constant ScrollMapEvent_Access := ScrollMapEvent_Access (scrollMapEvent_Param);
    begin
-        This.move (scrollMapEvent.getDx, scrollMapEvent.getDy);
+        VisibleCellPositionsSingleton'Class (This).move (scrollMapEvent.getDx, scrollMapEvent.getDy);
    end onMoveEvent;
 
    procedure addStationaryCellPositions (This : in out VisibleCellPositionsSingleton; list_Param : access BasicArrayList_Package.BasicArrayList'Class) is
@@ -157,7 +157,7 @@ package body org.allbinary.game.input.form.VisibleCellPositionsSingleton_Package
 
    procedure move (This : in out VisibleCellPositionsSingleton; dx : Integer; dy : Integer) is
    begin
-        This.getSimpleTiledLayer.moveDXY (dx, dy);
+        VisibleCellPositionsSingleton'Class (This).getSimpleTiledLayer.moveDXY (dx, dy);
    end move;
 
    procedure paint (This : in out VisibleCellPositionsSingleton; graphics_Param : access Graphics_Package.Graphics'Class) is

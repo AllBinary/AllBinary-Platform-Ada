@@ -53,8 +53,8 @@ package body org.allbinary.logic.control.workflow.request.BasicWorkFlow_Package 
         weblisketSession := WeblisketSession_Package.Create (hashMap, pageContext);
         This.storeName := weblisketSession.getStoreName;
         requestHashMap := RequestParams_Package.Create (pageContext).toHashMap;
-        This.workFlowName := Unbounded_String (requestHashMap.get (WorkFlowData_Package.getInstance.NAME));
-        This.workFlowDoc := DomDocumentHelper_Package.create (Unbounded_String (requestHashMap.get (WorkFlowData_Package.getInstance.DATA)));
+        This.workFlowName := Java_Unbox (requestHashMap.get (WorkFlowData_Package.getInstance.NAME));
+        This.workFlowDoc := DomDocumentHelper_Package.create (Java_Unbox (requestHashMap.get (WorkFlowData_Package.getInstance.DATA)));
    end Initialize;
 
    function Create (hashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) return BasicWorkFlow_Access is
@@ -68,9 +68,9 @@ package body org.allbinary.logic.control.workflow.request.BasicWorkFlow_Package 
       hashMap : constant HashMap_Access := HashMap_Access (hashMap_Param);
    begin
       Initialize_Fields (This);
-        This.workFlowName := Unbounded_String (hashMap.get (WorkFlowData_Package.getInstance.NAME));
-        This.storeName := Unbounded_String (hashMap.get (StoreFrontData_Package.getInstance.NAME));
-        This.workFlowDoc := DomDocumentHelper_Package.create (Unbounded_String (hashMap.get (WorkFlowData_Package.getInstance.DATA)));
+        This.workFlowName := Java_Unbox (hashMap.get (WorkFlowData_Package.getInstance.NAME));
+        This.storeName := Java_Unbox (hashMap.get (StoreFrontData_Package.getInstance.NAME));
+        This.workFlowDoc := DomDocumentHelper_Package.create (Java_Unbox (hashMap.get (WorkFlowData_Package.getInstance.DATA)));
    end Initialize;
 
    function Create (hashMap_Param : access HashMap_Package.HashMap'Class) return BasicWorkFlow_Access is
@@ -92,7 +92,7 @@ package body org.allbinary.logic.control.workflow.request.BasicWorkFlow_Package 
 
    function getKey (This : in out BasicWorkFlow) return Java_Object_Access is
    begin
-        return Java_Object_Access (This.getName);
+        return Java_Box (BasicWorkFlow'Class (This).getName);
    end getKey;
 
    --  throws Exception
@@ -119,12 +119,12 @@ package body org.allbinary.logic.control.workflow.request.BasicWorkFlow_Package 
       time : Unbounded_String;
    begin
         hashMap := StdUtil_Package.getInstance.createHashMap;
-        hashMap.put (WorkFlowData_Package.getInstance.NAME, This.workFlowName);
-        hashMap.put (StoreFrontData_Package.getInstance.NAME, This.storeName);
-        hashMap.put (WorkFlowData_Package.getInstance.DATA, XmlDocumentHelper_Package.toString (This.workFlowDoc));
+        hashMap.put (WorkFlowData_Package.getInstance.NAME, Java_Box (This.workFlowName));
+        hashMap.put (StoreFrontData_Package.getInstance.NAME, Java_Box (This.storeName));
+        hashMap.put (WorkFlowData_Package.getInstance.DATA, Java_Box (XmlDocumentHelper_Package.toString (This.workFlowDoc)));
         calendar := Calendar_Package.getInstance;
         time := Java_New_String (calendar.getTimeInMillis.toString);
-        hashMap.put (EntryData_Package.getInstance.LASTMODIFIED, time);
+        hashMap.put (EntryData_Package.getInstance.LASTMODIFIED, Java_Box (time));
         return hashMap;
    end toHashMap;
 
@@ -140,14 +140,14 @@ package body org.allbinary.logic.control.workflow.request.BasicWorkFlow_Package 
       index : Integer;
    begin
         begin
-            hashMap := This.toHashMap;
+            hashMap := BasicWorkFlow'Class (This).toHashMap;
             keySet := hashMap.keySet;
             node := document.createElement (WorkFlowData_Package.getInstance.WORKFLOW);
             nameArray := keySet.toArray;
             size := nameArray'Length;
             for index in 0 .. (size) - 1 loop
-                name := Unbounded_String (nameArray (index));
-                value := Unbounded_String (hashMap.get (name));
+                name := Java_Unbox (nameArray (index));
+                value := Java_Unbox (hashMap.get (Java_Box (name)));
                 node.appendChild (ModDomHelper_Package.createNameValueNodes (document, name, value));
             end loop;
             return node;

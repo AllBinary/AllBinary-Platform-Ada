@@ -45,9 +45,9 @@ package body org.allbinary.game.score.displayable.HighScoreTextBox_Package is
         if operatingSystemInterface.isOverScan then
             username := InApplicationPurchaseFactory_Package.getInstance.getUserName;
             if (username) /= (Null_Unbounded_String) then
-                This.getTextFieldItem.setString (username);
+                HighScoreTextBox'Class (This).getTextFieldItem.setString (username);
             else
-                This.getTextFieldItem.setString (To_Unbounded_String ("NoGamerInfo"));
+                HighScoreTextBox'Class (This).getTextFieldItem.setString (To_Unbounded_String ("NoGamerInfo"));
             end if;
         end if;
    end Initialize;
@@ -62,10 +62,10 @@ package body org.allbinary.game.score.displayable.HighScoreTextBox_Package is
    procedure initCommands (This : in out HighScoreTextBox; cmdListener_Param : access CommandListener_Package.CommandListener'Class) is
       cmdListener : constant CommandListener_Access := CommandListener_Access (cmdListener_Param);
    begin
-        This.removeAllCommands;
+        HighScoreTextBox'Class (This).removeAllCommands;
         PostGameCommandFactory_Package.getInstance.addCommands (HighScoreTextBox_Access'(This'Unchecked_Access));
-        This.addCommand (HighScoreUtil_Package.SUBMIT_TEXTBOX_COMMAND);
-        This.setCommandListener (cmdListener);
+        HighScoreTextBox'Class (This).addCommand (HighScoreUtil_Package.SUBMIT_TEXTBOX_COMMAND);
+        HighScoreTextBox'Class (This).setCommandListener (cmdListener);
    end initCommands;
 
    procedure open (This : in out HighScoreTextBox) is
@@ -82,8 +82,8 @@ package body org.allbinary.game.score.displayable.HighScoreTextBox_Package is
         This.paintable := This.pleaseWait;
         This.repaintBehavior.onChangeRepaint (HighScoreTextBox_Access'(This'Unchecked_Access));
         CustomTextBox (This).close;
-        This.removeCommand (HighScoreUtil_Package.SUBMIT_TEXTBOX_COMMAND);
-        This.update;
+        HighScoreTextBox'Class (This).removeCommand (HighScoreUtil_Package.SUBMIT_TEXTBOX_COMMAND);
+        HighScoreTextBox'Class (This).update;
         if This.submitted then
             This.highScoreUtil.saveHighScore;
         else
@@ -97,7 +97,7 @@ package body org.allbinary.game.score.displayable.HighScoreTextBox_Package is
    procedure update (This : in out HighScoreTextBox) is
       name : Unbounded_String;
    begin
-        name := This.getTextFieldItem.getString;
+        name := HighScoreTextBox'Class (This).getTextFieldItem.getString;
         This.highScoreUtil.update (name);
         CustomTextBox (This).update;
    end update;

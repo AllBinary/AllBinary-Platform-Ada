@@ -66,7 +66,7 @@ package body org.allbinary.logic.visual.transform.template.customizer.hedges.hea
    begin
       Validation_Package.Initialize (This);
       Initialize_Fields (This);
-        This.getFormData (hashMap);
+        HeadingValidation'Class (This).getFormData (hashMap);
    end Initialize;
 
    function Create (hashMap_Param : access HashMap_Package.HashMap'Class) return HeadingValidation_Access is

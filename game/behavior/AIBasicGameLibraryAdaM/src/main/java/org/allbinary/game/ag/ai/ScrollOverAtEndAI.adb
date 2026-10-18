@@ -45,7 +45,7 @@ package body org.allbinary.game.ag.ai.ScrollOverAtEndAI_Package is
       height : Integer;
       displayInfo : DisplayInfoSingleton_Access;
    begin
-        ownerLayerInterface := This.getOwnerLayerInterface;
+        ownerLayerInterface := ScrollOverAtEndAI'Class (This).getOwnerLayerInterface;
         x := ownerLayerInterface.getXP;
         y := ownerLayerInterface.getYP;
         width := ownerLayerInterface.getWidth;

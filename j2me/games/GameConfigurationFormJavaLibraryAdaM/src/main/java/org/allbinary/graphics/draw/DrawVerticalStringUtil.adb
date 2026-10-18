@@ -146,7 +146,7 @@ package body org.allbinary.graphics.draw.DrawVerticalStringUtil_Package is
                             currentLength := linePortion;
                         end if;
                     end if;
-                    This.drawCenterString (graphics, string_Id, offset, currentLength, x, (y) + (((((index) + (Java_Post_Increment (extraLines)))) * (This.charHeight))));
+                    DrawVerticalStringUtil'Class (This).drawCenterString (graphics, string_Id, offset, currentLength, x, (y) + (((((index) + (Java_Post_Increment (extraLines)))) * (This.charHeight))));
                     offset := (offset) + (currentLength);
                     currentLength := linePortion;
                 end loop;

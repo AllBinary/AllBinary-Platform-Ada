@@ -181,6 +181,7 @@ package body org.allbinary.media.audio.PlayerComposite_Package is
    function getControls (This : in out PlayerComposite) return Control_Access_Array_Access is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return null;
    end getControls;
 
    procedure setVolume (This : in out PlayerComposite; leftVolume : Integer; rightVolume : Integer) is

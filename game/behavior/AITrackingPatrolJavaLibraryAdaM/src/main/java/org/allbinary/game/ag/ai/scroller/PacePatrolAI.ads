@@ -20,7 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with javax.microedition.lcdui.Canvas_Package; use javax.microedition.lcdui.Canvas_Package;
+with javax.microedition.lcdui.Canvas_Package; use javax.microedition.lcdui.Canvas_Package;
 with org.allbinary.direction.Direction_Package; use org.allbinary.direction.Direction_Package;
 with org.allbinary.direction.DirectionCompositeInterface_Package; use org.allbinary.direction.DirectionCompositeInterface_Package;
 with org.allbinary.direction.DirectionFactory_Package; use org.allbinary.direction.DirectionFactory_Package;
@@ -41,6 +41,7 @@ with org.allbinary.game.ag.ai.scroller.BasePatrolAI_Package; use org.allbinary.g
 
 package org.allbinary.game.ag.ai.scroller.PacePatrolAI_Package is
 
+   package Canvas_Package renames Standard.javax.microedition.lcdui.Canvas_Package;
    package Direction_Package renames Standard.org.allbinary.direction.Direction_Package;
    package DirectionCompositeInterface_Package renames Standard.org.allbinary.direction.DirectionCompositeInterface_Package;
    package DirectionFactory_Package renames Standard.org.allbinary.direction.DirectionFactory_Package;

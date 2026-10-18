@@ -51,8 +51,8 @@ package body org.allbinary.game.Intermission_Package is
    procedure setEnabled (This : in out Intermission; enabled : Boolean) is
    begin
         This.enabled := enabled;
-        if This.isEnabled then
-            This.getTimeDelayHelper.setStartTimeTNT;
+        if Intermission'Class (This).isEnabled then
+            Intermission'Class (This).getTimeDelayHelper.setStartTimeTNT;
         end if;
         This.intermissionEnableListener.notifyIntermission (enabled);
    end setEnabled;

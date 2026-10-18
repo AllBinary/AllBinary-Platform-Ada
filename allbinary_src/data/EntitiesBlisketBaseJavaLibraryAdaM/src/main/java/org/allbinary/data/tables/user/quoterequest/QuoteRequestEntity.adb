@@ -27,7 +27,7 @@ package body org.allbinary.data.tables.user.quoterequest.QuoteRequestEntity_Pack
    begin
         AbSqlBean_Package.Initialize (This, UserDbInitInfo_Package.Create);
         Initialize_Fields (This);
-        This.setTableName (This.tableName);
+        QuoteRequestEntity'Class (This).setTableName (This.tableName);
    end Initialize;
 
    function Create return QuoteRequestEntity_Access is
@@ -63,8 +63,8 @@ package body org.allbinary.data.tables.user.quoterequest.QuoteRequestEntity_Pack
       quoteRequestHashMap : HashMap_Access;
    begin
         row := StdUtil_Package.getInstance.createHashMap;
-        row.put (UserData_Package.USERNAME, userName);
-        row.put (QuoteRequestData_Package.getInstance.ID, To_Unbounded_String (Java_Image (id)));
+        row.put (UserData_Package.USERNAME, Java_Box (userName));
+        row.put (QuoteRequestData_Package.getInstance.ID, Java_Box (To_Unbounded_String (Java_Image (id))));
         quoteRequestHashMap := AbSqlBean (This).getRow (row);
         if (quoteRequestHashMap) /= (null) then
             return QuoteRequest_Package.Create (quoteRequestHashMap);
@@ -129,7 +129,7 @@ package body org.allbinary.data.tables.user.quoterequest.QuoteRequestEntity_Pack
 
    function createTable (This : in out QuoteRequestEntity) return Unbounded_String is
    begin
-        return AbSqlBean (This).createTable (This.createTableStatement);
+        return AbSqlBean (This).createTable (QuoteRequestEntity'Class (This).createTableStatement);
    end createTable;
 
    function dropTable (This : in out QuoteRequestEntity) return Unbounded_String is

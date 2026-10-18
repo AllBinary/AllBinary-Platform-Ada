@@ -45,7 +45,7 @@ package body org.allbinary.input.automation.robot.InputRobotFactory_Package is
             for i in 0 .. (screens'Length) - 1 loop
                 inputRobotInterface := InputRobotInterface_Access (InputRobot_Package.Create (screens (i)));
                 This.logUtil.putF (To_Unbounded_String ("Adding Robot: ") & inputRobotInterface.getName, InputRobotFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("getRobots"));
-                This.get.put (inputRobotInterface.getName, inputRobotInterface);
+                InputRobotFactory'Class (This).get.put (inputRobotInterface.getName, inputRobotInterface);
             end loop;
             This.logUtil.putF (To_Unbounded_String ("Number Of Robots: ") & Java_Image (This.hashtable.size), InputRobotFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("getRobots"));
         exception
@@ -78,7 +78,7 @@ package body org.allbinary.input.automation.robot.InputRobotFactory_Package is
       helpSetEvent : HelpSetEvent_Access;
    begin
         This.logUtil.putF (To_Unbounded_String ("Adding InputRobotInterface: ") & inputRobotInterface.getName, InputRobotFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("add"));
-        This.get.put (inputRobotInterface.getName, inputRobotInterface);
+        InputRobotFactory'Class (This).get.put (inputRobotInterface.getName, inputRobotInterface);
         helpSet := inputRobotInterface.getHelpSet;
         if (This.helpSetListenerInterface) /= (null) then
             if (helpSet) /= (null) then
@@ -102,12 +102,12 @@ package body org.allbinary.input.automation.robot.InputRobotFactory_Package is
       inputRobotInterface : InputRobotInterface_Access;
       index : Integer;
    begin
-        set := This.get.keySet;
+        set := InputRobotFactory'Class (This).get.keySet;
         This.logUtil.putF (To_Unbounded_String ("Loading Libraries"), InputRobotFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("loadLibraries"));
         nameArray := set.toArray;
         size := nameArray'Length;
         for index in 0 .. (size) - 1 loop
-            inputRobotInterface := InputRobotFactory_Package.getInstance.get (Unbounded_String (nameArray (index)));
+            inputRobotInterface := InputRobotFactory_Package.getInstance.get (Java_Unbox (nameArray (index)));
             InputRobotFactory_Package.loadLibrary (inputRobotInterface);
         end loop;
    end loadLibraries;
@@ -150,12 +150,12 @@ package body org.allbinary.input.automation.robot.InputRobotFactory_Package is
       index : Integer;
    begin
         This.logUtil.putF (To_Unbounded_String ("Unloading Libraries"), InputRobotFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("unloadLibraries"));
-        set := This.get.keySet;
+        set := InputRobotFactory'Class (This).get.keySet;
         inputRobotInterface := null;
         inputRobotArray := set.toArray;
         size := inputRobotArray'Length;
         for index in 0 .. (size) - 1 loop
-            inputRobotInterface := This.get (Unbounded_String (inputRobotArray (index)));
+            inputRobotInterface := InputRobotFactory'Class (This).get (Java_Unbox (inputRobotArray (index)));
             if InterfaceUtil_Package.isImplemented (SecuredNativeLibraryInterface_Package.SecuredNativeLibraryInterface'Tag, inputRobotInterface) then
                 This.logUtil.putF (To_Unbounded_String ("Unloading Library: ") & inputRobotInterface.getName, InputRobotFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("unloadLibraries"));
                 securedNativeLibraryInterface := SecuredNativeLibraryInterface_Access (inputRobotInterface);

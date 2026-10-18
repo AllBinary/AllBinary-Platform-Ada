@@ -37,7 +37,7 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
         else
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Profile Action Name Node Null")));
         end if;
-        This.setGenericProfileActionScript (GenericProfileActionScript_Package.Create (This.genericProfileActionJPanel, node));
+        GenericProfileAction'Class (This).setGenericProfileActionScript (GenericProfileActionScript_Package.Create (This.genericProfileActionJPanel, node));
    end Initialize;
 
    function Create (genericProfileActionJPanel_Param : access GenericProfileActionJPanel_Package.GenericProfileActionJPanel'Class; node_Param : access Node_Package.Node'Class) return GenericProfileAction_Access is
@@ -51,7 +51,7 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
    begin
       Initialize_Fields (This);
         This.name := name;
-        This.setGenericProfileActionScript (GenericProfileActionScript_Package.Create (This.genericProfileActionJPanel));
+        GenericProfileAction'Class (This).setGenericProfileActionScript (GenericProfileActionScript_Package.Create (This.genericProfileActionJPanel));
    end Initialize;
 
    function Create (name : Unbounded_String) return GenericProfileAction_Access is
@@ -75,7 +75,7 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
       hashMap : HashMap_Access;
    begin
         hashMap := StdUtil_Package.getInstance.createHashMap;
-        hashMap.put (GenericProfileActionData_Package.NAME, This.name);
+        hashMap.put (GenericProfileActionData_Package.NAME, Java_Box (This.name));
         This.logUtil.putF (To_Unbounded_String ("HashMap: ") & hashMap.toString, GenericProfileAction_Access'(This'Unchecked_Access), To_Unbounded_String ("toHashMap()"));
         return hashMap;
    end toHashMap;
@@ -85,8 +85,8 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
       document : constant Document_Access := Document_Access (document_Param);
       node : Node_Access;
    begin
-        node := ModDomHelper_Package.createNodeWithValueNodes (document, GenericProfileActionData_Package.NAME, This.toHashMap);
-        node.appendChild (This.getGenericProfileActionScript.toXmlNode (document));
+        node := ModDomHelper_Package.createNodeWithValueNodes (document, GenericProfileActionData_Package.NAME, GenericProfileAction'Class (This).toHashMap);
+        node.appendChild (GenericProfileAction'Class (This).getGenericProfileActionScript.toXmlNode (document));
         return node;
    end toXmlNode;
 

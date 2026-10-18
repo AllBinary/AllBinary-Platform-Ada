@@ -40,13 +40,13 @@ package body org.allbinary.game.layer.UpgradableWideRTSLayerPaintable_Package is
       rtsLayer : constant RTSLayer_Access := RTSLayer_Access (rtsLayer_Param);
    begin
         RTSLayerCompositePaintable (This).update (rtsLayer);
-        This.setCost (StringMaker_Package.Create.append (This.getUpgradeCost).append (CommonSeps_Package.getInstance.SPACE).append (This.getDownGradeCost).toString);
+        UpgradableWideRTSLayerPaintable'Class (This).setCost (StringMaker_Package.Create.append (UpgradableWideRTSLayerPaintable'Class (This).getUpgradeCost).append (CommonSeps_Package.getInstance.SPACE).append (UpgradableWideRTSLayerPaintable'Class (This).getDownGradeCost).toString);
    end update;
 
    procedure paint (This : in out UpgradableWideRTSLayerPaintable; graphics_Param : access Graphics_Package.Graphics'Class) is
       graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
-        graphics.drawString (This.getCost, This.upgradableRTSLayerHudPaintable.textX, This.upgradableRTSLayerHudPaintable.costY, 0);
+        graphics.drawString (UpgradableWideRTSLayerPaintable'Class (This).getCost, This.upgradableRTSLayerHudPaintable.textX, This.upgradableRTSLayerHudPaintable.costY, 0);
    end paint;
 
    procedure setCost (This : in out UpgradableWideRTSLayerPaintable; cost : Unbounded_String) is

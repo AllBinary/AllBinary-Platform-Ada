@@ -44,7 +44,7 @@ package body admin.taghelpers.BasicGroupItemsRequestHelper_Package is
       ModifyTable_Package.Initialize (This);
       Initialize_Fields (This);
         This.request := HttpServletRequest_Access (pageContext.getRequest);
-        This.getFormData;
+        BasicGroupItemsRequestHelper'Class (This).getFormData;
    end Initialize;
 
    function Create (hashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) return BasicGroupItemsRequestHelper_Access is
@@ -77,20 +77,20 @@ package body admin.taghelpers.BasicGroupItemsRequestHelper_Package is
       time : Unbounded_String;
    begin
         values := StdUtil_Package.getInstance.createHashMap;
-        values.put (This.basicItemData.ID, This.id);
-        values.put (BasicGroupItemData_Package.ITEM_ONE, This.itemOne);
-        values.put (BasicGroupItemData_Package.ITEM_TWO, This.itemTwo);
-        values.put (BasicGroupItemData_Package.ITEM_THREE, This.itemThree);
-        values.put (BasicGroupItemData_Package.ITEM_FOUR, This.itemFour);
-        values.put (BasicGroupItemData_Package.ITEM_FIVE, This.itemFive);
-        values.put (BasicGroupItemData_Package.ITEM_SIX, This.itemSix);
-        values.put (BasicGroupItemData_Package.ITEM_SEVEN, This.itemSeven);
-        values.put (BasicGroupItemData_Package.ITEM_EIGHT, This.itemEight);
-        values.put (BasicGroupItemData_Package.ITEM_NINE, This.itemNine);
-        values.put (BasicGroupItemData_Package.ITEM_TEN, This.itemTen);
+        values.put (This.basicItemData.ID, Java_Box (This.id));
+        values.put (BasicGroupItemData_Package.ITEM_ONE, Java_Box (This.itemOne));
+        values.put (BasicGroupItemData_Package.ITEM_TWO, Java_Box (This.itemTwo));
+        values.put (BasicGroupItemData_Package.ITEM_THREE, Java_Box (This.itemThree));
+        values.put (BasicGroupItemData_Package.ITEM_FOUR, Java_Box (This.itemFour));
+        values.put (BasicGroupItemData_Package.ITEM_FIVE, Java_Box (This.itemFive));
+        values.put (BasicGroupItemData_Package.ITEM_SIX, Java_Box (This.itemSix));
+        values.put (BasicGroupItemData_Package.ITEM_SEVEN, Java_Box (This.itemSeven));
+        values.put (BasicGroupItemData_Package.ITEM_EIGHT, Java_Box (This.itemEight));
+        values.put (BasicGroupItemData_Package.ITEM_NINE, Java_Box (This.itemNine));
+        values.put (BasicGroupItemData_Package.ITEM_TEN, Java_Box (This.itemTen));
         calendar := Calendar_Package.getInstance;
         time := Java_New_String (calendar.getTimeInMillis.toString);
-        values.put (EntryData_Package.getInstance.LASTMODIFIED, time);
+        values.put (EntryData_Package.getInstance.LASTMODIFIED, Java_Box (time));
         return values;
    end getHashMap;
 
@@ -105,19 +105,19 @@ package body admin.taghelpers.BasicGroupItemsRequestHelper_Package is
             calendar := Calendar_Package.getInstance;
             time := Java_New_String (calendar.getTimeInMillis.toString);
             values := BasicArrayListD_Package.Create;
-            values.add (This.id);
-            values.add (This.itemOne);
-            values.add (This.itemTwo);
-            values.add (This.itemThree);
-            values.add (This.itemFour);
-            values.add (This.itemFive);
-            values.add (This.itemSix);
-            values.add (This.itemSeven);
-            values.add (This.itemEight);
-            values.add (This.itemNine);
-            values.add (This.itemTen);
-            values.add (time);
-            values.add (time);
+            values.add (Java_Box (This.id));
+            values.add (Java_Box (This.itemOne));
+            values.add (Java_Box (This.itemTwo));
+            values.add (Java_Box (This.itemThree));
+            values.add (Java_Box (This.itemFour));
+            values.add (Java_Box (This.itemFive));
+            values.add (Java_Box (This.itemSix));
+            values.add (Java_Box (This.itemSeven));
+            values.add (Java_Box (This.itemEight));
+            values.add (Java_Box (This.itemNine));
+            values.add (Java_Box (This.itemTen));
+            values.add (Java_Box (time));
+            values.add (Java_Box (time));
             BasicGroupItemsEntityFactory_Package.getInstance.getBasicGroupItemsEntityInstance.insert (values);
             success := To_Unbounded_String ("Successfully inserted ") & This.id & To_Unbounded_String (" into items table");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
@@ -170,7 +170,7 @@ package body admin.taghelpers.BasicGroupItemsRequestHelper_Package is
    begin
         begin
             success := To_Unbounded_String ("Update Pricing Successful");
-            values := This.getHashMap;
+            values := BasicGroupItemsRequestHelper'Class (This).getHashMap;
             BasicGroupItemsEntityFactory_Package.getInstance.getBasicGroupItemsEntityInstance.update (values);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
                 This.logUtil.putF (StringMaker_Package.Create.append (This.id).append (CommonSeps_Package.getInstance.SPACE).append (success).toString, BasicGroupItemsRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("update()"));

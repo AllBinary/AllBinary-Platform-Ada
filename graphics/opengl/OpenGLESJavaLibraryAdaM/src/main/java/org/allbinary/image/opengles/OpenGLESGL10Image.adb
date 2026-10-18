@@ -37,8 +37,8 @@ package body org.allbinary.image.opengles.OpenGLESGL10Image_Package is
 --        v_center : Float;
 --        imageProcessor : OpenGLESImageProcessor_Access;
 --     begin
---              imageWidth := This.getWidth;
---              imageHeight := This.getHeight;
+--              imageWidth := OpenGLESGL10Image'Class (This).getWidth;
+--              imageHeight := OpenGLESGL10Image'Class (This).getHeight;
 --              This.regionRectangleFloatArray (7) := viewHeight;
 --              This.regionRectangleFloatArray (1) := (This.regionRectangleFloatArray (7)) - (height);
 --              This.regionRectangleFloatArray (3) := width;
@@ -85,8 +85,8 @@ package body org.allbinary.image.opengles.OpenGLESGL10Image_Package is
 --        height : Integer;
 --        imageProcessor : OpenGLESImageProcessor_Access;
 --     begin
---              width := This.getWidth;
---              height := This.getHeight;
+--              width := OpenGLESGL10Image'Class (This).getWidth;
+--              height := OpenGLESGL10Image'Class (This).getHeight;
 --              This.regionRectangleFloatArray (7) := This.displayInfoSingleton.getLastHeight;
 --              This.regionRectangleFloatArray (1) := (This.regionRectangleFloatArray (7)) - (height);
 --              This.regionRectangleFloatArray (3) := width;
@@ -137,7 +137,7 @@ package body org.allbinary.image.opengles.OpenGLESGL10Image_Package is
    begin
         OpenGLESImage_Package.Initialize (This, image, bitmapFactory, textureFactory);
         Initialize_Fields (This);
-        This.initVertices;
+        OpenGLESGL10Image'Class (This).initVertices;
    end Initialize;
 
    function Create (image_Param : access Image_Package.Image'Class; bitmapFactory_Param : access PlatformBitmapBaseFactory_Package.PlatformBitmapBaseFactory'Class; textureFactory_Param : access PlatformTextureBaseFactory_Package.PlatformTextureBaseFactory'Class) return OpenGLESGL10Image_Access is

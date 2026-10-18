@@ -46,11 +46,11 @@ package body org.allbinary.game.rts.technology.UnitTechnologySingletonFactory_Pa
 
    procedure init (This : in out UnitTechnologySingletonFactory) is
    begin
-        This.setDamage (0);
-        This.setHealth (0);
-        This.setReload (0);
-        This.setRepair (0);
-        This.setSpeed (0);
+        UnitTechnologySingletonFactory'Class (This).setDamage (0);
+        UnitTechnologySingletonFactory'Class (This).setHealth (0);
+        UnitTechnologySingletonFactory'Class (This).setReload (0);
+        UnitTechnologySingletonFactory'Class (This).setRepair (0);
+        UnitTechnologySingletonFactory'Class (This).setSpeed (0);
    end init;
 
    function getDamage (This : in out UnitTechnologySingletonFactory) return Integer is

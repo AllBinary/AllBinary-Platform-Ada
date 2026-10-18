@@ -40,7 +40,7 @@ package body org.allbinary.image.gui.RotationImageJPanel_Package is
    begin
         JPanel_Package.Initialize (This);
         Initialize_Fields (This);
-        This.initComponents;
+        RotationImageJPanel'Class (This).initComponents;
         This.imageProcessorInput := imageProcessorInput;
    end Initialize;
 
@@ -61,8 +61,8 @@ package body org.allbinary.image.gui.RotationImageJPanel_Package is
 --     begin
 --                  logUtil := LogUtil_Package.getInstance;
 --                  begin
---                      angleAsString := Unbounded_String (This.totalAngleJComboBox.getSelectedItem);
---                      ImageArrayRotationUtil_Package.getInstance.process (This.getImageProcessorInput, angleAsString, RotationImageJPanel_Access'(This'Unchecked_Access));
+--                      angleAsString := Java_Unbox (This.totalAngleJComboBox.getSelectedItem);
+--                      ImageArrayRotationUtil_Package.getInstance.process (RotationImageJPanel'Class (This).getImageProcessorInput, angleAsString, RotationImageJPanel_Access'(This'Unchecked_Access));
 --                  exception
 --                      when Java_Occurrence : others =>
 --                          declare
@@ -109,7 +109,7 @@ package body org.allbinary.image.gui.RotationImageJPanel_Package is
 --     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
 --        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
---                  This.generateJButtonActionPerformed (evt);
+--                  RotationImageJPanel'Class (This).generateJButtonActionPerformed (evt);
 --     end actionPerformed;
 );
         This.totalAngleJComboBox.setModel (DefaultComboBoxModel_Package.Create (new Unbounded_String_Array'(This.commonStrings.UP, This.commonStrings.DOWN, To_Unbounded_String ("-90"), To_Unbounded_String ("90"))));
@@ -118,7 +118,7 @@ package body org.allbinary.image.gui.RotationImageJPanel_Package is
 --     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
 --        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
---                  This.totalAngleJComboBoxActionPerformed (evt);
+--                  RotationImageJPanel'Class (This).totalAngleJComboBoxActionPerformed (evt);
 --     end actionPerformed;
 );
         This.jLabel3.setText (To_Unbounded_String ("Total Angle:"));
@@ -133,7 +133,7 @@ package body org.allbinary.image.gui.RotationImageJPanel_Package is
         jPanel3Layout.setHorizontalGroup (jPanel3Layout.createParallelGroup (org_Package.jdesktop.layout.GroupLayout.LEADING).add (jPanel3Layout.createSequentialGroup.add (This.jLabel2).addContainerGap (377, Short_Package.MAX_VALUE)));
         jPanel3Layout.setVerticalGroup (jPanel3Layout.createParallelGroup (org_Package.jdesktop.layout.GroupLayout.LEADING).add (This.jLabel2));
         layout := GroupLayout_Package.Create (RotationImageJPanel_Access'(This'Unchecked_Access));
-        This.setLayout (layout);
+        RotationImageJPanel'Class (This).setLayout (layout);
         layout.setHorizontalGroup (layout.createParallelGroup (org_Package.jdesktop.layout.GroupLayout.LEADING).add (org_Package.jdesktop.layout.GroupLayout.TRAILING, This.jPanel2, org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short_Package.MAX_VALUE).add (layout.createSequentialGroup.addContainerGap.add (This.jPanel3, org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short_Package.MAX_VALUE).addContainerGap).add (This.jPanel1, org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short_Package.MAX_VALUE));
         layout.setVerticalGroup (layout.createParallelGroup (org_Package.jdesktop.layout.GroupLayout.LEADING).add (layout.createSequentialGroup.add (This.jPanel2, org_Package.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org_Package.jdesktop.layout.GroupLayout.PREFERRED_SIZE).addPreferredGap (org_Package.jdesktop.layout.LayoutStyle.UNRELATED).add (This.jPanel3, org_Package.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org_Package.jdesktop.layout.GroupLayout.PREFERRED_SIZE).addPreferredGap (org_Package.jdesktop.layout.LayoutStyle.RELATED).add (This.jPanel1, org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short_Package.MAX_VALUE)));
    end initComponents;
@@ -141,7 +141,7 @@ package body org.allbinary.image.gui.RotationImageJPanel_Package is
    procedure generateJButtonActionPerformed (This : in out RotationImageJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
       evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
-        This.process;
+        RotationImageJPanel'Class (This).process;
    end generateJButtonActionPerformed;
 
    procedure totalAngleJComboBoxActionPerformed (This : in out RotationImageJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
@@ -170,11 +170,11 @@ package body org.allbinary.image.gui.RotationImageJPanel_Package is
       isWritten : Boolean;
    begin
         This.result := generatedBufferedImage;
-        This.getParent.repaint;
+        RotationImageJPanel'Class (This).getParent.repaint;
         file := This.imageProcessorInput.getFiles (index);
         if not (This.writeOverOriginalJCheckBox.isSelected) then
             filePath := file.getAbsolutePath;
-            extensionIndex := (Index (filePath, To_String (This.imageStrings.PNG_EXTENSION)) - 1);
+            extensionIndex := (Index (filePath, Java_Image (This.imageStrings.PNG_EXTENSION)) - 1);
             filePath := StringMaker_Package.Create.append (Unbounded_Slice (filePath, (0) + 1, extensionIndex)).append (CommonSeps_Package.getInstance.UNDERSCORE).append (name).append (This.imageStrings.PNG_EXTENSION).toString;
             file := File_Package.Create (filePath);
         end if;

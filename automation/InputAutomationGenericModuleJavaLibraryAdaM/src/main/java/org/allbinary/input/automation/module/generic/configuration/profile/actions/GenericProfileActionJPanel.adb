@@ -34,7 +34,7 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
    begin
       JPanel_Package.Initialize (This);
       Initialize_Fields (This);
-        This.initComponents;
+        GenericProfileActionJPanel'Class (This).initComponents;
    end Initialize;
 
    function Create return GenericProfileActionJPanel_Access is
@@ -51,12 +51,12 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
         This.blankProfileActionScriptJPanel.removeAll;
         genericProfileActionScriptJPanel := GenericProfileActionScriptJPanel_Package.Create;
         JTreeInterfaceFactory_Package.getInstance.set (genericProfileActionScriptJPanel);
-        This.setGenericProfileActionScriptJPanel (genericProfileActionScriptJPanel);
-        This.getGenericProfileActionScriptJPanel.setGenericProfileActionScript (This.getGenericProfileAction.getGenericProfileActionScript);
-        This.getGenericProfileActionScriptJPanel.updateJTree;
+        GenericProfileActionJPanel'Class (This).setGenericProfileActionScriptJPanel (genericProfileActionScriptJPanel);
+        GenericProfileActionJPanel'Class (This).getGenericProfileActionScriptJPanel.setGenericProfileActionScript (GenericProfileActionJPanel'Class (This).getGenericProfileAction.getGenericProfileActionScript);
+        GenericProfileActionJPanel'Class (This).getGenericProfileActionScriptJPanel.updateJTree;
         layout := GroupLayout_Access (This.blankProfileActionScriptJPanel.getLayout);
-        layout.setHorizontalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGap (0, 395, Short_Package.MAX_VALUE).addComponent (This.getGenericProfileActionScriptJPanel, javax_Package.swing.GroupLayout.PREFERRED_SIZE, javax_Package.swing.GroupLayout.DEFAULT_SIZE, javax_Package.swing.GroupLayout.PREFERRED_SIZE));
-        layout.setVerticalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGap (0, 256, Short_Package.MAX_VALUE).addComponent (This.getGenericProfileActionScriptJPanel, javax_Package.swing.GroupLayout.PREFERRED_SIZE, javax_Package.swing.GroupLayout.DEFAULT_SIZE, javax_Package.swing.GroupLayout.PREFERRED_SIZE));
+        layout.setHorizontalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGap (0, 395, Short_Package.MAX_VALUE).addComponent (GenericProfileActionJPanel'Class (This).getGenericProfileActionScriptJPanel, javax_Package.swing.GroupLayout.PREFERRED_SIZE, javax_Package.swing.GroupLayout.DEFAULT_SIZE, javax_Package.swing.GroupLayout.PREFERRED_SIZE));
+        layout.setVerticalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGap (0, 256, Short_Package.MAX_VALUE).addComponent (GenericProfileActionJPanel'Class (This).getGenericProfileActionScriptJPanel, javax_Package.swing.GroupLayout.PREFERRED_SIZE, javax_Package.swing.GroupLayout.DEFAULT_SIZE, javax_Package.swing.GroupLayout.PREFERRED_SIZE));
         This.logUtil.putF (To_Unbounded_String ("Updated UI"), GenericProfileActionJPanel_Access'(This'Unchecked_Access), To_Unbounded_String ("updateUI"));
    end updateProfileActionUI;
 
@@ -92,8 +92,8 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
         This.newColorAtJButton := JButton_Package.Create;
         This.newTimeIntervalJButton := JButton_Package.Create;
         This.newAlwaysJButton := JButton_Package.Create;
-        This.setMinimumSize (Dimension_Package.Create (440, 275));
-        This.setPreferredSize (Dimension_Package.Create (440, 275));
+        GenericProfileActionJPanel'Class (This).setMinimumSize (Dimension_Package.Create (440, 275));
+        GenericProfileActionJPanel'Class (This).setPreferredSize (Dimension_Package.Create (440, 275));
         This.genericProfileActionScriptJScrollPane.setPreferredSize (Dimension_Package.Create (474, 270));
         This.blankProfileActionScriptJPanel.setMinimumSize (Dimension_Package.Create (400, 200));
         blankProfileActionScriptJPanelLayout := GroupLayout_Package.Create (This.blankProfileActionScriptJPanel);
@@ -108,7 +108,7 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
 --     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
 --        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
---                  This.newColorAtJButtonActionPerformed (evt);
+--                  GenericProfileActionJPanel'Class (This).newColorAtJButtonActionPerformed (evt);
 --     end actionPerformed;
 );
         This.newTimeIntervalJButton.setText (To_Unbounded_String ("Time Interval"));
@@ -117,7 +117,7 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
 --     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
 --        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
---                  This.newTimeIntervalJButtonActionPerformed (evt);
+--                  GenericProfileActionJPanel'Class (This).newTimeIntervalJButtonActionPerformed (evt);
 --     end actionPerformed;
 );
         This.newAlwaysJButton.setText (To_Unbounded_String ("Always On/Off"));
@@ -126,11 +126,11 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
 --     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
 --        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
---                  This.newAlwaysJButtonActionPerformed (evt);
+--                  GenericProfileActionJPanel'Class (This).newAlwaysJButtonActionPerformed (evt);
 --     end actionPerformed;
 );
         layout := GroupLayout_Package.Create (GenericProfileActionJPanel_Access'(This'Unchecked_Access));
-        This.setLayout (layout);
+        GenericProfileActionJPanel'Class (This).setLayout (layout);
         layout.setHorizontalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (layout.createSequentialGroup.addComponent (This.ifJLabel).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent (This.newColorAtJButton).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent (This.newTimeIntervalJButton).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent (This.newAlwaysJButton).addContainerGap (61, Short_Package.MAX_VALUE)).addComponent (This.genericProfileActionScriptJScrollPane, javax_Package.swing.GroupLayout.DEFAULT_SIZE, 440, Short_Package.MAX_VALUE));
         layout.setVerticalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (layout.createSequentialGroup.addGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.BASELINE).addComponent (This.ifJLabel, javax_Package.swing.GroupLayout.PREFERRED_SIZE, 14, javax_Package.swing.GroupLayout.PREFERRED_SIZE).addComponent (This.newColorAtJButton).addComponent (This.newTimeIntervalJButton).addComponent (This.newAlwaysJButton)).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent (This.genericProfileActionScriptJScrollPane, javax_Package.swing.GroupLayout.DEFAULT_SIZE, 246, Short_Package.MAX_VALUE)));
    end initComponents;
@@ -139,24 +139,24 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
       evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
         This.logUtil.putF (To_Unbounded_String ("New Time Interval Action Condition"), GenericProfileActionJPanel_Access'(This'Unchecked_Access), To_Unbounded_String ("newTimeIntervalJButtonActionPerformed"));
-        This.getGenericProfileAction.getGenericProfileActionScript.addCondition (ProfileActionScriptConditionInterface_Access (TimeIntervalActionScriptCondition_Package.Create));
-        This.updateProfileActionUI;
+        GenericProfileActionJPanel'Class (This).getGenericProfileAction.getGenericProfileActionScript.addCondition (ProfileActionScriptConditionInterface_Access (TimeIntervalActionScriptCondition_Package.Create));
+        GenericProfileActionJPanel'Class (This).updateProfileActionUI;
    end newTimeIntervalJButtonActionPerformed;
 
    procedure newAlwaysJButtonActionPerformed (This : in out GenericProfileActionJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
       evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
         This.logUtil.putF (To_Unbounded_String ("New EveryTime Action Condition"), GenericProfileActionJPanel_Access'(This'Unchecked_Access), To_Unbounded_String ("newEveryTimeJButtonActionPerformed"));
-        This.getGenericProfileAction.getGenericProfileActionScript.addCondition (ProfileActionScriptConditionInterface_Access (AlwaysActionScriptCondition_Package.Create));
-        This.updateProfileActionUI;
+        GenericProfileActionJPanel'Class (This).getGenericProfileAction.getGenericProfileActionScript.addCondition (ProfileActionScriptConditionInterface_Access (AlwaysActionScriptCondition_Package.Create));
+        GenericProfileActionJPanel'Class (This).updateProfileActionUI;
    end newAlwaysJButtonActionPerformed;
 
    procedure newColorAtJButtonActionPerformed (This : in out GenericProfileActionJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
       evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
         This.logUtil.putF (To_Unbounded_String ("New Color At Action Condition"), GenericProfileActionJPanel_Access'(This'Unchecked_Access), To_Unbounded_String ("newColorAtJButtonActionPerformed"));
-        This.getGenericProfileAction.getGenericProfileActionScript.addCondition (ProfileActionScriptConditionInterface_Access (ColorAtActionScriptCondition_Package.Create));
-        This.updateProfileActionUI;
+        GenericProfileActionJPanel'Class (This).getGenericProfileAction.getGenericProfileActionScript.addCondition (ProfileActionScriptConditionInterface_Access (ColorAtActionScriptCondition_Package.Create));
+        GenericProfileActionJPanel'Class (This).updateProfileActionUI;
    end newColorAtJButtonActionPerformed;
 
 end org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileActionJPanel_Package;

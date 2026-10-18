@@ -91,7 +91,7 @@ package body org.allbinary.android.input.motion.api5.GameInputMotionEventProcess
             if (action) = (MotionEvent_Package.ACTION_DOWN) then
                 for pointerIndex in reverse 0 .. totalMinusOne loop
                     pointerId := motionEvent.getPointerId (pointerIndex);
-                    if This.isValid (pointerId) then
+                    if GameInputMotionEventProcessorAPI5'Class (This).isValid (pointerId) then
                         scalableListener := This.displayInfo.getScalableListener;
                         x := Integer (((((motionEvent.getX (pointerIndex)) - (This.displayInfo.getLeft))) / (scalableListener.getRatio (This.displayInfo.getRatio))));
                         y := Integer (((((motionEvent.getY (pointerIndex)) - (This.displayInfo.getTop))) / (scalableListener.getRatio (This.displayInfo.getRatio))));
@@ -101,7 +101,7 @@ package body org.allbinary.android.input.motion.api5.GameInputMotionEventProcess
             elsif ((action) = (MotionEvent_Package.ACTION_UP)) or else ((action) = (MotionEvent_Package.ACTION_CANCEL)) then
                 for pointerIndex in reverse 0 .. totalMinusOne loop
                     pointerId := motionEvent.getPointerId (pointerIndex);
-                    if This.isValid (pointerId) then
+                    if GameInputMotionEventProcessorAPI5'Class (This).isValid (pointerId) then
                         scalableListener := This.displayInfo.getScalableListener;
                         x := Integer (((((motionEvent.getX (pointerIndex)) - (This.displayInfo.getLeft))) / (scalableListener.getRatio (This.displayInfo.getRatio))));
                         y := Integer (((((motionEvent.getY (pointerIndex)) - (This.displayInfo.getTop))) / (scalableListener.getRatio (This.displayInfo.getRatio))));
@@ -111,7 +111,7 @@ package body org.allbinary.android.input.motion.api5.GameInputMotionEventProcess
             elsif (action) = (MotionEvent_Package.ACTION_MOVE) then
                 for pointerIndex in reverse 0 .. totalMinusOne loop
                     pointerId := motionEvent.getPointerId (pointerIndex);
-                    if This.isValid (pointerId) then
+                    if GameInputMotionEventProcessorAPI5'Class (This).isValid (pointerId) then
                         scalableListener := This.displayInfo.getScalableListener;
                         x := Integer (((((motionEvent.getX (pointerIndex)) - (This.displayInfo.getLeft))) / (scalableListener.getRatio (This.displayInfo.getRatio))));
                         y := Integer (((((motionEvent.getY (pointerIndex)) - (This.displayInfo.getTop))) / (scalableListener.getRatio (This.displayInfo.getRatio))));

@@ -94,11 +94,11 @@ package body org.allbinary.business.context.modules.storefront.statistics.orders
    begin
         hashMap := StdUtil_Package.getInstance.createHashMap;
         storeFrontOrdersHistoryStatisticsData := StoreFrontOrdersHistoryStatisticsData_Package.getInstance;
-        hashMap.put (storeFrontOrdersHistoryStatisticsData.NUMBEROFORDERS, This.getNumberOfOrders.toString);
-        hashMap.put (storeFrontOrdersHistoryStatisticsData.SUBTOTAL, This.getSubTotal.toString);
-        hashMap.put (storeFrontOrdersHistoryStatisticsData.SHIPPINGCOST, This.getShippingCost.toString);
-        hashMap.put (storeFrontOrdersHistoryStatisticsData.TAXES, This.getTaxes.toString);
-        hashMap.put (storeFrontOrdersHistoryStatisticsData.TOTAL, This.getTotal.toString);
+        hashMap.put (storeFrontOrdersHistoryStatisticsData.NUMBEROFORDERS, Java_Box (StoreFrontOrdersHistoryStatistics'Class (This).getNumberOfOrders.toString));
+        hashMap.put (storeFrontOrdersHistoryStatisticsData.SUBTOTAL, Java_Box (StoreFrontOrdersHistoryStatistics'Class (This).getSubTotal.toString));
+        hashMap.put (storeFrontOrdersHistoryStatisticsData.SHIPPINGCOST, Java_Box (StoreFrontOrdersHistoryStatistics'Class (This).getShippingCost.toString));
+        hashMap.put (storeFrontOrdersHistoryStatisticsData.TAXES, Java_Box (StoreFrontOrdersHistoryStatistics'Class (This).getTaxes.toString));
+        hashMap.put (storeFrontOrdersHistoryStatisticsData.TOTAL, Java_Box (StoreFrontOrdersHistoryStatistics'Class (This).getTotal.toString));
         return hashMap;
    end toHashMap;
 

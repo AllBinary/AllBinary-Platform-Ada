@@ -38,7 +38,7 @@ package body org.allbinary.game.layer.CollidableCompositeLayer_Package is
         AllBinaryGameLayer_Package.Initialize (This, name, layerInfo, viewPosition);
         Initialize_Fields (This);
         if (collidableBaseBehaviorFactory) /= (CollidableNeverCollideBehaviorFactory_Package.getInstance) then
-            This.setCollidableInferface (collidableBaseBehaviorFactory.createBehavior);
+            CollidableCompositeLayer'Class (This).setCollidableInferface (collidableBaseBehaviorFactory.createBehavior);
         end if;
    end Initialize;
 
@@ -78,14 +78,14 @@ package body org.allbinary.game.layer.CollidableCompositeLayer_Package is
         commonSeps := CommonSeps_Package.getInstance;
         AllBinaryGameLayer (This).toStringAppend (stringBuffer);
         stringBuffer.append (commonSeps.NEW_LINE);
-        stringBuffer.append (This.getCollidableInferface.toString);
+        stringBuffer.append (CollidableCompositeLayer'Class (This).getCollidableInferface.toString);
    end toStringAppend;
 
    function toString (This : in out CollidableCompositeLayer) return Unbounded_String is
       stringBuffer : StringMaker_Access;
    begin
         stringBuffer := StringMaker_Package.Create;
-        This.toStringAppend (stringBuffer);
+        CollidableCompositeLayer'Class (This).toStringAppend (stringBuffer);
         return stringBuffer.toString;
    end toString;
 

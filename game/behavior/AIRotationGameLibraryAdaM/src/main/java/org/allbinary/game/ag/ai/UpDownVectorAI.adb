@@ -30,7 +30,7 @@ package body org.allbinary.game.ag.ai.UpDownVectorAI_Package is
    begin
         BasicAI_Package.Initialize (This, ownerLayerInterface, gameInput);
         Initialize_Fields (This);
-        velocityInterfaceCompositeInterface := VelocityInterfaceCompositeInterface_Access (This.getOwnerLayerInterface);
+        velocityInterfaceCompositeInterface := VelocityInterfaceCompositeInterface_Access (UpDownVectorAI'Class (This).getOwnerLayerInterface);
         This.velocityInterface := velocityInterfaceCompositeInterface.getVelocityProperties;
         This.velocityInterface.getVelocityYBasicDecimalP.setint (0);
    end Initialize;
@@ -48,7 +48,7 @@ package body org.allbinary.game.ag.ai.UpDownVectorAI_Package is
       y : Integer;
       basicDecimal : BasicDecimal_Access;
    begin
-        y := (This.getOwnerLayerInterface.getHeight) * (270);
+        y := (UpDownVectorAI'Class (This).getOwnerLayerInterface.getHeight) * (270);
         if (This.index) < (5) then
             basicDecimal := This.velocityInterface.getVelocityYBasicDecimalP;
             basicDecimal.setint (0);
@@ -61,7 +61,7 @@ package body org.allbinary.game.ag.ai.UpDownVectorAI_Package is
             This.index := This.index + 1;
         else
             This.index := 0;
-            This.processAI (allBinaryLayerManager);
+            UpDownVectorAI'Class (This).processAI (allBinaryLayerManager);
         end if;
    end processAI;
 

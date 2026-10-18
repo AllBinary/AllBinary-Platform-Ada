@@ -26,7 +26,7 @@ package body org.allbinary.business.installer.DynamicInitDb_Package is
    begin
       InitDb_Package.Initialize (This);
       Initialize_Fields (This);
-        This.setHelper (InitDbHelperFactory_Package.getInstance (abeClientInformation));
+        DynamicInitDb'Class (This).setHelper (InitDbHelperFactory_Package.getInstance (abeClientInformation));
    end Initialize;
 
    function Create (abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class) return DynamicInitDb_Access is
@@ -42,7 +42,7 @@ package body org.allbinary.business.installer.DynamicInitDb_Package is
    begin
       InitDb_Package.Initialize (This);
       Initialize_Fields (This);
-        This.setHelper (InitDbHelperFactory_Package.getInstance (abeClientInformation, databaseConnectionInfoInterface));
+        DynamicInitDb'Class (This).setHelper (InitDbHelperFactory_Package.getInstance (abeClientInformation, databaseConnectionInfoInterface));
    end Initialize;
 
    function Create (abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; databaseConnectionInfoInterface_Param : access DatabaseConnectionInfoInterface_Package.DatabaseConnectionInfoInterface'Class) return DynamicInitDb_Access is

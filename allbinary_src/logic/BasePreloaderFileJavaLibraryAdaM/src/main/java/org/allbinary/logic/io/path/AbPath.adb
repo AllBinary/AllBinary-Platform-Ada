@@ -52,11 +52,11 @@ package body org.allbinary.logic.io.path.AbPath_Package is
       Initialize_Fields (This);
         stringValidationUtil := StringValidationUtil_Package.getInstance;
         if not (stringValidationUtil.isEmpty (aPath)) then
-            This.schema := This.getSchema (aPath);
+            This.schema := AbPath'Class (This).getSchema (aPath);
             This.nameP := name;
-            This.path := This.abPathUtil.adjustEnd (This.abPathUtil.adjust (This.getPathFromPath (aPath)));
+            This.path := This.abPathUtil.adjustEnd (This.abPathUtil.adjust (AbPath'Class (This).getPathFromPath (aPath)));
         else
-            This.init;
+            AbPath'Class (This).init;
             if not (stringValidationUtil.isEmpty (name)) then
                 This.nameP := name;
             end if;
@@ -73,14 +73,14 @@ package body org.allbinary.logic.io.path.AbPath_Package is
    procedure init (This : in out AbPath) is
    begin
         This.schema := This.EMPTY_STRING;
-        This.setPath (This.abPathData.SEPARATOR);
+        AbPath'Class (This).setPath (This.abPathData.SEPARATOR);
         This.nameP := This.EMPTY_STRING;
    end init;
 
    function getSchema (This : in out AbPath; aPath : Unbounded_String) return Unbounded_String is
       beginIndex : Integer;
    begin
-        beginIndex := (Index (aPath, To_String (This.commonSeps.COLON)) - 1);
+        beginIndex := (Index (aPath, Java_Image (This.commonSeps.COLON)) - 1);
         if (beginIndex) >= (0) then
             This.hasSchemaP := True;
             return Unbounded_Slice (aPath, (0) + 1, beginIndex);
@@ -102,10 +102,10 @@ package body org.allbinary.logic.io.path.AbPath_Package is
    begin
         filePathData := FilePathData_Package.getInstance;
         tempPath := aPath;
-        if not (This.hasSchema) then
+        if not (AbPath'Class (This).hasSchema) then
             tempPath := This.abPathUtil.adjustStart (tempPath);
         else
-            beginIndex := (Index (tempPath, To_String (This.commonSeps.COLON)) - 1);
+            beginIndex := (Index (tempPath, Java_Image (This.commonSeps.COLON)) - 1);
             if (beginIndex) >= (0) then
                 beginIndex := beginIndex + 1;
                 while ((Element (tempPath, (beginIndex) + 1)) = (This.abPathData.SEPARATORCHAR)) or else ((Element (tempPath, (beginIndex) + 1)) = (filePathData.SEPARATORCHAR)) loop
@@ -135,11 +135,11 @@ package body org.allbinary.logic.io.path.AbPath_Package is
       stringBuffer : StringMaker_Access;
    begin
         stringBuffer := StringMaker_Package.Create;
-        if This.hasSchema then
+        if AbPath'Class (This).hasSchema then
             stringBuffer.append (This.schema);
             stringBuffer.append (AbPath_Package.NETWORK_SEP);
         end if;
-        stringBuffer.append (This.getPath);
+        stringBuffer.append (AbPath'Class (This).getPath);
         stringBuffer.append (This.nameP);
         return stringBuffer.toString;
    end toString;
@@ -148,17 +148,17 @@ package body org.allbinary.logic.io.path.AbPath_Package is
       filePathData : FilePathData_Access;
       stringBuffer : StringMaker_Access;
    begin
-        if This.hasSchema then
+        if AbPath'Class (This).hasSchema then
             filePathData := FilePathData_Package.getInstance;
             stringBuffer := StringMaker_Package.Create;
             stringBuffer.append (This.schema);
             stringBuffer.append (This.commonSeps.COLON);
             stringBuffer.append (filePathData.PATH_START);
-            stringBuffer.append (FilePathUtil_Package.adjust (This.getPath));
+            stringBuffer.append (FilePathUtil_Package.adjust (AbPath'Class (This).getPath));
             stringBuffer.append (This.nameP);
             return stringBuffer.toString;
         else
-            return Java_Image (FilePathUtil_Package.adjust (This.getPath)) & This.nameP;
+            return Java_Image (FilePathUtil_Package.adjust (AbPath'Class (This).getPath)) & This.nameP;
         end if;
    end toFileSystemString;
 

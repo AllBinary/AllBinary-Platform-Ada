@@ -44,7 +44,7 @@ package body views.compound.objectConfig.CompoundContextTransformInfoObjectConfi
    begin
         GenericStoreTransformInfoObjectConfig_Package.Initialize (This, abeClientInformation, transformInfoInterface, document);
         Initialize_Fields (This);
-        This.setDocument (This.generate (This.toXmlDoc));
+        CompoundContextTransformInfoObjectConfig'Class (This).setDocument (CompoundContextTransformInfoObjectConfig'Class (This).generate (CompoundContextTransformInfoObjectConfig'Class (This).toXmlDoc));
    end Initialize;
 
    function Create (abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class; document_Param : access Document_Package.Document'Class) return CompoundContextTransformInfoObjectConfig_Access is
@@ -60,7 +60,7 @@ package body views.compound.objectConfig.CompoundContextTransformInfoObjectConfi
    begin
         GenericStoreTransformInfoObjectConfig_Package.Initialize (This, abeClientInformation, transformInfoInterface, name, type_Id);
         Initialize_Fields (This);
-        This.setDocument (This.generate (This.toXmlDoc));
+        CompoundContextTransformInfoObjectConfig'Class (This).setDocument (CompoundContextTransformInfoObjectConfig'Class (This).generate (CompoundContextTransformInfoObjectConfig'Class (This).toXmlDoc));
    end Initialize;
 
    function Create (abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class; name : Unbounded_String; type_Id : Unbounded_String) return CompoundContextTransformInfoObjectConfig_Access is
@@ -90,16 +90,16 @@ package body views.compound.objectConfig.CompoundContextTransformInfoObjectConfi
       replace : Replace_Access;
       index : Integer;
    begin
-        storeName := This.getTransformInfoInterface.getStoreName;
-        httpTransformInfoInterface := TransformInfoHttpInterface_Access (This.getTransformInfoInterface);
-        templateNameOverride := StringUtil_Package.getInstance.getNonNull (Unbounded_String (httpTransformInfoInterface.getPropertiesHashMap.get (TransformInfoData_Package.getInstance.PARTIAL)));
+        storeName := CompoundContextTransformInfoObjectConfig'Class (This).getTransformInfoInterface.getStoreName;
+        httpTransformInfoInterface := TransformInfoHttpInterface_Access (CompoundContextTransformInfoObjectConfig'Class (This).getTransformInfoInterface);
+        templateNameOverride := StringUtil_Package.getInstance.getNonNull (Java_Unbox (httpTransformInfoInterface.getPropertiesHashMap.get (TransformInfoData_Package.getInstance.PARTIAL)));
         stringBuffer := StringMaker_Package.Create;
         stringBuffer.append (storeName);
         stringBuffer.append (templateNameOverride);
         stringBuffer.append (CommonSeps_Package.getInstance.SPACE);
         stringBuffer.append (RootTransformInfoData_Package.NAME);
-        rootComponentInterface := TransformFactory_Package.getInstance.getInstance (This.abeClientInformation, stringBuffer.toString, This.getTransformInfoInterface);
-        viewVector := This.getTransformDomNodes;
+        rootComponentInterface := TransformFactory_Package.getInstance.getInstance (This.abeClientInformation, stringBuffer.toString, CompoundContextTransformInfoObjectConfig'Class (This).getTransformInfoInterface);
+        viewVector := CompoundContextTransformInfoObjectConfig'Class (This).getTransformDomNodes;
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
             This.logUtil.putF (To_Unbounded_String ("Root View Called with: ") & Java_Image (viewVector.size), CompoundContextTransformInfoObjectConfig_Access'(This'Unchecked_Access), To_Unbounded_String ("get(transformInfoInterface)"));
         end if;
@@ -110,7 +110,7 @@ package body views.compound.objectConfig.CompoundContextTransformInfoObjectConfi
         for index in 0 .. (size) - 1 loop
             objectConfigTransformInfoDomNode := TransformInfoDomNode_Access (viewVector.get (index));
             templateKey := objectConfigTransformInfoDomNode.getReplaceKey;
-            componentInterface := TransformFactory_Package.getInstance.getInstance (This.abeClientInformation, objectConfigTransformInfoDomNode.getTransformInfoInterface.getName, This.getTransformInfoInterface);
+            componentInterface := TransformFactory_Package.getInstance.getInstance (This.abeClientInformation, objectConfigTransformInfoDomNode.getTransformInfoInterface.getName, CompoundContextTransformInfoObjectConfig'Class (This).getTransformInfoInterface);
             replacementViewString := componentInterface.view;
             replacementViewString := DocumentToNode_Package.convertDocumentToNodeString (replacementViewString);
             stringBuffer.delete (0, stringBuffer.length);
@@ -140,7 +140,7 @@ package body views.compound.objectConfig.CompoundContextTransformInfoObjectConfi
       completeTemplateViewBytes : Short_Short_Integer_Array_Access;
       bais : ByteArrayInputStream_Access;
    begin
-        completeTemplateViewBytes := This.get.getBytes;
+        completeTemplateViewBytes := CompoundContextTransformInfoObjectConfig'Class (This).get.getBytes;
         bais := ByteArrayInputStream_Package.Create (completeTemplateViewBytes);
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
             This.logUtil.putF (To_Unbounded_String ("Template: ") & Java_New_String (completeTemplateViewBytes).toString, CompoundContextTransformInfoObjectConfig_Access'(This'Unchecked_Access), To_Unbounded_String ("createInputStream()"));

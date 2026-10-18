@@ -41,7 +41,7 @@ package body org.allbinary.game.collision.layer.CollidableInterfaceLayerProcesso
    begin
         collidableInterfaceCompositeInterface := CollidableInterfaceCompositeInterface_Access (layerInterface);
         if collidableInterfaceCompositeInterface.getCollidableInferface.isCollidable (CollidableCompositeLayer_Access (collidableInterfaceCompositeInterface)) then
-            AllBinaryCollisionManager_Package.getInstance.process (This.getLayerManager, collidableInterfaceCompositeInterface, index);
+            AllBinaryCollisionManager_Package.getInstance.process (CollidableInterfaceLayerProcessor'Class (This).getLayerManager, collidableInterfaceCompositeInterface, index);
         end if;
    end processAt;
 

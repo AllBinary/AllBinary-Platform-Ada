@@ -25,8 +25,8 @@ package body admin.tags.PaymentTransactionResultTag_Package is
    begin
       TableTag_Package.Initialize (This);
       Initialize_Fields (This);
-        This.setTagHelperFactory (PaymentTransactionResultHelperFactory_Package.Create);
-        This.setTagRequestHelperFactory (PaymentTransactionResultHelperFactory_Package.Create);
+        PaymentTransactionResultTag'Class (This).setTagHelperFactory (PaymentTransactionResultHelperFactory_Package.Create);
+        PaymentTransactionResultTag'Class (This).setTagRequestHelperFactory (PaymentTransactionResultHelperFactory_Package.Create);
    end Initialize;
 
    function Create return PaymentTransactionResultTag_Access is

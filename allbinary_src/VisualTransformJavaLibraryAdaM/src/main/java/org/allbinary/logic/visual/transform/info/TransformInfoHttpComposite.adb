@@ -49,7 +49,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoHttpComposit
 
    function getWeblisketSession (This : in out TransformInfoHttpComposite) return WeblisketSession_Access is
    begin
-        return WeblisketSession_Package.Create (This.getPropertiesHashMap, This.getPageContext);
+        return WeblisketSession_Package.Create (TransformInfoHttpComposite'Class (This).getPropertiesHashMap, TransformInfoHttpComposite'Class (This).getPageContext);
    end getWeblisketSession;
 
    function getPageContext (This : in out TransformInfoHttpComposite) return PageContext_Access is

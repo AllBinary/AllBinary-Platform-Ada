@@ -8,10 +8,11 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.io.InputStream_Package; use java.io.InputStream_Package;
+with java.io.InputStream_Package; use java.io.InputStream_Package;
 
 package org.platform.OpenGLResources_Package is
 
+   package InputStream_Package renames Standard.java.io.InputStream_Package;
 
    type OpenGLResources is tagged;
    type OpenGLResources_Access is access all OpenGLResources'Class;

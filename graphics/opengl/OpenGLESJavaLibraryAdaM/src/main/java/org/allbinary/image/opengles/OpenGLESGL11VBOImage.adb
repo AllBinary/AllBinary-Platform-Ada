@@ -34,7 +34,7 @@ package body org.allbinary.image.opengles.OpenGLESGL11VBOImage_Package is
    begin
         OpenGLESImage_Package.Initialize (This, image, bitmapFactory, textureFactory);
         Initialize_Fields (This);
-        This.initVertices;
+        OpenGLESGL11VBOImage'Class (This).initVertices;
         This.regionRectangleVertexFloatBuffer.put (FloatBuffer_Package.wrap (This.regionRectangleFloatArray));
         This.regionTextureVertexFloatBuffer.put (FloatBuffer_Package.wrap (This.regionTextureRectangleFloatArray));
    end Initialize;
@@ -82,12 +82,12 @@ package body org.allbinary.image.opengles.OpenGLESGL11VBOImage_Package is
         This.regionRectangleFloatArray (6) := Float (x);
         This.regionRectangleFloatArray (9) := This.regionRectangleFloatArray (3);
         This.regionRectangleFloatArray (10) := This.regionRectangleFloatArray (7);
-        This.regionTextureRectangleFloatArray (0) := (x_src) / (This.getWidth);
-        This.regionTextureRectangleFloatArray (1) := ((((y_src) + (height)))) / (This.getHeight);
-        This.regionTextureRectangleFloatArray (2) := ((((x_src) + (width)))) / (This.getWidth);
+        This.regionTextureRectangleFloatArray (0) := (x_src) / (OpenGLESGL11VBOImage'Class (This).getWidth);
+        This.regionTextureRectangleFloatArray (1) := ((((y_src) + (height)))) / (OpenGLESGL11VBOImage'Class (This).getHeight);
+        This.regionTextureRectangleFloatArray (2) := ((((x_src) + (width)))) / (OpenGLESGL11VBOImage'Class (This).getWidth);
         This.regionTextureRectangleFloatArray (3) := This.regionTextureRectangleFloatArray (1);
         This.regionTextureRectangleFloatArray (4) := This.regionTextureRectangleFloatArray (0);
-        This.regionTextureRectangleFloatArray (5) := (y_src) / (This.getHeight);
+        This.regionTextureRectangleFloatArray (5) := (y_src) / (OpenGLESGL11VBOImage'Class (This).getHeight);
         This.regionTextureRectangleFloatArray (6) := This.regionTextureRectangleFloatArray (2);
         This.regionTextureRectangleFloatArray (7) := This.regionTextureRectangleFloatArray (5);
         This.glUtil.position (This.regionRectangleVertexFloatBuffer, 0);
@@ -109,8 +109,8 @@ package body org.allbinary.image.opengles.OpenGLESGL11VBOImage_Package is
    begin
         This.regionRectangleFloatArray (0) := Float (x);
         This.regionRectangleFloatArray (7) := (DisplayInfoSingleton_Package.getInstance.getLastHeight) - (y);
-        This.regionRectangleFloatArray (1) := (This.regionRectangleFloatArray (7)) - (This.getHeight);
-        This.regionRectangleFloatArray (3) := (x) + (This.getWidth);
+        This.regionRectangleFloatArray (1) := (This.regionRectangleFloatArray (7)) - (OpenGLESGL11VBOImage'Class (This).getHeight);
+        This.regionRectangleFloatArray (3) := (x) + (OpenGLESGL11VBOImage'Class (This).getWidth);
         This.regionRectangleFloatArray (4) := This.regionRectangleFloatArray (1);
         This.regionRectangleFloatArray (6) := Float (x);
         This.regionRectangleFloatArray (9) := This.regionRectangleFloatArray (3);

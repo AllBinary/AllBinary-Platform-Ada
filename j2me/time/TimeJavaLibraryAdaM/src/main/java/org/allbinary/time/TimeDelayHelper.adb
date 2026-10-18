@@ -28,7 +28,7 @@ package body org.allbinary.time.TimeDelayHelper_Package is
    begin
       Initialize_Fields (This);
         This.delay_Id := delay_Id;
-        This.setStartTimeTNT;
+        TimeDelayHelper'Class (This).setStartTimeTNT;
    end Initialize;
 
    function Create (delay_Id : Integer) return TimeDelayHelper_Access is
@@ -98,7 +98,7 @@ package body org.allbinary.time.TimeDelayHelper_Package is
 
    function isElapsed (This : in out TimeDelayHelper; currentTime : Long_Long_Integer; time : Long_Long_Integer) return Boolean is
    begin
-        if (This.getElapsed (currentTime)) > (time) then
+        if (TimeDelayHelper'Class (This).getElapsed (currentTime)) > (time) then
             return True;
         else
             return False;
@@ -107,7 +107,7 @@ package body org.allbinary.time.TimeDelayHelper_Package is
 
    function isElapsedTNT (This : in out TimeDelayHelper; time : Long_Long_Integer) return Boolean is
    begin
-        if (This.getElapsedTNT) > (time) then
+        if (TimeDelayHelper'Class (This).getElapsedTNT) > (time) then
             return True;
         else
             return False;
@@ -131,7 +131,7 @@ package body org.allbinary.time.TimeDelayHelper_Package is
 
    procedure pause (This : in out TimeDelayHelper) is
    begin
-        This.elapsedTimeAtPause := This.getElapsedTNT;
+        This.elapsedTimeAtPause := TimeDelayHelper'Class (This).getElapsedTNT;
         This.startTime := Long_Package.MAX_VALUE;
    end pause;
 
@@ -140,7 +140,7 @@ package body org.allbinary.time.TimeDelayHelper_Package is
         if (This.elapsedTimeAtPause) /= (Long_Package.MIN_VALUE) then
             This.startTime := (Java_Current_Time_Millis) + (This.elapsedTimeAtPause);
             This.elapsedTimeAtPause := Long_Package.MIN_VALUE;
-            This.setStartTimeTNT;
+            TimeDelayHelper'Class (This).setStartTimeTNT;
             return True;
         end if;
         return False;
@@ -151,7 +151,7 @@ package body org.allbinary.time.TimeDelayHelper_Package is
       commonLabels : CommonLabels_Access;
       elapsedAsString : Unbounded_String;
    begin
-        elapsed := This.getElapsed (currentTime);
+        elapsed := TimeDelayHelper'Class (This).getElapsed (currentTime);
         if (elapsed) > (0) then
             commonLabels := CommonLabels_Package.getInstance;
             elapsedAsString := To_Unbounded_String (Java_Image (elapsed));
@@ -168,7 +168,7 @@ package body org.allbinary.time.TimeDelayHelper_Package is
       elapsedAsString : Unbounded_String;
    begin
         currentTime := Java_Current_Time_Millis;
-        elapsed := This.getElapsed (currentTime);
+        elapsed := TimeDelayHelper'Class (This).getElapsed (currentTime);
         if (elapsed) > (0) then
             commonLabels := CommonLabels_Package.getInstance;
             elapsedAsString := To_Unbounded_String (Java_Image (elapsed));

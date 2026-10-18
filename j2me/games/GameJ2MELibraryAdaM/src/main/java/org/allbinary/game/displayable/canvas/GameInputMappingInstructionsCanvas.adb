@@ -46,9 +46,9 @@ package body org.allbinary.game.displayable.canvas.GameInputMappingInstructionsC
    procedure initCommands (This : in out GameInputMappingInstructionsCanvas; cmdListener_Param : access CommandListener_Package.CommandListener'Class) is
       cmdListener : constant CommandListener_Access := CommandListener_Access (cmdListener_Param);
    begin
-        This.removeAllCommands;
-        This.addCommand (GameInputMappingInstructionsCanvas_Package.CLOSE);
-        This.setCommandListener (cmdListener);
+        GameInputMappingInstructionsCanvas'Class (This).removeAllCommands;
+        GameInputMappingInstructionsCanvas'Class (This).addCommand (GameInputMappingInstructionsCanvas_Package.CLOSE);
+        GameInputMappingInstructionsCanvas'Class (This).setCommandListener (cmdListener);
    end initCommands;
 
    procedure paint (This : in out GameInputMappingInstructionsCanvas; graphics_Param : access Graphics_Package.Graphics'Class) is

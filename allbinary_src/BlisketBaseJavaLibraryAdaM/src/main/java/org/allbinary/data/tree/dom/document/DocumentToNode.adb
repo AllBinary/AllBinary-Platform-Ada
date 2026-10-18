@@ -57,7 +57,7 @@ package body org.allbinary.data.tree.dom.document.DocumentToNode_Package is
       resultString : Unbounded_String;
    begin
         startIndex := 0;
-        while ((Java_Assign (startIndex, (Index (documentString, To_String (start)) - 1)))) /= (-(1)) loop
+        while ((Java_Assign (startIndex, (Index (documentString, Java_Image (start)) - 1)))) /= (-(1)) loop
             if (startIndex) >= (0) then
                 endIndex := documentString.indexOf (end_Id, startIndex);
                 if (endIndex) >= (0) then

@@ -28,7 +28,7 @@ package body org.allbinary.data.tables.staticpages.StaticPagesEntity_Package is
    begin
         AbSqlBean_Package.Initialize (This, StaticPagesDbInitInfo_Package.Create);
         Initialize_Fields (This);
-        This.setTableName (This.TABLENAME);
+        StaticPagesEntity'Class (This).setTableName (This.TABLENAME);
    end Initialize;
 
    function Create return StaticPagesEntity_Access is
@@ -63,8 +63,8 @@ package body org.allbinary.data.tables.staticpages.StaticPagesEntity_Package is
       file : Unbounded_String;
    begin
         whereHashMap := StdUtil_Package.getInstance.createHashMap;
-        whereHashMap.put (StoreFrontData_Package.getInstance.NAME, store);
-        whereHashMap.put (This.basicItemData.KEYWORDS, keywords);
+        whereHashMap.put (StoreFrontData_Package.getInstance.NAME, Java_Box (store));
+        whereHashMap.put (This.basicItemData.KEYWORDS, Java_Box (keywords));
         file := AbSqlBean (This).getField (whereHashMap, SearchData_Package.PAGE);
         return file;
    end getFile;
@@ -84,7 +84,7 @@ package body org.allbinary.data.tables.staticpages.StaticPagesEntity_Package is
    procedure update (This : in out StaticPagesEntity; updatedValues_Param : access HashMap_Package.HashMap'Class) is
       updatedValues : constant HashMap_Access := HashMap_Access (updatedValues_Param);
    begin
-        AbSqlBean (This).updateWhere (This.basicItemData.KEYWORDS, Unbounded_String (updatedValues.get (This.basicItemData.KEYWORDS)), updatedValues);
+        AbSqlBean (This).updateWhere (This.basicItemData.KEYWORDS, Java_Unbox (updatedValues.get (This.basicItemData.KEYWORDS)), updatedValues);
    end update;
 
    function createTableStatement (This : in out StaticPagesEntity) return Unbounded_String is
@@ -97,7 +97,7 @@ package body org.allbinary.data.tables.staticpages.StaticPagesEntity_Package is
 
    function createTable (This : in out StaticPagesEntity) return Unbounded_String is
    begin
-        return AbSqlBean (This).createTable (This.createTableStatement);
+        return AbSqlBean (This).createTable (StaticPagesEntity'Class (This).createTableStatement);
    end createTable;
 
    procedure getFile (This : in out StaticPagesEntity; store : Unbounded_String; keywords : Unbounded_String) is

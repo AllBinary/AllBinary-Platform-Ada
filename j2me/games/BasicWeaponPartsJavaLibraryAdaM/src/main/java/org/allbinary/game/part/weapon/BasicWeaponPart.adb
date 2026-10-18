@@ -40,8 +40,8 @@ package body org.allbinary.game.part.weapon.BasicWeaponPart_Package is
       relativeRelationship : constant RelativeRelationship_Access := RelativeRelationship_Access (relativeRelationship_Param);
    begin
       Initialize_Fields (This);
-        This.init (sourceLayerInterface, weaponProperties, scoreableInterface, relativeRelationship);
-        This.setAnimationInterface (animationInterface);
+        BasicWeaponPart'Class (This).init (sourceLayerInterface, weaponProperties, scoreableInterface, relativeRelationship);
+        BasicWeaponPart'Class (This).setAnimationInterface (animationInterface);
    end Initialize;
 
    function Create (animationInterface_Param : access Animation_Package.Animation'Class; sourceLayerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; weaponProperties_Param : access WeaponProperties_Package.WeaponProperties'Class; scoreableInterface_Param : access ScoreableInterface_Package.ScoreableInterface'Class; relativeRelationship_Param : access RelativeRelationship_Package.RelativeRelationship'Class) return BasicWeaponPart_Access is
@@ -57,8 +57,8 @@ package body org.allbinary.game.part.weapon.BasicWeaponPart_Package is
       scoreableInterface : constant ScoreableInterface_Access := ScoreableInterface_Access (scoreableInterface_Param);
       relativeRelationship : constant RelativeRelationship_Access := RelativeRelationship_Access (relativeRelationship_Param);
    begin
-        This.setOwnerLayerInterface (sourceLayerInterface);
-        This.setWeaponProperties (weaponProperties);
+        BasicWeaponPart'Class (This).setOwnerLayerInterface (sourceLayerInterface);
+        BasicWeaponPart'Class (This).setWeaponProperties (weaponProperties);
         This.scoreableInterface := scoreableInterface;
         This.relativeRelationship := relativeRelationship;
    end init;
@@ -67,7 +67,7 @@ package body org.allbinary.game.part.weapon.BasicWeaponPart_Package is
    procedure process (This : in out BasicWeaponPart; allbinaryLayerManager_Param : access AllBinaryLayerManager_Package.AllBinaryLayerManager'Class; angle : Short_Integer; otherAngle : Short_Integer) is
       allbinaryLayerManager : constant AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (allbinaryLayerManager_Param);
    begin
-        This.processScore (allbinaryLayerManager, angle, otherAngle, This.getWeaponProperties, This.scoreableInterface);
+        BasicWeaponPart'Class (This).processScore (allbinaryLayerManager, angle, otherAngle, BasicWeaponPart'Class (This).getWeaponProperties, This.scoreableInterface);
    end process;
 
    --  throws Exception
@@ -107,7 +107,7 @@ package body org.allbinary.game.part.weapon.BasicWeaponPart_Package is
       viewX : Integer;
       viewY : Integer;
    begin
-        viewPosition := This.getOwnerLayerInterface.getViewPosition;
+        viewPosition := BasicWeaponPart'Class (This).getOwnerLayerInterface.getViewPosition;
         viewX := viewPosition.getX;
         viewY := viewPosition.getY;
         This.animationInterface.paintXY (graphics, viewX, viewY);

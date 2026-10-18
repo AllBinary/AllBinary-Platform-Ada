@@ -26,8 +26,8 @@ package body admin.tags.InventoryTag_Package is
    begin
         TableTag_Package.Initialize (This);
         Initialize_Fields (This);
-        This.setTagHelperFactory (InventoryHelperFactory_Package.Create);
-        This.setTagRequestHelperFactory (InventoryRequestHelperFactory_Package.Create);
+        InventoryTag'Class (This).setTagHelperFactory (InventoryHelperFactory_Package.Create);
+        InventoryTag'Class (This).setTagRequestHelperFactory (InventoryRequestHelperFactory_Package.Create);
    end Initialize;
 
    function Create return InventoryTag_Access is
@@ -47,13 +47,13 @@ package body admin.tags.InventoryTag_Package is
       parentTag : Tag_Access;
    begin
         begin
-            if This.isEnabled then
-                if (This.getCommand) /= (null) then
-                    if ((((This.getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.BACKUP)) /= (0)) and then ((This.getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.RESTORE)) /= (0))) and then ((This.getCommand.compareTo (This.commonStrings.CREATE)) /= (0))) and then ((This.getCommand.compareTo (This.commonStrings.DROP)) /= (0)) then
-                        parentTag := This.getParent;
+            if InventoryTag'Class (This).isEnabled then
+                if (InventoryTag'Class (This).getCommand) /= (null) then
+                    if ((((InventoryTag'Class (This).getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.BACKUP)) /= (0)) and then ((InventoryTag'Class (This).getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.RESTORE)) /= (0))) and then ((InventoryTag'Class (This).getCommand.compareTo (This.commonStrings.CREATE)) /= (0))) and then ((InventoryTag'Class (This).getCommand.compareTo (This.commonStrings.DROP)) /= (0)) then
+                        parentTag := InventoryTag'Class (This).getParent;
                         ParentInventoryTagHelper_Package.getInstance.isValid (InventoryTag_Access'(This'Unchecked_Access), parentTag);
-                        This.getPropertiesHashMap.put (AbTagData_Package.PARENT, parentTag);
-                        This.getPropertiesHashMap.put (StoreFrontData_Package.getInstance.NAME, This.storeName);
+                        InventoryTag'Class (This).getPropertiesHashMap.put (AbTagData_Package.PARENT, parentTag);
+                        InventoryTag'Class (This).getPropertiesHashMap.put (StoreFrontData_Package.getInstance.NAME, This.storeName);
                     end if;
                     return TableTag (This).doStartTag;
                 end if;

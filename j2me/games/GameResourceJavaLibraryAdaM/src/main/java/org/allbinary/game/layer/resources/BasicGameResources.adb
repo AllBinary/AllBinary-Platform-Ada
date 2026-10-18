@@ -44,7 +44,7 @@ package body org.allbinary.game.layer.resources.BasicGameResources_Package is
         begin
             scale := GameConfigurationCentral_Package.getInstance.SCALE.getValue.intValue;
             if ((scale) > (1)) and then (((scale) - (1)) < (SIZE'Length)) then
-                This.append (ROOT, SIZE ((scale) - (1)));
+                BasicGameResources'Class (This).append (ROOT, SIZE ((scale) - (1)));
             else
                 Java_Throw (Java_New_Exception ("Exception", StringMaker_Package.Create.append (To_Unbounded_String ("Invalid Value: ")).appendint (scale).toString));
             end if;
@@ -65,7 +65,7 @@ package body org.allbinary.game.layer.resources.BasicGameResources_Package is
       string_Id : Unbounded_String;
    begin
         DESTROY := To_Unbounded_String ("_destroy");
-        string_Id := This.getString;
+        string_Id := BasicGameResources'Class (This).getString;
         BasicGameResources_Package.stringBuffer.delete (0, BasicGameResources_Package.stringBuffer.length);
         BasicGameResources_Package.stringBuffer.append (ROOT);
         BasicGameResources_Package.stringBuffer.append (string_Id);

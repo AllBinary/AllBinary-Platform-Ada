@@ -49,7 +49,7 @@ package body org.allbinary.graphics.displayable.screen.WebCommandProcessor_Packa
    begin
         begin
             if (Desktop_Package.isDesktopSupported) and then (Desktop_Package.getDesktop.isSupported (Desktop_Package.Action.BROWSE)) then
-                Desktop_Package.getDesktop.browse (URI_Package.Create (Unbounded_String (This.list.removeAt (0))));
+                Desktop_Package.getDesktop.browse (URI_Package.Create (Java_Unbox (This.list.removeAt (0))));
             end if;
         exception
             when Java_Occurrence : others =>

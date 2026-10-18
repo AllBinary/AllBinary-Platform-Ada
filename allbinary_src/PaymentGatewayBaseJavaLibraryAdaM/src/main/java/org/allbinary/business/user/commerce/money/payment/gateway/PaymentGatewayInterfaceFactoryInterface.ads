@@ -20,11 +20,12 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.util.HashMap_Package; use java.util.HashMap_Package;
+with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayInterface_Package; use org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayInterface_Package;
 
 package org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayInterfaceFactoryInterface_Package is
 
+   package HashMap_Package renames Standard.java.util.HashMap_Package;
 
    type PaymentGatewayInterfaceFactoryInterface is interface;
    type PaymentGatewayInterfaceFactoryInterface_Access is access all PaymentGatewayInterfaceFactoryInterface'Class;

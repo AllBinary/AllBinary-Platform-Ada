@@ -23,7 +23,7 @@ with AllBinary_Java; use AllBinary_Java;
 --  with java.sql.Connection_Package; use java.sql.Connection_Package;
 --  with java.sql.DriverManager_Package; use java.sql.DriverManager_Package;
 --  with java.sql.SQLException_Package; use java.sql.SQLException_Package;
---  with java.util.HashMap_Package; use java.util.HashMap_Package;
+with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
@@ -32,6 +32,7 @@ with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.
 
 package org.allbinary.logic.communication.sql.connection.pool.SqlConnectionPool_Package is
 
+   package HashMap_Package renames Standard.java.util.HashMap_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
    package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;

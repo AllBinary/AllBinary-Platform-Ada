@@ -52,11 +52,11 @@ package body org.allbinary.game.configuration.InGameFeatures_Package is
         if (exclusiveOrientationSensorVector) /= (null) then
             inGameExclusiveOrientationSensorVectorCanBeNull := inGameFeatureChoiceGroups.get.get (Java_Object_Access (orientationData.ORIENTATION_SENSOR_INPUT));
             if (inGameExclusiveOrientationSensorVectorCanBeNull) = (null) then
-                This.addToInGameMenu;
+                InGameFeatures'Class (This).addToInGameMenu;
             else
                 inGameExclusiveOrientationSensorVector := BasicArrayList_Access (inGameExclusiveOrientationSensorVectorCanBeNull);
                 if (inGameExclusiveOrientationSensorVector.size) = (0) then
-                    This.addToInGameMenu;
+                    InGameFeatures'Class (This).addToInGameMenu;
                 end if;
             end if;
         end if;

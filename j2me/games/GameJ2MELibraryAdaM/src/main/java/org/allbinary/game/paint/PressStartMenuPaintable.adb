@@ -66,13 +66,13 @@ package body org.allbinary.game.paint.PressStartMenuPaintable_Package is
       graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
         if This.timeDelayHelper.isTimeTNT then
-            if This.isFlash then
-                This.setFlash (False);
+            if PressStartMenuPaintable'Class (This).isFlash then
+                PressStartMenuPaintable'Class (This).setFlash (False);
             else
-                This.setFlash (True);
+                PressStartMenuPaintable'Class (This).setFlash (True);
             end if;
         end if;
-        if This.isFlash then
+        if PressStartMenuPaintable'Class (This).isFlash then
             This.myFontProcessor.process (graphics);
             graphics.drawString (This.startString, (This.displayInfo.getLastHalfWidth) - (This.beginWidth), (This.displayInfo.getLastHeight) - (This.line), This.anchor);
         end if;

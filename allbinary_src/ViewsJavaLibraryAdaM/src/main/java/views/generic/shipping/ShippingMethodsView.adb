@@ -29,7 +29,7 @@ package body views.generic_Id.shipping.ShippingMethodsView_Package is
    begin
         HttpStoreComponentView_Package.Initialize (This, transformInfoInterface);
         Initialize_Fields (This);
-        This.storeFrontInterface := StoreFrontFactory_Package.getInstance (This.getTransformInfoInterface.getStoreName);
+        This.storeFrontInterface := StoreFrontFactory_Package.getInstance (ShippingMethodsView'Class (This).getTransformInfoInterface.getStoreName);
         This.shippingMethods := ShippingMethods_Package.Create (This.abeClientInformation, This.storeFrontInterface);
    end Initialize;
 
@@ -62,9 +62,9 @@ package body views.generic_Id.shipping.ShippingMethodsView_Package is
    begin
         begin
             shippingMethodsNode := document.createElement (ShippingMethodsData_Package.SHIPPINGMETHODSORDERSUMMARIES);
-            order := This.getWeblisketSession.getOrder;
-            basket := This.getWeblisketSession.getOrder.getBasket;
-            shippingAddressesEntityInterface := ShippingAddressesEntityFactory_Package.getInstance.getInstance (This.getWeblisketSession.getUserName);
+            order := ShippingMethodsView'Class (This).getWeblisketSession.getOrder;
+            basket := ShippingMethodsView'Class (This).getWeblisketSession.getOrder.getBasket;
+            shippingAddressesEntityInterface := ShippingAddressesEntityFactory_Package.getInstance.getInstance (ShippingMethodsView'Class (This).getWeblisketSession.getUserName);
             streetAddress := shippingAddressesEntityInterface.getDefault;
             shippingVector := This.shippingMethods.get;
             size := shippingVector.size;
@@ -107,14 +107,14 @@ package body views.generic_Id.shipping.ShippingMethodsView_Package is
 
    procedure addDomNodeInterfaces (This : in out ShippingMethodsView) is
    begin
-        This.addDomNodeInterface (DomNodeInterface_Access (ShippingMethodsView_Access'(This'Unchecked_Access)));
+        ShippingMethodsView'Class (This).addDomNodeInterface (DomNodeInterface_Access (ShippingMethodsView_Access'(This'Unchecked_Access)));
    end addDomNodeInterfaces;
 
    function view (This : in out ShippingMethodsView) return Unbounded_String is
       error : Unbounded_String;
    begin
         begin
-            This.addDomNodeInterfaces;
+            ShippingMethodsView'Class (This).addDomNodeInterfaces;
             return HttpStoreComponentView (This).view;
         exception
             when Java_Occurrence : others =>

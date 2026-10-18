@@ -34,20 +34,20 @@ package body org.allbinary.game.input.MapSelectionGameInputProcessor_Package is
 --        commonStrings : CommonStrings_Access;
 --     begin
 --              begin
---                  This.setRunning (True);
+--                  MapSelectionGameInputProcessor'Class (This).setRunning (True);
 --                  SecondaryPlayerQueueFactory_Package.getInstance.add (SelectSound_Package.getInstance);
 --                  track := (This.preGameSelectorPaintable.getPreGameSelectionForm.getSelectedIndex) + (1);
 --                  wave := This.raceTrackGeographicMapInterfaceFactoryInterface.getFirstWaveWithTrack (track);
 --                  This.gameCanvas.getLayerManager.getGameInfo.setCurrentLevel (wave);
 --                  This.gameCanvas.buildGameInit (False);
---                  GameKeyEventHandler_Package.getInstance.removeListener (This.getPlayerGameInput);
---                  This.setRunning (False);
+--                  GameKeyEventHandler_Package.getInstance.removeListener (MapSelectionGameInputProcessor'Class (This).getPlayerGameInput);
+--                  MapSelectionGameInputProcessor'Class (This).setRunning (False);
 --              exception
 --                  when Java_Occurrence : others =>
 --                      declare
 --                          e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
 --                      begin
---                  This.setRunning (False);
+--                  MapSelectionGameInputProcessor'Class (This).setRunning (False);
 --                  logUtil := LogUtil_Package.getInstance;
 --                  commonStrings := CommonStrings_Package.getInstance;
 --                  logUtil.put (commonStrings.EXCEPTION_Id, MapSelectionGameInputProcessor_Access'(This'Unchecked_Access), commonStrings.RUN, e);
@@ -82,7 +82,7 @@ package body org.allbinary.game.input.MapSelectionGameInputProcessor_Package is
    --  throws Exception
    procedure process (This : in out MapSelectionGameInputProcessor) is
    begin
-        This.getPlayerGameInput.update;
+        MapSelectionGameInputProcessor'Class (This).getPlayerGameInput.update;
    end process;
 
    --  throws Exception
@@ -134,7 +134,7 @@ package body org.allbinary.game.input.MapSelectionGameInputProcessor_Package is
 
    function getName (This : in out MapSelectionGameInputProcessor) return Unbounded_String is
    begin
-        return This.toString;
+        return MapSelectionGameInputProcessor'Class (This).toString;
    end getName;
 
    function getPlayerGameInput (This : in out MapSelectionGameInputProcessor) return PlayerGameInput_Access is

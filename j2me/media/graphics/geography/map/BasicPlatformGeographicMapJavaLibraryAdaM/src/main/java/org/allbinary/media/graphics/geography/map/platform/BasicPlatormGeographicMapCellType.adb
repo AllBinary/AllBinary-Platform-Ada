@@ -64,7 +64,7 @@ package body org.allbinary.media.graphics.geography.map.platform.BasicPlatormGeo
    function isType (This : in out BasicPlatormGeographicMapCellType; type_Id_Param : access GeographicMapCellType_Package.GeographicMapCellType'Class) return Boolean is
       type_Id : constant GeographicMapCellType_Access := GeographicMapCellType_Access (type_Id_Param);
    begin
-        return This.hasType (type_Id.getType);
+        return BasicPlatormGeographicMapCellType'Class (This).hasType (type_Id.getType);
    end isType;
 
    function hasType (This : in out BasicPlatormGeographicMapCellType; type_Id : Integer) return Boolean is

@@ -46,7 +46,7 @@ package body org.allbinary.game.displayable.canvas.BasicPopupMenuPaintable_Packa
         else
             This.animationInterface := RectangleFilledAnimation_Package.Create (This.rectangle.getWidth, This.rectangle.getHeight, BasicColorFactory_Package.getInstance.TRANSPARENT_GREY);
         end if;
-        This.init (rectangle);
+        BasicPopupMenuPaintable'Class (This).init (rectangle);
    end Initialize;
 
    function Create (rectangle_Param : access Rectangle_Package.Rectangle'Class; backgroundBasicColor_Param : access BasicColor_Package.BasicColor'Class; foregroundBasicColor_Param : access BasicColor_Package.BasicColor'Class) return BasicPopupMenuPaintable_Access is
@@ -76,7 +76,7 @@ package body org.allbinary.game.displayable.canvas.BasicPopupMenuPaintable_Packa
             BORDER := (MyFontProcessor_Package.defaultCharWidth (font)) * (2);
         end if;
         This.BORDER := BORDER;
-        This.heightOffset := (This.rectangle.getHeight) - (((font.getHeight) * (BasicPopupMenuPaintable_Package.NAME.length)));
+        This.heightOffset := (This.rectangle.getHeight) - (((font.getHeight) * (Length (BasicPopupMenuPaintable_Package.NAME))));
         if OpenGLFeatureUtil_Package.getInstance.isAnyThreed then
             This.heightOffset := (This.heightOffset) - ((font.getHeight) + (2));
             if AndroidUtil_Package.isAndroid then

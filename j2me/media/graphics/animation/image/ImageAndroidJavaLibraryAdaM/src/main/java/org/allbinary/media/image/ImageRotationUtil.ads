@@ -20,7 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
+with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
 with org.allbinary.graphics.Anchor_Package; use org.allbinary.graphics.Anchor_Package;
 with android.graphics.Bitmap_Package; use android.graphics.Bitmap_Package;
 with android.graphics.Canvas_Package; use android.graphics.Canvas_Package;
@@ -30,6 +30,7 @@ with org.allbinary.media.image.ImageCreationUtil_Package; use org.allbinary.medi
 
 package org.allbinary.media.image.ImageRotationUtil_Package is
 
+   package Image_Package renames Standard.javax.microedition.lcdui.Image_Package;
    package Anchor_Package renames Standard.org.allbinary.graphics.Anchor_Package;
    package Bitmap_Package renames Standard.android.graphics.Bitmap_Package;
    package Canvas_Package renames Standard.android.graphics.Canvas_Package;

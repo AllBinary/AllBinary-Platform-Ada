@@ -39,7 +39,7 @@ package body org.allbinary.game.configuration.persistance.KeyValuePersistance_Pa
    procedure loadAll (This : in out KeyValuePersistance; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class) is
       abeClientInformation : constant AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
    begin
-        This.loadAllSize (abeClientInformation, 1);
+        KeyValuePersistance'Class (This).loadAllSize (abeClientInformation, 1);
    end loadAll;
 
    --  throws Exception
@@ -60,7 +60,7 @@ package body org.allbinary.game.configuration.persistance.KeyValuePersistance_Pa
    begin
         recordStore := NullRecordStore_Package.NULL_RECORD_STORE;
         begin
-            recordStore := RecordStore_Package.openRecordStore (This.getRecordId (abeClientInformation), True);
+            recordStore := RecordStore_Package.openRecordStore (KeyValuePersistance'Class (This).getRecordId (abeClientInformation), True);
             recordEnum := recordStore.enumerateRecords (NullRecordFilter_Package.NULL_RECORD_FILTER, NullRecordComparator_Package.NULL_RECORD_COMPARATOR, True);
             hashtable := null;
             name := Null_Unbounded_String;
@@ -125,7 +125,7 @@ package body org.allbinary.game.configuration.persistance.KeyValuePersistance_Pa
         recordStore := NullRecordStore_Package.NULL_RECORD_STORE;
         begin
             This.logUtil.putF (StringMaker_Package.Create.append (This.persistanceStrings.SAVING).append (StringUtil_Package.getInstance.toString (hashtable)).toString, KeyValuePersistance_Access'(This'Unchecked_Access), This.commonStrings.SAVE);
-            recordStore := RecordStore_Package.openRecordStore (This.getRecordId (abeClientInformation), True);
+            recordStore := RecordStore_Package.openRecordStore (KeyValuePersistance'Class (This).getRecordId (abeClientInformation), True);
             byteArrayOutputStream := ByteArrayOutputStream_Package.Create;
             outputStream := DataOutputStream_Package.Create (byteArrayOutputStream);
             value := Null_Unbounded_String;
@@ -134,10 +134,10 @@ package body org.allbinary.game.configuration.persistance.KeyValuePersistance_Pa
             anyType := null;
             size := objectArray'Length;
             for index in 0 .. (size) - 1 loop
-                outputStream.writeUTF (Unbounded_String (objectArray (index)));
+                outputStream.writeUTF (Java_Unbox (objectArray (index)));
                 outputStream.writeUTF (commonSeps.EQUALS);
                 anyType := Java_Object_Access (objectArray (index));
-                value := Unbounded_String (hashtable.get (anyType));
+                value := Java_Unbox (hashtable.get (anyType));
                 outputStream.writeUTF (value);
             end loop;
             tsUtil := TsUtil_Package.getInstance;

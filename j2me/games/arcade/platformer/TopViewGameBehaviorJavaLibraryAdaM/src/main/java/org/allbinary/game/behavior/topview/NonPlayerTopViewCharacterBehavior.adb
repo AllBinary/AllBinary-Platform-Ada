@@ -57,7 +57,7 @@ package body org.allbinary.game.behavior.topview.NonPlayerTopViewCharacterBehavi
                 nextTerrainGeographicMapCellPosition := geographicMapCellPositionFactory.getAt ((geographicMapCellPosition.getColumn) + (1), geographicMapCellPosition.getRow);
             end if;
             This.geographicMapBehavior.getCellTypeAt (geographicMapInterfaceArray, geographicMapCellTypeArray, nextTerrainGeographicMapCellPosition);
-            hasSolidBlock := This.hasSolidBlock (geographicMapInterfaceArray, geographicMapCellTypeArray);
+            hasSolidBlock := NonPlayerTopViewCharacterBehavior'Class (This).hasSolidBlock (geographicMapInterfaceArray, geographicMapCellTypeArray);
             if not (hasSolidBlock) then
                 terrainEvent := TerrainEventCircularStaticPool_Package.getInstance.getNext (This.CLIFF);
                 TerrainEventHandler_Package.getInstance (layer).fireEvent (terrainEvent);

@@ -20,7 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with javax.microedition.lcdui.Canvas_Package; use javax.microedition.lcdui.Canvas_Package;
+with javax.microedition.lcdui.Canvas_Package; use javax.microedition.lcdui.Canvas_Package;
 with org.allbinary.game.input.GameInputStrings_Package; use org.allbinary.game.input.GameInputStrings_Package;
 with org.allbinary.game.input.event.GameKeyEvent_Package; use org.allbinary.game.input.event.GameKeyEvent_Package;
 with org.allbinary.graphics.GPoint_Package; use org.allbinary.graphics.GPoint_Package;
@@ -40,6 +40,7 @@ with org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package; use org.
 
 package org.allbinary.game.displayable.canvas.PopupMenuInputProcessor_Package is
 
+   package Canvas_Package renames Standard.javax.microedition.lcdui.Canvas_Package;
    package GameInputStrings_Package renames Standard.org.allbinary.game.input.GameInputStrings_Package;
    package GameKeyEvent_Package renames Standard.org.allbinary.game.input.event.GameKeyEvent_Package;
    package GPoint_Package renames Standard.org.allbinary.graphics.GPoint_Package;

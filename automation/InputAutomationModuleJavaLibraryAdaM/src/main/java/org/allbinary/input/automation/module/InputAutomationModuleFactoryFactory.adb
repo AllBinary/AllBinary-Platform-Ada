@@ -41,7 +41,7 @@ package body org.allbinary.input.automation.module.InputAutomationModuleFactoryF
         inputAutomationModuleConfiguration := null;
         while iterator.hasNext loop
             inputAutomationModuleConfiguration := InputAutomationModuleConfiguration_Access (iterator.next);
-            This.add (inputAutomationModuleConfiguration);
+            InputAutomationModuleFactoryFactory'Class (This).add (inputAutomationModuleConfiguration);
         end loop;
         This.defaultListModelHelper.initDefaultModelList;
         This.logUtil.putF (To_Unbounded_String ("Loaded ") & Java_Image (This.hashMap.size) & To_Unbounded_String ("/") & Java_Image (This.defaultListModelHelper.getListModel.getSize) & To_Unbounded_String (" Input Automation Modules"), InputAutomationModuleFactoryFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("Contructor"));
@@ -61,7 +61,7 @@ package body org.allbinary.input.automation.module.InputAutomationModuleFactoryF
       helpSetEvent : HelpSetEvent_Access;
    begin
         inputAutomationModuleInterface := inputAutomationModuleConfiguration.getInputAutomationModuleInterface;
-        This.hashMap.put (inputAutomationModuleConfiguration.getName, inputAutomationModuleInterface);
+        This.hashMap.put (Java_Box (inputAutomationModuleConfiguration.getName), inputAutomationModuleInterface);
         This.defaultListModelHelper.add (inputAutomationModuleConfiguration.getName);
         helpSet := inputAutomationModuleInterface.getHelpSet;
         if not (JavaHelpSetNotifier_Package.isNotified (helpSet)) then
@@ -81,7 +81,7 @@ package body org.allbinary.input.automation.module.InputAutomationModuleFactoryF
    begin
         commonStrings := CommonStrings_Package.getInstance;
         This.logUtil.putF (To_Unbounded_String ("Getting Module: ") & moduleName, InputAutomationModuleFactoryFactory_Access'(This'Unchecked_Access), commonStrings.GET_INSTANCE);
-        inputAutomationModuleFactoryInterface := InputAutomationModuleFactoryInterface_Access (This.hashMap.get (moduleName));
+        inputAutomationModuleFactoryInterface := InputAutomationModuleFactoryInterface_Access (This.hashMap.get (Java_Box (moduleName)));
         if (inputAutomationModuleFactoryInterface) = (null) then
             This.logUtil.putF (To_Unbounded_String ("Module: ") & moduleName & To_Unbounded_String (" was null"), InputAutomationModuleFactoryFactory_Access'(This'Unchecked_Access), commonStrings.GET_INSTANCE);
         end if;

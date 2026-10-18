@@ -30,7 +30,7 @@ package body org.allbinary.game.layer.weapon.DamageWeaponLayer_Package is
       viewPosition : constant ViewPositionBase_Access := ViewPositionBase_Access (viewPosition_Param);
    begin
         WeaponLayer_Package.Initialize (This, name, remoteInfo, multiPlayerType, movement, animationInterface, destroyedAnimationInterface, rectangle, viewPosition);
-        This.setCollidableInferface (CollidableDamageWeaponBehavior_Package.Create (True));
+        DamageWeaponLayer'Class (This).setCollidableInferface (CollidableDamageWeaponBehavior_Package.Create (True));
    end Initialize;
 
    function Create (name : Unbounded_String; remoteInfo_Param : access RemoteInfo_Package.RemoteInfo'Class; movement_Param : access Movement_Package.Movement'Class; animationInterface_Param : access Animation_Package.Animation'Class; destroyedAnimationInterface_Param : access Animation_Package.Animation'Class; rectangle_Param : access Rectangle_Package.Rectangle'Class; viewPosition_Param : access ViewPositionBase_Package.ViewPositionBase'Class; username : Unbounded_String; actorSessionId : Integer; id : Integer; multiPlayerType : Integer) return DamageWeaponLayer_Access is

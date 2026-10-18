@@ -66,21 +66,21 @@ package body org.allbinary.graphics.opengles.CurrentDisplayableFactory_Package i
                 return;
             end if;
         end if;
-        This.setDisplayable (displayable);
+        CurrentDisplayableFactory'Class (This).setDisplayable (displayable);
    end setMyCanvas;
 
    procedure setDisplayable (This : in out CurrentDisplayableFactory; displayable_Param : access Displayable_Package.Displayable'Class) is
       displayable : constant Displayable_Access := Displayable_Access (displayable_Param);
    begin
         This.displayable := displayable;
-        This.setOpenGlReadydisplayable (displayable);
+        CurrentDisplayableFactory'Class (This).setOpenGlReadydisplayable (displayable);
    end setDisplayable;
 
    procedure setOpenGlReadydisplayable (This : in out CurrentDisplayableFactory; openGlReadydisplayable_Param : access Displayable_Package.Displayable'Class) is
       openGlReadydisplayable : constant Displayable_Access := Displayable_Access (openGlReadydisplayable_Param);
    begin
         This.openGlReadydisplayable := openGlReadydisplayable;
-        This.update;
+        CurrentDisplayableFactory'Class (This).update;
    end setOpenGlReadydisplayable;
 
    function getOpenGlReadydisplayable (This : in out CurrentDisplayableFactory) return Displayable_Access is
@@ -94,7 +94,7 @@ package body org.allbinary.graphics.opengles.CurrentDisplayableFactory_Package i
         PreLogUtil_Package.put (StringMaker_Package.Create.append (This.RUNNABLE).append (This.stringUtil.toString (runnable_Case)).toString, CurrentDisplayableFactory_Access'(This'Unchecked_Access), This.SET_RUNNABLE);
         This.runnable_Case := runnable_Case;
         if (This.usedRunnable) /= (This.runnable_Case) then
-            This.update;
+            CurrentDisplayableFactory'Class (This).update;
         else
             PreLogUtil_Package.put (StringMaker_Package.Create.append (This.RUNNABLE_WAS_ALREADY_IN_USE).append (This.stringUtil.toString (runnable_Case)).toString, CurrentDisplayableFactory_Access'(This'Unchecked_Access), This.SET_RUNNABLE);
         end if;
@@ -103,7 +103,7 @@ package body org.allbinary.graphics.opengles.CurrentDisplayableFactory_Package i
    procedure clearRunnable (This : in out CurrentDisplayableFactory) is
    begin
         PreLogUtil_Package.put (StringMaker_Package.Create.append (This.RUNNABLE).append (This.stringUtil.toString (NullRunnable_Package.getInstance)).toString, CurrentDisplayableFactory_Access'(This'Unchecked_Access), This.CLEAR_RUNNABLE);
-        This.setUsedRunnable (NullWaitGameRunnable_Package.getInstance);
+        CurrentDisplayableFactory'Class (This).setUsedRunnable (NullWaitGameRunnable_Package.getInstance);
    end clearRunnable;
 
    procedure update (This : in out CurrentDisplayableFactory) is
@@ -118,16 +118,16 @@ package body org.allbinary.graphics.opengles.CurrentDisplayableFactory_Package i
             stringMaker.append (This.stringUtil.toString (This.openGlReadydisplayable));
             if (SWTUtil_Package.isSWT) and then (not (features.isDefault (OpenGLFeatureFactory_Package.getInstance.OPENGL))) then
                 PreLogUtil_Package.put (stringMaker.append (commonSeps.SPACE).append (SWTUtil_Package.SWT).append (commonSeps.SPACE).append (This.RUNNABLE).append (This.stringUtil.toString (NullRunnable_Package.getInstance)).toString, CurrentDisplayableFactory_Access'(This'Unchecked_Access), This.commonStrings.UPDATE);
-                This.setUsedRunnable (NullWaitGameRunnable_Package.getInstance);
+                CurrentDisplayableFactory'Class (This).setUsedRunnable (NullWaitGameRunnable_Package.getInstance);
             elsif J2MEUtil_Package.isHTML then
                 PreLogUtil_Package.put (stringMaker.append (commonSeps.SPACE).append (GraphicsStrings_Package.getInstance.HTML).append (commonSeps.SPACE).append (This.RUNNABLE).append (This.stringUtil.toString (This.runnable_Case)).toString, CurrentDisplayableFactory_Access'(This'Unchecked_Access), This.commonStrings.UPDATE);
-                This.setUsedRunnable (This.runnable_Case);
+                CurrentDisplayableFactory'Class (This).setUsedRunnable (This.runnable_Case);
             elsif (((This.openGlReadydisplayable.all in DemoCanvas_Package.DemoCanvas'Class)) or else ((This.openGlReadydisplayable.all in AllBinaryGameCanvas_Package.AllBinaryGameCanvas'Class))) or else (features.isDefault (OpenGLFeatureFactory_Package.getInstance.OPENGL)) then
                 PreLogUtil_Package.put (stringMaker.append (commonSeps.SPACE).append (OpenGLFeatureFactory_Package.getInstance.OPENGL.toString).append (commonSeps.SPACE).append (This.RUNNABLE).append (This.stringUtil.toString (This.runnable_Case)).toString, CurrentDisplayableFactory_Access'(This'Unchecked_Access), This.commonStrings.UPDATE);
-                This.setUsedRunnable (This.runnable_Case);
+                CurrentDisplayableFactory'Class (This).setUsedRunnable (This.runnable_Case);
             else
                 PreLogUtil_Package.put (stringMaker.append (This.RUNNABLE).append (This.stringUtil.toString (NullRunnable_Package.getInstance)).toString, CurrentDisplayableFactory_Access'(This'Unchecked_Access), This.commonStrings.UPDATE);
-                This.setUsedRunnable (NullWaitGameRunnable_Package.getInstance);
+                CurrentDisplayableFactory'Class (This).setUsedRunnable (NullWaitGameRunnable_Package.getInstance);
             end if;
         end;
    end update;

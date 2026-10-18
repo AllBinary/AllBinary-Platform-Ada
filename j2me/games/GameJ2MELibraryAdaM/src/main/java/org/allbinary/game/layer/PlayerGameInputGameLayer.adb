@@ -27,7 +27,7 @@ package body org.allbinary.game.layer.PlayerGameInputGameLayer_Package is
    begin
         AllBinaryGameLayer_Package.Initialize (This, StringUtil_Package.getInstance.EMPTY_STRING, Rectangle_Package.Create (PointFactory_Package.getInstance.ZERO_ZERO, 0, 0), StaticViewPosition_Package.Create (0, 0, 0));
         Initialize_Fields (This);
-        This.playerGameInput := PlayerGameInput_Package.Create (This.getGameKeyEventList, BasicArrayListD_Package.Create, playerInputId);
+        This.playerGameInput := PlayerGameInput_Package.Create (PlayerGameInputGameLayer'Class (This).getGameKeyEventList, BasicArrayListD_Package.Create, playerInputId);
         canvasStrings := CanvasStrings_Package.getInstance;
         This.logUtil.putF (To_Unbounded_String ("Danger Danger Danger: Should Not Be Called Except For Testing Input"), PlayerGameInputGameLayer_Access'(This'Unchecked_Access), canvasStrings.PAINT);
    end Initialize;

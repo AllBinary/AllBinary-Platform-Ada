@@ -22,10 +22,10 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.thread.ARunnable_Package; use org.allbinary.thread.ARunnable_Package;
 --  with java.io.ByteArrayInputStream_Package; use java.io.ByteArrayInputStream_Package;
---  with java.io.InputStream_Package; use java.io.InputStream_Package;
---  with javax.microedition.media.Control_Package; use javax.microedition.media.Control_Package;
---  with javax.microedition.media.MediaException_Package; use javax.microedition.media.MediaException_Package;
---  with javax.microedition.media.PlayerListener_Package; use javax.microedition.media.PlayerListener_Package;
+with java.io.InputStream_Package; use java.io.InputStream_Package;
+with javax.microedition.media.Control_Package; use javax.microedition.media.Control_Package;
+with javax.microedition.media.MediaException_Package; use javax.microedition.media.MediaException_Package;
+with javax.microedition.media.PlayerListener_Package; use javax.microedition.media.PlayerListener_Package;
 --  with javax.sound.sampled.AudioInputStream_Package; use javax.sound.sampled.AudioInputStream_Package;
 --  with javax.sound.sampled.AudioSystem_Package; use javax.sound.sampled.AudioSystem_Package;
 --  with javax.sound.sampled.Clip_Package; use javax.sound.sampled.Clip_Package;
@@ -45,6 +45,10 @@ with org.allbinary.media.audio.NullControl_Package; use org.allbinary.media.audi
 package org.allbinary.media.audio.PCClipWavPlayer_Package is
 
    package ARunnable_Package renames Standard.org.allbinary.thread.ARunnable_Package;
+   package InputStream_Package renames Standard.java.io.InputStream_Package;
+   package Control_Package renames Standard.javax.microedition.media.Control_Package;
+   package MediaException_Package renames Standard.javax.microedition.media.MediaException_Package;
+   package PlayerListener_Package renames Standard.javax.microedition.media.PlayerListener_Package;
    package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;

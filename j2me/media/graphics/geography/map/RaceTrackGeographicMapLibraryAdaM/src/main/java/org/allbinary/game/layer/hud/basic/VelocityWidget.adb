@@ -68,7 +68,7 @@ package body org.allbinary.game.layer.hud.basic.VelocityWidget_Package is
 
    procedure add (This : in out VelocityWidget; value : Integer) is
    begin
-        This.set ((This.velocity) + (value));
+        VelocityWidget'Class (This).set ((This.velocity) + (value));
    end add;
 
    procedure set (This : in out VelocityWidget; value : Integer) is
@@ -92,7 +92,7 @@ package body org.allbinary.game.layer.hud.basic.VelocityWidget_Package is
 
    procedure reduce (This : in out VelocityWidget; value : Integer) is
    begin
-        This.set ((This.velocity) - (value));
+        VelocityWidget'Class (This).set ((This.velocity) - (value));
    end reduce;
 
    procedure paint (This : in out VelocityWidget; graphics_Param : access Graphics_Package.Graphics'Class) is

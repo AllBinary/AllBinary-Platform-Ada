@@ -81,7 +81,7 @@ package body org.allbinary.logic.system.security.crypt.DatabaseEncoder_Package i
             size := vector.size;
             byteOfData := Null_Unbounded_String;
             for index in 0 .. (size) - 1 loop
-                byteOfData := Unbounded_String (vector.objectArray (index));
+                byteOfData := Java_Unbox (vector.objectArray (index));
                 byteVector.add (byteOfData);
             end loop;
             decode := new Short_Short_Integer_Array'(0 .. (byteVector.size) - 1 => 0);

@@ -66,11 +66,11 @@ package body org.allbinary.logic.math.PrimitiveLongUtil_Package is
       digit : Integer;
    begin
         if (value) < (10) then
-            This.setCurrentTotalDigits (1);
+            PrimitiveLongUtil'Class (This).setCurrentTotalDigits (1);
             return This.primitiveLongSingleton.NUMBER_CHAR_ARRAYS (value);
         end if;
         if (value) > (This.maxValue) then
-            This.setCurrentTotalDigits (3);
+            PrimitiveLongUtil'Class (This).setCurrentTotalDigits (3);
             return This.primitiveLongSingleton.UNK;
         end if;
         index := 0;
@@ -88,7 +88,7 @@ package body org.allbinary.logic.math.PrimitiveLongUtil_Package is
             end if;
             div := (div) / (10);
         end loop;
-        This.setCurrentTotalDigits (index);
+        PrimitiveLongUtil'Class (This).setCurrentTotalDigits (index);
         return This.charArray;
    end getCharArray;
 

@@ -65,19 +65,19 @@ package body org.allbinary.game.displayable.canvas.StartCanvas_Package is
    begin
         RunnableCanvas_Package.Initialize (This, commandListener, CurrentDisplayableFactory_Package.getInstance.DEFAULT_CHILD_NAME_LIST, True);
         Initialize_Fields (This);
-        This.setWait (NullWaitGameRunnable_Package.getInstance.WAIT);
+        StartCanvas'Class (This).setWait (NullWaitGameRunnable_Package.getInstance.WAIT);
         This.gameInitializationInterfaceFactoryInterface := gameInitializationInterfaceFactoryInterface;
         GameInitializationUtil_Package.getInstance.initDemo (abeClientInformation, StartCanvas_Access'(This'Unchecked_Access), gameInitializationInterfaceFactoryInterface);
         ResizableListenerHandler_Package.getInstance.fireEvent (False);
         This.overlayPaintable := overlayPaintable;
         This.highScoresFactoryInterface := highScoresFactoryInterface;
-        This.setDefaultPaintableInterface (paintable);
-        This.setPaintableInterface (This.getDefaultPaintableInterface);
+        StartCanvas'Class (This).setDefaultPaintableInterface (paintable);
+        StartCanvas'Class (This).setPaintableInterface (StartCanvas'Class (This).getDefaultPaintableInterface);
         if isContinue then
-            This.addCommand (GameCommandsFactory_Package.getInstance.CONTINUE_COMMAND);
+            StartCanvas'Class (This).addCommand (GameCommandsFactory_Package.getInstance.CONTINUE_COMMAND);
         end if;
         if ChangedGameFeatureListener_Package.getInstance.isChangedFeature (GameFeatureFactory_Package.getInstance.SOUND) then
-            This.mediaInit;
+            StartCanvas'Class (This).mediaInit;
         end if;
         DisplayChangeEventHandler_Package.getInstance.addListenerInterface (StartCanvas_Access'(This'Unchecked_Access));
    end Initialize;
@@ -102,7 +102,7 @@ package body org.allbinary.game.displayable.canvas.StartCanvas_Package is
       rectangle : Rectangle_Access;
    begin
         begin
-            scrollSelectionForm := This.getMenuForm;
+            scrollSelectionForm := StartCanvas'Class (This).getMenuForm;
             if (scrollSelectionForm) /= (null) then
                 formType := FormTypeFactory_Package.getInstance.getFormType;
                 rectangle := This.formUtil.createFormRectangle;
@@ -171,14 +171,14 @@ package body org.allbinary.game.displayable.canvas.StartCanvas_Package is
       size : Integer;
       index : Integer;
    begin
-        This.removeAllCommands;
-        commandArray := This.getCustomCommands;
+        StartCanvas'Class (This).removeAllCommands;
+        commandArray := StartCanvas'Class (This).getCustomCommands;
         size := commandArray'Length;
         for index in 0 .. (size) - 1 loop
-            This.addCommand (Command_Access (commandArray (index)));
+            StartCanvas'Class (This).addCommand (Command_Access (commandArray (index)));
         end loop;
         CustomGameMenuUtil_Package.add (StartCanvas_Access'(This'Unchecked_Access));
-        This.setCommandListener (cmdListener);
+        StartCanvas'Class (This).setCommandListener (cmdListener);
    end initCommands;
 
    --  throws Exception
@@ -202,20 +202,20 @@ package body org.allbinary.game.displayable.canvas.StartCanvas_Package is
    --  throws Exception
    procedure initMenu (This : in out StartCanvas) is
    begin
-        This.close;
-        This.open;
+        StartCanvas'Class (This).close;
+        StartCanvas'Class (This).open;
    end initMenu;
 
    procedure open (This : in out StartCanvas) is
    begin
-        BasicMotionGesturesHandler_Package.getInstance.addListenerInterface (This.getMenuInputProcessor);
-        GameKeyEventHandler_Package.getInstance.addListener (This.getMenuInputProcessor);
+        BasicMotionGesturesHandler_Package.getInstance.addListenerInterface (StartCanvas'Class (This).getMenuInputProcessor);
+        GameKeyEventHandler_Package.getInstance.addListener (StartCanvas'Class (This).getMenuInputProcessor);
    end open;
 
    procedure close (This : in out StartCanvas) is
    begin
-        BasicMotionGesturesHandler_Package.getInstance.removeListener (This.getMenuInputProcessor);
-        GameKeyEventHandler_Package.getInstance.removeListener (This.getMenuInputProcessor);
+        BasicMotionGesturesHandler_Package.getInstance.removeListener (StartCanvas'Class (This).getMenuInputProcessor);
+        GameKeyEventHandler_Package.getInstance.removeListener (StartCanvas'Class (This).getMenuInputProcessor);
    end close;
 
    function getSourceId (This : in out StartCanvas) return Integer is
@@ -225,33 +225,33 @@ package body org.allbinary.game.displayable.canvas.StartCanvas_Package is
 
    procedure keyPressed (This : in out StartCanvas; keyCode : Integer) is
    begin
-        This.keyPressedByDevice (keyCode, 0);
+        StartCanvas'Class (This).keyPressedByDevice (keyCode, 0);
    end keyPressed;
 
    procedure keyReleased (This : in out StartCanvas; keyCode : Integer) is
    begin
-        This.keyReleasedByDevice (keyCode, 0);
+        StartCanvas'Class (This).keyReleasedByDevice (keyCode, 0);
    end keyReleased;
 
    procedure keyRepeated (This : in out StartCanvas; keyCode : Integer) is
    begin
-        This.keyRepeatedByDevice (keyCode, 0);
+        StartCanvas'Class (This).keyRepeatedByDevice (keyCode, 0);
    end keyRepeated;
 
    procedure keyPressedByDevice (This : in out StartCanvas; keyCode : Integer; deviceId : Integer) is
    begin
-        This.addGameKeyEvent (keyCode, False);
+        StartCanvas'Class (This).addGameKeyEvent (keyCode, False);
    end keyPressedByDevice;
 
    procedure keyReleasedByDevice (This : in out StartCanvas; keyCode : Integer; deviceId : Integer) is
    begin
-        This.removeGameKeyEvent (keyCode, False);
+        StartCanvas'Class (This).removeGameKeyEvent (keyCode, False);
    end keyReleasedByDevice;
 
    procedure keyRepeatedByDevice (This : in out StartCanvas; keyCode : Integer; deviceId : Integer) is
    begin
         if This.isSingleKeyRepeatableProcessing then
-            This.addGameKeyEvent (keyCode, True);
+            StartCanvas'Class (This).addGameKeyEvent (keyCode, True);
         end if;
    end keyRepeatedByDevice;
 
@@ -301,14 +301,14 @@ package body org.allbinary.game.displayable.canvas.StartCanvas_Package is
 
    procedure pause (This : in out StartCanvas) is
    begin
-        This.close;
-        This.setPaused (True);
+        StartCanvas'Class (This).close;
+        StartCanvas'Class (This).setPaused (True);
    end pause;
 
    procedure unPause (This : in out StartCanvas) is
    begin
-        This.open;
-        This.setPaused (False);
+        StartCanvas'Class (This).open;
+        StartCanvas'Class (This).setPaused (False);
    end unPause;
 
    function isPausable (This : in out StartCanvas) return Boolean is
@@ -358,7 +358,7 @@ package body org.allbinary.game.displayable.canvas.StartCanvas_Package is
         This.paintableInterface.paint (graphics);
         This.paintedSpecialAnimationInterface.paintXY (graphics, 0, 0);
         This.highScoresPaintable.paint (graphics);
-        This.getBasicGameDemoPaintable.paint (graphics);
+        StartCanvas'Class (This).getBasicGameDemoPaintable.paint (graphics);
         This.overlayPaintable.paint (graphics);
         This.progressPaintable.paint (graphics);
    end paint;
@@ -390,27 +390,27 @@ package body org.allbinary.game.displayable.canvas.StartCanvas_Package is
                 if (highScores) = (NullHighScoresSingletonFactory_Package.getInstance) then
                     newState := 0;
                 else
-                    This.getRealHighScoresPaintable.setHighScores (highScores);
+                    StartCanvas'Class (This).getRealHighScoresPaintable.setHighScores (highScores);
                 end if;
             end if;
         end if;
-        This.setState (newState);
-        This.updateDemoState;
+        StartCanvas'Class (This).setState (newState);
+        StartCanvas'Class (This).updateDemoState;
    end demoStateChange;
 
    procedure updateDemoState (This : in out StartCanvas) is
       gameAdState : GameAdState_Access;
    begin
         PreLogUtil_Package.put (SmallIntegerSingletonFactory_Package.getInstance.createInstance (This.state).toString, StartCanvas_Access'(This'Unchecked_Access), This.SET_STATE);
-        This.getBasicGameDemoPaintable.setState (This.state);
+        StartCanvas'Class (This).getBasicGameDemoPaintable.setState (This.state);
         if (This.state) = (0) then
             This.highScoresPaintable := NullPaintable_Package.getInstance;
-            This.paintedSpecialAnimationInterface := This.getSpecialAnimationInterface;
-            This.getSpecialAnimationInterface.reset;
+            This.paintedSpecialAnimationInterface := StartCanvas'Class (This).getSpecialAnimationInterface;
+            StartCanvas'Class (This).getSpecialAnimationInterface.reset;
         elsif (This.state) = (1) then
             This.paintedSpecialAnimationInterface := SpecialAnimation_Package.getInstance;
         elsif (This.state) = (2) then
-            This.highScoresPaintable := This.getRealHighScoresPaintable;
+            This.highScoresPaintable := StartCanvas'Class (This).getRealHighScoresPaintable;
         end if;
         gameAdState := This.gameAdStateFactory.getCurrentInstance;
         gameAdState.processPageAdState;
@@ -420,18 +420,21 @@ package body org.allbinary.game.displayable.canvas.StartCanvas_Package is
    function getNextRandom (This : in out StartCanvas) return Integer is
    begin
         Java_Throw (Java_New_Exception ("Exception", This.commonStrings.NOT_IMPLEMENTED));
+        return 0;
    end getNextRandom;
 
    --  throws Exception
    function createGameLayerManager (This : in out StartCanvas; randomValue : Integer) return AllBinaryGameLayerManager_Access is
    begin
         Java_Throw (Java_New_Exception ("Exception", This.commonStrings.NOT_IMPLEMENTED));
+        return null;
    end createGameLayerManager;
 
    --  throws Exception
    function createRunnable (This : in out StartCanvas; randomLevel : Integer) return GameCanvasRunnableInterface_Access is
    begin
         Java_Throw (Java_New_Exception ("Exception", This.commonStrings.NOT_IMPLEMENTED));
+        return null;
    end createRunnable;
 
    --  throws Exception
@@ -439,7 +442,7 @@ package body org.allbinary.game.displayable.canvas.StartCanvas_Package is
       randomLevel : Integer;
    begin
         This.highScoresPaintable := NullPaintable_Package.getInstance;
-        randomLevel := This.getNextRandom;
+        randomLevel := StartCanvas'Class (This).getNextRandom;
    end createCanvas;
 
    --  throws Exception
@@ -458,14 +461,14 @@ package body org.allbinary.game.displayable.canvas.StartCanvas_Package is
       indexedAnimationBehavior : IndexedAnimationBehavior_Access;
       demoGameMidlet : DemoGameMidlet_Access;
    begin
-        This.getMenuInputProcessor.processInputList;
-        This.preDemoProcess;
+        StartCanvas'Class (This).getMenuInputProcessor.processInputList;
+        StartCanvas'Class (This).preDemoProcess;
         if (This.state) = (0) then
-            indexedAnimationBehavior := IndexedAnimationBehavior_Access (This.getSpecialAnimationInterface.getAnimationBehavior);
+            indexedAnimationBehavior := IndexedAnimationBehavior_Access (StartCanvas'Class (This).getSpecialAnimationInterface.getAnimationBehavior);
             if (indexedAnimationBehavior.loopIndex) < (1) then
                 This.timeDelayHelper.setStartTimeTNT;
             end if;
-            demoGameMidlet := DemoGameMidlet_Access (This.getCustomCommandListener);
+            demoGameMidlet := DemoGameMidlet_Access (StartCanvas'Class (This).getCustomCommandListener);
         end if;
    end process;
 
@@ -480,7 +483,7 @@ package body org.allbinary.game.displayable.canvas.StartCanvas_Package is
    begin
         This.gameRunnable.run;
         This.specialAnimationInterface.nextFrame;
-        This.process;
+        StartCanvas'Class (This).process;
    end processGame;
 
    procedure run (This : in out StartCanvas) is
@@ -490,29 +493,29 @@ package body org.allbinary.game.displayable.canvas.StartCanvas_Package is
         begin
             progressCanvas := ProgressCanvasFactory_Package.getInstance;
             progressCanvas.addNormalPortion (50, To_Unbounded_String ("Demo Thread"));
-            This.setCurrentThread;
-            This.setRunning (True);
+            StartCanvas'Class (This).setCurrentThread;
+            StartCanvas'Class (This).setRunning (True);
             if This.features.isFeature (MainFeatureFactory_Package.getInstance.LOAD_ONDEMAND) then
                 progressCanvas.end_Id;
             else
                 progressCanvas.addNormalPortion (50, To_Unbounded_String ("Demo Thread Running"));
             end if;
-            This.fullScreenUtil.initOnRun (StartCanvas_Access'(This'Unchecked_Access), This.getCustomCommandListener);
-            This.initMenu;
-            This.initPostPaint;
-            This.updateDemoState;
+            This.fullScreenUtil.initOnRun (StartCanvas_Access'(This'Unchecked_Access), StartCanvas'Class (This).getCustomCommandListener);
+            StartCanvas'Class (This).initMenu;
+            StartCanvas'Class (This).initPostPaint;
+            StartCanvas'Class (This).updateDemoState;
             if This.features.isDefault (This.openGLFeatureFactory.OPENGL_AS_GAME_THREAD) then
                 OpenGLThreadUtil_Package.getInstance.onResume;
             end if;
             if (This.features.isDefault (This.openGLFeatureFactory.OPENGL_AS_GAME_THREAD)) or else (J2MEUtil_Package.isHTML) then
                 null;
             else
-                while This.isRunning loop
+                while StartCanvas'Class (This).isRunning loop
                     This.loopTimeHelper.setStartTimeTNT;
-                    This.processGame;
-                    This.processLoopSleep;
+                    StartCanvas'Class (This).processGame;
+                    StartCanvas'Class (This).processLoopSleep;
                 end loop;
-                This.end_Id;
+                StartCanvas'Class (This).end_Id;
             end if;
         exception
             when Java_Occurrence : others =>
@@ -533,7 +536,7 @@ package body org.allbinary.game.displayable.canvas.StartCanvas_Package is
             if (((This.features.isDefault (This.openGLFeatureFactory.OPENGL)) or else (J2MEUtil_Package.isHTML))) and then (not (running)) then
                 currentDisplayableFactory := CurrentDisplayableFactory_Package.getInstance;
                 currentDisplayableFactory.clearRunnable;
-                This.end_Id;
+                StartCanvas'Class (This).end_Id;
             end if;
         exception
             when Java_Occurrence : others =>
@@ -556,7 +559,7 @@ package body org.allbinary.game.displayable.canvas.StartCanvas_Package is
             progressCanvas.start;
         end if;
         This.logUtil.putF (To_Unbounded_String ("Demo End"), StartCanvas_Access'(This'Unchecked_Access), This.commonStrings.RUN);
-        This.close;
+        StartCanvas'Class (This).close;
         DisplayChangeEventHandler_Package.getInstance.removeListener (StartCanvas_Access'(This'Unchecked_Access));
    end end_Id;
 
@@ -698,7 +701,7 @@ package body org.allbinary.game.displayable.canvas.StartCanvas_Package is
         if features.isDefault (openGLFeatureFactory.OPENGL_AS_GAME_THREAD) then
             return True;
         else
-            return This.isRunning;
+            return StartCanvas'Class (This).isRunning;
         end if;
    end isRunningInAnotherThread;
 

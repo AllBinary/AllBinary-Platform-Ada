@@ -48,8 +48,8 @@ package body org.allbinary.game.ag.ai.scroller.PacePatrolAI_Package is
       direction : Direction_Access;
       directionFactory : DirectionFactory_Access;
    begin
-        This.update;
-        direction := This.setFiringDirectionForTargetIfInRange;
+        PacePatrolAI'Class (This).update;
+        direction := PacePatrolAI'Class (This).setFiringDirectionForTargetIfInRange;
         directionFactory := DirectionFactory_Package.getInstance;
         if (direction) = (directionFactory.LEFT) then
             if ((This.lastKeyDirection) /= (This.keyDirection)) or else (not (This.isFollowLimitedByTerrain)) then
@@ -89,7 +89,7 @@ package body org.allbinary.game.ag.ai.scroller.PacePatrolAI_Package is
       index : Integer;
    begin
         directionFactory := DirectionFactory_Package.getInstance;
-        ownerLayerInterface := This.getOwnerLayerInterface;
+        ownerLayerInterface := PacePatrolAI'Class (This).getOwnerLayerInterface;
         direction := directionFactory.NOT_BORDERED_WITH;
         lastTrackingEvent := null;
         lastTrackingLayerInterface := null;
@@ -105,8 +105,8 @@ package body org.allbinary.game.ag.ai.scroller.PacePatrolAI_Package is
             absXDistance := abs (xDistance);
             absYDistance := abs (yDistance);
             if (absYDistance) <= (100) then
-                if (absXDistance) < ((This.getFiringDistance) / (2)) then
-                    directionCompositeInterface := DirectionCompositeInterface_Access (This.getOwnerLayerInterface);
+                if (absXDistance) < ((PacePatrolAI'Class (This).getFiringDistance) / (2)) then
+                    directionCompositeInterface := DirectionCompositeInterface_Access (PacePatrolAI'Class (This).getOwnerLayerInterface);
                     if ((xDistance) < (0)) and then ((directionCompositeInterface.getDirection) = (directionFactory.RIGHT)) then
                         direction := directionFactory.RIGHT;
                     elsif ((xDistance) > (0)) and then ((directionCompositeInterface.getDirection) = (directionFactory.LEFT)) then

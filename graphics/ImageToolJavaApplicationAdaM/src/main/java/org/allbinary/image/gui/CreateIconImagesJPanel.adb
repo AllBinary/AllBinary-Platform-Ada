@@ -33,7 +33,7 @@ package body org.allbinary.image.gui.CreateIconImagesJPanel_Package is
    begin
         JPanel_Package.Initialize (This);
         Initialize_Fields (This);
-        This.initComponents;
+        CreateIconImagesJPanel'Class (This).initComponents;
         This.imageProcessorInput := imageProcessorInput;
         numberStringArray := new Unbounded_String_Array'(0 .. (101) - 1 => Null_Unbounded_String);
         numberStringArray (0) := To_Unbounded_String (Java_Image (-(1)));
@@ -85,7 +85,7 @@ package body org.allbinary.image.gui.CreateIconImagesJPanel_Package is
 --                  begin
 --                      imageUtil := ImageUtil_Package.getInstance;
 --                      stringMaker := StringMaker_Package.Create;
---                      imageProcessorInput := This.getImageProcessorInput;
+--                      imageProcessorInput := CreateIconImagesJPanel'Class (This).getImageProcessorInput;
 --                      files := imageProcessorInput.getFiles;
 --                      iconWidthList := BasicArrayListD_Package.Create;
 --                      iconHeightList := BasicArrayListD_Package.Create;
@@ -115,7 +115,7 @@ package body org.allbinary.image.gui.CreateIconImagesJPanel_Package is
 --                              imagePersistanceUtil.saveWithBatik (AbFile_Package.createAbFile (newFilePath), generatedBufferedImageArray (index));
 --                          end loop;
 --                      end loop;
---                      This.getParent.repaint;
+--                      CreateIconImagesJPanel'Class (This).getParent.repaint;
 --                  exception
 --                      when Java_Occurrence : others =>
 --                          declare
@@ -149,11 +149,11 @@ package body org.allbinary.image.gui.CreateIconImagesJPanel_Package is
 --     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
 --        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
---                  This.aboveJButtonActionPerformed (evt);
+--                  CreateIconImagesJPanel'Class (This).aboveJButtonActionPerformed (evt);
 --     end actionPerformed;
 );
         layout := GroupLayout_Package.Create (CreateIconImagesJPanel_Access'(This'Unchecked_Access));
-        This.setLayout (layout);
+        CreateIconImagesJPanel'Class (This).setLayout (layout);
         layout.setHorizontalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (layout.createSequentialGroup.addComponent (This.aboveJButton).addGap (0, 335, Short_Package.MAX_VALUE)));
         layout.setVerticalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (layout.createSequentialGroup.addContainerGap.addComponent (This.aboveJButton).addContainerGap (286, Short_Package.MAX_VALUE)));
    end initComponents;
@@ -161,7 +161,7 @@ package body org.allbinary.image.gui.CreateIconImagesJPanel_Package is
    procedure aboveJButtonActionPerformed (This : in out CreateIconImagesJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
       evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
-        This.process;
+        CreateIconImagesJPanel'Class (This).process;
    end aboveJButtonActionPerformed;
 
 end org.allbinary.image.gui.CreateIconImagesJPanel_Package;

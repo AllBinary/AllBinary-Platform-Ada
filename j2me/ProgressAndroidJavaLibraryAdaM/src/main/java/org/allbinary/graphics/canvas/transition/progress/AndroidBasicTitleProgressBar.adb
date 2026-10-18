@@ -38,7 +38,7 @@ package body org.allbinary.graphics.canvas.transition.progress.AndroidBasicTitle
    begin
         ProgressCanvas_Package.Initialize (This, title, backgroundBasicColor, foregroundBasicColor);
         Initialize_Fields (This);
-        This.init;
+        AndroidBasicTitleProgressBar'Class (This).init;
         DisplayChangeEventHandler_Package.getInstance.addListenerInterface (AndroidBasicTitleProgressBar_Access'(This'Unchecked_Access));
         size := This.IMAGE'Length;
         for index in 0 .. (size) - 1 loop
@@ -81,9 +81,9 @@ package body org.allbinary.graphics.canvas.transition.progress.AndroidBasicTitle
                 This.dismissTitleProgressBarRunnable := DismissTitleProgressBarRunnable_Package.Create (This.midletActivity, AndroidBasicTitleProgressBar_Access'(This'Unchecked_Access));
                 This.titleProgressDialogSetProgressRunnable := TitleProgressBarSetProgressRunnable_Package.Create (This.midletActivity, AndroidBasicTitleProgressBar_Access'(This'Unchecked_Access));
                 This.titleProgressDialogPortionSetProgressRunnable := TitleProgressBarPortionSetProgressRunnable_Package.Create (This.midletActivity, AndroidBasicTitleProgressBar_Access'(This'Unchecked_Access));
-                This.loadProgressImages;
+                AndroidBasicTitleProgressBar'Class (This).loadProgressImages;
             end if;
-            This.updateCurrent;
+            AndroidBasicTitleProgressBar'Class (This).updateCurrent;
         exception
             when Java_Occurrence : others =>
                 declare
@@ -99,15 +99,15 @@ package body org.allbinary.graphics.canvas.transition.progress.AndroidBasicTitle
       currentImage : Image_Access;
    begin
         begin
-            if not (This.isBackground) then
+            if not (AndroidBasicTitleProgressBar'Class (This).isBackground) then
                 This.animation := NullAnimationFactory_Package.getFactoryInstance.getInstance (0);
             elsif (AndroidBasicTitleProgressBar_Package.background) /= (0) then
                 displayInfo := DisplayInfoSingleton_Package.getInstance;
                 currentImage := null;
                 if displayInfo.isPortrait then
-                    currentImage := This.getImage (0);
+                    currentImage := AndroidBasicTitleProgressBar'Class (This).getImage (0);
                 else
-                    currentImage := This.getImage (2);
+                    currentImage := AndroidBasicTitleProgressBar'Class (This).getImage (2);
                 end if;
                 if (currentImage) = (null) then
                     This.animation := NullAnimationFactory_Package.getFactoryInstance.getInstance (0);
@@ -135,8 +135,8 @@ package body org.allbinary.graphics.canvas.transition.progress.AndroidBasicTitle
       displayChangeEvent : constant DisplayChangeEvent_Access := DisplayChangeEvent_Access (displayChangeEvent_Param);
    begin
         begin
-            This.loadProgressImages;
-            This.updateCurrent;
+            AndroidBasicTitleProgressBar'Class (This).loadProgressImages;
+            AndroidBasicTitleProgressBar'Class (This).updateCurrent;
         exception
             when Java_Occurrence : others =>
                 declare
@@ -158,9 +158,9 @@ package body org.allbinary.graphics.canvas.transition.progress.AndroidBasicTitle
             lastWidth := displayInfo.getLastWidth;
             lastHeight := displayInfo.getLastHeight;
             if displayInfo.isPortraitWH (lastWidth, lastHeight) then
-                This.setImages (0, lastWidth, lastHeight);
+                AndroidBasicTitleProgressBar'Class (This).setImages (0, lastWidth, lastHeight);
             else
-                This.setImages (2, lastWidth, lastHeight);
+                AndroidBasicTitleProgressBar'Class (This).setImages (2, lastWidth, lastHeight);
             end if;
         exception
             when Java_Occurrence : others =>
@@ -320,7 +320,7 @@ package body org.allbinary.graphics.canvas.transition.progress.AndroidBasicTitle
                 This.IMAGE (index) := preResourceImageUtil.encapsulate (This.IMAGE (index));
             end if;
         end loop;
-        This.updateCurrent;
+        AndroidBasicTitleProgressBar'Class (This).updateCurrent;
    end initOpenGL;
 
    --  throws Exception
@@ -331,7 +331,7 @@ package body org.allbinary.graphics.canvas.transition.progress.AndroidBasicTitle
       index : Integer;
    begin
         This.logUtil.putF (This.commonStrings.START, AndroidBasicTitleProgressBar_Access'(This'Unchecked_Access), This.commonStrings.UPDATE);
-        This.initOpenGL (graphics);
+        AndroidBasicTitleProgressBar'Class (This).initOpenGL (graphics);
         This.image_Case := GameFeatureImageCacheFactory_Package.getInstance.getWithKey (AndroidBasicTitleProgressBar_Package.RESOURCE);
         preResourceImageUtil := PreResourceImageUtil_Package.getInstance;
         size := This.IMAGE'Length;
@@ -379,7 +379,7 @@ package body org.allbinary.graphics.canvas.transition.progress.AndroidBasicTitle
    procedure setBackground (This : in out AndroidBasicTitleProgressBar; background : Boolean) is
    begin
         ProgressCanvas (This).setBackground (background);
-        This.updateCurrent;
+        AndroidBasicTitleProgressBar'Class (This).updateCurrent;
    end setBackground;
 
    procedure setPortion (This : in out AndroidBasicTitleProgressBar; portion : Integer) is

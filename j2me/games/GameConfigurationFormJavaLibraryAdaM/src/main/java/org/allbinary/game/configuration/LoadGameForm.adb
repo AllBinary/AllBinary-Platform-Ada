@@ -31,8 +31,8 @@ package body org.allbinary.game.configuration.LoadGameForm_Package is
         CommandForm_Package.Initialize (This, commandListener, title, backgrounBasicColor, foregroundBasicColor);
         Initialize_Fields (This);
         This.logUtil.putF (This.commonStrings.START, LoadGameForm_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
-        This.update;
-        This.initCommands (commandListener);
+        LoadGameForm'Class (This).update;
+        LoadGameForm'Class (This).initCommands (commandListener);
    end Initialize;
 
    function Create (commandListener_Param : access CommandListener_Package.CommandListener'Class; title : Unbounded_String; backgrounBasicColor_Param : access BasicColor_Package.BasicColor'Class; foregroundBasicColor_Param : access BasicColor_Package.BasicColor'Class) return LoadGameForm_Access is
@@ -47,11 +47,11 @@ package body org.allbinary.game.configuration.LoadGameForm_Package is
       gameCommandsFactory : GameCommandsFactory_Access;
    begin
         gameCommandsFactory := GameCommandsFactory_Package.getInstance;
-        This.removeAllCommands;
-        This.addCommand (gameCommandsFactory.LOAD_FILE);
-        This.addCommand (gameCommandsFactory.DELETE_FILE);
-        This.addCommand (gameCommandsFactory.CLOSE_AND_SHOW_GAME_CANVAS);
-        This.setCommandListener (cmdListener);
+        LoadGameForm'Class (This).removeAllCommands;
+        LoadGameForm'Class (This).addCommand (gameCommandsFactory.LOAD_FILE);
+        LoadGameForm'Class (This).addCommand (gameCommandsFactory.DELETE_FILE);
+        LoadGameForm'Class (This).addCommand (gameCommandsFactory.CLOSE_AND_SHOW_GAME_CANVAS);
+        LoadGameForm'Class (This).setCommandListener (cmdListener);
    end initCommands;
 
    --  throws Exception
@@ -59,9 +59,9 @@ package body org.allbinary.game.configuration.LoadGameForm_Package is
       list : BasicArrayList_Access;
    begin
         list := GamePersistanceSingleton_Package.getInstance.getIds;
-        This.deleteAll;
+        LoadGameForm'Class (This).deleteAll;
         if (list.size) > (0) then
-            This.add (list, To_Unbounded_String ("Select A Saved Game"), Choice_Package.EXCLUSIVE);
+            LoadGameForm'Class (This).add (list, To_Unbounded_String ("Select A Saved Game"), Choice_Package.EXCLUSIVE);
             This.areChoices := True;
         else
             This.meUtil.appendItem (LoadGameForm_Access'(This'Unchecked_Access), StringItem_Package.Create (To_Unbounded_String ("No Saved Games"), StringUtil_Package.getInstance.EMPTY_STRING, Item_Package.PLAIN));
@@ -74,7 +74,7 @@ package body org.allbinary.game.configuration.LoadGameForm_Package is
       list : constant BasicArrayList_Access := BasicArrayList_Access (list_Param);
       choiceGroup : ChoiceGroup_Access;
    begin
-        choiceGroup := This.getChoiceGroup (list, name, option);
+        choiceGroup := LoadGameForm'Class (This).getChoiceGroup (list, name, option);
         if (list.size) > (0) then
             choiceGroup.setSelectedIndex (0, True);
         end if;
@@ -106,7 +106,7 @@ package body org.allbinary.game.configuration.LoadGameForm_Package is
       choiceGroup : ChoiceGroup_Access;
    begin
         if This.areChoices then
-            choiceGroup := ChoiceGroup_Access (This.get (0));
+            choiceGroup := ChoiceGroup_Access (LoadGameForm'Class (This).get (0));
             return choiceGroup.getSelectedIndex;
         else
             return -(1);
@@ -118,7 +118,7 @@ package body org.allbinary.game.configuration.LoadGameForm_Package is
       value : Integer;
    begin
         if This.areChoices then
-            choiceGroup := ChoiceGroup_Access (This.get (0));
+            choiceGroup := ChoiceGroup_Access (LoadGameForm'Class (This).get (0));
             value := To_Unbounded_String (Java_Image (choiceGroup.getString (choiceGroup.getSelectedIndex))).intValue;
             return value;
         else

@@ -86,7 +86,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoDomNode_Pack
         if (templateAttrNode) /= (null) then
             This.mappedName := templateAttrNode.getValue;
         else
-            This.mappedName := This.getTransformInfoInterface.getName;
+            This.mappedName := TransformInfoDomNode'Class (This).getTransformInfoInterface.getName;
         end if;
    end Initialize;
 

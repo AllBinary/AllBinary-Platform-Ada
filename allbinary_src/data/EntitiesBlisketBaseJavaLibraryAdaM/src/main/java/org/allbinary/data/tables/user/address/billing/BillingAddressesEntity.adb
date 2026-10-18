@@ -26,7 +26,7 @@ package body org.allbinary.data.tables.user.address.billing.BillingAddressesEnti
    begin
         StreetAddressesEntity_Package.Initialize (This, userName);
         Initialize_Fields (This);
-        This.setTableName (This.TABLENAME);
+        BillingAddressesEntity'Class (This).setTableName (This.TABLENAME);
    end Initialize;
 
    function Create (userName : Unbounded_String) return BillingAddressesEntity_Access is

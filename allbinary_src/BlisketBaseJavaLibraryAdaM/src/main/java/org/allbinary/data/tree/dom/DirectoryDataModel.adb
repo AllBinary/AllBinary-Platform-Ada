@@ -85,16 +85,16 @@ package body org.allbinary.data.tree.dom.DirectoryDataModel_Package is
    --  throws Exception
    function toXmlDoc (This : in out DirectoryDataModel) return Document_Access is
    begin
-        return This.getTransformDocumentInterface.getDoc;
+        return DirectoryDataModel'Class (This).getTransformDocumentInterface.getDoc;
    end toXmlDoc;
 
    --  throws Exception
    function view (This : in out DirectoryDataModel) return Unbounded_String is
       node : Node_Access;
    begin
-        node := This.toXmlNode (This.getTransformDocumentInterface.getDoc);
-        This.getTransformDocumentInterface.getBaseNode.appendChild (node);
-        return XmlDocumentHelper_Package.toString (This.getTransformDocumentInterface.getDoc);
+        node := DirectoryDataModel'Class (This).toXmlNode (DirectoryDataModel'Class (This).getTransformDocumentInterface.getDoc);
+        DirectoryDataModel'Class (This).getTransformDocumentInterface.getBaseNode.appendChild (node);
+        return XmlDocumentHelper_Package.toString (DirectoryDataModel'Class (This).getTransformDocumentInterface.getDoc);
    end view;
 
    procedure toXmlNode (This : in out DirectoryDataModel; document_Param : access Document_Package.Document'Class) is

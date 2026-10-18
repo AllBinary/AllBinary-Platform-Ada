@@ -51,7 +51,7 @@ package body org.allbinary.game.layer.LayerPlacer_Package is
         layerPlacementInterface := null;
         for index in 0 .. (size) - 1 loop
             layerPlacementInterface := LayerPlacementInterface_Access (list.objectArray (index));
-            This.process (layerPlacementInterface);
+            LayerPlacer'Class (This).process (layerPlacementInterface);
         end loop;
    end processList;
 
@@ -69,7 +69,7 @@ package body org.allbinary.game.layer.LayerPlacer_Package is
       z : Integer;
       layerInterface : AllBinaryLayer_Access;
    begin
-        relativePoint := This.getPoint (layerPlacementInterface);
+        relativePoint := LayerPlacer'Class (This).getPoint (layerPlacementInterface);
         layerInterfaceFactory := LayerInterfaceFactory_Package.getInstance;
         hashtable := layerPlacementInterface.getInstance;
         enumeration := hashtable.keys;

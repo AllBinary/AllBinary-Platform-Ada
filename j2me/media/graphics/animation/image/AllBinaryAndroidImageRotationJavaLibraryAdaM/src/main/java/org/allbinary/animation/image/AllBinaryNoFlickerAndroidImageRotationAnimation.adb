@@ -60,21 +60,21 @@ package body org.allbinary.animation.image.AllBinaryNoFlickerAndroidImageRotatio
       changed : Boolean;
    begin
         changed := False;
-        if ((This.getBasicColorP) = (null)) or else ((This.getBasicColorP.intValue) /= (basicColor.intValue)) then
+        if ((AllBinaryNoFlickerAndroidImageRotationAnimation'Class (This).getBasicColorP) = (null)) or else ((AllBinaryNoFlickerAndroidImageRotationAnimation'Class (This).getBasicColorP.intValue) /= (basicColor.intValue)) then
             This.imageModifierUtil.setColor (This.originalImage, This.imageToShow, 0, basicColor);
             changed := True;
         end if;
         ImageBaseRotationAnimation (This).setBasicColorP (basicColor);
         if changed then
             This.matrix.setRotate (0.0, Float (This.halfWidth), Float (This.halfHeight));
-            This.updateImage;
+            AllBinaryNoFlickerAndroidImageRotationAnimation'Class (This).updateImage;
         end if;
    end setBasicColorP;
 
    procedure changeBasicColor (This : in out AllBinaryNoFlickerAndroidImageRotationAnimation; basicColor_Param : access BasicColor_Package.BasicColor'Class) is
       basicColor : constant BasicColor_Access := BasicColor_Access (basicColor_Param);
    begin
-        This.setBasicColorP (basicColor);
+        AllBinaryNoFlickerAndroidImageRotationAnimation'Class (This).setBasicColorP (basicColor);
    end changeBasicColor;
 
    procedure setAlpha (This : in out AllBinaryNoFlickerAndroidImageRotationAnimation; alpha : Integer) is
@@ -88,7 +88,7 @@ package body org.allbinary.animation.image.AllBinaryNoFlickerAndroidImageRotatio
         This.imageModifierUtil.setAlpha (This.originalImage, This.imageToShow, 0, This.alphaP);
         if changed then
             This.matrix.setRotate (0.0, Float (This.halfWidth), Float (This.halfHeight));
-            This.updateImage;
+            AllBinaryNoFlickerAndroidImageRotationAnimation'Class (This).updateImage;
         end if;
    end setAlpha;
 
@@ -96,20 +96,20 @@ package body org.allbinary.animation.image.AllBinaryNoFlickerAndroidImageRotatio
    begin
         ImageBaseRotationAnimation (This).nextRotation;
         This.matrix.setRotate (Float (This.increment), Float (This.halfWidth), Float (This.halfHeight));
-        This.updateImage;
+        AllBinaryNoFlickerAndroidImageRotationAnimation'Class (This).updateImage;
    end nextRotation;
 
    procedure previousRotation (This : in out AllBinaryNoFlickerAndroidImageRotationAnimation) is
    begin
         ImageBaseRotationAnimation (This).previousRotation;
         This.matrix.setRotate (Float (-(This.increment)), Float (This.halfWidth), Float (This.halfHeight));
-        This.updateImage;
+        AllBinaryNoFlickerAndroidImageRotationAnimation'Class (This).updateImage;
    end previousRotation;
 
    procedure updateImage (This : in out AllBinaryNoFlickerAndroidImageRotationAnimation) is
    begin
         This.androidImageUtil.rotate (This.twoImages (This.bufferedImageIndex), This.originalImage, This.matrix, This.imageModifierUtil.paint);
-        This.swap;
+        AllBinaryNoFlickerAndroidImageRotationAnimation'Class (This).swap;
    end updateImage;
 
    procedure setFrame (This : in out AllBinaryNoFlickerAndroidImageRotationAnimation; index : Integer) is
@@ -121,7 +121,7 @@ package body org.allbinary.animation.image.AllBinaryNoFlickerAndroidImageRotatio
         newFrame := This.circularIndexUtil.getIndex;
         This.angleInfo.adjustAngle (newFrame);
         This.matrix.setRotate ((Float (((newFrame) - (currentFrame)))) * (Float (This.increment)), Float (This.halfWidth), Float (This.halfHeight));
-        This.updateImage;
+        AllBinaryNoFlickerAndroidImageRotationAnimation'Class (This).updateImage;
    end setFrame;
 
    procedure swap (This : in out AllBinaryNoFlickerAndroidImageRotationAnimation) is

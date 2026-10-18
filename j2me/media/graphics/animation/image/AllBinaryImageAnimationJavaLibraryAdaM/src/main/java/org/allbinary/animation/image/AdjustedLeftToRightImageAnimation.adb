@@ -29,7 +29,7 @@ package body org.allbinary.animation.image.AdjustedLeftToRightImageAnimation_Pac
    begin
         LeftToRightImageAnimation_Package.Initialize (This, image, sequenceArray, animationBehavior);
         Initialize_Fields (This);
-        This.init (dx, dy);
+        AdjustedLeftToRightImageAnimation'Class (This).init (dx, dy);
    end Initialize;
 
    function Create (image_Param : access Image_Package.Image'Class; sequenceArray : Integer_Array_Access; dx : Integer; dy : Integer; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class) return AdjustedLeftToRightImageAnimation_Access is

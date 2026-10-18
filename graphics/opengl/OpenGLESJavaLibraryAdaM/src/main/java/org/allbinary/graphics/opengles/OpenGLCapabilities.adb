@@ -105,7 +105,7 @@ package body org.allbinary.graphics.opengles.OpenGLCapabilities_Package is
                 This.glShaderVersionString := This.stringUtil.EMPTY_STRING;
             end if;
             begin
-                if ((This.glShaderVersionString) /= (Null_Unbounded_String)) and then (((Index (This.glShaderVersionString, To_String ('.')) - 1)) >= (0)) then
+                if ((This.glShaderVersionString) /= (Null_Unbounded_String)) and then (((Index (This.glShaderVersionString, Java_Image ('.')) - 1)) >= (0)) then
                     startIndex := This.glShaderVersionString.lastIndexOf (' ');
                     if (startIndex) >= (0) then
                         This.glShaderVersionString := Unbounded_Slice (This.glShaderVersionString, ((startIndex) + (1)) + 1, Length (This.glShaderVersionString));
@@ -124,12 +124,12 @@ package body org.allbinary.graphics.opengles.OpenGLCapabilities_Package is
             This.glRenderer := gl.glGetString (GL10.GL_RENDERER);
             This.glVendor := gl.glGetString (GL10.GL_VENDOR);
             This.glExtensions := gl.glGetString (GL10.GL_EXTENSIONS);
-            if ((Index (This.glExtensions, To_String (This.GL_EXT_GPU_SHADER_100)) - 1)) >= (0) then
+            if ((Index (This.glExtensions, Java_Image (This.GL_EXT_GPU_SHADER_100)) - 1)) >= (0) then
                 This.glExtensionGPUShader100 := True;
             else
                 This.glExtensionGPUShader100 := False;
             end if;
-            if ((Index (This.glExtensions, To_String (This.GL_EXT_GPU_SHADER4)) - 1)) >= (0) then
+            if ((Index (This.glExtensions, Java_Image (This.GL_EXT_GPU_SHADER4)) - 1)) >= (0) then
                 This.glExtensionGPUShader4 := True;
             else
                 This.glExtensionGPUShader4 := False;
@@ -137,7 +137,7 @@ package body org.allbinary.graphics.opengles.OpenGLCapabilities_Package is
             if (This.glRenderer) = (Null_Unbounded_String) then
                 This.glRenderer := This.stringUtil.EMPTY_STRING;
             end if;
-            if ((Index (Translate (This.glRenderer, Ada.Strings.Maps.Constants.Lower_Case_Map), To_String (To_Unbounded_String ("pixelflinger"))) - 1)) >= (0) then
+            if ((Index (Translate (This.glRenderer, Ada.Strings.Maps.Constants.Lower_Case_Map), Java_Image (To_Unbounded_String ("pixelflinger"))) - 1)) >= (0) then
                 This.acceleratedString := To_Unbounded_String ("Probably Not for ") & This.glRenderer;
                 This.possiblyAccelerated := False;
             else
@@ -148,9 +148,9 @@ package body org.allbinary.graphics.opengles.OpenGLCapabilities_Package is
             if (This.glVersionString) = (Null_Unbounded_String) then
                 This.glVersionString := This.stringUtil.EMPTY_STRING;
                 This.glVersion := This.VERSION_UNK;
-            elsif ((Index (This.glVersionString, To_String (To_Unbounded_String (" 1.0"))) - 1)) >= (0) then
+            elsif ((Index (This.glVersionString, Java_Image (To_Unbounded_String (" 1.0"))) - 1)) >= (0) then
                 This.glVersion := This.VERSION_1_0;
-            elsif ((Index (This.glVersionString, To_String (To_Unbounded_String (" 1.1"))) - 1)) >= (0) then
+            elsif ((Index (This.glVersionString, Java_Image (To_Unbounded_String (" 1.1"))) - 1)) >= (0) then
                 This.glVersion := This.VERSION_1_1;
             else
                 This.glVersion := This.VERSION_UNK;
@@ -167,8 +167,8 @@ package body org.allbinary.graphics.opengles.OpenGLCapabilities_Package is
                 This.glExtensions := This.stringUtil.EMPTY_STRING;
             end if;
             if This.possiblyAccelerated then
-                PreLogUtil_Package.put (StringMaker_Package.Create.append (To_Unbounded_String ("VBO:?")).appendboolean (((This.glInstanceVersion) = (This.VERSION_1_1))).append (To_Unbounded_String ("||")).appendboolean (This.isExtension (openGLFeatureFactory.OPENGL_VERTEX_BUFFER_OBJECT)).toString, OpenGLCapabilities_Access'(This'Unchecked_Access), METHOD_NAME);
-                if (((This.glInstanceVersion) = (This.VERSION_1_1)) or else (This.isExtension (openGLFeatureFactory.OPENGL_VERTEX_BUFFER_OBJECT))) then
+                PreLogUtil_Package.put (StringMaker_Package.Create.append (To_Unbounded_String ("VBO:?")).appendboolean (((This.glInstanceVersion) = (This.VERSION_1_1))).append (To_Unbounded_String ("||")).appendboolean (OpenGLCapabilities'Class (This).isExtension (openGLFeatureFactory.OPENGL_VERTEX_BUFFER_OBJECT)).toString, OpenGLCapabilities_Access'(This'Unchecked_Access), METHOD_NAME);
+                if (((This.glInstanceVersion) = (This.VERSION_1_1)) or else (OpenGLCapabilities'Class (This).isExtension (openGLFeatureFactory.OPENGL_VERTEX_BUFFER_OBJECT))) then
                     if AndroidUtil_Package.isAndroid then
                         PreLogUtil_Package.put (To_Unbounded_String ("VBO implementation was detected, but disabled by default for Android"), OpenGLCapabilities_Access'(This'Unchecked_Access), METHOD_NAME);
                     else
@@ -212,7 +212,7 @@ package body org.allbinary.graphics.opengles.OpenGLCapabilities_Package is
       gameFeature : constant OpenGLFeature_Access := OpenGLFeature_Access (gameFeature_Param);
       index : Integer;
    begin
-        index := (Index (This.glExtensions, To_String (gameFeature.getName)) - 1);
+        index := (Index (This.glExtensions, Java_Image (gameFeature.getName)) - 1);
         if (index) >= (0) then
             return True;
         else
@@ -222,7 +222,7 @@ package body org.allbinary.graphics.opengles.OpenGLCapabilities_Package is
 
    function isGlExtensionDrawTexture (This : in out OpenGLCapabilities) return Boolean is
    begin
-        This.requireInitialization;
+        OpenGLCapabilities'Class (This).requireInitialization;
         return This.glExtensionDrawTexture;
    end isGlExtensionDrawTexture;
 
@@ -233,49 +233,49 @@ package body org.allbinary.graphics.opengles.OpenGLCapabilities_Package is
 
    function isGlExtensionGPUShader4 (This : in out OpenGLCapabilities) return Boolean is
    begin
-        This.requireInitialization;
+        OpenGLCapabilities'Class (This).requireInitialization;
         return This.glExtensionGPUShader4;
    end isGlExtensionGPUShader4;
 
    function getGlVersion (This : in out OpenGLCapabilities) return Unbounded_String is
    begin
-        This.requireInitialization;
+        OpenGLCapabilities'Class (This).requireInitialization;
         return This.glVersion;
    end getGlVersion;
 
    function getGlVersionString (This : in out OpenGLCapabilities) return Unbounded_String is
    begin
-        This.requireInitialization;
+        OpenGLCapabilities'Class (This).requireInitialization;
         return This.glVersionString;
    end getGlVersionString;
 
    function getGlShaderVersion (This : in out OpenGLCapabilities) return Unbounded_String is
    begin
-        This.requireInitialization;
+        OpenGLCapabilities'Class (This).requireInitialization;
         return This.glShaderVersionString;
    end getGlShaderVersion;
 
    function isGlThreedDrawTexture (This : in out OpenGLCapabilities) return Boolean is
    begin
-        This.requireInitialization;
+        OpenGLCapabilities'Class (This).requireInitialization;
         return This.glThreedDrawTexture;
    end isGlThreedDrawTexture;
 
    function getGlRenderer (This : in out OpenGLCapabilities) return Unbounded_String is
    begin
-        This.requireInitialization;
+        OpenGLCapabilities'Class (This).requireInitialization;
         return This.glRenderer;
    end getGlRenderer;
 
    function isVertexBufferObjectSupport (This : in out OpenGLCapabilities) return Boolean is
    begin
-        This.requireInitialization;
+        OpenGLCapabilities'Class (This).requireInitialization;
         return This.vertexBufferObjectSupport;
    end isVertexBufferObjectSupport;
 
    function isTextureSizeValid (This : in out OpenGLCapabilities; widthAndHeight : Integer) return Boolean is
    begin
-        This.requireInitialization;
+        OpenGLCapabilities'Class (This).requireInitialization;
         if (This.maxTextureSize) >= (widthAndHeight) then
             return True;
         end if;
@@ -306,7 +306,7 @@ package body org.allbinary.graphics.opengles.OpenGLCapabilities_Package is
         stringBuffer.append (This.acceleratedString);
         stringBuffer.append (commonSeps.NEW_LINE);
         stringBuffer.append (To_Unbounded_String (" VBO Support: "));
-        stringBuffer.appendboolean (This.isVertexBufferObjectSupport);
+        stringBuffer.appendboolean (OpenGLCapabilities'Class (This).isVertexBufferObjectSupport);
         stringBuffer.append (commonSeps.NEW_LINE);
         stringBuffer.append (To_Unbounded_String (" Max Texture Size: "));
         stringBuffer.appendint (This.maxTextureSize);

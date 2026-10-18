@@ -54,8 +54,8 @@ package body admin.taghelpers.MultipartRequestParamForwardHelper_Package is
       commonStrings : CommonStrings_Access;
    begin
         begin
-            if This.shouldForward then
-                params := This.getParams;
+            if MultipartRequestParamForwardHelper'Class (This).shouldForward then
+                params := MultipartRequestParamForwardHelper'Class (This).getParams;
                 stringBuffer := StringMaker_Package.Create;
                 stringBuffer.append (This.page);
                 stringBuffer.append (params);
@@ -94,8 +94,8 @@ package body admin.taghelpers.MultipartRequestParamForwardHelper_Package is
         stringBuffer := StringMaker_Package.Create;
         size := This.paramVector.size;
         for index in 0 .. (size) - 1 loop
-            key := Unbounded_String (This.paramVector.get (index));
-            value := Unbounded_String (hashMap.get (key));
+            key := Java_Unbox (This.paramVector.get (index));
+            value := Java_Unbox (hashMap.get (Java_Box (key)));
             if (index) /= (0) then
                 stringBuffer.append (AMP);
             else
@@ -113,7 +113,7 @@ package body admin.taghelpers.MultipartRequestParamForwardHelper_Package is
       requestCommand : Unbounded_String;
    begin
         hashMap := This.requestMapInterface.getRequestHashMap;
-        requestCommand := Unbounded_String (hashMap.get (GLOBALS2.ADMINCOMMAND));
+        requestCommand := Java_Unbox (hashMap.get (GLOBALS2.ADMINCOMMAND));
         if (StringValidationUtil_Package.getInstance.isEmpty (This.command)) or else (((not (StringValidationUtil_Package.getInstance.isEmpty (requestCommand))) and then ((This.command.compareTo (requestCommand)) = (0)))) then
             return True;
         end if;

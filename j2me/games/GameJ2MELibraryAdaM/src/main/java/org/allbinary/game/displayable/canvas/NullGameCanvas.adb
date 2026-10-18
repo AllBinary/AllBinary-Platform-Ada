@@ -88,19 +88,19 @@ package body org.allbinary.game.displayable.canvas.NullGameCanvas_Package is
 
    procedure pause (This : in out NullGameCanvas) is
    begin
-        This.setPaused (True);
+        NullGameCanvas'Class (This).setPaused (True);
    end pause;
 
    procedure unPause (This : in out NullGameCanvas) is
    begin
-        This.setPaused (False);
+        NullGameCanvas'Class (This).setPaused (False);
    end unPause;
 
    procedure initCommands (This : in out NullGameCanvas; cmdListener_Param : access CommandListener_Package.CommandListener'Class) is
       cmdListener : constant CommandListener_Access := CommandListener_Access (cmdListener_Param);
    begin
-        This.removeAllCommands;
-        This.setCommandListener (cmdListener);
+        NullGameCanvas'Class (This).removeAllCommands;
+        NullGameCanvas'Class (This).setCommandListener (cmdListener);
    end initCommands;
 
    --  throws Exception

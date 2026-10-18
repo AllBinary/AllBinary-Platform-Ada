@@ -27,8 +27,8 @@ package body admin.tags.StaticPagesTag_Package is
    begin
       TableTag_Package.Initialize (This);
       Initialize_Fields (This);
-        This.setTagHelperFactory (StaticPagesHelperFactory_Package.Create);
-        This.setTagRequestHelperFactory (StaticPagesRequestHelperFactory_Package.Create);
+        StaticPagesTag'Class (This).setTagHelperFactory (StaticPagesHelperFactory_Package.Create);
+        StaticPagesTag'Class (This).setTagRequestHelperFactory (StaticPagesRequestHelperFactory_Package.Create);
    end Initialize;
 
    function Create return StaticPagesTag_Access is
@@ -52,10 +52,10 @@ package body admin.tags.StaticPagesTag_Package is
       error : Unbounded_String;
    begin
         begin
-            anyType := StaticPagesRequestHelperFactory_Package.Create.getInstance (This.getPropertiesHashMap, This.pageContext);
+            anyType := StaticPagesRequestHelperFactory_Package.Create.getInstance (StaticPagesTag'Class (This).getPropertiesHashMap, This.pageContext);
             helperClass := anyType.all'Tag;
             method := helperClass.getMethod (To_Unbounded_String ("generateStaticPages"), null);
-            result := Unbounded_String (method.invoke (anyType, null));
+            result := Java_Unbox (method.invoke (anyType, null));
             return result;
         exception
             when Java_Occurrence : others =>
@@ -76,10 +76,10 @@ package body admin.tags.StaticPagesTag_Package is
       error : Unbounded_String;
    begin
         begin
-            anyType := StaticPagesRequestHelperFactory_Package.Create.getInstance (This.getPropertiesHashMap, This.pageContext);
+            anyType := StaticPagesRequestHelperFactory_Package.Create.getInstance (StaticPagesTag'Class (This).getPropertiesHashMap, This.pageContext);
             helperClass := anyType.all'Tag;
             method := helperClass.getMethod (To_Unbounded_String ("makePublic"), null);
-            result := Unbounded_String (method.invoke (anyType, null));
+            result := Java_Unbox (method.invoke (anyType, null));
             return result;
         exception
             when Java_Occurrence : others =>
@@ -96,16 +96,16 @@ package body admin.tags.StaticPagesTag_Package is
       output : Unbounded_String;
    begin
         begin
-            if This.isEnabled then
-                if (This.getCommand) /= (null) then
-                    if (This.getCommand.compareTo (SearchData_Package.GENERATESTATICPAGES)) = (0) then
-                        This.getPropertiesHashMap.put (TransformInfoData_Package.getInstance.TEMPLATEFILENAME, This.xslFile);
-                        output := This.generateStaticPages;
+            if StaticPagesTag'Class (This).isEnabled then
+                if (StaticPagesTag'Class (This).getCommand) /= (null) then
+                    if (StaticPagesTag'Class (This).getCommand.compareTo (SearchData_Package.GENERATESTATICPAGES)) = (0) then
+                        StaticPagesTag'Class (This).getPropertiesHashMap.put (TransformInfoData_Package.getInstance.TEMPLATEFILENAME, This.xslFile);
+                        output := StaticPagesTag'Class (This).generateStaticPages;
                         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAGEXTRAOUTPUT) then
                             This.pageContext.getOut.print (output);
                         end if;
-                    elsif (This.getCommand.compareTo (SearchData_Package.MAKEPUBLIC)) = (0) then
-                        output := This.makePublic;
+                    elsif (StaticPagesTag'Class (This).getCommand.compareTo (SearchData_Package.MAKEPUBLIC)) = (0) then
+                        output := StaticPagesTag'Class (This).makePublic;
                         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAGEXTRAOUTPUT) then
                             This.pageContext.getOut.print (output);
                         end if;

@@ -38,10 +38,10 @@ package body org.allbinary.game.input.event.GameKeyEvent_Package is
         AllBinaryEventObject_Package.Initialize (This, anyType);
         Initialize_Fields (This);
         This.sourceId := sourceId;
-        This.setOriginalKey (originalKey);
+        GameKeyEvent'Class (This).setOriginalKey (originalKey);
         This.key := key;
-        This.setGameActionKey (gameActionKey);
-        This.setRepeatEvents (repeated);
+        GameKeyEvent'Class (This).setGameActionKey (gameActionKey);
+        GameKeyEvent'Class (This).setRepeatEvents (repeated);
    end Initialize;
 
    function Create (anyType_Param : access Java_Object'Class; sourceId : Integer; originalKey : Integer; gameActionKey : Integer; key : Integer; repeated : Boolean) return GameKeyEvent_Access is
@@ -54,7 +54,7 @@ package body org.allbinary.game.input.event.GameKeyEvent_Package is
    procedure init (This : in out GameKeyEvent; anyType_Param : access Java_Object'Class) is
       anyType : constant Java_Object_Access := Java_Object_Access (anyType_Param);
    begin
-        This.setSource (anyType);
+        GameKeyEvent'Class (This).setSource (anyType);
    end init;
 
    procedure setRepeatEvents (This : in out GameKeyEvent; repeated : Boolean) is
@@ -77,7 +77,7 @@ package body org.allbinary.game.input.event.GameKeyEvent_Package is
    begin
         stringBuffer := StringMaker_Package.Create;
         stringBuffer.append (To_Unbounded_String ("" & ASCII.LF & "Key: "));
-        stringBuffer.appendint (This.getKey);
+        stringBuffer.appendint (GameKeyEvent'Class (This).getKey);
         return stringBuffer.toString;
    end toString;
 

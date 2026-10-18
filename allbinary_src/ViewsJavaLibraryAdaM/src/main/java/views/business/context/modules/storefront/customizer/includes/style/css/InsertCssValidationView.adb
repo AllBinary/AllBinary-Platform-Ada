@@ -51,7 +51,7 @@ package body views.business.context.modules.storefront.customizer.includes.style
                 This.logUtil.putF (To_Unbounded_String ("Started Validation"), InsertCssValidationView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
             end if;
             if (isValid) = (True) then
-                CustomizerUtil_Package.getInstance.insert (This.getTransformInfoInterface, DomNodeInterface_Access (This.styleValidationInterface));
+                CustomizerUtil_Package.getInstance.insert (InsertCssValidationView'Class (This).getTransformInfoInterface, DomNodeInterface_Access (This.styleValidationInterface));
             end if;
             return isValid;
         exception
@@ -101,7 +101,7 @@ package body views.business.context.modules.storefront.customizer.includes.style
    function view (This : in out InsertCssValidationView) return Unbounded_String is
    begin
         begin
-            return StoreCustomizerComponentUtil_Package.getInstance.generate (This.abeClientInformation, This.getTransformInfoInterface);
+            return StoreCustomizerComponentUtil_Package.getInstance.generate (This.abeClientInformation, InsertCssValidationView'Class (This).getTransformInfoInterface);
         exception
             when Java_Occurrence : others =>
                 declare

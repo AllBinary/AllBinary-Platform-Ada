@@ -12,27 +12,6 @@
 --  
 --  Generated Code Do Not Modify
 
-
-package body org.allbinary.business.user.commerce.money.payment.PaymentException_Package is
-
-   procedure Initialize_Fields (This : in out PaymentException'Class) is
-   begin
-      null;
-   end Initialize_Fields;
-
-
-   procedure Initialize (This : in out PaymentException'Class; error : Unbounded_String) is
-   begin
-        Exception_Package.Initialize (This, error);
-   end Initialize;
-
-   function Create (error : Unbounded_String) return PaymentException_Access is
-      This : constant PaymentException_Access := new PaymentException;
-   begin
-      PaymentException_Package.Initialize (This.all, error);
-      return This;
-   end Create;
-
-end org.allbinary.business.user.commerce.money.payment.PaymentException_Package;
+--  Java exception class PaymentException is only a package spec
 
 

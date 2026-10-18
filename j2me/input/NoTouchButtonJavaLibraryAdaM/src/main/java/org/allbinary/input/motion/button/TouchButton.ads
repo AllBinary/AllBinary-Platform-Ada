@@ -20,7 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
 with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Animation_Package;
 with org.allbinary.animation.AnimationInterface_Package; use org.allbinary.animation.AnimationInterface_Package;
 with org.allbinary.graphics.CellPosition_Package; use org.allbinary.graphics.CellPosition_Package;
@@ -37,6 +37,7 @@ with org.allbinary.input.motion.button.TouchButtonInput_Package; use org.allbina
 
 package org.allbinary.input.motion.button.TouchButton_Package is
 
+   package Graphics_Package renames Standard.javax.microedition.lcdui.Graphics_Package;
    package Animation_Package renames Standard.org.allbinary.animation.Animation_Package;
    package AnimationInterface_Package renames Standard.org.allbinary.animation.AnimationInterface_Package;
    package CellPosition_Package renames Standard.org.allbinary.graphics.CellPosition_Package;

@@ -48,7 +48,7 @@ package body org.allbinary.game.configuration.event.BaseChangedGameFeatureListen
    begin
         This.logUtil.putF (StringMaker_Package.Create.append (This.gameFeatureUtil.GAME_FEATURE_CHANGED).append (gameFeatureEvent.getWhatChanged).toString, BaseChangedGameFeatureListener_Access'(This'Unchecked_Access), This.gameFeatureUtil.ON_GAME_FEATURE_CHANGE);
         This.list.add (gameFeatureEvent.getGameOption);
-        This.setChanged (True);
+        BaseChangedGameFeatureListener'Class (This).setChanged (True);
    end onGameFeatureChange;
 
    procedure add (This : in out BaseChangedGameFeatureListener; gameFeature_Param : access Feature_Package.Feature'Class) is
@@ -66,7 +66,7 @@ package body org.allbinary.game.configuration.event.BaseChangedGameFeatureListen
    procedure setChanged (This : in out BaseChangedGameFeatureListener; initialized : Boolean) is
    begin
         This.changed := initialized;
-        if not (This.isChanged) then
+        if not (BaseChangedGameFeatureListener'Class (This).isChanged) then
             This.list.clear;
         end if;
    end setChanged;

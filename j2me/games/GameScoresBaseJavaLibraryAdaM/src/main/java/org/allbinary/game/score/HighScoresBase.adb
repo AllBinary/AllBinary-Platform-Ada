@@ -52,6 +52,7 @@ package body org.allbinary.game.score.HighScoresBase_Package is
    function createHighScoresHelper (This : in out HighScoresBase) return HighScoresHelperBaseInterface_Access is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return null;
    end createHighScoresHelper;
 
 end org.allbinary.game.score.HighScoresBase_Package;

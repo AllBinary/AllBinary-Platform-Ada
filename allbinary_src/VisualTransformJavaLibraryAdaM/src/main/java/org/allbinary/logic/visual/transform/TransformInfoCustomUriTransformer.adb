@@ -28,7 +28,7 @@ package body org.allbinary.logic.visual.transform.TransformInfoCustomUriTransfor
    begin
         BasicTransformer_Package.Initialize (This, abeClientInformation, transformInfoInterface);
         transformInfoObjectConfigInterface := TransformInfoObjectConfigInterface_Access (TransformInfoObjectConfigAndManipulatorFactory_Package.getInstance.getInstance (abeClientInformation, transformInfoInterface));
-        This.setURIResolver (URIResolver_Access (CustomUriResolver_Package.Create (transformInfoObjectConfigInterface.getImportUriPath, BasicUriResolver_Access (This.getURIResolver))));
+        TransformInfoCustomUriTransformer'Class (This).setURIResolver (URIResolver_Access (CustomUriResolver_Package.Create (transformInfoObjectConfigInterface.getImportUriPath, BasicUriResolver_Access (TransformInfoCustomUriTransformer'Class (This).getURIResolver))));
    end Initialize;
 
    function Create (abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return TransformInfoCustomUriTransformer_Access is

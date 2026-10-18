@@ -20,7 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.io.InputStream_Package; use java.io.InputStream_Package;
+with java.io.InputStream_Package; use java.io.InputStream_Package;
 --  with java.io.StringBufferInputStream_Package; use java.io.StringBufferInputStream_Package;
 --  with javax.xml.transform.URIResolver_Package; use javax.xml.transform.URIResolver_Package;
 --  with javax.xml.transform.stream.StreamSource_Package; use javax.xml.transform.stream.StreamSource_Package;
@@ -34,6 +34,7 @@ with org.allbinary.logic.visual.transform.BasicTransformerInterface_Package; use
 
 package org.allbinary.logic.visual.transform.AbTransformer_Package is
 
+   package InputStream_Package renames Standard.java.io.InputStream_Package;
    package XslHelper_Package renames Standard.org.allbinary.data.tree.dom.XslHelper_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package TransformInfoInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;

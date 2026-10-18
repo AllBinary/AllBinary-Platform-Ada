@@ -52,7 +52,7 @@ package body org.allbinary.game.input.form.BuildingAdvancedRTSFormInput_Package 
 
    function isPositionBlocked (This : in out BuildingAdvancedRTSFormInput) return Boolean is
    begin
-        if (DropCellPositionHistory_Package.getInstance.isCellPositionWithDrop (This.getSelectedGeographicCellPosition)) or else (WaypointCellPositionHistory_Package.getInstance.isCellPositionWithDrop (This.getSelectedGeographicCellPosition)) then
+        if (DropCellPositionHistory_Package.getInstance.isCellPositionWithDrop (BuildingAdvancedRTSFormInput'Class (This).getSelectedGeographicCellPosition)) or else (WaypointCellPositionHistory_Package.getInstance.isCellPositionWithDrop (BuildingAdvancedRTSFormInput'Class (This).getSelectedGeographicCellPosition)) then
             return True;
         else
             return False;

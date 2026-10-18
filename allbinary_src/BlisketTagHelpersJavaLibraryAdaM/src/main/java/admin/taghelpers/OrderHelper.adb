@@ -37,7 +37,7 @@ package body admin.taghelpers.OrderHelper_Package is
         This.propertiesHashMap := propertiesHashMap;
         This.pageContext := pageContext;
         This.request := HttpServletRequest_Access (pageContext.getRequest);
-        storeName := Unbounded_String (propertiesHashMap.get (StoreFrontData_Package.getInstance.NAME));
+        storeName := Java_Unbox (propertiesHashMap.get (StoreFrontData_Package.getInstance.NAME));
         if not (StringValidationUtil_Package.getInstance.isEmpty (storeName)) then
             This.storeFrontInterface := StoreFrontFactory_Package.getInstance (storeName);
         end if;
@@ -65,7 +65,7 @@ package body admin.taghelpers.OrderHelper_Package is
         begin
             paymentGatewayBoolean := False;
             orderInterface := This.weblisketSession.getOrder;
-            requestPaymentGateway := Unbounded_String (This.request.getParameter (PaymentGatewayData_Package.NAME.toString));
+            requestPaymentGateway := Java_Unbox (This.request.getParameter (PaymentGatewayData_Package.NAME.toString));
             if not (StringValidationUtil_Package.getInstance.isEmpty (requestPaymentGateway)) then
                 This.weblisketSession.setPaymentMethod (requestPaymentGateway);
                 orderInterface.setPaymentMethod (requestPaymentGateway);

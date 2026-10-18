@@ -20,7 +20,7 @@ package body org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingle
       null;
       This.string_Id := StringUtil_Package.getInstance.EMPTY_STRING;
       This.listString := StringUtil_Package.getInstance.EMPTY_STRING;
-      This.append := StringUtil_Package.getInstance.EMPTY_STRING;
+      This.append_Field := StringUtil_Package.getInstance.EMPTY_STRING;
       This.PRESSED_AND_FIRED := To_Unbounded_String ("pressed & fired");
       This.PRESSED_AND_NOT_FIRED := To_Unbounded_String ("pressed in button but not fired");
       This.ASSOCIATED_RELEASED_AND_FIRED := To_Unbounded_String ("assoc. rel & fired");
@@ -48,63 +48,63 @@ package body org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingle
         return CurrentlyPressedTouchButtonSingletonDebug_Package.instanceC;
    end getInstance;
 
-   procedure appendTouchButtonInput (This : in out CurrentlyPressedTouchButtonSingletonDebug; append : Unbounded_String; touchButtonInput_Param : access TouchButtonInput_Package.TouchButtonInput'Class) is
+   procedure appendTouchButtonInput (This : in out CurrentlyPressedTouchButtonSingletonDebug; append_Field : Unbounded_String; touchButtonInput_Param : access TouchButtonInput_Package.TouchButtonInput'Class) is
       touchButtonInput : constant TouchButtonInput_Access := TouchButtonInput_Access (touchButtonInput_Param);
       stringBuffer : StringMaker_Access;
    begin
         stringBuffer := StringMaker_Package.Create;
         stringBuffer.append (touchButtonInput.toString);
         stringBuffer.append (CommonSeps_Package.getInstance.SPACE);
-        stringBuffer.append (append);
-        This.append := stringBuffer.toString;
-        This.string_Id := StringMaker_Package.Create.append (This.listString).append (This.append).toString;
+        stringBuffer.append (append_Field);
+        This.append_Field := stringBuffer.toString;
+        This.string_Id := StringMaker_Package.Create.append (This.listString).append (This.append_Field).toString;
    end appendTouchButtonInput;
 
-   procedure append (This : in out CurrentlyPressedTouchButtonSingletonDebug; append : Unbounded_String) is
+   procedure append (This : in out CurrentlyPressedTouchButtonSingletonDebug; append_Field : Unbounded_String) is
    begin
-        This.append := StringMaker_Package.Create.append (This.append).append (append).toString;
-        This.string_Id := StringMaker_Package.Create.append (This.listString).append (This.append).toString;
+        This.append_Field := StringMaker_Package.Create.append (This.append_Field).append (append_Field).toString;
+        This.string_Id := StringMaker_Package.Create.append (This.listString).append (This.append_Field).toString;
    end append;
 
    procedure clearLog (This : in out CurrentlyPressedTouchButtonSingletonDebug; x : Integer; y : Integer) is
    begin
-        This.append := StringMaker_Package.Create.append (GPoint_Package.toStringStatic (x, y, 0)).append (CommonSeps_Package.getInstance.SPACE).toString;
-        This.string_Id := StringMaker_Package.Create.append (This.listString).append (This.append).toString;
+        This.append_Field := StringMaker_Package.Create.append (GPoint_Package.toStringStatic (x, y, 0)).append (CommonSeps_Package.getInstance.SPACE).toString;
+        This.string_Id := StringMaker_Package.Create.append (This.listString).append (This.append_Field).toString;
    end clearLog;
 
    procedure releaseAndNotFired (This : in out CurrentlyPressedTouchButtonSingletonDebug) is
    begin
-        This.append (This.RELEASED_AND_NOT_FIRED);
+        CurrentlyPressedTouchButtonSingletonDebug'Class (This).append (This.RELEASED_AND_NOT_FIRED);
    end releaseAndNotFired;
 
    procedure releaseAndFired (This : in out CurrentlyPressedTouchButtonSingletonDebug; touchButtonInput_Param : access TouchButtonInput_Package.TouchButtonInput'Class) is
       touchButtonInput : constant TouchButtonInput_Access := TouchButtonInput_Access (touchButtonInput_Param);
    begin
-        This.appendTouchButtonInput (This.RELEASED_AND_FIRED, touchButtonInput);
+        CurrentlyPressedTouchButtonSingletonDebug'Class (This).appendTouchButtonInput (This.RELEASED_AND_FIRED, touchButtonInput);
    end releaseAndFired;
 
    procedure releaseAndFired2 (This : in out CurrentlyPressedTouchButtonSingletonDebug; touchButtonInput_Param : access TouchButtonInput_Package.TouchButtonInput'Class) is
       touchButtonInput : constant TouchButtonInput_Access := TouchButtonInput_Access (touchButtonInput_Param);
    begin
-        This.appendTouchButtonInput (This.RELEASED_AND_FIRED_2, touchButtonInput);
+        CurrentlyPressedTouchButtonSingletonDebug'Class (This).appendTouchButtonInput (This.RELEASED_AND_FIRED_2, touchButtonInput);
    end releaseAndFired2;
 
    procedure releaseAndFiredAssociated (This : in out CurrentlyPressedTouchButtonSingletonDebug; touchButtonInput_Param : access TouchButtonInput_Package.TouchButtonInput'Class) is
       touchButtonInput : constant TouchButtonInput_Access := TouchButtonInput_Access (touchButtonInput_Param);
    begin
-        This.appendTouchButtonInput (This.ASSOCIATED_RELEASED_AND_FIRED, touchButtonInput);
+        CurrentlyPressedTouchButtonSingletonDebug'Class (This).appendTouchButtonInput (This.ASSOCIATED_RELEASED_AND_FIRED, touchButtonInput);
    end releaseAndFiredAssociated;
 
    procedure pressedAndFired (This : in out CurrentlyPressedTouchButtonSingletonDebug; touchButtonInput_Param : access TouchButtonInput_Package.TouchButtonInput'Class) is
       touchButtonInput : constant TouchButtonInput_Access := TouchButtonInput_Access (touchButtonInput_Param);
    begin
-        This.appendTouchButtonInput (This.PRESSED_AND_FIRED, touchButtonInput);
+        CurrentlyPressedTouchButtonSingletonDebug'Class (This).appendTouchButtonInput (This.PRESSED_AND_FIRED, touchButtonInput);
    end pressedAndFired;
 
    procedure pressedAndNotFired (This : in out CurrentlyPressedTouchButtonSingletonDebug; touchButtonInput_Param : access TouchButtonInput_Package.TouchButtonInput'Class) is
       touchButtonInput : constant TouchButtonInput_Access := TouchButtonInput_Access (touchButtonInput_Param);
    begin
-        This.appendTouchButtonInput (This.PRESSED_AND_NOT_FIRED, touchButtonInput);
+        CurrentlyPressedTouchButtonSingletonDebug'Class (This).appendTouchButtonInput (This.PRESSED_AND_NOT_FIRED, touchButtonInput);
    end pressedAndNotFired;
 
    function removeAt (This : in out CurrentlyPressedTouchButtonSingletonDebug; index : Integer) return TouchButtonInput_Access is
@@ -112,7 +112,7 @@ package body org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingle
    begin
         touchButtonInput := CurrentlyPressedTouchButtonSingleton (This).removeAt (index);
         This.listString := This.list.toString;
-        This.string_Id := StringMaker_Package.Create.append (This.listString).append (This.append).toString;
+        This.string_Id := StringMaker_Package.Create.append (This.listString).append (This.append_Field).toString;
         return touchButtonInput;
    end removeAt;
 
@@ -122,7 +122,7 @@ package body org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingle
    begin
         isRemoved := CurrentlyPressedTouchButtonSingleton (This).remove (touchButtonInput);
         This.listString := This.list.toString;
-        This.string_Id := StringMaker_Package.Create.append (This.listString).append (This.append).toString;
+        This.string_Id := StringMaker_Package.Create.append (This.listString).append (This.append_Field).toString;
         return isRemoved;
    end remove;
 
@@ -131,7 +131,7 @@ package body org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingle
    begin
         CurrentlyPressedTouchButtonSingleton (This).add (touchButtonInput);
         This.listString := This.list.toString;
-        This.string_Id := StringMaker_Package.Create.append (This.listString).append (This.append).toString;
+        This.string_Id := StringMaker_Package.Create.append (This.listString).append (This.append_Field).toString;
    end add;
 
    function toString (This : in out CurrentlyPressedTouchButtonSingletonDebug) return Unbounded_String is

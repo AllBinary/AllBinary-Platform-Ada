@@ -43,7 +43,7 @@ package body org.allbinary.logic.communication.smtp.configuration.user.event.Use
       classes : Ada_Tags_Tag_Array_Access;
    begin
         params := new Java_Object_Access_Array'(0 .. (1) - 1 => null);
-        classes := new Ada_Tags_Tag_Array'(0 .. (1) - 1 => null);
+        classes := new Ada_Tags_Tag_Array'(0 .. (1) - 1 => Ada.Tags.No_Tag);
         classes (0) := UserInterface_Package.UserInterface'Tag;
         params (0) := Java_Object_Access (userInterface);
         return UserEmailEventListenerInterface_Access (AbeFactory_Package.getInstance.getInstance (abeClientInformation, userEmailEventConfigurationInterface.getEventListenerClassPath, classes, params));

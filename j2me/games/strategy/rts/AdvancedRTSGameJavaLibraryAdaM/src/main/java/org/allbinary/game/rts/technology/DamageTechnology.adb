@@ -78,12 +78,12 @@ package body org.allbinary.game.rts.technology.DamageTechnology_Package is
 
    function getUpgradeCost (This : in out DamageTechnology) return Integer is
    begin
-        return (((This.getLevel) * (This.getLevel))) * (1000);
+        return (((DamageTechnology'Class (This).getLevel) * (DamageTechnology'Class (This).getLevel))) * (1000);
    end getUpgradeCost;
 
    function isUpgradeable (This : in out DamageTechnology) return Boolean is
    begin
-        if (This.getLevel) < (This.getMaxLevel) then
+        if (DamageTechnology'Class (This).getLevel) < (DamageTechnology'Class (This).getMaxLevel) then
             return True;
         else
             return False;
@@ -95,7 +95,7 @@ package body org.allbinary.game.rts.technology.DamageTechnology_Package is
    begin
         This.level := This.level + 1;
         unitTechnologySingletonFactory := UnitTechnologySingletonFactory_Package.getInstance;
-        unitTechnologySingletonFactory.setDamage ((unitTechnologySingletonFactory.getDamage) + (((This.getLevel) * (100))));
+        unitTechnologySingletonFactory.setDamage ((unitTechnologySingletonFactory.getDamage) + (((DamageTechnology'Class (This).getLevel) * (100))));
    end upgrade;
 
    function isSelfUpgradeable (This : in out DamageTechnology) return Boolean is

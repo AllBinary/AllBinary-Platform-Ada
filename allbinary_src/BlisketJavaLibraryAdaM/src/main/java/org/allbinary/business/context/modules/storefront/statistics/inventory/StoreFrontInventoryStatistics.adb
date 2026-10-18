@@ -69,8 +69,8 @@ package body org.allbinary.business.context.modules.storefront.statistics.invent
       hashMap : HashMap_Access;
    begin
         hashMap := StdUtil_Package.getInstance.createHashMap;
-        hashMap.put (StoreFrontInventoryStatisticsData_Package.getInstance.NUMBEROFITEMS, This.getNumber.toString);
-        hashMap.put (StoreFrontInventoryStatisticsData_Package.getInstance.TOTALVALUE, This.getTotal.toString);
+        hashMap.put (StoreFrontInventoryStatisticsData_Package.getInstance.NUMBEROFITEMS, Java_Box (StoreFrontInventoryStatistics'Class (This).getNumber.toString));
+        hashMap.put (StoreFrontInventoryStatisticsData_Package.getInstance.TOTALVALUE, Java_Box (StoreFrontInventoryStatistics'Class (This).getTotal.toString));
         return hashMap;
    end toHashMap;
 

@@ -40,7 +40,7 @@ package body org.allbinary.logic.system.hardware.linux.LinuxHardware_Package is
    procedure Initialize (This : in out LinuxHardware'Class; path : Unbounded_String) is
    begin
       Initialize_Fields (This);
-        This.init (path);
+        LinuxHardware'Class (This).init (path);
    end Initialize;
 
    function Create (path : Unbounded_String) return LinuxHardware_Access is
@@ -54,7 +54,7 @@ package body org.allbinary.logic.system.hardware.linux.LinuxHardware_Package is
       cpu : Cpu_Access;
    begin
       Initialize_Fields (This);
-        This.init (PCIFILE);
+        LinuxHardware'Class (This).init (PCIFILE);
         if (This.componentInterfaceVector.size) < (This.MINHARDWARE) then
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Not Enough Data For A Valid License On Linux")));
         end if;
@@ -64,7 +64,7 @@ package body org.allbinary.logic.system.hardware.linux.LinuxHardware_Package is
             This.componentInterfaceVector.add (cpu);
         end if;
         if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.OS) then
-            This.logUtil.putF (To_Unbounded_String ("Hardware Data: ") & This.toString, LinuxHardware_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
+            This.logUtil.putF (To_Unbounded_String ("Hardware Data: ") & LinuxHardware'Class (This).toString, LinuxHardware_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         end if;
    end Initialize;
 
@@ -81,14 +81,14 @@ package body org.allbinary.logic.system.hardware.linux.LinuxHardware_Package is
    begin
         lineNumberReader := null;
         begin
-            This.init (lineNumberReader, filePath);
+            LinuxHardware'Class (This).init (lineNumberReader, filePath);
         exception
             when Java_Occurrence : others =>
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.OS) then
-                This.logUtil.put (To_Unbounded_String ("Hardware Data: ") & This.toString, LinuxHardware_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR, e);
+                This.logUtil.put (To_Unbounded_String ("Hardware Data: ") & LinuxHardware'Class (This).toString, LinuxHardware_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR, e);
             end if;
             Java_Throw (e);
                 end;
@@ -137,12 +137,12 @@ package body org.allbinary.logic.system.hardware.linux.LinuxHardware_Package is
                 end if;
                 nextLine := lineNumberReader.readLine;
                 while ((lineNumberReader) /= (null)) and then ((nextLine) /= (Null_Unbounded_String)) loop
-                    if This.isNextHardware (nextLine) then
+                    if LinuxHardware'Class (This).isNextHardware (nextLine) then
                         exit;
                     end if;
                     nextLine := lineNumberReader.readLine;
                 end loop;
-                while This.isNextHardware (nextLine) loop
+                while LinuxHardware'Class (This).isNextHardware (nextLine) loop
                     componentData := StringMaker_Package.Create;
                     if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.OS) then
                         This.logUtil.putF (To_Unbounded_String ("Found Hardware Device: ") & Java_Image (This.componentInterfaceVector.size), LinuxHardware_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
@@ -155,7 +155,7 @@ package body org.allbinary.logic.system.hardware.linux.LinuxHardware_Package is
                         componentData.append (nextLine);
                         componentData.append (CommonSeps_Package.getInstance.NEW_LINE);
                         nextLine := lineNumberReader.readLine;
-                        if ((nextLine) = (Null_Unbounded_String)) or else (This.isNextHardware (nextLine)) then
+                        if ((nextLine) = (Null_Unbounded_String)) or else (LinuxHardware'Class (This).isNextHardware (nextLine)) then
                             exit;
                         end if;
                     end loop;
@@ -274,7 +274,7 @@ package body org.allbinary.logic.system.hardware.linux.LinuxHardware_Package is
       index : Integer;
    begin
         if (nextLine) /= (Null_Unbounded_String) then
-            index := (Index (nextLine, To_String (To_Unbounded_String ("Bus"))) - 1);
+            index := (Index (nextLine, Java_Image (To_Unbounded_String ("Bus"))) - 1);
             if ((index) >= (0)) and then ((index) < (4)) then
                 return True;
             end if;

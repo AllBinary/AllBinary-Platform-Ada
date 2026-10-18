@@ -47,21 +47,21 @@ package body org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEvent_Pac
    function getCommand (This : in out MyCanvasEvent) return Unbounded_String is
       myEventSource : MyCanvasEventSource_Access;
    begin
-        myEventSource := MyCanvasEventSource_Access (This.getSource);
+        myEventSource := MyCanvasEventSource_Access (MyCanvasEvent'Class (This).getSource);
         return myEventSource.getCommand;
    end getCommand;
 
    function getTreeNode (This : in out MyCanvasEvent) return MutableTreeNode_Access is
       myEventSource : MyCanvasEventSource_Access;
    begin
-        myEventSource := MyCanvasEventSource_Access (This.getSource);
+        myEventSource := MyCanvasEventSource_Access (MyCanvasEvent'Class (This).getSource);
         return myEventSource.getTreeNode;
    end getTreeNode;
 
    function getAngle (This : in out MyCanvasEvent) return Long_Float is
       myEventSource : MyCanvasEventSource_Access;
    begin
-        myEventSource := MyCanvasEventSource_Access (This.getSource);
+        myEventSource := MyCanvasEventSource_Access (MyCanvasEvent'Class (This).getSource);
         return myEventSource.getAngle;
    end getAngle;
 

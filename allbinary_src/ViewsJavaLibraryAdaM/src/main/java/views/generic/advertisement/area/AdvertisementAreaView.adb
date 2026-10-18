@@ -28,7 +28,7 @@ package body views.generic_Id.advertisement.area.AdvertisementAreaView_Package i
    begin
         HttpStoreComponentView_Package.Initialize (This, transformInfoInterface);
         Initialize_Fields (This);
-        This.advertisementAreaName := Unbounded_String (This.getPropertiesHashMap.get (AdvertisementAreaData_Package.getInstance.NAME));
+        This.advertisementAreaName := Java_Unbox (AdvertisementAreaView'Class (This).getPropertiesHashMap.get (AdvertisementAreaData_Package.getInstance.NAME));
    end Initialize;
 
    function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return AdvertisementAreaView_Access is
@@ -46,7 +46,7 @@ package body views.generic_Id.advertisement.area.AdvertisementAreaView_Package i
    begin
         begin
             advertisementAreasEntityInterface := AdvertisementAreasEntityFactory_Package.getInstance;
-            advertisementAreaInterface := advertisementAreasEntityInterface.get (This.getTransformInfoInterface.getStoreName, This.advertisementAreaName);
+            advertisementAreaInterface := advertisementAreasEntityInterface.get (AdvertisementAreaView'Class (This).getTransformInfoInterface.getStoreName, This.advertisementAreaName);
             return null;
         exception
             when Java_Occurrence : others =>
@@ -63,14 +63,14 @@ package body views.generic_Id.advertisement.area.AdvertisementAreaView_Package i
 
    procedure addDomNodeInterfaces (This : in out AdvertisementAreaView) is
    begin
-        This.addDomNodeInterface (DomNodeInterface_Access (AdvertisementAreaView_Access'(This'Unchecked_Access)));
+        AdvertisementAreaView'Class (This).addDomNodeInterface (DomNodeInterface_Access (AdvertisementAreaView_Access'(This'Unchecked_Access)));
    end addDomNodeInterfaces;
 
    --  throws Exception
    function view (This : in out AdvertisementAreaView) return Unbounded_String is
    begin
         begin
-            This.addDomNodeInterfaces;
+            AdvertisementAreaView'Class (This).addDomNodeInterfaces;
             return HttpStoreComponentView (This).view;
         exception
             when Java_Occurrence : others =>

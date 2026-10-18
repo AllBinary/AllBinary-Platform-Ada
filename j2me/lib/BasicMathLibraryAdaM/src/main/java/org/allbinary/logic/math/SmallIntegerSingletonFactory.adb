@@ -37,18 +37,18 @@ package body org.allbinary.logic.math.SmallIntegerSingletonFactory_Package is
       minAllowed : Integer;
       logUtil : LogUtil_Access;
    begin
-        minAllowed := This.getMinAllowed;
+        minAllowed := SmallIntegerSingletonFactory'Class (This).getMinAllowed;
         if (This.MIN) <= (minAllowed) then
             if J2MEUtil_Package.isJ2ME then
                 null;
             elsif AndroidUtil_Package.isAndroid then
                 logUtil := LogUtil_Package.getInstance;
                 logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Android InputFactory was initialized before GameMidlet: ")).appendint (This.MIN).toString, SmallIntegerSingletonFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("getMin"));
-                This.initWithRange (16#291#, 6);
+                SmallIntegerSingletonFactory'Class (This).initWithRange (16#291#, 6);
             else
                 logUtil := LogUtil_Package.getInstance;
                 logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("InputFactory was initialized before GameMidlet or KeyFactoryInitializer - Currently this is occurs on JS build by TouchMotionGestureFactory constructor: ")).appendint (This.MIN).toString, SmallIntegerSingletonFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("getMin"));
-                This.initWithRange (16#2D0#, 6);
+                SmallIntegerSingletonFactory'Class (This).initWithRange (16#2D0#, 6);
             end if;
         end if;
         if (This.MIN) <= (minAllowed) then
@@ -108,7 +108,7 @@ package body org.allbinary.logic.math.SmallIntegerSingletonFactory_Package is
    procedure Initialize (This : in out SmallIntegerSingletonFactory'Class) is
    begin
       Initialize_Fields (This);
-        This.initWithRange (23, 0);
+        SmallIntegerSingletonFactory'Class (This).initWithRange (23, 0);
    end Initialize;
 
    function Create return SmallIntegerSingletonFactory_Access is
@@ -134,7 +134,7 @@ package body org.allbinary.logic.math.SmallIntegerSingletonFactory_Package is
    function createInstance (This : in out SmallIntegerSingletonFactory; index : Integer) return Integer is
       integer_Id : Integer;
    begin
-        integer_Id := This.getAt (index);
+        integer_Id := SmallIntegerSingletonFactory'Class (This).getAt (index);
         if (integer_Id) = (null) then
             integer_Id := index;
         end if;

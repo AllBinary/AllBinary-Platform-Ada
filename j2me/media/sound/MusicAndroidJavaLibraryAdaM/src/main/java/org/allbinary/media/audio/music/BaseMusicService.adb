@@ -81,14 +81,14 @@ package body org.allbinary.media.audio.music.BaseMusicService_Package is
    procedure onStart (This : in out BaseMusicService; intent_Param : access Intent_Package.Intent'Class; startid : Integer) is
       intent : constant Intent_Access := Intent_Access (intent_Param);
    begin
-        This.onStartCommandIntent (intent);
+        BaseMusicService'Class (This).onStartCommandIntent (intent);
         This.logUtil.putF (This.commonStrings.START, BaseMusicService_Access'(This'Unchecked_Access), This.commonStateStrings.START);
    end onStart;
 
    function onStartCommand (This : in out BaseMusicService; intent_Param : access Intent_Package.Intent'Class; flags : Integer; startId : Integer) return Integer is
       intent : constant Intent_Access := Intent_Access (intent_Param);
    begin
-        This.onStartCommandIntent (intent);
+        BaseMusicService'Class (This).onStartCommandIntent (intent);
         return Service_Package.START_STICKY;
    end onStartCommand;
 
@@ -106,10 +106,10 @@ package body org.allbinary.media.audio.music.BaseMusicService_Package is
             command := intent.getIntExtra (This.commonStateStrings.ON_START_COMMAND, -(1));
             This.logUtil.putF ((CommonLabels_Package.getInstance.COMMAND_LABEL) + (command), BaseMusicService_Access'(This'Unchecked_Access), This.commonStateStrings.ON_START_COMMAND);
             if (command) = (1) then
-                This.pause;
+                BaseMusicService'Class (This).pause;
                 return;
             elsif (command) = (2) then
-                This.resume;
+                BaseMusicService'Class (This).resume;
                 return;
             else
                 This.songId := intent.getIntExtra (musicStrings.SONG_EXTRA, -(1));
@@ -130,7 +130,7 @@ package body org.allbinary.media.audio.music.BaseMusicService_Package is
                 thread.start;
                 return;
             end if;
-            This.start;
+            BaseMusicService'Class (This).start;
         end if;
    end onStartCommandIntent;
 

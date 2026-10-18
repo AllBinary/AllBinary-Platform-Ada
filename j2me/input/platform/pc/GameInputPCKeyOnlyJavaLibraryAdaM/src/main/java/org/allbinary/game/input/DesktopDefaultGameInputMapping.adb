@@ -27,7 +27,7 @@ package body org.allbinary.game.input.DesktopDefaultGameInputMapping_Package is
       gameKeyFactory : GameKeyFactory_Access;
    begin
         PersistentInputMapping_Package.Initialize (This, GamePersistanceStrings_Package.getInstance.DEFAULT_INPUT_MAPPING_RECORD_ID);
-        inputToGameKeyMapping := This.getInputMapping;
+        inputToGameKeyMapping := DesktopDefaultGameInputMapping'Class (This).getInputMapping;
         pcKeyFactory := PCKeyFactory_Package.getInstance;
         gameKeyFactory := GameKeyFactory_Package.getInstance;
         inputToGameKeyMapping.add (gameKeyFactory.FIRE, pcKeyFactory.ENTER);

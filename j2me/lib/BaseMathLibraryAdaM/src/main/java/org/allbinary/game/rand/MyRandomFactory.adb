@@ -55,7 +55,7 @@ package body org.allbinary.game.rand.MyRandomFactory_Package is
 
    function getAbsoluteNextInt (This : in out MyRandomFactory; range_Id : Integer) return Integer is
    begin
-        return This.mathUtil.abs_Id (This.getNextInt (range_Id));
+        return This.mathUtil.abs_Id (MyRandomFactory'Class (This).getNextInt (range_Id));
    end getAbsoluteNextInt;
 
    function getAbsoluteNextIntAllowZero (This : in out MyRandomFactory; range_Id : Integer) return Integer is
@@ -63,13 +63,13 @@ package body org.allbinary.game.rand.MyRandomFactory_Package is
         if (range_Id) = (0) then
             return 0;
         else
-            return This.mathUtil.abs_Id (This.getNextInt (range_Id));
+            return This.mathUtil.abs_Id (MyRandomFactory'Class (This).getNextInt (range_Id));
         end if;
    end getAbsoluteNextIntAllowZero;
 
    procedure shuffle (This : in out MyRandomFactory; intArray : Integer_Array_Access) is
    begin
-        This.shuffleTotal (intArray, (intArray'Length) * (7));
+        MyRandomFactory'Class (This).shuffleTotal (intArray, (intArray'Length) * (7));
    end shuffle;
 
    procedure shuffleTotal (This : in out MyRandomFactory; intArray : Integer_Array_Access; shuffleTotal : Integer) is
@@ -84,8 +84,8 @@ package body org.allbinary.game.rand.MyRandomFactory_Package is
         randomIndex2 := 0;
         value := 0;
         for index in 0 .. (shuffleTotal) - 1 loop
-            randomIndex := This.getAbsoluteNextIntAllowZero (size);
-            randomIndex2 := This.getAbsoluteNextIntAllowZero (size);
+            randomIndex := MyRandomFactory'Class (This).getAbsoluteNextIntAllowZero (size);
+            randomIndex2 := MyRandomFactory'Class (This).getAbsoluteNextIntAllowZero (size);
             value := intArray (randomIndex);
             intArray (randomIndex) := intArray (randomIndex2);
             intArray (randomIndex2) := value;
@@ -94,7 +94,7 @@ package body org.allbinary.game.rand.MyRandomFactory_Package is
 
    procedure shuffle2 (This : in out MyRandomFactory; intArray : Integer_Array_Access; intArray2 : Integer_Array_Access) is
    begin
-        This.shuffle2Total (intArray, intArray2, (intArray'Length) * (7));
+        MyRandomFactory'Class (This).shuffle2Total (intArray, intArray2, (intArray'Length) * (7));
    end shuffle2;
 
    procedure shuffle2Total (This : in out MyRandomFactory; intArray : Integer_Array_Access; intArray2 : Integer_Array_Access; shuffleTotal : Integer) is
@@ -111,8 +111,8 @@ package body org.allbinary.game.rand.MyRandomFactory_Package is
         value := 0;
         value2 := 0;
         for index in 0 .. (shuffleTotal) - 1 loop
-            randomIndex := This.getAbsoluteNextIntAllowZero (size);
-            randomIndex2 := This.getAbsoluteNextIntAllowZero (size);
+            randomIndex := MyRandomFactory'Class (This).getAbsoluteNextIntAllowZero (size);
+            randomIndex2 := MyRandomFactory'Class (This).getAbsoluteNextIntAllowZero (size);
             value := intArray (randomIndex);
             value2 := intArray2 (randomIndex);
             intArray (randomIndex) := intArray (randomIndex2);

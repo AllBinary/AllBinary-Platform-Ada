@@ -31,8 +31,8 @@ package body org.allbinary.input.motion.button.TouchScreenFactory_Package is
    begin
       Initialize_Fields (This);
         begin
-            This.setTouch (True);
-            This.setMultiTouch (False);
+            TouchScreenFactory'Class (This).setTouch (True);
+            TouchScreenFactory'Class (This).setMultiTouch (False);
         exception
             when Java_Occurrence : others =>
                 declare
@@ -102,13 +102,13 @@ package body org.allbinary.input.motion.button.TouchScreenFactory_Package is
    begin
         stringBuffer := StringMaker_Package.Create;
         stringBuffer.append (To_Unbounded_String ("TouchScreen: "));
-        stringBuffer.appendboolean (This.isTouch);
+        stringBuffer.appendboolean (TouchScreenFactory'Class (This).isTouch);
         stringBuffer.append (To_Unbounded_String (" MultiTouch: "));
-        stringBuffer.appendboolean (This.isMultiTouch);
+        stringBuffer.appendboolean (TouchScreenFactory'Class (This).isMultiTouch);
         stringBuffer.append (To_Unbounded_String (" Distinct MultiTouch: "));
-        stringBuffer.appendboolean (This.isMultiTouchDistinct);
+        stringBuffer.appendboolean (TouchScreenFactory'Class (This).isMultiTouchDistinct);
         stringBuffer.append (To_Unbounded_String (" TouchScreenType: "));
-        stringBuffer.append (StringUtil_Package.getInstance.toString (This.getTouchScreenType));
+        stringBuffer.append (StringUtil_Package.getInstance.toString (TouchScreenFactory'Class (This).getTouchScreenType));
         return stringBuffer.toString;
    end toString;
 

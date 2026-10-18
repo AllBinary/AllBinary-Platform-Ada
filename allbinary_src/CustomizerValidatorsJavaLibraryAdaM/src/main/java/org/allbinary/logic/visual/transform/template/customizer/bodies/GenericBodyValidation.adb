@@ -66,7 +66,7 @@ package body org.allbinary.logic.visual.transform.template.customizer.bodies.Gen
    begin
       Validation_Package.Initialize (This);
       Initialize_Fields (This);
-        This.getFormData (hashMap);
+        GenericBodyValidation'Class (This).getFormData (hashMap);
    end Initialize;
 
    function Create (hashMap_Param : access HashMap_Package.HashMap'Class) return GenericBodyValidation_Access is
@@ -80,7 +80,7 @@ package body org.allbinary.logic.visual.transform.template.customizer.bodies.Gen
    procedure getFormData (This : in out GenericBodyValidation; hashMap_Param : access HashMap_Package.HashMap'Class) is
       hashMap : constant HashMap_Access := HashMap_Access (hashMap_Param);
    begin
-        This.body_Id := Unbounded_String (hashMap.get (BodyData_Package.getInstance.NAME));
+        This.body_Id := Java_Unbox (hashMap.get (BodyData_Package.getInstance.NAME));
    end getFormData;
 
    function isValid (This : in out GenericBodyValidation) return Boolean is

@@ -35,7 +35,7 @@ package body org.allbinary.animation.IndependentVectorExplosionRotationAnimation
         This.vectorInfo := vectorInfo;
         This.basicColor := basicColor;
         This.vectorAnimationFactoryInterface := vectorAnimationFactoryInterface;
-        This.init;
+        IndependentVectorExplosionRotationAnimationFactory'Class (This).init;
    end Initialize;
 
    function Create (vectorInfo_Param : access VectorInfo_Package.VectorInfo'Class; basicColor_Param : access BasicColor_Package.BasicColor'Class; vectorAnimationFactoryInterface_Param : access VectorAnimationFactoryInterface_Package.VectorAnimationFactoryInterface'Class) return IndependentVectorExplosionRotationAnimationFactory_Access is

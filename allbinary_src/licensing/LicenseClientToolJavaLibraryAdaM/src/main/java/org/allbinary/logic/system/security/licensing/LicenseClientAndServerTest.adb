@@ -82,7 +82,7 @@ package body org.allbinary.logic.system.security.licensing.LicenseClientAndServe
             size := This.vector.size;
             for index in 0 .. (size) - 1 loop
                 stringBuffer.append (TESTING);
-                serverName := Unbounded_String (This.vector.get (index));
+                serverName := Java_Unbox (This.vector.get (index));
                 begin
                     licenseInitInfo := LicenseInitInfo_Package.Create;
                     licenseInitInfo.addServer (serverName);

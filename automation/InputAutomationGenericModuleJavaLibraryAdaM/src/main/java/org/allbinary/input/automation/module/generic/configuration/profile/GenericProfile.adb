@@ -33,10 +33,10 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
       index : Integer;
    begin
       Initialize_Fields (This);
-        This.setName (DomNodeHelper_Package.getTextNodeValue (node));
+        GenericProfile'Class (This).setName (DomNodeHelper_Package.getTextNodeValue (node));
         This.vector := BasicArrayListD_Package.Create;
         nodeList := node.getChildNodes;
-        This.logUtil.putF (To_Unbounded_String ("Name: ") & This.getName & To_Unbounded_String (" Child Nodes: ") & Java_Image (nodeList.getLength), GenericProfile_Access'(This'Unchecked_Access), To_Unbounded_String ("Contructor"));
+        This.logUtil.putF (To_Unbounded_String ("Name: ") & GenericProfile'Class (This).getName & To_Unbounded_String (" Child Nodes: ") & Java_Image (nodeList.getLength), GenericProfile_Access'(This'Unchecked_Access), To_Unbounded_String ("Contructor"));
         for index in 0 .. (nodeList.getLength) - 1 loop
             profileNode := nodeList.item (index);
             if (profileNode.getNodeName.compareTo (GenericProfileDataWorkerData_Package.NAME)) = (0) then
@@ -57,7 +57,7 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
    procedure Initialize (This : in out GenericProfile'Class; name : Unbounded_String) is
    begin
       Initialize_Fields (This);
-        This.setName (name);
+        GenericProfile'Class (This).setName (name);
         This.vector := BasicArrayListD_Package.Create;
    end Initialize;
 

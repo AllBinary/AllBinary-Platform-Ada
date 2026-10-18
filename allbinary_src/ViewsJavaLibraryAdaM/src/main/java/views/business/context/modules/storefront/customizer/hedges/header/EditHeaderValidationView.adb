@@ -40,7 +40,7 @@ package body views.business.context.modules.storefront.customizer.hedges.header.
       isValid : Boolean;
    begin
         begin
-            This.heading := HeadingValidation_Package.Create (CustomizerUtil_Package.getInstance.getViewDataForComponentsInObjectConfig (This.getTransformInfoInterface));
+            This.heading := HeadingValidation_Package.Create (CustomizerUtil_Package.getInstance.getViewDataForComponentsInObjectConfig (EditHeaderValidationView'Class (This).getTransformInfoInterface));
             isValid := This.heading.isValid;
             return isValid;
         exception

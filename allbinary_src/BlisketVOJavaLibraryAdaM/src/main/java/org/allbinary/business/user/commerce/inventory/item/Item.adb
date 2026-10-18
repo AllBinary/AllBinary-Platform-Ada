@@ -33,7 +33,7 @@ package body org.allbinary.business.user.commerce.inventory.item.Item_Package is
    begin
         BasicItem_Package.Initialize (This, itemHashMap);
         Initialize_Fields (This);
-        This.setData (itemHashMap);
+        Item'Class (This).setData (itemHashMap);
    end Initialize;
 
    function Create (itemHashMap_Param : access HashMap_Package.HashMap'Class) return Item_Access is
@@ -66,11 +66,11 @@ package body org.allbinary.business.user.commerce.inventory.item.Item_Package is
    procedure setData (This : in out Item; itemHashMap_Param : access HashMap_Package.HashMap'Class) is
       itemHashMap : constant HashMap_Access := HashMap_Access (itemHashMap_Param);
    begin
-        This.group := Unbounded_String (itemHashMap.get (ShippingMethodData_Package.GROUP));
-        This.tax := Unbounded_String (itemHashMap.get (OrderHistoryData_Package.TAX));
-        This.shippingType := Unbounded_String (itemHashMap.get (ShippingMethodData_Package.NAME));
-        This.shippingCost := Unbounded_String (itemHashMap.get (ShippingMethodData_Package.COST));
-        This.shippedDate := Unbounded_String (itemHashMap.get (OrderHistoryData_Package.SHIPPEDDATE));
+        This.group := Java_Unbox (itemHashMap.get (ShippingMethodData_Package.GROUP));
+        This.tax := Java_Unbox (itemHashMap.get (OrderHistoryData_Package.TAX));
+        This.shippingType := Java_Unbox (itemHashMap.get (ShippingMethodData_Package.NAME));
+        This.shippingCost := Java_Unbox (itemHashMap.get (ShippingMethodData_Package.COST));
+        This.shippedDate := Java_Unbox (itemHashMap.get (OrderHistoryData_Package.SHIPPEDDATE));
         itemHashMap.put (StreetAddressData_Package.NAME, itemHashMap.get (ShippingAddressData_Package.NAME));
         itemHashMap.put (StreetAddressData_Package.STREET, itemHashMap.get (ShippingAddressData_Package.STREET));
         itemHashMap.put (StreetAddressData_Package.CITY, itemHashMap.get (ShippingAddressData_Package.CITY));
@@ -145,12 +145,12 @@ package body org.allbinary.business.user.commerce.inventory.item.Item_Package is
       hashMap : HashMap_Access;
    begin
         hashMap := BasicItem (This).toHashMap;
-        hashMap.put (ShippingMethodData_Package.GROUP, This.group);
-        hashMap.put (OrderHistoryData_Package.TAX, This.tax);
-        hashMap.put (ShippingMethodData_Package.NAME, This.shippingType);
-        hashMap.put (ShippingMethodData_Package.COST, This.shippingCost);
-        hashMap.put (OrderHistoryData_Package.SHIPPEDDATE, This.shippedDate);
-        hashMap.put (EntryData_Package.getInstance.SPECIAL, This.special);
+        hashMap.put (ShippingMethodData_Package.GROUP, Java_Box (This.group));
+        hashMap.put (OrderHistoryData_Package.TAX, Java_Box (This.tax));
+        hashMap.put (ShippingMethodData_Package.NAME, Java_Box (This.shippingType));
+        hashMap.put (ShippingMethodData_Package.COST, Java_Box (This.shippingCost));
+        hashMap.put (OrderHistoryData_Package.SHIPPEDDATE, Java_Box (This.shippedDate));
+        hashMap.put (EntryData_Package.getInstance.SPECIAL, Java_Box (This.special));
         return hashMap;
    end toHashMap;
 

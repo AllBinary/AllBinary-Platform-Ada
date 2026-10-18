@@ -64,7 +64,7 @@ package body org.allbinary.business.user.commerce.money.payment.gateway.transact
             httpServletRequest := HttpServletRequest_Access (pageContext.getRequest);
             command := httpServletRequest.getParameter (org_Package.allbinary.globals.GLOBALS2.ADMINCOMMAND);
             if ((command) /= (Null_Unbounded_String)) and then ((command.compareTo (org_Package.allbinary.globals.GLOBALS2.AUTHORIZEFORMEVALBODYONERROR)) = (0)) then
-                return This.generateFromTestData (transformInfoInterface);
+                return PaymentTransactionInterfaceRequestFactory'Class (This).generateFromTestData (transformInfoInterface);
             else
                 propertiesHashMap := httpTransformInfoInterface.getPropertiesHashMap;
                 weblisketSession := WeblisketSession_Package.Create (propertiesHashMap, pageContext);
@@ -135,7 +135,7 @@ package body org.allbinary.business.user.commerce.money.payment.gateway.transact
             weblisketSession := WeblisketSession_Package.Create (propertiesHashMap, pageContext);
             storeFrontInterface := StoreFrontFactory_Package.getInstance (weblisketSession.getStoreName);
             httpServletRequest := HttpServletRequest_Access (pageContext.getRequest);
-            gatewayName := Unbounded_String (weblisketSession.getPaymentMethod);
+            gatewayName := Java_Unbox (weblisketSession.getPaymentMethod);
             if StringValidationUtil_Package.getInstance.isEmpty (gatewayName) then
                 gatewayName := httpServletRequest.getParameter (PaymentGatewayData_Package.NAME.toString);
             end if;

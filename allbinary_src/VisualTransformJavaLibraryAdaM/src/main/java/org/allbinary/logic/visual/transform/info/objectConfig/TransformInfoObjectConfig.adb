@@ -32,7 +32,7 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.TransformInf
    begin
       Initialize_Fields (This);
         This.ownerTransformInfoInterface := transformInfoInterface;
-        This.createDocument;
+        TransformInfoObjectConfig'Class (This).createDocument;
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
             stringBuffer := StringMaker_Package.Create;
             stringBuffer.append (To_Unbounded_String ("TransformInfo: "));
@@ -42,7 +42,7 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.TransformInf
                 stringBuffer.append (To_Unbounded_String ("No Owner!?#@"));
             end if;
             stringBuffer.append (To_Unbounded_String ("" & ASCII.LF & "Constructed with document: "));
-            stringBuffer.append (This.toString);
+            stringBuffer.append (TransformInfoObjectConfig'Class (This).toString);
             This.logUtil.putF (stringBuffer.toString, TransformInfoObjectConfig_Access'(This'Unchecked_Access), To_Unbounded_String ("Constructor(TransformInfoInterface)"));
         end if;
    end Initialize;
@@ -63,9 +63,9 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.TransformInf
       Initialize_Fields (This);
         This.ownerTransformInfoInterface := transformInfoInterface;
         This.document := document;
-        node := DomSearchHelper_Package.getNodeNoThrow (OutputTypeData_Package.getInstance.NAME, This.getRootNode.getChildNodes);
+        node := DomSearchHelper_Package.getNodeNoThrow (OutputTypeData_Package.getInstance.NAME, TransformInfoObjectConfig'Class (This).getRootNode.getChildNodes);
         if (node) /= (null) then
-            This.setOutputTypeName (DomNodeHelper_Package.getTextNodeValue (node));
+            TransformInfoObjectConfig'Class (This).setOutputTypeName (DomNodeHelper_Package.getTextNodeValue (node));
         end if;
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
             stringBuffer := StringMaker_Package.Create;
@@ -76,7 +76,7 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.TransformInf
                 stringBuffer.append (To_Unbounded_String ("No Owner!?#@"));
             end if;
             stringBuffer.append (To_Unbounded_String ("" & ASCII.LF & "Constructed with document: "));
-            stringBuffer.append (This.toString);
+            stringBuffer.append (TransformInfoObjectConfig'Class (This).toString);
             This.logUtil.putF (stringBuffer.toString, TransformInfoObjectConfig_Access'(This'Unchecked_Access), To_Unbounded_String ("Constructor(TransformInfoInterface, Document)"));
         end if;
    end Initialize;
@@ -96,7 +96,7 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.TransformInf
    begin
       Initialize_Fields (This);
         This.ownerTransformInfoInterface := transformInfoInterface;
-        This.createDocument;
+        TransformInfoObjectConfig'Class (This).createDocument;
         configNameAttr := This.document.createAttribute (TransformInfoObjectConfigData_Package.getInstance.NAME);
         configNameAttr.setValue (name);
         objectConfigNode := This.document.getElementsByTagName (TransformInfoObjectConfigData_Package.getInstance.NAME).item (0);
@@ -110,7 +110,7 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.TransformInf
                 stringBuffer.append (To_Unbounded_String ("No Owner!?#@"));
             end if;
             stringBuffer.append (To_Unbounded_String ("" & ASCII.LF & "Constructed with document: "));
-            stringBuffer.append (This.toString);
+            stringBuffer.append (TransformInfoObjectConfig'Class (This).toString);
             This.logUtil.putF (stringBuffer.toString, TransformInfoObjectConfig_Access'(This'Unchecked_Access), To_Unbounded_String ("Constructor(TransformInfoInterface, name, type)"));
         end if;
    end Initialize;
@@ -183,7 +183,7 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.TransformInf
    function getName (This : in out TransformInfoObjectConfig) return Unbounded_String is
       attrNode : Attr_Access;
    begin
-        attrNode := Attr_Access (This.getTemplateAttributes.getNamedItem (TransformInfoObjectConfigData_Package.getInstance.NAME));
+        attrNode := Attr_Access (TransformInfoObjectConfig'Class (This).getTemplateAttributes.getNamedItem (TransformInfoObjectConfigData_Package.getInstance.NAME));
         return attrNode.getValue;
    end getName;
 
@@ -191,7 +191,7 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.TransformInf
    procedure setName (This : in out TransformInfoObjectConfig; name : Unbounded_String) is
       attrNode : Attr_Access;
    begin
-        attrNode := Attr_Access (This.getTemplateAttributes.getNamedItem (TransformInfoObjectConfigData_Package.getInstance.NAME));
+        attrNode := Attr_Access (TransformInfoObjectConfig'Class (This).getTemplateAttributes.getNamedItem (TransformInfoObjectConfigData_Package.getInstance.NAME));
         attrNode.setValue (name);
    end setName;
 
@@ -228,7 +228,7 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.TransformInf
       index : Integer;
    begin
         viewVector := BasicArrayListD_Package.Create;
-        viewNodeVector := This.getNodeVector (nodeName);
+        viewNodeVector := TransformInfoObjectConfig'Class (This).getNodeVector (nodeName);
         size := viewNodeVector.size;
         for index in 0 .. (size) - 1 loop
             viewNode := Node_Access (viewNodeVector.get (index));
@@ -246,7 +246,7 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.TransformInf
       index : Integer;
    begin
         viewVector := BasicArrayListD_Package.Create;
-        viewNodeVector := This.getNodeVector (nodeName);
+        viewNodeVector := TransformInfoObjectConfig'Class (This).getNodeVector (nodeName);
         size := viewNodeVector.size;
         for index in 0 .. (size) - 1 loop
             viewNode := Node_Access (viewNodeVector.get (index));
@@ -316,25 +316,25 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.TransformInf
    --  throws Exception
    function getTransformDomNodes (This : in out TransformInfoObjectConfig) return BasicArrayList_Access is
    begin
-        return This.getTransformDomNodes (TransformInfosData_Package.getInstance.GROUP);
+        return TransformInfoObjectConfig'Class (This).getTransformDomNodes (TransformInfosData_Package.getInstance.GROUP);
    end getTransformDomNodes;
 
    --  throws Exception
    function getTransforms (This : in out TransformInfoObjectConfig) return BasicArrayList_Access is
    begin
-        return This.getTransforms (TransformInfosData_Package.getInstance.NAME);
+        return TransformInfoObjectConfig'Class (This).getTransforms (TransformInfosData_Package.getInstance.NAME);
    end getTransforms;
 
    --  throws Exception
    function getGroupTransforms (This : in out TransformInfoObjectConfig) return BasicArrayList_Access is
    begin
-        return This.getTransforms (TransformInfosData_Package.getInstance.GROUP);
+        return TransformInfoObjectConfig'Class (This).getTransforms (TransformInfosData_Package.getInstance.GROUP);
    end getGroupTransforms;
 
    --  throws Exception
    function getParentTransforms (This : in out TransformInfoObjectConfig) return BasicArrayList_Access is
    begin
-        return This.getTransforms (TransformInfoData_Package.getInstance.PARENT);
+        return TransformInfoObjectConfig'Class (This).getTransforms (TransformInfoData_Package.getInstance.PARENT);
    end getParentTransforms;
 
    function getRootNode (This : in out TransformInfoObjectConfig) return Node_Access is
@@ -357,7 +357,7 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.TransformInf
    function getInputOutputTypeName (This : in out TransformInfoObjectConfig) return Unbounded_String is
       node : Node_Access;
    begin
-        node := DomSearchHelper_Package.getNode (InputOutputTypeData_Package.getInstance.NAME, This.getRootNode.getChildNodes);
+        node := DomSearchHelper_Package.getNode (InputOutputTypeData_Package.getInstance.NAME, TransformInfoObjectConfig'Class (This).getRootNode.getChildNodes);
         return DomNodeHelper_Package.getTextNodeValue (node);
    end getInputOutputTypeName;
 
@@ -365,7 +365,7 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.TransformInf
    function getInputOutputTypeFile (This : in out TransformInfoObjectConfig) return Unbounded_String is
       node : Node_Access;
    begin
-        node := DomSearchHelper_Package.getNode (InputOutputTypeData_Package.getInstance.FILE, This.getRootNode.getChildNodes);
+        node := DomSearchHelper_Package.getNode (InputOutputTypeData_Package.getInstance.FILE, TransformInfoObjectConfig'Class (This).getRootNode.getChildNodes);
         return DomNodeHelper_Package.getTextNodeValue (node);
    end getInputOutputTypeFile;
 
@@ -373,7 +373,7 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.TransformInf
    function getImportUriPath (This : in out TransformInfoObjectConfig) return Unbounded_String is
       node : Node_Access;
    begin
-        node := DomSearchHelper_Package.getNode (XslData_Package.getInstance.ROOT_IMPORT_URI, This.getRootNode.getChildNodes);
+        node := DomSearchHelper_Package.getNode (XslData_Package.getInstance.ROOT_IMPORT_URI, TransformInfoObjectConfig'Class (This).getRootNode.getChildNodes);
         return DomNodeHelper_Package.getTextNodeValue (node);
    end getImportUriPath;
 

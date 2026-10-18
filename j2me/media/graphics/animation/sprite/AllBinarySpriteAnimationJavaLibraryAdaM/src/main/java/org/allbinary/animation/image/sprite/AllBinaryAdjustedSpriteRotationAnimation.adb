@@ -45,7 +45,7 @@ package body org.allbinary.animation.image.sprite.AllBinaryAdjustedSpriteRotatio
       g : constant Graphics_Access := Graphics_Access (g_Param);
    begin
         This.sprite.setPosition ((x) + (This.dx), (y) + (This.dy));
-        This.paint (g);
+        AllBinaryAdjustedSpriteRotationAnimation'Class (This).paint (g);
    end paintXY;
 
 end org.allbinary.animation.image.sprite.AllBinaryAdjustedSpriteRotationAnimation_Package;

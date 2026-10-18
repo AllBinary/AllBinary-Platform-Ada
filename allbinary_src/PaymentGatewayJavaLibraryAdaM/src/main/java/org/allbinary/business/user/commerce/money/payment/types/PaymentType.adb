@@ -82,7 +82,7 @@ package body org.allbinary.business.user.commerce.money.payment.types.PaymentTyp
       vector : BasicArrayList_Access;
    begin
         vector := BasicArrayListD_Package.Create;
-        vector.addAllList (This.getBasicPaymentType.toVector);
+        vector.addAllList (PaymentType'Class (This).getBasicPaymentType.toVector);
         if (This.paymentTransactionInterfaceFactoryInterface) /= (null) then
             vector.add (To_Unbounded_String (Ada.Tags.Expanded_Name (This.paymentTransactionInterfaceFactoryInterface.all'Tag)));
         end if;
@@ -96,12 +96,12 @@ package body org.allbinary.business.user.commerce.money.payment.types.PaymentTyp
       hashMap : HashMap_Access;
    begin
         hashMap := StdUtil_Package.getInstance.createHashMap;
-        hashMap.putAll (This.getBasicPaymentType.toHashMap);
+        hashMap.putAll (PaymentType'Class (This).getBasicPaymentType.toHashMap);
         if (This.paymentTransactionInterfaceFactoryInterface) /= (null) then
-            hashMap.put (PaymentGatewayData_Package.PAYMENTTRANSACTIONINTERFACEFACTORYINTERFACE.toString, To_Unbounded_String (Ada.Tags.Expanded_Name (This.paymentTransactionInterfaceFactoryInterface.all'Tag)));
+            hashMap.put (Java_Box (PaymentGatewayData_Package.PAYMENTTRANSACTIONINTERFACEFACTORYINTERFACE.toString), Java_Box (To_Unbounded_String (Ada.Tags.Expanded_Name (This.paymentTransactionInterfaceFactoryInterface.all'Tag))));
         end if;
         if (This.paymentProcessorInterfaceFactoryInterface) /= (null) then
-            hashMap.put (PaymentGatewayData_Package.PAYMENTPROCESSORINTERFACEFACTORYINTERFACE.toString, To_Unbounded_String (Ada.Tags.Expanded_Name (This.paymentProcessorInterfaceFactoryInterface.all'Tag)));
+            hashMap.put (Java_Box (PaymentGatewayData_Package.PAYMENTPROCESSORINTERFACEFACTORYINTERFACE.toString), Java_Box (To_Unbounded_String (Ada.Tags.Expanded_Name (This.paymentProcessorInterfaceFactoryInterface.all'Tag))));
         end if;
         return hashMap;
    end toHashMap;

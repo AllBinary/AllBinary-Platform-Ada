@@ -140,7 +140,7 @@ package body org.allbinary.media.image.ImagesRatioUtil_Package is
         end if;
         fudgedBufferedImageArray := new BufferedImage_Access_Array'(0 .. (end_Id) - 1 => null);
         for index in 0 .. (end_Id) - 1 loop
-            fudgedBufferedImageArray (index) := This.fudge (bufferedImageArray (index), ratio);
+            fudgedBufferedImageArray (index) := ImagesRatioUtil'Class (This).fudge (bufferedImageArray (index), ratio);
         end loop;
         return fudgedBufferedImageArray;
    end fudge;

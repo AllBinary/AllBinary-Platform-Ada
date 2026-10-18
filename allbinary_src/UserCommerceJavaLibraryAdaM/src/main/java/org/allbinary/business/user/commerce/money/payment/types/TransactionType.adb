@@ -38,11 +38,12 @@ package body org.allbinary.business.user.commerce.money.payment.types.Transactio
    function isEqual (This : in out TransactionType; transactionType_Param : access TransactionType_Package.TransactionType'Class) return Boolean is
       transactionType : constant TransactionType_Access := TransactionType_Access (transactionType_Param);
    begin
-        if (This.toString.compareTo (transactionType.toString)) = (0) then
+        if (TransactionType'Class (This).toString.compareTo (transactionType.toString)) = (0) then
             return True;
         else
             return False;
         end if;
+        return False;
    end isEqual;
 
    function toString (This : in out TransactionType) return Unbounded_String is

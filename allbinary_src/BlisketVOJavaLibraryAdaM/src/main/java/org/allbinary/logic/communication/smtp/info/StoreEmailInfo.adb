@@ -34,7 +34,7 @@ package body org.allbinary.logic.communication.smtp.info.StoreEmailInfo_Package 
             This.logUtil.putF (commonStrings.START, StoreEmailInfo_Access'(This'Unchecked_Access), commonStrings.CONSTRUCTOR);
         end if;
         This.storeFrontInterface := storeFrontInterface;
-        This.init;
+        StoreEmailInfo'Class (This).init;
    end Initialize;
 
    function Create (storeFrontInterface_Param : access StoreFrontInterface_Package.StoreFrontInterface'Class; subject : Unbounded_String; textBody : Unbounded_String) return StoreEmailInfo_Access is
@@ -51,7 +51,7 @@ package body org.allbinary.logic.communication.smtp.info.StoreEmailInfo_Package 
    begin
         contextConfigurationInterface := This.storeFrontInterface.getContextConfigurationInterface;
         emailServerConfigurationInterface := contextConfigurationInterface.getEmailServerConfigurationInterface;
-        This.setEmailServerConfigurationInterface (emailServerConfigurationInterface);
+        StoreEmailInfo'Class (This).setEmailServerConfigurationInterface (emailServerConfigurationInterface);
    end init;
 
 end org.allbinary.logic.communication.smtp.info.StoreEmailInfo_Package;

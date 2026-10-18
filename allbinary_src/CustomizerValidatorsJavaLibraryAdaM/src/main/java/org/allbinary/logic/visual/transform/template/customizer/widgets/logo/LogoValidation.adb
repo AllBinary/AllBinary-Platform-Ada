@@ -65,7 +65,7 @@ package body org.allbinary.logic.visual.transform.template.customizer.widgets.lo
       Validation_Package.Initialize (This);
       Initialize_Fields (This);
         This.isFile := True;
-        This.getFormData (hashMap);
+        LogoValidation'Class (This).getFormData (hashMap);
    end Initialize;
 
    function Create (hashMap_Param : access HashMap_Package.HashMap'Class) return LogoValidation_Access is
@@ -81,7 +81,7 @@ package body org.allbinary.logic.visual.transform.template.customizer.widgets.lo
       stringBuffer : StringMaker_Access;
    begin
         This.logoFileItem := FileItem_Access (hashMap.get (LogoData_Package.getInstance.IMAGE));
-        This.logoAbPath := AbPath_Package.Create (Unbounded_String (hashMap.get (LogoData_Package.getInstance.IMAGEPATH)), StringUtil_Package.getInstance.EMPTY_STRING);
+        This.logoAbPath := AbPath_Package.Create (Java_Unbox (hashMap.get (LogoData_Package.getInstance.IMAGEPATH)), StringUtil_Package.getInstance.EMPTY_STRING);
         if (This.logoFileItem) /= (null) then
             This.logoFile := HttpRequestUtil_Package.getInstance.generateFileName (This.logoFileItem.getName);
         end if;
@@ -184,11 +184,11 @@ package body org.allbinary.logic.visual.transform.template.customizer.widgets.lo
         hashMap := StdUtil_Package.getInstance.createHashMap;
         hashMap.put (LogoData_Package.getInstance.IMAGE, stringUtil.EMPTY_STRING);
         if (This.logoFile) /= (Null_Unbounded_String) then
-            hashMap.put (LogoData_Package.getInstance.IMAGEPATH, This.logoAbPath.toString);
-            hashMap.put (LogoData_Package.getInstance.IMAGEFILENAME, This.logoFile);
+            hashMap.put (LogoData_Package.getInstance.IMAGEPATH, Java_Box (This.logoAbPath.toString));
+            hashMap.put (LogoData_Package.getInstance.IMAGEFILENAME, Java_Box (This.logoFile));
         else
             hashMap.put (LogoData_Package.getInstance.IMAGEPATH, null);
-            hashMap.put (LogoData_Package.getInstance.IMAGEFILENAME, This.logoFile);
+            hashMap.put (LogoData_Package.getInstance.IMAGEFILENAME, Java_Box (This.logoFile));
         end if;
         return hashMap;
    end toHashMap;
@@ -198,7 +198,7 @@ package body org.allbinary.logic.visual.transform.template.customizer.widgets.lo
       document : constant Document_Access := Document_Access (document_Param);
       hashMap : HashMap_Access;
    begin
-        hashMap := This.toHashMap;
+        hashMap := LogoValidation'Class (This).toHashMap;
         return ModDomHelper_Package.createNameValueNodes (document, LogoData_Package.getInstance.NAME, hashMap);
    end toXmlNode;
 

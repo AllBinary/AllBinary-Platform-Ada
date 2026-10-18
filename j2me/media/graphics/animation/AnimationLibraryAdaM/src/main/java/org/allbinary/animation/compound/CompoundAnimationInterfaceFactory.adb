@@ -45,11 +45,11 @@ package body org.allbinary.animation.compound.CompoundAnimationInterfaceFactory_
       index : Integer;
    begin
         size := This.basicAnimationInterfaceFactoryInterfaceArrayP'Length;
-        animationInterfaceArray := This.createArray (size);
+        animationInterfaceArray := CompoundAnimationInterfaceFactory'Class (This).createArray (size);
         for index in 0 .. (size) - 1 loop
             animationInterfaceArray (index) := This.basicAnimationInterfaceFactoryInterfaceArrayP (index).getInstance (instanceId);
         end loop;
-        return This.createAnimation (animationInterfaceArray);
+        return CompoundAnimationInterfaceFactory'Class (This).createAnimation (animationInterfaceArray);
    end getInstance;
 
    function createArray (This : in out CompoundAnimationInterfaceFactory; size : Integer) return Animation_Access_Array_Access is

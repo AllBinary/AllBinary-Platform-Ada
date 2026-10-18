@@ -88,27 +88,27 @@ package body org.allbinary.logic.communication.http.request.session.BasicWeblisk
 
    function getWebAppPath (This : in out BasicWeblisketSession) return Unbounded_String is
    begin
-        return Unbounded_String (This.session.getAttribute (org_Package.allbinary.globals.GLOBALS2.WEBAPPPATH));
+        return Java_Unbox (This.session.getAttribute (org_Package.allbinary.globals.GLOBALS2.WEBAPPPATH));
    end getWebAppPath;
 
    function getUserName (This : in out BasicWeblisketSession) return Unbounded_String is
    begin
-        return Unbounded_String (This.session.getAttribute (UserData_Package.USERNAME));
+        return Java_Unbox (This.session.getAttribute (UserData_Package.USERNAME));
    end getUserName;
 
    function getPassword (This : in out BasicWeblisketSession) return Unbounded_String is
    begin
-        return Unbounded_String (This.session.getAttribute (UserData_Package.PASSWORD));
+        return Java_Unbox (This.session.getAttribute (UserData_Package.PASSWORD));
    end getPassword;
 
    function getPaymentMethod (This : in out BasicWeblisketSession) return Unbounded_String is
    begin
-        return Unbounded_String (This.session.getAttribute (PaymentGatewayData_Package.NAME.toString));
+        return Java_Unbox (This.session.getAttribute (PaymentGatewayData_Package.NAME.toString));
    end getPaymentMethod;
 
    function getAuthentication (This : in out BasicWeblisketSession) return Unbounded_String is
    begin
-        return Unbounded_String (This.session.getAttribute (WeblisketSessionData_Package.AUTHENTICATED));
+        return Java_Unbox (This.session.getAttribute (WeblisketSessionData_Package.AUTHENTICATED));
    end getAuthentication;
 
    function getAttempts (This : in out BasicWeblisketSession) return Integer is
@@ -118,12 +118,12 @@ package body org.allbinary.logic.communication.http.request.session.BasicWeblisk
 
    function getTimeout (This : in out BasicWeblisketSession) return Unbounded_String is
    begin
-        return Unbounded_String (This.session.getAttribute (WeblisketSessionData_Package.TIMEOUT));
+        return Java_Unbox (This.session.getAttribute (WeblisketSessionData_Package.TIMEOUT));
    end getTimeout;
 
    function getStoreName (This : in out BasicWeblisketSession) return Unbounded_String is
    begin
-        return Unbounded_String (This.session.getAttribute (StoreFrontData_Package.getInstance.NAME));
+        return Java_Unbox (This.session.getAttribute (StoreFrontData_Package.getInstance.NAME));
    end getStoreName;
 
    procedure setAuthenticated (This : in out BasicWeblisketSession; value : Boolean) is

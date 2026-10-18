@@ -31,7 +31,7 @@ package body org.allbinary.logic.communication.smtp.Email_Package is
    begin
       Initialize_Fields (This);
         This.isDebug := False;
-        This.init (from, to, subject, server, textBody, htmlAttachment, contentBase);
+        Email'Class (This).init (from, to, subject, server, textBody, htmlAttachment, contentBase);
    end Initialize;
 
    function Create (from : Unbounded_String; to : Unbounded_String; subject : Unbounded_String; server : Unbounded_String; textBody : Unbounded_String; htmlAttachment : Unbounded_String; contentBase : Unbounded_String) return Email_Access is
@@ -45,7 +45,7 @@ package body org.allbinary.logic.communication.smtp.Email_Package is
    begin
       Initialize_Fields (This);
         This.isDebug := isDebug;
-        This.init (from, to, subject, server, textBody, htmlAttachment, contentBase);
+        Email'Class (This).init (from, to, subject, server, textBody, htmlAttachment, contentBase);
    end Initialize;
 
    function Create (from : Unbounded_String; to : Unbounded_String; subject : Unbounded_String; server : Unbounded_String; textBody : Unbounded_String; htmlAttachment : Unbounded_String; contentBase : Unbounded_String; isDebug : Boolean) return Email_Access is
@@ -75,7 +75,7 @@ package body org.allbinary.logic.communication.smtp.Email_Package is
                 end if;
                 mimeBodyParts (1) := MimeBodyPart_Package.Create (internetHeaders, htmlAttachment.getBytes);
             end if;
-            This.init (server, Authenticator_Access (null), new InternetAddress_Access_Array'(0 => InternetAddress_Package.Create (from)), new InternetAddress_Access_Array'(0 => InternetAddress_Package.Create (to)), InternetAddress_Access_Array_Access (null), InternetAddress_Access_Array_Access (null), subject, mimeBodyParts);
+            Email'Class (This).init (server, Authenticator_Access (null), new InternetAddress_Access_Array'(0 => InternetAddress_Package.Create (from)), new InternetAddress_Access_Array'(0 => InternetAddress_Package.Create (to)), InternetAddress_Access_Array_Access (null), InternetAddress_Access_Array_Access (null), subject, mimeBodyParts);
         exception
             when Java_Occurrence : others =>
                 declare
@@ -160,7 +160,7 @@ package body org.allbinary.logic.communication.smtp.Email_Package is
    --  throws Exception
    function log (This : in out Email) return Unbounded_String is
    begin
-        return To_Unbounded_String ("" & ASCII.LF & "HashMap: ") & This.toHashMap.toString;
+        return To_Unbounded_String ("" & ASCII.LF & "HashMap: ") & Email'Class (This).toHashMap.toString;
    end log;
 
    --  throws Exception
@@ -173,37 +173,37 @@ package body org.allbinary.logic.communication.smtp.Email_Package is
    begin
         begin
             hashMap := StdUtil_Package.getInstance.createHashMap;
-            hashMap.put (EmailData_Package.SERVER, Unbounded_String (This.properties.get (Email_Package.SMTP_HOST)));
+            hashMap.put (EmailData_Package.SERVER, Java_Unbox (This.properties.get (Email_Package.SMTP_HOST)));
             addresses := This.msg.getFrom;
             if (addresses) /= (null) then
                 for index in 0 .. (addresses'Length) - 1 loop
-                    hashMap.put (EmailData_Package.FROM, addresses (index).toString);
+                    hashMap.put (EmailData_Package.FROM, Java_Box (addresses (index).toString));
                 end loop;
             end if;
             addresses := This.msg.getRecipients (Message_Package.RecipientType.TO);
             if (addresses) /= (null) then
                 for index in 0 .. (addresses'Length) - 1 loop
-                    hashMap.put (EmailData_Package.TO, addresses (index).toString);
+                    hashMap.put (EmailData_Package.TO, Java_Box (addresses (index).toString));
                 end loop;
             end if;
             addresses := This.msg.getRecipients (Message_Package.RecipientType.CC);
             if (addresses) /= (null) then
                 for index in 0 .. (addresses'Length) - 1 loop
-                    hashMap.put (EmailData_Package.CC, addresses (index).toString);
+                    hashMap.put (EmailData_Package.CC, Java_Box (addresses (index).toString));
                 end loop;
             end if;
             addresses := This.msg.getRecipients (Message_Package.RecipientType.BCC);
             if (addresses) /= (null) then
                 for index in 0 .. (addresses'Length) - 1 loop
-                    hashMap.put (EmailData_Package.BCC, addresses (index).toString);
+                    hashMap.put (EmailData_Package.BCC, Java_Box (addresses (index).toString));
                 end loop;
             end if;
             hashMap.put (EmailData_Package.SUBJECT, This.msg.getSubject);
             mimeMultipart := MimeMultipart_Access (This.msg.getContent);
             if (mimeMultipart) /= (null) then
                 for index in 0 .. (mimeMultipart.getCount) - 1 loop
-                    content := Unbounded_String (mimeMultipart.getBodyPart (index).getContent);
-                    hashMap.put (EmailData_Package.CONTENT, content);
+                    content := Java_Unbox (mimeMultipart.getBodyPart (index).getContent);
+                    hashMap.put (EmailData_Package.CONTENT, Java_Box (content));
                 end loop;
             end if;
             return hashMap;
@@ -225,7 +225,7 @@ package body org.allbinary.logic.communication.smtp.Email_Package is
       document : constant Document_Access := Document_Access (document_Param);
       node : Node_Access;
    begin
-        node := ModDomHelper_Package.createNameValueNodes (document, EmailData_Package.NAME, This.toHashMap);
+        node := ModDomHelper_Package.createNameValueNodes (document, EmailData_Package.NAME, Email'Class (This).toHashMap);
         return node;
    end toXmlNode;
 
@@ -233,6 +233,7 @@ package body org.allbinary.logic.communication.smtp.Email_Package is
    function toXmlDoc (This : in out Email) return Document_Access is
    begin
         Java_Throw (Java_New_Exception ("Exception", CommonStrings_Package.getInstance.NOT_IMPLEMENTED));
+        return null;
    end toXmlDoc;
 
    procedure toXmlNode (This : in out Email; document_Param : access Document_Package.Document'Class) is

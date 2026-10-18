@@ -27,7 +27,7 @@ package body views.admin.payment.gateway.PaymentGatewayViewAbstract_Package is
    begin
         TransformInfoHttpComposite_Package.Initialize (This, transformInfoInterface);
         Initialize_Fields (This);
-        This.getFormData (HttpServletRequest_Access (This.getPageContext.getRequest));
+        PaymentGatewayViewAbstract'Class (This).getFormData (HttpServletRequest_Access (PaymentGatewayViewAbstract'Class (This).getPageContext.getRequest));
    end Initialize;
 
    function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return PaymentGatewayViewAbstract_Access is
@@ -42,9 +42,9 @@ package body views.admin.payment.gateway.PaymentGatewayViewAbstract_Package is
       storeName : Unbounded_String;
       gatewayName : Unbounded_String;
    begin
-        storeName := This.getWeblisketSession.getStoreName;
+        storeName := PaymentGatewayViewAbstract'Class (This).getWeblisketSession.getStoreName;
         gatewayName := request.getParameter (PaymentGatewayData_Package.NAME.toString);
-        This.setPaymentGatewayPrimaryKey (PaymentGatewayPrimaryKey_Package.Create (storeName, gatewayName));
+        PaymentGatewayViewAbstract'Class (This).setPaymentGatewayPrimaryKey (PaymentGatewayPrimaryKey_Package.Create (storeName, gatewayName));
    end getFormData;
 
    function getPaymentGatewayPrimaryKey (This : in out PaymentGatewayViewAbstract) return PaymentGatewayPrimaryKey_Access is

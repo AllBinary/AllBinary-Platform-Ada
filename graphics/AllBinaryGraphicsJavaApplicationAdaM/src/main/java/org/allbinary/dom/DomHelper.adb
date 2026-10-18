@@ -162,7 +162,7 @@ package body org.allbinary.dom.DomHelper_Package is
       index : Integer;
    begin
         list := BasicArrayListD_Package.Create;
-        childNodeList := This.getChildNodeList (nodeName, nodeList);
+        childNodeList := DomHelper'Class (This).getChildNodeList (nodeName, nodeList);
         numberOfChildren := childNodeList.getLength;
         for index in 0 .. (numberOfChildren) - 1 loop
             node := childNodeList.item (index);

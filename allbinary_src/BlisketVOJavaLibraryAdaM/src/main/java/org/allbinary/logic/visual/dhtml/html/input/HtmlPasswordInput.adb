@@ -24,8 +24,8 @@ package body org.allbinary.logic.visual.dhtml.html.input.HtmlPasswordInput_Packa
    procedure Initialize (This : in out HtmlPasswordInput'Class; before : Unbounded_String; name : Unbounded_String; value : Unbounded_String; after : Unbounded_String) is
    begin
         HtmlLengthInput_Package.Initialize (This, before, HtmlInputData_Package.getInstance.PASSWORD, name, value, after);
-        This.setSize (32);
-        This.setMaxLength (128);
+        HtmlPasswordInput'Class (This).setSize (32);
+        HtmlPasswordInput'Class (This).setMaxLength (128);
    end Initialize;
 
    function Create (before : Unbounded_String; name : Unbounded_String; value : Unbounded_String; after : Unbounded_String) return HtmlPasswordInput_Access is

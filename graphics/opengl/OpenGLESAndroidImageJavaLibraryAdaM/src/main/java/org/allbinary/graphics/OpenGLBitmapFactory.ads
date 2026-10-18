@@ -8,8 +8,8 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.io.InputStream_Package; use java.io.InputStream_Package;
---  with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
+with java.io.InputStream_Package; use java.io.InputStream_Package;
+with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
 with android.graphics.Bitmap_Package; use android.graphics.Bitmap_Package;
 with android.graphics.BitmapFactory_Package; use android.graphics.BitmapFactory_Package;
 --  with java.io.IOException_Package; use java.io.IOException_Package;
@@ -20,6 +20,8 @@ with org.allbinary.graphics.OpenGLBitmap_Package; use org.allbinary.graphics.Ope
 
 package org.allbinary.graphics.OpenGLBitmapFactory_Package is
 
+   package InputStream_Package renames Standard.java.io.InputStream_Package;
+   package Image_Package renames Standard.javax.microedition.lcdui.Image_Package;
    package Bitmap_Package renames Standard.android.graphics.Bitmap_Package;
    package BitmapFactory_Package renames Standard.android.graphics.BitmapFactory_Package;
    package PlatformBitmapBaseFactory_Package renames Standard.org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package;
@@ -56,8 +58,8 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.io.InputStream_Package; use java.io.InputStream_Package;
---  with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
+with java.io.InputStream_Package; use java.io.InputStream_Package;
+with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
 with android.graphics.Bitmap_Package; use android.graphics.Bitmap_Package;
 with android.graphics.BitmapFactory_Package; use android.graphics.BitmapFactory_Package;
 --  with java.io.IOException_Package; use java.io.IOException_Package;
@@ -68,6 +70,8 @@ with org.allbinary.graphics.OpenGLBitmap_Package; use org.allbinary.graphics.Ope
 
 package org.allbinary.graphics.Config_Package is
 
+   package InputStream_Package renames Standard.java.io.InputStream_Package;
+   package Image_Package renames Standard.javax.microedition.lcdui.Image_Package;
    package Bitmap_Package renames Standard.android.graphics.Bitmap_Package;
    package BitmapFactory_Package renames Standard.android.graphics.BitmapFactory_Package;
    package PlatformBitmapBaseFactory_Package renames Standard.org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package;

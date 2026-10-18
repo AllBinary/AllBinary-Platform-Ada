@@ -30,7 +30,7 @@ package body views.generic_Id.address.billing.BillingAddressesView_Package is
    begin
         HttpStoreComponentView_Package.Initialize (This, transformInfoInterface);
         Initialize_Fields (This);
-        httpTransformInfoInterface := TransformInfoHttpInterface_Access (This.getTransformInfoInterface);
+        httpTransformInfoInterface := TransformInfoHttpInterface_Access (BillingAddressesView'Class (This).getTransformInfoInterface);
         This.request := HttpServletRequest_Access (httpTransformInfoInterface.getPageContext.getRequest);
    end Initialize;
 
@@ -77,14 +77,14 @@ package body views.generic_Id.address.billing.BillingAddressesView_Package is
 
    procedure addDomNodeInterfaces (This : in out BillingAddressesView) is
    begin
-        This.addDomNodeInterface (DomNodeInterface_Access (BillingAddressesView_Access'(This'Unchecked_Access)));
+        BillingAddressesView'Class (This).addDomNodeInterface (DomNodeInterface_Access (BillingAddressesView_Access'(This'Unchecked_Access)));
    end addDomNodeInterfaces;
 
    --  throws Exception
    function view (This : in out BillingAddressesView) return Unbounded_String is
    begin
         begin
-            This.addDomNodeInterfaces;
+            BillingAddressesView'Class (This).addDomNodeInterfaces;
             return HttpStoreComponentView (This).view;
         exception
             when Java_Occurrence : others =>

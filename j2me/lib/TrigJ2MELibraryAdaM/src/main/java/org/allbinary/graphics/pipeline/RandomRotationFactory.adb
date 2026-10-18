@@ -47,7 +47,7 @@ package body org.allbinary.graphics.pipeline.RandomRotationFactory_Package is
    begin
         graphicsPipe := BasicGraphicsPipeline_Package.Create (vector);
         graphicsPipe.createMatrix;
-        graphicsPipe.rotateToAngle (This.angleFactory.getAt (This.getNextRandomAngle (howMuch)));
+        graphicsPipe.rotateToAngle (This.angleFactory.getAt (RandomRotationFactory'Class (This).getNextRandomAngle (howMuch)));
         return graphicsPipe.getMatrix;
    end getInstanceList;
 

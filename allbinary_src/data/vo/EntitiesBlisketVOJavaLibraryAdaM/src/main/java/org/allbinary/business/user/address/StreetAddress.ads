@@ -20,7 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.util.HashMap_Package; use java.util.HashMap_Package;
+with java.util.HashMap_Package; use java.util.HashMap_Package;
 --  with java.util.Set_Package; use java.util.Set_Package;
 --  with javax.servlet.http.HttpServletRequest_Package; use javax.servlet.http.HttpServletRequest_Package;
 with org.allbinary.data.tree.dom.DomNodeHelper_Package; use org.allbinary.data.tree.dom.DomNodeHelper_Package;
@@ -38,6 +38,7 @@ with org.allbinary.business.user.address.StreetAddressData_Package; use org.allb
 
 package org.allbinary.business.user.address.StreetAddress_Package is
 
+   package HashMap_Package renames Standard.java.util.HashMap_Package;
    package DomNodeHelper_Package renames Standard.org.allbinary.data.tree.dom.DomNodeHelper_Package;
    package DomSearchHelper_Package renames Standard.org.allbinary.data.tree.dom.DomSearchHelper_Package;
    package ModDomHelper_Package renames Standard.org.allbinary.data.tree.dom.ModDomHelper_Package;
@@ -64,7 +65,7 @@ package org.allbinary.business.user.address.StreetAddress_Package is
       state : Unbounded_String;
       code : Unbounded_String;
       country : Unbounded_String;
-      isDefault : Boolean;
+      isDefault_Field : Boolean;
    end record;
 
    procedure Initialize (This : in out StreetAddress'Class);

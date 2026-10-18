@@ -44,9 +44,9 @@ package body org.allbinary.business.user.UserDomNode_Package is
    begin
         EMPTY_STRING := StringUtil_Package.getInstance.EMPTY_STRING;
         hashMap := This.dataMappingInterface.toHashMap;
-        hashMap.put (EntryData_Package.getInstance.LASTMODIFIED, EMPTY_STRING);
-        hashMap.put (EntryData_Package.getInstance.ENCRYPTION, EMPTY_STRING);
-        hashMap.put (UserData_Package.PASSWORD, EMPTY_STRING);
+        hashMap.put (EntryData_Package.getInstance.LASTMODIFIED, Java_Box (EMPTY_STRING));
+        hashMap.put (EntryData_Package.getInstance.ENCRYPTION, Java_Box (EMPTY_STRING));
+        hashMap.put (UserData_Package.PASSWORD, Java_Box (EMPTY_STRING));
         return ModDomHelper_Package.createNameValueNodes (document, UserData_Package.NAME, hashMap);
    end toXmlNode;
 

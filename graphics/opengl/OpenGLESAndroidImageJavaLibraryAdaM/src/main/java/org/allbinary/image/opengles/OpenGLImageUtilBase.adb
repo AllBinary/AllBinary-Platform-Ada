@@ -38,6 +38,7 @@ package body org.allbinary.image.opengles.OpenGLImageUtilBase_Package is
       originalBitmap : constant OpenGLBitmap_Access := OpenGLBitmap_Access (originalBitmap_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return null;
    end paint;
 
    function paint (This : in out OpenGLImageUtilBase; colorBitmap_Param : access OpenGLBitmap_Package.OpenGLBitmap'Class; originalBitmap_Param : access OpenGLBitmap_Package.OpenGLBitmap'Class; alpha : Integer; basicColor_Param : access BasicColor_Package.BasicColor'Class) return OpenGLBitmap_Access is
@@ -46,12 +47,14 @@ package body org.allbinary.image.opengles.OpenGLImageUtilBase_Package is
       basicColor : constant BasicColor_Access := BasicColor_Access (basicColor_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return null;
    end paint;
 
    --  throws IOException
    function createImage (This : in out OpenGLImageUtilBase; name : Unbounded_String) return OpenGLBitmap_Access is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return null;
    end createImage;
 
    --  throws IOException
@@ -59,6 +62,7 @@ package body org.allbinary.image.opengles.OpenGLImageUtilBase_Package is
       inputStream : constant InputStream_Access := InputStream_Access (inputStream_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return null;
    end createImageFromInputStream;
 
    procedure paint (This : in out OpenGLImageUtilBase; alphaBitmap_Param : access OpenGLBitmap_Package.OpenGLBitmap'Class; originalBitmap_Param : access OpenGLBitmap_Package.OpenGLBitmap'Class; index : Integer) is

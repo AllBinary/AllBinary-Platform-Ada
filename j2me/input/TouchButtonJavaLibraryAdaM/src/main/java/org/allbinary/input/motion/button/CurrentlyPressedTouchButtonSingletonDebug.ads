@@ -42,7 +42,7 @@ package org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingletonDe
    type CurrentlyPressedTouchButtonSingletonDebug is new CurrentlyPressedTouchButtonSingleton with record
       string_Id : Unbounded_String;
       listString : Unbounded_String;
-      append : Unbounded_String;
+      append_Field : Unbounded_String;
       PRESSED_AND_FIRED : Unbounded_String;
       PRESSED_AND_NOT_FIRED : Unbounded_String;
       ASSOCIATED_RELEASED_AND_FIRED : Unbounded_String;
@@ -55,8 +55,8 @@ package org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingletonDe
    procedure Initialize (This : in out CurrentlyPressedTouchButtonSingletonDebug'Class);
    function Create return CurrentlyPressedTouchButtonSingletonDebug_Access;
    function getInstance return CurrentlyPressedTouchButtonSingleton_Access;
-   procedure appendTouchButtonInput (This : in out CurrentlyPressedTouchButtonSingletonDebug; append : Unbounded_String; touchButtonInput_Param : access TouchButtonInput_Package.TouchButtonInput'Class);
-   procedure append (This : in out CurrentlyPressedTouchButtonSingletonDebug; append : Unbounded_String);
+   procedure appendTouchButtonInput (This : in out CurrentlyPressedTouchButtonSingletonDebug; append_Field : Unbounded_String; touchButtonInput_Param : access TouchButtonInput_Package.TouchButtonInput'Class);
+   procedure append (This : in out CurrentlyPressedTouchButtonSingletonDebug; append_Field : Unbounded_String);
    procedure clearLog (This : in out CurrentlyPressedTouchButtonSingletonDebug; x : Integer; y : Integer);
    procedure releaseAndNotFired (This : in out CurrentlyPressedTouchButtonSingletonDebug);
    procedure releaseAndFired (This : in out CurrentlyPressedTouchButtonSingletonDebug; touchButtonInput_Param : access TouchButtonInput_Package.TouchButtonInput'Class);

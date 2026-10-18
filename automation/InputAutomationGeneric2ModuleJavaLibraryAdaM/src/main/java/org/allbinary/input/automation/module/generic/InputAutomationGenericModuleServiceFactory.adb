@@ -30,7 +30,7 @@ package body org.allbinary.input.automation.module.generic_Id.InputAutomationGen
         begin
             inputAutomationModuleInterfaceArray := new InputAutomationModuleFactoryInterface_Access_Array'(0 .. (1) - 1 => null);
             inputAutomationModuleInterfaceArray (0) := GenericModuleFactory_Package.Create;
-            This.setInputAutomationModuleInterfaceArray (inputAutomationModuleInterfaceArray);
+            InputAutomationGenericModuleServiceFactory'Class (This).setInputAutomationModuleInterfaceArray (inputAutomationModuleInterfaceArray);
         exception
             when Java_Occurrence : others =>
                 declare

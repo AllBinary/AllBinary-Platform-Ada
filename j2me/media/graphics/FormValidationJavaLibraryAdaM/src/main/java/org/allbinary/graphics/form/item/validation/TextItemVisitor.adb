@@ -39,7 +39,7 @@ package body org.allbinary.graphics.form.item.validation.TextItemVisitor_Package
       anyType : constant Java_Object_Access := Java_Object_Access (anyType_Param);
       value : Unbounded_String;
    begin
-        value := Unbounded_String (anyType);
+        value := Java_Unbox (anyType);
         if (Length (value)) < (2) then
             return BooleanFactory_Package.getInstance.TRUE;
         else

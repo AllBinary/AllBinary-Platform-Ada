@@ -39,20 +39,20 @@ package body org.allbinary.input.automation.module.generic_Id.GenericInputAutoma
         AbstractInputAutomationWorker_Package.Initialize (This, inputAutomationActionInterface);
         Initialize_Fields (This);
         This.logUtil.putF (This.commonStrings.START, GenericInputAutomationWorker_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
-        This.setCaptureWorker (GenericProfileCaptureWorkerFactory_Package.getInstance (genericProfile));
-        This.setInputAutomationActionInterface (inputAutomationActionInterface);
-        This.setImageComparisonWorker (ImageComparisonWorker_Package.Create (imageComparatorConstraintsInterface));
-        This.setMotionRectanglesWorker (MotionRectanglesWorker_Package.Create (motionRectangleConstraintsInterface));
-        This.setGenericProfile (genericProfile);
-        vector := This.getGenericProfile.getGenericProfileDataWorkerTypeVector;
+        GenericInputAutomationWorker'Class (This).setCaptureWorker (GenericProfileCaptureWorkerFactory_Package.getInstance (genericProfile));
+        GenericInputAutomationWorker'Class (This).setInputAutomationActionInterface (inputAutomationActionInterface);
+        GenericInputAutomationWorker'Class (This).setImageComparisonWorker (ImageComparisonWorker_Package.Create (imageComparatorConstraintsInterface));
+        GenericInputAutomationWorker'Class (This).setMotionRectanglesWorker (MotionRectanglesWorker_Package.Create (motionRectangleConstraintsInterface));
+        GenericInputAutomationWorker'Class (This).setGenericProfile (genericProfile);
+        vector := GenericInputAutomationWorker'Class (This).getGenericProfile.getGenericProfileDataWorkerTypeVector;
         size := vector.size;
         for index in 0 .. (size) - 1 loop
             genericProfileDataWorkerType := GenericProfileDataWorkerType_Access (vector.get (index));
             This.logUtil.putF (To_Unbounded_String ("Adding Listener: ") & Java_Image (genericProfileDataWorkerType), GenericInputAutomationWorker_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
             if (genericProfileDataWorkerType) = (GenericProfileDataWorkerType_Package.COMPARISON) then
-                This.getCaptureWorker.addListenerInterface (This.getImageComparisonWorker);
+                GenericInputAutomationWorker'Class (This).getCaptureWorker.addListenerInterface (GenericInputAutomationWorker'Class (This).getImageComparisonWorker);
             elsif (genericProfileDataWorkerType) = (GenericProfileDataWorkerType_Package.MOTION) then
-                This.getImageComparisonWorker.addListenerInterface (This.getMotionRectanglesWorker);
+                GenericInputAutomationWorker'Class (This).getImageComparisonWorker.addListenerInterface (GenericInputAutomationWorker'Class (This).getMotionRectanglesWorker);
             end if;
         end loop;
    end Initialize;
@@ -79,28 +79,28 @@ package body org.allbinary.input.automation.module.generic_Id.GenericInputAutoma
       index : Integer;
    begin
         This.logUtil.putF (This.commonStrings.START, GenericInputAutomationWorker_Access'(This'Unchecked_Access), This.PROCESS_DATA_WORKER_RESULTS);
-        This.waitForDataWorkers;
+        GenericInputAutomationWorker'Class (This).waitForDataWorkers;
         cacheInterface := J2SECacheInterface_Access (CapturedBufferedImagesCacheSingleton_Package.getInstance);
         keyArray := cacheInterface.keySet.toArray;
         if (keyArray'Length) > (0) then
             This.logUtil.putF (To_Unbounded_String ("Image Available"), GenericInputAutomationWorker_Access'(This'Unchecked_Access), This.PROCESS_DATA_WORKER_RESULTS);
-            This.setFrame (Long_Long_Integer (keyArray ((keyArray'Length) - (1))));
-            if (This.getFrame) > (This.lastFrame) then
-                This.logUtil.putF (To_Unbounded_String ("Processing new frame: ") & Java_Image (This.getFrame), GenericInputAutomationWorker_Access'(This'Unchecked_Access), This.PROCESS_DATA_WORKER_RESULTS);
-                hashMap := This.getGenericProfile.getGenericProfileActions.getHashMap;
+            GenericInputAutomationWorker'Class (This).setFrame (Long_Long_Integer (keyArray ((keyArray'Length) - (1))));
+            if (GenericInputAutomationWorker'Class (This).getFrame) > (This.lastFrame) then
+                This.logUtil.putF (To_Unbounded_String ("Processing new frame: ") & Java_Image (GenericInputAutomationWorker'Class (This).getFrame), GenericInputAutomationWorker_Access'(This'Unchecked_Access), This.PROCESS_DATA_WORKER_RESULTS);
+                hashMap := GenericInputAutomationWorker'Class (This).getGenericProfile.getGenericProfileActions.getHashMap;
                 set := hashMap.keySet;
                 This.logUtil.putF (To_Unbounded_String ("Processing ") & Java_Image (set.size) & To_Unbounded_String ("Actions"), GenericInputAutomationWorker_Access'(This'Unchecked_Access), This.PROCESS_DATA_WORKER_RESULTS);
                 actionNameArray := set.toArray;
                 size := actionNameArray'Length;
                 for index in 0 .. (size) - 1 loop
-                    actionNameString := Unbounded_String (actionNameArray (index));
+                    actionNameString := Java_Unbox (actionNameArray (index));
                     This.logUtil.putF (To_Unbounded_String ("Processing Action: ") & actionNameString, GenericInputAutomationWorker_Access'(This'Unchecked_Access), This.PROCESS_DATA_WORKER_RESULTS);
-                    genericProfileAction := GenericProfileAction_Access (hashMap.get (actionNameString));
+                    genericProfileAction := GenericProfileAction_Access (hashMap.get (Java_Box (actionNameString)));
                     genericProfileActionScript := genericProfileAction.getGenericProfileActionScript;
                     vector := genericProfileActionScript.getProfileActionConditionInterfaceVector;
-                    CaptureWorkerUtil_Package.processProfileActionConditions (vector, This.getFrame);
+                    CaptureWorkerUtil_Package.processProfileActionConditions (vector, GenericInputAutomationWorker'Class (This).getFrame);
                 end loop;
-                This.lastFrame := This.getFrame;
+                This.lastFrame := GenericInputAutomationWorker'Class (This).getFrame;
             end if;
         else
             This.logUtil.putF (To_Unbounded_String ("Image Not Available"), GenericInputAutomationWorker_Access'(This'Unchecked_Access), This.PROCESS_DATA_WORKER_RESULTS);
@@ -111,8 +111,8 @@ package body org.allbinary.input.automation.module.generic_Id.GenericInputAutoma
    procedure process (This : in out GenericInputAutomationWorker) is
    begin
         This.logUtil.putF (This.commonStrings.START, GenericInputAutomationWorker_Access'(This'Unchecked_Access), This.commonStrings.PROCESS);
-        This.startDataWorkers;
-        This.processDataWorkerResults;
+        GenericInputAutomationWorker'Class (This).startDataWorkers;
+        GenericInputAutomationWorker'Class (This).processDataWorkerResults;
    end process;
 
    function getGenericProfile (This : in out GenericInputAutomationWorker) return GenericProfile_Access is

@@ -40,7 +40,7 @@ package body org.allbinary.game.health.HealthBarTwodAnimation_Package is
    begin
         ax := This.allbinaryLayer.getViewPosition.getX;
         This.basicSetColorUtil.setBasicColorP3 (graphics, This.basicColor, This.colorP);
-        graphics.fillRect (ax, (This.getY) - (1), This.x2, This.thickness);
+        graphics.fillRect (ax, (HealthBarTwodAnimation'Class (This).getY) - (1), This.x2, This.thickness);
    end paintXY;
 
 end org.allbinary.game.health.HealthBarTwodAnimation_Package;

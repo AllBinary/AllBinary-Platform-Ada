@@ -36,10 +36,10 @@ package body org.allbinary.graphics.j2me.workarea.WorkAreaJTreeJPanel_Package is
    begin
       JPanel_Package.Initialize (This);
       Initialize_Fields (This);
-        This.initComponents;
+        WorkAreaJTreeJPanel'Class (This).initComponents;
         This.rootTreeNode := DefaultMutableTreeNode_Package.Create (workAreaName);
         This.workAreaPropertiesJPanel.removeAll;
-        This.updateTree;
+        WorkAreaJTreeJPanel'Class (This).updateTree;
         This.highlightedBasicArrayList := BasicArrayListD_Package.Create;
    end Initialize;
 
@@ -64,7 +64,7 @@ package body org.allbinary.graphics.j2me.workarea.WorkAreaJTreeJPanel_Package is
 --     procedure mousePressed (This : in out ; evt_Param : access MouseEvent_Package.MouseEvent'Class) is
 --        evt : constant MouseEvent_Access := MouseEvent_Access (evt_Param);
 --     begin
---                  This.workAreaJTreeMousePressed (evt);
+--                  WorkAreaJTreeJPanel'Class (This).workAreaJTreeMousePressed (evt);
 --     end mousePressed;
 );
         This.workAreaPropertiesJPanel.removeAll;
@@ -78,7 +78,7 @@ package body org.allbinary.graphics.j2me.workarea.WorkAreaJTreeJPanel_Package is
         basicArrayList := BasicArrayListD_Package.Create;
         if (treePathArray) /= (null) then
             for index in 0 .. (treePathArray'Length) - 1 loop
-                basicArrayList.add (This.getNode (treePathArray (index)));
+                basicArrayList.add (WorkAreaJTreeJPanel'Class (This).getNode (treePathArray (index)));
             end loop;
         end if;
         return basicArrayList;
@@ -142,12 +142,12 @@ package body org.allbinary.graphics.j2me.workarea.WorkAreaJTreeJPanel_Package is
       node : DefaultMutableTreeNode_Access;
       parent : DefaultMutableTreeNode_Access;
    begin
-        node := This.getNode (treePath);
+        node := WorkAreaJTreeJPanel'Class (This).getNode (treePath);
         if (node) /= (null) then
             if (node.getUserObject.all in CanvasTreeLabel_Package.CanvasTreeLabel'Class) then
-                This.removeCanvas (node);
+                WorkAreaJTreeJPanel'Class (This).removeCanvas (node);
             else
-                This.removeGraphicItem (node);
+                WorkAreaJTreeJPanel'Class (This).removeGraphicItem (node);
             end if;
         end if;
         parent := DefaultMutableTreeNode_Access (node.getParent);
@@ -159,10 +159,10 @@ package body org.allbinary.graphics.j2me.workarea.WorkAreaJTreeJPanel_Package is
       treePath : TreePath_Access;
    begin
         treePath := This.workAreaJTree.getSelectionPath;
-        This.copy (treePath);
-        This.updateTree;
-        This.expand;
-        This.repaint;
+        WorkAreaJTreeJPanel'Class (This).copy (treePath);
+        WorkAreaJTreeJPanel'Class (This).updateTree;
+        WorkAreaJTreeJPanel'Class (This).expand;
+        WorkAreaJTreeJPanel'Class (This).repaint;
    end copy;
 
    --  throws Exception
@@ -170,7 +170,7 @@ package body org.allbinary.graphics.j2me.workarea.WorkAreaJTreeJPanel_Package is
       treePath : constant TreePath_Access := TreePath_Access (treePath_Param);
       node : DefaultMutableTreeNode_Access;
    begin
-        node := This.getNode (treePath);
+        node := WorkAreaJTreeJPanel'Class (This).getNode (treePath);
         if (node) /= (null) then
             if (node.getUserObject.all in CanvasTreeLabel_Package.CanvasTreeLabel'Class) then
                 MyCanvasEventService_Package.fire (MyCanvasEvent_Package.Create (Java_Object_Access (MyCanvasEventSource_Package.Create (MyCanvasEventService_Package.DUPLICATE, node))));
@@ -185,7 +185,7 @@ package body org.allbinary.graphics.j2me.workarea.WorkAreaJTreeJPanel_Package is
       treePath : constant TreePath_Access := TreePath_Access (treePath_Param);
       node : DefaultMutableTreeNode_Access;
    begin
-        node := This.getNode (treePath);
+        node := WorkAreaJTreeJPanel'Class (This).getNode (treePath);
         if (node) /= (null) then
             if (node.getUserObject.all in CanvasTreeLabel_Package.CanvasTreeLabel'Class) then
                 MyCanvasEventService_Package.fire (MyCanvasEvent_Package.Create (Java_Object_Access (MyCanvasEventSource_Package.Create (MyCanvasEventService_Package.ROTATE, angle, node))));
@@ -231,13 +231,13 @@ package body org.allbinary.graphics.j2me.workarea.WorkAreaJTreeJPanel_Package is
 --     procedure popupMenuWillBecomeInvisible (This : in out ; evt_Param : access PopupMenuEvent_Package.PopupMenuEvent'Class) is
 --        evt : constant PopupMenuEvent_Access := PopupMenuEvent_Access (evt_Param);
 --     begin
---                  This.itemJPopupMenuPopupMenuWillBecomeInvisible (evt);
+--                  WorkAreaJTreeJPanel'Class (This).itemJPopupMenuPopupMenuWillBecomeInvisible (evt);
 --     end popupMenuWillBecomeInvisible;
 --              
 --     procedure popupMenuWillBecomeVisible (This : in out ; evt_Param : access PopupMenuEvent_Package.PopupMenuEvent'Class) is
 --        evt : constant PopupMenuEvent_Access := PopupMenuEvent_Access (evt_Param);
 --     begin
---                  This.itemJPopupMenuPopupMenuWillBecomeVisible (evt);
+--                  WorkAreaJTreeJPanel'Class (This).itemJPopupMenuPopupMenuWillBecomeVisible (evt);
 --     end popupMenuWillBecomeVisible;
 );
         This.deleteJMenuItem.setText (To_Unbounded_String ("Delete"));
@@ -246,7 +246,7 @@ package body org.allbinary.graphics.j2me.workarea.WorkAreaJTreeJPanel_Package is
 --     procedure mousePressed (This : in out ; evt_Param : access MouseEvent_Package.MouseEvent'Class) is
 --        evt : constant MouseEvent_Access := MouseEvent_Access (evt_Param);
 --     begin
---                  This.deleteJMenuItemMousePressed (evt);
+--                  WorkAreaJTreeJPanel'Class (This).deleteJMenuItemMousePressed (evt);
 --     end mousePressed;
 );
         This.itemJPopupMenu.add (This.deleteJMenuItem);
@@ -256,7 +256,7 @@ package body org.allbinary.graphics.j2me.workarea.WorkAreaJTreeJPanel_Package is
 --     procedure mousePressed (This : in out ; evt_Param : access MouseEvent_Package.MouseEvent'Class) is
 --        evt : constant MouseEvent_Access := MouseEvent_Access (evt_Param);
 --     begin
---                  This.copyJMenuItemMousePressed (evt);
+--                  WorkAreaJTreeJPanel'Class (This).copyJMenuItemMousePressed (evt);
 --     end mousePressed;
 );
         This.itemJPopupMenu.add (This.copyJMenuItem);
@@ -266,22 +266,22 @@ package body org.allbinary.graphics.j2me.workarea.WorkAreaJTreeJPanel_Package is
 --     procedure mousePressed (This : in out ; evt_Param : access MouseEvent_Package.MouseEvent'Class) is
 --        evt : constant MouseEvent_Access := MouseEvent_Access (evt_Param);
 --     begin
---                  This.rotateJMenuItemMousePressed (evt);
+--                  WorkAreaJTreeJPanel'Class (This).rotateJMenuItemMousePressed (evt);
 --     end mousePressed;
 );
         This.itemJPopupMenu.add (This.rotateJMenuItem);
-        This.setLayout (GridLayout_Package.Create (1, 1));
+        WorkAreaJTreeJPanel'Class (This).setLayout (GridLayout_Package.Create (1, 1));
         This.workAreaPropertiesJPanel.addMouseListener (MouseAdapter_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
 --     procedure mousePressed (This : in out ; evt_Param : access MouseEvent_Package.MouseEvent'Class) is
 --        evt : constant MouseEvent_Access := MouseEvent_Access (evt_Param);
 --     begin
---                  This.workAreaPropertiesJPanelMousePressed (evt);
+--                  WorkAreaJTreeJPanel'Class (This).workAreaPropertiesJPanelMousePressed (evt);
 --     end mousePressed;
 );
         This.workAreaPropertiesJPanel.setLayout (GridLayout_Package.Create (1, 0));
         This.itemJScrollPane1.setViewportView (This.workAreaPropertiesJPanel);
-        This.add (This.itemJScrollPane1);
+        WorkAreaJTreeJPanel'Class (This).add (This.itemJScrollPane1);
    end initComponents;
 
    procedure rotateJMenuItemMousePressed (This : in out WorkAreaJTreeJPanel; evt_Param : access MouseEvent_Package.MouseEvent'Class) is
@@ -290,10 +290,10 @@ package body org.allbinary.graphics.j2me.workarea.WorkAreaJTreeJPanel_Package is
    begin
         begin
             treePath := This.workAreaJTree.getSelectionPath;
-            This.rotate (treePath, 45);
-            This.updateTree;
-            This.expand;
-            This.repaint;
+            WorkAreaJTreeJPanel'Class (This).rotate (treePath, 45);
+            WorkAreaJTreeJPanel'Class (This).updateTree;
+            WorkAreaJTreeJPanel'Class (This).expand;
+            WorkAreaJTreeJPanel'Class (This).repaint;
         exception
             when Java_Occurrence : others =>
                 declare
@@ -313,7 +313,7 @@ package body org.allbinary.graphics.j2me.workarea.WorkAreaJTreeJPanel_Package is
    begin
         begin
             selectedTreePathArray := This.workAreaJTree.getSelectionPaths;
-            list := This.getNode (selectedTreePathArray);
+            list := WorkAreaJTreeJPanel'Class (This).getNode (selectedTreePathArray);
             if (list.size) > (0) then
                 if ((Java_And (evt.getModifiers, evt.BUTTON3_MASK))) = (evt.BUTTON3_MASK) then
                     for index in 0 .. (selectedTreePathArray'Length) - 1 loop
@@ -326,13 +326,13 @@ package body org.allbinary.graphics.j2me.workarea.WorkAreaJTreeJPanel_Package is
                     end loop;
                 end if;
                 if ((Java_And (evt.getModifiers, evt.BUTTON1_MASK))) = (evt.BUTTON1_MASK) then
-                    This.deselectAll;
+                    WorkAreaJTreeJPanel'Class (This).deselectAll;
                     for index in 0 .. (selectedTreePathArray'Length) - 1 loop
                         defaultMutableTreeNode := DefaultMutableTreeNode_Access (list.get (index));
                         if (defaultMutableTreeNode.getUserObject.all in CanvasTreeLabel_Package.CanvasTreeLabel'Class) then
                             MyCanvasEventService_Package.fire (MyCanvasEvent_Package.Create (Java_Object_Access (MyCanvasEventSource_Package.Create (MyCanvasEventService_Package.SELECT_Id, defaultMutableTreeNode))));
                         else
-                            This.selectGraphicItem (defaultMutableTreeNode);
+                            WorkAreaJTreeJPanel'Class (This).selectGraphicItem (defaultMutableTreeNode);
                         end if;
                     end loop;
                 end if;
@@ -363,7 +363,7 @@ package body org.allbinary.graphics.j2me.workarea.WorkAreaJTreeJPanel_Package is
       evt : constant MouseEvent_Access := MouseEvent_Access (evt_Param);
    begin
         begin
-            This.copy;
+            WorkAreaJTreeJPanel'Class (This).copy;
         exception
             when Java_Occurrence : others =>
                 declare
@@ -384,10 +384,10 @@ package body org.allbinary.graphics.j2me.workarea.WorkAreaJTreeJPanel_Package is
             selectedTreePathArray := This.workAreaJTree.getSelectionPaths;
             for index in 0 .. (selectedTreePathArray'Length) - 1 loop
                 treePath := selectedTreePathArray (index);
-                This.remove (treePath);
-                This.updateTree;
-                This.expand;
-                This.repaint;
+                WorkAreaJTreeJPanel'Class (This).remove (treePath);
+                WorkAreaJTreeJPanel'Class (This).updateTree;
+                WorkAreaJTreeJPanel'Class (This).expand;
+                WorkAreaJTreeJPanel'Class (This).repaint;
             end loop;
         exception
             when Java_Occurrence : others =>

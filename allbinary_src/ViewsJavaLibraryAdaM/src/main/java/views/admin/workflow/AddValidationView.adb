@@ -28,7 +28,7 @@ package body views.admin.workflow.AddValidationView_Package is
    begin
         WorkFlowView_Package.Initialize (This, transformInfoInterface);
         Initialize_Fields (This);
-        This.workFlowInterface := NewWorkFlowFactory_Package.getInstance.getInstance (This.abeClientInformation, This.getPropertiesHashMap, This.getPageContext);
+        This.workFlowInterface := NewWorkFlowFactory_Package.getInstance.getInstance (This.abeClientInformation, AddValidationView'Class (This).getPropertiesHashMap, AddValidationView'Class (This).getPageContext);
    end Initialize;
 
    function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return AddValidationView_Access is
@@ -60,7 +60,7 @@ package body views.admin.workflow.AddValidationView_Package is
    begin
         begin
             stringBuffer := StringMaker_Package.Create;
-            if (WorkFlowEntityFactory_Package.getInstance.create2.get (This.workFlowInterface.getName, This.getTransformInfoInterface.getStoreName)) /= (null) then
+            if (WorkFlowEntityFactory_Package.getInstance.create2.get (This.workFlowInterface.getName, AddValidationView'Class (This).getTransformInfoInterface.getStoreName)) /= (null) then
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
                     This.logUtil.putF (To_Unbounded_String ("Workflow already exist"), AddValidationView_Access'(This'Unchecked_Access), To_Unbounded_String ("validationInfo()"));
                 end if;

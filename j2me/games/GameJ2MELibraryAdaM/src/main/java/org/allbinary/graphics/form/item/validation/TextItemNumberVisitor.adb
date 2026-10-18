@@ -42,7 +42,7 @@ package body org.allbinary.graphics.form.item.validation.TextItemNumberVisitor_P
       stringValidationUtil : StringValidationUtil_Access;
       commonStrings : CommonStrings_Access;
    begin
-        value := Unbounded_String (anyType);
+        value := Java_Unbox (anyType);
         if (Length (value)) < (2) then
             stringValidationUtil := StringValidationUtil_Package.getInstance;
             if stringValidationUtil.isNumber (value) then

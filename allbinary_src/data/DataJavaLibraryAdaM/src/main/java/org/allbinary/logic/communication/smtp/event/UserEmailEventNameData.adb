@@ -27,8 +27,8 @@ package body org.allbinary.logic.communication.smtp.event.UserEmailEventNameData
    begin
       Initialize_Fields (This);
         This.eventHandlerName := eventHandlerName;
-        This.initNextId;
-        UserEmailEventNameData_Package.userNameEvenNameHashMap.put (This.eventHandlerName, UserEmailEventNameData_Access'(This'Unchecked_Access));
+        UserEmailEventNameData'Class (This).initNextId;
+        UserEmailEventNameData_Package.userNameEvenNameHashMap.put (Java_Box (This.eventHandlerName), UserEmailEventNameData_Access'(This'Unchecked_Access));
    end Initialize;
 
    function Create (eventHandlerName : Unbounded_String) return UserEmailEventNameData_Access is
@@ -46,14 +46,14 @@ package body org.allbinary.logic.communication.smtp.event.UserEmailEventNameData
 
    function isEvent (This : in out UserEmailEventNameData; userEmailEventNameString : Unbounded_String) return Boolean is
    begin
-        return UserEmailEventNameData_Package.userNameEvenNameHashMap.containsKey (userEmailEventNameString);
+        return UserEmailEventNameData_Package.userNameEvenNameHashMap.containsKey (Java_Box (userEmailEventNameString));
    end isEvent;
 
    --  throws Exception
    function getInstance (userEmailEventNameString : Unbounded_String) return UserEmailEventNameData_Access is
       userEmailEventNameData : UserEmailEventNameData_Access;
    begin
-        userEmailEventNameData := UserEmailEventNameData_Access (UserEmailEventNameData_Package.userNameEvenNameHashMap.get (userEmailEventNameString));
+        userEmailEventNameData := UserEmailEventNameData_Access (UserEmailEventNameData_Package.userNameEvenNameHashMap.get (Java_Box (userEmailEventNameString)));
         if (userEmailEventNameData) = (null) then
             Java_Throw (Java_New_Exception ("Exception"));
         else

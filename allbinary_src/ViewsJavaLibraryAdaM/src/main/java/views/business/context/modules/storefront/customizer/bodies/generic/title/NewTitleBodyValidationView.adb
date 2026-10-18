@@ -50,10 +50,10 @@ package body views.business.context.modules.storefront.customizer.bodies.generic
    begin
         begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-                This.logUtil.putF (To_Unbounded_String ("View Name: ") & This.getTransformInfoInterface.getName, NewTitleBodyValidationView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
+                This.logUtil.putF (To_Unbounded_String ("View Name: ") & NewTitleBodyValidationView'Class (This).getTransformInfoInterface.getName, NewTitleBodyValidationView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
             end if;
             begin
-                CustomizerUtil_Package.getInstance.insert (This.getTransformInfoInterface, DomNodeInterface_Access (This.titleBody));
+                CustomizerUtil_Package.getInstance.insert (NewTitleBodyValidationView'Class (This).getTransformInfoInterface, DomNodeInterface_Access (This.titleBody));
             end;
             return True;
         exception

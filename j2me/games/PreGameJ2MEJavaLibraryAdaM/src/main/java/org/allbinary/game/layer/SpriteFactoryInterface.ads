@@ -20,11 +20,13 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
---  with javax.microedition.lcdui.game.Sprite_Package; use javax.microedition.lcdui.game.Sprite_Package;
+with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
+with javax.microedition.lcdui.game.Sprite_Package; use javax.microedition.lcdui.game.Sprite_Package;
 
 package org.allbinary.game.layer.SpriteFactoryInterface_Package is
 
+   package Image_Package renames Standard.javax.microedition.lcdui.Image_Package;
+   package Sprite_Package renames Standard.javax.microedition.lcdui.game.Sprite_Package;
 
    type SpriteFactoryInterface is interface;
    type SpriteFactoryInterface_Access is access all SpriteFactoryInterface'Class;

@@ -65,8 +65,8 @@ package body org.allbinary.business.backup.BlisketBackupFactory_Package is
             stringBuffer.append (PATH_GLOBALS.getInstance.BACKUP_PATH);
             backupPath := stringBuffer.toString;
             path := AbPath_Package.Create (backupPath, This.stringUtil.EMPTY_STRING);
-            fileBasicArrayList := This.getFileBasicArrayList (backupPath);
-            This.backup (fileBasicArrayList, Java_Image (path.toFileSystemString) & To_Unbounded_String ("backup.zip"));
+            fileBasicArrayList := BlisketBackupFactory'Class (This).getFileBasicArrayList (backupPath);
+            BlisketBackupFactory'Class (This).backup (fileBasicArrayList, Java_Image (path.toFileSystemString) & To_Unbounded_String ("backup.zip"));
         exception
             when Java_Occurrence : others =>
                 declare
@@ -103,7 +103,7 @@ package body org.allbinary.business.backup.BlisketBackupFactory_Package is
             nextStore := Null_Unbounded_String;
             viewsPath := Null_Unbounded_String;
             for index in 0 .. (size) - 1 loop
-                nextStore := Unbounded_String (storeFrontNamesBasicArrayList.get (index));
+                nextStore := Java_Unbox (storeFrontNamesBasicArrayList.get (index));
                 stringBuffer.delete (0, stringBuffer.length);
                 stringBuffer.append (URLGLOBALS.getWebappPath);
                 stringBuffer.append (PATH_GLOBALS.getInstance.VIEWS_PATH);
@@ -115,9 +115,9 @@ package body org.allbinary.business.backup.BlisketBackupFactory_Package is
                 stringBuffer.append (To_Unbounded_String (" from: "));
                 stringBuffer.append (viewsPath);
                 PreLogUtil_Package.put (stringBuffer.toString, BlisketBackupFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("backupViews()"));
-                fileBasicArrayList.addAllList (This.getFileBasicArrayList (viewsPath));
+                fileBasicArrayList.addAllList (BlisketBackupFactory'Class (This).getFileBasicArrayList (viewsPath));
             end loop;
-            This.backup (fileBasicArrayList, Java_Image (path.toFileSystemString) & To_Unbounded_String ("backupViews.zip"));
+            BlisketBackupFactory'Class (This).backup (fileBasicArrayList, Java_Image (path.toFileSystemString) & To_Unbounded_String ("backupViews.zip"));
         exception
             when Java_Occurrence : others =>
                 declare
@@ -156,7 +156,7 @@ package body org.allbinary.business.backup.BlisketBackupFactory_Package is
             storeFrontInterface := null;
             resourcesPath := Null_Unbounded_String;
             for index in 0 .. (size) - 1 loop
-                nextStore := Unbounded_String (storeFrontNamesBasicArrayList.get (index));
+                nextStore := Java_Unbox (storeFrontNamesBasicArrayList.get (index));
                 storeFrontInterface := storeFrontsEntity.getStoreFrontInterface (nextStore);
                 stringBuffer.delete (0, stringBuffer.length);
                 stringBuffer.append (URLGLOBALS.getWebappPath);
@@ -169,9 +169,9 @@ package body org.allbinary.business.backup.BlisketBackupFactory_Package is
                 stringBuffer.append (To_Unbounded_String (" from: "));
                 stringBuffer.append (resourcesPath);
                 PreLogUtil_Package.put (stringBuffer.toString, BlisketBackupFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("backupResources()"));
-                fileBasicArrayList.addAllList (This.getFileBasicArrayList (resourcesPath));
+                fileBasicArrayList.addAllList (BlisketBackupFactory'Class (This).getFileBasicArrayList (resourcesPath));
             end loop;
-            This.backup (fileBasicArrayList, Java_Image (path.toFileSystemString) & To_Unbounded_String ("backupResources.zip"));
+            BlisketBackupFactory'Class (This).backup (fileBasicArrayList, Java_Image (path.toFileSystemString) & To_Unbounded_String ("backupResources.zip"));
         exception
             when Java_Occurrence : others =>
                 declare
@@ -206,14 +206,14 @@ package body org.allbinary.business.backup.BlisketBackupFactory_Package is
             size := storeFrontNamesBasicArrayList.size;
             nextStore := Null_Unbounded_String;
             for index in 0 .. (size) - 1 loop
-                nextStore := Unbounded_String (storeFrontNamesBasicArrayList.get (index));
+                nextStore := Java_Unbox (storeFrontNamesBasicArrayList.get (index));
                 PreLogUtil_Package.put (To_Unbounded_String ("Backup Store Jsps: ") & nextStore, BlisketBackupFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("backupJsps()"));
                 stringBuffer.delete (0, stringBuffer.length);
                 stringBuffer.append (URLGLOBALS.getWebappPath);
                 stringBuffer.append (nextStore);
-                fileBasicArrayList.addAllList (This.getFileBasicArrayList (stringBuffer.toString));
+                fileBasicArrayList.addAllList (BlisketBackupFactory'Class (This).getFileBasicArrayList (stringBuffer.toString));
             end loop;
-            This.backup (fileBasicArrayList, Java_Image (path.toFileSystemString) & To_Unbounded_String ("backupJsps.zip"));
+            BlisketBackupFactory'Class (This).backup (fileBasicArrayList, Java_Image (path.toFileSystemString) & To_Unbounded_String ("backupJsps.zip"));
         exception
             when Java_Occurrence : others =>
                 declare

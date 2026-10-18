@@ -31,7 +31,7 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
    begin
       Panel_Package.Initialize (This);
       Initialize_Fields (This);
-        This.initComponents;
+        RemoveActionScriptItemJPanel'Class (This).initComponents;
         This.genericProfileActionJPanel := genericProfileActionJPanel;
         This.profileActionScriptConditionInterface := profileActionScriptConditionInterface;
    end Initialize;
@@ -46,17 +46,17 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
    procedure initComponents (This : in out RemoveActionScriptItemJPanel) is
    begin
         This.removeJButton := JButton_Package.Create;
-        This.setLayout (GridLayout_Package.Create);
+        RemoveActionScriptItemJPanel'Class (This).setLayout (GridLayout_Package.Create);
         This.removeJButton.setText (To_Unbounded_String ("Remove"));
         This.removeJButton.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
 --     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
 --        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
---                  This.removeJButtonActionPerformed (evt);
+--                  RemoveActionScriptItemJPanel'Class (This).removeJButtonActionPerformed (evt);
 --     end actionPerformed;
 );
-        This.add (This.removeJButton);
+        RemoveActionScriptItemJPanel'Class (This).add (This.removeJButton);
    end initComponents;
 
    procedure removeJButtonActionPerformed (This : in out RemoveActionScriptItemJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class) is

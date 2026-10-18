@@ -47,7 +47,7 @@ package body views.business.context.modules.storefront.customizer.bodies.generic
    begin
         begin
             begin
-                CustomizerUtil_Package.getInstance.insert (This.getTransformInfoInterface, DomNodeInterface_Access (This.body_Id));
+                CustomizerUtil_Package.getInstance.insert (NewGenericBodyValidationView'Class (This).getTransformInfoInterface, DomNodeInterface_Access (This.body_Id));
             end;
             return True;
         exception

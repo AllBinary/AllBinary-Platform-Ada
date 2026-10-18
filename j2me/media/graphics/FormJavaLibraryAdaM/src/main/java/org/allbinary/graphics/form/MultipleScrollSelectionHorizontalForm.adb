@@ -92,7 +92,7 @@ package body org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_P
       dx : Integer := dx_Param;
       dx2 : Integer;
    begin
-        dx2 := (This.paintItem (graphics, index, item, dx, dy)) + (This.border);
+        dx2 := (MultipleScrollSelectionHorizontalForm'Class (This).paintItem (graphics, index, item, dx, dy)) + (This.border);
         This.paintable.paint (graphics, index, dx, dy);
         dx := dx2;
         return dx;
@@ -103,14 +103,14 @@ package body org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_P
       graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
       item : constant ABCustomItem_Access := ABCustomItem_Access (item_Param);
    begin
-        This.paintItem (graphics, index, item, dx, dy);
+        MultipleScrollSelectionHorizontalForm'Class (This).paintItem (graphics, index, item, dx, dy);
         This.paintable.paint (graphics, index, dx, dy);
         return dx;
    end paintVertical;
 
    function getStartIndex (This : in out MultipleScrollSelectionHorizontalForm) return Integer is
    begin
-        return This.getSelectedIndex;
+        return MultipleScrollSelectionHorizontalForm'Class (This).getSelectedIndex;
    end getStartIndex;
 
    procedure paint (This : in out MultipleScrollSelectionHorizontalForm; graphics_Param : access Graphics_Package.Graphics'Class) is
@@ -124,15 +124,15 @@ package body org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_P
    begin
         begin
             This.myFontProcessor.process (graphics);
-            start := This.getStartIndex;
-            size := This.size;
+            start := MultipleScrollSelectionHorizontalForm'Class (This).getStartIndex;
+            size := MultipleScrollSelectionHorizontalForm'Class (This).size;
             dx := This.x;
             dy := This.y;
             This.rectPaintable.paint (graphics);
-            graphics.drawString (This.getTitle, This.x, (This.y) - (This.fontHeight), 0);
+            graphics.drawString (MultipleScrollSelectionHorizontalForm'Class (This).getTitle, This.x, (This.y) - (This.fontHeight), 0);
             item := null;
             for index in start .. (size) - 1 loop
-                item := This.get (index);
+                item := MultipleScrollSelectionHorizontalForm'Class (This).get (index);
                 if (dx) >= (This.rectangle.getMaxX) then
                     if This.logged then
                         null;

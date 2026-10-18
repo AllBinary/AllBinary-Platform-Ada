@@ -42,7 +42,7 @@ package body org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeC
       goingToGeographicMapCellPosition : constant GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (goingToGeographicMapCellPosition_Param);
       geographicMapCellPosition : constant GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (geographicMapCellPosition_Param);
    begin
-        This.getInstance (goingToGeographicMapCellPosition, geographicMapCellPosition, costFromStart, costToEnd);
+        PathFindingNodeCostInfoFactory'Class (This).getInstance (goingToGeographicMapCellPosition, geographicMapCellPosition, costFromStart, costToEnd);
    end create;
 
    --  throws Exception
@@ -51,7 +51,7 @@ package body org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeC
       geographicMapCellPosition : constant GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (geographicMapCellPosition_Param);
       pathFindingNodeCostInfo : PathFindingNodeCostInfo_Access;
    begin
-        pathFindingNodeCostInfo := This.getInstance (goingToGeographicMapCellPosition, geographicMapCellPosition);
+        pathFindingNodeCostInfo := PathFindingNodeCostInfoFactory'Class (This).getInstance (goingToGeographicMapCellPosition, geographicMapCellPosition);
         if (pathFindingNodeCostInfo) = (null) then
             pathFindingNodeCostInfo := PathFindingNodeCostInfo_Package.Create (costFromStart, costToEnd);
             pathFindingNodeCostInfo.setCalculatedTotalCost;
@@ -76,7 +76,7 @@ package body org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeC
       comingFromGeographicMapCellPosition : constant GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (comingFromGeographicMapCellPosition_Param);
       geographicMapCellPosition : constant GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (geographicMapCellPosition_Param);
    begin
-        return This.getInstance (comingFromGeographicMapCellPosition, geographicMapCellPosition).totalCostP;
+        return PathFindingNodeCostInfoFactory'Class (This).getInstance (comingFromGeographicMapCellPosition, geographicMapCellPosition).totalCostP;
    end getTotalCost;
 
    procedure getInstance (This : in out PathFindingNodeCostInfoFactory; goingToGeographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class; geographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class; costFromStart : Long_Long_Integer; costToEnd : Long_Long_Integer) is

@@ -51,8 +51,8 @@ package body org.allbinary.business.user.NewUserFactory_Package is
         httpTransformInfoInterface := TransformInfoHttpInterface_Access (transformInfoInterface);
         httpServletRequest := HttpServletRequest_Access (httpTransformInfoInterface.getPageContext.getRequest);
         hashMap := RequestParams_Package.Create (httpServletRequest).toHashMap;
-        role := Unbounded_String (httpTransformInfoInterface.getPropertiesHashMap.get (UserRoleData_Package.NAME.toString));
-        hashMap.put (UserRoleData_Package.NAME.toString, role);
+        role := Java_Unbox (httpTransformInfoInterface.getPropertiesHashMap.get (UserRoleData_Package.NAME.toString));
+        hashMap.put (Java_Box (UserRoleData_Package.NAME.toString), Java_Box (role));
         return CreateUserFactory_Package.getInstance (hashMap);
    end getInstance;
 
@@ -65,8 +65,8 @@ package body org.allbinary.business.user.NewUserFactory_Package is
    begin
         if (propertiesHashMap) /= (null) then
             requestHashMap := RequestParams_Package.Create (httpServletRequest).toHashMap;
-            roleString := Unbounded_String (propertiesHashMap.get (UserRoleData_Package.NAME.toString));
-            requestHashMap.put (UserRoleData_Package.NAME.toString, roleString);
+            roleString := Java_Unbox (propertiesHashMap.get (Java_Box (UserRoleData_Package.NAME.toString)));
+            requestHashMap.put (Java_Box (UserRoleData_Package.NAME.toString), Java_Box (roleString));
             return CreateUserFactory_Package.getInstance (requestHashMap);
         else
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Null HashMap")));

@@ -44,7 +44,7 @@ package body org.allbinary.canvas.FullScreenUtil_Package is
       commandListener : constant CommandListener_Access := CommandListener_Access (commandListener_Param);
    begin
         if (commandListener) /= (null) then
-            This.init (fullScreenInterface);
+            FullScreenUtil'Class (This).init (fullScreenInterface);
         end if;
    end initOnRun;
 
@@ -69,7 +69,7 @@ package body org.allbinary.canvas.FullScreenUtil_Package is
    function isScreenChangeCanvas (This : in out FullScreenUtil; fullScreenInterface_Param : access Canvas_Package.Canvas'Class) return Boolean is
       fullScreenInterface : constant Canvas_Access := Canvas_Access (fullScreenInterface_Param);
    begin
-        return This.isScreenChange (False);
+        return FullScreenUtil'Class (This).isScreenChange (False);
    end isScreenChangeCanvas;
 
    procedure isScreenChange (This : in out FullScreenUtil; isFullScreen : Boolean) is

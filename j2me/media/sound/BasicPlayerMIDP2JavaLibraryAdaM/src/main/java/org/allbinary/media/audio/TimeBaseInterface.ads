@@ -20,11 +20,13 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with javax.microedition.media.MediaException_Package; use javax.microedition.media.MediaException_Package;
---  with javax.microedition.media.TimeBase_Package; use javax.microedition.media.TimeBase_Package;
+with javax.microedition.media.MediaException_Package; use javax.microedition.media.MediaException_Package;
+with javax.microedition.media.TimeBase_Package; use javax.microedition.media.TimeBase_Package;
 
 package org.allbinary.media.audio.TimeBaseInterface_Package is
 
+   package MediaException_Package renames Standard.javax.microedition.media.MediaException_Package;
+   package TimeBase_Package renames Standard.javax.microedition.media.TimeBase_Package;
 
    type TimeBaseInterface is interface;
    type TimeBaseInterface_Access is access all TimeBaseInterface'Class;

@@ -28,7 +28,7 @@ package body org.allbinary.business.context.configuration.ContextConfiguration_P
    begin
       Initialize_Fields (This);
         This.logUtil.putF (This.commonStrings.START, ContextConfiguration_Access'(This'Unchecked_Access), To_Unbounded_String ("ContextConfiguration"));
-        This.setEmailServerConfigurationInterface (EmailServerConfigurationInterface_Access (EmailServerConfiguration_Package.Create));
+        ContextConfiguration'Class (This).setEmailServerConfigurationInterface (EmailServerConfigurationInterface_Access (EmailServerConfiguration_Package.Create));
    end Initialize;
 
    function Create return ContextConfiguration_Access is
@@ -43,7 +43,7 @@ package body org.allbinary.business.context.configuration.ContextConfiguration_P
    begin
       Initialize_Fields (This);
         This.logUtil.putF (This.commonStrings.START, ContextConfiguration_Access'(This'Unchecked_Access), To_Unbounded_String ("ContextConfiguration(HashMap)"));
-        This.setEmailServerConfigurationInterface (EmailServerConfigurationInterface_Access (EmailServerConfiguration_Package.Create (hashMap)));
+        ContextConfiguration'Class (This).setEmailServerConfigurationInterface (EmailServerConfigurationInterface_Access (EmailServerConfiguration_Package.Create (hashMap)));
    end Initialize;
 
    function Create (hashMap_Param : access HashMap_Package.HashMap'Class) return ContextConfiguration_Access is

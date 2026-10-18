@@ -38,7 +38,7 @@ package body org.allbinary.input.automation.module.configuration.InputAutomation
       index : Integer;
    begin
       Initialize_Fields (This);
-        This.setHashMap (HashMap_Package.Create);
+        InputAutomationModuleConfigurations'Class (This).setHashMap (HashMap_Package.Create);
         bytes := new Short_Short_Integer_Array'(0 .. (100000) - 1 => 0);
         idFile := FileInputStream_Package.Create (file);
         length := idFile.read (bytes);
@@ -51,7 +51,7 @@ package body org.allbinary.input.automation.module.configuration.InputAutomation
             This.logUtil.putF (To_Unbounded_String ("Number Of Module(s) Specified: ") & Java_Image (nameNodeList.getLength), InputAutomationModuleConfigurations_Access'(This'Unchecked_Access), To_Unbounded_String ("Contructor"));
             for index in 0 .. (nameNodeList.getLength) - 1 loop
                 node := nameNodeList.item (index);
-                This.add (InputAutomationModuleConfiguration_Package.Create (abeClientInformation, node));
+                InputAutomationModuleConfigurations'Class (This).add (InputAutomationModuleConfiguration_Package.Create (abeClientInformation, node));
             end loop;
         end if;
    end Initialize;
@@ -71,12 +71,12 @@ package body org.allbinary.input.automation.module.configuration.InputAutomation
       index : Integer;
    begin
       Initialize_Fields (This);
-        This.setHashMap (HashMap_Package.Create);
+        InputAutomationModuleConfigurations'Class (This).setHashMap (HashMap_Package.Create);
         nameNodeList := document.getElementsByTagName (InputAutomationModuleData_Package.NAME);
         This.logUtil.putF (To_Unbounded_String ("Number Of Module(s) Specified: ") & Java_Image (nameNodeList.getLength), InputAutomationModuleConfigurations_Access'(This'Unchecked_Access), To_Unbounded_String ("Contructor"));
         for index in 0 .. (nameNodeList.getLength) - 1 loop
             node := nameNodeList.item (index);
-            This.add (InputAutomationModuleConfiguration_Package.Create (abeClientInformation, node));
+            InputAutomationModuleConfigurations'Class (This).add (InputAutomationModuleConfiguration_Package.Create (abeClientInformation, node));
         end loop;
    end Initialize;
 
@@ -94,12 +94,12 @@ package body org.allbinary.input.automation.module.configuration.InputAutomation
       index : Integer;
    begin
       Initialize_Fields (This);
-        This.setHashMap (HashMap_Package.Create);
+        InputAutomationModuleConfigurations'Class (This).setHashMap (HashMap_Package.Create);
         size := inputAutomationModuleConfigurationList.size;
         inputAutomationModuleConfiguration := null;
         for index in 0 .. (size) - 1 loop
             inputAutomationModuleConfiguration := inputAutomationModuleConfigurationList.get (index);
-            This.add (inputAutomationModuleConfiguration);
+            InputAutomationModuleConfigurations'Class (This).add (inputAutomationModuleConfiguration);
         end loop;
    end Initialize;
 
@@ -113,7 +113,7 @@ package body org.allbinary.input.automation.module.configuration.InputAutomation
    procedure Initialize (This : in out InputAutomationModuleConfigurations'Class) is
    begin
       Initialize_Fields (This);
-        This.setHashMap (HashMap_Package.Create);
+        InputAutomationModuleConfigurations'Class (This).setHashMap (HashMap_Package.Create);
    end Initialize;
 
    function Create return InputAutomationModuleConfigurations_Access is
@@ -126,13 +126,13 @@ package body org.allbinary.input.automation.module.configuration.InputAutomation
    procedure add (This : in out InputAutomationModuleConfigurations; inputAutomationModuleConfiguration_Param : access InputAutomationModuleConfiguration_Package.InputAutomationModuleConfiguration'Class) is
       inputAutomationModuleConfiguration : constant InputAutomationModuleConfiguration_Access := InputAutomationModuleConfiguration_Access (inputAutomationModuleConfiguration_Param);
    begin
-        This.getHashMap.put (inputAutomationModuleConfiguration.getClassName, inputAutomationModuleConfiguration);
+        InputAutomationModuleConfigurations'Class (This).getHashMap.put (inputAutomationModuleConfiguration.getClassName, inputAutomationModuleConfiguration);
    end add;
 
    procedure remove (This : in out InputAutomationModuleConfigurations; inputAutomationModuleConfiguration_Param : access InputAutomationModuleConfiguration_Package.InputAutomationModuleConfiguration'Class) is
       inputAutomationModuleConfiguration : constant InputAutomationModuleConfiguration_Access := InputAutomationModuleConfiguration_Access (inputAutomationModuleConfiguration_Param);
    begin
-        This.getHashMap.remove (inputAutomationModuleConfiguration.getClassName);
+        InputAutomationModuleConfigurations'Class (This).getHashMap.remove (inputAutomationModuleConfiguration.getClassName);
    end remove;
 
    function getHashMap (This : in out InputAutomationModuleConfigurations) return HashMap_Access is

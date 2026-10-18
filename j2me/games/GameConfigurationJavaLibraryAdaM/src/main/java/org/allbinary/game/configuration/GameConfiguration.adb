@@ -30,12 +30,12 @@ package body org.allbinary.game.configuration.GameConfiguration_Package is
    procedure Initialize (This : in out GameConfiguration'Class; name : Unbounded_String; defaultValue : Integer; minValue : Integer; maxValue : Integer) is
    begin
       Initialize_Fields (This);
-        This.setName (name);
-        This.setDefaultValue (defaultValue);
-        This.value := This.getDefaultValue;
-        This.setMinValue (minValue);
-        This.setMaxValue (maxValue);
-        GameConfigurationSingleton_Package.getInstance.getHashtable.put (This.getName, GameConfiguration_Access'(This'Unchecked_Access));
+        GameConfiguration'Class (This).setName (name);
+        GameConfiguration'Class (This).setDefaultValue (defaultValue);
+        This.value := GameConfiguration'Class (This).getDefaultValue;
+        GameConfiguration'Class (This).setMinValue (minValue);
+        GameConfiguration'Class (This).setMaxValue (maxValue);
+        GameConfigurationSingleton_Package.getInstance.getHashtable.put (GameConfiguration'Class (This).getName, GameConfiguration_Access'(This'Unchecked_Access));
    end Initialize;
 
    function Create (name : Unbounded_String; defaultValue : Integer; minValue : Integer; maxValue : Integer) return GameConfiguration_Access is
@@ -104,7 +104,7 @@ package body org.allbinary.game.configuration.GameConfiguration_Package is
    --  throws Exception
    procedure setDefault (This : in out GameConfiguration) is
    begin
-        This.setValue (This.getDefaultValue);
+        GameConfiguration'Class (This).setValue (GameConfiguration'Class (This).getDefaultValue);
    end setDefault;
 
    function toString (This : in out GameConfiguration) return Unbounded_String is
@@ -114,15 +114,15 @@ package body org.allbinary.game.configuration.GameConfiguration_Package is
         stringBuffer.append (To_Unbounded_String ("Name: "));
         stringBuffer.append (This.name);
         stringBuffer.append (To_Unbounded_String (" Min: "));
-        stringBuffer.appendint (Integer (This.getMinValue.intValue));
+        stringBuffer.appendint (Integer (GameConfiguration'Class (This).getMinValue.intValue));
         stringBuffer.append (To_Unbounded_String (" Max: "));
-        stringBuffer.appendint (Integer (This.getMaxValue.intValue));
+        stringBuffer.appendint (Integer (GameConfiguration'Class (This).getMaxValue.intValue));
         stringBuffer.append (To_Unbounded_String (" Value: "));
-        stringBuffer.appendint (Integer (This.getValue.intValue));
+        stringBuffer.appendint (Integer (GameConfiguration'Class (This).getValue.intValue));
         stringBuffer.append (To_Unbounded_String (" Default: "));
-        stringBuffer.appendint (Integer (This.getDefaultValue.intValue));
+        stringBuffer.appendint (Integer (GameConfiguration'Class (This).getDefaultValue.intValue));
         stringBuffer.append (To_Unbounded_String (" Modifiable: "));
-        stringBuffer.appendboolean (This.isModifiable.booleanValue);
+        stringBuffer.appendboolean (GameConfiguration'Class (This).isModifiable.booleanValue);
         return stringBuffer.toString;
    end toString;
 

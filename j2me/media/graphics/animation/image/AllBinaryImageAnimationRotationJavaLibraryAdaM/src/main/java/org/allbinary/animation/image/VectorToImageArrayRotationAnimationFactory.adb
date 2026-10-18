@@ -30,7 +30,7 @@ package body org.allbinary.animation.image.VectorToImageArrayRotationAnimationFa
    begin
         BaseImageAnimationFactory_Package.Initialize (This, AnimationFrameToImageUtil_Package.getInstance.getInstanceTranslate (vectorInfo.getWidth, vectorInfo.getHeight, VectorAnimation_Package.createVectorAnimation (vectorInfo.getPoints, basicColor, animationBehaviorFactory.getOrCreateInstance)), PrimitiveIntUtil_Package.getArrayInstance, 0, 0, 0, 0, animationBehaviorFactory);
         Initialize_Fields (This);
-        This.init;
+        VectorToImageArrayRotationAnimationFactory'Class (This).init;
    end Initialize;
 
    function Create (vectorInfo_Param : access VectorInfo_Package.VectorInfo'Class; basicColor_Param : access BasicColor_Package.BasicColor'Class; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class) return VectorToImageArrayRotationAnimationFactory_Access is
@@ -46,14 +46,14 @@ package body org.allbinary.animation.image.VectorToImageArrayRotationAnimationFa
    begin
         angleFactory := AngleFactory_Package.getInstance;
         This.angleIncrement := (angleFactory.TOTAL_ANGLE) / (GameConfigurationCentral_Package.getInstance.getGameControlFidelity);
-        This.imageArray := ImageToRotationImageArrayUtil_Package.getInstance.generate (This.getImage, This.getAngleIncrement, Integer (angleFactory.TOTAL_ANGLE));
+        This.imageArray := ImageToRotationImageArrayUtil_Package.getInstance.generate (VectorToImageArrayRotationAnimationFactory'Class (This).getImage, VectorToImageArrayRotationAnimationFactory'Class (This).getAngleIncrement, Integer (angleFactory.TOTAL_ANGLE));
    end init;
 
    --  throws Exception
    function getInstance (This : in out VectorToImageArrayRotationAnimationFactory; instanceId : Integer) return Animation_Access is
    begin
         if ((This.animationFactoryInitializationVisitor.dx) /= (0)) or else ((This.animationFactoryInitializationVisitor.dy) /= (0)) then
-            return AdjustedImageArrayRotationAnimation_Package.Create (This.imageArray, AngleInfo_Package.getInstance (Short_Integer (This.getAngleIncrement)), Integer (AngleFactory_Package.getInstance.TOTAL_ANGLE), This.animationFactoryInitializationVisitor.dx, This.animationFactoryInitializationVisitor.dy, This.animationBehaviorFactory.getOrCreateInstance);
+            return AdjustedImageArrayRotationAnimation_Package.Create (This.imageArray, AngleInfo_Package.getInstance (Short_Integer (VectorToImageArrayRotationAnimationFactory'Class (This).getAngleIncrement)), Integer (AngleFactory_Package.getInstance.TOTAL_ANGLE), This.animationFactoryInitializationVisitor.dx, This.animationFactoryInitializationVisitor.dy, This.animationBehaviorFactory.getOrCreateInstance);
         else
             return AdjustedImageArrayRotationAnimation_Package.createAnimation (This.imageArray, AngleInfo_Package.getInstance (Short_Integer (This.angleIncrement)), Integer (AngleFactory_Package.getInstance.TOTAL_ANGLE), This.animationBehaviorFactory.getOrCreateInstance);
         end if;

@@ -42,12 +42,12 @@ package body org.allbinary.logic.communication.java.vm.stats.JvmStatistics_Packa
 
    function getFreeMemoryKilobytes (This : in out JvmStatistics) return Long_Long_Integer is
    begin
-        return (This.getFreeMemoryBytes) / (1024);
+        return (JvmStatistics'Class (This).getFreeMemoryBytes) / (1024);
    end getFreeMemoryKilobytes;
 
    function getFreeMemoryMegabytes (This : in out JvmStatistics) return Long_Long_Integer is
    begin
-        return (This.getFreeMemoryKilobytes) / (1024);
+        return (JvmStatistics'Class (This).getFreeMemoryKilobytes) / (1024);
    end getFreeMemoryMegabytes;
 
    function getMaxMemoryBytes (This : in out JvmStatistics) return Long_Long_Integer is
@@ -57,12 +57,12 @@ package body org.allbinary.logic.communication.java.vm.stats.JvmStatistics_Packa
 
    function getMaxMemoryKilobytes (This : in out JvmStatistics) return Long_Long_Integer is
    begin
-        return (This.getMaxMemoryBytes) / (1024);
+        return (JvmStatistics'Class (This).getMaxMemoryBytes) / (1024);
    end getMaxMemoryKilobytes;
 
    function getMaxMemoryMegabytes (This : in out JvmStatistics) return Long_Long_Integer is
    begin
-        return (This.getMaxMemoryKilobytes) / (1024);
+        return (JvmStatistics'Class (This).getMaxMemoryKilobytes) / (1024);
    end getMaxMemoryMegabytes;
 
    function getTotalMemoryBytes (This : in out JvmStatistics) return Long_Long_Integer is
@@ -72,102 +72,102 @@ package body org.allbinary.logic.communication.java.vm.stats.JvmStatistics_Packa
 
    function getTotalMemoryKilobytes (This : in out JvmStatistics) return Long_Long_Integer is
    begin
-        return (This.getTotalMemoryBytes) / (1024);
+        return (JvmStatistics'Class (This).getTotalMemoryBytes) / (1024);
    end getTotalMemoryKilobytes;
 
    function getTotalMemoryMegabytes (This : in out JvmStatistics) return Long_Long_Integer is
    begin
-        return (This.getTotalMemoryKilobytes) / (1024);
+        return (JvmStatistics'Class (This).getTotalMemoryKilobytes) / (1024);
    end getTotalMemoryMegabytes;
 
    function getFreeMemoryBytesLong (This : in out JvmStatistics) return Long_Long_Integer is
    begin
-        return This.getFreeMemoryBytes;
+        return JvmStatistics'Class (This).getFreeMemoryBytes;
    end getFreeMemoryBytesLong;
 
    function getFreeMemoryKilobytesLong (This : in out JvmStatistics) return Long_Long_Integer is
    begin
-        return This.getFreeMemoryKilobytes;
+        return JvmStatistics'Class (This).getFreeMemoryKilobytes;
    end getFreeMemoryKilobytesLong;
 
    function getFreeMemoryMegabytesLong (This : in out JvmStatistics) return Long_Long_Integer is
    begin
-        return This.getFreeMemoryMegabytes;
+        return JvmStatistics'Class (This).getFreeMemoryMegabytes;
    end getFreeMemoryMegabytesLong;
 
    function getMaxMemoryBytesLong (This : in out JvmStatistics) return Long_Long_Integer is
    begin
-        return This.getMaxMemoryBytes;
+        return JvmStatistics'Class (This).getMaxMemoryBytes;
    end getMaxMemoryBytesLong;
 
    function getMaxMemoryKilobytesLong (This : in out JvmStatistics) return Long_Long_Integer is
    begin
-        return This.getMaxMemoryKilobytes;
+        return JvmStatistics'Class (This).getMaxMemoryKilobytes;
    end getMaxMemoryKilobytesLong;
 
    function getMaxMemoryMegabytesLong (This : in out JvmStatistics) return Long_Long_Integer is
    begin
-        return This.getMaxMemoryMegabytes;
+        return JvmStatistics'Class (This).getMaxMemoryMegabytes;
    end getMaxMemoryMegabytesLong;
 
    function getTotalMemoryBytesLong (This : in out JvmStatistics) return Long_Long_Integer is
    begin
-        return This.getTotalMemoryBytes;
+        return JvmStatistics'Class (This).getTotalMemoryBytes;
    end getTotalMemoryBytesLong;
 
    function getTotalMemoryKilobytesLong (This : in out JvmStatistics) return Long_Long_Integer is
    begin
-        return This.getTotalMemoryKilobytes;
+        return JvmStatistics'Class (This).getTotalMemoryKilobytes;
    end getTotalMemoryKilobytesLong;
 
    function getTotalMemoryMegabytesLong (This : in out JvmStatistics) return Long_Long_Integer is
    begin
-        return This.getTotalMemoryMegabytes;
+        return JvmStatistics'Class (This).getTotalMemoryMegabytes;
    end getTotalMemoryMegabytesLong;
 
    function getFreeMemoryBytesString (This : in out JvmStatistics) return Unbounded_String is
    begin
-        return This.getFreeMemoryBytesLong.toString;
+        return JvmStatistics'Class (This).getFreeMemoryBytesLong.toString;
    end getFreeMemoryBytesString;
 
    function getFreeMemoryKilobytesString (This : in out JvmStatistics) return Unbounded_String is
    begin
-        return This.getFreeMemoryKilobytesLong.toString;
+        return JvmStatistics'Class (This).getFreeMemoryKilobytesLong.toString;
    end getFreeMemoryKilobytesString;
 
    function getFreeMemoryMegabytesString (This : in out JvmStatistics) return Unbounded_String is
    begin
-        return This.getFreeMemoryMegabytesLong.toString;
+        return JvmStatistics'Class (This).getFreeMemoryMegabytesLong.toString;
    end getFreeMemoryMegabytesString;
 
    function getMaxMemoryBytesString (This : in out JvmStatistics) return Unbounded_String is
    begin
-        return This.getMaxMemoryBytesLong.toString;
+        return JvmStatistics'Class (This).getMaxMemoryBytesLong.toString;
    end getMaxMemoryBytesString;
 
    function getMaxMemoryKilobytesString (This : in out JvmStatistics) return Unbounded_String is
    begin
-        return This.getMaxMemoryKilobytesLong.toString;
+        return JvmStatistics'Class (This).getMaxMemoryKilobytesLong.toString;
    end getMaxMemoryKilobytesString;
 
    function getMaxMemoryMegabytesString (This : in out JvmStatistics) return Unbounded_String is
    begin
-        return This.getMaxMemoryMegabytesLong.toString;
+        return JvmStatistics'Class (This).getMaxMemoryMegabytesLong.toString;
    end getMaxMemoryMegabytesString;
 
    function getTotalMemoryBytesString (This : in out JvmStatistics) return Unbounded_String is
    begin
-        return This.getTotalMemoryBytesLong.toString;
+        return JvmStatistics'Class (This).getTotalMemoryBytesLong.toString;
    end getTotalMemoryBytesString;
 
    function getTotalMemoryKilobytesString (This : in out JvmStatistics) return Unbounded_String is
    begin
-        return This.getTotalMemoryKilobytesLong.toString;
+        return JvmStatistics'Class (This).getTotalMemoryKilobytesLong.toString;
    end getTotalMemoryKilobytesString;
 
    function getTotalMemoryMegabytesString (This : in out JvmStatistics) return Unbounded_String is
    begin
-        return This.getTotalMemoryMegabytesLong.toString;
+        return JvmStatistics'Class (This).getTotalMemoryMegabytesLong.toString;
    end getTotalMemoryMegabytesString;
 
    function getNumberOfThreads (This : in out JvmStatistics) return Long_Long_Integer is
@@ -177,12 +177,12 @@ package body org.allbinary.logic.communication.java.vm.stats.JvmStatistics_Packa
 
    function getNumberOfThreadsLong (This : in out JvmStatistics) return Long_Long_Integer is
    begin
-        return This.getNumberOfThreads;
+        return JvmStatistics'Class (This).getNumberOfThreads;
    end getNumberOfThreadsLong;
 
    function getNumberOfThreadsString (This : in out JvmStatistics) return Unbounded_String is
    begin
-        return This.getNumberOfThreadsLong.toString;
+        return JvmStatistics'Class (This).getNumberOfThreadsLong.toString;
    end getNumberOfThreadsString;
 
    procedure collectGarbage (This : in out JvmStatistics) is

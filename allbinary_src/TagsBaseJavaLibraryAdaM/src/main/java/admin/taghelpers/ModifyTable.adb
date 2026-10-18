@@ -39,18 +39,21 @@ package body admin.taghelpers.ModifyTable_Package is
    function insert (This : in out ModifyTable) return Unbounded_String is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return Null_Unbounded_String;
    end insert;
 
    --  throws Exception
    function delete (This : in out ModifyTable) return Unbounded_String is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return Null_Unbounded_String;
    end delete;
 
    --  throws Exception
    function update (This : in out ModifyTable) return Unbounded_String is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return Null_Unbounded_String;
    end update;
 
 end admin.taghelpers.ModifyTable_Package;

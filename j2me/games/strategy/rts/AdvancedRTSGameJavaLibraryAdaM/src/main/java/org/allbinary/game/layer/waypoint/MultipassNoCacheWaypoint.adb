@@ -65,7 +65,7 @@ package body org.allbinary.game.layer.waypoint.MultipassNoCacheWaypoint_Package 
       pathFindingInfo : PathFindingInfo_Access;
    begin
         startGeographicMapCellPosition := geographicMapCellPosition;
-        endGeographicMapCellPosition := This.getEndGeographicMapCellPosition (startGeographicMapCellPosition);
+        endGeographicMapCellPosition := MultipassNoCacheWaypoint'Class (This).getEndGeographicMapCellPosition (startGeographicMapCellPosition);
         if (endGeographicMapCellPosition) = (null) then
             return PathFindingInfo_Package.NULL_PATH_FINDING_INFO;
         end if;
@@ -161,7 +161,7 @@ package body org.allbinary.game.layer.waypoint.MultipassNoCacheWaypoint_Package 
 
    procedure reset (This : in out MultipassNoCacheWaypoint) is
    begin
-        This.getConnectedWaypointList.clear;
+        MultipassNoCacheWaypoint'Class (This).getConnectedWaypointList.clear;
    end reset;
 
    --  throws Exception
@@ -174,13 +174,13 @@ package body org.allbinary.game.layer.waypoint.MultipassNoCacheWaypoint_Package 
         if (unitLayer.getGroupInterface (0)) /= (This.ownerLayer.getGroupInterface (0)) then
             return;
         end if;
-        size := This.getConnectedWaypointList.size;
+        size := MultipassNoCacheWaypoint'Class (This).getConnectedWaypointList.size;
         if (size) > (0) then
             unitWaypointBehavior := UnitWaypointBehavior_Access (unitLayer.getWaypointBehavior);
-            while (This.getConnectedWaypointList.size) > (0) loop
-                rtsLayer := CollidableDestroyableDamageableLayer_Access (This.getConnectedWaypointList.get (0));
+            while (MultipassNoCacheWaypoint'Class (This).getConnectedWaypointList.size) > (0) loop
+                rtsLayer := CollidableDestroyableDamageableLayer_Access (MultipassNoCacheWaypoint'Class (This).getConnectedWaypointList.get (0));
                 if rtsLayer.isDestroyed then
-                    This.getConnectedWaypointList.remove (rtsLayer);
+                    MultipassNoCacheWaypoint'Class (This).getConnectedWaypointList.remove (rtsLayer);
                 else
                     unitLayer.handleCost (This.ownerLayer);
                     unitWaypointBehavior.insertWaypoint (0, rtsLayer);

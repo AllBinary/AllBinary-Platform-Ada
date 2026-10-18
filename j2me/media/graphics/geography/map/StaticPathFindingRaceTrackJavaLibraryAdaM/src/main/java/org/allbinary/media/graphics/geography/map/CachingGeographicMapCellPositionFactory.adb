@@ -44,7 +44,7 @@ package body org.allbinary.media.graphics.geography.map.CachingGeographicMapCell
         cellPositionKey := CellPosition_Package.toStringColRow (i_column, i_row);
         cellPositionCanBeNull := hashtable.get (cellPositionKey);
         if (cellPositionCanBeNull) = (null) then
-            cellPositionCanBeNull := This.geographicMapCellPositionFactoryInterface.getInstance (This.geographicMapInterface, i_column, i_row, This.getColumns, This.getRows, width, height);
+            cellPositionCanBeNull := This.geographicMapCellPositionFactoryInterface.getInstance (This.geographicMapInterface, i_column, i_row, CachingGeographicMapCellPositionFactory'Class (This).getColumns, CachingGeographicMapCellPositionFactory'Class (This).getRows, width, height);
             This.geographicMapCellPositionArray (i_row) (i_column) := GeographicMapCellPosition_Access (cellPositionCanBeNull);
             hashtable.put (cellPositionKey, cellPositionCanBeNull);
         end if;

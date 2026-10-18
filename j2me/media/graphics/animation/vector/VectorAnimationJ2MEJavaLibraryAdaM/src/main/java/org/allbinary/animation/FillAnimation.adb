@@ -34,12 +34,12 @@ package body org.allbinary.animation.FillAnimation_Package is
       changed : Boolean;
    begin
         changed := False;
-        if ((This.getBasicColorP) = (null)) or else ((This.getBasicColorP.intValue) /= (basicColor.intValue)) then
+        if ((FillAnimation'Class (This).getBasicColorP) = (null)) or else ((FillAnimation'Class (This).getBasicColorP.intValue) /= (basicColor.intValue)) then
             changed := True;
         end if;
         IndexedAnimation (This).setBasicColorP (basicColor);
         if changed then
-            This.updateModifiers;
+            FillAnimation'Class (This).updateModifiers;
         end if;
    end setBasicColorP;
 
@@ -48,12 +48,12 @@ package body org.allbinary.animation.FillAnimation_Package is
       changed : Boolean;
    begin
         changed := False;
-        if ((This.getChangeBasicColor) = (null)) or else ((This.getChangeBasicColor.intValue) /= (basicColor.intValue)) then
+        if ((FillAnimation'Class (This).getChangeBasicColor) = (null)) or else ((FillAnimation'Class (This).getChangeBasicColor.intValue) /= (basicColor.intValue)) then
             changed := True;
         end if;
         IndexedAnimation (This).changeBasicColor (basicColor);
         if changed then
-            This.updateModifiers;
+            FillAnimation'Class (This).updateModifiers;
         end if;
    end changeBasicColor;
 
@@ -66,7 +66,7 @@ package body org.allbinary.animation.FillAnimation_Package is
         end if;
         IndexedAnimation (This).setAlpha (alpha);
         if changed then
-            This.updateModifiers;
+            FillAnimation'Class (This).updateModifiers;
         end if;
    end setAlpha;
 

@@ -20,8 +20,8 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
---  with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
+with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
 with org.allbinary.animation.AnimationInterface_Package; use org.allbinary.animation.AnimationInterface_Package;
 with org.allbinary.game.health.HealthInterface_Package; use org.allbinary.game.health.HealthInterface_Package;
 with org.allbinary.graphics.Anchor_Package; use org.allbinary.graphics.Anchor_Package;
@@ -30,6 +30,8 @@ with org.allbinary.game.layer.hud.basic.HealthGraphic_Package; use org.allbinary
 
 package org.allbinary.game.layer.hud.basic.ImageHealthGraphic_Package is
 
+   package Graphics_Package renames Standard.javax.microedition.lcdui.Graphics_Package;
+   package Image_Package renames Standard.javax.microedition.lcdui.Image_Package;
    package AnimationInterface_Package renames Standard.org.allbinary.animation.AnimationInterface_Package;
    package HealthInterface_Package renames Standard.org.allbinary.game.health.HealthInterface_Package;
    package Anchor_Package renames Standard.org.allbinary.graphics.Anchor_Package;

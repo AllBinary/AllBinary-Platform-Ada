@@ -28,7 +28,7 @@ package body org.allbinary.logic.communication.http.request.MultipartRequestPara
    begin
         RequestParams_Package.Initialize (This);
         Initialize_Fields (This);
-        This.processMultipartRequest (request);
+        MultipartRequestParams'Class (This).processMultipartRequest (request);
    end Initialize;
 
    function Create (request_Param : access HttpServletRequest_Package.HttpServletRequest'Class) return MultipartRequestParams_Access is
@@ -43,7 +43,7 @@ package body org.allbinary.logic.communication.http.request.MultipartRequestPara
    begin
         RequestParams_Package.Initialize (This);
         Initialize_Fields (This);
-        This.processMultipartRequest (HttpServletRequest_Access (pageContext.getRequest));
+        MultipartRequestParams'Class (This).processMultipartRequest (HttpServletRequest_Access (pageContext.getRequest));
    end Initialize;
 
    function Create (pageContext_Param : access PageContext_Package.PageContext'Class) return MultipartRequestParams_Access is
@@ -89,8 +89,8 @@ package body org.allbinary.logic.communication.http.request.MultipartRequestPara
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.HTTPREQUEST) then
                     This.logUtil.putF (To_Unbounded_String ("Special Request Data: ") & specialRequest.toString, MultipartRequestParams_Access'(This'Unchecked_Access), To_Unbounded_String ("processMultipartRequest()"));
                 end if;
-                This.setSpecial;
-                This.setMap (specialRequest);
+                MultipartRequestParams'Class (This).setSpecial;
+                MultipartRequestParams'Class (This).setMap (specialRequest);
             end if;
         exception
             when Java_Occurrence : others =>
@@ -109,7 +109,7 @@ package body org.allbinary.logic.communication.http.request.MultipartRequestPara
    function toHashMap (This : in out MultipartRequestParams) return HashMap_Access is
    begin
         if This.special then
-            return HashMap_Access (This.getMap);
+            return HashMap_Access (MultipartRequestParams'Class (This).getMap);
         else
             return RequestParams (This).toHashMap;
         end if;

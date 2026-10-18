@@ -46,7 +46,7 @@ package body org.allbinary.media.image.comparison.ComparisonImageInputOutput_Pac
             imageComparisonResultFrameCacheable := ImageComparisonResultFrameCacheable_Access ((AutomaticCacheInterface_Access (ImageComparisonResultCacheSingleton_Package.getInstance)).get (frame));
             if (imageComparisonResultFrameCacheable) /= (null) then
                 imageComparisonResult := imageComparisonResultFrameCacheable.getImageComparisonResult;
-                This.save (imageComparisonResult, imageComparisonResultFrameCacheable.getFrame);
+                ComparisonImageInputOutput'Class (This).save (imageComparisonResult, imageComparisonResultFrameCacheable.getFrame);
             else
                 This.logUtil.putF (To_Unbounded_String ("Comparison Results Not Available for Output: ") & Java_Image (frame), ComparisonImageInputOutput_Access'(This'Unchecked_Access), commonStrings.SAVE);
             end if;

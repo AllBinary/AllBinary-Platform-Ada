@@ -28,7 +28,7 @@ package body org.allbinary.media.image.cache.BufferedImageFrameCacheable_Package
    begin
       Initialize_Fields (This);
         This.frame := frame;
-        This.setBufferedImage (bufferedImage);
+        BufferedImageFrameCacheable'Class (This).setBufferedImage (bufferedImage);
    end Initialize;
 
    function Create (bufferedImage_Param : access BufferedImage_Package.BufferedImage'Class; frame : Long_Long_Integer) return BufferedImageFrameCacheable_Access is
@@ -70,7 +70,7 @@ package body org.allbinary.media.image.cache.BufferedImageFrameCacheable_Package
         stringBuffer := StringMaker_Package.Create;
         stringBuffer.append (To_Unbounded_String (Ada.Tags.Expanded_Name (This.all'Tag)));
         stringBuffer.append (To_Unbounded_String (" Frame: "));
-        stringBuffer.appendlong (This.getFrame);
+        stringBuffer.appendlong (BufferedImageFrameCacheable'Class (This).getFrame);
         return stringBuffer.toString;
    end toString;
 

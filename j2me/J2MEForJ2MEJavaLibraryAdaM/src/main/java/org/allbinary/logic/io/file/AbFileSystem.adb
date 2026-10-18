@@ -59,7 +59,7 @@ package body org.allbinary.logic.io.file.AbFileSystem_Package is
       bytes : Short_Short_Integer_Array_Access;
    begin
         bytes := new Short_Short_Integer_Array'(0 .. (1000000) - 1 => 0);
-        return This.readAsString (fileName, bytes);
+        return AbFileSystem'Class (This).readAsString (fileName, bytes);
    end readAsString;
 
    function readAsString (This : in out AbFileSystem; fileName : Unbounded_String; bytes : Short_Short_Integer_Array_Access) return Unbounded_String is

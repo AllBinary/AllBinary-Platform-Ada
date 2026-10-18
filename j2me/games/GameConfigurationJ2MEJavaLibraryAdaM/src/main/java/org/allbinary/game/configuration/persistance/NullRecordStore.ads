@@ -20,10 +20,11 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with javax.microedition.rms.RecordStore_Package; use javax.microedition.rms.RecordStore_Package;
+with javax.microedition.rms.RecordStore_Package; use javax.microedition.rms.RecordStore_Package;
 
 package org.allbinary.game.configuration.persistance.NullRecordStore_Package is
 
+   package RecordStore_Package renames Standard.javax.microedition.rms.RecordStore_Package;
 
    type NullRecordStore is tagged;
    type NullRecordStore_Access is access all NullRecordStore'Class;

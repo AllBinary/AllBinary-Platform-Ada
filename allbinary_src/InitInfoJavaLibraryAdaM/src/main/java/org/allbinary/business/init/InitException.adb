@@ -12,41 +12,6 @@
 --  
 --  Generated Code Do Not Modify
 
-
-package body org.allbinary.business.init.InitException_Package is
-
-   procedure Initialize_Fields (This : in out InitException'Class) is
-   begin
-      null;
-   end Initialize_Fields;
-
-
-   procedure Initialize (This : in out InitException'Class) is
-   begin
-      Exception_Package.Initialize (This);
-      Initialize_Fields (This);
-        null;
-   end Initialize;
-
-   function Create return InitException_Access is
-      This : constant InitException_Access := new InitException;
-   begin
-      InitException_Package.Initialize (This.all);
-      return This;
-   end Create;
-
-   procedure Initialize (This : in out InitException'Class; msg : Unbounded_String) is
-   begin
-        Exception_Package.Initialize (This, msg);
-   end Initialize;
-
-   function Create (msg : Unbounded_String) return InitException_Access is
-      This : constant InitException_Access := new InitException;
-   begin
-      InitException_Package.Initialize (This.all, msg);
-      return This;
-   end Create;
-
-end org.allbinary.business.init.InitException_Package;
+--  Java exception class InitException is only a package spec
 
 

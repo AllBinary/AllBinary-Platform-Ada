@@ -57,8 +57,8 @@ package body org.allbinary.data.tree.category.CategoryModifierTree_Package is
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.CATEGORY) then
                     This.logUtil.putF (To_Unbounded_String ("Saving"), CategoryModifierTree_Access'(This'Unchecked_Access), To_Unbounded_String ("insert()"));
                 end if;
-                This.save (parentCategoryInterface);
-                This.save (newChildCategoryInterface);
+                CategoryModifierTree'Class (This).save (parentCategoryInterface);
+                CategoryModifierTree'Class (This).save (newChildCategoryInterface);
             else
                 Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Will Not Add Null Category")));
             end if;
@@ -83,9 +83,9 @@ package body org.allbinary.data.tree.category.CategoryModifierTree_Package is
             if parentCategoryInterface.isValid.booleanValue then
                 parentCategoryInterface.addChild (existingChildCategoryInterface);
                 directoryToBeDeletedAbPath := AbPath_Package.Create (existingChildCategoryInterface.getRootFilePath.toString & existingChildCategoryInterface.getPath.toString, StringUtil_Package.getInstance.EMPTY_STRING);
-                This.delete (existingChildCategoryInterface);
+                CategoryModifierTree'Class (This).delete (existingChildCategoryInterface);
                 parentCategoryInterface.removeChild (existingChildCategoryInterface);
-                This.save (parentCategoryInterface);
+                CategoryModifierTree'Class (This).save (parentCategoryInterface);
                 This.directory.remove (directoryToBeDeletedAbPath);
             else
                 Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Will Not Add Null Category")));

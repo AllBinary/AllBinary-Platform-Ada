@@ -44,10 +44,10 @@ package body org.allbinary.media.image.cache.BufferedImageInfoFactory_Package is
         stringbuffer.appendint (height);
         stringbuffer.appendint (type_Id);
         key := stringbuffer.toString;
-        bufferedImageInfo := BufferedImageInfo_Access (BufferedImageInfoFactory_Package.hashMap.get (key));
+        bufferedImageInfo := BufferedImageInfo_Access (BufferedImageInfoFactory_Package.hashMap.get (Java_Box (key)));
         if (bufferedImageInfo) = (null) then
             bufferedImageInfo := BufferedImageInfo_Package.Create (width, height, type_Id);
-            BufferedImageInfoFactory_Package.hashMap.put (key, bufferedImageInfo);
+            BufferedImageInfoFactory_Package.hashMap.put (Java_Box (key), bufferedImageInfo);
         end if;
         return bufferedImageInfo;
    end getInstance;

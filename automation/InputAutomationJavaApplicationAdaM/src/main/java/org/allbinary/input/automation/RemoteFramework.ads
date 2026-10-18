@@ -20,11 +20,12 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.util.Map_Package; use java.util.Map_Package;
+with java.util.Map_Package; use java.util.Map_Package;
 with org.osgi.framework.BundleContext_Package; use org.osgi.framework.BundleContext_Package;
 
 package org.allbinary.input.automation.RemoteFramework_Package is
 
+   package Map_Package renames Standard.java.util.Map_Package;
    package BundleContext_Package renames Standard.org.osgi.framework.BundleContext_Package;
 
    type RemoteFramework is interface;

@@ -40,7 +40,7 @@ package body org.allbinary.game.layer.geographic.map.MiniMapLayer_Package is
         This.basicColorList := BasicArrayListD_Package.Create;
         This.positionList := BasicArrayListD_Package.Create;
         GeographicMapCellPositionEventHandler_Package.getInstance.addListener (MiniMapLayer_Access'(This'Unchecked_Access));
-        This.init;
+        MiniMapLayer'Class (This).init;
    end Initialize;
 
    function Create (geographicMapInterface_Param : access BasicGeographicMap_Package.BasicGeographicMap'Class; viewPosition_Param : access ViewPositionBase_Package.ViewPositionBase'Class) return MiniMapLayer_Access is
@@ -141,7 +141,7 @@ package body org.allbinary.game.layer.geographic.map.MiniMapLayer_Package is
       graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
         This.allBinaryTiledLayer.paint (graphics);
-        This.paintDots (graphics);
+        MiniMapLayer'Class (This).paintDots (graphics);
    end paint;
 
 end org.allbinary.game.layer.geographic.map.MiniMapLayer_Package;

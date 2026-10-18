@@ -61,7 +61,7 @@ package body admin.tags.ShippingTag_Package is
             anyType := ShippingHelperFactory_Package.Create.getInstance (This.propertiesHashMap, This.pageContext);
             addressHelperClass := anyType.all'Tag;
             method := addressHelperClass.getMethod (To_Unbounded_String ("setShippingType"), null);
-            result := Unbounded_String (method.invoke (anyType, null));
+            result := Java_Unbox (method.invoke (anyType, null));
             return result;
         exception
             when Java_Occurrence : others =>
@@ -79,9 +79,9 @@ package body admin.tags.ShippingTag_Package is
         begin
             if (This.command) /= (Null_Unbounded_String) then
                 This.propertiesHashMap := StdUtil_Package.getInstance.createHashMap;
-                This.propertiesHashMap.put (StoreFrontData_Package.getInstance.NAME, This.storeName);
+                This.propertiesHashMap.put (StoreFrontData_Package.getInstance.NAME, Java_Box (This.storeName));
                 if (This.command.compareTo (org_Package.allbinary.globals.GLOBALS2.SETSHIPPINGTYPE)) = (0) then
-                    This.setShippingType;
+                    ShippingTag'Class (This).setShippingType;
                 end if;
             end if;
             return SKIP_BODY;

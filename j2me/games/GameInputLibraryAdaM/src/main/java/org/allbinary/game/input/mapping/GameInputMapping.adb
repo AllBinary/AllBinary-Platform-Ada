@@ -27,8 +27,8 @@ package body org.allbinary.game.input.mapping.GameInputMapping_Package is
       gameKey : constant GameKey_Access := GameKey_Access (gameKey_Param);
    begin
       Initialize_Fields (This);
-        This.setName (name);
-        This.setGameKey (gameKey);
+        GameInputMapping'Class (This).setName (name);
+        GameInputMapping'Class (This).setGameKey (gameKey);
    end Initialize;
 
    function Create (name : Unbounded_String; gameKey_Param : access GameKey_Package.GameKey'Class) return GameInputMapping_Access is

@@ -72,7 +72,7 @@ package body org.allbinary.input.gyro.SensorGameUpdateProcessor_Package is
    begin
         GyroSensorFactory_Package.getInstance.setCompleteMotionGestureInputEventListener (NoCompleteMotionGestureInputEventListener_Package.getInstance);
         AccelerometerSensorFactory_Package.getInstance.setCompleteMotionGestureInputEventListener (NoCompleteMotionGestureInputEventListener_Package.getInstance);
-        This.setInputSensor (NoAllBinarySensor_Package.getInstance);
+        SensorGameUpdateProcessor'Class (This).setInputSensor (NoAllBinarySensor_Package.getInstance);
    end setNoSensors;
 
 end org.allbinary.input.gyro.SensorGameUpdateProcessor_Package;

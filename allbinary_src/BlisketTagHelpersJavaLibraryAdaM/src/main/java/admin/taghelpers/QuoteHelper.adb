@@ -33,7 +33,7 @@ package body admin.taghelpers.QuoteHelper_Package is
    begin
       BasicTable_Package.Initialize (This);
       Initialize_Fields (This);
-        storeName := Unbounded_String (hashMap.get (StoreFrontData_Package.getInstance.NAME));
+        storeName := Java_Unbox (hashMap.get (StoreFrontData_Package.getInstance.NAME));
         if (storeName) /= (Null_Unbounded_String) then
             This.storeFrontInterface := StoreFrontFactory_Package.getInstance (storeName);
         else
@@ -133,8 +133,8 @@ package body admin.taghelpers.QuoteHelper_Package is
             end loop;
             quoteRequest := quoteRequestEntity.get (userName, id);
             if (quoteRequest) /= (null) then
-                This.emailUser (quoteRequest);
-                This.emailAdmins (quoteRequest);
+                QuoteHelper'Class (This).emailUser (quoteRequest);
+                QuoteHelper'Class (This).emailAdmins (quoteRequest);
                 return To_Unbounded_String ("Thank You For Your Business.<p/>");
             else
                 Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("No Quote Request")));

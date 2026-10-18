@@ -20,7 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.util.HashMap_Package; use java.util.HashMap_Package;
+with java.util.HashMap_Package; use java.util.HashMap_Package;
 --  with javax.servlet.jsp.PageContext_Package; use javax.servlet.jsp.PageContext_Package;
 with org.allbinary.business.installer.Portion_Package; use org.allbinary.business.installer.Portion_Package;
 with org.allbinary.data.tables.user.commerce.inventory.item.special.SpecialItemsEntityFactory_Package; use org.allbinary.data.tables.user.commerce.inventory.item.special.SpecialItemsEntityFactory_Package;
@@ -30,6 +30,7 @@ with admin.taghelpers.BasicTable_Package; use admin.taghelpers.BasicTable_Packag
 
 package admin.taghelpers.SpecialItemsHelper_Package is
 
+   package HashMap_Package renames Standard.java.util.HashMap_Package;
    package Portion_Package renames Standard.org.allbinary.business.installer.Portion_Package;
    package SpecialItemsEntityFactory_Package renames Standard.org.allbinary.data.tables.user.commerce.inventory.item.special.SpecialItemsEntityFactory_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;

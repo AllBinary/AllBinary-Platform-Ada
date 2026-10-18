@@ -38,7 +38,7 @@ package body org.allbinary.business.user.commerce.money.payment.types.TenderType
    function isEqual (This : in out TenderType; tenderType_Param : access TenderType_Package.TenderType'Class) return Boolean is
       tenderType : constant TenderType_Access := TenderType_Access (tenderType_Param);
    begin
-        if (This.toString.compareTo (tenderType.toString)) = (0) then
+        if (TenderType'Class (This).toString.compareTo (tenderType.toString)) = (0) then
             return True;
         else
             return False;

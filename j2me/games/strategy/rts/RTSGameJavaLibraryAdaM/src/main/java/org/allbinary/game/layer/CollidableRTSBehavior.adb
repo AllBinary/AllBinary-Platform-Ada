@@ -69,7 +69,7 @@ package body org.allbinary.game.layer.CollidableRTSBehavior_Package is
         elsif (collisionType) = (collisionTypeFactory.COLLISION) then
             CollidableDestroyableDamageableBehavior (This).collide (ownerLayer, collidableInterfaceCompositeInterface);
         else
-            This.collideNone (ownerLayer, collidableInterfaceCompositeInterface);
+            CollidableRTSBehavior'Class (This).collideNone (ownerLayer, collidableInterfaceCompositeInterface);
         end if;
    end collide;
 

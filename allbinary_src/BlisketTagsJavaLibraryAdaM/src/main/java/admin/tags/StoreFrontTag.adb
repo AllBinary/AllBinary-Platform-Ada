@@ -59,7 +59,7 @@ package body admin.tags.StoreFrontTag_Package is
         begin
             anyType := StoreFrontHelperFactory_Package.Create.getInstance (This.propertiesHashMap, This.pageContext);
             method := anyType.all'Tag.getMethod (To_Unbounded_String ("getCurrentLocation"), null);
-            result := Unbounded_String (method.invoke (anyType, null));
+            result := Java_Unbox (method.invoke (anyType, null));
             return result;
         exception
             when Java_Occurrence : others =>
@@ -81,7 +81,7 @@ package body admin.tags.StoreFrontTag_Package is
         begin
             anyType := StoreFrontHelperFactory_Package.Create.getInstance (This.propertiesHashMap, This.pageContext);
             method := anyType.all'Tag.getMethod (To_Unbounded_String ("getCurrentHomeLocation"), null);
-            result := Unbounded_String (method.invoke (anyType, null));
+            result := Java_Unbox (method.invoke (anyType, null));
             return result;
         exception
             when Java_Occurrence : others =>
@@ -99,11 +99,11 @@ package body admin.tags.StoreFrontTag_Package is
         begin
             if (This.command) /= (Null_Unbounded_String) then
                 This.propertiesHashMap := StdUtil_Package.getInstance.createHashMap;
-                This.propertiesHashMap.put (StoreFrontData_Package.getInstance.NAME, This.storeName);
+                This.propertiesHashMap.put (StoreFrontData_Package.getInstance.NAME, Java_Box (This.storeName));
                 if (This.command.compareTo (org_Package.allbinary.globals.GLOBALS2.GETCURRENTLOCATION)) = (0) then
-                    This.pageContext.getOut.print (This.getCurrentLocation);
+                    This.pageContext.getOut.print (StoreFrontTag'Class (This).getCurrentLocation);
                 elsif (This.command.compareTo (org_Package.allbinary.globals.GLOBALS2.GETCURRENTHOMELOCATION)) = (0) then
-                    This.pageContext.getOut.print (This.getCurrentHomeLocation);
+                    This.pageContext.getOut.print (StoreFrontTag'Class (This).getCurrentHomeLocation);
                 end if;
             end if;
             return SKIP_BODY;

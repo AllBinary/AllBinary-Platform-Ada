@@ -42,10 +42,10 @@ package body org.allbinary.game.layer.unit.CollidableUnitBehavior_Package is
       collidableInterfaceCompositeInterface : constant CollidableCompositeLayer_Access := CollidableCompositeLayer_Access (collidableInterfaceCompositeInterface_Param);
       rtsLayer : AdvancedRTSGameLayer_Access;
    begin
-        This.chase (ownerLayer, collidableInterfaceCompositeInterface);
+        CollidableUnitBehavior'Class (This).chase (ownerLayer, collidableInterfaceCompositeInterface);
         rtsLayer := AdvancedRTSGameLayer_Access (collidableInterfaceCompositeInterface);
         if (rtsLayer.getType) = (UnitLayer_Package.getStaticType) then
-            This.collideUnit (ownerLayer, UnitLayer_Access (rtsLayer));
+            CollidableUnitBehavior'Class (This).collideUnit (ownerLayer, UnitLayer_Access (rtsLayer));
         end if;
    end collideNone;
 
@@ -200,11 +200,11 @@ package body org.allbinary.game.layer.unit.SimpleSteeringVisitor_Package is
             logUtil := LogUtil_Package.getInstance;
             begin
                 ownerLayer := CollidableCompositeLayer_Access (anyType);
-                if (This.getList.size) > (0) then
-                    allbinaryLayer := CollidableCompositeLayer_Access (This.getList.get (0));
-                    clear := This.steer (ownerLayer, allbinaryLayer);
+                if (CollidableUnitBehavior'Class (This).getList.size) > (0) then
+                    allbinaryLayer := CollidableCompositeLayer_Access (CollidableUnitBehavior'Class (This).getList.get (0));
+                    clear := CollidableUnitBehavior'Class (This).steer (ownerLayer, allbinaryLayer);
                     if clear then
-                        This.getList.clear;
+                        CollidableUnitBehavior'Class (This).getList.clear;
                         return NullUtil_Package.getInstance.NULL_OBJECT;
                     end if;
                     return BooleanFactory_Package.getInstance.TRUE;

@@ -60,7 +60,7 @@ package body org.allbinary.data.CamelCaseUtil_Package is
         size := list.size;
         word := Null_Unbounded_String;
         for i in 0 .. (size) - 1 loop
-            word := Unbounded_String (list.get (i));
+            word := Java_Unbox (list.get (i));
             word := (if stringValidationUtil.isEmpty (word) then word else StringMaker_Package.Create.appendchar (Ada.Characters.Handling.To_Upper (Element (word, (0) + 1))).append (Translate (Unbounded_Slice (word, (1) + 1, Length (word)), Ada.Strings.Maps.Constants.Lower_Case_Map)).toString);
             stringBuilder.append (word);
         end loop;

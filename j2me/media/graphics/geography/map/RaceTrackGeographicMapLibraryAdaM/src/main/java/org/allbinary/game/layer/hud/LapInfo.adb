@@ -65,11 +65,11 @@ package body org.allbinary.game.layer.hud.LapInfo_Package is
    begin
         stringBuffer := StringMaker_Package.Create;
         stringBuffer.append (To_Unbounded_String ("isDone: "));
-        stringBuffer.appendboolean (This.isDone);
+        stringBuffer.appendboolean (LapInfo'Class (This).isDone);
         stringBuffer.append (To_Unbounded_String (" CurrentLap: "));
-        stringBuffer.appendint (This.getCurrentLap);
+        stringBuffer.appendint (LapInfo'Class (This).getCurrentLap);
         stringBuffer.append (To_Unbounded_String (" Total Laps: "));
-        stringBuffer.appendint (This.getTotalLaps);
+        stringBuffer.appendint (LapInfo'Class (This).getTotalLaps);
         return stringBuffer.toString;
    end toString;
 

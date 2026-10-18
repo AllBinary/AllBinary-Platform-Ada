@@ -25,7 +25,7 @@ package body org.allbinary.game.input.PCGameKey_Package is
       id : Integer;
    begin
         Input_Package.Initialize (This, keyCode, name);
-        id := This.getId;
+        id := PCGameKey'Class (This).getId;
         if (id) >= (0) then
             InputFactory_Package.getInstance.add (id, PCGameKey_Access'(This'Unchecked_Access));
         end if;

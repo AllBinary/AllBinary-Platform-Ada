@@ -26,7 +26,7 @@ package body org.allbinary.logic.visual.transform.StoreTransformer_Package is
       transformInfoInterface : constant TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
    begin
         BasicTransformer_Package.Initialize (This, abeClientInformation, transformInfoInterface);
-        This.setURIResolver (URIResolver_Access (StoreUriResolver_Package.Create (This.getTransformInfoInterface, BasicUriResolver_Access (This.getURIResolver))));
+        StoreTransformer'Class (This).setURIResolver (URIResolver_Access (StoreUriResolver_Package.Create (StoreTransformer'Class (This).getTransformInfoInterface, BasicUriResolver_Access (StoreTransformer'Class (This).getURIResolver))));
    end Initialize;
 
    function Create (abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return StoreTransformer_Access is

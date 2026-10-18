@@ -32,7 +32,7 @@ package body org.allbinary.game.configuration.InGameOptionsForm_Package is
         gameFeatureFormUtil := GameFeatureFormUtil_Package.getInstance;
         gameFeatureFormUtil.addChoiceGroup (InGameOptionsForm_Access'(This'Unchecked_Access), InGameFeatureChoiceGroups_Package.getExclusiveInstance.get, Choice_Package.EXCLUSIVE);
         gameFeatureFormUtil.addChoiceGroup (InGameOptionsForm_Access'(This'Unchecked_Access), InGameFeatureChoiceGroups_Package.getMultipleInstance.get, Choice_Package.MULTIPLE);
-        This.initCommands (commandListener);
+        InGameOptionsForm'Class (This).initCommands (commandListener);
    end Initialize;
 
    function Create (commandListener_Param : access CommandListener_Package.CommandListener'Class; title : Unbounded_String; backgrounBasicColor_Param : access BasicColor_Package.BasicColor'Class; foregroundBasicColor_Param : access BasicColor_Package.BasicColor'Class) return InGameOptionsForm_Access is
@@ -45,10 +45,10 @@ package body org.allbinary.game.configuration.InGameOptionsForm_Package is
    procedure initCommands (This : in out InGameOptionsForm; cmdListener_Param : access CommandListener_Package.CommandListener'Class) is
       cmdListener : constant CommandListener_Access := CommandListener_Access (cmdListener_Param);
    begin
-        This.removeAllCommands;
-        This.addCommand (GameCommandsFactory_Package.getInstance.CLOSE_AND_SHOW_GAME_CANVAS);
-        This.addCommand (InGameOptionsForm_Package.DEFAULT);
-        This.setCommandListener (cmdListener);
+        InGameOptionsForm'Class (This).removeAllCommands;
+        InGameOptionsForm'Class (This).addCommand (GameCommandsFactory_Package.getInstance.CLOSE_AND_SHOW_GAME_CANVAS);
+        InGameOptionsForm'Class (This).addCommand (InGameOptionsForm_Package.DEFAULT);
+        InGameOptionsForm'Class (This).setCommandListener (cmdListener);
    end initCommands;
 
 begin

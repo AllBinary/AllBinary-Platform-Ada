@@ -39,13 +39,13 @@ package body tags.generic_Id.basket.BasketTag_Package is
    function doStartTag (This : in out BasketTag) return Integer is
    begin
         begin
-            This.setName (To_Unbounded_String ("Basic Basket View"));
-            This.setObjectFile (To_Unbounded_String ("views.generic.basket.ValidationView"));
-            if (This.getCommand) /= (null) then
-                if (This.getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.VIEW)) = (0) then
+            BasketTag'Class (This).setName (To_Unbounded_String ("Basic Basket View"));
+            BasketTag'Class (This).setObjectFile (To_Unbounded_String ("views.generic.basket.ValidationView"));
+            if (BasketTag'Class (This).getCommand) /= (null) then
+                if (BasketTag'Class (This).getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.VIEW)) = (0) then
                     null;
                 else
-                    Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("No Such View Command: ") & Java_Image (This.getCommand)));
+                    Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("No Such View Command: ") & Java_Image (BasketTag'Class (This).getCommand)));
                 end if;
                 return StoreValidationTransformTag (This).doStartTag;
             end if;

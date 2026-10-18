@@ -47,7 +47,7 @@ package body org.allbinary.game.layer.geographic.map.LayerCoveringCellPositionsU
       topLeftGeographicMapCellPosition : GeographicMapCellPosition_Access;
    begin
         topLeftGeographicMapCellPosition := geographicMapInterface.getCellPositionAtXY (x, y);
-        return This.getAll (geographicMapInterface, topLeftGeographicMapCellPosition, layerInterface, reusableList);
+        return LayerCoveringCellPositionsUtil'Class (This).getAll (geographicMapInterface, topLeftGeographicMapCellPosition, layerInterface, reusableList);
    end getAllXY;
 
    --  throws Exception

@@ -112,7 +112,7 @@ package body org.allbinary.logic.system.os.android.AndroidOS_Package is
       properties : AndroidSystemProperties_Access;
    begin
         properties := AndroidSystemProperties_Package.getInstance;
-        if ((Index (properties.getDevice.toLowerCase, To_String (This.OUYA)) - 1)) >= (0) then
+        if ((Index (properties.getDevice.toLowerCase, Java_Image (This.OUYA)) - 1)) >= (0) then
             return True;
         end if;
         return False;

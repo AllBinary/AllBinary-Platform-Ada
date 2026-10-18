@@ -45,12 +45,12 @@ package body org.allbinary.game.ag.ai.NumberOnOwnGroupSequenceAI_Package is
       index : Integer;
       size : Integer;
    begin
-        layerInterface := This.getOwnerLayerInterface;
-        index := This.getIndex;
+        layerInterface := NumberOnOwnGroupSequenceAI'Class (This).getOwnerLayerInterface;
+        index := NumberOnOwnGroupSequenceAI'Class (This).getIndex;
         if (This.numberOnSameTeam'Length) > (index) then
             size := GroupLayerManagerListener_Package.getInstance.getGroupSizeFromInterface (layerInterface);
             if (This.numberOnSameTeam (index).intValue) > (size) then
-                This.next;
+                NumberOnOwnGroupSequenceAI'Class (This).next;
             end if;
         end if;
         SequenceAI (This).processAI (allBinaryLayerManager);

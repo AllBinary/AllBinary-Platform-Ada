@@ -30,7 +30,7 @@ package body org.allbinary.animation.vector.CircleFilledAnimation_Package is
         Initialize_Fields (This);
         This.width := width;
         This.height := height;
-        This.setBasicColorP (basicColor);
+        CircleFilledAnimation'Class (This).setBasicColorP (basicColor);
    end Initialize;
 
    function Create (width : Integer; height : Integer; basicColor_Param : access BasicColor_Package.BasicColor'Class) return CircleFilledAnimation_Access is
@@ -48,7 +48,7 @@ package body org.allbinary.animation.vector.CircleFilledAnimation_Package is
    procedure paintXY (This : in out CircleFilledAnimation; graphics_Param : access Graphics_Package.Graphics'Class; x : Integer; y : Integer) is
       graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
-        This.basicSetColorUtil.setBasicColorP3 (graphics, This.getBasicColorP, This.getColor);
+        This.basicSetColorUtil.setBasicColorP3 (graphics, CircleFilledAnimation'Class (This).getBasicColorP, CircleFilledAnimation'Class (This).getColor);
         graphics.fillRect (x, y, This.width, This.height);
    end paintXY;
 

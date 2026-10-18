@@ -52,8 +52,8 @@ package body views.admin.orderhistory.DateRangeOrderHistoryView_Package is
    begin
         HttpStoreComponentView_Package.Initialize (This, transformInfoInterface);
         Initialize_Fields (This);
-        This.request := HttpServletRequest_Access (This.getPageContext.getRequest);
-        This.getFormData;
+        This.request := HttpServletRequest_Access (DateRangeOrderHistoryView'Class (This).getPageContext.getRequest);
+        DateRangeOrderHistoryView'Class (This).getFormData;
    end Initialize;
 
    function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return DateRangeOrderHistoryView_Access is
@@ -84,14 +84,14 @@ package body views.admin.orderhistory.DateRangeOrderHistoryView_Package is
 
    procedure addDomNodeInterfaces (This : in out DateRangeOrderHistoryView) is
    begin
-        This.addDomNodeInterface (DomNodeInterface_Access (DateRangeOrderHistoryView_Access'(This'Unchecked_Access)));
+        DateRangeOrderHistoryView'Class (This).addDomNodeInterface (DomNodeInterface_Access (DateRangeOrderHistoryView_Access'(This'Unchecked_Access)));
    end addDomNodeInterfaces;
 
    --  throws Exception
    function view (This : in out DateRangeOrderHistoryView) return Unbounded_String is
    begin
         begin
-            This.addDomNodeInterfaces;
+            DateRangeOrderHistoryView'Class (This).addDomNodeInterfaces;
             return HttpStoreComponentView (This).view;
         exception
             when Java_Occurrence : others =>

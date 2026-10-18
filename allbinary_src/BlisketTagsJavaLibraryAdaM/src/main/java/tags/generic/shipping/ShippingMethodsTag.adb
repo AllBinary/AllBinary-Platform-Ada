@@ -39,13 +39,13 @@ package body tags.generic_Id.shipping.ShippingMethodsTag_Package is
    function doStartTag (This : in out ShippingMethodsTag) return Integer is
    begin
         begin
-            if (This.getCommand) /= (null) then
-                This.setName (To_Unbounded_String ("Basic Shipping View"));
-                This.setObjectFile (To_Unbounded_String ("views.generic.shipping.ValidationView"));
-                if (This.getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.VIEW)) = (0) then
+            if (ShippingMethodsTag'Class (This).getCommand) /= (null) then
+                ShippingMethodsTag'Class (This).setName (To_Unbounded_String ("Basic Shipping View"));
+                ShippingMethodsTag'Class (This).setObjectFile (To_Unbounded_String ("views.generic.shipping.ValidationView"));
+                if (ShippingMethodsTag'Class (This).getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.VIEW)) = (0) then
                     null;
                 else
-                    Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("No Such View Command: ") & Java_Image (This.getCommand)));
+                    Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("No Such View Command: ") & Java_Image (ShippingMethodsTag'Class (This).getCommand)));
                 end if;
                 return StoreValidationTransformTag (This).doStartTag;
             end if;

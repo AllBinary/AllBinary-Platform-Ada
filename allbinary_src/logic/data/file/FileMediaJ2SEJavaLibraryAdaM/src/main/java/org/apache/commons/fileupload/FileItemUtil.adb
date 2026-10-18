@@ -38,7 +38,7 @@ package body org.apache.commons.fileupload.FileItemUtil_Package is
    function getString (This : in out FileItemUtil; fileItem_Param : access FileItemStream_Package.FileItemStream'Class) return Unbounded_String is
       fileItem : constant FileItemStream_Access := FileItemStream_Access (fileItem_Param);
    begin
-        return Java_New_String (This.getBytes (fileItem), This.DEFAULT_CHARSET);
+        return Java_New_String (FileItemUtil'Class (This).getBytes (fileItem), This.DEFAULT_CHARSET);
    end getString;
 
    --  throws Exception

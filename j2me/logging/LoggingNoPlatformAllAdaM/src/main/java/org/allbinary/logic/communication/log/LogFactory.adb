@@ -38,6 +38,7 @@ package body org.allbinary.logic.communication.log.LogFactory_Package is
       exception_Id : constant Java_Object_Access := Java_Object_Access (exception_Id_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return null;
    end getInstanceNoF;
 
    function getInstance (specialMessage : Unbounded_String; anyType_Param : access Java_Object'Class; functionName : Unbounded_String; exception_Id_Param : access Java_Object'Class) return Log_Access is
@@ -45,12 +46,14 @@ package body org.allbinary.logic.communication.log.LogFactory_Package is
       exception_Id : constant Java_Object_Access := Java_Object_Access (exception_Id_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return null;
    end getInstance;
 
    function getInstanceF (specialMessage : Unbounded_String; anyType_Param : access Java_Object'Class; functionName : Unbounded_String) return Log_Access is
       anyType : constant Java_Object_Access := Java_Object_Access (anyType_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return null;
    end getInstanceF;
 
    procedure getInstanceNoF (specialMessage : Unbounded_String; anyType_Param : access Java_Object'Class; exception_Id_Param : access Java_Object'Class) is

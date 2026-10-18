@@ -20,13 +20,14 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.util.HashMap_Package; use java.util.HashMap_Package;
+with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.business.user.UserFactoryInterface_Package; use org.allbinary.business.user.UserFactoryInterface_Package;
 with org.allbinary.business.user.UserInterface_Package; use org.allbinary.business.user.UserInterface_Package;
 with org.allbinary.business.user.modules.admin.store.order.review.ReviewOrderStoreAdminUser_Package; use org.allbinary.business.user.modules.admin.store.order.review.ReviewOrderStoreAdminUser_Package;
 
 package org.allbinary.business.user.modules.admin.store.order.review.ReviewOrderStoreAdminUserFactory_Package is
 
+   package HashMap_Package renames Standard.java.util.HashMap_Package;
    package UserFactoryInterface_Package renames Standard.org.allbinary.business.user.UserFactoryInterface_Package;
    package UserInterface_Package renames Standard.org.allbinary.business.user.UserInterface_Package;
 

@@ -68,7 +68,7 @@ package body org.allbinary.business.init.WeblisketFinder_Package is
    begin
         begin
             filePath := file.getPath;
-            end_Id := (Index (filePath, To_String (KEY)) - 1);
+            end_Id := (Index (filePath, Java_Image (KEY)) - 1);
             if (end_Id) < (0) then
                 return Null_Unbounded_String;
             end if;

@@ -47,6 +47,7 @@ package body org.allbinary.game.combat.destroy.DestroyableBaseBehavior_Package i
    function isDestroyed (This : in out DestroyableBaseBehavior) return Boolean is
    begin
         Java_Throw (Java_New_Exception ("Exception", CommonStrings_Package.getInstance.NOT_IMPLEMENTED));
+        return False;
    end isDestroyed;
 
    procedure setDestroyed (This : in out DestroyableBaseBehavior; destroyed : Boolean) is

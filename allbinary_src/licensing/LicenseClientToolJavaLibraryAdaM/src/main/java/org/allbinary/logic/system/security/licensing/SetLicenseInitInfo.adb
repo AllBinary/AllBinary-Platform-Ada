@@ -63,7 +63,7 @@ package body org.allbinary.logic.system.security.licensing.SetLicenseInitInfo_Pa
             if (licenceServerVector) = (null) then
                 Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("null BasicArrayList Passed - Just Make Empty if you want")));
             end if;
-            licenseInitInfo := This.getLicenseInitInfo;
+            licenseInitInfo := SetLicenseInitInfo'Class (This).getLicenseInitInfo;
             Ada.Text_IO.Put_Line (Java_Image (To_Unbounded_String ("License Serv Example: http://www.dartstatistics.com/LicServ/serverssl.php")));
             licenseInitInfo.clearServers;
             file := File_Package.Create (Java_Image (PrintLicenseInitInfo_Package.PATH) & To_Unbounded_String ("licenseservers.txt"));

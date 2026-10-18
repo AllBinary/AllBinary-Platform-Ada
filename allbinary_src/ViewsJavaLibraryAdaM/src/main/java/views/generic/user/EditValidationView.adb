@@ -39,13 +39,13 @@ package body views.generic_Id.user.EditValidationView_Package is
    function isValid (This : in out EditValidationView) return Boolean is
    begin
         begin
-            if (UserName_Package.getInstance.isValid (This.getWeblisketSession.getUserName)) = (False) then
+            if (UserName_Package.getInstance.isValid (EditValidationView'Class (This).getWeblisketSession.getUserName)) = (False) then
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
                     This.logUtil.putF (To_Unbounded_String ("Failed to validate username"), EditValidationView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
                 end if;
                 return False;
             end if;
-            This.user := UserEntityFactory_Package.getInstance.getUser (This.getWeblisketSession.getUserName);
+            This.user := UserEntityFactory_Package.getInstance.getUser (EditValidationView'Class (This).getWeblisketSession.getUserName);
             if (This.user) = (null) then
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
                     This.logUtil.putF (To_Unbounded_String ("User does not exist"), EditValidationView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
@@ -77,7 +77,7 @@ package body views.generic_Id.user.EditValidationView_Package is
    begin
         begin
             stringBuffer := StringMaker_Package.Create;
-            if (UserName_Package.getInstance.isValid (This.getWeblisketSession.getUserName)) = (False) then
+            if (UserName_Package.getInstance.isValid (EditValidationView'Class (This).getWeblisketSession.getUserName)) = (False) then
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
                     This.logUtil.putF (To_Unbounded_String ("Failed to validate username"), EditValidationView_Access'(This'Unchecked_Access), To_Unbounded_String ("validationInfo()"));
                 end if;

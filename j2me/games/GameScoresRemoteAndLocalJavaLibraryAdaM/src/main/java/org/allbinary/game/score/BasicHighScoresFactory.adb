@@ -52,7 +52,7 @@ package body org.allbinary.game.score.BasicHighScoresFactory_Package is
       highScoresResultsListener : constant HighScoresResultsListener_Access := HighScoresResultsListener_Access (highScoresResultsListener_Param);
    begin
         This.logUtil.putF (To_Unbounded_String ("Getting Remote/Local HighScores"), BasicHighScoresFactory_Access'(This'Unchecked_Access), This.FETCH);
-        This.fetchHighScoresPreload (gameInfo, highScoresResultsListener, True);
+        BasicHighScoresFactory'Class (This).fetchHighScoresPreload (gameInfo, highScoresResultsListener, True);
    end fetchHighScores;
 
    procedure fetchHighScoresPreload (This : in out BasicHighScoresFactory; gameInfo_Param : access GameInfo_Package.GameInfo'Class; highScoresResultsListener_Param : access HighScoresResultsListener_Package.HighScoresResultsListener'Class; preload : Boolean) is

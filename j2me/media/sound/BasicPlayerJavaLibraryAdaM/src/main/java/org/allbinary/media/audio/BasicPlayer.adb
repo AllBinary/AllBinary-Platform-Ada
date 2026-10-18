@@ -28,8 +28,8 @@ package body org.allbinary.media.audio.BasicPlayer_Package is
    procedure Initialize (This : in out BasicPlayer'Class) is
    begin
       Initialize_Fields (This);
-        This.setLoopCount (0);
-        This.setState (Player_Package.UNREALIZED);
+        BasicPlayer'Class (This).setLoopCount (0);
+        BasicPlayer'Class (This).setState (Player_Package.UNREALIZED);
    end Initialize;
 
    function Create return BasicPlayer_Access is
@@ -129,13 +129,13 @@ package body org.allbinary.media.audio.BasicPlayer_Package is
    --  throws MediaException
    procedure start (This : in out BasicPlayer) is
    begin
-        This.setState (Player_Package.STARTED);
+        BasicPlayer'Class (This).setState (Player_Package.STARTED);
    end start;
 
    --  throws MediaException
    procedure stop (This : in out BasicPlayer) is
    begin
-        This.setState (Player_Package.PREFETCHED);
+        BasicPlayer'Class (This).setState (Player_Package.PREFETCHED);
    end stop;
 
    procedure setVolume (This : in out BasicPlayer; leftVolume : Integer; rightVolume : Integer) is

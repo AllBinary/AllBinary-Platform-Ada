@@ -37,9 +37,9 @@ package body org.allbinary.input.automation.actions.script.condition.TimeInterva
       JPanel_Package.Initialize (This);
       Initialize_Fields (This);
         This.logUtil.putF (This.commonStrings.START, TimeIntervalActionScriptConditionJPanel_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
-        This.initComponents;
+        TimeIntervalActionScriptConditionJPanel'Class (This).initComponents;
         This.timeIntervalActionScriptConditionInterface := timeIntervalActionScriptConditionInterface;
-        This.set;
+        TimeIntervalActionScriptConditionJPanel'Class (This).set;
    end Initialize;
 
    function Create (timeIntervalActionScriptConditionInterface_Param : access TimeIntervalActionScriptConditionInterface_Package.TimeIntervalActionScriptConditionInterface'Class) return TimeIntervalActionScriptConditionJPanel_Access is
@@ -51,13 +51,13 @@ package body org.allbinary.input.automation.actions.script.condition.TimeInterva
 
    procedure set (This : in out TimeIntervalActionScriptConditionJPanel) is
    begin
-        This.getTimeIntervalJTextField.setText (To_Unbounded_String (Java_Image (This.timeIntervalActionScriptConditionInterface.getTimeDelayHelper.delay_Id)));
+        TimeIntervalActionScriptConditionJPanel'Class (This).getTimeIntervalJTextField.setText (To_Unbounded_String (Java_Image (This.timeIntervalActionScriptConditionInterface.getTimeDelayHelper.delay_Id)));
         This.timeIntervalActionScriptConditionInterface.log;
    end set;
 
    procedure update (This : in out TimeIntervalActionScriptConditionJPanel) is
    begin
-        This.timeIntervalActionScriptConditionInterface.getTimeDelayHelper.delay_Id := To_Unbounded_String (Java_Image (This.getTimeIntervalJTextField.getText));
+        This.timeIntervalActionScriptConditionInterface.getTimeDelayHelper.delay_Id := To_Unbounded_String (Java_Image (TimeIntervalActionScriptConditionJPanel'Class (This).getTimeIntervalJTextField.getText));
         This.timeIntervalActionScriptConditionInterface.log;
    end update;
 
@@ -102,7 +102,7 @@ package body org.allbinary.input.automation.actions.script.condition.TimeInterva
 --     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
 --        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
---                  This.okJButtonActionPerformed (evt);
+--                  TimeIntervalActionScriptConditionJPanel'Class (This).okJButtonActionPerformed (evt);
 --     end actionPerformed;
 );
         This.jLabel2.setText (To_Unbounded_String ("Time (ms):"));
@@ -110,19 +110,19 @@ package body org.allbinary.input.automation.actions.script.condition.TimeInterva
         This.timeIntervalActionJDialog.getContentPane.setLayout (timeIntervalActionJDialogLayout);
         timeIntervalActionJDialogLayout.setHorizontalGroup (timeIntervalActionJDialogLayout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (timeIntervalActionJDialogLayout.createSequentialGroup.addGroup (timeIntervalActionJDialogLayout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.TRAILING).addGroup (javax_Package.swing.GroupLayout.Alignment.LEADING, timeIntervalActionJDialogLayout.createSequentialGroup.addGap (82, 82, 82).addComponent (This.okJButton)).addGroup (javax_Package.swing.GroupLayout.Alignment.LEADING, timeIntervalActionJDialogLayout.createSequentialGroup.addGap (32, 32, 32).addGroup (timeIntervalActionJDialogLayout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (timeIntervalActionJDialogLayout.createSequentialGroup.addComponent (This.jLabel2).addGap (16, 16, 16).addComponent (This.timeIntervalJTextField, javax_Package.swing.GroupLayout.DEFAULT_SIZE, 85, Short_Package.MAX_VALUE)).addComponent (This.titleJLabel)))).addContainerGap (36, Short_Package.MAX_VALUE)));
         timeIntervalActionJDialogLayout.setVerticalGroup (timeIntervalActionJDialogLayout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (timeIntervalActionJDialogLayout.createSequentialGroup.addContainerGap.addComponent (This.titleJLabel).addGap (20, 20, 20).addGroup (timeIntervalActionJDialogLayout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.BASELINE).addComponent (This.jLabel2).addComponent (This.timeIntervalJTextField, javax_Package.swing.GroupLayout.PREFERRED_SIZE, javax_Package.swing.GroupLayout.DEFAULT_SIZE, javax_Package.swing.GroupLayout.PREFERRED_SIZE)).addGap (15, 15, 15).addComponent (This.okJButton).addContainerGap));
-        This.setMinimumSize (Dimension_Package.Create (100, 0));
+        TimeIntervalActionScriptConditionJPanel'Class (This).setMinimumSize (Dimension_Package.Create (100, 0));
         This.timeIntervalActionJButton.setText (To_Unbounded_String ("Edit"));
         This.timeIntervalActionJButton.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
 --     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
 --        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
---                  This.timeIntervalActionJButtonActionPerformed (evt);
+--                  TimeIntervalActionScriptConditionJPanel'Class (This).timeIntervalActionJButtonActionPerformed (evt);
 --     end actionPerformed;
 );
         This.jLabel1.setText (To_Unbounded_String ("Time Interval:"));
         layout := GroupLayout_Package.Create (TimeIntervalActionScriptConditionJPanel_Access'(This'Unchecked_Access));
-        This.setLayout (layout);
+        TimeIntervalActionScriptConditionJPanel'Class (This).setLayout (layout);
         layout.setHorizontalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (layout.createSequentialGroup.addComponent (This.jLabel1).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED, javax_Package.swing.GroupLayout.DEFAULT_SIZE, Short_Package.MAX_VALUE).addComponent (This.timeIntervalActionJButton)));
         layout.setVerticalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.BASELINE).addComponent (This.jLabel1).addComponent (This.timeIntervalActionJButton)));
    end initComponents;
@@ -130,14 +130,14 @@ package body org.allbinary.input.automation.actions.script.condition.TimeInterva
    procedure okJButtonActionPerformed (This : in out TimeIntervalActionScriptConditionJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
       evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
-        This.update;
-        This.getTimeIntervalActionJDialog.setVisible (False);
+        TimeIntervalActionScriptConditionJPanel'Class (This).update;
+        TimeIntervalActionScriptConditionJPanel'Class (This).getTimeIntervalActionJDialog.setVisible (False);
    end okJButtonActionPerformed;
 
    procedure timeIntervalActionJButtonActionPerformed (This : in out TimeIntervalActionScriptConditionJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
       evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
-        This.getTimeIntervalActionJDialog.setVisible (True);
+        TimeIntervalActionScriptConditionJPanel'Class (This).getTimeIntervalActionJDialog.setVisible (True);
    end timeIntervalActionJButtonActionPerformed;
 
 end org.allbinary.input.automation.actions.script.condition.TimeIntervalActionScriptConditionJPanel_Package;

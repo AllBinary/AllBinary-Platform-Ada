@@ -65,13 +65,13 @@ package body org.allbinary.animation.image.AllBinaryJ2SEImageRotationAnimation_P
       changed : Boolean;
    begin
         changed := False;
-        if ((This.getBasicColorP) = (null)) or else ((This.getBasicColorP.intValue) /= (basicColor.intValue)) then
+        if ((AllBinaryJ2SEImageRotationAnimation'Class (This).getBasicColorP) = (null)) or else ((AllBinaryJ2SEImageRotationAnimation'Class (This).getBasicColorP.intValue) /= (basicColor.intValue)) then
             changed := True;
         end if;
         ImageBaseRotationAnimation (This).setBasicColorP (basicColor);
         if changed then
             This.setColorProcessor := SetColorProcessor_Package.getInstance;
-            This.updateImage;
+            AllBinaryJ2SEImageRotationAnimation'Class (This).updateImage;
         end if;
    end setBasicColorP;
 
@@ -80,13 +80,13 @@ package body org.allbinary.animation.image.AllBinaryJ2SEImageRotationAnimation_P
       changed : Boolean;
    begin
         changed := False;
-        if ((This.getChangeBasicColor) = (null)) or else ((This.getChangeBasicColor.intValue) /= (basicColor.intValue)) then
+        if ((AllBinaryJ2SEImageRotationAnimation'Class (This).getChangeBasicColor) = (null)) or else ((AllBinaryJ2SEImageRotationAnimation'Class (This).getChangeBasicColor.intValue) /= (basicColor.intValue)) then
             changed := True;
         end if;
         ImageBaseRotationAnimation (This).changeBasicColor (basicColor);
         if changed then
             This.changeColorProcessor := ChangeColorProcessor_Package.getInstance;
-            This.updateImage;
+            AllBinaryJ2SEImageRotationAnimation'Class (This).updateImage;
         end if;
    end changeBasicColor;
 
@@ -100,7 +100,7 @@ package body org.allbinary.animation.image.AllBinaryJ2SEImageRotationAnimation_P
         ImageBaseRotationAnimation (This).setAlpha (alpha);
         if changed then
             This.alphaProcessor := AlphaProcessor_Package.getInstance;
-            This.updateImage;
+            AllBinaryJ2SEImageRotationAnimation'Class (This).updateImage;
         end if;
    end setAlpha;
 
@@ -110,7 +110,7 @@ package body org.allbinary.animation.image.AllBinaryJ2SEImageRotationAnimation_P
         This.scaleY := scaleY;
         if ((This.scaleX) /= (This.lastScaleX)) or else ((This.scaleY) /= (This.lastScaleY)) then
             This.scaleProcessor.update (This.realOriginalImage, This.originalImageArray, This.twoImages, This.bufferedImageIndex, This.scaleX, This.scaleY, This.maxScaleX, This.maxScaleY);
-            This.updateImage;
+            AllBinaryJ2SEImageRotationAnimation'Class (This).updateImage;
         end if;
         This.lastScaleX := This.scaleX;
         This.lastScaleY := This.scaleY;
@@ -121,19 +121,19 @@ package body org.allbinary.animation.image.AllBinaryJ2SEImageRotationAnimation_P
         This.maxScaleX := maxScaleX;
         This.maxScaleY := maxScaleY;
         This.scaleProcessor.update (This.realOriginalImage, This.originalImageArray, This.twoImages, This.bufferedImageIndex, This.scaleX, This.scaleY, This.maxScaleX, This.maxScaleY);
-        This.updateImage;
+        AllBinaryJ2SEImageRotationAnimation'Class (This).updateImage;
    end setMaxScale;
 
    procedure nextRotation (This : in out AllBinaryJ2SEImageRotationAnimation) is
    begin
         ImageBaseRotationAnimation (This).nextRotation;
-        This.updateImage;
+        AllBinaryJ2SEImageRotationAnimation'Class (This).updateImage;
    end nextRotation;
 
    procedure previousRotation (This : in out AllBinaryJ2SEImageRotationAnimation) is
    begin
         ImageBaseRotationAnimation (This).previousRotation;
-        This.updateImage;
+        AllBinaryJ2SEImageRotationAnimation'Class (This).updateImage;
    end previousRotation;
 
    procedure updateImage (This : in out AllBinaryJ2SEImageRotationAnimation) is
@@ -142,13 +142,13 @@ package body org.allbinary.animation.image.AllBinaryJ2SEImageRotationAnimation_P
         This.alphaProcessor.updateAlpha (This.imageModifierUtil, NullImage_Package.NULL_IMAGE, This.twoImages (This.bufferedImageIndex), 0, This.alphaP);
         This.setColorProcessor.updateColor (This.imageModifierUtil, NullImage_Package.NULL_IMAGE, This.twoImages (This.bufferedImageIndex), 0, This.basicColor);
         This.changeColorProcessor.updateColor (This.imageModifierUtil, NullImage_Package.NULL_IMAGE, This.twoImages (This.bufferedImageIndex), 0, This.changeBasicColorP);
-        This.swap;
+        AllBinaryJ2SEImageRotationAnimation'Class (This).swap;
    end updateImage;
 
    procedure setFrame (This : in out AllBinaryJ2SEImageRotationAnimation; index : Integer) is
    begin
         ImageBaseRotationAnimation (This).setFrame (index);
-        This.updateImage;
+        AllBinaryJ2SEImageRotationAnimation'Class (This).updateImage;
    end setFrame;
 
    procedure swap (This : in out AllBinaryJ2SEImageRotationAnimation) is

@@ -41,7 +41,7 @@ package body org.allbinary.physics.movement.PreciseConstantVelocityMovement_Pack
       velocityProperties : BasicVelocityProperties_Access;
    begin
         mathUtil := MathUtil_Package.getInstance;
-        velocityProperties := This.getVelocityProperties;
+        velocityProperties := PreciseConstantVelocityMovement'Class (This).getVelocityProperties;
         This.accumulatedX := Integer (((This.accumulatedX) + (velocityProperties.getVelocityXBasicDecimalP.getUnscaled)));
         This.accumulatedY := Integer (((This.accumulatedY) + (velocityProperties.getVelocityYBasicDecimalP.getUnscaled)));
         This.accumulatedZ := Integer (((This.accumulatedZ) + (velocityProperties.getVelocityZBasicDecimalP.getUnscaled)));

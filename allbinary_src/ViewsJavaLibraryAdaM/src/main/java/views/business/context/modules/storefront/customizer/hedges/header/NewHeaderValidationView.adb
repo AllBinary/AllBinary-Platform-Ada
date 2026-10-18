@@ -46,7 +46,7 @@ package body views.business.context.modules.storefront.customizer.hedges.header.
    function isValid (This : in out NewHeaderValidationView) return Boolean is
    begin
         begin
-            CustomizerUtil_Package.getInstance.insert (This.getTransformInfoInterface, DomNodeInterface_Access (NewHeaderValidationView_Access'(This'Unchecked_Access)));
+            CustomizerUtil_Package.getInstance.insert (NewHeaderValidationView'Class (This).getTransformInfoInterface, DomNodeInterface_Access (NewHeaderValidationView_Access'(This'Unchecked_Access)));
             return True;
         exception
             when Java_Occurrence : others =>

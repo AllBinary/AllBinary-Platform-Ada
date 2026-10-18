@@ -20,8 +20,8 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
---  with javax.microedition.lcdui.Screen_Package; use javax.microedition.lcdui.Screen_Package;
+with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Screen_Package; use javax.microedition.lcdui.Screen_Package;
 with org.allbinary.graphics.form.item.ABCustomItem_Package; use org.allbinary.graphics.form.item.ABCustomItem_Package;
 with org.allbinary.graphics.form.item.ABCustomItemInterface_Package; use org.allbinary.graphics.form.item.ABCustomItemInterface_Package;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
@@ -29,6 +29,8 @@ with org.allbinary.game.layer.AllBinaryTiledLayer_Package; use org.allbinary.gam
 
 package org.allbinary.game.layer.TileLayerItem_Package is
 
+   package Graphics_Package renames Standard.javax.microedition.lcdui.Graphics_Package;
+   package Screen_Package renames Standard.javax.microedition.lcdui.Screen_Package;
    package ABCustomItem_Package renames Standard.org.allbinary.graphics.form.item.ABCustomItem_Package;
    package ABCustomItemInterface_Package renames Standard.org.allbinary.graphics.form.item.ABCustomItemInterface_Package;
    package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;

@@ -49,12 +49,12 @@ package body org.allbinary.game.ag.ai.DiveAndDirectionalTrackingAI_Package is
         Initialize_Fields (This);
         This.aiVistor := visitor;
         This.artificialIntelligenceInterface := artificialIntelligenceInterface;
-        directionalCompositeInterface := DirectionalCompositeInterface_Access (This.getOwnerLayerInterface);
+        directionalCompositeInterface := DirectionalCompositeInterface_Access (DiveAndDirectionalTrackingAI'Class (This).getOwnerLayerInterface);
         This.directionalInterface := directionalCompositeInterface.getDirectionalInterface;
-        velocityInterfaceCompositeInterface := VelocityInterfaceCompositeInterface_Access (This.getOwnerLayerInterface);
+        velocityInterfaceCompositeInterface := VelocityInterfaceCompositeInterface_Access (DiveAndDirectionalTrackingAI'Class (This).getOwnerLayerInterface);
         This.velocityInterface := velocityInterfaceCompositeInterface.getVelocityProperties;
         DestroyedEventHandler_Package.getInstance.addListenerInterface (DiveAndDirectionalTrackingAI_Access'(This'Unchecked_Access));
-        This.init;
+        DiveAndDirectionalTrackingAI'Class (This).init;
    end Initialize;
 
    function Create (ownerLayerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; artificialIntelligenceInterface_Param : access ArtificialIntelligenceInterface_Package.ArtificialIntelligenceInterface'Class; gameInput_Param : access GameInput_Package.GameInput'Class; visitor_Param : access Visitor_Package.Visitor'Class) return DiveAndDirectionalTrackingAI_Access is
@@ -68,15 +68,15 @@ package body org.allbinary.game.ag.ai.DiveAndDirectionalTrackingAI_Package is
    procedure processAI (This : in out DiveAndDirectionalTrackingAI; allBinaryLayerManager_Param : access AllBinaryLayerManager_Package.AllBinaryLayerManager'Class) is
       allBinaryLayerManager : constant AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (allBinaryLayerManager_Param);
    begin
-        if This.isBeyondTarget then
-            This.init;
+        if DiveAndDirectionalTrackingAI'Class (This).isBeyondTarget then
+            DiveAndDirectionalTrackingAI'Class (This).init;
             This.velocityInterface.zero;
         end if;
         if not (This.diveP) then
-            This.target (allBinaryLayerManager);
+            DiveAndDirectionalTrackingAI'Class (This).target (allBinaryLayerManager);
         else
-            This.dive;
-            This.attack;
+            DiveAndDirectionalTrackingAI'Class (This).dive;
+            DiveAndDirectionalTrackingAI'Class (This).attack;
         end if;
         This.list.clear;
    end processAI;
@@ -106,7 +106,7 @@ package body org.allbinary.game.ag.ai.DiveAndDirectionalTrackingAI_Package is
         lastTrackingEvent := TrackingEvent_Access (This.list.removeAt (0));
         This.lastTrackingLayerInterface := lastTrackingEvent.getLayerInterface;
         layerInterface := This.lastTrackingLayerInterface;
-        ownerLayerInterface := This.getOwnerLayerInterface;
+        ownerLayerInterface := DiveAndDirectionalTrackingAI'Class (This).getOwnerLayerInterface;
         if (layerInterface.getGroupInterface) = (ownerLayerInterface.getGroupInterface) then
             return;
         end if;
@@ -129,13 +129,13 @@ package body org.allbinary.game.ag.ai.DiveAndDirectionalTrackingAI_Package is
             end if;
         end if;
         if (not (This.initialDropped)) and then ((This.directionOfTarget) /= (directionFactory.NOT_BORDERED_WITH)) then
-            This.drop;
+            DiveAndDirectionalTrackingAI'Class (This).drop;
         end if;
         if This.initialDropped then
             if ((This.directionOfTarget) = (directionFactory.UP)) or else ((This.directionOfTarget) = (directionFactory.DOWN)) then
-                This.verticalTargeting (x);
+                DiveAndDirectionalTrackingAI'Class (This).verticalTargeting (x);
             elsif ((This.directionOfTarget) = (directionFactory.LEFT)) or else ((This.directionOfTarget) = (directionFactory.RIGHT)) then
-                This.horizontalTargeting (y);
+                DiveAndDirectionalTrackingAI'Class (This).horizontalTargeting (y);
             else
                 This.artificialIntelligenceInterface.processAI (allBinaryLayerManager);
             end if;
@@ -146,15 +146,15 @@ package body org.allbinary.game.ag.ai.DiveAndDirectionalTrackingAI_Package is
    procedure verticalTargeting (This : in out DiveAndDirectionalTrackingAI; x : Integer) is
       ownerLayerInterface : AllBinaryLayer_Access;
    begin
-        ownerLayerInterface := This.getOwnerLayerInterface;
+        ownerLayerInterface := DiveAndDirectionalTrackingAI'Class (This).getOwnerLayerInterface;
         if (ownerLayerInterface.getXP) < (x) then
-            This.moveRight;
+            DiveAndDirectionalTrackingAI'Class (This).moveRight;
         end if;
         if (ownerLayerInterface.getXP) > (x) then
-            This.moveLeft;
+            DiveAndDirectionalTrackingAI'Class (This).moveLeft;
         end if;
         if ((ownerLayerInterface.getXP) > ((x) - (3))) and then ((ownerLayerInterface.getXP) < ((x) + (3))) then
-            This.setDive;
+            DiveAndDirectionalTrackingAI'Class (This).setDive;
         end if;
    end verticalTargeting;
 
@@ -162,15 +162,15 @@ package body org.allbinary.game.ag.ai.DiveAndDirectionalTrackingAI_Package is
    procedure horizontalTargeting (This : in out DiveAndDirectionalTrackingAI; y : Integer) is
       ownerLayerInterface : AllBinaryLayer_Access;
    begin
-        ownerLayerInterface := This.getOwnerLayerInterface;
+        ownerLayerInterface := DiveAndDirectionalTrackingAI'Class (This).getOwnerLayerInterface;
         if (ownerLayerInterface.getYP) < (y) then
-            This.moveDown;
+            DiveAndDirectionalTrackingAI'Class (This).moveDown;
         end if;
         if (ownerLayerInterface.getYP) > (y) then
-            This.moveUp;
+            DiveAndDirectionalTrackingAI'Class (This).moveUp;
         end if;
         if ((ownerLayerInterface.getYP) > ((y) - (3))) and then ((ownerLayerInterface.getYP) < ((y) + (3))) then
-            This.setDive;
+            DiveAndDirectionalTrackingAI'Class (This).setDive;
         end if;
    end horizontalTargeting;
 
@@ -184,7 +184,7 @@ package body org.allbinary.game.ag.ai.DiveAndDirectionalTrackingAI_Package is
    --  throws Exception
    procedure moveRight (This : in out DiveAndDirectionalTrackingAI) is
    begin
-        This.setLastDirection (This.directionFactory.RIGHT);
+        DiveAndDirectionalTrackingAI'Class (This).setLastDirection (This.directionFactory.RIGHT);
         This.directionalInterface.setFrameByDirection (This.lastDirection);
         This.aiVistor.visit (DiveAndDirectionalTrackingAI_Access'(This'Unchecked_Access));
    end moveRight;
@@ -192,7 +192,7 @@ package body org.allbinary.game.ag.ai.DiveAndDirectionalTrackingAI_Package is
    --  throws Exception
    procedure moveLeft (This : in out DiveAndDirectionalTrackingAI) is
    begin
-        This.setLastDirection (This.directionFactory.LEFT);
+        DiveAndDirectionalTrackingAI'Class (This).setLastDirection (This.directionFactory.LEFT);
         This.directionalInterface.setFrameByDirection (This.lastDirection);
         This.aiVistor.visit (DiveAndDirectionalTrackingAI_Access'(This'Unchecked_Access));
    end moveLeft;
@@ -200,7 +200,7 @@ package body org.allbinary.game.ag.ai.DiveAndDirectionalTrackingAI_Package is
    --  throws Exception
    procedure moveDown (This : in out DiveAndDirectionalTrackingAI) is
    begin
-        This.setLastDirection (This.directionFactory.DOWN);
+        DiveAndDirectionalTrackingAI'Class (This).setLastDirection (This.directionFactory.DOWN);
         This.directionalInterface.setFrameByDirection (This.lastDirection);
         This.aiVistor.visit (DiveAndDirectionalTrackingAI_Access'(This'Unchecked_Access));
    end moveDown;
@@ -208,7 +208,7 @@ package body org.allbinary.game.ag.ai.DiveAndDirectionalTrackingAI_Package is
    --  throws Exception
    procedure moveUp (This : in out DiveAndDirectionalTrackingAI) is
    begin
-        This.setLastDirection (This.directionFactory.UP);
+        DiveAndDirectionalTrackingAI'Class (This).setLastDirection (This.directionFactory.UP);
         This.directionalInterface.setFrameByDirection (This.lastDirection);
         This.aiVistor.visit (DiveAndDirectionalTrackingAI_Access'(This'Unchecked_Access));
    end moveUp;
@@ -238,25 +238,25 @@ package body org.allbinary.game.ag.ai.DiveAndDirectionalTrackingAI_Package is
    function isBeyondTarget (This : in out DiveAndDirectionalTrackingAI) return Boolean is
    begin
         if (This.directionOfTarget) = (This.directionFactory.DOWN) then
-            if (This.getOwnerLayerInterface.getYP) > ((This.lastTrackingLayerInterface.getYP) + (This.MIN_DISTANCE)) then
+            if (DiveAndDirectionalTrackingAI'Class (This).getOwnerLayerInterface.getYP) > ((This.lastTrackingLayerInterface.getYP) + (This.MIN_DISTANCE)) then
                 return True;
             else
                 return False;
             end if;
         elsif (This.directionOfTarget) = (This.directionFactory.UP) then
-            if (This.getOwnerLayerInterface.getYP) < ((This.lastTrackingLayerInterface.getYP) + (This.MIN_DISTANCE)) then
+            if (DiveAndDirectionalTrackingAI'Class (This).getOwnerLayerInterface.getYP) < ((This.lastTrackingLayerInterface.getYP) + (This.MIN_DISTANCE)) then
                 return True;
             else
                 return False;
             end if;
         elsif (This.directionOfTarget) = (This.directionFactory.RIGHT) then
-            if (This.getOwnerLayerInterface.getXP) > ((This.lastTrackingLayerInterface.getXP) + (This.MIN_DISTANCE)) then
+            if (DiveAndDirectionalTrackingAI'Class (This).getOwnerLayerInterface.getXP) > ((This.lastTrackingLayerInterface.getXP) + (This.MIN_DISTANCE)) then
                 return True;
             else
                 return False;
             end if;
         elsif (This.directionOfTarget) = (This.directionFactory.LEFT) then
-            if (This.getOwnerLayerInterface.getXP) < ((This.lastTrackingLayerInterface.getXP) + (This.MIN_DISTANCE)) then
+            if (DiveAndDirectionalTrackingAI'Class (This).getOwnerLayerInterface.getXP) < ((This.lastTrackingLayerInterface.getXP) + (This.MIN_DISTANCE)) then
                 return True;
             else
                 return False;
@@ -281,7 +281,7 @@ package body org.allbinary.game.ag.ai.DiveAndDirectionalTrackingAI_Package is
    procedure onDestroyed (This : in out DiveAndDirectionalTrackingAI; destroyedEvent_Param : access DestroyedEvent_Package.DestroyedEvent'Class) is
       destroyedEvent : constant DestroyedEvent_Access := DestroyedEvent_Access (destroyedEvent_Param);
    begin
-        if (This.getOwnerLayerInterface) = (destroyedEvent.getLayerInterface) then
+        if (DiveAndDirectionalTrackingAI'Class (This).getOwnerLayerInterface) = (destroyedEvent.getLayerInterface) then
             TrackingEventHandler_Package.getInstance.removeListener (DiveAndDirectionalTrackingAI_Access'(This'Unchecked_Access));
             DestroyedEventHandler_Package.getInstance.removeListener (DiveAndDirectionalTrackingAI_Access'(This'Unchecked_Access));
         end if;
@@ -292,7 +292,7 @@ package body org.allbinary.game.ag.ai.DiveAndDirectionalTrackingAI_Package is
       value : Integer;
    begin
         This.lastDirection := lastDirection;
-        value := This.getLastDirection.getValue;
+        value := DiveAndDirectionalTrackingAI'Class (This).getLastDirection.getValue;
         if (value) < (4) then
             BasicAI (This).setLastKey (This.directionToKeyMap (value));
         end if;
@@ -301,13 +301,13 @@ package body org.allbinary.game.ag.ai.DiveAndDirectionalTrackingAI_Package is
    procedure setLastKey (This : in out DiveAndDirectionalTrackingAI; lastKey : Integer) is
    begin
         BasicAI (This).setLastKey (lastKey);
-        if (This.getLastKey) = (Canvas_Package.LEFT) then
+        if (DiveAndDirectionalTrackingAI'Class (This).getLastKey) = (Canvas_Package.LEFT) then
             This.lastDirection := DirectionFactory_Package.getInstance.LEFT;
-        elsif (This.getLastKey) = (Canvas_Package.DOWN) then
+        elsif (DiveAndDirectionalTrackingAI'Class (This).getLastKey) = (Canvas_Package.DOWN) then
             This.lastDirection := DirectionFactory_Package.getInstance.DOWN;
-        elsif (This.getLastKey) = (Canvas_Package.UP) then
+        elsif (DiveAndDirectionalTrackingAI'Class (This).getLastKey) = (Canvas_Package.UP) then
             This.lastDirection := DirectionFactory_Package.getInstance.UP;
-        elsif (This.getLastKey) = (Canvas_Package.RIGHT) then
+        elsif (DiveAndDirectionalTrackingAI'Class (This).getLastKey) = (Canvas_Package.RIGHT) then
             This.lastDirection := DirectionFactory_Package.getInstance.RIGHT;
         end if;
    end setLastKey;
@@ -323,7 +323,7 @@ package body org.allbinary.game.ag.ai.DiveAndDirectionalTrackingAI_Package is
         stringBuffer := StringMaker_Package.Create;
         stringBuffer.append (BasicAI (This).toString);
         stringBuffer.append (To_Unbounded_String (" LastDirection: "));
-        stringBuffer.append (StringUtil_Package.getInstance.toString (This.getLastDirection));
+        stringBuffer.append (StringUtil_Package.getInstance.toString (DiveAndDirectionalTrackingAI'Class (This).getLastDirection));
         return stringBuffer.toString;
    end toString;
 

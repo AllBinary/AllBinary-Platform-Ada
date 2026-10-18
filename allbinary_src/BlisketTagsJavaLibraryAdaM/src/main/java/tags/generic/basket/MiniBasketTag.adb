@@ -39,13 +39,13 @@ package body tags.generic_Id.basket.MiniBasketTag_Package is
    function doStartTag (This : in out MiniBasketTag) return Integer is
    begin
         begin
-            This.setName (To_Unbounded_String ("Mini Basket View"));
-            This.setObjectFile (To_Unbounded_String ("views.generic.basket.mini.ValidationView"));
-            if (This.getCommand) /= (null) then
-                if (This.getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.VIEW)) = (0) then
+            MiniBasketTag'Class (This).setName (To_Unbounded_String ("Mini Basket View"));
+            MiniBasketTag'Class (This).setObjectFile (To_Unbounded_String ("views.generic.basket.mini.ValidationView"));
+            if (MiniBasketTag'Class (This).getCommand) /= (null) then
+                if (MiniBasketTag'Class (This).getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.VIEW)) = (0) then
                     null;
                 else
-                    Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("No Such View Command: ") & Java_Image (This.getCommand)));
+                    Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("No Such View Command: ") & Java_Image (MiniBasketTag'Class (This).getCommand)));
                 end if;
                 return StoreValidationTransformTag (This).doStartTag;
             end if;

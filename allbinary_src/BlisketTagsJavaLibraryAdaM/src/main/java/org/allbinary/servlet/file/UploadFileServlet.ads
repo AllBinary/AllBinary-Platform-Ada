@@ -21,8 +21,8 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.io.IOException_Package; use java.io.IOException_Package;
---  with java.io.InputStream_Package; use java.io.InputStream_Package;
---  with java.util.HashMap_Package; use java.util.HashMap_Package;
+with java.io.InputStream_Package; use java.io.InputStream_Package;
+with java.util.HashMap_Package; use java.util.HashMap_Package;
 --  with javax.servlet.ServletException_Package; use javax.servlet.ServletException_Package;
 --  with javax.servlet.http.HttpServlet_Package; use javax.servlet.http.HttpServlet_Package;
 --  with javax.servlet.http.HttpServletRequest_Package; use javax.servlet.http.HttpServletRequest_Package;
@@ -47,6 +47,8 @@ with org.apache.commons.fileupload.FileItem_Package; use org.apache.commons.file
 
 package org.allbinary.servlet.file.UploadFileServlet_Package is
 
+   package InputStream_Package renames Standard.java.io.InputStream_Package;
+   package HashMap_Package renames Standard.java.util.HashMap_Package;
    package AuthenticationHelper_Package renames Standard.admin.taghelpers.AuthenticationHelper_Package;
    package AuthenticationHelperFactory_Package renames Standard.admin.taghelpers.AuthenticationHelperFactory_Package;
    package AuthenticationHelperUtil_Package renames Standard.admin.taghelpers.AuthenticationHelperUtil_Package;

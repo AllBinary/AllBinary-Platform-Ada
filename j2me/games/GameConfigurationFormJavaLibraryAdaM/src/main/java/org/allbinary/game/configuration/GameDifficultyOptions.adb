@@ -34,10 +34,10 @@ package body org.allbinary.game.configuration.GameDifficultyOptions_Package is
         Initialize_Fields (This);
         This.logUtil.putF (This.commonStrings.START, GameDifficultyOptions_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         This.list := list;
-        This.update;
-        This.initCommands (commandListener);
+        GameDifficultyOptions'Class (This).update;
+        GameDifficultyOptions'Class (This).initCommands (commandListener);
         gameDifficultyFactory := GameDifficultyFactory_Package.getInstance;
-        This.setSelectedId (gameDifficultyFactory.getLevel);
+        GameDifficultyOptions'Class (This).setSelectedId (gameDifficultyFactory.getLevel);
    end Initialize;
 
    function Create (commandListener_Param : access CommandListener_Package.CommandListener'Class; title : Unbounded_String; list_Param : access BasicArrayList_Package.BasicArrayList'Class; backgrounBasicColor_Param : access BasicColor_Package.BasicColor'Class; foregroundBasicColor_Param : access BasicColor_Package.BasicColor'Class) return GameDifficultyOptions_Access is
@@ -56,7 +56,7 @@ package body org.allbinary.game.configuration.GameDifficultyOptions_Package is
    procedure close (This : in out GameDifficultyOptions) is
    begin
         CommandForm (This).close;
-        This.save;
+        GameDifficultyOptions'Class (This).save;
    end close;
 
    --  throws Exception
@@ -64,7 +64,7 @@ package body org.allbinary.game.configuration.GameDifficultyOptions_Package is
       gameDifficultyFactory : GameDifficultyFactory_Access;
    begin
         gameDifficultyFactory := GameDifficultyFactory_Package.getInstance;
-        gameDifficultyFactory.setLevel (This.getSelectedId);
+        gameDifficultyFactory.setLevel (GameDifficultyOptions'Class (This).getSelectedId);
    end save;
 
    procedure initCommands (This : in out GameDifficultyOptions; cmdListener_Param : access CommandListener_Package.CommandListener'Class) is
@@ -72,16 +72,16 @@ package body org.allbinary.game.configuration.GameDifficultyOptions_Package is
       gameCommandsFactory : GameCommandsFactory_Access;
    begin
         gameCommandsFactory := GameCommandsFactory_Package.getInstance;
-        This.removeAllCommands;
-        This.addCommand (gameCommandsFactory.CLOSE_AND_SHOW_GAME_CANVAS);
-        This.setCommandListener (cmdListener);
+        GameDifficultyOptions'Class (This).removeAllCommands;
+        GameDifficultyOptions'Class (This).addCommand (gameCommandsFactory.CLOSE_AND_SHOW_GAME_CANVAS);
+        GameDifficultyOptions'Class (This).setCommandListener (cmdListener);
    end initCommands;
 
    --  throws Exception
    procedure update (This : in out GameDifficultyOptions) is
    begin
-        This.deleteAll;
-        This.add (This.list, To_Unbounded_String ("Difficulty"), Choice_Package.EXCLUSIVE);
+        GameDifficultyOptions'Class (This).deleteAll;
+        GameDifficultyOptions'Class (This).add (This.list, To_Unbounded_String ("Difficulty"), Choice_Package.EXCLUSIVE);
         CommandForm (This).update;
    end update;
 
@@ -89,7 +89,7 @@ package body org.allbinary.game.configuration.GameDifficultyOptions_Package is
       list : constant BasicArrayList_Access := BasicArrayList_Access (list_Param);
       choiceGroup : ChoiceGroup_Access;
    begin
-        choiceGroup := This.getChoiceGroup (list, name, option);
+        choiceGroup := GameDifficultyOptions'Class (This).getChoiceGroup (list, name, option);
         if (list.size) > (0) then
             choiceGroup.setSelectedIndex (0, True);
         end if;
@@ -121,14 +121,14 @@ package body org.allbinary.game.configuration.GameDifficultyOptions_Package is
    procedure setSelectedId (This : in out GameDifficultyOptions; id : Integer) is
       choiceGroup : ChoiceGroup_Access;
    begin
-        choiceGroup := ChoiceGroup_Access (This.get (0));
+        choiceGroup := ChoiceGroup_Access (GameDifficultyOptions'Class (This).get (0));
         choiceGroup.setSelectedIndex (id, True);
    end setSelectedId;
 
    function getSelectedId (This : in out GameDifficultyOptions) return Integer is
       choiceGroup : ChoiceGroup_Access;
    begin
-        choiceGroup := ChoiceGroup_Access (This.get (0));
+        choiceGroup := ChoiceGroup_Access (GameDifficultyOptions'Class (This).get (0));
         return choiceGroup.getSelectedIndex;
    end getSelectedId;
 
@@ -136,7 +136,7 @@ package body org.allbinary.game.configuration.GameDifficultyOptions_Package is
       choiceGroup : ChoiceGroup_Access;
       value : Integer;
    begin
-        choiceGroup := ChoiceGroup_Access (This.get (0));
+        choiceGroup := ChoiceGroup_Access (GameDifficultyOptions'Class (This).get (0));
         value := To_Unbounded_String (Java_Image (choiceGroup.getString (choiceGroup.getSelectedIndex))).intValue;
         return value;
    end getSelectedText;

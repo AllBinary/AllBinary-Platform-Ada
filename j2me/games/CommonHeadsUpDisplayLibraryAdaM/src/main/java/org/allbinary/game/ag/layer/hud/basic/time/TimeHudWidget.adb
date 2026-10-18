@@ -42,7 +42,7 @@ package body org.allbinary.game.ag.layer.hud.basic.time.TimeHudWidget_Package is
         BasicHud_Package.Initialize (This, location, direction, bufferZone, basicColor);
         Initialize_Fields (This);
         This.timer := timer;
-        This.set;
+        TimeHudWidget'Class (This).set;
         This.updateMaxHeight := 14;
    end Initialize;
 
@@ -66,7 +66,7 @@ package body org.allbinary.game.ag.layer.hud.basic.time.TimeHudWidget_Package is
    procedure update (This : in out TimeHudWidget) is
    begin
         This.timer.update;
-        This.set;
+        TimeHudWidget'Class (This).set;
    end update;
 
    procedure set (This : in out TimeHudWidget) is

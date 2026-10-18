@@ -21,7 +21,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfo_Package is
       This.logUtil := LogUtil_Package.getInstance;
       This.commonStrings := CommonStrings_Package.getInstance;
       This.abeClientInformation := ServiceClientInformationInterfaceFactory_Package.getInstance;
-      This.isChild := False;
+      This.isChild_Field := False;
       This.name := Null_Unbounded_String;
       This.storeName := Null_Unbounded_String;
       This.objectFileName := Null_Unbounded_String;
@@ -51,7 +51,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfo_Package is
    procedure Initialize (This : in out TransformInfo'Class; name : Unbounded_String) is
    begin
       Initialize_Fields (This);
-        This.setName (name);
+        TransformInfo'Class (This).setName (name);
    end Initialize;
 
    function Create (name : Unbounded_String) return TransformInfo_Access is
@@ -64,11 +64,11 @@ package body org.allbinary.logic.visual.transform.info.TransformInfo_Package is
    procedure Initialize (This : in out TransformInfo'Class; name : Unbounded_String; objectFileName : Unbounded_String; objectConfigFileName : Unbounded_String; templateFileName : Unbounded_String; dataFileName : Unbounded_String) is
    begin
       Initialize_Fields (This);
-        This.setName (name);
-        This.setObjectFile (objectFileName);
-        This.setObjectConfigFile (objectConfigFileName);
-        This.setTemplateFile (templateFileName);
-        This.setDataFile (dataFileName);
+        TransformInfo'Class (This).setName (name);
+        TransformInfo'Class (This).setObjectFile (objectFileName);
+        TransformInfo'Class (This).setObjectConfigFile (objectConfigFileName);
+        TransformInfo'Class (This).setTemplateFile (templateFileName);
+        TransformInfo'Class (This).setDataFile (dataFileName);
    end Initialize;
 
    function Create (name : Unbounded_String; objectFileName : Unbounded_String; objectConfigFileName : Unbounded_String; templateFileName : Unbounded_String; dataFileName : Unbounded_String) return TransformInfo_Access is
@@ -99,23 +99,23 @@ package body org.allbinary.logic.visual.transform.info.TransformInfo_Package is
    begin
         transformInfoData := TransformInfoData_Package.getInstance;
         stringValidationUtil := StringValidationUtil_Package.getInstance;
-        aName := Unbounded_String (hashMap.get (transformInfoData.NAME));
+        aName := Java_Unbox (hashMap.get (transformInfoData.NAME));
         if not (stringValidationUtil.isEmpty (aName)) then
             This.name := aName;
         end if;
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
             stringBuffer := StringMaker_Package.Create;
             stringBuffer.append (To_Unbounded_String ("TransformInfo properties overridden for: "));
-            stringBuffer.append (This.getName);
+            stringBuffer.append (TransformInfo'Class (This).getName);
             stringBuffer.append (To_Unbounded_String ("" & ASCII.LF & " properties: "));
             stringBuffer.append (hashMap.toString);
             This.logUtil.putF (stringBuffer.toString, TransformInfo_Access'(This'Unchecked_Access), To_Unbounded_String ("override(HashMap hashMap)"));
         end if;
-        aStoreName := Unbounded_String (hashMap.get (StoreFrontData_Package.getInstance.NAME));
+        aStoreName := Java_Unbox (hashMap.get (StoreFrontData_Package.getInstance.NAME));
         if not (stringValidationUtil.isEmpty (aStoreName)) then
             This.storeName := aStoreName;
         end if;
-        aObjectFileName := Unbounded_String (hashMap.get (transformInfoData.OBJECTFILENAME));
+        aObjectFileName := Java_Unbox (hashMap.get (transformInfoData.OBJECTFILENAME));
         if not (stringValidationUtil.isEmpty (aObjectFileName)) then
             This.objectFileName := aObjectFileName;
         end if;
@@ -125,58 +125,58 @@ package body org.allbinary.logic.visual.transform.info.TransformInfo_Package is
         stringBuffer.append (This.storeName);
         stringBuffer.append (AbPathData_Package.getInstance.SEPARATOR);
         fileAbPath := AbPath_Package.Create (stringBuffer.toString, StringUtil_Package.getInstance.EMPTY_STRING);
-        aObject := Unbounded_String (hashMap.get (transformInfoData.OBJECT));
+        aObject := Java_Unbox (hashMap.get (transformInfoData.OBJECT));
         if not (stringValidationUtil.isEmpty (aObject)) then
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-                This.logUtil.putF (To_Unbounded_String ("TransformInfo override view Object for: ") & This.getName, TransformInfo_Access'(This'Unchecked_Access), To_Unbounded_String ("override(HashMap hashMap)"));
+                This.logUtil.putF (To_Unbounded_String ("TransformInfo override view Object for: ") & TransformInfo'Class (This).getName, TransformInfo_Access'(This'Unchecked_Access), To_Unbounded_String ("override(HashMap hashMap)"));
             end if;
             fileDataString := CryptFileReader_Package.Create (TransformInfoObjectData_Package.getInstance.UNCRYPTED_EXTENSION, TransformInfoObjectData_Package.getInstance.ENCRYPTED_EXTENSION).get (AbPath_Package.Create (fileAbPath.toString, aObject));
             if (fileDataString) /= (Null_Unbounded_String) then
                 This.anyType := fileDataString;
             end if;
         end if;
-        if not (stringValidationUtil.isEmpty (Unbounded_String (hashMap.get (transformInfoData.OBJECTCONFIG)))) then
+        if not (stringValidationUtil.isEmpty (Java_Unbox (hashMap.get (transformInfoData.OBJECTCONFIG)))) then
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-                This.logUtil.putF (To_Unbounded_String ("TransformInfo override ObjectConfig for: ") & This.getName, TransformInfo_Access'(This'Unchecked_Access), To_Unbounded_String ("override(HashMap hashMap)"));
+                This.logUtil.putF (To_Unbounded_String ("TransformInfo override ObjectConfig for: ") & TransformInfo'Class (This).getName, TransformInfo_Access'(This'Unchecked_Access), To_Unbounded_String ("override(HashMap hashMap)"));
             end if;
-            This.setObjectConfig (Unbounded_String (hashMap.get (transformInfoData.OBJECTCONFIG)));
+            TransformInfo'Class (This).setObjectConfig (Java_Unbox (hashMap.get (transformInfoData.OBJECTCONFIG)));
         end if;
-        objectConfigFileName := Unbounded_String (hashMap.get (transformInfoData.OBJECTCONFIGFILENAME));
+        objectConfigFileName := Java_Unbox (hashMap.get (transformInfoData.OBJECTCONFIGFILENAME));
         if not (stringValidationUtil.isEmpty (objectConfigFileName)) then
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-                This.logUtil.putF (To_Unbounded_String ("TransformInfo override ObjectConfig File for: ") & This.getName, TransformInfo_Access'(This'Unchecked_Access), To_Unbounded_String ("override(HashMap hashMap)"));
+                This.logUtil.putF (To_Unbounded_String ("TransformInfo override ObjectConfig File for: ") & TransformInfo'Class (This).getName, TransformInfo_Access'(This'Unchecked_Access), To_Unbounded_String ("override(HashMap hashMap)"));
             end if;
-            This.setObjectConfigFile (objectConfigFileName);
+            TransformInfo'Class (This).setObjectConfigFile (objectConfigFileName);
         end if;
-        type_Id := Unbounded_String (hashMap.get (OutputTypeData_Package.getInstance.NAME));
+        type_Id := Java_Unbox (hashMap.get (OutputTypeData_Package.getInstance.NAME));
         if not (stringValidationUtil.isEmpty (type_Id)) then
-            if (This.getObjectConfigInterface) = (null) then
-                This.setObjectConfigInterface (TransformInfoObjectConfig_Package.Create (TransformInfo_Access'(This'Unchecked_Access)));
+            if (TransformInfo'Class (This).getObjectConfigInterface) = (null) then
+                TransformInfo'Class (This).setObjectConfigInterface (TransformInfoObjectConfig_Package.Create (TransformInfo_Access'(This'Unchecked_Access)));
             end if;
-            This.getObjectConfigInterface.setOutputTypeName (type_Id);
+            TransformInfo'Class (This).getObjectConfigInterface.setOutputTypeName (type_Id);
         end if;
-        aTemplateFileName := Unbounded_String (hashMap.get (transformInfoData.TEMPLATEFILENAME));
+        aTemplateFileName := Java_Unbox (hashMap.get (transformInfoData.TEMPLATEFILENAME));
         if not (stringValidationUtil.isEmpty (aTemplateFileName)) then
             This.templateFileName := aTemplateFileName;
         end if;
-        aTemplate := Unbounded_String (hashMap.get (transformInfoData.TEMPLATE));
+        aTemplate := Java_Unbox (hashMap.get (transformInfoData.TEMPLATE));
         if not (stringValidationUtil.isEmpty (aTemplate)) then
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-                This.logUtil.putF (To_Unbounded_String ("TransformInfo override Template for: ") & This.getName, TransformInfo_Access'(This'Unchecked_Access), To_Unbounded_String ("override(HashMap hashMap)"));
+                This.logUtil.putF (To_Unbounded_String ("TransformInfo override Template for: ") & TransformInfo'Class (This).getName, TransformInfo_Access'(This'Unchecked_Access), To_Unbounded_String ("override(HashMap hashMap)"));
             end if;
             fileDataString := CryptFileReader_Package.Create (TransformInfoTemplateData_Package.getInstance.UNCRYPTED_EXTENSION, TransformInfoTemplateData_Package.getInstance.ENCRYPTED_EXTENSION).get (AbPath_Package.Create (fileAbPath.toString, aTemplate));
             if not (stringValidationUtil.isEmpty (fileDataString)) then
                 This.template := fileDataString;
             end if;
         end if;
-        aDataFileName := Unbounded_String (hashMap.get (transformInfoData.DATAFILENAME));
+        aDataFileName := Java_Unbox (hashMap.get (transformInfoData.DATAFILENAME));
         if not (stringValidationUtil.isEmpty (aDataFileName)) then
             This.dataFileName := aDataFileName;
         end if;
-        aData := Unbounded_String (hashMap.get (transformInfoData.DATA));
+        aData := Java_Unbox (hashMap.get (transformInfoData.DATA));
         if not (stringValidationUtil.isEmpty (aData)) then
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-                This.logUtil.putF (To_Unbounded_String ("TransformInfo override Data for: ") & This.getName, TransformInfo_Access'(This'Unchecked_Access), To_Unbounded_String ("override(HashMap hashMap)"));
+                This.logUtil.putF (To_Unbounded_String ("TransformInfo override Data for: ") & TransformInfo'Class (This).getName, TransformInfo_Access'(This'Unchecked_Access), To_Unbounded_String ("override(HashMap hashMap)"));
             end if;
             fileDataString := CryptFileReader_Package.Create (TransformInfoDataData_Package.getInstance.UNCRYPTED_EXTENSION, TransformInfoDataData_Package.getInstance.ENCRYPTED_EXTENSION).get (AbPath_Package.Create (fileAbPath.toString, aData));
             if not (stringValidationUtil.isEmpty (fileDataString)) then
@@ -190,7 +190,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfo_Package is
             stringBuffer.append (To_Unbounded_String ("" & ASCII.LF & "Temp Object File: "));
             stringBuffer.append (aObject);
             stringBuffer.append (To_Unbounded_String ("" & ASCII.LF & "Temp Object Config File: "));
-            stringBuffer.append (This.getObjectConfigFilePath.toString);
+            stringBuffer.append (TransformInfo'Class (This).getObjectConfigFilePath.toString);
             stringBuffer.append (To_Unbounded_String ("" & ASCII.LF & "Temp Template File: "));
             stringBuffer.append (aTemplate);
             stringBuffer.append (To_Unbounded_String ("" & ASCII.LF & "Temp Data File: "));
@@ -198,12 +198,12 @@ package body org.allbinary.logic.visual.transform.info.TransformInfo_Package is
             stringBuffer.append (To_Unbounded_String ("" & ASCII.LF & "Store Name: "));
             stringBuffer.append (aStoreName);
             stringBuffer.append (To_Unbounded_String ("" & ASCII.LF & "ObjectFile: "));
-            stringBuffer.append (This.getObjectFile);
+            stringBuffer.append (TransformInfo'Class (This).getObjectFile);
             stringBuffer.append (To_Unbounded_String ("->TransformInfo"));
             This.logUtil.putF (stringBuffer.toString, TransformInfo_Access'(This'Unchecked_Access), To_Unbounded_String ("TransformInfoInterface(HashMap)"));
         end if;
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPERFACTORY) then
-            This.logUtil.putF (This.log, TransformInfo_Access'(This'Unchecked_Access), To_Unbounded_String ("override"));
+            This.logUtil.putF (TransformInfo'Class (This).log, TransformInfo_Access'(This'Unchecked_Access), To_Unbounded_String ("override"));
         end if;
    end override;
 
@@ -216,7 +216,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfo_Package is
         stringBuffer.append (To_Unbounded_String ("" & ASCII.LF & "Object File: "));
         stringBuffer.append (This.objectFileName);
         stringBuffer.append (To_Unbounded_String ("" & ASCII.LF & "Object Config File Path: "));
-        stringBuffer.append (This.getObjectConfigFile);
+        stringBuffer.append (TransformInfo'Class (This).getObjectConfigFile);
         stringBuffer.append (To_Unbounded_String ("" & ASCII.LF & "Template File: "));
         stringBuffer.append (This.templateFileName);
         stringBuffer.append (To_Unbounded_String ("" & ASCII.LF & "Data File: "));
@@ -224,7 +224,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfo_Package is
         stringBuffer.append (To_Unbounded_String ("" & ASCII.LF & "Store Name: "));
         stringBuffer.append (This.storeName);
         stringBuffer.append (CommonSeps_Package.getInstance.NEW_LINE);
-        stringBuffer.append (This.getObjectFile);
+        stringBuffer.append (TransformInfo'Class (This).getObjectFile);
         stringBuffer.append (To_Unbounded_String ("->TransformInfo"));
         stringBuffer.append (To_Unbounded_String ("TransformInfoInterface(HashMap)"));
         return stringBuffer.toString;
@@ -276,7 +276,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfo_Package is
    procedure setObjectConfigFile (This : in out TransformInfo; value : Unbounded_String) is
    begin
         This.objectConfigFileName := value;
-        This.setObjectConfigInterface (TransformInfoObjectConfigAndManipulatorFactory_Package.getInstance.getInstance (This.abeClientInformation, TransformInfo_Access'(This'Unchecked_Access), This.getObjectConfigFilePath));
+        TransformInfo'Class (This).setObjectConfigInterface (TransformInfoObjectConfigAndManipulatorFactory_Package.getInstance.getInstance (This.abeClientInformation, TransformInfo_Access'(This'Unchecked_Access), TransformInfo'Class (This).getObjectConfigFilePath));
    end setObjectConfigFile;
 
    --  throws Exception
@@ -284,7 +284,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfo_Package is
       document : Document_Access;
    begin
         document := DomDocumentHelper_Package.create (value);
-        This.setObjectConfigInterface (TransformInfoObjectConfigAndManipulatorFactory_Package.getInstance.getInstance (This.abeClientInformation, TransformInfo_Access'(This'Unchecked_Access), document));
+        TransformInfo'Class (This).setObjectConfigInterface (TransformInfoObjectConfigAndManipulatorFactory_Package.getInstance.getInstance (This.abeClientInformation, TransformInfo_Access'(This'Unchecked_Access), document));
    end setObjectConfig;
 
    procedure setDataFile (This : in out TransformInfo; value : Unbounded_String) is
@@ -325,19 +325,19 @@ package body org.allbinary.logic.visual.transform.info.TransformInfo_Package is
    --  throws Exception
    function getTemplateFilePath (This : in out TransformInfo) return AbPath_Access is
    begin
-        return AbFilePath_Package.Create (This.getTemplateFile);
+        return AbFilePath_Package.Create (TransformInfo'Class (This).getTemplateFile);
    end getTemplateFilePath;
 
    --  throws Exception
    function getObjectConfigFilePath (This : in out TransformInfo) return AbPath_Access is
    begin
-        return AbFilePath_Package.Create (This.getObjectConfigFile);
+        return AbFilePath_Package.Create (TransformInfo'Class (This).getObjectConfigFile);
    end getObjectConfigFilePath;
 
    --  throws Exception
    function getDataFilePath (This : in out TransformInfo) return AbPath_Access is
    begin
-        return AbFilePath_Package.Create (This.getDataFile);
+        return AbFilePath_Package.Create (TransformInfo'Class (This).getDataFile);
    end getDataFilePath;
 
    function getObjectConfigFile (This : in out TransformInfo) return Unbounded_String is
@@ -352,13 +352,13 @@ package body org.allbinary.logic.visual.transform.info.TransformInfo_Package is
       stringBuffer : StringMaker_Access;
    begin
         stringValidationUtil := StringValidationUtil_Package.getInstance;
-        dataFileString := This.getDataFile;
+        dataFileString := TransformInfo'Class (This).getDataFile;
         if not (stringValidationUtil.isEmpty (dataFileString)) then
             begin
-                fileData := CryptFileReader_Package.Create (TransformInfoDataData_Package.getInstance.UNCRYPTED_EXTENSION, TransformInfoDataData_Package.getInstance.ENCRYPTED_EXTENSION).get (This.getDataFilePath);
+                fileData := CryptFileReader_Package.Create (TransformInfoDataData_Package.getInstance.UNCRYPTED_EXTENSION, TransformInfoDataData_Package.getInstance.ENCRYPTED_EXTENSION).get (TransformInfo'Class (This).getDataFilePath);
                 if not (stringValidationUtil.isEmpty (This.data)) then
                     if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-                        This.logUtil.putF (To_Unbounded_String ("Data File overriding existing data: ") & Java_Image (This.getDataFilePath), TransformInfo_Access'(This'Unchecked_Access), To_Unbounded_String ("getData()"));
+                        This.logUtil.putF (To_Unbounded_String ("Data File overriding existing data: ") & Java_Image (TransformInfo'Class (This).getDataFilePath), TransformInfo_Access'(This'Unchecked_Access), To_Unbounded_String ("getData()"));
                     end if;
                 end if;
                 This.data := fileData;
@@ -368,7 +368,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfo_Package is
                         e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                     begin
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
-                    This.logUtil.put (To_Unbounded_String ("Could Not Load Data from: ") & Java_Image (This.getDataFile), TransformInfo_Access'(This'Unchecked_Access), To_Unbounded_String ("getData()"), e);
+                    This.logUtil.put (To_Unbounded_String ("Could Not Load Data from: ") & Java_Image (TransformInfo'Class (This).getDataFile), TransformInfo_Access'(This'Unchecked_Access), To_Unbounded_String ("getData()"), e);
                 end if;
                     end;
             end;
@@ -386,7 +386,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfo_Package is
                     stringBuffer.append (To_Unbounded_String ("" & ASCII.LF & "Empty Data For: "));
                     stringBuffer.append (dataFileString);
                     stringBuffer.append (To_Unbounded_String ("" & ASCII.LF & "Path: "));
-                    stringBuffer.append (This.getDataFilePath.toFileSystemString);
+                    stringBuffer.append (TransformInfo'Class (This).getDataFilePath.toFileSystemString);
                     if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
                         This.logUtil.putF (stringBuffer.toString, TransformInfo_Access'(This'Unchecked_Access), To_Unbounded_String ("getData()"));
                     end if;
@@ -411,7 +411,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfo_Package is
       stringValidationUtil : StringValidationUtil_Access;
       document : Document_Access;
    begin
-        localData := This.getData;
+        localData := TransformInfo'Class (This).getData;
         stringValidationUtil := StringValidationUtil_Package.getInstance;
         if stringValidationUtil.isEmpty (localData) then
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
@@ -437,19 +437,19 @@ package body org.allbinary.logic.visual.transform.info.TransformInfo_Package is
    begin
         transformInfoData := TransformInfoData_Package.getInstance;
         hashMap := StdUtil_Package.getInstance.createHashMap;
-        hashMap.put (transformInfoData.NAME, This.name);
-        hashMap.put (StoreFrontData_Package.getInstance.NAME, This.storeName);
-        hashMap.put (transformInfoData.OBJECTFILENAME, This.objectFileName);
+        hashMap.put (transformInfoData.NAME, Java_Box (This.name));
+        hashMap.put (StoreFrontData_Package.getInstance.NAME, Java_Box (This.storeName));
+        hashMap.put (transformInfoData.OBJECTFILENAME, Java_Box (This.objectFileName));
         hashMap.put (transformInfoData.OBJECT, This.anyType);
-        hashMap.put (transformInfoData.OBJECTCONFIGFILENAME, This.getObjectConfigFile);
-        hashMap.put (transformInfoData.OBJECTCONFIG, Encoder_Package.encode (This.getObjectConfigInterface.toString.getBytes));
-        hashMap.put (transformInfoData.TEMPLATEFILENAME, This.templateFileName);
-        hashMap.put (transformInfoData.TEMPLATE, This.template);
-        hashMap.put (transformInfoData.DATAFILENAME, This.dataFileName);
+        hashMap.put (transformInfoData.OBJECTCONFIGFILENAME, TransformInfo'Class (This).getObjectConfigFile);
+        hashMap.put (transformInfoData.OBJECTCONFIG, Encoder_Package.encode (TransformInfo'Class (This).getObjectConfigInterface.toString.getBytes));
+        hashMap.put (transformInfoData.TEMPLATEFILENAME, Java_Box (This.templateFileName));
+        hashMap.put (transformInfoData.TEMPLATE, Java_Box (This.template));
+        hashMap.put (transformInfoData.DATAFILENAME, Java_Box (This.dataFileName));
         hashMap.put (transformInfoData.DATA, Encoder_Package.encode (This.data.getBytes));
         calendar := Calendar_Package.getInstance;
         time := Java_New_String (calendar.getTimeInMillis.toString);
-        hashMap.put (EntryData_Package.getInstance.LASTMODIFIED, time);
+        hashMap.put (EntryData_Package.getInstance.LASTMODIFIED, Java_Box (time));
         return hashMap;
    end toHashMap;
 
@@ -463,8 +463,8 @@ package body org.allbinary.logic.visual.transform.info.TransformInfo_Package is
         vector.add (This.storeName);
         vector.add (This.objectFileName);
         vector.add (This.anyType);
-        vector.add (This.getObjectConfigFile);
-        vector.add (Encoder_Package.encode (This.getObjectConfigInterface.toString.getBytes));
+        vector.add (TransformInfo'Class (This).getObjectConfigFile);
+        vector.add (Encoder_Package.encode (TransformInfo'Class (This).getObjectConfigInterface.toString.getBytes));
         vector.add (This.templateFileName);
         vector.add (This.template);
         vector.add (This.dataFileName);
@@ -478,17 +478,17 @@ package body org.allbinary.logic.visual.transform.info.TransformInfo_Package is
 
    function getKey (This : in out TransformInfo) return Java_Object_Access is
    begin
-        return Java_Object_Access (This.getName);
+        return Java_Box (TransformInfo'Class (This).getName);
    end getKey;
 
    procedure setChild (This : in out TransformInfo) is
    begin
-        This.isChild := True;
+        This.isChild_Field := True;
    end setChild;
 
    function isChild (This : in out TransformInfo) return Boolean is
    begin
-        return This.isChild;
+        return This.isChild_Field;
    end isChild;
 
    function getObjectConfigInterface (This : in out TransformInfo) return TransformInfoObjectConfigInterface_Access is

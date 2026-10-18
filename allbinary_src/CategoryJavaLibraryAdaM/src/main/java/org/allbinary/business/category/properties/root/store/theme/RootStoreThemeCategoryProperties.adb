@@ -95,7 +95,7 @@ package body org.allbinary.business.category.properties.root.store.theme.RootSto
         abPath := AbPath_Package.Create (stringBuffer.toString, StringUtil_Package.getInstance.EMPTY_STRING);
         httpServletRequest := HttpServletRequest_Access (transformInfoHttpStoreInterface.getPageContext.getRequest);
         This.webAppAbPath := AbPath_Package.Create (Java_Image (httpServletRequest.getContextPath) & abPath.toString, StringUtil_Package.getInstance.EMPTY_STRING);
-        This.setRootFilePath (AbPath_Package.Create (Java_Image (URLGLOBALS.getMainPath) & abPath.toString, StringUtil_Package.getInstance.EMPTY_STRING));
+        RootStoreThemeCategoryProperties'Class (This).setRootFilePath (AbPath_Package.Create (Java_Image (URLGLOBALS.getMainPath) & abPath.toString, StringUtil_Package.getInstance.EMPTY_STRING));
    end initPath;
 
 end org.allbinary.business.category.properties.root.store.theme.RootStoreThemeCategoryProperties_Package;

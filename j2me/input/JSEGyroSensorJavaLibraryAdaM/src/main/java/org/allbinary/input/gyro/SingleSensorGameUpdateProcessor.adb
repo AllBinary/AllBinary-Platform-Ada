@@ -40,7 +40,7 @@ package body org.allbinary.input.gyro.SingleSensorGameUpdateProcessor_Package is
    procedure process (This : in out SingleSensorGameUpdateProcessor; anyType_Param : access Java_Object'Class) is
       anyType : constant Java_Object_Access := Java_Object_Access (anyType_Param);
    begin
-        This.setNoSensors;
+        SingleSensorGameUpdateProcessor'Class (This).setNoSensors;
    end process;
 
    --  throws Exception

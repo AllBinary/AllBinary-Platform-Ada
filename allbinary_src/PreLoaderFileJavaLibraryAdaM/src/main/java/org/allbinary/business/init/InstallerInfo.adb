@@ -48,8 +48,8 @@ package body org.allbinary.business.init.InstallerInfo_Package is
             newFile := AbFile_Package.createAbFileFromAbPath (FILEABPATH);
             newFile.createNewFile;
             dataOutputStream := DataOutputStreamFactory_Package.getInstance.getInstanceForAbFile (newFile);
-            cryptedUserName := WeakCrypt_Package.Create (1).encrypt (This.getUserName).getBytes;
-            cryptedPassword := WeakCrypt_Package.Create (2).encrypt (This.getPassword).getBytes;
+            cryptedUserName := WeakCrypt_Package.Create (1).encrypt (InstallerInfo'Class (This).getUserName).getBytes;
+            cryptedPassword := WeakCrypt_Package.Create (2).encrypt (InstallerInfo'Class (This).getPassword).getBytes;
             dataOutputStream.writeUTF (DatabaseEncoder_Package.encode (cryptedUserName));
             dataOutputStream.writeUTF (DatabaseEncoder_Package.encode (cryptedPassword));
             InstallerInfo_Package.hasRead := False;
@@ -83,8 +83,8 @@ package body org.allbinary.business.init.InstallerInfo_Package is
                 iData := AbDataInputStream_Package.Create (iFile);
                 decryptedUserName := Java_New_String (DatabaseEncoder_Package.decode (iData.readUTF));
                 decryptedPassword := Java_New_String (DatabaseEncoder_Package.decode (iData.readUTF));
-                This.setUserName (WeakCrypt_Package.Create (1).decrypt (decryptedUserName));
-                This.setPassword (WeakCrypt_Package.Create (2).decrypt (decryptedPassword));
+                InstallerInfo'Class (This).setUserName (WeakCrypt_Package.Create (1).decrypt (decryptedUserName));
+                InstallerInfo'Class (This).setPassword (WeakCrypt_Package.Create (2).decrypt (decryptedPassword));
             else
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.PRELOADER) then
                     This.logUtil.putF (To_Unbounded_String ("Not a File - Failed Loading: ") & FILEABPATH.toString, InstallerInfo_Access'(This'Unchecked_Access), To_Unbounded_String ("read"));
@@ -122,7 +122,7 @@ package body org.allbinary.business.init.InstallerInfo_Package is
    begin
         if not (InstallerInfo_Package.hasRead) then
             InstallerInfo_Package.hasRead := True;
-            This.read;
+            InstallerInfo'Class (This).read;
             if ((InstallerInfo_Package.userName) = (null)) or else ((InstallerInfo_Package.password) = (null)) then
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.PRELOADER) then
                     This.logUtil.putF (To_Unbounded_String ("Failed"), InstallerInfo_Access'(This'Unchecked_Access), To_Unbounded_String ("updateIfNeeded"));
@@ -134,21 +134,21 @@ package body org.allbinary.business.init.InstallerInfo_Package is
    --  throws Exception
    function getUserName (This : in out InstallerInfo) return Unbounded_String is
    begin
-        This.updateIfNeeded;
+        InstallerInfo'Class (This).updateIfNeeded;
         return InstallerInfo_Package.userName;
    end getUserName;
 
    --  throws Exception
    function getPassword (This : in out InstallerInfo) return Unbounded_String is
    begin
-        This.updateIfNeeded;
+        InstallerInfo'Class (This).updateIfNeeded;
         return InstallerInfo_Package.password;
    end getPassword;
 
    --  throws Exception
    function isValid (This : in out InstallerInfo; userName : Unbounded_String; password : Unbounded_String) return Boolean is
    begin
-        This.updateIfNeeded;
+        InstallerInfo'Class (This).updateIfNeeded;
         if ((((userName) /= (Null_Unbounded_String)) and then ((userName.compareTo (userName)) = (0))) and then ((password) /= (Null_Unbounded_String))) and then ((password.compareTo (password)) = (0)) then
             return True;
         end if;

@@ -20,8 +20,8 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.util.HashMap_Package; use java.util.HashMap_Package;
---  with java.util.Map_Package; use java.util.Map_Package;
+with java.util.HashMap_Package; use java.util.HashMap_Package;
+with java.util.Map_Package; use java.util.Map_Package;
 --  with java.util.Set_Package; use java.util.Set_Package;
 --  with javax.servlet.http.HttpServletRequest_Package; use javax.servlet.http.HttpServletRequest_Package;
 --  with javax.servlet.jsp.PageContext_Package; use javax.servlet.jsp.PageContext_Package;
@@ -49,6 +49,8 @@ with admin.taghelpers.ModifyTable_Package; use admin.taghelpers.ModifyTable_Pack
 
 package admin.taghelpers.CategoryRequestHelper_Package is
 
+   package HashMap_Package renames Standard.java.util.HashMap_Package;
+   package Map_Package renames Standard.java.util.Map_Package;
    package CategoryComponent_Package renames Standard.org.allbinary.business.category.CategoryComponent_Package;
    package CategoryData_Package renames Standard.org.allbinary.business.category.CategoryData_Package;
    package CategoryInterface_Package renames Standard.org.allbinary.business.category.CategoryInterface_Package;

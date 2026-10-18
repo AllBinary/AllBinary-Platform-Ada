@@ -64,7 +64,7 @@ package body org.allbinary.game.ag.ai.scroller.FlockingAI_Package is
         for index in 0 .. (size) - 1 loop
             allBinaryLayer := AllBinaryLayer_Access (list.get (index));
             if (allBinaryLayer.getType) /= (WeaponLayer_Package.getStaticType) then
-                distance := This.getXYDistance (allBinaryLayer);
+                distance := FlockingAI'Class (This).getXYDistance (allBinaryLayer);
                 if (distance) > (maxDistance) then
                     maxDistance := distance;
                     farAllbinaryLayer := allBinaryLayer;
@@ -76,15 +76,15 @@ package body org.allbinary.game.ag.ai.scroller.FlockingAI_Package is
         end loop;
         if (maxDistance) > (This.allowedDistance) then
             if (farAllbinaryLayer) /= (AllBinaryLayer_Package.NULL_ALLBINARY_LAYER) then
-                ownerLayerInterface := This.getOwnerLayerInterface;
+                ownerLayerInterface := FlockingAI'Class (This).getOwnerLayerInterface;
                 if (farAllbinaryLayer.getXP) < (ownerLayerInterface.getXP) then
-                    This.processKeyAI (Canvas_Package.LEFT);
+                    FlockingAI'Class (This).processKeyAI (Canvas_Package.LEFT);
                 elsif (farAllbinaryLayer.getXP) > (ownerLayerInterface.getXP) then
-                    This.processKeyAI (Canvas_Package.RIGHT);
+                    FlockingAI'Class (This).processKeyAI (Canvas_Package.RIGHT);
                 elsif (farAllbinaryLayer.getYP) > (ownerLayerInterface.getYP) then
-                    This.processKeyAI (Canvas_Package.UP);
+                    FlockingAI'Class (This).processKeyAI (Canvas_Package.UP);
                 elsif (farAllbinaryLayer.getYP) < (ownerLayerInterface.getYP) then
-                    This.processKeyAI (Canvas_Package.DOWN);
+                    FlockingAI'Class (This).processKeyAI (Canvas_Package.DOWN);
                 end if;
             end if;
         end if;
@@ -98,7 +98,7 @@ package body org.allbinary.game.ag.ai.scroller.FlockingAI_Package is
       mathUtil : MathUtil_Access;
       totalDistance : Integer;
    begin
-        ownerLayerInterface := This.getOwnerLayerInterface;
+        ownerLayerInterface := FlockingAI'Class (This).getOwnerLayerInterface;
         xTotalDistance := (((allBinaryLayer.getXP) + (allBinaryLayer.getHalfWidth))) - (((ownerLayerInterface.getXP) + (ownerLayerInterface.getHalfWidth)));
         yTotalDistance := (((allBinaryLayer.getYP) + (allBinaryLayer.getHalfHeight))) - (((ownerLayerInterface.getYP) + (ownerLayerInterface.getHalfHeight)));
         mathUtil := MathUtil_Package.getInstance;

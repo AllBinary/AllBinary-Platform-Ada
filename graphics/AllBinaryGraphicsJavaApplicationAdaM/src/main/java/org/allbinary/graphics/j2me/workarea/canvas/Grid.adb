@@ -19,8 +19,8 @@ package body org.allbinary.graphics.j2me.workarea.canvas.Grid_Package is
    begin
       null;
       
-      This.isGridOn := True;
-      This.isGridPossible := False;
+      This.isGridOn_Field := True;
+      This.isGridPossible_Field := False;
       This.zoom := 3;
       This.isChanged := True;
    end Initialize_Fields;
@@ -44,9 +44,9 @@ package body org.allbinary.graphics.j2me.workarea.canvas.Grid_Package is
    begin
       Initialize_Fields (This);
         This.grid := grid.grid;
-        This.showGrid (grid.isGridOn);
-        This.isGridPossible := grid.isGridPossible;
-        This.setZoom (grid.getZoom);
+        Grid'Class (This).showGrid (grid.isGridOn_Field);
+        This.isGridPossible_Field := grid.isGridPossible_Field;
+        Grid'Class (This).setZoom (grid.getZoom);
    end Initialize;
 
    function Create (grid_Param : access Grid_Package.Grid'Class) return Grid_Access is
@@ -58,12 +58,12 @@ package body org.allbinary.graphics.j2me.workarea.canvas.Grid_Package is
 
    function isGridOn (This : in out Grid) return Boolean is
    begin
-        return This.isGridOn;
+        return This.isGridOn_Field;
    end isGridOn;
 
    function isGridPossible (This : in out Grid) return Boolean is
    begin
-        return This.isGridPossible;
+        return This.isGridPossible_Field;
    end isGridPossible;
 
    function getGrid (This : in out Grid) return GPoint_Access is
@@ -78,7 +78,7 @@ package body org.allbinary.graphics.j2me.workarea.canvas.Grid_Package is
 
    procedure showGrid (This : in out Grid; value : Boolean) is
    begin
-        This.isGridOn := value;
+        This.isGridOn_Field := value;
    end showGrid;
 
    procedure setZoom (This : in out Grid; zoom_Param : Integer) is

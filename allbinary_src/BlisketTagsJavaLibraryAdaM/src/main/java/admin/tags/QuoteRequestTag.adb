@@ -27,8 +27,8 @@ package body admin.tags.QuoteRequestTag_Package is
    begin
       TableTag_Package.Initialize (This);
       Initialize_Fields (This);
-        This.setTagHelperFactory (QuoteHelperFactory_Package.Create);
-        This.setTagRequestHelperFactory (QuoteRequestHelperFactory_Package.Create);
+        QuoteRequestTag'Class (This).setTagHelperFactory (QuoteHelperFactory_Package.Create);
+        QuoteRequestTag'Class (This).setTagRequestHelperFactory (QuoteRequestHelperFactory_Package.Create);
    end Initialize;
 
    function Create return QuoteRequestTag_Access is
@@ -52,10 +52,10 @@ package body admin.tags.QuoteRequestTag_Package is
       error : Unbounded_String;
    begin
         begin
-            anyType := QuoteHelperFactory_Package.Create.getInstance (This.getPropertiesHashMap, This.pageContext);
+            anyType := QuoteHelperFactory_Package.Create.getInstance (QuoteRequestTag'Class (This).getPropertiesHashMap, This.pageContext);
             helperClass := anyType.all'Tag;
             method := helperClass.getMethod (To_Unbounded_String ("email"), null);
-            result := Unbounded_String (method.invoke (anyType, null));
+            result := Java_Unbox (method.invoke (anyType, null));
             return result;
         exception
             when Java_Occurrence : others =>
@@ -71,10 +71,10 @@ package body admin.tags.QuoteRequestTag_Package is
    function doStartTag (This : in out QuoteRequestTag) return Integer is
    begin
         begin
-            if (This.getCommand) /= (null) then
-                This.getPropertiesHashMap.put (StoreFrontData_Package.getInstance.NAME, This.storeName);
-                if (This.getCommand.compareTo (To_Unbounded_String ("EMAIL"))) = (0) then
-                    This.email;
+            if (QuoteRequestTag'Class (This).getCommand) /= (null) then
+                QuoteRequestTag'Class (This).getPropertiesHashMap.put (StoreFrontData_Package.getInstance.NAME, This.storeName);
+                if (QuoteRequestTag'Class (This).getCommand.compareTo (To_Unbounded_String ("EMAIL"))) = (0) then
+                    QuoteRequestTag'Class (This).email;
                     return This.EVAL_BODY_INCLUDE;
                 else
                     return TableTag (This).doStartTag;

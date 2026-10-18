@@ -60,7 +60,7 @@ package body org.allbinary.game.layer.identification.GroupLayerManagerListener_P
       groupInterfaceArray : Group_Access_Array_Access;
    begin
         groupInterfaceArray := groupInterfaceCompositeInterface.getGroupInterface;
-        return This.getGroupSize (groupInterfaceArray (0));
+        return GroupLayerManagerListener'Class (This).getGroupSize (groupInterfaceArray (0));
    end getGroupSizeFromInterface;
 
    function getGroupSize (This : in out GroupLayerManagerListener; groupInterface_Param : access Group_Package.Group'Class) return Integer is
@@ -68,7 +68,7 @@ package body org.allbinary.game.layer.identification.GroupLayerManagerListener_P
       id : Integer;
    begin
         id := Integer (groupInterface.getGroupId);
-        return This.getGroupSizeById (id);
+        return GroupLayerManagerListener'Class (This).getGroupSizeById (id);
    end getGroupSize;
 
    function getList (This : in out GroupLayerManagerListener; groupInterface_Param : access Group_Package.Group'Class) return BasicArrayList_Access is
@@ -76,7 +76,7 @@ package body org.allbinary.game.layer.identification.GroupLayerManagerListener_P
       id : Integer;
    begin
         id := Integer (groupInterface.getGroupId);
-        return This.getListById (id);
+        return GroupLayerManagerListener'Class (This).getListById (id);
    end getList;
 
    function getListById (This : in out GroupLayerManagerListener; groupId : Integer) return BasicArrayList_Access is
@@ -106,7 +106,7 @@ package body org.allbinary.game.layer.identification.GroupLayerManagerListener_P
         size := This.list.size;
         for index in reverse 0 .. (size) - (1) loop
             if (id) /= (index) then
-                groupSize := This.getGroupSizeById (index);
+                groupSize := GroupLayerManagerListener'Class (This).getGroupSizeById (index);
                 if (groupSize) /= (0) then
                     This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Group Size: ")).appendint (groupSize).toString, GroupLayerManagerListener_Access'(This'Unchecked_Access), To_Unbounded_String ("areAllOtherGroupsEmpty"));
                     return False;
@@ -152,8 +152,8 @@ package body org.allbinary.game.layer.identification.GroupLayerManagerListener_P
    begin
         size := This.list.size;
         for index in reverse 0 .. (size) - (1) loop
-            if not (This.isIdInList (index, excludeGroupList)) then
-                groupSize := This.getGroupSizeById (index);
+            if not (GroupLayerManagerListener'Class (This).isIdInList (index, excludeGroupList)) then
+                groupSize := GroupLayerManagerListener'Class (This).getGroupSizeById (index);
                 if (groupSize) >= (maxSize) then
                     return False;
                 end if;

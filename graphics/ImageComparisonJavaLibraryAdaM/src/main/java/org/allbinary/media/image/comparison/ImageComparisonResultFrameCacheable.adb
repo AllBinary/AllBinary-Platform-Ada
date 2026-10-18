@@ -27,7 +27,7 @@ package body org.allbinary.media.image.comparison.ImageComparisonResultFrameCach
       imageComparisonResult : constant ImageComparisonResult_Access := ImageComparisonResult_Access (imageComparisonResult_Param);
    begin
       Initialize_Fields (This);
-        This.setImageComparisonResult (imageComparisonResult);
+        ImageComparisonResultFrameCacheable'Class (This).setImageComparisonResult (imageComparisonResult);
         This.frame := frame;
    end Initialize;
 
@@ -70,7 +70,7 @@ package body org.allbinary.media.image.comparison.ImageComparisonResultFrameCach
         stringBuffer := StringMaker_Package.Create;
         stringBuffer.append (To_Unbounded_String (Ada.Tags.Expanded_Name (This.all'Tag)));
         stringBuffer.append (To_Unbounded_String (" Frame: "));
-        stringBuffer.appendlong (This.getFrame);
+        stringBuffer.appendlong (ImageComparisonResultFrameCacheable'Class (This).getFrame);
         return stringBuffer.toString;
    end toString;
 

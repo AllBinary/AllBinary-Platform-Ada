@@ -30,7 +30,7 @@ package body org.allbinary.animation.vector.RectangleFilledAdjustedAnimation_Pac
         Initialize_Fields (This);
         This.offsetX := offsetX;
         This.offsetY := offsetY;
-        This.setBasicColorP (basicColor);
+        RectangleFilledAdjustedAnimation'Class (This).setBasicColorP (basicColor);
    end Initialize;
 
    function Create (width : Integer; height : Integer; offsetX : Integer; offsetY : Integer; basicColor_Param : access BasicColor_Package.BasicColor'Class) return RectangleFilledAdjustedAnimation_Access is
@@ -48,7 +48,7 @@ package body org.allbinary.animation.vector.RectangleFilledAdjustedAnimation_Pac
    procedure paintXY (This : in out RectangleFilledAdjustedAnimation; graphics_Param : access Graphics_Package.Graphics'Class; x : Integer; y : Integer) is
       graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
-        This.basicSetColorUtil.setBasicColorP3 (graphics, This.getBasicColorP, This.getColor);
+        This.basicSetColorUtil.setBasicColorP3 (graphics, RectangleFilledAdjustedAnimation'Class (This).getBasicColorP, RectangleFilledAdjustedAnimation'Class (This).getColor);
         RectangleFilledAnimation (This).paintXY (graphics, (x) + (This.offsetX), (y) + (This.offsetY));
    end paintXY;
 

@@ -20,14 +20,16 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with javax.microedition.lcdui.Font_Package; use javax.microedition.lcdui.Font_Package;
---  with javax.microedition.midlet.MIDlet_Package; use javax.microedition.midlet.MIDlet_Package;
+with javax.microedition.lcdui.Font_Package; use javax.microedition.lcdui.Font_Package;
+with javax.microedition.midlet.MIDlet_Package; use javax.microedition.midlet.MIDlet_Package;
 with org.allbinary.graphics.threed.Runnable_Package; use org.allbinary.graphics.threed.Runnable_Package;
 with org.allbinary.graphics.threed.GLHolder_Package; use org.allbinary.graphics.threed.GLHolder_Package;
 with org.allbinary.graphics.threed.RatioProcessor_Package; use org.allbinary.graphics.threed.RatioProcessor_Package;
 
 package org.allbinary.graphics.threed.SWTJOGLProcessor_Package is
 
+   package Font_Package renames Standard.javax.microedition.lcdui.Font_Package;
+   package MIDlet_Package renames Standard.javax.microedition.midlet.MIDlet_Package;
 
    type SWTJOGLProcessor is tagged;
    type SWTJOGLProcessor_Access is access all SWTJOGLProcessor'Class;

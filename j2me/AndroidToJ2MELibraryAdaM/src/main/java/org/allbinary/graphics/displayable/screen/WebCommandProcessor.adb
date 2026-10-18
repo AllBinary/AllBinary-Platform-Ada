@@ -53,7 +53,7 @@ package body org.allbinary.graphics.displayable.screen.WebCommandProcessor_Packa
         begin
             context := Context_Access (This.aboutCommandProcessor.getContext);
             intent := Intent_Package.Create (context, TsUtil_Package.getInstance.getClassClassLoader (WebCommandProcessor_Access'(This'Unchecked_Access)).loadClass (This.WEB_VIEW_ACTIVITY));
-            intent.putExtra (This.aboutCommandProcessor.URL, Unbounded_String (This.list.removeAt (0)));
+            intent.putExtra (This.aboutCommandProcessor.URL, Java_Unbox (This.list.removeAt (0)));
             intent.setFlags (Intent_Package.FLAG_ACTIVITY_NEW_TASK);
             context.startActivity (intent);
         exception

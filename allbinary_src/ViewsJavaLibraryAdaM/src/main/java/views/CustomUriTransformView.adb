@@ -34,8 +34,8 @@ package body views.CustomUriTransformView_Package is
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
             This.logUtil.putF (To_Unbounded_String ("View Name: ") & transformInfoInterface.getName, CustomUriTransformView_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         end if;
-        This.setTransformInfoInterface (transformInfoInterface);
-        This.setTransformDocumentInterface (TransformDocumentFactory_Package.getInstance);
+        CustomUriTransformView'Class (This).setTransformInfoInterface (transformInfoInterface);
+        CustomUriTransformView'Class (This).setTransformDocumentInterface (TransformDocumentFactory_Package.getInstance);
    end Initialize;
 
    function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return CustomUriTransformView_Access is
@@ -82,12 +82,12 @@ package body views.CustomUriTransformView_Package is
       document : Document_Access;
       dataNode : Node_Access;
    begin
-        document := This.getTransformInfoInterface.getDataDocument;
-        dataNode := This.getTransformDocumentInterface.getDoc.importNode (document.getFirstChild, True);
+        document := CustomUriTransformView'Class (This).getTransformInfoInterface.getDataDocument;
+        dataNode := CustomUriTransformView'Class (This).getTransformDocumentInterface.getDoc.importNode (document.getFirstChild, True);
         if (dataNode) /= (null) then
-            This.getTransformDocumentInterface.getBaseNode.appendChild (dataNode);
+            CustomUriTransformView'Class (This).getTransformDocumentInterface.getBaseNode.appendChild (dataNode);
         end if;
-        return This.getTransformDocumentInterface.getDoc;
+        return CustomUriTransformView'Class (This).getTransformDocumentInterface.getDoc;
    end getDoc;
 
    --  throws Exception
@@ -96,8 +96,8 @@ package body views.CustomUriTransformView_Package is
       result : Unbounded_String;
    begin
         begin
-            success := XmlDocumentHelper_Package.toString (This.getDoc);
-            result := TransformInfoCustomUriTransformer_Package.Create (This.abeClientInformation, This.getTransformInfoInterface).translate (success);
+            success := XmlDocumentHelper_Package.toString (CustomUriTransformView'Class (This).getDoc);
+            result := TransformInfoCustomUriTransformer_Package.Create (This.abeClientInformation, CustomUriTransformView'Class (This).getTransformInfoInterface).translate (success);
             return result;
         exception
             when Java_Occurrence : others =>

@@ -42,7 +42,7 @@ package body org.allbinary.input.motion.button.TouchScreenType_Package is
 
    function toString (This : in out TouchScreenType) return Unbounded_String is
    begin
-        return This.getName;
+        return TouchScreenType'Class (This).getName;
    end toString;
 
 end org.allbinary.input.motion.button.TouchScreenType_Package;

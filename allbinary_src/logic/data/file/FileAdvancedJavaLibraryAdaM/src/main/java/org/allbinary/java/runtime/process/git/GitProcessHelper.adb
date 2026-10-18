@@ -49,7 +49,7 @@ package body org.allbinary.java.runtime.process.git.GitProcessHelper_Package is
    --  throws IOException, InterruptedException
    function trackedFiles (This : in out GitProcessHelper; rootAsString : Unbounded_String; pathspec : Unbounded_String) return List_Access is
    begin
-        return This.trackedFiles (rootAsString, pathspec, To_Unbounded_String (".java"));
+        return GitProcessHelper'Class (This).trackedFiles (rootAsString, pathspec, To_Unbounded_String (".java"));
    end trackedFiles;
 
    --  throws IOException, InterruptedException

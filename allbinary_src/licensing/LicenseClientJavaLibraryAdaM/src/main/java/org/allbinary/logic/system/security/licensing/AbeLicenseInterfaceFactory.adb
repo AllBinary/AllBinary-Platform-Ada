@@ -49,8 +49,8 @@ package body org.allbinary.logic.system.security.licensing.AbeLicenseInterfaceFa
    function getLicenseInstance (This : in out AbeLicenseInterfaceFactory; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class) return AbeLicenseInterface_Access is
       abeClientInformation : constant AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
    begin
-        if This.isTimeToGetKey then
-            return This.get (abeClientInformation);
+        if AbeLicenseInterfaceFactory'Class (This).isTimeToGetKey then
+            return AbeLicenseInterfaceFactory'Class (This).get (abeClientInformation);
         else
             return This.abeLicenseInterface;
         end if;
@@ -87,7 +87,7 @@ package body org.allbinary.logic.system.security.licensing.AbeLicenseInterfaceFa
    begin
         calendar := Calendar_Package.getInstance;
         currentTime := calendar.getTimeInMillis;
-        if (((((This.abeLicenseInterface) = (null)) or else ((This.abeLicenseInterface) = (AbeNoLicense_Package.getInstance))) or else (not (This.abeLicenseInterface.hasKey))) or else (This.isCheck)) or else (((currentTime) - (Long_Long_Integer (This.checkPeriod))) > (This.time)) then
+        if (((((This.abeLicenseInterface) = (null)) or else ((This.abeLicenseInterface) = (AbeNoLicense_Package.getInstance))) or else (not (This.abeLicenseInterface.hasKey))) or else (AbeLicenseInterfaceFactory'Class (This).isCheck)) or else (((currentTime) - (Long_Long_Integer (This.checkPeriod))) > (This.time)) then
             This.abeLicenseInterface := null;
             This.time := currentTime;
             return True;

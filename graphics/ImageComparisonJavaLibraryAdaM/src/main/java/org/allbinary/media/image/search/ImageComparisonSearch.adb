@@ -40,9 +40,9 @@ package body org.allbinary.media.image.search.ImageComparisonSearch_Package is
    begin
       Initialize_Fields (This);
         This.nonMatchingPixelVector := BasicArrayListD_Package.Create;
-        This.setBufferedImages (new BufferedImage_Access_Array'(0 .. (2) - 1 => null));
-        This.getBufferedImages (0) := bufferedImage;
-        This.getBufferedImages (1) := bufferedImage2;
+        ImageComparisonSearch'Class (This).setBufferedImages (new BufferedImage_Access_Array'(0 .. (2) - 1 => null));
+        ImageComparisonSearch'Class (This).getBufferedImages (0) := bufferedImage;
+        ImageComparisonSearch'Class (This).getBufferedImages (1) := bufferedImage2;
         This.imageHeight := bufferedImage.getHeight;
         This.imageWidth := bufferedImage.getWidth;
         if (bufferedImage.getHeight) /= (bufferedImage2.getHeight) then
@@ -97,7 +97,7 @@ package body org.allbinary.media.image.search.ImageComparisonSearch_Package is
 
    function toString (This : in out ImageComparisonSearch) return Unbounded_String is
    begin
-        return To_Unbounded_String ("ImageComparisonInfo: ") & To_Unbounded_String (" Number Of Matching Pixels: ") & Java_Image (This.pixelsThatMatch) & To_Unbounded_String ("" & ASCII.LF & "Number Of Non-Matching Pixels: ") & Java_Image (This.getNonMatchingPixelVector.size) & To_Unbounded_String ("" & ASCII.LF & "Number Of Pixels Ignored: ") & Java_Image (This.pixelsIgnored) & To_Unbounded_String ("" & ASCII.LF & "Matching Percentage: ") & Java_Image (This.getMatchingPercent);
+        return To_Unbounded_String ("ImageComparisonInfo: ") & To_Unbounded_String (" Number Of Matching Pixels: ") & Java_Image (This.pixelsThatMatch) & To_Unbounded_String ("" & ASCII.LF & "Number Of Non-Matching Pixels: ") & Java_Image (ImageComparisonSearch'Class (This).getNonMatchingPixelVector.size) & To_Unbounded_String ("" & ASCII.LF & "Number Of Pixels Ignored: ") & Java_Image (This.pixelsIgnored) & To_Unbounded_String ("" & ASCII.LF & "Matching Percentage: ") & Java_Image (ImageComparisonSearch'Class (This).getMatchingPercent);
    end toString;
 
    function getBufferedImages (This : in out ImageComparisonSearch) return BufferedImage_Access_Array_Access is

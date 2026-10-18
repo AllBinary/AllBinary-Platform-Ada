@@ -20,9 +20,9 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with javax.microedition.lcdui.Command_Package; use javax.microedition.lcdui.Command_Package;
---  with javax.microedition.lcdui.CommandListener_Package; use javax.microedition.lcdui.CommandListener_Package;
---  with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Command_Package; use javax.microedition.lcdui.Command_Package;
+with javax.microedition.lcdui.CommandListener_Package; use javax.microedition.lcdui.CommandListener_Package;
+with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
 with org.allbinary.game.commands.GameCommandsFactory_Package; use org.allbinary.game.commands.GameCommandsFactory_Package;
 with org.allbinary.game.input.GameKey_Package; use org.allbinary.game.input.GameKey_Package;
 with org.allbinary.game.input.GameKeyFactory_Package; use org.allbinary.game.input.GameKeyFactory_Package;
@@ -46,6 +46,9 @@ with org.allbinary.game.displayable.canvas.GameInputMappingInstructionsCanvas_Pa
 
 package org.allbinary.game.displayable.canvas.GameInputMappingCanvas_Package is
 
+   package Command_Package renames Standard.javax.microedition.lcdui.Command_Package;
+   package CommandListener_Package renames Standard.javax.microedition.lcdui.CommandListener_Package;
+   package Graphics_Package renames Standard.javax.microedition.lcdui.Graphics_Package;
    package GameCommandsFactory_Package renames Standard.org.allbinary.game.commands.GameCommandsFactory_Package;
    package GameKey_Package renames Standard.org.allbinary.game.input.GameKey_Package;
    package GameKeyFactory_Package renames Standard.org.allbinary.game.input.GameKeyFactory_Package;

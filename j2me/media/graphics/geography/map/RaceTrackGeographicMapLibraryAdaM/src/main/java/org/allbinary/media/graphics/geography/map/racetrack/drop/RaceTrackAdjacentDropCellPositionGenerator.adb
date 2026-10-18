@@ -105,7 +105,7 @@ package body org.allbinary.media.graphics.geography.map.racetrack.drop.RaceTrack
       index2 : Integer;
    begin
         geographicMapCellPosition := GeographicMapCellPosition_Access (This.list.get (index));
-        randomGeographicMapCellPosition := This.getFirstNonRoadAdjacentCellPosition (geographicMapCellPosition.getColumn, geographicMapCellPosition.getRow);
+        randomGeographicMapCellPosition := RaceTrackAdjacentDropCellPositionGenerator'Class (This).getFirstNonRoadAdjacentCellPosition (geographicMapCellPosition.getColumn, geographicMapCellPosition.getRow);
         if (randomGeographicMapCellPosition) = (null) then
             return;
         end if;

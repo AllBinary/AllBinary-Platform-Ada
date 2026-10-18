@@ -47,7 +47,7 @@ package body org.allbinary.game.ag.ai.ScrollOverImmediateAI_Package is
       height : Integer;
       displayInfo : DisplayInfoSingleton_Access;
    begin
-        ownerLayerInterface := This.getOwnerLayerInterface;
+        ownerLayerInterface := ScrollOverImmediateAI'Class (This).getOwnerLayerInterface;
         x := ownerLayerInterface.getXP;
         y := ownerLayerInterface.getYP;
         x2 := ownerLayerInterface.getX2;

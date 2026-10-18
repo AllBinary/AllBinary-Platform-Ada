@@ -42,12 +42,12 @@ package body taghelpers.OrderHistoryHelper_Package is
         This.propertiesHashMap := propertiesHashMap;
         This.pageContext := pageContext;
         This.request := HttpServletRequest_Access (pageContext.getRequest);
-        storeName := Unbounded_String (propertiesHashMap.get (StoreFrontData_Package.getInstance.NAME));
-        This.newStatus := Unbounded_String (propertiesHashMap.get (OrderHistoryData_Package.STATUS));
+        storeName := Java_Unbox (propertiesHashMap.get (StoreFrontData_Package.getInstance.NAME));
+        This.newStatus := Java_Unbox (propertiesHashMap.get (OrderHistoryData_Package.STATUS));
         if (storeName) /= (Null_Unbounded_String) then
             This.storeFrontInterface := StoreFrontFactory_Package.getInstance (storeName);
         end if;
-        This.getFormData;
+        OrderHistoryHelper'Class (This).getFormData;
    end Initialize;
 
    function Create (propertiesHashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) return OrderHistoryHelper_Access is

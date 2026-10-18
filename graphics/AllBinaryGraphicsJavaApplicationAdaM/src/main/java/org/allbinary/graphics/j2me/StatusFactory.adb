@@ -48,7 +48,7 @@ package body org.allbinary.graphics.j2me.StatusFactory_Package is
 
    procedure setStatus_Case (This : in out StatusFactory; status : Unbounded_String) is
    begin
-        This.setStatusNoLog (status);
+        StatusFactory'Class (This).setStatusNoLog (status);
         This.logUtil.putF (This.STATUS_LABEL & status, StatusFactory_Access'(This'Unchecked_Access), This.SETSTATUS);
    end setStatus_Case;
 

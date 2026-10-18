@@ -23,7 +23,7 @@ with AllBinary_Java; use AllBinary_Java;
 with android.graphics.Paint_Package; use android.graphics.Paint_Package;
 with android.graphics.PorterDuff_Package; use android.graphics.PorterDuff_Package;
 with android.graphics.PorterDuffColorFilter_Package; use android.graphics.PorterDuffColorFilter_Package;
---  with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
+with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
 
 package org.allbinary.media.image.ImageModifierUtil_Package is
@@ -31,6 +31,7 @@ package org.allbinary.media.image.ImageModifierUtil_Package is
    package Paint_Package renames Standard.android.graphics.Paint_Package;
    package PorterDuff_Package renames Standard.android.graphics.PorterDuff_Package;
    package PorterDuffColorFilter_Package renames Standard.android.graphics.PorterDuffColorFilter_Package;
+   package Image_Package renames Standard.javax.microedition.lcdui.Image_Package;
    package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
 
    type ImageModifierUtil is tagged;

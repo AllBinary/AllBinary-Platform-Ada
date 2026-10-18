@@ -20,10 +20,11 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with javax.microedition.rms.RecordComparator_Package; use javax.microedition.rms.RecordComparator_Package;
+with javax.microedition.rms.RecordComparator_Package; use javax.microedition.rms.RecordComparator_Package;
 
 package org.allbinary.game.configuration.persistance.NullRecordComparator_Package is
 
+   package RecordComparator_Package renames Standard.javax.microedition.rms.RecordComparator_Package;
 
    type NullRecordComparator is tagged;
    type NullRecordComparator_Access is access all NullRecordComparator'Class;

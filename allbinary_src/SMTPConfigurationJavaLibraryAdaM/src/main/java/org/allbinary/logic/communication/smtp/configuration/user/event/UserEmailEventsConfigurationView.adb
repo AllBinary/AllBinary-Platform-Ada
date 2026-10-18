@@ -87,7 +87,7 @@ package body org.allbinary.logic.communication.smtp.configuration.user.event.Use
    begin
         userEmailConfigurationMapping := UserEmailEventsConfigurationMapping_Package.Create (This.userEmailEventsConfigurationInterface);
         node := document.createElement (UserEmailEventsConfigurationData_Package.NAME);
-        emailEventHashMap := This.getUserEmailEventsConfigurationInterface.getEventConfigurationHashMap;
+        emailEventHashMap := UserEmailEventsConfigurationView'Class (This).getUserEmailEventsConfigurationInterface.getEventConfigurationHashMap;
         set := emailEventHashMap.keySet;
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.EMAILLOGGING) then
             This.logUtil.putF (To_Unbounded_String ("Number Of Email Events Specified in file: ") & Java_Image (set.size), UserEmailEventsConfigurationView_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
@@ -95,8 +95,8 @@ package body org.allbinary.logic.communication.smtp.configuration.user.event.Use
         eventNameArray := set.toArray;
         size := eventNameArray'Length;
         for index in 0 .. (size) - 1 loop
-            eventName := Unbounded_String (eventNameArray (index));
-            userEmailEventsConfigurationInterface := UserEmailEventConfigurationInterface_Access (emailEventHashMap.get (eventName));
+            eventName := Java_Unbox (eventNameArray (index));
+            userEmailEventsConfigurationInterface := UserEmailEventConfigurationInterface_Access (emailEventHashMap.get (Java_Box (eventName)));
             userEmailEventConfigurationView := UserEmailEventConfigurationView_Package.Create (userEmailEventsConfigurationInterface);
             node.appendChild (userEmailEventConfigurationView.toXmlNode (document));
         end loop;

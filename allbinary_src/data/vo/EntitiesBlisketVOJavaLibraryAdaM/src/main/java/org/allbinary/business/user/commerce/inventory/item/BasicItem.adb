@@ -61,35 +61,35 @@ package body org.allbinary.business.user.commerce.inventory.item.BasicItem_Packa
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.PRODUCTSEARCHLOGGING) then
             This.logUtil.putF (This.commonStrings.START, BasicItem_Access'(This'Unchecked_Access), To_Unbounded_String ("Constructor(HashMap)"));
         end if;
-        This.itemId := Unbounded_String (itemHashMap.get (This.basicItemData.ID));
-        This.number := Unbounded_String (itemHashMap.get (This.basicItemData.NUMBER));
-        This.inBaskets := Unbounded_String (itemHashMap.get (This.basicItemData.INBASKETS));
-        This.weight := Unbounded_String (itemHashMap.get (This.basicItemData.WEIGHT));
-        This.enabled := Unbounded_String (itemHashMap.get (EntryData_Package.getInstance.ENABLE));
-        This.newOrUsed := Unbounded_String (itemHashMap.get (This.basicItemData.NEWORUSED));
-        This.summary := Unbounded_String (itemHashMap.get (This.basicItemData.SUMMARY));
-        This.distributor := Unbounded_String (itemHashMap.get (This.basicItemData.DISTRIBUTOR));
-        This.idUsedByDistributor := Unbounded_String (itemHashMap.get (This.basicItemData.IDUSEDBYDISTRIBUTOR));
-        This.producedBy := Unbounded_String (itemHashMap.get (This.basicItemData.PRODUCEDBY));
-        This.productionDate := Unbounded_String (itemHashMap.get (This.basicItemData.PRODUCTIONDATE));
-        This.startProductionDate := Unbounded_String (itemHashMap.get (This.basicItemData.STARTPRODUCTIONDATE));
-        This.description := Unbounded_String (itemHashMap.get (This.basicItemData.DESCRIPTION));
-        This.keywords := Unbounded_String (itemHashMap.get (This.basicItemData.KEYWORDS));
-        This.category := Unbounded_String (itemHashMap.get (This.basicItemData.CATEGORY));
-        This.type_Id := Unbounded_String (itemHashMap.get (This.basicItemData.TYPE_Id));
-        This.smallImage := Unbounded_String (itemHashMap.get (This.basicItemData.SMALLIMAGE));
-        This.mediumImage := Unbounded_String (itemHashMap.get (This.basicItemData.MEDIUMIMAGE));
-        This.largeImage := Unbounded_String (itemHashMap.get (This.basicItemData.LARGEIMAGE));
-        This.timeEntered := Unbounded_String (itemHashMap.get (EntryData_Package.getInstance.TIMECREATED));
-        This.lastModified := Unbounded_String (itemHashMap.get (EntryData_Package.getInstance.LASTMODIFIED));
-        This.price := Money_Package.Create (Unbounded_String (itemHashMap.get (This.basicItemData.PRICE)));
-        This.comment := Unbounded_String (itemHashMap.get (This.basicItemData.COMMENT));
-        This.customs := Unbounded_String (itemHashMap.get (This.basicItemData.CUSTOMS));
-        This.setDownloads (Unbounded_String (itemHashMap.get (This.basicItemData.DOWNLOADS)));
-        This.groups := Unbounded_String (itemHashMap.get (This.basicItemData.GROUPS));
-        This.options := Unbounded_String (itemHashMap.get (This.basicItemData.OPTIONS));
-        This.permissions := Unbounded_String (itemHashMap.get (This.basicItemData.PERMISSIONS));
-        This.specials := Unbounded_String (itemHashMap.get (This.basicItemData.SPECIALS));
+        This.itemId := Java_Unbox (itemHashMap.get (This.basicItemData.ID));
+        This.number := Java_Unbox (itemHashMap.get (This.basicItemData.NUMBER));
+        This.inBaskets := Java_Unbox (itemHashMap.get (This.basicItemData.INBASKETS));
+        This.weight := Java_Unbox (itemHashMap.get (This.basicItemData.WEIGHT));
+        This.enabled := Java_Unbox (itemHashMap.get (EntryData_Package.getInstance.ENABLE));
+        This.newOrUsed := Java_Unbox (itemHashMap.get (This.basicItemData.NEWORUSED));
+        This.summary := Java_Unbox (itemHashMap.get (This.basicItemData.SUMMARY));
+        This.distributor := Java_Unbox (itemHashMap.get (This.basicItemData.DISTRIBUTOR));
+        This.idUsedByDistributor := Java_Unbox (itemHashMap.get (This.basicItemData.IDUSEDBYDISTRIBUTOR));
+        This.producedBy := Java_Unbox (itemHashMap.get (This.basicItemData.PRODUCEDBY));
+        This.productionDate := Java_Unbox (itemHashMap.get (This.basicItemData.PRODUCTIONDATE));
+        This.startProductionDate := Java_Unbox (itemHashMap.get (This.basicItemData.STARTPRODUCTIONDATE));
+        This.description := Java_Unbox (itemHashMap.get (This.basicItemData.DESCRIPTION));
+        This.keywords := Java_Unbox (itemHashMap.get (This.basicItemData.KEYWORDS));
+        This.category := Java_Unbox (itemHashMap.get (This.basicItemData.CATEGORY));
+        This.type_Id := Java_Unbox (itemHashMap.get (This.basicItemData.TYPE_Id));
+        This.smallImage := Java_Unbox (itemHashMap.get (This.basicItemData.SMALLIMAGE));
+        This.mediumImage := Java_Unbox (itemHashMap.get (This.basicItemData.MEDIUMIMAGE));
+        This.largeImage := Java_Unbox (itemHashMap.get (This.basicItemData.LARGEIMAGE));
+        This.timeEntered := Java_Unbox (itemHashMap.get (EntryData_Package.getInstance.TIMECREATED));
+        This.lastModified := Java_Unbox (itemHashMap.get (EntryData_Package.getInstance.LASTMODIFIED));
+        This.price := Money_Package.Create (Java_Unbox (itemHashMap.get (This.basicItemData.PRICE)));
+        This.comment := Java_Unbox (itemHashMap.get (This.basicItemData.COMMENT));
+        This.customs := Java_Unbox (itemHashMap.get (This.basicItemData.CUSTOMS));
+        BasicItem'Class (This).setDownloads (Java_Unbox (itemHashMap.get (This.basicItemData.DOWNLOADS)));
+        This.groups := Java_Unbox (itemHashMap.get (This.basicItemData.GROUPS));
+        This.options := Java_Unbox (itemHashMap.get (This.basicItemData.OPTIONS));
+        This.permissions := Java_Unbox (itemHashMap.get (This.basicItemData.PERMISSIONS));
+        This.specials := Java_Unbox (itemHashMap.get (This.basicItemData.SPECIALS));
    end Initialize;
 
    function Create (itemHashMap_Param : access HashMap_Package.HashMap'Class) return BasicItem_Access is
@@ -131,7 +131,7 @@ package body org.allbinary.business.user.commerce.inventory.item.BasicItem_Packa
         This.price := Money_Package.Create;
         This.comment := EMPTY;
         This.customs := EMPTY;
-        This.setDownloads (EMPTY);
+        BasicItem'Class (This).setDownloads (EMPTY);
         This.groups := EMPTY;
         This.options := EMPTY;
         This.permissions := EMPTY;
@@ -268,7 +268,7 @@ package body org.allbinary.business.user.commerce.inventory.item.BasicItem_Packa
         if not (StringValidationUtil_Package.getInstance.isEmpty (This.downloads)) then
             downloadInteger := To_Unbounded_String (Java_Image (This.downloads));
             if (downloadInteger.intValue) /= (0) then
-                This.setDownloadable (True);
+                BasicItem'Class (This).setDownloadable (True);
             end if;
         end if;
    end setDownloads;
@@ -470,36 +470,36 @@ package body org.allbinary.business.user.commerce.inventory.item.BasicItem_Packa
             This.logUtil.putF (This.commonStrings.START, BasicItem_Access'(This'Unchecked_Access), To_Unbounded_String ("toHashMap"));
         end if;
         hashMap := StdUtil_Package.getInstance.createHashMap;
-        hashMap.put (This.basicItemData.ID, This.itemId);
-        hashMap.put (This.basicItemData.NUMBER, This.number);
-        hashMap.put (This.basicItemData.INBASKETS, This.inBaskets);
-        hashMap.put (This.basicItemData.WEIGHT, This.weight);
-        hashMap.put (EntryData_Package.getInstance.ENABLE, This.enabled);
-        hashMap.put (This.basicItemData.NEWORUSED, This.newOrUsed);
-        hashMap.put (This.basicItemData.SUMMARY, This.summary);
-        hashMap.put (This.basicItemData.DISTRIBUTOR, This.distributor);
-        hashMap.put (This.basicItemData.IDUSEDBYDISTRIBUTOR, This.idUsedByDistributor);
-        hashMap.put (This.basicItemData.PRODUCEDBY, This.producedBy);
-        hashMap.put (This.basicItemData.PRODUCTIONDATE, This.productionDate);
-        hashMap.put (This.basicItemData.STARTPRODUCTIONDATE, This.startProductionDate);
-        hashMap.put (This.basicItemData.DESCRIPTION, This.description);
-        hashMap.put (This.basicItemData.KEYWORDS, This.keywords);
-        hashMap.put (This.basicItemData.CATEGORY, This.category);
-        hashMap.put (This.basicItemData.TYPE_Id, This.type_Id);
-        hashMap.put (This.basicItemData.SMALLIMAGE, This.smallImage);
-        hashMap.put (This.basicItemData.MEDIUMIMAGE, This.mediumImage);
-        hashMap.put (This.basicItemData.LARGEIMAGE, This.largeImage);
+        hashMap.put (This.basicItemData.ID, Java_Box (This.itemId));
+        hashMap.put (This.basicItemData.NUMBER, Java_Box (This.number));
+        hashMap.put (This.basicItemData.INBASKETS, Java_Box (This.inBaskets));
+        hashMap.put (This.basicItemData.WEIGHT, Java_Box (This.weight));
+        hashMap.put (EntryData_Package.getInstance.ENABLE, Java_Box (This.enabled));
+        hashMap.put (This.basicItemData.NEWORUSED, Java_Box (This.newOrUsed));
+        hashMap.put (This.basicItemData.SUMMARY, Java_Box (This.summary));
+        hashMap.put (This.basicItemData.DISTRIBUTOR, Java_Box (This.distributor));
+        hashMap.put (This.basicItemData.IDUSEDBYDISTRIBUTOR, Java_Box (This.idUsedByDistributor));
+        hashMap.put (This.basicItemData.PRODUCEDBY, Java_Box (This.producedBy));
+        hashMap.put (This.basicItemData.PRODUCTIONDATE, Java_Box (This.productionDate));
+        hashMap.put (This.basicItemData.STARTPRODUCTIONDATE, Java_Box (This.startProductionDate));
+        hashMap.put (This.basicItemData.DESCRIPTION, Java_Box (This.description));
+        hashMap.put (This.basicItemData.KEYWORDS, Java_Box (This.keywords));
+        hashMap.put (This.basicItemData.CATEGORY, Java_Box (This.category));
+        hashMap.put (This.basicItemData.TYPE_Id, Java_Box (This.type_Id));
+        hashMap.put (This.basicItemData.SMALLIMAGE, Java_Box (This.smallImage));
+        hashMap.put (This.basicItemData.MEDIUMIMAGE, Java_Box (This.mediumImage));
+        hashMap.put (This.basicItemData.LARGEIMAGE, Java_Box (This.largeImage));
         calendar := Calendar_Package.getInstance;
         time := calendar.getTimeInMillis.toString;
-        hashMap.put (EntryData_Package.getInstance.LASTMODIFIED, time);
-        hashMap.put (This.basicItemData.PRICE, This.price.toString);
-        hashMap.put (This.basicItemData.COMMENT, This.comment);
-        hashMap.put (This.basicItemData.CUSTOMS, This.customs);
-        hashMap.put (This.basicItemData.DOWNLOADS, This.getDownloads);
-        hashMap.put (This.basicItemData.GROUPS, This.groups);
-        hashMap.put (This.basicItemData.OPTIONS, This.options);
-        hashMap.put (This.basicItemData.PERMISSIONS, This.permissions);
-        hashMap.put (This.basicItemData.SPECIALS, This.specials);
+        hashMap.put (EntryData_Package.getInstance.LASTMODIFIED, Java_Box (time));
+        hashMap.put (This.basicItemData.PRICE, Java_Box (This.price.toString));
+        hashMap.put (This.basicItemData.COMMENT, Java_Box (This.comment));
+        hashMap.put (This.basicItemData.CUSTOMS, Java_Box (This.customs));
+        hashMap.put (This.basicItemData.DOWNLOADS, BasicItem'Class (This).getDownloads);
+        hashMap.put (This.basicItemData.GROUPS, Java_Box (This.groups));
+        hashMap.put (This.basicItemData.OPTIONS, Java_Box (This.options));
+        hashMap.put (This.basicItemData.PERMISSIONS, Java_Box (This.permissions));
+        hashMap.put (This.basicItemData.SPECIALS, Java_Box (This.specials));
         return hashMap;
    end toHashMap;
 
@@ -528,9 +528,9 @@ package body org.allbinary.business.user.commerce.inventory.item.BasicItem_Packa
         values.add (This.keywords);
         values.add (This.category);
         values.add (This.type_Id);
-        values.add (This.getSmallImage);
-        values.add (This.getMediumImage);
-        values.add (This.getLargeImage);
+        values.add (BasicItem'Class (This).getSmallImage);
+        values.add (BasicItem'Class (This).getMediumImage);
+        values.add (BasicItem'Class (This).getLargeImage);
         calendar := Calendar_Package.getInstance;
         time := calendar.getTimeInMillis.toString;
         values.add (time);
@@ -538,7 +538,7 @@ package body org.allbinary.business.user.commerce.inventory.item.BasicItem_Packa
         values.add (This.price.toString);
         values.add (This.comment);
         values.add (This.customs);
-        values.add (This.getDownloads);
+        values.add (BasicItem'Class (This).getDownloads);
         values.add (This.groups);
         values.add (This.options);
         values.add (This.permissions);
@@ -549,7 +549,7 @@ package body org.allbinary.business.user.commerce.inventory.item.BasicItem_Packa
    --  throws Exception
    function getKey (This : in out BasicItem) return Java_Object_Access is
    begin
-        return Java_Object_Access (This.getId);
+        return Java_Object_Access (BasicItem'Class (This).getId);
    end getKey;
 
 end org.allbinary.business.user.commerce.inventory.item.BasicItem_Package;

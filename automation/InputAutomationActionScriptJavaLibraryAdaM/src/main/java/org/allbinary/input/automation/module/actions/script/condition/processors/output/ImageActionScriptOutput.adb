@@ -44,12 +44,12 @@ package body org.allbinary.input.automation.module.actions.script.condition.proc
                 childNode := nodeList.item (index);
                 if (childNode.getNodeName.compareTo (ImageActionScriptOutputData_Package.SAVE)) = (0) then
                     booleanString := DomNodeHelper_Package.getTextNodeValue (childNode);
-                    This.setSaved (booleanString.booleanValue);
+                    ImageActionScriptOutput'Class (This).setSaved (booleanString.booleanValue);
                 elsif (childNode.getNodeName.compareTo (ImageActionScriptOutputData_Package.DISPLAY)) = (0) then
                     booleanString := DomNodeHelper_Package.getTextNodeValue (childNode);
-                    This.setSaved (booleanString.booleanValue);
+                    ImageActionScriptOutput'Class (This).setSaved (booleanString.booleanValue);
                 elsif (childNode.getNodeName.compareTo (ImageActionScriptOutputData_Package.TYPES)) = (0) then
-                    This.setImageTypes (ImageTypes_Package.Create (childNode));
+                    ImageActionScriptOutput'Class (This).setImageTypes (ImageTypes_Package.Create (childNode));
                 else
                     Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Action Script Output Unknown Node")));
                 end if;
@@ -57,7 +57,7 @@ package body org.allbinary.input.automation.module.actions.script.condition.proc
         else
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Action Script Output Node Null")));
         end if;
-        This.setAllowsChildren (False);
+        ImageActionScriptOutput'Class (This).setAllowsChildren (False);
         This.actionScriptOutputJPanel := ImageActionScriptOutputJPanel_Package.Create (ImageActionScriptOutput_Access'(This'Unchecked_Access));
    end Initialize;
 
@@ -72,8 +72,8 @@ package body org.allbinary.input.automation.module.actions.script.condition.proc
    begin
         BasicProfileActionScriptOutput_Package.Initialize (This, NAME);
         Initialize_Fields (This);
-        This.setImageTypes (ImageTypes_Package.Create);
-        This.setAllowsChildren (False);
+        ImageActionScriptOutput'Class (This).setImageTypes (ImageTypes_Package.Create);
+        ImageActionScriptOutput'Class (This).setAllowsChildren (False);
         This.actionScriptOutputJPanel := ImageActionScriptOutputJPanel_Package.Create (ImageActionScriptOutput_Access'(This'Unchecked_Access));
    end Initialize;
 
@@ -93,8 +93,8 @@ package body org.allbinary.input.automation.module.actions.script.condition.proc
       hashMap : HashMap_Access;
    begin
         hashMap := StdUtil_Package.getInstance.createHashMap;
-        hashMap.put (ImageActionScriptOutputData_Package.DISPLAY, To_Unbounded_String (Java_Image (This.isDisplay)));
-        hashMap.put (ImageActionScriptOutputData_Package.SAVE, To_Unbounded_String (Java_Image (This.isSaved)));
+        hashMap.put (ImageActionScriptOutputData_Package.DISPLAY, Java_Box (To_Unbounded_String (Java_Image (ImageActionScriptOutput'Class (This).isDisplay))));
+        hashMap.put (ImageActionScriptOutputData_Package.SAVE, Java_Box (To_Unbounded_String (Java_Image (ImageActionScriptOutput'Class (This).isSaved))));
         This.logUtil.putF (To_Unbounded_String ("HashMap: ") & hashMap.toString, ImageActionScriptOutput_Access'(This'Unchecked_Access), To_Unbounded_String ("toHashMap()"));
         return hashMap;
    end toHashMap;
@@ -106,8 +106,8 @@ package body org.allbinary.input.automation.module.actions.script.condition.proc
       newNode : Node_Access;
    begin
         node := BasicProfileActionScriptOutput (This).toXmlNode (document);
-        newNode := ModDomHelper_Package.createNodeWithValueNodes (document, ImageActionScriptOutputData_Package.NAME, This.toHashMap);
-        newNode.appendChild (This.getImageTypes.toXmlNode (document));
+        newNode := ModDomHelper_Package.createNodeWithValueNodes (document, ImageActionScriptOutputData_Package.NAME, ImageActionScriptOutput'Class (This).toHashMap);
+        newNode.appendChild (ImageActionScriptOutput'Class (This).getImageTypes.toXmlNode (document));
         node.appendChild (newNode);
         return node;
    end toXmlNode;
@@ -148,17 +148,17 @@ package body org.allbinary.input.automation.module.actions.script.condition.proc
    begin
         stringBuffer := StringMaker_Package.Create;
         stringBuffer.append (To_Unbounded_String (" Is Save: "));
-        stringBuffer.appendboolean (This.isSaved);
+        stringBuffer.appendboolean (ImageActionScriptOutput'Class (This).isSaved);
         stringBuffer.append (To_Unbounded_String (" Is Display: "));
-        stringBuffer.appendboolean (This.isDisplay);
+        stringBuffer.appendboolean (ImageActionScriptOutput'Class (This).isDisplay);
         stringBuffer.append (To_Unbounded_String (" "));
-        stringBuffer.append (This.getImageTypes.toString);
+        stringBuffer.append (ImageActionScriptOutput'Class (This).getImageTypes.toString);
         return stringBuffer.toString;
    end future_toString;
 
    procedure log (This : in out ImageActionScriptOutput) is
    begin
-        This.logUtil.putF (This.future_toString, ImageActionScriptOutput_Access'(This'Unchecked_Access), To_Unbounded_String ("log"));
+        This.logUtil.putF (ImageActionScriptOutput'Class (This).future_toString, ImageActionScriptOutput_Access'(This'Unchecked_Access), To_Unbounded_String ("log"));
    end log;
 
    function getImageTypes (This : in out ImageActionScriptOutput) return ImageTypes_Access is

@@ -21,7 +21,7 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.util.Calendar_Package; use java.util.Calendar_Package;
---  with java.util.HashMap_Package; use java.util.HashMap_Package;
+with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 --  with javax.servlet.http.HttpServletRequest_Package; use javax.servlet.http.HttpServletRequest_Package;
@@ -52,6 +52,7 @@ with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 package org.allbinary.business.user.modules.User_Package is
 
    package Calendar_Package renames Standard.java.util.Calendar_Package;
+   package HashMap_Package renames Standard.java.util.HashMap_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
    package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    package StoreFrontData_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
@@ -105,7 +106,7 @@ package org.allbinary.business.user.modules.User_Package is
       encryption : Unbounded_String;
       secret : Unbounded_String;
       password : Password_Access;
-      enable : Unbounded_String;
+      enable_Field : Unbounded_String;
       permissions : Unbounded_String;
       userConfigurationInterface : UserConfigurationInterface_Access;
    end record;
@@ -142,7 +143,7 @@ package org.allbinary.business.user.modules.User_Package is
    procedure setPassword (This : in out User; value : Unbounded_String);
    procedure enable (This : in out User);
    procedure disable (This : in out User);
-   procedure setEnable (This : in out User; enable : Unbounded_String);
+   procedure setEnable (This : in out User; enable_Field : Unbounded_String);
    function getUserName (This : in out User) return Unbounded_String;
    function getPrefixName (This : in out User) return Unbounded_String;
    function getFirstName (This : in out User) return Unbounded_String;

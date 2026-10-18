@@ -61,7 +61,7 @@ package body org.allbinary.graphics.paint.SimpleTextPaintable_Package is
    begin
         This.myFontProcessor.process (graphics);
         width := This.displayInfoSingleton.getLast (This.displayInfoSingleton.WIDTH);
-        graphics.setColor (This.getBasicColorP.intValue);
+        graphics.setColor (SimpleTextPaintable'Class (This).getBasicColorP.intValue);
         graphics.drawString (This.text, ((Java_Shift_Right_Arithmetic (width, 1))) - (This.topScoresWidth), This.fontHeight, This.anchor);
    end paint;
 

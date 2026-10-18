@@ -20,7 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.util.HashMap_Package; use java.util.HashMap_Package;
+with java.util.HashMap_Package; use java.util.HashMap_Package;
 --  with javax.servlet.ServletRequest_Package; use javax.servlet.ServletRequest_Package;
 with org.allbinary.business.entry_Id.EntryData_Package; use org.allbinary.business.entry_Id.EntryData_Package;
 with org.allbinary.data.tree.dom.DomNodeInterface_Package; use org.allbinary.data.tree.dom.DomNodeInterface_Package;
@@ -35,6 +35,7 @@ with org.allbinary.business.user.commerce.money.payment.PaymentData_Package; use
 
 package org.allbinary.business.user.commerce.money.payment.Payment_Package is
 
+   package HashMap_Package renames Standard.java.util.HashMap_Package;
    package EntryData_Package renames Standard.org.allbinary.business.entry_Id.EntryData_Package;
    package DomNodeInterface_Package renames Standard.org.allbinary.data.tree.dom.DomNodeInterface_Package;
    package ModDomHelper_Package renames Standard.org.allbinary.data.tree.dom.ModDomHelper_Package;
@@ -66,7 +67,7 @@ package org.allbinary.business.user.commerce.money.payment.Payment_Package is
       checkType : Unbounded_String;
       driversLicense : Unbounded_String;
       magneticInkCheckReader : Unbounded_String;
-      isDefault : Boolean;
+      isDefault_Field : Boolean;
    end record;
 
    procedure Initialize (This : in out Payment'Class; payment_Param : access HashMap_Package.HashMap'Class);

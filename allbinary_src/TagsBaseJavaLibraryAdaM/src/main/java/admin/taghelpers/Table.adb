@@ -38,42 +38,49 @@ package body admin.taghelpers.Table_Package is
    function drop (This : in out Table) return Unbounded_String is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return Null_Unbounded_String;
    end drop;
 
    --  throws Exception
    function create (This : in out Table) return Unbounded_String is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return Null_Unbounded_String;
    end create;
 
    --  throws Exception
    function restore (This : in out Table) return Unbounded_String is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return Null_Unbounded_String;
    end restore;
 
    --  throws Exception
    function backup (This : in out Table) return Unbounded_String is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return Null_Unbounded_String;
    end backup;
 
    --  throws Exception
    function insert (This : in out Table) return Unbounded_String is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return Null_Unbounded_String;
    end insert;
 
    --  throws Exception
    function delete (This : in out Table) return Unbounded_String is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return Null_Unbounded_String;
    end delete;
 
    --  throws Exception
    function update (This : in out Table) return Unbounded_String is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return Null_Unbounded_String;
    end update;
 
 end admin.taghelpers.Table_Package;

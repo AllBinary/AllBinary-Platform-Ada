@@ -45,7 +45,7 @@ package body org.allbinary.graphics.canvas.transition.progress.LazyProgressCanva
    begin
         begin
             This.logUtil.putF (This.commonStrings.START, LazyProgressCanvas_Access'(This'Unchecked_Access), This.commonStrings.END_METHOD_NAME);
-            This.endActual;
+            LazyProgressCanvas'Class (This).endActual;
             This.paintable := This.GAUGE_PAINTABLE;
             ImageCacheFactory_Package.getInstance.runTask;
             ImageCacheFactory_Package.getInstance.progressEnded;
@@ -73,7 +73,7 @@ package body org.allbinary.graphics.canvas.transition.progress.LazyProgressCanva
    procedure endIfPaintedSinceStart (This : in out LazyProgressCanvas) is
    begin
         if ((This.paintable) = (This.GAUGE_PAINTABLE)) and then (This.hasPainted) then
-            This.endFromInitialLazyLoadingComplete;
+            LazyProgressCanvas'Class (This).endFromInitialLazyLoadingComplete;
         end if;
    end endIfPaintedSinceStart;
 

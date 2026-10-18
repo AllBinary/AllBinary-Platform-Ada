@@ -83,6 +83,7 @@ package body org.allbinary.graphics.form.ABCustomForm_Package is
    function getWidth (This : in out ABCustomForm) return Integer is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return 0;
    end getWidth;
 
    procedure paint (This : in out ABCustomForm; graphics_Param : access Graphics_Package.Graphics'Class) is

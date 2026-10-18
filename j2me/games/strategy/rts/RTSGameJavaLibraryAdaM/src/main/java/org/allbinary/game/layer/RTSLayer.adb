@@ -84,11 +84,11 @@ package body org.allbinary.game.layer.RTSLayer_Package is
    begin
         MultiPlayerGameLayer_Package.Initialize (This, remoteInfo, groupInterface, name, rectangle, viewPosition);
         Initialize_Fields (This);
-        This.initInputProcessors;
+        RTSLayer'Class (This).initInputProcessors;
         This.rootName := rootName;
         This.healthInterface := healthInterface;
         This.rtsFormInput := rtsFormInput;
-        This.setPosition (x, y, This.z);
+        RTSLayer'Class (This).setPosition (x, y, This.z);
         This.verticleBuildAnimationInterface := IndexedAnimation_Access (verticleBuildAnimationInterfaceFactoryInterface.getInstance (0));
         This.buildAnimationInterface := buildAnimationInterfaceFactoryInterface.getInstance (0);
         This.baseAnimationInterface := baseAnimationInterfaceFactoryInterface.getInstance (0);
@@ -124,9 +124,9 @@ package body org.allbinary.game.layer.RTSLayer_Package is
         geographicMapCompositeInterface := GeographicMapCompositeInterface_Access (This.allBinaryGameLayerManagerP);
         geographicMapInterface := geographicMapCompositeInterface.getGeographicMapInterface (0);
         tiledLayer := geographicMapInterface.getAllBinaryTiledLayer;
-        viewPosition2 := TileLayerPositionIntoViewPosition_Access (This.getViewPosition);
+        viewPosition2 := TileLayerPositionIntoViewPosition_Access (RTSLayer'Class (This).getViewPosition);
         viewPosition2.setTiledLayer (tiledLayer);
-        This.updateWaypointBehavior (geographicMapInterface);
+        RTSLayer'Class (This).updateWaypointBehavior (geographicMapInterface);
    end setAllBinaryGameLayerManager;
 
    --  throws Exception
@@ -149,7 +149,7 @@ package body org.allbinary.game.layer.RTSLayer_Package is
    begin
         This.rangeAnimation := This.initRangeAnimation;
         This.sensorRangeAnimation := This.initSensorRangeAnimation;
-        This.setSelected (True);
+        RTSLayer'Class (This).setSelected (True);
    end select_Id;
 
    procedure deselect (This : in out RTSLayer) is
@@ -158,7 +158,7 @@ package body org.allbinary.game.layer.RTSLayer_Package is
         animation := NullAnimationFactory_Package.getFactoryInstance.getInstance (0);
         This.rangeAnimation := animation;
         This.sensorRangeAnimation := animation;
-        This.setSelected (False);
+        RTSLayer'Class (This).setSelected (False);
    end deselect;
 
    procedure setSelected (This : in out RTSLayer; selected : Boolean) is
@@ -197,10 +197,10 @@ package body org.allbinary.game.layer.RTSLayer_Package is
       allBinaryLayerManager : constant AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (allBinaryLayerManager_Param);
    begin
         begin
-            if This.isCompleted then
-                This.processBuiltTick (allBinaryLayerManager);
+            if RTSLayer'Class (This).isCompleted then
+                RTSLayer'Class (This).processBuiltTick (allBinaryLayerManager);
             else
-                This.build;
+                RTSLayer'Class (This).build;
             end if;
         exception
             when Java_Occurrence : others =>
@@ -244,10 +244,10 @@ package body org.allbinary.game.layer.RTSLayer_Package is
       viewY : Integer;
    begin
         MultiPlayerGameLayer (This).paintFirst (graphics);
-        viewPosition := This.getViewPosition;
+        viewPosition := RTSLayer'Class (This).getViewPosition;
         viewX := viewPosition.getX;
         viewY := viewPosition.getY;
-        This.getAnimationInterface.paintXY (graphics, viewX, viewY);
+        RTSLayer'Class (This).getAnimationInterface.paintXY (graphics, viewX, viewY);
    end paint;
 
    --  throws Exception
@@ -289,7 +289,7 @@ package body org.allbinary.game.layer.RTSLayer_Package is
             This.hackVerticleBuild := This.hackVerticleBuild + 1;
         end if;
         This.percentCompleteP := ((100) * (This.hackVerticleBuild)) / (This.BUILD_VALUE);
-        This.getHudPaintable.updateInfo;
+        RTSLayer'Class (This).getHudPaintable.updateInfo;
    end build;
 
    function isSelfUpgradeable (This : in out RTSLayer) return Boolean is
@@ -314,7 +314,7 @@ package body org.allbinary.game.layer.RTSLayer_Package is
 
    function isUpgradeable (This : in out RTSLayer) return Boolean is
    begin
-        if (This.getLevel) < (This.getMaxLevel) then
+        if (RTSLayer'Class (This).getLevel) < (RTSLayer'Class (This).getMaxLevel) then
             return True;
         else
             return False;
@@ -323,7 +323,7 @@ package body org.allbinary.game.layer.RTSLayer_Package is
 
    function isDowngradeable (This : in out RTSLayer) return Boolean is
    begin
-        if (This.getLevel) > (1) then
+        if (RTSLayer'Class (This).getLevel) > (1) then
             return True;
         else
             return False;
@@ -363,18 +363,20 @@ package body org.allbinary.game.layer.RTSLayer_Package is
       waypointBehaviorBase : WaypointBehaviorBase_Access;
    begin
         anotherTargetDistance := This.layerDistanceUtil.getDistance (AllBinaryLayer_Access (RTSLayer_Access'(This'Unchecked_Access)), AllBinaryLayer_Access (targetGameLayer));
-        waypointBehaviorBase := This.getWaypointBehavior;
+        waypointBehaviorBase := RTSLayer'Class (This).getWaypointBehavior;
         waypointBehaviorBase.setTargetWithDistance (PathFindingLayerInterface_Access (targetGameLayer), anotherTargetDistance);
    end setTarget;
 
    function createHudPaintable (This : in out RTSLayer) return SelectionHudPaintable_Access is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return null;
    end createHudPaintable;
 
    function getHudPaintable (This : in out RTSLayer) return SelectionHudPaintable_Access is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return null;
    end getHudPaintable;
 
    function getMaxLevel (This : in out RTSLayer) return Integer is
@@ -413,7 +415,7 @@ package body org.allbinary.game.layer.RTSLayer_Package is
    procedure setDestroyed (This : in out RTSLayer; destroyed : Boolean) is
    begin
         This.destroyed := destroyed;
-        if This.isDestroyed then
+        if RTSLayer'Class (This).isDestroyed then
             DestroyedLayerProcessor_Package.getInstance.add (RTSLayer_Access'(This'Unchecked_Access));
             ViewPositionEventHandler_Package.getInstance.removeListener (RTSLayer_Access'(This'Unchecked_Access));
         end if;
@@ -444,11 +446,13 @@ package body org.allbinary.game.layer.RTSLayer_Package is
    function getWaypointBehavior (This : in out RTSLayer) return WaypointBehaviorBase_Access is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return null;
    end getWaypointBehavior;
 
    function getParentLayer (This : in out RTSLayer) return PathFindingLayerInterface_Access is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return null;
    end getParentLayer;
 
    function getRTSLayer2LogHelper (This : in out RTSLayer) return RTSLayer2LogHelper_Access is
@@ -479,6 +483,7 @@ package body org.allbinary.game.layer.RTSLayer_Package is
    function getCaptionAnimationHelper (This : in out RTSLayer) return CaptionAnimationHelperBase_Access is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return null;
    end getCaptionAnimationHelper;
 
    function isShowMoreCaptionStates (This : in out RTSLayer) return Boolean is
@@ -498,18 +503,21 @@ package body org.allbinary.game.layer.RTSLayer_Package is
    function getCurrentGeographicMapCellPosition (This : in out RTSLayer) return GeographicMapCellPosition_Access is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return null;
    end getCurrentGeographicMapCellPosition;
 
    --  throws Exception
    function getTopLeftGeographicMapCellPosition (This : in out RTSLayer) return GeographicMapCellPosition_Access is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return null;
    end getTopLeftGeographicMapCellPosition;
 
    function getMoveOutOfBuildAreaPath (This : in out RTSLayer; geographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) return BasicArrayList_Access is
       geographicMapCellPosition : constant GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (geographicMapCellPosition_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return null;
    end getMoveOutOfBuildAreaPath;
 
    --  throws Exception
@@ -535,6 +543,7 @@ package body org.allbinary.game.layer.RTSLayer_Package is
    function getSurroundingGeographicMapCellPositionList (This : in out RTSLayer) return BasicArrayList_Access is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return null;
    end getSurroundingGeographicMapCellPositionList;
 
    --  throws Exception
@@ -557,6 +566,7 @@ package body org.allbinary.game.layer.RTSLayer_Package is
    function getTrackingEvent (This : in out RTSLayer) return TrackingEvent_Access is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return null;
    end getTrackingEvent;
 
    --  throws Exception
@@ -613,7 +623,7 @@ package body org.allbinary.game.layer.RTSLayer_Package is
 
    procedure setFrame (This : in out RTSLayer; index : Integer) is
    begin
-        This.getRotationAnimationInterface.setFrame (index);
+        RTSLayer'Class (This).getRotationAnimationInterface.setFrame (index);
    end setFrame;
 
    procedure setRotationAnimationInterface (This : in out RTSLayer; rotationAnimationInterface_Param : access RotationAnimation_Package.RotationAnimation'Class) is

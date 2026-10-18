@@ -42,7 +42,7 @@ package body org.allbinary.game.input.SelectedRTSLayersPlayerGameInput_Package i
    begin
         PlayerGameInput_Package.Initialize (This, list, BasicArrayListD_Package.Create, playerInputId);
         Initialize_Fields (This);
-        This.initInputProcessors;
+        SelectedRTSLayersPlayerGameInput'Class (This).initInputProcessors;
         This.rtsPlayerLayerInterface := rtsPlayerLayerInterface;
         This.list := list;
         This.selectRTSLayerVisitorInterface := selectRTSLayerVisitorFactoryInterface.create (SelectedRTSLayersPlayerGameInput_Access'(This'Unchecked_Access));
@@ -180,12 +180,12 @@ package body org.allbinary.game.input.SelectedRTSLayersPlayerGameInput_Package i
             for index in 0 .. (size) - 1 loop
                 gameKeyEvent := GameKeyEvent_Access (This.list.get (index));
                 key := gameKeyEvent.getKey;
-                This.processInputKey (key);
+                SelectedRTSLayersPlayerGameInput'Class (This).processInputKey (key);
             end loop;
             if This.isSingleKeyProcessing then
-                This.clear;
+                SelectedRTSLayersPlayerGameInput'Class (This).clear;
             else
-                This.update;
+                SelectedRTSLayersPlayerGameInput'Class (This).update;
             end if;
         exception
             when Java_Occurrence : others =>
@@ -207,7 +207,7 @@ package body org.allbinary.game.input.SelectedRTSLayersPlayerGameInput_Package i
    begin
         This.paintSelectedRTSLayersList := BasicArrayListUtil_Package.getInstance.getImmutableInstance;
         if (selectedLayer) = (CollidableDestroyableDamageableLayer_Package.getNullInstance) then
-            This.deselectAll;
+            SelectedRTSLayersPlayerGameInput'Class (This).deselectAll;
             This.selectedRTSLayersList.clear;
         else
             if not (This.selectedRTSLayersList.contains (selectedLayer)) then
@@ -230,10 +230,10 @@ package body org.allbinary.game.input.SelectedRTSLayersPlayerGameInput_Package i
         This.logUtil.putF (stringBuffer.toString, SelectedRTSLayersPlayerGameInput_Access'(This'Unchecked_Access), To_Unbounded_String ("setSelectedRTSLayer"));
         This.paintSelectedRTSLayersList := BasicArrayListUtil_Package.getInstance.getImmutableInstance;
         This.selectRTSLayerVisitorInterface.visit (selectedLayer);
-        This.deselectAll;
+        SelectedRTSLayersPlayerGameInput'Class (This).deselectAll;
         if (This.selectedRTSLayersList.size) > (0) then
-            This.getPreSelectedRTSLayersList.clear;
-            tempList := This.getPreSelectedRTSLayersList;
+            SelectedRTSLayersPlayerGameInput'Class (This).getPreSelectedRTSLayersList.clear;
+            tempList := SelectedRTSLayersPlayerGameInput'Class (This).getPreSelectedRTSLayersList;
             This.preSelectedRTSLayersList := This.selectedRTSLayersList;
             This.selectedRTSLayersList := tempList;
             This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Preselected: ")).append (This.preSelectedRTSLayersList.toString).toString, SelectedRTSLayersPlayerGameInput_Access'(This'Unchecked_Access), To_Unbounded_String ("setSelectedRTSLayer"));
@@ -246,7 +246,7 @@ package body org.allbinary.game.input.SelectedRTSLayersPlayerGameInput_Package i
 
    function getLastSelectedRtsLayer (This : in out SelectedRTSLayersPlayerGameInput) return CollidableDestroyableDamageableLayer_Access is
    begin
-        if This.isAnyRTSLayerSelected then
+        if SelectedRTSLayersPlayerGameInput'Class (This).isAnyRTSLayerSelected then
             return CollidableDestroyableDamageableLayer_Access (This.selectedRTSLayersList.get ((This.selectedRTSLayersList.size) - (1)));
         else
             return CollidableDestroyableDamageableLayer_Package.getNullInstance;

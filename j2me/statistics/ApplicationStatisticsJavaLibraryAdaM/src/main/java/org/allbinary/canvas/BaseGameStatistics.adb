@@ -182,7 +182,7 @@ package body org.allbinary.canvas.BaseGameStatistics_Package is
         totalTime := This.timeDelayHelper.getElapsed (This.gameTickTimeDelayHelper.startTime);
         totalTime := ((totalTime) / (1000));
         if (totalTime) > (0) then
-            return This.toStringAt (totalTime);
+            return BaseGameStatistics'Class (This).toStringAt (totalTime);
         else
             return This.NOT_Id;
         end if;

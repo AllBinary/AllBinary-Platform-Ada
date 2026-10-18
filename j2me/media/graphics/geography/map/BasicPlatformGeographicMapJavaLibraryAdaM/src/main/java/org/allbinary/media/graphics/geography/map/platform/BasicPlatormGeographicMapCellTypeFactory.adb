@@ -57,7 +57,7 @@ package body org.allbinary.media.graphics.geography.map.platform.BasicPlatormGeo
         key := Null_Unbounded_String;
         basicPlatormGeographicMapCellType := null;
         while This.enumerationUtil.hasMoreElements (enumeration) loop
-            key := Unbounded_String (This.enumerationUtil.nextElement (enumeration));
+            key := Java_Unbox (This.enumerationUtil.nextElement (enumeration));
             This.logUtil.putF (key, BasicPlatormGeographicMapCellTypeFactory_Access'(This'Unchecked_Access), commonStrings.INIT);
             idsWithTypeList := BasicArrayList_Access (tileTypeToTileIdsMap.get (key));
             basicPlatormGeographicMapCellType := BasicPlatormGeographicMapCellType_Package.Create (idsWithTypeList);

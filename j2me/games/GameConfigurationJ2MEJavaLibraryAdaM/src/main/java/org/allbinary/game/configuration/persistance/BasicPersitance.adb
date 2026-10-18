@@ -45,7 +45,7 @@ package body org.allbinary.game.configuration.persistance.BasicPersitance_Packag
    procedure deleteRecoreStore (This : in out BasicPersitance; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class) is
       abeClientInformation : constant AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
    begin
-        RecordStore_Package.deleteRecordStore (This.getRecordId (abeClientInformation));
+        RecordStore_Package.deleteRecordStore (BasicPersitance'Class (This).getRecordId (abeClientInformation));
    end deleteRecoreStore;
 
    --  throws Exception
@@ -58,9 +58,9 @@ package body org.allbinary.game.configuration.persistance.BasicPersitance_Packag
         size := This.idList.size;
         for index in 0 .. (size) - 1 loop
             integer_Id := Integer (This.idList.objectArray (index));
-            This.delete (abeClientInformation, integer_Id.intValue);
+            BasicPersitance'Class (This).delete (abeClientInformation, integer_Id.intValue);
         end loop;
-        This.clear;
+        BasicPersitance'Class (This).clear;
    end deleteAll;
 
    --  throws Exception
@@ -71,7 +71,7 @@ package body org.allbinary.game.configuration.persistance.BasicPersitance_Packag
         recordStore := NullRecordStore_Package.NULL_RECORD_STORE;
         begin
             This.logUtil.putF (StringMaker_Package.Create.append (This.persistanceStrings.DELETING_WITH_ID).appendint (deleteId).toString, BasicPersitance_Access'(This'Unchecked_Access), This.commonStrings.delete);
-            recordStore := RecordStore_Package.openRecordStore (This.getRecordId (abeClientInformation), True);
+            recordStore := RecordStore_Package.openRecordStore (BasicPersitance'Class (This).getRecordId (abeClientInformation), True);
             recordStore.deleteRecord (deleteId);
         exception
             when Java_Occurrence : others =>

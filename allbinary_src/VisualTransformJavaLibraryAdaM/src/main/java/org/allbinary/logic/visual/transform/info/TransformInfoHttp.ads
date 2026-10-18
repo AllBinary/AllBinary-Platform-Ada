@@ -20,7 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.util.HashMap_Package; use java.util.HashMap_Package;
+with java.util.HashMap_Package; use java.util.HashMap_Package;
 --  with javax.servlet.http.HttpServletRequest_Package; use javax.servlet.http.HttpServletRequest_Package;
 --  with javax.servlet.jsp.PageContext_Package; use javax.servlet.jsp.PageContext_Package;
 with org.allbinary.business.context.AbContext_Package; use org.allbinary.business.context.AbContext_Package;
@@ -40,6 +40,7 @@ with org.allbinary.logic.visual.transform.info.TransformInfoData_Package; use or
 
 package org.allbinary.logic.visual.transform.info.TransformInfoHttp_Package is
 
+   package HashMap_Package renames Standard.java.util.HashMap_Package;
    package AbContext_Package renames Standard.org.allbinary.business.context.AbContext_Package;
    package StoreFrontData_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
    package FREEBLISKET_PATH_GLOBALS_Package renames Standard.org.allbinary.globals.FREEBLISKET_PATH_GLOBALS_Package;

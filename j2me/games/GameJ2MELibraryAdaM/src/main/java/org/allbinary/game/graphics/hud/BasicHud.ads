@@ -20,7 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
 with org.allbinary.J2MEUtil_Package; use org.allbinary.J2MEUtil_Package;
 with org.allbinary.graphics.Anchor_Package; use org.allbinary.graphics.Anchor_Package;
 with org.allbinary.graphics.GPoint_Package; use org.allbinary.graphics.GPoint_Package;
@@ -44,6 +44,7 @@ with org.allbinary.game.graphics.hud.BasicHudFactory_Package; use org.allbinary.
 
 package org.allbinary.game.graphics.hud.BasicHud_Package is
 
+   package Graphics_Package renames Standard.javax.microedition.lcdui.Graphics_Package;
    package J2MEUtil_Package renames Standard.org.allbinary.J2MEUtil_Package;
    package Anchor_Package renames Standard.org.allbinary.graphics.Anchor_Package;
    package GPoint_Package renames Standard.org.allbinary.graphics.GPoint_Package;

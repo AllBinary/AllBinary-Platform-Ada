@@ -23,9 +23,9 @@ with AllBinary_Java; use AllBinary_Java;
 --  with java.nio.ByteBuffer_Package; use java.nio.ByteBuffer_Package;
 --  with java.nio.ByteOrder_Package; use java.nio.ByteOrder_Package;
 --  with java.nio.FloatBuffer_Package; use java.nio.FloatBuffer_Package;
---  with javax.microedition.khronos.opengles.GL_Package; use javax.microedition.khronos.opengles.GL_Package;
---  with javax.microedition.khronos.opengles.GL10_Package; use javax.microedition.khronos.opengles.GL10_Package;
---  with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
+with javax.microedition.khronos.opengles.GL_Package; use javax.microedition.khronos.opengles.GL_Package;
+with javax.microedition.khronos.opengles.GL10_Package; use javax.microedition.khronos.opengles.GL10_Package;
+with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
 with org.allbinary.graphics.displayable.DisplayInfoSingleton_Package; use org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
 with org.allbinary.graphics.opengles.OpenGLLogUtil_Package; use org.allbinary.graphics.opengles.OpenGLLogUtil_Package;
 with org.allbinary.opengles.GLUtil_Package; use org.allbinary.opengles.GLUtil_Package;
@@ -38,6 +38,9 @@ with org.allbinary.image.opengles.OpenGLESImageProcessor_Package; use org.allbin
 
 package org.allbinary.image.opengles.OpenGLESGL10Image_Package is
 
+   package GL_Package renames Standard.javax.microedition.khronos.opengles.GL_Package;
+   package GL10_Package renames Standard.javax.microedition.khronos.opengles.GL10_Package;
+   package Image_Package renames Standard.javax.microedition.lcdui.Image_Package;
    package DisplayInfoSingleton_Package renames Standard.org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
    package OpenGLLogUtil_Package renames Standard.org.allbinary.graphics.opengles.OpenGLLogUtil_Package;
    package GLUtil_Package renames Standard.org.allbinary.opengles.GLUtil_Package;

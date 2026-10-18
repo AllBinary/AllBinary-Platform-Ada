@@ -142,17 +142,17 @@ package body admin.tags.BasketTag_Package is
         begin
             if (This.command) /= (Null_Unbounded_String) then
                 This.propertiesHashMap := StdUtil_Package.getInstance.createHashMap;
-                This.propertiesHashMap.put (StoreFrontData_Package.getInstance.NAME, This.storeName);
+                This.propertiesHashMap.put (StoreFrontData_Package.getInstance.NAME, Java_Box (This.storeName));
                 if (This.command.compareTo (BasketData_Package.INSERT)) = (0) then
-                    if not (This.addItemToBasket) then
+                    if not (BasketTag'Class (This).addItemToBasket) then
                         This.pageContext.getOut.println (To_Unbounded_String ("Item is not currently being sold.<p/>"));
                     end if;
                 elsif (This.command.compareTo (BasketData_Package.DELETE)) = (0) then
-                    This.removeItemFromBasket;
+                    BasketTag'Class (This).removeItemFromBasket;
                 elsif (This.command.compareTo (BasketData_Package.ADJUST)) = (0) then
-                    This.adjustBasket;
+                    BasketTag'Class (This).adjustBasket;
                 elsif (This.command.compareTo (BasketData_Package.ISEMPTY)) = (0) then
-                    if This.isBasketEmpty then
+                    if BasketTag'Class (This).isBasketEmpty then
                         return This.EVAL_BODY_INCLUDE;
                     else
                         return SKIP_BODY;

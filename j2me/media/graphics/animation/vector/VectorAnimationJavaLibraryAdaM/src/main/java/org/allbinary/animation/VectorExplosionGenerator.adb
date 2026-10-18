@@ -60,7 +60,7 @@ package body org.allbinary.animation.VectorExplosionGenerator_Package is
             points (index) (0) := point.getX;
             points (index) (1) := point.getY;
         end loop;
-        return This.createListFromPoints (list, points, howMuch, type_Id);
+        return VectorExplosionGenerator'Class (This).createListFromPoints (list, points, howMuch, type_Id);
    end createList;
 
    --  throws Exception
@@ -70,7 +70,7 @@ package body org.allbinary.animation.VectorExplosionGenerator_Package is
       tempBasicArrayList : BasicArrayList_Access;
       newPoints : Integer_Array_Access_Array_Access_Array_Access;
    begin
-        pointsBasicArrayList := This.getInstanceStartFrame (points, howMuch, type_Id, True);
+        pointsBasicArrayList := VectorExplosionGenerator'Class (This).getInstanceStartFrame (points, howMuch, type_Id, True);
         tempBasicArrayList := BasicArrayList_Access (pointsBasicArrayList.objectArray (0));
         newPoints := This.vectorAnimationUtil.toAnimationArrayFromListOfPointListWithPointsPerFrame (pointsBasicArrayList, tempBasicArrayList.size);
         return newPoints;
@@ -86,13 +86,13 @@ package body org.allbinary.animation.VectorExplosionGenerator_Package is
    begin
         begin
             pointsBasicArrayList := BasicArrayListS_Package.Create (howMuch);
-            pointsBasicArrayList.add (This.createPointsBasicArrayList (points));
+            pointsBasicArrayList.add (VectorExplosionGenerator'Class (This).createPointsBasicArrayList (points));
             frameIndex := 0;
             tempBasicArrayList := null;
             pointBasicArrayList := null;
             while (frameIndex) < (howMuch) loop
                 tempBasicArrayList := BasicArrayList_Access (pointsBasicArrayList.objectArray (frameIndex));
-                pointBasicArrayList := This.createListFromPoints (tempBasicArrayList, points, howMuch, type_Id);
+                pointBasicArrayList := VectorExplosionGenerator'Class (This).createListFromPoints (tempBasicArrayList, points, howMuch, type_Id);
                 pointsBasicArrayList.add (pointBasicArrayList);
                 frameIndex := frameIndex + 1;
             end loop;

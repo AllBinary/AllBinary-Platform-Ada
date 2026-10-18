@@ -20,11 +20,13 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.io.DataInputStream_Package; use java.io.DataInputStream_Package;
---  with java.io.InputStream_Package; use java.io.InputStream_Package;
+with java.io.DataInputStream_Package; use java.io.DataInputStream_Package;
+with java.io.InputStream_Package; use java.io.InputStream_Package;
 
 package org.allbinary.logic.io.AbDataInputStream_Package is
 
+   package DataInputStream_Package renames Standard.java.io.DataInputStream_Package;
+   package InputStream_Package renames Standard.java.io.InputStream_Package;
 
    type AbDataInputStream is tagged;
    type AbDataInputStream_Access is access all AbDataInputStream'Class;

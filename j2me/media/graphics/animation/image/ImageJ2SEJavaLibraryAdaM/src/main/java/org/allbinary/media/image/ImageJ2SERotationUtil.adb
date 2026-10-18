@@ -45,7 +45,7 @@ package body org.allbinary.media.image.ImageJ2SERotationUtil_Package is
    function getRotatedImage (This : in out ImageJ2SERotationUtil; bufferedImage_Param : access Image_Package.Image'Class; totalAngle : Integer) return BufferedImage_Access is
       bufferedImage : constant Image_Access := Image_Access (bufferedImage_Param);
    begin
-        return This.getRotatedImageRadians (bufferedImage, ((This.TWO_PIE) * (Long_Float (totalAngle))) / (360.0));
+        return ImageJ2SERotationUtil'Class (This).getRotatedImageRadians (bufferedImage, ((This.TWO_PIE) * (Long_Float (totalAngle))) / (360.0));
    end getRotatedImage;
 
    function getRotatedImageRadians (This : in out ImageJ2SERotationUtil; bufferedImage_Param : access Image_Package.Image'Class; radians : Long_Float) return BufferedImage_Access is
@@ -53,7 +53,7 @@ package body org.allbinary.media.image.ImageJ2SERotationUtil_Package is
       newBufferedImage : BufferedImage_Access;
    begin
         newBufferedImage := This.imageUtil.create (bufferedImage.getWidth (null), bufferedImage.getHeight (null));
-        return This.drawRotatedImageRadians (bufferedImage, newBufferedImage, newBufferedImage.createGraphics, radians);
+        return ImageJ2SERotationUtil'Class (This).drawRotatedImageRadians (bufferedImage, newBufferedImage, newBufferedImage.createGraphics, radians);
    end getRotatedImageRadians;
 
    function drawRotatedImageRadians (This : in out ImageJ2SERotationUtil; bufferedImage_Param : access Image_Package.Image'Class; newBufferedImage_Param : access BufferedImage_Package.BufferedImage'Class; g_Param : access Graphics2D_Package.Graphics2D'Class; radians : Long_Float) return BufferedImage_Access is
@@ -75,7 +75,7 @@ package body org.allbinary.media.image.ImageJ2SERotationUtil_Package is
         g := newBufferedImage.createGraphics;
         g.setBackground (This.imageJ2SEUtil.TRANSPARENT_COLOR);
         g.clearRect (0, 0, newBufferedImage.getWidth, newBufferedImage.getHeight);
-        return This.drawRotatedImageRadians (bufferedImage, newBufferedImage, g, ((This.TWO_PIE) * (Long_Float (totalAngle))) / (360.0));
+        return ImageJ2SERotationUtil'Class (This).drawRotatedImageRadians (bufferedImage, newBufferedImage, g, ((This.TWO_PIE) * (Long_Float (totalAngle))) / (360.0));
    end rotateImage;
 
    function createRotatedImage (This : in out ImageJ2SERotationUtil; bufferedImage_Param : access Image_Package.Image'Class; newBufferedImage_Param : access BufferedImage_Package.BufferedImage'Class; totalAngle : Integer) return BufferedImage_Access is
@@ -84,7 +84,7 @@ package body org.allbinary.media.image.ImageJ2SERotationUtil_Package is
       g : Graphics2D_Access;
    begin
         g := newBufferedImage.createGraphics;
-        return This.drawRotatedImageRadians (bufferedImage, newBufferedImage, g, ((This.TWO_PIE) * (Long_Float (totalAngle))) / (360.0));
+        return ImageJ2SERotationUtil'Class (This).drawRotatedImageRadians (bufferedImage, newBufferedImage, g, ((This.TWO_PIE) * (Long_Float (totalAngle))) / (360.0));
    end createRotatedImage;
 
    function getRotatedImages (This : in out ImageJ2SERotationUtil; bufferedImage_Param : access Image_Package.Image'Class; numberOfFrames : Integer; totalAngle : Integer) return BufferedImage_Access_Array_Access is
@@ -100,7 +100,7 @@ package body org.allbinary.media.image.ImageJ2SERotationUtil_Package is
         size := bufferedImageArray'Length;
         for index in 0 .. (size) - 1 loop
             radians := (((arc) / (Long_Float (size)))) * (Long_Float (index));
-            bufferedImageArray (index) := This.getRotatedImageRadians (bufferedImage, radians);
+            bufferedImageArray (index) := ImageJ2SERotationUtil'Class (This).getRotatedImageRadians (bufferedImage, radians);
         end loop;
         return bufferedImageArray;
    end getRotatedImages;

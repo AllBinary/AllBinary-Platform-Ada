@@ -42,11 +42,13 @@ package body org.allbinary.android.activity.NullKeyInputViewComposite_Package is
    function getRootView (This : in out NullKeyInputViewComposite) return View_Access is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return null;
    end getRootView;
 
    function getView (This : in out NullKeyInputViewComposite) return View_Access is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return null;
    end getView;
 
    procedure runOnUiThread (This : in out NullKeyInputViewComposite; action_Param : access Runnable_Package.Runnable'Class) is

@@ -54,7 +54,7 @@ package body org.allbinary.logic.util.cache.IndexedBasicArrayListCache_Package i
         if (This.size) < (size) then
             This.list.ensureCapacity (size);
             for index in reverse This.size .. (size) - (1) loop
-                This.addDefault;
+                IndexedBasicArrayListCache'Class (This).addDefault;
             end loop;
             This.size := size;
         end if;

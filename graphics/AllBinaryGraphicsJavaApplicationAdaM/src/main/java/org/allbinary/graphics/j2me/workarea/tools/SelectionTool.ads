@@ -20,7 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.util.HashMap_Package; use java.util.HashMap_Package;
+with java.util.HashMap_Package; use java.util.HashMap_Package;
 --  with javax.swing.tree.MutableTreeNode_Package; use javax.swing.tree.MutableTreeNode_Package;
 with org.allbinary.graphics.GPoint_Package; use org.allbinary.graphics.GPoint_Package;
 with org.allbinary.graphics.PointFactory_Package; use org.allbinary.graphics.PointFactory_Package;
@@ -41,6 +41,7 @@ with org.allbinary.graphics.j2me.workarea.tools.MouseStrings_Package; use org.al
 
 package org.allbinary.graphics.j2me.workarea.tools.SelectionTool_Package is
 
+   package HashMap_Package renames Standard.java.util.HashMap_Package;
    package GPoint_Package renames Standard.org.allbinary.graphics.GPoint_Package;
    package PointFactory_Package renames Standard.org.allbinary.graphics.PointFactory_Package;
    package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;

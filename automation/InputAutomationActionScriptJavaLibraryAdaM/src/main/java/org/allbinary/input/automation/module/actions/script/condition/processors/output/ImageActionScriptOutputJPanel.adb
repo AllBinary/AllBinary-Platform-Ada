@@ -39,9 +39,9 @@ package body org.allbinary.input.automation.module.actions.script.condition.proc
       JPanel_Package.Initialize (This);
       Initialize_Fields (This);
         This.logUtil.putF (This.commonStrings.START, ImageActionScriptOutputJPanel_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
-        This.initComponents;
+        ImageActionScriptOutputJPanel'Class (This).initComponents;
         This.capturedImageActionScriptOutputInterface := capturedImageActionScriptOutputInterface;
-        This.set;
+        ImageActionScriptOutputJPanel'Class (This).set;
    end Initialize;
 
    function Create (capturedImageActionScriptOutputInterface_Param : access ImageActionScriptOutputInterface_Package.ImageActionScriptOutputInterface'Class) return ImageActionScriptOutputJPanel_Access is
@@ -59,7 +59,7 @@ package body org.allbinary.input.automation.module.actions.script.condition.proc
       imageType : InputImageType_Access;
       index : Integer;
    begin
-        This.setImageTypeJlistModel;
+        ImageActionScriptOutputJPanel'Class (This).setImageTypeJlistModel;
         imageTypes := This.capturedImageActionScriptOutputInterface.getImageTypes;
         vector := imageTypes.getVector;
         selectedArray := new Integer_Array'(0 .. (vector.size) - 1 => 0);
@@ -147,7 +147,7 @@ package body org.allbinary.input.automation.module.actions.script.condition.proc
 --     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
 --        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
---                  This.okJButtonActionPerformed (evt);
+--                  ImageActionScriptOutputJPanel'Class (This).okJButtonActionPerformed (evt);
 --     end actionPerformed;
 );
         This.saveJCheckBox.setText (To_Unbounded_String ("Save To File"));
@@ -161,7 +161,7 @@ package body org.allbinary.input.automation.module.actions.script.condition.proc
 --     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
 --        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
---                  This.displayJCheckBoxActionPerformed (evt);
+--                  ImageActionScriptOutputJPanel'Class (This).displayJCheckBoxActionPerformed (evt);
 --     end actionPerformed;
 );
         This.itemTypesJList.setModel (AbstractListModel_Package.Create  --  Java anonymous class body: implement it as a named type
@@ -170,11 +170,13 @@ package body org.allbinary.input.automation.module.actions.script.condition.proc
 --     function getSize (This : in out ) return Integer is
 --     begin
 --                  return strings'Length;
+--          return 0;
 --     end getSize;
 --              
 --     function getElementAt (This : in out ; i : Integer) return Java_Object_Access is
 --     begin
 --                  return strings (i);
+--          return null;
 --     end getElementAt;
 );
         This.jScrollPane1.setViewportView (This.itemTypesJList);
@@ -182,19 +184,19 @@ package body org.allbinary.input.automation.module.actions.script.condition.proc
         This.capturedImageActionJDialog.getContentPane.setLayout (capturedImageActionJDialogLayout);
         capturedImageActionJDialogLayout.setHorizontalGroup (capturedImageActionJDialogLayout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (capturedImageActionJDialogLayout.createSequentialGroup.addGroup (capturedImageActionJDialogLayout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (capturedImageActionJDialogLayout.createSequentialGroup.addGap (61, 61, 61).addComponent (This.titleJLabel)).addGroup (capturedImageActionJDialogLayout.createSequentialGroup.addContainerGap.addGroup (capturedImageActionJDialogLayout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (capturedImageActionJDialogLayout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addComponent (This.displayJCheckBox).addComponent (This.saveJCheckBox, javax_Package.swing.GroupLayout.Alignment.TRAILING)).addGroup (capturedImageActionJDialogLayout.createSequentialGroup.addGap (84, 84, 84).addComponent (This.okJButton)))).addGroup (capturedImageActionJDialogLayout.createSequentialGroup.addContainerGap.addComponent (This.jScrollPane1, javax_Package.swing.GroupLayout.DEFAULT_SIZE, 216, Short_Package.MAX_VALUE))).addContainerGap));
         capturedImageActionJDialogLayout.setVerticalGroup (capturedImageActionJDialogLayout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (capturedImageActionJDialogLayout.createSequentialGroup.addComponent (This.titleJLabel).addGap (5, 5, 5).addComponent (This.jScrollPane1, javax_Package.swing.GroupLayout.DEFAULT_SIZE, 105, Short_Package.MAX_VALUE).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent (This.saveJCheckBox).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent (This.displayJCheckBox).addGap (9, 9, 9).addComponent (This.okJButton).addContainerGap));
-        This.setMinimumSize (Dimension_Package.Create (100, 0));
+        ImageActionScriptOutputJPanel'Class (This).setMinimumSize (Dimension_Package.Create (100, 0));
         This.capturedImageActionJButton.setText (To_Unbounded_String ("Edit"));
         This.capturedImageActionJButton.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
 --     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
 --        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
---                  This.capturedImageActionJButtonActionPerformed (evt);
+--                  ImageActionScriptOutputJPanel'Class (This).capturedImageActionJButtonActionPerformed (evt);
 --     end actionPerformed;
 );
         This.jLabel1.setText (To_Unbounded_String ("Capture Image:"));
         layout := GroupLayout_Package.Create (ImageActionScriptOutputJPanel_Access'(This'Unchecked_Access));
-        This.setLayout (layout);
+        ImageActionScriptOutputJPanel'Class (This).setLayout (layout);
         layout.setHorizontalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (layout.createSequentialGroup.addComponent (This.jLabel1).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED, javax_Package.swing.GroupLayout.DEFAULT_SIZE, Short_Package.MAX_VALUE).addComponent (This.capturedImageActionJButton)));
         layout.setVerticalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.BASELINE).addComponent (This.jLabel1).addComponent (This.capturedImageActionJButton)));
    end initComponents;
@@ -208,14 +210,14 @@ package body org.allbinary.input.automation.module.actions.script.condition.proc
    procedure okJButtonActionPerformed (This : in out ImageActionScriptOutputJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
       evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
-        This.update;
-        This.getCapturedImageActionJDialog.setVisible (False);
+        ImageActionScriptOutputJPanel'Class (This).update;
+        ImageActionScriptOutputJPanel'Class (This).getCapturedImageActionJDialog.setVisible (False);
    end okJButtonActionPerformed;
 
    procedure capturedImageActionJButtonActionPerformed (This : in out ImageActionScriptOutputJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
       evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
-        This.getCapturedImageActionJDialog.setVisible (True);
+        ImageActionScriptOutputJPanel'Class (This).getCapturedImageActionJDialog.setVisible (True);
    end capturedImageActionJButtonActionPerformed;
 
 end org.allbinary.input.automation.module.actions.script.condition.processors.output.ImageActionScriptOutputJPanel_Package;

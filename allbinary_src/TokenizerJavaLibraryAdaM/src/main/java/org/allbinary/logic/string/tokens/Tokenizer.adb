@@ -108,8 +108,8 @@ package body org.allbinary.logic.string_Id.tokens.Tokenizer_Package is
         end_Id := 0;
         size := stringVector.size;
         for index in 0 .. (size) - 1 loop
-            string_Id := Unbounded_String (stringVector.objectArray (index));
-            end_Id := (Index (string_Id, To_String (This.sep)) - 1);
+            string_Id := Java_Unbox (stringVector.objectArray (index));
+            end_Id := (Index (string_Id, Java_Image (This.sep)) - 1);
             if (end_Id) >= (0) then
                 tokenHashtable.put (Unbounded_Slice (string_Id, (0) + 1, end_Id), Unbounded_Slice (string_Id, ((end_Id) + (1)) + 1, Length (string_Id)));
             end if;

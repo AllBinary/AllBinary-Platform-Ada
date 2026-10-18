@@ -20,7 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.util.HashMap_Package; use java.util.HashMap_Package;
+with java.util.HashMap_Package; use java.util.HashMap_Package;
 --  with java.util.Set_Package; use java.util.Set_Package;
 --  with javax.servlet.http.HttpServletRequest_Package; use javax.servlet.http.HttpServletRequest_Package;
 with org.allbinary.data.tree.dom.ModDomHelper_Package; use org.allbinary.data.tree.dom.ModDomHelper_Package;
@@ -32,6 +32,7 @@ with org.allbinary.logic.control.search.SearchData_Package; use org.allbinary.lo
 
 package org.allbinary.logic.control.search.SearchParams_Package is
 
+   package HashMap_Package renames Standard.java.util.HashMap_Package;
    package ModDomHelper_Package renames Standard.org.allbinary.data.tree.dom.ModDomHelper_Package;
    package ToDomHelper_Package renames Standard.org.allbinary.data.tree.dom.ToDomHelper_Package;
    package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;

@@ -37,7 +37,7 @@ package body org.allbinary.graphics.j2me.workarea.tools.LinesGraphicItem_Package
       Initialize_Fields (This);
         This.points := Points_Package.Create;
         begin
-            This.init;
+            LinesGraphicItem'Class (This).init;
             This.active := True;
         exception
             when Java_Occurrence : others =>
@@ -68,7 +68,7 @@ package body org.allbinary.graphics.j2me.workarea.tools.LinesGraphicItem_Package
    begin
       Initialize_Fields (This);
         This.points := Points_Package.Create;
-        This.init;
+        LinesGraphicItem'Class (This).init;
         This.active := False;
         lineNodes := DomHelper_Package.getInstance.getWithoutTextNodes (linesNode.getChildNodes);
         numberOfLines := lineNodes.size;
@@ -76,10 +76,10 @@ package body org.allbinary.graphics.j2me.workarea.tools.LinesGraphicItem_Package
             lineNode := Node_Access (lineNodes.get (index));
             pointNodes := DomHelper_Package.getInstance.getWithoutTextNodes (lineNode.getChildNodes);
             pointOneNode := DomHelper_Package.getInstance.searchNodeList (PointsDomUtil_Package.getInstance.POINTONE, pointNodes);
-            This.addPoint (pointOneNode.getChildNodes);
+            LinesGraphicItem'Class (This).addPoint (pointOneNode.getChildNodes);
             if (index) = ((numberOfLines) - (1)) then
                 pointTwoNode := DomHelper_Package.getInstance.searchNodeList (PointsDomUtil_Package.getInstance.POINTTWO, pointNodes);
-                This.addPoint (pointTwoNode.getChildNodes);
+                LinesGraphicItem'Class (This).addPoint (pointTwoNode.getChildNodes);
             end if;
         end loop;
         if (numberOfLines) = (0) then
@@ -129,17 +129,17 @@ package body org.allbinary.graphics.j2me.workarea.tools.LinesGraphicItem_Package
 
    procedure addRotate (This : in out LinesGraphicItem; theta : Long_Float) is
    begin
-        This.setRotate ((This.theta) + (theta));
+        LinesGraphicItem'Class (This).setRotate ((This.theta) + (theta));
    end addRotate;
 
    procedure setAngle (This : in out LinesGraphicItem; angle : Long_Float) is
    begin
-        This.setRotate (Ada.Numerics.Long_Elementary_Functions.ToRadians (angle));
+        LinesGraphicItem'Class (This).setRotate (Ada.Numerics.Long_Elementary_Functions.ToRadians (angle));
    end setAngle;
 
    procedure addAngle (This : in out LinesGraphicItem; angle : Long_Float) is
    begin
-        This.setRotate ((This.theta) + (Ada.Numerics.Long_Elementary_Functions.ToRadians (angle)));
+        LinesGraphicItem'Class (This).setRotate ((This.theta) + (Ada.Numerics.Long_Elementary_Functions.ToRadians (angle)));
    end addAngle;
 
    function getTreeNode (This : in out LinesGraphicItem) return MutableTreeNode_Access is
@@ -177,7 +177,7 @@ package body org.allbinary.graphics.j2me.workarea.tools.LinesGraphicItem_Package
         yTextNode := yNode.getFirstChild;
         yInteger := yTextNode.getNodeValue;
         point := PointFactory_Package.getInstance.createXY (xInteger.intValue, yInteger.intValue);
-        This.addPoint (point);
+        LinesGraphicItem'Class (This).addPoint (point);
    end addPoint;
 
    procedure addPoint (This : in out LinesGraphicItem; point_Param : access GPoint_Package.GPoint'Class) is
@@ -273,13 +273,13 @@ package body org.allbinary.graphics.j2me.workarea.tools.LinesGraphicItem_Package
    begin
         begin
             graphics := Graphics2D_Access (g);
-            graphics.setColor (This.getColor);
+            graphics.setColor (LinesGraphicItem'Class (This).getColor);
             graphics.setStroke (BasicStroke_Package.Create (x));
-            if (This.isActive) and then ((This.currentMousePoint) /= (null)) then
+            if (LinesGraphicItem'Class (This).isActive) and then ((This.currentMousePoint) /= (null)) then
                 This.points.getPoints.add (This.currentMousePoint);
             end if;
             tempPointVector := PointsUtil_Package.getInstance.doTransforms (This.points.getPoints, canvasAngle, PointFactory_Package.getInstance.createXY (dimension.getWidth, dimension.getHeight));
-            if (This.isActive) and then ((This.currentMousePoint) /= (null)) then
+            if (LinesGraphicItem'Class (This).isActive) and then ((This.currentMousePoint) /= (null)) then
                 This.currentMousePoint := GPoint_Access (This.points.getPoints.removeAt ((This.points.getSize) - (1)));
             end if;
             size := tempPointVector.size;
@@ -346,10 +346,10 @@ package body org.allbinary.graphics.j2me.workarea.tools.LinesGraphicItem_Package
             if ((Java_And (mouseEvent.getModifiers, mouseEvent.BUTTON1_MASK))) = (mouseEvent.BUTTON1_MASK) then
                 point := PointFactory_Package.getInstance.createXY ((mousePoint.getX) / (x), (mousePoint.getY) / (y));
                 StatusFactory_Package.getInstance.setStatus (To_Unbounded_String ("Line Point Added: ") & point.toString);
-                This.addPoint (point);
+                LinesGraphicItem'Class (This).addPoint (point);
             elsif ((Java_And (mouseEvent.getModifiers, mouseEvent.BUTTON3_MASK))) = (mouseEvent.BUTTON3_MASK) then
                 StatusFactory_Package.getInstance.setStatus (To_Unbounded_String ("Line Point Removed"));
-                This.removePoint;
+                LinesGraphicItem'Class (This).removePoint;
             end if;
             This.currentMousePoint := mousePoint;
         exception
@@ -419,15 +419,15 @@ package body org.allbinary.graphics.j2me.workarea.tools.LinesGraphicItem_Package
             keyCode := keyEvent.getKeyCode;
             if (keyCode) = (keyEvent.VK_ESCAPE) then
                 StatusFactory_Package.getInstance.setStatus (To_Unbounded_String ("Deactivated"));
-                This.deactivate;
+                LinesGraphicItem'Class (This).deactivate;
             elsif (keyCode) = (keyEvent.VK_UP) then
-                This.translate (0, -(1));
+                LinesGraphicItem'Class (This).translate (0, -(1));
             elsif (keyCode) = (keyEvent.VK_DOWN) then
-                This.translate (0, 1);
+                LinesGraphicItem'Class (This).translate (0, 1);
             elsif (keyCode) = (keyEvent.VK_LEFT) then
-                This.translate (-(1), 0);
+                LinesGraphicItem'Class (This).translate (-(1), 0);
             elsif (keyCode) = (keyEvent.VK_RIGHT) then
-                This.translate (1, 0);
+                LinesGraphicItem'Class (This).translate (1, 0);
             end if;
         exception
             when Java_Occurrence : others =>

@@ -111,13 +111,13 @@ package body org.allbinary.logic.system.os.GenericOperatingSystem_Package is
         NEW_LINE := CommonSeps_Package.getInstance.NEW_LINE;
         osBuffer := StringMaker_Package.Create;
         osBuffer.append (To_Unbounded_String ("Operating System Info: " & ASCII.LF & ""));
-        osBuffer.append (This.getName);
+        osBuffer.append (GenericOperatingSystem'Class (This).getName);
         osBuffer.append (NEW_LINE);
-        osBuffer.append (This.getArch);
+        osBuffer.append (GenericOperatingSystem'Class (This).getArch);
         osBuffer.append (NEW_LINE);
-        osBuffer.append (This.getVersion);
+        osBuffer.append (GenericOperatingSystem'Class (This).getVersion);
         osBuffer.append (NEW_LINE);
-        osBuffer.append (StringUtil_Package.getInstance.toString (This.getCharacterSet));
+        osBuffer.append (StringUtil_Package.getInstance.toString (GenericOperatingSystem'Class (This).getCharacterSet));
         osBuffer.append (NEW_LINE);
         return osBuffer.toString;
    end toString;

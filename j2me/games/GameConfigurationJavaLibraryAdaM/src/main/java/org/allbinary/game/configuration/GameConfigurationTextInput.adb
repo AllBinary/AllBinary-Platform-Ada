@@ -26,9 +26,9 @@ package body org.allbinary.game.configuration.GameConfigurationTextInput_Package
    procedure Initialize (This : in out GameConfigurationTextInput'Class; label : Unbounded_String; text : Unbounded_String) is
    begin
       Initialize_Fields (This);
-        This.setText (text);
-        This.setLabel (label);
-        GameConfigurationTextInput_Package.hashtable.put (This.getLabel, GameConfigurationTextInput_Access'(This'Unchecked_Access));
+        GameConfigurationTextInput'Class (This).setText (text);
+        GameConfigurationTextInput'Class (This).setLabel (label);
+        GameConfigurationTextInput_Package.hashtable.put (GameConfigurationTextInput'Class (This).getLabel, GameConfigurationTextInput_Access'(This'Unchecked_Access));
    end Initialize;
 
    function Create (label : Unbounded_String; text : Unbounded_String) return GameConfigurationTextInput_Access is

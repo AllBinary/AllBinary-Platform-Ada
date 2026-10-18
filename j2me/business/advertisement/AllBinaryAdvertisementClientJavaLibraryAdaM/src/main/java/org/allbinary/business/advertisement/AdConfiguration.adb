@@ -27,9 +27,9 @@ package body org.allbinary.business.advertisement.AdConfiguration_Package is
    procedure Initialize (This : in out AdConfiguration'Class; advertIdArray : Java_Object_Access_Array_Access) is
    begin
       Initialize_Fields (This);
-        This.INNERACTIVE := Unbounded_String (advertIdArray (0));
-        This.ADMOB := Unbounded_String (advertIdArray (1));
-        This.LEADBOLT := Unbounded_String (advertIdArray (2));
+        This.INNERACTIVE := Java_Unbox (advertIdArray (0));
+        This.ADMOB := Java_Unbox (advertIdArray (1));
+        This.LEADBOLT := Java_Unbox (advertIdArray (2));
    end Initialize;
 
    function Create (advertIdArray : Java_Object_Access_Array_Access) return AdConfiguration_Access is

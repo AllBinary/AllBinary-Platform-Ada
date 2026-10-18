@@ -23,7 +23,7 @@ with AllBinary_Java; use AllBinary_Java;
 --  with java.awt.Graphics2D_Package; use java.awt.Graphics2D_Package;
 --  with java.awt.geom.AffineTransform_Package; use java.awt.geom.AffineTransform_Package;
 --  with java.awt.image.BufferedImage_Package; use java.awt.image.BufferedImage_Package;
---  with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
+with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
 with org.allbinary.image.ImageCache_Package; use org.allbinary.image.ImageCache_Package;
 with org.allbinary.media.image.ImageUtil_Package; use org.allbinary.media.image.ImageUtil_Package;
 with org.allbinary.media.image.ImageJ2SEUtil_Package; use org.allbinary.media.image.ImageJ2SEUtil_Package;
@@ -31,6 +31,7 @@ with org.allbinary.media.image.ImageCreationUtil_Package; use org.allbinary.medi
 
 package org.allbinary.media.image.ImageScaleUtil_Package is
 
+   package Image_Package renames Standard.javax.microedition.lcdui.Image_Package;
    package ImageCache_Package renames Standard.org.allbinary.image.ImageCache_Package;
 
    type ImageScaleUtil is tagged;

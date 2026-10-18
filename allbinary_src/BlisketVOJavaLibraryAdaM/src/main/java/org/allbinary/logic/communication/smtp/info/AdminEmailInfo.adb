@@ -31,7 +31,7 @@ package body org.allbinary.logic.communication.smtp.info.AdminEmailInfo_Package 
             commonStrings := CommonStrings_Package.getInstance;
             This.logUtil.putF (commonStrings.START, AdminEmailInfo_Access'(This'Unchecked_Access), commonStrings.CONSTRUCTOR);
         end if;
-        This.init;
+        AdminEmailInfo'Class (This).init;
    end Initialize;
 
    function Create (subject : Unbounded_String; textBody : Unbounded_String) return AdminEmailInfo_Access is
@@ -50,7 +50,7 @@ package body org.allbinary.logic.communication.smtp.info.AdminEmailInfo_Package 
         adminConfigurationInterface := AdminConfigurationInterface_Access (AdminConfiguration_Package.Create);
         contextConfigurationInterface := adminConfigurationInterface.getContextConfigurationInterface;
         emailServerConfigurationInterface := contextConfigurationInterface.getEmailServerConfigurationInterface;
-        This.setEmailServerConfigurationInterface (emailServerConfigurationInterface);
+        AdminEmailInfo'Class (This).setEmailServerConfigurationInterface (emailServerConfigurationInterface);
    end init;
 
 end org.allbinary.logic.communication.smtp.info.AdminEmailInfo_Package;

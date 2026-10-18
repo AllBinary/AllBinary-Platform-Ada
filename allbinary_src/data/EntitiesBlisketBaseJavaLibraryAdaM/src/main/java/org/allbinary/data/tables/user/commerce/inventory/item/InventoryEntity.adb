@@ -28,7 +28,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.item.InventoryEnt
    begin
         AbSqlBean_Package.Initialize (This, InventoryDbInitInfo_Package.Create);
         Initialize_Fields (This);
-        This.setTableName (This.tableName);
+        InventoryEntity'Class (This).setTableName (This.tableName);
    end Initialize;
 
    function Create return InventoryEntity_Access is
@@ -98,7 +98,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.item.InventoryEnt
         for i in 0 .. (size) - 1 loop
             itemHashMap := HashMap_Access (itemHashMapVector.get (i));
             if (itemHashMap) /= (null) then
-                category := Unbounded_String (itemHashMap.get (This.basicItemData.CATEGORY));
+                category := Java_Unbox (itemHashMap.get (This.basicItemData.CATEGORY));
                 if (not (StringValidationUtil_Package.getInstance.isEmpty (category))) and then (category.startsWith (storeFrontInterface.getCategoryPath)) then
                     itemVector.add (BasicItem_Package.Create (itemHashMap));
                 end if;
@@ -113,7 +113,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.item.InventoryEnt
       itemHashMap : HashMap_Access;
    begin
         keysAndValues := StdUtil_Package.getInstance.createHashMap;
-        keysAndValues.put (This.basicItemData.ID, id);
+        keysAndValues.put (This.basicItemData.ID, Java_Box (id));
         itemHashMap := AbSqlBean (This).getRow (keysAndValues);
         if (itemHashMap) /= (null) then
             return BasicItem_Package.Create (itemHashMap);
@@ -200,13 +200,13 @@ package body org.allbinary.data.tables.user.commerce.inventory.item.InventoryEnt
 
    function createTable (This : in out InventoryEntity) return Unbounded_String is
    begin
-        return AbSqlBean (This).createTable (This.createTableStatement);
+        return AbSqlBean (This).createTable (InventoryEntity'Class (This).createTableStatement);
    end createTable;
 
    procedure update (This : in out InventoryEntity; updatedValues_Param : access HashMap_Package.HashMap'Class) is
       updatedValues : constant HashMap_Access := HashMap_Access (updatedValues_Param);
    begin
-        AbSqlBean (This).updateWhere (This.basicItemData.ID, Unbounded_String (updatedValues.get (This.basicItemData.ID)), updatedValues);
+        AbSqlBean (This).updateWhere (This.basicItemData.ID, Java_Unbox (updatedValues.get (This.basicItemData.ID)), updatedValues);
    end update;
 
    function dropTable (This : in out InventoryEntity) return Unbounded_String is

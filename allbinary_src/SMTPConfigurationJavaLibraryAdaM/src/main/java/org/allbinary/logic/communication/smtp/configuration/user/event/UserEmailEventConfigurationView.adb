@@ -33,10 +33,10 @@ package body org.allbinary.logic.communication.smtp.configuration.user.event.Use
         childNodeList := node.getChildNodes;
         hashMap := StdUtil_Package.getInstance.createHashMap;
         name := DomNodeHelper_Package.getTextNodeValue (UserEmailEventConfigurationData_Package.NAME, childNodeList);
-        hashMap.put (UserEmailEventConfigurationData_Package.NAME, name);
+        hashMap.put (UserEmailEventConfigurationData_Package.NAME, Java_Box (name));
         eventListenerClassPath := DomNodeHelper_Package.getTextNodeValue (UserEmailEventConfigurationData_Package.LISTENER_CLASSPATH, childNodeList);
-        hashMap.put (UserEmailEventConfigurationData_Package.LISTENER_CLASSPATH, eventListenerClassPath);
-        This.setUserEmailEventConfigurationInterface (UserEmailEventConfigurationInterface_Access (UserEmailEventConfiguration_Package.Create (hashMap)));
+        hashMap.put (UserEmailEventConfigurationData_Package.LISTENER_CLASSPATH, Java_Box (eventListenerClassPath));
+        UserEmailEventConfigurationView'Class (This).setUserEmailEventConfigurationInterface (UserEmailEventConfigurationInterface_Access (UserEmailEventConfiguration_Package.Create (hashMap)));
    end Initialize;
 
    function Create (node_Param : access Node_Package.Node'Class) return UserEmailEventConfigurationView_Access is
@@ -50,7 +50,7 @@ package body org.allbinary.logic.communication.smtp.configuration.user.event.Use
       userEmailEventConfigurationInterface : constant UserEmailEventConfigurationInterface_Access := UserEmailEventConfigurationInterface_Access (userEmailEventConfigurationInterface_Param);
    begin
       Initialize_Fields (This);
-        This.setUserEmailEventConfigurationInterface (userEmailEventConfigurationInterface);
+        UserEmailEventConfigurationView'Class (This).setUserEmailEventConfigurationInterface (userEmailEventConfigurationInterface);
    end Initialize;
 
    function Create (userEmailEventConfigurationInterface_Param : access UserEmailEventConfigurationInterface_Package.UserEmailEventConfigurationInterface'Class) return UserEmailEventConfigurationView_Access is
@@ -67,7 +67,7 @@ package body org.allbinary.logic.communication.smtp.configuration.user.event.Use
       hashMap : HashMap_Access;
       node : Node_Access;
    begin
-        userEmailEventConfigurationMapping := UserEmailEventConfigurationMapping_Package.Create (This.getUserEmailEventConfigurationInterface);
+        userEmailEventConfigurationMapping := UserEmailEventConfigurationMapping_Package.Create (UserEmailEventConfigurationView'Class (This).getUserEmailEventConfigurationInterface);
         hashMap := userEmailEventConfigurationMapping.toHashMap;
         node := ModDomHelper_Package.createNameValueNodes (document, UserEmailEventConfigurationData_Package.NAME, hashMap);
         return node;

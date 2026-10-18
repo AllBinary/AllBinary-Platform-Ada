@@ -34,7 +34,7 @@ package body org.allbinary.graphics.j2me.dialog.RotateJDialog_Package is
    begin
         JDialog_Package.Initialize (This, parent, modal);
         Initialize_Fields (This);
-        This.initComponents;
+        RotateJDialog'Class (This).initComponents;
    end Initialize;
 
    function Create (parent_Param : access Frame_Package.Frame'Class; modal : Boolean) return RotateJDialog_Access is
@@ -54,7 +54,7 @@ package body org.allbinary.graphics.j2me.dialog.RotateJDialog_Package is
         This.jLabel2 := JLabel_Package.Create;
         This.jPanel1 := JPanel_Package.Create;
         This.jButton1 := JButton_Package.Create;
-        This.setDefaultCloseOperation (javax_Package.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        RotateJDialog'Class (This).setDefaultCloseOperation (javax_Package.swing.WindowConstants.DISPOSE_ON_CLOSE);
         This.angleIncrementJTextField.setText (To_Unbounded_String ("36"));
         This.jLabel1.setText (To_Unbounded_String ("Angle Increment:"));
         This.totalRotationJTextField.setText (To_Unbounded_String ("360"));
@@ -65,18 +65,18 @@ package body org.allbinary.graphics.j2me.dialog.RotateJDialog_Package is
 --     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
 --        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
---                  This.jButton1ActionPerformed (evt);
+--                  RotateJDialog'Class (This).jButton1ActionPerformed (evt);
 --     end actionPerformed;
 );
         jPanel1Layout := GroupLayout_Package.Create (This.jPanel1);
         This.jPanel1.setLayout (jPanel1Layout);
         jPanel1Layout.setHorizontalGroup (jPanel1Layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (jPanel1Layout.createSequentialGroup.addGap (62, 62, 62).addComponent (This.jButton1).addContainerGap (62, Short_Package.MAX_VALUE)));
         jPanel1Layout.setVerticalGroup (jPanel1Layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addComponent (This.jButton1));
-        layout := GroupLayout_Package.Create (This.getContentPane);
-        This.getContentPane.setLayout (layout);
+        layout := GroupLayout_Package.Create (RotateJDialog'Class (This).getContentPane);
+        RotateJDialog'Class (This).getContentPane.setLayout (layout);
         layout.setHorizontalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (layout.createSequentialGroup.addContainerGap.addGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.TRAILING).addComponent (This.jLabel1).addComponent (This.jLabel2)).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.UNRELATED).addGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addComponent (This.totalRotationJTextField, javax_Package.swing.GroupLayout.Alignment.TRAILING, javax_Package.swing.GroupLayout.DEFAULT_SIZE, 31, Short_Package.MAX_VALUE).addComponent (This.angleIncrementJTextField, javax_Package.swing.GroupLayout.Alignment.TRAILING, javax_Package.swing.GroupLayout.PREFERRED_SIZE, 31, javax_Package.swing.GroupLayout.PREFERRED_SIZE)).addContainerGap).addComponent (This.jPanel1, javax_Package.swing.GroupLayout.Alignment.TRAILING, javax_Package.swing.GroupLayout.DEFAULT_SIZE, javax_Package.swing.GroupLayout.DEFAULT_SIZE, Short_Package.MAX_VALUE));
         layout.setVerticalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (layout.createSequentialGroup.addContainerGap.addGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.BASELINE).addComponent (This.angleIncrementJTextField, javax_Package.swing.GroupLayout.PREFERRED_SIZE, javax_Package.swing.GroupLayout.DEFAULT_SIZE, javax_Package.swing.GroupLayout.PREFERRED_SIZE).addComponent (This.jLabel1)).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.BASELINE).addComponent (This.totalRotationJTextField, javax_Package.swing.GroupLayout.PREFERRED_SIZE, javax_Package.swing.GroupLayout.DEFAULT_SIZE, javax_Package.swing.GroupLayout.PREFERRED_SIZE).addComponent (This.jLabel2)).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short_Package.MAX_VALUE).addComponent (This.jPanel1, javax_Package.swing.GroupLayout.PREFERRED_SIZE, javax_Package.swing.GroupLayout.DEFAULT_SIZE, javax_Package.swing.GroupLayout.PREFERRED_SIZE).addContainerGap));
-        This.pack;
+        RotateJDialog'Class (This).pack;
    end initComponents;
 
    procedure jButton1ActionPerformed (This : in out RotateJDialog; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
@@ -86,8 +86,8 @@ package body org.allbinary.graphics.j2me.dialog.RotateJDialog_Package is
         begin
             This.hashMap.put (To_Unbounded_String (Java_Image (0)), To_Unbounded_String (Java_Image (This.angleIncrementJTextField.getText)));
             This.hashMap.put (To_Unbounded_String (Java_Image (1)), To_Unbounded_String (Java_Image (This.totalRotationJTextField.getText)));
-            (HashMapJDialogListenerInterface_Access (This.getParent)).onHashMap (This.hashMap);
-            This.setVisible (False);
+            (HashMapJDialogListenerInterface_Access (RotateJDialog'Class (This).getParent)).onHashMap (This.hashMap);
+            RotateJDialog'Class (This).setVisible (False);
         exception
             when Java_Occurrence : others =>
                 declare

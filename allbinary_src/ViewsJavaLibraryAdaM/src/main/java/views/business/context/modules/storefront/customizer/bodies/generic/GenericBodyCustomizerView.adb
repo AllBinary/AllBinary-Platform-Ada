@@ -40,8 +40,8 @@ package body views.business.context.modules.storefront.customizer.bodies.generic
    --  throws Exception
    procedure addDomNodeInterfaces (This : in out GenericBodyCustomizerView) is
    begin
-        This.addDomNodeInterface (DomNodeInterface_Access (This.body_Id));
-        This.addDomNodeInterface (DomNodeInterface_Access (GenericBodyCustomizerView_Access'(This'Unchecked_Access)));
+        GenericBodyCustomizerView'Class (This).addDomNodeInterface (DomNodeInterface_Access (This.body_Id));
+        GenericBodyCustomizerView'Class (This).addDomNodeInterface (DomNodeInterface_Access (GenericBodyCustomizerView_Access'(This'Unchecked_Access)));
    end addDomNodeInterfaces;
 
    --  throws Exception
@@ -49,7 +49,7 @@ package body views.business.context.modules.storefront.customizer.bodies.generic
       document : constant Document_Access := Document_Access (document_Param);
       pageName : Unbounded_String;
    begin
-        pageName := TransformTemplateCustomizerUtil_Package.getInstance.getPageNameHack (This.getTransformInfoInterface.getName, This.getWeblisketSession.getStoreName);
+        pageName := TransformTemplateCustomizerUtil_Package.getInstance.getPageNameHack (GenericBodyCustomizerView'Class (This).getTransformInfoInterface.getName, GenericBodyCustomizerView'Class (This).getWeblisketSession.getStoreName);
         if StringValidationUtil_Package.getInstance.isEmpty (pageName) then
             pageName := GenericBodyCustomizerView_Package.NAME;
         end if;
@@ -62,9 +62,9 @@ package body views.business.context.modules.storefront.customizer.bodies.generic
       result : Unbounded_String;
    begin
         begin
-            This.addDomNodeInterfaces;
-            success := XmlDocumentHelper_Package.toString (This.getDoc);
-            result := StoreTransformer_Package.Create (This.abeClientInformation, This.getTransformInfoInterface).translate (success);
+            GenericBodyCustomizerView'Class (This).addDomNodeInterfaces;
+            success := XmlDocumentHelper_Package.toString (GenericBodyCustomizerView'Class (This).getDoc);
+            result := StoreTransformer_Package.Create (This.abeClientInformation, GenericBodyCustomizerView'Class (This).getTransformInfoInterface).translate (success);
             return StringEscapeUtils_Package.unescapeHtml3 (result);
         exception
             when Java_Occurrence : others =>

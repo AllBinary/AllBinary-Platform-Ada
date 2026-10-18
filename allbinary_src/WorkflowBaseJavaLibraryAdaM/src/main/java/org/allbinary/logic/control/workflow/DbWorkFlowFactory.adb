@@ -51,9 +51,9 @@ package body org.allbinary.logic.control.workflow.DbWorkFlowFactory_Package is
       commonStrings : CommonStrings_Access;
    begin
         begin
-            className := Unbounded_String (hashMap.get (DynamicObjectData_Package.NAME));
+            className := Java_Unbox (hashMap.get (DynamicObjectData_Package.NAME));
             params := new Java_Object_Access_Array'(0 .. (1) - 1 => null);
-            classes := new Ada_Tags_Tag_Array'(0 .. (1) - 1 => null);
+            classes := new Ada_Tags_Tag_Array'(0 .. (1) - 1 => Ada.Tags.No_Tag);
             classes (0) := hashMap.all'Tag;
             params (0) := Java_Object_Access (hashMap);
             anyType := AbeFactory_Package.getInstance.getInstance (abeClientInformation, className, classes, params);

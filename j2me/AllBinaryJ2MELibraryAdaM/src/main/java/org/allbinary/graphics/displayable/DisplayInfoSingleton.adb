@@ -117,7 +117,7 @@ package body org.allbinary.graphics.displayable.DisplayInfoSingleton_Package is
    procedure setLastSize (This : in out DisplayInfoSingleton; aLastWidth : Integer; aLastHeight : Integer; reason_Case : Unbounded_String) is
    begin
         if ((This.full_Case (This.WIDTH)) /= (aLastWidth)) or else ((This.full_Case (This.HEIGHT)) /= (aLastHeight)) then
-            This.setLastSizeForce (aLastWidth, aLastHeight, reason_Case);
+            DisplayInfoSingleton'Class (This).setLastSizeForce (aLastWidth, aLastHeight, reason_Case);
         end if;
    end setLastSize;
 
@@ -134,14 +134,14 @@ package body org.allbinary.graphics.displayable.DisplayInfoSingleton_Package is
         aFullWidth := aLastWidth;
         aFullHeight := aLastHeight;
         stringMaker.delete (0, stringMaker.length);
-        This.logUtil.putF (stringMaker.append (This.FULL_WIDTH).appendint (aFullWidth).append (This.FULL_HEIGHT).appendint (aFullHeight).append (This.toString).toString, DisplayInfoSingleton_Access'(This'Unchecked_Access), This.SET_LAST_SIZE_METHOD_NAME);
+        This.logUtil.putF (stringMaker.append (This.FULL_WIDTH).appendint (aFullWidth).append (This.FULL_HEIGHT).appendint (aFullHeight).append (DisplayInfoSingleton'Class (This).toString).toString, DisplayInfoSingleton_Access'(This'Unchecked_Access), This.SET_LAST_SIZE_METHOD_NAME);
         operatingSystemInterface := OperatingSystemFactory_Package.getInstance.getOperatingSystemInstance;
         if operatingSystemInterface.isOverScan then
             aLastWidth := ((aLastWidth) * (operatingSystemInterface.getOverScanXPercent)) / (100);
             aLastHeight := ((aLastHeight) * (operatingSystemInterface.getOverScanYPercent)) / (100);
         end if;
         if operatingSystemInterface.isScalable then
-            if This.isPortraitWH (aLastWidth, aLastHeight) then
+            if DisplayInfoSingleton'Class (This).isPortraitWH (aLastWidth, aLastHeight) then
                 if (Float (aLastHeight)) > (This.scaleLargestTo) then
                     This.displayRatio := (This.scaleLargestTo) / (Float (aLastHeight));
                     This.ratio := (Float (aLastHeight)) / (This.scaleLargestTo);
@@ -182,7 +182,7 @@ package body org.allbinary.graphics.displayable.DisplayInfoSingleton_Package is
         This.last_Case (This.HEIGHT) := aLastHeight;
         This.lastHalf (This.HEIGHT) := (Java_Shift_Right_Arithmetic (This.last_Case (This.HEIGHT), 1));
         SWTJOGLProcessor_Package.getInstance.setCustom (aLastWidth, aLastHeight, This.ratio);
-        This.add (This.SET_LAST_SIZE_METHOD_NAME);
+        DisplayInfoSingleton'Class (This).add (This.SET_LAST_SIZE_METHOD_NAME);
    end setLastSizeForce;
 
    function isPortraitWH (This : in out DisplayInfoSingleton; lastWidth : Integer; lastHeight : Integer) return Boolean is
@@ -196,7 +196,7 @@ package body org.allbinary.graphics.displayable.DisplayInfoSingleton_Package is
 
    function isPortrait (This : in out DisplayInfoSingleton) return Boolean is
    begin
-        return This.isPortraitWH (This.last_Case (This.WIDTH), This.last_Case (This.HEIGHT));
+        return DisplayInfoSingleton'Class (This).isPortraitWH (This.last_Case (This.WIDTH), This.last_Case (This.HEIGHT));
    end isPortrait;
 
    procedure add (This : in out DisplayInfoSingleton; reason_Case : Unbounded_String) is
@@ -205,7 +205,7 @@ package body org.allbinary.graphics.displayable.DisplayInfoSingleton_Package is
         stringMaker := StringMaker_Package.Create;
         This.logUtil.putF (stringMaker.append (This.REASON).append (reason_Case).toString, DisplayInfoSingleton_Access'(This'Unchecked_Access), This.FIRE_METHOD_NAME);
         stringMaker.delete (0, stringMaker.length);
-        This.logUtil.putF (This.toStringAppend (stringMaker), DisplayInfoSingleton_Access'(This'Unchecked_Access), This.FIRE_METHOD_NAME);
+        This.logUtil.putF (DisplayInfoSingleton'Class (This).toStringAppend (stringMaker), DisplayInfoSingleton_Access'(This'Unchecked_Access), This.FIRE_METHOD_NAME);
         This.list.add (reason_Case);
    end add;
 
@@ -213,7 +213,7 @@ package body org.allbinary.graphics.displayable.DisplayInfoSingleton_Package is
    begin
         begin
             if (This.list.size) > (0) then
-                This.processForced;
+                DisplayInfoSingleton'Class (This).processForced;
             end if;
             This.list.clear;
         exception
@@ -261,7 +261,7 @@ package body org.allbinary.graphics.displayable.DisplayInfoSingleton_Package is
         aFullWidth := aLastWidth;
         aFullHeight := aLastHeight;
         stringMaker := StringMaker_Package.Create;
-        This.logUtil.putF (stringMaker.append (CommonLabels_Package.getInstance.START_LABEL).append (reason_Case).append (This.LAST_WIDTH).appendint (aLastWidth).append (This.LAST_HEIGHT).appendint (aLastHeight).append (This.commonSeps.SPACE).append (This.toString).toString, DisplayInfoSingleton_Access'(This'Unchecked_Access), This.commonStrings.UPDATE);
+        This.logUtil.putF (stringMaker.append (CommonLabels_Package.getInstance.START_LABEL).append (reason_Case).append (This.LAST_WIDTH).appendint (aLastWidth).append (This.LAST_HEIGHT).appendint (aLastHeight).append (This.commonSeps.SPACE).append (DisplayInfoSingleton'Class (This).toString).toString, DisplayInfoSingleton_Access'(This'Unchecked_Access), This.commonStrings.UPDATE);
         if ((aLastWidth) > (0)) and then ((aLastHeight) > (0)) then
             features := Features_Package.getInstance;
             openGLFeatureFactory := OpenGLFeatureFactory_Package.getInstance;
@@ -274,7 +274,7 @@ package body org.allbinary.graphics.displayable.DisplayInfoSingleton_Package is
                     aLastHeight := ((aLastHeight) * (operatingSystemInterface.getOverScanYPercent)) / (100);
                 end if;
                 if operatingSystemInterface.isScalable then
-                    if This.isPortraitWH (aLastWidth, aLastHeight) then
+                    if DisplayInfoSingleton'Class (This).isPortraitWH (aLastWidth, aLastHeight) then
                         if (Float (aLastHeight)) > (This.scaleLargestTo) then
                             This.displayRatio := (This.scaleLargestTo) / (Float (aLastHeight));
                             This.ratio := (Float (aLastHeight)) / (This.scaleLargestTo);
@@ -315,7 +315,7 @@ package body org.allbinary.graphics.displayable.DisplayInfoSingleton_Package is
                 This.last_Case (This.HEIGHT) := aLastHeight;
                 This.lastHalf (This.HEIGHT) := (Java_Shift_Right_Arithmetic (This.last_Case (This.HEIGHT), 1));
                 SWTJOGLProcessor_Package.getInstance.setCustom (aLastWidth, aLastHeight, This.ratio);
-                This.add (This.commonStrings.UPDATE);
+                DisplayInfoSingleton'Class (This).add (This.commonStrings.UPDATE);
             end if;
         end if;
    end update;
@@ -324,7 +324,7 @@ package body org.allbinary.graphics.displayable.DisplayInfoSingleton_Package is
       stringBuffer : StringMaker_Access;
    begin
         stringBuffer := StringMaker_Package.Create;
-        return This.toStringAppend (stringBuffer);
+        return DisplayInfoSingleton'Class (This).toStringAppend (stringBuffer);
    end toString;
 
    function toStringAppend (This : in out DisplayInfoSingleton; stringBuffer_Param : access StringMaker_Package.StringMaker'Class) return Unbounded_String is
@@ -355,7 +355,7 @@ package body org.allbinary.graphics.displayable.DisplayInfoSingleton_Package is
         stringBuffer.append (This.commonLabels.HEIGHT_LABEL);
         stringBuffer.appendint (This.lastHalf (This.HEIGHT));
         stringBuffer.append (This.commonSeps.SPACE);
-        stringBuffer.append ((if This.isPortrait then This.PORTRAIT else This.LANDSCAPE));
+        stringBuffer.append ((if DisplayInfoSingleton'Class (This).isPortrait then This.PORTRAIT else This.LANDSCAPE));
         return stringBuffer.toString;
    end toStringAppend;
 

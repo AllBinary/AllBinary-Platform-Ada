@@ -27,7 +27,7 @@ package body org.allbinary.data.tables.advertisement.campaign.internal.Advertise
    begin
         AbSqlBean_Package.Initialize (This, UserDbInitInfo_Package.Create);
         Initialize_Fields (This);
-        This.setTableName (This.tableName);
+        AdvertisementCampaignInternalEntity'Class (This).setTableName (This.tableName);
    end Initialize;
 
    function Create return AdvertisementCampaignInternalEntity_Access is
@@ -65,7 +65,7 @@ package body org.allbinary.data.tables.advertisement.campaign.internal.Advertise
       index : Integer;
    begin
         keysAndValues := StdUtil_Package.getInstance.createHashMap;
-        keysAndValues.put (StoreFrontData_Package.getInstance.NAME, storeName);
+        keysAndValues.put (StoreFrontData_Package.getInstance.NAME, Java_Box (storeName));
         hashMapVector := AbSqlBean (This).getRows (keysAndValues);
         vector := BasicArrayListD_Package.Create;
         size := hashMapVector.size;
@@ -83,8 +83,8 @@ package body org.allbinary.data.tables.advertisement.campaign.internal.Advertise
       hashMap : HashMap_Access;
    begin
         keysAndValues := StdUtil_Package.getInstance.createHashMap;
-        keysAndValues.put (StoreFrontData_Package.getInstance.NAME, storeName);
-        keysAndValues.put (AdvertisementCampaignData_Package.getInstance.NAME, name);
+        keysAndValues.put (StoreFrontData_Package.getInstance.NAME, Java_Box (storeName));
+        keysAndValues.put (AdvertisementCampaignData_Package.getInstance.NAME, Java_Box (name));
         hashMap := AbSqlBean (This).getRow (keysAndValues);
         if (hashMap) /= (null) then
             return AdvertisementCampaignInterface_Access (AdvertisementCampaign_Package.Create (hashMap));
@@ -96,7 +96,7 @@ package body org.allbinary.data.tables.advertisement.campaign.internal.Advertise
    procedure update (This : in out AdvertisementCampaignInternalEntity; updatedValues_Param : access HashMap_Package.HashMap'Class) is
       updatedValues : constant HashMap_Access := HashMap_Access (updatedValues_Param);
    begin
-        AbSqlBean (This).updateWhere (EntryData_Package.getInstance.getInstance.ID, Unbounded_String (updatedValues.get (EntryData_Package.getInstance.getInstance.ID)), updatedValues);
+        AbSqlBean (This).updateWhere (EntryData_Package.getInstance.getInstance.ID, Java_Unbox (updatedValues.get (EntryData_Package.getInstance.getInstance.ID)), updatedValues);
    end update;
 
    function createTableStatement (This : in out AdvertisementCampaignInternalEntity) return Unbounded_String is
@@ -108,7 +108,7 @@ package body org.allbinary.data.tables.advertisement.campaign.internal.Advertise
         advertisementCampaignData := AdvertisementCampaignData_Package.getInstance;
         stringBuffer := StringMaker_Package.Create;
         stringBuffer.append (This.sqlStrings.CREATE_TABLE);
-        stringBuffer.append (This.getTableName);
+        stringBuffer.append (AdvertisementCampaignInternalEntity'Class (This).getTableName);
         stringBuffer.append (This.sqlStrings.START);
         stringBuffer.append (entryData.ID).append (This.sqlTypeStrings.MAX_BIG_INT_UNSIGNED_NOT_NULL).append (StoreFrontData_Package.getInstance.NAME).append (This.sqlTypeStrings.MAX_CHAR_COLUMN_NOT_NULL).append (advertisementCampaignData.NAME).append (This.sqlTypeStrings.MAX_CHAR_COLUMN_NOT_NULL).append (advertisementCampaignData.DESCRIPTION).append (This.sqlTypeStrings.MAX_CHAR_COLUMN_NOT_NULL).append (advertisementCampaignData.CONFIG).append (This.sqlTypeStrings.BLOB_NOT_NULL).append (TimeData_Package.getInstance.START).append (This.sqlTypeStrings.MAX_BIG_INT_UNSIGNED_NOT_NULL).append (TimeData_Package.getInstance.END_Id).append (This.sqlTypeStrings.MAX_BIG_INT_UNSIGNED_NOT_NULL).append (entryData.TIMECREATED).append (This.sqlTypeStrings.MAX_BIG_INT_UNSIGNED_NOT_NULL).append (entryData.LASTMODIFIED).append (This.sqlTypeStrings.MAX_BIG_INT_UNSIGNED_NOT_NULL).append (This.sqlStrings.PRIMARY_KEY).append (entryData.ID).append (This.sqlStrings.END_Id);
         return stringBuffer.toString;
@@ -117,7 +117,7 @@ package body org.allbinary.data.tables.advertisement.campaign.internal.Advertise
    function createTable (This : in out AdvertisementCampaignInternalEntity) return Unbounded_String is
       returnStr : Unbounded_String;
    begin
-        returnStr := AbSqlBean (This).createTable (This.createTableStatement);
+        returnStr := AbSqlBean (This).createTable (AdvertisementCampaignInternalEntity'Class (This).createTableStatement);
         return returnStr;
    end createTable;
 

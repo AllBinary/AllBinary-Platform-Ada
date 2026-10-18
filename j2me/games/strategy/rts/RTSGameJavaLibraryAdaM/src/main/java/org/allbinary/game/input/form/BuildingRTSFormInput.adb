@@ -87,12 +87,12 @@ package body org.allbinary.game.input.form.BuildingRTSFormInput_Package is
       item : constant ABCustomItem_Access := ABCustomItem_Access (item_Param);
    begin
         RTSFormInput (This).process (layerManager);
-        This.buildFromMotionInput (rtsPlayerLayerInterface, layerManager, item, itemIndex);
+        BuildingRTSFormInput'Class (This).buildFromMotionInput (rtsPlayerLayerInterface, layerManager, item, itemIndex);
    end processGameSpecific;
 
    function isPositionBlocked (This : in out BuildingRTSFormInput) return Boolean is
    begin
-        return This.dropCellPositionHistory.isCellPositionWithDrop (This.getSelectedGeographicCellPosition);
+        return This.dropCellPositionHistory.isCellPositionWithDrop (BuildingRTSFormInput'Class (This).getSelectedGeographicCellPosition);
    end isPositionBlocked;
 
    function isDemoLocked (This : in out BuildingRTSFormInput; item_Param : access ABCustomItem_Package.ABCustomItem'Class) return Boolean is
@@ -130,19 +130,19 @@ package body org.allbinary.game.input.form.BuildingRTSFormInput_Package is
         end if;
         geographicMapCompositeInterface := GeographicMapCompositeInterface_Access (layerManager);
         geographicMapInterface := geographicMapCompositeInterface.getGeographicMapInterface (0);
-        if This.isDemoLocked (item) then
+        if BuildingRTSFormInput'Class (This).isDemoLocked (item) then
             rtsPlayerLayerInterface.add (ErrorSound_Package.getInstance);
             LockedFeatureNotificationUtil_Package.getInstance.fireWithColor (geographicMapInterface.getForegroundBasicColor);
             return;
         end if;
-        geographicMapCellPosition := This.getSelectedGeographicCellPosition;
+        geographicMapCellPosition := BuildingRTSFormInput'Class (This).getSelectedGeographicCellPosition;
         if (geographicMapCellPosition) /= (SimpleGeographicMapCellPositionFactory_Package.NULL_GEOGRAPHIC_MAP_CELL_POSITION) then
-            if not (This.isPositionBlocked) then
+            if not (BuildingRTSFormInput'Class (This).isPositionBlocked) then
                 geographicMapCellType := geographicMapInterface.getCellTypeAt (geographicMapCellPosition);
                 raceTrackGeographicMapCellTypeFactory := RaceTrackGeographicMapCellTypeFactory_Access (geographicMapInterface.getGeographicMapCellTypeFactory);
                 if not (raceTrackGeographicMapCellTypeFactory.isPath (geographicMapCellType)) then
                     if (This.newUnconstructedRTSLayerInterfaceArray (itemIndex)) = (CollidableDestroyableDamageableLayer_Package.getNullInstance) then
-                        This.newUnconstructedRTSLayerInterfaceArray (itemIndex) := This.getInstance (layerManager, item, geographicMapCellPosition);
+                        This.newUnconstructedRTSLayerInterfaceArray (itemIndex) := BuildingRTSFormInput'Class (This).getInstance (layerManager, item, geographicMapCellPosition);
                     else
                         rtsLayer := RTSLayer_Access (This.newUnconstructedRTSLayerInterfaceArray (itemIndex));
                         cellPoint := geographicMapCellPosition.getPoint;
@@ -150,7 +150,7 @@ package body org.allbinary.game.input.form.BuildingRTSFormInput_Package is
                         rtsLayer.geographicMapCellPositionAreaBase.update (geographicMapInterface);
                     end if;
                     rtsLayer := RTSLayer_Access (This.newUnconstructedRTSLayerInterfaceArray (itemIndex));
-                    This.attemptBuild (rtsPlayerLayerInterface, layerManager, rtsLayer, itemIndex);
+                    BuildingRTSFormInput'Class (This).attemptBuild (rtsPlayerLayerInterface, layerManager, rtsLayer, itemIndex);
                 else
                     rtsPlayerLayerInterface.add (ErrorSound_Package.getInstance);
                     if not (rtsPlayerLayerInterface.implmentsArtificialIntelligenceCompositeInterface) then
@@ -190,7 +190,7 @@ package body org.allbinary.game.input.form.BuildingRTSFormInput_Package is
         This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Layer: ")).append (StringUtil_Package.getInstance.toString (layerInterface)).toString, BuildingRTSFormInput_Access'(This'Unchecked_Access), To_Unbounded_String ("attemptBuild"));
         geographicMapCellPositionArea := layerInterface.geographicMapCellPositionAreaBase;
         occupyList := geographicMapCellPositionArea.getOccupyingGeographicMapCellPositionList;
-        if not (This.isBuildAttemptValid (rtsPlayerLayerInterface, layerInterface)) then
+        if not (BuildingRTSFormInput'Class (This).isBuildAttemptValid (rtsPlayerLayerInterface, layerInterface)) then
             return False;
         end if;
         geographicMapCellType := null;
@@ -221,7 +221,7 @@ package body org.allbinary.game.input.form.BuildingRTSFormInput_Package is
             layerInterface.construct (rtsPlayerLayerInterface);
             This.newUnconstructedRTSLayerInterfaceArray (itemIndex) := CollidableDestroyableDamageableLayer_Package.getNullInstance;
             capital.removeMoney (cost);
-            This.add (rtsPlayerLayerInterface, layerManager, layerInterface);
+            BuildingRTSFormInput'Class (This).add (rtsPlayerLayerInterface, layerManager, layerInterface);
             return True;
         else
             rtsPlayerLayerInterface.add (ErrorSound_Package.getInstance);
@@ -255,7 +255,7 @@ package body org.allbinary.game.input.form.BuildingRTSFormInput_Package is
             end if;
             return False;
         else
-            if This.isSurroundingCellsOffMap (layerInterface) then
+            if BuildingRTSFormInput'Class (This).isSurroundingCellsOffMap (layerInterface) then
                 rtsPlayerLayerInterface.add (ErrorSound_Package.getInstance);
                 if not (rtsPlayerLayerInterface.implmentsArtificialIntelligenceCompositeInterface) then
                     GameNotificationEventHandler_Package.getInstance.fireEvent (This.mapEdgeGameNotificationEvent);
@@ -279,7 +279,7 @@ package body org.allbinary.game.input.form.BuildingRTSFormInput_Package is
         occupyList := geographicMapCellPositionArea.getOccupyingGeographicMapCellPositionList;
         This.dropCellPositionHistory.addAll (occupyList, layerInterface);
         rtsPlayerGameInput := RTSPlayerGameInput_Access (rtsPlayerLayerInterface.getPlayerGameInput);
-        rtsPlayerGameInput.setSelectedRTSLayer (layerInterface, This.getSelectedGeographicCellPosition);
+        rtsPlayerGameInput.setSelectedRTSLayer (layerInterface, BuildingRTSFormInput'Class (This).getSelectedGeographicCellPosition);
         layerManager.append (layerInterface);
         rtsPlayerLayerInterface.add (BuildingSound_Package.getInstance);
         if not (rtsPlayerLayerInterface.implmentsArtificialIntelligenceCompositeInterface) then

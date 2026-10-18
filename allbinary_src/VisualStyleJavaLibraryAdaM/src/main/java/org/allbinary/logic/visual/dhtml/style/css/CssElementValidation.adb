@@ -79,7 +79,7 @@ package body org.allbinary.logic.visual.dhtml.style.css.CssElementValidation_Pac
    begin
         begin
             stringBuffer := StringMaker_Package.Create;
-            stringBuffer.append (This.getValue);
+            stringBuffer.append (CssElementValidation'Class (This).getValue);
             stringBuffer.append (To_Unbounded_String (" Css Style is not valid."));
             return stringBuffer.toString;
         exception

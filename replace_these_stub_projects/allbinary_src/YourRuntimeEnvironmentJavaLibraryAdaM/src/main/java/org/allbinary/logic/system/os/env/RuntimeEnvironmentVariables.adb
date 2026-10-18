@@ -32,7 +32,7 @@ package body org.allbinary.logic.system.os.env.RuntimeEnvironmentVariables_Packa
    function getVariable (This : in out RuntimeEnvironmentVariables; var : Unbounded_String) return Unbounded_String is
       environmentVariables : Properties_Access;
    begin
-        environmentVariables := This.get;
+        environmentVariables := RuntimeEnvironmentVariables'Class (This).get;
         return environmentVariables.getProperty (var);
    end getVariable;
 
@@ -63,7 +63,7 @@ package body org.allbinary.logic.system.os.env.RuntimeEnvironmentVariables_Packa
             operatingSystems := OperatingSystems_Package.getInstance;
             if (osName.compareTo (operatingSystems.LINUX)) = (0) then
                 process := Runtime_Package.getRuntime.exec (linuxCommand);
-            elsif ((Index (osName, To_String (operatingSystems.WINDOWS)) - 1)) >= (0) then
+            elsif ((Index (osName, Java_Image (operatingSystems.WINDOWS)) - 1)) >= (0) then
                 process := Runtime_Package.getRuntime.exec (windowsCommand);
             elsif (osName.compareTo (operatingSystems.SOLARIS)) = (0) then
                 process := Runtime_Package.getRuntime.exec (solarisCommand);
@@ -74,7 +74,7 @@ package body org.allbinary.logic.system.os.env.RuntimeEnvironmentVariables_Packa
             bufferedReader := BufferedReader_Package.Create (processInputStreamReader);
             keyValuePair := Null_Unbounded_String;
             while ((Java_Assign (keyValuePair, bufferedReader.readLine))) /= (null) loop
-                index := (Index (keyValuePair, To_String ('=')) - 1);
+                index := (Index (keyValuePair, Java_Image ('=')) - 1);
                 key := Unbounded_Slice (keyValuePair, (0) + 1, index);
                 value := Unbounded_Slice (keyValuePair, ((index) + (1)) + 1, Length (keyValuePair));
                 environmentVariables.put (key, value);
@@ -148,7 +148,7 @@ package body org.allbinary.logic.system.os.env.RuntimeEnvironmentVariables_Packa
       existingPath : Unbounded_String;
    begin
         begin
-            existingPath := This.getLibraryPath;
+            existingPath := RuntimeEnvironmentVariables'Class (This).getLibraryPath;
             System_Package.setProperty (To_Unbounded_String ("java.library.path"), libPath & To_Unbounded_String (":") & existingPath);
         exception
             when Java_Occurrence : others =>
@@ -227,7 +227,7 @@ package body org.allbinary.logic.system.os.env.RuntimeEnvironmentVariables_Packa
             windowsCommand := To_Unbounded_String ("cmd.exe /c set") & var & To_Unbounded_String ("=") & val;
             if (osName.compareTo (operatingSystems.LINUX)) = (0) then
                 Java_Throw (Java_New_Exception ("Exception"));
-            elsif ((Index (osName, To_String (operatingSystems.WINDOWS)) - 1)) >= (0) then
+            elsif ((Index (osName, Java_Image (operatingSystems.WINDOWS)) - 1)) >= (0) then
                 process := Runtime_Package.getRuntime.exec (windowsCommand);
             elsif (osName.compareTo (operatingSystems.SOLARIS)) = (0) then
                 Java_Throw (Java_New_Exception ("Exception"));

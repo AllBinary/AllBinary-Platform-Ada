@@ -136,9 +136,9 @@ package body org.allbinary.business.user.commerce.money.payment.types.PaymentTyp
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.PAYMENT) then
             This.logUtil.putF (This.commonStrings.START, PaymentTypeUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("getDefault"));
         end if;
-        This.initDefault (storeName);
+        PaymentTypeUtil'Class (This).initDefault (storeName);
         if not (StringValidationUtil_Package.getInstance.isEmpty (This.defaultName)) then
-            return This.get (This.defaultName);
+            return PaymentTypeUtil'Class (This).get (This.defaultName);
         end if;
         Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("No Default: ") & This.defaultName));
    end getDefault;

@@ -47,7 +47,7 @@ package body org.allbinary.game.layer.hud.event.GameNotificationEventHandler_Pac
         end if;
         BasicEventHandler (This).removeAllListeners;
         if (eventListenerInterface) /= (NullEventListener_Package.NULL_EVENT_LISTENER) then
-            This.addListenerInterface (eventListenerInterface);
+            GameNotificationEventHandler'Class (This).addListenerInterface (eventListenerInterface);
         end if;
    end removeAllListeners;
 

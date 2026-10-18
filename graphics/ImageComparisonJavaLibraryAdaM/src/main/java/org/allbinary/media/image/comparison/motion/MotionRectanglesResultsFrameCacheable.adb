@@ -28,7 +28,7 @@ package body org.allbinary.media.image.comparison.motion.MotionRectanglesResults
    begin
       Initialize_Fields (This);
         This.frame := frame;
-        This.setMotionRectangles (motionRectangles);
+        MotionRectanglesResultsFrameCacheable'Class (This).setMotionRectangles (motionRectangles);
    end Initialize;
 
    function Create (motionRectangles_Param : access MotionRectangles_Package.MotionRectangles'Class; frame : Long_Long_Integer) return MotionRectanglesResultsFrameCacheable_Access is
@@ -60,7 +60,7 @@ package body org.allbinary.media.image.comparison.motion.MotionRectanglesResults
         stringBuffer := StringMaker_Package.Create;
         stringBuffer.append (To_Unbounded_String (Ada.Tags.Expanded_Name (This.all'Tag)));
         stringBuffer.append (To_Unbounded_String (" Frame: "));
-        stringBuffer.append (This.getKey.toString);
+        stringBuffer.append (MotionRectanglesResultsFrameCacheable'Class (This).getKey.toString);
         return stringBuffer.toString;
    end toString;
 

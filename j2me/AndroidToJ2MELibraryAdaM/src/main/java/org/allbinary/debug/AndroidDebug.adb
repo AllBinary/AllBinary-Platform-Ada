@@ -38,16 +38,16 @@ package body org.allbinary.debug.AndroidDebug_Package is
 
    procedure start (This : in out AndroidDebug) is
    begin
-        This.setStartTime (Java_Current_Time_Millis);
+        AndroidDebug'Class (This).setStartTime (Java_Current_Time_Millis);
         Debug_Package.startMethodTracing (To_Unbounded_String ("trace"), This.bufferSize);
-        This.setRunning (True);
+        AndroidDebug'Class (This).setRunning (True);
    end start;
 
    procedure stop (This : in out AndroidDebug) is
    begin
         This.startTime := Long_Package.MAX_VALUE;
         Debug_Package.stopMethodTracing;
-        This.setRunning (False);
+        AndroidDebug'Class (This).setRunning (False);
    end stop;
 
    function getMaxTime (This : in out AndroidDebug) return Long_Long_Integer is

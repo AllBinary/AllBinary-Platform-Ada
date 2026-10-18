@@ -44,7 +44,7 @@ package body org.allbinary.game.layer.TechnologyRTSInterfaceImageItem_Package is
         ABCustomImageItem_Package.Initialize (This, label, img, layout, altText, basicColor, 0);
         Initialize_Fields (This);
         This.rtsInterface := rtsInterface;
-        This.update;
+        TechnologyRTSInterfaceImageItem'Class (This).update;
    end Initialize;
 
    function Create (label : Unbounded_String; img_Param : access Image_Package.Image'Class; layout : Integer; altText : Unbounded_String; basicColor_Param : access BasicColor_Package.BasicColor'Class; rtsInterface_Param : access RTSInterface_Package.RTSInterface'Class) return TechnologyRTSInterfaceImageItem_Access is
@@ -64,7 +64,7 @@ package body org.allbinary.game.layer.TechnologyRTSInterfaceImageItem_Package is
         font := graphics.getFont;
         fontHeight := font.getHeight;
         imageHeight := 0;
-        image := This.getImage;
+        image := TechnologyRTSInterfaceImageItem'Class (This).getImage;
         if (image) /= (NullImage_Package.NULL_IMAGE) then
             imageHeight := image.getHeight;
         end if;
@@ -83,8 +83,8 @@ package body org.allbinary.game.layer.TechnologyRTSInterfaceImageItem_Package is
 
    procedure update (This : in out TechnologyRTSInterfaceImageItem) is
    begin
-        This.costString := This.primitiveLongUtil.getCharArray (This.getRtsInterface.getUpgradeCost);
-        This.levelString := This.primitiveLongUtil.getCharArray (This.getRtsInterface.getLevel);
+        This.costString := This.primitiveLongUtil.getCharArray (TechnologyRTSInterfaceImageItem'Class (This).getRtsInterface.getUpgradeCost);
+        This.levelString := This.primitiveLongUtil.getCharArray (TechnologyRTSInterfaceImageItem'Class (This).getRtsInterface.getLevel);
    end update;
 
    procedure paintXY (This : in out TechnologyRTSInterfaceImageItem; graphics_Param : access Graphics_Package.Graphics'Class; x : Integer; y : Integer) is

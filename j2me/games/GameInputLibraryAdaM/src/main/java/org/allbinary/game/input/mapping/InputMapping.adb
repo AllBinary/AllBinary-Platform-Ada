@@ -73,7 +73,7 @@ package body org.allbinary.game.input.mapping.InputMapping_Package is
         stringBuffer.append (To_Unbounded_String (" == "));
         stringBuffer.append (stringUtil.toString (mappedToInput));
         This.logUtil.putF (stringBuffer.toString, InputMapping_Access'(This'Unchecked_Access), To_Unbounded_String ("InputMapping::remove"));
-        list := This.getMappedInput (input);
+        list := InputMapping'Class (This).getMappedInput (input);
         if list.contains (mappedToInput) then
             list.remove (mappedToInput);
             This.mappedList.remove (mappedToInput);
@@ -105,7 +105,7 @@ package body org.allbinary.game.input.mapping.InputMapping_Package is
       mappedToInput : constant Input_Access := Input_Access (mappedToInput_Param);
       list : BasicArrayList_Access;
    begin
-        list := This.getMappedInput (input);
+        list := InputMapping'Class (This).getMappedInput (input);
         if not (list.contains (mappedToInput)) then
             list.add (mappedToInput);
             This.mappedList.add (mappedToInput);

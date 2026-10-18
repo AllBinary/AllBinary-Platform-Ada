@@ -31,8 +31,8 @@ package body org.allbinary.layer.Layer_Package is
    procedure Initialize (This : in out Layer'Class; width : Integer; height : Integer) is
    begin
       Initialize_Fields (This);
-        This.setLayerWidth (width);
-        This.setLayerHeight (height);
+        Layer'Class (This).setLayerWidth (width);
+        Layer'Class (This).setLayerHeight (height);
    end Initialize;
 
    function Create (width : Integer; height : Integer) return Layer_Access is

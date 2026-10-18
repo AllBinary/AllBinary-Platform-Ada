@@ -78,12 +78,12 @@ package body org.allbinary.game.rts.technology.ReloadTechnology_Package is
 
    function getUpgradeCost (This : in out ReloadTechnology) return Integer is
    begin
-        return (((This.getLevel) * (This.getLevel))) * (1000);
+        return (((ReloadTechnology'Class (This).getLevel) * (ReloadTechnology'Class (This).getLevel))) * (1000);
    end getUpgradeCost;
 
    function isUpgradeable (This : in out ReloadTechnology) return Boolean is
    begin
-        if (This.getLevel) < (This.getMaxLevel) then
+        if (ReloadTechnology'Class (This).getLevel) < (ReloadTechnology'Class (This).getMaxLevel) then
             return True;
         else
             return False;
@@ -95,7 +95,7 @@ package body org.allbinary.game.rts.technology.ReloadTechnology_Package is
    begin
         This.level := This.level + 1;
         unitTechnologySingletonFactory := UnitTechnologySingletonFactory_Package.getInstance;
-        unitTechnologySingletonFactory.setReload ((unitTechnologySingletonFactory.getReload) + (((This.getLevel) * (10))));
+        unitTechnologySingletonFactory.setReload ((unitTechnologySingletonFactory.getReload) + (((ReloadTechnology'Class (This).getLevel) * (10))));
    end upgrade;
 
    function isSelfUpgradeable (This : in out ReloadTechnology) return Boolean is

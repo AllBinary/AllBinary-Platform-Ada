@@ -29,7 +29,7 @@ package body org.allbinary.util.ArrayUtil_Package is
 
    function copyOf (This : in out ArrayUtil; original : Java_Object_Access_Array_Access; newLength : Integer) return Java_Object_Access_Array_Access is
    begin
-        return This.copyOfType (original, newLength, original.all'Tag);
+        return ArrayUtil'Class (This).copyOfType (original, newLength, original.all'Tag);
    end copyOf;
 
    function copyOfType (This : in out ArrayUtil; original : Java_Object_Access_Array_Access; newLength : Integer; newType : Ada.Tags.Tag) return Java_Object_Access_Array_Access is

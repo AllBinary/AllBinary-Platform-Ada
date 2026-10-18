@@ -28,7 +28,7 @@ package body org.allbinary.media.graphics.geography.map.GeographicMapCellHistory
       GeographicMapCellHistoryProgressBase_Package.Initialize (This);
       Initialize_Fields (This);
         This.geographicMapCellHistoryArray := geographicMapCellHistoryArray;
-        This.init;
+        GeographicMapCellHistoryProgress'Class (This).init;
    end Initialize;
 
    function Create (geographicMapCellHistoryArray : GeographicMapCellHistory_Access_Array_Access) return GeographicMapCellHistoryProgress_Access is

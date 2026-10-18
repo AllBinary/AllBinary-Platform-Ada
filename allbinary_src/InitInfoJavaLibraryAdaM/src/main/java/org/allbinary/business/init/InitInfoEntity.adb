@@ -52,7 +52,7 @@ package body org.allbinary.business.init.InitInfoEntity_Package is
         stringBuffer.append (This.NOTHING);
         stringBuffer.append (This.sqlStrings.END_Id);
         This.tableData := stringBuffer.toString;
-        This.setTable (This.tableName);
+        InitInfoEntity'Class (This).setTable (This.tableName);
    end Initialize;
 
    function Create return InitInfoEntity_Access is
@@ -68,8 +68,8 @@ package body org.allbinary.business.init.InitInfoEntity_Package is
    begin
         begin
             keyAndValue := StdUtil_Package.getInstance.createHashMap;
-            keyAndValue.put (This.NOTHING, This.NOTHING);
-            hashMap := This.getRow (keyAndValue);
+            keyAndValue.put (Java_Box (This.NOTHING), Java_Box (This.NOTHING));
+            hashMap := InitInfoEntity'Class (This).getRow (keyAndValue);
             if (hashMap) /= (null) then
                 InitInfo_Package.getInstance.set (hashMap);
                 return True;
@@ -98,8 +98,8 @@ package body org.allbinary.business.init.InitInfoEntity_Package is
    begin
         begin
             keyAndValue := StdUtil_Package.getInstance.createHashMap;
-            keyAndValue.put (This.NOTHING, This.NOTHING);
-            hashMap := This.getRow (keyAndValue);
+            keyAndValue.put (Java_Box (This.NOTHING), Java_Box (This.NOTHING));
+            hashMap := InitInfoEntity'Class (This).getRow (keyAndValue);
             if (hashMap) /= (null) then
                 return True;
             else
@@ -123,7 +123,7 @@ package body org.allbinary.business.init.InitInfoEntity_Package is
 
    procedure update (This : in out InitInfoEntity) is
    begin
-        This.updateWhere (This.NOTHING, This.NOTHING, InitInfo_Package.getInstance.toHashMap);
+        InitInfoEntity'Class (This).updateWhere (This.NOTHING, This.NOTHING, InitInfo_Package.getInstance.toHashMap);
    end update;
 
    procedure add (This : in out InitInfoEntity) is
@@ -135,7 +135,7 @@ package body org.allbinary.business.init.InitInfoEntity_Package is
             values.add (InitInfo_Package.getInstance.getTesting);
             values.add (InitInfo_Package.getInstance.getTestHtmlPath);
             values.add (InitInfo_Package.getInstance.getMainPath);
-            This.insert (values);
+            InitInfoEntity'Class (This).insert (values);
         exception
             when Java_Occurrence : others =>
                 declare

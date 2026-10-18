@@ -41,7 +41,7 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.OverrideStor
       document : constant Document_Access := Document_Access (document_Param);
    begin
         GenericStoreTransformInfoObjectConfig_Package.Initialize (This, abeClientInformation, transformInfoInterface, document);
-        This.setDocument (This.generate (This.toXmlDoc));
+        OverrideStoreTransformInfoObjectConfig'Class (This).setDocument (OverrideStoreTransformInfoObjectConfig'Class (This).generate (OverrideStoreTransformInfoObjectConfig'Class (This).toXmlDoc));
    end Initialize;
 
    function Create (abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class; document_Param : access Document_Package.Document'Class) return OverrideStoreTransformInfoObjectConfig_Access is
@@ -56,7 +56,7 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.OverrideStor
       transformInfoInterface : constant TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
    begin
         GenericStoreTransformInfoObjectConfig_Package.Initialize (This, abeClientInformation, transformInfoInterface, name, type_Id);
-        This.setDocument (This.generate (This.toXmlDoc));
+        OverrideStoreTransformInfoObjectConfig'Class (This).setDocument (OverrideStoreTransformInfoObjectConfig'Class (This).generate (OverrideStoreTransformInfoObjectConfig'Class (This).toXmlDoc));
    end Initialize;
 
    function Create (abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class; name : Unbounded_String; type_Id : Unbounded_String) return OverrideStoreTransformInfoObjectConfig_Access is

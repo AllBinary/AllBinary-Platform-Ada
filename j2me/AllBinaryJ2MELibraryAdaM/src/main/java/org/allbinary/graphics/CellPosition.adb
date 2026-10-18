@@ -52,7 +52,7 @@ package body org.allbinary.graphics.CellPosition_Package is
 
    function toString (This : in out CellPosition) return Unbounded_String is
    begin
-        return CellPosition_Package.toStringColRow (This.getColumn, This.getRow);
+        return CellPosition_Package.toStringColRow (CellPosition'Class (This).getColumn, CellPosition'Class (This).getRow);
    end toString;
 
    function toStringCellPosition (basicGeographicMapCellPosition_Param : access CellPosition_Package.CellPosition'Class) return Unbounded_String is

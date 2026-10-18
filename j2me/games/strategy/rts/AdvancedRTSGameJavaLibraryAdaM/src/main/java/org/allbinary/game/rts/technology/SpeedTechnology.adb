@@ -78,12 +78,12 @@ package body org.allbinary.game.rts.technology.SpeedTechnology_Package is
 
    function getUpgradeCost (This : in out SpeedTechnology) return Integer is
    begin
-        return (((This.getLevel) * (This.getLevel))) * (1000);
+        return (((SpeedTechnology'Class (This).getLevel) * (SpeedTechnology'Class (This).getLevel))) * (1000);
    end getUpgradeCost;
 
    function isUpgradeable (This : in out SpeedTechnology) return Boolean is
    begin
-        if (This.getLevel) < (This.getMaxLevel) then
+        if (SpeedTechnology'Class (This).getLevel) < (SpeedTechnology'Class (This).getMaxLevel) then
             return True;
         else
             return False;
@@ -95,7 +95,7 @@ package body org.allbinary.game.rts.technology.SpeedTechnology_Package is
    begin
         This.level := This.level + 1;
         unitTechnologySingletonFactory := UnitTechnologySingletonFactory_Package.getInstance;
-        unitTechnologySingletonFactory.setSpeed ((unitTechnologySingletonFactory.getSpeed) + (((This.getLevel) * (100))));
+        unitTechnologySingletonFactory.setSpeed ((unitTechnologySingletonFactory.getSpeed) + (((SpeedTechnology'Class (This).getLevel) * (100))));
    end upgrade;
 
    function isSelfUpgradeable (This : in out SpeedTechnology) return Boolean is

@@ -27,8 +27,8 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
    begin
         GenericProfileDataWorkerType_Package.Initialize (This, name);
         Initialize_Fields (This);
-        This.setPath (path);
-        This.setLastFrame (lastFrame);
+        SavedCaptureGenericProfileDataWorkerType'Class (This).setPath (path);
+        SavedCaptureGenericProfileDataWorkerType'Class (This).setLastFrame (lastFrame);
    end Initialize;
 
    function Create (name : Unbounded_String; path : Unbounded_String; lastFrame : Integer) return SavedCaptureGenericProfileDataWorkerType_Access is

@@ -41,7 +41,7 @@ package org.allbinary.game.layer.FakeLayerManager_Package is
 
    type FakeLayerManager is new AllBinaryGameLayerManager and GeographicMapCompositeInterface with record
       geographicMapInterfaceArray : BasicGeographicMap_Access_Array_Access;
-      geographicMapCellTypeArray : GeographicMapCellType_Access_Array_Access;
+      geographicMapCellTypeArray_Field : GeographicMapCellType_Access_Array_Access;
    end record;
 
    procedure Initialize (This : in out FakeLayerManager'Class; gameInfo_Param : access GameInfo_Package.GameInfo'Class);

@@ -27,9 +27,9 @@ package body org.allbinary.game.layer.Aggression_Package is
    procedure Initialize (This : in out Aggression'Class; ram : Integer; projectile : Integer; drops : Integer) is
    begin
       Initialize_Fields (This);
-        This.setRam (ram);
-        This.setProjectile (projectile);
-        This.setDrops (drops);
+        Aggression'Class (This).setRam (ram);
+        Aggression'Class (This).setProjectile (projectile);
+        Aggression'Class (This).setDrops (drops);
    end Initialize;
 
    function Create (ram : Integer; projectile : Integer; drops : Integer) return Aggression_Access is

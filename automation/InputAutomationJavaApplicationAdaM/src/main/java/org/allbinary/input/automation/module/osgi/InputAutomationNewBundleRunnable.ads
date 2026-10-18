@@ -24,7 +24,7 @@ with AllBinary_Java; use AllBinary_Java;
 --  with java.io.FileFilter_Package; use java.io.FileFilter_Package;
 --  with java.io.FileInputStream_Package; use java.io.FileInputStream_Package;
 --  with java.net.URL_Package; use java.net.URL_Package;
---  with java.util.HashMap_Package; use java.util.HashMap_Package;
+with java.util.HashMap_Package; use java.util.HashMap_Package;
 --  with java.util.Set_Package; use java.util.Set_Package;
 --  with java.util.jar.JarInputStream_Package; use java.util.jar.JarInputStream_Package;
 --  with java.util.jar.Manifest_Package; use java.util.jar.Manifest_Package;
@@ -46,6 +46,7 @@ with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArr
 
 package org.allbinary.input.automation.module.osgi.InputAutomationNewBundleRunnable_Package is
 
+   package HashMap_Package renames Standard.java.util.HashMap_Package;
    package Bundle_Package renames Standard.org.osgi.framework.Bundle_Package;
    package BundleContext_Package renames Standard.org.osgi.framework.BundleContext_Package;
    package Constants_Package renames Standard.org.osgi.framework.Constants_Package;

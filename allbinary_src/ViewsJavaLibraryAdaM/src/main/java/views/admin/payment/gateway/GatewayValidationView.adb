@@ -54,6 +54,7 @@ package body views.admin.payment.gateway.GatewayValidationView_Package is
    function validationInfo (This : in out GatewayValidationView) return Unbounded_String is
    begin
         Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("validationInfo")));
+        return Null_Unbounded_String;
    end validationInfo;
 
    function toXmlDoc (This : in out GatewayValidationView) return Document_Access is
@@ -70,7 +71,7 @@ package body views.admin.payment.gateway.GatewayValidationView_Package is
    --  throws Exception
    function view (This : in out GatewayValidationView) return Unbounded_String is
    begin
-        return GatewayView_Package.Create (This.getTransformInfoInterface).view;
+        return GatewayView_Package.Create (GatewayValidationView'Class (This).getTransformInfoInterface).view;
    end view;
 
    procedure toValidationInfoNode (This : in out GatewayValidationView; document_Param : access Document_Package.Document'Class) is

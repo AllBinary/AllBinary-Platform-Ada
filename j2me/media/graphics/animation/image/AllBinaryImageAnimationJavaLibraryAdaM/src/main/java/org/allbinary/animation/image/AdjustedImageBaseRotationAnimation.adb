@@ -30,7 +30,7 @@ package body org.allbinary.animation.image.AdjustedImageBaseRotationAnimation_Pa
    begin
         ImageBaseRotationAnimation_Package.Initialize (This, image, angleInfo, totalAngle, animationBehavior);
         Initialize_Fields (This);
-        This.init (dx, dy);
+        AdjustedImageBaseRotationAnimation'Class (This).init (dx, dy);
    end Initialize;
 
    function Create (image_Param : access Image_Package.Image'Class; angleInfo_Param : access AngleInfo_Package.AngleInfo'Class; totalAngle : Short_Integer; dx : Integer; dy : Integer; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class) return AdjustedImageBaseRotationAnimation_Access is

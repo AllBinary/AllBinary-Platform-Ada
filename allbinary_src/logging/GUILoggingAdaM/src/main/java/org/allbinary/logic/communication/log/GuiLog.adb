@@ -69,7 +69,7 @@ package body org.allbinary.logic.communication.log.GuiLog_Package is
    function put (This : in out GuiLog; specialMessage : Unbounded_String; anyType_Param : access Java_Object'Class; functionName : Unbounded_String) return Unbounded_String is
       anyType : constant Java_Object_Access := Java_Object_Access (anyType_Param);
    begin
-        return This.put (specialMessage, anyType, functionName, null);
+        return GuiLog'Class (This).put (specialMessage, anyType, functionName, null);
    end put;
 
    function put (This : in out GuiLog; specialMessage : Unbounded_String; anyType_Param : access Java_Object'Class; functionName : Unbounded_String; exception_Id_Param : access Java_Throwable_Object'Class) return Unbounded_String is
@@ -79,7 +79,7 @@ package body org.allbinary.logic.communication.log.GuiLog_Package is
    begin
         begin
             data := This.logFormatUtil.get (specialMessage, To_Unbounded_String (Ada.Tags.Expanded_Name (anyType.all'Tag)), functionName, exception_Id);
-            This.showDialog (data);
+            GuiLog'Class (This).showDialog (data);
             Ada.Text_IO.Put_Line (Java_Image (data));
             return data;
         exception
@@ -95,7 +95,7 @@ package body org.allbinary.logic.communication.log.GuiLog_Package is
 
    function put (This : in out GuiLog; specialMessage : Unbounded_String; className : Unbounded_String; functionName : Unbounded_String) return Unbounded_String is
    begin
-        return This.put (specialMessage, className, functionName, null);
+        return GuiLog'Class (This).put (specialMessage, className, functionName, null);
    end put;
 
    function put (This : in out GuiLog; specialMessage : Unbounded_String; className : Unbounded_String; functionName : Unbounded_String; exception_Id_Param : access Java_Throwable_Object'Class) return Unbounded_String is
@@ -104,7 +104,7 @@ package body org.allbinary.logic.communication.log.GuiLog_Package is
    begin
         begin
             data := This.logFormatUtil.get (specialMessage, className, functionName, exception_Id);
-            This.showDialog (data);
+            GuiLog'Class (This).showDialog (data);
             Ada.Text_IO.Put_Line (Java_Image (data));
             return data;
         exception

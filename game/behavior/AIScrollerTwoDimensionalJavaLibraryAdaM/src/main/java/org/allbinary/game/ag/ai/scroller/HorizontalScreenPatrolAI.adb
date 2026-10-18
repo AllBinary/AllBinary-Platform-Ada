@@ -60,7 +60,7 @@ package body org.allbinary.game.ag.ai.scroller.HorizontalScreenPatrolAI_Package 
    begin
         BasicAI (This).processKeyAI (This.keyDirection);
         if This.timeDelayHelper.isTimeTNT then
-            layerInterface := This.getOwnerLayerInterface;
+            layerInterface := HorizontalScreenPatrolAI'Class (This).getOwnerLayerInterface;
             currentOwnerLayerX := layerInterface.getXP;
             if (currentOwnerLayerX) < (-(layerInterface.getWidth)) then
                 y := MyRandomFactory_Package.getInstance.getAbsoluteNextIntAllowZero (50);

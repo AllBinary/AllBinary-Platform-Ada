@@ -30,8 +30,8 @@ package body org.allbinary.animation.image.LeftToRightImageAnimation_Package is
         ImageSegmentAnimation_Package.Initialize (This, image, sequenceArray, animationBehavior);
         Initialize_Fields (This);
         This.currentWidth := 0;
-        if (This.getSequence (0)) = (-(1)) then
-            This.setFrame ((This.getSize) - (1));
+        if (LeftToRightImageAnimation'Class (This).getSequence (0)) = (-(1)) then
+            LeftToRightImageAnimation'Class (This).setFrame ((LeftToRightImageAnimation'Class (This).getSize) - (1));
         end if;
    end Initialize;
 
@@ -44,39 +44,39 @@ package body org.allbinary.animation.image.LeftToRightImageAnimation_Package is
 
    procedure nextFrame (This : in out LeftToRightImageAnimation) is
    begin
-        if (This.getSequence (0)) = (-(1)) then
+        if (LeftToRightImageAnimation'Class (This).getSequence (0)) = (-(1)) then
             ImageSegmentAnimation (This).previousFrame;
         else
             ImageSegmentAnimation (This).nextFrame;
         end if;
-        This.update;
+        LeftToRightImageAnimation'Class (This).update;
    end nextFrame;
 
    procedure previousFrame (This : in out LeftToRightImageAnimation) is
    begin
-        if (This.getSequence (0)) = (-(1)) then
+        if (LeftToRightImageAnimation'Class (This).getSequence (0)) = (-(1)) then
             ImageSegmentAnimation (This).nextFrame;
         else
             ImageSegmentAnimation (This).previousFrame;
         end if;
-        This.update;
+        LeftToRightImageAnimation'Class (This).update;
    end previousFrame;
 
    procedure setFrame (This : in out LeftToRightImageAnimation; index : Integer) is
    begin
         ImageSegmentAnimation (This).setFrame (index);
-        This.update;
+        LeftToRightImageAnimation'Class (This).update;
    end setFrame;
 
    procedure update (This : in out LeftToRightImageAnimation) is
    begin
-        This.currentWidth := ((This.getDrawWidth) * (This.getFrame)) / (This.getSize);
+        This.currentWidth := ((LeftToRightImageAnimation'Class (This).getDrawWidth) * (LeftToRightImageAnimation'Class (This).getFrame)) / (LeftToRightImageAnimation'Class (This).getSize);
    end update;
 
    procedure paintXY (This : in out LeftToRightImageAnimation; graphics_Param : access Graphics_Package.Graphics'Class; x : Integer; y : Integer) is
       graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
-        graphics.drawRegion (This.getImage, This.getStartX, This.getStartY, This.currentWidth, This.getDrawHeight, Sprite_Package.TRANS_NONE, x, y, This.anchor);
+        graphics.drawRegion (LeftToRightImageAnimation'Class (This).getImage, LeftToRightImageAnimation'Class (This).getStartX, LeftToRightImageAnimation'Class (This).getStartY, This.currentWidth, LeftToRightImageAnimation'Class (This).getDrawHeight, Sprite_Package.TRANS_NONE, x, y, This.anchor);
    end paintXY;
 
 end org.allbinary.animation.image.LeftToRightImageAnimation_Package;

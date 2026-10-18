@@ -49,7 +49,7 @@ package body org.allbinary.game.init.GameInitializationUtil_Package is
             gameInitializationInterface := gameInitializationInterfaceFactoryInterface.getInstance;
             features := Features_Package.getInstance;
             if features.isFeature (mainFeatureFactory.LOAD_ALL) then
-                This.initGame (abeClientInformation, canvas, gameInitializationInterfaceFactoryInterface);
+                GameInitializationUtil'Class (This).initGame (abeClientInformation, canvas, gameInitializationInterfaceFactoryInterface);
             elsif features.isFeature (mainFeatureFactory.LOAD_ONDEMAND) then
                 resourceLoadingLevelFactory := ResourceLoadingLevelFactory_Package.getInstance;
                 gameInitializationInterface.init (abeClientInformation, canvas.getCustomCommandListener, resourceLoadingLevelFactory.LOAD_EARLY.getLevel);

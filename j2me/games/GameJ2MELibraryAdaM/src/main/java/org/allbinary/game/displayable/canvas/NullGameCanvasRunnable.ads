@@ -20,9 +20,9 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with javax.microedition.lcdui.CommandListener_Package; use javax.microedition.lcdui.CommandListener_Package;
---  with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
---  with javax.microedition.lcdui.Item_Package; use javax.microedition.lcdui.Item_Package;
+with javax.microedition.lcdui.CommandListener_Package; use javax.microedition.lcdui.CommandListener_Package;
+with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Item_Package; use javax.microedition.lcdui.Item_Package;
 with org.allbinary.game.state.GameState_Package; use org.allbinary.game.state.GameState_Package;
 with org.allbinary.game.state.GameStateFactory_Package; use org.allbinary.game.state.GameStateFactory_Package;
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
@@ -32,6 +32,9 @@ with org.allbinary.game.displayable.canvas.GameCanvasRunnableInterface_Package; 
 
 package org.allbinary.game.displayable.canvas.NullGameCanvasRunnable_Package is
 
+   package CommandListener_Package renames Standard.javax.microedition.lcdui.CommandListener_Package;
+   package Graphics_Package renames Standard.javax.microedition.lcdui.Graphics_Package;
+   package Item_Package renames Standard.javax.microedition.lcdui.Item_Package;
    package GameState_Package renames Standard.org.allbinary.game.state.GameState_Package;
    package GameStateFactory_Package renames Standard.org.allbinary.game.state.GameStateFactory_Package;
    package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;

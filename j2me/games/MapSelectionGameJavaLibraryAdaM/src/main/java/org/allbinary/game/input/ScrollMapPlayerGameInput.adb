@@ -35,10 +35,10 @@ package body org.allbinary.game.input.ScrollMapPlayerGameInput_Package is
    begin
         PlayerGameInput_Package.Initialize (This, list, BasicArrayListD_Package.Create, playerInputId);
         Initialize_Fields (This);
-        This.initInputProcessors;
+        ScrollMapPlayerGameInput'Class (This).initInputProcessors;
         This.geographicMapInterface := geographicMapInterface;
         This.inputList := list;
-        This.init;
+        ScrollMapPlayerGameInput'Class (This).init;
    end Initialize;
 
    function Create (geographicMapInterface_Param : access BasicGeographicMap_Package.BasicGeographicMap'Class; list_Param : access BasicArrayList_Package.BasicArrayList'Class; playerInputId : Integer) return ScrollMapPlayerGameInput_Access is
@@ -60,8 +60,8 @@ package body org.allbinary.game.input.ScrollMapPlayerGameInput_Package is
 
    procedure init (This : in out ScrollMapPlayerGameInput) is
    begin
-        This.maxBottom := This.getSpecialHeight;
-        This.maxRight := This.getSpecialWidth;
+        This.maxBottom := ScrollMapPlayerGameInput'Class (This).getSpecialHeight;
+        This.maxRight := ScrollMapPlayerGameInput'Class (This).getSpecialWidth;
    end init;
 
    --  throws Exception
@@ -72,13 +72,13 @@ package body org.allbinary.game.input.ScrollMapPlayerGameInput_Package is
    begin
         terrainTiledLayer := This.geographicMapInterface.getAllBinaryTiledLayer;
         displayInfo := DisplayInfoSingleton_Package.getInstance;
-        This.move (-(terrainTiledLayer.getXP), 0);
+        ScrollMapPlayerGameInput'Class (This).move (-(terrainTiledLayer.getXP), 0);
         if (terrainTiledLayer.getWidth) < (displayInfo.getLastWidth) then
             diffX := (Java_Shift_Right_Arithmetic (((displayInfo.getLastWidth) - (terrainTiledLayer.getWidth)), 1));
-            This.move (-(diffX), 0);
+            ScrollMapPlayerGameInput'Class (This).move (-(diffX), 0);
         else
             diffX := (Java_Shift_Right_Arithmetic (((terrainTiledLayer.getWidth) - (displayInfo.getLastWidth)), 1));
-            This.move (diffX, 0);
+            ScrollMapPlayerGameInput'Class (This).move (diffX, 0);
         end if;
    end scrollMiddleX;
 
@@ -95,11 +95,11 @@ package body org.allbinary.game.input.ScrollMapPlayerGameInput_Package is
         elsif (anchor) = (Graphics_Package.BOTTOM) then
             This.logUtil.putF (To_Unbounded_String ("Bottom"), ScrollMapPlayerGameInput_Access'(This'Unchecked_Access), To_Unbounded_String ("scrollY"));
             diffY := ((terrainTiledLayer.getHeight) - (displayInfo.getLastHeight));
-            This.move (0, diffY);
+            ScrollMapPlayerGameInput'Class (This).move (0, diffY);
         elsif (anchor) = (Graphics_Package.VCENTER) then
             This.logUtil.putF (To_Unbounded_String ("Center"), ScrollMapPlayerGameInput_Access'(This'Unchecked_Access), To_Unbounded_String ("scrollY"));
             diffY := (((terrainTiledLayer.getHeight) - (displayInfo.getLastHeight))) / (2);
-            This.move (0, diffY);
+            ScrollMapPlayerGameInput'Class (This).move (0, diffY);
         else
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("No Such Anchor Supported")));
         end if;
@@ -110,8 +110,8 @@ package body org.allbinary.game.input.ScrollMapPlayerGameInput_Package is
       y : Integer;
    begin
         y := (This.geographicMapInterface.getAllBinaryTiledLayer.getYP) - (10);
-        if This.keepOnMapMinY (y) then
-            This.move (0, -(10));
+        if ScrollMapPlayerGameInput'Class (This).keepOnMapMinY (y) then
+            ScrollMapPlayerGameInput'Class (This).move (0, -(10));
         end if;
    end up;
 
@@ -120,8 +120,8 @@ package body org.allbinary.game.input.ScrollMapPlayerGameInput_Package is
       y : Integer;
    begin
         y := (-(This.geographicMapInterface.getAllBinaryTiledLayer.getYP)) + (10);
-        if This.keepOnMapMaxY (y) then
-            This.move (0, 10);
+        if ScrollMapPlayerGameInput'Class (This).keepOnMapMaxY (y) then
+            ScrollMapPlayerGameInput'Class (This).move (0, 10);
         end if;
    end down;
 
@@ -130,8 +130,8 @@ package body org.allbinary.game.input.ScrollMapPlayerGameInput_Package is
       x : Integer;
    begin
         x := (This.geographicMapInterface.getAllBinaryTiledLayer.getYP) + (10);
-        if This.keepOnMapMinX (x) then
-            This.move (10, 0);
+        if ScrollMapPlayerGameInput'Class (This).keepOnMapMinX (x) then
+            ScrollMapPlayerGameInput'Class (This).move (10, 0);
         end if;
    end right;
 
@@ -140,8 +140,8 @@ package body org.allbinary.game.input.ScrollMapPlayerGameInput_Package is
       x : Integer;
    begin
         x := (-(This.geographicMapInterface.getAllBinaryTiledLayer.getYP)) - (10);
-        if This.keepOnMapMaxX (x) then
-            This.move (-(10), 0);
+        if ScrollMapPlayerGameInput'Class (This).keepOnMapMaxX (x) then
+            ScrollMapPlayerGameInput'Class (This).move (-(10), 0);
         end if;
    end left;
 
@@ -174,12 +174,12 @@ package body org.allbinary.game.input.ScrollMapPlayerGameInput_Package is
             for index in 0 .. (size) - 1 loop
                 gameKeyEvent := GameKeyEvent_Access (This.inputList.get (index));
                 key := gameKeyEvent.getKey;
-                This.processInputKey (key);
+                ScrollMapPlayerGameInput'Class (This).processInputKey (key);
             end loop;
             if This.isSingleKeyProcessing then
-                This.clear;
+                ScrollMapPlayerGameInput'Class (This).clear;
             else
-                This.update;
+                ScrollMapPlayerGameInput'Class (This).update;
             end if;
         exception
             when Java_Occurrence : others =>

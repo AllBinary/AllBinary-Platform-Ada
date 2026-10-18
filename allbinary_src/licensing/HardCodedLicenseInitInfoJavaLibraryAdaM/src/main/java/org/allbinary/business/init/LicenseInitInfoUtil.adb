@@ -58,7 +58,7 @@ package body org.allbinary.business.init.LicenseInitInfoUtil_Package is
    --  throws Exception
    function read (This : in out LicenseInitInfoUtil) return LicenseInitInfo_Access is
    begin
-        return This.readAgain (0);
+        return LicenseInitInfoUtil'Class (This).readAgain (0);
    end read;
 
    --  throws Exception

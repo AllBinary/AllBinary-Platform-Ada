@@ -47,6 +47,7 @@ package body org.allbinary.canvas.GameStatisticsFactory_Package is
    function toString (This : in out GameStatisticsFactory) return Unbounded_String is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return Null_Unbounded_String;
    end toString;
 
 begin

@@ -30,12 +30,12 @@ package body org.allbinary.input.automation.module.game.HitPointGameObject_Packa
    begin
         MeteredGameObject_Package.Initialize (This, bufferedImage, minX, maxX, y);
         Initialize_Fields (This);
-        if (This.getRatios ((bufferedImage'Length) - (1)).doubleValue) < (1.0) then
-            This.setDamaged (True);
+        if (HitPointGameObject'Class (This).getRatios ((bufferedImage'Length) - (1)).doubleValue) < (1.0) then
+            HitPointGameObject'Class (This).setDamaged (True);
         else
-            This.setDamaged (False);
+            HitPointGameObject'Class (This).setDamaged (False);
         end if;
-        if (This.getRatios ((bufferedImage'Length) - (1)).doubleValue) > (0.25) then
+        if (HitPointGameObject'Class (This).getRatios ((bufferedImage'Length) - (1)).doubleValue) > (0.25) then
             This.closeDeath := False;
         else
             This.closeDeath := True;
@@ -51,7 +51,7 @@ package body org.allbinary.input.automation.module.game.HitPointGameObject_Packa
 
    function isMoreThan (This : in out HitPointGameObject; aFloat : Float) return Boolean is
    begin
-        if (This.getRatios ((This.getRatios'Length) - (1)).doubleValue) > (aFloat) then
+        if (HitPointGameObject'Class (This).getRatios ((HitPointGameObject'Class (This).getRatios'Length) - (1)).doubleValue) > (aFloat) then
             return True;
         else
             return False;
@@ -88,10 +88,10 @@ package body org.allbinary.input.automation.module.game.HitPointGameObject_Packa
         stringBuffer.append (MeteredGameObject (This).toString);
         stringBuffer.append (commonSeps.NEW_LINE);
         stringBuffer.append (This.IS_DAMAGED_LABEL);
-        stringBuffer.appendboolean (This.isDamaged);
+        stringBuffer.appendboolean (HitPointGameObject'Class (This).isDamaged);
         stringBuffer.append (commonSeps.NEW_LINE);
         stringBuffer.append (This.IS_CLOSE_DEATH_LABEL);
-        stringBuffer.appendboolean (This.isCloseDeath);
+        stringBuffer.appendboolean (HitPointGameObject'Class (This).isCloseDeath);
         return stringBuffer.toString;
    end toString;
 

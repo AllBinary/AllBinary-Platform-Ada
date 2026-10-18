@@ -60,7 +60,7 @@ package body org.allbinary.media.image.ImageCopyUtil_Package is
             image := This.openGLUtil.addImage (image);
             return image;
         else
-            return This.createImage (originalImage);
+            return ImageCopyUtil'Class (This).createImage (originalImage);
         end if;
    end createImageForRotation;
 
@@ -114,7 +114,7 @@ package body org.allbinary.media.image.ImageCopyUtil_Package is
         end if;
         if This.features.isFeature (This.openGLFeatureFactory.OPENGL) then
             if This.openGLESImageExclusionUtil.isCustomScaling (originalImage) then
-                return This.createImage2 (originalImage, width, height, mutable);
+                return ImageCopyUtil'Class (This).createImage2 (originalImage, width, height, mutable);
             end if;
             if (originalImage.getType) >= (OpenGLESImage_Package.TYPE_Id) then
                 openGLESImage := (OpenGLESImage_Access (originalImage));
@@ -280,7 +280,7 @@ package body org.allbinary.media.image.ImageCopyUtil_Package is
                 newHeight := newWidth;
             end if;
         end if;
-        image := This.createImageWH (originalImage, newWidth, newHeight, True);
+        image := ImageCopyUtil'Class (This).createImageWH (originalImage, newWidth, newHeight, True);
         if image.isMutable then
             originalImageData := (Image_Access (originalImage.getImage)).getImageData;
             mutableImage2 := SwtMutableImage_Access (image);

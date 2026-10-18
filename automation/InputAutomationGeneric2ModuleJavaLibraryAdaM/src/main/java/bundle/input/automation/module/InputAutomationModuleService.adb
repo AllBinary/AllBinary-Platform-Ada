@@ -25,7 +25,7 @@ package body bundle.input.automation.module.InputAutomationModuleService_Package
    procedure Initialize (This : in out InputAutomationModuleService'Class; inputAutomationModuleInterfaceArray : InputAutomationModuleFactoryInterface_Access_Array_Access) is
    begin
       Initialize_Fields (This);
-        This.setInputAutomationModuleInterfaceArray (inputAutomationModuleInterfaceArray);
+        InputAutomationModuleService'Class (This).setInputAutomationModuleInterfaceArray (inputAutomationModuleInterfaceArray);
    end Initialize;
 
    function Create (inputAutomationModuleInterfaceArray : InputAutomationModuleFactoryInterface_Access_Array_Access) return InputAutomationModuleService_Access is

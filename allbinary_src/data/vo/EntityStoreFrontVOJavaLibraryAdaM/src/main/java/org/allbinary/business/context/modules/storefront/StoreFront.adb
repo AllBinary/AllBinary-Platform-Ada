@@ -76,11 +76,11 @@ package body org.allbinary.business.context.modules.storefront.StoreFront_Packag
       request : constant HttpServletRequest_Access := HttpServletRequest_Access (request_Param);
    begin
       Initialize_Fields (This);
-        This.getFormData (RequestParams_Package.Create (request).toHashMap);
+        StoreFront'Class (This).getFormData (RequestParams_Package.Create (request).toHashMap);
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.EMAILLOGGING) then
             This.logUtil.putF (To_Unbounded_String ("TWB- needs update for adding and updating context configuration - currently defaults to admin context config"), StoreFront_Access'(This'Unchecked_Access), To_Unbounded_String ("StoreFront"));
         end if;
-        This.setContextConfigurationInterface (ContextConfigurationInterfaceFactory_Package.getInstance.getInstance (To_Unbounded_String ("Admin")));
+        StoreFront'Class (This).setContextConfigurationInterface (ContextConfigurationInterfaceFactory_Package.getInstance.getInstance (To_Unbounded_String ("Admin")));
    end Initialize;
 
    function Create (request_Param : access HttpServletRequest_Package.HttpServletRequest'Class) return StoreFront_Access is
@@ -96,11 +96,11 @@ package body org.allbinary.business.context.modules.storefront.StoreFront_Packag
       document : Document_Access;
    begin
       Initialize_Fields (This);
-        This.getFormData (hashMap);
-        domDocumentString := Unbounded_String (hashMap.get (StoreFrontData_Package.getInstance.CONFIGURATION));
+        StoreFront'Class (This).getFormData (hashMap);
+        domDocumentString := Java_Unbox (hashMap.get (StoreFrontData_Package.getInstance.CONFIGURATION));
         if (domDocumentString) = (Null_Unbounded_String) then
             document := DomDocumentHelper_Package.create (domDocumentString);
-            This.setContextConfigurationInterface (ContextConfigurationInterfaceFactory_Package.getInstance.getInstance (document));
+            StoreFront'Class (This).setContextConfigurationInterface (ContextConfigurationInterfaceFactory_Package.getInstance.getInstance (document));
         end if;
    end Initialize;
 
@@ -124,32 +124,32 @@ package body org.allbinary.business.context.modules.storefront.StoreFront_Packag
    function createPath (This : in out StoreFront; key : Unbounded_String; hashMap_Param : access HashMap_Package.HashMap'Class) return AbPath_Access is
       hashMap : constant HashMap_Access := HashMap_Access (hashMap_Param);
    begin
-        return AbPath_Package.Create (This.create (This.EMPTY_STRING, key, hashMap), StringUtil_Package.getInstance.EMPTY_STRING);
+        return AbPath_Package.Create (StoreFront'Class (This).create (This.EMPTY_STRING, key, hashMap), StringUtil_Package.getInstance.EMPTY_STRING);
    end createPath;
 
    --  throws Exception
    function createPath (This : in out StoreFront; append : Unbounded_String; key : Unbounded_String; hashMap_Param : access HashMap_Package.HashMap'Class) return AbPath_Access is
       hashMap : constant HashMap_Access := HashMap_Access (hashMap_Param);
    begin
-        return AbPath_Package.Create (This.create (append, key, hashMap), StringUtil_Package.getInstance.EMPTY_STRING);
+        return AbPath_Package.Create (StoreFront'Class (This).create (append, key, hashMap), StringUtil_Package.getInstance.EMPTY_STRING);
    end createPath;
 
    function get (This : in out StoreFront; key : Unbounded_String; hashMap_Param : access HashMap_Package.HashMap'Class) return Unbounded_String is
       hashMap : constant HashMap_Access := HashMap_Access (hashMap_Param);
    begin
-        return This.create (This.EMPTY_STRING, key, hashMap);
+        return StoreFront'Class (This).create (This.EMPTY_STRING, key, hashMap);
    end get;
 
    function create (This : in out StoreFront; append : Unbounded_String; key : Unbounded_String; hashMap_Param : access HashMap_Package.HashMap'Class) return Unbounded_String is
       hashMap : constant HashMap_Access := HashMap_Access (hashMap_Param);
       path : Unbounded_String;
    begin
-        path := Unbounded_String (hashMap.get (key));
+        path := Java_Unbox (hashMap.get (Java_Box (key)));
         if StringValidationUtil_Package.getInstance.isEmpty (path) then
             return This.EMPTY_STRING;
         else
-            if This.isColumn (path) then
-                return Java_Image (Unbounded_String (hashMap.get (path))) & append;
+            if StoreFront'Class (This).isColumn (path) then
+                return Java_Image (Java_Unbox (hashMap.get (Java_Box (path)))) & append;
             else
                 return path;
             end if;
@@ -162,33 +162,33 @@ package body org.allbinary.business.context.modules.storefront.StoreFront_Packag
       storeFrontData : StoreFrontData_Access;
    begin
         storeFrontData := StoreFrontData_Package.getInstance;
-        This.name := Unbounded_String (storeHashMap.get (storeFrontData.NAME));
-        This.basketName := Unbounded_String (storeHashMap.get (storeFrontData.NAME));
-        This.homeHostName := Unbounded_String (storeHashMap.get (storeFrontData.HOMEHOSTNAME));
-        This.homeHostNamePath := This.createPath (storeFrontData.HOMEHOSTNAMEPATH, storeHashMap);
-        This.hostName := Unbounded_String (storeHashMap.get (storeFrontData.HOSTNAME));
-        This.hostNamePath := This.createPath (storeFrontData.HOSTNAMEPATH, storeHashMap);
-        This.testHomeHostName := Unbounded_String (storeHashMap.get (storeFrontData.TESTHOMEHOSTNAME));
-        This.testHomeHostNamePath := This.createPath (storeFrontData.TESTHOMEHOSTNAMEPATH, storeHashMap);
-        This.testHostName := Unbounded_String (storeHashMap.get (storeFrontData.TESTHOSTNAME));
-        This.testHostNamePath := This.createPath (storeFrontData.TESTHOSTNAMEPATH, storeHashMap);
-        This.imagePath := This.createPath (StoreFront_Package.RESOURCES, storeFrontData.IMAGEPATH, storeHashMap);
-        This.staticPath := This.createPath (To_Unbounded_String (" Products") & Java_Image (AbPathData_Package.getInstance.SEPARATOR), storeFrontData.STATICPATH, storeHashMap);
-        This.categoryPath := This.createPath (StoreFront_Package.RESOURCES, storeFrontData.CATEGORYPATH, storeHashMap);
-        This.inventoryControl := Unbounded_String (storeHashMap.get (storeFrontData.INVENTORYCONTROL));
-        This.subStores := Unbounded_String (storeHashMap.get (storeFrontData.SUBSTORES));
-        This.tagLocation := Unbounded_String (storeHashMap.get (storeFrontData.TAGLOCATION));
-        This.packageLocation := Unbounded_String (storeHashMap.get (storeFrontData.PACKAGELOCATION));
-        This.ftp := Unbounded_String (storeHashMap.get (storeFrontData.FTP));
-        This.ftpPath := This.createPath (storeFrontData.FTPPATH, storeHashMap);
-        This.ftpUserName := Unbounded_String (storeHashMap.get (storeFrontData.FTPUSERNAME));
-        This.ftpPassword := Unbounded_String (storeHashMap.get (storeFrontData.FTPPASSWORD));
-        This.testFtp := Unbounded_String (storeHashMap.get (storeFrontData.TESTFTP));
-        This.testFtpPath := This.createPath (storeFrontData.TESTFTPPATH, storeHashMap);
-        This.testFtpUserName := Unbounded_String (storeHashMap.get (storeFrontData.TESTFTPUSERNAME));
-        This.testFtpPassword := Unbounded_String (storeHashMap.get (storeFrontData.TESTFTPPASSWORD));
-        This.timeCreated := Unbounded_String (storeHashMap.get (EntryData_Package.getInstance.TIMECREATED));
-        This.lastModified := Unbounded_String (storeHashMap.get (EntryData_Package.getInstance.LASTMODIFIED));
+        This.name := Java_Unbox (storeHashMap.get (storeFrontData.NAME));
+        This.basketName := Java_Unbox (storeHashMap.get (storeFrontData.NAME));
+        This.homeHostName := Java_Unbox (storeHashMap.get (storeFrontData.HOMEHOSTNAME));
+        This.homeHostNamePath := StoreFront'Class (This).createPath (storeFrontData.HOMEHOSTNAMEPATH, storeHashMap);
+        This.hostName := Java_Unbox (storeHashMap.get (storeFrontData.HOSTNAME));
+        This.hostNamePath := StoreFront'Class (This).createPath (storeFrontData.HOSTNAMEPATH, storeHashMap);
+        This.testHomeHostName := Java_Unbox (storeHashMap.get (storeFrontData.TESTHOMEHOSTNAME));
+        This.testHomeHostNamePath := StoreFront'Class (This).createPath (storeFrontData.TESTHOMEHOSTNAMEPATH, storeHashMap);
+        This.testHostName := Java_Unbox (storeHashMap.get (storeFrontData.TESTHOSTNAME));
+        This.testHostNamePath := StoreFront'Class (This).createPath (storeFrontData.TESTHOSTNAMEPATH, storeHashMap);
+        This.imagePath := StoreFront'Class (This).createPath (StoreFront_Package.RESOURCES, storeFrontData.IMAGEPATH, storeHashMap);
+        This.staticPath := StoreFront'Class (This).createPath (To_Unbounded_String (" Products") & Java_Image (AbPathData_Package.getInstance.SEPARATOR), storeFrontData.STATICPATH, storeHashMap);
+        This.categoryPath := StoreFront'Class (This).createPath (StoreFront_Package.RESOURCES, storeFrontData.CATEGORYPATH, storeHashMap);
+        This.inventoryControl := Java_Unbox (storeHashMap.get (storeFrontData.INVENTORYCONTROL));
+        This.subStores := Java_Unbox (storeHashMap.get (storeFrontData.SUBSTORES));
+        This.tagLocation := Java_Unbox (storeHashMap.get (storeFrontData.TAGLOCATION));
+        This.packageLocation := Java_Unbox (storeHashMap.get (storeFrontData.PACKAGELOCATION));
+        This.ftp := Java_Unbox (storeHashMap.get (storeFrontData.FTP));
+        This.ftpPath := StoreFront'Class (This).createPath (storeFrontData.FTPPATH, storeHashMap);
+        This.ftpUserName := Java_Unbox (storeHashMap.get (storeFrontData.FTPUSERNAME));
+        This.ftpPassword := Java_Unbox (storeHashMap.get (storeFrontData.FTPPASSWORD));
+        This.testFtp := Java_Unbox (storeHashMap.get (storeFrontData.TESTFTP));
+        This.testFtpPath := StoreFront'Class (This).createPath (storeFrontData.TESTFTPPATH, storeHashMap);
+        This.testFtpUserName := Java_Unbox (storeHashMap.get (storeFrontData.TESTFTPUSERNAME));
+        This.testFtpPassword := Java_Unbox (storeHashMap.get (storeFrontData.TESTFTPPASSWORD));
+        This.timeCreated := Java_Unbox (storeHashMap.get (EntryData_Package.getInstance.TIMECREATED));
+        This.lastModified := Java_Unbox (storeHashMap.get (EntryData_Package.getInstance.LASTMODIFIED));
    end getFormData;
 
    function isNameValid (This : in out StoreFront) return Boolean is
@@ -225,7 +225,7 @@ package body org.allbinary.business.context.modules.storefront.StoreFront_Packag
       stringValidationUtil : StringValidationUtil_Access;
    begin
         valid := True;
-        valid := This.isNameValid;
+        valid := StoreFront'Class (This).isNameValid;
         stringValidationUtil := StringValidationUtil_Package.getInstance;
         if not (stringValidationUtil.isValidRequired (This.basketName, This.MINCHAR, This.MAXCHAR)) then
             valid := False;
@@ -328,7 +328,7 @@ package body org.allbinary.business.context.modules.storefront.StoreFront_Packag
         begin
             stringValidationUtil := StringValidationUtil_Package.getInstance;
             stringBuffer := StringMaker_Package.Create;
-            stringBuffer.append (This.nameValidationInfo);
+            stringBuffer.append (StoreFront'Class (This).nameValidationInfo);
             if not (stringValidationUtil.isValidRequired (This.basketName, This.MINCHAR, This.MAXCHAR)) then
                 stringBuffer.append (To_Unbounded_String ("Basket name is invalid. Must be < "));
                 stringBuffer.appendint (This.MAXCHAR);
@@ -427,7 +427,7 @@ package body org.allbinary.business.context.modules.storefront.StoreFront_Packag
 
    function getTestHtmlPath (This : in out StoreFront) return Unbounded_String is
    begin
-        return (org_Package.allbinary.globals.URLGLOBALS.getTestHtmlPath) + (This.getCurrentHostNamePath);
+        return (org_Package.allbinary.globals.URLGLOBALS.getTestHtmlPath) + (StoreFront'Class (This).getCurrentHostNamePath);
    end getTestHtmlPath;
 
    function getCurrentHostName (This : in out StoreFront) return Unbounded_String is
@@ -435,9 +435,9 @@ package body org.allbinary.business.context.modules.storefront.StoreFront_Packag
    begin
         location := This.EMPTY_STRING;
         if org_Package.allbinary.globals.URLGLOBALS.isTestingMode then
-            location := This.getTestHostName;
+            location := StoreFront'Class (This).getTestHostName;
         else
-            location := This.getHostName;
+            location := StoreFront'Class (This).getHostName;
         end if;
         return location;
    end getCurrentHostName;
@@ -447,9 +447,9 @@ package body org.allbinary.business.context.modules.storefront.StoreFront_Packag
    begin
         location := This.EMPTY_STRING;
         if org_Package.allbinary.globals.URLGLOBALS.isTestingMode then
-            location := This.getTestHostNamePath;
+            location := StoreFront'Class (This).getTestHostNamePath;
         else
-            location := This.getHostNamePath;
+            location := StoreFront'Class (This).getHostNamePath;
         end if;
         return location;
    end getCurrentHostNamePath;
@@ -459,9 +459,9 @@ package body org.allbinary.business.context.modules.storefront.StoreFront_Packag
    begin
         location := This.EMPTY_STRING;
         if org_Package.allbinary.globals.URLGLOBALS.isTestingMode then
-            location := This.getTestHomeHostName;
+            location := StoreFront'Class (This).getTestHomeHostName;
         else
-            location := This.getHomeHostName;
+            location := StoreFront'Class (This).getHomeHostName;
         end if;
         return location;
    end getCurrentHomeHostName;
@@ -471,9 +471,9 @@ package body org.allbinary.business.context.modules.storefront.StoreFront_Packag
    begin
         location := This.EMPTY_STRING;
         if org_Package.allbinary.globals.URLGLOBALS.isTestingMode then
-            location := This.getTestHomeHostNamePath;
+            location := StoreFront'Class (This).getTestHomeHostNamePath;
         else
-            location := This.getHomeHostNamePath;
+            location := StoreFront'Class (This).getHomeHostNamePath;
         end if;
         return location;
    end getCurrentHomeHostNamePath;
@@ -775,14 +775,14 @@ package body org.allbinary.business.context.modules.storefront.StoreFront_Packag
    function createDirectories (This : in out StoreFront) return Boolean is
       storeAbPath : AbPath_Access;
    begin
-        storeAbPath := AbPath_Package.Create ((URLGLOBALS.getWebappPath) + (This.getCurrentHomeHostNamePath), StringUtil_Package.getInstance.EMPTY_STRING);
+        storeAbPath := AbPath_Package.Create ((URLGLOBALS.getWebappPath) + (StoreFront'Class (This).getCurrentHomeHostNamePath), StringUtil_Package.getInstance.EMPTY_STRING);
         if not (This.directory.create (storeAbPath)) then
             return False;
         end if;
-        if not (This.directory.create (AbPath_Package.Create ((storeAbPath) + (This.getCategoryPath), StringUtil_Package.getInstance.EMPTY_STRING))) then
+        if not (This.directory.create (AbPath_Package.Create ((storeAbPath) + (StoreFront'Class (This).getCategoryPath), StringUtil_Package.getInstance.EMPTY_STRING))) then
             return False;
         end if;
-        if not (This.directory.create (AbPath_Package.Create ((storeAbPath) + (This.getStaticPath), StringUtil_Package.getInstance.EMPTY_STRING))) then
+        if not (This.directory.create (AbPath_Package.Create ((storeAbPath) + (StoreFront'Class (This).getStaticPath), StringUtil_Package.getInstance.EMPTY_STRING))) then
             return False;
         end if;
         return True;
@@ -801,7 +801,7 @@ package body org.allbinary.business.context.modules.storefront.StoreFront_Packag
       halfViewTotal : Integer;
    begin
         begin
-            if not (This.createDirectories) then
+            if not (StoreFront'Class (This).createDirectories) then
                 Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Unable to create store directories")));
             end if;
             stringBuffer := StringMaker_Package.Create;
@@ -820,7 +820,7 @@ package body org.allbinary.business.context.modules.storefront.StoreFront_Packag
             fromSpecialDirectoryAbPath := AbPath_Package.Create (stringBuffer.toString, StringUtil_Package.getInstance.EMPTY_STRING);
             stringBuffer.delete (0, stringBuffer.length);
             stringBuffer.append (viewPath);
-            stringBuffer.append (This.getName);
+            stringBuffer.append (StoreFront'Class (This).getName);
             stringBuffer.append (AbPathData_Package.getInstance.SEPARATOR);
             toDirectoryAbPath := AbPath_Package.Create (stringBuffer.toString, StringUtil_Package.getInstance.EMPTY_STRING);
             if (current) = (0) then
@@ -835,17 +835,17 @@ package body org.allbinary.business.context.modules.storefront.StoreFront_Packag
                 if file.isDirectory then
                     halfViewTotal := (viewTotal) / (2);
                     if (current) < (halfViewTotal) then
-                        This.installViews (fromSpecialDirectoryAbPath, toDirectoryAbPath, current, halfViewTotal);
+                        StoreFront'Class (This).installViews (fromSpecialDirectoryAbPath, toDirectoryAbPath, current, halfViewTotal);
                     elsif (current) < (viewTotal) then
-                        This.installViews (fromDirectoryAbPath, toDirectoryAbPath, (current) - (halfViewTotal), (viewTotal) - (halfViewTotal));
+                        StoreFront'Class (This).installViews (fromDirectoryAbPath, toDirectoryAbPath, (current) - (halfViewTotal), (viewTotal) - (halfViewTotal));
                     end if;
                 else
-                    This.installViews (fromDirectoryAbPath, toDirectoryAbPath, current, viewTotal);
+                    StoreFront'Class (This).installViews (fromDirectoryAbPath, toDirectoryAbPath, current, viewTotal);
                 end if;
             elsif (current) < (installTotal) then
-                This.installResources (fromDirectoryAbPath, (current) - (viewTotal), (installTotal) - (viewTotal));
+                StoreFront'Class (This).installResources (fromDirectoryAbPath, (current) - (viewTotal), (installTotal) - (viewTotal));
             else
-                This.installMedia (fromDirectoryAbPath, (current) - (installTotal), (total) - (installTotal));
+                StoreFront'Class (This).installMedia (fromDirectoryAbPath, (current) - (installTotal), (total) - (installTotal));
             end if;
         exception
             when Java_Occurrence : others =>
@@ -883,9 +883,9 @@ package body org.allbinary.business.context.modules.storefront.StoreFront_Packag
         installCategoryAbPath := AbPath_Package.Create (stringBuffer.toString, StringUtil_Package.getInstance.EMPTY_STRING);
         stringBuffer.delete (0, stringBuffer.length);
         stringBuffer.append (URLGLOBALS.getMainPath);
-        stringBuffer.append (This.getCurrentHomeHostNamePath);
+        stringBuffer.append (StoreFront'Class (This).getCurrentHomeHostNamePath);
         stringBuffer.append (AbPathData_Package.getInstance.SEPARATOR);
-        stringBuffer.append (This.getCategoryPath);
+        stringBuffer.append (StoreFront'Class (This).getCategoryPath);
         categoryAbPath := AbPath_Package.Create (stringBuffer.toString, StringUtil_Package.getInstance.EMPTY_STRING);
         FileUtil_Package.getInstance.copyDirectoryPortion (installCategoryAbPath, categoryAbPath, True, False, current, total);
    end installResources;
@@ -904,7 +904,7 @@ package body org.allbinary.business.context.modules.storefront.StoreFront_Packag
         stringBuffer.append (To_Unbounded_String ("images"));
         stringBuffer.append (AbPathData_Package.getInstance.SEPARATOR);
         viewStoreImagesDirectoryAbPath := AbPath_Package.Create (stringBuffer.toString, StringUtil_Package.getInstance.EMPTY_STRING);
-        storeAbPath := AbPath_Package.Create ((URLGLOBALS.getWebappPath) + (This.getCurrentHomeHostNamePath), StringUtil_Package.getInstance.EMPTY_STRING);
+        storeAbPath := AbPath_Package.Create ((URLGLOBALS.getWebappPath) + (StoreFront'Class (This).getCurrentHomeHostNamePath), StringUtil_Package.getInstance.EMPTY_STRING);
         FileUtil_Package.getInstance.copyDirectoryPortion (viewStoreImagesDirectoryAbPath, storeAbPath, True, False, current, total);
    end installMedia;
 
@@ -929,7 +929,7 @@ package body org.allbinary.business.context.modules.storefront.StoreFront_Packag
         dataVector.add (This.staticPath.toString);
         dataVector.add (This.categoryPath.toString);
         dataVector.add (This.inventoryControl);
-        contextConfigurationDomDocumentMapping := ContextConfigurationDomDocumentMapping_Package.Create (This.getContextConfigurationInterface);
+        contextConfigurationDomDocumentMapping := ContextConfigurationDomDocumentMapping_Package.Create (StoreFront'Class (This).getContextConfigurationInterface);
         dataVector.add (contextConfigurationDomDocumentMapping.toDomDocumentString);
         dataVector.add (This.subStores);
         dataVector.add (This.tagLocation);
@@ -959,41 +959,41 @@ package body org.allbinary.business.context.modules.storefront.StoreFront_Packag
    begin
         storeFrontData := StoreFrontData_Package.getInstance;
         dataHashMap := StdUtil_Package.getInstance.createHashMap;
-        dataHashMap.put (storeFrontData.NAME, This.name);
-        dataHashMap.put (storeFrontData.HOMEHOSTNAME, This.homeHostName);
-        dataHashMap.put (storeFrontData.HOMEHOSTNAMEPATH, This.homeHostNamePath.toString);
-        dataHashMap.put (storeFrontData.HOSTNAME, This.hostName);
-        dataHashMap.put (storeFrontData.HOSTNAMEPATH, This.hostNamePath.toString);
-        dataHashMap.put (storeFrontData.TESTHOMEHOSTNAME, This.testHomeHostName);
-        dataHashMap.put (storeFrontData.TESTHOMEHOSTNAMEPATH, This.testHomeHostNamePath.toString);
-        dataHashMap.put (storeFrontData.TESTHOSTNAME, This.testHostName);
-        dataHashMap.put (storeFrontData.TESTHOSTNAMEPATH, This.testHostNamePath.toString);
-        dataHashMap.put (storeFrontData.IMAGEPATH, This.imagePath.toString);
-        dataHashMap.put (storeFrontData.STATICPATH, This.staticPath.toString);
-        dataHashMap.put (storeFrontData.CATEGORYPATH, This.categoryPath.toString);
-        dataHashMap.put (storeFrontData.INVENTORYCONTROL, This.inventoryControl);
-        contextConfigurationDomDocumentMapping := ContextConfigurationDomDocumentMapping_Package.Create (This.getContextConfigurationInterface);
+        dataHashMap.put (storeFrontData.NAME, Java_Box (This.name));
+        dataHashMap.put (storeFrontData.HOMEHOSTNAME, Java_Box (This.homeHostName));
+        dataHashMap.put (storeFrontData.HOMEHOSTNAMEPATH, Java_Box (This.homeHostNamePath.toString));
+        dataHashMap.put (storeFrontData.HOSTNAME, Java_Box (This.hostName));
+        dataHashMap.put (storeFrontData.HOSTNAMEPATH, Java_Box (This.hostNamePath.toString));
+        dataHashMap.put (storeFrontData.TESTHOMEHOSTNAME, Java_Box (This.testHomeHostName));
+        dataHashMap.put (storeFrontData.TESTHOMEHOSTNAMEPATH, Java_Box (This.testHomeHostNamePath.toString));
+        dataHashMap.put (storeFrontData.TESTHOSTNAME, Java_Box (This.testHostName));
+        dataHashMap.put (storeFrontData.TESTHOSTNAMEPATH, Java_Box (This.testHostNamePath.toString));
+        dataHashMap.put (storeFrontData.IMAGEPATH, Java_Box (This.imagePath.toString));
+        dataHashMap.put (storeFrontData.STATICPATH, Java_Box (This.staticPath.toString));
+        dataHashMap.put (storeFrontData.CATEGORYPATH, Java_Box (This.categoryPath.toString));
+        dataHashMap.put (storeFrontData.INVENTORYCONTROL, Java_Box (This.inventoryControl));
+        contextConfigurationDomDocumentMapping := ContextConfigurationDomDocumentMapping_Package.Create (StoreFront'Class (This).getContextConfigurationInterface);
         dataHashMap.put (storeFrontData.CONFIGURATION, contextConfigurationDomDocumentMapping.toDomDocumentString);
-        dataHashMap.put (storeFrontData.SUBSTORES, This.subStores);
-        dataHashMap.put (storeFrontData.TAGLOCATION, This.tagLocation);
-        dataHashMap.put (storeFrontData.PACKAGELOCATION, This.packageLocation);
-        dataHashMap.put (storeFrontData.FTP, This.ftp);
-        dataHashMap.put (storeFrontData.FTPPATH, This.ftpPath.toString);
-        dataHashMap.put (storeFrontData.FTPUSERNAME, This.ftpUserName);
-        dataHashMap.put (storeFrontData.FTPPASSWORD, This.ftpPassword);
-        dataHashMap.put (storeFrontData.TESTFTP, This.testFtp);
-        dataHashMap.put (storeFrontData.TESTFTPPATH, This.testFtpPath.toString);
-        dataHashMap.put (storeFrontData.TESTFTPUSERNAME, This.testFtpUserName);
-        dataHashMap.put (storeFrontData.TESTFTPPASSWORD, This.testFtpPassword);
+        dataHashMap.put (storeFrontData.SUBSTORES, Java_Box (This.subStores));
+        dataHashMap.put (storeFrontData.TAGLOCATION, Java_Box (This.tagLocation));
+        dataHashMap.put (storeFrontData.PACKAGELOCATION, Java_Box (This.packageLocation));
+        dataHashMap.put (storeFrontData.FTP, Java_Box (This.ftp));
+        dataHashMap.put (storeFrontData.FTPPATH, Java_Box (This.ftpPath.toString));
+        dataHashMap.put (storeFrontData.FTPUSERNAME, Java_Box (This.ftpUserName));
+        dataHashMap.put (storeFrontData.FTPPASSWORD, Java_Box (This.ftpPassword));
+        dataHashMap.put (storeFrontData.TESTFTP, Java_Box (This.testFtp));
+        dataHashMap.put (storeFrontData.TESTFTPPATH, Java_Box (This.testFtpPath.toString));
+        dataHashMap.put (storeFrontData.TESTFTPUSERNAME, Java_Box (This.testFtpUserName));
+        dataHashMap.put (storeFrontData.TESTFTPPASSWORD, Java_Box (This.testFtpPassword));
         calendar := Calendar_Package.getInstance;
         time := Java_New_String (calendar.getTimeInMillis.toString);
-        dataHashMap.put (EntryData_Package.getInstance.LASTMODIFIED, time);
+        dataHashMap.put (EntryData_Package.getInstance.LASTMODIFIED, Java_Box (time));
         return dataHashMap;
    end toHashMap;
 
    function getKey (This : in out StoreFront) return Java_Object_Access is
    begin
-        return Java_Object_Access (This.getName);
+        return Java_Box (StoreFront'Class (This).getName);
    end getKey;
 
    function getContextConfigurationInterface (This : in out StoreFront) return ContextConfigurationInterface_Access is

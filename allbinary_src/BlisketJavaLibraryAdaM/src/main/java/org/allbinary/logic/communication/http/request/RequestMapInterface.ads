@@ -20,10 +20,11 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.util.HashMap_Package; use java.util.HashMap_Package;
+with java.util.HashMap_Package; use java.util.HashMap_Package;
 
 package org.allbinary.logic.communication.http.request.RequestMapInterface_Package is
 
+   package HashMap_Package renames Standard.java.util.HashMap_Package;
 
    type RequestMapInterface is interface;
    type RequestMapInterface_Access is access all RequestMapInterface'Class;

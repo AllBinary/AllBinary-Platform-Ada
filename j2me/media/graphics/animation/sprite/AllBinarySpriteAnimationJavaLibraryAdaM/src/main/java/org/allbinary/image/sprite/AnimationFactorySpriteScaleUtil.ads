@@ -20,8 +20,8 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
---  with javax.microedition.lcdui.game.Sprite_Package; use javax.microedition.lcdui.game.Sprite_Package;
+with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
+with javax.microedition.lcdui.game.Sprite_Package; use javax.microedition.lcdui.game.Sprite_Package;
 with org.allbinary.game.layer.SpriteFactory_Package; use org.allbinary.game.layer.SpriteFactory_Package;
 with org.allbinary.graphics.opengles.OpenGLUtil_Package; use org.allbinary.graphics.opengles.OpenGLUtil_Package;
 with org.allbinary.image.ImageCache_Package; use org.allbinary.image.ImageCache_Package;
@@ -36,6 +36,8 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 
 package org.allbinary.image.sprite.AnimationFactorySpriteScaleUtil_Package is
 
+   package Image_Package renames Standard.javax.microedition.lcdui.Image_Package;
+   package Sprite_Package renames Standard.javax.microedition.lcdui.game.Sprite_Package;
    package SpriteFactory_Package renames Standard.org.allbinary.game.layer.SpriteFactory_Package;
    package OpenGLUtil_Package renames Standard.org.allbinary.graphics.opengles.OpenGLUtil_Package;
    package ImageCache_Package renames Standard.org.allbinary.image.ImageCache_Package;

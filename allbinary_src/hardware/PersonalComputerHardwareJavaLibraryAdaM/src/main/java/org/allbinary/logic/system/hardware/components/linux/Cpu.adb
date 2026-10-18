@@ -28,7 +28,7 @@ package body org.allbinary.logic.system.hardware.components.linux.Cpu_Package is
    procedure Initialize (This : in out Cpu'Class; filePath : Unbounded_String) is
    begin
       Initialize_Fields (This);
-        This.init (filePath);
+        Cpu'Class (This).init (filePath);
    end Initialize;
 
    function Create (filePath : Unbounded_String) return Cpu_Access is
@@ -41,7 +41,7 @@ package body org.allbinary.logic.system.hardware.components.linux.Cpu_Package is
    procedure Initialize (This : in out Cpu'Class) is
    begin
       Initialize_Fields (This);
-        This.init (This.CPUFILE);
+        Cpu'Class (This).init (This.CPUFILE);
    end Initialize;
 
    function Create return Cpu_Access is
@@ -57,14 +57,14 @@ package body org.allbinary.logic.system.hardware.components.linux.Cpu_Package is
    begin
         lineNumberReader := null;
         begin
-            This.init (lineNumberReader, filePath);
+            Cpu'Class (This).init (lineNumberReader, filePath);
         exception
             when Java_Occurrence : others =>
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.OS) then
-                This.logUtil.put (StringMaker_Package.Create.append (To_Unbounded_String ("Cpu Data: ")).append (This.toString).toString, Cpu_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR, e);
+                This.logUtil.put (StringMaker_Package.Create.append (To_Unbounded_String ("Cpu Data: ")).append (Cpu'Class (This).toString).toString, Cpu_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR, e);
             end if;
             Java_Throw (e);
                 end;
@@ -100,34 +100,34 @@ package body org.allbinary.logic.system.hardware.components.linux.Cpu_Package is
             if (lineNumberReader) /= (null) then
                 nextLine := lineNumberReader.readLine;
                 while ((lineNumberReader) /= (null)) and then ((nextLine) /= (Null_Unbounded_String)) loop
-                    index := (Index (nextLine, To_String (':')) - 1);
+                    index := (Index (nextLine, Java_Image (':')) - 1);
                     if (index) >= (0) then
                         key := Unbounded_Slice (nextLine, (0) + 1, index);
                         valueIndex := (index) + (1);
                         value := Unbounded_Slice (nextLine, (valueIndex) + 1, Length (nextLine));
-                        if ((Index (key, To_String (CpuInfo_Package.PROCESSOR.toString)) - 1)) >= (0) then
-                            This.cpuHashMap.put (CpuInfo_Package.PROCESSOR, value);
+                        if ((Index (key, Java_Image (CpuInfo_Package.PROCESSOR.toString)) - 1)) >= (0) then
+                            This.cpuHashMap.put (CpuInfo_Package.PROCESSOR, Java_Box (value));
                         end if;
-                        if ((Index (key, To_String (CpuInfo_Package.VENDORID.toString)) - 1)) >= (0) then
-                            This.cpuHashMap.put (CpuInfo_Package.VENDORID, value);
+                        if ((Index (key, Java_Image (CpuInfo_Package.VENDORID.toString)) - 1)) >= (0) then
+                            This.cpuHashMap.put (CpuInfo_Package.VENDORID, Java_Box (value));
                         end if;
-                        if ((Index (key, To_String (CpuInfo_Package.CPUFAMILY.toString)) - 1)) >= (0) then
-                            This.cpuHashMap.put (CpuInfo_Package.CPUFAMILY, value);
+                        if ((Index (key, Java_Image (CpuInfo_Package.CPUFAMILY.toString)) - 1)) >= (0) then
+                            This.cpuHashMap.put (CpuInfo_Package.CPUFAMILY, Java_Box (value));
                         end if;
-                        if ((Index (key, To_String (CpuInfo_Package.MODEL.toString)) - 1)) >= (0) then
-                            This.cpuHashMap.put (CpuInfo_Package.MODEL, value);
+                        if ((Index (key, Java_Image (CpuInfo_Package.MODEL.toString)) - 1)) >= (0) then
+                            This.cpuHashMap.put (CpuInfo_Package.MODEL, Java_Box (value));
                         end if;
-                        if ((Index (key, To_String (CpuInfo_Package.MODELNAME.toString)) - 1)) >= (0) then
-                            This.cpuHashMap.put (CpuInfo_Package.MODELNAME, value);
+                        if ((Index (key, Java_Image (CpuInfo_Package.MODELNAME.toString)) - 1)) >= (0) then
+                            This.cpuHashMap.put (CpuInfo_Package.MODELNAME, Java_Box (value));
                         end if;
-                        if ((Index (key, To_String (CpuInfo_Package.STEPPING.toString)) - 1)) >= (0) then
-                            This.cpuHashMap.put (CpuInfo_Package.STEPPING, value);
+                        if ((Index (key, Java_Image (CpuInfo_Package.STEPPING.toString)) - 1)) >= (0) then
+                            This.cpuHashMap.put (CpuInfo_Package.STEPPING, Java_Box (value));
                         end if;
-                        if ((Index (key, To_String (CpuInfo_Package.CPUMHZ.toString)) - 1)) >= (0) then
-                            This.cpuHashMap.put (CpuInfo_Package.CPUMHZ, value);
+                        if ((Index (key, Java_Image (CpuInfo_Package.CPUMHZ.toString)) - 1)) >= (0) then
+                            This.cpuHashMap.put (CpuInfo_Package.CPUMHZ, Java_Box (value));
                         end if;
-                        if ((Index (key, To_String (CpuInfo_Package.CACHESIZE.toString)) - 1)) >= (0) then
-                            This.cpuHashMap.put (CpuInfo_Package.CACHESIZE, value);
+                        if ((Index (key, Java_Image (CpuInfo_Package.CACHESIZE.toString)) - 1)) >= (0) then
+                            This.cpuHashMap.put (CpuInfo_Package.CACHESIZE, Java_Box (value));
                         end if;
                     end if;
                     nextLine := lineNumberReader.readLine;
@@ -144,42 +144,42 @@ package body org.allbinary.logic.system.hardware.components.linux.Cpu_Package is
 
    function getProcessor (This : in out Cpu) return Unbounded_String is
    begin
-        return Unbounded_String (This.cpuHashMap.get (CpuInfo_Package.PROCESSOR));
+        return Java_Unbox (This.cpuHashMap.get (CpuInfo_Package.PROCESSOR));
    end getProcessor;
 
    function getVendorId (This : in out Cpu) return Unbounded_String is
    begin
-        return Unbounded_String (This.cpuHashMap.get (CpuInfo_Package.VENDORID));
+        return Java_Unbox (This.cpuHashMap.get (CpuInfo_Package.VENDORID));
    end getVendorId;
 
    function getCpuFamily (This : in out Cpu) return Unbounded_String is
    begin
-        return Unbounded_String (This.cpuHashMap.get (CpuInfo_Package.CPUFAMILY));
+        return Java_Unbox (This.cpuHashMap.get (CpuInfo_Package.CPUFAMILY));
    end getCpuFamily;
 
    function getModel (This : in out Cpu) return Unbounded_String is
    begin
-        return Unbounded_String (This.cpuHashMap.get (CpuInfo_Package.MODEL));
+        return Java_Unbox (This.cpuHashMap.get (CpuInfo_Package.MODEL));
    end getModel;
 
    function getModelName (This : in out Cpu) return Unbounded_String is
    begin
-        return Unbounded_String (This.cpuHashMap.get (CpuInfo_Package.MODELNAME));
+        return Java_Unbox (This.cpuHashMap.get (CpuInfo_Package.MODELNAME));
    end getModelName;
 
    function getStepping (This : in out Cpu) return Unbounded_String is
    begin
-        return Unbounded_String (This.cpuHashMap.get (CpuInfo_Package.STEPPING));
+        return Java_Unbox (This.cpuHashMap.get (CpuInfo_Package.STEPPING));
    end getStepping;
 
    function getCpuSpeed (This : in out Cpu) return Unbounded_String is
    begin
-        return Unbounded_String (This.cpuHashMap.get (CpuInfo_Package.CPUMHZ));
+        return Java_Unbox (This.cpuHashMap.get (CpuInfo_Package.CPUMHZ));
    end getCpuSpeed;
 
    function getCacheSize (This : in out Cpu) return Unbounded_String is
    begin
-        return Unbounded_String (This.cpuHashMap.get (CpuInfo_Package.CACHESIZE));
+        return Java_Unbox (This.cpuHashMap.get (CpuInfo_Package.CACHESIZE));
    end getCacheSize;
 
    function compareTo (This : in out Cpu; cpuInterface_Param : access CpuInterface_Package.CpuInterface'Class) return Boolean is
@@ -202,21 +202,21 @@ package body org.allbinary.logic.system.hardware.components.linux.Cpu_Package is
         commonLabels := CommonLabels_Package.getInstance;
         commonSeps := CommonSeps_Package.getInstance;
         stringMaker := StringMaker_Package.Create;
-        stringMaker.append (CpuInfo_Package.PROCESSOR.toString).append (commonLabels.COLON_SEP).append (This.getProcessor);
+        stringMaker.append (CpuInfo_Package.PROCESSOR.toString).append (commonLabels.COLON_SEP).append (Cpu'Class (This).getProcessor);
         stringMaker.append (commonSeps.NEW_LINE);
-        stringMaker.append (CpuInfo_Package.VENDORID.toString).append (commonLabels.COLON_SEP).append (This.getVendorId);
+        stringMaker.append (CpuInfo_Package.VENDORID.toString).append (commonLabels.COLON_SEP).append (Cpu'Class (This).getVendorId);
         stringMaker.append (commonSeps.NEW_LINE);
-        stringMaker.append (CpuInfo_Package.CPUFAMILY.toString).append (commonLabels.COLON_SEP).append (This.getCpuFamily);
+        stringMaker.append (CpuInfo_Package.CPUFAMILY.toString).append (commonLabels.COLON_SEP).append (Cpu'Class (This).getCpuFamily);
         stringMaker.append (commonSeps.NEW_LINE);
-        stringMaker.append (CpuInfo_Package.MODEL.toString).append (commonLabels.COLON_SEP).append (This.getModel);
+        stringMaker.append (CpuInfo_Package.MODEL.toString).append (commonLabels.COLON_SEP).append (Cpu'Class (This).getModel);
         stringMaker.append (commonSeps.NEW_LINE);
-        stringMaker.append (CpuInfo_Package.MODELNAME.toString).append (commonLabels.COLON_SEP).append (This.getModelName);
+        stringMaker.append (CpuInfo_Package.MODELNAME.toString).append (commonLabels.COLON_SEP).append (Cpu'Class (This).getModelName);
         stringMaker.append (commonSeps.NEW_LINE);
-        stringMaker.append (CpuInfo_Package.STEPPING.toString).append (commonLabels.COLON_SEP).append (This.getStepping);
+        stringMaker.append (CpuInfo_Package.STEPPING.toString).append (commonLabels.COLON_SEP).append (Cpu'Class (This).getStepping);
         stringMaker.append (commonSeps.NEW_LINE);
-        stringMaker.append (CpuInfo_Package.CPUMHZ.toString).append (commonLabels.COLON_SEP).append (This.getCpuSpeed);
+        stringMaker.append (CpuInfo_Package.CPUMHZ.toString).append (commonLabels.COLON_SEP).append (Cpu'Class (This).getCpuSpeed);
         stringMaker.append (commonSeps.NEW_LINE);
-        stringMaker.append (CpuInfo_Package.CACHESIZE.toString).append (commonLabels.COLON_SEP).append (This.getCacheSize);
+        stringMaker.append (CpuInfo_Package.CACHESIZE.toString).append (commonLabels.COLON_SEP).append (Cpu'Class (This).getCacheSize);
         return stringMaker.toString;
    end toString;
 

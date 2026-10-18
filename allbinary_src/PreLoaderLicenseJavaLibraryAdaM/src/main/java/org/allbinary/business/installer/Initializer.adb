@@ -75,8 +75,8 @@ package body org.allbinary.business.installer.Initializer_Package is
         keyArray := keys.toArray;
         size := keyArray'Length;
         for index in 0 .. (size) - 1 loop
-            key := Unbounded_String (keyArray (index));
-            values := Unbounded_String_Array_Access (map.get (key));
+            key := Java_Unbox (keyArray (index));
+            values := Unbounded_String_Array_Access (map.get (Java_Box (key)));
             hashMap.put (Java_New_String (key), Java_New_String (values (0)));
             stringBuffer.delete (0, stringBuffer.length);
             stringBuffer.append (To_Unbounded_String ("key: "));
@@ -85,7 +85,7 @@ package body org.allbinary.business.installer.Initializer_Package is
             stringBuffer.append (values (0));
             This.logUtil.putF (stringBuffer.toString, Initializer_Access'(This'Unchecked_Access), To_Unbounded_String ("getFormData()"));
         end loop;
-        This.getFormData (hashMap);
+        Initializer'Class (This).getFormData (hashMap);
    end Initialize;
 
    function Create (map_Param : access Map_Package.Map'Class) return Initializer_Access is
@@ -99,7 +99,7 @@ package body org.allbinary.business.installer.Initializer_Package is
       initHashMap : constant HashMap_Access := HashMap_Access (initHashMap_Param);
    begin
       Initialize_Fields (This);
-        This.getFormData (initHashMap);
+        Initializer'Class (This).getFormData (initHashMap);
    end Initialize;
 
    function Create (initHashMap_Param : access HashMap_Package.HashMap'Class) return Initializer_Access is
@@ -115,41 +115,41 @@ package body org.allbinary.business.installer.Initializer_Package is
    begin
         begin
             initializerData := InitializerData_Package.getInstance;
-            This.userJdbcDriver := Unbounded_String (hashMap.get (initializerData.CUSTOMERJDBCDRIVER));
-            This.userName := Unbounded_String (hashMap.get (initializerData.CUSTOMERNAME));
-            This.userUserName := Unbounded_String (hashMap.get (initializerData.CUSTOMERUSERNAME));
-            This.userPassword := Unbounded_String (hashMap.get (initializerData.CUSTOMERPASSWORD));
-            This.userSchema := Unbounded_String (hashMap.get (initializerData.CUSTOMERSCHEMA));
-            This.userServer := Unbounded_String (hashMap.get (initializerData.CUSTOMERSERVER));
-            This.userPort := Unbounded_String (hashMap.get (initializerData.CUSTOMERPORT));
-            This.historyJdbcDriver := Unbounded_String (hashMap.get (initializerData.HISTORYJDBCDRIVER));
-            This.historyName := Unbounded_String (hashMap.get (initializerData.HISTORYNAME));
-            This.historyUserName := Unbounded_String (hashMap.get (initializerData.HISTORYUSERNAME));
-            This.historyPassword := Unbounded_String (hashMap.get (initializerData.HISTORYPASSWORD));
-            This.historySchema := Unbounded_String (hashMap.get (initializerData.HISTORYSCHEMA));
-            This.historyServer := Unbounded_String (hashMap.get (initializerData.HISTORYSERVER));
-            This.historyPort := Unbounded_String (hashMap.get (initializerData.HISTORYPORT));
-            This.logJdbcDriver := Unbounded_String (hashMap.get (initializerData.LOGJDBCDRIVER));
-            This.logName := Unbounded_String (hashMap.get (initializerData.LOGNAME));
-            This.logUserName := Unbounded_String (hashMap.get (initializerData.LOGUSERNAME));
-            This.logPassword := Unbounded_String (hashMap.get (initializerData.LOGPASSWORD));
-            This.logSchema := Unbounded_String (hashMap.get (initializerData.LOGSCHEMA));
-            This.logServer := Unbounded_String (hashMap.get (initializerData.LOGSERVER));
-            This.logPort := Unbounded_String (hashMap.get (initializerData.LOGPORT));
-            This.inventoryJdbcDriver := Unbounded_String (hashMap.get (initializerData.INVENTORYJDBCDRIVER));
-            This.inventoryName := Unbounded_String (hashMap.get (initializerData.INVENTORYNAME));
-            This.inventoryUserName := Unbounded_String (hashMap.get (initializerData.INVENTORYUSERNAME));
-            This.inventoryPassword := Unbounded_String (hashMap.get (initializerData.INVENTORYPASSWORD));
-            This.inventorySchema := Unbounded_String (hashMap.get (initializerData.INVENTORYSCHEMA));
-            This.inventoryServer := Unbounded_String (hashMap.get (initializerData.INVENTORYSERVER));
-            This.inventoryPort := Unbounded_String (hashMap.get (initializerData.INVENTORYPORT));
-            This.staticPagesJdbcDriver := Unbounded_String (hashMap.get (initializerData.STATICPAGESJDBCDRIVER));
-            This.staticPagesName := Unbounded_String (hashMap.get (initializerData.STATICPAGESNAME));
-            This.staticPagesUserName := Unbounded_String (hashMap.get (initializerData.STATICPAGESUSERNAME));
-            This.staticPagesPassword := Unbounded_String (hashMap.get (initializerData.STATICPAGESPASSWORD));
-            This.staticPagesSchema := Unbounded_String (hashMap.get (initializerData.STATICPAGESSCHEMA));
-            This.staticPagesServer := Unbounded_String (hashMap.get (initializerData.STATICPAGESSERVER));
-            This.staticPagesPort := Unbounded_String (hashMap.get (initializerData.STATICPAGESPORT));
+            This.userJdbcDriver := Java_Unbox (hashMap.get (initializerData.CUSTOMERJDBCDRIVER));
+            This.userName := Java_Unbox (hashMap.get (initializerData.CUSTOMERNAME));
+            This.userUserName := Java_Unbox (hashMap.get (initializerData.CUSTOMERUSERNAME));
+            This.userPassword := Java_Unbox (hashMap.get (initializerData.CUSTOMERPASSWORD));
+            This.userSchema := Java_Unbox (hashMap.get (initializerData.CUSTOMERSCHEMA));
+            This.userServer := Java_Unbox (hashMap.get (initializerData.CUSTOMERSERVER));
+            This.userPort := Java_Unbox (hashMap.get (initializerData.CUSTOMERPORT));
+            This.historyJdbcDriver := Java_Unbox (hashMap.get (initializerData.HISTORYJDBCDRIVER));
+            This.historyName := Java_Unbox (hashMap.get (initializerData.HISTORYNAME));
+            This.historyUserName := Java_Unbox (hashMap.get (initializerData.HISTORYUSERNAME));
+            This.historyPassword := Java_Unbox (hashMap.get (initializerData.HISTORYPASSWORD));
+            This.historySchema := Java_Unbox (hashMap.get (initializerData.HISTORYSCHEMA));
+            This.historyServer := Java_Unbox (hashMap.get (initializerData.HISTORYSERVER));
+            This.historyPort := Java_Unbox (hashMap.get (initializerData.HISTORYPORT));
+            This.logJdbcDriver := Java_Unbox (hashMap.get (initializerData.LOGJDBCDRIVER));
+            This.logName := Java_Unbox (hashMap.get (initializerData.LOGNAME));
+            This.logUserName := Java_Unbox (hashMap.get (initializerData.LOGUSERNAME));
+            This.logPassword := Java_Unbox (hashMap.get (initializerData.LOGPASSWORD));
+            This.logSchema := Java_Unbox (hashMap.get (initializerData.LOGSCHEMA));
+            This.logServer := Java_Unbox (hashMap.get (initializerData.LOGSERVER));
+            This.logPort := Java_Unbox (hashMap.get (initializerData.LOGPORT));
+            This.inventoryJdbcDriver := Java_Unbox (hashMap.get (initializerData.INVENTORYJDBCDRIVER));
+            This.inventoryName := Java_Unbox (hashMap.get (initializerData.INVENTORYNAME));
+            This.inventoryUserName := Java_Unbox (hashMap.get (initializerData.INVENTORYUSERNAME));
+            This.inventoryPassword := Java_Unbox (hashMap.get (initializerData.INVENTORYPASSWORD));
+            This.inventorySchema := Java_Unbox (hashMap.get (initializerData.INVENTORYSCHEMA));
+            This.inventoryServer := Java_Unbox (hashMap.get (initializerData.INVENTORYSERVER));
+            This.inventoryPort := Java_Unbox (hashMap.get (initializerData.INVENTORYPORT));
+            This.staticPagesJdbcDriver := Java_Unbox (hashMap.get (initializerData.STATICPAGESJDBCDRIVER));
+            This.staticPagesName := Java_Unbox (hashMap.get (initializerData.STATICPAGESNAME));
+            This.staticPagesUserName := Java_Unbox (hashMap.get (initializerData.STATICPAGESUSERNAME));
+            This.staticPagesPassword := Java_Unbox (hashMap.get (initializerData.STATICPAGESPASSWORD));
+            This.staticPagesSchema := Java_Unbox (hashMap.get (initializerData.STATICPAGESSCHEMA));
+            This.staticPagesServer := Java_Unbox (hashMap.get (initializerData.STATICPAGESSERVER));
+            This.staticPagesPort := Java_Unbox (hashMap.get (initializerData.STATICPAGESPORT));
         exception
             when Java_Occurrence : others =>
                 declare
@@ -185,7 +185,7 @@ package body org.allbinary.business.installer.Initializer_Package is
       stringValidationUtil : StringValidationUtil_Access;
    begin
         isValid := True;
-        if not (This.isJdbcDriverValid (This.userJdbcDriver)) then
+        if not (Initializer'Class (This).isJdbcDriverValid (This.userJdbcDriver)) then
             isValid := False;
         end if;
         stringValidationUtil := StringValidationUtil_Package.getInstance;
@@ -198,7 +198,7 @@ package body org.allbinary.business.installer.Initializer_Package is
         if not (stringValidationUtil.isValidNotRequired (This.userPassword, Initializer_Package.MINPASSWORD, Initializer_Package.MAX)) then
             isValid := False;
         end if;
-        if not (This.isJdbcDriverValid (This.historyJdbcDriver)) then
+        if not (Initializer'Class (This).isJdbcDriverValid (This.historyJdbcDriver)) then
             isValid := False;
         end if;
         if not (stringValidationUtil.isValidRequired (This.historyName, Initializer_Package.MIN, Initializer_Package.MAXDB)) then
@@ -210,7 +210,7 @@ package body org.allbinary.business.installer.Initializer_Package is
         if not (stringValidationUtil.isValidNotRequired (This.historyPassword, Initializer_Package.MINPASSWORD, Initializer_Package.MAX)) then
             isValid := False;
         end if;
-        if not (This.isJdbcDriverValid (This.logJdbcDriver)) then
+        if not (Initializer'Class (This).isJdbcDriverValid (This.logJdbcDriver)) then
             isValid := False;
         end if;
         if not (stringValidationUtil.isValidRequired (This.logName, Initializer_Package.MIN, Initializer_Package.MAXDB)) then
@@ -222,7 +222,7 @@ package body org.allbinary.business.installer.Initializer_Package is
         if not (stringValidationUtil.isValidNotRequired (This.logPassword, Initializer_Package.MINPASSWORD, Initializer_Package.MAX)) then
             isValid := False;
         end if;
-        if not (This.isJdbcDriverValid (This.inventoryJdbcDriver)) then
+        if not (Initializer'Class (This).isJdbcDriverValid (This.inventoryJdbcDriver)) then
             isValid := False;
         end if;
         if not (stringValidationUtil.isValidRequired (This.inventoryName, Initializer_Package.MIN, Initializer_Package.MAXDB)) then
@@ -234,7 +234,7 @@ package body org.allbinary.business.installer.Initializer_Package is
         if not (stringValidationUtil.isValidNotRequired (This.inventoryPassword, Initializer_Package.MINPASSWORD, Initializer_Package.MAX)) then
             isValid := False;
         end if;
-        if not (This.isJdbcDriverValid (This.staticPagesJdbcDriver)) then
+        if not (Initializer'Class (This).isJdbcDriverValid (This.staticPagesJdbcDriver)) then
             isValid := False;
         end if;
         if not (stringValidationUtil.isValidRequired (This.staticPagesName, Initializer_Package.MIN, Initializer_Package.MAXDB)) then
@@ -282,9 +282,9 @@ package body org.allbinary.business.installer.Initializer_Package is
    begin
         isJdbcDriversValid := True;
         stringBuffer := StringMaker_Package.Create;
-        if not (This.isJdbcDriverValid (This.userJdbcDriver)) then
+        if not (Initializer'Class (This).isJdbcDriverValid (This.userJdbcDriver)) then
             isJdbcDriversValid := False;
-            stringBuffer.append (This.getJdbcDriverValidationInfo (This.userJdbcDriver));
+            stringBuffer.append (Initializer'Class (This).getJdbcDriverValidationInfo (This.userJdbcDriver));
         end if;
         stringValidationUtil := StringValidationUtil_Package.getInstance;
         if not (stringValidationUtil.isValidRequired (This.userName, Initializer_Package.MIN, Initializer_Package.MAXDB)) then
@@ -296,9 +296,9 @@ package body org.allbinary.business.installer.Initializer_Package is
         if not (stringValidationUtil.isValidNotRequired (This.userPassword, Initializer_Package.MINPASSWORD, Initializer_Package.MAX)) then
             stringBuffer.append (To_Unbounded_String ("User DB password should be < ") & Java_Image (Initializer_Package.MAX) & To_Unbounded_String (" and > ") & Java_Image (Initializer_Package.MINPASSWORD) & To_Unbounded_String (" characters in length.<br />"));
         end if;
-        if not (This.isJdbcDriverValid (This.historyJdbcDriver)) then
+        if not (Initializer'Class (This).isJdbcDriverValid (This.historyJdbcDriver)) then
             isJdbcDriversValid := False;
-            stringBuffer.append (This.getJdbcDriverValidationInfo (This.historyJdbcDriver));
+            stringBuffer.append (Initializer'Class (This).getJdbcDriverValidationInfo (This.historyJdbcDriver));
         end if;
         if not (stringValidationUtil.isValidRequired (This.historyName, Initializer_Package.MIN, Initializer_Package.MAXDB)) then
             stringBuffer.append (To_Unbounded_String ("History db should be < ") & Java_Image (Initializer_Package.MAXDB) & To_Unbounded_String (" and > ") & Java_Image (Initializer_Package.MIN) & To_Unbounded_String (" characters in length.<br />"));
@@ -309,9 +309,9 @@ package body org.allbinary.business.installer.Initializer_Package is
         if not (stringValidationUtil.isValidNotRequired (This.historyPassword, Initializer_Package.MINPASSWORD, Initializer_Package.MAX)) then
             stringBuffer.append (To_Unbounded_String ("History db password should be < ") & Java_Image (Initializer_Package.MAX) & To_Unbounded_String (" and > ") & Java_Image (Initializer_Package.MINPASSWORD) & To_Unbounded_String (" characters in length.<br />"));
         end if;
-        if not (This.isJdbcDriverValid (This.logJdbcDriver)) then
+        if not (Initializer'Class (This).isJdbcDriverValid (This.logJdbcDriver)) then
             isJdbcDriversValid := False;
-            stringBuffer.append (This.getJdbcDriverValidationInfo (This.logJdbcDriver));
+            stringBuffer.append (Initializer'Class (This).getJdbcDriverValidationInfo (This.logJdbcDriver));
         end if;
         if not (stringValidationUtil.isValidRequired (This.logName, Initializer_Package.MIN, Initializer_Package.MAXDB)) then
             stringBuffer.append (To_Unbounded_String ("Log db should be < ") & Java_Image (Initializer_Package.MAXDB) & To_Unbounded_String (" and > ") & Java_Image (Initializer_Package.MIN) & To_Unbounded_String (" characters in length.<br />"));
@@ -322,9 +322,9 @@ package body org.allbinary.business.installer.Initializer_Package is
         if not (stringValidationUtil.isValidNotRequired (This.logPassword, Initializer_Package.MINPASSWORD, Initializer_Package.MAX)) then
             stringBuffer.append (To_Unbounded_String ("Log db password should be < ") & Java_Image (Initializer_Package.MAX) & To_Unbounded_String (" and > ") & Java_Image (Initializer_Package.MINPASSWORD) & To_Unbounded_String (" characters in length.<br />"));
         end if;
-        if not (This.isJdbcDriverValid (This.inventoryJdbcDriver)) then
+        if not (Initializer'Class (This).isJdbcDriverValid (This.inventoryJdbcDriver)) then
             isJdbcDriversValid := False;
-            stringBuffer.append (This.getJdbcDriverValidationInfo (This.inventoryJdbcDriver));
+            stringBuffer.append (Initializer'Class (This).getJdbcDriverValidationInfo (This.inventoryJdbcDriver));
         end if;
         if not (stringValidationUtil.isValidRequired (This.inventoryName, Initializer_Package.MIN, Initializer_Package.MAXDB)) then
             stringBuffer.append (To_Unbounded_String ("Inventory db should be < ") & Java_Image (Initializer_Package.MAXDB) & To_Unbounded_String (" and > ") & Java_Image (Initializer_Package.MIN) & To_Unbounded_String (" characters in length.<br />"));
@@ -335,9 +335,9 @@ package body org.allbinary.business.installer.Initializer_Package is
         if not (stringValidationUtil.isValidNotRequired (This.inventoryPassword, Initializer_Package.MINPASSWORD, Initializer_Package.MAX)) then
             stringBuffer.append (To_Unbounded_String ("Inventory DB password should be < ") & Java_Image (Initializer_Package.MAX) & To_Unbounded_String (" and > ") & Java_Image (Initializer_Package.MINPASSWORD) & To_Unbounded_String (" characters in length.<br />"));
         end if;
-        if not (This.isJdbcDriverValid (This.staticPagesJdbcDriver)) then
+        if not (Initializer'Class (This).isJdbcDriverValid (This.staticPagesJdbcDriver)) then
             isJdbcDriversValid := False;
-            stringBuffer.append (This.getJdbcDriverValidationInfo (This.staticPagesJdbcDriver));
+            stringBuffer.append (Initializer'Class (This).getJdbcDriverValidationInfo (This.staticPagesJdbcDriver));
         end if;
         if not (stringValidationUtil.isValidRequired (This.staticPagesName, Initializer_Package.MIN, Initializer_Package.MAXDB)) then
             stringBuffer.append (To_Unbounded_String ("Static Pages db should be < ") & Java_Image (Initializer_Package.MAXDB) & To_Unbounded_String (" and > ") & Java_Image (Initializer_Package.MIN) & To_Unbounded_String (" characters in length.<br />"));
@@ -349,7 +349,7 @@ package body org.allbinary.business.installer.Initializer_Package is
             stringBuffer.append (To_Unbounded_String ("Static Pages DB password should be < ") & Java_Image (Initializer_Package.MAX) & To_Unbounded_String (" and > ") & Java_Image (Initializer_Package.MINPASSWORD) & To_Unbounded_String (" characters in length.<br />"));
         end if;
         if not (isJdbcDriversValid) then
-            stringBuffer.append (This.getJdbcDriverSolutionInfo);
+            stringBuffer.append (Initializer'Class (This).getJdbcDriverSolutionInfo);
         end if;
         return stringBuffer.toString;
    end getInvalidInfo;

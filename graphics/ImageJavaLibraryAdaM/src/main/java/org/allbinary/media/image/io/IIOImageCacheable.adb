@@ -44,7 +44,7 @@ package body org.allbinary.media.image.io.IIOImageCacheable_Package is
    procedure setBufferedImage (This : in out IIOImageCacheable; bufferedImage_Param : access BufferedImage_Package.BufferedImage'Class) is
       bufferedImage : constant BufferedImage_Access := BufferedImage_Access (bufferedImage_Param);
    begin
-        This.setIioImage (IIOImage_Package.Create (bufferedImage, null, null));
+        IIOImageCacheable'Class (This).setIioImage (IIOImage_Package.Create (bufferedImage, null, null));
    end setBufferedImage;
 
    function getIioImage (This : in out IIOImageCacheable) return IIOImage_Access is

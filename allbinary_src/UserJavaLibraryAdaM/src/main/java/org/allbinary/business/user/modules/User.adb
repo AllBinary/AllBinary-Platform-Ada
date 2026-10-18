@@ -39,7 +39,7 @@ package body org.allbinary.business.user.modules.User_Package is
       This.encryption := Null_Unbounded_String;
       This.secret := Null_Unbounded_String;
       
-      This.enable := Null_Unbounded_String;
+      This.enable_Field := Null_Unbounded_String;
       This.permissions := Null_Unbounded_String;
       
    end Initialize_Fields;
@@ -63,8 +63,8 @@ package body org.allbinary.business.user.modules.User_Package is
       request : constant HttpServletRequest_Access := HttpServletRequest_Access (request_Param);
    begin
       Initialize_Fields (This);
-        This.getFormData (RequestParams_Package.Create (request).toHashMap);
-        This.userConfigurationInterface := UserConfigurationInterfaceFactory_Package.getInstance (This.getRole);
+        User'Class (This).getFormData (RequestParams_Package.Create (request).toHashMap);
+        This.userConfigurationInterface := UserConfigurationInterfaceFactory_Package.getInstance (User'Class (This).getRole);
    end Initialize;
 
    function Create (request_Param : access HttpServletRequest_Package.HttpServletRequest'Class) return User_Access is
@@ -78,8 +78,8 @@ package body org.allbinary.business.user.modules.User_Package is
       userHashMap : constant HashMap_Access := HashMap_Access (userHashMap_Param);
    begin
       Initialize_Fields (This);
-        This.getFormData (userHashMap);
-        This.userConfigurationInterface := UserConfigurationInterfaceFactory_Package.getInstance (This.getRole);
+        User'Class (This).getFormData (userHashMap);
+        This.userConfigurationInterface := UserConfigurationInterfaceFactory_Package.getInstance (User'Class (This).getRole);
    end Initialize;
 
    function Create (userHashMap_Param : access HashMap_Package.HashMap'Class) return User_Access is
@@ -100,38 +100,38 @@ package body org.allbinary.business.user.modules.User_Package is
    begin
         This.userName := UserName_Package.Create (userHashMap).get;
         stringUtil := StringUtil_Package.getInstance;
-        passwordString := stringUtil.getNonNull (Unbounded_String (userHashMap.get (UserData_Package.PASSWORD)));
+        passwordString := stringUtil.getNonNull (Java_Unbox (userHashMap.get (UserData_Package.PASSWORD)));
         stringValidationUtil := StringValidationUtil_Package.getInstance;
         if (stringValidationUtil.isEmpty (This.userName)) and then (stringValidationUtil.isEmpty (passwordString)) then
-            This.userName := stringUtil.getNonNull (Unbounded_String (userHashMap.get (WeblisketSessionData_Package.REMOVABLEUSERNAME)));
-            passwordString := stringUtil.getNonNull (Unbounded_String (userHashMap.get (WeblisketSessionData_Package.REMOVABLEPASSWORD)));
+            This.userName := stringUtil.getNonNull (Java_Unbox (userHashMap.get (WeblisketSessionData_Package.REMOVABLEUSERNAME)));
+            passwordString := stringUtil.getNonNull (Java_Unbox (userHashMap.get (WeblisketSessionData_Package.REMOVABLEPASSWORD)));
         end if;
-        encryption := stringUtil.getNonNull (Unbounded_String (userHashMap.get (EntryData_Package.getInstance.ENCRYPTION)));
-        secret := stringUtil.getNonNull (Unbounded_String (userHashMap.get (UserData_Package.SECRET)));
+        encryption := stringUtil.getNonNull (Java_Unbox (userHashMap.get (EntryData_Package.getInstance.ENCRYPTION)));
+        secret := stringUtil.getNonNull (Java_Unbox (userHashMap.get (UserData_Package.SECRET)));
         This.password := Password_Package.Create (passwordString);
-        This.prefixName := stringUtil.getNonNull (Unbounded_String (userHashMap.get (UserData_Package.PREFIXNAME)));
-        This.firstName := stringUtil.getNonNull (Unbounded_String (userHashMap.get (UserData_Package.FIRSTNAME)));
-        This.lastName := stringUtil.getNonNull (Unbounded_String (userHashMap.get (UserData_Package.LASTNAME)));
-        This.middleName := stringUtil.getNonNull (Unbounded_String (userHashMap.get (UserData_Package.MIDDLENAME)));
-        This.suffixName := stringUtil.getNonNull (Unbounded_String (userHashMap.get (UserData_Package.SUFFIXNAME)));
-        This.company := stringUtil.getNonNull (Unbounded_String (userHashMap.get (UserData_Package.COMPANY)));
-        This.positionAtCompany := stringUtil.getNonNull (Unbounded_String (userHashMap.get (UserData_Package.POSITIONATCOMPANY)));
-        This.mainEmail := stringUtil.getNonNull (Unbounded_String (userHashMap.get (UserData_Package.MAINEMAIL)));
-        This.secondaryEmail := stringUtil.getNonNull (Unbounded_String (userHashMap.get (UserData_Package.SECONDARYEMAIL)));
-        This.homePhone := stringUtil.getNonNull (Unbounded_String (userHashMap.get (UserData_Package.HOMEPHONE)));
-        This.cellPhone := stringUtil.getNonNull (Unbounded_String (userHashMap.get (UserData_Package.CELLPHONE)));
-        This.workPhone := stringUtil.getNonNull (Unbounded_String (userHashMap.get (UserData_Package.WORKPHONE)));
-        This.otherContact := stringUtil.getNonNull (Unbounded_String (userHashMap.get (UserData_Package.OTHERCONTACT)));
-        This.electronicDevice := stringUtil.getNonNull (Unbounded_String (userHashMap.get (UserData_Package.ELECTRONICDEVICE)));
-        This.fax := stringUtil.getNonNull (Unbounded_String (userHashMap.get (UserData_Package.FAX)));
-        This.role := UserRoleB_Package.getRole (Unbounded_String (userHashMap.get (UserRoleData_Package.NAME.toString)));
-        This.permissions := stringUtil.getNonNull (Unbounded_String (userHashMap.get (UserData_Package.PERMISSIONS)));
+        This.prefixName := stringUtil.getNonNull (Java_Unbox (userHashMap.get (UserData_Package.PREFIXNAME)));
+        This.firstName := stringUtil.getNonNull (Java_Unbox (userHashMap.get (UserData_Package.FIRSTNAME)));
+        This.lastName := stringUtil.getNonNull (Java_Unbox (userHashMap.get (UserData_Package.LASTNAME)));
+        This.middleName := stringUtil.getNonNull (Java_Unbox (userHashMap.get (UserData_Package.MIDDLENAME)));
+        This.suffixName := stringUtil.getNonNull (Java_Unbox (userHashMap.get (UserData_Package.SUFFIXNAME)));
+        This.company := stringUtil.getNonNull (Java_Unbox (userHashMap.get (UserData_Package.COMPANY)));
+        This.positionAtCompany := stringUtil.getNonNull (Java_Unbox (userHashMap.get (UserData_Package.POSITIONATCOMPANY)));
+        This.mainEmail := stringUtil.getNonNull (Java_Unbox (userHashMap.get (UserData_Package.MAINEMAIL)));
+        This.secondaryEmail := stringUtil.getNonNull (Java_Unbox (userHashMap.get (UserData_Package.SECONDARYEMAIL)));
+        This.homePhone := stringUtil.getNonNull (Java_Unbox (userHashMap.get (UserData_Package.HOMEPHONE)));
+        This.cellPhone := stringUtil.getNonNull (Java_Unbox (userHashMap.get (UserData_Package.CELLPHONE)));
+        This.workPhone := stringUtil.getNonNull (Java_Unbox (userHashMap.get (UserData_Package.WORKPHONE)));
+        This.otherContact := stringUtil.getNonNull (Java_Unbox (userHashMap.get (UserData_Package.OTHERCONTACT)));
+        This.electronicDevice := stringUtil.getNonNull (Java_Unbox (userHashMap.get (UserData_Package.ELECTRONICDEVICE)));
+        This.fax := stringUtil.getNonNull (Java_Unbox (userHashMap.get (UserData_Package.FAX)));
+        This.role := UserRoleB_Package.getRole (Java_Unbox (userHashMap.get (Java_Box (UserRoleData_Package.NAME.toString))));
+        This.permissions := stringUtil.getNonNull (Java_Unbox (userHashMap.get (UserData_Package.PERMISSIONS)));
         if (not (stringValidationUtil.isEmpty (This.permissions))) and then ((This.permissions.compareTo (StoreFrontData_Package.getInstance.NAME)) = (0)) then
-            This.permissions := stringUtil.getNonNull (Unbounded_String (userHashMap.get (StoreFrontData_Package.getInstance.NAME)));
+            This.permissions := stringUtil.getNonNull (Java_Unbox (userHashMap.get (StoreFrontData_Package.getInstance.NAME)));
         elsif (This.permissions) = (Null_Unbounded_String) then
             This.permissions := To_Unbounded_String ("No Permissions");
         end if;
-        This.enable := stringUtil.getNonNull (Unbounded_String (userHashMap.get (EntryData_Package.getInstance.ENABLE)));
+        This.enable_Field := stringUtil.getNonNull (Java_Unbox (userHashMap.get (EntryData_Package.getInstance.ENABLE)));
    end getFormData;
 
    function isValid (This : in out User) return Boolean is
@@ -154,7 +154,7 @@ package body org.allbinary.business.user.modules.User_Package is
             if not (stringValidationUtil.isValidRequired (This.lastName, 1, UserData_Package.MAXLEN)) then
                 valid := False;
             end if;
-            if (not (stringValidationUtil.isValidRequired (This.mainEmail, 1, UserData_Package.MAXLEN))) or else (((Index (This.mainEmail, To_String (To_Unbounded_String ("@"))) - 1)) = (-(1))) then
+            if (not (stringValidationUtil.isValidRequired (This.mainEmail, 1, UserData_Package.MAXLEN))) or else (((Index (This.mainEmail, Java_Image (To_Unbounded_String ("@"))) - 1)) = (-(1))) then
                 valid := False;
             end if;
             return valid;
@@ -187,7 +187,7 @@ package body org.allbinary.business.user.modules.User_Package is
             if not (stringValidationUtil.isValidRequired (This.lastName, 1, UserData_Package.MAXLEN)) then
                 stringBuffer.append (To_Unbounded_String ("Please enter a valid Last Name.<br />"));
             end if;
-            if (not (stringValidationUtil.isValidRequired (This.mainEmail, 1, UserData_Package.MAXLEN))) or else (((Index (This.mainEmail, To_String (To_Unbounded_String ("@"))) - 1)) = (-(1))) then
+            if (not (stringValidationUtil.isValidRequired (This.mainEmail, 1, UserData_Package.MAXLEN))) or else (((Index (This.mainEmail, Java_Image (To_Unbounded_String ("@"))) - 1)) = (-(1))) then
                 stringBuffer.append (To_Unbounded_String ("Please enter a valid email address.<br />"));
             end if;
             return stringBuffer.toString;
@@ -312,17 +312,17 @@ package body org.allbinary.business.user.modules.User_Package is
 
    procedure enable (This : in out User) is
    begin
-        This.setEnable (To_Unbounded_String ("Yes"));
+        User'Class (This).setEnable (To_Unbounded_String ("Yes"));
    end enable;
 
    procedure disable (This : in out User) is
    begin
-        This.setEnable (To_Unbounded_String ("No"));
+        User'Class (This).setEnable (To_Unbounded_String ("No"));
    end disable;
 
-   procedure setEnable (This : in out User; enable : Unbounded_String) is
+   procedure setEnable (This : in out User; enable_Field : Unbounded_String) is
    begin
-        This.enable := enable;
+        This.enable_Field := enable_Field;
    end setEnable;
 
    function getUserName (This : in out User) return Unbounded_String is
@@ -454,12 +454,12 @@ package body org.allbinary.business.user.modules.User_Package is
         values.add (This.otherContact);
         values.add (This.electronicDevice);
         values.add (This.fax);
-        values.add (This.getRole.toString);
-        userConfigurationDomDocumentMapping := UserConfigurationDomDocumentMapping_Package.Create (This.getUserConfigurationInterface);
+        values.add (User'Class (This).getRole.toString);
+        userConfigurationDomDocumentMapping := UserConfigurationDomDocumentMapping_Package.Create (User'Class (This).getUserConfigurationInterface);
         values.add (userConfigurationDomDocumentMapping.toDomDocumentString);
         values.add (This.permissions);
         values.addAllList (This.password.toVector (This.secret));
-        values.add (This.enable);
+        values.add (This.enable_Field);
         calendar := Calendar_Package.getInstance;
         time := Java_New_String (calendar.getTimeInMillis.toString);
         values.add (time);
@@ -491,14 +491,14 @@ package body org.allbinary.business.user.modules.User_Package is
         values.put (UserData_Package.OTHERCONTACT, This.otherContact);
         values.put (UserData_Package.ELECTRONICDEVICE, This.electronicDevice);
         values.put (UserData_Package.FAX, This.fax);
-        if (This.getRole) /= (null) then
-            values.put (UserRoleData_Package.NAME.toString, This.getRole.toString);
+        if (User'Class (This).getRole) /= (null) then
+            values.put (UserRoleData_Package.NAME.toString, User'Class (This).getRole.toString);
         end if;
-        userConfigurationDomDocumentMapping := UserConfigurationDomDocumentMapping_Package.Create (This.getUserConfigurationInterface);
+        userConfigurationDomDocumentMapping := UserConfigurationDomDocumentMapping_Package.Create (User'Class (This).getUserConfigurationInterface);
         values.put (UserData_Package.CONFIGURATION, userConfigurationDomDocumentMapping.toDomDocumentString);
         values.put (UserData_Package.PERMISSIONS, This.permissions);
         values.putAll (This.password.toHashMap (This.secret));
-        values.put (EntryData_Package.getInstance.ENABLE, This.enable);
+        values.put (EntryData_Package.getInstance.ENABLE, This.enable_Field);
         calendar := Calendar_Package.getInstance;
         time := Java_New_String (calendar.getTimeInMillis.toString);
         values.put (EntryData_Package.getInstance.LASTMODIFIED, time);
@@ -514,8 +514,8 @@ package body org.allbinary.business.user.modules.User_Package is
       weblisketSession : constant WeblisketSessionInterface_Access := WeblisketSessionInterface_Access (weblisketSession_Param);
    begin
         weblisketSession.setAuthenticated;
-        weblisketSession.setRole (This.getRole);
-        weblisketSession.setUserName (This.getUserName);
+        weblisketSession.setRole (User'Class (This).getRole);
+        weblisketSession.setUserName (User'Class (This).getUserName);
    end validateSession;
 
    procedure updateSession (This : in out User; weblisketSession_Param : access WeblisketSessionInterface_Package.WeblisketSessionInterface'Class) is
@@ -532,7 +532,7 @@ package body org.allbinary.business.user.modules.User_Package is
    --  throws Exception
    function getKey (This : in out User) return Java_Object_Access is
    begin
-        return Java_Object_Access (This.userName);
+        return Java_Box (This.userName);
    end getKey;
 
    function toValidationInfoDoc (This : in out User) return Document_Access is

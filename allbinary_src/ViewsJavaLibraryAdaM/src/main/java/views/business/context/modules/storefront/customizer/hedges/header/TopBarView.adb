@@ -39,7 +39,7 @@ package body views.business.context.modules.storefront.customizer.hedges.header.
 
    procedure addDomNodeInterfaces (This : in out TopBarView) is
    begin
-        This.addDomNodeInterface (DomNodeInterface_Access (TopBarView_Access'(This'Unchecked_Access)));
+        TopBarView'Class (This).addDomNodeInterface (DomNodeInterface_Access (TopBarView_Access'(This'Unchecked_Access)));
    end addDomNodeInterfaces;
 
    --  throws Exception
@@ -65,7 +65,7 @@ package body views.business.context.modules.storefront.customizer.hedges.header.
    function view (This : in out TopBarView) return Unbounded_String is
    begin
         begin
-            This.addDomNodeInterfaces;
+            TopBarView'Class (This).addDomNodeInterfaces;
             return HttpStoreComponentView (This).view;
         exception
             when Java_Occurrence : others =>

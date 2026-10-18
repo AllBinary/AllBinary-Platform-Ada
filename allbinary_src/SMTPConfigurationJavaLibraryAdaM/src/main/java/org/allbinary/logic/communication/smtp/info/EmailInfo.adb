@@ -34,7 +34,7 @@ package body org.allbinary.logic.communication.smtp.info.EmailInfo_Package is
             commonStrings := CommonStrings_Package.getInstance;
             This.logUtil.putF (commonStrings.START, EmailInfo_Access'(This'Unchecked_Access), commonStrings.CONSTRUCTOR);
         end if;
-        This.init (basicEmailInfo, null, null);
+        EmailInfo'Class (This).init (basicEmailInfo, null, null);
    end Initialize;
 
    function Create (basicEmailInfo_Param : access BasicEmailInfo_Package.BasicEmailInfo'Class) return EmailInfo_Access is
@@ -53,7 +53,7 @@ package body org.allbinary.logic.communication.smtp.info.EmailInfo_Package is
             commonStrings := CommonStrings_Package.getInstance;
             This.logUtil.putF (commonStrings.START, EmailInfo_Access'(This'Unchecked_Access), commonStrings.CONSTRUCTOR);
         end if;
-        This.init (basicEmailInfo, null, null);
+        EmailInfo'Class (This).init (basicEmailInfo, null, null);
    end Initialize;
 
    function Create (basicEmailInfo_Param : access BasicEmailInfo_Package.BasicEmailInfo'Class; htmlAttachment : Unbounded_String; contentBase : Unbounded_String) return EmailInfo_Access is
@@ -88,7 +88,7 @@ package body org.allbinary.logic.communication.smtp.info.EmailInfo_Package is
 
    function toString (This : in out EmailInfo) return Unbounded_String is
    begin
-        return To_Unbounded_String ("Email Info: " & ASCII.LF & " ") & This.getBasicEmailInfo.toString;
+        return To_Unbounded_String ("Email Info: " & ASCII.LF & " ") & EmailInfo'Class (This).getBasicEmailInfo.toString;
    end toString;
 
 end org.allbinary.logic.communication.smtp.info.EmailInfo_Package;

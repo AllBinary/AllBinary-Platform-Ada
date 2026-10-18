@@ -32,9 +32,9 @@ package body org.allbinary.osgi.service.InputAutomationServiceConsumer_Package i
       osgiServiceVisitorInterface : constant OSGIServiceVisitorInterface_Access := OSGIServiceVisitorInterface_Access (osgiServiceVisitorInterface_Param);
    begin
       Initialize_Fields (This);
-        This.setRegistryName (registryName);
-        This.setBundleContext (bundleContext);
-        This.setOsgiServiceVisitorInterface (osgiServiceVisitorInterface);
+        InputAutomationServiceConsumer'Class (This).setRegistryName (registryName);
+        InputAutomationServiceConsumer'Class (This).setBundleContext (bundleContext);
+        InputAutomationServiceConsumer'Class (This).setOsgiServiceVisitorInterface (osgiServiceVisitorInterface);
    end Initialize;
 
    function Create (registryName : Unbounded_String; bundleContext_Param : access BundleContext_Package.BundleContext'Class; osgiServiceVisitorInterface_Param : access OSGIServiceVisitorInterface_Package.OSGIServiceVisitorInterface'Class) return InputAutomationServiceConsumer_Access is
@@ -52,13 +52,13 @@ package body org.allbinary.osgi.service.InputAutomationServiceConsumer_Package i
       index : Integer;
    begin
         This.logUtil.putF (This.commonStrings.START, InputAutomationServiceConsumer_Access'(This'Unchecked_Access), This.commonStrings.PROCESS);
-        vector := This.osgiServiceUtil.getServicesObjectVector (This.getBundleContext, This.getServiceReferences);
+        vector := This.osgiServiceUtil.getServicesObjectVector (InputAutomationServiceConsumer'Class (This).getBundleContext, InputAutomationServiceConsumer'Class (This).getServiceReferences);
         This.logUtil.putF (To_Unbounded_String ("Processing ") & Java_Image (vector.size) & To_Unbounded_String (" Services"), InputAutomationServiceConsumer_Access'(This'Unchecked_Access), This.commonStrings.PROCESS);
         size := vector.size;
         osgiServiceInterface := null;
         for index in 0 .. (size) - 1 loop
             osgiServiceInterface := OSGIServiceInterface_Access (vector.get (index));
-            if not (This.getOsgiServiceVisitorInterface.visit (osgiServiceInterface)) then
+            if not (InputAutomationServiceConsumer'Class (This).getOsgiServiceVisitorInterface.visit (osgiServiceInterface)) then
                 Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Unable to process service: ") & Java_Image (osgiServiceInterface)));
             end if;
         end loop;
@@ -67,7 +67,7 @@ package body org.allbinary.osgi.service.InputAutomationServiceConsumer_Package i
    --  throws Exception
    function getServiceReferences (This : in out InputAutomationServiceConsumer) return ServiceReference_Access_Array_Access is
    begin
-        return This.getBundleContext.getServiceReferences (This.getRegistryName, null);
+        return InputAutomationServiceConsumer'Class (This).getBundleContext.getServiceReferences (InputAutomationServiceConsumer'Class (This).getRegistryName, null);
    end getServiceReferences;
 
    function getBundleContext (This : in out InputAutomationServiceConsumer) return BundleContext_Access is

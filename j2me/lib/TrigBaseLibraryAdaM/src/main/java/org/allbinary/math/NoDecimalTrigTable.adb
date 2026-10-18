@@ -1250,13 +1250,13 @@ package body org.allbinary.math.NoDecimalTrigTable_Package is
         angle := null;
         for index in 0 .. (dx'Length) - 1 loop
             for index2 in 0 .. (dy'Length) - 1 loop
-                angleOfTarget := This.antiTan (dx (index), dy (index2));
+                angleOfTarget := NoDecimalTrigTable'Class (This).antiTan (dx (index), dy (index2));
                 angle := angleFactory.getAt (Integer (angleOfTarget));
                 stringMaker.delete (0, stringMaker.length);
                 PreLogUtil_Package.put (stringMaker.append (CommonLabels_Package.getInstance.INDEX_LABEL).appendint (index).append (To_Unbounded_String (" index2: ")).appendint (index2).append (PositionStrings_Package.getInstance.DX_LABEL).appendint (dx (index)).append (PositionStrings_Package.getInstance.DY_LABEL).appendint (dy (index2)).append (TARGET_ANGLE).appendshort (angleOfTarget).append (CommonSeps_Package.getInstance.EQUALS).appendshort (Short_Integer (angle.getValue)).toString, NoDecimalTrigTable_Access'(This'Unchecked_Access), METHOD_NAME);
             end loop;
         end loop;
-        angleOfTarget := This.antiTan (dx (0), dy (0));
+        angleOfTarget := NoDecimalTrigTable'Class (This).antiTan (dx (0), dy (0));
         return angleOfTarget;
    end antiTanDebug;
 

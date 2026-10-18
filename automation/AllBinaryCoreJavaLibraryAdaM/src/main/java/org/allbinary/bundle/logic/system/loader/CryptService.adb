@@ -53,7 +53,7 @@ package body org.allbinary.bundle.logic.system.loader.CryptService_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.showLicenseDialog (abeClientInformation, e);
+            CryptService'Class (This).showLicenseDialog (abeClientInformation, e);
                 end;
         end;
         return null;

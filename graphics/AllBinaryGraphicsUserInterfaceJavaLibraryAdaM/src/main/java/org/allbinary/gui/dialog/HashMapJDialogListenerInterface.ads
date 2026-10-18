@@ -20,10 +20,11 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.util.HashMap_Package; use java.util.HashMap_Package;
+with java.util.HashMap_Package; use java.util.HashMap_Package;
 
 package org.allbinary.gui.dialog.HashMapJDialogListenerInterface_Package is
 
+   package HashMap_Package renames Standard.java.util.HashMap_Package;
 
    type HashMapJDialogListenerInterface is interface;
    type HashMapJDialogListenerInterface_Access is access all HashMapJDialogListenerInterface'Class;

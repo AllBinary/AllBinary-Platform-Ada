@@ -103,25 +103,25 @@ package body org.allbinary.animation.compound.CompoundIndexedAnimation_Package i
    procedure nextAnimation (This : in out CompoundIndexedAnimation) is
       frame : Integer;
    begin
-        frame := This.getFrame;
+        frame := CompoundIndexedAnimation'Class (This).getFrame;
         This.circularIndexUtil.next;
-        This.setFrame (frame);
+        CompoundIndexedAnimation'Class (This).setFrame (frame);
    end nextAnimation;
 
    procedure previousAnimation (This : in out CompoundIndexedAnimation) is
       frame : Integer;
    begin
-        frame := This.getFrame;
+        frame := CompoundIndexedAnimation'Class (This).getFrame;
         This.circularIndexUtil.previous;
-        This.setFrame (frame);
+        CompoundIndexedAnimation'Class (This).setFrame (frame);
    end previousAnimation;
 
    procedure setAnimation (This : in out CompoundIndexedAnimation; index : Integer) is
       frame : Integer;
    begin
-        frame := This.getFrame;
+        frame := CompoundIndexedAnimation'Class (This).getFrame;
         This.circularIndexUtil.setIndex (index);
-        This.setFrame (frame);
+        CompoundIndexedAnimation'Class (This).setFrame (frame);
    end setAnimation;
 
    function getAnimationInterfaceArray (This : in out CompoundIndexedAnimation) return Animation_Access_Array_Access is

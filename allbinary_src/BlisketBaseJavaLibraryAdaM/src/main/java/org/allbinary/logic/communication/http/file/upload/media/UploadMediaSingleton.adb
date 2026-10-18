@@ -47,19 +47,19 @@ package body org.allbinary.logic.communication.http.file.upload.media.UploadMedi
         mediaDataNameArray := set.toArray;
         size := mediaDataNameArray'Length;
         for index in 0 .. (size) - 1 loop
-            mediaDataName := Unbounded_String (mediaDataNameArray (index));
-            mediaData := MediaData_Access (hashMap.get (mediaDataName));
-            This.readerFileTypesHashMap.put (mediaData.getName, mediaData.getType);
+            mediaDataName := Java_Unbox (mediaDataNameArray (index));
+            mediaData := MediaData_Access (hashMap.get (Java_Box (mediaDataName)));
+            This.readerFileTypesHashMap.put (Java_Box (mediaData.getName), mediaData.getType);
         end loop;
         mediaIOUtil := MediaIOUtil_Package.getInstance;
         RESIZABLE_MEDIA := MediaTypeData_Package.getInstance.RESIZABLE_MEDIA;
         readerFileTypes := mediaIOUtil.getReaderFormatNames;
         for index in 0 .. (readerFileTypes'Length) - 1 loop
-            This.readerFileTypesHashMap.put (readerFileTypes (index), RESIZABLE_MEDIA);
+            This.readerFileTypesHashMap.put (readerFileTypes (index), Java_Box (RESIZABLE_MEDIA));
         end loop;
         writerFileTypes := mediaIOUtil.getWriterFormatNames;
         for index in 0 .. (writerFileTypes'Length) - 1 loop
-            This.writerFileTypesHashMap.put (writerFileTypes (index), RESIZABLE_MEDIA);
+            This.writerFileTypesHashMap.put (writerFileTypes (index), Java_Box (RESIZABLE_MEDIA));
         end loop;
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.HTTPREQUEST) then
             stringBuffer := StringMaker_Package.Create;
@@ -88,40 +88,40 @@ package body org.allbinary.logic.communication.http.file.upload.media.UploadMedi
 
    function isReaderSupported (This : in out UploadMediaSingleton; mediaFileType : Unbounded_String) return Boolean is
    begin
-        return This.readerFileTypesHashMap.containsKey (mediaFileType);
+        return This.readerFileTypesHashMap.containsKey (Java_Box (mediaFileType));
    end isReaderSupported;
 
    function isWriterSupported (This : in out UploadMediaSingleton; mediaFileType : Unbounded_String) return Boolean is
    begin
-        return This.readerFileTypesHashMap.containsKey (mediaFileType);
+        return This.readerFileTypesHashMap.containsKey (Java_Box (mediaFileType));
    end isWriterSupported;
 
    function isSupported (This : in out UploadMediaSingleton; mediaFileType : Unbounded_String) return Boolean is
    begin
-        return (This.isReaderSupported (mediaFileType)) and then (This.isWriterSupported (mediaFileType));
+        return (UploadMediaSingleton'Class (This).isReaderSupported (mediaFileType)) and then (UploadMediaSingleton'Class (This).isWriterSupported (mediaFileType));
    end isSupported;
 
    function isMedia (This : in out UploadMediaSingleton; mediaFileType : Unbounded_String; aMediaType : Unbounded_String) return Boolean is
    begin
-        return (This.isReaderMedia (mediaFileType, aMediaType)) and then (This.isWriterMedia (mediaFileType, aMediaType));
+        return (UploadMediaSingleton'Class (This).isReaderMedia (mediaFileType, aMediaType)) and then (UploadMediaSingleton'Class (This).isWriterMedia (mediaFileType, aMediaType));
    end isMedia;
 
    function isReaderMedia (This : in out UploadMediaSingleton; mediaFileType : Unbounded_String; aMediaType : Unbounded_String) return Boolean is
    begin
-        return This.isMedia (mediaFileType, aMediaType, This.readerFileTypesHashMap);
+        return UploadMediaSingleton'Class (This).isMedia (mediaFileType, aMediaType, This.readerFileTypesHashMap);
    end isReaderMedia;
 
    function isWriterMedia (This : in out UploadMediaSingleton; mediaFileType : Unbounded_String; aMediaType : Unbounded_String) return Boolean is
    begin
-        return This.isMedia (mediaFileType, aMediaType, This.writerFileTypesHashMap);
+        return UploadMediaSingleton'Class (This).isMedia (mediaFileType, aMediaType, This.writerFileTypesHashMap);
    end isWriterMedia;
 
    function isMedia (This : in out UploadMediaSingleton; mediaFileType : Unbounded_String; aMediaType : Unbounded_String; hashMap_Param : access HashMap_Package.HashMap'Class) return Boolean is
       hashMap : constant HashMap_Access := HashMap_Access (hashMap_Param);
       mediaType : Unbounded_String;
    begin
-        if hashMap.containsKey (mediaFileType) then
-            mediaType := Unbounded_String (hashMap.get (mediaFileType));
+        if hashMap.containsKey (Java_Box (mediaFileType)) then
+            mediaType := Java_Unbox (hashMap.get (Java_Box (mediaFileType)));
             if (mediaType.compareTo (aMediaType)) = (0) then
                 return True;
             else

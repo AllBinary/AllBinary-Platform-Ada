@@ -31,7 +31,7 @@ package body org.allbinary.logic.system.hardware.android.AndroidHardware_Package
       size : Integer;
    begin
       Initialize_Fields (This);
-        This.init (This.DEVICES);
+        AndroidHardware'Class (This).init (This.DEVICES);
         size := This.componentInterfaceVector.size;
         if (size) < (This.MINHARDWARE) then
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Not Enough Data For A Valid License On Linux")));
@@ -51,13 +51,13 @@ package body org.allbinary.logic.system.hardware.android.AndroidHardware_Package
    begin
         lineNumberReader := NullCloseable_Package.NULL_CLOSEABLE;
         begin
-            lineNumberReader := This.get (filePath);
+            lineNumberReader := AndroidHardware'Class (This).get (filePath);
         exception
             when Java_Occurrence : others =>
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (To_Unbounded_String ("Hardware Data: ") & This.toString, AndroidHardware_Access'(This'Unchecked_Access), This.commonStrings.INIT, e);
+            This.logUtil.put (To_Unbounded_String ("Hardware Data: ") & AndroidHardware'Class (This).toString, AndroidHardware_Access'(This'Unchecked_Access), This.commonStrings.INIT, e);
             Java_Throw (e);
                 end;
         end;

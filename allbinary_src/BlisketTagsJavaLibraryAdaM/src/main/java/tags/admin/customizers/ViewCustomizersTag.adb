@@ -39,8 +39,8 @@ package body tags.admin.customizers.ViewCustomizersTag_Package is
    function doStartTag (This : in out ViewCustomizersTag) return Integer is
    begin
         begin
-            This.setName (To_Unbounded_String ("Add Validation Customizers View"));
-            This.setObjectFile (To_Unbounded_String ("views.admin.customizers.CustomizersValidationView"));
+            ViewCustomizersTag'Class (This).setName (To_Unbounded_String ("Add Validation Customizers View"));
+            ViewCustomizersTag'Class (This).setObjectFile (To_Unbounded_String ("views.admin.customizers.CustomizersValidationView"));
             return StoreValidationTransformTag (This).doStartTag;
         exception
             when Java_Occurrence : others =>

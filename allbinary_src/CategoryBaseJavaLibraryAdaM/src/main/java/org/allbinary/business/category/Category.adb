@@ -38,7 +38,7 @@ package body org.allbinary.business.category.Category_Package is
         end if;
         This.categoryPropertiesInterface := categoryPropertiesFactoryInterface.getInstance;
         This.categoryHierarchyInterface := CategoryHierarchyInterface_Access (CategoryHierarchy_Package.Create (Category_Access'(This'Unchecked_Access), Category_Access'(This'Unchecked_Access)));
-        This.log;
+        Category'Class (This).log;
    end Initialize;
 
    function Create (categoryPropertiesFactoryInterface_Param : access CategoryPropertiesFactoryInterface_Package.CategoryPropertiesFactoryInterface'Class) return Category_Access is
@@ -54,7 +54,7 @@ package body org.allbinary.business.category.Category_Package is
       Initialize_Fields (This);
         This.categoryPropertiesInterface := categoryPropertiesFactoryInterface.getInstance;
         This.categoryHierarchyInterface := CategoryHierarchyInterface_Access (CategoryHierarchy_Package.Create (Category_Access'(This'Unchecked_Access), Category_Access'(This'Unchecked_Access), level));
-        This.log;
+        Category'Class (This).log;
    end Initialize;
 
    function Create (categoryPropertiesFactoryInterface_Param : access CategoryPropertiesFactoryInterface_Package.CategoryPropertiesFactoryInterface'Class; level : Integer) return Category_Access is
@@ -72,7 +72,7 @@ package body org.allbinary.business.category.Category_Package is
       Initialize_Fields (This);
         This.categoryPropertiesInterface := CategoryPropertiesInterface_Access (categoryPropertiesFactoryInterface.getInstance);
         This.categoryHierarchyInterface := CategoryHierarchyInterface_Access (CategoryHierarchy_Package.Create (rootCategoryInterface, parentCategoryInterface));
-        This.log;
+        Category'Class (This).log;
    end Initialize;
 
    function Create (rootCategoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class; parentCategoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class; categoryPropertiesFactoryInterface_Param : access CategoryPropertiesFactoryInterface_Package.CategoryPropertiesFactoryInterface'Class) return Category_Access is
@@ -106,7 +106,7 @@ package body org.allbinary.business.category.Category_Package is
    --  throws Exception
    function getFilePath (This : in out Category) return AbPath_Access is
    begin
-        return AbPath_Package.Create (This.getRootFilePath.toString & This.getProperties.getPath (This.getHierarchy).toString, This.getProperties.getFileName);
+        return AbPath_Package.Create (Category'Class (This).getRootFilePath.toString & Category'Class (This).getProperties.getPath (Category'Class (This).getHierarchy).toString, Category'Class (This).getProperties.getFileName);
    end getFilePath;
 
    --  throws Exception
@@ -134,13 +134,13 @@ package body org.allbinary.business.category.Category_Package is
       categoryInterface : constant CategoryInterface_Access := CategoryInterface_Access (categoryInterface_Param);
       childCategoryHierarchyInterface : CategoryHierarchyInterface_Access;
    begin
-        This.removeDuplicateChild (categoryInterface);
+        Category'Class (This).removeDuplicateChild (categoryInterface);
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.CATEGORY) then
             This.logUtil.putF (To_Unbounded_String ("adding"), Category_Access'(This'Unchecked_Access), To_Unbounded_String ("addChild"));
         end if;
         childCategoryHierarchyInterface := categoryInterface.getHierarchy;
         childCategoryHierarchyInterface.setParent (Category_Access'(This'Unchecked_Access));
-        childCategoryHierarchyInterface.setRoot (This.getHierarchy.getRoot);
+        childCategoryHierarchyInterface.setRoot (Category'Class (This).getHierarchy.getRoot);
         categoryInterface.setHierarchy (childCategoryHierarchyInterface);
         This.typeVector.add (This.CATEGORY);
         return This.childCategoryVector.add (categoryInterface);
@@ -173,7 +173,7 @@ package body org.allbinary.business.category.Category_Package is
                 end if;
             end if;
         end loop;
-        This.removal (removalVector);
+        Category'Class (This).removal (removalVector);
         return bool_return;
    end removeChild;
 
@@ -225,7 +225,7 @@ package body org.allbinary.business.category.Category_Package is
                 end if;
             end if;
         end loop;
-        This.removal (removalVector);
+        Category'Class (This).removal (removalVector);
         return bool_return;
    end removeDuplicateChild;
 
@@ -338,9 +338,9 @@ package body org.allbinary.business.category.Category_Package is
             stringBuffer.append (To_Unbounded_String ("Category Name: "));
             stringBuffer.append (This.categoryPropertiesInterface.getValue);
             stringBuffer.append (To_Unbounded_String ("" & ASCII.LF & "Path = "));
-            stringBuffer.append (This.getPath.toString);
+            stringBuffer.append (Category'Class (This).getPath.toString);
             stringBuffer.append (To_Unbounded_String ("" & ASCII.LF & "File Path: "));
-            stringBuffer.append (This.getFilePath.toString);
+            stringBuffer.append (Category'Class (This).getFilePath.toString);
             This.logUtil.putF (stringBuffer.toString, Category_Access'(This'Unchecked_Access), To_Unbounded_String ("log()"));
         end if;
    end log;

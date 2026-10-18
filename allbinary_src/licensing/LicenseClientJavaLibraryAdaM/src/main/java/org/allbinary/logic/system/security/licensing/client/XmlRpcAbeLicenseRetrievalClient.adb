@@ -50,26 +50,26 @@ package body org.allbinary.logic.system.security.licensing.client.XmlRpcAbeLicen
       abeLicenseInterface : AbeLicenseInterface_Access;
    begin
         begin
-            server := This.getClientInfo.getLicenseServer (This.getServer);
+            server := XmlRpcAbeLicenseRetrievalClient'Class (This).getClientInfo.getLicenseServer (XmlRpcAbeLicenseRetrievalClient'Class (This).getServer);
             stringBuffer := StringMaker_Package.Create;
             stringBuffer.append (TRYING);
-            stringBuffer.appendint (Integer (This.getServer));
+            stringBuffer.appendint (Integer (XmlRpcAbeLicenseRetrievalClient'Class (This).getServer));
             stringBuffer.append (SEP_Package);
             stringBuffer.append (server);
             This.logUtil.putF (Java_Image (CommonLabels_Package.getInstance.START_LABEL) & stringBuffer.toString, XmlRpcAbeLicenseRetrievalClient_Access'(This'Unchecked_Access), This.commonStrings.GET);
             param := BasicArrayListD_Package.Create;
             xmlRpcClient := XmlRpcClient_Package.Create (server);
-            This.setClient (xmlRpcClient);
+            XmlRpcAbeLicenseRetrievalClient'Class (This).setClient (xmlRpcClient);
             xmlRpcClient.setBasicAuthentication (null, null);
-            hashtable := This.getClientInfo.toHashtable;
+            hashtable := XmlRpcAbeLicenseRetrievalClient'Class (This).getClientInfo.toHashtable;
             This.logUtil.putF (Java_Image (CLIENT_INFO) & hashtable.toString, XmlRpcAbeLicenseRetrievalClient_Access'(This'Unchecked_Access), This.commonStrings.GET);
             param.add (hashtable);
-            result := xmlRpcClient.execute (This.getRemoteMethod, param, cryptInterface);
+            result := xmlRpcClient.execute (XmlRpcAbeLicenseRetrievalClient'Class (This).getRemoteMethod, param, cryptInterface);
             This.logUtil.putF (Java_Image (RESULT) & result.toString, XmlRpcAbeLicenseRetrievalClient_Access'(This'Unchecked_Access), This.commonStrings.GET);
             resultHashtable := ABHashtable_Access (result);
             if not (AbeClientLicense_Package.hasRequiredKeys (resultHashtable)) then
                 This.logUtil.putF (INVALID, XmlRpcAbeLicenseRetrievalClient_Access'(This'Unchecked_Access), This.commonStrings.GET);
-                return This.tryAnother (anyType);
+                return XmlRpcAbeLicenseRetrievalClient'Class (This).tryAnother (anyType);
             end if;
             abeLicenseInterface := AbeClientLicense_Package.Create (resultHashtable);
             This.logUtil.putF (Java_Image (This.commonStrings.END_Id) & stringBuffer.toString, XmlRpcAbeLicenseRetrievalClient_Access'(This'Unchecked_Access), This.commonStrings.GET);
@@ -83,7 +83,7 @@ package body org.allbinary.logic.system.security.licensing.client.XmlRpcAbeLicen
             This.logUtil.put (EXCEPTION_IN_CLIENT, XmlRpcAbeLicenseRetrievalClient_Access'(This'Unchecked_Access), This.commonStrings.GET, e);
             This.logUtil.putF ((TRYING_OTHER_SERVERS) + (ExceptionUtil_Package.getInstance.getStackTrace (e)), XmlRpcAbeLicenseRetrievalClient_Access'(This'Unchecked_Access), This.commonStrings.GET);
             if not (Java_Get_Message (e).startsWith (HOST_NOT_RESOLVED)) then
-                return This.tryAnother (anyType);
+                return XmlRpcAbeLicenseRetrievalClient'Class (This).tryAnother (anyType);
             else
                 This.isOnline := False;
                 Java_Throw (Java_New_Exception ("Exception", HOST_NOT_RESOLVED_MSG));

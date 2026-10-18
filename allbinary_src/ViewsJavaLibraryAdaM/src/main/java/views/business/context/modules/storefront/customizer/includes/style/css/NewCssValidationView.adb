@@ -47,7 +47,7 @@ package body views.business.context.modules.storefront.customizer.includes.style
    begin
         begin
             begin
-                CustomizerUtil_Package.getInstance.insert (This.getTransformInfoInterface, DomNodeInterface_Access (This.styleValidationInterface));
+                CustomizerUtil_Package.getInstance.insert (NewCssValidationView'Class (This).getTransformInfoInterface, DomNodeInterface_Access (This.styleValidationInterface));
             end;
             return True;
         exception

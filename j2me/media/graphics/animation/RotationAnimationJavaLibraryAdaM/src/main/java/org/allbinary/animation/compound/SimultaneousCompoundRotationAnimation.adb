@@ -152,7 +152,7 @@ package body org.allbinary.animation.compound.SimultaneousCompoundRotationAnimat
    procedure adjustFrameToAngle (This : in out SimultaneousCompoundRotationAnimation; newAngle_Param : access Angle_Package.Angle'Class) is
       newAngle : constant Angle_Access := Angle_Access (newAngle_Param);
    begin
-        This.adjustFrame (newAngle.getValue);
+        SimultaneousCompoundRotationAnimation'Class (This).adjustFrame (newAngle.getValue);
    end adjustFrameToAngle;
 
    procedure adjustFrame (This : in out SimultaneousCompoundRotationAnimation; angle : Short_Integer) is

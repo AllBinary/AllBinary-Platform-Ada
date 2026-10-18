@@ -36,17 +36,17 @@ package body org.allbinary.logic.control.search.SearchParams_Package is
    begin
       Initialize_Fields (This);
         This.columnsAndSearchValues := StdUtil_Package.getInstance.createHashMap;
-        This.setLength (request.getParameter (SearchData_Package.LENGTH));
-        This.setOrder (request.getParameter (SearchData_Package.ORDER));
+        SearchParams'Class (This).setLength (request.getParameter (SearchData_Package.LENGTH));
+        SearchParams'Class (This).setOrder (request.getParameter (SearchData_Package.ORDER));
         page := request.getParameter (SearchData_Package.PAGE);
-        This.setStartPage (page);
-        This.setEndPage (page);
-        This.setSortBy (request.getParameter (SearchData_Package.SORTBY));
+        SearchParams'Class (This).setStartPage (page);
+        SearchParams'Class (This).setEndPage (page);
+        SearchParams'Class (This).setSortBy (request.getParameter (SearchData_Package.SORTBY));
         index := 0;
         columnName := request.getParameter (Java_Image (SearchData_Package.COLUMNNAME) & To_Unbounded_String ("[0]"));
         columnValue := request.getParameter (Java_Image (SearchData_Package.COLUMNVALUE) & To_Unbounded_String ("[0]"));
         while (columnName) /= (Null_Unbounded_String) loop
-            This.add (columnName, columnValue);
+            SearchParams'Class (This).add (columnName, columnValue);
             index := index + 1;
             columnName := request.getParameter (Java_Image (SearchData_Package.COLUMNNAME) & To_Unbounded_String ("[") & Java_Image (index) & To_Unbounded_String ("]"));
             columnValue := request.getParameter (Java_Image (SearchData_Package.COLUMNVALUE) & To_Unbounded_String ("[") & Java_Image (index) & To_Unbounded_String ("]"));
@@ -62,7 +62,7 @@ package body org.allbinary.logic.control.search.SearchParams_Package is
 
    procedure add (This : in out SearchParams; column : Unbounded_String; value : Unbounded_String) is
    begin
-        This.columnsAndSearchValues.put (column, value);
+        This.columnsAndSearchValues.put (Java_Box (column), Java_Box (value));
    end add;
 
    procedure setOrder (This : in out SearchParams; value : Unbounded_String) is
@@ -153,10 +153,10 @@ package body org.allbinary.logic.control.search.SearchParams_Package is
       paramsNode : Node_Access;
    begin
         paramsNode := ModDomHelper_Package.createNameValueNodes (document, SearchData_Package.PARAMS, SearchData_Package.PARAMS);
-        paramsNode.appendChild (This.getFieldsNode (document));
-        paramsNode.appendChild (This.getOrderNode (document));
-        paramsNode.appendChild (This.getSortByNode (document));
-        paramsNode.appendChild (This.getLengthNode (document));
+        paramsNode.appendChild (SearchParams'Class (This).getFieldsNode (document));
+        paramsNode.appendChild (SearchParams'Class (This).getOrderNode (document));
+        paramsNode.appendChild (SearchParams'Class (This).getSortByNode (document));
+        paramsNode.appendChild (SearchParams'Class (This).getLengthNode (document));
         return paramsNode;
    end getParamsNode;
 
@@ -176,8 +176,8 @@ package body org.allbinary.logic.control.search.SearchParams_Package is
         searchValueArray := set.toArray;
         size := searchValueArray'Length;
         for index in 0 .. (size) - 1 loop
-            key := Unbounded_String (searchValueArray (index));
-            searchValue := Unbounded_String (This.columnsAndSearchValues.get (key));
+            key := Java_Unbox (searchValueArray (index));
+            searchValue := Java_Unbox (This.columnsAndSearchValues.get (Java_Box (key)));
             fieldsNode.appendChild (ModDomHelper_Package.createNameValueNodes (document, SearchData_Package.FIELD, key, ToDomHelper_Package.convertNull (searchValue)));
         end loop;
         return fieldsNode;
@@ -187,21 +187,21 @@ package body org.allbinary.logic.control.search.SearchParams_Package is
    function getOrderNode (This : in out SearchParams; document_Param : access Document_Package.Document'Class) return Node_Access is
       document : constant Document_Access := Document_Access (document_Param);
    begin
-        return ModDomHelper_Package.createNameValueNodes (document, SearchData_Package.ORDER, ToDomHelper_Package.convertNull (This.getOrder));
+        return ModDomHelper_Package.createNameValueNodes (document, SearchData_Package.ORDER, ToDomHelper_Package.convertNull (SearchParams'Class (This).getOrder));
    end getOrderNode;
 
    --  throws Exception
    function getSortByNode (This : in out SearchParams; document_Param : access Document_Package.Document'Class) return Node_Access is
       document : constant Document_Access := Document_Access (document_Param);
    begin
-        return ModDomHelper_Package.createNameValueNodes (document, SearchData_Package.SORTBY, ToDomHelper_Package.convertNull (This.getSortBy));
+        return ModDomHelper_Package.createNameValueNodes (document, SearchData_Package.SORTBY, ToDomHelper_Package.convertNull (SearchParams'Class (This).getSortBy));
    end getSortByNode;
 
    --  throws Exception
    function getLengthNode (This : in out SearchParams; document_Param : access Document_Package.Document'Class) return Node_Access is
       document : constant Document_Access := Document_Access (document_Param);
    begin
-        return ModDomHelper_Package.createNameValueNodes (document, SearchData_Package.LENGTH, ToDomHelper_Package.convertNull (This.getLength));
+        return ModDomHelper_Package.createNameValueNodes (document, SearchData_Package.LENGTH, ToDomHelper_Package.convertNull (SearchParams'Class (This).getLength));
    end getLengthNode;
 
    procedure getParamsNode (This : in out SearchParams; document_Param : access Document_Package.Document'Class) is

@@ -37,7 +37,7 @@ package body org.allbinary.logic.visual.dhtml.html.HtmlTag_Package is
 
    procedure addAttribute (This : in out HtmlTag; key : Unbounded_String; value : Unbounded_String) is
    begin
-        This.otherAttributes.put (key, value);
+        This.otherAttributes.put (Java_Box (key), Java_Box (value));
    end addAttribute;
 
 end org.allbinary.logic.visual.dhtml.html.HtmlTag_Package;

@@ -43,7 +43,7 @@ package body org.allbinary.input.motion.button.EndLevelNoBuildingSelectedTouchBu
             list := BasicArrayListD_Package.Create;
             list.addAllList (BasicTouchButtonsBuilder_Package.Create.getList);
             list.addAllList (BuildingScrollTouchButtonsBuilder_Package.Create.getList);
-            This.addList (list);
+            EndLevelNoBuildingSelectedTouchButtonsBuilder'Class (This).addList (list);
             return list;
         exception
             when Java_Occurrence : others =>

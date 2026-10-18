@@ -63,10 +63,10 @@ package body org.allbinary.logic.system.SoftwareInformation_Package is
         VERSION := To_Unbounded_String ("Version: ");
         stringBuffer := StringMaker_Package.Create;
         stringBuffer.append (NAME);
-        stringBuffer.append (This.getName);
+        stringBuffer.append (SoftwareInformation'Class (This).getName);
         stringBuffer.append (CommonSeps_Package.getInstance.SPACE);
         stringBuffer.append (VERSION);
-        stringBuffer.append (This.getVersion);
+        stringBuffer.append (SoftwareInformation'Class (This).getVersion);
         return stringBuffer.toString;
    end toString;
 

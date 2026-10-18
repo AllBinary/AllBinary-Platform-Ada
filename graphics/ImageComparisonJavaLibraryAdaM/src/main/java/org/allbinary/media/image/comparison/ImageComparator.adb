@@ -79,7 +79,7 @@ package body org.allbinary.media.image.comparison.ImageComparator_Package is
       bufferedImage1 : constant BufferedImage_Access := BufferedImage_Access (bufferedImage1_Param);
       bufferedImage2 : constant BufferedImage_Access := BufferedImage_Access (bufferedImage2_Param);
    begin
-        return This.compare (bufferedImage1, bufferedImage2, frameOne, frameTwo, tolerance, StringUtil_Package.getInstance.EMPTY_STRING);
+        return ImageComparator'Class (This).compare (bufferedImage1, bufferedImage2, frameOne, frameTwo, tolerance, StringUtil_Package.getInstance.EMPTY_STRING);
    end compare;
 
    --  throws Exception
@@ -96,7 +96,7 @@ package body org.allbinary.media.image.comparison.ImageComparator_Package is
         imageComparisonInfo := ImageComparisonResult_Package.Create (name, bufferedImage1, bufferedImage2, frameOne, frameTwo, tolerance);
         for indexY in 0 .. (imageComparisonInfo.imageHeight) - 1 loop
             for indexX in 0 .. (imageComparisonInfo.imageWidth) - 1 loop
-                This.process (imageComparisonInfo, PointFactory_Package.getInstance.createXY (indexX, indexY));
+                ImageComparator'Class (This).process (imageComparisonInfo, PointFactory_Package.getInstance.createXY (indexX, indexY));
                 if (imageComparisonInfo.getNonMatchingPixelVector.size) > (This.imageComparatorConstraintsInterface.getMaxNonMatchingPixelDeltas) then
                     exit;
                 end if;

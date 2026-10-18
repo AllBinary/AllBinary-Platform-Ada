@@ -52,7 +52,7 @@ package body org.allbinary.media.audio.AndroidMediaPlayerWrapper_Package is
                 if (mediaPlayer) = (null) then
                     Java_Throw (Java_New_Exception ("Exception", StringMaker_Package.Create.append (To_Unbounded_String ("Failed to create media player for: ")).append (resource).append (To_Unbounded_String (" with id: ")).append (resourceUtil.getResourceId (resource).toString).toString));
                 end if;
-                This.setMediaPlayer (mediaPlayer);
+                AndroidMediaPlayerWrapper'Class (This).setMediaPlayer (mediaPlayer);
                 This.mediaPlayer.setLooping (False);
             end if;
         exception

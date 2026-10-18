@@ -45,7 +45,7 @@ package body org.allbinary.business.category.store.theme.StoreThemeCategoryView_
       index : Integer;
    begin
         node := CategoryView (This).toXmlNode (document);
-        storeThemeCategoryInterface := StoreThemeCategoryInterface_Access (This.getCategoryInterface);
+        storeThemeCategoryInterface := StoreThemeCategoryInterface_Access (StoreThemeCategoryView'Class (This).getCategoryInterface);
         themeValidationArray := ThemeValidation_Access_Array_Access (storeThemeCategoryInterface.getThemes.toArray);
         Arrays_Package.sort (themeValidationArray, ThemeComparator_Package.Create);
         size := themeValidationArray'Length;

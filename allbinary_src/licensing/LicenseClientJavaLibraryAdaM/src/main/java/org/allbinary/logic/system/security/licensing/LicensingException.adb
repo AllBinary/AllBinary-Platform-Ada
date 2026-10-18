@@ -12,45 +12,6 @@
 --  
 --  Generated Code Do Not Modify
 
-
-package body org.allbinary.logic.system.security.licensing.LicensingException_Package is
-
-   procedure Initialize_Fields (This : in out LicensingException'Class) is
-   begin
-      null;
-   end Initialize_Fields;
-
-
-   procedure Initialize (This : in out LicensingException'Class) is
-   begin
-      Exception_Package.Initialize (This);
-      Initialize_Fields (This);
-        null;
-   end Initialize;
-
-   function Create return LicensingException_Access is
-      This : constant LicensingException_Access := new LicensingException;
-   begin
-      LicensingException_Package.Initialize (This.all);
-      return This;
-   end Create;
-
-   procedure Initialize (This : in out LicensingException'Class; msg : Unbounded_String) is
-   begin
-        Exception_Package.Initialize (This, msg);
-   end Initialize;
-
-   function Create (msg : Unbounded_String) return LicensingException_Access is
-      This : constant LicensingException_Access := new LicensingException;
-   begin
-      LicensingException_Package.Initialize (This.all, msg);
-      return This;
-   end Create;
-
-begin
-   null;
-   serialVersionUID := 1;
-
-end org.allbinary.logic.system.security.licensing.LicensingException_Package;
+--  Java exception class LicensingException is only a package spec
 
 

@@ -26,8 +26,8 @@ package body org.allbinary.game.input.Input_Package is
    procedure Initialize (This : in out Input'Class; id : Integer; name : Unbounded_String) is
    begin
       Initialize_Fields (This);
-        This.setId (id);
-        This.setName (name);
+        Input'Class (This).setId (id);
+        Input'Class (This).setName (name);
    end Initialize;
 
    function Create (id : Integer; name : Unbounded_String) return Input_Access is
@@ -62,9 +62,9 @@ package body org.allbinary.game.input.Input_Package is
    begin
         stringBuffer := StringMaker_Package.Create;
         stringBuffer.append (To_Unbounded_String ("Name: "));
-        stringBuffer.append (This.getName);
+        stringBuffer.append (Input'Class (This).getName);
         stringBuffer.append (To_Unbounded_String (" Id: "));
-        stringBuffer.appendint (This.getId);
+        stringBuffer.appendint (Input'Class (This).getId);
         return stringBuffer.toString;
    end toString;
 

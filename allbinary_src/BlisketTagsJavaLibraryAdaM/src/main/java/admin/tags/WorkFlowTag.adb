@@ -25,8 +25,8 @@ package body admin.tags.WorkFlowTag_Package is
    begin
       TableTag_Package.Initialize (This);
       Initialize_Fields (This);
-        This.setTagHelperFactory (WorkFlowHelperFactory_Package.Create);
-        This.setTagRequestHelperFactory (WorkFlowHelperFactory_Package.Create);
+        WorkFlowTag'Class (This).setTagHelperFactory (WorkFlowHelperFactory_Package.Create);
+        WorkFlowTag'Class (This).setTagRequestHelperFactory (WorkFlowHelperFactory_Package.Create);
    end Initialize;
 
    function Create return WorkFlowTag_Access is

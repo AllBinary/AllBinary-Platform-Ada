@@ -20,12 +20,13 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with javax.microedition.lcdui.Command_Package; use javax.microedition.lcdui.Command_Package;
+with javax.microedition.lcdui.Command_Package; use javax.microedition.lcdui.Command_Package;
 with org.allbinary.game.score.HighScoreCommandsBaseFactory_Package; use org.allbinary.game.score.HighScoreCommandsBaseFactory_Package;
 with org.allbinary.game.score.HighScoreCommands_Package; use org.allbinary.game.score.HighScoreCommands_Package;
 
 package org.allbinary.game.score.HighScoreCommandsFactory_Package is
 
+   package Command_Package renames Standard.javax.microedition.lcdui.Command_Package;
 
    type HighScoreCommandsFactory is tagged;
    type HighScoreCommandsFactory_Access is access all HighScoreCommandsFactory'Class;

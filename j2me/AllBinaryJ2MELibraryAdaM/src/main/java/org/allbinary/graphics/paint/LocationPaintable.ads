@@ -20,11 +20,12 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
 with org.allbinary.graphics.paint.LocationPaintableInterface_Package; use org.allbinary.graphics.paint.LocationPaintableInterface_Package;
 
 package org.allbinary.graphics.paint.LocationPaintable_Package is
 
+   package Graphics_Package renames Standard.javax.microedition.lcdui.Graphics_Package;
 
    type LocationPaintable is tagged;
    type LocationPaintable_Access is access all LocationPaintable'Class;

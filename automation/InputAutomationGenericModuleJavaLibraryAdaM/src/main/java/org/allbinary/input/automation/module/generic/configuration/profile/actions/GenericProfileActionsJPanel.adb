@@ -40,7 +40,7 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
    begin
       JPanel_Package.Initialize (This);
       Initialize_Fields (This);
-        This.initComponents;
+        GenericProfileActionsJPanel'Class (This).initComponents;
    end Initialize;
 
    function Create return GenericProfileActionsJPanel_Access is
@@ -76,7 +76,7 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
 --     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
 --        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
---                  This.okNewProfileActionJButtonActionPerformed (evt);
+--                  GenericProfileActionsJPanel'Class (This).okNewProfileActionJButtonActionPerformed (evt);
 --     end actionPerformed;
 );
         newProfileActionJDialogLayout := GroupLayout_Package.Create (This.newProfileActionJDialog.getContentPane);
@@ -89,7 +89,7 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
 --     procedure valueChanged (This : in out ; evt_Param : access ListSelectionEvent_Package.ListSelectionEvent'Class) is
 --        evt : constant ListSelectionEvent_Access := ListSelectionEvent_Access (evt_Param);
 --     begin
---                  This.genericProfileActionsJListValueChanged (evt);
+--                  GenericProfileActionsJPanel'Class (This).genericProfileActionsJListValueChanged (evt);
 --     end valueChanged;
 );
         This.genericProfileActionsJScrollPane.setViewportView (This.genericProfileActionsJList);
@@ -99,7 +99,7 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
 --     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
 --        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
---                  This.newActionJButtonActionPerformed (evt);
+--                  GenericProfileActionsJPanel'Class (This).newActionJButtonActionPerformed (evt);
 --     end actionPerformed;
 );
         This.deleteActionJButton.setText (To_Unbounded_String ("Delete"));
@@ -108,7 +108,7 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
 --     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
 --        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
---                  This.deleteActionJButtonActionPerformed (evt);
+--                  GenericProfileActionsJPanel'Class (This).deleteActionJButtonActionPerformed (evt);
 --     end actionPerformed;
 );
         This.saveJButton.setText (To_Unbounded_String ("Save"));
@@ -117,7 +117,7 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
 --     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
 --        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
---                  This.saveJButtonActionPerformed (evt);
+--                  GenericProfileActionsJPanel'Class (This).saveJButtonActionPerformed (evt);
 --     end actionPerformed;
 );
         This.blankGenericProfileActionJPanel.setMinimumSize (Dimension_Package.Create (500, 300));
@@ -130,7 +130,7 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
         genericProfileActionsJPanelLayout.setHorizontalGroup (genericProfileActionsJPanelLayout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (genericProfileActionsJPanelLayout.createSequentialGroup.addComponent (This.genericProfileActionsJScrollPane, javax_Package.swing.GroupLayout.PREFERRED_SIZE, 95, javax_Package.swing.GroupLayout.PREFERRED_SIZE).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent (This.blankGenericProfileActionJPanel, javax_Package.swing.GroupLayout.DEFAULT_SIZE, javax_Package.swing.GroupLayout.DEFAULT_SIZE, Short_Package.MAX_VALUE)).addGroup (genericProfileActionsJPanelLayout.createSequentialGroup.addComponent (This.newActionJButton).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent (This.deleteActionJButton).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent (This.saveJButton).addContainerGap));
         genericProfileActionsJPanelLayout.setVerticalGroup (genericProfileActionsJPanelLayout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (genericProfileActionsJPanelLayout.createSequentialGroup.addGroup (genericProfileActionsJPanelLayout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.BASELINE).addComponent (This.newActionJButton).addComponent (This.deleteActionJButton).addComponent (This.saveJButton)).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addGroup (genericProfileActionsJPanelLayout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING, False).addComponent (This.blankGenericProfileActionJPanel, 0, 296, Short_Package.MAX_VALUE).addComponent (This.genericProfileActionsJScrollPane, javax_Package.swing.GroupLayout.DEFAULT_SIZE, 296, Short_Package.MAX_VALUE)).addContainerGap (javax_Package.swing.GroupLayout.DEFAULT_SIZE, Short_Package.MAX_VALUE)));
         layout := GroupLayout_Package.Create (GenericProfileActionsJPanel_Access'(This'Unchecked_Access));
-        This.setLayout (layout);
+        GenericProfileActionsJPanel'Class (This).setLayout (layout);
         layout.setHorizontalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (layout.createSequentialGroup.addComponent (This.genericProfileActionsJPanel, javax_Package.swing.GroupLayout.PREFERRED_SIZE, 596, javax_Package.swing.GroupLayout.PREFERRED_SIZE).addContainerGap (javax_Package.swing.GroupLayout.DEFAULT_SIZE, Short_Package.MAX_VALUE)));
         layout.setVerticalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addComponent (This.genericProfileActionsJPanel, javax_Package.swing.GroupLayout.PREFERRED_SIZE, 336, javax_Package.swing.GroupLayout.PREFERRED_SIZE));
    end initComponents;
@@ -138,7 +138,7 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
    procedure setModel (This : in out GenericProfileActionsJPanel) is
       defaultListModelHelper : DefaultListModelHelper_Access;
    begin
-        defaultListModelHelper := This.getGenericProfileActions.getDefaultListModelHelper;
+        defaultListModelHelper := GenericProfileActionsJPanel'Class (This).getGenericProfileActions.getDefaultListModelHelper;
         if (defaultListModelHelper.getListModel.getSize) > (0) then
             This.genericProfileActionsJList.setModel (defaultListModelHelper.getListModel);
         end if;
@@ -148,7 +148,7 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
       evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
         begin
-            This.getGenericProfileActions.save;
+            GenericProfileActionsJPanel'Class (This).getGenericProfileActions.save;
         exception
             when Java_Occurrence : others =>
                 declare
@@ -165,13 +165,13 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
    begin
         This.blankGenericProfileActionJPanel.removeAll;
         if (profileActionNameString) /= (Null_Unbounded_String) then
-            genericProfileAction := This.getGenericProfileActions.getAction (profileActionNameString);
-            This.setGenericProfileActionJPanel (GenericProfileActionJPanel_Package.Create);
-            This.getGenericProfileActionJPanel.setGenericProfileAction (genericProfileAction);
-            This.getGenericProfileActionJPanel.updateProfileActionUI;
+            genericProfileAction := GenericProfileActionsJPanel'Class (This).getGenericProfileActions.getAction (profileActionNameString);
+            GenericProfileActionsJPanel'Class (This).setGenericProfileActionJPanel (GenericProfileActionJPanel_Package.Create);
+            GenericProfileActionsJPanel'Class (This).getGenericProfileActionJPanel.setGenericProfileAction (genericProfileAction);
+            GenericProfileActionsJPanel'Class (This).getGenericProfileActionJPanel.updateProfileActionUI;
             layout := GroupLayout_Access (This.blankGenericProfileActionJPanel.getLayout);
-            layout.setHorizontalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGap (0, 395, Short_Package.MAX_VALUE).addComponent (This.getGenericProfileActionJPanel, javax_Package.swing.GroupLayout.PREFERRED_SIZE, javax_Package.swing.GroupLayout.DEFAULT_SIZE, javax_Package.swing.GroupLayout.PREFERRED_SIZE));
-            layout.setVerticalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGap (0, 256, Short_Package.MAX_VALUE).addComponent (This.getGenericProfileActionJPanel, javax_Package.swing.GroupLayout.PREFERRED_SIZE, javax_Package.swing.GroupLayout.DEFAULT_SIZE, javax_Package.swing.GroupLayout.PREFERRED_SIZE));
+            layout.setHorizontalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGap (0, 395, Short_Package.MAX_VALUE).addComponent (GenericProfileActionsJPanel'Class (This).getGenericProfileActionJPanel, javax_Package.swing.GroupLayout.PREFERRED_SIZE, javax_Package.swing.GroupLayout.DEFAULT_SIZE, javax_Package.swing.GroupLayout.PREFERRED_SIZE));
+            layout.setVerticalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGap (0, 256, Short_Package.MAX_VALUE).addComponent (GenericProfileActionsJPanel'Class (This).getGenericProfileActionJPanel, javax_Package.swing.GroupLayout.PREFERRED_SIZE, javax_Package.swing.GroupLayout.DEFAULT_SIZE, javax_Package.swing.GroupLayout.PREFERRED_SIZE));
             This.logUtil.putF (To_Unbounded_String ("Setting Configuration Profile Actions JPanel"), GenericProfileActionsJPanel_Access'(This'Unchecked_Access), To_Unbounded_String ("genericProfileActionsJListValueChanged"));
         end if;
    end updateProfileActionUI;
@@ -181,8 +181,8 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
       profileActionNameString : Unbounded_String;
    begin
         begin
-            profileActionNameString := Unbounded_String (This.genericProfileActionsJList.getSelectedValue);
-            This.updateProfileActionUI (profileActionNameString);
+            profileActionNameString := Java_Unbox (This.genericProfileActionsJList.getSelectedValue);
+            GenericProfileActionsJPanel'Class (This).updateProfileActionUI (profileActionNameString);
         exception
             when Java_Occurrence : others =>
                 declare
@@ -199,11 +199,11 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
    begin
         begin
             newActionName := This.newProfileActionJTextField.getText;
-            This.getGenericProfileActions.add (newActionName);
-            This.setModel;
+            GenericProfileActionsJPanel'Class (This).getGenericProfileActions.add (newActionName);
+            GenericProfileActionsJPanel'Class (This).setModel;
             This.genericProfileActionsJList.setSelectedValue (newActionName, True);
             This.newProfileActionJDialog.setVisible (False);
-            This.updateProfileActionUI (newActionName);
+            GenericProfileActionsJPanel'Class (This).updateProfileActionUI (newActionName);
         exception
             when Java_Occurrence : others =>
                 declare
@@ -223,10 +223,10 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
         begin
             anyType := This.genericProfileActionsJList.getSelectedValues;
             for index in 0 .. (anyType'Length) - 1 loop
-                nextSelectedValueString := Unbounded_String (anyType (index));
-                This.getGenericProfileActions.remove (nextSelectedValueString);
+                nextSelectedValueString := Java_Unbox (anyType (index));
+                GenericProfileActionsJPanel'Class (This).getGenericProfileActions.remove (nextSelectedValueString);
             end loop;
-            This.selectFirstElement;
+            GenericProfileActionsJPanel'Class (This).selectFirstElement;
         exception
             when Java_Occurrence : others =>
                 declare
@@ -240,10 +240,10 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
    --  throws Exception
    procedure selectFirstElement (This : in out GenericProfileActionsJPanel) is
    begin
-        This.setModel;
+        GenericProfileActionsJPanel'Class (This).setModel;
         if (This.genericProfileActionsJList.getModel.getSize) > (0) then
             This.genericProfileActionsJList.setSelectedValue (This.genericProfileActionsJList.getModel.getElementAt (0), True);
-            This.updateProfileActionUI (Unbounded_String (This.genericProfileActionsJList.getModel.getElementAt (0)));
+            GenericProfileActionsJPanel'Class (This).updateProfileActionUI (Java_Unbox (This.genericProfileActionsJList.getModel.getElementAt (0)));
         else
             This.blankGenericProfileActionJPanel.removeAll;
             This.blankGenericProfileActionJPanel.repaint;

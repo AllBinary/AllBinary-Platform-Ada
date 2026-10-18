@@ -49,7 +49,7 @@ package body org.allbinary.input.automation.log.FrameLog_Package is
    begin
         size := vectorOfStrings.size;
         for index in 0 .. (size) - 1 loop
-            This.addAction (Unbounded_String (vectorOfStrings.get (index)));
+            FrameLog'Class (This).addAction (Java_Unbox (vectorOfStrings.get (index)));
         end loop;
    end addActions;
 
@@ -72,7 +72,7 @@ package body org.allbinary.input.automation.log.FrameLog_Package is
         filePath := filePathStringBuffer.toString;
         fileOutputStream := FileOutputStream_Package.Create (File_Package.Create (filePath));
         fileOutputStream.write (FrameLog_Package.frameBytes);
-        fileOutputStream.write (This.getFrame.toString.getBytes);
+        fileOutputStream.write (FrameLog'Class (This).getFrame.toString.getBytes);
         fileOutputStream.write (ASCII.LF);
         fileOutputStream.write (FrameLog_Package.info);
         fileOutputStream.write (This.infoStringBuffer.toString.getBytes);

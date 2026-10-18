@@ -64,6 +64,7 @@ package body org.allbinary.media.graphics.geography.map.racetrack.BasePathFindin
       geographicMapInterface : constant BasicGeographicMap_Access := BasicGeographicMap_Access (geographicMapInterface_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return null;
    end getInstancePathFindingInfo;
 
    procedure getInstancePathFindingInfo (This : in out BasePathFindingInfoFactory; geographicMapInterface_Param : access BasicGeographicMap_Package.BasicGeographicMap'Class; graphArray : Integer_Array_Access_Array_Access) is

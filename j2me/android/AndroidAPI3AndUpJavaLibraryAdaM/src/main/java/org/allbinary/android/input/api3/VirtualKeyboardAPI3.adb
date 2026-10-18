@@ -58,21 +58,21 @@ package body org.allbinary.android.input.api3.VirtualKeyboardAPI3_Package is
    begin
         isShow := Boolean (virtualKeyboardEvent.getSource);
         if isShow.booleanValue then
-            This.showVirtualKeyboard;
+            VirtualKeyboardAPI3'Class (This).showVirtualKeyboard;
         else
-            This.hideVirtualKeyboard;
+            VirtualKeyboardAPI3'Class (This).hideVirtualKeyboard;
         end if;
    end onVirtualKeyboardEvent;
 
    procedure forceHide (This : in out VirtualKeyboardAPI3) is
    begin
-        This.hideVirtualKeyboard;
+        VirtualKeyboardAPI3'Class (This).hideVirtualKeyboard;
    end forceHide;
 
    procedure hide (This : in out VirtualKeyboardAPI3) is
    begin
         if This.virtualKeyboard then
-            This.forceHide;
+            VirtualKeyboardAPI3'Class (This).forceHide;
         end if;
    end hide;
 

@@ -26,7 +26,7 @@ package body org.allbinary.configuration.ApplicationConfiguration_Package is
    begin
       Initialize_Fields (This);
         begin
-            This.read;
+            ApplicationConfiguration'Class (This).read;
         exception
             when Java_Occurrence : others =>
                 declare
@@ -48,10 +48,10 @@ package body org.allbinary.configuration.ApplicationConfiguration_Package is
    --  throws Exception
    procedure read (This : in out ApplicationConfiguration) is
    begin
-        This.setFullscreen (True);
-        This.setProgressBarView (False);
-        This.setShowTitleBar (False);
-        This.logUtil.putF (To_Unbounded_String ("Read Configuration: ") & This.toString, ApplicationConfiguration_Access'(This'Unchecked_Access), To_Unbounded_String ("read"));
+        ApplicationConfiguration'Class (This).setFullscreen (True);
+        ApplicationConfiguration'Class (This).setProgressBarView (False);
+        ApplicationConfiguration'Class (This).setShowTitleBar (False);
+        This.logUtil.putF (To_Unbounded_String ("Read Configuration: ") & ApplicationConfiguration'Class (This).toString, ApplicationConfiguration_Access'(This'Unchecked_Access), To_Unbounded_String ("read"));
    end read;
 
    --  throws Exception
@@ -68,14 +68,14 @@ package body org.allbinary.configuration.ApplicationConfiguration_Package is
         if (gameFeature) = (MainFeatureFactory_Package.getInstance.FULL_SCREEN) then
             features := Features_Package.getInstance;
             if features.isFeature (gameFeature) then
-                if not (This.isFullscreen) then
-                    This.setFullscreen (True);
-                    This.write;
+                if not (ApplicationConfiguration'Class (This).isFullscreen) then
+                    ApplicationConfiguration'Class (This).setFullscreen (True);
+                    ApplicationConfiguration'Class (This).write;
                 end if;
             else
-                if This.isFullscreen then
-                    This.setFullscreen (False);
-                    This.write;
+                if ApplicationConfiguration'Class (This).isFullscreen then
+                    ApplicationConfiguration'Class (This).setFullscreen (False);
+                    ApplicationConfiguration'Class (This).write;
                 end if;
             end if;
         end if;
@@ -116,11 +116,11 @@ package body org.allbinary.configuration.ApplicationConfiguration_Package is
    begin
         stringBuffer := StringMaker_Package.Create;
         stringBuffer.append (To_Unbounded_String ("isFullscreen: "));
-        stringBuffer.appendboolean (This.isFullscreen);
+        stringBuffer.appendboolean (ApplicationConfiguration'Class (This).isFullscreen);
         stringBuffer.append (To_Unbounded_String (" isProgressBarView: "));
-        stringBuffer.appendboolean (This.isProgressBarView);
+        stringBuffer.appendboolean (ApplicationConfiguration'Class (This).isProgressBarView);
         stringBuffer.append (To_Unbounded_String (" isShowTitleBar: "));
-        stringBuffer.appendboolean (This.isShowTitleBar);
+        stringBuffer.appendboolean (ApplicationConfiguration'Class (This).isShowTitleBar);
         return stringBuffer.toString;
    end toString;
 

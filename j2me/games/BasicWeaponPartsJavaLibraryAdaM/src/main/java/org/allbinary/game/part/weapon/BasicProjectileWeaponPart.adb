@@ -56,7 +56,7 @@ package body org.allbinary.game.part.weapon.BasicProjectileWeaponPart_Package is
       scoreableInterface : constant ScoreableInterface_Access := ScoreableInterface_Access (scoreableInterface_Param);
       weaponLayer : WeaponLayer_Access;
    begin
-        weaponLayer := This.weaponLayerCircularStaticPool.getInstanceWeaponLayer (This.getOwnerLayerInterface, This.relativeRelationship.getX, This.relativeRelationship.getY, This.relativeRelationship.getZ, Integer (angle), Integer (otherAngle), weaponProperties, scoreableInterface);
+        weaponLayer := This.weaponLayerCircularStaticPool.getInstanceWeaponLayer (BasicProjectileWeaponPart'Class (This).getOwnerLayerInterface, This.relativeRelationship.getX, This.relativeRelationship.getY, This.relativeRelationship.getZ, Integer (angle), Integer (otherAngle), weaponProperties, scoreableInterface);
         allbinaryLayerManager.append (weaponLayer);
    end processScore;
 

@@ -36,12 +36,14 @@ package body org.platform.opengl.OpenGLGLU_Package is
       gl : constant GL10_Access := GL10_Access (gl_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return 0;
    end gluProject;
 
    function gluUnProject (This : in out OpenGLGLU; gl_Param : access GL10_Package.GL10'Class; winX : Float; winY : Float; winZ : Float; model : Float_Array_Access; modelOffset : Integer; project : Float_Array_Access; projectOffset : Integer; view : Integer_Array_Access; viewOffset : Integer; obj : Float_Array_Access; objOffset : Integer) return Integer is
       gl : constant GL10_Access := GL10_Access (gl_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return 0;
    end gluUnProject;
 
    procedure glFrustumf (This : in out OpenGLGLU; gl_Param : access GL10_Package.GL10'Class; lt : Float; rt : Float; btm : Float; top : Float; zNear : Float; zFar : Float) is

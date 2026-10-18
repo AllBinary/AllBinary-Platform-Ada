@@ -47,7 +47,7 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
         nameArray := set.toArray;
         size := nameArray'Length;
         for index in 0 .. (size) - 1 loop
-            defaultComboBoxModel.addElement (Unbounded_String (nameArray (index)));
+            defaultComboBoxModel.addElement (Java_Unbox (nameArray (index)));
         end loop;
         return defaultComboBoxModel;
    end getInstance;

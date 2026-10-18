@@ -27,7 +27,7 @@ package body org.allbinary.logic.communication.smtp.configuration.user.event.Use
    procedure Initialize (This : in out UserEmailEventsConfiguration'Class) is
    begin
       Initialize_Fields (This);
-        This.init;
+        UserEmailEventsConfiguration'Class (This).init;
    end Initialize;
 
    function Create return UserEmailEventsConfiguration_Access is
@@ -41,7 +41,7 @@ package body org.allbinary.logic.communication.smtp.configuration.user.event.Use
       hashMap : constant HashMap_Access := HashMap_Access (hashMap_Param);
    begin
       Initialize_Fields (This);
-        This.init;
+        UserEmailEventsConfiguration'Class (This).init;
    end Initialize;
 
    function Create (hashMap_Param : access HashMap_Package.HashMap'Class) return UserEmailEventsConfiguration_Access is
@@ -70,7 +70,7 @@ package body org.allbinary.logic.communication.smtp.configuration.user.event.Use
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.EMAILLOGGING) then
             This.logUtil.putF (To_Unbounded_String ("Adding: ") & Java_Image (userEmailEventConfigurationInterface.log), UserEmailEventsConfiguration_Access'(This'Unchecked_Access), To_Unbounded_String ("addUserEmailEventConfiguration"));
         end if;
-        This.emailEventHashMap.put (userEmailEventConfigurationInterface.getName, userEmailEventConfigurationInterface);
+        This.emailEventHashMap.put (Java_Box (userEmailEventConfigurationInterface.getName), userEmailEventConfigurationInterface);
    end addUserEmailEventConfiguration;
 
    --  throws Exception
@@ -80,7 +80,7 @@ package body org.allbinary.logic.communication.smtp.configuration.user.event.Use
       userInterface : constant UserInterface_Access := UserInterface_Access (userInterface_Param);
       userEmailEventConfigurationInterface : UserEmailEventConfigurationInterface_Access;
    begin
-        userEmailEventConfigurationInterface := UserEmailEventConfigurationInterface_Access (This.emailEventHashMap.get (userEmailEventNameData.toString));
+        userEmailEventConfigurationInterface := UserEmailEventConfigurationInterface_Access (This.emailEventHashMap.get (Java_Box (userEmailEventNameData.toString)));
         return UserEmailEventListenerFactory_Package.getInstance (abeClientInformation, userEmailEventConfigurationInterface, userInterface);
    end getEventListener;
 

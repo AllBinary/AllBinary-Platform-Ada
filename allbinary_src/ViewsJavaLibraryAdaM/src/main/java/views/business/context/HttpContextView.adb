@@ -31,7 +31,7 @@ package body views.business.context.HttpContextView_Package is
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
             This.logUtil.putF (To_Unbounded_String ("View Name: ") & transformInfoInterface.getName, HttpContextView_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         end if;
-        This.setTransformDocumentInterface (TransformHttpRequestDocumentFactory_Package.getInstance (This.getPageContext, This.getWeblisketSession));
+        HttpContextView'Class (This).setTransformDocumentInterface (TransformHttpRequestDocumentFactory_Package.getInstance (HttpContextView'Class (This).getPageContext, HttpContextView'Class (This).getWeblisketSession));
    end Initialize;
 
    function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return HttpContextView_Access is
@@ -47,9 +47,9 @@ package body views.business.context.HttpContextView_Package is
       result : Unbounded_String;
    begin
         begin
-            This.toXmlDoc;
-            success := XmlDocumentHelper_Package.toString (This.getDoc);
-            result := ContextTransformer_Package.Create (This.abeClientInformation, This.getTransformInfoInterface).translate (success);
+            HttpContextView'Class (This).toXmlDoc;
+            success := XmlDocumentHelper_Package.toString (HttpContextView'Class (This).getDoc);
+            result := ContextTransformer_Package.Create (This.abeClientInformation, HttpContextView'Class (This).getTransformInfoInterface).translate (success);
             return result;
         exception
             when Java_Occurrence : others =>

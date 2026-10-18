@@ -31,9 +31,9 @@ package body org.allbinary.logic.system.security.licensing.registration.Registra
       Initialize_Fields (This);
         begin
             if FileFactory_Package.getInstance.isFile (This.FILE) then
-                This.read;
+                RegistrationConfiguration'Class (This).read;
             else
-                This.write;
+                RegistrationConfiguration'Class (This).write;
             end if;
         exception
             when Java_Occurrence : others =>
@@ -67,8 +67,8 @@ package body org.allbinary.logic.system.security.licensing.registration.Registra
         fileInputStreamFactory := FileStreamFactory_Package.getInstance;
         fileInputStream := fileInputStreamFactory.getFileInputStreamInstance (StringUtil_Package.getInstance.EMPTY_STRING, This.FILE);
         dataInputStream := DataInputStream_Package.Create (fileInputStream);
-        This.setRegistrationCode (dataInputStream.readUTF);
-        PreLogUtil_Package.put (StringMaker_Package.Create.append (To_Unbounded_String ("Read Configuration: ")).append (This.toString).toString, RegistrationConfiguration_Access'(This'Unchecked_Access), To_Unbounded_String ("read"));
+        RegistrationConfiguration'Class (This).setRegistrationCode (dataInputStream.readUTF);
+        PreLogUtil_Package.put (StringMaker_Package.Create.append (To_Unbounded_String ("Read Configuration: ")).append (RegistrationConfiguration'Class (This).toString).toString, RegistrationConfiguration_Access'(This'Unchecked_Access), To_Unbounded_String ("read"));
    end read;
 
    --  throws Exception
@@ -79,11 +79,11 @@ package body org.allbinary.logic.system.security.licensing.registration.Registra
    begin
         dataOutputStream := null;
         begin
-            This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Write Configuration: ")).append (This.toString).toString, RegistrationConfiguration_Access'(This'Unchecked_Access), To_Unbounded_String ("write"));
+            This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Write Configuration: ")).append (RegistrationConfiguration'Class (This).toString).toString, RegistrationConfiguration_Access'(This'Unchecked_Access), To_Unbounded_String ("write"));
             fileInputStreamFactory := FileStreamFactory_Package.getInstance;
             fileOutputStream := fileInputStreamFactory.getFileOutputStreamInstance (StringUtil_Package.getInstance.EMPTY_STRING, This.FILE);
             dataOutputStream := AbDataOutputStream_Package.Create (fileOutputStream);
-            dataOutputStream.writeUTF (This.getRegistrationCode);
+            dataOutputStream.writeUTF (RegistrationConfiguration'Class (This).getRegistrationCode);
             dataOutputStream.flush;
         end;
         --  finally
@@ -94,7 +94,7 @@ package body org.allbinary.logic.system.security.licensing.registration.Registra
 
    function toString (This : in out RegistrationConfiguration) return Unbounded_String is
    begin
-        return StringMaker_Package.Create.append (To_Unbounded_String ("Registration Code: ")).append (This.getRegistrationCode).toString;
+        return StringMaker_Package.Create.append (To_Unbounded_String ("Registration Code: ")).append (RegistrationConfiguration'Class (This).getRegistrationCode).toString;
    end toString;
 
    procedure setRegistrationCode (This : in out RegistrationConfiguration; registrationCode : Unbounded_String) is

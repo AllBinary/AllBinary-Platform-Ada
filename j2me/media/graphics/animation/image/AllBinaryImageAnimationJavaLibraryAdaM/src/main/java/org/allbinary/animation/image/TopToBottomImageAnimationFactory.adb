@@ -39,8 +39,8 @@ package body org.allbinary.animation.image.TopToBottomImageAnimationFactory_Pack
    function getInstance (This : in out TopToBottomImageAnimationFactory; instanceId : Integer) return Animation_Access is
       scaledImage : Image_Access;
    begin
-        scaledImage := This.animationFactoryImageScaleUtil.createImage (This.getImage, This.animationFactoryInitializationVisitor.width, This.animationFactoryInitializationVisitor.height, This.scaleProperties.scaleWidth, This.scaleProperties.scaleHeight);
-        return TopToBottomImageAnimation_Package.Create (scaledImage, This.getSequenceArray, This.animationBehaviorFactory.getOrCreateInstance);
+        scaledImage := This.animationFactoryImageScaleUtil.createImage (TopToBottomImageAnimationFactory'Class (This).getImage, This.animationFactoryInitializationVisitor.width, This.animationFactoryInitializationVisitor.height, This.scaleProperties.scaleWidth, This.scaleProperties.scaleHeight);
+        return TopToBottomImageAnimation_Package.Create (scaledImage, TopToBottomImageAnimationFactory'Class (This).getSequenceArray, This.animationBehaviorFactory.getOrCreateInstance);
    end getInstance;
 
    procedure getInstance (This : in out TopToBottomImageAnimationFactory; instanceId : Integer) is

@@ -22,7 +22,7 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.io.ByteArrayOutputStream_Package; use java.io.ByteArrayOutputStream_Package;
 --  with java.io.PrintStream_Package; use java.io.PrintStream_Package;
---  with java.util.HashMap_Package; use java.util.HashMap_Package;
+with java.util.HashMap_Package; use java.util.HashMap_Package;
 --  with java.util.Properties_Package; use java.util.Properties_Package;
 --  with javax.mail.Address_Package; use javax.mail.Address_Package;
 --  with javax.mail.Authenticator_Package; use javax.mail.Authenticator_Package;
@@ -48,6 +48,7 @@ with org.allbinary.logic.communication.smtp.EmailData_Package; use org.allbinary
 package org.allbinary.logic.communication.smtp.Email_Package is
 
    package ByteArrayOutputStream_Package renames Standard.java.io.ByteArrayOutputStream_Package;
+   package HashMap_Package renames Standard.java.util.HashMap_Package;
    package ModDomHelper_Package renames Standard.org.allbinary.data.tree.dom.ModDomHelper_Package;
    package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;

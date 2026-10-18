@@ -48,12 +48,12 @@ package body org.allbinary.data.tables.generator.IdGeneratorEntity_Package is
       value_Case : Unbounded_String;
    begin
         keysAndValues := StdUtil_Package.getInstance.createHashMap;
-        keysAndValues.put (This.NAME, name_Case);
+        keysAndValues.put (Java_Box (This.NAME), Java_Box (name_Case));
         hashMap := AbSqlBean (This).getRow (keysAndValues);
-        if ((Unbounded_String (hashMap.get (This.NAME))).compareTo (name_Case)) /= (0) then
+        if ((Java_Unbox (hashMap.get (Java_Box (This.NAME)))).compareTo (name_Case)) /= (0) then
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("results do not match")));
         end if;
-        value_Case := Unbounded_String (hashMap.get (This.VALUE));
+        value_Case := Java_Unbox (hashMap.get (Java_Box (This.VALUE)));
         return Long_Long_Integer'Value (To_String (value_Case));
    end get;
 
@@ -92,15 +92,15 @@ package body org.allbinary.data.tables.generator.IdGeneratorEntity_Package is
       map : HashMap_Access;
    begin
         map := StdUtil_Package.getInstance.createHashMap;
-        map.put (This.NAME, name_Case);
-        map.put (This.VALUE, value_Case);
-        This.update (map);
+        map.put (Java_Box (This.NAME), Java_Box (name_Case));
+        map.put (Java_Box (This.VALUE), Java_Box (value_Case));
+        IdGeneratorEntity'Class (This).update (map);
    end update;
 
    procedure update (This : in out IdGeneratorEntity; hashMap_Param : access HashMap_Package.HashMap'Class) is
       hashMap : constant HashMap_Access := HashMap_Access (hashMap_Param);
    begin
-        AbSqlBean (This).updateWhere (This.NAME, Unbounded_String (hashMap.get (This.NAME)), hashMap);
+        AbSqlBean (This).updateWhere (This.NAME, Java_Unbox (hashMap.get (Java_Box (This.NAME))), hashMap);
    end update;
 
    function createTable (This : in out IdGeneratorEntity) return Unbounded_String is

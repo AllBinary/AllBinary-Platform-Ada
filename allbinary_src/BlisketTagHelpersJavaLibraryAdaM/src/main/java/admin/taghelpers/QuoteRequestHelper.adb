@@ -36,7 +36,7 @@ package body admin.taghelpers.QuoteRequestHelper_Package is
         request := HttpServletRequest_Access (pageContext.getRequest);
         This.weblisketSession := WeblisketSession_Package.Create (hashMap, pageContext);
         This.quoteRequest := QuoteRequest_Package.Create (This.weblisketSession.getUserName, request);
-        storeName := Unbounded_String (hashMap.get (StoreFrontData_Package.getInstance.NAME));
+        storeName := Java_Unbox (hashMap.get (StoreFrontData_Package.getInstance.NAME));
         if (storeName) /= (Null_Unbounded_String) then
             This.storeFrontInterface := StoreFrontFactory_Package.getInstance (storeName);
         end if;

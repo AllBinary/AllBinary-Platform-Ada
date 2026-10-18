@@ -20,10 +20,11 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with javax.microedition.lcdui.Command_Package; use javax.microedition.lcdui.Command_Package;
+with javax.microedition.lcdui.Command_Package; use javax.microedition.lcdui.Command_Package;
 
 package org.allbinary.graphics.displayable.command.MyCommandInterface_Package is
 
+   package Command_Package renames Standard.javax.microedition.lcdui.Command_Package;
 
    type MyCommandInterface is interface;
    type MyCommandInterface_Access is access all MyCommandInterface'Class;

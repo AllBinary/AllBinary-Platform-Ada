@@ -61,7 +61,7 @@ package body org.allbinary.logic.util.cache.BasicArrayListPool_Package is
         index := usedList.size;
         while (Java_Pre_Decrement (index)) >= (0) loop
             anyType := CacheableInterface_Access (usedList.objectArray (index));
-            This.add (anyType);
+            BasicArrayListPool'Class (This).add (anyType);
         end loop;
         usedList.clear;
    end addAll;
@@ -77,7 +77,7 @@ package body org.allbinary.logic.util.cache.BasicArrayListPool_Package is
             list := BasicArrayListCacheable_Access (usedList.objectArray (index));
             if (list.size) = (0) then
                 usedList.removeAt (index);
-                This.add (list);
+                BasicArrayListPool'Class (This).add (list);
             end if;
         end loop;
    end releaseUsedBackToPool;

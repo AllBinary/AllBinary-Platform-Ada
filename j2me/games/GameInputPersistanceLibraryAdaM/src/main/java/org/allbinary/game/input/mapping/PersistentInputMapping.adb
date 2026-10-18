@@ -51,7 +51,7 @@ package body org.allbinary.game.input.mapping.PersistentInputMapping_Package is
 
    function getTotalMapped (This : in out PersistentInputMapping) return Integer is
    begin
-        return This.getInputMapping.getHashtable.size;
+        return PersistentInputMapping'Class (This).getInputMapping.getHashtable.size;
    end getTotalMapped;
 
    function isDefaultNew (This : in out PersistentInputMapping) return Boolean is
@@ -68,9 +68,9 @@ package body org.allbinary.game.input.mapping.PersistentInputMapping_Package is
    procedure setDefault (This : in out PersistentInputMapping; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class) is
       abeClientInformation : constant AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
    begin
-        This.getInputMapping.removeAll;
-        This.getInputMapping.addMapping (This.getDefault);
-        This.save (abeClientInformation);
+        PersistentInputMapping'Class (This).getInputMapping.removeAll;
+        PersistentInputMapping'Class (This).getInputMapping.addMapping (PersistentInputMapping'Class (This).getDefault);
+        PersistentInputMapping'Class (This).save (abeClientInformation);
    end setDefault;
 
    --  throws Exception
@@ -78,17 +78,17 @@ package body org.allbinary.game.input.mapping.PersistentInputMapping_Package is
       abeClientInformation : constant AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
    begin
         This.inputPersistance.deleteAll (abeClientInformation);
-        This.save (abeClientInformation);
+        PersistentInputMapping'Class (This).save (abeClientInformation);
    end update;
 
    --  throws Exception
    procedure save (This : in out PersistentInputMapping; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class) is
       abeClientInformation : constant AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
    begin
-        This.inputPersistance.save (abeClientInformation, This.getInputMapping.getHashtable);
-        This.inputMappingEvent.setInputToGameKeyMapping (This.getInputMapping);
-        if (This.getInputMappingEventListenerInterface) /= (null) then
-            This.getInputMappingEventListenerInterface.onInputMappingEvent (This.inputMappingEvent);
+        This.inputPersistance.save (abeClientInformation, PersistentInputMapping'Class (This).getInputMapping.getHashtable);
+        This.inputMappingEvent.setInputToGameKeyMapping (PersistentInputMapping'Class (This).getInputMapping);
+        if (PersistentInputMapping'Class (This).getInputMappingEventListenerInterface) /= (null) then
+            PersistentInputMapping'Class (This).getInputMappingEventListenerInterface.onInputMappingEvent (This.inputMappingEvent);
         end if;
    end save;
 
@@ -115,7 +115,7 @@ package body org.allbinary.game.input.mapping.PersistentInputMapping_Package is
                 begin
             PreLogUtil_Package.putOE (This.commonStrings.EXCEPTION_Id, PersistentInputMapping_Access'(This'Unchecked_Access), This.commonStrings.INIT, e);
             This.inputPersistance.deleteRecoreStore (abeClientInformation);
-            This.setDefault (abeClientInformation);
+            PersistentInputMapping'Class (This).setDefault (abeClientInformation);
             This.inputPersistance.loadAll (abeClientInformation);
                 end;
         end;
@@ -133,12 +133,12 @@ package body org.allbinary.game.input.mapping.PersistentInputMapping_Package is
                 mappedToInput := Input_Access (This.enumerationUtil.nextElement (enumeration));
                 gameActionInput := Input_Access (hashtable.get (mappedToInput));
                 totalMappedTo := totalMappedTo + 1;
-                This.getInputMapping.add (gameActionInput, mappedToInput);
+                PersistentInputMapping'Class (This).getInputMapping.add (gameActionInput, mappedToInput);
             end loop;
         end loop;
         stringBuffer := StringMaker_Package.Create;
         stringBuffer.append (To_Unbounded_String ("End - Total Loaded Keys Mapped: "));
-        stringBuffer.appendint (This.getTotalMapped);
+        stringBuffer.appendint (PersistentInputMapping'Class (This).getTotalMapped);
         stringBuffer.append (To_Unbounded_String (" to: "));
         stringBuffer.appendint (totalMappedTo);
         This.logUtil.putF (stringBuffer.toString, PersistentInputMapping_Access'(This'Unchecked_Access), This.commonStrings.INIT);
@@ -165,6 +165,7 @@ package body org.allbinary.game.input.mapping.PersistentInputMapping_Package is
       input : constant Input_Access := Input_Access (input_Param);
    begin
         Java_Throw (Java_New_Exception ("Exception", This.commonStrings.NOT_IMPLEMENTED));
+        return False;
    end isDelete;
 
    --  throws Exception
@@ -172,6 +173,7 @@ package body org.allbinary.game.input.mapping.PersistentInputMapping_Package is
       input : constant Input_Access := Input_Access (input_Param);
    begin
         Java_Throw (Java_New_Exception ("Exception", This.commonStrings.NOT_IMPLEMENTED));
+        return False;
    end isSystemInput;
 
    procedure isDelete (This : in out PersistentInputMapping; input_Param : access Input_Package.Input'Class) is

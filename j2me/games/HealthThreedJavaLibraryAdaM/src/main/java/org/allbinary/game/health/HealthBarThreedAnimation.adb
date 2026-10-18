@@ -93,8 +93,8 @@ package body org.allbinary.game.health.HealthBarThreedAnimation_Package is
    procedure onHealthChange (This : in out HealthBarThreedAnimation; newX2 : Integer) is
    begin
         HealthBarAnimation (This).onHealthChange (newX2);
-        This.updateColor;
-        This.updateSize;
+        HealthBarThreedAnimation'Class (This).updateColor;
+        HealthBarThreedAnimation'Class (This).updateSize;
    end onHealthChange;
 
    procedure paintThreedXYZ (This : in out HealthBarThreedAnimation; graphics_Param : access Graphics_Package.Graphics'Class; x : Integer; y : Integer; z : Integer) is

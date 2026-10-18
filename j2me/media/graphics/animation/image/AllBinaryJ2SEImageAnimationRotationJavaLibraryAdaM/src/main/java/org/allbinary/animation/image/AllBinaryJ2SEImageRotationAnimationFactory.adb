@@ -60,9 +60,9 @@ package body org.allbinary.animation.image.AllBinaryJ2SEImageRotationAnimationFa
    begin
         features := Features_Package.getInstance;
         if (This.resizeCanvasForRotation) and then (not (features.isDefault (OpenGLFeatureFactory_Package.getInstance.OPENGL))) then
-            return ImageCopyUtil_Package.getInstance.createImageScale (This.getImage, 1.44, False);
+            return ImageCopyUtil_Package.getInstance.createImageScale (AllBinaryJ2SEImageRotationAnimationFactory'Class (This).getImage, 1.44, False);
         else
-            return This.getImage;
+            return AllBinaryJ2SEImageRotationAnimationFactory'Class (This).getImage;
         end if;
    end getCanvasImage;
 
@@ -75,7 +75,7 @@ package body org.allbinary.animation.image.AllBinaryJ2SEImageRotationAnimationFa
       copyOfScaledImage : Image_Access;
    begin
         imageCopyUtil := ImageCopyUtil_Package.getInstance;
-        canvasImage := This.getCanvasImage;
+        canvasImage := AllBinaryJ2SEImageRotationAnimationFactory'Class (This).getCanvasImage;
         scaledImage := This.animationFactoryImageScaleUtil.createImage (canvasImage, This.animationFactoryInitializationVisitor.width, This.animationFactoryInitializationVisitor.height, This.scaleProperties.scaleWidth, This.scaleProperties.scaleHeight);
         openGLUtil := OpenGLUtil_Package.getInstance;
         scaledImage := openGLUtil.addImage (scaledImage);

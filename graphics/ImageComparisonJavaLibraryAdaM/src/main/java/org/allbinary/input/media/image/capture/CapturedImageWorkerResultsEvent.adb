@@ -30,7 +30,7 @@ package body org.allbinary.input.media.image.capture.CapturedImageWorkerResultsE
         AllBinaryEventObject_Package.Initialize (This, anyType);
         Initialize_Fields (This);
         This.frame := frame;
-        This.setBufferedImage (bufferedImage);
+        CapturedImageWorkerResultsEvent'Class (This).setBufferedImage (bufferedImage);
    end Initialize;
 
    function Create (anyType_Param : access Java_Object'Class; frame : Long_Long_Integer; bufferedImage_Param : access BufferedImage_Package.BufferedImage'Class) return CapturedImageWorkerResultsEvent_Access is

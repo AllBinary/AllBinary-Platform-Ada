@@ -18,9 +18,9 @@ package body org.allbinary.logic.StdUtil_Package is
    procedure Initialize_Fields (This : in out StdUtil'Class) is
    begin
       null;
-      This.EMPTY_VECTOR := This.createVector;
-      This.NULL_TABLE := This.createHashtable;
-      This.NULL_MAP := This.createHashMap;
+      This.EMPTY_VECTOR := StdUtil'Class (This).createVector;
+      This.NULL_TABLE := StdUtil'Class (This).createHashtable;
+      This.NULL_MAP := StdUtil'Class (This).createHashMap;
    end Initialize_Fields;
 
    procedure Initialize (This : in out StdUtil'Class) is

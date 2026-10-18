@@ -27,8 +27,8 @@ package body org.allbinary.business.installer.Portion_Package is
       hashMap : constant HashMap_Access := HashMap_Access (hashMap_Param);
    begin
       Initialize_Fields (This);
-        This.current := Integer (hashMap.get (To_Unbounded_String ("current")));
-        This.total := Integer (hashMap.get (To_Unbounded_String ("total")));
+        This.current := Integer (hashMap.get (Java_Box (To_Unbounded_String ("current"))));
+        This.total := Integer (hashMap.get (Java_Box (To_Unbounded_String ("total"))));
    end Initialize;
 
    function Create (hashMap_Param : access HashMap_Package.HashMap'Class) return Portion_Access is

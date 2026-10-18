@@ -51,10 +51,10 @@ package body tags.generic_Id.order.history.OrderHistoryTag_Package is
       error : Unbounded_String;
    begin
         begin
-            anyType := OrderHistoryHelperFactory_Package.Create.getInstance (This.getPropertiesHashMap, This.pageContext);
+            anyType := OrderHistoryHelperFactory_Package.Create.getInstance (OrderHistoryTag'Class (This).getPropertiesHashMap, This.pageContext);
             helperClass := anyType.all'Tag;
             method := helperClass.getMethod (To_Unbounded_String ("setOrderStatus"), null);
-            result := Unbounded_String (method.invoke (anyType, null));
+            result := Java_Unbox (method.invoke (anyType, null));
             return result;
         exception
             when Java_Occurrence : others =>
@@ -70,16 +70,16 @@ package body tags.generic_Id.order.history.OrderHistoryTag_Package is
    function doStartTag (This : in out OrderHistoryTag) return Integer is
    begin
         begin
-            This.setName (To_Unbounded_String ("Basic Order History View"));
-            This.setObjectFile (To_Unbounded_String ("views.generic.order.history.ValidationView"));
-            if (This.getCommand) /= (null) then
-                if (This.getCommand.compareTo (OrderHistoryData_Package.SETSTATUS)) = (0) then
-                    This.getPropertiesHashMap.put (OrderHistoryData_Package.STATUS, This.status);
-                    This.pageContext.getOut.print (This.setOrderStatus);
-                elsif (This.getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.VIEW)) = (0) then
+            OrderHistoryTag'Class (This).setName (To_Unbounded_String ("Basic Order History View"));
+            OrderHistoryTag'Class (This).setObjectFile (To_Unbounded_String ("views.generic.order.history.ValidationView"));
+            if (OrderHistoryTag'Class (This).getCommand) /= (null) then
+                if (OrderHistoryTag'Class (This).getCommand.compareTo (OrderHistoryData_Package.SETSTATUS)) = (0) then
+                    OrderHistoryTag'Class (This).getPropertiesHashMap.put (OrderHistoryData_Package.STATUS, This.status);
+                    This.pageContext.getOut.print (OrderHistoryTag'Class (This).setOrderStatus);
+                elsif (OrderHistoryTag'Class (This).getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.VIEW)) = (0) then
                     null;
                 else
-                    Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("No Such View Command: ") & Java_Image (This.getCommand)));
+                    Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("No Such View Command: ") & Java_Image (OrderHistoryTag'Class (This).getCommand)));
                 end if;
                 return StoreValidationTransformTag (This).doStartTag;
             end if;

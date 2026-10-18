@@ -42,9 +42,9 @@ package body org.allbinary.logic.util.cache.KeylessBasicArrayListCache_Package i
    begin
         begin
             if (This.index) >= (This.list.size) then
-                This.addDefault;
+                KeylessBasicArrayListCache'Class (This).addDefault;
             end if;
-            list := BasicArrayList_Access (This.getAt (Java_Post_Increment (This.index)));
+            list := BasicArrayList_Access (KeylessBasicArrayListCache'Class (This).getAt (Java_Post_Increment (This.index)));
             return list;
         exception
             when Java_Occurrence : others =>

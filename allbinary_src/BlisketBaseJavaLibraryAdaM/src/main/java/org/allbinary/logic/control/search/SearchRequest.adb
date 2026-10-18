@@ -104,7 +104,7 @@ package body org.allbinary.logic.control.search.SearchRequest_Package is
    function getFileBaseNameNode (This : in out SearchRequest; document_Param : access Document_Package.Document'Class) return Node_Access is
       document : constant Document_Access := Document_Access (document_Param);
    begin
-        return ModDomHelper_Package.createNameValueNodes (document, SearchData_Package.FILENAME, This.getFileBaseName);
+        return ModDomHelper_Package.createNameValueNodes (document, SearchData_Package.FILENAME, SearchRequest'Class (This).getFileBaseName);
    end getFileBaseNameNode;
 
    procedure getFileBaseNameNode (This : in out SearchRequest; document_Param : access Document_Package.Document'Class) is

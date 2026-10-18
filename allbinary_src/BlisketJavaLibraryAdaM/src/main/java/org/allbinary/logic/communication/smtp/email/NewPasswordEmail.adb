@@ -46,8 +46,8 @@ package body org.allbinary.logic.communication.smtp.email.NewPasswordEmail_Packa
    --  throws Exception
    procedure process (This : in out NewPasswordEmail) is
    begin
-        This.notifyStoreAdmin;
-        This.notifyUser;
+        NewPasswordEmail'Class (This).notifyStoreAdmin;
+        NewPasswordEmail'Class (This).notifyUser;
    end process;
 
    --  throws Exception

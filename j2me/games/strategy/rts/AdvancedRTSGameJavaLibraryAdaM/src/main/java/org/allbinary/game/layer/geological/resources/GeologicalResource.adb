@@ -27,7 +27,7 @@ package body org.allbinary.game.layer.geological.resources.GeologicalResource_Pa
    begin
       Initialize_Fields (This);
         This.initTotal := initTotal;
-        This.init;
+        GeologicalResource'Class (This).init;
    end Initialize;
 
    function Create (initTotal : Integer) return GeologicalResource_Access is
@@ -39,26 +39,26 @@ package body org.allbinary.game.layer.geological.resources.GeologicalResource_Pa
 
    procedure init (This : in out GeologicalResource) is
    begin
-        This.setTotal (This.initTotal);
+        GeologicalResource'Class (This).setTotal (This.initTotal);
    end init;
 
    procedure add (This : in out GeologicalResource; value : Integer) is
       max : Integer;
    begin
         max := Integer_Package.MAX_VALUE;
-        if ((This.getTotal) + (value)) > (max) then
-            This.setTotal (max);
+        if ((GeologicalResource'Class (This).getTotal) + (value)) > (max) then
+            GeologicalResource'Class (This).setTotal (max);
         else
-            This.setTotal ((This.getTotal) + (value));
+            GeologicalResource'Class (This).setTotal ((GeologicalResource'Class (This).getTotal) + (value));
         end if;
    end add;
 
    procedure remove (This : in out GeologicalResource; value : Integer) is
    begin
-        if ((This.getTotal) - (value)) < (0) then
-            This.setTotal (0);
+        if ((GeologicalResource'Class (This).getTotal) - (value)) < (0) then
+            GeologicalResource'Class (This).setTotal (0);
         else
-            This.setTotal ((This.getTotal) - (value));
+            GeologicalResource'Class (This).setTotal ((GeologicalResource'Class (This).getTotal) - (value));
         end if;
    end remove;
 

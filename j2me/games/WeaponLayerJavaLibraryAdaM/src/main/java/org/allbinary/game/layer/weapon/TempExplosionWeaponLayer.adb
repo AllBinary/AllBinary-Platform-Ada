@@ -34,8 +34,8 @@ package body org.allbinary.game.layer.weapon.TempExplosionWeaponLayer_Package is
       allBinaryLayerManager : constant AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (allBinaryLayerManager_Param);
    begin
         if This.timeDelayHelper.isTime (GameTickTimeDelayHelperFactory_Package.getInstance.startTime) then
-            This.getCollidableInferface.collide (TempExplosionWeaponLayer_Access'(This'Unchecked_Access), TempExplosionWeaponLayer_Access'(This'Unchecked_Access));
-            This.totalDamage := (This.getInitDamage) + (1);
+            TempExplosionWeaponLayer'Class (This).getCollidableInferface.collide (TempExplosionWeaponLayer_Access'(This'Unchecked_Access), TempExplosionWeaponLayer_Access'(This'Unchecked_Access));
+            This.totalDamage := (TempExplosionWeaponLayer'Class (This).getInitDamage) + (1);
         end if;
         SimpleWeaponLayer (This).processTick (allBinaryLayerManager);
    end processTick;

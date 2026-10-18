@@ -60,15 +60,15 @@ package body org.allbinary.image.gui.ImageToolJFrame_Package is
    begin
       JFrame_Package.Initialize (This);
       Initialize_Fields (This);
-        This.initComponents;
+        ImageToolJFrame'Class (This).initComponents;
         commonPhoneStrings := CommonPhoneStrings_Package.getInstance;
-        This.setSize (640, 480);
-        This.getMaxRedJTextField.setText (To_Unbounded_String ("255"));
-        This.getMaxGreenJTextField.setText (To_Unbounded_String ("255"));
-        This.getMaxBlueJTextField.setText (To_Unbounded_String ("255"));
-        This.getMinRedJTextField.setText (commonPhoneStrings.ZERO);
-        This.getMinGreenJTextField.setText (commonPhoneStrings.ZERO);
-        This.getMinBlueJTextField.setText (commonPhoneStrings.ZERO);
+        ImageToolJFrame'Class (This).setSize (640, 480);
+        ImageToolJFrame'Class (This).getMaxRedJTextField.setText (To_Unbounded_String ("255"));
+        ImageToolJFrame'Class (This).getMaxGreenJTextField.setText (To_Unbounded_String ("255"));
+        ImageToolJFrame'Class (This).getMaxBlueJTextField.setText (To_Unbounded_String ("255"));
+        ImageToolJFrame'Class (This).getMinRedJTextField.setText (commonPhoneStrings.ZERO);
+        ImageToolJFrame'Class (This).getMinGreenJTextField.setText (commonPhoneStrings.ZERO);
+        ImageToolJFrame'Class (This).getMinBlueJTextField.setText (commonPhoneStrings.ZERO);
         This.fileJDialog := FileJDialog_Package.Create;
         This.fileJDialog.addFinishedListener (ImageToolJFrame_Access'(This'Unchecked_Access));
    end Initialize;
@@ -127,24 +127,24 @@ package body org.allbinary.image.gui.ImageToolJFrame_Package is
 --     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
 --        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
---                  This.okJButtonActionPerformed (evt);
+--                  ImageToolJFrame'Class (This).okJButtonActionPerformed (evt);
 --     end actionPerformed;
 );
         analysisActionJDialogLayout := GroupLayout_Package.Create (This.analysisActionJDialog.getContentPane);
         This.analysisActionJDialog.getContentPane.setLayout (analysisActionJDialogLayout);
         analysisActionJDialogLayout.setHorizontalGroup (analysisActionJDialogLayout.createParallelGroup (org_Package.jdesktop.layout.GroupLayout.LEADING).add (analysisActionJDialogLayout.createSequentialGroup.addContainerGap.add (analysisActionJDialogLayout.createParallelGroup (org_Package.jdesktop.layout.GroupLayout.LEADING).add (analysisActionJDialogLayout.createSequentialGroup.add (analysisActionJDialogLayout.createParallelGroup (org_Package.jdesktop.layout.GroupLayout.LEADING).add (This.blueJLabel).add (This.greenJLabel).add (This.redJLabel).add (This.colorRangeJLabel)).add (29, 29, 29).add (analysisActionJDialogLayout.createParallelGroup (org_Package.jdesktop.layout.GroupLayout.LEADING).add (org_Package.jdesktop.layout.GroupLayout.TRAILING, This.minJLabel, org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 58, Short_Package.MAX_VALUE).add (analysisActionJDialogLayout.createParallelGroup (org_Package.jdesktop.layout.GroupLayout.TRAILING, False).add (org_Package.jdesktop.layout.GroupLayout.LEADING, This.minBlueJTextField).add (org_Package.jdesktop.layout.GroupLayout.LEADING, This.minGreenJTextField).add (org_Package.jdesktop.layout.GroupLayout.LEADING, This.minRedJTextField, org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 42, Short_Package.MAX_VALUE).add (org_Package.jdesktop.layout.GroupLayout.LEADING, This.okJButton))).addPreferredGap (org_Package.jdesktop.layout.LayoutStyle.RELATED).add (analysisActionJDialogLayout.createParallelGroup (org_Package.jdesktop.layout.GroupLayout.TRAILING).add (org_Package.jdesktop.layout.GroupLayout.LEADING, analysisActionJDialogLayout.createSequentialGroup.add (analysisActionJDialogLayout.createParallelGroup (org_Package.jdesktop.layout.GroupLayout.TRAILING, False).add (org_Package.jdesktop.layout.GroupLayout.LEADING, This.maxRedJTextField).add (org_Package.jdesktop.layout.GroupLayout.LEADING, analysisActionJDialogLayout.createSequentialGroup.add (1, 1, 1).add (analysisActionJDialogLayout.createParallelGroup (org_Package.jdesktop.layout.GroupLayout.LEADING).add (This.maxBlueJTextField).add (This.maxGreenJTextField, org_Package.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 43, org_Package.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))).addPreferredGap (org_Package.jdesktop.layout.LayoutStyle.RELATED, 17, Short_Package.MAX_VALUE)).add (org_Package.jdesktop.layout.GroupLayout.LEADING, This.maxJLabel, org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 61, Short_Package.MAX_VALUE)).addContainerGap).add (org_Package.jdesktop.layout.GroupLayout.TRAILING, analysisActionJDialogLayout.createSequentialGroup.add (This.titleJLabel).add (25, 25, 25)))));
         analysisActionJDialogLayout.setVerticalGroup (analysisActionJDialogLayout.createParallelGroup (org_Package.jdesktop.layout.GroupLayout.LEADING).add (analysisActionJDialogLayout.createSequentialGroup.add (This.titleJLabel).addPreferredGap (org_Package.jdesktop.layout.LayoutStyle.RELATED).add (analysisActionJDialogLayout.createParallelGroup (org_Package.jdesktop.layout.GroupLayout.BASELINE).add (This.minJLabel).add (This.colorRangeJLabel).add (This.maxJLabel)).addPreferredGap (org_Package.jdesktop.layout.LayoutStyle.RELATED).add (analysisActionJDialogLayout.createParallelGroup (org_Package.jdesktop.layout.GroupLayout.TRAILING).add (This.redJLabel).add (analysisActionJDialogLayout.createParallelGroup (org_Package.jdesktop.layout.GroupLayout.BASELINE).add (This.minRedJTextField, org_Package.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org_Package.jdesktop.layout.GroupLayout.PREFERRED_SIZE).add (This.maxRedJTextField, org_Package.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org_Package.jdesktop.layout.GroupLayout.PREFERRED_SIZE))).addPreferredGap (org_Package.jdesktop.layout.LayoutStyle.RELATED).add (analysisActionJDialogLayout.createParallelGroup (org_Package.jdesktop.layout.GroupLayout.TRAILING).add (This.greenJLabel).add (analysisActionJDialogLayout.createParallelGroup (org_Package.jdesktop.layout.GroupLayout.BASELINE).add (This.minGreenJTextField, org_Package.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org_Package.jdesktop.layout.GroupLayout.PREFERRED_SIZE).add (This.maxGreenJTextField, org_Package.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org_Package.jdesktop.layout.GroupLayout.PREFERRED_SIZE))).addPreferredGap (org_Package.jdesktop.layout.LayoutStyle.RELATED).add (analysisActionJDialogLayout.createParallelGroup (org_Package.jdesktop.layout.GroupLayout.TRAILING).add (This.blueJLabel).add (analysisActionJDialogLayout.createParallelGroup (org_Package.jdesktop.layout.GroupLayout.BASELINE).add (This.minBlueJTextField, org_Package.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org_Package.jdesktop.layout.GroupLayout.PREFERRED_SIZE).add (This.maxBlueJTextField, org_Package.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org_Package.jdesktop.layout.GroupLayout.PREFERRED_SIZE))).add (16, 16, 16).add (This.okJButton).addContainerGap (org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short_Package.MAX_VALUE)));
-        This.setDefaultCloseOperation (javax_Package.swing.WindowConstants.EXIT_ON_CLOSE);
-        This.getContentPane.setLayout (GridLayout_Package.Create (1, 0));
+        ImageToolJFrame'Class (This).setDefaultCloseOperation (javax_Package.swing.WindowConstants.EXIT_ON_CLOSE);
+        ImageToolJFrame'Class (This).getContentPane.setLayout (GridLayout_Package.Create (1, 0));
         This.jPanel1.setLayout (GridLayout_Package.Create (1, 0));
-        This.getContentPane.add (This.jPanel1);
+        ImageToolJFrame'Class (This).getContentPane.add (This.jPanel1);
         This.fileJMenu.setText (To_Unbounded_String ("File"));
         This.fileJMenu.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
 --     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
 --        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
---                  This.fileJMenuActionPerformed (evt);
+--                  ImageToolJFrame'Class (This).fileJMenuActionPerformed (evt);
 --     end actionPerformed;
 );
         This.openImageJMenuItem.setText (To_Unbounded_String ("Open"));
@@ -153,7 +153,7 @@ package body org.allbinary.image.gui.ImageToolJFrame_Package is
 --     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
 --        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
---                  This.openImageJMenuItemActionPerformed (evt);
+--                  ImageToolJFrame'Class (This).openImageJMenuItemActionPerformed (evt);
 --     end actionPerformed;
 );
         This.fileJMenu.add (This.openImageJMenuItem);
@@ -164,7 +164,7 @@ package body org.allbinary.image.gui.ImageToolJFrame_Package is
 --     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
 --        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
---                  This.processingJMenuActionPerformed (evt);
+--                  ImageToolJFrame'Class (This).processingJMenuActionPerformed (evt);
 --     end actionPerformed;
 );
         This.analyzeJMenuItem.setText (To_Unbounded_String ("Image Analyze"));
@@ -173,7 +173,7 @@ package body org.allbinary.image.gui.ImageToolJFrame_Package is
 --     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
 --        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
---                  This.analyzeJMenuItemActionPerformed (evt);
+--                  ImageToolJFrame'Class (This).analyzeJMenuItemActionPerformed (evt);
 --     end actionPerformed;
 );
         This.processingJMenu.add (This.analyzeJMenuItem);
@@ -183,7 +183,7 @@ package body org.allbinary.image.gui.ImageToolJFrame_Package is
 --     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
 --        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
---                  This.generateMirrorSpriteMenuItemActionPerformed (evt);
+--                  ImageToolJFrame'Class (This).generateMirrorSpriteMenuItemActionPerformed (evt);
 --     end actionPerformed;
 );
         This.processingJMenu.add (This.generateMirrorSpriteMenuItem);
@@ -193,7 +193,7 @@ package body org.allbinary.image.gui.ImageToolJFrame_Package is
 --     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
 --        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
---                  This.generateRotationSpriteJMenuItemActionPerformed (evt);
+--                  ImageToolJFrame'Class (This).generateRotationSpriteJMenuItemActionPerformed (evt);
 --     end actionPerformed;
 );
         This.processingJMenu.add (This.generateRotationSpriteJMenuItem);
@@ -203,7 +203,7 @@ package body org.allbinary.image.gui.ImageToolJFrame_Package is
 --     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
 --        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
---                  This.generateSpriteSplitterMenuItemActionPerformed (evt);
+--                  ImageToolJFrame'Class (This).generateSpriteSplitterMenuItemActionPerformed (evt);
 --     end actionPerformed;
 );
         This.processingJMenu.add (This.generateSpriteSplitterMenuItem);
@@ -213,7 +213,7 @@ package body org.allbinary.image.gui.ImageToolJFrame_Package is
 --     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
 --        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
---                  This.generateRotationMenuItemActionPerformed (evt);
+--                  ImageToolJFrame'Class (This).generateRotationMenuItemActionPerformed (evt);
 --     end actionPerformed;
 );
         This.processingJMenu.add (This.generateRotationMenuItem);
@@ -223,7 +223,7 @@ package body org.allbinary.image.gui.ImageToolJFrame_Package is
 --     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
 --        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
---                  This.createStripImageJMenuItemActionPerformed (evt);
+--                  ImageToolJFrame'Class (This).createStripImageJMenuItemActionPerformed (evt);
 --     end actionPerformed;
 );
         This.processingJMenu.add (This.createStripImageJMenuItem);
@@ -233,7 +233,7 @@ package body org.allbinary.image.gui.ImageToolJFrame_Package is
 --     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
 --        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
---                  This.mirrorJMenuItemActionPerformed (evt);
+--                  ImageToolJFrame'Class (This).mirrorJMenuItemActionPerformed (evt);
 --     end actionPerformed;
 );
         This.processingJMenu.add (This.mirrorJMenuItem);
@@ -243,7 +243,7 @@ package body org.allbinary.image.gui.ImageToolJFrame_Package is
 --     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
 --        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
---                  This.scaleImagesJMenuItemActionPerformed (evt);
+--                  ImageToolJFrame'Class (This).scaleImagesJMenuItemActionPerformed (evt);
 --     end actionPerformed;
 );
         This.processingJMenu.add (This.scaleImagesJMenuItem);
@@ -253,7 +253,7 @@ package body org.allbinary.image.gui.ImageToolJFrame_Package is
 --     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
 --        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
---                  This.canvasImagesJMenuItemActionPerformed (evt);
+--                  ImageToolJFrame'Class (This).canvasImagesJMenuItemActionPerformed (evt);
 --     end actionPerformed;
 );
         This.processingJMenu.add (This.canvasImagesJMenuItem);
@@ -263,13 +263,13 @@ package body org.allbinary.image.gui.ImageToolJFrame_Package is
 --     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
 --        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
---                  This.createIconsJMenuItemActionPerformed (evt);
+--                  ImageToolJFrame'Class (This).createIconsJMenuItemActionPerformed (evt);
 --     end actionPerformed;
 );
         This.processingJMenu.add (This.createIconImagesJMenuItem);
         This.mainJMenuBar.add (This.processingJMenu);
-        This.setJMenuBar (This.mainJMenuBar);
-        This.pack;
+        ImageToolJFrame'Class (This).setJMenuBar (This.mainJMenuBar);
+        ImageToolJFrame'Class (This).pack;
    end initComponents;
 
    procedure createStripImageJMenuItemActionPerformed (This : in out ImageToolJFrame; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
@@ -298,7 +298,7 @@ package body org.allbinary.image.gui.ImageToolJFrame_Package is
    begin
         begin
             This.logUtil.putF (To_Unbounded_String ("Starting"), ImageToolJFrame_Access'(This'Unchecked_Access), To_Unbounded_String ("okJButtonActionPerformed"));
-            imageAnalysisResultsArray := ImageAnalysis_Package.getInstance.process (This.imageProcessorInput.getBufferedImageArray, This.getColorRangeInterface);
+            imageAnalysisResultsArray := ImageAnalysis_Package.getInstance.process (This.imageProcessorInput.getBufferedImageArray, ImageToolJFrame'Class (This).getColorRangeInterface);
             This.jPanel1.removeAll;
             This.jPanel1.add (ImageAnalysisResultsJPanel_Package.Create (imageAnalysisResultsArray));
             This.jPanel1.updateUI;
@@ -350,9 +350,10 @@ package body org.allbinary.image.gui.ImageToolJFrame_Package is
 --        fileNameIndexValue1 : Integer;
 --        fileNameIndexValue2 : Integer;
 --     begin
---                      fileNameIndexValue1 := This.extractIndexNumberIfAnyFromFileName (file1.getName);
---                      fileNameIndexValue2 := This.extractIndexNumberIfAnyFromFileName (file2.getName);
+--                      fileNameIndexValue1 := ImageToolJFrame'Class (This).extractIndexNumberIfAnyFromFileName (file1.getName);
+--                      fileNameIndexValue2 := ImageToolJFrame'Class (This).extractIndexNumberIfAnyFromFileName (file2.getName);
 --                      return (fileNameIndexValue1) - (fileNameIndexValue2);
+--          return 0;
 --     end compare;
 --                  
 --     function extractIndexNumberIfAnyFromFileName (This : in out ; name : Unbounded_String) return Integer is
@@ -376,6 +377,7 @@ package body org.allbinary.image.gui.ImageToolJFrame_Package is
 --                              end;
 --                      end;
 --                      return i;
+--          return 0;
 --     end extractIndexNumberIfAnyFromFileName;
 );
             bufferedImageArray := new BufferedImage_Access_Array'(0 .. (files'Length) - 1 => null);
@@ -594,12 +596,12 @@ package body org.allbinary.image.gui.ImageToolJFrame_Package is
       colorRangeInterface : ColorRangeInterface_Access;
    begin
         colorRangeInterface := ColorRangeInterface_Access (ColorRange_Package.Create);
-        colorRangeInterface.setMinRed (This.getMinRedJTextField.getText.intValue);
-        colorRangeInterface.setMaxRed (This.getMaxRedJTextField.getText.intValue);
-        colorRangeInterface.setMinGreen (This.getMinGreenJTextField.getText.intValue);
-        colorRangeInterface.setMaxGreen (This.getMaxGreenJTextField.getText.intValue);
-        colorRangeInterface.setMinBlue (This.getMinBlueJTextField.getText.intValue);
-        colorRangeInterface.setMaxBlue (This.getMaxBlueJTextField.getText.intValue);
+        colorRangeInterface.setMinRed (ImageToolJFrame'Class (This).getMinRedJTextField.getText.intValue);
+        colorRangeInterface.setMaxRed (ImageToolJFrame'Class (This).getMaxRedJTextField.getText.intValue);
+        colorRangeInterface.setMinGreen (ImageToolJFrame'Class (This).getMinGreenJTextField.getText.intValue);
+        colorRangeInterface.setMaxGreen (ImageToolJFrame'Class (This).getMaxGreenJTextField.getText.intValue);
+        colorRangeInterface.setMinBlue (ImageToolJFrame'Class (This).getMinBlueJTextField.getText.intValue);
+        colorRangeInterface.setMaxBlue (ImageToolJFrame'Class (This).getMaxBlueJTextField.getText.intValue);
         return colorRangeInterface;
    end getColorRangeInterface;
 

@@ -34,34 +34,40 @@ package body org.platform.OpenGLResources_Package is
    function isExcluded (This : in out OpenGLResources; name : Unbounded_String) return Boolean is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return False;
    end isExcluded;
 
    function getIdentifier (This : in out OpenGLResources; name : Unbounded_String; defType : Unbounded_String; defPackage : Unbounded_String) return Integer is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return 0;
    end getIdentifier;
 
    --  throws Exception
    function openRawResource (This : in out OpenGLResources; id : Integer) return InputStream_Access is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return null;
    end openRawResource;
 
    --  throws Exception
    function openRawResourceFromName (This : in out OpenGLResources; resourceName : Unbounded_String) return InputStream_Access is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return null;
    end openRawResourceFromName;
 
    --  throws Exception
    function getResourceAsStream (This : in out OpenGLResources; resourceName : Unbounded_String) return InputStream_Access is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return null;
    end getResourceAsStream;
 
    function getPackageName (This : in out OpenGLResources) return Unbounded_String is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return Null_Unbounded_String;
    end getPackageName;
 
    procedure isExcluded (This : in out OpenGLResources; name : Unbounded_String) is

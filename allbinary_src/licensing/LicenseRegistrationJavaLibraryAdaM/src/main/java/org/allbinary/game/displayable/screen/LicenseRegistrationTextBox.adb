@@ -43,11 +43,11 @@ package body org.allbinary.game.displayable.screen.LicenseRegistrationTextBox_Pa
    procedure initCommands (This : in out LicenseRegistrationTextBox; cmdListener_Param : access CommandListener_Package.CommandListener'Class) is
       cmdListener : constant CommandListener_Access := CommandListener_Access (cmdListener_Param);
    begin
-        This.removeAllCommands;
-        This.addCommand (GameCommandsFactory_Package.getInstance.CLOSE_AND_SHOW_GAME_CANVAS);
-        This.addCommand (GameCommandsFactory_Package.getInstance.TOGGLE_KEYBOARD);
-        This.addCommand (SUBMIT_COMMAND);
-        This.setCommandListener (cmdListener);
+        LicenseRegistrationTextBox'Class (This).removeAllCommands;
+        LicenseRegistrationTextBox'Class (This).addCommand (GameCommandsFactory_Package.getInstance.CLOSE_AND_SHOW_GAME_CANVAS);
+        LicenseRegistrationTextBox'Class (This).addCommand (GameCommandsFactory_Package.getInstance.TOGGLE_KEYBOARD);
+        LicenseRegistrationTextBox'Class (This).addCommand (SUBMIT_COMMAND);
+        LicenseRegistrationTextBox'Class (This).setCommandListener (cmdListener);
    end initCommands;
 
    procedure open (This : in out LicenseRegistrationTextBox) is
@@ -66,7 +66,7 @@ package body org.allbinary.game.displayable.screen.LicenseRegistrationTextBox_Pa
         end;
         CustomTextBox (This).open;
         This.paintable := NullPaintable_Package.getInstance;
-        This.repaint;
+        LicenseRegistrationTextBox'Class (This).repaint;
    end open;
 
    --  throws Exception
@@ -85,7 +85,7 @@ package body org.allbinary.game.displayable.screen.LicenseRegistrationTextBox_Pa
                 end;
         end;
         This.paintable := This.pleaseWaitPaintable;
-        This.repaint;
+        LicenseRegistrationTextBox'Class (This).repaint;
         CustomTextBox (This).close;
    end close;
 
@@ -99,7 +99,7 @@ package body org.allbinary.game.displayable.screen.LicenseRegistrationTextBox_Pa
    procedure submit (This : in out LicenseRegistrationTextBox) is
       commandListener : CommandListener_Access;
    begin
-        commandListener := This.getCustomCommandListener;
+        commandListener := LicenseRegistrationTextBox'Class (This).getCustomCommandListener;
         commandListener.commandAction (SUBMIT_COMMAND, LicenseRegistrationTextBox_Access'(This'Unchecked_Access));
    end submit;
 

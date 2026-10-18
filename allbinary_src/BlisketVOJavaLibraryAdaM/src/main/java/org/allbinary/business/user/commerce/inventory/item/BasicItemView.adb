@@ -65,15 +65,15 @@ package body org.allbinary.business.user.commerce.inventory.item.BasicItemView_P
         end if;
         hashMap := This.itemInterface.toHashMap;
         EMPTY_STRING := StringUtil_Package.getInstance.EMPTY_STRING;
-        hashMap.put (This.basicItemData.IMAGE, EMPTY_STRING);
+        hashMap.put (This.basicItemData.IMAGE, Java_Box (EMPTY_STRING));
         stringUtil := StringUtil_Package.getInstance;
         keySet := hashMap.keySet;
         node := document.createElement (This.basicItemData.ITEM);
         nameArray := keySet.toArray;
         size2 := nameArray'Length;
         for index in 0 .. (size2) - 1 loop
-            name := Unbounded_String (nameArray (index));
-            value := Unbounded_String (hashMap.get (name));
+            name := Java_Unbox (nameArray (index));
+            value := Java_Unbox (hashMap.get (Java_Box (name)));
             value := stringUtil.getNonNull (value);
             node.appendChild (ModDomHelper_Package.createNameValueNodes (document, name, value));
         end loop;

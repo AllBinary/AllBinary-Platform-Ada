@@ -30,7 +30,7 @@ package body views.generic_Id.user.DeleteValidationUserView_Package is
    begin
         UserView_Package.Initialize (This, transformInfoInterface);
         Initialize_Fields (This);
-        httpServletRequest := HttpServletRequest_Access (This.getPageContext.getRequest);
+        httpServletRequest := HttpServletRequest_Access (DeleteValidationUserView'Class (This).getPageContext.getRequest);
         hashMap := RequestParams_Package.Create (httpServletRequest).toHashMap;
         This.userName := UserName_Package.Create (hashMap).get;
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then

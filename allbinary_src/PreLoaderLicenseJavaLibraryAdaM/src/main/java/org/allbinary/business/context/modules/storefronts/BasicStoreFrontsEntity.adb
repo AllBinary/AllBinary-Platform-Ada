@@ -27,7 +27,7 @@ package body org.allbinary.business.context.modules.storefronts.BasicStoreFronts
    begin
         InitSql_Package.Initialize (This, UserDbInitInfo_Package.Create);
         Initialize_Fields (This);
-        This.setTable (This.tableName);
+        BasicStoreFrontsEntity'Class (This).setTable (This.tableName);
    end Initialize;
 
    function Create return BasicStoreFrontsEntity_Access is
@@ -43,7 +43,7 @@ package body org.allbinary.business.context.modules.storefronts.BasicStoreFronts
       storeHashMap : HashMap_Access;
    begin
         keysAndValues := StdUtil_Package.getInstance.createHashMap;
-        keysAndValues.put (StoreFrontData_Package.getInstance.NAME, name);
+        keysAndValues.put (StoreFrontData_Package.getInstance.NAME, Java_Box (name));
         storeHashMap := InitSql (This).getRow (keysAndValues);
         if (storeHashMap) = (null) then
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("No Such Store: ") & name));

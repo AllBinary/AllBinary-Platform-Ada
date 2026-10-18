@@ -42,7 +42,7 @@ package body org.allbinary.input.media.image.capture.CapturedImageInputOutput_Pa
         commonStrings := CommonStrings_Package.getInstance;
         capturedBufferedImageCacheable := (BufferedImageFrameCacheable_Access ((AutomaticCacheInterface_Access (CapturedBufferedImagesCacheSingleton_Package.getInstance)).get (frame)));
         This.logUtil.putF ((To_Unbounded_String ("Saving: ") & capturedBufferedImageCacheable.toString), CapturedImageInputOutput_Access'(This'Unchecked_Access), commonStrings.SAVE);
-        This.save (capturedBufferedImageCacheable.getBufferedImage, frame);
+        CapturedImageInputOutput'Class (This).save (capturedBufferedImageCacheable.getBufferedImage, frame);
    end save;
 
    procedure save (This : in out CapturedImageInputOutput; bufferedImage_Param : access BufferedImage_Package.BufferedImage'Class; frame : Long_Long_Integer) is

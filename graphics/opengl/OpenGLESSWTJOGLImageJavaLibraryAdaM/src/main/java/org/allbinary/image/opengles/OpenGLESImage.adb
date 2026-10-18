@@ -109,7 +109,7 @@ package body org.allbinary.image.opengles.OpenGLESImage_Package is
       graphicsStrings : GraphicsStrings_Access;
    begin
         graphicsStrings := GraphicsStrings_Package.getInstance;
-        return StringMaker_Package.Create.append (This.getName).append (Image (This).toString).append (graphicsStrings.OPACITY).appendfloat (Float (This.openGLESImageProperties.alphaf)).toString;
+        return StringMaker_Package.Create.append (OpenGLESImage'Class (This).getName).append (Image (This).toString).append (graphicsStrings.OPACITY).appendfloat (Float (This.openGLESImageProperties.alphaf)).toString;
    end toString;
 
    procedure initTexture (This : in out OpenGLESImage; gl_Param : access GL10_Package.GL10'Class) is

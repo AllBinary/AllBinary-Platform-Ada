@@ -42,9 +42,9 @@ package body org.allbinary.layer.AllBinaryLayer_Package is
         end if;
         This.name := localName;
         point := rectangle.getPoint;
-        This.setPosition (point.getX, point.getY, point.getZ);
-        This.setHalfWidth ((Java_Shift_Right_Arithmetic (This.getWidth, 1)));
-        This.setHalfHeight ((Java_Shift_Right_Arithmetic (This.getHeight, 1)));
+        AllBinaryLayer'Class (This).setPosition (point.getX, point.getY, point.getZ);
+        AllBinaryLayer'Class (This).setHalfWidth ((Java_Shift_Right_Arithmetic (AllBinaryLayer'Class (This).getWidth, 1)));
+        AllBinaryLayer'Class (This).setHalfHeight ((Java_Shift_Right_Arithmetic (AllBinaryLayer'Class (This).getHeight, 1)));
         This.viewPosition := viewPosition;
         This.viewPosition.setAllbinaryLayer (AllBinaryLayer_Access'(This'Unchecked_Access));
    end Initialize;
@@ -71,17 +71,17 @@ package body org.allbinary.layer.AllBinaryLayer_Package is
 
    function getX2 (This : in out AllBinaryLayer) return Integer is
    begin
-        return (This.getXP) + (This.getWidth);
+        return (AllBinaryLayer'Class (This).getXP) + (AllBinaryLayer'Class (This).getWidth);
    end getX2;
 
    function getY2 (This : in out AllBinaryLayer) return Integer is
    begin
-        return (This.getYP) + (This.getHeight);
+        return (AllBinaryLayer'Class (This).getYP) + (AllBinaryLayer'Class (This).getHeight);
    end getY2;
 
    function getZ2 (This : in out AllBinaryLayer) return Integer is
    begin
-        return Integer (((This.getZP) + (This.getDepth)));
+        return Integer (((AllBinaryLayer'Class (This).getZP) + (AllBinaryLayer'Class (This).getDepth)));
    end getZ2;
 
    function getName (This : in out AllBinaryLayer) return Unbounded_String is
@@ -111,7 +111,7 @@ package body org.allbinary.layer.AllBinaryLayer_Package is
 
    function getHalfDepth (This : in out AllBinaryLayer) return Integer is
    begin
-        return (Integer (This.getDepth)) / (2);
+        return (Integer (AllBinaryLayer'Class (This).getDepth)) / (2);
    end getHalfDepth;
 
    function getViewPosition (This : in out AllBinaryLayer) return ViewPositionBase_Access is
@@ -174,32 +174,32 @@ package body org.allbinary.layer.AllBinaryLayer_Package is
         commonSeps := CommonSeps_Package.getInstance;
         positionStrings := PositionStrings_Package.getInstance;
         commonLabels := CommonLabels_Package.getInstance;
-        stringBuffer.append (This.getName);
+        stringBuffer.append (AllBinaryLayer'Class (This).getName);
         stringBuffer.append (commonSeps.COLON);
         stringBuffer.append (AllBinaryLayer_Package.TYPE_Id);
-        stringBuffer.appendint (This.getType);
+        stringBuffer.appendint (AllBinaryLayer'Class (This).getType);
         stringBuffer.append (commonSeps.SPACE);
         stringBuffer.append (positionStrings.X_LABEL);
-        stringBuffer.appendint (Integer (This.getXP));
+        stringBuffer.appendint (Integer (AllBinaryLayer'Class (This).getXP));
         stringBuffer.append (commonSeps.SPACE);
         stringBuffer.append (positionStrings.Y_LABEL);
-        stringBuffer.appendint (Integer (This.getYP));
+        stringBuffer.appendint (Integer (AllBinaryLayer'Class (This).getYP));
         stringBuffer.append (commonSeps.SPACE);
         stringBuffer.append (positionStrings.Z_LABEL);
-        stringBuffer.appendint (Integer (This.getZP));
+        stringBuffer.appendint (Integer (AllBinaryLayer'Class (This).getZP));
         stringBuffer.append (commonSeps.SPACE);
         stringBuffer.append (commonLabels.WIDTH_LABEL);
-        stringBuffer.appendint (Integer (This.getWidth));
+        stringBuffer.appendint (Integer (AllBinaryLayer'Class (This).getWidth));
         stringBuffer.append (commonSeps.SPACE);
         stringBuffer.append (commonLabels.HEIGHT_LABEL);
-        stringBuffer.appendint (Integer (This.getHeight));
+        stringBuffer.appendint (Integer (AllBinaryLayer'Class (This).getHeight));
    end toStringAppend;
 
    function toString (This : in out AllBinaryLayer) return Unbounded_String is
       stringBuffer : StringMaker_Access;
    begin
         stringBuffer := StringMaker_Package.Create;
-        This.toStringAppend (stringBuffer);
+        AllBinaryLayer'Class (This).toStringAppend (stringBuffer);
         return stringBuffer.toString;
    end toString;
 

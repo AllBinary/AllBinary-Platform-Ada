@@ -49,9 +49,9 @@ package body admin.taghelpers.AuthenticationHelper_Package is
       TagHelper_Package.Initialize (This);
       Initialize_Fields (This);
         This.weblisketSession := WeblisketSession_Package.Create (hashMap, httpServletRequest);
-        This.getFormData;
+        AuthenticationHelper'Class (This).getFormData;
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.AUTHENTICATION) then
-            This.logUtil.putF (This.outputSessionInfo, AuthenticationHelper_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
+            This.logUtil.putF (AuthenticationHelper'Class (This).outputSessionInfo, AuthenticationHelper_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         end if;
    end Initialize;
 
@@ -121,7 +121,7 @@ package body admin.taghelpers.AuthenticationHelper_Package is
                 This.logUtil.putF (To_Unbounded_String ("Role Is Not In Session"), AuthenticationHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("isSessionOld()"));
             end if;
         end if;
-        return This.isRarelyUsedSession;
+        return AuthenticationHelper'Class (This).isRarelyUsedSession;
    end isSessionOld;
 
    function isRarelyUsedSession (This : in out AuthenticationHelper) return Boolean is
@@ -224,7 +224,7 @@ package body admin.taghelpers.AuthenticationHelper_Package is
    begin
         begin
             if (This.role) /= (null) then
-                if This.isAuthenticated then
+                if AuthenticationHelper'Class (This).isAuthenticated then
                     if (This.sessionUserName) /= (Null_Unbounded_String) then
                         basicUserRole := This.role.getBasicUserRole;
                         basicUserRoleArray := roles.toArray;
@@ -293,10 +293,10 @@ package body admin.taghelpers.AuthenticationHelper_Package is
                         return True;
                     end if;
                 end if;
-                This.nextAttempt;
+                AuthenticationHelper'Class (This).nextAttempt;
                 return False;
             end if;
-            This.nextAttempt;
+            AuthenticationHelper'Class (This).nextAttempt;
             return False;
         exception
             when Java_Occurrence : others =>
@@ -315,7 +315,7 @@ package body admin.taghelpers.AuthenticationHelper_Package is
    begin
         begin
             if BooleanUtil_Package.getInstance.getFromString (This.timeout) then
-                This.invalidateSession;
+                AuthenticationHelper'Class (This).invalidateSession;
                 return True;
             end if;
             begin

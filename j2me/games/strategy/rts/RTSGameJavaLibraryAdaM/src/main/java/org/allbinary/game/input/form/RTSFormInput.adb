@@ -70,7 +70,7 @@ package body org.allbinary.game.input.form.RTSFormInput_Package is
       scrollSelectionForm : ScrollSelectionForm_Access;
       item : ABCustomItem_Access;
    begin
-        index := This.getIndexAt (rtsPlayerLayerInterface, point);
+        index := RTSFormInput'Class (This).getIndexAt (rtsPlayerLayerInterface, point);
         if (index) < (0) then
             return;
         end if;
@@ -79,14 +79,14 @@ package body org.allbinary.game.input.form.RTSFormInput_Package is
         if (item) = (null) then
             return;
         end if;
-        This.processGameSpecific (associatedRtsLayer, rtsPlayerLayerInterface, layerManager, item, index);
+        RTSFormInput'Class (This).processGameSpecific (associatedRtsLayer, rtsPlayerLayerInterface, layerManager, item, index);
    end processAtPoint;
 
    --  throws Exception
    procedure process (This : in out RTSFormInput; layerManager_Param : access AllBinaryLayerManager_Package.AllBinaryLayerManager'Class) is
       layerManager : constant AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (layerManager_Param);
    begin
-        This.setAllBinaryGameLayerManager (AllBinaryGameLayerManager_Access (layerManager));
+        RTSFormInput'Class (This).setAllBinaryGameLayerManager (AllBinaryGameLayerManager_Access (layerManager));
    end process;
 
    --  throws Exception
@@ -109,7 +109,7 @@ package body org.allbinary.game.input.form.RTSFormInput_Package is
       scrollSelectionForm : ScrollSelectionForm_Access;
       item : ABCustomItem_Access;
    begin
-        index := This.getIndexAt (rtsPlayerLayerInterface, point);
+        index := RTSFormInput'Class (This).getIndexAt (rtsPlayerLayerInterface, point);
         if (index) < (0) then
             return False;
         end if;
@@ -118,7 +118,7 @@ package body org.allbinary.game.input.form.RTSFormInput_Package is
         if (item) = (null) then
             return False;
         end if;
-        This.processStickyGameSpecific (associatedRtsLayer, rtsPlayerLayerInterface, layerManager, item, index);
+        RTSFormInput'Class (This).processStickyGameSpecific (associatedRtsLayer, rtsPlayerLayerInterface, layerManager, item, index);
         return True;
    end processSticky;
 
@@ -168,7 +168,7 @@ package body org.allbinary.game.input.form.RTSFormInput_Package is
         cellPoint := geographicMapCellPosition.getPoint;
         if (layerInterfaceFactoryInterface) /= (null) then
             This.hashtable.put (AllBinaryGameLayerManager_Package.ID, layerManager);
-            return RTSLayer_Access (layerInterfaceFactoryInterface.getNextInstance (This.getHashtable, cellPoint.getX, cellPoint.getY, cellPoint.getZ));
+            return RTSLayer_Access (layerInterfaceFactoryInterface.getNextInstance (RTSFormInput'Class (This).getHashtable, cellPoint.getX, cellPoint.getY, cellPoint.getZ));
         end if;
         return CollidableDestroyableDamageableLayer_Package.getNullInstance;
    end getInstance;

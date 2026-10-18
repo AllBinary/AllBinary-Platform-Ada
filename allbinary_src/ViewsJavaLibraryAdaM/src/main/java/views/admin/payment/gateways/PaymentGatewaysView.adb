@@ -51,13 +51,13 @@ package body views.admin.payment.gateways.PaymentGatewaysView_Package is
       index : Integer;
    begin
         begin
-            storeName := This.getTransformInfoInterface.getStoreName;
+            storeName := PaymentGatewaysView'Class (This).getTransformInfoInterface.getStoreName;
             paymentGatewaysNode := document.createElement (PaymentGatewaysData_Package.NAME);
             size := This.paymentGatewayVector.size;
             for index in 0 .. (size) - 1 loop
                 paymentType := BasicPaymentType_Access (This.paymentGatewayVector.get (index));
                 hashMap := paymentType.toHashMap;
-                hashMap.put (EntryData_Package.getInstance.DEFAULT, PaymentTypeUtil_Package.getInstance.getDefault (storeName).getBasicPaymentType.getName);
+                hashMap.put (EntryData_Package.getInstance.DEFAULT, Java_Box (PaymentTypeUtil_Package.getInstance.getDefault (storeName).getBasicPaymentType.getName));
                 paymentGatewayNode := ModDomHelper_Package.createNodeWithValueNodes (document, PaymentGatewayData_Package.NAME.toString, hashMap);
                 paymentGatewaysNode.appendChild (paymentGatewayNode);
             end loop;
@@ -77,14 +77,14 @@ package body views.admin.payment.gateways.PaymentGatewaysView_Package is
 
    procedure addDomNodeInterfaces (This : in out PaymentGatewaysView) is
    begin
-        This.addDomNodeInterface (DomNodeInterface_Access (PaymentGatewaysView_Access'(This'Unchecked_Access)));
+        PaymentGatewaysView'Class (This).addDomNodeInterface (DomNodeInterface_Access (PaymentGatewaysView_Access'(This'Unchecked_Access)));
    end addDomNodeInterfaces;
 
    function view (This : in out PaymentGatewaysView) return Unbounded_String is
       error : Unbounded_String;
    begin
         begin
-            This.addDomNodeInterfaces;
+            PaymentGatewaysView'Class (This).addDomNodeInterfaces;
             return HttpStoreComponentView (This).view;
         exception
             when Java_Occurrence : others =>

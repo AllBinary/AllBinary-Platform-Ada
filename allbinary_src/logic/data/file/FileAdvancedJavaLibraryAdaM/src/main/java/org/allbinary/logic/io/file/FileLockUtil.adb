@@ -53,7 +53,7 @@ package body org.allbinary.logic.io.file.FileLockUtil_Package is
         size := vector.size;
         for index in 0 .. (size) - 1 loop
             file := AbFile_Access (vector.get (index));
-            fileLock := This.getLock (file);
+            fileLock := FileLockUtil'Class (This).getLock (file);
             if (fileLock) /= (null) then
                 This.logUtil.putF (To_Unbounded_String ("File Lock Obtained: ") & Java_Image (file.getAbsolutePath), FileLockUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("getAll"));
                 fileLockVector.add (fileLock);
@@ -70,7 +70,7 @@ package body org.allbinary.logic.io.file.FileLockUtil_Package is
    function getAllPossible (This : in out FileLockUtil; vector_Param : access BasicArrayList_Package.BasicArrayList'Class) return BasicArrayList_Access is
       vector : constant BasicArrayList_Access := BasicArrayList_Access (vector_Param);
    begin
-        return This.getAll (vector, False);
+        return FileLockUtil'Class (This).getAll (vector, False);
    end getAllPossible;
 
    --  throws Exception
@@ -78,7 +78,7 @@ package body org.allbinary.logic.io.file.FileLockUtil_Package is
       vector : constant BasicArrayList_Access := BasicArrayList_Access (vector_Param);
       fileLockVector : BasicArrayList_Access;
    begin
-        fileLockVector := This.getAll (vector, True);
+        fileLockVector := FileLockUtil'Class (This).getAll (vector, True);
         if (vector.size) /= (fileLockVector.size) then
             return BasicArrayListD_Package.Create;
         else
@@ -91,7 +91,7 @@ package body org.allbinary.logic.io.file.FileLockUtil_Package is
       file : constant AbFile_Access := AbFile_Access (file_Param);
    begin
         begin
-            return This.getLock (AbFileOutputStream_Package.createFromAbFileAppend (file, True));
+            return FileLockUtil'Class (This).getLock (AbFileOutputStream_Package.createFromAbFileAppend (file, True));
         exception
             when Java_Occurrence : others =>
                 declare
@@ -113,7 +113,7 @@ package body org.allbinary.logic.io.file.FileLockUtil_Package is
       fileLock : FileLock_Access;
    begin
         begin
-            fileLock := This.getLock (fileOutputStream.getChannel);
+            fileLock := FileLockUtil'Class (This).getLock (fileOutputStream.getChannel);
             return fileLock;
         exception
             when Java_Occurrence : others =>

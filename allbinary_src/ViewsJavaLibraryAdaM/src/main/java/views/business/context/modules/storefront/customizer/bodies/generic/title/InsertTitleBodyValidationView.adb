@@ -28,7 +28,7 @@ package body views.business.context.modules.storefront.customizer.bodies.generic
    begin
         TitleBodyCustomizerView_Package.Initialize (This, transformInfoInterface);
         Initialize_Fields (This);
-        requestHashMap := RequestParams_Package.Create (This.getPageContext).toHashMap;
+        requestHashMap := RequestParams_Package.Create (InsertTitleBodyValidationView'Class (This).getPageContext).toHashMap;
         This.titleBody := TitleBodyValidation_Package.Create (requestHashMap);
    end Initialize;
 
@@ -54,7 +54,7 @@ package body views.business.context.modules.storefront.customizer.bodies.generic
             end if;
             isValid := This.titleBody.isValid;
             if (isValid) = (True) then
-                CustomizerUtil_Package.getInstance.insert (This.getTransformInfoInterface, DomNodeInterface_Access (This.titleBody));
+                CustomizerUtil_Package.getInstance.insert (InsertTitleBodyValidationView'Class (This).getTransformInfoInterface, DomNodeInterface_Access (This.titleBody));
             end if;
             return isValid;
         exception
@@ -105,7 +105,7 @@ package body views.business.context.modules.storefront.customizer.bodies.generic
    function view (This : in out InsertTitleBodyValidationView) return Unbounded_String is
    begin
         begin
-            return StoreCustomizerComponentUtil_Package.getInstance.generate (This.abeClientInformation, This.getTransformInfoInterface);
+            return StoreCustomizerComponentUtil_Package.getInstance.generate (This.abeClientInformation, InsertTitleBodyValidationView'Class (This).getTransformInfoInterface);
         exception
             when Java_Occurrence : others =>
                 declare

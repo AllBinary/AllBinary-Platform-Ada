@@ -49,7 +49,7 @@ package body org.allbinary.game.PlayerType_Package is
 
    function toString (This : in out PlayerType) return Unbounded_String is
    begin
-        return This.getName;
+        return PlayerType'Class (This).getName;
    end toString;
 
 end org.allbinary.game.PlayerType_Package;

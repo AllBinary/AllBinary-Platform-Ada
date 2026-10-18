@@ -43,7 +43,7 @@ package body org.allbinary.image.gui.MirrorImageJPanel_Package is
         JPanel_Package.Initialize (This);
         Initialize_Fields (This);
         This.logUtil.putF (To_Unbounded_String ("Starting"), MirrorImageJPanel_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
-        This.initComponents;
+        MirrorImageJPanel'Class (This).initComponents;
         This.imageProcessorInput := imageProcessorInput;
    end Initialize;
 
@@ -70,7 +70,7 @@ package body org.allbinary.image.gui.MirrorImageJPanel_Package is
 --     begin
 --                  logUtil := LogUtil_Package.getInstance;
 --                  begin
---                      imageProcessorInput := This.getImageProcessorInput;
+--                      imageProcessorInput := MirrorImageJPanel'Class (This).getImageProcessorInput;
 --                      bufferedImageArray := imageProcessorInput.getBufferedImageArray;
 --                      for index in 0 .. (bufferedImageArray'Length) - 1 loop
 --                          This.result := MirrorImageUtil_Package.getInstance.getImage (bufferedImageArray (index), This.verticleJCheckBox.isSelected, This.horizontalJCheckBox.isSelected);
@@ -79,14 +79,14 @@ package body org.allbinary.image.gui.MirrorImageJPanel_Package is
 --                              null;
 --                          elsif This.renameJRadioButton.isSelected then
 --                              filePath := file.getAbsolutePath;
---                              extensionIndex := (Index (filePath, To_String (This.imageStrings.PNG_EXTENSION)) - 1);
+--                              extensionIndex := (Index (filePath, Java_Image (This.imageStrings.PNG_EXTENSION)) - 1);
 --                              filePath := Unbounded_Slice (filePath, (0) + 1, extensionIndex) & To_Unbounded_String ("_mirror") & Java_Image (This.imageStrings.PNG_EXTENSION);
 --                              logUtil.putF (To_Unbounded_String ("Renamed File: ") & filePath, MirrorImageJPanel_Access'(This'Unchecked_Access), This.commonStrings.RUN);
 --                              file := File_Package.Create (filePath);
 --                          end if;
 --                          isWritten := ImageIO_Package.write (RenderedImage_Access (This.result), This.imageStrings.PNG, file);
 --                          logUtil.putF (To_Unbounded_String ("File: ") & Java_Image (file) & To_Unbounded_String (" Wrote: ") & Java_Image (isWritten), MirrorImageJPanel_Access'(This'Unchecked_Access), This.commonStrings.RUN);
---                          This.getParent.repaint;
+--                          MirrorImageJPanel'Class (This).getParent.repaint;
 --                      end loop;
 --                  exception
 --                      when Java_Occurrence : others =>
@@ -141,7 +141,7 @@ package body org.allbinary.image.gui.MirrorImageJPanel_Package is
 --     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
 --        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
---                  This.generateJButtonActionPerformed (evt);
+--                  MirrorImageJPanel'Class (This).generateJButtonActionPerformed (evt);
 --     end actionPerformed;
 );
         This.renameJRadioButton.setText (To_Unbounded_String ("Save As filename_mirror"));
@@ -150,7 +150,7 @@ package body org.allbinary.image.gui.MirrorImageJPanel_Package is
 --     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
 --        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
---                  This.renameJRadioButtonActionPerformed (evt);
+--                  MirrorImageJPanel'Class (This).renameJRadioButtonActionPerformed (evt);
 --     end actionPerformed;
 );
         This.writeOverOriginalJRadioButton.setText (To_Unbounded_String ("Write Over Original"));
@@ -164,7 +164,7 @@ package body org.allbinary.image.gui.MirrorImageJPanel_Package is
         jPanel3Layout.setHorizontalGroup (jPanel3Layout.createParallelGroup (org_Package.jdesktop.layout.GroupLayout.LEADING).add (jPanel3Layout.createSequentialGroup.add (This.jLabel2).addContainerGap (433, Short_Package.MAX_VALUE)));
         jPanel3Layout.setVerticalGroup (jPanel3Layout.createParallelGroup (org_Package.jdesktop.layout.GroupLayout.LEADING).add (This.jLabel2));
         layout := GroupLayout_Package.Create (MirrorImageJPanel_Access'(This'Unchecked_Access));
-        This.setLayout (layout);
+        MirrorImageJPanel'Class (This).setLayout (layout);
         layout.setHorizontalGroup (layout.createParallelGroup (org_Package.jdesktop.layout.GroupLayout.LEADING).add (org_Package.jdesktop.layout.GroupLayout.TRAILING, layout.createSequentialGroup.addContainerGap.add (This.jPanel3, org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short_Package.MAX_VALUE).addContainerGap).add (This.jPanel1, org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short_Package.MAX_VALUE).add (layout.createSequentialGroup.add (This.jPanel2, org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short_Package.MAX_VALUE).addContainerGap (org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short_Package.MAX_VALUE)));
         layout.setVerticalGroup (layout.createParallelGroup (org_Package.jdesktop.layout.GroupLayout.LEADING).add (layout.createSequentialGroup.add (This.jPanel2, org_Package.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 25, org_Package.jdesktop.layout.GroupLayout.PREFERRED_SIZE).addPreferredGap (org_Package.jdesktop.layout.LayoutStyle.RELATED).add (This.jPanel3, org_Package.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org_Package.jdesktop.layout.GroupLayout.PREFERRED_SIZE).addPreferredGap (org_Package.jdesktop.layout.LayoutStyle.RELATED).add (This.jPanel1, org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short_Package.MAX_VALUE)));
    end initComponents;
@@ -172,7 +172,7 @@ package body org.allbinary.image.gui.MirrorImageJPanel_Package is
    procedure generateJButtonActionPerformed (This : in out MirrorImageJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
       evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
-        This.process;
+        MirrorImageJPanel'Class (This).process;
    end generateJButtonActionPerformed;
 
    procedure renameJRadioButtonActionPerformed (This : in out MirrorImageJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class) is

@@ -31,8 +31,8 @@ package body views.generic_Id.order.OrderView_Package is
    begin
         HttpStoreComponentView_Package.Initialize (This, transformInfoInterface);
         Initialize_Fields (This);
-        This.request := HttpServletRequest_Access (This.getPageContext.getRequest);
-        This.getFormData;
+        This.request := HttpServletRequest_Access (OrderView'Class (This).getPageContext.getRequest);
+        OrderView'Class (This).getFormData;
    end Initialize;
 
    function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return OrderView_Access is
@@ -48,7 +48,7 @@ package body views.generic_Id.order.OrderView_Package is
    begin
         id := This.request.getParameter (OrderData_Package.ID);
         if (id) = (Null_Unbounded_String) then
-            id := This.getWeblisketSession.getOrder.getId;
+            id := OrderView'Class (This).getWeblisketSession.getOrder.getId;
         end if;
         This.order := Order_Package.Create (Basket_Package.Create);
         This.order.setId (id);
@@ -80,14 +80,14 @@ package body views.generic_Id.order.OrderView_Package is
 
    procedure addDomNodeInterfaces (This : in out OrderView) is
    begin
-        This.addDomNodeInterface (DomNodeInterface_Access (OrderView_Access'(This'Unchecked_Access)));
+        OrderView'Class (This).addDomNodeInterface (DomNodeInterface_Access (OrderView_Access'(This'Unchecked_Access)));
    end addDomNodeInterfaces;
 
    --  throws Exception
    function view (This : in out OrderView) return Unbounded_String is
    begin
         begin
-            This.addDomNodeInterfaces;
+            OrderView'Class (This).addDomNodeInterfaces;
             return HttpStoreComponentView (This).view;
         exception
             when Java_Occurrence : others =>

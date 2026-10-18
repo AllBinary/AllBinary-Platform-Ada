@@ -41,8 +41,8 @@ package body org.allbinary.animation.image.AllBinaryHTMLImageRotationAnimation_P
         This.imageToShow := image;
         This.twoImages (0) := image;
         This.twoImages (1) := ImageCopyUtil_Package.getInstance.createImage (image);
-        This.canvasSurfaceArray (0) := This.getCanvasSurface (This.twoImages (0));
-        This.canvasSurfaceArray (1) := This.getCanvasSurface (This.twoImages (1));
+        This.canvasSurfaceArray (0) := AllBinaryHTMLImageRotationAnimation'Class (This).getCanvasSurface (This.twoImages (0));
+        This.canvasSurfaceArray (1) := AllBinaryHTMLImageRotationAnimation'Class (This).getCanvasSurface (This.twoImages (1));
    end Initialize;
 
    function Create (originalImage_Param : access Image_Package.Image'Class; image_Param : access Image_Package.Image'Class; angleInfo_Param : access AngleInfo_Package.AngleInfo'Class; totalAngle : Short_Integer; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class) return AllBinaryHTMLImageRotationAnimation_Access is
@@ -72,12 +72,12 @@ package body org.allbinary.animation.image.AllBinaryHTMLImageRotationAnimation_P
       changed : Boolean;
    begin
         changed := False;
-        if ((This.getBasicColorP) = (null)) or else ((This.getBasicColorP.intValue) /= (basicColor.intValue)) then
+        if ((AllBinaryHTMLImageRotationAnimation'Class (This).getBasicColorP) = (null)) or else ((AllBinaryHTMLImageRotationAnimation'Class (This).getBasicColorP.intValue) /= (basicColor.intValue)) then
             changed := True;
         end if;
         ImageBaseRotationAnimation (This).setBasicColorP (basicColor);
         if changed then
-            This.updateImage;
+            AllBinaryHTMLImageRotationAnimation'Class (This).updateImage;
         end if;
    end setBasicColorP;
 
@@ -91,20 +91,20 @@ package body org.allbinary.animation.image.AllBinaryHTMLImageRotationAnimation_P
         ImageBaseRotationAnimation (This).setAlpha (alpha);
         if changed then
             This.alphaProcessor := AlphaProcessor_Package.getInstance;
-            This.updateImage;
+            AllBinaryHTMLImageRotationAnimation'Class (This).updateImage;
         end if;
    end setAlpha;
 
    procedure nextRotation (This : in out AllBinaryHTMLImageRotationAnimation) is
    begin
         ImageBaseRotationAnimation (This).nextRotation;
-        This.updateImage;
+        AllBinaryHTMLImageRotationAnimation'Class (This).updateImage;
    end nextRotation;
 
    procedure previousRotation (This : in out AllBinaryHTMLImageRotationAnimation) is
    begin
         ImageBaseRotationAnimation (This).previousRotation;
-        This.updateImage;
+        AllBinaryHTMLImageRotationAnimation'Class (This).updateImage;
    end previousRotation;
 
    procedure updateImage (This : in out AllBinaryHTMLImageRotationAnimation) is
@@ -116,13 +116,13 @@ package body org.allbinary.animation.image.AllBinaryHTMLImageRotationAnimation_P
         This.alphaProcessor.setAlpha (This.imageModifierUtil, This.originalImage, This.twoImages (This.bufferedImageIndex), This.alphaP);
         This.imageRotationUtil.drawImage (This.originalImage, This.imageToShow, canvasSurface);
         canvasSurface.restore;
-        This.swap;
+        AllBinaryHTMLImageRotationAnimation'Class (This).swap;
    end updateImage;
 
    procedure setFrame (This : in out AllBinaryHTMLImageRotationAnimation; index : Integer) is
    begin
         ImageBaseRotationAnimation (This).setFrame (index);
-        This.updateImage;
+        AllBinaryHTMLImageRotationAnimation'Class (This).updateImage;
    end setFrame;
 
    procedure swap (This : in out AllBinaryHTMLImageRotationAnimation) is

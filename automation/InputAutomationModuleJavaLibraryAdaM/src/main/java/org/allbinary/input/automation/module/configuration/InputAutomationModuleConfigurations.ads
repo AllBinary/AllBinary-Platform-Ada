@@ -22,7 +22,7 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.io.File_Package; use java.io.File_Package;
 --  with java.io.FileInputStream_Package; use java.io.FileInputStream_Package;
---  with java.util.HashMap_Package; use java.util.HashMap_Package;
+with java.util.HashMap_Package; use java.util.HashMap_Package;
 --  with java.util.List_Package; use java.util.List_Package;
 with org.allbinary.data.tree.dom.document.DomDocumentHelper_Package; use org.allbinary.data.tree.dom.document.DomDocumentHelper_Package;
 with org.allbinary.input.automation.module.InputAutomationModuleData_Package; use org.allbinary.input.automation.module.InputAutomationModuleData_Package;
@@ -36,6 +36,7 @@ with org.allbinary.input.automation.module.configuration.InputAutomationModuleCo
 
 package org.allbinary.input.automation.module.configuration.InputAutomationModuleConfigurations_Package is
 
+   package HashMap_Package renames Standard.java.util.HashMap_Package;
    package DomDocumentHelper_Package renames Standard.org.allbinary.data.tree.dom.document.DomDocumentHelper_Package;
    package InputAutomationModuleData_Package renames Standard.org.allbinary.input.automation.module.InputAutomationModuleData_Package;
    package NewInputAutomationModulesData_Package renames Standard.org.allbinary.input.automation.module.NewInputAutomationModulesData_Package;

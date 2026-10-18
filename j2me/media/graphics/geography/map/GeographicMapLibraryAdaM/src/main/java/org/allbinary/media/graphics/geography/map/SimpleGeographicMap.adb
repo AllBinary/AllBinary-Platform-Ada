@@ -39,8 +39,8 @@ package body org.allbinary.media.graphics.geography.map.SimpleGeographicMap_Pack
         This.name := name;
         This.cellTypeIdToGeographicMapCellType := cellTypeIdToGeographicMapCellType;
         This.tiledLayer := tiledLayer;
-        This.setBackgroundBasicColor (backgroundBasicColor);
-        This.setForegroundBasicColor (foregroundBasicColor);
+        SimpleGeographicMap'Class (This).setBackgroundBasicColor (backgroundBasicColor);
+        SimpleGeographicMap'Class (This).setForegroundBasicColor (foregroundBasicColor);
    end Initialize;
 
    function Create (id : Integer; name : Unbounded_String; cellTypeIdToGeographicMapCellType : Integer_Array_Access; tiledLayer_Param : access AllBinaryTiledLayer_Package.AllBinaryTiledLayer'Class; foregroundBasicColor_Param : access BasicColor_Package.BasicColor'Class; backgroundBasicColor_Param : access BasicColor_Package.BasicColor'Class) return SimpleGeographicMap_Access is

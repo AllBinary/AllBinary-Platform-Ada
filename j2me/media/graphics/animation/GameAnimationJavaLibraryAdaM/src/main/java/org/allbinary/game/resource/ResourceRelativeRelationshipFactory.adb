@@ -39,7 +39,7 @@ package body org.allbinary.game.resource.ResourceRelativeRelationshipFactory_Pac
    --  throws Exception
    procedure init (This : in out ResourceRelativeRelationshipFactory; level : Integer) is
    begin
-        This.setInitialized (True);
+        ResourceRelativeRelationshipFactory'Class (This).setInitialized (True);
    end init;
 
    --  throws Exception
@@ -58,7 +58,7 @@ package body org.allbinary.game.resource.ResourceRelativeRelationshipFactory_Pac
       hardPoint : constant RelativeRelationship_Access := RelativeRelationship_Access (hardPoint_Param);
       list : BasicArrayList_Access;
    begin
-        list := This.getResourceRelativeRelationshipList (resource);
+        list := ResourceRelativeRelationshipFactory'Class (This).getResourceRelativeRelationshipList (resource);
         if (list) = (This.basicArrayListUtil.getImmutableInstance) then
             list := BasicArrayListD_Package.Create;
         end if;

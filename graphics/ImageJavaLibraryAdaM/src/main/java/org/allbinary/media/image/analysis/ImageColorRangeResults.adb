@@ -27,7 +27,7 @@ package body org.allbinary.media.image.analysis.ImageColorRangeResults_Package i
    procedure Initialize (This : in out ImageColorRangeResults'Class) is
    begin
       Initialize_Fields (This);
-        This.setColorRangeInterface (ColorRangeInterface_Access (ColorRange_Package.Create));
+        ImageColorRangeResults'Class (This).setColorRangeInterface (ColorRangeInterface_Access (ColorRange_Package.Create));
    end Initialize;
 
    function Create return ImageColorRangeResults_Access is
@@ -80,7 +80,7 @@ package body org.allbinary.media.image.analysis.ImageColorRangeResults_Package i
 
    function getPercent (This : in out ImageColorRangeResults) return Float is
    begin
-        return ((Float (This.getMatchingPixelsChecked)) / (Float (This.getTotalPixelsChecked)));
+        return ((Float (ImageColorRangeResults'Class (This).getMatchingPixelsChecked)) / (Float (ImageColorRangeResults'Class (This).getTotalPixelsChecked)));
    end getPercent;
 
 end org.allbinary.media.image.analysis.ImageColorRangeResults_Package;

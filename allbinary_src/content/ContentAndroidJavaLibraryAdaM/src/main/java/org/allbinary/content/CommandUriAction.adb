@@ -52,7 +52,7 @@ package body org.allbinary.content.CommandUriAction_Package is
       commonStrings : CommonStrings_Access;
    begin
         begin
-            intent := This.getIntent (command);
+            intent := CommandUriAction'Class (This).getIntent (command);
             ResourceUtil_Package.getInstance.getContext.startActivity (intent);
         exception
             when Java_Occurrence : others =>
@@ -71,7 +71,7 @@ package body org.allbinary.content.CommandUriAction_Package is
       uri : Uri_Access;
       intent : Intent_Access;
    begin
-        url := Unbounded_String (This.hashtable.get (command));
+        url := Java_Unbox (This.hashtable.get (command));
         uri := Uri_Package.parse (url);
         intent := Intent_Package.Create (Intent_Package.ACTION_VIEW, uri);
         return intent;

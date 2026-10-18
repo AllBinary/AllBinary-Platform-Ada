@@ -36,12 +36,14 @@ package body javax.microedition.lcdui.NullCanvas_Package is
    function getCommandStack (This : in out NullCanvas) return Stack_Access is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return null;
    end getCommandStack;
 
    function isCommand (This : in out NullCanvas; command_Param : access Command_Package.Command'Class) return Boolean is
       command : constant Command_Access := Command_Access (command_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return False;
    end isCommand;
 
    procedure addCommand (This : in out NullCanvas; command_Param : access Command_Package.Command'Class) is
@@ -70,11 +72,13 @@ package body javax.microedition.lcdui.NullCanvas_Package is
    function getCustomCommandListener (This : in out NullCanvas) return CommandListener_Access is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return null;
    end getCustomCommandListener;
 
    function isPaused (This : in out NullCanvas) return Boolean is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return False;
    end isPaused;
 
    procedure removePauseCommand (This : in out NullCanvas) is

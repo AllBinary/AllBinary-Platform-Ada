@@ -37,7 +37,7 @@ package body views.generic_Id.address.shipping.AddValidationView_Package is
    --  throws Exception
    function isValid (This : in out AddValidationView) return Boolean is
    begin
-        This.streetAddress := StreetAddress_Package.Create (This.getRequest);
+        This.streetAddress := StreetAddress_Package.Create (AddValidationView'Class (This).getRequest);
         if (This.streetAddress.isValid) = (False) then
             return False;
         end if;

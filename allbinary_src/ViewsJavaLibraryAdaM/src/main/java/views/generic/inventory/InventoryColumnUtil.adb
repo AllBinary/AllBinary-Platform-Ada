@@ -55,9 +55,9 @@ package body views.generic_Id.inventory.InventoryColumnUtil_Package is
         size := vectorOfHashMaps.size;
         for index in 0 .. (size) - 1 loop
             hashMap := HashMap_Access (vectorOfHashMaps.get (index));
-            categoryName := Unbounded_String (hashMap.get (This.basicItemData.CATEGORY));
+            categoryName := Java_Unbox (hashMap.get (This.basicItemData.CATEGORY));
             if (not (StringValidationUtil_Package.getInstance.isEmpty (categoryName))) and then (categoryName.startsWith (category)) then
-                keywords.add (hashMap.get (column));
+                keywords.add (hashMap.get (Java_Box (column)));
             end if;
         end loop;
         return keywords;

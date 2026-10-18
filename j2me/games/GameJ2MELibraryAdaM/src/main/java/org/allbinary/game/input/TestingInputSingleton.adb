@@ -139,8 +139,8 @@ package body org.allbinary.game.input.TestingInputSingleton_Package is
    procedure processInput (This : in out TestingInputSingleton; allbinaryLayerManager_Param : access AllBinaryLayerManager_Package.AllBinaryLayerManager'Class) is
       allbinaryLayerManager : constant AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (allbinaryLayerManager_Param);
    begin
-        This.processInputList (allbinaryLayerManager, This.getGameKeyEventList);
-        This.getGameKeyEventList.clear;
+        TestingInputSingleton'Class (This).processInputList (allbinaryLayerManager, TestingInputSingleton'Class (This).getGameKeyEventList);
+        TestingInputSingleton'Class (This).getGameKeyEventList.clear;
    end processInput;
 
    procedure paint (This : in out TestingInputSingleton; graphics_Param : access Graphics_Package.Graphics'Class) is

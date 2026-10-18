@@ -53,7 +53,7 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
       JPanel_Package.Initialize (This);
       Initialize_Fields (This);
         This.logUtil.putF (This.commonStrings.START, KeyboardActionScriptInputJPanel_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
-        This.initComponents;
+        KeyboardActionScriptInputJPanel'Class (This).initComponents;
         This.keyActionScriptInputInterface := keyActionScriptInputInterface;
         defaultComboBoxModel := DefaultComboBoxModel_Package.Create;
         defaultComboBoxModel.addElement (TempInputRobotNames_Package.DX_NAME);
@@ -74,7 +74,7 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
             This.pressJRadioButton.setSelected (False);
             This.releaseJRadioButton.setSelected (True);
         end if;
-        This.set;
+        KeyboardActionScriptInputJPanel'Class (This).set;
    end Initialize;
 
    function Create (keyActionScriptInputInterface_Param : access KeyboardActionScriptInputInterface_Package.KeyboardActionScriptInputInterface'Class) return KeyboardActionScriptInputJPanel_Access is
@@ -101,7 +101,7 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
       selectedItem : Unbounded_String;
    begin
         comboBoxModel := This.inputAutomationTypeJComboBox.getModel;
-        selectedItem := Unbounded_String (comboBoxModel.getSelectedItem);
+        selectedItem := Java_Unbox (comboBoxModel.getSelectedItem);
         if not (StringValidationUtil_Package.getInstance.isEmpty (selectedItem)) then
             This.keyActionScriptInputInterface.setInputRobotInterface (InputRobotFactory_Package.getInstance.get (selectedItem));
         end if;
@@ -112,7 +112,7 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
       selectedItem : Unbounded_String;
    begin
         comboBoxModel := This.keyNameJComboBox.getModel;
-        selectedItem := Unbounded_String (comboBoxModel.getSelectedItem);
+        selectedItem := Java_Unbox (comboBoxModel.getSelectedItem);
         if not (StringValidationUtil_Package.getInstance.isEmpty (selectedItem)) then
             return Integer (KeySingletonFactory_Package.getHashtable.get (selectedItem));
         end if;
@@ -129,8 +129,8 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
    --  throws Exception
    procedure update (This : in out KeyboardActionScriptInputJPanel) is
    begin
-        This.updateInputType;
-        This.updateKeys;
+        KeyboardActionScriptInputJPanel'Class (This).updateInputType;
+        KeyboardActionScriptInputJPanel'Class (This).updateKeys;
         This.keyActionScriptInputInterface.setTime (To_Unbounded_String (Java_Image (This.timeJTextField.getText)).intValue);
         This.keyActionScriptInputInterface.log;
    end update;
@@ -181,7 +181,7 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
 --     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
 --        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
---                  This.keyNameJComboBoxActionPerformed (evt);
+--                  KeyboardActionScriptInputJPanel'Class (This).keyNameJComboBoxActionPerformed (evt);
 --     end actionPerformed;
 );
         This.timeJTextField.setText (CommonPhoneStrings_Package.getInstance.ZERO);
@@ -199,7 +199,7 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
 --     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
 --        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
---                  This.pressJRadioButtonActionPerformed (evt);
+--                  KeyboardActionScriptInputJPanel'Class (This).pressJRadioButtonActionPerformed (evt);
 --     end actionPerformed;
 );
         This.releaseJRadioButton.setText (To_Unbounded_String ("Release"));
@@ -210,7 +210,7 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
 --     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
 --        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
---                  This.releaseJRadioButtonActionPerformed (evt);
+--                  KeyboardActionScriptInputJPanel'Class (This).releaseJRadioButtonActionPerformed (evt);
 --     end actionPerformed;
 );
         This.normalJRadioButton.setSelected (True);
@@ -222,7 +222,7 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
 --     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
 --        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
---                  This.normalJRadioButtonActionPerformed (evt);
+--                  KeyboardActionScriptInputJPanel'Class (This).normalJRadioButtonActionPerformed (evt);
 --     end actionPerformed;
 );
         This.simultaneousJRadioButton.setSelected (True);
@@ -234,7 +234,7 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
 --     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
 --        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
---                  This.simultaneousJRadioButtonActionPerformed (evt);
+--                  KeyboardActionScriptInputJPanel'Class (This).simultaneousJRadioButtonActionPerformed (evt);
 --     end actionPerformed;
 );
         This.sequenceJRadioButton.setText (To_Unbounded_String ("Sequence"));
@@ -245,7 +245,7 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
 --     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
 --        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
---                  This.sequenceJRadioButtonActionPerformed (evt);
+--                  KeyboardActionScriptInputJPanel'Class (This).sequenceJRadioButtonActionPerformed (evt);
 --     end actionPerformed;
 );
         This.okJButton.setText (To_Unbounded_String ("OK"));
@@ -255,7 +255,7 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
 --     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
 --        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
---                  This.okJButtonActionPerformed (evt);
+--                  KeyboardActionScriptInputJPanel'Class (This).okJButtonActionPerformed (evt);
 --     end actionPerformed;
 );
         This.jPanel1.add (This.okJButton);
@@ -264,26 +264,26 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
 --     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
 --        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
---                  This.keyIntegerJComboBoxActionPerformed (evt);
+--                  KeyboardActionScriptInputJPanel'Class (This).keyIntegerJComboBoxActionPerformed (evt);
 --     end actionPerformed;
 );
         keyActionJDialogLayout := GroupLayout_Package.Create (This.keyActionJDialog.getContentPane);
         This.keyActionJDialog.getContentPane.setLayout (keyActionJDialogLayout);
         keyActionJDialogLayout.setHorizontalGroup (keyActionJDialogLayout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (keyActionJDialogLayout.createSequentialGroup.addContainerGap.addGroup (keyActionJDialogLayout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (keyActionJDialogLayout.createSequentialGroup.addGroup (keyActionJDialogLayout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING, False).addComponent (This.addKeyJLabel, javax_Package.swing.GroupLayout.DEFAULT_SIZE, javax_Package.swing.GroupLayout.DEFAULT_SIZE, Short_Package.MAX_VALUE).addComponent (This.inputTypeJLabel, javax_Package.swing.GroupLayout.DEFAULT_SIZE, javax_Package.swing.GroupLayout.DEFAULT_SIZE, Short_Package.MAX_VALUE)).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addGroup (keyActionJDialogLayout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.TRAILING).addComponent (This.inputAutomationTypeJComboBox, 0, 148, Short_Package.MAX_VALUE).addComponent (This.textJTextField, javax_Package.swing.GroupLayout.Alignment.LEADING, javax_Package.swing.GroupLayout.DEFAULT_SIZE, 148, Short_Package.MAX_VALUE).addGroup (keyActionJDialogLayout.createSequentialGroup.addComponent (This.keyNameJComboBox, 0, 101, Short_Package.MAX_VALUE).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent (This.keyIntegerJComboBox, javax_Package.swing.GroupLayout.PREFERRED_SIZE, 41, javax_Package.swing.GroupLayout.PREFERRED_SIZE)))).addComponent (This.testJLabel, javax_Package.swing.GroupLayout.PREFERRED_SIZE, 60, javax_Package.swing.GroupLayout.PREFERRED_SIZE).addGroup (keyActionJDialogLayout.createSequentialGroup.addComponent (This.normalJRadioButton).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent (This.pressJRadioButton).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent (This.releaseJRadioButton).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED, 48, javax_Package.swing.GroupLayout.PREFERRED_SIZE)).addGroup (javax_Package.swing.GroupLayout.Alignment.TRAILING, keyActionJDialogLayout.createSequentialGroup.addComponent (This.holdTimeJLabel).addGap (22, 22, 22).addComponent (This.timeJTextField, javax_Package.swing.GroupLayout.DEFAULT_SIZE, 113, Short_Package.MAX_VALUE)).addGroup (keyActionJDialogLayout.createSequentialGroup.addComponent (This.delayBetweenJLabel).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short_Package.MAX_VALUE).addComponent (This.delayJTextField, javax_Package.swing.GroupLayout.PREFERRED_SIZE, 68, javax_Package.swing.GroupLayout.PREFERRED_SIZE)).addGroup (keyActionJDialogLayout.createSequentialGroup.addComponent (This.simultaneousJRadioButton).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent (This.sequenceJRadioButton))).addContainerGap).addComponent (This.titleJLabel, javax_Package.swing.GroupLayout.Alignment.TRAILING, javax_Package.swing.GroupLayout.DEFAULT_SIZE, 229, Short_Package.MAX_VALUE).addComponent (This.jPanel1, javax_Package.swing.GroupLayout.DEFAULT_SIZE, 229, Short_Package.MAX_VALUE));
         keyActionJDialogLayout.setVerticalGroup (keyActionJDialogLayout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (keyActionJDialogLayout.createSequentialGroup.addComponent (This.titleJLabel).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addGroup (keyActionJDialogLayout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.BASELINE).addComponent (This.inputTypeJLabel).addComponent (This.inputAutomationTypeJComboBox, javax_Package.swing.GroupLayout.PREFERRED_SIZE, javax_Package.swing.GroupLayout.DEFAULT_SIZE, javax_Package.swing.GroupLayout.PREFERRED_SIZE)).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addGroup (keyActionJDialogLayout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.BASELINE).addComponent (This.addKeyJLabel).addComponent (This.keyIntegerJComboBox, javax_Package.swing.GroupLayout.PREFERRED_SIZE, javax_Package.swing.GroupLayout.DEFAULT_SIZE, javax_Package.swing.GroupLayout.PREFERRED_SIZE).addComponent (This.keyNameJComboBox, javax_Package.swing.GroupLayout.PREFERRED_SIZE, javax_Package.swing.GroupLayout.DEFAULT_SIZE, javax_Package.swing.GroupLayout.PREFERRED_SIZE)).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addGroup (keyActionJDialogLayout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.BASELINE).addComponent (This.testJLabel).addComponent (This.textJTextField, javax_Package.swing.GroupLayout.PREFERRED_SIZE, javax_Package.swing.GroupLayout.DEFAULT_SIZE, javax_Package.swing.GroupLayout.PREFERRED_SIZE)).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addGroup (keyActionJDialogLayout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.BASELINE).addComponent (This.pressJRadioButton).addComponent (This.normalJRadioButton).addComponent (This.releaseJRadioButton)).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addGroup (keyActionJDialogLayout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.BASELINE).addComponent (This.holdTimeJLabel).addComponent (This.timeJTextField, javax_Package.swing.GroupLayout.PREFERRED_SIZE, javax_Package.swing.GroupLayout.DEFAULT_SIZE, javax_Package.swing.GroupLayout.PREFERRED_SIZE)).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addGroup (keyActionJDialogLayout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.BASELINE).addComponent (This.delayBetweenJLabel).addComponent (This.delayJTextField, javax_Package.swing.GroupLayout.PREFERRED_SIZE, javax_Package.swing.GroupLayout.DEFAULT_SIZE, javax_Package.swing.GroupLayout.PREFERRED_SIZE)).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addGroup (keyActionJDialogLayout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.BASELINE).addComponent (This.simultaneousJRadioButton).addComponent (This.sequenceJRadioButton)).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent (This.jPanel1, javax_Package.swing.GroupLayout.PREFERRED_SIZE, javax_Package.swing.GroupLayout.DEFAULT_SIZE, javax_Package.swing.GroupLayout.PREFERRED_SIZE).addContainerGap));
-        This.setMinimumSize (Dimension_Package.Create (100, 0));
+        KeyboardActionScriptInputJPanel'Class (This).setMinimumSize (Dimension_Package.Create (100, 0));
         This.keyActionJButton.setText (To_Unbounded_String ("Edit"));
         This.keyActionJButton.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
 --     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
 --        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
---                  This.keyActionJButtonActionPerformed (evt);
+--                  KeyboardActionScriptInputJPanel'Class (This).keyActionJButtonActionPerformed (evt);
 --     end actionPerformed;
 );
         This.jLabel1.setText (To_Unbounded_String ("Key:"));
         layout := GroupLayout_Package.Create (KeyboardActionScriptInputJPanel_Access'(This'Unchecked_Access));
-        This.setLayout (layout);
+        KeyboardActionScriptInputJPanel'Class (This).setLayout (layout);
         layout.setHorizontalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (layout.createSequentialGroup.addComponent (This.jLabel1).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short_Package.MAX_VALUE).addComponent (This.keyActionJButton)));
         layout.setVerticalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.BASELINE).addComponent (This.jLabel1).addComponent (This.keyActionJButton)));
    end initComponents;
@@ -326,8 +326,8 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
       evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
       integer_Id : Integer;
    begin
-        integer_Id := This.getSelectedKey;
-        This.prependText (integer_Id);
+        integer_Id := KeyboardActionScriptInputJPanel'Class (This).getSelectedKey;
+        KeyboardActionScriptInputJPanel'Class (This).prependText (integer_Id);
         This.keyIntegerJComboBox.setSelectedIndex (This.keyNameJComboBox.getSelectedIndex);
    end keyNameJComboBoxActionPerformed;
 
@@ -335,8 +335,8 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
       evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
         begin
-            This.update;
-            This.getKeyActionJDialog.setVisible (False);
+            KeyboardActionScriptInputJPanel'Class (This).update;
+            KeyboardActionScriptInputJPanel'Class (This).getKeyActionJDialog.setVisible (False);
         exception
             when Java_Occurrence : others =>
                 declare
@@ -350,7 +350,7 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
    procedure keyActionJButtonActionPerformed (This : in out KeyboardActionScriptInputJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
       evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
-        This.getKeyActionJDialog.setVisible (True);
+        KeyboardActionScriptInputJPanel'Class (This).getKeyActionJDialog.setVisible (True);
    end keyActionJButtonActionPerformed;
 
    procedure normalJRadioButtonActionPerformed (This : in out KeyboardActionScriptInputJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class) is

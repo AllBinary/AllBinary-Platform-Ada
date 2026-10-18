@@ -50,7 +50,7 @@ package body org.allbinary.media.image.comparison.ImageComparisonResult_Package 
         This.bufferedImages (1) := bufferedImage2;
         This.frameOne := frameOne;
         This.frameTwo := frameTwo;
-        This.setTolerance (0);
+        ImageComparisonResult'Class (This).setTolerance (0);
         imageHeight := bufferedImage.getHeight;
         imageWidth := bufferedImage.getWidth;
         if (bufferedImage.getHeight) /= (bufferedImage2.getHeight) then
@@ -107,7 +107,7 @@ package body org.allbinary.media.image.comparison.ImageComparisonResult_Package 
 
    function toString (This : in out ImageComparisonResult) return Unbounded_String is
    begin
-        return StringMaker_Package.Create.append (To_Unbounded_String ("ImageComparisonInfo: ")).append (This.name).append (To_Unbounded_String (" Number Of Matching Pixels: ")).appendint (This.pixelsThatMatch).append (To_Unbounded_String ("" & ASCII.LF & "Number Of Non-Matching Pixels: ")).appendint (This.getNonMatchingPixelVector.size).append (To_Unbounded_String ("" & ASCII.LF & "Number Of Pixels Ignored: ")).appendint (This.pixelsIgnored).append (To_Unbounded_String ("" & ASCII.LF & "Matching Percentage: ")).appendfloat (This.getMatchingPercent).toString;
+        return StringMaker_Package.Create.append (To_Unbounded_String ("ImageComparisonInfo: ")).append (This.name).append (To_Unbounded_String (" Number Of Matching Pixels: ")).appendint (This.pixelsThatMatch).append (To_Unbounded_String ("" & ASCII.LF & "Number Of Non-Matching Pixels: ")).appendint (ImageComparisonResult'Class (This).getNonMatchingPixelVector.size).append (To_Unbounded_String ("" & ASCII.LF & "Number Of Pixels Ignored: ")).appendint (This.pixelsIgnored).append (To_Unbounded_String ("" & ASCII.LF & "Matching Percentage: ")).appendfloat (ImageComparisonResult'Class (This).getMatchingPercent).toString;
    end toString;
 
    function getBufferedImages (This : in out ImageComparisonResult) return BufferedImage_Access_Array_Access is

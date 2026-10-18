@@ -69,7 +69,7 @@ package body org.allbinary.input.automation.robot.InputRobot_Package is
    procedure mouseMove (This : in out InputRobot; point_Param : access Point_Package.Point'Class) is
       point : constant Point_Access := Point_Access (point_Param);
    begin
-        This.mouseMove (point.x, point.y);
+        InputRobot'Class (This).mouseMove (point.x, point.y);
    end mouseMove;
 
    procedure mouseMove (This : in out InputRobot; x : Integer; y : Integer) is
@@ -84,7 +84,7 @@ package body org.allbinary.input.automation.robot.InputRobot_Package is
    procedure mouseMoveToTarget (This : in out InputRobot; rectangle_Param : access Rectangle_Package.Rectangle'Class) is
       rectangle : constant Rectangle_Access := Rectangle_Access (rectangle_Param);
    begin
-        This.mouseMoveToTarget (rectangle, 0, 0);
+        InputRobot'Class (This).mouseMoveToTarget (rectangle, 0, 0);
    end mouseMoveToTarget;
 
    function createScreenCapture (This : in out InputRobot; screenRect_Param : access Rectangle_Package.Rectangle'Class) return BufferedImage_Access is

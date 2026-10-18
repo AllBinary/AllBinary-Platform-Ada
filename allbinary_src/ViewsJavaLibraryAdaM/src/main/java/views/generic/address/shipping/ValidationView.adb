@@ -40,7 +40,7 @@ package body views.generic_Id.address.shipping.ValidationView_Package is
       streetAddress : StreetAddress_Access;
       index : Integer;
    begin
-        billingAddressesEntity := ShippingAddressesEntity_Package.Create (This.getWeblisketSession.getUserName);
+        billingAddressesEntity := ShippingAddressesEntity_Package.Create (ValidationView'Class (This).getWeblisketSession.getUserName);
         This.streetAddressList := billingAddressesEntity.get;
         if (This.streetAddressList) = (null) then
             return False;

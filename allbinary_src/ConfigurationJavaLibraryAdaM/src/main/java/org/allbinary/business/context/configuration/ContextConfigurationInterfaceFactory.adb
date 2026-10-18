@@ -61,7 +61,7 @@ package body org.allbinary.business.context.configuration.ContextConfigurationIn
         contextConfigurationData := ContextConfigurationData_Package.getInstance;
         documentString := CryptFileReader_Package.Create (contextConfigurationData.UNCRYPTED_EXTENSION, contextConfigurationData.ENCRYPTED_EXTENSION).get (abPath);
         document := DomDocumentHelper_Package.create (documentString);
-        return This.getInstance (document);
+        return ContextConfigurationInterfaceFactory'Class (This).getInstance (document);
    end getInstance;
 
    procedure getInstance (This : in out ContextConfigurationInterfaceFactory; document_Param : access Document_Package.Document'Class) is

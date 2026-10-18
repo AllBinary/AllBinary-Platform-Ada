@@ -77,11 +77,11 @@ package body org.allbinary.media.image.cache.BufferedImageInfo_Package is
         stringBuffer := StringMaker_Package.Create;
         stringBuffer.append (To_Unbounded_String ("BufferedImageInfo -"));
         stringBuffer.append (commonLabels.WIDTH_LABEL);
-        stringBuffer.appendint (This.getWidth);
+        stringBuffer.appendint (BufferedImageInfo'Class (This).getWidth);
         stringBuffer.append (commonLabels.HEIGHT_LABEL);
-        stringBuffer.appendint (This.getHeight);
+        stringBuffer.appendint (BufferedImageInfo'Class (This).getHeight);
         stringBuffer.append (To_Unbounded_String (" Type: "));
-        stringBuffer.appendint (This.getType);
+        stringBuffer.appendint (BufferedImageInfo'Class (This).getType);
         return stringBuffer.toString;
    end toString;
 

@@ -35,7 +35,7 @@ package body admin.taghelpers.PaymentHelper_Package is
         This.request := HttpServletRequest_Access (pageContext.getRequest);
         This.weblisketSession := WeblisketSession_Package.Create (hashMap, pageContext);
         This.portion := Portion_Package.Create (hashMap);
-        This.getFormData;
+        PaymentHelper'Class (This).getFormData;
    end Initialize;
 
    function Create (hashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) return PaymentHelper_Access is

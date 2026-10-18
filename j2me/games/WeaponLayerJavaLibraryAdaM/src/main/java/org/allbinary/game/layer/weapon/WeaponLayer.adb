@@ -44,7 +44,7 @@ package body org.allbinary.game.layer.weapon.WeaponLayer_Package is
         MultiPlayerGameLayer_Package.Initialize (This, remoteInfo, BasicGroupFactory_Package.getInstance.NONE_ARRAY, name, rectangle, viewPosition);
         Initialize_Fields (This);
         This.initAnimationInterface := animationInterface;
-        This.setAnimationInterface (animationInterface);
+        WeaponLayer'Class (This).setAnimationInterface (animationInterface);
         This.destroyedAnimationInterface := destroyedAnimationInterface;
         This.movement := movement;
         This.multiPlayerType := multiPlayerType;
@@ -61,7 +61,7 @@ package body org.allbinary.game.layer.weapon.WeaponLayer_Package is
       collidableInferface : constant CollidableBaseBehavior_Access := CollidableBaseBehavior_Access (collidableInferface_Param);
    begin
         MultiPlayerGameLayer (This).setCollidableInferface (collidableInferface);
-        This.collidableWeaponBehavior := CollidableWeaponBehavior_Access (This.getCollidableInferface);
+        This.collidableWeaponBehavior := CollidableWeaponBehavior_Access (WeaponLayer'Class (This).getCollidableInferface);
    end setCollidableInferface;
 
    --  throws Exception
@@ -78,18 +78,18 @@ package body org.allbinary.game.layer.weapon.WeaponLayer_Package is
       weaponProperties : constant WeaponProperties_Access := WeaponProperties_Access (weaponProperties_Param);
       scoreable : constant ScoreableInterface_Access := ScoreableInterface_Access (scoreable_Param);
    begin
-        This.setWeaponPropertiesP (weaponProperties);
-        This.setReadyForExplosion (False);
-        This.setAnimationInterface (This.getInitAnimationInterfaceP);
-        This.setOwnerLayerInterface (sourceLayerInterface);
+        WeaponLayer'Class (This).setWeaponPropertiesP (weaponProperties);
+        WeaponLayer'Class (This).setReadyForExplosion (False);
+        WeaponLayer'Class (This).setAnimationInterface (WeaponLayer'Class (This).getInitAnimationInterfaceP);
+        WeaponLayer'Class (This).setOwnerLayerInterface (sourceLayerInterface);
         This.collidableWeaponBehavior.init (sourceLayerInterface);
-        This.setGroupInterfaces;
+        WeaponLayer'Class (This).setGroupInterfaces;
         if (scoreable) /= (null) then
             This.scoreableInterface := scoreable;
         end if;
         This.totalDamage := 0;
         This.initDamage := weaponProperties.getDamage;
-        This.setDestroyed (False);
+        WeaponLayer'Class (This).setDestroyed (False);
         This.movement.init (weaponProperties.getSpeed, angle, otherAngle);
    end init;
 
@@ -98,9 +98,9 @@ package body org.allbinary.game.layer.weapon.WeaponLayer_Package is
    begin
         basicGroupFactory := BasicGroupFactory_Package.getInstance;
         if (This.sourceLayerInterface.getGroupInterface (0)) = (basicGroupFactory.ENEMY) then
-            This.setGroupInterface (basicGroupFactory.ENEMY_ARRAY);
+            WeaponLayer'Class (This).setGroupInterface (basicGroupFactory.ENEMY_ARRAY);
         else
-            This.setGroupInterface (This.sourceLayerInterface.getGroupInterface);
+            WeaponLayer'Class (This).setGroupInterface (This.sourceLayerInterface.getGroupInterface);
         end if;
    end setGroupInterfaces;
 
@@ -111,23 +111,23 @@ package body org.allbinary.game.layer.weapon.WeaponLayer_Package is
       indexedAnimationInterface : IndexedAnimation_Access;
       currentFrame : Integer;
    begin
-        if (This.isExhausted) and then (not (This.isDestroyed)) then
-            if This.isReadyForExplosion then
-                indexedAnimationInterface := IndexedAnimation_Access (This.getAnimationInterface);
+        if (WeaponLayer'Class (This).isExhausted) and then (not (WeaponLayer'Class (This).isDestroyed)) then
+            if WeaponLayer'Class (This).isReadyForExplosion then
+                indexedAnimationInterface := IndexedAnimation_Access (WeaponLayer'Class (This).getAnimationInterface);
                 currentFrame := indexedAnimationInterface.getFrame;
                 if (currentFrame) < ((indexedAnimationInterface.getAnimationSize) - (1)) then
                     indexedAnimationInterface.nextFrame;
                 else
-                    This.setDestroyed (True);
+                    WeaponLayer'Class (This).setDestroyed (True);
                 end if;
             else
-                collidableWeaponBehavior := CollidableWeaponBehavior_Access (This.getCollidableInferface);
+                collidableWeaponBehavior := CollidableWeaponBehavior_Access (WeaponLayer'Class (This).getCollidableInferface);
                 if collidableWeaponBehavior.isCollided then
-                    This.setAnimationInterface (This.destroyedAnimationInterface);
-                    This.getMovement.stop;
-                    This.setReadyForExplosion (True);
+                    WeaponLayer'Class (This).setAnimationInterface (This.destroyedAnimationInterface);
+                    WeaponLayer'Class (This).getMovement.stop;
+                    WeaponLayer'Class (This).setReadyForExplosion (True);
                 else
-                    This.setDestroyed (True);
+                    WeaponLayer'Class (This).setDestroyed (True);
                 end if;
             end if;
         end if;
@@ -152,7 +152,7 @@ package body org.allbinary.game.layer.weapon.WeaponLayer_Package is
 
    function isExhausted (This : in out WeaponLayer) return Boolean is
    begin
-        if ((This.totalDamage) > (This.getInitDamage)) or else ((This.totalDamage) < (0)) then
+        if ((This.totalDamage) > (WeaponLayer'Class (This).getInitDamage)) or else ((This.totalDamage) < (0)) then
             return True;
         else
             return False;
@@ -162,9 +162,9 @@ package body org.allbinary.game.layer.weapon.WeaponLayer_Package is
    function getDamage (This : in out WeaponLayer; damageType : Integer) return Integer is
       total : Integer;
    begin
-        if not (This.isExhausted) then
-            total := (This.getInitDamage) - (This.totalDamage);
-            This.givePoints (total);
+        if not (WeaponLayer'Class (This).isExhausted) then
+            total := (WeaponLayer'Class (This).getInitDamage) - (This.totalDamage);
+            WeaponLayer'Class (This).givePoints (total);
             return total;
         end if;
         return 0;
@@ -173,7 +173,7 @@ package body org.allbinary.game.layer.weapon.WeaponLayer_Package is
    procedure setDestroyed (This : in out WeaponLayer; destroyed : Boolean) is
    begin
         This.destroyed := destroyed;
-        if This.isDestroyed then
+        if WeaponLayer'Class (This).isDestroyed then
             This.scoreableInterface := NoScoreable_Package.getInstance;
             DestroyedLayerProcessor_Package.getInstance.add (WeaponLayer_Access'(This'Unchecked_Access));
         end if;
@@ -226,16 +226,16 @@ package body org.allbinary.game.layer.weapon.WeaponLayer_Package is
       graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
       viewPosition : ViewPositionBase_Access;
    begin
-        viewPosition := This.getViewPosition;
-        This.animationInterface.paintXY (graphics, (viewPosition.getX) - (This.getHalfWidth), (viewPosition.getY) - (This.getHalfHeight));
+        viewPosition := WeaponLayer'Class (This).getViewPosition;
+        This.animationInterface.paintXY (graphics, (viewPosition.getX) - (WeaponLayer'Class (This).getHalfWidth), (viewPosition.getY) - (WeaponLayer'Class (This).getHalfHeight));
    end paint;
 
    procedure paintThreed (This : in out WeaponLayer; graphics_Param : access Graphics_Package.Graphics'Class) is
       graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
       viewPosition : ViewPositionBase_Access;
    begin
-        viewPosition := This.getViewPosition;
-        This.animationInterface.paintThreedXYZ (graphics, (viewPosition.getX) - (This.getHalfWidth), (viewPosition.getY) - (This.getHalfHeight), (viewPosition.getZ) - (This.getHalfDepth));
+        viewPosition := WeaponLayer'Class (This).getViewPosition;
+        This.animationInterface.paintThreedXYZ (graphics, (viewPosition.getX) - (WeaponLayer'Class (This).getHalfWidth), (viewPosition.getY) - (WeaponLayer'Class (This).getHalfHeight), (viewPosition.getZ) - (WeaponLayer'Class (This).getHalfDepth));
    end paintThreed;
 
    function getMovement (This : in out WeaponLayer) return Movement_Access is

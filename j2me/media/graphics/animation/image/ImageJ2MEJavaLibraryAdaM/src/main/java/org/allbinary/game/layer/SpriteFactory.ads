@@ -20,13 +20,15 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
---  with javax.microedition.lcdui.game.Sprite_Package; use javax.microedition.lcdui.game.Sprite_Package;
+with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
+with javax.microedition.lcdui.game.Sprite_Package; use javax.microedition.lcdui.game.Sprite_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.game.layer.SpriteFactoryInterface_Package; use org.allbinary.game.layer.SpriteFactoryInterface_Package;
 
 package org.allbinary.game.layer.SpriteFactory_Package is
 
+   package Image_Package renames Standard.javax.microedition.lcdui.Image_Package;
+   package Sprite_Package renames Standard.javax.microedition.lcdui.game.Sprite_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
 
    type SpriteFactory is tagged;

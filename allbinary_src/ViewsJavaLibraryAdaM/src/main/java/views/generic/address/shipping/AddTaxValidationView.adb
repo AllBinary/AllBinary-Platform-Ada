@@ -47,8 +47,8 @@ package body views.generic_Id.address.shipping.AddTaxValidationView_Package is
       index : Integer;
    begin
         begin
-            This.streetAddress := StreetAddress_Package.Create (This.getRequest);
-            storeFrontInterface := StoreFrontFactory_Package.getInstance (This.getTransformInfoInterface.getStoreName);
+            This.streetAddress := StreetAddress_Package.Create (AddTaxValidationView'Class (This).getRequest);
+            storeFrontInterface := StoreFrontFactory_Package.getInstance (AddTaxValidationView'Class (This).getTransformInfoInterface.getStoreName);
             taxInterface := TaxFactory_Package.getInstance.getInstance (This.abeClientInformation, storeFrontInterface);
             if (taxInterface) = (null) then
                 return False;
@@ -56,7 +56,7 @@ package body views.generic_Id.address.shipping.AddTaxValidationView_Package is
             if (taxInterface.isValid (This.streetAddress, storeFrontInterface)) = (False) then
                 return False;
             end if;
-            billingAddressesEntity := ShippingAddressesEntity_Package.Create (This.getWeblisketSession.getUserName);
+            billingAddressesEntity := ShippingAddressesEntity_Package.Create (AddTaxValidationView'Class (This).getWeblisketSession.getUserName);
             streetAddressList := billingAddressesEntity.get;
             if (streetAddressList) = (null) then
                 return False;
@@ -95,7 +95,7 @@ package body views.generic_Id.address.shipping.AddTaxValidationView_Package is
    begin
         begin
             stringBuffer := StringMaker_Package.Create;
-            storeFrontInterface := StoreFrontFactory_Package.getInstance (This.getTransformInfoInterface.getStoreName);
+            storeFrontInterface := StoreFrontFactory_Package.getInstance (AddTaxValidationView'Class (This).getTransformInfoInterface.getStoreName);
             taxInterface := TaxFactory_Package.getInstance.getInstance (This.abeClientInformation, storeFrontInterface);
             if (taxInterface) = (null) then
                 stringBuffer.append (To_Unbounded_String ("Unable to Load Tax Component<br/>"));
@@ -104,7 +104,7 @@ package body views.generic_Id.address.shipping.AddTaxValidationView_Package is
                     stringBuffer.append (To_Unbounded_String ("Unable to validate address with Tax Component<br/>"));
                 end if;
             end if;
-            billingAddressesEntity := ShippingAddressesEntity_Package.Create (This.getWeblisketSession.getUserName);
+            billingAddressesEntity := ShippingAddressesEntity_Package.Create (AddTaxValidationView'Class (This).getWeblisketSession.getUserName);
             streetAddressList := billingAddressesEntity.get;
             size := streetAddressList.size;
             for index in 0 .. (size) - 1 loop

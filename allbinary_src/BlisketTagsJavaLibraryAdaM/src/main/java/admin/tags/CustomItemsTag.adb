@@ -25,8 +25,8 @@ package body admin.tags.CustomItemsTag_Package is
    begin
       TableTag_Package.Initialize (This);
       Initialize_Fields (This);
-        This.setTagHelperFactory (CustomItemsHelperFactory_Package.Create);
-        This.setTagRequestHelperFactory (CustomItemsRequestHelperFactory_Package.Create);
+        CustomItemsTag'Class (This).setTagHelperFactory (CustomItemsHelperFactory_Package.Create);
+        CustomItemsTag'Class (This).setTagRequestHelperFactory (CustomItemsRequestHelperFactory_Package.Create);
    end Initialize;
 
    function Create return CustomItemsTag_Access is

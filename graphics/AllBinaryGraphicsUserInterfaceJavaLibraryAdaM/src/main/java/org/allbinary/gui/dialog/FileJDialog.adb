@@ -28,8 +28,8 @@ package body org.allbinary.gui.dialog.FileJDialog_Package is
    begin
         JDialog_Package.Initialize (This);
         Initialize_Fields (This);
-        This.initComponents;
-        This.getJFileChooser1.setMultiSelectionEnabled (True);
+        FileJDialog'Class (This).initComponents;
+        FileJDialog'Class (This).getJFileChooser1.setMultiSelectionEnabled (True);
    end Initialize;
 
    function Create return FileJDialog_Access is
@@ -44,8 +44,8 @@ package body org.allbinary.gui.dialog.FileJDialog_Package is
    begin
         JDialog_Package.Initialize (This, parent, modal);
         Initialize_Fields (This);
-        This.initComponents;
-        This.getJFileChooser1.setMultiSelectionEnabled (True);
+        FileJDialog'Class (This).initComponents;
+        FileJDialog'Class (This).getJFileChooser1.setMultiSelectionEnabled (True);
    end Initialize;
 
    function Create (parent_Param : access Frame_Package.Frame'Class; modal : Boolean) return FileJDialog_Access is
@@ -65,20 +65,20 @@ package body org.allbinary.gui.dialog.FileJDialog_Package is
       layout : GroupLayout_Access;
    begin
         This.jFileChooser1 := JFileChooser_Package.Create;
-        This.setDefaultCloseOperation (javax_Package.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        FileJDialog'Class (This).setDefaultCloseOperation (javax_Package.swing.WindowConstants.DISPOSE_ON_CLOSE);
         This.jFileChooser1.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
 --     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
 --        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
---                  This.jFileChooser1ActionPerformed (evt);
+--                  FileJDialog'Class (This).jFileChooser1ActionPerformed (evt);
 --     end actionPerformed;
 );
-        layout := GroupLayout_Package.Create (This.getContentPane);
-        This.getContentPane.setLayout (layout);
+        layout := GroupLayout_Package.Create (FileJDialog'Class (This).getContentPane);
+        FileJDialog'Class (This).getContentPane.setLayout (layout);
         layout.setHorizontalGroup (layout.createParallelGroup (org_Package.jdesktop.layout.GroupLayout.LEADING).add (org_Package.jdesktop.layout.GroupLayout.TRAILING, layout.createSequentialGroup.addContainerGap (org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short_Package.MAX_VALUE).add (This.jFileChooser1, org_Package.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org_Package.jdesktop.layout.GroupLayout.PREFERRED_SIZE).addContainerGap));
         layout.setVerticalGroup (layout.createParallelGroup (org_Package.jdesktop.layout.GroupLayout.LEADING).add (layout.createSequentialGroup.addContainerGap.add (This.jFileChooser1, org_Package.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 357, org_Package.jdesktop.layout.GroupLayout.PREFERRED_SIZE).addContainerGap (org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short_Package.MAX_VALUE)));
-        This.pack;
+        FileJDialog'Class (This).pack;
    end initComponents;
 
    procedure jFileChooser1ActionPerformed (This : in out FileJDialog; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
@@ -86,11 +86,11 @@ package body org.allbinary.gui.dialog.FileJDialog_Package is
       files : File_Access_Array_Access;
    begin
         This.logUtil.putF (To_Unbounded_String ("Starting Action Command: ") & Java_Image (evt.getActionCommand), FileJDialog_Access'(This'Unchecked_Access), To_Unbounded_String ("ActionPerformed"));
-        files := This.getJFileChooser1.getSelectedFiles;
-        if (evt.getActionCommand) = (This.getJFileChooser1.CANCEL_SELECTION) then
-            This.setVisible (False);
+        files := FileJDialog'Class (This).getJFileChooser1.getSelectedFiles;
+        if (evt.getActionCommand) = (FileJDialog'Class (This).getJFileChooser1.CANCEL_SELECTION) then
+            FileJDialog'Class (This).setVisible (False);
         end if;
-        if (evt.getActionCommand) = (This.getJFileChooser1.APPROVE_SELECTION) then
+        if (evt.getActionCommand) = (FileJDialog'Class (This).getJFileChooser1.APPROVE_SELECTION) then
             if ((files) /= (null)) and then ((files'Length) > (0)) then
                 This.finishedListenerInterface.onFiles (files);
             end if;

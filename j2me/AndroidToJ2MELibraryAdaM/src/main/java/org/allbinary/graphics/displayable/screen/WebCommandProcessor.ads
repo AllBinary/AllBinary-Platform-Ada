@@ -21,9 +21,9 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with android.content.Context_Package; use android.content.Context_Package;
---  with javax.microedition.lcdui.Canvas_Package; use javax.microedition.lcdui.Canvas_Package;
---  with javax.microedition.lcdui.Command_Package; use javax.microedition.lcdui.Command_Package;
---  with javax.microedition.lcdui.CommandListener_Package; use javax.microedition.lcdui.CommandListener_Package;
+with javax.microedition.lcdui.Canvas_Package; use javax.microedition.lcdui.Canvas_Package;
+with javax.microedition.lcdui.Command_Package; use javax.microedition.lcdui.Command_Package;
+with javax.microedition.lcdui.CommandListener_Package; use javax.microedition.lcdui.CommandListener_Package;
 with android.content.Intent_Package; use android.content.Intent_Package;
 with org.allbinary.TsUtil_Package; use org.allbinary.TsUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
@@ -35,6 +35,9 @@ with org.allbinary.graphics.displayable.screen.AboutCommandProcessor_Package; us
 package org.allbinary.graphics.displayable.screen.WebCommandProcessor_Package is
 
    package Context_Package renames Standard.android.content.Context_Package;
+   package Canvas_Package renames Standard.javax.microedition.lcdui.Canvas_Package;
+   package Command_Package renames Standard.javax.microedition.lcdui.Command_Package;
+   package CommandListener_Package renames Standard.javax.microedition.lcdui.CommandListener_Package;
    package Intent_Package renames Standard.android.content.Intent_Package;
    package TsUtil_Package renames Standard.org.allbinary.TsUtil_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;

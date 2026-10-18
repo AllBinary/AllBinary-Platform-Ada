@@ -44,7 +44,7 @@ package body org.allbinary.input.automation.module.configuration.InputAutomation
       node : constant Node_Access := Node_Access (node_Param);
    begin
       Initialize_Fields (This);
-        This.init (abeClientInformation, node);
+        InputAutomationModuleConfiguration'Class (This).init (abeClientInformation, node);
    end Initialize;
 
    function Create (abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; node_Param : access Node_Package.Node'Class) return InputAutomationModuleConfiguration_Access is
@@ -58,9 +58,9 @@ package body org.allbinary.input.automation.module.configuration.InputAutomation
       abeClientInformation : constant AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
    begin
       Initialize_Fields (This);
-        This.setName (name);
-        This.setClassName (className);
-        This.init (abeClientInformation);
+        InputAutomationModuleConfiguration'Class (This).setName (name);
+        InputAutomationModuleConfiguration'Class (This).setClassName (className);
+        InputAutomationModuleConfiguration'Class (This).init (abeClientInformation);
    end Initialize;
 
    function Create (abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; name : Unbounded_String; className : Unbounded_String) return InputAutomationModuleConfiguration_Access is
@@ -74,8 +74,8 @@ package body org.allbinary.input.automation.module.configuration.InputAutomation
       inputAutomationModuleInterface : constant InputAutomationModuleFactoryInterface_Access := InputAutomationModuleFactoryInterface_Access (inputAutomationModuleInterface_Param);
    begin
       Initialize_Fields (This);
-        This.setInputAutomationModuleInterface (inputAutomationModuleInterface);
-        This.setClassName (To_Unbounded_String (Ada.Tags.Expanded_Name (This.inputAutomationModuleInterface.all'Tag)));
+        InputAutomationModuleConfiguration'Class (This).setInputAutomationModuleInterface (inputAutomationModuleInterface);
+        InputAutomationModuleConfiguration'Class (This).setClassName (To_Unbounded_String (Ada.Tags.Expanded_Name (This.inputAutomationModuleInterface.all'Tag)));
    end Initialize;
 
    function Create (inputAutomationModuleInterface_Param : access InputAutomationModuleFactoryInterface_Package.InputAutomationModuleFactoryInterface'Class) return InputAutomationModuleConfiguration_Access is
@@ -96,8 +96,8 @@ package body org.allbinary.input.automation.module.configuration.InputAutomation
         if (nodeList) /= (null) then
             classNameNode := DomSearchHelper_Package.getNode (DynamicObjectData_Package.NAME, nodeList);
             if (classNameNode) /= (null) then
-                This.setClassName (DomNodeHelper_Package.getTextNodeValue (classNameNode));
-                This.init (abeClientInformation);
+                InputAutomationModuleConfiguration'Class (This).setClassName (DomNodeHelper_Package.getTextNodeValue (classNameNode));
+                InputAutomationModuleConfiguration'Class (This).init (abeClientInformation);
             else
                 This.logUtil.putF (To_Unbounded_String ("Class Node Null"), InputAutomationModuleConfiguration_Access'(This'Unchecked_Access), This.commonStrings.INIT);
             end if;
@@ -110,9 +110,9 @@ package body org.allbinary.input.automation.module.configuration.InputAutomation
       abeClientInformation : constant AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
    begin
         begin
-            This.logUtil.putF (To_Unbounded_String ("Name: ") & This.getName, InputAutomationModuleConfiguration_Access'(This'Unchecked_Access), This.commonStrings.INIT);
+            This.logUtil.putF (To_Unbounded_String ("Name: ") & InputAutomationModuleConfiguration'Class (This).getName, InputAutomationModuleConfiguration_Access'(This'Unchecked_Access), This.commonStrings.INIT);
             This.logUtil.putF (To_Unbounded_String ("ClassName: ") & This.className, InputAutomationModuleConfiguration_Access'(This'Unchecked_Access), This.commonStrings.INIT);
-            This.setInputAutomationModuleInterface (InputAutomationModuleFactoryInterface_Access (AbeFactory_Package.getInstance.getInstance.getInstance (abeClientInformation, This.getClassName)));
+            InputAutomationModuleConfiguration'Class (This).setInputAutomationModuleInterface (InputAutomationModuleFactoryInterface_Access (AbeFactory_Package.getInstance.getInstance.getInstance (abeClientInformation, InputAutomationModuleConfiguration'Class (This).getClassName)));
         exception
             when Java_Occurrence : others =>
                 declare
@@ -131,7 +131,7 @@ package body org.allbinary.input.automation.module.configuration.InputAutomation
       classNameNode : Node_Access;
    begin
         node := document.createElement (InputAutomationModuleData_Package.NAME);
-        classNameNode := ModDomHelper_Package.createTextNode (document, DynamicObjectData_Package.NAME, This.getClassName);
+        classNameNode := ModDomHelper_Package.createTextNode (document, DynamicObjectData_Package.NAME, InputAutomationModuleConfiguration'Class (This).getClassName);
         node.appendChild (classNameNode);
         return node;
    end toDomNode;
@@ -168,7 +168,7 @@ package body org.allbinary.input.automation.module.configuration.InputAutomation
    begin
         This.logUtil.putF (To_Unbounded_String ("InputAutomationModuleFactoryInterface : ") & Java_Image (inputAutomationModuleInterface), InputAutomationModuleConfiguration_Access'(This'Unchecked_Access), To_Unbounded_String ("setInputAutomationModuleInterface"));
         This.inputAutomationModuleInterface := inputAutomationModuleInterface;
-        This.setName (This.inputAutomationModuleInterface.getName);
+        InputAutomationModuleConfiguration'Class (This).setName (This.inputAutomationModuleInterface.getName);
    end setInputAutomationModuleInterface;
 
    procedure toDomNode (This : in out InputAutomationModuleConfiguration; document_Param : access Document_Package.Document'Class) is

@@ -25,7 +25,7 @@ package body org.allbinary.game.GameMode_Package is
    procedure Initialize (This : in out GameMode'Class; name : Unbounded_String) is
    begin
       Initialize_Fields (This);
-        This.setName (name);
+        GameMode'Class (This).setName (name);
    end Initialize;
 
    function Create (name : Unbounded_String) return GameMode_Access is
@@ -47,7 +47,7 @@ package body org.allbinary.game.GameMode_Package is
 
    function toString (This : in out GameMode) return Unbounded_String is
    begin
-        return This.getName;
+        return GameMode'Class (This).getName;
    end toString;
 
 begin

@@ -37,7 +37,7 @@ package body org.allbinary.graphics.form.item.CustomTextBox_Package is
         textFieldItem := ABTextFieldItem_Package.Create (CustomTextBox_Access'(This'Unchecked_Access), TextItemVisitor_Package.Create, stringUtil.EMPTY_STRING, stringUtil.EMPTY_STRING, maxSize, 0, stringUtil.EMPTY_STRING, font, backgroundBasicColor, foregroundBasicColor);
         textFieldItem.setString (text);
         This.textFieldItem := textFieldItem;
-        This.setTitle (label);
+        CustomTextBox'Class (This).setTitle (label);
    end Initialize;
 
    function Create (cmdListener_Param : access CommandListener_Package.CommandListener'Class; label : Unbounded_String; text : Unbounded_String; maxSize : Integer; constraints : Integer; font_Param : access Font_Package.Font'Class; backgroundBasicColor_Param : access BasicColor_Package.BasicColor'Class; foregroundBasicColor_Param : access BasicColor_Package.BasicColor'Class) return CustomTextBox_Access is
@@ -55,22 +55,22 @@ package body org.allbinary.graphics.form.item.CustomTextBox_Package is
    procedure onEventRaw (This : in out CustomTextBox; keyCode : Integer; deviceId : Integer; repeated : Boolean) is
    begin
         This.logUtil.putF (StringMaker_Package.Create.append (This.commonStrings.START).appendint (keyCode).toString, CustomTextBox_Access'(This'Unchecked_Access), To_Unbounded_String ("onEvent"));
-        This.keyPressedByDevice (keyCode, deviceId);
+        CustomTextBox'Class (This).keyPressedByDevice (keyCode, deviceId);
    end onEventRaw;
 
    procedure keyPressed (This : in out CustomTextBox; keyCode : Integer) is
    begin
-        This.keyPressedByDevice (keyCode, 0);
+        CustomTextBox'Class (This).keyPressedByDevice (keyCode, 0);
    end keyPressed;
 
    procedure keyReleased (This : in out CustomTextBox; keyCode : Integer) is
    begin
-        This.keyReleasedByDevice (keyCode, 0);
+        CustomTextBox'Class (This).keyReleasedByDevice (keyCode, 0);
    end keyReleased;
 
    procedure keyRepeated (This : in out CustomTextBox; keyCode : Integer) is
    begin
-        This.keyRepeatedByDevice (keyCode, 0);
+        CustomTextBox'Class (This).keyRepeatedByDevice (keyCode, 0);
    end keyRepeated;
 
    procedure keyPressedByDevice (This : in out CustomTextBox; keyCode : Integer; deviceId : Integer) is
@@ -82,7 +82,7 @@ package body org.allbinary.graphics.form.item.CustomTextBox_Package is
             platformKeyFactory := PlatformKeyFactory_Package.getInstance;
             input := This.inputFactory.getInstanceById (keyCode);
             if platformKeyFactory.isSubmission (input) then
-                This.submit;
+                CustomTextBox'Class (This).submit;
             else
                 This.textFieldItem.keyPressed (keyCode);
             end if;
@@ -108,9 +108,9 @@ package body org.allbinary.graphics.form.item.CustomTextBox_Package is
         graphics.fillRect (0, 0, This.displayInfo.getLastWidth, This.displayInfo.getLastHeight);
         graphics.setColor (This.foregroundColor);
         if not (J2MEUtil_Package.isJ2ME) then
-            graphics.drawString (This.getTitle, 8, 1, 0);
+            graphics.drawString (CustomTextBox'Class (This).getTitle, 8, 1, 0);
         end if;
-        This.paintXY (graphics, 8, (graphics.getFont.getHeight) + (2));
+        CustomTextBox'Class (This).paintXY (graphics, 8, (graphics.getFont.getHeight) + (2));
         GameCommandCanvas (This).paint (graphics);
    end paint;
 

@@ -29,7 +29,7 @@ package body org.allbinary.animation.vector.LineAnimation_Package is
    begin
       Animation_Package.Initialize (This);
       Initialize_Fields (This);
-        This.setBasicColorP (basicColor);
+        LineAnimation'Class (This).setBasicColorP (basicColor);
    end Initialize;
 
    function Create (basicColor_Param : access BasicColor_Package.BasicColor'Class) return LineAnimation_Access is
@@ -66,7 +66,7 @@ package body org.allbinary.animation.vector.LineAnimation_Package is
       currentLine : Integer_Array_Access_Array_Access;
    begin
         currentLine := This.line;
-        This.basicSetColorUtil.setBasicColorP3 (graphics, This.getBasicColorP, This.getColor);
+        This.basicSetColorUtil.setBasicColorP3 (graphics, LineAnimation'Class (This).getBasicColorP, LineAnimation'Class (This).getColor);
         graphics.drawLine (currentLine (0) (0), currentLine (0) (1), currentLine (1) (0), currentLine (1) (1));
    end paintXY;
 

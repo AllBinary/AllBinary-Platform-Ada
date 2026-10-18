@@ -20,7 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.util.HashMap_Package; use java.util.HashMap_Package;
+with java.util.HashMap_Package; use java.util.HashMap_Package;
 --  with javax.servlet.ServletConfig_Package; use javax.servlet.ServletConfig_Package;
 --  with javax.servlet.ServletContext_Package; use javax.servlet.ServletContext_Package;
 --  with javax.servlet.ServletRequest_Package; use javax.servlet.ServletRequest_Package;
@@ -36,6 +36,7 @@ with org.allbinary.logic.control.workflow.WorkFlowData_Package; use org.allbinar
 
 package org.allbinary.logic.control.workflow.RequestWorkFlowFactory_Package is
 
+   package HashMap_Package renames Standard.java.util.HashMap_Package;
    package WorkFlowEntityFactory_Package renames Standard.org.allbinary.data.tables.workflow.WorkFlowEntityFactory_Package;
    package WeblisketSession_Package renames Standard.org.allbinary.logic.communication.http.request.session.WeblisketSession_Package;
    package AbPathData_Package renames Standard.org.allbinary.logic.io.path.AbPathData_Package;

@@ -94,8 +94,8 @@ package body org.allbinary.game.configuration.GameConfigurationCentral_Package i
             list := keyValuePersistance.getIds;
             if (list.size) > (0) then
                 hashtable := keyValuePersistance.get (0);
-                anyType := Java_Object_Access (This.SCALE.getName);
-                value := Unbounded_String (hashtable.get (anyType));
+                anyType := Java_Box (This.SCALE.getName);
+                value := Java_Unbox (hashtable.get (anyType));
                 This.SCALE.setValue (smallIntegerSingletonFactory.getAt (To_Unbounded_String (Java_Image (value)).intValue));
             else
                 This.logUtil.putF (To_Unbounded_String ("No Game Configuration To Load"), GameConfigurationCentral_Access'(This'Unchecked_Access), commonStrings.LOAD);

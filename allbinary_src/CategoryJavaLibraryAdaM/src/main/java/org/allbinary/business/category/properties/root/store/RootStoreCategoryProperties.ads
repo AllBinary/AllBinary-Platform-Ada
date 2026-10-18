@@ -20,7 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.util.HashMap_Package; use java.util.HashMap_Package;
+with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 --  with javax.servlet.http.HttpServletRequest_Package; use javax.servlet.http.HttpServletRequest_Package;
@@ -46,6 +46,7 @@ with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 
 package org.allbinary.business.category.properties.root.store.RootStoreCategoryProperties_Package is
 
+   package HashMap_Package renames Standard.java.util.HashMap_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
    package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    package CategoryData_Package renames Standard.org.allbinary.business.category.CategoryData_Package;
@@ -79,7 +80,7 @@ package org.allbinary.business.category.properties.root.store.RootStoreCategoryP
       fileAbPath : AbPath_Access;
       abPath : AbPath_Access;
       category : Unbounded_String;
-      isRealRoot : Boolean;
+      isRealRoot_Field : Boolean;
       webAppAbPath : AbPath_Access;
       transformInfoInterface : TransformInfoInterface_Access;
    end record;

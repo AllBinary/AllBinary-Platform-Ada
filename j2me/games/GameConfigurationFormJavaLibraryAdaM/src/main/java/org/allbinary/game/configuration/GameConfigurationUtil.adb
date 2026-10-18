@@ -51,10 +51,10 @@ package body org.allbinary.game.configuration.GameConfigurationUtil_Package is
       gameConfigurationSingleton : GameConfigurationSingleton_Access;
       gameConfiguration : GameConfiguration_Access;
    begin
-        This.update (gauge);
+        GameConfigurationUtil'Class (This).update (gauge);
         gameConfigurationSingleton := GameConfigurationSingleton_Package.getInstance;
         gameConfiguration := gameConfigurationSingleton.getInstanceByName (gauge.getLabel);
-        This.updateChallange (gameOptionsForm, gameConfiguration);
+        GameConfigurationUtil'Class (This).updateChallange (gameOptionsForm, gameConfiguration);
    end change;
 
    --  throws Exception

@@ -45,16 +45,16 @@ package body org.allbinary.game.ag.ai.tactical.HorizontalManeuverAI_Package is
       ownerLayerInterface : AllBinaryLayer_Access;
       x : Integer;
    begin
-        ownerLayerInterface := This.getOwnerLayerInterface;
+        ownerLayerInterface := HorizontalManeuverAI'Class (This).getOwnerLayerInterface;
         x := ownerLayerInterface.getXP;
         if ((ownerLayerInterface.getXP) - (This.currentSpeed)) <= (0) then
-            This.reverse_Id;
-            This.drop;
+            HorizontalManeuverAI'Class (This).reverse_Id;
+            HorizontalManeuverAI'Class (This).drop;
         end if;
         if ((ownerLayerInterface.getX2) + (This.currentSpeed)) > (DisplayInfoSingleton_Package.getInstance.getLastWidth) then
-            This.reverse_Id;
-            This.accelerate;
-            This.drop;
+            HorizontalManeuverAI'Class (This).reverse_Id;
+            HorizontalManeuverAI'Class (This).accelerate;
+            HorizontalManeuverAI'Class (This).drop;
         end if;
         if (This.currentRelativeAngle) = (0) then
             x := (x) + (This.currentSpeed);
@@ -89,7 +89,7 @@ package body org.allbinary.game.ag.ai.tactical.HorizontalManeuverAI_Package is
       ownerLayerInterface : AllBinaryLayer_Access;
       y : Integer;
    begin
-        ownerLayerInterface := This.getOwnerLayerInterface;
+        ownerLayerInterface := HorizontalManeuverAI'Class (This).getOwnerLayerInterface;
         y := ownerLayerInterface.getYP;
         if ((ownerLayerInterface.getY2) + (ownerLayerInterface.getHeight)) > (DisplayInfoSingleton_Package.getInstance.getLastHeight) then
             y := 0;

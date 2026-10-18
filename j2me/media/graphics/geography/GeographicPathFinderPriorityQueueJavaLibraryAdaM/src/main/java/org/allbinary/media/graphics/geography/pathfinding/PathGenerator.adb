@@ -52,7 +52,7 @@ package body org.allbinary.media.graphics.geography.pathfinding.PathGenerator_Pa
       pathFindingInfo : constant PathFindingInfo_Access := PathFindingInfo_Access (pathFindingInfo_Param);
       geographicMapCellPositionBasicArrayList : BasicArrayList_Access;
    begin
-        geographicMapCellPositionBasicArrayList := This.create (geographicMapInterface, pathFindingInfo, totalPaths);
+        geographicMapCellPositionBasicArrayList := PathGenerator'Class (This).create (geographicMapInterface, pathFindingInfo, totalPaths);
         return geographicMapCellPositionBasicArrayList;
    end getInstanceNoCache;
 
@@ -63,6 +63,7 @@ package body org.allbinary.media.graphics.geography.pathfinding.PathGenerator_Pa
       pathFindingInfo : constant PathFindingInfo_Access := PathFindingInfo_Access (pathFindingInfo_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return null;
    end createList;
 
    --  throws Exception
@@ -104,6 +105,7 @@ package body org.allbinary.media.graphics.geography.pathfinding.PathGenerator_Pa
       geographicMapCellHistory : constant GeographicMapCellHistory_Access := GeographicMapCellHistory_Access (geographicMapCellHistory_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return False;
    end isValid;
 
    procedure getInstanceNoCache (This : in out PathGenerator; geographicMapInterface_Param : access BasicGeographicMap_Package.BasicGeographicMap'Class; pathFindingInfo_Param : access PathFindingInfo_Package.PathFindingInfo'Class; totalPaths : Integer) is

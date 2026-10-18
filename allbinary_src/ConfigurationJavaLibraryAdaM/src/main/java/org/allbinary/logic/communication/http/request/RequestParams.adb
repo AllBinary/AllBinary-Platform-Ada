@@ -44,7 +44,7 @@ package body org.allbinary.logic.communication.http.request.RequestParams_Packag
    begin
       Initialize_Fields (This);
         This.map := request.getParameterMap;
-        This.logUtil.putF (To_Unbounded_String ("RequestParams Size: ") & Java_Image (This.getMap.keySet.size), RequestParams_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
+        This.logUtil.putF (To_Unbounded_String ("RequestParams Size: ") & Java_Image (RequestParams'Class (This).getMap.keySet.size), RequestParams_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
    end Initialize;
 
    function Create (request_Param : access HttpServletRequest_Package.HttpServletRequest'Class) return RequestParams_Access is
@@ -59,7 +59,7 @@ package body org.allbinary.logic.communication.http.request.RequestParams_Packag
    begin
       Initialize_Fields (This);
         This.map := pageContext.getRequest.getParameterMap;
-        This.logUtil.putF (To_Unbounded_String ("Request Params Size: ") & Java_Image (This.getMap.keySet.size), RequestParams_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
+        This.logUtil.putF (To_Unbounded_String ("Request Params Size: ") & Java_Image (RequestParams'Class (This).getMap.keySet.size), RequestParams_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
    end Initialize;
 
    function Create (pageContext_Param : access PageContext_Package.PageContext'Class) return RequestParams_Access is
@@ -98,8 +98,8 @@ package body org.allbinary.logic.communication.http.request.RequestParams_Packag
             keyArray := keys.toArray;
             size := keyArray'Length;
             for i in 0 .. (size) - 1 loop
-                key_Case := Unbounded_String (keyArray (i));
-                values := Unbounded_String_Array_Access (This.map.get (key_Case));
+                key_Case := Java_Unbox (keyArray (i));
+                values := Unbounded_String_Array_Access (This.map.get (Java_Box (key_Case)));
                 stringBuffer.delete (0, stringBuffer.length);
                 stringBuffer.append (This.KEY);
                 stringBuffer.append (key_Case);
@@ -137,8 +137,8 @@ package body org.allbinary.logic.communication.http.request.RequestParams_Packag
         size := keyArray'Length;
         stringBuffer := StringMaker_Package.Create;
         for i in 0 .. (size) - 1 loop
-            key_Case := Unbounded_String (keyArray (i));
-            values := Unbounded_String_Array_Access (This.map.get (key_Case));
+            key_Case := Java_Unbox (keyArray (i));
+            values := Unbounded_String_Array_Access (This.map.get (Java_Box (key_Case)));
             hashMap.put (Java_New_String (key_Case), Java_New_String (values (0)));
         end loop;
         stringBuffer.delete (0, stringBuffer.length);

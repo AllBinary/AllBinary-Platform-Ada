@@ -69,12 +69,12 @@ package body org.allbinary.logic.communication.smtp.info.BasicEmailInfo_Package 
       stringBuffer : StringMaker_Access;
    begin
         stringBuffer := StringMaker_Package.Create;
-        stringBuffer.append (This.getEmailServerConfigurationInterface.toString);
+        stringBuffer.append (BasicEmailInfo'Class (This).getEmailServerConfigurationInterface.toString);
         stringBuffer.append (CommonSeps_Package.getInstance.NEW_LINE);
         stringBuffer.append (To_Unbounded_String ("Subject: " & ASCII.LF & ""));
-        stringBuffer.append (This.getSubject);
+        stringBuffer.append (BasicEmailInfo'Class (This).getSubject);
         stringBuffer.append (To_Unbounded_String ("" & ASCII.LF & "Text Body: " & ASCII.LF & ""));
-        stringBuffer.append (This.getTextBody);
+        stringBuffer.append (BasicEmailInfo'Class (This).getTextBody);
         return stringBuffer.toString;
    end toString;
 

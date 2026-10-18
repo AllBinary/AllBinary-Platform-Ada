@@ -21,7 +21,7 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.util.EventListener_Package; use java.util.EventListener_Package;
---  with java.util.HashMap_Package; use java.util.HashMap_Package;
+with java.util.HashMap_Package; use java.util.HashMap_Package;
 --  with java.util.LinkedList_Package; use java.util.LinkedList_Package;
 --  with javax.swing.tree.MutableTreeNode_Package; use javax.swing.tree.MutableTreeNode_Package;
 with org.allbinary.dom.DomHelper_Package; use org.allbinary.dom.DomHelper_Package;
@@ -52,6 +52,7 @@ with org.allbinary.graphics.j2me.workarea.GridBagConstraints_Package; use org.al
 
 package org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package is
 
+   package HashMap_Package renames Standard.java.util.HashMap_Package;
    package DomHelper_Package renames Standard.org.allbinary.dom.DomHelper_Package;
    package StatusFactory_Package renames Standard.org.allbinary.graphics.j2me.StatusFactory_Package;
    package CanvasDom_Package renames Standard.org.allbinary.graphics.j2me.workarea.canvas.CanvasDom_Package;
@@ -81,7 +82,7 @@ package org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package is
       selectedFrame : Integer;
       propertiesJPanel : PropertiesJPanel_Access;
       workAreaJTreeJPanel : WorkAreaJTreeJPanel_Access;
-      isPlaying : Boolean;
+      isPlaying_Field : Boolean;
       innerJPanel : JPanel_Access;
    end record;
    document : Document_Access;

@@ -40,7 +40,7 @@ package body org.allbinary.game.layer.capital.event.CapitalEvent_Package is
    begin
         stringBuffer := StringMaker_Package.Create;
         stringBuffer.append (To_Unbounded_String ("CapitalEvent: Value: " & ASCII.LF & ""));
-        stringBuffer.appendint (This.getValue);
+        stringBuffer.appendint (CapitalEvent'Class (This).getValue);
         return stringBuffer.toString;
    end toString;
 

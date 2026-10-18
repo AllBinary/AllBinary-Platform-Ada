@@ -57,7 +57,7 @@ package body servlet.request.RequestHandler_Package is
         begin
             response.setContentType (To_Unbounded_String ("text/html"));
             out_Id := response.getWriter;
-            workflowInterface := RequestWorkFlowFactory_Package.getInstance (ServletRequest_Access (request), ServletResponse_Access (response), This.getServletConfig, This.getServletContext);
+            workflowInterface := RequestWorkFlowFactory_Package.getInstance (ServletRequest_Access (request), ServletResponse_Access (response), RequestHandler'Class (This).getServletConfig, RequestHandler'Class (This).getServletContext);
             if (workflowInterface) /= (null) then
                 out_Id.print (workflowInterface.process);
             end if;
@@ -81,7 +81,7 @@ package body servlet.request.RequestHandler_Package is
       request : constant HttpServletRequest_Access := HttpServletRequest_Access (request_Param);
       response : constant HttpServletResponse_Access := HttpServletResponse_Access (response_Param);
    begin
-        This.processRequest (request, response);
+        RequestHandler'Class (This).processRequest (request, response);
    end doGet;
 
    --  throws ServletException, IOException
@@ -89,7 +89,7 @@ package body servlet.request.RequestHandler_Package is
       request : constant HttpServletRequest_Access := HttpServletRequest_Access (request_Param);
       response : constant HttpServletResponse_Access := HttpServletResponse_Access (response_Param);
    begin
-        This.processRequest (request, response);
+        RequestHandler'Class (This).processRequest (request, response);
    end doPost;
 
    function getServletInfo (This : in out RequestHandler) return Unbounded_String is

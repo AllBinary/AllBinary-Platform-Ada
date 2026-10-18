@@ -62,7 +62,7 @@ package body org.allbinary.media.graphics.geography.map.drop.AnyRandomDropCellPo
             randomColumn := randomFactory.getAbsoluteNextInt (tiledLayer.getColumns);
             randomRow := randomFactory.getAbsoluteNextInt (tiledLayer.getRows);
             geographicMapCellPosition := basicGeographicMapCellPositionFactory.getAt (randomColumn, randomRow);
-            if This.isDropAllowedAt (geographicMapCellPosition) then
+            if AnyRandomDropCellPositionGenerator'Class (This).isDropAllowedAt (geographicMapCellPosition) then
                 This.list.add (geographicMapCellPosition);
             end if;
         end loop;

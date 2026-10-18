@@ -72,13 +72,13 @@ package body org.allbinary.logic.visual.transform.template.customizer.widgets.ti
                 This.logUtil.putF (This.commonStrings.START, TitleNotRequiredValidation_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
             end if;
             valid := True;
-            if not (StringValidationUtil_Package.getInstance.isValidNotRequired (This.getTitle, 0, TitleData_Package.getInstance.MAXLEN)) then
+            if not (StringValidationUtil_Package.getInstance.isValidNotRequired (TitleNotRequiredValidation'Class (This).getTitle, 0, TitleData_Package.getInstance.MAXLEN)) then
                 valid := False;
             end if;
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
                 stringBuffer := StringMaker_Package.Create;
                 stringBuffer.append (To_Unbounded_String ("Title: "));
-                stringBuffer.append (This.getTitle);
+                stringBuffer.append (TitleNotRequiredValidation'Class (This).getTitle);
                 stringBuffer.append (To_Unbounded_String ("End: "));
                 stringBuffer.appendboolean (valid);
                 This.logUtil.putF (stringBuffer.toString, TitleNotRequiredValidation_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);

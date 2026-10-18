@@ -30,8 +30,8 @@ package body views.admin.user.UsersValidationView_Package is
    begin
         UsersView_Package.Initialize (This, transformInfoInterface);
         Initialize_Fields (This);
-        httpTransformInfoInterface := TransformInfoHttpInterface_Access (This.getTransformInfoInterface);
-        role := Unbounded_String (httpTransformInfoInterface.getPropertiesHashMap.get (UserRoleData_Package.NAME.toString));
+        httpTransformInfoInterface := TransformInfoHttpInterface_Access (UsersValidationView'Class (This).getTransformInfoInterface);
+        role := Java_Unbox (httpTransformInfoInterface.getPropertiesHashMap.get (UserRoleData_Package.NAME.toString));
         userRole := UserRoleB_Package.getRole (role);
         This.userVector := UserEntityFactory_Package.getInstance.getUsersWithRole (userRole);
    end Initialize;

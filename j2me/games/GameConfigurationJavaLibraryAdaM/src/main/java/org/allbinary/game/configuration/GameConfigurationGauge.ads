@@ -20,11 +20,12 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with javax.microedition.lcdui.Gauge_Package; use javax.microedition.lcdui.Gauge_Package;
+with javax.microedition.lcdui.Gauge_Package; use javax.microedition.lcdui.Gauge_Package;
 with org.allbinary.game.configuration.GameConfiguration_Package; use org.allbinary.game.configuration.GameConfiguration_Package;
 
 package org.allbinary.game.configuration.GameConfigurationGauge_Package is
 
+   package Gauge_Package renames Standard.javax.microedition.lcdui.Gauge_Package;
 
    type GameConfigurationGauge is tagged;
    type GameConfigurationGauge_Access is access all GameConfigurationGauge'Class;

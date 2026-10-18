@@ -55,11 +55,11 @@ package body org.allbinary.logic.math.permutations.OrderedIntArrayPermutationUti
         while (data ((j) - (1))) <= (data ((i) - (1))) loop
             j := (j) - (1);
         end loop;
-        This.swap (data, (i) - (1), (j) - (1));
+        OrderedIntArrayPermutationUtil'Class (This).swap (data, (i) - (1), (j) - (1));
         i := i + 1;
         j := length;
         while (i) < (j) loop
-            This.swap (data, (i) - (1), (j) - (1));
+            OrderedIntArrayPermutationUtil'Class (This).swap (data, (i) - (1), (j) - (1));
             i := i + 1;
             j := j - 1;
         end loop;
@@ -91,11 +91,11 @@ package body org.allbinary.logic.math.permutations.OrderedIntArrayPermutationUti
       iterations : Long_Long_Integer;
       count : Long_Long_Integer;
    begin
-        iterations := This.factorial (data'Length);
+        iterations := OrderedIntArrayPermutationUtil'Class (This).factorial (data'Length);
         Ada.Text_IO.Put (Java_Image (This.TOTAL_ITERATIONS_TABLE));
         Ada.Text_IO.Put_Line (Java_Image (iterations));
         for count in 0 .. ((iterations) - (1)) - 1 loop
-            This.getNext (data);
+            OrderedIntArrayPermutationUtil'Class (This).getNext (data);
             visitor.visit (OrderedIntArrayPermutationUtil_Access'(This'Unchecked_Access));
         end loop;
         Ada.Text_IO.Put_Line (Java_Image (This.FINISHED));

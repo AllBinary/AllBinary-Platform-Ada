@@ -52,7 +52,7 @@ package body org.allbinary.logic.control.workflow.StoreTagWorkFlowFactory_Packag
       classes : Ada_Tags_Tag_Array_Access;
    begin
         begin
-            workFlowClassName := Unbounded_String (propertiesHashMap.get (DynamicObjectData_Package.NAME));
+            workFlowClassName := Java_Unbox (propertiesHashMap.get (DynamicObjectData_Package.NAME));
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPERFACTORY) then
                 stringBuffer := StringMaker_Package.Create;
                 stringBuffer.append (To_Unbounded_String ("Creating WorkFlow: "));
@@ -63,7 +63,7 @@ package body org.allbinary.logic.control.workflow.StoreTagWorkFlowFactory_Packag
                 This.logUtil.putF (stringBuffer.toString, StoreTagWorkFlowFactory_Access'(This'Unchecked_Access), commonStrings.GET_INSTANCE);
             end if;
             params := new Java_Object_Access_Array'(0 .. (2) - 1 => null);
-            classes := new Ada_Tags_Tag_Array'(0 .. (2) - 1 => null);
+            classes := new Ada_Tags_Tag_Array'(0 .. (2) - 1 => Ada.Tags.No_Tag);
             classes (0) := propertiesHashMap.all'Tag;
             classes (1) := AbeFactory_Package.getInstance.getClass (abeClientInformation, To_Unbounded_String ("javax.servlet.jsp.PageContext"));
             params (0) := Java_Object_Access (propertiesHashMap);
@@ -75,7 +75,7 @@ package body org.allbinary.logic.control.workflow.StoreTagWorkFlowFactory_Packag
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPERFACTORYERROR) then
-                workFlowClassName := Unbounded_String (propertiesHashMap.get (DynamicObjectData_Package.NAME));
+                workFlowClassName := Java_Unbox (propertiesHashMap.get (DynamicObjectData_Package.NAME));
                 stringBuffer := StringMaker_Package.Create;
                 stringBuffer.append (To_Unbounded_String ("Error Creating WorkFlow: "));
                 stringBuffer.append (workFlowClassName);

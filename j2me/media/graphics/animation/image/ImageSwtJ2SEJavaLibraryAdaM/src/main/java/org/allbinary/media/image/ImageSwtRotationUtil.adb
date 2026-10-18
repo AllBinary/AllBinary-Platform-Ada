@@ -72,7 +72,7 @@ package body org.allbinary.media.image.ImageSwtRotationUtil_Package is
       newSwtImage : constant Image_Access := Image_Access (newSwtImage_Param);
       gc : constant GC_Access := GC_Access (gc_Param);
    begin
-        return This.getRotatedImage2 (originalSwtImage, newSwtImage, gc, totalAngle);
+        return ImageSwtRotationUtil'Class (This).getRotatedImage2 (originalSwtImage, newSwtImage, gc, totalAngle);
    end rotateImage;
 
    function getRotatedImageSWT (This : in out ImageSwtRotationUtil; bufferedImage_Param : access Image_Package.Image'Class; newSwtImage_Param : access Image_Package.Image'Class; gc_Param : access GC_Package.GC'Class; totalAngle : Integer) return Image_Access is
@@ -80,7 +80,7 @@ package body org.allbinary.media.image.ImageSwtRotationUtil_Package is
       newSwtImage : constant Image_Access := Image_Access (newSwtImage_Param);
       gc : constant GC_Access := GC_Access (gc_Param);
    begin
-        return This.getRotatedImage2 (bufferedImage, newSwtImage, gc, totalAngle);
+        return ImageSwtRotationUtil'Class (This).getRotatedImage2 (bufferedImage, newSwtImage, gc, totalAngle);
    end getRotatedImageSWT;
 
    function getRotatedImages (This : in out ImageSwtRotationUtil; bufferedImage_Param : access Image_Package.Image'Class; numberOfFrames : Integer; totalAngle : Integer) return Image_Access_Array_Access is
@@ -95,7 +95,7 @@ package body org.allbinary.media.image.ImageSwtRotationUtil_Package is
         size := bufferedImageArray'Length;
         for index in 0 .. (size) - 1 loop
             angle := (((totalAngle) / (size))) * (index);
-            bufferedImageArray (index) := This.getRotatedImage (bufferedImage, angle);
+            bufferedImageArray (index) := ImageSwtRotationUtil'Class (This).getRotatedImage (bufferedImage, angle);
         end loop;
         return bufferedImageArray;
    end getRotatedImages;

@@ -41,7 +41,7 @@ package body org.allbinary.opengles.JOGL11_Package is
    begin
         JOGL10_Package.Initialize (This, gl, gl2);
         Initialize_Fields (This);
-        This.gl11 := This.getJOGLGL;
+        This.gl11 := JOGL11'Class (This).getJOGLGL;
    end Initialize;
 
    function Create (gl_Param : access GL_Package.GL'Class; gl2_Param : access GL2_Package.GL2'Class) return JOGL11_Access is

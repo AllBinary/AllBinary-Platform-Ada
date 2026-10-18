@@ -63,67 +63,67 @@ package body tags.transform.info.TransformInfoTag_Package is
    procedure setName (This : in out TransformInfoTag; value : Unbounded_String) is
    begin
         This.name := value;
-        This.getPropertiesHashMap.put (TransformInfoData_Package.getInstance.NAME, This.name);
+        TransformInfoTag'Class (This).getPropertiesHashMap.put (TransformInfoData_Package.getInstance.NAME, This.name);
    end setName;
 
    procedure setStoreName (This : in out TransformInfoTag; value : Unbounded_String) is
    begin
         This.storeName := value;
-        This.getPropertiesHashMap.put (StoreFrontData_Package.getInstance.NAME, This.storeName);
+        TransformInfoTag'Class (This).getPropertiesHashMap.put (StoreFrontData_Package.getInstance.NAME, This.storeName);
    end setStoreName;
 
    procedure setObjectFile (This : in out TransformInfoTag; value : Unbounded_String) is
    begin
         This.objectFile := value;
-        This.getPropertiesHashMap.put (TransformInfoData_Package.getInstance.OBJECTFILENAME, This.objectFile);
+        TransformInfoTag'Class (This).getPropertiesHashMap.put (TransformInfoData_Package.getInstance.OBJECTFILENAME, This.objectFile);
    end setObjectFile;
 
    procedure setObject (This : in out TransformInfoTag; value : Unbounded_String) is
    begin
         This.anyType := value;
-        This.getPropertiesHashMap.put (TransformInfoData_Package.getInstance.OBJECT, This.anyType);
+        TransformInfoTag'Class (This).getPropertiesHashMap.put (TransformInfoData_Package.getInstance.OBJECT, This.anyType);
    end setObject;
 
    procedure setTemplateFile (This : in out TransformInfoTag; value : Unbounded_String) is
    begin
         This.templateFile := value;
-        This.getPropertiesHashMap.put (TransformInfoData_Package.getInstance.TEMPLATEFILENAME, This.templateFile);
+        TransformInfoTag'Class (This).getPropertiesHashMap.put (TransformInfoData_Package.getInstance.TEMPLATEFILENAME, This.templateFile);
    end setTemplateFile;
 
    procedure setTemplate (This : in out TransformInfoTag; value : Unbounded_String) is
    begin
         This.template := value;
-        This.getPropertiesHashMap.put (TransformInfoData_Package.getInstance.TEMPLATE, This.template);
+        TransformInfoTag'Class (This).getPropertiesHashMap.put (TransformInfoData_Package.getInstance.TEMPLATE, This.template);
    end setTemplate;
 
    procedure setDataFile (This : in out TransformInfoTag; value : Unbounded_String) is
    begin
         This.dataFile := value;
-        This.getPropertiesHashMap.put (TransformInfoData_Package.getInstance.DATAFILENAME, This.dataFile);
+        TransformInfoTag'Class (This).getPropertiesHashMap.put (TransformInfoData_Package.getInstance.DATAFILENAME, This.dataFile);
    end setDataFile;
 
    procedure setData (This : in out TransformInfoTag; value : Unbounded_String) is
    begin
         This.data := value;
-        This.getPropertiesHashMap.put (TransformInfoData_Package.getInstance.DATA, This.data);
+        TransformInfoTag'Class (This).getPropertiesHashMap.put (TransformInfoData_Package.getInstance.DATA, This.data);
    end setData;
 
    procedure setObjectConfigFile (This : in out TransformInfoTag; value : Unbounded_String) is
    begin
         This.objectConfigFile := value;
-        This.getPropertiesHashMap.put (TransformInfoData_Package.getInstance.OBJECTCONFIGFILENAME, This.objectConfigFile);
+        TransformInfoTag'Class (This).getPropertiesHashMap.put (TransformInfoData_Package.getInstance.OBJECTCONFIGFILENAME, This.objectConfigFile);
    end setObjectConfigFile;
 
    procedure setObjectConfig (This : in out TransformInfoTag; value : Unbounded_String) is
    begin
         This.objectConfig := value;
-        This.getPropertiesHashMap.put (TransformInfoData_Package.getInstance.OBJECTCONFIG, This.objectConfig);
+        TransformInfoTag'Class (This).getPropertiesHashMap.put (TransformInfoData_Package.getInstance.OBJECTCONFIG, This.objectConfig);
    end setObjectConfig;
 
    procedure setType (This : in out TransformInfoTag; value : Unbounded_String) is
    begin
         This.type_Id := value;
-        This.getPropertiesHashMap.put (OutputTypeData_Package.getInstance.NAME, This.type_Id);
+        TransformInfoTag'Class (This).getPropertiesHashMap.put (OutputTypeData_Package.getInstance.NAME, This.type_Id);
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAG) then
             This.logUtil.putF (To_Unbounded_String ("TransformInfoTag type set: ") & This.type_Id, TransformInfoTag_Access'(This'Unchecked_Access), To_Unbounded_String ("setType"));
         end if;

@@ -20,13 +20,15 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.util.HashMap_Package; use java.util.HashMap_Package;
---  with java.util.Map_Package; use java.util.Map_Package;
+with java.util.HashMap_Package; use java.util.HashMap_Package;
+with java.util.Map_Package; use java.util.Map_Package;
 --  with java.util.Set_Package; use java.util.Set_Package;
 with jsinterop.annotations.JsType_Package; use jsinterop.annotations.JsType_Package;
 
 package org.allbinary.util.ABHashMap_Package is
 
+   package HashMap_Package renames Standard.java.util.HashMap_Package;
+   package Map_Package renames Standard.java.util.Map_Package;
    package JsType_Package renames Standard.jsinterop.annotations.JsType_Package;
 
    type ABHashMap is tagged;

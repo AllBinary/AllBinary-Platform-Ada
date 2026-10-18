@@ -46,13 +46,13 @@ package body org.allbinary.media.image.comparison.motion.MotionRectanglesWorker_
       imageComparisonResultsEvent : constant ImageComparisonResultsEvent_Access := ImageComparisonResultsEvent_Access (imageComparisonResultsEvent_Param);
    begin
         This.imageComparisonInfoVector.add (imageComparisonResultsEvent);
-        This.run;
+        MotionRectanglesWorker'Class (This).run;
    end onImageComparisonResultsEvent;
 
    procedure onEvent (This : in out MotionRectanglesWorker; allBinaryEventObject_Param : access AllBinaryEventObject_Package.AllBinaryEventObject'Class) is
       allBinaryEventObject : constant AllBinaryEventObject_Access := AllBinaryEventObject_Access (allBinaryEventObject_Param);
    begin
-        This.onImageComparisonResultsEvent (ImageComparisonResultsEvent_Access (allBinaryEventObject));
+        MotionRectanglesWorker'Class (This).onImageComparisonResultsEvent (ImageComparisonResultsEvent_Access (allBinaryEventObject));
    end onEvent;
 
    function isRunning (This : in out MotionRectanglesWorker) return Boolean is
@@ -75,7 +75,7 @@ package body org.allbinary.media.image.comparison.motion.MotionRectanglesWorker_
    begin
         begin
             This.logUtil.putF (This.commonStrings.START, MotionRectanglesWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN);
-            This.setRunning (True);
+            MotionRectanglesWorker'Class (This).setRunning (True);
             timeHelper := TimeDelayHelper_Package.Create (1000);
             timeHelper.setStartTimeTNT;
             imageComparisonResultsEvent := ImageComparisonResultsEvent_Access (This.imageComparisonInfoVector.get (0));
@@ -88,11 +88,11 @@ package body org.allbinary.media.image.comparison.motion.MotionRectanglesWorker_
             constrainedMotionRectangles := ConstrainedMotionRectangles_Package.Create (This.motionRectangleConstraintsInterface, consolidatedMotionRectangles);
             constrainedMotionRectangles.applyMotionRectangleConstraints (consolidatedMotionRectangles);
             ConstrainedMotionRectanglesResultsCacheSingleton_Package.getInstance.add (MotionRectanglesResultsFrameCacheable_Package.Create (constrainedMotionRectangles, imageComparisonInfo.getFrameTwo));
-            This.fireEvent (MotionRectanglesResultsEvent_Package.Create (MotionRectanglesWorker_Access'(This'Unchecked_Access), imageComparisonInfo.getFrameTwo, MotionRectangles_Access (constrainedMotionRectangles)));
+            MotionRectanglesWorker'Class (This).fireEvent (MotionRectanglesResultsEvent_Package.Create (MotionRectanglesWorker_Access'(This'Unchecked_Access), imageComparisonInfo.getFrameTwo, MotionRectangles_Access (constrainedMotionRectangles)));
             This.imageComparisonInfoVector.remove (imageComparisonResultsEvent);
             This.index := This.index + 1;
             This.logUtil.putF ((CommonLabels_Package.getInstance.ELAPSED) + (timeHelper.getElapsedTNT), MotionRectanglesWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN);
-            This.setRunning (False);
+            MotionRectanglesWorker'Class (This).setRunning (False);
             This.logUtil.putF (This.commonStrings.END_Id, MotionRectanglesWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN);
         exception
             when Java_Occurrence : others =>

@@ -22,7 +22,7 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.io.FileInputStream_Package; use java.io.FileInputStream_Package;
 --  with java.io.IOException_Package; use java.io.IOException_Package;
---  with java.util.Map_Package; use java.util.Map_Package;
+with java.util.Map_Package; use java.util.Map_Package;
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.logic.communication.log.LogBuffer_Package; use org.allbinary.logic.communication.log.LogBuffer_Package;
 with org.allbinary.logic.communication.log.LogFactory_Package; use org.allbinary.logic.communication.log.LogFactory_Package;
@@ -36,6 +36,7 @@ with org.allbinary.logic.system.loader.NoClassDefFoundError_Package; use org.all
 
 package org.allbinary.logic.system.loader.AbeClassLoader_Package is
 
+   package Map_Package renames Standard.java.util.Map_Package;
    package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    package LogBuffer_Package renames Standard.org.allbinary.logic.communication.log.LogBuffer_Package;
    package LogFactory_Package renames Standard.org.allbinary.logic.communication.log.LogFactory_Package;

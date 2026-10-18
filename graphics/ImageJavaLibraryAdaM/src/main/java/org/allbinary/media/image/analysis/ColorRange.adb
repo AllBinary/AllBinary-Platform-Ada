@@ -108,7 +108,7 @@ package body org.allbinary.media.image.analysis.ColorRange_Package is
    function isInRange (This : in out ColorRange; color_Param : access Color_Package.Color'Class) return Boolean is
       color : constant Color_Access := Color_Access (color_Param);
    begin
-        if ((((((color.getRed) >= (This.getMinRed)) and then ((color.getRed) <= (This.getMaxRed))) and then ((color.getGreen) >= (This.getMinGreen))) and then ((color.getGreen) <= (This.getMaxGreen))) and then ((color.getBlue) >= (This.getMinBlue))) and then ((color.getBlue) <= (This.getMaxBlue)) then
+        if ((((((color.getRed) >= (ColorRange'Class (This).getMinRed)) and then ((color.getRed) <= (ColorRange'Class (This).getMaxRed))) and then ((color.getGreen) >= (ColorRange'Class (This).getMinGreen))) and then ((color.getGreen) <= (ColorRange'Class (This).getMaxGreen))) and then ((color.getBlue) >= (ColorRange'Class (This).getMinBlue))) and then ((color.getBlue) <= (ColorRange'Class (This).getMaxBlue)) then
             return True;
         else
             return False;
@@ -120,22 +120,22 @@ package body org.allbinary.media.image.analysis.ColorRange_Package is
    begin
         stringBuffer := StringMaker_Package.Create;
         stringBuffer.append (To_Unbounded_String ("getMinRed(): "));
-        stringBuffer.appendint (This.getMinRed);
+        stringBuffer.appendint (ColorRange'Class (This).getMinRed);
         stringBuffer.append (CommonSeps_Package.getInstance.NEW_LINE);
         stringBuffer.append (To_Unbounded_String ("getMaxRed(): "));
-        stringBuffer.appendint (This.getMaxRed);
+        stringBuffer.appendint (ColorRange'Class (This).getMaxRed);
         stringBuffer.append (CommonSeps_Package.getInstance.NEW_LINE);
         stringBuffer.append (To_Unbounded_String ("getMinGreen(): "));
-        stringBuffer.appendint (This.getMinGreen);
+        stringBuffer.appendint (ColorRange'Class (This).getMinGreen);
         stringBuffer.append (CommonSeps_Package.getInstance.NEW_LINE);
         stringBuffer.append (To_Unbounded_String ("getMaxGreen(): "));
-        stringBuffer.appendint (This.getMaxGreen);
+        stringBuffer.appendint (ColorRange'Class (This).getMaxGreen);
         stringBuffer.append (CommonSeps_Package.getInstance.NEW_LINE);
         stringBuffer.append (To_Unbounded_String ("getMinBlue(): "));
-        stringBuffer.appendint (This.getMinGreen);
+        stringBuffer.appendint (ColorRange'Class (This).getMinGreen);
         stringBuffer.append (CommonSeps_Package.getInstance.NEW_LINE);
         stringBuffer.append (To_Unbounded_String ("getMaxBlue(): "));
-        stringBuffer.appendint (This.getMaxBlue);
+        stringBuffer.appendint (ColorRange'Class (This).getMaxBlue);
         return stringBuffer.toString;
    end toString;
 

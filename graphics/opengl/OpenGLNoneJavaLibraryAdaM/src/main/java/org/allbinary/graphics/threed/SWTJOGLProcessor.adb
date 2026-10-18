@@ -128,24 +128,28 @@ package body org.allbinary.graphics.threed.SWTJOGLProcessor_Package is
       font : constant Font_Access := Font_Access (font_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return 0;
    end charWidth;
 
    function charsWidth (This : in out SWTJOGLProcessor; font_Param : access Font_Package.Font'Class; ch : Character_Array_Access; offset : Integer; length : Integer) return Integer is
       font : constant Font_Access := Font_Access (font_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return 0;
    end charsWidth;
 
    function stringWidth (This : in out SWTJOGLProcessor; font_Param : access Font_Package.Font'Class; str : Unbounded_String) return Integer is
       font : constant Font_Access := Font_Access (font_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return 0;
    end stringWidth;
 
    function substringWidth (This : in out SWTJOGLProcessor; font_Param : access Font_Package.Font'Class; str : Unbounded_String; offset : Integer; len : Integer) return Integer is
       font : constant Font_Access := Font_Access (font_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return 0;
    end substringWidth;
 
    procedure charWidth (This : in out SWTJOGLProcessor; font_Param : access Font_Package.Font'Class; ch : Character) is

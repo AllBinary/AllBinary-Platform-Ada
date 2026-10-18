@@ -29,8 +29,8 @@ package body org.allbinary.graphics.form.CommandCurrentSelectionForm_Package is
    begin
         ScrollCurrentSelectionForm_Package.Initialize (This, title, items, ItemPaintableFactory_Package.getInstance, border, -(3), moveForSmallScreen, backgroundBasicColor, foregroundBasicColor);
         Initialize_Fields (This);
-        This.initAnimations;
-        This.addAll (items);
+        CommandCurrentSelectionForm'Class (This).initAnimations;
+        CommandCurrentSelectionForm'Class (This).addAll (items);
    end Initialize;
 
    function Create (title : Unbounded_String; items : ABCustomItem_Access_Array_Access; border : Integer; moveForSmallScreen : Boolean; backgroundBasicColor_Param : access BasicColor_Package.BasicColor'Class; foregroundBasicColor_Param : access BasicColor_Package.BasicColor'Class) return CommandCurrentSelectionForm_Access is
@@ -43,7 +43,7 @@ package body org.allbinary.graphics.form.CommandCurrentSelectionForm_Package is
    procedure updateMeasurement (This : in out CommandCurrentSelectionForm; graphics_Param : access Graphics_Package.Graphics'Class) is
       graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
-        This.updateAll (graphics, This.getAllitems);
+        CommandCurrentSelectionForm'Class (This).updateAll (graphics, CommandCurrentSelectionForm'Class (This).getAllitems);
         ScrollCurrentSelectionForm (This).updateMeasurement (graphics);
    end updateMeasurement;
 
@@ -67,7 +67,7 @@ package body org.allbinary.graphics.form.CommandCurrentSelectionForm_Package is
    begin
         index := items'Length;
         while (Java_Pre_Decrement (index)) >= (0) loop
-            This.addAt (index, items (index));
+            CommandCurrentSelectionForm'Class (This).addAt (index, items (index));
         end loop;
    end addAll;
 
@@ -112,7 +112,7 @@ package body org.allbinary.graphics.form.CommandCurrentSelectionForm_Package is
         index := items'Length;
         while (Java_Pre_Decrement (index)) >= (0) loop
             items (index).preMeasurement (graphics);
-            This.updateAt (index, items (index));
+            CommandCurrentSelectionForm'Class (This).updateAt (index, items (index));
         end loop;
    end updateAll;
 
@@ -176,7 +176,7 @@ package body org.allbinary.graphics.form.CommandCurrentSelectionForm_Package is
       commandTextItem : CommandTextItem_Access;
    begin
         index := ScrollCurrentSelectionForm (This).getSelectedIndex;
-        commandTextItem := CommandTextItem_Access (This.get (index));
+        commandTextItem := CommandTextItem_Access (CommandCurrentSelectionForm'Class (This).get (index));
         return commandTextItem.getCommand;
    end getSelectedCommand;
 
@@ -185,7 +185,7 @@ package body org.allbinary.graphics.form.CommandCurrentSelectionForm_Package is
       result : Integer;
    begin
         result := ScrollCurrentSelectionForm (This).append (item);
-        This.addAt (result, item);
+        CommandCurrentSelectionForm'Class (This).addAt (result, item);
         return result;
    end append;
 
@@ -196,7 +196,7 @@ package body org.allbinary.graphics.form.CommandCurrentSelectionForm_Package is
 
    procedure deleteAll (This : in out CommandCurrentSelectionForm) is
    begin
-        This.initAnimations;
+        CommandCurrentSelectionForm'Class (This).initAnimations;
         ScrollCurrentSelectionForm (This).deleteAll;
    end deleteAll;
 

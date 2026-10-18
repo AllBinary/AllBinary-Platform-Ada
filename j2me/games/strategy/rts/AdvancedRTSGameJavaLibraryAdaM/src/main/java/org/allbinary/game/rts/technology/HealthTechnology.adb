@@ -78,12 +78,12 @@ package body org.allbinary.game.rts.technology.HealthTechnology_Package is
 
    function getUpgradeCost (This : in out HealthTechnology) return Integer is
    begin
-        return (((This.getLevel) * (This.getLevel))) * (1000);
+        return (((HealthTechnology'Class (This).getLevel) * (HealthTechnology'Class (This).getLevel))) * (1000);
    end getUpgradeCost;
 
    function isUpgradeable (This : in out HealthTechnology) return Boolean is
    begin
-        if (This.getLevel) < (This.getMaxLevel) then
+        if (HealthTechnology'Class (This).getLevel) < (HealthTechnology'Class (This).getMaxLevel) then
             return True;
         else
             return False;
@@ -95,7 +95,7 @@ package body org.allbinary.game.rts.technology.HealthTechnology_Package is
    begin
         This.level := This.level + 1;
         unitTechnologySingletonFactory := UnitTechnologySingletonFactory_Package.getInstance;
-        unitTechnologySingletonFactory.setHealth ((unitTechnologySingletonFactory.getHealth) + (((This.getLevel) * (100))));
+        unitTechnologySingletonFactory.setHealth ((unitTechnologySingletonFactory.getHealth) + (((HealthTechnology'Class (This).getLevel) * (100))));
    end upgrade;
 
    function isSelfUpgradeable (This : in out HealthTechnology) return Boolean is

@@ -23,11 +23,12 @@ with AllBinary_Java; use AllBinary_Java;
 --  with java.io.FileInputStream_Package; use java.io.FileInputStream_Package;
 --  with java.io.FileNotFoundException_Package; use java.io.FileNotFoundException_Package;
 --  with java.io.IOException_Package; use java.io.IOException_Package;
---  with java.io.InputStream_Package; use java.io.InputStream_Package;
+with java.io.InputStream_Package; use java.io.InputStream_Package;
 --  with java.nio.channels.FileChannel_Package; use java.nio.channels.FileChannel_Package;
 
 package org.allbinary.logic.io.AbFileInputStream_Package is
 
+   package InputStream_Package renames Standard.java.io.InputStream_Package;
 
    type AbFileInputStream is tagged;
    type AbFileInputStream_Access is access all AbFileInputStream'Class;

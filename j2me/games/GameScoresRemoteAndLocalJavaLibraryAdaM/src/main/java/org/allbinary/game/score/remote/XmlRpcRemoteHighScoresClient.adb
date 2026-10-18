@@ -29,7 +29,7 @@ package body org.allbinary.game.score.remote.XmlRpcRemoteHighScoresClient_Packag
         XmlRpcAbeClient_Package.Initialize (This, clientInfo, remoteMethod);
         Initialize_Fields (This);
         This.page := page;
-        This.setServer (0);
+        XmlRpcRemoteHighScoresClient'Class (This).setServer (0);
    end Initialize;
 
    function Create (clientInfo_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; page : Unbounded_String; remoteMethod : Unbounded_String) return XmlRpcRemoteHighScoresClient_Access is
@@ -53,22 +53,22 @@ package body org.allbinary.game.score.remote.XmlRpcRemoteHighScoresClient_Packag
    begin
         begin
             param := BasicArrayListD_Package.Create;
-            serverUrl := This.getClientInfo.getLicenseServer (This.getServer);
+            serverUrl := XmlRpcRemoteHighScoresClient'Class (This).getClientInfo.getLicenseServer (XmlRpcRemoteHighScoresClient'Class (This).getServer);
             index := serverUrl.lastIndexOf ('/');
             serverUrl := Unbounded_Slice (serverUrl, (0) + 1, (index) + (1)) & This.page;
             stringBuffer := StringMaker_Package.Create;
             stringBuffer.append (TRYING);
-            stringBuffer.appendint (Integer (This.getServer));
+            stringBuffer.appendint (Integer (XmlRpcRemoteHighScoresClient'Class (This).getServer));
             stringBuffer.append (SEP_Package);
             stringBuffer.append (serverUrl);
             This.logUtil.putF (stringBuffer.toString, XmlRpcRemoteHighScoresClient_Access'(This'Unchecked_Access), This.commonStrings.GET);
             xmlRpcClient := XmlRpcClient_Package.Create (serverUrl);
-            This.setClient (xmlRpcClient);
+            XmlRpcRemoteHighScoresClient'Class (This).setClient (xmlRpcClient);
             xmlRpcClient.setBasicAuthentication (null, null);
             hashtable := ABHashtable_Access (anyType);
             This.logUtil.putF (Java_Image (CLIENT_INFO) & hashtable.toString, XmlRpcRemoteHighScoresClient_Access'(This'Unchecked_Access), This.commonStrings.GET);
             param.add (hashtable);
-            result := xmlRpcClient.execute (This.getRemoteMethod, param, cryptInterface);
+            result := xmlRpcClient.execute (XmlRpcRemoteHighScoresClient'Class (This).getRemoteMethod, param, cryptInterface);
             This.logUtil.putF (Java_Image (RESULT) & result.toString, XmlRpcRemoteHighScoresClient_Access'(This'Unchecked_Access), This.commonStrings.GET);
             This.isOnline := True;
             return result;
@@ -79,7 +79,7 @@ package body org.allbinary.game.score.remote.XmlRpcRemoteHighScoresClient_Packag
                 begin
             This.logUtil.put ((TRYING_OTHER_SERVERS) + (ExceptionUtil_Package.getInstance.getStackTrace (e)), XmlRpcRemoteHighScoresClient_Access'(This'Unchecked_Access), This.commonStrings.GET, e);
             if not (Java_Get_Message (e).startsWith (HOST_NOT_RESOLVED)) then
-                return This.tryAnother (anyType);
+                return XmlRpcRemoteHighScoresClient'Class (This).tryAnother (anyType);
             else
                 Java_Throw (Java_New_Exception ("Exception", HOST_NOT_RESOLVED_MSG));
             end if;

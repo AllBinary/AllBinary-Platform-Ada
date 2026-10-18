@@ -12,29 +12,6 @@
 --  
 --  Generated Code Do Not Modify
 
-
-package body org.allbinary.business.user.commerce.money.MoneyException_Package is
-
-   procedure Initialize_Fields (This : in out MoneyException'Class) is
-   begin
-      null;
-   end Initialize_Fields;
-
-
-   procedure Initialize (This : in out MoneyException'Class) is
-   begin
-      Exception_Package.Initialize (This);
-      Initialize_Fields (This);
-        null;
-   end Initialize;
-
-   function Create return MoneyException_Access is
-      This : constant MoneyException_Access := new MoneyException;
-   begin
-      MoneyException_Package.Initialize (This.all);
-      return This;
-   end Create;
-
-end org.allbinary.business.user.commerce.money.MoneyException_Package;
+--  Java exception class MoneyException is only a package spec
 
 

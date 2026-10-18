@@ -26,8 +26,8 @@ package body admin.tags.PaymentGatewayTag_Package is
    begin
       TableTag_Package.Initialize (This);
       Initialize_Fields (This);
-        This.setTagHelperFactory (PaymentGatewayHelperFactory_Package.Create);
-        This.setTagRequestHelperFactory (PaymentGatewayHelperFactory_Package.Create);
+        PaymentGatewayTag'Class (This).setTagHelperFactory (PaymentGatewayHelperFactory_Package.Create);
+        PaymentGatewayTag'Class (This).setTagRequestHelperFactory (PaymentGatewayHelperFactory_Package.Create);
    end Initialize;
 
    function Create return PaymentGatewayTag_Access is
@@ -45,10 +45,10 @@ package body admin.tags.PaymentGatewayTag_Package is
       result : Unbounded_String;
    begin
         begin
-            anyType := PaymentGatewayHelperFactory_Package.Create.getInstance (This.getPropertiesHashMap, This.pageContext);
+            anyType := PaymentGatewayHelperFactory_Package.Create.getInstance (PaymentGatewayTag'Class (This).getPropertiesHashMap, This.pageContext);
             helperClass := anyType.all'Tag;
             method := helperClass.getMethod (This.commonStrings.PROCESS, null);
-            result := Unbounded_String (method.invoke (anyType, null));
+            result := Java_Unbox (method.invoke (anyType, null));
             return result;
         exception
             when Java_Occurrence : others =>
@@ -66,13 +66,13 @@ package body admin.tags.PaymentGatewayTag_Package is
       output : Unbounded_String;
    begin
         begin
-            if This.isEnabled then
-                if (((This.getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.AUTHORIZEORDEREVALBODYONERROR)) = (0)) or else ((This.getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.AUTHORIZEORDERANDEVALBODY)) = (0))) or else ((This.getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.AUTHORIZEFORMEVALBODYONERROR)) = (0)) then
-                    output := This.process;
+            if PaymentGatewayTag'Class (This).isEnabled then
+                if (((PaymentGatewayTag'Class (This).getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.AUTHORIZEORDEREVALBODYONERROR)) = (0)) or else ((PaymentGatewayTag'Class (This).getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.AUTHORIZEORDERANDEVALBODY)) = (0))) or else ((PaymentGatewayTag'Class (This).getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.AUTHORIZEFORMEVALBODYONERROR)) = (0)) then
+                    output := PaymentGatewayTag'Class (This).process;
                     begin
                         This.pageContext.getOut.print (output & To_Unbounded_String ("<br />"));
                     end;
-                    if (This.getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.AUTHORIZEORDEREVALBODYONERROR)) = (0) then
+                    if (PaymentGatewayTag'Class (This).getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.AUTHORIZEORDEREVALBODYONERROR)) = (0) then
                         return This.SKIP_BODY;
                     else
                         return This.EVAL_BODY_INCLUDE;

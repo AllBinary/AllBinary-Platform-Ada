@@ -37,7 +37,7 @@ package body org.allbinary.game.ag.layer.pickup.FallingPickupLayer_Package is
    procedure processTick (This : in out FallingPickupLayer; allBinaryLayerManager_Param : access AllBinaryLayerManager_Package.AllBinaryLayerManager'Class) is
       allBinaryLayerManager : constant AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (allBinaryLayerManager_Param);
    begin
-        This.setPosition (This.x, (This.y) + (1), This.z);
+        FallingPickupLayer'Class (This).setPosition (This.x, (This.y) + (1), This.z);
    end processTick;
 
    function implmentsTickableInterface (This : in out FallingPickupLayer) return Boolean is

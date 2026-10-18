@@ -43,7 +43,7 @@ package body org.allbinary.animation.FeaturedAnimationInterfaceFactoryInterfaceF
    --  throws Exception
    function getRectangle (This : in out FeaturedAnimationInterfaceFactoryInterfaceFactory; resource : Unbounded_String) return Rectangle_Access is
    begin
-        return This.getRectangleXY (resource, 0, 0);
+        return FeaturedAnimationInterfaceFactoryInterfaceFactory'Class (This).getRectangleXY (resource, 0, 0);
    end getRectangle;
 
    --  throws Exception
@@ -57,9 +57,9 @@ package body org.allbinary.animation.FeaturedAnimationInterfaceFactoryInterfaceF
       index : Integer;
    begin
         pointFactory := PointFactory_Package.getInstance;
-        list := This.getList;
+        list := FeaturedAnimationInterfaceFactoryInterfaceFactory'Class (This).getList;
         scale := GameConfigurationCentral_Package.getInstance.SCALE.getValue.intValue;
-        size := This.getList.size;
+        size := FeaturedAnimationInterfaceFactoryInterfaceFactory'Class (This).getList.size;
         for index in 0 .. (size) - 1 loop
             featureInterface := FeatureResourceAnimationInterfaceFactoryInterface_Access (list.objectArray (index));
             if featureInterface.isFeature then
@@ -75,13 +75,13 @@ package body org.allbinary.animation.FeaturedAnimationInterfaceFactoryInterfaceF
    --  throws Exception
    function getProcedural (This : in out FeaturedAnimationInterfaceFactoryInterfaceFactory; resource : Unbounded_String) return ProceduralAnimationInterfaceFactoryInterface_Access is
    begin
-        return ProceduralAnimationInterfaceFactoryInterface_Access (This.getBasicAnimationInterfaceFactoryInstance (resource));
+        return ProceduralAnimationInterfaceFactoryInterface_Access (FeaturedAnimationInterfaceFactoryInterfaceFactory'Class (This).getBasicAnimationInterfaceFactoryInstance (resource));
    end getProcedural;
 
    --  throws Exception
    function get (This : in out FeaturedAnimationInterfaceFactoryInterfaceFactory; resource : Unbounded_String) return AnimationInterfaceFactoryInterface_Access is
    begin
-        return AnimationInterfaceFactoryInterface_Access (This.getBasicAnimationInterfaceFactoryInstance (resource));
+        return AnimationInterfaceFactoryInterface_Access (FeaturedAnimationInterfaceFactoryInterfaceFactory'Class (This).getBasicAnimationInterfaceFactoryInstance (resource));
    end get;
 
    --  throws Exception
@@ -101,9 +101,9 @@ package body org.allbinary.animation.FeaturedAnimationInterfaceFactoryInterfaceF
       RESOURCES_LABEL : Unbounded_String;
       size2 : Integer;
    begin
-        list := This.getList;
+        list := FeaturedAnimationInterfaceFactoryInterfaceFactory'Class (This).getList;
         resourceTypeAvailableList := BasicArrayListD_Package.Create;
-        size := This.getList.size;
+        size := FeaturedAnimationInterfaceFactoryInterfaceFactory'Class (This).getList.size;
         featureInterface := null;
         animationInterfaceFactoryInterface := null;
         for index in 0 .. (size) - 1 loop

@@ -20,7 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
+with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
 with org.allbinary.animation.AnimationBehaviorFactory_Package; use org.allbinary.animation.AnimationBehaviorFactory_Package;
 with org.allbinary.animation.NullAnimationFactory_Package; use org.allbinary.animation.NullAnimationFactory_Package;
 with org.allbinary.animation.image.sprite.OneRowSpriteIndexedAnimationFactory_Package; use org.allbinary.animation.image.sprite.OneRowSpriteIndexedAnimationFactory_Package;
@@ -49,6 +49,7 @@ with org.allbinary.input.motion.button.TouchButtonStrafeRightResource_Package; u
 
 package org.allbinary.input.motion.button.TouchButtonResourceAnimationInterfaceFactoryInterfaceFactory_Package is
 
+   package Image_Package renames Standard.javax.microedition.lcdui.Image_Package;
    package AnimationBehaviorFactory_Package renames Standard.org.allbinary.animation.AnimationBehaviorFactory_Package;
    package NullAnimationFactory_Package renames Standard.org.allbinary.animation.NullAnimationFactory_Package;
    package OneRowSpriteIndexedAnimationFactory_Package renames Standard.org.allbinary.animation.image.sprite.OneRowSpriteIndexedAnimationFactory_Package;

@@ -41,7 +41,7 @@ package body tags.ValidationTransformTag_Package is
    procedure setXsl (This : in out ValidationTransformTag; value : Unbounded_String) is
    begin
         This.xslFile := value;
-        This.setTemplateFile (This.xslFile);
+        ValidationTransformTag'Class (This).setTemplateFile (This.xslFile);
    end setXsl;
 
    procedure setLogic (This : in out ValidationTransformTag; logic : Boolean) is
@@ -56,9 +56,9 @@ package body tags.ValidationTransformTag_Package is
       result : Boolean;
    begin
         begin
-            helperClass := This.getHelper.all'Tag;
+            helperClass := ValidationTransformTag'Class (This).getHelper.all'Tag;
             method := helperClass.getMethod (This.commonStrings.IS_VALID, null);
-            result := Boolean (method.invoke (This.getHelper, null));
+            result := Boolean (method.invoke (ValidationTransformTag'Class (This).getHelper, null));
             return result.booleanValue;
         exception
             when Java_Occurrence : others =>
@@ -80,9 +80,9 @@ package body tags.ValidationTransformTag_Package is
       result : Unbounded_String;
    begin
         begin
-            addressHelperClass := This.getHelper.all'Tag;
+            addressHelperClass := ValidationTransformTag'Class (This).getHelper.all'Tag;
             method := addressHelperClass.getMethod (To_Unbounded_String ("validationInfo"), null);
-            result := Unbounded_String (method.invoke (This.getHelper, null));
+            result := Java_Unbox (method.invoke (ValidationTransformTag'Class (This).getHelper, null));
             return result;
         exception
             when Java_Occurrence : others =>
@@ -107,20 +107,20 @@ package body tags.ValidationTransformTag_Package is
                 stringBuffer := StringMaker_Package.Create;
                 request := HttpServletRequest_Access (This.pageContext.getRequest);
                 stringBuffer.append (To_Unbounded_String ("ValidationViewTag Start For: "));
-                stringBuffer.append (This.getName);
+                stringBuffer.append (ValidationTransformTag'Class (This).getName);
                 stringBuffer.append (To_Unbounded_String ("" & ASCII.LF & "View FIle: "));
-                stringBuffer.append (This.getObjectFile);
+                stringBuffer.append (ValidationTransformTag'Class (This).getObjectFile);
                 stringBuffer.append (To_Unbounded_String ("" & ASCII.LF & "Request URI: "));
                 stringBuffer.append (request.getRequestURI);
                 This.logUtil.putF (stringBuffer.toString, ValidationTransformTag_Access'(This'Unchecked_Access), This.tagStrings.DO_START_TAG);
             end if;
-            This.setHelper;
-            if This.isValid then
+            ValidationTransformTag'Class (This).setHelper;
+            if ValidationTransformTag'Class (This).isValid then
                 TransformTag (This).doStartTag;
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAG) then
                     stringBuffer := StringMaker_Package.Create;
                     stringBuffer.append (To_Unbounded_String ("View File: "));
-                    stringBuffer.append (This.getObjectFile);
+                    stringBuffer.append (ValidationTransformTag'Class (This).getObjectFile);
                     stringBuffer.append (To_Unbounded_String ("" & ASCII.LF & "Logic includes body if true="));
                     stringBuffer.appendboolean (This.logic);
                     This.logUtil.putF (stringBuffer.toString, ValidationTransformTag_Access'(This'Unchecked_Access), This.tagStrings.DO_START_TAG);
@@ -131,11 +131,11 @@ package body tags.ValidationTransformTag_Package is
                     return SKIP_BODY;
                 end if;
             else
-                This.pageContext.getOut.print (This.validationInfo);
+                This.pageContext.getOut.print (ValidationTransformTag'Class (This).validationInfo);
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAG) then
                     stringBuffer := StringMaker_Package.Create;
                     stringBuffer.append (To_Unbounded_String ("View File: "));
-                    stringBuffer.append (This.getObjectFile);
+                    stringBuffer.append (ValidationTransformTag'Class (This).getObjectFile);
                     stringBuffer.append (To_Unbounded_String ("" & ASCII.LF & "isValid()=false"));
                     stringBuffer.append (To_Unbounded_String ("" & ASCII.LF & "Logic skips body if true="));
                     stringBuffer.appendboolean (This.logic);

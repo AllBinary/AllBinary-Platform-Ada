@@ -20,10 +20,11 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with javax.microedition.rms.RecordFilter_Package; use javax.microedition.rms.RecordFilter_Package;
+with javax.microedition.rms.RecordFilter_Package; use javax.microedition.rms.RecordFilter_Package;
 
 package org.allbinary.game.configuration.persistance.NullRecordFilter_Package is
 
+   package RecordFilter_Package renames Standard.javax.microedition.rms.RecordFilter_Package;
 
    type NullRecordFilter is tagged;
    type NullRecordFilter_Access is access all NullRecordFilter'Class;

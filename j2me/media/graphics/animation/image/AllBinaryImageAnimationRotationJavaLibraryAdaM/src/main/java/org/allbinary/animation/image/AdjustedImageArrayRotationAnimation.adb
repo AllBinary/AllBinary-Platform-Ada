@@ -47,7 +47,7 @@ package body org.allbinary.animation.image.AdjustedImageArrayRotationAnimation_P
    begin
         ImageArrayRotationAnimation_Package.Initialize (This, imageArray, angleInfo, totalAngle, animationBehavior);
         Initialize_Fields (This);
-        This.init (dx, dy);
+        AdjustedImageArrayRotationAnimation'Class (This).init (dx, dy);
    end Initialize;
 
    function Create (imageArray : Image_Access_Array_Access; angleInfo_Param : access AngleInfo_Package.AngleInfo'Class; totalAngle : Integer; dx : Integer; dy : Integer; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class) return AdjustedImageArrayRotationAnimation_Access is
@@ -60,8 +60,8 @@ package body org.allbinary.animation.image.AdjustedImageArrayRotationAnimation_P
    --  throws Exception
    procedure init (This : in out AdjustedImageArrayRotationAnimation; dx : Integer; dy : Integer) is
    begin
-        This.setDx (dx);
-        This.setDy (dy);
+        AdjustedImageArrayRotationAnimation'Class (This).setDx (dx);
+        AdjustedImageArrayRotationAnimation'Class (This).setDy (dy);
    end init;
 
    procedure paintXY (This : in out AdjustedImageArrayRotationAnimation; graphics_Param : access Graphics_Package.Graphics'Class; x : Integer; y : Integer) is

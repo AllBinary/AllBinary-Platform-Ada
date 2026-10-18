@@ -79,11 +79,11 @@ package body org.allbinary.animation.image.sprite.SpriteIndexedAnimationFactory_
    function getInstance (This : in out SpriteIndexedAnimationFactory; instanceId : Integer) return Animation_Access is
       sprite : Sprite_Access;
    begin
-        sprite := This.animationFactorySpriteScaleUtil.createImage (This.getImage, This.animationFactoryInitializationVisitor.width, This.animationFactoryInitializationVisitor.height, This.scaleProperties.scaleWidth, This.scaleProperties.scaleHeight);
+        sprite := This.animationFactorySpriteScaleUtil.createImage (SpriteIndexedAnimationFactory'Class (This).getImage, This.animationFactoryInitializationVisitor.width, This.animationFactoryInitializationVisitor.height, This.scaleProperties.scaleWidth, This.scaleProperties.scaleHeight);
         if ((This.animationFactoryInitializationVisitor.dx) /= (0)) or else ((This.animationFactoryInitializationVisitor.dy) /= (0)) then
-            return AdjustedSpriteIndexedAnimation_Package.Create (sprite, This.getImage, This.basicColorArray, This.animationFactoryInitializationVisitor.dx, This.animationFactoryInitializationVisitor.dy, This.animationBehaviorFactory.getOrCreateInstance);
+            return AdjustedSpriteIndexedAnimation_Package.Create (sprite, SpriteIndexedAnimationFactory'Class (This).getImage, This.basicColorArray, This.animationFactoryInitializationVisitor.dx, This.animationFactoryInitializationVisitor.dy, This.animationBehaviorFactory.getOrCreateInstance);
         else
-            return SpriteIndexedAnimation_Package.Create (sprite, This.getImage, This.basicColorArray, This.animationBehaviorFactory.getOrCreateInstance);
+            return SpriteIndexedAnimation_Package.Create (sprite, SpriteIndexedAnimationFactory'Class (This).getImage, This.basicColorArray, This.animationBehaviorFactory.getOrCreateInstance);
         end if;
    end getInstance;
 
@@ -91,7 +91,7 @@ package body org.allbinary.animation.image.sprite.SpriteIndexedAnimationFactory_
    function getInstanceAnimation (This : in out SpriteIndexedAnimationFactory; animationInterface_Param : access Animation_Package.Animation'Class) return Animation_Access is
       animationInterface : constant Animation_Access := Animation_Access (animationInterface_Param);
    begin
-        return This.getInstance (0);
+        return SpriteIndexedAnimationFactory'Class (This).getInstance (0);
    end getInstanceAnimation;
 
    procedure createCWHDXY (image_Param : access Image_Package.Image'Class; basicColorArray : BasicColor_Access_Array_Access; width : Integer; height : Integer; dx : Integer; dy : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class) is

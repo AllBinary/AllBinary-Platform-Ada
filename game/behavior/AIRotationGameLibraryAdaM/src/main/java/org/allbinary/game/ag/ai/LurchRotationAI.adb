@@ -29,9 +29,9 @@ package body org.allbinary.game.ag.ai.LurchRotationAI_Package is
    begin
         LurchAI_Package.Initialize (This, ownerLayerInterface, gameInput);
         Initialize_Fields (This);
-        rotationAnimationInterfaceCompositeInterface := RotationAnimationInterfaceCompositeInterface_Access (This.getOwnerLayerInterface);
+        rotationAnimationInterfaceCompositeInterface := RotationAnimationInterfaceCompositeInterface_Access (LurchRotationAI'Class (This).getOwnerLayerInterface);
         This.rotationAnimationInterface := rotationAnimationInterfaceCompositeInterface.getRotationAnimationInterface;
-        This.update;
+        LurchRotationAI'Class (This).update;
    end Initialize;
 
    function Create (ownerLayerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; gameInput_Param : access GameInput_Package.GameInput'Class) return LurchRotationAI_Access is
@@ -44,7 +44,7 @@ package body org.allbinary.game.ag.ai.LurchRotationAI_Package is
    procedure reverse_Id (This : in out LurchRotationAI) is
    begin
         LurchAI (This).reverse_Id;
-        This.update;
+        LurchRotationAI'Class (This).update;
    end reverse_Id;
 
    procedure update (This : in out LurchRotationAI) is
@@ -55,12 +55,12 @@ package body org.allbinary.game.ag.ai.LurchRotationAI_Package is
         if (This.currentRelativeAngle) = (0) then
             rotationAnimationInterface := RotationAnimationInterface_Access (This.rotationAnimationInterface);
             angleIncrementInfo := rotationAnimationInterface.getAngleInfoP.getAngleIncrementInfo;
-            rotationAnimationInterfaceCompositeInterface := RotationAnimationInterfaceCompositeInterface_Access (This.getOwnerLayerInterface);
+            rotationAnimationInterfaceCompositeInterface := RotationAnimationInterfaceCompositeInterface_Access (LurchRotationAI'Class (This).getOwnerLayerInterface);
             rotationAnimationInterfaceCompositeInterface.setFrame (angleIncrementInfo.RIGHT_FRAME.intValue);
         elsif (This.currentRelativeAngle) = (180) then
             rotationAnimationInterface := RotationAnimationInterface_Access (This.rotationAnimationInterface);
             angleIncrementInfo := rotationAnimationInterface.getAngleInfoP.getAngleIncrementInfo;
-            rotationAnimationInterfaceCompositeInterface := RotationAnimationInterfaceCompositeInterface_Access (This.getOwnerLayerInterface);
+            rotationAnimationInterfaceCompositeInterface := RotationAnimationInterfaceCompositeInterface_Access (LurchRotationAI'Class (This).getOwnerLayerInterface);
             rotationAnimationInterfaceCompositeInterface.setFrame (angleIncrementInfo.LEFT_FRAME.intValue);
         end if;
    end update;

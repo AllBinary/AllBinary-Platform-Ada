@@ -47,7 +47,7 @@ package body org.allbinary.game.layer.hud.basic.PositionWidget_Package is
    procedure set (This : in out PositionWidget; position : Integer) is
    begin
         This.position := position;
-        This.positionString := PositionWidget_Package.toString (This.get);
+        This.positionString := PositionWidget_Package.toString (PositionWidget'Class (This).get);
    end set;
 
    procedure paint (This : in out PositionWidget; graphics_Param : access Graphics_Package.Graphics'Class) is

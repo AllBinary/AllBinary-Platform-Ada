@@ -34,7 +34,7 @@ package body org.allbinary.graphics.j2me.dialog.NewWorkAreaJDialog_Package is
         JDialog_Package.Initialize (This, Frame_Access (parent), modal);
         Initialize_Fields (This);
         begin
-            This.initComponents;
+            NewWorkAreaJDialog'Class (This).initComponents;
             This.parent := parent;
             This.xSizeJTextField := JTextField_Package.Create (To_Unbounded_String ("12"));
             This.ySizeJTextField := JTextField_Package.Create (To_Unbounded_String ("12"));
@@ -47,7 +47,7 @@ package body org.allbinary.graphics.j2me.dialog.NewWorkAreaJDialog_Package is
 --        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
 --                      begin
---                          This.disposeNewDialog;
+--                          NewWorkAreaJDialog'Class (This).disposeNewDialog;
 --                      exception
 --                          when Java_Occurrence : others =>
 --                              declare
@@ -58,18 +58,18 @@ package body org.allbinary.graphics.j2me.dialog.NewWorkAreaJDialog_Package is
 --                      end;
 --     end actionPerformed;
 );
-            This.setSize (150, 100);
-            This.getContentPane.setLayout (GridLayout_Package.Create (5, 2));
-            This.getContentPane.add (JLabel_Package.Create (To_Unbounded_String ("Please enter")));
-            This.getContentPane.add (JLabel_Package.Create (To_Unbounded_String (" the size.")));
-            This.getContentPane.add (JLabel_Package.Create (To_Unbounded_String ("Name:")));
-            This.getContentPane.add (This.nameJTextField);
-            This.getContentPane.add (JLabel_Package.Create (To_Unbounded_String ("X: ")));
-            This.getContentPane.add (This.xSizeJTextField);
-            This.getContentPane.add (JLabel_Package.Create (To_Unbounded_String ("Y: ")));
-            This.getContentPane.add (This.ySizeJTextField);
-            This.getContentPane.add (submitButton);
-            This.show;
+            NewWorkAreaJDialog'Class (This).setSize (150, 100);
+            NewWorkAreaJDialog'Class (This).getContentPane.setLayout (GridLayout_Package.Create (5, 2));
+            NewWorkAreaJDialog'Class (This).getContentPane.add (JLabel_Package.Create (To_Unbounded_String ("Please enter")));
+            NewWorkAreaJDialog'Class (This).getContentPane.add (JLabel_Package.Create (To_Unbounded_String (" the size.")));
+            NewWorkAreaJDialog'Class (This).getContentPane.add (JLabel_Package.Create (To_Unbounded_String ("Name:")));
+            NewWorkAreaJDialog'Class (This).getContentPane.add (This.nameJTextField);
+            NewWorkAreaJDialog'Class (This).getContentPane.add (JLabel_Package.Create (To_Unbounded_String ("X: ")));
+            NewWorkAreaJDialog'Class (This).getContentPane.add (This.xSizeJTextField);
+            NewWorkAreaJDialog'Class (This).getContentPane.add (JLabel_Package.Create (To_Unbounded_String ("Y: ")));
+            NewWorkAreaJDialog'Class (This).getContentPane.add (This.ySizeJTextField);
+            NewWorkAreaJDialog'Class (This).getContentPane.add (submitButton);
+            NewWorkAreaJDialog'Class (This).show;
         exception
             when Java_Occurrence : others =>
                 declare
@@ -104,7 +104,7 @@ package body org.allbinary.graphics.j2me.dialog.NewWorkAreaJDialog_Package is
             workAreaJPanel := WorkAreaJPanel_Package.Create (newName, This.dimension, canvasWidth.intValue, canvasHeight.intValue);
             workAreaJPanel.setLayout (GridLayout_Package.Create (1, 1));
             This.parent.add (WorkAreaJPanelInterface_Access (workAreaJPanel));
-            This.dispose;
+            NewWorkAreaJDialog'Class (This).dispose;
         exception
             when Java_Occurrence : others =>
                 declare
@@ -117,22 +117,22 @@ package body org.allbinary.graphics.j2me.dialog.NewWorkAreaJDialog_Package is
 
    procedure initComponents (This : in out NewWorkAreaJDialog) is
    begin
-        This.addWindowListener (WindowAdapter_Package.Create  --  Java anonymous class body: implement it as a named type
+        NewWorkAreaJDialog'Class (This).addWindowListener (WindowAdapter_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
 --     procedure windowClosing (This : in out ; evt_Param : access WindowEvent_Package.WindowEvent'Class) is
 --        evt : constant WindowEvent_Access := WindowEvent_Access (evt_Param);
 --     begin
---                  This.closeDialog (evt);
+--                  NewWorkAreaJDialog'Class (This).closeDialog (evt);
 --     end windowClosing;
 );
-        This.pack;
+        NewWorkAreaJDialog'Class (This).pack;
    end initComponents;
 
    procedure closeDialog (This : in out NewWorkAreaJDialog; evt_Param : access WindowEvent_Package.WindowEvent'Class) is
       evt : constant WindowEvent_Access := WindowEvent_Access (evt_Param);
    begin
-        This.setVisible (False);
-        This.dispose;
+        NewWorkAreaJDialog'Class (This).setVisible (False);
+        NewWorkAreaJDialog'Class (This).dispose;
    end closeDialog;
 
    procedure main (args : Unbounded_String_Array_Access) is

@@ -48,7 +48,7 @@ package body org.allbinary.bundle.logic.preloader.AllBinaryPreloaderActivator_Pa
         begin
             This.logUtil.putF (This.commonStrings.START, AllBinaryPreloaderActivator_Access'(This'Unchecked_Access), To_Unbounded_String ("start"));
             AllBinaryPreloaderActivator_Package.context := context;
-            This.registerAsService;
+            AllBinaryPreloaderActivator'Class (This).registerAsService;
         exception
             when Java_Occurrence : others =>
                 declare

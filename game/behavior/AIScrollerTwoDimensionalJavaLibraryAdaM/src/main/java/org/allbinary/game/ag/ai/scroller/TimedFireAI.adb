@@ -44,7 +44,7 @@ package body org.allbinary.game.ag.ai.scroller.TimedFireAI_Package is
       allBinaryLayerManager : constant AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (allBinaryLayerManager_Param);
       timeFiredInterface : TimeFiredInterface_Access;
    begin
-        timeFiredInterface := TimeFiredInterface_Access (This.getOwnerLayerInterface);
+        timeFiredInterface := TimeFiredInterface_Access (TimedFireAI'Class (This).getOwnerLayerInterface);
         if (This.maxFireDelayTimeHelper.isTime (GameTickTimeDelayHelperFactory_Package.getInstance.startTime)) and then (((timeFiredInterface.getLastFireTime) + (This.maxFireDelayTimeHelper.delay_Id)) < (This.maxFireDelayTimeHelper.getStartTime)) then
             BasicAI (This).processKeyAI (Canvas_Package.KEY_NUM1);
             This.maxFireDelayTimeHelper.delay_Id := This.delay_Id;

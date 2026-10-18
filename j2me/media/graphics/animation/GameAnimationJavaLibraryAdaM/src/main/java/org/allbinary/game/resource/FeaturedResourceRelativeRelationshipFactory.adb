@@ -50,14 +50,14 @@ package body org.allbinary.game.resource.FeaturedResourceRelativeRelationshipFac
       list : BasicArrayList_Access;
       index : Integer;
    begin
-        featureReleaseList := This.getList;
-        size := This.getList.size;
+        featureReleaseList := FeaturedResourceRelativeRelationshipFactory'Class (This).getList;
+        size := FeaturedResourceRelativeRelationshipFactory'Class (This).getList.size;
         for index in 0 .. (size) - 1 loop
             featureInterface := ResourceRelativeRelationshipFactoryInterface_Access (featureReleaseList.objectArray (index));
             if featureInterface.isFeature then
                 list := featureInterface.getResourceRelativeRelationshipList (resource);
                 if (list) /= (This.basicArrayListUtil.getImmutableInstance) then
-                    return This.duplicate (list, layer);
+                    return FeaturedResourceRelativeRelationshipFactory'Class (This).duplicate (list, layer);
                 end if;
             end if;
         end loop;

@@ -27,8 +27,8 @@ package body admin.tags.BillingAddressTag_Package is
    begin
       TableTag_Package.Initialize (This);
       Initialize_Fields (This);
-        This.setTagHelperFactory (BillingAddressHelperFactory_Package.Create);
-        This.setTagRequestHelperFactory (BillingAddressHelperFactory_Package.Create);
+        BillingAddressTag'Class (This).setTagHelperFactory (BillingAddressHelperFactory_Package.Create);
+        BillingAddressTag'Class (This).setTagRequestHelperFactory (BillingAddressHelperFactory_Package.Create);
    end Initialize;
 
    function Create return BillingAddressTag_Access is
@@ -52,10 +52,10 @@ package body admin.tags.BillingAddressTag_Package is
       error : Unbounded_String;
    begin
         begin
-            anyType := BillingAddressHelperFactory_Package.Create.getInstance (This.getPropertiesHashMap, This.pageContext);
+            anyType := BillingAddressHelperFactory_Package.Create.getInstance (BillingAddressTag'Class (This).getPropertiesHashMap, This.pageContext);
             addressHelperClass := anyType.all'Tag;
             method := addressHelperClass.getMethod (To_Unbounded_String ("set"), null);
-            result := Unbounded_String (method.invoke (anyType, null));
+            result := Java_Unbox (method.invoke (anyType, null));
             return result;
         exception
             when Java_Occurrence : others =>
@@ -76,10 +76,10 @@ package body admin.tags.BillingAddressTag_Package is
       error : Unbounded_String;
    begin
         begin
-            anyType := BillingAddressHelperFactory_Package.Create.getInstance (This.getPropertiesHashMap, This.pageContext);
+            anyType := BillingAddressHelperFactory_Package.Create.getInstance (BillingAddressTag'Class (This).getPropertiesHashMap, This.pageContext);
             addressHelperClass := anyType.all'Tag;
             method := addressHelperClass.getMethod (To_Unbounded_String ("setToShippingAddress"), null);
-            result := Unbounded_String (method.invoke (anyType, null));
+            result := Java_Unbox (method.invoke (anyType, null));
             return result;
         exception
             when Java_Occurrence : others =>
@@ -95,13 +95,13 @@ package body admin.tags.BillingAddressTag_Package is
    function doStartTag (This : in out BillingAddressTag) return Integer is
    begin
         begin
-            if This.isEnabled then
-                if (This.getCommand) /= (null) then
-                    if (This.getCommand.compareTo (BillingAddressData_Package.SELECT_Id)) = (0) then
-                        This.set;
+            if BillingAddressTag'Class (This).isEnabled then
+                if (BillingAddressTag'Class (This).getCommand) /= (null) then
+                    if (BillingAddressTag'Class (This).getCommand.compareTo (BillingAddressData_Package.SELECT_Id)) = (0) then
+                        BillingAddressTag'Class (This).set;
                         return This.EVAL_BODY_INCLUDE;
-                    elsif (This.getCommand.compareTo (BillingAddressData_Package.SETTOSHIPPINGADDRESS)) = (0) then
-                        This.setToShippingAddress;
+                    elsif (BillingAddressTag'Class (This).getCommand.compareTo (BillingAddressData_Package.SETTOSHIPPINGADDRESS)) = (0) then
+                        BillingAddressTag'Class (This).setToShippingAddress;
                     else
                         return TableTag (This).doStartTag;
                     end if;

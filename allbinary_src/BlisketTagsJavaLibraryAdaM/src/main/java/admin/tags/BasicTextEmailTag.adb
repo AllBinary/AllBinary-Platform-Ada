@@ -56,8 +56,8 @@ package body admin.tags.BasicTextEmailTag_Package is
    begin
         begin
             propertiesHashMap := StdUtil_Package.getInstance.createHashMap;
-            propertiesHashMap.put (To_Unbounded_String ("Subject"), This.subject);
-            propertiesHashMap.put (To_Unbounded_String ("Body"), This.body_Id);
+            propertiesHashMap.put (Java_Box (To_Unbounded_String ("Subject")), Java_Box (This.subject));
+            propertiesHashMap.put (Java_Box (To_Unbounded_String ("Body")), Java_Box (This.body_Id));
             anyType := BasicTextEmailHelperFactory_Package.Create.getInstance (propertiesHashMap, This.pageContext);
             method := anyType.all'Tag.getMethod (To_Unbounded_String ("send"), null);
             method.invoke (anyType, null);
@@ -80,7 +80,7 @@ package body admin.tags.BasicTextEmailTag_Package is
    function doStartTag (This : in out BasicTextEmailTag) return Integer is
    begin
         begin
-            This.pageContext.getOut.print (This.send);
+            This.pageContext.getOut.print (BasicTextEmailTag'Class (This).send);
             return SKIP_BODY;
         exception
             when Java_Occurrence : others =>

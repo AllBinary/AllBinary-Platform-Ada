@@ -50,7 +50,7 @@ package body org.allbinary.business.context.configuration.ContextConfigurationDo
    --  throws Exception
    function toDomDocumentString (This : in out ContextConfigurationDomDocumentMapping) return Unbounded_String is
    begin
-        return XmlDocumentHelper_Package.toString (This.toXmlDoc);
+        return XmlDocumentHelper_Package.toString (ContextConfigurationDomDocumentMapping'Class (This).toXmlDoc);
    end toDomDocumentString;
 
 end org.allbinary.business.context.configuration.ContextConfigurationDomDocumentMapping_Package;

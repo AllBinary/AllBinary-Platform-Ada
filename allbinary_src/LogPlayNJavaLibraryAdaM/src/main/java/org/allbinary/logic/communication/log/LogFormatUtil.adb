@@ -55,8 +55,8 @@ package body org.allbinary.logic.communication.log.LogFormatUtil_Package is
       exception_Id : constant Java_Object_Access := Java_Object_Access (exception_Id_Param);
       stringBuffer : StringMaker_Access;
    begin
-        stringBuffer := This.getF (className, functionName);
-        stringBuffer.append (This.getO (exception_Id));
+        stringBuffer := LogFormatUtil'Class (This).getF (className, functionName);
+        stringBuffer.append (LogFormatUtil'Class (This).getO (exception_Id));
         stringBuffer.append (This.SPECIAL_MESSAGE);
         stringBuffer.append (specialMessage);
         stringBuffer.append (This.commonSeps.NEW_LINE);
@@ -66,7 +66,7 @@ package body org.allbinary.logic.communication.log.LogFormatUtil_Package is
    function getS (This : in out LogFormatUtil; className : Unbounded_String; functionName : Unbounded_String; specialMessage : Unbounded_String) return Unbounded_String is
       stringBuffer : StringMaker_Access;
    begin
-        stringBuffer := This.getF (className, functionName);
+        stringBuffer := LogFormatUtil'Class (This).getF (className, functionName);
         stringBuffer.append (This.SPECIAL_MESSAGE);
         stringBuffer.append (specialMessage);
         stringBuffer.append (This.commonSeps.NEW_LINE);

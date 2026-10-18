@@ -69,7 +69,7 @@ package org.allbinary.logic.communication.log.config.LogConfig_Package is
    type LogConfig_Access_Array_Access is access all LogConfig_Access_Array;
 
    type LogConfig is new Java_Object with record
-      isEnabled : Boolean;
+      isEnabled_Field : Boolean;
       name : Unbounded_String;
       description : Unbounded_String;
       path : Unbounded_String;

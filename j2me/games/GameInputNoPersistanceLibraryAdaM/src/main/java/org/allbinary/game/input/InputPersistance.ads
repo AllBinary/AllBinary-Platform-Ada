@@ -20,8 +20,8 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with javax.microedition.rms.RecordEnumeration_Package; use javax.microedition.rms.RecordEnumeration_Package;
---  with javax.microedition.rms.RecordStore_Package; use javax.microedition.rms.RecordStore_Package;
+with javax.microedition.rms.RecordEnumeration_Package; use javax.microedition.rms.RecordEnumeration_Package;
+with javax.microedition.rms.RecordStore_Package; use javax.microedition.rms.RecordStore_Package;
 with org.allbinary.game.configuration.persistance.BasicPersitance_Package; use org.allbinary.game.configuration.persistance.BasicPersitance_Package;
 with org.allbinary.game.configuration.persistance.NullRecordComparator_Package; use org.allbinary.game.configuration.persistance.NullRecordComparator_Package;
 with org.allbinary.game.configuration.persistance.NullRecordFilter_Package; use org.allbinary.game.configuration.persistance.NullRecordFilter_Package;
@@ -38,6 +38,8 @@ with org.allbinary.game.input.Input_Package; use org.allbinary.game.input.Input_
 
 package org.allbinary.game.input.InputPersistance_Package is
 
+   package RecordEnumeration_Package renames Standard.javax.microedition.rms.RecordEnumeration_Package;
+   package RecordStore_Package renames Standard.javax.microedition.rms.RecordStore_Package;
    package BasicPersitance_Package renames Standard.org.allbinary.game.configuration.persistance.BasicPersitance_Package;
    package NullRecordComparator_Package renames Standard.org.allbinary.game.configuration.persistance.NullRecordComparator_Package;
    package NullRecordFilter_Package renames Standard.org.allbinary.game.configuration.persistance.NullRecordFilter_Package;

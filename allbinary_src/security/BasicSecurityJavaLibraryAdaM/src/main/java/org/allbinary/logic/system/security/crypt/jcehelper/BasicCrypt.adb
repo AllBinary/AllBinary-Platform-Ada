@@ -53,7 +53,7 @@ package body org.allbinary.logic.system.security.crypt.jcehelper.BasicCrypt_Pack
    function encrypt (This : in out BasicCrypt; array_Id : Short_Short_Integer_Array_Access) return Short_Short_Integer_Array_Access is
    begin
         begin
-            return This.mutilate (array_Id);
+            return BasicCrypt'Class (This).mutilate (array_Id);
         exception
             when Java_Occurrence : others =>
                 declare
@@ -68,7 +68,7 @@ package body org.allbinary.logic.system.security.crypt.jcehelper.BasicCrypt_Pack
    function decrypt (This : in out BasicCrypt; array_Id : Short_Short_Integer_Array_Access) return Short_Short_Integer_Array_Access is
    begin
         begin
-            return This.mutilate (array_Id);
+            return BasicCrypt'Class (This).mutilate (array_Id);
         exception
             when Java_Occurrence : others =>
                 declare

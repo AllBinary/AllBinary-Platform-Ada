@@ -27,8 +27,8 @@ package body admin.tags.OrderItemsTag_Package is
    begin
       TableTag_Package.Initialize (This);
       Initialize_Fields (This);
-        This.setTagHelperFactory (OrderItemsHelperFactory_Package.Create);
-        This.setTagRequestHelperFactory (OrderItemsRequestHelperFactory_Package.Create);
+        OrderItemsTag'Class (This).setTagHelperFactory (OrderItemsHelperFactory_Package.Create);
+        OrderItemsTag'Class (This).setTagRequestHelperFactory (OrderItemsRequestHelperFactory_Package.Create);
    end Initialize;
 
    function Create return OrderItemsTag_Access is
@@ -54,18 +54,18 @@ package body admin.tags.OrderItemsTag_Package is
       error : Unbounded_String;
    begin
         begin
-            anyType := OrderItemsRequestHelperFactory_Package.Create.getInstance (This.getPropertiesHashMap, This.pageContext);
+            anyType := OrderItemsRequestHelperFactory_Package.Create.getInstance (OrderItemsTag'Class (This).getPropertiesHashMap, This.pageContext);
             if (This.status) = (Null_Unbounded_String) then
                 helperClass := anyType.all'Tag;
                 method := helperClass.getMethod (To_Unbounded_String ("setOrderStatus"), null);
-                result := Unbounded_String (method.invoke (anyType, null));
+                result := Java_Unbox (method.invoke (anyType, null));
                 return result;
             else
                 helperClass := anyType.all'Tag;
                 methodParams := new Ada_Tags_Tag_Array'(0 => This.status.all'Tag);
                 method := helperClass.getMethod (To_Unbounded_String ("setOrderStatus"), methodParams);
                 methodArgs := new Java_Object_Access_Array'(0 => This.status);
-                result := Unbounded_String (method.invoke (anyType, methodArgs));
+                result := Java_Unbox (method.invoke (anyType, methodArgs));
                 return result;
             end if;
         exception
@@ -82,11 +82,11 @@ package body admin.tags.OrderItemsTag_Package is
    function doStartTag (This : in out OrderItemsTag) return Integer is
    begin
         begin
-            if This.isEnabled then
-                if (This.getCommand) /= (null) then
-                    This.getPropertiesHashMap.put (OrderHistoryData_Package.STATUS, This.status);
-                    if (This.getCommand.compareTo (OrderHistoryData_Package.SETSTATUS)) = (0) then
-                        This.pageContext.getOut.print (This.setOrderStatus);
+            if OrderItemsTag'Class (This).isEnabled then
+                if (OrderItemsTag'Class (This).getCommand) /= (null) then
+                    OrderItemsTag'Class (This).getPropertiesHashMap.put (OrderHistoryData_Package.STATUS, This.status);
+                    if (OrderItemsTag'Class (This).getCommand.compareTo (OrderHistoryData_Package.SETSTATUS)) = (0) then
+                        This.pageContext.getOut.print (OrderItemsTag'Class (This).setOrderStatus);
                     else
                         return TableTag (This).doStartTag;
                     end if;

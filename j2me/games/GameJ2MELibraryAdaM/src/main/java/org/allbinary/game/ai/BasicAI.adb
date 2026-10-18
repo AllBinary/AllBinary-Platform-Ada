@@ -89,9 +89,9 @@ package body org.allbinary.game.ai.BasicAI_Package is
    begin
         stringBuffer := StringMaker_Package.Create;
         stringBuffer.append (CommonSeps_Package.getInstance.NEW_LINE);
-        stringBuffer.append (This.getName);
+        stringBuffer.append (BasicAI'Class (This).getName);
         stringBuffer.append (To_Unbounded_String (" LastKey: "));
-        stringBuffer.append (CanvasUtil_Package.getKeyName (This.getLastKey));
+        stringBuffer.append (CanvasUtil_Package.getKeyName (BasicAI'Class (This).getLastKey));
         return stringBuffer.toString;
    end toString;
 

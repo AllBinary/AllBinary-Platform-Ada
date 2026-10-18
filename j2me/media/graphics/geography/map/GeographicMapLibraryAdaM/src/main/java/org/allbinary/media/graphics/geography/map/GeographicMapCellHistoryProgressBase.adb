@@ -47,6 +47,7 @@ package body org.allbinary.media.graphics.geography.map.GeographicMapCellHistory
    function isAnyProgress (This : in out GeographicMapCellHistoryProgressBase) return Boolean is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return False;
    end isAnyProgress;
 
 begin

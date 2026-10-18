@@ -28,7 +28,7 @@ package body org.allbinary.logic.string_Id.StringMaker_Package is
       stringLength : Integer;
    begin
         stringLength := Length (string_Id);
-        This.ensureCapacity ((This.currentLength) + (stringLength));
+        StringMaker'Class (This).ensureCapacity ((This.currentLength) + (stringLength));
         Java_Get_Chars (string_Id, 0, stringLength, This.charArray, This.currentLength);
         This.currentLength := (This.currentLength) + (stringLength);
         return StringMaker_Access'(This'Unchecked_Access);
@@ -36,7 +36,7 @@ package body org.allbinary.logic.string_Id.StringMaker_Package is
 
    function appendchar (This : in out StringMaker; c : Character) return StringMaker_Access is
    begin
-        This.ensureCapacity ((This.currentLength) + (1));
+        StringMaker'Class (This).ensureCapacity ((This.currentLength) + (1));
         This.charArray (Java_Post_Increment (This.currentLength)) := c;
         return StringMaker_Access'(This'Unchecked_Access);
    end appendchar;
@@ -44,7 +44,7 @@ package body org.allbinary.logic.string_Id.StringMaker_Package is
    function appendCharArray (This : in out StringMaker; charArray : Character_Array_Access; start : Integer; end_Id : Integer) return StringMaker_Access is
       index : Integer;
    begin
-        This.ensureCapacity ((This.currentLength) + (((end_Id) - (start))));
+        StringMaker'Class (This).ensureCapacity ((This.currentLength) + (((end_Id) - (start))));
         for index in start .. (end_Id) - 1 loop
             This.charArray (Java_Post_Increment (This.currentLength)) := charArray (index);
         end loop;
@@ -53,44 +53,44 @@ package body org.allbinary.logic.string_Id.StringMaker_Package is
 
    function appendbyte (This : in out StringMaker; b : Short_Short_Integer) return StringMaker_Access is
    begin
-        This.append (To_Unbounded_String (Java_Image (b)));
+        StringMaker'Class (This).append (To_Unbounded_String (Java_Image (b)));
         return StringMaker_Access'(This'Unchecked_Access);
    end appendbyte;
 
    function appendshort (This : in out StringMaker; b : Short_Integer) return StringMaker_Access is
    begin
-        This.append (To_Unbounded_String (Java_Image (b)));
+        StringMaker'Class (This).append (To_Unbounded_String (Java_Image (b)));
         return StringMaker_Access'(This'Unchecked_Access);
    end appendshort;
 
    function appendint (This : in out StringMaker; i : Integer) return StringMaker_Access is
    begin
-        This.append (To_Unbounded_String (Java_Image (i)));
+        StringMaker'Class (This).append (To_Unbounded_String (Java_Image (i)));
         return StringMaker_Access'(This'Unchecked_Access);
    end appendint;
 
    function appendlong (This : in out StringMaker; l : Long_Long_Integer) return StringMaker_Access is
    begin
-        This.append (To_Unbounded_String (Java_Image (l)));
+        StringMaker'Class (This).append (To_Unbounded_String (Java_Image (l)));
         return StringMaker_Access'(This'Unchecked_Access);
    end appendlong;
 
    function appendfloat (This : in out StringMaker; f : Float) return StringMaker_Access is
    begin
-        This.append (To_Unbounded_String (Java_Image (f)));
+        StringMaker'Class (This).append (To_Unbounded_String (Java_Image (f)));
         return StringMaker_Access'(This'Unchecked_Access);
    end appendfloat;
 
    function appendboolean (This : in out StringMaker; bool : Boolean) return StringMaker_Access is
    begin
         if bool then
-            This.ensureCapacity ((This.currentLength) + (4));
+            StringMaker'Class (This).ensureCapacity ((This.currentLength) + (4));
             This.charArray (Java_Post_Increment (This.currentLength)) := 't';
             This.charArray (Java_Post_Increment (This.currentLength)) := 'r';
             This.charArray (Java_Post_Increment (This.currentLength)) := 'u';
             This.charArray (Java_Post_Increment (This.currentLength)) := 'e';
         else
-            This.ensureCapacity ((This.currentLength) + (5));
+            StringMaker'Class (This).ensureCapacity ((This.currentLength) + (5));
             This.charArray (Java_Post_Increment (This.currentLength)) := 'f';
             This.charArray (Java_Post_Increment (This.currentLength)) := 'a';
             This.charArray (Java_Post_Increment (This.currentLength)) := 'l';
@@ -113,7 +113,7 @@ package body org.allbinary.logic.string_Id.StringMaker_Package is
                 newCapacity := minSize;
             end if;
             copy := new Character_Array'(0 .. (newCapacity) - 1 => ASCII.NUL);
-            min := This.min (This.charArray'Length, newCapacity);
+            min := StringMaker'Class (This).min (This.charArray'Length, newCapacity);
             Java_Array_Copy (This.charArray, 0, copy, 0, min);
             This.charArray := copy;
         end if;

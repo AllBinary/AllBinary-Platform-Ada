@@ -47,7 +47,7 @@ package body org.allbinary.game.combat.canvas.CombatGameCanvas_Package is
    procedure initApp (This : in out CombatGameCanvas; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class) is
       abeClientInformation : constant AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
    begin
-        This.CombatGameCanvas_init;
+        CombatGameCanvas'Class (This).CombatGameCanvas_init;
         AllBinaryGameCanvas (This).initApp (abeClientInformation);
    end initApp;
 
@@ -92,7 +92,7 @@ package body org.allbinary.game.combat.canvas.CombatGameCanvas_Package is
         GroupLayerManagerListener_Package.getInstance.clear;
         GroupLayerManagerListener_Package.getInstance.log;
         DestroyedEventHandler_Package.getInstance.removeAllListeners;
-        This.cleanupManager;
+        CombatGameCanvas'Class (This).cleanupManager;
    end cleanupGame;
 
    --  throws Exception

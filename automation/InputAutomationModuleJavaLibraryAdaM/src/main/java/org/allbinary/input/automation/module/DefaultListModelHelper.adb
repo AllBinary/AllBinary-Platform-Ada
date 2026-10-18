@@ -45,7 +45,7 @@ package body org.allbinary.input.automation.module.DefaultListModelHelper_Packag
         This.defaultListModel := DefaultListModel_Package.Create;
         size := This.vector.size;
         for index in 0 .. (size) - 1 loop
-            moduleName := Unbounded_String (This.vector.get (index));
+            moduleName := Java_Unbox (This.vector.get (index));
             This.defaultListModel.addElement (moduleName);
         end loop;
    end initDefaultModelList;

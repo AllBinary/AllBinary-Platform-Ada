@@ -96,7 +96,7 @@ package body org.allbinary.media.graphics.geography.pathfinding.StaticPathGenera
                 size := basicList.size;
                 pathList := null;
                 for index in 0 .. (size) - 1 loop
-                    pathList := This.getGeographicMapCellPositionListFromBasicGeographicMapCellPositionList (geographicMapCellPositionFactory, BasicArrayList_Access (basicList.get (index)));
+                    pathList := StaticPathGenerator'Class (This).getGeographicMapCellPositionListFromBasicGeographicMapCellPositionList (geographicMapCellPositionFactory, BasicArrayList_Access (basicList.get (index)));
                     list.add (pathList);
                 end loop;
                 pathCacheFactory.add (mapIdInteger, list);

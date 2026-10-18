@@ -43,13 +43,13 @@ package body org.allbinary.media.graphics.geography.map.racetrack.BaseRaceTrackG
         This.raceTrackData := raceTrackData;
         This.miniGeographicMap := miniGeographicMap;
         miniTiledLayer := This.miniGeographicMap.getAllBinaryTiledLayer;
-        if (miniTiledLayer.getColumns) /= (This.getGeographicMapCellPositionFactory.getColumns) then
-            error := StringMaker_Package.Create.append (To_Unbounded_String ("RaceTrackMap has incorrect Mini Map columns: ")).appendint (Integer (miniTiledLayer.getColumns)).append (To_Unbounded_String (" != ")).appendint (Integer (This.getGeographicMapCellPositionFactory.getColumns)).toString;
+        if (miniTiledLayer.getColumns) /= (BaseRaceTrackGeographicMap'Class (This).getGeographicMapCellPositionFactory.getColumns) then
+            error := StringMaker_Package.Create.append (To_Unbounded_String ("RaceTrackMap has incorrect Mini Map columns: ")).appendint (Integer (miniTiledLayer.getColumns)).append (To_Unbounded_String (" != ")).appendint (Integer (BaseRaceTrackGeographicMap'Class (This).getGeographicMapCellPositionFactory.getColumns)).toString;
             commonStrings := CommonStrings_Package.getInstance;
             This.logUtil.putF (commonStrings.EXCEPTION_Id, BaseRaceTrackGeographicMap_Access'(This'Unchecked_Access), commonStrings.CONSTRUCTOR);
             Java_Throw (Java_New_Exception ("Exception", error));
         end if;
-        if (miniTiledLayer.getRows) /= (This.getGeographicMapCellPositionFactory.getRows) then
+        if (miniTiledLayer.getRows) /= (BaseRaceTrackGeographicMap'Class (This).getGeographicMapCellPositionFactory.getRows) then
             error := To_Unbounded_String ("RaceTrackMap has incorrect Mini Map rows");
             commonStrings := CommonStrings_Package.getInstance;
             This.logUtil.putF (commonStrings.EXCEPTION_Id, BaseRaceTrackGeographicMap_Access'(This'Unchecked_Access), commonStrings.CONSTRUCTOR);

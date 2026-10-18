@@ -39,7 +39,7 @@ package body tags.StoreValidationTransformTag_Package is
    procedure setStoreName (This : in out StoreValidationTransformTag; value : Unbounded_String) is
    begin
         This.storeName := value;
-        This.getPropertiesHashMap.put (StoreFrontData_Package.getInstance.NAME, This.storeName);
+        StoreValidationTransformTag'Class (This).getPropertiesHashMap.put (StoreFrontData_Package.getInstance.NAME, This.storeName);
    end setStoreName;
 
    --  throws JspTagException

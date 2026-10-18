@@ -43,17 +43,17 @@ package body org.allbinary.logic.system.security.licensing.AbeClientInformation_
       logUtil : LogUtil_Access;
    begin
         begin
-            This.setOperatingSystemInterface (OperatingSystemFactory_Package.getInstance.getOperatingSystemInstance);
+            AbeClientInformation'Class (This).setOperatingSystemInterface (OperatingSystemFactory_Package.getInstance.getOperatingSystemInstance);
             licenseInitInfo := LicenseInitInfoUtil_Package.getInstance.read;
-            This.setLicenseId (licenseInitInfo.getLicenseId);
-            This.setLicenseServers (licenseInitInfo.getServerList);
+            AbeClientInformation'Class (This).setLicenseId (licenseInitInfo.getLicenseId);
+            AbeClientInformation'Class (This).setLicenseServers (licenseInitInfo.getServerList);
             stringValidationUtil := StringValidationUtil_Package.getInstance;
-            if stringValidationUtil.isEmpty (This.getLicenseId) then
+            if stringValidationUtil.isEmpty (AbeClientInformation'Class (This).getLicenseId) then
                 NONE := To_Unbounded_String ("No License Id");
-                This.setLicenseId (NONE);
+                AbeClientInformation'Class (This).setLicenseId (NONE);
             end if;
             commonStrings := CommonStrings_Package.getInstance;
-            PreLogUtil_Package.put (StringMaker_Package.Create.append (To_Unbounded_String ("Special Name: ")).append (This.getSpecialName).toString, AbeClientInformation_Access'(This'Unchecked_Access), commonStrings.CONSTRUCTOR);
+            PreLogUtil_Package.put (StringMaker_Package.Create.append (To_Unbounded_String ("Special Name: ")).append (AbeClientInformation'Class (This).getSpecialName).toString, AbeClientInformation_Access'(This'Unchecked_Access), commonStrings.CONSTRUCTOR);
         exception
             when Java_Occurrence : others =>
                 declare

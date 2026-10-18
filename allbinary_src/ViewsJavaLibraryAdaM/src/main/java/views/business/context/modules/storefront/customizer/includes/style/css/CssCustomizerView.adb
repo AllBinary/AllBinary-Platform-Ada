@@ -40,14 +40,14 @@ package body views.business.context.modules.storefront.customizer.includes.style
    --  throws Exception
    procedure addDomNodeInterfaces (This : in out CssCustomizerView) is
    begin
-        This.addDomNodeInterface (DomNodeInterface_Access (This.styleValidationInterface));
+        CssCustomizerView'Class (This).addDomNodeInterface (DomNodeInterface_Access (This.styleValidationInterface));
    end addDomNodeInterfaces;
 
    --  throws Exception
    function view (This : in out CssCustomizerView) return Unbounded_String is
    begin
         begin
-            This.addDomNodeInterfaces;
+            CssCustomizerView'Class (This).addDomNodeInterfaces;
             return HttpStoreComponentView (This).view;
         exception
             when Java_Occurrence : others =>

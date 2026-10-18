@@ -50,9 +50,9 @@ package body org.allbinary.android.api5.ActivityFractureUtilAPI5_Package is
    begin
         touchScreenFactory := TouchScreenFactory_Package.getInstance;
         touchScreenTypeFactory := TouchScreenTypeFactory_Package.getInstance;
-        touchScreenFactory.setTouch (This.isTouch (activity));
-        touchScreenFactory.setMultiTouch (This.isMultiTouch (activity));
-        touchScreenFactory.setMultiTouchDistinct (This.isMultiTouchDistinct (activity));
+        touchScreenFactory.setTouch (ActivityFractureUtilAPI5'Class (This).isTouch (activity));
+        touchScreenFactory.setMultiTouch (ActivityFractureUtilAPI5'Class (This).isMultiTouch (activity));
+        touchScreenFactory.setMultiTouchDistinct (ActivityFractureUtilAPI5'Class (This).isMultiTouchDistinct (activity));
         touchScreenTypeFactory.update (activity);
         commonStrings := CommonStrings_Package.getInstance;
         PreLogUtil_Package.put (touchScreenFactory.toString, ActivityFractureUtilAPI5_Access'(This'Unchecked_Access), commonStrings.PROCESS);
@@ -61,19 +61,19 @@ package body org.allbinary.android.api5.ActivityFractureUtilAPI5_Package is
    function isTouch (This : in out ActivityFractureUtilAPI5; activity_Param : access Activity_Package.Activity'Class) return Boolean is
       activity : constant Activity_Access := Activity_Access (activity_Param);
    begin
-        return This.isFeature (activity, This.FEATURE_TOUCHSCREEN);
+        return ActivityFractureUtilAPI5'Class (This).isFeature (activity, This.FEATURE_TOUCHSCREEN);
    end isTouch;
 
    function isMultiTouch (This : in out ActivityFractureUtilAPI5; activity_Param : access Activity_Package.Activity'Class) return Boolean is
       activity : constant Activity_Access := Activity_Access (activity_Param);
    begin
-        return This.isFeature (activity, This.FEATURE_TOUCHSCREEN_MULTITOUCH);
+        return ActivityFractureUtilAPI5'Class (This).isFeature (activity, This.FEATURE_TOUCHSCREEN_MULTITOUCH);
    end isMultiTouch;
 
    function isMultiTouchDistinct (This : in out ActivityFractureUtilAPI5; activity_Param : access Activity_Package.Activity'Class) return Boolean is
       activity : constant Activity_Access := Activity_Access (activity_Param);
    begin
-        return This.isFeature (activity, This.FEATURE_TOUCHSCREEN_MULTITOUCH_DISTINCT);
+        return ActivityFractureUtilAPI5'Class (This).isFeature (activity, This.FEATURE_TOUCHSCREEN_MULTITOUCH_DISTINCT);
    end isMultiTouchDistinct;
 
    function isFeature (This : in out ActivityFractureUtilAPI5; activity_Param : access Activity_Package.Activity'Class; property : Unbounded_String) return Boolean is

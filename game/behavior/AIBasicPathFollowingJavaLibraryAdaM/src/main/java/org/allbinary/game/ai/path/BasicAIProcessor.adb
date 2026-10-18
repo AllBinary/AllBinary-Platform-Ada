@@ -38,9 +38,9 @@ package body org.allbinary.game.ai.path.BasicAIProcessor_Package is
         This.geographicMapCellHistory := geographicMapCellHistory;
         This.geographicMapCellPositionBasicArrayList := chosenPathList;
         This.geographicMapCellPathHistoryInfo := geographicMapCellPathHistoryInfo;
-        This.setName (name);
-        This.setNewPath (geographicMapCellHistory, chosenPathList);
-        This.basicAI := BasicDirectionAIHelper_Package.Create (This.getName, angleInfo);
+        BasicAIProcessor'Class (This).setName (name);
+        BasicAIProcessor'Class (This).setNewPath (geographicMapCellHistory, chosenPathList);
+        This.basicAI := BasicDirectionAIHelper_Package.Create (BasicAIProcessor'Class (This).getName, angleInfo);
    end Initialize;
 
    function Create (name : Unbounded_String; geographicMapCellHistory_Param : access GeographicMapCellHistory_Package.GeographicMapCellHistory'Class; geographicMapCellPathHistoryInfo_Param : access GeographicMapCellPathHistoryInfo_Package.GeographicMapCellPathHistoryInfo'Class; chosenPathList_Param : access BasicArrayList_Package.BasicArrayList'Class; angleInfo_Param : access AngleInfo_Package.AngleInfo'Class; seed : Integer) return BasicAIProcessor_Access is
@@ -54,9 +54,9 @@ package body org.allbinary.game.ai.path.BasicAIProcessor_Package is
       geographicMapCellHistory : constant GeographicMapCellHistory_Access := GeographicMapCellHistory_Access (geographicMapCellHistory_Param);
       chosenPathList : constant BasicArrayList_Access := BasicArrayList_Access (chosenPathList_Param);
    begin
-        This.setGeographicMapCellHistory (geographicMapCellHistory);
+        BasicAIProcessor'Class (This).setGeographicMapCellHistory (geographicMapCellHistory);
         This.geographicMapCellPositionBasicArrayList := chosenPathList;
-        This.init;
+        BasicAIProcessor'Class (This).init;
    end setNewPath;
 
    procedure init (This : in out BasicAIProcessor) is
@@ -64,7 +64,7 @@ package body org.allbinary.game.ai.path.BasicAIProcessor_Package is
         This.geographicMapCellPathHistoryInfo := GeographicMapCellPathHistoryInfo_Package.Create;
         This.geographicMapCellPathHistoryInfo.setPreviousOnPathGeographicMapCellPosition (GeographicMapCellPosition_Access (This.geographicMapCellPositionBasicArrayList.get ((This.geographicMapCellPositionBasicArrayList.size) - (1))));
         This.geographicMapCellPathHistoryInfo.setNextOnPathGeographicMapCellPosition (GeographicMapCellPosition_Access (This.geographicMapCellPositionBasicArrayList.get ((This.geographicMapCellPositionBasicArrayList.size) - (1))));
-        This.update;
+        BasicAIProcessor'Class (This).update;
    end init;
 
    --  throws Exception
@@ -86,7 +86,7 @@ package body org.allbinary.game.ai.path.BasicAIProcessor_Package is
 
    procedure update (This : in out BasicAIProcessor) is
    begin
-        This.geographicMapCellPathHistoryInfo.setNextUnvisitedOnPathGeographicMapCellPosition (This.getGeographicMapCellHistory.getFirstUnvisited);
+        This.geographicMapCellPathHistoryInfo.setNextUnvisitedOnPathGeographicMapCellPosition (BasicAIProcessor'Class (This).getGeographicMapCellHistory.getFirstUnvisited);
         This.geographicMapCellPathHistoryInfo.setNextChosenOnPathGeographicMapCellPosition (This.geographicMapCellPathHistoryInfo.getNextUnvisitedOnPathGeographicMapCellPosition);
    end update;
 
@@ -98,11 +98,11 @@ package body org.allbinary.game.ai.path.BasicAIProcessor_Package is
    begin
         keyDirection := -(1);
         if This.geographicMapCellPositionBasicArrayList.contains (currentGeographicMapCellPosition) then
-            This.update;
-            keyDirection := This.goTowardNextChosenOnPathPosition (currentGeographicMapCellPosition);
+            BasicAIProcessor'Class (This).update;
+            keyDirection := BasicAIProcessor'Class (This).goTowardNextChosenOnPathPosition (currentGeographicMapCellPosition);
             This.geographicMapCellPathHistoryInfo.setPreviousOnPathGeographicMapCellPosition (currentGeographicMapCellPosition);
         else
-            keyDirection := This.goTowardNextChosenOnPathPosition (currentGeographicMapCellPosition);
+            keyDirection := BasicAIProcessor'Class (This).goTowardNextChosenOnPathPosition (currentGeographicMapCellPosition);
         end if;
         return keyDirection;
    end processAI;

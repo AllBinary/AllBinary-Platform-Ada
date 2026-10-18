@@ -60,7 +60,7 @@ package body org.allbinary.servlet.file.DownloadFileServlet_Package is
                 response.sendError (HttpServletResponse_Package.SC_NOT_FOUND);
                 return;
             end if;
-            beginIndex := (Index (requestPath, To_String (This.DOWNLOAD)) - 1);
+            beginIndex := (Index (requestPath, Java_Image (This.DOWNLOAD)) - 1);
             filePath := StringUtil_Package.getInstance.EMPTY_STRING;
             if (beginIndex) >= (0) then
                 filePath := Unbounded_Slice (requestPath, ((beginIndex) + (Length (This.DOWNLOAD))) + 1, Length (requestPath));
@@ -77,7 +77,7 @@ package body org.allbinary.servlet.file.DownloadFileServlet_Package is
             if authenticationHelper.isAuthenticated then
                 if AuthenticationHelperUtil_Package.getInstance.isAuthorized (authenticationHelper, filePath) then
                     inputStream := CloudStreamUtil_Package.getInstance.getFile (file);
-                    contentType := This.getServletContext.getMimeType (file.getName);
+                    contentType := DownloadFileServlet'Class (This).getServletContext.getMimeType (file.getName);
                     if (contentType) = (Null_Unbounded_String) then
                         contentType := To_Unbounded_String ("application/octet-stream");
                     end if;
@@ -122,7 +122,7 @@ package body org.allbinary.servlet.file.DownloadFileServlet_Package is
       request : constant HttpServletRequest_Access := HttpServletRequest_Access (request_Param);
       response : constant HttpServletResponse_Access := HttpServletResponse_Access (response_Param);
    begin
-        This.processRequest (request, response);
+        DownloadFileServlet'Class (This).processRequest (request, response);
    end doGet;
 
    --  throws ServletException, IOException
@@ -130,7 +130,7 @@ package body org.allbinary.servlet.file.DownloadFileServlet_Package is
       request : constant HttpServletRequest_Access := HttpServletRequest_Access (request_Param);
       response : constant HttpServletResponse_Access := HttpServletResponse_Access (response_Param);
    begin
-        This.processRequest (request, response);
+        DownloadFileServlet'Class (This).processRequest (request, response);
    end doPost;
 
    function getServletInfo (This : in out DownloadFileServlet) return Unbounded_String is

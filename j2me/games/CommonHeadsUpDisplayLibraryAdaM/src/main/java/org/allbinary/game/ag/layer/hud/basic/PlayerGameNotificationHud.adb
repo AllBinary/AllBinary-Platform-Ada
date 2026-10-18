@@ -108,15 +108,15 @@ package body org.allbinary.game.ag.layer.hud.basic.PlayerGameNotificationHud_Pac
    begin
         if This.timeDelayHelper.isTime (This.gameTickTimeDelayHelper.startTime) then
             gameAdState := GameAdStateFactory_Package.getInstance.getCurrentInstance;
-            if gameAdState.isShowingAtLocation (This.getLocation) then
+            if gameAdState.isShowingAtLocation (PlayerGameNotificationHud'Class (This).getLocation) then
                 This.offsetY := -(54);
             else
                 This.offsetY := 0;
             end if;
             if (This.gameNotification.getSize) > (0) then
-                This.setAndRemove;
+                PlayerGameNotificationHud'Class (This).setAndRemove;
             elsif (This.permanentGameNotification.getSize) > (0) then
-                This.setNextUnremoveable;
+                PlayerGameNotificationHud'Class (This).setNextUnremoveable;
             else
                 This.string_Id := This.EMPTY_STRING;
             end if;
@@ -126,7 +126,7 @@ package body org.allbinary.game.ag.layer.hud.basic.PlayerGameNotificationHud_Pac
    --  throws Exception
    procedure setAndRemove (This : in out PlayerGameNotificationHud) is
    begin
-        This.string_Id := Unbounded_String (This.gameNotification.stringList.removeAt (0));
+        This.string_Id := Java_Unbox (This.gameNotification.stringList.removeAt (0));
         This.processor := This.setAndRemoveProcessor;
    end setAndRemove;
 
@@ -135,16 +135,16 @@ package body org.allbinary.game.ag.layer.hud.basic.PlayerGameNotificationHud_Pac
       time : Integer;
       iTime : Integer;
    begin
-        This.setX (Java_Shift_Right_Arithmetic (((This.displayInfo.getLastWidth) - (This.width)), 1));
-        This.point.setX (This.getX);
-        This.point.setY (This.getY);
+        PlayerGameNotificationHud'Class (This).setX (Java_Shift_Right_Arithmetic (((This.displayInfo.getLastWidth) - (This.width)), 1));
+        This.point.setX (PlayerGameNotificationHud'Class (This).getX);
+        This.point.setY (PlayerGameNotificationHud'Class (This).getY);
         time := Integer (This.gameNotification.timeList.removeAt (0));
         iTime := (time.intValue) * (1000);
         if (iTime) = (0) then
             iTime := 500;
         end if;
         This.timeDelayHelper.delay_Id := iTime;
-        This.setBasicColorP (BasicColor_Access (This.gameNotification.colorList.removeAt (0)));
+        PlayerGameNotificationHud'Class (This).setBasicColorP (BasicColor_Access (This.gameNotification.colorList.removeAt (0)));
    end setAndRemoveProcess;
 
    --  throws Exception
@@ -152,7 +152,7 @@ package body org.allbinary.game.ag.layer.hud.basic.PlayerGameNotificationHud_Pac
       index : Integer;
    begin
         index := This.circularIndexUtil.getIndex;
-        This.string_Id := Unbounded_String (This.permanentGameNotification.stringList.objectArray (index));
+        This.string_Id := Java_Unbox (This.permanentGameNotification.stringList.objectArray (index));
         This.processor := This.nextUnremoveableProcessor;
    end setNextUnremoveable;
 
@@ -162,12 +162,12 @@ package body org.allbinary.game.ag.layer.hud.basic.PlayerGameNotificationHud_Pac
       time : Integer;
    begin
         index := This.circularIndexUtil.getIndex;
-        This.setX (Java_Shift_Right_Arithmetic (((This.displayInfo.getLastWidth) - (This.width)), 1));
-        This.point.setX (This.getX);
-        This.point.setY (This.getY);
+        PlayerGameNotificationHud'Class (This).setX (Java_Shift_Right_Arithmetic (((This.displayInfo.getLastWidth) - (This.width)), 1));
+        This.point.setX (PlayerGameNotificationHud'Class (This).getX);
+        This.point.setY (PlayerGameNotificationHud'Class (This).getY);
         time := Integer (This.permanentGameNotification.timeList.objectArray (index));
         This.timeDelayHelper.delay_Id := (time.intValue) * (1000);
-        This.setBasicColorP (BasicColor_Access (This.permanentGameNotification.colorList.objectArray (index)));
+        PlayerGameNotificationHud'Class (This).setBasicColorP (BasicColor_Access (This.permanentGameNotification.colorList.objectArray (index)));
         This.circularIndexUtil.next;
    end setNextUnremoveableProcess;
 

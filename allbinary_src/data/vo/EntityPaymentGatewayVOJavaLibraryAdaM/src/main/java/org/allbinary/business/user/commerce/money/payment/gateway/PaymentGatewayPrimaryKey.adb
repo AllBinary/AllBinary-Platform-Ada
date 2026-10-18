@@ -26,8 +26,8 @@ package body org.allbinary.business.user.commerce.money.payment.gateway.PaymentG
    procedure Initialize (This : in out PaymentGatewayPrimaryKey'Class; storeName : Unbounded_String; gatewayName : Unbounded_String) is
    begin
       Initialize_Fields (This);
-        This.setStoreName (storeName);
-        This.setName (gatewayName);
+        PaymentGatewayPrimaryKey'Class (This).setStoreName (storeName);
+        PaymentGatewayPrimaryKey'Class (This).setName (gatewayName);
    end Initialize;
 
    function Create (storeName : Unbounded_String; gatewayName : Unbounded_String) return PaymentGatewayPrimaryKey_Access is
@@ -64,11 +64,11 @@ package body org.allbinary.business.user.commerce.money.payment.gateway.PaymentG
         stringBuffer.append (PaymentGatewayPrimaryKey_Package.PaymentGatewayPrimaryKey'Tag.getName);
         stringBuffer.append (StoreFront_Package.StoreFront'Tag.getName);
         stringBuffer.append (To_Unbounded_String (" ="));
-        stringBuffer.append (This.getStoreName);
+        stringBuffer.append (PaymentGatewayPrimaryKey'Class (This).getStoreName);
         stringBuffer.append (CommonSeps_Package.getInstance.SPACE);
         stringBuffer.append (PaymentGateway_Package.PaymentGateway'Tag.getName);
         stringBuffer.append (To_Unbounded_String ("="));
-        stringBuffer.append (This.getName);
+        stringBuffer.append (PaymentGatewayPrimaryKey'Class (This).getName);
         return stringBuffer.toString;
    end toString;
 

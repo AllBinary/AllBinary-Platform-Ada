@@ -53,7 +53,7 @@ package body views.generic_Id.inventory.InventorySearch_Package is
             storeFront := This.searchRequest.getStoreFront;
             searchParams := This.searchRequest.getParams;
             columnValueHashMap := searchParams.get;
-            file := StaticPagesEntity_Package.Create.getFile (storeFront.getName, Replace_Package.Create (To_Unbounded_String ("-"), CommonSeps_Package.getInstance.SPACE).all_Id (Unbounded_String (columnValueHashMap.get (This.basicItemData.KEYWORDS))));
+            file := StaticPagesEntity_Package.Create.getFile (storeFront.getName, Replace_Package.Create (To_Unbounded_String ("-"), CommonSeps_Package.getInstance.SPACE).all_Id (Java_Unbox (columnValueHashMap.get (This.basicItemData.KEYWORDS))));
             if StringValidationUtil_Package.getInstance.isEmpty (file) then
                 return Null_Unbounded_String;
             else
@@ -86,7 +86,7 @@ package body views.generic_Id.inventory.InventorySearch_Package is
       str : Unbounded_String_Array_Access;
    begin
         begin
-            str := This.search;
+            str := InventorySearch'Class (This).search;
             return str (This.searchRequest.getParams.getStartPageInt.intValue);
         exception
             when Java_Occurrence : others =>

@@ -56,7 +56,7 @@ package body org.allbinary.game.input.event.RawKeyEventHandler_Package is
         size := vector.size;
         for index in 0 .. (size) - 1 loop
             eventListenerInterface := RawKeyEventListener_Access (vector.get (index));
-            This.addListener (eventListenerInterface);
+            RawKeyEventHandler'Class (This).addListener (eventListenerInterface);
         end loop;
    end addListeners;
 
@@ -99,7 +99,7 @@ package body org.allbinary.game.input.event.RawKeyEventHandler_Package is
         while (index) < (This.eventListenerInterfaceList.size) loop
             begin
                 eventListenerInterface := RawKeyEventListener_Access (This.eventListenerInterfaceList.get (index));
-                This.process (keyCode, deviceId, repeated, eventListenerInterface);
+                RawKeyEventHandler'Class (This).process (keyCode, deviceId, repeated, eventListenerInterface);
             exception
                 when Java_Occurrence : others =>
                     declare

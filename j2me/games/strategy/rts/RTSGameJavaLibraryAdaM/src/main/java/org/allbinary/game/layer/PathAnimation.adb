@@ -89,14 +89,14 @@ package body org.allbinary.game.layer.PathAnimation_Package is
                     start := (size) - (2);
                     for index in 0 .. ((size) - (1)) - 1 loop
                         if (index) = (start) then
-                            This.setBasicColorP (This.startColor);
-                            This.basicSetColorUtil.setBasicColorP3 (graphics, This.getBasicColorP, This.getColor);
+                            PathAnimation'Class (This).setBasicColorP (This.startColor);
+                            This.basicSetColorUtil.setBasicColorP3 (graphics, PathAnimation'Class (This).getBasicColorP, PathAnimation'Class (This).getColor);
                         elsif geographicMapCellHistory.isVisited (geographicMapCellPosition) then
-                            This.setBasicColorP (This.endColor);
-                            This.basicSetColorUtil.setBasicColorP3 (graphics, This.getBasicColorP, This.getColor);
+                            PathAnimation'Class (This).setBasicColorP (This.endColor);
+                            This.basicSetColorUtil.setBasicColorP3 (graphics, PathAnimation'Class (This).getBasicColorP, PathAnimation'Class (This).getColor);
                         else
-                            This.setBasicColorP (This.middleColor);
-                            This.basicSetColorUtil.setBasicColorP3 (graphics, This.getBasicColorP, This.getColor);
+                            PathAnimation'Class (This).setBasicColorP (This.middleColor);
+                            This.basicSetColorUtil.setBasicColorP3 (graphics, PathAnimation'Class (This).getBasicColorP, PathAnimation'Class (This).getColor);
                         end if;
                         geographicMapCellPosition := GeographicMapCellPosition_Access (list.get (index));
                         point := geographicMapCellPosition.getMidPoint;

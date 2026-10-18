@@ -42,7 +42,7 @@ package body org.allbinary.game.ag.layer.pickup.points.PointsLayerCircularStatic
       pointsLayer : PointsLayer_Access;
       scoreableInterface : ScoreableInterface_Access;
    begin
-        pointsLayer := PointsLayer_Access (This.getNextInstance);
+        pointsLayer := PointsLayer_Access (PointsLayerCircularStaticPool'Class (This).getNextInstance);
         scoreableInterface := ScoreableInterface_Access (sourceLayerInterface);
         pointsLayer.visit (scoreableInterface);
    end visit;

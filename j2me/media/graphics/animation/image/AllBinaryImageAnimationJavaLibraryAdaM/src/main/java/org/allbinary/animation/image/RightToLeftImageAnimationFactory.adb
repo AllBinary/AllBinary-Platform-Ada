@@ -39,7 +39,7 @@ package body org.allbinary.animation.image.RightToLeftImageAnimationFactory_Pack
    function getInstance (This : in out RightToLeftImageAnimationFactory; instanceId : Integer) return Animation_Access is
       scaledImage : Image_Access;
    begin
-        scaledImage := This.animationFactoryImageScaleUtil.createImage (This.getImage, This.animationFactoryInitializationVisitor.width, This.animationFactoryInitializationVisitor.height, This.scaleProperties.scaleWidth, This.scaleProperties.scaleHeight);
+        scaledImage := This.animationFactoryImageScaleUtil.createImage (RightToLeftImageAnimationFactory'Class (This).getImage, This.animationFactoryInitializationVisitor.width, This.animationFactoryInitializationVisitor.height, This.scaleProperties.scaleWidth, This.scaleProperties.scaleHeight);
         if ((This.animationFactoryInitializationVisitor.dx) /= (0)) or else ((This.animationFactoryInitializationVisitor.dy) /= (0)) then
             This.animationFactoryImageScaleUtil.processAdjust (RightToLeftImageAnimationFactory_Access'(This'Unchecked_Access));
             return AdjustedRightToLeftImageAnimation_Package.Create (scaledImage, This.animationFactoryInitializationVisitor.dx, This.animationFactoryInitializationVisitor.dy, This.animationBehaviorFactory.getOrCreateInstance);

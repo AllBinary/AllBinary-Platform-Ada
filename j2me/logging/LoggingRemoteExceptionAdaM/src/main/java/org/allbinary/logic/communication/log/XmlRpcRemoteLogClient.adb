@@ -48,15 +48,15 @@ package body org.allbinary.logic.communication.log.XmlRpcRemoteLogClient_Package
    begin
         begin
             param := BasicArrayListD_Package.Create;
-            serverUrl := This.getClientInfo.getLicenseServer (This.getServer);
+            serverUrl := XmlRpcRemoteLogClient'Class (This).getClientInfo.getLicenseServer (XmlRpcRemoteLogClient'Class (This).getServer);
             index := serverUrl.lastIndexOf (To_Unbounded_String ("/"));
             serverUrl := Unbounded_Slice (serverUrl, (0) + 1, (index) + (1)) & To_Unbounded_String ("logservssl.php");
             xmlRpcClient := XmlRpcClient_Package.Create (serverUrl);
-            This.setClient (xmlRpcClient);
+            XmlRpcRemoteLogClient'Class (This).setClient (xmlRpcClient);
             xmlRpcClient.setBasicAuthentication (null, null);
             hashtable := ABHashtable_Access (anyType);
             param.add (hashtable);
-            result := xmlRpcClient.execute (This.getRemoteMethod, param, This.noCrypt);
+            result := xmlRpcClient.execute (XmlRpcRemoteLogClient'Class (This).getRemoteMethod, param, This.noCrypt);
             Ada.Text_IO.Put_Line (Java_Image (Java_Image ((CommonLabels_Package.getInstance.RESULT_U) + (CommonSeps_Package.getInstance.NEW_LINE)) & result.toString));
             return result;
         exception
@@ -66,7 +66,7 @@ package body org.allbinary.logic.communication.log.XmlRpcRemoteLogClient_Package
                 begin
             Ada.Text_IO.Put_Line (Java_Image (To_Unbounded_String ("IOException Trying Other Servers")));
             if not (Java_Get_Message (e).startsWith (HOST_NOT_RESOLVED)) then
-                return This.tryAnother (anyType);
+                return XmlRpcRemoteLogClient'Class (This).tryAnother (anyType);
             else
                 Java_Throw (Java_New_Exception ("Exception", HOST_NOT_RESOLVED_MSG));
             end if;

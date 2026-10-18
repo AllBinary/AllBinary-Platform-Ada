@@ -44,7 +44,7 @@ package body org.allbinary.animation.image.sprite.AdjustedSpriteIndexedAnimation
    procedure paintFrame (This : in out AdjustedSpriteIndexedAnimation; graphics_Param : access Graphics_Package.Graphics'Class; frame : Integer; x : Integer; y : Integer) is
       graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
-        This.setFrame (frame);
+        AdjustedSpriteIndexedAnimation'Class (This).setFrame (frame);
         This.sprite.setPosition ((x) + (This.dx), (y) + (This.dy));
         SpriteIndexedAnimation (This).paint (graphics);
    end paintFrame;

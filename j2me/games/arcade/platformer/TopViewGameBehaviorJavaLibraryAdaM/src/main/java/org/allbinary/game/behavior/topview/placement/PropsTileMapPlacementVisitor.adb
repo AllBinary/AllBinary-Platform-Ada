@@ -57,7 +57,7 @@ package body org.allbinary.game.behavior.topview.placement.PropsTileMapPlacement
                 if (mapArray (index) (index2)) = (14) then
                     null;
                 else
-                    This.visit2 (mapArray, mapData, index, index2);
+                    PropsTileMapPlacementVisitor'Class (This).visit2 (mapArray, mapData, index, index2);
                 end if;
                 if ((index) rem (7)) = (0) then
                     if (mapArray (index) (index2)) = (19) then

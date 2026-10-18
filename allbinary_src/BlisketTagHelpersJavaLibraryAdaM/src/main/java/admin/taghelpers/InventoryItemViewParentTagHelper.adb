@@ -46,7 +46,7 @@ package body admin.taghelpers.InventoryItemViewParentTagHelper_Package is
       stringBuffer : StringMaker_Access;
    begin
         if (inventoryTag) /= (null) then
-            This.checkForValidationViewHelper (inventoryTag.getHelper);
+            InventoryItemViewParentTagHelper'Class (This).checkForValidationViewHelper (inventoryTag.getHelper);
             validationViewHelper := ValidationViewHelper_Access (inventoryTag.getHelper);
             viewObject := validationViewHelper.getViewObject;
             if (viewObject.getTypeId) /= (InventoryItemView_Package.TYPE_ID) then
@@ -70,7 +70,7 @@ package body admin.taghelpers.InventoryItemViewParentTagHelper_Package is
       stringBuffer : StringMaker_Access;
    begin
         if (inventoryTag) /= (null) then
-            This.checkForValidationViewHelper (inventoryTag.getHelper);
+            InventoryItemViewParentTagHelper'Class (This).checkForValidationViewHelper (inventoryTag.getHelper);
             validationViewHelper := ValidationViewHelper_Access (inventoryTag.getHelper);
             viewObject := validationViewHelper.getViewObject;
             if (viewObject.getTypeId) /= (DownloadableInventoryItemView_Package.TYPE_ID) then
@@ -94,7 +94,7 @@ package body admin.taghelpers.InventoryItemViewParentTagHelper_Package is
       stringBuffer : StringMaker_Access;
    begin
         if (inventoryTag) /= (null) then
-            This.checkForValidationViewHelper (inventoryTag.getHelper);
+            InventoryItemViewParentTagHelper'Class (This).checkForValidationViewHelper (inventoryTag.getHelper);
             validationViewHelper := ValidationViewHelper_Access (inventoryTag.getHelper);
             viewObject := validationViewHelper.getViewObject;
             if ((viewObject.getTypeId) /= (InventoryItemView_Package.TYPE_ID)) and then ((viewObject.getTypeId) /= (DownloadableInventoryItemView_Package.TYPE_ID)) then

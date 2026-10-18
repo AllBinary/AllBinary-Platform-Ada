@@ -29,9 +29,9 @@ package body org.allbinary.game.layer.waypoint.WaypointLayer_Package is
       rectangle : constant Rectangle_Access := Rectangle_Access (rectangle_Param);
    begin
         AdvancedRTSGameLayer_Package.Initialize (This, remoteInfo, parentLayer, AdvancedRTSProperties_Package.createProperties, groupInterface, rootName, name, Health_Package.Create (1000), NullRTSFormInputFactory_Package.getInstance, animationInterfaceFactoryInterface, animationInterfaceFactoryInterface, animationInterfaceFactoryInterface, animationInterfaceFactoryInterface, animationInterfaceFactoryInterface, proceduralAnimationInterfaceFactoryInterface, rectangle, x, y, TileLayerPositionIntoViewPosition_Package.Create);
-        This.setCollidableInferface (CollidableWaypointBehavior_Package.Create (True));
-        This.getWaypointBehavior.setWaypoint (Waypoint_Package.Create (WaypointLayer_Access'(This'Unchecked_Access), AttackSound_Package.getInstance));
-        This.setAnimationInterface (This.indexedButShouldBeRotationAnimationInterface);
+        WaypointLayer'Class (This).setCollidableInferface (CollidableWaypointBehavior_Package.Create (True));
+        WaypointLayer'Class (This).getWaypointBehavior.setWaypoint (Waypoint_Package.Create (WaypointLayer_Access'(This'Unchecked_Access), AttackSound_Package.getInstance));
+        WaypointLayer'Class (This).setAnimationInterface (This.indexedButShouldBeRotationAnimationInterface);
    end Initialize;
 
    function Create (remoteInfo_Param : access RemoteInfo_Package.RemoteInfo'Class; parentLayer_Param : access PathFindingLayerInterface_Package.PathFindingLayerInterface'Class; groupInterface : Group_Access_Array_Access; rootName : Unbounded_String; name : Unbounded_String; animationInterfaceFactoryInterface_Param : access AnimationInterfaceFactoryInterface_Package.AnimationInterfaceFactoryInterface'Class; proceduralAnimationInterfaceFactoryInterface_Param : access ProceduralAnimationInterfaceFactoryInterface_Package.ProceduralAnimationInterfaceFactoryInterface'Class; rectangle_Param : access Rectangle_Package.Rectangle'Class; x : Integer; y : Integer) return WaypointLayer_Access is
@@ -45,13 +45,13 @@ package body org.allbinary.game.layer.waypoint.WaypointLayer_Package is
       rtsPlayerLayerInterface : constant RTSPlayerLayerInterface_Access := RTSPlayerLayerInterface_Access (rtsPlayerLayerInterface_Param);
    begin
         This.percentCompleteP := 100;
-        This.initVisibility (rtsPlayerLayerInterface);
+        WaypointLayer'Class (This).initVisibility (rtsPlayerLayerInterface);
    end construct;
 
    procedure paint (This : in out WaypointLayer; graphics_Param : access Graphics_Package.Graphics'Class) is
       graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
-        if This.isVisible then
+        if WaypointLayer'Class (This).isVisible then
             AdvancedRTSGameLayer (This).paint (graphics);
         end if;
    end paint;
@@ -86,7 +86,7 @@ package body org.allbinary.game.layer.waypoint.WaypointLayer_Package is
    procedure setDestroyed (This : in out WaypointLayer; destroyed : Boolean) is
    begin
         AdvancedRTSGameLayer (This).setDestroyed (destroyed);
-        if This.isDestroyed then
+        if WaypointLayer'Class (This).isDestroyed then
             WaypointCellPositionHistory_Package.getInstance.removeLayer (WaypointLayer_Access'(This'Unchecked_Access));
         end if;
    end setDestroyed;

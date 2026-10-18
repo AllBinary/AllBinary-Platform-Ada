@@ -47,13 +47,13 @@ package body org.allbinary.media.image.search.ImageComparisonSearchWorker_Packag
       imageComparisonResultsEvent : constant ImageComparisonResultsEvent_Access := ImageComparisonResultsEvent_Access (imageComparisonResultsEvent_Param);
    begin
         This.imageComparisonInfoVector.add (imageComparisonResultsEvent.getImageComparisonResult);
-        This.run;
+        ImageComparisonSearchWorker'Class (This).run;
    end onImageComparisonResultsEvent;
 
    procedure onEvent (This : in out ImageComparisonSearchWorker; allBinaryEventObject_Param : access AllBinaryEventObject_Package.AllBinaryEventObject'Class) is
       allBinaryEventObject : constant AllBinaryEventObject_Access := AllBinaryEventObject_Access (allBinaryEventObject_Param);
    begin
-        This.onImageComparisonResultsEvent (ImageComparisonResultsEvent_Access (allBinaryEventObject));
+        ImageComparisonSearchWorker'Class (This).onImageComparisonResultsEvent (ImageComparisonResultsEvent_Access (allBinaryEventObject));
    end onEvent;
 
    function isRunning (This : in out ImageComparisonSearchWorker) return Boolean is
@@ -73,7 +73,7 @@ package body org.allbinary.media.image.search.ImageComparisonSearchWorker_Packag
    begin
         begin
             This.logUtil.putF (This.commonStrings.START, ImageComparisonSearchWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN);
-            This.setRunning (True);
+            ImageComparisonSearchWorker'Class (This).setRunning (True);
             timeHelper := TimeDelayHelper_Package.Create (1000);
             timeHelper.setStartTimeTNT;
             imageComparisonInfo := ImageComparisonResult_Access (This.imageComparisonInfoVector.get (0));
@@ -82,7 +82,7 @@ package body org.allbinary.media.image.search.ImageComparisonSearchWorker_Packag
             This.imageComparisonInfoVector.remove (imageComparisonInfo);
             This.index := This.index + 1;
             This.logUtil.putF ((CommonLabels_Package.getInstance.ELAPSED) + (timeHelper.getElapsedTNT), ImageComparisonSearchWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN);
-            This.setRunning (False);
+            ImageComparisonSearchWorker'Class (This).setRunning (False);
             This.logUtil.putF (This.commonStrings.END_Id, ImageComparisonSearchWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN);
         exception
             when Java_Occurrence : others =>

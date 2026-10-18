@@ -58,7 +58,7 @@ package body org.allbinary.game.combat.destroy.DestroyedLayerProcessor_Package i
       commonStrings : CommonStrings_Access;
       index : Integer;
    begin
-        list := This.getList;
+        list := DestroyedLayerProcessor'Class (This).getList;
         size := list.size;
         destroyedEventHandler := DestroyedEventHandler_Package.getInstance;
         destroyEventCircularStaticPool := DestroyEventCircularStaticPool_Package.getInstance;

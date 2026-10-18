@@ -29,12 +29,12 @@ package body org.allbinary.graphics.displayable.ScreenRelationalUtil_Package is
    function getScaleImage (This : in out ScreenRelationalUtil; image_Param : access Image_Package.Image'Class) return Float is
       image : constant Image_Access := Image_Access (image_Param);
    begin
-        return This.getScaleWH (image.getWidth, image.getHeight);
+        return ScreenRelationalUtil'Class (This).getScaleWH (image.getWidth, image.getHeight);
    end getScaleImage;
 
    function getScaleWH (This : in out ScreenRelationalUtil; aWidth : Integer; aHeight : Integer) return Float is
    begin
-        return This.getScaleWHA (aWidth, aHeight, 20);
+        return ScreenRelationalUtil'Class (This).getScaleWHA (aWidth, aHeight, 20);
    end getScaleWH;
 
    function getScaleWHA (This : in out ScreenRelationalUtil; aWidth : Integer; aHeight : Integer; add : Integer) return Float is
@@ -59,12 +59,12 @@ package body org.allbinary.graphics.displayable.ScreenRelationalUtil_Package is
 
    function getScaledHeight (This : in out ScreenRelationalUtil; aWidth : Integer; aHeight : Integer) return Integer is
    begin
-        return Integer (((This.getScaleWH (aWidth, aHeight)) * (Float (aHeight))));
+        return Integer (((ScreenRelationalUtil'Class (This).getScaleWH (aWidth, aHeight)) * (Float (aHeight))));
    end getScaledHeight;
 
    function getScaledHeightAdd (This : in out ScreenRelationalUtil; aWidth : Integer; aHeight : Integer; add : Integer) return Integer is
    begin
-        return Integer (((This.getScaleWHA (aWidth, aHeight, add)) * (Float (aHeight))));
+        return Integer (((ScreenRelationalUtil'Class (This).getScaleWHA (aWidth, aHeight, add)) * (Float (aHeight))));
    end getScaledHeightAdd;
 
    procedure getScaleImage (This : in out ScreenRelationalUtil; image_Param : access Image_Package.Image'Class) is

@@ -54,21 +54,21 @@ package body org.allbinary.animation.image.AllBinaryFlickerAndroidImageRotationA
       changed : Boolean;
    begin
         changed := False;
-        if ((This.getBasicColorP) = (null)) or else ((This.getBasicColorP.intValue) /= (basicColor.intValue)) then
-            This.imageModifierUtil.setColor (This.originalImage, This.getImage, 0, basicColor);
+        if ((AllBinaryFlickerAndroidImageRotationAnimation'Class (This).getBasicColorP) = (null)) or else ((AllBinaryFlickerAndroidImageRotationAnimation'Class (This).getBasicColorP.intValue) /= (basicColor.intValue)) then
+            This.imageModifierUtil.setColor (This.originalImage, AllBinaryFlickerAndroidImageRotationAnimation'Class (This).getImage, 0, basicColor);
             changed := True;
         end if;
         ImageBaseRotationAnimation (This).setBasicColorP (basicColor);
         if changed then
             This.matrix.setRotate (0.0, Float (This.halfWidth), Float (This.halfHeight));
-            This.updateImage;
+            AllBinaryFlickerAndroidImageRotationAnimation'Class (This).updateImage;
         end if;
    end setBasicColorP;
 
    procedure changeBasicColor (This : in out AllBinaryFlickerAndroidImageRotationAnimation; basicColor_Param : access BasicColor_Package.BasicColor'Class) is
       basicColor : constant BasicColor_Access := BasicColor_Access (basicColor_Param);
    begin
-        This.setBasicColorP (basicColor);
+        AllBinaryFlickerAndroidImageRotationAnimation'Class (This).setBasicColorP (basicColor);
    end changeBasicColor;
 
    procedure setAlpha (This : in out AllBinaryFlickerAndroidImageRotationAnimation; alpha : Integer) is
@@ -79,10 +79,10 @@ package body org.allbinary.animation.image.AllBinaryFlickerAndroidImageRotationA
             changed := True;
         end if;
         ImageBaseRotationAnimation (This).setAlpha (alpha);
-        This.imageModifierUtil.setAlpha (This.originalImage, This.getImage, 0, This.alphaP);
+        This.imageModifierUtil.setAlpha (This.originalImage, AllBinaryFlickerAndroidImageRotationAnimation'Class (This).getImage, 0, This.alphaP);
         if changed then
             This.matrix.setRotate (0.0, Float (This.halfWidth), Float (This.halfHeight));
-            This.updateImage;
+            AllBinaryFlickerAndroidImageRotationAnimation'Class (This).updateImage;
         end if;
    end setAlpha;
 
@@ -90,19 +90,19 @@ package body org.allbinary.animation.image.AllBinaryFlickerAndroidImageRotationA
    begin
         ImageBaseRotationAnimation (This).nextRotation;
         This.matrix.setRotate (Float (This.increment), Float (This.halfWidth), Float (This.halfHeight));
-        This.updateImage;
+        AllBinaryFlickerAndroidImageRotationAnimation'Class (This).updateImage;
    end nextRotation;
 
    procedure previousRotation (This : in out AllBinaryFlickerAndroidImageRotationAnimation) is
    begin
         ImageBaseRotationAnimation (This).previousRotation;
         This.matrix.setRotate (Float (-(This.increment)), Float (This.halfWidth), Float (This.halfHeight));
-        This.updateImage;
+        AllBinaryFlickerAndroidImageRotationAnimation'Class (This).updateImage;
    end previousRotation;
 
    procedure updateImage (This : in out AllBinaryFlickerAndroidImageRotationAnimation) is
    begin
-        This.androidImageUtil.rotate (This.getImage, This.originalImage, This.matrix, This.imageModifierUtil.paint);
+        This.androidImageUtil.rotate (AllBinaryFlickerAndroidImageRotationAnimation'Class (This).getImage, This.originalImage, This.matrix, This.imageModifierUtil.paint);
    end updateImage;
 
    procedure setFrame (This : in out AllBinaryFlickerAndroidImageRotationAnimation; index : Integer) is
@@ -114,7 +114,7 @@ package body org.allbinary.animation.image.AllBinaryFlickerAndroidImageRotationA
         newFrame := This.circularIndexUtil.getIndex;
         This.angleInfo.adjustAngle (newFrame);
         This.matrix.setRotate ((Float (((newFrame) - (currentFrame)))) * (Float (This.increment)), Float (This.halfWidth), Float (This.halfHeight));
-        This.updateImage;
+        AllBinaryFlickerAndroidImageRotationAnimation'Class (This).updateImage;
    end setFrame;
 
 end org.allbinary.animation.image.AllBinaryFlickerAndroidImageRotationAnimation_Package;

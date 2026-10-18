@@ -29,7 +29,7 @@ package body org.allbinary.animation.image.ImageArraySpecialAnimation_Package is
    begin
         ImageArrayAnimation_Package.Initialize (This, imageArray, animationBehavior);
         Initialize_Fields (This);
-        This.reset;
+        ImageArraySpecialAnimation'Class (This).reset;
    end Initialize;
 
    function Create (imageArray : Image_Access_Array_Access; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class) return ImageArraySpecialAnimation_Access is
@@ -51,16 +51,16 @@ package body org.allbinary.animation.image.ImageArraySpecialAnimation_Package is
 
    procedure reset (This : in out ImageArraySpecialAnimation) is
    begin
-        This.setFrame ((This.getSize) - (1));
+        ImageArraySpecialAnimation'Class (This).setFrame ((ImageArraySpecialAnimation'Class (This).getSize) - (1));
         This.loopCount := 0;
    end reset;
 
    procedure nextFrame (This : in out ImageArraySpecialAnimation) is
    begin
-        if (This.getFrame) > (0) then
+        if (ImageArraySpecialAnimation'Class (This).getFrame) > (0) then
             if This.timeDelayHelper.isTime (GameTickTimeDelayHelperFactory_Package.getInstance.startTime) then
-                This.previousFrame;
-                if (This.getFrame) = (0) then
+                ImageArraySpecialAnimation'Class (This).previousFrame;
+                if (ImageArraySpecialAnimation'Class (This).getFrame) = (0) then
                     This.loopCount := This.loopCount + 1;
                 end if;
             end if;
@@ -69,7 +69,7 @@ package body org.allbinary.animation.image.ImageArraySpecialAnimation_Package is
 
    function isComplete (This : in out ImageArraySpecialAnimation) return Boolean is
    begin
-        if ((This.loopCount) < (This.loopCountTotal)) or else ((This.getFrame) /= (0)) then
+        if ((This.loopCount) < (This.loopCountTotal)) or else ((ImageArraySpecialAnimation'Class (This).getFrame) /= (0)) then
             return False;
         else
             return True;
@@ -81,7 +81,7 @@ package body org.allbinary.animation.image.ImageArraySpecialAnimation_Package is
       x : Integer := x_Param;
       y : Integer := y_Param;
    begin
-        x := (DisplayInfoSingleton_Package.getInstance.getLastHalfWidth) - ((Java_Shift_Right_Arithmetic (This.getImage (This.circularIndexUtil.getIndex).getWidth, 1)));
+        x := (DisplayInfoSingleton_Package.getInstance.getLastHalfWidth) - ((Java_Shift_Right_Arithmetic (ImageArraySpecialAnimation'Class (This).getImage (This.circularIndexUtil.getIndex).getWidth, 1)));
         y := 5;
         ImageArrayAnimation (This).paintXY (graphics, x, y);
    end paintXY;

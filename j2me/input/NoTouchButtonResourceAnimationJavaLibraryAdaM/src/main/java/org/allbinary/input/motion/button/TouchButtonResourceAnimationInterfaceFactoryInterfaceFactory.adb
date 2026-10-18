@@ -41,14 +41,14 @@ package body org.allbinary.input.motion.button.TouchButtonResourceAnimationInter
    --  throws Exception
    procedure init (This : in out TouchButtonResourceAnimationInterfaceFactoryInterfaceFactory; level : Integer) is
    begin
-        This.initImageCache (ImageCacheFactory_Package.getInstance, level);
+        TouchButtonResourceAnimationInterfaceFactoryInterfaceFactory'Class (This).initImageCache (ImageCacheFactory_Package.getInstance, level);
    end init;
 
    --  throws Exception
    procedure initImageCache (This : in out TouchButtonResourceAnimationInterfaceFactoryInterfaceFactory; imageCache_Param : access ImageCache_Package.ImageCache'Class; level : Integer) is
       imageCache : constant ImageCache_Access := ImageCache_Access (imageCache_Param);
    begin
-        if This.isInitialized then
+        if TouchButtonResourceAnimationInterfaceFactoryInterfaceFactory'Class (This).isInitialized then
             return;
         end if;
         BaseResourceAnimationInterfaceFactoryInterfaceFactory (This).init (level);

@@ -37,6 +37,7 @@ package body org.allbinary.game.layer.NullRTSLayer_Package is
    function getName (This : in out NullRTSLayer) return Unbounded_String is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return Null_Unbounded_String;
    end getName;
 
    --  throws Exception
@@ -54,11 +55,13 @@ package body org.allbinary.game.layer.NullRTSLayer_Package is
    function getGameNotificationHud (This : in out NullRTSLayer) return GameNotificationHud_Access is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return null;
    end getGameNotificationHud;
 
    function getCurrentScrollSelectionForm (This : in out NullRTSLayer) return ScrollSelectionForm_Access is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return null;
    end getCurrentScrollSelectionForm;
 
    procedure setCurrentScrollSelectionForm (This : in out NullRTSLayer; currentScrollSelectionForm_Param : access ScrollSelectionForm_Package.ScrollSelectionForm'Class) is
@@ -70,11 +73,13 @@ package body org.allbinary.game.layer.NullRTSLayer_Package is
    function getBuildingScrollSelectionForm (This : in out NullRTSLayer) return ScrollSelectionForm_Access is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return null;
    end getBuildingScrollSelectionForm;
 
    function getPlayerGameInput (This : in out NullRTSLayer) return PlayerGameInput_Access is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return null;
    end getPlayerGameInput;
 
    procedure onEvent (This : in out NullRTSLayer; eventObject_Param : access AllBinaryEventObject_Package.AllBinaryEventObject'Class) is
@@ -100,6 +105,7 @@ package body org.allbinary.game.layer.NullRTSLayer_Package is
    function getCapital (This : in out NullRTSLayer) return Capital_Access is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return null;
    end getCapital;
 
    function getRTSFormInput (This : in out NullRTSLayer) return RTSFormInput_Access is
@@ -116,11 +122,13 @@ package body org.allbinary.game.layer.NullRTSLayer_Package is
    function getPlayerOwnedRTSLayers (This : in out NullRTSLayer) return PlayerOwnedRTSLayers_Access is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return null;
    end getPlayerOwnedRTSLayers;
 
    function implmentsArtificialIntelligenceCompositeInterface (This : in out NullRTSLayer) return Boolean is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return False;
    end implmentsArtificialIntelligenceCompositeInterface;
 
 begin

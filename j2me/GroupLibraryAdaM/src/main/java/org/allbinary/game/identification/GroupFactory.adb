@@ -53,7 +53,7 @@ package body org.allbinary.game.identification.GroupFactory_Package is
    function getNextGroupByName (This : in out GroupFactory; name : Unbounded_String) return Group_Access is
       group : Group_Access;
    begin
-        group := This.getNextGroup;
+        group := GroupFactory'Class (This).getNextGroup;
         group.setName (name);
         return group;
    end getNextGroupByName;

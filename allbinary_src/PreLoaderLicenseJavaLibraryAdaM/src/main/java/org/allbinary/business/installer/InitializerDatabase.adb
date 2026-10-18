@@ -48,8 +48,8 @@ package body org.allbinary.business.installer.InitializerDatabase_Package is
         keyArray := keys.toArray;
         size := keyArray'Length;
         for index in 0 .. (size) - 1 loop
-            key := Unbounded_String (keyArray (index));
-            values := Unbounded_String_Array_Access (map.get (key));
+            key := Java_Unbox (keyArray (index));
+            values := Unbounded_String_Array_Access (map.get (Java_Box (key)));
             hashMap.put (Java_New_String (key), Java_New_String (values (0)));
             stringBuffer.delete (0, stringBuffer.length);
             stringBuffer.append (To_Unbounded_String ("key: "));
@@ -58,7 +58,7 @@ package body org.allbinary.business.installer.InitializerDatabase_Package is
             stringBuffer.append (values (0));
             This.logUtil.putF (stringBuffer.toString, InitializerDatabase_Access'(This'Unchecked_Access), To_Unbounded_String ("getFormData()"));
         end loop;
-        This.getFormData (abeClientInformation, hashMap);
+        InitializerDatabase'Class (This).getFormData (abeClientInformation, hashMap);
    end Initialize;
 
    function Create (abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; map_Param : access Map_Package.Map'Class) return InitializerDatabase_Access is
@@ -73,7 +73,7 @@ package body org.allbinary.business.installer.InitializerDatabase_Package is
       initHashMap : constant HashMap_Access := HashMap_Access (initHashMap_Param);
    begin
       Initialize_Fields (This);
-        This.getFormData (abeClientInformation, initHashMap);
+        InitializerDatabase'Class (This).getFormData (abeClientInformation, initHashMap);
    end Initialize;
 
    function Create (abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; initHashMap_Param : access HashMap_Package.HashMap'Class) return InitializerDatabase_Access is
@@ -92,21 +92,21 @@ package body org.allbinary.business.installer.InitializerDatabase_Package is
    begin
         begin
             initializerData := InitializerData_Package.getInstance;
-            This.setAdminDbUserName (Unbounded_String (hashMap.get (initializerData.DBUSER)));
-            This.setAdminDbPassword (Unbounded_String (hashMap.get (initializerData.DBPASSWORD)));
-            This.setAdminJdbcDriver (Unbounded_String (hashMap.get (initializerData.ADMINJDBCDRIVER)));
-            This.setAdminSchema (Unbounded_String (hashMap.get (initializerData.ADMINSCHEMA)));
-            This.setAdminServer (Unbounded_String (hashMap.get (initializerData.ADMINSERVER)));
-            This.setAdminPort (Unbounded_String (hashMap.get (initializerData.ADMINPORT)));
+            InitializerDatabase'Class (This).setAdminDbUserName (Java_Unbox (hashMap.get (initializerData.DBUSER)));
+            InitializerDatabase'Class (This).setAdminDbPassword (Java_Unbox (hashMap.get (initializerData.DBPASSWORD)));
+            InitializerDatabase'Class (This).setAdminJdbcDriver (Java_Unbox (hashMap.get (initializerData.ADMINJDBCDRIVER)));
+            InitializerDatabase'Class (This).setAdminSchema (Java_Unbox (hashMap.get (initializerData.ADMINSCHEMA)));
+            InitializerDatabase'Class (This).setAdminServer (Java_Unbox (hashMap.get (initializerData.ADMINSERVER)));
+            InitializerDatabase'Class (This).setAdminPort (Java_Unbox (hashMap.get (initializerData.ADMINPORT)));
             dbConnectionInfo := DbConnectionInfo_Package.Create;
             adminDbName := StringUtil_Package.getInstance.EMPTY_STRING;
-            dbConnectionInfo.setJdbcDriver (This.getAdminJdbcDriver);
+            dbConnectionInfo.setJdbcDriver (InitializerDatabase'Class (This).getAdminJdbcDriver);
             dbConnectionInfo.setName (adminDbName);
-            dbConnectionInfo.setUserName (This.getAdminDbUserName);
-            dbConnectionInfo.setPassword (This.getAdminDbPassword);
-            dbConnectionInfo.setSchema (This.getAdminSchema);
-            dbConnectionInfo.setServer (This.getAdminServer);
-            dbConnectionInfo.setPort (This.getAdminPort);
+            dbConnectionInfo.setUserName (InitializerDatabase'Class (This).getAdminDbUserName);
+            dbConnectionInfo.setPassword (InitializerDatabase'Class (This).getAdminDbPassword);
+            dbConnectionInfo.setSchema (InitializerDatabase'Class (This).getAdminSchema);
+            dbConnectionInfo.setServer (InitializerDatabase'Class (This).getAdminServer);
+            dbConnectionInfo.setPort (InitializerDatabase'Class (This).getAdminPort);
             This.initDb := DynamicInitDb_Package.Create (abeClientInformation, DatabaseConnectionInfoInterface_Access (dbConnectionInfo));
         exception
             when Java_Occurrence : others =>
@@ -143,7 +143,7 @@ package body org.allbinary.business.installer.InitializerDatabase_Package is
       stringValidationUtil : StringValidationUtil_Access;
    begin
         isValid := True;
-        if not (This.isJdbcDriverValid (This.adminJdbcDriver)) then
+        if not (InitializerDatabase'Class (This).isJdbcDriverValid (This.adminJdbcDriver)) then
             isValid := False;
         end if;
         stringValidationUtil := StringValidationUtil_Package.getInstance;
@@ -175,9 +175,9 @@ package body org.allbinary.business.installer.InitializerDatabase_Package is
         isValid := True;
         isJdbcDriversValid := True;
         stringBuffer := StringMaker_Package.Create;
-        if not (This.isJdbcDriverValid (This.adminJdbcDriver)) then
+        if not (InitializerDatabase'Class (This).isJdbcDriverValid (This.adminJdbcDriver)) then
             isJdbcDriversValid := False;
-            stringBuffer.append (This.getJdbcDriverValidationInfo (This.getAdminJdbcDriver));
+            stringBuffer.append (InitializerDatabase'Class (This).getJdbcDriverValidationInfo (InitializerDatabase'Class (This).getAdminJdbcDriver));
         end if;
         stringValidationUtil := StringValidationUtil_Package.getInstance;
         if not (stringValidationUtil.isValidRequired (This.adminDbUserName, InitializerDatabase_Package.MIN, InitializerDatabase_Package.MAX)) then

@@ -29,7 +29,7 @@ package body org.allbinary.input.automation.actions.script.ProfileActionScriptIt
    begin
         DefaultMutableTreeNode_Package.Initialize (This, label);
         Initialize_Fields (This);
-        This.init;
+        ProfileActionScriptItem'Class (This).init;
         This.logUtil.putF (To_Unbounded_String ("Label: ") & label, ProfileActionScriptItem_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
    end Initialize;
 
@@ -44,7 +44,7 @@ package body org.allbinary.input.automation.actions.script.ProfileActionScriptIt
    begin
         DefaultMutableTreeNode_Package.Initialize (This, label);
         Initialize_Fields (This);
-        This.init;
+        ProfileActionScriptItem'Class (This).init;
         This.logUtil.putF (To_Unbounded_String ("Label: ") & label, ProfileActionScriptItem_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
    end Initialize;
 
@@ -59,13 +59,13 @@ package body org.allbinary.input.automation.actions.script.ProfileActionScriptIt
       jMenuItemEdit : JMenuItem_Access;
       jMenuItemDelete : JMenuItem_Access;
    begin
-        This.setJPopupMenu (JPopupMenu_Package.Create);
+        ProfileActionScriptItem'Class (This).setJPopupMenu (JPopupMenu_Package.Create);
         jMenuItemEdit := JMenuItem_Package.Create (EDIT);
         jMenuItemDelete := JMenuItem_Package.Create (DELETE);
         jMenuItemEdit.addActionListener (ProfileActionScriptItem_Access'(This'Unchecked_Access));
         jMenuItemDelete.addActionListener (ProfileActionScriptItem_Access'(This'Unchecked_Access));
-        This.getJPopupMenu.add (jMenuItemEdit);
-        This.getJPopupMenu.add (jMenuItemDelete);
+        ProfileActionScriptItem'Class (This).getJPopupMenu.add (jMenuItemEdit);
+        ProfileActionScriptItem'Class (This).getJPopupMenu.add (jMenuItemDelete);
    end init;
 
    --  throws Exception
@@ -88,7 +88,7 @@ package body org.allbinary.input.automation.actions.script.ProfileActionScriptIt
       actionEvent : constant ActionEvent_Access := ActionEvent_Access (actionEvent_Param);
    begin
         if (actionEvent.getActionCommand.compareTo (ProfileActionScriptItem_Package.EDIT)) = (0) then
-            This.showDialog;
+            ProfileActionScriptItem'Class (This).showDialog;
         end if;
    end actionPerformed;
 

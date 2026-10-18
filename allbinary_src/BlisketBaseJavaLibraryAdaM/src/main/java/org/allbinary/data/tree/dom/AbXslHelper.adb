@@ -43,7 +43,7 @@ package body org.allbinary.data.tree.dom.AbXslHelper_Package is
       xslFile : constant AbFile_Access := AbFile_Access (xslFile_Param);
       xmlFile : constant AbFile_Access := AbFile_Access (xmlFile_Param);
    begin
-        return This.translate (xslFile.getAbsolutePath, xmlFile.getAbsolutePath);
+        return AbXslHelper'Class (This).translate (xslFile.getAbsolutePath, xmlFile.getAbsolutePath);
    end translate;
 
    --  throws Exception
@@ -51,7 +51,7 @@ package body org.allbinary.data.tree.dom.AbXslHelper_Package is
       xslPath : constant AbPath_Access := AbPath_Access (xslPath_Param);
       xmlPath : constant AbPath_Access := AbPath_Access (xmlPath_Param);
    begin
-        return This.translate (xslPath.getPath, xmlPath.getPath);
+        return AbXslHelper'Class (This).translate (xslPath.getPath, xmlPath.getPath);
    end translate;
 
    --  throws Exception

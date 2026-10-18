@@ -84,21 +84,25 @@ package body org.allbinary.graphics.opengles.OpenGLESStrings_Package is
    function charWidth (This : in out OpenGLESStrings; ch : Character) return Integer is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return 0;
    end charWidth;
 
    function charsWidth (This : in out OpenGLESStrings; ch : Character_Array_Access; offset : Integer; length : Integer) return Integer is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return 0;
    end charsWidth;
 
    function stringWidth (This : in out OpenGLESStrings; string_Id : Unbounded_String) return Integer is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return 0;
    end stringWidth;
 
    function stringWidth (This : in out OpenGLESStrings; string_Id : Unbounded_String; offset : Integer; len : Integer) return Integer is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return 0;
    end stringWidth;
 
    procedure charWidth (This : in out OpenGLESStrings; ch : Character) is

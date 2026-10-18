@@ -31,13 +31,13 @@ package body org.allbinary.game.configuration.GameOptionsForm_Package is
         CommandForm_Package.Initialize (This, commandListener, title, backgrounBasicColor, foregroundBasicColor);
         Initialize_Fields (This);
         This.logUtil.putF (This.commonStrings.START, GameOptionsForm_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
-        This.addConfiguration;
+        GameOptionsForm'Class (This).addConfiguration;
         gameFeatureFormUtil := GameFeatureFormUtil_Package.getInstance;
         gameFeatureFormUtil.addChoiceGroup (GameOptionsForm_Access'(This'Unchecked_Access), GameFeatureChoiceGroups_Package.getExclusiveInstance.get, Choice_Package.EXCLUSIVE);
         gameFeatureFormUtil.addChoiceGroup (GameOptionsForm_Access'(This'Unchecked_Access), GameFeatureChoiceGroups_Package.getMultipleInstance.get, Choice_Package.MULTIPLE);
-        This.initCommands (commandListener);
-        This.setItemStateListener (GameFeatureItemStateListener_Package.Create (GameOptionsForm_Access'(This'Unchecked_Access)));
-        This.addTextFieldsIfSimulated;
+        GameOptionsForm'Class (This).initCommands (commandListener);
+        GameOptionsForm'Class (This).setItemStateListener (GameFeatureItemStateListener_Package.Create (GameOptionsForm_Access'(This'Unchecked_Access)));
+        GameOptionsForm'Class (This).addTextFieldsIfSimulated;
    end Initialize;
 
    function Create (commandListener_Param : access CommandListener_Package.CommandListener'Class; title : Unbounded_String; backgrounBasicColor_Param : access BasicColor_Package.BasicColor'Class; foregroundBasicColor_Param : access BasicColor_Package.BasicColor'Class) return GameOptionsForm_Access is
@@ -52,7 +52,7 @@ package body org.allbinary.game.configuration.GameOptionsForm_Package is
       abeClientInformation : constant AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
    begin
         CommandForm (This).close;
-        This.save (abeClientInformation);
+        GameOptionsForm'Class (This).save (abeClientInformation);
    end closeClientInformation;
 
    procedure addTextFieldsIfSimulated (This : in out GameOptionsForm) is
@@ -68,7 +68,7 @@ package body org.allbinary.game.configuration.GameOptionsForm_Package is
             if (listCanBeNull) /= (null) then
                 list := BasicArrayList_Access (listCanBeNull);
                 if list.contains (SensorFeatureFactory_Package.getInstance.SIMULATED_ORIENTATION_SENSORS) then
-                    This.addTextFields;
+                    GameOptionsForm'Class (This).addTextFields;
                 end if;
             end if;
         end if;
@@ -129,10 +129,10 @@ package body org.allbinary.game.configuration.GameOptionsForm_Package is
       gameCommandsFactory : GameCommandsFactory_Access;
    begin
         gameCommandsFactory := GameCommandsFactory_Package.getInstance;
-        This.removeAllCommands;
-        This.addCommand (gameCommandsFactory.CLOSE_OPTIONS);
-        This.addCommand (gameCommandsFactory.DEFAULT_OPTIONS);
-        This.setCommandListener (cmdListener);
+        GameOptionsForm'Class (This).removeAllCommands;
+        GameOptionsForm'Class (This).addCommand (gameCommandsFactory.CLOSE_OPTIONS);
+        GameOptionsForm'Class (This).addCommand (gameCommandsFactory.DEFAULT_OPTIONS);
+        GameOptionsForm'Class (This).setCommandListener (cmdListener);
    end initCommands;
 
    --  throws Exception
@@ -148,10 +148,10 @@ package body org.allbinary.game.configuration.GameOptionsForm_Package is
       size2 : Integer;
       integer_Id : Integer;
    begin
-        size := This.size;
+        size := GameOptionsForm'Class (This).size;
         item := null;
         for index in 0 .. (size) - 1 loop
-            item := This.get (index);
+            item := GameOptionsForm'Class (This).get (index);
             if (item.all in GameConfigurationGauge_Package.GameConfigurationGauge'Class) then
                 GameConfigurationUtil_Package.getInstance.update (GameConfigurationGauge_Access (item));
             elsif (item.all in TextField_Package.TextField'Class) then

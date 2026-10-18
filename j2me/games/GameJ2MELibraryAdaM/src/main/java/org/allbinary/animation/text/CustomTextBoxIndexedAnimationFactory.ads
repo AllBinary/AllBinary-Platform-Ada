@@ -20,8 +20,8 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with javax.microedition.lcdui.Font_Package; use javax.microedition.lcdui.Font_Package;
---  with javax.microedition.lcdui.TextField_Package; use javax.microedition.lcdui.TextField_Package;
+with javax.microedition.lcdui.Font_Package; use javax.microedition.lcdui.Font_Package;
+with javax.microedition.lcdui.TextField_Package; use javax.microedition.lcdui.TextField_Package;
 with org.allbinary.graphics.form.item.CustomTextBox_Package; use org.allbinary.graphics.form.item.CustomTextBox_Package;
 with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Animation_Package;
 with org.allbinary.animation.AnimationInterfaceFactoryInterface_Package; use org.allbinary.animation.AnimationInterfaceFactoryInterface_Package;
@@ -36,6 +36,8 @@ with org.allbinary.animation.text.CustomTextBoxIndexedAnimation_Package; use org
 
 package org.allbinary.animation.text.CustomTextBoxIndexedAnimationFactory_Package is
 
+   package Font_Package renames Standard.javax.microedition.lcdui.Font_Package;
+   package TextField_Package renames Standard.javax.microedition.lcdui.TextField_Package;
    package CustomTextBox_Package renames Standard.org.allbinary.graphics.form.item.CustomTextBox_Package;
    package Animation_Package renames Standard.org.allbinary.animation.Animation_Package;
    package AnimationInterfaceFactoryInterface_Package renames Standard.org.allbinary.animation.AnimationInterfaceFactoryInterface_Package;

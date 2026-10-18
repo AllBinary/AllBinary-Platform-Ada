@@ -57,14 +57,14 @@ package body org.allbinary.logic.io.path.PathUtil_Package is
    function getWithoutExtensionWithAbFilePath (This : in out PathUtil; abFilePath_Param : access AbFilePath_Package.AbFilePath'Class) return Unbounded_String is
       abFilePath : constant AbFilePath_Access := AbFilePath_Access (abFilePath_Param);
    begin
-        return This.getWithoutExtension (abFilePath.toString);
+        return PathUtil'Class (This).getWithoutExtension (abFilePath.toString);
    end getWithoutExtensionWithAbFilePath;
 
    --  throws Exception
    function getWithoutExtensionWithAbPath (This : in out PathUtil; abPath_Param : access AbPath_Package.AbPath'Class) return Unbounded_String is
       abPath : constant AbPath_Access := AbPath_Access (abPath_Param);
    begin
-        return This.getWithoutExtension (abPath.toString);
+        return PathUtil'Class (This).getWithoutExtension (abPath.toString);
    end getWithoutExtensionWithAbPath;
 
    --  throws Exception
@@ -82,8 +82,8 @@ package body org.allbinary.logic.io.path.PathUtil_Package is
 
    function isValid (This : in out PathUtil; path : Unbounded_String) return Boolean is
    begin
-        if This.isValidStart (path) then
-            if This.isValidEnd (path) then
+        if PathUtil'Class (This).isValidStart (path) then
+            if PathUtil'Class (This).isValidEnd (path) then
                 return True;
             end if;
         end if;
@@ -116,7 +116,7 @@ package body org.allbinary.logic.io.path.PathUtil_Package is
    function adjustStart (This : in out PathUtil; path_Param : Unbounded_String) return Unbounded_String is
       path : Unbounded_String := path_Param;
    begin
-        if not (This.isValidStart (path)) then
+        if not (PathUtil'Class (This).isValidStart (path)) then
             path := Java_Image (This.abPathData.SEPARATOR) & path;
         end if;
         return path;
@@ -125,7 +125,7 @@ package body org.allbinary.logic.io.path.PathUtil_Package is
    function adjustEnd (This : in out PathUtil; path_Param : Unbounded_String) return Unbounded_String is
       path : Unbounded_String := path_Param;
    begin
-        if not (This.isValidEnd (path)) then
+        if not (PathUtil'Class (This).isValidEnd (path)) then
             path := path & Java_Image (This.abPathData.SEPARATOR);
         end if;
         return path;
@@ -139,7 +139,7 @@ package body org.allbinary.logic.io.path.PathUtil_Package is
         if stringValidationUtil.isEmpty (path) then
             return This.abPathData.SEPARATOR;
         end if;
-        if ((Index (path, To_String (To_Unbounded_String ("\"))) - 1)) >= (0) then
+        if ((Index (path, Java_Image (To_Unbounded_String ("\"))) - 1)) >= (0) then
             path := path.replace ('\', This.abPathData.SEPARATORCHAR);
         end if;
         return path;
@@ -158,7 +158,7 @@ package body org.allbinary.logic.io.path.PathUtil_Package is
             return AbPath_Package.createAbPath;
         end if;
         if (Length (path)) = ((endIndex) + (1)) then
-            return This.removeNameFromPath (Unbounded_Slice (path, (0) + 1, (endIndex) - (1)));
+            return PathUtil'Class (This).removeNameFromPath (Unbounded_Slice (path, (0) + 1, (endIndex) - (1)));
         else
             pathWithoutName := Unbounded_Slice (path, (0) + 1, endIndex);
             return AbPath_Package.Create (pathWithoutName, StringUtil_Package.getInstance.EMPTY_STRING);

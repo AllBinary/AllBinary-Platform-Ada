@@ -25,7 +25,7 @@ with android.graphics.Canvas_Package; use android.graphics.Canvas_Package;
 with android.graphics.Color_Package; use android.graphics.Color_Package;
 with android.graphics.Matrix_Package; use android.graphics.Matrix_Package;
 with android.graphics.Paint_Package; use android.graphics.Paint_Package;
---  with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
+with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
 with org.microemu.android.device.AndroidImageInterface_Package; use org.microemu.android.device.AndroidImageInterface_Package;
 
 package org.allbinary.media.image.AndroidImageUtil_Package is
@@ -35,6 +35,7 @@ package org.allbinary.media.image.AndroidImageUtil_Package is
    package Color_Package renames Standard.android.graphics.Color_Package;
    package Matrix_Package renames Standard.android.graphics.Matrix_Package;
    package Paint_Package renames Standard.android.graphics.Paint_Package;
+   package Image_Package renames Standard.javax.microedition.lcdui.Image_Package;
    package AndroidImageInterface_Package renames Standard.org.microemu.android.device.AndroidImageInterface_Package;
 
    type AndroidImageUtil is tagged;

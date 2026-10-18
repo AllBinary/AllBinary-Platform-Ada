@@ -20,10 +20,10 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.io.InputStream_Package; use java.io.InputStream_Package;
---  with javax.microedition.khronos.opengles.GL10_Package; use javax.microedition.khronos.opengles.GL10_Package;
---  with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
---  with javax.microedition.lcdui.NullImage_Package; use javax.microedition.lcdui.NullImage_Package;
+with java.io.InputStream_Package; use java.io.InputStream_Package;
+with javax.microedition.khronos.opengles.GL10_Package; use javax.microedition.khronos.opengles.GL10_Package;
+with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
+with javax.microedition.lcdui.NullImage_Package; use javax.microedition.lcdui.NullImage_Package;
 with org.allbinary.device.NullGL10_Package; use org.allbinary.device.NullGL10_Package;
 with org.allbinary.graphics.opengles.renderer.AllBinaryRendererBase3_Package; use org.allbinary.graphics.opengles.renderer.AllBinaryRendererBase3_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
@@ -36,6 +36,10 @@ with org.allbinary.image.opengles.OpenGLESImage_Package; use org.allbinary.image
 
 package org.allbinary.image.opengles.OpenGLImageCache_Package is
 
+   package InputStream_Package renames Standard.java.io.InputStream_Package;
+   package GL10_Package renames Standard.javax.microedition.khronos.opengles.GL10_Package;
+   package Image_Package renames Standard.javax.microedition.lcdui.Image_Package;
+   package NullImage_Package renames Standard.javax.microedition.lcdui.NullImage_Package;
    package NullGL10_Package renames Standard.org.allbinary.device.NullGL10_Package;
    package AllBinaryRendererBase3_Package renames Standard.org.allbinary.graphics.opengles.renderer.AllBinaryRendererBase3_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;

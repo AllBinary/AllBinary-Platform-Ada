@@ -37,6 +37,7 @@ package body org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package i
       image : constant Image_Access := Image_Access (image_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return null;
    end createBitmap;
 
    procedure createBitmap (This : in out PlatformBitmapBaseFactory; image_Param : access Image_Package.Image'Class) is

@@ -52,7 +52,7 @@ package body admin.taghelpers.InventoryRequestHelper_Package is
       error : Unbounded_String;
    begin
         begin
-            dataMappingInterface := TableMappingInterface_Access (This.getItemInterface);
+            dataMappingInterface := TableMappingInterface_Access (InventoryRequestHelper'Class (This).getItemInterface);
             values := dataMappingInterface.toVector;
             InventoryEntityFactory_Package.getInstance.getInventoryEntityInstance.insert (values);
             success := To_Unbounded_String ("Successfully Added Product");
@@ -82,8 +82,8 @@ package body admin.taghelpers.InventoryRequestHelper_Package is
       error : Unbounded_String;
    begin
         begin
-            dataMappingInterface := TableMappingInterface_Access (This.getItemInterface);
-            id := Unbounded_String (dataMappingInterface.getKey);
+            dataMappingInterface := TableMappingInterface_Access (InventoryRequestHelper'Class (This).getItemInterface);
+            id := Java_Unbox (dataMappingInterface.getKey);
             InventoryEntityFactory_Package.getInstance.getInventoryEntityInstance.deleteWhere (This.basicItemData.ID, id);
             stringBuffer := StringMaker_Package.Create;
             stringBuffer.append (To_Unbounded_String ("Successfully Removed the item with "));
@@ -115,8 +115,8 @@ package body admin.taghelpers.InventoryRequestHelper_Package is
       error : Unbounded_String;
    begin
         begin
-            This.delete;
-            This.insert;
+            InventoryRequestHelper'Class (This).delete;
+            InventoryRequestHelper'Class (This).insert;
             success := To_Unbounded_String ("Item Successfully Updated");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
                 This.logUtil.putF (success, InventoryRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("update()"));

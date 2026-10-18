@@ -27,8 +27,8 @@ package body admin.tags.CategoryTag_Package is
    begin
       TableTag_Package.Initialize (This);
       Initialize_Fields (This);
-        This.setTagHelperFactory (CategoryHelperFactory_Package.Create);
-        This.setTagRequestHelperFactory (CategoryRequestHelperFactory_Package.Create);
+        CategoryTag'Class (This).setTagHelperFactory (CategoryHelperFactory_Package.Create);
+        CategoryTag'Class (This).setTagRequestHelperFactory (CategoryRequestHelperFactory_Package.Create);
    end Initialize;
 
    function Create return CategoryTag_Access is
@@ -52,10 +52,10 @@ package body admin.tags.CategoryTag_Package is
       error : Unbounded_String;
    begin
         begin
-            anyType := CategoryRequestHelperFactory_Package.Create.getInstance (This.getPropertiesHashMap, This.pageContext);
+            anyType := CategoryRequestHelperFactory_Package.Create.getInstance (CategoryTag'Class (This).getPropertiesHashMap, This.pageContext);
             helperClass := anyType.all'Tag;
             method := helperClass.getMethod (To_Unbounded_String ("viewCategory"), null);
-            result := Unbounded_String (method.invoke (anyType, null));
+            result := Java_Unbox (method.invoke (anyType, null));
             return result;
         exception
             when Java_Occurrence : others =>
@@ -76,10 +76,10 @@ package body admin.tags.CategoryTag_Package is
       error : Unbounded_String;
    begin
         begin
-            anyType := CategoryRequestHelperFactory_Package.Create.getInstance (This.getPropertiesHashMap, This.pageContext);
+            anyType := CategoryRequestHelperFactory_Package.Create.getInstance (CategoryTag'Class (This).getPropertiesHashMap, This.pageContext);
             helperClass := anyType.all'Tag;
             method := helperClass.getMethod (To_Unbounded_String ("viewCategories"), null);
-            result := Unbounded_String (method.invoke (anyType, null));
+            result := Java_Unbox (method.invoke (anyType, null));
             return result;
         exception
             when Java_Occurrence : others =>
@@ -96,16 +96,16 @@ package body admin.tags.CategoryTag_Package is
       output : Unbounded_String;
    begin
         begin
-            if This.isEnabled then
-                if (This.getCommand) /= (null) then
-                    This.getPropertiesHashMap.put (TransformInfoData_Package.getInstance.TEMPLATEFILENAME, This.xsl);
-                    if (This.getCommand.compareTo (CategoryData_Package.getInstance.VIEW)) = (0) then
-                        output := This.viewCategory;
+            if CategoryTag'Class (This).isEnabled then
+                if (CategoryTag'Class (This).getCommand) /= (null) then
+                    CategoryTag'Class (This).getPropertiesHashMap.put (TransformInfoData_Package.getInstance.TEMPLATEFILENAME, This.xsl);
+                    if (CategoryTag'Class (This).getCommand.compareTo (CategoryData_Package.getInstance.VIEW)) = (0) then
+                        output := CategoryTag'Class (This).viewCategory;
                         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAGEXTRAOUTPUT) then
                             This.pageContext.getOut.print (output);
                         end if;
-                    elsif (This.getCommand.compareTo (CategoryData_Package.getInstance.VIEW)) = (0) then
-                        output := This.viewCategories;
+                    elsif (CategoryTag'Class (This).getCommand.compareTo (CategoryData_Package.getInstance.VIEW)) = (0) then
+                        output := CategoryTag'Class (This).viewCategories;
                         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAGEXTRAOUTPUT) then
                             This.pageContext.getOut.print (output);
                         end if;

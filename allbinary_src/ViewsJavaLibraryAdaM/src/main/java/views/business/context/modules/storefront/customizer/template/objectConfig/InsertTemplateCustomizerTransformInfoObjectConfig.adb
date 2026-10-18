@@ -42,7 +42,7 @@ package body views.business.context.modules.storefront.customizer.template.objec
    begin
         NoTemplateTransformInfoObjectConfig_Package.Initialize (This, transformInfoInterface, document);
         Initialize_Fields (This);
-        This.setDocument (This.generate (This.toXmlDoc));
+        InsertTemplateCustomizerTransformInfoObjectConfig'Class (This).setDocument (InsertTemplateCustomizerTransformInfoObjectConfig'Class (This).generate (InsertTemplateCustomizerTransformInfoObjectConfig'Class (This).toXmlDoc));
    end Initialize;
 
    function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class; document_Param : access Document_Package.Document'Class) return InsertTemplateCustomizerTransformInfoObjectConfig_Access is
@@ -57,7 +57,7 @@ package body views.business.context.modules.storefront.customizer.template.objec
    begin
         NoTemplateTransformInfoObjectConfig_Package.Initialize (This, transformInfoInterface, name, type_Id);
         Initialize_Fields (This);
-        This.setDocument (This.generate (This.toXmlDoc));
+        InsertTemplateCustomizerTransformInfoObjectConfig'Class (This).setDocument (InsertTemplateCustomizerTransformInfoObjectConfig'Class (This).generate (InsertTemplateCustomizerTransformInfoObjectConfig'Class (This).toXmlDoc));
    end Initialize;
 
    function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class; name : Unbounded_String; type_Id : Unbounded_String) return InsertTemplateCustomizerTransformInfoObjectConfig_Access is
@@ -79,7 +79,7 @@ package body views.business.context.modules.storefront.customizer.template.objec
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
             This.logUtil.putF (To_Unbounded_String ("Setting: ") & aParentViewName, InsertTemplateCustomizerTransformInfoObjectConfig_Access'(This'Unchecked_Access), To_Unbounded_String ("set()"));
         end if;
-        document := This.toXmlDoc;
+        document := InsertTemplateCustomizerTransformInfoObjectConfig'Class (This).toXmlDoc;
         parentComponentsNodeList := document.getElementsByTagName (TransformInfosData_Package.getInstance.NAME);
         if ((parentComponentsNodeList) /= (null)) and then ((parentComponentsNodeList.getLength) > (0)) then
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then

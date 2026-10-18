@@ -29,7 +29,7 @@ package body taghelpers.ValidationViewHelper_Package is
    begin
         ViewHelper_Package.Initialize (This, hashMap, pageContext);
         Initialize_Fields (This);
-        This.viewInterface := ValidationComponentInterface_Access (This.getViewObject);
+        This.viewInterface := ValidationComponentInterface_Access (ValidationViewHelper'Class (This).getViewObject);
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPER) then
             This.logUtil.putF (This.commonStrings.START, ValidationViewHelper_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         end if;

@@ -28,7 +28,7 @@ package body views.business.context.modules.storefront.customizer.includes.globa
    begin
         HttpStoreComponentView_Package.Initialize (This, transformInfoInterface);
         Initialize_Fields (This);
-        This.globalsValidation := GlobalsValidation_Package.Create (This.getWeblisketSession.getStoreName);
+        This.globalsValidation := GlobalsValidation_Package.Create (GlobalsView'Class (This).getWeblisketSession.getStoreName);
    end Initialize;
 
    function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return GlobalsView_Access is
@@ -40,7 +40,7 @@ package body views.business.context.modules.storefront.customizer.includes.globa
 
    procedure addDomNodeInterfaces (This : in out GlobalsView) is
    begin
-        This.addDomNodeInterface (DomNodeInterface_Access (This.globalsValidation));
+        GlobalsView'Class (This).addDomNodeInterface (DomNodeInterface_Access (This.globalsValidation));
    end addDomNodeInterfaces;
 
    --  throws Exception
@@ -66,7 +66,7 @@ package body views.business.context.modules.storefront.customizer.includes.globa
    function view (This : in out GlobalsView) return Unbounded_String is
    begin
         begin
-            This.addDomNodeInterfaces;
+            GlobalsView'Class (This).addDomNodeInterfaces;
             return HttpStoreComponentView (This).view;
         exception
             when Java_Occurrence : others =>

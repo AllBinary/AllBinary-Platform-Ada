@@ -51,7 +51,7 @@ package body org.allbinary.thread.ThreadPool_Package is
         if not (This.currentPriorityRunnable.isDone) then
             This.currentPriorityRunnable.run;
         else
-            runnable := This.getTask;
+            runnable := ThreadPool'Class (This).getTask;
             if (runnable) = (This.NULL_RUNNABLE) then
                 return;
             end if;
@@ -67,7 +67,7 @@ package body org.allbinary.thread.ThreadPool_Package is
    procedure runATask (This : in out ThreadPool) is
       runnable : Runnable_Access;
    begin
-        runnable := This.getTask;
+        runnable := ThreadPool'Class (This).getTask;
         if (runnable) /= (null) then
             runnable.run;
         end if;
@@ -89,7 +89,7 @@ package body org.allbinary.thread.ThreadPool_Package is
       index : Integer;
    begin
         if not (This.isAlive) then
-            This.init;
+            ThreadPool'Class (This).init;
         end if;
         if (task_Id) /= (null) then
             size := This.taskQueue.size;
@@ -115,7 +115,7 @@ package body org.allbinary.thread.ThreadPool_Package is
       task_Id : constant Runnable_Access := Runnable_Access (task_Id_Param);
    begin
         if not (This.isAlive) then
-            This.init;
+            ThreadPool'Class (This).init;
         end if;
         if (task_Id) /= (null) then
             This.taskQueue.add (task_Id);

@@ -42,13 +42,13 @@ package body org.allbinary.thread.ThreadFactoryUtil_Package is
    function getInstanceGameCanvasRunnable (This : in out ThreadFactoryUtil; runnable_Param : access GameCanvasRunnableInterface_Package.GameCanvasRunnableInterface'Class) return Thread_Access is
       runnable : constant GameCanvasRunnableInterface_Access := GameCanvasRunnableInterface_Access (runnable_Param);
    begin
-        return This.getInstanceType (runnable, runnable.getType);
+        return ThreadFactoryUtil'Class (This).getInstanceType (runnable, runnable.getType);
    end getInstanceGameCanvasRunnable;
 
    function getInstanceForRunnable (This : in out ThreadFactoryUtil; runnable_Param : access ABRunnable_Package.ABRunnable'Class) return Thread_Access is
       runnable : constant ABRunnable_Access := ABRunnable_Access (runnable_Param);
    begin
-        return This.getInstanceType (runnable, runnable.getType);
+        return ThreadFactoryUtil'Class (This).getInstanceType (runnable, runnable.getType);
    end getInstanceForRunnable;
 
    function getInstanceType (This : in out ThreadFactoryUtil; runnable_Param : access Runnable_Package.Runnable'Class; type_Id : Integer) return Thread_Access is

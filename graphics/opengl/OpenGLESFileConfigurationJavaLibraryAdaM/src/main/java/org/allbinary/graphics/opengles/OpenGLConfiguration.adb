@@ -43,9 +43,9 @@ package body org.allbinary.graphics.opengles.OpenGLConfiguration_Package is
       Initialize_Fields (This);
         begin
             if FileFactory_Package.getInstance.isFile (This.FILE) then
-                This.read;
+                OpenGLConfiguration'Class (This).read;
             else
-                This.write;
+                OpenGLConfiguration'Class (This).write;
             end if;
         exception
             when Java_Occurrence : others =>
@@ -82,49 +82,49 @@ package body org.allbinary.graphics.opengles.OpenGLConfiguration_Package is
         dataInputStream := DataInputStream_Package.Create (fileInputStream);
         openGLValue := dataInputStream.readInt;
         if (openGLValue) = (0) then
-            This.setOpenGL (False);
+            OpenGLConfiguration'Class (This).setOpenGL (False);
         elsif (openGLValue) = (1) then
-            This.setOpenGL (True);
+            OpenGLConfiguration'Class (This).setOpenGL (True);
         else
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Invalid OpenGL Setting")));
         end if;
         version := dataInputStream.readUTF;
         if (This.tsUtil.compareTo (version, openGLFeatureFactory.OPENGL_AUTO_SELECT.getName)) = (0) then
-            This.setVersionSelector (openGLFeatureFactory.OPENGL_AUTO_SELECT);
+            OpenGLConfiguration'Class (This).setVersionSelector (openGLFeatureFactory.OPENGL_AUTO_SELECT);
         elsif (This.tsUtil.compareTo (version, openGLFeatureFactory.OPENGL_MINIMUM.getName)) = (0) then
-            This.setVersionSelector (openGLFeatureFactory.OPENGL_MINIMUM);
+            OpenGLConfiguration'Class (This).setVersionSelector (openGLFeatureFactory.OPENGL_MINIMUM);
         else
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("OpenGLConfiguration: Error reading version selector: ") & version));
         end if;
         type_Id := dataInputStream.readUTF;
         if (This.tsUtil.compareTo (type_Id, openGLFeatureFactory.OPENGL_AS_GAME_THREAD.getName)) = (0) then
-            This.setType (openGLFeatureFactory.OPENGL_AS_GAME_THREAD);
+            OpenGLConfiguration'Class (This).setType (openGLFeatureFactory.OPENGL_AS_GAME_THREAD);
         elsif (This.tsUtil.compareTo (type_Id, openGLFeatureFactory.OPENGL_AND_GAME_HAVE_DIFFERENT_THREADS.getName)) = (0) then
-            This.setType (openGLFeatureFactory.OPENGL_AND_GAME_HAVE_DIFFERENT_THREADS);
+            OpenGLConfiguration'Class (This).setType (openGLFeatureFactory.OPENGL_AND_GAME_HAVE_DIFFERENT_THREADS);
         else
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("OpenGLConfiguration: Error reading image color")));
         end if;
         imageColor := dataInputStream.readUTF;
         if (This.tsUtil.compareTo (imageColor, openGLFeatureFactory.IMAGE_COLOR_DEPTH_4444.getName)) = (0) then
-            This.setImageColor (openGLFeatureFactory.IMAGE_COLOR_DEPTH_4444);
+            OpenGLConfiguration'Class (This).setImageColor (openGLFeatureFactory.IMAGE_COLOR_DEPTH_4444);
         elsif (This.tsUtil.compareTo (imageColor, openGLFeatureFactory.IMAGE_COLOR_DEPTH_4444.getName)) = (0) then
-            This.setImageColor (openGLFeatureFactory.IMAGE_COLOR_DEPTH_4444);
+            OpenGLConfiguration'Class (This).setImageColor (openGLFeatureFactory.IMAGE_COLOR_DEPTH_4444);
         elsif (This.tsUtil.compareTo (imageColor, openGLFeatureFactory.IMAGE_COLOR_DEPTH_4444.getName)) = (0) then
-            This.setImageColor (openGLFeatureFactory.IMAGE_COLOR_DEPTH_4444);
+            OpenGLConfiguration'Class (This).setImageColor (openGLFeatureFactory.IMAGE_COLOR_DEPTH_4444);
         else
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("OpenGLConfiguration: Error reading image color: ") & Java_Image (imageColor)));
         end if;
         color := dataInputStream.readUTF;
         if (This.tsUtil.compareTo (color, openGLFeatureFactory.OPENGL_COLOR_DEPTH_4444.getName)) = (0) then
-            This.setColor (openGLFeatureFactory.OPENGL_COLOR_DEPTH_4444);
+            OpenGLConfiguration'Class (This).setColor (openGLFeatureFactory.OPENGL_COLOR_DEPTH_4444);
         elsif (This.tsUtil.compareTo (color, openGLFeatureFactory.OPENGL_COLOR_DEPTH_565.getName)) = (0) then
-            This.setColor (openGLFeatureFactory.OPENGL_COLOR_DEPTH_565);
+            OpenGLConfiguration'Class (This).setColor (openGLFeatureFactory.OPENGL_COLOR_DEPTH_565);
         elsif (This.tsUtil.compareTo (color, openGLFeatureFactory.OPENGL_COLOR_DEPTH_8888.getName)) = (0) then
-            This.setColor (openGLFeatureFactory.OPENGL_COLOR_DEPTH_8888);
+            OpenGLConfiguration'Class (This).setColor (openGLFeatureFactory.OPENGL_COLOR_DEPTH_8888);
         else
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("OpenGLConfiguration: Error reading color: ") & Java_Image (color)));
         end if;
-        PreLogUtil_Package.put (To_Unbounded_String ("Read Configuration: ") & This.toString, OpenGLConfiguration_Access'(This'Unchecked_Access), To_Unbounded_String ("read"));
+        PreLogUtil_Package.put (To_Unbounded_String ("Read Configuration: ") & OpenGLConfiguration'Class (This).toString, OpenGLConfiguration_Access'(This'Unchecked_Access), To_Unbounded_String ("read"));
    end read;
 
    --  throws Exception
@@ -136,20 +136,20 @@ package body org.allbinary.graphics.opengles.OpenGLConfiguration_Package is
    begin
         closeable := NullCloseable_Package.NULL_CLOSEABLE;
         begin
-            PreLogUtil_Package.put (To_Unbounded_String ("Write Configuration: ") & This.toString, OpenGLConfiguration_Access'(This'Unchecked_Access), To_Unbounded_String ("write"));
+            PreLogUtil_Package.put (To_Unbounded_String ("Write Configuration: ") & OpenGLConfiguration'Class (This).toString, OpenGLConfiguration_Access'(This'Unchecked_Access), To_Unbounded_String ("write"));
             fileInputStreamFactory := FileStreamFactory_Package.getInstance;
             fileOutputStream := fileInputStreamFactory.getFileOutputStreamInstance (StringUtil_Package.getInstance.EMPTY_STRING, This.FILE);
             dataOutputStream := AbDataOutputStream_Package.Create (fileOutputStream);
             closeable := dataOutputStream;
-            if This.isOpenGL then
+            if OpenGLConfiguration'Class (This).isOpenGL then
                 dataOutputStream.writeInt (1);
             else
                 dataOutputStream.writeInt (0);
             end if;
-            dataOutputStream.writeUTF (This.getVersionSelector.getName);
-            dataOutputStream.writeUTF (This.getType.getName);
-            dataOutputStream.writeUTF (This.getImageColor.getName);
-            dataOutputStream.writeUTF (This.getColor.getName);
+            dataOutputStream.writeUTF (OpenGLConfiguration'Class (This).getVersionSelector.getName);
+            dataOutputStream.writeUTF (OpenGLConfiguration'Class (This).getType.getName);
+            dataOutputStream.writeUTF (OpenGLConfiguration'Class (This).getImageColor.getName);
+            dataOutputStream.writeUTF (OpenGLConfiguration'Class (This).getColor.getName);
             dataOutputStream.flush;
         exception
             when Java_Occurrence : others =>
@@ -173,19 +173,19 @@ package body org.allbinary.graphics.opengles.OpenGLConfiguration_Package is
         features := Features_Package.getInstance;
         if ChangedGameFeatureListener_Package.getInstance.isChangedFeature (MainFeatureFactory_Package.getInstance.STATIC) then
             openGLFeatureFactory := OpenGLFeatureFactory_Package.getInstance;
-            if This.isOpenGL then
+            if OpenGLConfiguration'Class (This).isOpenGL then
                 if ((features.isFeature (openGLFeatureFactory.OPENGL_2D)) or else (features.isFeature (openGLFeatureFactory.OPENGL_3D))) or else (features.isFeature (openGLFeatureFactory.OPENGL_2D_AND_3D)) then
                     if not (features.isDefault (OpenGLFeatureFactory_Package.getInstance.OPENGL)) then
                         This.logUtil.putF (To_Unbounded_String ("Turning on OpenGL as Default"), OpenGLConfiguration_Access'(This'Unchecked_Access), This.commonStrings.INIT);
                         features.addDefault (OpenGLFeatureFactory_Package.getInstance.OPENGL);
-                        This.logUtil.putF (To_Unbounded_String ("Using OpenGL Type Feature: ") & Java_Image (This.getType), OpenGLConfiguration_Access'(This'Unchecked_Access), This.commonStrings.INIT);
-                        features.addDefault (This.getType);
-                        This.logUtil.putF (To_Unbounded_String ("Using OpenGL ImageColor Feature: ") & Java_Image (This.getImageColor), OpenGLConfiguration_Access'(This'Unchecked_Access), This.commonStrings.INIT);
-                        features.addDefault (This.getImageColor);
-                        This.logUtil.putF (To_Unbounded_String ("Using OpenGL Color Feature: ") & Java_Image (This.getColor), OpenGLConfiguration_Access'(This'Unchecked_Access), This.commonStrings.INIT);
-                        features.addDefault (This.getColor);
-                        This.logUtil.putF (To_Unbounded_String ("Using OpenGL Version Selector Feature: ") & Java_Image (This.getVersionSelector), OpenGLConfiguration_Access'(This'Unchecked_Access), This.commonStrings.INIT);
-                        features.addDefault (This.getVersionSelector);
+                        This.logUtil.putF (To_Unbounded_String ("Using OpenGL Type Feature: ") & Java_Image (OpenGLConfiguration'Class (This).getType), OpenGLConfiguration_Access'(This'Unchecked_Access), This.commonStrings.INIT);
+                        features.addDefault (OpenGLConfiguration'Class (This).getType);
+                        This.logUtil.putF (To_Unbounded_String ("Using OpenGL ImageColor Feature: ") & Java_Image (OpenGLConfiguration'Class (This).getImageColor), OpenGLConfiguration_Access'(This'Unchecked_Access), This.commonStrings.INIT);
+                        features.addDefault (OpenGLConfiguration'Class (This).getImageColor);
+                        This.logUtil.putF (To_Unbounded_String ("Using OpenGL Color Feature: ") & Java_Image (OpenGLConfiguration'Class (This).getColor), OpenGLConfiguration_Access'(This'Unchecked_Access), This.commonStrings.INIT);
+                        features.addDefault (OpenGLConfiguration'Class (This).getColor);
+                        This.logUtil.putF (To_Unbounded_String ("Using OpenGL Version Selector Feature: ") & Java_Image (OpenGLConfiguration'Class (This).getVersionSelector), OpenGLConfiguration_Access'(This'Unchecked_Access), This.commonStrings.INIT);
+                        features.addDefault (OpenGLConfiguration'Class (This).getVersionSelector);
                     end if;
                 else
                     This.logUtil.putF (To_Unbounded_String ("OpenGL is enabled, but this game does not support OpenGL (Probably from installing with the same package name from a game that had OpenGL available)"), OpenGLConfiguration_Access'(This'Unchecked_Access), This.commonStrings.INIT);
@@ -194,11 +194,11 @@ package body org.allbinary.graphics.opengles.OpenGLConfiguration_Package is
                 This.logUtil.putF (To_Unbounded_String ("OpenGL is Off"), OpenGLConfiguration_Access'(This'Unchecked_Access), This.commonStrings.INIT);
             end if;
         else
-            if (This.isOpenGL) and then (not (features.isDefault (OpenGLFeatureFactory_Package.getInstance.OPENGL))) then
+            if (OpenGLConfiguration'Class (This).isOpenGL) and then (not (features.isDefault (OpenGLFeatureFactory_Package.getInstance.OPENGL))) then
                 PreLogUtil_Package.put (To_Unbounded_String ("OpenGL is set but not Enabled since statics where not cleared (Reboot or Complete exit is Required)"), OpenGLConfiguration_Access'(This'Unchecked_Access), This.commonStrings.INIT);
             end if;
         end if;
-        PreLogUtil_Package.put (This.toString, OpenGLConfiguration_Access'(This'Unchecked_Access), This.commonStrings.INIT);
+        PreLogUtil_Package.put (OpenGLConfiguration'Class (This).toString, OpenGLConfiguration_Access'(This'Unchecked_Access), This.commonStrings.INIT);
    end init;
 
    --  throws Exception
@@ -213,36 +213,36 @@ package body org.allbinary.graphics.opengles.OpenGLConfiguration_Package is
         modified := False;
         if (gameFeature) = (openGLFeatureFactory.OPENGL) then
             if features.isFeature (gameFeature) then
-                if not (This.isOpenGL) then
-                    This.setOpenGL (True);
+                if not (OpenGLConfiguration'Class (This).isOpenGL) then
+                    OpenGLConfiguration'Class (This).setOpenGL (True);
                     modified := True;
                 end if;
             else
-                if This.isOpenGL then
-                    This.setOpenGL (False);
+                if OpenGLConfiguration'Class (This).isOpenGL then
+                    OpenGLConfiguration'Class (This).setOpenGL (False);
                     modified := True;
                 end if;
             end if;
         end if;
         if ((gameFeature) = (openGLFeatureFactory.OPENGL_AND_GAME_HAVE_DIFFERENT_THREADS)) or else ((gameFeature) = (openGLFeatureFactory.OPENGL_AS_GAME_THREAD)) then
             if features.isFeature (gameFeature) then
-                if (gameFeature) /= (This.getType) then
-                    This.setType (OpenGLFeature_Access (gameFeature));
+                if (gameFeature) /= (OpenGLConfiguration'Class (This).getType) then
+                    OpenGLConfiguration'Class (This).setType (OpenGLFeature_Access (gameFeature));
                     modified := True;
                 end if;
             end if;
         end if;
         if (((gameFeature) = (openGLFeatureFactory.IMAGE_COLOR_DEPTH_4444)) or else ((gameFeature) = (openGLFeatureFactory.IMAGE_COLOR_DEPTH_565))) or else ((gameFeature) = (openGLFeatureFactory.IMAGE_COLOR_DEPTH_8888)) then
             if features.isFeature (gameFeature) then
-                if (This.getImageColor) /= (gameFeature) then
-                    This.setImageColor (OpenGLFeature_Access (gameFeature));
+                if (OpenGLConfiguration'Class (This).getImageColor) /= (gameFeature) then
+                    OpenGLConfiguration'Class (This).setImageColor (OpenGLFeature_Access (gameFeature));
                     if colorLocked then
                         if (gameFeature) = (openGLFeatureFactory.IMAGE_COLOR_DEPTH_4444) then
-                            This.setColor (openGLFeatureFactory.OPENGL_COLOR_DEPTH_4444);
+                            OpenGLConfiguration'Class (This).setColor (openGLFeatureFactory.OPENGL_COLOR_DEPTH_4444);
                         elsif (gameFeature) = (openGLFeatureFactory.IMAGE_COLOR_DEPTH_565) then
-                            This.setColor (openGLFeatureFactory.OPENGL_COLOR_DEPTH_565);
+                            OpenGLConfiguration'Class (This).setColor (openGLFeatureFactory.OPENGL_COLOR_DEPTH_565);
                         elsif (gameFeature) = (openGLFeatureFactory.IMAGE_COLOR_DEPTH_8888) then
-                            This.setColor (openGLFeatureFactory.OPENGL_COLOR_DEPTH_8888);
+                            OpenGLConfiguration'Class (This).setColor (openGLFeatureFactory.OPENGL_COLOR_DEPTH_8888);
                         end if;
                     end if;
                     modified := True;
@@ -251,20 +251,20 @@ package body org.allbinary.graphics.opengles.OpenGLConfiguration_Package is
         end if;
         if (((gameFeature) = (openGLFeatureFactory.OPENGL_COLOR_DEPTH_4444)) or else ((gameFeature) = (openGLFeatureFactory.OPENGL_COLOR_DEPTH_565))) or else ((gameFeature) = (openGLFeatureFactory.OPENGL_COLOR_DEPTH_8888)) then
             if features.isFeature (gameFeature) then
-                if (This.getColor) /= (gameFeature) then
-                    This.setColor (OpenGLFeature_Access (gameFeature));
+                if (OpenGLConfiguration'Class (This).getColor) /= (gameFeature) then
+                    OpenGLConfiguration'Class (This).setColor (OpenGLFeature_Access (gameFeature));
                     modified := True;
                 end if;
             end if;
         end if;
         if ((gameFeature) = (openGLFeatureFactory.OPENGL_AUTO_SELECT)) or else ((gameFeature) = (openGLFeatureFactory.OPENGL_MINIMUM)) then
             if features.isFeature (gameFeature) then
-                This.setVersionSelector (OpenGLFeature_Access (gameFeature));
+                OpenGLConfiguration'Class (This).setVersionSelector (OpenGLFeature_Access (gameFeature));
             end if;
             modified := True;
         end if;
         if modified then
-            This.write;
+            OpenGLConfiguration'Class (This).write;
         end if;
    end update;
 
@@ -329,15 +329,15 @@ package body org.allbinary.graphics.opengles.OpenGLConfiguration_Package is
         stringBuffer := StringMaker_Package.Create;
         stringUtil := StringUtil_Package.getInstance;
         stringBuffer.append (To_Unbounded_String (" isOpenGL: "));
-        stringBuffer.appendboolean (This.isOpenGL);
+        stringBuffer.appendboolean (OpenGLConfiguration'Class (This).isOpenGL);
         stringBuffer.append (To_Unbounded_String (" VersionSelector: "));
-        stringBuffer.append (stringUtil.toString (This.getVersionSelector));
+        stringBuffer.append (stringUtil.toString (OpenGLConfiguration'Class (This).getVersionSelector));
         stringBuffer.append (To_Unbounded_String (" Type: "));
-        stringBuffer.append (stringUtil.toString (This.getType));
+        stringBuffer.append (stringUtil.toString (OpenGLConfiguration'Class (This).getType));
         stringBuffer.append (To_Unbounded_String (" Image Color: "));
-        stringBuffer.append (stringUtil.toString (This.getImageColor));
+        stringBuffer.append (stringUtil.toString (OpenGLConfiguration'Class (This).getImageColor));
         stringBuffer.append (To_Unbounded_String (" Color: "));
-        stringBuffer.append (stringUtil.toString (This.getColor));
+        stringBuffer.append (stringUtil.toString (OpenGLConfiguration'Class (This).getColor));
         return stringBuffer.toString;
    end toString;
 

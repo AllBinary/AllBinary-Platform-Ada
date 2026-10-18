@@ -60,7 +60,7 @@ package body org.allbinary.game.input.InputPersistance_Package is
    begin
         recordStore := NullRecordStore_Package.NULL_RECORD_STORE;
         begin
-            recordStore := RecordStore_Package.openRecordStore (This.getRecordId (abeClientInformation), True);
+            recordStore := RecordStore_Package.openRecordStore (InputPersistance'Class (This).getRecordId (abeClientInformation), True);
             recordEnum := recordStore.enumerateRecords (NullRecordFilter_Package.NULL_RECORD_FILTER, NullRecordComparator_Package.NULL_RECORD_COMPARATOR, True);
             gameActionInputId := 0;
             inputId := 0;
@@ -164,7 +164,7 @@ package body org.allbinary.game.input.InputPersistance_Package is
         begin
             stringBuffer := StringMaker_Package.Create;
             PreLogUtil_Package.put (stringBuffer.append (This.persistanceStrings.SAVING).append (StringUtil_Package.getInstance.toString (hashtable)).toString, InputPersistance_Access'(This'Unchecked_Access), This.commonStrings.SAVE);
-            recordStore := RecordStore_Package.openRecordStore (This.getRecordId (abeClientInformation), True);
+            recordStore := RecordStore_Package.openRecordStore (InputPersistance'Class (This).getRecordId (abeClientInformation), True);
             byteArrayOutputStream := ByteArrayOutputStream_Package.Create;
             outputStream := DataOutputStream_Package.Create (byteArrayOutputStream);
             gameActionInput := null;

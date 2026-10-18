@@ -70,7 +70,7 @@ package body org.allbinary.game.layer.RTSLayerUtil_Package is
         index := size;
         while (Java_Pre_Decrement (index)) >= (0) loop
             partInterface := BasicWeaponPart_Access (partInterfaceArray (index));
-            partInterface.setWeaponProperties (This.createWeaponProperties (partInterface.getWeaponProperties, rtsLayer.getLevel, (rtsLayer.getLevel) + (1)));
+            partInterface.setWeaponProperties (RTSLayerUtil'Class (This).createWeaponProperties (partInterface.getWeaponProperties, rtsLayer.getLevel, (rtsLayer.getLevel) + (1)));
         end loop;
         rtsLayer.select_Id;
    end downgrade;
@@ -89,7 +89,7 @@ package body org.allbinary.game.layer.RTSLayerUtil_Package is
         index := size;
         while (Java_Pre_Decrement (index)) >= (0) loop
             partInterface := BasicWeaponPart_Access (partInterfaceArray (index));
-            partInterface.setWeaponProperties (This.createWeaponProperties (partInterface.getWeaponProperties, rtsLayer.getLevel, (rtsLayer.getLevel) - (1)));
+            partInterface.setWeaponProperties (RTSLayerUtil'Class (This).createWeaponProperties (partInterface.getWeaponProperties, rtsLayer.getLevel, (rtsLayer.getLevel) - (1)));
         end loop;
         rtsLayer.select_Id;
    end upgrade;
@@ -104,7 +104,7 @@ package body org.allbinary.game.layer.RTSLayerUtil_Package is
       cost : Long_Long_Integer;
    begin
         cost := (((weaponProperties.getDamage) + (weaponProperties.getRange)) + ((Java_Shift_Right_Arithmetic (((This.MAX_RELOAD_TIME) / (weaponProperties.getReloadTime)), 1))));
-        cost := This.getCostExponential (cost);
+        cost := RTSLayerUtil'Class (This).getCostExponential (cost);
         return Integer (cost);
    end getWeaponPropertiesCost;
 
@@ -125,7 +125,7 @@ package body org.allbinary.game.layer.RTSLayerUtil_Package is
         for index in reverse 0 .. (size) - (1) loop
             partInterface := BasicWeaponPart_Access (partInterfaceArray (index));
             weaponProperties := partInterface.getWeaponProperties;
-            total := (total) + (This.getWeaponPropertiesCost (weaponProperties));
+            total := (total) + (RTSLayerUtil'Class (This).getWeaponPropertiesCost (weaponProperties));
         end loop;
         return total;
    end getCost;
@@ -151,8 +151,8 @@ package body org.allbinary.game.layer.RTSLayerUtil_Package is
         for index in reverse 0 .. (size) - (1) loop
             partInterface := BasicWeaponPart_Access (partInterfaceArray (index));
             weaponProperties := partInterface.getWeaponProperties;
-            downgradeWeaponCost := This.getWeaponPropertiesCost (This.createWeaponProperties (weaponProperties, (rtsLayer.getLevel) - (1), rtsLayer.getLevel));
-            currentWeaponCost := This.getWeaponPropertiesCost (weaponProperties);
+            downgradeWeaponCost := RTSLayerUtil'Class (This).getWeaponPropertiesCost (RTSLayerUtil'Class (This).createWeaponProperties (weaponProperties, (rtsLayer.getLevel) - (1), rtsLayer.getLevel));
+            currentWeaponCost := RTSLayerUtil'Class (This).getWeaponPropertiesCost (weaponProperties);
             downgradeCost := (downgradeCost) + (((currentWeaponCost) - (downgradeWeaponCost)));
         end loop;
         downgradeCost := ((downgradeCost) * (9)) / (10);
@@ -181,8 +181,8 @@ package body org.allbinary.game.layer.RTSLayerUtil_Package is
         for index in reverse 0 .. (size) - (1) loop
             partInterface := BasicWeaponPart_Access (partInterfaceArray (index));
             weaponProperties := partInterface.getWeaponProperties;
-            upgradedWeaponCost := This.getWeaponPropertiesCost (This.createWeaponProperties (weaponProperties, (rtsLayer.getLevel) + (1), rtsLayer.getLevel));
-            currentWeaponCost := This.getWeaponPropertiesCost (weaponProperties);
+            upgradedWeaponCost := RTSLayerUtil'Class (This).getWeaponPropertiesCost (RTSLayerUtil'Class (This).createWeaponProperties (weaponProperties, (rtsLayer.getLevel) + (1), rtsLayer.getLevel));
+            currentWeaponCost := RTSLayerUtil'Class (This).getWeaponPropertiesCost (weaponProperties);
             upgradeCost := (upgradeCost) + (((upgradedWeaponCost) - (currentWeaponCost)));
         end loop;
         This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Total Cost: ")).appendint (upgradeCost).toString, RTSLayerUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("getUpgradeCost"));

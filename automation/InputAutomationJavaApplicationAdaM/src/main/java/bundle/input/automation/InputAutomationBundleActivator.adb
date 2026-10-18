@@ -64,15 +64,15 @@ package body bundle.input.automation.InputAutomationBundleActivator_Package is
    --  throws Exception
    procedure registerAsService (This : in out InputAutomationBundleActivator) is
    begin
-        OSGIActivatorUtil_Package.registerAsService (This.getBundleContext, InputAutomationServiceFactory_Package.getInstance, InputAutomationConfigurationModuleChangeListener_Package.InputAutomationConfigurationModuleChangeListener'Tag.getName);
-        OSGIActivatorUtil_Package.registerAsService (This.getBundleContext, InputAutomationServiceFactory_Package.getInstance, InputAutomationRobotChangeListener_Package.InputAutomationRobotChangeListener'Tag.getName);
+        OSGIActivatorUtil_Package.registerAsService (InputAutomationBundleActivator'Class (This).getBundleContext, InputAutomationServiceFactory_Package.getInstance, InputAutomationConfigurationModuleChangeListener_Package.InputAutomationConfigurationModuleChangeListener'Tag.getName);
+        OSGIActivatorUtil_Package.registerAsService (InputAutomationBundleActivator'Class (This).getBundleContext, InputAutomationServiceFactory_Package.getInstance, InputAutomationRobotChangeListener_Package.InputAutomationRobotChangeListener'Tag.getName);
    end registerAsService;
 
    --  throws Exception
    procedure useServices (This : in out InputAutomationBundleActivator) is
    begin
-        InputAutomationRobotServiceConsumer_Package.Create (This.getBundleContext).process;
-        InputAutomationModuleServiceConsumer_Package.Create (This.getBundleContext).process;
+        InputAutomationRobotServiceConsumer_Package.Create (InputAutomationBundleActivator'Class (This).getBundleContext).process;
+        InputAutomationModuleServiceConsumer_Package.Create (InputAutomationBundleActivator'Class (This).getBundleContext).process;
    end useServices;
 
    --  throws Exception

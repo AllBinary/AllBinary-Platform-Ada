@@ -20,7 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with javax.microedition.lcdui.Command_Package; use javax.microedition.lcdui.Command_Package;
+with javax.microedition.lcdui.Command_Package; use javax.microedition.lcdui.Command_Package;
 with org.allbinary.data.resource.ResourceUtil_Package; use org.allbinary.data.resource.ResourceUtil_Package;
 with org.allbinary.TsUtil_Package; use org.allbinary.TsUtil_Package;
 with org.allbinary.content.Context_Package; use org.allbinary.content.Context_Package;
@@ -32,6 +32,7 @@ with org.allbinary.content.PendingIntent_Package; use org.allbinary.content.Pend
 
 package org.allbinary.content.NotificationUtil_Package is
 
+   package Command_Package renames Standard.javax.microedition.lcdui.Command_Package;
    package ResourceUtil_Package renames Standard.org.allbinary.data.resource.ResourceUtil_Package;
    package TsUtil_Package renames Standard.org.allbinary.TsUtil_Package;
 

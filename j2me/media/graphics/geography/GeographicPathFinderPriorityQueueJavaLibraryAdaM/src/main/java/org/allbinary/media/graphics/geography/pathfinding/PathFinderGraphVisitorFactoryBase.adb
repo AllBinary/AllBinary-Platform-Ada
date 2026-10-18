@@ -37,6 +37,7 @@ package body org.allbinary.media.graphics.geography.pathfinding.PathFinderGraphV
       geographicMapInterface : constant BasicGeographicMap_Access := BasicGeographicMap_Access (geographicMapInterface_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return null;
    end getInstance;
 
    procedure getInstance (This : in out PathFinderGraphVisitorFactoryBase; geographicMapInterface_Param : access BasicGeographicMap_Package.BasicGeographicMap'Class) is

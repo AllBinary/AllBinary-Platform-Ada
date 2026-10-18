@@ -33,7 +33,7 @@ package body org.allbinary.input.motion.gesture.observer.MotionGestureEvent_Pack
         AllBinaryEventObject_Package.Initialize (This, source);
         Initialize_Fields (This);
         This.id := id;
-        This.setMotionGesture (motionGesture);
+        MotionGestureEvent'Class (This).setMotionGesture (motionGesture);
    end Initialize;
 
    function Create (source_Param : access Java_Object'Class; id : Integer; motionGesture_Param : access MotionGestureInput_Package.MotionGestureInput'Class) return MotionGestureEvent_Access is

@@ -27,8 +27,8 @@ package body admin.tags.UserTag_Package is
    begin
       TableTag_Package.Initialize (This);
       Initialize_Fields (This);
-        This.setTagHelperFactory (UserHelperFactory_Package.Create);
-        This.setTagRequestHelperFactory (UserHelperFactory_Package.Create);
+        UserTag'Class (This).setTagHelperFactory (UserHelperFactory_Package.Create);
+        UserTag'Class (This).setTagRequestHelperFactory (UserHelperFactory_Package.Create);
    end Initialize;
 
    function Create return UserTag_Access is
@@ -41,20 +41,20 @@ package body admin.tags.UserTag_Package is
    procedure setRole (This : in out UserTag; value : Unbounded_String) is
    begin
         This.role := value;
-        This.getPropertiesHashMap.put (UserRoleData_Package.NAME, This.role);
+        UserTag'Class (This).getPropertiesHashMap.put (UserRoleData_Package.NAME, This.role);
    end setRole;
 
    procedure setEnable (This : in out UserTag; value : Unbounded_String) is
    begin
         This.enable := value;
-        This.getPropertiesHashMap.put (EntryData_Package.getInstance.ENABLE, This.enable);
+        UserTag'Class (This).getPropertiesHashMap.put (EntryData_Package.getInstance.ENABLE, This.enable);
    end setEnable;
 
    --  throws JspTagException
    function doStartTag (This : in out UserTag) return Integer is
    begin
         begin
-            if This.isEnabled then
+            if UserTag'Class (This).isEnabled then
                 return TableTag (This).doStartTag;
             end if;
             return SKIP_BODY;

@@ -79,11 +79,11 @@ package body org.allbinary.thread.ImageCacheRunnable_Package is
    begin
             logUtil := LogUtil_Package.getInstance;
             begin
-                This.setRunning (True);
+                ConcurrentImageLoadingProcessor'Class (This).setRunning (True);
                 This.imageCache.waitForLoadNow;
                 This.imageCache.loadImages;
                 This.imageCache.loadRemainingAnimations;
-                This.setRunning (False);
+                ConcurrentImageLoadingProcessor'Class (This).setRunning (False);
                 progressCanvas := ProgressCanvasFactory_Package.getInstance;
                 if not (progressCanvas.inProgress) then
                     progressCanvas.endFromInitialLazyLoadingComplete;
@@ -93,7 +93,7 @@ package body org.allbinary.thread.ImageCacheRunnable_Package is
                     declare
                         e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                     begin
-                This.setRunning (False);
+                ConcurrentImageLoadingProcessor'Class (This).setRunning (False);
                 commonStrings := CommonStrings_Package.getInstance;
                 logUtil.put (commonStrings.EXCEPTION_Id, ConcurrentImageLoadingProcessor_Access'(This'Unchecked_Access), commonStrings.RUN, e);
                     end;

@@ -47,6 +47,7 @@ package body org.allbinary.input.gyro.AllBinaryOrientationSensor_Package is
    function getOrientation (This : in out AllBinaryOrientationSensor) return Orientation_Access is
    begin
         Java_Throw (Java_New_Exception ("Exception", This.commonStrings.NOT_IMPLEMENTED));
+        return null;
    end getOrientation;
 
 end org.allbinary.input.gyro.AllBinaryOrientationSensor_Package;

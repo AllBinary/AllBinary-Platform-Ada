@@ -52,9 +52,9 @@ package body org.allbinary.input.automation.actions.script.condition.ColorAtActi
       JPanel_Package.Initialize (This);
       Initialize_Fields (This);
         This.logUtil.putF (This.commonStrings.START, ColorAtActionScriptConditionJPanel_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
-        This.initComponents;
+        ColorAtActionScriptConditionJPanel'Class (This).initComponents;
         This.colorAtActionScriptConditionInterface := colorAtActionScriptConditionInterface;
-        This.set;
+        ColorAtActionScriptConditionJPanel'Class (This).set;
    end Initialize;
 
    function Create (colorAtActionScriptConditionInterface_Param : access ColorAtActionScriptConditionInterface_Package.ColorAtActionScriptConditionInterface'Class) return ColorAtActionScriptConditionJPanel_Access is
@@ -68,14 +68,14 @@ package body org.allbinary.input.automation.actions.script.condition.ColorAtActi
       colorRangeInterface : ColorRangeInterface_Access;
    begin
         colorRangeInterface := This.colorAtActionScriptConditionInterface.getColorRangeInterface;
-        This.getMinRedJTextField.setText (To_Unbounded_String (Java_Image (colorRangeInterface.getMinRed)));
-        This.getMaxRedJTextField.setText (To_Unbounded_String (Java_Image (colorRangeInterface.getMaxRed)));
-        This.getMinGreenJTextField.setText (To_Unbounded_String (Java_Image (colorRangeInterface.getMinGreen)));
-        This.getMaxGreenJTextField.setText (To_Unbounded_String (Java_Image (colorRangeInterface.getMaxGreen)));
-        This.getMinBlueJTextField.setText (To_Unbounded_String (Java_Image (colorRangeInterface.getMinBlue)));
-        This.getMaxBlueJTextField.setText (To_Unbounded_String (Java_Image (colorRangeInterface.getMaxBlue)));
-        This.getColorAtXJTextField.setText (To_Unbounded_String (Java_Image (This.colorAtActionScriptConditionInterface.getPoint.x)));
-        This.getColorAtYJTextField.setText (To_Unbounded_String (Java_Image (This.colorAtActionScriptConditionInterface.getPoint.y)));
+        ColorAtActionScriptConditionJPanel'Class (This).getMinRedJTextField.setText (To_Unbounded_String (Java_Image (colorRangeInterface.getMinRed)));
+        ColorAtActionScriptConditionJPanel'Class (This).getMaxRedJTextField.setText (To_Unbounded_String (Java_Image (colorRangeInterface.getMaxRed)));
+        ColorAtActionScriptConditionJPanel'Class (This).getMinGreenJTextField.setText (To_Unbounded_String (Java_Image (colorRangeInterface.getMinGreen)));
+        ColorAtActionScriptConditionJPanel'Class (This).getMaxGreenJTextField.setText (To_Unbounded_String (Java_Image (colorRangeInterface.getMaxGreen)));
+        ColorAtActionScriptConditionJPanel'Class (This).getMinBlueJTextField.setText (To_Unbounded_String (Java_Image (colorRangeInterface.getMinBlue)));
+        ColorAtActionScriptConditionJPanel'Class (This).getMaxBlueJTextField.setText (To_Unbounded_String (Java_Image (colorRangeInterface.getMaxBlue)));
+        ColorAtActionScriptConditionJPanel'Class (This).getColorAtXJTextField.setText (To_Unbounded_String (Java_Image (This.colorAtActionScriptConditionInterface.getPoint.x)));
+        ColorAtActionScriptConditionJPanel'Class (This).getColorAtYJTextField.setText (To_Unbounded_String (Java_Image (This.colorAtActionScriptConditionInterface.getPoint.y)));
         This.colorAtActionScriptConditionInterface.log;
    end set;
 
@@ -85,17 +85,17 @@ package body org.allbinary.input.automation.actions.script.condition.ColorAtActi
       yString : Unbounded_String;
    begin
         colorRangeInterface := This.colorAtActionScriptConditionInterface.getColorRangeInterface;
-        colorRangeInterface.setMinRed (To_Unbounded_String (Java_Image (This.getMinRedJTextField.getText)).intValue);
-        colorRangeInterface.setMaxRed (To_Unbounded_String (Java_Image (This.getMaxRedJTextField.getText)).intValue);
-        colorRangeInterface.setMinGreen (To_Unbounded_String (Java_Image (This.getMinGreenJTextField.getText)).intValue);
-        colorRangeInterface.setMaxGreen (To_Unbounded_String (Java_Image (This.getMaxGreenJTextField.getText)).intValue);
-        colorRangeInterface.setMinBlue (To_Unbounded_String (Java_Image (This.getMinBlueJTextField.getText)).intValue);
-        colorRangeInterface.setMaxBlue (To_Unbounded_String (Java_Image (This.getMaxBlueJTextField.getText)).intValue);
-        xString := This.getColorAtXJTextField.getText;
+        colorRangeInterface.setMinRed (To_Unbounded_String (Java_Image (ColorAtActionScriptConditionJPanel'Class (This).getMinRedJTextField.getText)).intValue);
+        colorRangeInterface.setMaxRed (To_Unbounded_String (Java_Image (ColorAtActionScriptConditionJPanel'Class (This).getMaxRedJTextField.getText)).intValue);
+        colorRangeInterface.setMinGreen (To_Unbounded_String (Java_Image (ColorAtActionScriptConditionJPanel'Class (This).getMinGreenJTextField.getText)).intValue);
+        colorRangeInterface.setMaxGreen (To_Unbounded_String (Java_Image (ColorAtActionScriptConditionJPanel'Class (This).getMaxGreenJTextField.getText)).intValue);
+        colorRangeInterface.setMinBlue (To_Unbounded_String (Java_Image (ColorAtActionScriptConditionJPanel'Class (This).getMinBlueJTextField.getText)).intValue);
+        colorRangeInterface.setMaxBlue (To_Unbounded_String (Java_Image (ColorAtActionScriptConditionJPanel'Class (This).getMaxBlueJTextField.getText)).intValue);
+        xString := ColorAtActionScriptConditionJPanel'Class (This).getColorAtXJTextField.getText;
         if (not (StringValidationUtil_Package.getInstance.isEmpty (xString))) and then (StringValidationUtil_Package.getInstance.isNumber (xString)) then
             This.colorAtActionScriptConditionInterface.getPoint.x := Integer'Value (To_String (xString));
         end if;
-        yString := This.getColorAtYJTextField.getText;
+        yString := ColorAtActionScriptConditionJPanel'Class (This).getColorAtYJTextField.getText;
         if (not (StringValidationUtil_Package.getInstance.isEmpty (yString))) and then (StringValidationUtil_Package.getInstance.isNumber (yString)) then
             This.colorAtActionScriptConditionInterface.getPoint.y := Integer'Value (To_String (xString));
         end if;
@@ -255,26 +255,26 @@ package body org.allbinary.input.automation.actions.script.condition.ColorAtActi
 --     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
 --        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
---                  This.okJButtonActionPerformed (evt);
+--                  ColorAtActionScriptConditionJPanel'Class (This).okJButtonActionPerformed (evt);
 --     end actionPerformed;
 );
         colorAtActionJDialogLayout := GroupLayout_Package.Create (This.colorAtActionJDialog.getContentPane);
         This.colorAtActionJDialog.getContentPane.setLayout (colorAtActionJDialogLayout);
         colorAtActionJDialogLayout.setHorizontalGroup (colorAtActionJDialogLayout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (colorAtActionJDialogLayout.createSequentialGroup.addContainerGap.addGroup (colorAtActionJDialogLayout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (colorAtActionJDialogLayout.createSequentialGroup.addGroup (colorAtActionJDialogLayout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.TRAILING).addComponent (This.okJButton).addGroup (colorAtActionJDialogLayout.createSequentialGroup.addGroup (colorAtActionJDialogLayout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING, False).addGroup (colorAtActionJDialogLayout.createSequentialGroup.addGroup (colorAtActionJDialogLayout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addComponent (This.blueJLabel).addComponent (This.greenJLabel).addComponent (This.redJLabel).addComponent (This.colorRangeJLabel)).addGap (29, 29, 29)).addGroup (javax_Package.swing.GroupLayout.Alignment.TRAILING, colorAtActionJDialogLayout.createSequentialGroup.addComponent (This.locationJLabel).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED, javax_Package.swing.GroupLayout.DEFAULT_SIZE, Short_Package.MAX_VALUE).addComponent (This.xJLabel).addGap (18, 18, 18))).addGroup (colorAtActionJDialogLayout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addComponent (This.minBlueJTextField, javax_Package.swing.GroupLayout.DEFAULT_SIZE, 40, Short_Package.MAX_VALUE).addComponent (This.minGreenJTextField, javax_Package.swing.GroupLayout.DEFAULT_SIZE, 40, Short_Package.MAX_VALUE).addComponent (This.minJLabel, javax_Package.swing.GroupLayout.Alignment.TRAILING, javax_Package.swing.GroupLayout.DEFAULT_SIZE, javax_Package.swing.GroupLayout.DEFAULT_SIZE, Short_Package.MAX_VALUE).addComponent (This.minRedJTextField, javax_Package.swing.GroupLayout.DEFAULT_SIZE, 40, Short_Package.MAX_VALUE).addComponent (This.colorAtXJTextField, javax_Package.swing.GroupLayout.DEFAULT_SIZE, 40, Short_Package.MAX_VALUE)).addGap (16, 16, 16))).addGap (6, 6, 6).addComponent (This.yJLabel).addGap (24, 24, 24).addGroup (colorAtActionJDialogLayout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.TRAILING).addComponent (This.maxJLabel, javax_Package.swing.GroupLayout.Alignment.LEADING, javax_Package.swing.GroupLayout.DEFAULT_SIZE, javax_Package.swing.GroupLayout.DEFAULT_SIZE, Short_Package.MAX_VALUE).addGroup (javax_Package.swing.GroupLayout.Alignment.LEADING, colorAtActionJDialogLayout.createSequentialGroup.addGap (1, 1, 1).addGroup (colorAtActionJDialogLayout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING, False).addComponent (This.maxBlueJTextField, javax_Package.swing.GroupLayout.Alignment.TRAILING).addComponent (This.maxRedJTextField, javax_Package.swing.GroupLayout.Alignment.TRAILING, javax_Package.swing.GroupLayout.DEFAULT_SIZE, 43, Short_Package.MAX_VALUE).addComponent (This.maxGreenJTextField, javax_Package.swing.GroupLayout.Alignment.TRAILING, javax_Package.swing.GroupLayout.PREFERRED_SIZE, 43, javax_Package.swing.GroupLayout.PREFERRED_SIZE))).addComponent (This.colorAtYJTextField, javax_Package.swing.GroupLayout.Alignment.LEADING, javax_Package.swing.GroupLayout.DEFAULT_SIZE, 44, Short_Package.MAX_VALUE)).addGap (22, 22, 22)).addGroup (javax_Package.swing.GroupLayout.Alignment.TRAILING, colorAtActionJDialogLayout.createSequentialGroup.addComponent (This.titleJLabel).addGap (33, 33, 33)))));
         colorAtActionJDialogLayout.setVerticalGroup (colorAtActionJDialogLayout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (colorAtActionJDialogLayout.createSequentialGroup.addContainerGap.addComponent (This.titleJLabel).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addGroup (colorAtActionJDialogLayout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (colorAtActionJDialogLayout.createSequentialGroup.addGap (15, 15, 15).addGroup (colorAtActionJDialogLayout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.BASELINE).addComponent (This.xJLabel).addComponent (This.locationJLabel).addComponent (This.colorAtXJTextField, javax_Package.swing.GroupLayout.PREFERRED_SIZE, javax_Package.swing.GroupLayout.DEFAULT_SIZE, javax_Package.swing.GroupLayout.PREFERRED_SIZE).addComponent (This.yJLabel)).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addGroup (colorAtActionJDialogLayout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.BASELINE).addComponent (This.minJLabel).addComponent (This.colorRangeJLabel)).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addGroup (colorAtActionJDialogLayout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.BASELINE).addComponent (This.minRedJTextField, javax_Package.swing.GroupLayout.PREFERRED_SIZE, javax_Package.swing.GroupLayout.DEFAULT_SIZE, javax_Package.swing.GroupLayout.PREFERRED_SIZE).addComponent (This.redJLabel)).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addGroup (colorAtActionJDialogLayout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.BASELINE).addComponent (This.greenJLabel).addComponent (This.minGreenJTextField, javax_Package.swing.GroupLayout.PREFERRED_SIZE, javax_Package.swing.GroupLayout.DEFAULT_SIZE, javax_Package.swing.GroupLayout.PREFERRED_SIZE)).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addGroup (colorAtActionJDialogLayout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.BASELINE).addComponent (This.blueJLabel).addComponent (This.minBlueJTextField, javax_Package.swing.GroupLayout.PREFERRED_SIZE, javax_Package.swing.GroupLayout.DEFAULT_SIZE, javax_Package.swing.GroupLayout.PREFERRED_SIZE)).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short_Package.MAX_VALUE).addComponent (This.okJButton)).addGroup (colorAtActionJDialogLayout.createSequentialGroup.addGap (14, 14, 14).addComponent (This.colorAtYJTextField, javax_Package.swing.GroupLayout.PREFERRED_SIZE, javax_Package.swing.GroupLayout.DEFAULT_SIZE, javax_Package.swing.GroupLayout.PREFERRED_SIZE).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent (This.maxJLabel).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent (This.maxRedJTextField, javax_Package.swing.GroupLayout.PREFERRED_SIZE, javax_Package.swing.GroupLayout.DEFAULT_SIZE, javax_Package.swing.GroupLayout.PREFERRED_SIZE).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent (This.maxGreenJTextField, javax_Package.swing.GroupLayout.PREFERRED_SIZE, javax_Package.swing.GroupLayout.DEFAULT_SIZE, javax_Package.swing.GroupLayout.PREFERRED_SIZE).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent (This.maxBlueJTextField, javax_Package.swing.GroupLayout.PREFERRED_SIZE, javax_Package.swing.GroupLayout.DEFAULT_SIZE, javax_Package.swing.GroupLayout.PREFERRED_SIZE))).addContainerGap));
-        This.setPreferredSize (Dimension_Package.Create (100, 0));
+        ColorAtActionScriptConditionJPanel'Class (This).setPreferredSize (Dimension_Package.Create (100, 0));
         This.colorAtActionJButton.setText (To_Unbounded_String ("Edit"));
         This.colorAtActionJButton.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
 --     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
 --        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
---                  This.colorAtActionJButtonActionPerformed (evt);
+--                  ColorAtActionScriptConditionJPanel'Class (This).colorAtActionJButtonActionPerformed (evt);
 --     end actionPerformed;
 );
         This.jLabel1.setText (To_Unbounded_String ("Color At:"));
         layout := GroupLayout_Package.Create (ColorAtActionScriptConditionJPanel_Access'(This'Unchecked_Access));
-        This.setLayout (layout);
+        ColorAtActionScriptConditionJPanel'Class (This).setLayout (layout);
         layout.setHorizontalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (layout.createSequentialGroup.addComponent (This.jLabel1).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short_Package.MAX_VALUE).addComponent (This.colorAtActionJButton)));
         layout.setVerticalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.BASELINE).addComponent (This.jLabel1).addComponent (This.colorAtActionJButton)));
    end initComponents;
@@ -282,14 +282,14 @@ package body org.allbinary.input.automation.actions.script.condition.ColorAtActi
    procedure okJButtonActionPerformed (This : in out ColorAtActionScriptConditionJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
       evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
-        This.update;
-        This.getColorAtActionJDialog.setVisible (False);
+        ColorAtActionScriptConditionJPanel'Class (This).update;
+        ColorAtActionScriptConditionJPanel'Class (This).getColorAtActionJDialog.setVisible (False);
    end okJButtonActionPerformed;
 
    procedure colorAtActionJButtonActionPerformed (This : in out ColorAtActionScriptConditionJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
       evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
-        This.getColorAtActionJDialog.setVisible (True);
+        ColorAtActionScriptConditionJPanel'Class (This).getColorAtActionJDialog.setVisible (True);
    end colorAtActionJButtonActionPerformed;
 
 end org.allbinary.input.automation.actions.script.condition.ColorAtActionScriptConditionJPanel_Package;

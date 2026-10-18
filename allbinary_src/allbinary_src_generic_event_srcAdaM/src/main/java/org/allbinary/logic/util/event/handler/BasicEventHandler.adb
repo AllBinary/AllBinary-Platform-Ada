@@ -113,7 +113,7 @@ package body org.allbinary.logic.util.event.handler.BasicEventHandler_Package is
         while (index) < (This.eventListenerInterfaceList.size) loop
             begin
                 eventListenerInterface := EventListenerInterface_Access (This.eventListenerInterfaceList.objectArray (index));
-                This.process (eventObject, eventListenerInterface);
+                BasicEventHandler'Class (This).process (eventObject, eventListenerInterface);
             exception
                 when Java_Occurrence : others =>
                     declare

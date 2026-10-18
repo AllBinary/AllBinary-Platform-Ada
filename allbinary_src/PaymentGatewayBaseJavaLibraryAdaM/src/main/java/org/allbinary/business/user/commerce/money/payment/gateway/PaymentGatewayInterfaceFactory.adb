@@ -45,7 +45,7 @@ package body org.allbinary.business.user.commerce.money.payment.gateway.PaymentG
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.PAYMENT) then
                 This.logUtil.putF (To_Unbounded_String ("Getting"), PaymentGatewayInterfaceFactory_Access'(This'Unchecked_Access), commonStrings.GET_INSTANCE);
             end if;
-            return This.getInstance (RequestParams_Package.Create (httpServletRequest).toHashMap);
+            return PaymentGatewayInterfaceFactory'Class (This).getInstance (RequestParams_Package.Create (httpServletRequest).toHashMap);
         exception
             when Java_Occurrence : others =>
                 declare
@@ -65,8 +65,8 @@ package body org.allbinary.business.user.commerce.money.payment.gateway.PaymentG
       hashMap : HashMap_Access;
    begin
         hashMap := StdUtil_Package.getInstance.createHashMap;
-        hashMap.put (PaymentGatewayData_Package.NAME.toString, paymentType.getName);
-        return This.getInstance (hashMap);
+        hashMap.put (Java_Box (PaymentGatewayData_Package.NAME.toString), Java_Box (paymentType.getName));
+        return PaymentGatewayInterfaceFactory'Class (This).getInstance (hashMap);
    end getInstance;
 
    --  throws Exception
@@ -79,7 +79,7 @@ package body org.allbinary.business.user.commerce.money.payment.gateway.PaymentG
    begin
         commonStrings := CommonStrings_Package.getInstance;
         begin
-            gatewayName := Unbounded_String (hashMap.get (PaymentGatewayData_Package.NAME.toString));
+            gatewayName := Java_Unbox (hashMap.get (Java_Box (PaymentGatewayData_Package.NAME.toString)));
             paymentType := BasicPaymentTypeUtil_Package.getInstance.get (gatewayName);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.PAYMENT) then
                 This.logUtil.putF (To_Unbounded_String ("Getting PaymentGatewayInterface for PaymentType: ") & paymentType.getName & To_Unbounded_String (" with: ") & Java_Image (hashMap), PaymentGatewayInterfaceFactory_Access'(This'Unchecked_Access), commonStrings.GET_INSTANCE);

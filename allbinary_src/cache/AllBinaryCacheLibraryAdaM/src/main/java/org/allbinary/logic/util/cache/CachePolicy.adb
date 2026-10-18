@@ -28,8 +28,8 @@ package body org.allbinary.logic.util.cache.CachePolicy_Package is
    begin
       Initialize_Fields (This);
         This.name := name;
-        This.setMaxTime (maxTime);
-        This.setMaxSize (maxSize);
+        CachePolicy'Class (This).setMaxTime (maxTime);
+        CachePolicy'Class (This).setMaxSize (maxSize);
    end Initialize;
 
    function Create (name : Unbounded_String; maxTime : Long_Long_Integer; maxSize : Long_Long_Integer) return CachePolicy_Access is

@@ -27,7 +27,7 @@ package body org.allbinary.game.input.MotionJ2MEDefaultGameInputMapping_Package 
       basicTouchInputFactory : BasicTouchInputFactory_Access;
    begin
         PersistentInputMapping_Package.Initialize (This, GamePersistanceStrings_Package.getInstance.DEFAULT_INPUT_MAPPING_RECORD_ID);
-        inputToGameKeyMapping := This.getInputMapping;
+        inputToGameKeyMapping := MotionJ2MEDefaultGameInputMapping'Class (This).getInputMapping;
         gameKeyFactory := GameKeyFactory_Package.getInstance;
         inputToGameKeyMapping.add (gameKeyFactory.UP, gameKeyFactory.KEY_NUM2);
         inputToGameKeyMapping.add (gameKeyFactory.LEFT, gameKeyFactory.KEY_NUM4);

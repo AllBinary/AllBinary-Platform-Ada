@@ -53,7 +53,7 @@ package body org.allbinary.logic.util.event.handler.BasicEventHandler_Package is
         size := vector.size;
         for index in 0 .. (size) - 1 loop
             eventListenerInterface := EventListenerInterface_Access (vector.get (index));
-            This.addListenerInterface (eventListenerInterface);
+            BasicEventHandler'Class (This).addListenerInterface (eventListenerInterface);
         end loop;
    end addListeners;
 
@@ -67,7 +67,7 @@ package body org.allbinary.logic.util.event.handler.BasicEventHandler_Package is
         size := vector.size;
         for index in 0 .. (size) - 1 loop
             eventListenerInterface := EventListenerInterface_Access (vector.get (index));
-            This.removeListener (eventListenerInterface);
+            BasicEventHandler'Class (This).removeListener (eventListenerInterface);
         end loop;
    end removeListeners;
 
@@ -110,7 +110,7 @@ package body org.allbinary.logic.util.event.handler.BasicEventHandler_Package is
         while (index) < (This.eventListenerInterfaceList.size) loop
             begin
                 eventListenerInterface := EventListenerInterface_Access (This.eventListenerInterfaceList.get (index));
-                This.process (eventObject, eventListenerInterface);
+                BasicEventHandler'Class (This).process (eventObject, eventListenerInterface);
             exception
                 when Java_Occurrence : others =>
                     declare

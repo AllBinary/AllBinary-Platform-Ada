@@ -54,7 +54,7 @@ package body org.allbinary.business.category.properties.CategoryProperties_Packa
       categoryPropertiesHashMap : constant HashMap_Access := HashMap_Access (categoryPropertiesHashMap_Param);
    begin
       Initialize_Fields (This);
-        This.category := Java_New_String (Unbounded_String (categoryPropertiesHashMap.get (CategoryData_Package.getInstance.NAME)));
+        This.category := Java_New_String (Java_Unbox (categoryPropertiesHashMap.get (CategoryData_Package.getInstance.NAME)));
    end Initialize;
 
    function Create (categoryPropertiesHashMap_Param : access HashMap_Package.HashMap'Class) return CategoryProperties_Access is
@@ -76,7 +76,7 @@ package body org.allbinary.business.category.properties.CategoryProperties_Packa
 
    function getKey (This : in out CategoryProperties) return Java_Object_Access is
    begin
-        return Java_Object_Access (This.getValue);
+        return Java_Object_Access (CategoryProperties'Class (This).getValue);
    end getKey;
 
    function getValue (This : in out CategoryProperties) return Unbounded_String is
@@ -122,10 +122,10 @@ package body org.allbinary.business.category.properties.CategoryProperties_Packa
             end loop;
         end if;
         pathStringBuffer.delete (0, pathStringBuffer.length);
-        pathStringBuffer.append (abPathData.SEPARATOR).append (This.getValue);
+        pathStringBuffer.append (abPathData.SEPARATOR).append (CategoryProperties'Class (This).getValue);
         size := list.size;
         for index in 0 .. (size) - 1 loop
-            pathStringBuffer.append (Unbounded_String (list.get (index)));
+            pathStringBuffer.append (Java_Unbox (list.get (index)));
         end loop;
         pathStringBuffer.append (abPathData.SEPARATOR);
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.CATEGORY) then
@@ -136,13 +136,14 @@ package body org.allbinary.business.category.properties.CategoryProperties_Packa
 
    function getFileName (This : in out CategoryProperties) return Unbounded_String is
    begin
-        return ((This.getValue) + (AbPathData_Package.getInstance.EXTENSION_SEP)) + (CategoryData_Package.getInstance.UNCRYPTED_EXTENSION);
+        return ((CategoryProperties'Class (This).getValue) + (AbPathData_Package.getInstance.EXTENSION_SEP)) + (CategoryData_Package.getInstance.UNCRYPTED_EXTENSION);
    end getFileName;
 
    --  throws Exception
    function getWebAppPath (This : in out CategoryProperties) return AbPath_Access is
    begin
         Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Not Root")));
+        return null;
    end getWebAppPath;
 
    procedure setValue (This : in out CategoryProperties; value : Unbounded_String) is
@@ -164,7 +165,7 @@ package body org.allbinary.business.category.properties.CategoryProperties_Packa
       categoryHashMap : HashMap_Access;
    begin
         categoryHashMap := StdUtil_Package.getInstance.createHashMap;
-        categoryHashMap.put (CategoryData_Package.getInstance.NAME, This.category);
+        categoryHashMap.put (CategoryData_Package.getInstance.NAME, Java_Box (This.category));
         return categoryHashMap;
    end toHashMap;
 

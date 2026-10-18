@@ -29,7 +29,7 @@ package body org.allbinary.media.image.comparison.motion.ConstrainedMotionRectan
    begin
         MotionRectangles_Package.Initialize (This, NAME, motionRectangles.getImageComparisonResult);
         Initialize_Fields (This);
-        This.setMotionRectangleConstraintsInterface (motionRectangleConstraintsInterface);
+        ConstrainedMotionRectangles'Class (This).setMotionRectangleConstraintsInterface (motionRectangleConstraintsInterface);
    end Initialize;
 
    function Create (motionRectangleConstraintsInterface_Param : access MotionRectangleConstraintsInterface_Package.MotionRectangleConstraintsInterface'Class; motionRectangles_Param : access MotionRectangles_Package.MotionRectangles'Class) return ConstrainedMotionRectangles_Access is
@@ -64,19 +64,19 @@ package body org.allbinary.media.image.comparison.motion.ConstrainedMotionRectan
         for index in 0 .. (size) - 1 loop
             motionRectangle := MotionRectangle_Access (vector2.get (index));
             rectangle := motionRectangle.getRectangle;
-            isTooSmall := This.getMotionRectangleConstraintsInterface.isTooSmall (rectangle);
+            isTooSmall := ConstrainedMotionRectangles'Class (This).getMotionRectangleConstraintsInterface.isTooSmall (rectangle);
             if isTooSmall then
                 goto Continue_N66349;
             end if;
-            isAreaTooSmall := This.getMotionRectangleConstraintsInterface.isAreaTooSmall (rectangle);
+            isAreaTooSmall := ConstrainedMotionRectangles'Class (This).getMotionRectangleConstraintsInterface.isAreaTooSmall (rectangle);
             if isAreaTooSmall then
                 goto Continue_N66349;
             end if;
-            isTooBig := This.getMotionRectangleConstraintsInterface.isTooBig (rectangle);
+            isTooBig := ConstrainedMotionRectangles'Class (This).getMotionRectangleConstraintsInterface.isTooBig (rectangle);
             if isTooBig then
                 goto Continue_N66349;
             end if;
-            isValid := This.getMotionRectangleConstraintsInterface.isValid (This.getImageComparisonResult.getFrameTwo, bufferedImage, motionRectangle.getRectangle);
+            isValid := ConstrainedMotionRectangles'Class (This).getMotionRectangleConstraintsInterface.isValid (ConstrainedMotionRectangles'Class (This).getImageComparisonResult.getFrameTwo, bufferedImage, motionRectangle.getRectangle);
             if not (isValid) then
                 goto Continue_N66349;
             end if;
@@ -85,7 +85,7 @@ package body org.allbinary.media.image.comparison.motion.ConstrainedMotionRectan
             end if;
             <<Continue_N66349>> null;
         end loop;
-        This.setVector (vector);
+        ConstrainedMotionRectangles'Class (This).setVector (vector);
    end applyMotionRectangleConstraints;
 
    function getMotionRectangleConstraintsInterface (This : in out ConstrainedMotionRectangles) return MotionRectangleConstraintsInterface_Access is

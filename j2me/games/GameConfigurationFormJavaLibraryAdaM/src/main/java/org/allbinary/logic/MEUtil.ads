@@ -20,11 +20,12 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with javax.microedition.lcdui.Item_Package; use javax.microedition.lcdui.Item_Package;
+with javax.microedition.lcdui.Item_Package; use javax.microedition.lcdui.Item_Package;
 with org.allbinary.graphics.displayable.screen.CommandForm_Package; use org.allbinary.graphics.displayable.screen.CommandForm_Package;
 
 package org.allbinary.logic.MEUtil_Package is
 
+   package Item_Package renames Standard.javax.microedition.lcdui.Item_Package;
    package CommandForm_Package renames Standard.org.allbinary.graphics.displayable.screen.CommandForm_Package;
 
    type MEUtil is tagged;

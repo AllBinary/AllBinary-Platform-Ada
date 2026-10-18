@@ -38,8 +38,8 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoHttpStoreNoM
    --  throws Exception
    procedure setObjectConfigFile (This : in out TransformInfoHttpStoreNoManipulation; value : Unbounded_String) is
    begin
-        This.setObjectConfigFileName (value);
-        This.setObjectConfigInterface (TransformInfoObjectConfigNoManipulationFactory_Package.getInstance.getInstance (TransformInfoHttpStoreNoManipulation_Access'(This'Unchecked_Access), This.getObjectConfigFilePath));
+        TransformInfoHttpStoreNoManipulation'Class (This).setObjectConfigFileName (value);
+        TransformInfoHttpStoreNoManipulation'Class (This).setObjectConfigInterface (TransformInfoObjectConfigNoManipulationFactory_Package.getInstance.getInstance (TransformInfoHttpStoreNoManipulation_Access'(This'Unchecked_Access), TransformInfoHttpStoreNoManipulation'Class (This).getObjectConfigFilePath));
    end setObjectConfigFile;
 
    --  throws Exception

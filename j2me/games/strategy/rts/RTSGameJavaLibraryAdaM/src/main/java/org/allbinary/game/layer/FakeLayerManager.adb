@@ -18,7 +18,7 @@ package body org.allbinary.game.layer.FakeLayerManager_Package is
    begin
       null;
       This.geographicMapInterfaceArray := BasicGeographicMap_Package.NULL_BASIC_GEOGRAPHIC_MAP_ARRAY;
-      This.geographicMapCellTypeArray := GeographicMapCellType_Package.NULL_GEOGRAPHIC_MAP_CELL_TYPE_ARRAY;
+      This.geographicMapCellTypeArray_Field := GeographicMapCellType_Package.NULL_GEOGRAPHIC_MAP_CELL_TYPE_ARRAY;
    end Initialize_Fields;
 
 
@@ -44,12 +44,12 @@ package body org.allbinary.game.layer.FakeLayerManager_Package is
    procedure setGeographicMapInterface (This : in out FakeLayerManager; geographicMapInterfaceArray : BasicGeographicMap_Access_Array_Access) is
    begin
         This.geographicMapInterfaceArray := geographicMapInterfaceArray;
-        This.geographicMapCellTypeArray := new GeographicMapCellType_Access_Array'(0 .. (This.geographicMapInterfaceArray'Length) - 1 => null);
+        This.geographicMapCellTypeArray_Field := new GeographicMapCellType_Access_Array'(0 .. (This.geographicMapInterfaceArray'Length) - 1 => null);
    end setGeographicMapInterface;
 
    function geographicMapCellTypeArray (This : in out FakeLayerManager) return GeographicMapCellType_Access_Array_Access is
    begin
-        return This.geographicMapCellTypeArray;
+        return This.geographicMapCellTypeArray_Field;
    end geographicMapCellTypeArray;
 
 end org.allbinary.game.layer.FakeLayerManager_Package;

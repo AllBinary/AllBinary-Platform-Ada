@@ -43,7 +43,7 @@ package body org.allbinary.image.gui.ResizeImageJPanel_Package is
    begin
         JPanel_Package.Initialize (This);
         Initialize_Fields (This);
-        This.initComponents;
+        ResizeImageJPanel'Class (This).initComponents;
         This.imageProcessorInput := imageProcessorInput;
         numberStringArray := new Unbounded_String_Array'(0 .. (101) - 1 => Null_Unbounded_String);
         numberStringArray (0) := To_Unbounded_String (Java_Image (-(1)));
@@ -87,9 +87,9 @@ package body org.allbinary.image.gui.ResizeImageJPanel_Package is
 --                  logUtil := LogUtil_Package.getInstance;
 --                  begin
 --                      imageUtil := ImageUtil_Package.getInstance;
---                      percent := To_Unbounded_String (Java_Image (Unbounded_String (This.jComboBox1.getSelectedItem)));
+--                      percent := To_Unbounded_String (Java_Image (Java_Unbox (This.jComboBox1.getSelectedItem)));
 --                      percentAsFloat := Float'Value (To_String (This.floatPercentJTextField.getText));
---                      imageProcessorInput := This.getImageProcessorInput;
+--                      imageProcessorInput := ResizeImageJPanel'Class (This).getImageProcessorInput;
 --                      files := imageProcessorInput.getFiles;
 --                      generatedBufferedImageArray := null;
 --                      if (percentAsFloat.intValue) /= (-(1)) then
@@ -97,8 +97,8 @@ package body org.allbinary.image.gui.ResizeImageJPanel_Package is
 --                      elsif (percent.intValue) /= (-(1)) then
 --                          generatedBufferedImageArray := imageUtil.createBufferedImageForResize (imageProcessorInput.getBufferedImageArray, percent, True);
 --                      else
---                          width := To_Unbounded_String (Java_Image (Unbounded_String (This.jTextField1.getText)));
---                          height := To_Unbounded_String (Java_Image (Unbounded_String (This.jTextField2.getText)));
+--                          width := To_Unbounded_String (Java_Image (Java_Unbox (This.jTextField1.getText)));
+--                          height := To_Unbounded_String (Java_Image (Java_Unbox (This.jTextField2.getText)));
 --                          generatedBufferedImageArray := imageUtil.createBufferedImage3 (imageProcessorInput.getBufferedImageArray, width, height, True);
 --                      end if;
 --                      araster := generatedBufferedImageArray (0).getAlphaRaster;
@@ -111,7 +111,7 @@ package body org.allbinary.image.gui.ResizeImageJPanel_Package is
 --                      for index in 0 .. (generatedBufferedImageArray'Length) - 1 loop
 --                          imagePersistanceUtil.saveWithBatik (FileWrapperUtil_Package.wrapFile (files (index)), generatedBufferedImageArray (index));
 --                      end loop;
---                      This.getParent.repaint;
+--                      ResizeImageJPanel'Class (This).getParent.repaint;
 --                  exception
 --                      when Java_Occurrence : others =>
 --                          declare
@@ -138,7 +138,7 @@ package body org.allbinary.image.gui.ResizeImageJPanel_Package is
 --     begin
 --                  logUtil := LogUtil_Package.getInstance;
 --                  begin
---                      imageProcessorInput := This.getImageProcessorInput;
+--                      imageProcessorInput := ResizeImageJPanel'Class (This).getImageProcessorInput;
 --                      size := imageProcessorInput.getBufferedImageArray'Length;
 --                      bufferedImageArray := imageProcessorInput.getBufferedImageArray;
 --                      bufferedImage := null;
@@ -147,7 +147,7 @@ package body org.allbinary.image.gui.ResizeImageJPanel_Package is
 --                          This.jTextField1.setText (To_Unbounded_String (Java_Image (bufferedImage.getWidth)));
 --                          This.jTextField2.setText (To_Unbounded_String (Java_Image (bufferedImage.getHeight)));
 --                      end loop;
---                      This.getParent.repaint;
+--                      ResizeImageJPanel'Class (This).getParent.repaint;
 --                  exception
 --                      when Java_Occurrence : others =>
 --                          declare
@@ -174,7 +174,7 @@ package body org.allbinary.image.gui.ResizeImageJPanel_Package is
 --     begin
 --                  logUtil := LogUtil_Package.getInstance;
 --                  begin
---                      imageProcessorInput := This.getImageProcessorInput;
+--                      imageProcessorInput := ResizeImageJPanel'Class (This).getImageProcessorInput;
 --                      size := imageProcessorInput.getBufferedImageArray'Length;
 --                      bufferedImageArray := imageProcessorInput.getBufferedImageArray;
 --                      bufferedImage := null;
@@ -183,7 +183,7 @@ package body org.allbinary.image.gui.ResizeImageJPanel_Package is
 --                          This.jTextField1.setText (To_Unbounded_String (Java_Image (((bufferedImage.getWidth) / (16)) * (16))));
 --                          This.jTextField2.setText (To_Unbounded_String (Java_Image (((bufferedImage.getHeight) / (16)) * (16))));
 --                      end loop;
---                      This.getParent.repaint;
+--                      ResizeImageJPanel'Class (This).getParent.repaint;
 --                  exception
 --                      when Java_Occurrence : others =>
 --                          declare
@@ -210,7 +210,7 @@ package body org.allbinary.image.gui.ResizeImageJPanel_Package is
 --     begin
 --                  logUtil := LogUtil_Package.getInstance;
 --                  begin
---                      imageProcessorInput := This.getImageProcessorInput;
+--                      imageProcessorInput := ResizeImageJPanel'Class (This).getImageProcessorInput;
 --                      size := imageProcessorInput.getBufferedImageArray'Length;
 --                      bufferedImageArray := imageProcessorInput.getBufferedImageArray;
 --                      bufferedImage := null;
@@ -219,7 +219,7 @@ package body org.allbinary.image.gui.ResizeImageJPanel_Package is
 --                          This.jTextField1.setText (To_Unbounded_String (Java_Image ((((((bufferedImage.getWidth) / (16))) + (1))) * (16))));
 --                          This.jTextField2.setText (To_Unbounded_String (Java_Image ((((((bufferedImage.getHeight) / (16))) + (1))) * (16))));
 --                      end loop;
---                      This.getParent.repaint;
+--                      ResizeImageJPanel'Class (This).getParent.repaint;
 --                  exception
 --                      when Java_Occurrence : others =>
 --                          declare
@@ -265,7 +265,7 @@ package body org.allbinary.image.gui.ResizeImageJPanel_Package is
 --     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
 --        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
---                  This.aboveJButtonActionPerformed (evt);
+--                  ResizeImageJPanel'Class (This).aboveJButtonActionPerformed (evt);
 --     end actionPerformed;
 );
         This.jLabel2.setText (To_Unbounded_String ("Width:"));
@@ -276,7 +276,7 @@ package body org.allbinary.image.gui.ResizeImageJPanel_Package is
 --     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
 --        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
---                  This.updateJButtonActionPerformed (evt);
+--                  ResizeImageJPanel'Class (This).updateJButtonActionPerformed (evt);
 --     end actionPerformed;
 );
         This.floatPercentJTextField.setText (To_Unbounded_String ("-1.000000"));
@@ -287,7 +287,7 @@ package body org.allbinary.image.gui.ResizeImageJPanel_Package is
 --     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
 --        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
---                  This.adjustFor16AboveJButtonActionPerformed (evt);
+--                  ResizeImageJPanel'Class (This).adjustFor16AboveJButtonActionPerformed (evt);
 --     end actionPerformed;
 );
         This.adjustFor16BelowJButton.setText (To_Unbounded_String ("Adjust for 16 Below"));
@@ -296,11 +296,11 @@ package body org.allbinary.image.gui.ResizeImageJPanel_Package is
 --     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
 --        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
---                  This.adjustFor16BelowJButtonActionPerformed (evt);
+--                  ResizeImageJPanel'Class (This).adjustFor16BelowJButtonActionPerformed (evt);
 --     end actionPerformed;
 );
         layout := GroupLayout_Package.Create (ResizeImageJPanel_Access'(This'Unchecked_Access));
-        This.setLayout (layout);
+        ResizeImageJPanel'Class (This).setLayout (layout);
         layout.setHorizontalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (layout.createSequentialGroup.addContainerGap.addGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addComponent (This.jLabel1).addComponent (This.jLabel2).addComponent (This.jLabel3)).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING, False).addComponent (This.jComboBox1, 0, javax_Package.swing.GroupLayout.DEFAULT_SIZE, Short_Package.MAX_VALUE).addComponent (This.jTextField1).addComponent (This.jTextField2)).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.UNRELATED).addGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addComponent (This.floatPercentJTextField, javax_Package.swing.GroupLayout.PREFERRED_SIZE, javax_Package.swing.GroupLayout.DEFAULT_SIZE, javax_Package.swing.GroupLayout.PREFERRED_SIZE).addComponent (This.adjustFor16AboveJButton).addComponent (This.adjustFor16BelowJButton)).addContainerGap (javax_Package.swing.GroupLayout.DEFAULT_SIZE, Short_Package.MAX_VALUE)).addGroup (layout.createSequentialGroup.addComponent (This.updateJButton).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent (This.aboveJButton).addGap (0, 250, Short_Package.MAX_VALUE)));
         layout.setVerticalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (layout.createSequentialGroup.addContainerGap.addGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.BASELINE).addComponent (This.jLabel1).addComponent (This.jComboBox1, javax_Package.swing.GroupLayout.PREFERRED_SIZE, javax_Package.swing.GroupLayout.DEFAULT_SIZE, javax_Package.swing.GroupLayout.PREFERRED_SIZE).addComponent (This.floatPercentJTextField, javax_Package.swing.GroupLayout.PREFERRED_SIZE, javax_Package.swing.GroupLayout.DEFAULT_SIZE, javax_Package.swing.GroupLayout.PREFERRED_SIZE)).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.BASELINE).addComponent (This.jTextField1, javax_Package.swing.GroupLayout.PREFERRED_SIZE, javax_Package.swing.GroupLayout.DEFAULT_SIZE, javax_Package.swing.GroupLayout.PREFERRED_SIZE).addComponent (This.jLabel2).addComponent (This.adjustFor16AboveJButton)).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.BASELINE).addComponent (This.jLabel3).addComponent (This.jTextField2, javax_Package.swing.GroupLayout.PREFERRED_SIZE, javax_Package.swing.GroupLayout.DEFAULT_SIZE, javax_Package.swing.GroupLayout.PREFERRED_SIZE).addComponent (This.adjustFor16BelowJButton)).addGap (18, 18, 18).addGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.BASELINE).addComponent (This.aboveJButton).addComponent (This.updateJButton)).addContainerGap (175, Short_Package.MAX_VALUE)));
    end initComponents;
@@ -308,25 +308,25 @@ package body org.allbinary.image.gui.ResizeImageJPanel_Package is
    procedure aboveJButtonActionPerformed (This : in out ResizeImageJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
       evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
-        This.process;
+        ResizeImageJPanel'Class (This).process;
    end aboveJButtonActionPerformed;
 
    procedure updateJButtonActionPerformed (This : in out ResizeImageJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
       evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
-        This.update;
+        ResizeImageJPanel'Class (This).update;
    end updateJButtonActionPerformed;
 
    procedure adjustFor16AboveJButtonActionPerformed (This : in out ResizeImageJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
       evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
-        This.updateFor16Above;
+        ResizeImageJPanel'Class (This).updateFor16Above;
    end adjustFor16AboveJButtonActionPerformed;
 
    procedure adjustFor16BelowJButtonActionPerformed (This : in out ResizeImageJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
       evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
-        This.updateFor16Below;
+        ResizeImageJPanel'Class (This).updateFor16Below;
    end adjustFor16BelowJButtonActionPerformed;
 
 end org.allbinary.image.gui.ResizeImageJPanel_Package;

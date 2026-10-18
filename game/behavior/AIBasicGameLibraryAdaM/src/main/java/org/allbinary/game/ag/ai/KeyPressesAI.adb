@@ -63,23 +63,23 @@ package body org.allbinary.game.ag.ai.KeyPressesAI_Package is
    --  throws Exception
    procedure toggle (This : in out KeyPressesAI) is
    begin
-        if This.isOn then
-            This.setOn (False);
+        if KeyPressesAI'Class (This).isOn then
+            KeyPressesAI'Class (This).setOn (False);
         else
-            This.setOn (True);
+            KeyPressesAI'Class (This).setOn (True);
         end if;
    end toggle;
 
    --  throws Exception
    procedure disable (This : in out KeyPressesAI) is
    begin
-        This.setOn (False);
+        KeyPressesAI'Class (This).setOn (False);
    end disable;
 
    --  throws Exception
    procedure enable (This : in out KeyPressesAI) is
    begin
-        This.setOn (True);
+        KeyPressesAI'Class (This).setOn (True);
    end enable;
 
    procedure setOn (This : in out KeyPressesAI; on : Boolean) is

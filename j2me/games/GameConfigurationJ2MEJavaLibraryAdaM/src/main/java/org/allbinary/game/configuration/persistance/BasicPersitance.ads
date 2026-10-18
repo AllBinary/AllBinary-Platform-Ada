@@ -20,7 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with javax.microedition.rms.RecordStore_Package; use javax.microedition.rms.RecordStore_Package;
+with javax.microedition.rms.RecordStore_Package; use javax.microedition.rms.RecordStore_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
@@ -34,6 +34,7 @@ with org.allbinary.game.configuration.persistance.NullRecordStore_Package; use o
 
 package org.allbinary.game.configuration.persistance.BasicPersitance_Package is
 
+   package RecordStore_Package renames Standard.javax.microedition.rms.RecordStore_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
    package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;

@@ -82,7 +82,7 @@ package body org.allbinary.media.graphics.geography.map.CellPositionsUtil_Packag
         reusableList.clear;
         for index in reverse 0 .. (occupyList.size) - (1) loop
             layerGeographicMapCellPosition := GeographicMapCellPosition_Access (occupyList.get (index));
-            surroundingGeographicMapCellPositionList := This.getAllSurroundingAt (geographicMapInterface, layerGeographicMapCellPosition, This.reusableSingleThreadedSurroundingList);
+            surroundingGeographicMapCellPositionList := CellPositionsUtil'Class (This).getAllSurroundingAt (geographicMapInterface, layerGeographicMapCellPosition, This.reusableSingleThreadedSurroundingList);
             for index2 in reverse 0 .. (surroundingGeographicMapCellPositionList.size) - (1) loop
                 geographicMapCellPosition := GeographicMapCellPosition_Access (surroundingGeographicMapCellPositionList.get (index2));
                 if (not (reusableList.contains (geographicMapCellPosition))) and then (not (occupyList.contains (geographicMapCellPosition))) then

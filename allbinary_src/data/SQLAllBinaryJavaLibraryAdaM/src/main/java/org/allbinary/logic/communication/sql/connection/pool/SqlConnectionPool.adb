@@ -67,7 +67,7 @@ package body org.allbinary.logic.communication.sql.connection.pool.SqlConnection
             end if;
             return DriverManager_Package.getConnection (url);
         else
-            connectionVector := BasicArrayList_Access (This.connectionHashMap.get (url));
+            connectionVector := BasicArrayList_Access (This.connectionHashMap.get (Java_Box (url)));
             if (connectionVector) = (null) then
                 connectionVector := BasicArrayListD_Package.Create;
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGINGPOOL) then
@@ -91,7 +91,7 @@ package body org.allbinary.logic.communication.sql.connection.pool.SqlConnection
                     sqlConnection := Connection_Access (connectionVector.get (i));
                     if not (sqlConnection.isClosed) then
                         connectionVector.remove (sqlConnection);
-                        This.connectionHashMap.put (url, connectionVector);
+                        This.connectionHashMap.put (Java_Box (url), connectionVector);
                         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGINGPOOL) then
                             stringBuffer.delete (0, stringBuffer.length);
                             stringBuffer.append (This.NUMBER_OF_SQL_CONNECTIONS_FOR);
@@ -129,12 +129,12 @@ package body org.allbinary.logic.communication.sql.connection.pool.SqlConnection
                 connectionVector := BasicArrayListD_Package.Create;
                 connectionVector.add (sqlConnection);
             else
-                connectionVector := BasicArrayList_Access (This.connectionHashMap.get (url));
+                connectionVector := BasicArrayList_Access (This.connectionHashMap.get (Java_Box (url)));
                 if (connectionVector) = (null) then
                     connectionVector := BasicArrayListD_Package.Create;
                 end if;
                 connectionVector.add (sqlConnection);
-                This.connectionHashMap.put (url, connectionVector);
+                This.connectionHashMap.put (Java_Box (url), connectionVector);
             end if;
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGINGPOOL) then
                 stringBuffer := StringMaker_Package.Create;

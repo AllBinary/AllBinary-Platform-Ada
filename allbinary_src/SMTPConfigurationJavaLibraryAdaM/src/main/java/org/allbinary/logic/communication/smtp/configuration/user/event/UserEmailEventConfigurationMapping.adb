@@ -40,7 +40,7 @@ package body org.allbinary.logic.communication.smtp.configuration.user.event.Use
       hashMap : HashMap_Access;
    begin
         hashMap := StdUtil_Package.getInstance.createHashMap;
-        hashMap.put (UserEmailEventConfigurationData_Package.NAME, This.userEmailEventConfigurationInterface.getName);
+        hashMap.put (UserEmailEventConfigurationData_Package.NAME, Java_Box (This.userEmailEventConfigurationInterface.getName));
         hashMap.put (UserEmailEventConfigurationData_Package.LISTENER_CLASSPATH, This.userEmailEventConfigurationInterface.getEventListenerClassPath);
         return hashMap;
    end toHashMap;

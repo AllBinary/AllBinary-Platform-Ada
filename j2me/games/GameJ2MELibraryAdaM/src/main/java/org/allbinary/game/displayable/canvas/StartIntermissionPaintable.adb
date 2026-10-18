@@ -48,7 +48,7 @@ package body org.allbinary.game.displayable.canvas.StartIntermissionPaintable_Pa
         This.gameCanvas := gameCanvas;
         This.stringArray := stringArray;
         This.lastWidth := new Integer_Array'(0 .. (This.stringArray'Length) - 1 => 0);
-        This.setBasicColorP (basicColor);
+        StartIntermissionPaintable'Class (This).setBasicColorP (basicColor);
         This.color := basicColor.intValue;
         This.fontSize := font.getSize;
         This.font := font;

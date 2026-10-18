@@ -43,15 +43,15 @@ package body org.allbinary.animation.image.sprite.ColorCompositeSpriteIndexedAni
    function getInstance (This : in out ColorCompositeSpriteIndexedAnimationFactory; instanceId : Integer) return Animation_Access is
       sprite : Sprite_Access;
    begin
-        sprite := This.animationFactorySpriteScaleUtil.createImage (This.getImage, This.animationFactoryInitializationVisitor.width, This.animationFactoryInitializationVisitor.height, This.scaleProperties.scaleWidth, This.scaleProperties.scaleHeight);
-        return SpriteIndexedAnimation_Package.Create (sprite, This.getImage, This.basicColorArray, This.animationBehaviorFactory.getOrCreateInstance);
+        sprite := This.animationFactorySpriteScaleUtil.createImage (ColorCompositeSpriteIndexedAnimationFactory'Class (This).getImage, This.animationFactoryInitializationVisitor.width, This.animationFactoryInitializationVisitor.height, This.scaleProperties.scaleWidth, This.scaleProperties.scaleHeight);
+        return SpriteIndexedAnimation_Package.Create (sprite, ColorCompositeSpriteIndexedAnimationFactory'Class (This).getImage, This.basicColorArray, This.animationBehaviorFactory.getOrCreateInstance);
    end getInstance;
 
    --  throws Exception
    function getInstanceAnimation (This : in out ColorCompositeSpriteIndexedAnimationFactory; animationInterface_Param : access Animation_Package.Animation'Class) return Animation_Access is
       animationInterface : constant Animation_Access := Animation_Access (animationInterface_Param);
    begin
-        return This.getInstance (0);
+        return ColorCompositeSpriteIndexedAnimationFactory'Class (This).getInstance (0);
    end getInstanceAnimation;
 
    procedure getInstance (This : in out ColorCompositeSpriteIndexedAnimationFactory; instanceId : Integer) is

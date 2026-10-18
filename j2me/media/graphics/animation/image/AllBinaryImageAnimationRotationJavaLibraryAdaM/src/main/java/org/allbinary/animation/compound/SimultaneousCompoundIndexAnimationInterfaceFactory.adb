@@ -49,7 +49,7 @@ package body org.allbinary.animation.compound.SimultaneousCompoundIndexAnimation
         for index in 0 .. (size) - 1 loop
             animationInterfaceArray (index) := IndexedAnimation_Access (This.basicAnimationInterfaceFactoryInterfaceArray (index).getInstance (instanceId));
         end loop;
-        return This.getOrCreate (animationInterfaceArray);
+        return SimultaneousCompoundIndexAnimationInterfaceFactory'Class (This).getOrCreate (animationInterfaceArray);
    end getInstance;
 
    function getOrCreate (This : in out SimultaneousCompoundIndexAnimationInterfaceFactory; animationInterfaceArray : IndexedAnimation_Access_Array_Access) return Animation_Access is

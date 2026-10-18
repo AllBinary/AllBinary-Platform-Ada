@@ -70,14 +70,14 @@ package body org.allbinary.input.motion.button.BasicTouchInputFactory_Package is
             This.list.add (This.SPECIAL_BUTTON_ONE);
             This.list.add (This.SPECIAL_BUTTON_FIVE);
             This.list.add (This.SPECIAL_BUTTON_SIX);
-            This.updateAllList (This.list, inputToGameKeyMapping);
+            BasicTouchInputFactory'Class (This).updateAllList (This.list, inputToGameKeyMapping);
         end if;
    end init;
 
    procedure updateAll (This : in out BasicTouchInputFactory; inputToGameKeyMapping_Param : access InputToGameKeyMapping_Package.InputToGameKeyMapping'Class) is
       inputToGameKeyMapping : constant InputToGameKeyMapping_Access := InputToGameKeyMapping_Access (inputToGameKeyMapping_Param);
    begin
-        This.updateAllList (This.getList, inputToGameKeyMapping);
+        BasicTouchInputFactory'Class (This).updateAllList (BasicTouchInputFactory'Class (This).getList, inputToGameKeyMapping);
    end updateAll;
 
    procedure updateAllList (This : in out BasicTouchInputFactory; list_Param : access BasicArrayList_Package.BasicArrayList'Class; inputToGameKeyMapping_Param : access InputToGameKeyMapping_Package.InputToGameKeyMapping'Class) is

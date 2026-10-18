@@ -28,7 +28,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.order.OrderItemsE
    begin
         AbSqlBean_Package.Initialize (This, HistoryDbInitInfo_Package.Create);
         Initialize_Fields (This);
-        This.setTableName (This.tableName);
+        OrderItemsEntity'Class (This).setTableName (This.tableName);
    end Initialize;
 
    function Create return OrderItemsEntity_Access is
@@ -62,7 +62,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.order.OrderItemsE
             itemsArray := items.toArray;
             itemsSize := itemsArray'Length;
             for i in 0 .. (itemsSize) - 1 loop
-                item := Unbounded_String (itemsArray (i));
+                item := Java_Unbox (itemsArray (i));
                 itemInterface := inventoryEntity.getItem (item);
                 vector := BasicArrayListD_Package.Create;
                 vector.add (OrderItemIdGenerator_Package.Create.getNext);
@@ -108,7 +108,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.order.OrderItemsE
                 vector.add (ZERO_STRING);
                 vector.add (ZERO_STRING);
                 vector.add (ZERO_STRING);
-                This.insert (vector);
+                OrderItemsEntity'Class (This).insert (vector);
             end loop;
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
                 This.logUtil.putF (To_Unbounded_String ("Command Success Added: ") & Java_Image (items.size), OrderItemsEntity_Access'(This'Unchecked_Access), INSERT);
@@ -132,9 +132,9 @@ package body org.allbinary.data.tables.user.commerce.inventory.order.OrderItemsE
         begin
             whereHashMap := StdUtil_Package.getInstance.createHashMap;
             updateHashMap := StdUtil_Package.getInstance.createHashMap;
-            whereHashMap.put (OrderData_Package.ID, orderId);
-            whereHashMap.put (ShippingMethodData_Package.GROUP, groupId);
-            updateHashMap.put (OrderHistoryData_Package.STATUS, status);
+            whereHashMap.put (OrderData_Package.ID, Java_Box (orderId));
+            whereHashMap.put (ShippingMethodData_Package.GROUP, Java_Box (groupId));
+            updateHashMap.put (OrderHistoryData_Package.STATUS, Java_Box (status));
             AbSqlBean (This).updateWhere (whereHashMap, updateHashMap);
         exception
             when Java_Occurrence : others =>
@@ -158,7 +158,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.order.OrderItemsE
             itemStatusVector := AbSqlBean (This).getColumnWhere (OrderHistoryData_Package.STATUS, OrderData_Package.ID, orderId);
             size := itemStatusVector.size;
             for index in 0 .. (size) - 1 loop
-                status := Unbounded_String (itemStatusVector.get (index));
+                status := Java_Unbox (itemStatusVector.get (index));
                 if (status.compareTo (OrderHistoryData_Package.SHIPPED)) /= (0) then
                     return False;
                 end if;
@@ -192,7 +192,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.order.OrderItemsE
         begin
             basketReview := BasketReview_Package.Create;
             keyValues := StdUtil_Package.getInstance.createHashMap;
-            keyValues.put (OrderData_Package.ID, orderId);
+            keyValues.put (OrderData_Package.ID, Java_Box (orderId));
             items := AbSqlBean (This).getRows (keyValues);
             entryData := EntryData_Package.getInstance;
             if ((items) /= (null)) and then ((items.size) > (0)) then
@@ -201,14 +201,14 @@ package body org.allbinary.data.tables.user.commerce.inventory.order.OrderItemsE
                 itemsSize := itemsArray'Length;
                 for i in 0 .. (itemsSize) - 1 loop
                     itemHashMap := HashMap_Access (itemsArray (i));
-                    itemHashMap.put (This.basicItemData.INBASKETS, EMPTY_STRING);
-                    itemHashMap.put (entryData.ENABLE, EMPTY_STRING);
-                    itemHashMap.put (entryData.TIMECREATED, EMPTY_STRING);
-                    itemHashMap.put (entryData.LASTMODIFIED, EMPTY_STRING);
-                    itemHashMap.put (This.basicItemData.GROUPS, EMPTY_STRING);
-                    itemHashMap.put (This.basicItemData.OPTIONS, EMPTY_STRING);
-                    itemHashMap.put (This.basicItemData.PERMISSIONS, EMPTY_STRING);
-                    itemHashMap.put (This.basicItemData.SPECIALS, EMPTY_STRING);
+                    itemHashMap.put (This.basicItemData.INBASKETS, Java_Box (EMPTY_STRING));
+                    itemHashMap.put (entryData.ENABLE, Java_Box (EMPTY_STRING));
+                    itemHashMap.put (entryData.TIMECREATED, Java_Box (EMPTY_STRING));
+                    itemHashMap.put (entryData.LASTMODIFIED, Java_Box (EMPTY_STRING));
+                    itemHashMap.put (This.basicItemData.GROUPS, Java_Box (EMPTY_STRING));
+                    itemHashMap.put (This.basicItemData.OPTIONS, Java_Box (EMPTY_STRING));
+                    itemHashMap.put (This.basicItemData.PERMISSIONS, Java_Box (EMPTY_STRING));
+                    itemHashMap.put (This.basicItemData.SPECIALS, Java_Box (EMPTY_STRING));
                     item := Item_Package.Create (itemHashMap);
                     basketReview.addItem (item);
                 end loop;
@@ -332,7 +332,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.order.OrderItemsE
 
    function createTable (This : in out OrderItemsEntity) return Unbounded_String is
    begin
-        return AbSqlBean (This).createTable (This.createTableStatement);
+        return AbSqlBean (This).createTable (OrderItemsEntity'Class (This).createTableStatement);
    end createTable;
 
    function dropTable (This : in out OrderItemsEntity) return Unbounded_String is

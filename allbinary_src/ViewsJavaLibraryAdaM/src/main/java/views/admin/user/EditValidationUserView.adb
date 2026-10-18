@@ -30,7 +30,7 @@ package body views.admin.user.EditValidationUserView_Package is
    begin
         UserView_Package.Initialize (This, transformInfoInterface);
         Initialize_Fields (This);
-        httpServletRequest := HttpServletRequest_Access (This.getPageContext.getRequest);
+        httpServletRequest := HttpServletRequest_Access (EditValidationUserView'Class (This).getPageContext.getRequest);
         hashMap := RequestParams_Package.Create (httpServletRequest).toHashMap;
         This.userName := UserName_Package.Create (hashMap).get;
    end Initialize;

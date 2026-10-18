@@ -50,7 +50,7 @@ package body workflows.template.data.BasicWorkFlow_Package is
    --  throws Exception
    function getName (This : in out BasicWorkFlow) return Unbounded_String is
    begin
-        return Unbounded_String (This.getPropertiesHashMap.get (WorkFlowData_Package.getInstance.NAME));
+        return Java_Unbox (BasicWorkFlow'Class (This).getPropertiesHashMap.get (WorkFlowData_Package.getInstance.NAME));
    end getName;
 
    function getPropertiesHashMap (This : in out BasicWorkFlow) return HashMap_Access is

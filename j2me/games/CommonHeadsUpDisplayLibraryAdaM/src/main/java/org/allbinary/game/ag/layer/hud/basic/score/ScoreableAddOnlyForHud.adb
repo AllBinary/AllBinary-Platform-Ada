@@ -28,7 +28,7 @@ package body org.allbinary.game.ag.layer.hud.basic.score.ScoreableAddOnlyForHud_
         Scoreable_Package.Initialize (This, 0);
         Initialize_Fields (This);
         This.scoreHudWidget := scoreVectorGraphic;
-        This.getScoreHudWidget.set (0);
+        ScoreableAddOnlyForHud'Class (This).getScoreHudWidget.set (0);
    end Initialize;
 
    function Create (scoreVectorGraphic_Param : access ScoreHudWidget_Package.ScoreHudWidget'Class) return ScoreableAddOnlyForHud_Access is
@@ -46,7 +46,7 @@ package body org.allbinary.game.ag.layer.hud.basic.score.ScoreableAddOnlyForHud_
    procedure addPoints (This : in out ScoreableAddOnlyForHud; points : Integer) is
    begin
         Scoreable (This).addPoints (points);
-        This.getScoreHudWidget.add (points);
+        ScoreableAddOnlyForHud'Class (This).getScoreHudWidget.add (points);
    end addPoints;
 
    function getScoreHudWidget (This : in out ScoreableAddOnlyForHud) return ScoreHudWidget_Access is

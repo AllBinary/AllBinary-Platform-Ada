@@ -55,8 +55,8 @@ package body org.allbinary.util.EnumerationUtil_Package is
       basicArrayList : BasicArrayList_Access;
    begin
         basicArrayList := BasicArrayListD_Package.Create;
-        while This.hasMoreElements (enumeration) loop
-            basicArrayList.add (This.nextElement (enumeration));
+        while EnumerationUtil'Class (This).hasMoreElements (enumeration) loop
+            basicArrayList.add (EnumerationUtil'Class (This).nextElement (enumeration));
         end loop;
         return basicArrayList.toArray;
    end getAsArray;

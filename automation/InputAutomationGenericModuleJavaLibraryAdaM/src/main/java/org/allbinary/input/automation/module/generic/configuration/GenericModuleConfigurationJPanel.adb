@@ -50,9 +50,9 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.Gene
    begin
       JPanel_Package.Initialize (This);
       Initialize_Fields (This);
-        This.initComponents;
-        This.setGenericProfiles (GenericProfiles_Package.Create (GenericProfiles_Package.DEFAULT_FILE));
-        This.selectFirstElement;
+        GenericModuleConfigurationJPanel'Class (This).initComponents;
+        GenericModuleConfigurationJPanel'Class (This).setGenericProfiles (GenericProfiles_Package.Create (GenericProfiles_Package.DEFAULT_FILE));
+        GenericModuleConfigurationJPanel'Class (This).selectFirstElement;
    end Initialize;
 
    function Create return GenericModuleConfigurationJPanel_Access is
@@ -96,7 +96,7 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.Gene
 --     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
 --        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
---                  This.okNewProfileJButtonActionPerformed (evt);
+--                  GenericModuleConfigurationJPanel'Class (This).okNewProfileJButtonActionPerformed (evt);
 --     end actionPerformed;
 );
         This.newProfileNameJLabel.setText (To_Unbounded_String ("New Profile Name"));
@@ -104,9 +104,9 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.Gene
         This.newProfileJDialog.getContentPane.setLayout (newProfileJDialogLayout);
         newProfileJDialogLayout.setHorizontalGroup (newProfileJDialogLayout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (newProfileJDialogLayout.createSequentialGroup.addGroup (newProfileJDialogLayout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (newProfileJDialogLayout.createSequentialGroup.addGap (80, 80, 80).addComponent (This.newProfileNameJLabel)).addGroup (newProfileJDialogLayout.createSequentialGroup.addGap (30, 30, 30).addComponent (This.newProfileNameJTextField, javax_Package.swing.GroupLayout.PREFERRED_SIZE, 180, javax_Package.swing.GroupLayout.PREFERRED_SIZE)).addGroup (newProfileJDialogLayout.createSequentialGroup.addGap (100, 100, 100).addComponent (This.okNewProfileJButton))).addContainerGap (35, Short_Package.MAX_VALUE)));
         newProfileJDialogLayout.setVerticalGroup (newProfileJDialogLayout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (newProfileJDialogLayout.createSequentialGroup.addGap (10, 10, 10).addComponent (This.newProfileNameJLabel).addGap (16, 16, 16).addComponent (This.newProfileNameJTextField, javax_Package.swing.GroupLayout.PREFERRED_SIZE, javax_Package.swing.GroupLayout.DEFAULT_SIZE, javax_Package.swing.GroupLayout.PREFERRED_SIZE).addGap (20, 20, 20).addComponent (This.okNewProfileJButton)));
-        This.setLayout (GridLayout_Package.Create (1, 0));
-        This.setMinimumSize (Dimension_Package.Create (400, 300));
-        This.setPreferredSize (Dimension_Package.Create (700, 700));
+        GenericModuleConfigurationJPanel'Class (This).setLayout (GridLayout_Package.Create (1, 0));
+        GenericModuleConfigurationJPanel'Class (This).setMinimumSize (Dimension_Package.Create (400, 300));
+        GenericModuleConfigurationJPanel'Class (This).setPreferredSize (Dimension_Package.Create (700, 700));
         This.genericJTabbedPane.setToolTipText (This.stringUtil.EMPTY_STRING);
         This.genericJTabbedPane.setMinimumSize (Dimension_Package.Create (800, 600));
         This.genericProfilesJPanel.setMinimumSize (Dimension_Package.Create (400, 300));
@@ -116,7 +116,7 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.Gene
 --     procedure valueChanged (This : in out ; evt_Param : access ListSelectionEvent_Package.ListSelectionEvent'Class) is
 --        evt : constant ListSelectionEvent_Access := ListSelectionEvent_Access (evt_Param);
 --     begin
---                  This.genericProfilesJListValueChanged (evt);
+--                  GenericModuleConfigurationJPanel'Class (This).genericProfilesJListValueChanged (evt);
 --     end valueChanged;
 );
         This.genericProfilesJScrollPane.setViewportView (This.genericProfilesJList);
@@ -127,7 +127,7 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.Gene
 --     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
 --        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
---                  This.newProfileJButtonActionPerformed (evt);
+--                  GenericModuleConfigurationJPanel'Class (This).newProfileJButtonActionPerformed (evt);
 --     end actionPerformed;
 );
         This.deleteProfileJButton.setText (To_Unbounded_String ("Delete"));
@@ -137,7 +137,7 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.Gene
 --     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
 --        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
---                  This.deleteProfileJButtonActionPerformed (evt);
+--                  GenericModuleConfigurationJPanel'Class (This).deleteProfileJButtonActionPerformed (evt);
 --     end actionPerformed;
 );
         This.jPanel1.setPreferredSize (Dimension_Package.Create (1000, 100));
@@ -150,7 +150,7 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.Gene
 --     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
 --        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
---                  This.screenCaptureJRadioButtonActionPerformed (evt);
+--                  GenericModuleConfigurationJPanel'Class (This).screenCaptureJRadioButtonActionPerformed (evt);
 --     end actionPerformed;
 );
         This.jLabel1.setText (To_Unbounded_String ("Profile Options"));
@@ -164,7 +164,7 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.Gene
 --     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
 --        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
---                  This.savedCaptureJRadioButtonActionPerformed (evt);
+--                  GenericModuleConfigurationJPanel'Class (This).savedCaptureJRadioButtonActionPerformed (evt);
 --     end actionPerformed;
 );
         This.captureMotionAnalysisJCheckBox.setText (To_Unbounded_String ("Motion Analysis"));
@@ -176,7 +176,7 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.Gene
 --     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
 --        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
---                  This.captureMotionAnalysisJCheckBoxActionPerformed (evt);
+--                  GenericModuleConfigurationJPanel'Class (This).captureMotionAnalysisJCheckBoxActionPerformed (evt);
 --     end actionPerformed;
 );
         This.captureComparisonJCheckBox.setText (To_Unbounded_String ("Comparison"));
@@ -188,7 +188,7 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.Gene
 --     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
 --        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
---                  This.captureComparisonJCheckBoxActionPerformed (evt);
+--                  GenericModuleConfigurationJPanel'Class (This).captureComparisonJCheckBoxActionPerformed (evt);
 --     end actionPerformed;
 );
         This.jLabel3.setText (To_Unbounded_String ("Image Processing:"));
@@ -207,7 +207,7 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.Gene
         blankGenericProfileActionsJPanelLayout.setHorizontalGroup (blankGenericProfileActionsJPanelLayout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGap (0, 395, Short_Package.MAX_VALUE));
         blankGenericProfileActionsJPanelLayout.setVerticalGroup (blankGenericProfileActionsJPanelLayout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGap (0, 275, Short_Package.MAX_VALUE));
         This.genericJTabbedPane.addTab (To_Unbounded_String ("Actions"), This.blankGenericProfileActionsJPanel);
-        This.add (This.genericJTabbedPane);
+        GenericModuleConfigurationJPanel'Class (This).add (This.genericJTabbedPane);
    end initComponents;
 
    procedure savedCaptureJRadioButtonActionPerformed (This : in out GenericModuleConfigurationJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
@@ -216,10 +216,10 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.Gene
         begin
             if This.savedCaptureJRadioButton.isSelected then
                 This.logUtil.putF (To_Unbounded_String ("Selected"), GenericModuleConfigurationJPanel_Access'(This'Unchecked_Access), To_Unbounded_String ("savedCaptureJRadioButtonActionPerformed"));
-                This.getSelectedGenericProfile.add (GenericProfileDataWorkerType_Package.SAVED_CAPTURE);
-                This.getSelectedGenericProfile.remove (GenericProfileDataWorkerType_Package.SCREEN_CAPTURE);
+                GenericModuleConfigurationJPanel'Class (This).getSelectedGenericProfile.add (GenericProfileDataWorkerType_Package.SAVED_CAPTURE);
+                GenericModuleConfigurationJPanel'Class (This).getSelectedGenericProfile.remove (GenericProfileDataWorkerType_Package.SCREEN_CAPTURE);
                 This.screenCaptureJRadioButton.setSelected (False);
-                This.getGenericProfiles.save;
+                GenericModuleConfigurationJPanel'Class (This).getGenericProfiles.save;
             end if;
         exception
             when Java_Occurrence : others =>
@@ -237,10 +237,10 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.Gene
         begin
             if This.screenCaptureJRadioButton.isSelected then
                 This.logUtil.putF (To_Unbounded_String ("Selected"), GenericModuleConfigurationJPanel_Access'(This'Unchecked_Access), To_Unbounded_String ("screenCaptureJRadioButtonActionPerformed"));
-                This.getSelectedGenericProfile.add (GenericProfileDataWorkerType_Package.SCREEN_CAPTURE);
-                This.getSelectedGenericProfile.remove (GenericProfileDataWorkerType_Package.SAVED_CAPTURE);
+                GenericModuleConfigurationJPanel'Class (This).getSelectedGenericProfile.add (GenericProfileDataWorkerType_Package.SCREEN_CAPTURE);
+                GenericModuleConfigurationJPanel'Class (This).getSelectedGenericProfile.remove (GenericProfileDataWorkerType_Package.SAVED_CAPTURE);
                 This.savedCaptureJRadioButton.setSelected (False);
-                This.getGenericProfiles.save;
+                GenericModuleConfigurationJPanel'Class (This).getGenericProfiles.save;
             end if;
         exception
             when Java_Occurrence : others =>
@@ -257,11 +257,11 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.Gene
    begin
         begin
             if This.captureMotionAnalysisJCheckBox.isSelected then
-                This.getSelectedGenericProfile.add (GenericProfileDataWorkerType_Package.MOTION);
+                GenericModuleConfigurationJPanel'Class (This).getSelectedGenericProfile.add (GenericProfileDataWorkerType_Package.MOTION);
             else
-                This.getSelectedGenericProfile.remove (GenericProfileDataWorkerType_Package.MOTION);
+                GenericModuleConfigurationJPanel'Class (This).getSelectedGenericProfile.remove (GenericProfileDataWorkerType_Package.MOTION);
             end if;
-            This.getGenericProfiles.save;
+            GenericModuleConfigurationJPanel'Class (This).getGenericProfiles.save;
         exception
             when Java_Occurrence : others =>
                 declare
@@ -277,11 +277,11 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.Gene
    begin
         begin
             if This.captureComparisonJCheckBox.isSelected then
-                This.getSelectedGenericProfile.add (GenericProfileDataWorkerType_Package.COMPARISON);
+                GenericModuleConfigurationJPanel'Class (This).getSelectedGenericProfile.add (GenericProfileDataWorkerType_Package.COMPARISON);
             else
-                This.getSelectedGenericProfile.remove (GenericProfileDataWorkerType_Package.COMPARISON);
+                GenericModuleConfigurationJPanel'Class (This).getSelectedGenericProfile.remove (GenericProfileDataWorkerType_Package.COMPARISON);
             end if;
-            This.getGenericProfiles.save;
+            GenericModuleConfigurationJPanel'Class (This).getGenericProfiles.save;
         exception
             when Java_Occurrence : others =>
                 declare
@@ -297,17 +297,17 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.Gene
       genericProfileActionsJPanel : GenericProfileActionsJPanel_Access;
       layout : GroupLayout_Access;
    begin
-        This.getBlankGenericProfileActionsJPanel.removeAll;
+        GenericModuleConfigurationJPanel'Class (This).getBlankGenericProfileActionsJPanel.removeAll;
         if (profileNameString) /= (Null_Unbounded_String) then
             genericProfileActionsJPanel := GenericProfileActionsJPanel_Package.Create;
-            This.setSelectedGenericProfile (This.getGenericProfiles.get (profileNameString));
-            This.getSelectedGenericProfile.setGenericProfileActions (GenericProfileActions_Package.Create (genericProfileActionsJPanel, profileNameString));
-            genericProfileActionsJPanel.setGenericProfileActions (This.getSelectedGenericProfile.getGenericProfileActions);
+            GenericModuleConfigurationJPanel'Class (This).setSelectedGenericProfile (GenericModuleConfigurationJPanel'Class (This).getGenericProfiles.get (profileNameString));
+            GenericModuleConfigurationJPanel'Class (This).getSelectedGenericProfile.setGenericProfileActions (GenericProfileActions_Package.Create (genericProfileActionsJPanel, profileNameString));
+            genericProfileActionsJPanel.setGenericProfileActions (GenericModuleConfigurationJPanel'Class (This).getSelectedGenericProfile.getGenericProfileActions);
             genericProfileActionsJPanel.selectFirstElement;
-            layout := GroupLayout_Access (This.getBlankGenericProfileActionsJPanel.getLayout);
+            layout := GroupLayout_Access (GenericModuleConfigurationJPanel'Class (This).getBlankGenericProfileActionsJPanel.getLayout);
             layout.setHorizontalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGap (0, 395, Short_Package.MAX_VALUE).addComponent (genericProfileActionsJPanel, javax_Package.swing.GroupLayout.PREFERRED_SIZE, javax_Package.swing.GroupLayout.DEFAULT_SIZE, javax_Package.swing.GroupLayout.PREFERRED_SIZE));
             layout.setVerticalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGap (0, 256, Short_Package.MAX_VALUE).addComponent (genericProfileActionsJPanel, javax_Package.swing.GroupLayout.PREFERRED_SIZE, javax_Package.swing.GroupLayout.DEFAULT_SIZE, javax_Package.swing.GroupLayout.PREFERRED_SIZE));
-            This.updateProfileOptions;
+            GenericModuleConfigurationJPanel'Class (This).updateProfileOptions;
             This.logUtil.putF (To_Unbounded_String ("Setting Configuration Profile JPanel"), GenericModuleConfigurationJPanel_Access'(This'Unchecked_Access), To_Unbounded_String ("updateProfileUI"));
         else
             This.logUtil.putF (To_Unbounded_String ("Null Configuration Profile"), GenericModuleConfigurationJPanel_Access'(This'Unchecked_Access), To_Unbounded_String ("updateProfileUI"));
@@ -317,10 +317,10 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.Gene
    --  throws Exception
    procedure selectFirstElement (This : in out GenericModuleConfigurationJPanel) is
    begin
-        This.genericProfilesJList.setModel (This.getGenericProfiles.getDefaultListModelHelper.getListModel);
+        This.genericProfilesJList.setModel (GenericModuleConfigurationJPanel'Class (This).getGenericProfiles.getDefaultListModelHelper.getListModel);
         if (This.genericProfilesJList.getModel.getSize) > (0) then
             This.genericProfilesJList.setSelectedValue (This.genericProfilesJList.getModel.getElementAt (0), True);
-            This.updateProfileUI (Unbounded_String (This.genericProfilesJList.getModel.getElementAt (0)));
+            GenericModuleConfigurationJPanel'Class (This).updateProfileUI (Java_Unbox (This.genericProfilesJList.getModel.getElementAt (0)));
         end if;
    end selectFirstElement;
 
@@ -333,7 +333,7 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.Gene
       index : Integer;
    begin
         This.logUtil.putF (This.commonStrings.START, GenericModuleConfigurationJPanel_Access'(This'Unchecked_Access), To_Unbounded_String ("updateProfileOptions"));
-        genericProfile := This.getSelectedGenericProfile;
+        genericProfile := GenericModuleConfigurationJPanel'Class (This).getSelectedGenericProfile;
         vector := genericProfile.getGenericProfileDataWorkerTypeVector;
         This.screenCaptureJRadioButton.setSelected (False);
         This.savedCaptureJRadioButton.setSelected (False);
@@ -359,7 +359,7 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.Gene
         end loop;
         if (not (This.screenCaptureJRadioButton.isSelected)) and then (not (This.savedCaptureJRadioButton.isSelected)) then
             This.screenCaptureJRadioButton.setSelected (True);
-            This.getSelectedGenericProfile.add (GenericProfileDataWorkerType_Package.SCREEN_CAPTURE);
+            GenericModuleConfigurationJPanel'Class (This).getSelectedGenericProfile.add (GenericProfileDataWorkerType_Package.SCREEN_CAPTURE);
         end if;
         This.logUtil.putF (This.commonStrings.END_Id, GenericModuleConfigurationJPanel_Access'(This'Unchecked_Access), To_Unbounded_String ("updateProfileOptions"));
    end updateProfileOptions;
@@ -402,8 +402,8 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.Gene
       profileNameString : Unbounded_String;
    begin
         begin
-            profileNameString := Unbounded_String (This.genericProfilesJList.getSelectedValue);
-            This.updateProfileUI (profileNameString);
+            profileNameString := Java_Unbox (This.genericProfilesJList.getSelectedValue);
+            GenericModuleConfigurationJPanel'Class (This).updateProfileUI (profileNameString);
         exception
             when Java_Occurrence : others =>
                 declare
@@ -423,10 +423,10 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.Gene
         begin
             anyType := This.genericProfilesJList.getSelectedValues;
             for index in 0 .. (anyType'Length) - 1 loop
-                nextSelectedValueString := Unbounded_String (anyType (index));
-                This.getGenericProfiles.remove (nextSelectedValueString);
+                nextSelectedValueString := Java_Unbox (anyType (index));
+                GenericModuleConfigurationJPanel'Class (This).getGenericProfiles.remove (nextSelectedValueString);
             end loop;
-            This.selectFirstElement;
+            GenericModuleConfigurationJPanel'Class (This).selectFirstElement;
         exception
             when Java_Occurrence : others =>
                 declare
@@ -443,11 +443,11 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.Gene
    begin
         begin
             newProfileName := This.newProfileNameJTextField.getText;
-            This.getGenericProfiles.add (newProfileName);
-            This.genericProfilesJList.setModel (This.getGenericProfiles.getDefaultListModelHelper.getListModel);
+            GenericModuleConfigurationJPanel'Class (This).getGenericProfiles.add (newProfileName);
+            This.genericProfilesJList.setModel (GenericModuleConfigurationJPanel'Class (This).getGenericProfiles.getDefaultListModelHelper.getListModel);
             This.genericProfilesJList.setSelectedValue (newProfileName, True);
             This.newProfileJDialog.setVisible (False);
-            This.updateProfileUI (newProfileName);
+            GenericModuleConfigurationJPanel'Class (This).updateProfileUI (newProfileName);
         exception
             when Java_Occurrence : others =>
                 declare

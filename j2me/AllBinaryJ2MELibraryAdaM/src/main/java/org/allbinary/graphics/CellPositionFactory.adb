@@ -62,7 +62,7 @@ package body org.allbinary.graphics.CellPositionFactory_Package is
         This.rows := rows;
         for column in 0 .. (columns) - 1 loop
             for row in 0 .. (rows) - 1 loop
-                This.createInstance (column, row);
+                CellPositionFactory'Class (This).createInstance (column, row);
             end loop;
         end loop;
    end init;
@@ -78,7 +78,7 @@ package body org.allbinary.graphics.CellPositionFactory_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             commonStrings := CommonStrings_Package.getInstance;
-            This.logUtil.put (StringMaker_Package.Create.append (To_Unbounded_String ("columns: ")).appendint (This.getColumns).append (To_Unbounded_String (" rows: ")).appendint (This.getRows).append (To_Unbounded_String (" col: ")).appendint (i_column).append (To_Unbounded_String (" row: ")).appendint (i_row).toString, CellPositionFactory_Access'(This'Unchecked_Access), commonStrings.GET_INSTANCE, e);
+            This.logUtil.put (StringMaker_Package.Create.append (To_Unbounded_String ("columns: ")).appendint (CellPositionFactory'Class (This).getColumns).append (To_Unbounded_String (" rows: ")).appendint (CellPositionFactory'Class (This).getRows).append (To_Unbounded_String (" col: ")).appendint (i_column).append (To_Unbounded_String (" row: ")).appendint (i_row).toString, CellPositionFactory_Access'(This'Unchecked_Access), commonStrings.GET_INSTANCE, e);
             return This.NONE;
                 end;
         end;

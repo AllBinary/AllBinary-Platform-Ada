@@ -82,16 +82,16 @@ package body org.allbinary.game.layer.UpgradableRTSLayerHudPaintable_Package is
    procedure updateSelectionInfo (This : in out UpgradableRTSLayerHudPaintable) is
       rtsLayer : RTSLayer_Access;
    begin
-        rtsLayer := RTSLayer_Access (This.getRtsLayer);
+        rtsLayer := RTSLayer_Access (UpgradableRTSLayerHudPaintable'Class (This).getRtsLayer);
         This.rtsLayerCompositePaintableLateInit.update (rtsLayer);
-        This.setAnimationInterface (rtsLayer.getVerticleBuildAnimationInterface);
-        This.setName (rtsLayer.getName);
+        UpgradableRTSLayerHudPaintable'Class (This).setAnimationInterface (rtsLayer.getVerticleBuildAnimationInterface);
+        UpgradableRTSLayerHudPaintable'Class (This).setName (rtsLayer.getName);
    end updateSelectionInfo;
 
    procedure updateInfo (This : in out UpgradableRTSLayerHudPaintable) is
       rtsLayer : RTSLayer_Access;
    begin
-        rtsLayer := RTSLayer_Access (This.getRtsLayer);
+        rtsLayer := RTSLayer_Access (UpgradableRTSLayerHudPaintable'Class (This).getRtsLayer);
         This.percentComplete := rtsLayer.getPercentComplete;
         if (This.percentComplete) < (10) then
             This.percentCompleteX := 32;
@@ -100,8 +100,8 @@ package body org.allbinary.game.layer.UpgradableRTSLayerHudPaintable_Package is
         else
             This.percentCompleteX := 16;
         end if;
-        This.percentCompleteArray := This.getPrimitiveLongUtil.getCharArray (This.percentComplete);
-        This.currentTotalDigits := This.getPrimitiveLongUtil.getCurrentTotalDigits;
+        This.percentCompleteArray := UpgradableRTSLayerHudPaintable'Class (This).getPrimitiveLongUtil.getCharArray (This.percentComplete);
+        This.currentTotalDigits := UpgradableRTSLayerHudPaintable'Class (This).getPrimitiveLongUtil.getCurrentTotalDigits;
    end updateInfo;
 
    procedure paint (This : in out UpgradableRTSLayerHudPaintable; graphics_Param : access Graphics_Package.Graphics'Class) is
@@ -111,7 +111,7 @@ package body org.allbinary.game.layer.UpgradableRTSLayerHudPaintable_Package is
         This.rtsLayerCompositePaintableLateInit.paint (graphics);
         graphics.drawChars (This.percentCompleteArray, 0, This.currentTotalDigits, (This.imageX) + (This.percentCompleteX), This.costY, 0);
         graphics.drawString (This.PERCENT, This.percentCompleteX2, This.costY, 0);
-        This.getAnimationInterface.paintXY (graphics, This.imageX, This.y);
+        UpgradableRTSLayerHudPaintable'Class (This).getAnimationInterface.paintXY (graphics, This.imageX, This.y);
    end paint;
 
    procedure setRtsLayer (This : in out UpgradableRTSLayerHudPaintable; rtsLayer_Param : access RTSLayer_Package.RTSLayer'Class) is

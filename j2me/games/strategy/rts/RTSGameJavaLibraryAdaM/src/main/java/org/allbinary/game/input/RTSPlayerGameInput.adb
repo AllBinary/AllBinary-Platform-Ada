@@ -45,14 +45,14 @@ package body org.allbinary.game.input.RTSPlayerGameInput_Package is
    begin
         PlayerGameInput_Package.Initialize (This, inputList, BasicArrayListD_Package.Create, playerInputId);
         Initialize_Fields (This);
-        This.initInputProcessors;
+        RTSPlayerGameInput'Class (This).initInputProcessors;
         This.gameCanvas := gameCanvas;
         This.inputList := inputList;
         This.towerInfoPaintable := towerInfoPaintable;
         This.rtsPlayerLayerInterface := rtsPlayerLayerInterface;
-        This.selectedRTSLayerPlayerGameInput := SelectedRTSLayersPlayerGameInput_Package.Create (This.getRTSLayerInfoPaintable, This.getRtsPlayerLayerInterface, This.inputList, playerInputId, selectRTSLayerVisitorFactoryInterface);
+        This.selectedRTSLayerPlayerGameInput := SelectedRTSLayersPlayerGameInput_Package.Create (RTSPlayerGameInput'Class (This).getRTSLayerInfoPaintable, RTSPlayerGameInput'Class (This).getRtsPlayerLayerInterface, This.inputList, playerInputId, selectRTSLayerVisitorFactoryInterface);
         if (This.rtsPlayerLayerInterface) /= (NullRTSLayer_Package.NULL_RTS_LAYER) then
-            This.setSelectedRtsFormInput (This.rtsPlayerLayerInterface.getRTSFormInput);
+            RTSPlayerGameInput'Class (This).setSelectedRtsFormInput (This.rtsPlayerLayerInterface.getRTSFormInput);
         end if;
         geographicMapCompositeInterface := GeographicMapCompositeInterface_Access (This.gameCanvas.getLayerManager);
         geographicMapInterface := geographicMapCompositeInterface.getGeographicMapInterface (0);
@@ -82,7 +82,7 @@ package body org.allbinary.game.input.RTSPlayerGameInput_Package is
    begin
         begin
             This.logUtil.putF (This.commonStrings.START, RTSPlayerGameInput_Access'(This'Unchecked_Access), To_Unbounded_String ("onDisplayChangeEvent"));
-            This.getRTSLayerInfoPaintable.update;
+            RTSPlayerGameInput'Class (This).getRTSLayerInfoPaintable.update;
         exception
             when Java_Occurrence : others =>
                 declare
@@ -131,21 +131,21 @@ package body org.allbinary.game.input.RTSPlayerGameInput_Package is
       index : Integer;
    begin
         begin
-            This.processMotionInput (layerManager);
+            RTSPlayerGameInput'Class (This).processMotionInput (layerManager);
             size := This.inputList.size;
             key := 0;
             for index in 0 .. (size) - 1 loop
                 gameKeyEvent := GameKeyEvent_Access (This.inputList.get (index));
                 key := gameKeyEvent.getKey;
-                This.getScrollPlayerGameInput.processInputKey (key);
-                This.getSelectedBuildingPlayerGameInput.processInputKey (key);
+                RTSPlayerGameInput'Class (This).getScrollPlayerGameInput.processInputKey (key);
+                RTSPlayerGameInput'Class (This).getSelectedBuildingPlayerGameInput.processInputKey (key);
                 This.inputProcessorArray (key).processEvent (layerManager, gameKeyEvent);
                 This.removeInputProcessorArray (key).processEvent (layerManager, gameKeyEvent);
             end loop;
-            if This.isIsSingleKeyProcessing then
-                This.clear;
+            if RTSPlayerGameInput'Class (This).isIsSingleKeyProcessing then
+                RTSPlayerGameInput'Class (This).clear;
             else
-                This.update;
+                RTSPlayerGameInput'Class (This).update;
             end if;
         exception
             when Java_Occurrence : others =>
@@ -194,7 +194,7 @@ package body org.allbinary.game.input.RTSPlayerGameInput_Package is
                 geographicMapCellPosition := geographicMapInterface.getCellPositionAtXY (layer.getXP, layer.getYP);
             end if;
             foundRTSLayer := CollidableDestroyableDamageableLayer_Access (layer);
-            This.setSelectedRTSLayer (foundRTSLayer, geographicMapCellPosition);
+            RTSPlayerGameInput'Class (This).setSelectedRTSLayer (foundRTSLayer, geographicMapCellPosition);
         else
             commonLabels := CommonLabels_Package.getInstance;
             This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Off Of Map -")).append (commonLabels.WIDTH_LABEL).appendint (Integer (allBinaryTiledLayer.getWidth)).append (commonLabels.HEIGHT_LABEL).appendint (Integer (allBinaryTiledLayer.getHeight)).toString, RTSPlayerGameInput_Access'(This'Unchecked_Access), To_Unbounded_String ("select"));
@@ -206,7 +206,7 @@ package body org.allbinary.game.input.RTSPlayerGameInput_Package is
       rtsLayer : constant CollidableDestroyableDamageableLayer_Access := CollidableDestroyableDamageableLayer_Access (rtsLayer_Param);
       geographicMapCellPosition : constant GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (geographicMapCellPosition_Param);
    begin
-        This.getSelectedBuildingPlayerGameInput.setSelectedRTSLayer (rtsLayer);
+        RTSPlayerGameInput'Class (This).getSelectedBuildingPlayerGameInput.setSelectedRTSLayer (rtsLayer);
    end setSelectedRTSLayer;
 
    procedure paint (This : in out RTSPlayerGameInput; graphics_Param : access Graphics_Package.Graphics'Class) is
@@ -222,12 +222,12 @@ package body org.allbinary.game.input.RTSPlayerGameInput_Package is
       rtsLayer : RTSLayer_Access;
       index : Integer;
    begin
-        geographicMapCellPosition := This.getSelectedRtsFormInput.getSelectedGeographicCellPosition;
+        geographicMapCellPosition := RTSPlayerGameInput'Class (This).getSelectedRtsFormInput.getSelectedGeographicCellPosition;
         geographicMapCompositeInterface := GeographicMapCompositeInterface_Access (This.gameCanvas.getLayerManager);
         geographicMapInterface := geographicMapCompositeInterface.getGeographicMapInterface (0);
         allBinaryTiledLayer := geographicMapInterface.getAllBinaryTiledLayer;
         graphics.setColor (BasicColorFactory_Package.getInstance.GREEN.intValue);
-        list := This.getSelectedBuildingPlayerGameInput.getPaintSelectedRTSLayersList;
+        list := RTSPlayerGameInput'Class (This).getSelectedBuildingPlayerGameInput.getPaintSelectedRTSLayersList;
         width := 0;
         height := 0;
         if (list.size) > (0) then

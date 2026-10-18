@@ -44,11 +44,11 @@ package body org.allbinary.game.graphics.hud.BasicHud_Package is
       basicColor : constant BasicColor_Access := BasicColor_Access (basicColor_Param);
    begin
       Initialize_Fields (This);
-        This.setLocation (location);
-        This.setDirection (direction);
-        This.setBufferZone (bufferZone);
-        This.onDisplayChangeEvent (DisplayInfoSingleton_Package.getInstance.displayChangeEvent);
-        This.setBasicColorP (basicColor);
+        BasicHud'Class (This).setLocation (location);
+        BasicHud'Class (This).setDirection (direction);
+        BasicHud'Class (This).setBufferZone (bufferZone);
+        BasicHud'Class (This).onDisplayChangeEvent (DisplayInfoSingleton_Package.getInstance.displayChangeEvent);
+        BasicHud'Class (This).setBasicColorP (basicColor);
         This.color := basicColor.intValue;
    end Initialize;
 
@@ -64,9 +64,9 @@ package body org.allbinary.game.graphics.hud.BasicHud_Package is
       commonStrings : CommonStrings_Access;
    begin
         begin
-            This.hudGraphicsPosition := This.getHudGraphicsPositionWH (This.displayInfo.getLastWidth, This.displayInfo.getLastHeight, This.updateMaxWidth, This.updateMaxHeight);
+            This.hudGraphicsPosition := BasicHud'Class (This).getHudGraphicsPositionWH (This.displayInfo.getLastWidth, This.displayInfo.getLastHeight, This.updateMaxWidth, This.updateMaxHeight);
             This.x := This.hudGraphicsPosition.getPoint.getX;
-            This.setY (This.hudGraphicsPosition.getPoint.getY);
+            BasicHud'Class (This).setY (This.hudGraphicsPosition.getPoint.getY);
         exception
             when Java_Occurrence : others =>
                 declare
@@ -100,36 +100,36 @@ package body org.allbinary.game.graphics.hud.BasicHud_Package is
         y := 0;
         anchor := 0;
         basicHudFactory := BasicHudFactory_Package.getInstance;
-        if (basicHudFactory.BOTTOMLEFT) = (This.getLocation) then
+        if (basicHudFactory.BOTTOMLEFT) = (BasicHud'Class (This).getLocation) then
             x := (This.bufferZone) + (2);
             y := ((height) - (maxHeight)) - (This.bufferZone);
             anchor := Java_And (Graphics_Package.BOTTOM, Graphics_Package.LEFT);
-        elsif (basicHudFactory.BOTTOMRIGHT) = (This.getLocation) then
+        elsif (basicHudFactory.BOTTOMRIGHT) = (BasicHud'Class (This).getLocation) then
             x := (width) - (maxWidth);
             y := ((height) - (maxHeight)) - (This.bufferZone);
             anchor := Java_And (Graphics_Package.BOTTOM, Graphics_Package.RIGHT);
-        elsif (basicHudFactory.TOPLEFT) = (This.getLocation) then
+        elsif (basicHudFactory.TOPLEFT) = (BasicHud'Class (This).getLocation) then
             x := (This.bufferZone) + (2);
             y := This.bufferZoneY;
             anchor := Anchor_Package.TOP_LEFT;
-        elsif (basicHudFactory.TOPRIGHT) = (This.getLocation) then
+        elsif (basicHudFactory.TOPRIGHT) = (BasicHud'Class (This).getLocation) then
             x := (width) - (maxWidth);
             y := This.bufferZoneY;
             anchor := Java_And (Graphics_Package.TOP, Graphics_Package.RIGHT);
-        elsif (basicHudFactory.TOPCENTER) = (This.getLocation) then
+        elsif (basicHudFactory.TOPCENTER) = (BasicHud'Class (This).getLocation) then
             x := ((((width) - (maxWidth))) / (2));
             y := This.bufferZoneY;
             anchor := Java_And (Graphics_Package.TOP, Graphics_Package.HCENTER);
-        elsif (basicHudFactory.BOTTOMCENTER) = (This.getLocation) then
+        elsif (basicHudFactory.BOTTOMCENTER) = (BasicHud'Class (This).getLocation) then
             x := ((((width) - (maxWidth))) / (2));
             y := ((height) - (maxHeight)) - (This.bufferZone);
             anchor := Java_And (Graphics_Package.BOTTOM, Graphics_Package.HCENTER);
-        elsif (basicHudFactory.ABSOLUTE) = (This.getLocation) then
+        elsif (basicHudFactory.ABSOLUTE) = (BasicHud'Class (This).getLocation) then
             x := maxHeight;
             y := maxWidth;
             anchor := 0;
         end if;
-        return HudGraphicsPosition_Package.Create (This.getPoint (x, y), anchor);
+        return HudGraphicsPosition_Package.Create (BasicHud'Class (This).getPoint (x, y), anchor);
    end getHudGraphicsPositionWH;
 
    procedure onEvent (This : in out BasicHud; eventObject_Param : access AllBinaryEventObject_Package.AllBinaryEventObject'Class) is
@@ -219,18 +219,18 @@ package body org.allbinary.game.graphics.hud.BasicHud_Package is
       graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
         This.myFontProcessor.process (graphics);
-        This.basicSetColorUtil.setBasicColorP (graphics, This.getBasicColorP);
-        graphics.drawString (string_Id, This.x, This.getY, This.hudGraphicsPosition.getAnchor);
-        graphics.drawString (string2, (This.x) + (offset), This.getY, This.hudGraphicsPosition.getAnchor);
+        This.basicSetColorUtil.setBasicColorP (graphics, BasicHud'Class (This).getBasicColorP);
+        graphics.drawString (string_Id, This.x, BasicHud'Class (This).getY, This.hudGraphicsPosition.getAnchor);
+        graphics.drawString (string2, (This.x) + (offset), BasicHud'Class (This).getY, This.hudGraphicsPosition.getAnchor);
    end paintSSO;
 
    procedure paintSSOO (This : in out BasicHud; graphics_Param : access Graphics_Package.Graphics'Class; string_Id : Unbounded_String; string2 : Unbounded_String; offset : Integer; offset2 : Integer) is
       graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
         This.myFontProcessor.process (graphics);
-        graphics.setColor (This.getColor);
-        graphics.drawString (string_Id, (This.x) + (offset), This.getY, This.hudGraphicsPosition.getAnchor);
-        graphics.drawString (string2, (This.x) + (offset2), This.getY, This.hudGraphicsPosition.getAnchor);
+        graphics.setColor (BasicHud'Class (This).getColor);
+        graphics.drawString (string_Id, (This.x) + (offset), BasicHud'Class (This).getY, This.hudGraphicsPosition.getAnchor);
+        graphics.drawString (string2, (This.x) + (offset2), BasicHud'Class (This).getY, This.hudGraphicsPosition.getAnchor);
    end paintSSOO;
 
    procedure paintDXY (This : in out BasicHud; graphics_Param : access Graphics_Package.Graphics'Class; charArray : Character_Array_Access; offset : Integer; len : Integer; charArray2 : Character_Array_Access; offset2 : Integer; len2 : Integer; xOffset : Integer; xOffset2 : Integer) is
@@ -238,8 +238,8 @@ package body org.allbinary.game.graphics.hud.BasicHud_Package is
       y : Integer;
    begin
         This.myFontProcessor.process (graphics);
-        This.basicSetColorUtil.setBasicColorP (graphics, This.getBasicColorP);
-        y := This.getY;
+        This.basicSetColorUtil.setBasicColorP (graphics, BasicHud'Class (This).getBasicColorP);
+        y := BasicHud'Class (This).getY;
         graphics.drawChars (charArray, offset, len, (This.x) + (xOffset), y, This.hudGraphicsPosition.getAnchor);
         graphics.drawChars (charArray2, offset2, len2, (This.x) + (xOffset2), y, This.hudGraphicsPosition.getAnchor);
    end paintDXY;
@@ -249,8 +249,8 @@ package body org.allbinary.game.graphics.hud.BasicHud_Package is
       y : Integer;
    begin
         This.myFontProcessor.process (graphics);
-        This.basicSetColorUtil.setBasicColorP (graphics, This.getBasicColorP);
-        y := This.getY;
+        This.basicSetColorUtil.setBasicColorP (graphics, BasicHud'Class (This).getBasicColorP);
+        y := BasicHud'Class (This).getY;
         graphics.drawChars (charArray, offset, len, This.x, y, This.hudGraphicsPosition.getAnchor);
         graphics.drawChars (charArray2, offset2, len2, (This.x) + (xOffset), y, This.hudGraphicsPosition.getAnchor);
    end paintDX;
@@ -260,8 +260,8 @@ package body org.allbinary.game.graphics.hud.BasicHud_Package is
       y : Integer;
    begin
         This.myFontProcessor.process (graphics);
-        This.basicSetColorUtil.setBasicColorP (graphics, This.getBasicColorP);
-        y := This.getY;
+        This.basicSetColorUtil.setBasicColorP (graphics, BasicHud'Class (This).getBasicColorP);
+        y := BasicHud'Class (This).getY;
         graphics.drawChars (charArray, offset, len, This.x, y, This.hudGraphicsPosition.getAnchor);
    end paintOffsetAndLength;
 
@@ -270,8 +270,8 @@ package body org.allbinary.game.graphics.hud.BasicHud_Package is
       y : Integer;
    begin
         This.myFontProcessor.process (graphics);
-        This.basicSetColorUtil.setBasicColorP (graphics, This.getBasicColorP);
-        y := (This.getY) + (This.offsetY);
+        This.basicSetColorUtil.setBasicColorP (graphics, BasicHud'Class (This).getBasicColorP);
+        y := (BasicHud'Class (This).getY) + (This.offsetY);
         graphics.drawString (string_Id, This.x, y, This.hudGraphicsPosition.getAnchor);
    end paintString;
 

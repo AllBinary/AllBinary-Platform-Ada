@@ -43,17 +43,20 @@ package body org.allbinary.emulator.device.TrueTypeFontUtil_Package is
    function getAsTextureSize (This : in out TrueTypeFontUtil; textureSize : Integer) return Integer is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return 0;
    end getAsTextureSize;
 
    function getCellSize (This : in out TrueTypeFontUtil; cellSize : Integer) return Integer is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return 0;
    end getCellSize;
 
    function getFontBitmap (This : in out TrueTypeFontUtil; filename : Unbounded_String; fontSize : Integer; cellSize : Integer; basicColor_Param : access BasicColor_Package.BasicColor'Class) return Image_Access is
       basicColor : constant BasicColor_Access := BasicColor_Access (basicColor_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return null;
    end getFontBitmap;
 
    procedure saveFontAtlasAsFile (This : in out TrueTypeFontUtil) is
@@ -66,11 +69,13 @@ package body org.allbinary.emulator.device.TrueTypeFontUtil_Package is
       basicColor : constant BasicColor_Access := BasicColor_Access (basicColor_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return null;
    end getFontBitmapGL;
 
    function getFontWidths (This : in out TrueTypeFontUtil; filename : Unbounded_String; fontSize : Integer) return Integer_Array_Access is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return null;
    end getFontWidths;
 
    procedure getAsTextureSize (This : in out TrueTypeFontUtil; textureSize : Integer) is

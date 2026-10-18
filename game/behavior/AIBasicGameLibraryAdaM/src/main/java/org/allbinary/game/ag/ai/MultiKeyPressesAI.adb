@@ -30,7 +30,7 @@ package body org.allbinary.game.ag.ai.MultiKeyPressesAI_Package is
    begin
         KeyPressesAI_Package.Initialize (This, hashtable, ownerLayerInterface, gameInput);
         Initialize_Fields (This);
-        This.update;
+        MultiKeyPressesAI'Class (This).update;
    end Initialize;
 
    function Create (hashtable_Param : access ABHashtable_Package.ABHashtable'Class; ownerLayerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; gameInput_Param : access GameInput_Package.GameInput'Class) return MultiKeyPressesAI_Access is
@@ -55,10 +55,10 @@ package body org.allbinary.game.ag.ai.MultiKeyPressesAI_Package is
       key : Integer;
       index : Integer;
    begin
-        gameInput := This.getGameInput;
+        gameInput := MultiKeyPressesAI'Class (This).getGameInput;
         keys := This.keys;
         size := keys'Length;
-        if This.isOn then
+        if MultiKeyPressesAI'Class (This).isOn then
             for index in 0 .. (size) - 1 loop
                 key := keys (index).intValue;
                 if (key) /= (-(1)) then
@@ -80,7 +80,7 @@ package body org.allbinary.game.ag.ai.MultiKeyPressesAI_Package is
    begin
         if This.toggleTimeHelper.isTime (This.gameTickTimeDelayHelper.startTime) then
             KeyPressesAI (This).toggle;
-            This.update;
+            MultiKeyPressesAI'Class (This).update;
         end if;
    end toggle;
 
@@ -89,7 +89,7 @@ package body org.allbinary.game.ag.ai.MultiKeyPressesAI_Package is
    begin
         if This.toggleTimeHelper.isTime (This.gameTickTimeDelayHelper.startTime) then
             KeyPressesAI (This).disable;
-            This.update;
+            MultiKeyPressesAI'Class (This).update;
         end if;
    end disable;
 
@@ -98,7 +98,7 @@ package body org.allbinary.game.ag.ai.MultiKeyPressesAI_Package is
    begin
         if This.toggleTimeHelper.isTime (This.gameTickTimeDelayHelper.startTime) then
             KeyPressesAI (This).enable;
-            This.update;
+            MultiKeyPressesAI'Class (This).update;
         end if;
    end enable;
 

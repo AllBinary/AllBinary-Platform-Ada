@@ -48,7 +48,7 @@ package body org.allbinary.logic.communication.sql.AbSqlBean_Package is
         stringBuffer.append (This.sqlStrings.SELECT_Id);
         stringBuffer.append (requestedField);
         stringBuffer.append (This.sqlStrings.FROM);
-        stringBuffer.append (This.getTableName);
+        stringBuffer.append (AbSqlBean'Class (This).getTableName);
         stringBuffer.append (This.sqlStrings.WHERE);
         stringBuffer.append (key);
         stringBuffer.append (This.sqlStrings.EQUAL_QUOTE);
@@ -57,7 +57,7 @@ package body org.allbinary.logic.communication.sql.AbSqlBean_Package is
         sqlStatement := stringBuffer.toString;
         begin
             field := This.stringUtil.EMPTY_STRING;
-            rset := This.executeSQLStatement (sqlStatement);
+            rset := AbSqlBean'Class (This).executeSQLStatement (sqlStatement);
             while rset.next loop
                 field := rset.getString (requestedField);
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
@@ -101,7 +101,7 @@ package body org.allbinary.logic.communication.sql.AbSqlBean_Package is
         stringBuffer.append (This.sqlStrings.SELECT_Id);
         stringBuffer.append (requestedField);
         stringBuffer.append (This.sqlStrings.FROM);
-        stringBuffer.append (This.getTableName);
+        stringBuffer.append (AbSqlBean'Class (This).getTableName);
         stringBuffer.append (This.sqlStrings.WHERE);
         begin
             field := This.stringUtil.EMPTY_STRING;
@@ -111,8 +111,8 @@ package body org.allbinary.logic.communication.sql.AbSqlBean_Package is
             key := Null_Unbounded_String;
             value := Null_Unbounded_String;
             for i in 0 .. (size) - 1 loop
-                key := Unbounded_String (keyArray (i));
-                value := Java_New_String (Unbounded_String (keysAndValues.get (key)));
+                key := Java_Unbox (keyArray (i));
+                value := Java_New_String (Java_Unbox (keysAndValues.get (Java_Box (key))));
                 stringBuffer.append (key);
                 stringBuffer.append (This.sqlStrings.EQUAL_QUOTE);
                 stringBuffer.append (value);
@@ -122,7 +122,7 @@ package body org.allbinary.logic.communication.sql.AbSqlBean_Package is
                 end if;
             end loop;
             sqlStatement := stringBuffer.toString;
-            rset := This.executeSQLStatement (sqlStatement);
+            rset := AbSqlBean'Class (This).executeSQLStatement (sqlStatement);
             while rset.next loop
                 field := rset.getString (requestedField);
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
@@ -175,14 +175,14 @@ package body org.allbinary.logic.communication.sql.AbSqlBean_Package is
                 stringBuffer.append (keyArray (i).toString);
             end loop;
             stringBuffer.append (This.sqlStrings.FROM);
-            stringBuffer.append (This.getTableName);
+            stringBuffer.append (AbSqlBean'Class (This).getTableName);
             stringBuffer.append (This.sqlStrings.WHERE);
             stringBuffer.append (key);
             stringBuffer.append (This.sqlStrings.EQUAL_QUOTE);
             stringBuffer.append (value);
             stringBuffer.append (This.sqlStrings.CLOSE_QUOTE);
             sqlStatement := stringBuffer.toString;
-            rset := This.executeSQLStatement (sqlStatement);
+            rset := AbSqlBean'Class (This).executeSQLStatement (sqlStatement);
             columnName := Null_Unbounded_String;
             field := Null_Unbounded_String;
             while rset.next loop
@@ -191,7 +191,7 @@ package body org.allbinary.logic.communication.sql.AbSqlBean_Package is
                 for i in 0 .. (size2) - 1 loop
                     columnName := keyArray2 (i).toString;
                     field := rset.getObject (columnName).toString;
-                    if (field.compareTo (Unbounded_String (columnsAndValues.get (columnName)))) /= (0) then
+                    if (field.compareTo (Java_Unbox (columnsAndValues.get (Java_Box (columnName))))) /= (0) then
                         return org_Package.allbinary.globals.GLOBALS2.NOTASUBSET;
                     end if;
                 end loop;

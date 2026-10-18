@@ -53,7 +53,7 @@ package body org.allbinary.logic.communication.http.request.HttpRequestUtil_Pack
    function generateFileName (This : in out HttpRequestUtil; requestPath : Unbounded_String) return Unbounded_String is
       beginIndex : Integer;
    begin
-        beginIndex := This.getLastSeparatorIndex (requestPath);
+        beginIndex := HttpRequestUtil'Class (This).getLastSeparatorIndex (requestPath);
         if (beginIndex) < (0) then
             return requestPath;
         else

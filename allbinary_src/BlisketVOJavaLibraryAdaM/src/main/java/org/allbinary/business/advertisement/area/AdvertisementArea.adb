@@ -32,13 +32,13 @@ package body org.allbinary.business.advertisement.area.AdvertisementArea_Package
       document : Document_Access;
    begin
       Initialize_Fields (This);
-        This.name := Unbounded_String (hashMap.get (AdvertisementAreaData_Package.getInstance.NAME));
-        This.storeName := Unbounded_String (hashMap.get (StoreFrontData_Package.getInstance.NAME));
-        This.description := Unbounded_String (hashMap.get (AdvertisementAreaData_Package.getInstance.DESCRIPTION));
-        constraintsDomString := Unbounded_String (hashMap.get (AdvertisementAreaData_Package.getInstance.CONSTRAINTS));
+        This.name := Java_Unbox (hashMap.get (AdvertisementAreaData_Package.getInstance.NAME));
+        This.storeName := Java_Unbox (hashMap.get (StoreFrontData_Package.getInstance.NAME));
+        This.description := Java_Unbox (hashMap.get (AdvertisementAreaData_Package.getInstance.DESCRIPTION));
+        constraintsDomString := Java_Unbox (hashMap.get (AdvertisementAreaData_Package.getInstance.CONSTRAINTS));
         document := DomDocumentHelper_Package.create (constraintsDomString);
         This.advertisementAreaConstraintsInterface := AdvertisementAreaConstraints_Package.Create (document);
-        This.campaign := Unbounded_String (hashMap.get (AdvertisementCampaignData_Package.getInstance.NAME));
+        This.campaign := Java_Unbox (hashMap.get (AdvertisementCampaignData_Package.getInstance.NAME));
    end Initialize;
 
    function Create (hashMap_Param : access HashMap_Package.HashMap'Class) return AdvertisementArea_Access is

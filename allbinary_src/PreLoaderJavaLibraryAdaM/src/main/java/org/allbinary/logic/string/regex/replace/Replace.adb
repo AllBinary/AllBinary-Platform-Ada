@@ -71,7 +71,7 @@ package body org.allbinary.logic.string_Id.regex.replace.Replace_Package is
 
    function all_Case_Id (This : in out Replace; replace : Unbounded_String) return Unbounded_String is
    begin
-        return This.upTo (replace, Integer_Package.MIN_VALUE);
+        return Replace'Class (This).upTo (replace, Integer_Package.MIN_VALUE);
    end all_Case_Id;
 
    function upTo (This : in out Replace; replace_Param : Unbounded_String; total : Integer) return Unbounded_String is
@@ -172,8 +172,8 @@ package body org.allbinary.logic.string_Id.regex.replace.Replace_Package is
         keyArray := This.j2seUtil.getHashMapAsArray (This.hashMap);
         size := keyArray'Length;
         for index2 in 0 .. (size) - 1 loop
-            key := Unbounded_String (keyArray (index2));
-            value := Unbounded_String (This.hashMap.get (key));
+            key := Java_Unbox (keyArray (index2));
+            value := Java_Unbox (This.hashMap.get (Java_Box (key)));
             index := 0;
             while (index) < (Length (replace)) loop
                 newStringBuffer.delete (0, newStringBuffer.length);

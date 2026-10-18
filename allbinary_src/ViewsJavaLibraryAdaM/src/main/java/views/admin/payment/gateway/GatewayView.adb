@@ -40,8 +40,8 @@ package body views.admin.payment.gateway.GatewayView_Package is
       request : constant HttpServletRequest_Access := HttpServletRequest_Access (request_Param);
    begin
         PaymentGatewayViewAbstract (This).getFormData (request);
-        if StringValidationUtil_Package.getInstance.isEmpty (This.getPaymentGatewayPrimaryKey.getName) then
-            This.getPaymentGatewayPrimaryKey.setName (This.getWeblisketSession.getPaymentMethod);
+        if StringValidationUtil_Package.getInstance.isEmpty (GatewayView'Class (This).getPaymentGatewayPrimaryKey.getName) then
+            GatewayView'Class (This).getPaymentGatewayPrimaryKey.setName (GatewayView'Class (This).getWeblisketSession.getPaymentMethod);
         end if;
    end getFormData;
 
@@ -50,8 +50,8 @@ package body views.admin.payment.gateway.GatewayView_Package is
       paymentGatewayInterface : PaymentGatewayInterface_Access;
    begin
         begin
-            paymentGatewayInterface := PaymentGatewayEntityFactory_Package.getInstance.getPaymentGatewayInterface (This.getPaymentGatewayPrimaryKey.getStoreName, BasicPaymentTypeUtil_Package.getInstance.get (This.getPaymentGatewayPrimaryKey.getName));
-            return PaymentGatewayComponent_Package.Create (This.getTransformInfoInterface, paymentGatewayInterface).view;
+            paymentGatewayInterface := PaymentGatewayEntityFactory_Package.getInstance.getPaymentGatewayInterface (GatewayView'Class (This).getPaymentGatewayPrimaryKey.getStoreName, BasicPaymentTypeUtil_Package.getInstance.get (GatewayView'Class (This).getPaymentGatewayPrimaryKey.getName));
+            return PaymentGatewayComponent_Package.Create (GatewayView'Class (This).getTransformInfoInterface, paymentGatewayInterface).view;
         exception
             when Java_Occurrence : others =>
                 declare

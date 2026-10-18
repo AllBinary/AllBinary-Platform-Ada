@@ -20,8 +20,8 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with javax.microedition.lcdui.Canvas_Package; use javax.microedition.lcdui.Canvas_Package;
---  with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Canvas_Package; use javax.microedition.lcdui.Canvas_Package;
+with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
 with org.allbinary.graphics.GPoint_Package; use org.allbinary.graphics.GPoint_Package;
 with org.allbinary.graphics.Rectangle_Package; use org.allbinary.graphics.Rectangle_Package;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
@@ -45,6 +45,8 @@ with org.allbinary.graphics.form.FormType_Package; use org.allbinary.graphics.fo
 
 package org.allbinary.graphics.form.ScrollSelectionForm_Package is
 
+   package Canvas_Package renames Standard.javax.microedition.lcdui.Canvas_Package;
+   package Graphics_Package renames Standard.javax.microedition.lcdui.Graphics_Package;
    package GPoint_Package renames Standard.org.allbinary.graphics.GPoint_Package;
    package Rectangle_Package renames Standard.org.allbinary.graphics.Rectangle_Package;
    package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
@@ -133,8 +135,8 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with javax.microedition.lcdui.Canvas_Package; use javax.microedition.lcdui.Canvas_Package;
---  with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Canvas_Package; use javax.microedition.lcdui.Canvas_Package;
+with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
 with org.allbinary.graphics.GPoint_Package; use org.allbinary.graphics.GPoint_Package;
 with org.allbinary.graphics.Rectangle_Package; use org.allbinary.graphics.Rectangle_Package;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
@@ -158,6 +160,8 @@ with org.allbinary.graphics.form.FormType_Package; use org.allbinary.graphics.fo
 
 package org.allbinary.graphics.form.ScrollSelectionFormHorizontalPaintable_Package is
 
+   package Canvas_Package renames Standard.javax.microedition.lcdui.Canvas_Package;
+   package Graphics_Package renames Standard.javax.microedition.lcdui.Graphics_Package;
    package GPoint_Package renames Standard.org.allbinary.graphics.GPoint_Package;
    package Rectangle_Package renames Standard.org.allbinary.graphics.Rectangle_Package;
    package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
@@ -196,8 +200,8 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with javax.microedition.lcdui.Canvas_Package; use javax.microedition.lcdui.Canvas_Package;
---  with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Canvas_Package; use javax.microedition.lcdui.Canvas_Package;
+with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
 with org.allbinary.graphics.GPoint_Package; use org.allbinary.graphics.GPoint_Package;
 with org.allbinary.graphics.Rectangle_Package; use org.allbinary.graphics.Rectangle_Package;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
@@ -221,6 +225,8 @@ with org.allbinary.graphics.form.FormType_Package; use org.allbinary.graphics.fo
 
 package org.allbinary.graphics.form.ScrollSelectionFormVerticalPaintable_Package is
 
+   package Canvas_Package renames Standard.javax.microedition.lcdui.Canvas_Package;
+   package Graphics_Package renames Standard.javax.microedition.lcdui.Graphics_Package;
    package GPoint_Package renames Standard.org.allbinary.graphics.GPoint_Package;
    package Rectangle_Package renames Standard.org.allbinary.graphics.Rectangle_Package;
    package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
@@ -259,8 +265,8 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with javax.microedition.lcdui.Canvas_Package; use javax.microedition.lcdui.Canvas_Package;
---  with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Canvas_Package; use javax.microedition.lcdui.Canvas_Package;
+with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
 with org.allbinary.graphics.GPoint_Package; use org.allbinary.graphics.GPoint_Package;
 with org.allbinary.graphics.Rectangle_Package; use org.allbinary.graphics.Rectangle_Package;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
@@ -284,6 +290,8 @@ with org.allbinary.graphics.form.FormType_Package; use org.allbinary.graphics.fo
 
 package org.allbinary.graphics.form.ScrollSelectionFormTempHorizontalPaintable_Package is
 
+   package Canvas_Package renames Standard.javax.microedition.lcdui.Canvas_Package;
+   package Graphics_Package renames Standard.javax.microedition.lcdui.Graphics_Package;
    package GPoint_Package renames Standard.org.allbinary.graphics.GPoint_Package;
    package Rectangle_Package renames Standard.org.allbinary.graphics.Rectangle_Package;
    package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
@@ -322,8 +330,8 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with javax.microedition.lcdui.Canvas_Package; use javax.microedition.lcdui.Canvas_Package;
---  with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Canvas_Package; use javax.microedition.lcdui.Canvas_Package;
+with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
 with org.allbinary.graphics.GPoint_Package; use org.allbinary.graphics.GPoint_Package;
 with org.allbinary.graphics.Rectangle_Package; use org.allbinary.graphics.Rectangle_Package;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
@@ -347,6 +355,8 @@ with org.allbinary.graphics.form.FormType_Package; use org.allbinary.graphics.fo
 
 package org.allbinary.graphics.form.ScrollSelectionFormHorizontalDx_Package is
 
+   package Canvas_Package renames Standard.javax.microedition.lcdui.Canvas_Package;
+   package Graphics_Package renames Standard.javax.microedition.lcdui.Graphics_Package;
    package GPoint_Package renames Standard.org.allbinary.graphics.GPoint_Package;
    package Rectangle_Package renames Standard.org.allbinary.graphics.Rectangle_Package;
    package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
@@ -385,8 +395,8 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with javax.microedition.lcdui.Canvas_Package; use javax.microedition.lcdui.Canvas_Package;
---  with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Canvas_Package; use javax.microedition.lcdui.Canvas_Package;
+with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
 with org.allbinary.graphics.GPoint_Package; use org.allbinary.graphics.GPoint_Package;
 with org.allbinary.graphics.Rectangle_Package; use org.allbinary.graphics.Rectangle_Package;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
@@ -410,6 +420,8 @@ with org.allbinary.graphics.form.FormType_Package; use org.allbinary.graphics.fo
 
 package org.allbinary.graphics.form.ScrollSelectionFormVericalDx_Package is
 
+   package Canvas_Package renames Standard.javax.microedition.lcdui.Canvas_Package;
+   package Graphics_Package renames Standard.javax.microedition.lcdui.Graphics_Package;
    package GPoint_Package renames Standard.org.allbinary.graphics.GPoint_Package;
    package Rectangle_Package renames Standard.org.allbinary.graphics.Rectangle_Package;
    package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
@@ -448,8 +460,8 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with javax.microedition.lcdui.Canvas_Package; use javax.microedition.lcdui.Canvas_Package;
---  with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Canvas_Package; use javax.microedition.lcdui.Canvas_Package;
+with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
 with org.allbinary.graphics.GPoint_Package; use org.allbinary.graphics.GPoint_Package;
 with org.allbinary.graphics.Rectangle_Package; use org.allbinary.graphics.Rectangle_Package;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
@@ -473,6 +485,8 @@ with org.allbinary.graphics.form.FormType_Package; use org.allbinary.graphics.fo
 
 package org.allbinary.graphics.form.ScrollSelectionFormTempHorizontalDx_Package is
 
+   package Canvas_Package renames Standard.javax.microedition.lcdui.Canvas_Package;
+   package Graphics_Package renames Standard.javax.microedition.lcdui.Graphics_Package;
    package GPoint_Package renames Standard.org.allbinary.graphics.GPoint_Package;
    package Rectangle_Package renames Standard.org.allbinary.graphics.Rectangle_Package;
    package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;

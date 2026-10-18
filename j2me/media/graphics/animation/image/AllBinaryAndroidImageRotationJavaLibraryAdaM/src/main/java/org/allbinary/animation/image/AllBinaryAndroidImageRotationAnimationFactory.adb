@@ -103,9 +103,9 @@ package body org.allbinary.animation.image.AllBinaryAndroidImageRotationAnimatio
    begin
         features := Features_Package.getInstance;
         if (This.resizeCanvasForRotation) and then (not (features.isDefault (OpenGLFeatureFactory_Package.getInstance.OPENGL))) then
-            return ImageCopyUtil_Package.getInstance.createImageScale (This.getImage, 1.44, False);
+            return ImageCopyUtil_Package.getInstance.createImageScale (AllBinaryAndroidImageRotationAnimationFactory'Class (This).getImage, 1.44, False);
         else
-            return This.getImage;
+            return AllBinaryAndroidImageRotationAnimationFactory'Class (This).getImage;
         end if;
    end getCanvasImage;
 
@@ -115,7 +115,7 @@ package body org.allbinary.animation.image.AllBinaryAndroidImageRotationAnimatio
       scaledImage : Image_Access;
       copyOfScaledImage : Image_Access;
    begin
-        canvasImage := This.getCanvasImage;
+        canvasImage := AllBinaryAndroidImageRotationAnimationFactory'Class (This).getCanvasImage;
         scaledImage := This.animationFactoryImageScaleUtil.createImage (canvasImage, This.animationFactoryInitializationVisitor.width, This.animationFactoryInitializationVisitor.height, This.scaleProperties.scaleWidth, This.scaleProperties.scaleHeight);
         copyOfScaledImage := ImageCopyUtil_Package.getInstance.createImage (scaledImage);
         if ((This.animationFactoryInitializationVisitor.dx) /= (0)) or else ((This.animationFactoryInitializationVisitor.dy) /= (0)) then

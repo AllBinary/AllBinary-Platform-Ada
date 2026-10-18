@@ -47,7 +47,7 @@ package body org.allbinary.media.image.ImageJ2MEScaleUtil_Package is
         scaledImages := new Image_Access_Array'(0 .. (images'Length) - 1 => null);
         index := images'Length;
         while (Java_Pre_Decrement (index)) >= (0) loop
-            scaledImages (index) := This.scale (images (index), width, height);
+            scaledImages (index) := ImageJ2MEScaleUtil'Class (This).scale (images (index), width, height);
         end loop;
         return scaledImages;
    end scaleArray;

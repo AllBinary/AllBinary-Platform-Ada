@@ -20,11 +20,12 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with javax.microedition.lcdui.game.TiledLayer_Package; use javax.microedition.lcdui.game.TiledLayer_Package;
+with javax.microedition.lcdui.game.TiledLayer_Package; use javax.microedition.lcdui.game.TiledLayer_Package;
 with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackData_Package; use org.allbinary.media.graphics.geography.map.racetrack.RaceTrackData_Package;
 
 package org.allbinary.media.graphics.geography.map.racetrack.TiledLayerFactory_Package is
 
+   package TiledLayer_Package renames Standard.javax.microedition.lcdui.game.TiledLayer_Package;
 
    type TiledLayerFactory is tagged;
    type TiledLayerFactory_Access is access all TiledLayerFactory'Class;

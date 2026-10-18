@@ -79,7 +79,7 @@ package body org.allbinary.media.image.ImageUtil_Package is
             imageData := bufferedImage.getImageData;
             newWidth := Integer ((((imageData.width) * (percent)) / (100)));
             newHeight := Integer ((((imageData.height) * (percent)) / (100)));
-            scaledBufferedImageArray (index) := This.createBufferedImage5 (bufferedImage, newWidth, newHeight, scale);
+            scaledBufferedImageArray (index) := ImageUtil'Class (This).createBufferedImage5 (bufferedImage, newWidth, newHeight, scale);
         end loop;
         return scaledBufferedImageArray;
    end createBufferedImage;
@@ -103,7 +103,7 @@ package body org.allbinary.media.image.ImageUtil_Package is
             imageData := bufferedImage.getImageData;
             newWidth := Integer (((imageData.width) * (percent)));
             newHeight := Integer (((imageData.height) * (percent)));
-            scaledBufferedImageArray (index) := This.createBufferedImage5 (bufferedImage, newWidth, newHeight, scale);
+            scaledBufferedImageArray (index) := ImageUtil'Class (This).createBufferedImage5 (bufferedImage, newWidth, newHeight, scale);
         end loop;
         return scaledBufferedImageArray;
    end createBufferedImage2;
@@ -117,7 +117,7 @@ package body org.allbinary.media.image.ImageUtil_Package is
         size := bufferedImageArray'Length;
         scaledBufferedImageArray := new Image_Access_Array'(0 .. (size) - 1 => null);
         for index in 0 .. (size) - 1 loop
-            scaledBufferedImageArray (index) := This.createBufferedImage5 (bufferedImageArray (index), width, height, scale);
+            scaledBufferedImageArray (index) := ImageUtil'Class (This).createBufferedImage5 (bufferedImageArray (index), width, height, scale);
         end loop;
         return scaledBufferedImageArray;
    end createBufferedImage3;
@@ -126,14 +126,14 @@ package body org.allbinary.media.image.ImageUtil_Package is
    function createBufferedImage4 (This : in out ImageUtil; bufferedImage_Param : access Image_Package.Image'Class; newWidth : Integer; newHeight : Integer) return Image_Access is
       bufferedImage : constant Image_Access := Image_Access (bufferedImage_Param);
    begin
-        return This.createBufferedImage5 (bufferedImage, newWidth, newHeight, True);
+        return ImageUtil'Class (This).createBufferedImage5 (bufferedImage, newWidth, newHeight, True);
    end createBufferedImage4;
 
    --  throws Exception
    function createBufferedImage5 (This : in out ImageUtil; bufferedImage_Param : access Image_Package.Image'Class; newWidth : Integer; newHeight : Integer; scale : Boolean) return Image_Access is
       bufferedImage : constant Image_Access := Image_Access (bufferedImage_Param);
    begin
-        return This.createBufferedImage6 (bufferedImage, newWidth, newHeight, scale, False);
+        return ImageUtil'Class (This).createBufferedImage6 (bufferedImage, newWidth, newHeight, scale, False);
    end createBufferedImage5;
 
    --  throws Exception

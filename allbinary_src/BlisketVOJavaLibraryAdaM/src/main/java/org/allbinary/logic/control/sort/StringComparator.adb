@@ -40,8 +40,8 @@ package body org.allbinary.logic.control.sort.StringComparator_Package is
       string_Id : Unbounded_String;
       string2 : Unbounded_String;
    begin
-        string_Id := Unbounded_String (anyType);
-        string2 := Unbounded_String (object2);
+        string_Id := Java_Unbox (anyType);
+        string2 := Java_Unbox (object2);
         return string_Id.compareTo (string2);
    end compare;
 

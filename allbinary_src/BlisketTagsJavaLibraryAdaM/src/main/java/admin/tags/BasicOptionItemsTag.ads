@@ -20,13 +20,14 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.util.HashMap_Package; use java.util.HashMap_Package;
+with java.util.HashMap_Package; use java.util.HashMap_Package;
 with admin.taghelpers.BasicOptionItemsHelperFactory_Package; use admin.taghelpers.BasicOptionItemsHelperFactory_Package;
 with admin.taghelpers.BasicOptionItemsRequestHelperFactory_Package; use admin.taghelpers.BasicOptionItemsRequestHelperFactory_Package;
 with admin.tags.TableTag_Package; use admin.tags.TableTag_Package;
 
 package admin.tags.BasicOptionItemsTag_Package is
 
+   package HashMap_Package renames Standard.java.util.HashMap_Package;
    package BasicOptionItemsHelperFactory_Package renames Standard.admin.taghelpers.BasicOptionItemsHelperFactory_Package;
    package BasicOptionItemsRequestHelperFactory_Package renames Standard.admin.taghelpers.BasicOptionItemsRequestHelperFactory_Package;
 

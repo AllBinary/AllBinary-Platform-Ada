@@ -20,8 +20,8 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with javax.microedition.lcdui.Command_Package; use javax.microedition.lcdui.Command_Package;
---  with javax.microedition.lcdui.CommandListener_Package; use javax.microedition.lcdui.CommandListener_Package;
+with javax.microedition.lcdui.Command_Package; use javax.microedition.lcdui.Command_Package;
+with javax.microedition.lcdui.CommandListener_Package; use javax.microedition.lcdui.CommandListener_Package;
 with org.allbinary.game.GameInfo_Package; use org.allbinary.game.GameInfo_Package;
 with org.allbinary.game.score.HighScore_Package; use org.allbinary.game.score.HighScore_Package;
 with org.allbinary.game.score.HighScoreNamePersistanceSingleton_Package; use org.allbinary.game.score.HighScoreNamePersistanceSingleton_Package;
@@ -38,6 +38,8 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 
 package org.allbinary.game.score.displayable.HighScoreUtil_Package is
 
+   package Command_Package renames Standard.javax.microedition.lcdui.Command_Package;
+   package CommandListener_Package renames Standard.javax.microedition.lcdui.CommandListener_Package;
    package GameInfo_Package renames Standard.org.allbinary.game.GameInfo_Package;
    package HighScore_Package renames Standard.org.allbinary.game.score.HighScore_Package;
    package HighScoreNamePersistanceSingleton_Package renames Standard.org.allbinary.game.score.HighScoreNamePersistanceSingleton_Package;

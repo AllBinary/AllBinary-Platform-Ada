@@ -41,7 +41,7 @@ package body org.allbinary.game.paint.help.InputMappingHelpPaintable_Package is
         HelpPaintable_Package.Initialize (This, To_Unbounded_String ("Input Mapping"), backgroundBasicColor, basicColor);
         Initialize_Fields (This);
         This.gameInputMappingArray := gameInputMappingArray;
-        This.update (This.NONE, This.NONE);
+        InputMappingHelpPaintable'Class (This).update (This.NONE, This.NONE);
         if ((backgroundBasicColor) = (This.basicColorFactory.WHITE)) or else ((basicColor) = (This.basicColorFactory.WHITE)) then
             This.selectedBasicColor := This.basicColorFactory.RED;
         else
@@ -90,7 +90,7 @@ package body org.allbinary.game.paint.help.InputMappingHelpPaintable_Package is
         size2 := 0;
         for index in 0 .. (size) - 1 loop
             list := This.keyMappingArray (index);
-            keyMappings := This.get (list);
+            keyMappings := InputMappingHelpPaintable'Class (This).get (list);
             stringMaker.delete (0, stringMaker.length);
             actionString := stringMaker.append (inputInfo (index)).append (This.commonSeps.COLON).append (This.commonSeps.SPACE).append (This.commonSeps.SPACE).toString;
             updateMyFontProperties.actionStringArray (index) := actionString;

@@ -58,9 +58,9 @@ package body org.allbinary.data.resource.ResourceUtil_Package is
    function getResourceAsStream (This : in out ResourceUtil; resource : Unbounded_String) return InputStream_Access is
       inputStream : InputStream_Access;
    begin
-        inputStream := This.getResourceAsStreamAtStart (resource, 2);
+        inputStream := ResourceUtil'Class (This).getResourceAsStreamAtStart (resource, 2);
         if (inputStream) = (null) then
-            inputStream := This.getResourceAsStreamAtStart (resource, 1);
+            inputStream := ResourceUtil'Class (This).getResourceAsStreamAtStart (resource, 1);
             if (inputStream) = (null) then
                 Java_Throw (Java_New_Exception ("Exception", StringMaker_Package.Create.append (To_Unbounded_String ("Unable to obtain: ")).append (resource).toString));
             end if;

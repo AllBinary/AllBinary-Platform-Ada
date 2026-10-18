@@ -65,7 +65,7 @@ package body views.generic_Id.inventory.InventorySearchUtil_Package is
         subStoreVector := storeFrontInterface.getSubStores;
         size := subStoreVector.size;
         for index in 0 .. (size) - 1 loop
-            subStore := Unbounded_String (subStoreVector.get (index));
+            subStore := Java_Unbox (subStoreVector.get (index));
             substoreIdColumn := inventorySearchUtil.getColumnWhereLike (inventoryEntityInterface, subStore, This.basicItemData.ID);
             column.addAllList (substoreIdColumn);
         end loop;
@@ -132,7 +132,7 @@ package body views.generic_Id.inventory.InventorySearchUtil_Package is
             pageLength := searchParams.getLengthInt.intValue;
             savedPagesInRange := 0;
             columnValueHashMap := searchParams.get;
-            keyword := Replace_Package.Create (To_Unbounded_String ("-"), CommonSeps_Package.getInstance.SPACE).all_Id (Unbounded_String (columnValueHashMap.get (This.basicItemData.KEYWORDS)));
+            keyword := Replace_Package.Create (To_Unbounded_String ("-"), CommonSeps_Package.getInstance.SPACE).all_Id (Java_Unbox (columnValueHashMap.get (This.basicItemData.KEYWORDS)));
             if StringValidationUtil_Package.getInstance.isEmpty (keyword) then
                 return null;
             end if;
@@ -159,11 +159,11 @@ package body views.generic_Id.inventory.InventorySearchUtil_Package is
                 currentPage := -(1);
                 size := column.size;
                 for index in 0 .. (size) - 1 loop
-                    product := Java_New_String (Unbounded_String (column.get (index)));
+                    product := Java_New_String (Java_Unbox (column.get (index)));
                     itemInterface := inventoryEntityInterface.getItem (product);
                     keywords := itemInterface.getKeywords;
                     keywords := Translate (keywords, Ada.Strings.Maps.Constants.Upper_Case_Map);
-                    if ((Index (keywords, To_String (keyword)) - 1)) /= (-(1)) then
+                    if ((Index (keywords, Java_Image (keyword)) - 1)) /= (-(1)) then
                         if (((currentPage) + (1)) >= (startPage)) and then (((currentPage) + (1)) <= (endPage)) then
                             itemNode := BasicItemView_Package.Create (itemInterface, BasicArrayListD_Package.Create).toXmlNode (viewDocumentInterface.getDoc);
                             itemNode.appendChild (ModDomHelper_Package.createNameValueNodes (viewDocumentInterface.getDoc, BasketData_Package.ITEMTOTALINBASKET, This.commonPhoneStrings.ONE));
@@ -228,7 +228,7 @@ package body views.generic_Id.inventory.InventorySearchUtil_Package is
                     end if;
                 end loop;
                 if (savedPagesInRange) = (0) then
-                    result := This.getNoResults (viewDocumentInterface, inventoryNode);
+                    result := InventorySearchUtil'Class (This).getNoResults (viewDocumentInterface, inventoryNode);
                     productListingPages (0) := StoreTransformer_Package.Create (abeClientInformation, TransformInfoHttpSearch_Package.Create (searchRequest)).translate (result);
                 end if;
                 return productListingPages;

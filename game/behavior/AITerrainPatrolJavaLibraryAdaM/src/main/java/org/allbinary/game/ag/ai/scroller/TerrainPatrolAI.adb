@@ -45,7 +45,7 @@ package body org.allbinary.game.ag.ai.scroller.TerrainPatrolAI_Package is
    procedure update (This : in out TerrainPatrolAI) is
    begin
         PacePatrolAI (This).update;
-        This.changeDirectionIfCliffReached;
+        TerrainPatrolAI'Class (This).changeDirectionIfCliffReached;
    end update;
 
    procedure changeDirectionIfCliffReached (This : in out TerrainPatrolAI) is
@@ -63,7 +63,7 @@ package body org.allbinary.game.ag.ai.scroller.TerrainPatrolAI_Package is
             basicTerrainInfo := terrainEvent.getBasicTerrainInfo;
             angle := basicTerrainInfo.getAngle;
             if (angle) = (This.DOWN) then
-                This.nextDirection;
+                TerrainPatrolAI'Class (This).nextDirection;
                 if not (This.isFollowLimitedByTerrain) then
                     This.logUtil.putF (To_Unbounded_String ("Following Limited"), TerrainPatrolAI_Access'(This'Unchecked_Access), To_Unbounded_String ("onTerrainEvent"));
                     This.isFollowLimitedByTerrain := True;

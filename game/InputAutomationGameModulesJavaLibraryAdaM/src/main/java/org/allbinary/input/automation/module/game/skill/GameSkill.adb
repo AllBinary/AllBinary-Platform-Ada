@@ -32,11 +32,11 @@ package body org.allbinary.input.automation.module.game.skill.GameSkill_Package 
       gameSkillType : constant GameSkillType_Access := GameSkillType_Access (gameSkillType_Param);
    begin
       Initialize_Fields (This);
-        This.setGameSkillType (gameSkillType);
-        This.setExtra (extra);
-        This.setTime (time);
+        GameSkill'Class (This).setGameSkillType (gameSkillType);
+        GameSkill'Class (This).setExtra (extra);
+        GameSkill'Class (This).setTime (time);
         This.vector := BasicArrayListD_Package.Create;
-        GameSkill_Package.hashMap.put (StringMaker_Package.Create.append (This.getGameSkillType.getName).append (CommonSeps_Package.getInstance.SPACE).append (extra).toString, GameSkill_Access'(This'Unchecked_Access));
+        GameSkill_Package.hashMap.put (Java_Box (StringMaker_Package.Create.append (GameSkill'Class (This).getGameSkillType.getName).append (CommonSeps_Package.getInstance.SPACE).append (extra).toString), GameSkill_Access'(This'Unchecked_Access));
    end Initialize;
 
    function Create (gameSkillType_Param : access GameSkillType_Package.GameSkillType'Class; extra : Unbounded_String; time : Integer) return GameSkill_Access is
@@ -91,7 +91,7 @@ package body org.allbinary.input.automation.module.game.skill.GameSkill_Package 
    function getInstance (gameSkillType_Param : access GameSkillType_Package.GameSkillType'Class; extra : Unbounded_String) return GameSkill_Access is
       gameSkillType : constant GameSkillType_Access := GameSkillType_Access (gameSkillType_Param);
    begin
-        return GameSkill_Access (GameSkill_Package.hashMap.get (StringMaker_Package.Create.append (gameSkillType.getName).append (CommonSeps_Package.getInstance.SPACE).append (extra).toString));
+        return GameSkill_Access (GameSkill_Package.hashMap.get (Java_Box (StringMaker_Package.Create.append (gameSkillType.getName).append (CommonSeps_Package.getInstance.SPACE).append (extra).toString)));
    end getInstance;
 
    function toString (This : in out GameSkill) return Unbounded_String is
@@ -101,13 +101,13 @@ package body org.allbinary.input.automation.module.game.skill.GameSkill_Package 
         commonSeps := CommonSeps_Package.getInstance;
         stringBuffer := StringMaker_Package.Create;
         stringBuffer.append (This.GAME_SKILL_LABEL);
-        stringBuffer.append (This.getGameSkillType.toString);
+        stringBuffer.append (GameSkill'Class (This).getGameSkillType.toString);
         stringBuffer.append (commonSeps.SPACE);
         stringBuffer.append (This.EXTRA_LABEL);
-        stringBuffer.append (This.getExtra);
+        stringBuffer.append (GameSkill'Class (This).getExtra);
         stringBuffer.append (commonSeps.SPACE);
         stringBuffer.append (This.TIME_LABEL);
-        stringBuffer.appendlong (Long_Long_Integer (This.getTime));
+        stringBuffer.appendlong (Long_Long_Integer (GameSkill'Class (This).getTime));
         return stringBuffer.toString;
    end toString;
 

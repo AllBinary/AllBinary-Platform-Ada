@@ -52,10 +52,10 @@ package body org.allbinary.game.displayable.canvas.GameCommandCanvas_Package is
         This.backgroundBasicColor := backgroundBasicColor;
         This.foregroundColor := This.foregroundBasicColor.intValue;
         This.backgroundColor := This.backgroundBasicColor.intValue;
-        This.initCommands (cmdListener);
+        GameCommandCanvas'Class (This).initCommands (cmdListener);
         if (cmdListener) /= (NullCommandListener_Package.NULL_COMMAND_LISTENER) then
             begin
-                This.initMenu;
+                GameCommandCanvas'Class (This).initMenu;
                 This.repaintProcessor.process;
             exception
                 when Java_Occurrence : others =>
@@ -84,9 +84,9 @@ package body org.allbinary.game.displayable.canvas.GameCommandCanvas_Package is
             font := graphics.getFont;
             This.logUtil.putF (StringMaker_Package.Create.append (This.commonStrings.START).append (This.canvasStrings.FD_WIDTH).appendint (Integer (MyFontProcessor_Package.defaultCharWidth (font))).append (This.canvasStrings.FD_HEIGHT).appendint (Integer (font.getHeight)).toString, GameCommandCanvas_Access'(This'Unchecked_Access), This.canvasStrings.UPDATE_MEASUREMENT);
             This.fontHeight := font.getHeight;
-            rectangle := This.createRectangle (This.menuForm.size);
+            rectangle := GameCommandCanvas'Class (This).createRectangle (This.menuForm.size);
             This.menuForm.init (rectangle, FormTypeFactory_Package.getInstance.VERTICAL_CENTER_FORM);
-            This.update;
+            GameCommandCanvas'Class (This).update;
         exception
             when Java_Occurrence : others =>
                 declare
@@ -114,19 +114,19 @@ package body org.allbinary.game.displayable.canvas.GameCommandCanvas_Package is
    procedure initCommands (This : in out GameCommandCanvas; cmdListener_Param : access CommandListener_Package.CommandListener'Class) is
       cmdListener : constant CommandListener_Access := CommandListener_Access (cmdListener_Param);
    begin
-        This.removeAllCommands;
-        This.addCommand (GameCommandsFactory_Package.getInstance.CLOSE_AND_SHOW_GAME_CANVAS);
-        This.setCommandListener (cmdListener);
+        GameCommandCanvas'Class (This).removeAllCommands;
+        GameCommandCanvas'Class (This).addCommand (GameCommandsFactory_Package.getInstance.CLOSE_AND_SHOW_GAME_CANVAS);
+        GameCommandCanvas'Class (This).setCommandListener (cmdListener);
    end initCommands;
 
    --  throws Exception
    procedure initMenu (This : in out GameCommandCanvas) is
       form : ScrollSelectionForm_Access;
    begin
-        form := This.createForm;
+        form := GameCommandCanvas'Class (This).createForm;
         This.menuForm := form;
         if (form) /= (ScrollSelectionFormNoneFactory_Package.getInstance) then
-            This.setMenuInputProcessor (ImmediateCommandFormInputProcessor_Package.Create (BasicArrayListD_Package.Create, -(1), GameCommandCanvas_Access'(This'Unchecked_Access), form));
+            GameCommandCanvas'Class (This).setMenuInputProcessor (ImmediateCommandFormInputProcessor_Package.Create (BasicArrayListD_Package.Create, -(1), GameCommandCanvas_Access'(This'Unchecked_Access), form));
             This.menuPaintable := FormPaintable_Package.Create (form);
         end if;
         This.repaintBehavior.onChangeRepaint (GameCommandCanvas_Access'(This'Unchecked_Access));
@@ -137,8 +137,8 @@ package body org.allbinary.game.displayable.canvas.GameCommandCanvas_Package is
       items : ABCustomItem_Access_Array_Access;
       rectangle : Rectangle_Access;
    begin
-        items := CommandTextItemArrayFactory_Package.Create (AllCommandsVisitor_Package.Create).getInstance (This.getCommandStack, This.backgroundBasicColor, This.foregroundBasicColor);
-        rectangle := This.createRectangle (items'Length);
+        items := CommandTextItemArrayFactory_Package.Create (AllCommandsVisitor_Package.Create).getInstance (GameCommandCanvas'Class (This).getCommandStack, This.backgroundBasicColor, This.foregroundBasicColor);
+        rectangle := GameCommandCanvas'Class (This).createRectangle (items'Length);
         return CommandCurrentSelectionFormFactory_Package.getInstance (StringUtil_Package.getInstance.EMPTY_STRING, items, rectangle, FormTypeFactory_Package.getInstance.VERTICAL_CENTER_FORM, 15, False, This.backgroundBasicColor, This.foregroundBasicColor);
    end createForm;
 
@@ -158,8 +158,8 @@ package body org.allbinary.game.displayable.canvas.GameCommandCanvas_Package is
    procedure open (This : in out GameCommandCanvas) is
    begin
         This.logUtil.putF (This.commonStrings.START, GameCommandCanvas_Access'(This'Unchecked_Access), To_Unbounded_String ("open"));
-        BasicMotionGesturesHandler_Package.getInstance.addListenerInterface (This.getMenuInputProcessor);
-        GameKeyEventHandler_Package.getInstance.addListener (This.getMenuInputProcessor);
+        BasicMotionGesturesHandler_Package.getInstance.addListenerInterface (GameCommandCanvas'Class (This).getMenuInputProcessor);
+        GameKeyEventHandler_Package.getInstance.addListener (GameCommandCanvas'Class (This).getMenuInputProcessor);
         DisplayChangeEventHandler_Package.getInstance.addListenerInterface (GameCommandCanvas_Access'(This'Unchecked_Access));
    end open;
 
@@ -167,8 +167,8 @@ package body org.allbinary.game.displayable.canvas.GameCommandCanvas_Package is
    procedure close (This : in out GameCommandCanvas) is
    begin
         This.logUtil.putF (This.commonStrings.START, GameCommandCanvas_Access'(This'Unchecked_Access), This.commonStrings.CLOSE);
-        BasicMotionGesturesHandler_Package.getInstance.removeListener (This.getMenuInputProcessor);
-        GameKeyEventHandler_Package.getInstance.removeListener (This.getMenuInputProcessor);
+        BasicMotionGesturesHandler_Package.getInstance.removeListener (GameCommandCanvas'Class (This).getMenuInputProcessor);
+        GameKeyEventHandler_Package.getInstance.removeListener (GameCommandCanvas'Class (This).getMenuInputProcessor);
         DisplayChangeEventHandler_Package.getInstance.removeListener (GameCommandCanvas_Access'(This'Unchecked_Access));
    end close;
 
@@ -185,34 +185,34 @@ package body org.allbinary.game.displayable.canvas.GameCommandCanvas_Package is
 
    procedure keyPressed (This : in out GameCommandCanvas; keyCode : Integer) is
    begin
-        This.keyPressedByDevice (keyCode, 0);
+        GameCommandCanvas'Class (This).keyPressedByDevice (keyCode, 0);
    end keyPressed;
 
    procedure keyReleased (This : in out GameCommandCanvas; keyCode : Integer) is
    begin
-        This.keyReleasedByDevice (keyCode, 0);
+        GameCommandCanvas'Class (This).keyReleasedByDevice (keyCode, 0);
    end keyReleased;
 
    procedure keyRepeated (This : in out GameCommandCanvas; keyCode : Integer) is
    begin
-        This.keyRepeatedByDevice (keyCode, 0);
+        GameCommandCanvas'Class (This).keyRepeatedByDevice (keyCode, 0);
    end keyRepeated;
 
    procedure keyPressedByDevice (This : in out GameCommandCanvas; keyCode : Integer; deviceId : Integer) is
    begin
         This.logUtil.putF (StringMaker_Package.Create.append (CommonSeps_Package.getInstance.SPACE).appendint (keyCode).toString, GameCommandCanvas_Access'(This'Unchecked_Access), This.gameInputStrings.KEY_PRESSED);
-        This.addGameKeyEvent (keyCode, 0, False);
+        GameCommandCanvas'Class (This).addGameKeyEvent (keyCode, 0, False);
    end keyPressedByDevice;
 
    procedure keyReleasedByDevice (This : in out GameCommandCanvas; keyCode : Integer; deviceId : Integer) is
    begin
-        This.removeGameKeyEvent (keyCode, deviceId, False);
+        GameCommandCanvas'Class (This).removeGameKeyEvent (keyCode, deviceId, False);
    end keyReleasedByDevice;
 
    procedure keyRepeatedByDevice (This : in out GameCommandCanvas; keyCode : Integer; deviceId : Integer) is
    begin
         if This.isSingleKeyRepeatableProcessing then
-            This.addGameKeyEvent (keyCode, deviceId, True);
+            GameCommandCanvas'Class (This).addGameKeyEvent (keyCode, deviceId, True);
         end if;
    end keyRepeatedByDevice;
 

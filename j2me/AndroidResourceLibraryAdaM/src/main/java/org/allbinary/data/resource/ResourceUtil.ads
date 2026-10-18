@@ -20,7 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.io.InputStream_Package; use java.io.InputStream_Package;
+with java.io.InputStream_Package; use java.io.InputStream_Package;
 with android.app.Activity_Package; use android.app.Activity_Package;
 with android.content.Context_Package; use android.content.Context_Package;
 with android.content.res.Resources_Package; use android.content.res.Resources_Package;
@@ -39,6 +39,7 @@ with org.allbinary.util.HashtableUtil_Package; use org.allbinary.util.HashtableU
 
 package org.allbinary.data.resource.ResourceUtil_Package is
 
+   package InputStream_Package renames Standard.java.io.InputStream_Package;
    package Activity_Package renames Standard.android.app.Activity_Package;
    package Context_Package renames Standard.android.content.Context_Package;
    package Resources_Package renames Standard.android.content.res.Resources_Package;

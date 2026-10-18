@@ -30,7 +30,7 @@ package body org.allbinary.animation.VectorExplosionAnimationFactory_Package is
    begin
       Initialize_Fields (This);
         This.animationBehaviorFactory := animationBehaviorFactory;
-        This.setBasicColorP (basicColor);
+        VectorExplosionAnimationFactory'Class (This).setBasicColorP (basicColor);
    end Initialize;
 
    function Create (basicColor_Param : access BasicColor_Package.BasicColor'Class; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class) return VectorExplosionAnimationFactory_Access is
@@ -52,7 +52,7 @@ package body org.allbinary.animation.VectorExplosionAnimationFactory_Package is
         frame := vectorRotationAnimationInterface.getFrame;
         framePoints := vectorRotationAnimationInterface.getPoints (frame);
         points := This.vectorExplosionGenerator.getInstance (framePoints, 6, This.vectorExplosionGenerator.ROTATION);
-        return VectorRotationAnimation_Package.Create (points, This.getBasicColorP, This.animationBehaviorFactory.getOrCreateInstance);
+        return VectorRotationAnimation_Package.Create (points, VectorExplosionAnimationFactory'Class (This).getBasicColorP, This.animationBehaviorFactory.getOrCreateInstance);
    end getInstanceAnimation;
 
    procedure setBasicColorP (This : in out VectorExplosionAnimationFactory; basicColor_Param : access BasicColor_Package.BasicColor'Class) is

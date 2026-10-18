@@ -27,8 +27,8 @@ package body org.allbinary.logic.communication.smtp.configuration.user.event.Use
    procedure Initialize (This : in out UserEmailEventConfiguration'Class) is
    begin
       Initialize_Fields (This);
-        This.setName (StringUtil_Package.getInstance.EMPTY_STRING);
-        This.setEventListenerClassPath (StringUtil_Package.getInstance.EMPTY_STRING);
+        UserEmailEventConfiguration'Class (This).setName (StringUtil_Package.getInstance.EMPTY_STRING);
+        UserEmailEventConfiguration'Class (This).setEventListenerClassPath (StringUtil_Package.getInstance.EMPTY_STRING);
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.EMAILLOGGING) then
             This.logUtil.putF (To_Unbounded_String ("New"), UserEmailEventConfiguration_Access'(This'Unchecked_Access), To_Unbounded_String (" Constructor"));
         end if;
@@ -45,10 +45,10 @@ package body org.allbinary.logic.communication.smtp.configuration.user.event.Use
       hashMap : constant HashMap_Access := HashMap_Access (hashMap_Param);
    begin
       Initialize_Fields (This);
-        This.setName (Unbounded_String (hashMap.get (UserEmailEventConfigurationData_Package.NAME)));
-        This.setEventListenerClassPath (Unbounded_String (hashMap.get (UserEmailEventConfigurationData_Package.LISTENER_CLASSPATH)));
+        UserEmailEventConfiguration'Class (This).setName (Java_Unbox (hashMap.get (UserEmailEventConfigurationData_Package.NAME)));
+        UserEmailEventConfiguration'Class (This).setEventListenerClassPath (Java_Unbox (hashMap.get (UserEmailEventConfigurationData_Package.LISTENER_CLASSPATH)));
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.EMAILLOGGING) then
-            This.logUtil.putF (To_Unbounded_String ("Log: ") & Java_Image (This.log), UserEmailEventConfiguration_Access'(This'Unchecked_Access), To_Unbounded_String (" Constructor"));
+            This.logUtil.putF (To_Unbounded_String ("Log: ") & Java_Image (UserEmailEventConfiguration'Class (This).log), UserEmailEventConfiguration_Access'(This'Unchecked_Access), To_Unbounded_String (" Constructor"));
         end if;
    end Initialize;
 
@@ -81,7 +81,7 @@ package body org.allbinary.logic.communication.smtp.configuration.user.event.Use
 
    function log (This : in out UserEmailEventConfiguration) return Unbounded_String is
    begin
-        return To_Unbounded_String ("" & ASCII.LF & "User Email Event Log Info:") & To_Unbounded_String ("" & ASCII.LF & "Name: ") & This.getName & To_Unbounded_String ("" & ASCII.LF & "EventListenerClassPath: ") & Java_Image (This.getEventListenerClassPath);
+        return To_Unbounded_String ("" & ASCII.LF & "User Email Event Log Info:") & To_Unbounded_String ("" & ASCII.LF & "Name: ") & UserEmailEventConfiguration'Class (This).getName & To_Unbounded_String ("" & ASCII.LF & "EventListenerClassPath: ") & Java_Image (UserEmailEventConfiguration'Class (This).getEventListenerClassPath);
    end log;
 
 end org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventConfiguration_Package;

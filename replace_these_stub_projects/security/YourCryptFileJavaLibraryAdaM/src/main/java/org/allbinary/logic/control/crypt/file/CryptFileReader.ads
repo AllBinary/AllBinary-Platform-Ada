@@ -8,11 +8,12 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.io.InputStream_Package; use java.io.InputStream_Package;
+with java.io.InputStream_Package; use java.io.InputStream_Package;
 with org.allbinary.logic.io.path.AbPath_Package; use org.allbinary.logic.io.path.AbPath_Package;
 
 package org.allbinary.logic.control.crypt.file.CryptFileReader_Package is
 
+   package InputStream_Package renames Standard.java.io.InputStream_Package;
    package AbPath_Package renames Standard.org.allbinary.logic.io.path.AbPath_Package;
 
    type CryptFileReader is tagged;

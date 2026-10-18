@@ -55,12 +55,14 @@ package body org.allbinary.media.graphics.geography.pathfinding.PathFinderGraphV
       graphPath : constant Java_Object_Access := Java_Object_Access (graphPath_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return False;
    end isValid;
 
    function getInvalidReason (This : in out PathFinderGraphVisitorBase; graphPath_Param : access Java_Object'Class) return Unbounded_String is
       graphPath : constant Java_Object_Access := Java_Object_Access (graphPath_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return Null_Unbounded_String;
    end getInvalidReason;
 
    procedure isValid (This : in out PathFinderGraphVisitorBase; graphPath_Param : access Java_Object'Class) is

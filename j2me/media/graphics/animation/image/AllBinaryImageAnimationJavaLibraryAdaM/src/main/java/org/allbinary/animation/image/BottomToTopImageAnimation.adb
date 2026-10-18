@@ -30,7 +30,7 @@ package body org.allbinary.animation.image.BottomToTopImageAnimation_Package is
    begin
         ImageSegmentAnimation_Package.Initialize (This, image, PrimitiveIntUtil_Package.getArrayInstance, animationBehavior);
         Initialize_Fields (This);
-        This.setFrame ((This.getSize) - (1));
+        BottomToTopImageAnimation'Class (This).setFrame ((BottomToTopImageAnimation'Class (This).getSize) - (1));
    end Initialize;
 
    function Create (image_Param : access Image_Package.Image'Class; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class) return BottomToTopImageAnimation_Access is
@@ -43,31 +43,31 @@ package body org.allbinary.animation.image.BottomToTopImageAnimation_Package is
    procedure nextFrame (This : in out BottomToTopImageAnimation) is
    begin
         ImageSegmentAnimation (This).previousFrame;
-        This.update;
+        BottomToTopImageAnimation'Class (This).update;
    end nextFrame;
 
    procedure previousFrame (This : in out BottomToTopImageAnimation) is
    begin
         ImageSegmentAnimation (This).nextFrame;
-        This.update;
+        BottomToTopImageAnimation'Class (This).update;
    end previousFrame;
 
    procedure setFrame (This : in out BottomToTopImageAnimation; index : Integer) is
    begin
         ImageSegmentAnimation (This).setFrame (index);
-        This.update;
+        BottomToTopImageAnimation'Class (This).update;
    end setFrame;
 
    procedure update (This : in out BottomToTopImageAnimation) is
    begin
-        This.startHeight := ((This.getDrawHeight) * (This.getFrame)) / (This.getSize);
-        This.currentHeight := (This.getDrawHeight) - (This.startHeight);
+        This.startHeight := ((BottomToTopImageAnimation'Class (This).getDrawHeight) * (BottomToTopImageAnimation'Class (This).getFrame)) / (BottomToTopImageAnimation'Class (This).getSize);
+        This.currentHeight := (BottomToTopImageAnimation'Class (This).getDrawHeight) - (This.startHeight);
    end update;
 
    procedure paintXY (This : in out BottomToTopImageAnimation; graphics_Param : access Graphics_Package.Graphics'Class; x : Integer; y : Integer) is
       graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
-        graphics.drawRegion (This.getImage, This.getStartX, This.startHeight, This.getDrawWidth, This.currentHeight, Sprite_Package.TRANS_NONE, x, (y) + (This.startHeight), This.anchor);
+        graphics.drawRegion (BottomToTopImageAnimation'Class (This).getImage, BottomToTopImageAnimation'Class (This).getStartX, This.startHeight, BottomToTopImageAnimation'Class (This).getDrawWidth, This.currentHeight, Sprite_Package.TRANS_NONE, x, (y) + (This.startHeight), This.anchor);
    end paintXY;
 
 end org.allbinary.animation.image.BottomToTopImageAnimation_Package;

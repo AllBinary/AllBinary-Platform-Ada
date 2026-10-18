@@ -28,9 +28,9 @@ package body org.allbinary.logic.io.path.AbFilePath_Package is
         AbPath_Package.Initialize (This, StringUtil_Package.getInstance.EMPTY_STRING, StringUtil_Package.getInstance.EMPTY_STRING);
         pathData := AbPathData_Package.getInstance;
         abPathUtil := PathUtil_Package.getInstance;
-        This.schema := This.getSchema (aPath);
-        This.setName (pathData.getNameFromPath (aPath));
-        This.setPath (abPathUtil.adjust (This.getPathFromPath (abPathUtil.removeNameFromPath (aPath).toString)));
+        This.schema := AbFilePath'Class (This).getSchema (aPath);
+        AbFilePath'Class (This).setName (pathData.getNameFromPath (aPath));
+        AbFilePath'Class (This).setPath (abPathUtil.adjust (AbFilePath'Class (This).getPathFromPath (abPathUtil.removeNameFromPath (aPath).toString)));
    end Initialize;
 
    function Create (aPath : Unbounded_String) return AbFilePath_Access is

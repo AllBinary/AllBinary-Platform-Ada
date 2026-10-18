@@ -79,7 +79,7 @@ package body org.allbinary.data.resource.ResourceUtil_Package is
    begin
         if (DebugFactory_Package.getInstance) /= (NoDebug_Package.getInstance) then
             PreLogUtil_Package.put (StringMaker_Package.Create.append (resource).append (CommonSeps_Package.getInstance.COLON).append (value.toString).toString, ResourceUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("addResource"));
-            if This.containsDuplicate (resource, value) then
+            if ResourceUtil'Class (This).containsDuplicate (resource, value) then
                 ForcedLogUtil_Package.log (StringMaker_Package.Create.append (To_Unbounded_String ("Found Duplicate Resource: ")).append (resource).toString, ResourceUtil_Access'(This'Unchecked_Access));
             end if;
         end if;

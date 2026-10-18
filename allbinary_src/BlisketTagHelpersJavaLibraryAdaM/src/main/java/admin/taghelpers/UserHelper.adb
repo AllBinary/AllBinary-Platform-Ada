@@ -93,7 +93,7 @@ package body admin.taghelpers.UserHelper_Package is
    begin
         begin
             userInterface := NewUserFactory_Package.getInstance (This.request, This.hashMap);
-            enable := Unbounded_String (This.hashMap.get (EntryData_Package.getInstance.ENABLE));
+            enable := Java_Unbox (This.hashMap.get (EntryData_Package.getInstance.ENABLE));
             if not (StringValidationUtil_Package.getInstance.isEmpty (enable)) then
                 userInterface.setEnable (enable);
             end if;

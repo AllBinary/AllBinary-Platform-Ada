@@ -55,13 +55,13 @@ package body org.allbinary.business.user.modules.customer.affiliate.AffiliateUse
       weblisketSession : constant WeblisketSessionInterface_Access := WeblisketSessionInterface_Access (weblisketSession_Param);
    begin
         User (This).validateSession (weblisketSession);
-        This.updateSession (weblisketSession);
+        AffiliateUser'Class (This).updateSession (weblisketSession);
    end validateSession;
 
    procedure updateSession (This : in out AffiliateUser; weblisketSession_Param : access WeblisketSessionInterface_Package.WeblisketSessionInterface'Class) is
       weblisketSession : constant WeblisketSessionInterface_Access := WeblisketSessionInterface_Access (weblisketSession_Param);
    begin
-        weblisketSession.setStoreName (This.getPermissions);
+        weblisketSession.setStoreName (AffiliateUser'Class (This).getPermissions);
    end updateSession;
 
    function isSessionValid (This : in out AffiliateUser) return Boolean is

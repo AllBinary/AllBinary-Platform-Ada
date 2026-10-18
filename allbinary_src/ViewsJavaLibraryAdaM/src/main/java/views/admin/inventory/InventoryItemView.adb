@@ -34,8 +34,8 @@ package body views.admin.inventory.InventoryItemView_Package is
    begin
         HttpStoreComponentView_Package.Initialize (This, transformInfoInterface);
         Initialize_Fields (This);
-        This.request := HttpServletRequest_Access (This.getPageContext.getRequest);
-        This.getFormData;
+        This.request := HttpServletRequest_Access (InventoryItemView'Class (This).getPageContext.getRequest);
+        InventoryItemView'Class (This).getFormData;
    end Initialize;
 
    function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return InventoryItemView_Access is
@@ -50,7 +50,7 @@ package body views.admin.inventory.InventoryItemView_Package is
    begin
         HttpStoreComponentView_Package.Initialize (This, transformInfoInterface);
         Initialize_Fields (This);
-        This.request := HttpServletRequest_Access (This.getPageContext.getRequest);
+        This.request := HttpServletRequest_Access (InventoryItemView'Class (This).getPageContext.getRequest);
    end Initialize;
 
    function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class; empty : Unbounded_String) return InventoryItemView_Access is
@@ -73,8 +73,8 @@ package body views.admin.inventory.InventoryItemView_Package is
       pathUtil : PathUtil_Access;
       stringBuffer : StringMaker_Access;
    begin
-        This.setRequestHashMap (MultipartRequestParams_Package.Create (This.request).toHashMap);
-        imageFileItemObject := This.getRequestHashMap.get (This.basicItemData.IMAGE);
+        InventoryItemView'Class (This).setRequestHashMap (MultipartRequestParams_Package.Create (This.request).toHashMap);
+        imageFileItemObject := InventoryItemView'Class (This).getRequestHashMap.get (This.basicItemData.IMAGE);
         if HttpFileUploadUtil_Package.getInstance.isValid (imageFileItemObject) then
             fileItem := FileItem_Access (imageFileItemObject);
             if ((fileItem) /= (null)) and then ((fileItem.getSize) > (1)) then
@@ -93,7 +93,7 @@ package body views.admin.inventory.InventoryItemView_Package is
                 end if;
             end if;
         end if;
-        This.itemInterface := ItemInterface_Access (BasicItem_Package.Create (This.getRequestHashMap));
+        This.itemInterface := ItemInterface_Access (BasicItem_Package.Create (InventoryItemView'Class (This).getRequestHashMap));
    end getFormData;
 
    procedure addDomNodeInterfaces (This : in out InventoryItemView) is
@@ -109,7 +109,7 @@ package body views.admin.inventory.InventoryItemView_Package is
             downloadableItem := DownloadableItem_Access (This.downloadableItemVector.get (index));
             vector.add (DownloadableItemView_Package.Create (downloadableItem));
         end loop;
-        This.addDomNodeInterface (BasicItemView_Package.Create (This.itemInterface, vector));
+        InventoryItemView'Class (This).addDomNodeInterface (BasicItemView_Package.Create (This.itemInterface, vector));
    end addDomNodeInterfaces;
 
    function getItemInterface (This : in out InventoryItemView) return ItemInterface_Access is
@@ -121,7 +121,7 @@ package body views.admin.inventory.InventoryItemView_Package is
    function view (This : in out InventoryItemView) return Unbounded_String is
    begin
         begin
-            This.addDomNodeInterfaces;
+            InventoryItemView'Class (This).addDomNodeInterfaces;
             return HttpStoreComponentView (This).view;
         exception
             when Java_Occurrence : others =>
@@ -147,15 +147,15 @@ package body views.admin.inventory.InventoryItemView_Package is
       fileItem : FileItem_Access;
       index : Integer;
    begin
-        set := This.getRequestHashMap.keySet;
+        set := InventoryItemView'Class (This).getRequestHashMap.keySet;
         fieldNameArray := set.toArray;
         size := fieldNameArray'Length;
         for index in 0 .. (size) - 1 loop
-            fieldName := Unbounded_String (fieldNameArray (index));
+            fieldName := Java_Unbox (fieldNameArray (index));
             if (fieldName.compareTo (This.basicItemData.IMAGE)) = (0) then
-                storeFrontInterface := StoreFrontFactory_Package.getInstance (This.getWeblisketSession.getStoreName);
+                storeFrontInterface := StoreFrontFactory_Package.getInstance (InventoryItemView'Class (This).getWeblisketSession.getStoreName);
                 inventoryUploadMediaUtil := InventoryUploadMediaUtil_Package.Create (storeFrontInterface, This.itemInterface);
-                fileItem := FileItem_Access (This.getRequestHashMap.get (This.basicItemData.IMAGE));
+                fileItem := FileItem_Access (InventoryItemView'Class (This).getRequestHashMap.get (This.basicItemData.IMAGE));
                 This.itemInterface := inventoryUploadMediaUtil.saveFiles (fileItem.get, This.imageFileName, This.mediaData);
             end if;
         end loop;

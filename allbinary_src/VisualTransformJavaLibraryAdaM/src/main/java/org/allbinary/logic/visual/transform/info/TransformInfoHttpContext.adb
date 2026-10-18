@@ -38,7 +38,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoHttpContext_
             stringBuffer.append (propertiesHashMap.toString);
             This.logUtil.putF (stringBuffer.toString, TransformInfoHttpContext_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         end if;
-        This.setStoreName (StringUtil_Package.getInstance.EMPTY_STRING);
+        TransformInfoHttpContext'Class (This).setStoreName (StringUtil_Package.getInstance.EMPTY_STRING);
    end Initialize;
 
    function Create (databaseHashMap_Param : access HashMap_Package.HashMap'Class; propertiesHashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) return TransformInfoHttpContext_Access is
@@ -57,7 +57,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoHttpContext_
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
             This.logUtil.putF (To_Unbounded_String ("Properties HashMap: ") & propertiesHashMap.toString, TransformInfoHttpContext_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         end if;
-        This.setStoreName (StringUtil_Package.getInstance.EMPTY_STRING);
+        TransformInfoHttpContext'Class (This).setStoreName (StringUtil_Package.getInstance.EMPTY_STRING);
    end Initialize;
 
    function Create (propertiesHashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) return TransformInfoHttpContext_Access is
@@ -75,7 +75,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoHttpContext_
         stringBuffer.append (URLGLOBALS.getMainPath);
         stringBuffer.append (FREEBLISKET_PATH_GLOBALS.getInstance.XSLPATH);
         stringBuffer.append (FREEBLISKET_PATH_GLOBALS.getInstance.INSTALLPATH);
-        stringBuffer.append (This.getStoreName);
+        stringBuffer.append (TransformInfoHttpContext'Class (This).getStoreName);
         stringBuffer.append (AbPathData_Package.getInstance.SEPARATOR);
         return stringBuffer.toString;
    end getPath;
@@ -83,19 +83,19 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoHttpContext_
    --  throws Exception
    function getTemplateFilePath (This : in out TransformInfoHttpContext) return AbPath_Access is
    begin
-        return AbPath_Package.Create (This.getPath, This.getTemplateFile);
+        return AbPath_Package.Create (TransformInfoHttpContext'Class (This).getPath, TransformInfoHttpContext'Class (This).getTemplateFile);
    end getTemplateFilePath;
 
    --  throws Exception
    function getObjectConfigFilePath (This : in out TransformInfoHttpContext) return AbPath_Access is
    begin
-        return AbPath_Package.Create (This.getPath, This.getObjectConfigFile);
+        return AbPath_Package.Create (TransformInfoHttpContext'Class (This).getPath, TransformInfoHttpContext'Class (This).getObjectConfigFile);
    end getObjectConfigFilePath;
 
    --  throws Exception
    function getDataFilePath (This : in out TransformInfoHttpContext) return AbPath_Access is
    begin
-        return AbPath_Package.Create (This.getPath, This.getDataFile);
+        return AbPath_Package.Create (TransformInfoHttpContext'Class (This).getPath, TransformInfoHttpContext'Class (This).getDataFile);
    end getDataFilePath;
 
 end org.allbinary.logic.visual.transform.info.TransformInfoHttpContext_Package;

@@ -28,7 +28,7 @@ package body org.allbinary.game.paint.GameScrollMenuPaintable_Package is
       basicColor : constant BasicColor_Access := BasicColor_Access (basicColor_Param);
    begin
         BasicGameDemoPaintable_Package.Initialize (This, mainDemoStatePaintable, ownershipPaintable, helpPaintableInterface);
-        This.setColor (basicColor);
+        GameScrollMenuPaintable'Class (This).setColor (basicColor);
         ColorChangeEventHandler_Package.getInstance.addListenerInterface (GameScrollMenuPaintable_Access'(This'Unchecked_Access));
    end Initialize;
 
@@ -41,7 +41,7 @@ package body org.allbinary.game.paint.GameScrollMenuPaintable_Package is
 
    procedure setState (This : in out GameScrollMenuPaintable; state : Integer) is
    begin
-        This.setCurrentStatePaintable (This.getMainDemoStatePaintable);
+        GameScrollMenuPaintable'Class (This).setCurrentStatePaintable (GameScrollMenuPaintable'Class (This).getMainDemoStatePaintable);
    end setState;
 
    procedure onEvent (This : in out GameScrollMenuPaintable; eventObject_Param : access AllBinaryEventObject_Package.AllBinaryEventObject'Class) is
@@ -59,7 +59,7 @@ package body org.allbinary.game.paint.GameScrollMenuPaintable_Package is
       stringComponent : ABStringComponent_Access;
       index : Integer;
    begin
-        mainGameDemoStatePaintable := MainGameDemoStatePaintable_Access (This.getMainDemoStatePaintable);
+        mainGameDemoStatePaintable := MainGameDemoStatePaintable_Access (GameScrollMenuPaintable'Class (This).getMainDemoStatePaintable);
         formPaintable := FormPaintable_Access (mainGameDemoStatePaintable.getMenuPaintableInterface);
         scrollSelectionForm := ScrollSelectionForm_Access (formPaintable.getForm);
         mainGameDemoStatePaintable.getOwnershipPaintableInterface.setBasicColorP (basicColor);

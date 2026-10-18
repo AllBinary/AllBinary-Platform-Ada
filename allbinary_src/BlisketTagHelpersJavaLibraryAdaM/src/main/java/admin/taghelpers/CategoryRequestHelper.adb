@@ -39,7 +39,7 @@ package body admin.taghelpers.CategoryRequestHelper_Package is
             This.request := HttpServletRequest_Access (pageContext.getRequest);
             This.pageContext := pageContext;
             This.hashMap := hashMap;
-            This.getXmlData;
+            CategoryRequestHelper'Class (This).getXmlData;
         exception
             when Java_Occurrence : others =>
                 declare
@@ -80,10 +80,10 @@ package body admin.taghelpers.CategoryRequestHelper_Package is
             keyArray := keys.toArray;
             size := keyArray'Length;
             if (size) > (0) then
-                xmlRequest := Unbounded_String (keyArray (0));
+                xmlRequest := Java_Unbox (keyArray (0));
                 index := 1;
                 while ((index) < (size)) and then (not (xmlRequest.startsWith (CategoryRequestHelper_Package.categoryRequest))) loop
-                    xmlRequest := Unbounded_String (keyArray (index));
+                    xmlRequest := Java_Unbox (keyArray (index));
                     if xmlRequest.startsWith (CategoryRequestHelper_Package.categoryRequest) then
                         exit;
                     end if;
@@ -96,7 +96,7 @@ package body admin.taghelpers.CategoryRequestHelper_Package is
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPER) then
                     This.logUtil.putF (XmlDocumentHelper_Package.toString (document), CategoryRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("getXmlData()"));
                 end if;
-                This.setCategoryLoader (requestNode);
+                CategoryRequestHelper'Class (This).setCategoryLoader (requestNode);
                 parentCategoryNode := DomSearchHelper_Package.getNode (categoryData.PARENT, requestNode.getChildNodes);
                 categoryNode := DomSearchHelper_Package.getNode (categoryData.NAME, parentCategoryNode.getChildNodes);
                 This.categoryInterface := CategoryInterface_Access (StoreCategoryFactory_Package.Create (This.transformInfoInterface).getRootInstanceFromNode (categoryNode));

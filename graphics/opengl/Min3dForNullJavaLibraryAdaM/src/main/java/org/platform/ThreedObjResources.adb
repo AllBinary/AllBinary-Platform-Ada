@@ -42,7 +42,7 @@ package body org.platform.ThreedObjResources_Package is
    function get (This : in out ThreedObjResources; resourceName : Unbounded_String) return Unbounded_String is
       resourceName2 : Unbounded_String;
    begin
-        resourceName2 := Unbounded_String (This.hashtable.get (resourceName));
+        resourceName2 := Java_Unbox (This.hashtable.get (resourceName));
         if (resourceName2) /= (Null_Unbounded_String) then
             return resourceName2;
         end if;

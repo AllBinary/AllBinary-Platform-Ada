@@ -87,8 +87,8 @@ package body org.allbinary.graphics.opengles.OpenGLUtil_Package is
         progressCanvas := ProgressCanvasFactory_Package.getInstance;
         progressCanvas.update (graphics);
         (OpenGLImageCache_Access (OpenGLImageCacheFactory_Package.getInstance)).update (gl);
-        This.processRunnables;
-        This.set (gl);
+        OpenGLUtil'Class (This).processRunnables;
+        OpenGLUtil'Class (This).set (gl);
    end onSurfaceChanged;
 
    function addImage (This : in out OpenGLUtil; image_Param : access Image_Package.Image'Class) return Image_Access is

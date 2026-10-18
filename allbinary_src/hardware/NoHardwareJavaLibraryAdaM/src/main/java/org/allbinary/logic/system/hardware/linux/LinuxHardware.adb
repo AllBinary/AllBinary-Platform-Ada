@@ -37,61 +37,73 @@ package body org.allbinary.logic.system.hardware.linux.LinuxHardware_Package is
    function getMultimedia (This : in out LinuxHardware; index : Integer) return MediaInterface_Access is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return null;
    end getMultimedia;
 
    function getBridge (This : in out LinuxHardware; index : Integer) return BridgeInterface_Access is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return null;
    end getBridge;
 
    function getCpu (This : in out LinuxHardware; index : Integer) return CpuInterface_Access is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return null;
    end getCpu;
 
    function getEthernet (This : in out LinuxHardware; index : Integer) return EthernetInterface_Access is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return null;
    end getEthernet;
 
    function getFireWire (This : in out LinuxHardware; index : Integer) return FireWireInterface_Access is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return null;
    end getFireWire;
 
    function getHardDriveController (This : in out LinuxHardware; index : Integer) return HardDriveControllerInterface_Access is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return null;
    end getHardDriveController;
 
    function getHardDrive (This : in out LinuxHardware; index : Integer) return HardDriveInterface_Access is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return null;
    end getHardDrive;
 
    function getMachineAccessControlAddress (This : in out LinuxHardware; index : Integer) return MachineAccessControlAddressInterface_Access is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return null;
    end getMachineAccessControlAddress;
 
    function getMonitor (This : in out LinuxHardware; index : Integer) return MonitorInterface_Access is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return null;
    end getMonitor;
 
    function getUsb (This : in out LinuxHardware; index : Integer) return UsbInterface_Access is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return null;
    end getUsb;
 
    function getVideo (This : in out LinuxHardware; index : Integer) return VideoInterface_Access is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return null;
    end getVideo;
 
    function getComponent (This : in out LinuxHardware; index : Integer) return HardwareComponentInterface_Access is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return null;
    end getComponent;
 
    function toString (This : in out LinuxHardware) return Unbounded_String is

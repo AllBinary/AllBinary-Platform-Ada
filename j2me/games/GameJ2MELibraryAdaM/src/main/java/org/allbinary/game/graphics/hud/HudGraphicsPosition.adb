@@ -27,8 +27,8 @@ package body org.allbinary.game.graphics.hud.HudGraphicsPosition_Package is
       point : constant GPoint_Access := GPoint_Access (point_Param);
    begin
       Initialize_Fields (This);
-        This.setAnchor (anchor);
-        This.setPoint (point);
+        HudGraphicsPosition'Class (This).setAnchor (anchor);
+        HudGraphicsPosition'Class (This).setPoint (point);
    end Initialize;
 
    function Create (point_Param : access GPoint_Package.GPoint'Class; anchor : Integer) return HudGraphicsPosition_Access is

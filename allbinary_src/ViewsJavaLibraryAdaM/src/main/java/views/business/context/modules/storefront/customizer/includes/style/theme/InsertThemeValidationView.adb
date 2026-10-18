@@ -31,7 +31,7 @@ package body views.business.context.modules.storefront.customizer.includes.style
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
             This.logUtil.putF (This.commonStrings.CONSTRUCTOR, InsertThemeValidationView_Access'(This'Unchecked_Access), To_Unbounded_String ("started"));
         end if;
-        This.requestHashMap := NameSpaceRequestParams_Package.Create (This.getPageContext).toHashMap;
+        This.requestHashMap := NameSpaceRequestParams_Package.Create (InsertThemeValidationView'Class (This).getPageContext).toHashMap;
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
             This.logUtil.putF (This.commonStrings.CONSTRUCTOR, InsertThemeValidationView_Access'(This'Unchecked_Access), To_Unbounded_String ("begin loading theme"));
         end if;
@@ -59,14 +59,14 @@ package body views.business.context.modules.storefront.customizer.includes.style
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
                 This.logUtil.putF (To_Unbounded_String ("Started Validation"), InsertThemeValidationView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
             end if;
-            themeValidation := ThemeValidation_Package.Create (This.getTransformInfoInterface, This.requestHashMap);
+            themeValidation := ThemeValidation_Package.Create (InsertThemeValidationView'Class (This).getTransformInfoInterface, This.requestHashMap);
             if (themeValidation.isValid) = (False) then
                 isValid := False;
             end if;
             This.validationInterface := themeValidation.getCssStyleValidation;
             isValid := This.validationInterface.isValid;
             if (isValid) = (True) then
-                CustomizerUtil_Package.getInstance.insert (This.getTransformInfoInterface, DomNodeInterface_Access (This.validationInterface));
+                CustomizerUtil_Package.getInstance.insert (InsertThemeValidationView'Class (This).getTransformInfoInterface, DomNodeInterface_Access (This.validationInterface));
             end if;
             return isValid;
         exception
@@ -116,7 +116,7 @@ package body views.business.context.modules.storefront.customizer.includes.style
    function view (This : in out InsertThemeValidationView) return Unbounded_String is
    begin
         begin
-            return StoreCustomizerComponentUtil_Package.getInstance.generate (This.abeClientInformation, This.getTransformInfoInterface);
+            return StoreCustomizerComponentUtil_Package.getInstance.generate (This.abeClientInformation, InsertThemeValidationView'Class (This).getTransformInfoInterface);
         exception
             when Java_Occurrence : others =>
                 declare

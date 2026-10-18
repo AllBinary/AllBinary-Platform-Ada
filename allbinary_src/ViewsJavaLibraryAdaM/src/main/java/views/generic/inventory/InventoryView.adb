@@ -53,7 +53,7 @@ package body views.generic_Id.inventory.InventoryView_Package is
             end if;
             inventoryEntityInterface := InventoryEntityFactory_Package.getInstance.getInventoryEntityInstance;
             inventoryNode := document.createElement (InventoryData_Package.INVENTORY);
-            itemVector := inventoryEntityInterface.getItems (StoreFrontFactory_Package.getInstance (This.getTransformInfoInterface.getStoreName));
+            itemVector := inventoryEntityInterface.getItems (StoreFrontFactory_Package.getInstance (InventoryView'Class (This).getTransformInfoInterface.getStoreName));
             inventoryNode.appendChild (ModDomHelper_Package.createNameValueNodes (document, SearchData_Package.TOTAL_NUMBER_ITEMS_ON_THIS_PAGE, itemVector.size.toString));
             size := itemVector.size;
             for index in 0 .. (size) - 1 loop
@@ -81,14 +81,14 @@ package body views.generic_Id.inventory.InventoryView_Package is
 
    procedure addDomNodeInterfaces (This : in out InventoryView) is
    begin
-        This.addDomNodeInterface (DomNodeInterface_Access (InventoryView_Access'(This'Unchecked_Access)));
+        InventoryView'Class (This).addDomNodeInterface (DomNodeInterface_Access (InventoryView_Access'(This'Unchecked_Access)));
    end addDomNodeInterfaces;
 
    function view (This : in out InventoryView) return Unbounded_String is
       error : Unbounded_String;
    begin
         begin
-            This.addDomNodeInterfaces;
+            InventoryView'Class (This).addDomNodeInterfaces;
             return HttpStoreComponentView (This).view;
         exception
             when Java_Occurrence : others =>

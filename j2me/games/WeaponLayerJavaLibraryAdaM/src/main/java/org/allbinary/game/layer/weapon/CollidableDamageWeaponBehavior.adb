@@ -27,8 +27,8 @@ package body org.allbinary.game.layer.weapon.CollidableDamageWeaponBehavior_Pack
    begin
         CollidableDestroyableDamageableBehavior_Package.Initialize (This, collidable);
         Initialize_Fields (This);
-        This.setCollided (False);
-        This.setCollidable (True);
+        CollidableDamageWeaponBehavior'Class (This).setCollided (False);
+        CollidableDamageWeaponBehavior'Class (This).setCollidable (True);
         This.collisionHelper := CollidableHelperFactory_Package.getInstance;
    end Initialize;
 
@@ -42,7 +42,7 @@ package body org.allbinary.game.layer.weapon.CollidableDamageWeaponBehavior_Pack
    procedure init (This : in out CollidableDamageWeaponBehavior; sourceLayerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class) is
       sourceLayerInterface : constant AllBinaryLayer_Access := AllBinaryLayer_Access (sourceLayerInterface_Param);
    begin
-        This.setCollided (False);
+        CollidableDamageWeaponBehavior'Class (This).setCollided (False);
         This.collisionHelper.setOwnerLayerInterface (sourceLayerInterface);
    end init;
 

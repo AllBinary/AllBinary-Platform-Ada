@@ -55,7 +55,7 @@ package body org.allbinary.layer.event.LayerManagerEvent_Package is
         stringBuffer := StringMaker_Package.Create;
         stringBuffer.append (To_Unbounded_String ("LayerManagerEvent: " & ASCII.LF & ""));
         stringBuffer.append (To_Unbounded_String ("LayerInterface: "));
-        stringBuffer.append (This.getLayerInterface.toString);
+        stringBuffer.append (LayerManagerEvent'Class (This).getLayerInterface.toString);
         stringBuffer.append (To_Unbounded_String ("" & ASCII.LF & "CRUD: "));
         stringBuffer.append (This.crud);
         return stringBuffer.toString;

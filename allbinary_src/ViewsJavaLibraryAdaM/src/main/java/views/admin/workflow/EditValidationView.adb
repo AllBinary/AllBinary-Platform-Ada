@@ -29,7 +29,7 @@ package body views.admin.workflow.EditValidationView_Package is
    begin
         WorkFlowView_Package.Initialize (This, transformInfoInterface);
         Initialize_Fields (This);
-        httpTransformInfoInterface := TransformInfoHttpInterface_Access (This.getTransformInfoInterface);
+        httpTransformInfoInterface := TransformInfoHttpInterface_Access (EditValidationView'Class (This).getTransformInfoInterface);
         This.workFlowName := httpTransformInfoInterface.getPageContext.getRequest.getParameter (WorkFlowData_Package.getInstance.NAME);
    end Initialize;
 
@@ -46,7 +46,7 @@ package body views.admin.workflow.EditValidationView_Package is
             if (This.workFlowName) = (Null_Unbounded_String) then
                 return False;
             end if;
-            if (WorkFlowEntityFactory_Package.getInstance.create2.get (This.workFlowName, This.getTransformInfoInterface.getStoreName)) = (null) then
+            if (WorkFlowEntityFactory_Package.getInstance.create2.get (This.workFlowName, EditValidationView'Class (This).getTransformInfoInterface.getStoreName)) = (null) then
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
                     This.logUtil.putF (To_Unbounded_String ("WorkFlow does not exist."), EditValidationView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
                 end if;
@@ -74,7 +74,7 @@ package body views.admin.workflow.EditValidationView_Package is
             if (This.workFlowName) = (Null_Unbounded_String) then
                 stringBuffer.append (To_Unbounded_String ("WorkFlow name is invalid<br />"));
             end if;
-            if (WorkFlowEntityFactory_Package.getInstance.create2.get (This.workFlowName, This.getTransformInfoInterface.getStoreName)) = (null) then
+            if (WorkFlowEntityFactory_Package.getInstance.create2.get (This.workFlowName, EditValidationView'Class (This).getTransformInfoInterface.getStoreName)) = (null) then
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
                     This.logUtil.putF (To_Unbounded_String ("WorkFlow does not exist."), EditValidationView_Access'(This'Unchecked_Access), To_Unbounded_String ("validationInfo()"));
                 end if;

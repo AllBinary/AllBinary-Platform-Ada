@@ -49,16 +49,16 @@ package body org.allbinary.game.ag.ai.tactical.LurchAI_Package is
         else
             This.currentSpeed := -(1);
         end if;
-        ownerLayerInterface := This.getOwnerLayerInterface;
+        ownerLayerInterface := LurchAI'Class (This).getOwnerLayerInterface;
         x := ownerLayerInterface.getXP;
         if ((ownerLayerInterface.getXP) - (This.currentSpeed)) <= (0) then
-            This.reverse_Id;
-            This.drop;
+            LurchAI'Class (This).reverse_Id;
+            LurchAI'Class (This).drop;
         end if;
         if ((ownerLayerInterface.getX2) + (This.currentSpeed)) > (DisplayInfoSingleton_Package.getInstance.getLastWidth) then
-            This.reverse_Id;
-            This.accelerate;
-            This.drop;
+            LurchAI'Class (This).reverse_Id;
+            LurchAI'Class (This).accelerate;
+            LurchAI'Class (This).drop;
         end if;
         if (This.currentRelativeAngle) = (0) then
             x := (x) + (This.currentSpeed);
@@ -93,7 +93,7 @@ package body org.allbinary.game.ag.ai.tactical.LurchAI_Package is
       ownerLayerInterface : AllBinaryLayer_Access;
       y : Integer;
    begin
-        ownerLayerInterface := This.getOwnerLayerInterface;
+        ownerLayerInterface := LurchAI'Class (This).getOwnerLayerInterface;
         y := ownerLayerInterface.getYP;
         if ((ownerLayerInterface.getY2) + (ownerLayerInterface.getHeight)) > (DisplayInfoSingleton_Package.getInstance.getLastHeight) then
             y := 0;

@@ -42,21 +42,21 @@ package body org.allbinary.game.input.PlayerGameInput_Package is
    procedure onPressGameKeyEvent (This : in out PlayerGameInput; gameKeyEvent_Param : access GameKeyEvent_Package.GameKeyEvent'Class) is
       gameKeyEvent : constant GameKeyEvent_Access := GameKeyEvent_Access (gameKeyEvent_Param);
    begin
-        This.add (gameKeyEvent);
-        This.addForRemoval (gameKeyEvent);
+        PlayerGameInput'Class (This).add (gameKeyEvent);
+        PlayerGameInput'Class (This).addForRemoval (gameKeyEvent);
    end onPressGameKeyEvent;
 
    procedure onDownGameKeyEvent (This : in out PlayerGameInput; gameKeyEvent_Param : access GameKeyEvent_Package.GameKeyEvent'Class) is
       gameKeyEvent : constant GameKeyEvent_Access := GameKeyEvent_Access (gameKeyEvent_Param);
    begin
-        This.add (gameKeyEvent);
+        PlayerGameInput'Class (This).add (gameKeyEvent);
    end onDownGameKeyEvent;
 
    procedure onDownKeyEvent (This : in out PlayerGameInput; gameKeyEvent_Param : access GameKeyEvent_Package.GameKeyEvent'Class) is
       gameKeyEvent : constant GameKeyEvent_Access := GameKeyEvent_Access (gameKeyEvent_Param);
    begin
-        This.add (gameKeyEvent);
-        This.addForRemoval (gameKeyEvent);
+        PlayerGameInput'Class (This).add (gameKeyEvent);
+        PlayerGameInput'Class (This).addForRemoval (gameKeyEvent);
    end onDownKeyEvent;
 
    procedure onDownKey (This : in out PlayerGameInput; gameKeyEvent : Integer) is
@@ -67,7 +67,7 @@ package body org.allbinary.game.input.PlayerGameInput_Package is
    procedure onUpGameKeyEvent (This : in out PlayerGameInput; gameKeyEvent_Param : access GameKeyEvent_Package.GameKeyEvent'Class) is
       gameKeyEvent : constant GameKeyEvent_Access := GameKeyEvent_Access (gameKeyEvent_Param);
    begin
-        This.addForRemoval (gameKeyEvent);
+        PlayerGameInput'Class (This).addForRemoval (gameKeyEvent);
    end onUpGameKeyEvent;
 
    procedure onUpKeyEvent (This : in out PlayerGameInput; gameKeyEvent : Integer) is

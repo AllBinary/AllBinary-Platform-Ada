@@ -20,7 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.util.HashMap_Package; use java.util.HashMap_Package;
+with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.J2SEUtil_Package; use org.allbinary.J2SEUtil_Package;
 with org.allbinary.globals.AppUrlGlobals_Package; use org.allbinary.globals.AppUrlGlobals_Package;
 with org.allbinary.globals.URLGLOBALS_Package; use org.allbinary.globals.URLGLOBALS_Package;
@@ -32,6 +32,7 @@ with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package
 
 package org.allbinary.logic.string_Id.regex.replace.Replace_Package is
 
+   package HashMap_Package renames Standard.java.util.HashMap_Package;
    package J2SEUtil_Package renames Standard.org.allbinary.J2SEUtil_Package;
    package AppUrlGlobals_Package renames Standard.org.allbinary.globals.AppUrlGlobals_Package;
    package URLGLOBALS_Package renames Standard.org.allbinary.globals.URLGLOBALS_Package;

@@ -96,7 +96,7 @@ package body org.allbinary.logic.visual.transform.TransformFactory_Package is
                 This.logUtil.putF (To_Unbounded_String ("Creating Transform: ") & Java_Image (propertiesHashMap.get (transformInfoData.NAME)), TransformFactory_Access'(This'Unchecked_Access), This.commonStrings.GET_INSTANCE);
             end if;
             transformInfoEntity := TransformInfoEntityBuilder_Package.getInstance;
-            transformInfoInterface := transformInfoEntity.get (Unbounded_String (propertiesHashMap.get (transformInfoData.NAME)), propertiesHashMap, pageContext);
+            transformInfoInterface := transformInfoEntity.get (Java_Unbox (propertiesHashMap.get (transformInfoData.NAME)), propertiesHashMap, pageContext);
             if (transformInfoInterface) /= (null) then
                 transformInfoInterface.override (propertiesHashMap);
             else
@@ -115,7 +115,7 @@ package body org.allbinary.logic.visual.transform.TransformFactory_Package is
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPERFACTORYERROR) then
                 stringBuffer := StringMaker_Package.Create;
                 stringBuffer.append (To_Unbounded_String ("Failed To Get Instance: "));
-                stringBuffer.append (Unbounded_String (propertiesHashMap.get (TransformInfoData_Package.getInstance.NAME)));
+                stringBuffer.append (Java_Unbox (propertiesHashMap.get (TransformInfoData_Package.getInstance.NAME)));
                 stringBuffer.append (To_Unbounded_String ("->TransformFactory"));
                 This.logUtil.put (stringBuffer.toString, TransformFactory_Access'(This'Unchecked_Access), This.commonStrings.GET_INSTANCE, e);
             end if;

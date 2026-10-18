@@ -58,7 +58,7 @@ package body org.allbinary.media.image.ImageCompleteUtil_Package is
         playnImage := PlaynImage_Access (image);
         playnCoreImage := Image_Access (playnImage.getImage);
         if (not (playnCoreImage.isReady_Case)) or else (((playnCoreImage.width) + (playnCoreImage.height)) <= (0)) then
-            This.handleTimeout (name);
+            ImageCompleteUtil'Class (This).handleTimeout (name);
             return False;
         end if;
         if not (image.isReady_Case) then

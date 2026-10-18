@@ -39,7 +39,7 @@ package body org.allbinary.game.layer.SelectionHudPaintable_Package is
    begin
       InitUpdatePaintable_Package.Initialize (This);
       Initialize_Fields (This);
-        This.update;
+        SelectionHudPaintable'Class (This).update;
         This.primitiveLongUtil := PrimitiveLongUtil_Package.createPowerOfTen (10000);
    end Initialize;
 
@@ -57,7 +57,7 @@ package body org.allbinary.game.layer.SelectionHudPaintable_Package is
    begin
         commonButtons := CommonButtons_Package.getInstance;
         font := graphics.getFont;
-        This.setHeight ((commonButtons.STANDARD_BUTTON_SIZE) + (font.getHeight));
+        SelectionHudPaintable'Class (This).setHeight ((commonButtons.STANDARD_BUTTON_SIZE) + (font.getHeight));
         This.myFontProcessor := MyFontProcessor_Package.getInstance;
    end updateMeasurement;
 
@@ -70,9 +70,9 @@ package body org.allbinary.game.layer.SelectionHudPaintable_Package is
         touchButtonLocationHelper := TouchButtonLocationHelper_Package.Create;
         displayInfoSingleton := DisplayInfoSingleton_Package.getInstance;
         This.x := (commonButtons.STANDARD_BUTTON_SIZE) + (touchButtonLocationHelper.getColumnsRemainderHalf);
-        This.textX := (This.getX) + (4);
-        This.width := (displayInfoSingleton.getLastWidth) - ((This.getX) * (2));
-        This.imageX := ((This.getWidth) + (touchButtonLocationHelper.getColumnsRemainderHalf)) - (10);
+        This.textX := (SelectionHudPaintable'Class (This).getX) + (4);
+        This.width := (displayInfoSingleton.getLastWidth) - ((SelectionHudPaintable'Class (This).getX) * (2));
+        This.imageX := ((SelectionHudPaintable'Class (This).getWidth) + (touchButtonLocationHelper.getColumnsRemainderHalf)) - (10);
         This.myFontProcessor := This.updateMyFontProcessor;
    end update;
 
@@ -116,7 +116,7 @@ package body org.allbinary.game.layer.SelectionHudPaintable_Package is
       basicColor : constant BasicColor_Access := BasicColor_Access (basicColor_Param);
    begin
         This.basicColor := basicColor;
-        This.setColor (basicColor.intValue);
+        SelectionHudPaintable'Class (This).setColor (basicColor.intValue);
    end setBasicColorP;
 
    function getBasicColorP (This : in out SelectionHudPaintable) return BasicColor_Access is
@@ -159,9 +159,9 @@ package body org.allbinary.game.layer.SelectionHudPaintable_Package is
    begin
         This.myFontProcessor.process (graphics);
         graphics.setColor (This.backgroundColor);
-        graphics.drawRect (This.getX, This.y, This.getWidth, This.getHeight);
-        graphics.setColor (This.getColor);
-        graphics.drawString (This.getName, This.textX, This.y, 0);
+        graphics.drawRect (SelectionHudPaintable'Class (This).getX, This.y, SelectionHudPaintable'Class (This).getWidth, SelectionHudPaintable'Class (This).getHeight);
+        graphics.setColor (SelectionHudPaintable'Class (This).getColor);
+        graphics.drawString (SelectionHudPaintable'Class (This).getName, This.textX, This.y, 0);
    end paint;
 
 end org.allbinary.game.layer.SelectionHudPaintable_Package;

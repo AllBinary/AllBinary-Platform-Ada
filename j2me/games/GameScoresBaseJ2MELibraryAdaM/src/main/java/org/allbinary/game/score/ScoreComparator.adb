@@ -71,9 +71,9 @@ package body org.allbinary.game.score.ScoreComparator_Package is
                 end;
         end;
         if This.isHighestBest then
-            return This.getHighTooLow (scoreOne, scoreTwo);
+            return ScoreComparator'Class (This).getHighTooLow (scoreOne, scoreTwo);
         else
-            return This.getLowTooHigh (scoreOne, scoreTwo);
+            return ScoreComparator'Class (This).getLowTooHigh (scoreOne, scoreTwo);
         end if;
    end compare;
 

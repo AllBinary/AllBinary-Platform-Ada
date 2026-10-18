@@ -50,6 +50,7 @@ package body org.allbinary.layer.LayerProcessor_Package is
       layerInterface : constant AllBinaryLayer_Access := AllBinaryLayer_Access (layerInterface_Param);
    begin
         Java_Throw (Java_New_Exception ("Exception", This.commonStrings.NOT_IMPLEMENTED));
+        return False;
    end isProcessorLayer;
 
    function getLayerManager (This : in out LayerProcessor) return LayerManager_Access is
@@ -64,10 +65,10 @@ package body org.allbinary.layer.LayerProcessor_Package is
       size : Integer;
       index : Integer;
    begin
-        layerManager := This.getLayerManager;
+        layerManager := LayerProcessor'Class (This).getLayerManager;
         size := layerManager.getSize;
         for index in 0 .. (size) - 1 loop
-            This.processAt (allBinaryLayerManager, AllBinaryLayer_Access (layerManager.getLayerAt (index)), index);
+            LayerProcessor'Class (This).processAt (allBinaryLayerManager, AllBinaryLayer_Access (layerManager.getLayerAt (index)), index);
         end loop;
    end process;
 

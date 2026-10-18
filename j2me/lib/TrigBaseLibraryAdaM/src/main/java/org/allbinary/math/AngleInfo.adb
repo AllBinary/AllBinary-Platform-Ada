@@ -47,7 +47,7 @@ package body org.allbinary.math.AngleInfo_Package is
       newAngle : Integer;
    begin
         newAngle := ((This.angleIncrementInfo.getAngleIncrement) * (frame)) - (90);
-        This.setAngle (Short_Integer (This.frameUtil.adjustAngleToFrameAngle (newAngle)));
+        AngleInfo'Class (This).setAngle (Short_Integer (This.frameUtil.adjustAngleToFrameAngle (newAngle)));
    end adjustAngle;
 
    function getAngle (This : in out AngleInfo) return Short_Integer is
@@ -72,7 +72,7 @@ package body org.allbinary.math.AngleInfo_Package is
         stringBuffer.append (AngleInfo_Package.ANGLE);
         stringBuffer.appendshort (This.angle_Case);
         stringBuffer.append (CommonSeps_Package.getInstance.SPACE);
-        stringBuffer.append (StringUtil_Package.getInstance.toString (This.getAngleIncrementInfo));
+        stringBuffer.append (StringUtil_Package.getInstance.toString (AngleInfo'Class (This).getAngleIncrementInfo));
         return stringBuffer.toString;
    end toString;
 

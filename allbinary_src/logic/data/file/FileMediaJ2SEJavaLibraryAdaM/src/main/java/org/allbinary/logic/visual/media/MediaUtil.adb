@@ -49,7 +49,7 @@ package body org.allbinary.logic.visual.media.MediaUtil_Package is
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Unable to find ImageReader for this file.")));
         end if;
         if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.VIEW) then
-            hashMap := This.getImageBufferPropertyHashMap (bufferedImage);
+            hashMap := MediaUtil'Class (This).getImageBufferPropertyHashMap (bufferedImage);
             This.logUtil.putF (To_Unbounded_String ("Image Properties: ") & hashMap.toString, MediaUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("saveImageFile()"));
         end if;
         imageFile := AbFile_Package.createAbFile (category & newImageFileName);
@@ -95,7 +95,7 @@ package body org.allbinary.logic.visual.media.MediaUtil_Package is
         if (propertyStringArray) /= (null) then
             for index in 0 .. (propertyStringArray'Length) - 1 loop
                 propertyObject := bufferedImage.getProperty (propertyStringArray (index));
-                hashMap.put (propertyStringArray (index), propertyObject.toString);
+                hashMap.put (propertyStringArray (index), Java_Box (propertyObject.toString));
             end loop;
         end if;
         return hashMap;

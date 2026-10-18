@@ -39,12 +39,12 @@ package body tags.admin.payment.gateway.ViewTag_Package is
    function doStartTag (This : in out ViewTag) return Integer is
    begin
         begin
-            if (This.getCommand) /= (null) then
-                if (This.getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.VIEW)) = (0) then
-                    This.setName (To_Unbounded_String ("Validation Gateway View"));
-                    This.setObjectFile (To_Unbounded_String ("views.admin.payment.gateway.GatewayValidationView"));
+            if (ViewTag'Class (This).getCommand) /= (null) then
+                if (ViewTag'Class (This).getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.VIEW)) = (0) then
+                    ViewTag'Class (This).setName (To_Unbounded_String ("Validation Gateway View"));
+                    ViewTag'Class (This).setObjectFile (To_Unbounded_String ("views.admin.payment.gateway.GatewayValidationView"));
                 else
-                    Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("No Such View Command: ") & Java_Image (This.getCommand)));
+                    Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("No Such View Command: ") & Java_Image (ViewTag'Class (This).getCommand)));
                 end if;
                 return StoreValidationTransformTag (This).doStartTag;
             end if;

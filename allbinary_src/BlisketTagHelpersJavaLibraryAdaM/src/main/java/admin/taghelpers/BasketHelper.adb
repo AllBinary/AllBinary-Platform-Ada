@@ -36,7 +36,7 @@ package body admin.taghelpers.BasketHelper_Package is
       Initialize_Fields (This);
         This.propertiesHashMap := hashMap;
         This.pageContext := pageContext;
-        storeName := Unbounded_String (This.propertiesHashMap.get (StoreFrontData_Package.getInstance.NAME));
+        storeName := Java_Unbox (This.propertiesHashMap.get (StoreFrontData_Package.getInstance.NAME));
         if (storeName) /= (Null_Unbounded_String) then
             This.storeFrontInterface := StoreFrontFactory_Package.getInstance (storeName);
         end if;

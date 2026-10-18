@@ -48,7 +48,7 @@ package body org.allbinary.animation.caption.CaptionIndexedAnimation_Package is
         This.dy := dy;
         This.time := time;
         This.END_EVENT := AllBinaryEventObject_Package.Create (CaptionIndexedAnimation_Access'(This'Unchecked_Access));
-        timePerFrame := (This.time) / (This.getSize);
+        timePerFrame := (This.time) / (CaptionIndexedAnimation'Class (This).getSize);
         This.timeDelayHelper := TimeDelayHelper_Package.Create (timePerFrame);
         This.player := player;
         This.player.start;
@@ -67,14 +67,14 @@ package body org.allbinary.animation.caption.CaptionIndexedAnimation_Package is
         if This.timeDelayHelper.isTime (GameTickTimeDelayHelperFactory_Package.getInstance.startTime) then
             This.movieIndexedAnimationInterface.nextFrame;
         end if;
-        if This.isLastFrame then
+        if CaptionIndexedAnimation'Class (This).isLastFrame then
             AnimationEventHandler_Package.getInstance.fireEvent (This.END_EVENT);
         end if;
    end nextFrame;
 
    function isLastFrame (This : in out CaptionIndexedAnimation) return Boolean is
    begin
-        if (This.movieIndexedAnimationInterface.getFrame) = ((This.getSize) - (1)) then
+        if (This.movieIndexedAnimationInterface.getFrame) = ((CaptionIndexedAnimation'Class (This).getSize) - (1)) then
             return True;
         else
             return False;

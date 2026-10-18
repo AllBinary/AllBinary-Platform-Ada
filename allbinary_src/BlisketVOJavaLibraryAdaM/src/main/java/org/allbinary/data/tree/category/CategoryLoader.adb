@@ -55,7 +55,7 @@ package body org.allbinary.data.tree.category.CategoryLoader_Package is
                         if not (rootAbFile.isDirectory) then
                             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Could Not Create Directory")));
                         end if;
-                        This.save (categoryInterface);
+                        CategoryLoader'Class (This).save (categoryInterface);
                     end if;
                 end if;
                 fileAbPath := categoryInterface.getFilePath;
@@ -94,9 +94,9 @@ package body org.allbinary.data.tree.category.CategoryLoader_Package is
       categoryNode : Node_Access;
    begin
         begin
-            document := This.getDoc (categoryInterface);
+            document := CategoryLoader'Class (This).getDoc (categoryInterface);
             categoryNode := DomSearchHelper_Package.getNode (CategoryData_Package.getInstance.NAME, document.getChildNodes);
-            return This.addProperties (categoryInterface, categoryNode.getChildNodes);
+            return CategoryLoader'Class (This).addProperties (categoryInterface, categoryNode.getChildNodes);
         exception
             when Java_Occurrence : others =>
                 declare
@@ -118,7 +118,7 @@ package body org.allbinary.data.tree.category.CategoryLoader_Package is
         begin
             categoryNode := DomSearchHelper_Package.getNode (CategoryData_Package.getInstance.NAME, document.getChildNodes);
             loadedCategoryInterface := This.categoryFactoryInterface.getRootInstanceFromNode (categoryNode);
-            return This.addProperties (loadedCategoryInterface, categoryNode.getChildNodes);
+            return CategoryLoader'Class (This).addProperties (loadedCategoryInterface, categoryNode.getChildNodes);
         exception
             when Java_Occurrence : others =>
                 declare
@@ -137,8 +137,8 @@ package body org.allbinary.data.tree.category.CategoryLoader_Package is
       document : Document_Access;
    begin
         begin
-            document := This.getDoc (categoryInterface);
-            return This.getAll (document);
+            document := CategoryLoader'Class (This).getDoc (categoryInterface);
+            return CategoryLoader'Class (This).getAll (document);
         exception
             when Java_Occurrence : others =>
                 declare
@@ -160,7 +160,7 @@ package body org.allbinary.data.tree.category.CategoryLoader_Package is
         begin
             categoryNode := DomSearchHelper_Package.getNode (CategoryData_Package.getInstance.NAME, document.getChildNodes);
             loadedCategoryInterface := This.categoryFactoryInterface.getRootInstanceFromNode (categoryNode);
-            return This.addProperties (loadedCategoryInterface, categoryNode.getChildNodes);
+            return CategoryLoader'Class (This).addProperties (loadedCategoryInterface, categoryNode.getChildNodes);
         exception
             when Java_Occurrence : others =>
                 declare

@@ -68,7 +68,7 @@ package body org.allbinary.image.ImageCacheBase_Package is
             This.availableListOfList (index).clear;
             This.availableListOfList (index).addAllList (This.listOfList (index));
         end loop;
-        This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("ImageCache: ")).append (This.toString).toString, ImageCacheBase_Access'(This'Unchecked_Access), To_Unbounded_String ("releaseAll"));
+        This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("ImageCache: ")).append (ImageCacheBase'Class (This).toString).toString, ImageCacheBase_Access'(This'Unchecked_Access), To_Unbounded_String ("releaseAll"));
    end releaseAll;
 
    function getIndexWH (This : in out ImageCacheBase; width : Integer; height : Integer) return Integer is
@@ -103,6 +103,7 @@ package body org.allbinary.image.ImageCacheBase_Package is
    function get (This : in out ImageCacheBase; caller : Unbounded_String; width : Integer; height : Integer) return Image_Access is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return null;
    end get;
 
    --  throws Exception
@@ -110,6 +111,7 @@ package body org.allbinary.image.ImageCacheBase_Package is
       key : constant Java_Object_Access := Java_Object_Access (key_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return null;
    end getWithKey;
 
    --  throws Exception

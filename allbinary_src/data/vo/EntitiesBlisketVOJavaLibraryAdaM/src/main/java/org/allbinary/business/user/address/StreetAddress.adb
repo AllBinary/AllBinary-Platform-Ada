@@ -26,7 +26,7 @@ package body org.allbinary.business.user.address.StreetAddress_Package is
       
       
       
-      This.isDefault := False;
+      This.isDefault_Field := False;
    end Initialize_Fields;
 
 
@@ -65,7 +65,7 @@ package body org.allbinary.business.user.address.StreetAddress_Package is
         This.code := DomNodeHelper_Package.getTextNodeValue (codeNode);
         countryNode := DomSearchHelper_Package.getNode (StreetAddressData_Package.COUNTRY, node.getChildNodes);
         This.country := DomNodeHelper_Package.getTextNodeValue (countryNode);
-        This.log;
+        StreetAddress'Class (This).log;
    end Initialize;
 
    function Create (node_Param : access Node_Package.Node'Class) return StreetAddress_Access is
@@ -86,8 +86,8 @@ package body org.allbinary.business.user.address.StreetAddress_Package is
         This.state := streetAddress.getState;
         This.code := streetAddress.getCode;
         This.country := streetAddress.getCountry;
-        This.isDefault := streetAddress.isDefault;
-        This.log;
+        This.isDefault_Field := streetAddress.isDefault;
+        StreetAddress'Class (This).log;
    end Initialize;
 
    function Create (streetAddress_Param : access StreetAddress_Package.StreetAddress'Class) return StreetAddress_Access is
@@ -101,14 +101,14 @@ package body org.allbinary.business.user.address.StreetAddress_Package is
       request : constant HttpServletRequest_Access := HttpServletRequest_Access (request_Param);
    begin
       Initialize_Fields (This);
-        This.setId (request.getParameter (StreetAddressData_Package.ID));
-        This.setName (request.getParameter (StreetAddressData_Package.NAME));
-        This.setStreet (request.getParameter (StreetAddressData_Package.STREET));
-        This.setCity (request.getParameter (StreetAddressData_Package.CITY));
-        This.setState (request.getParameter (StreetAddressData_Package.STATE));
-        This.setCode (request.getParameter (StreetAddressData_Package.CODE));
-        This.setCountry (request.getParameter (StreetAddressData_Package.COUNTRY));
-        This.log;
+        StreetAddress'Class (This).setId (request.getParameter (StreetAddressData_Package.ID));
+        StreetAddress'Class (This).setName (request.getParameter (StreetAddressData_Package.NAME));
+        StreetAddress'Class (This).setStreet (request.getParameter (StreetAddressData_Package.STREET));
+        StreetAddress'Class (This).setCity (request.getParameter (StreetAddressData_Package.CITY));
+        StreetAddress'Class (This).setState (request.getParameter (StreetAddressData_Package.STATE));
+        StreetAddress'Class (This).setCode (request.getParameter (StreetAddressData_Package.CODE));
+        StreetAddress'Class (This).setCountry (request.getParameter (StreetAddressData_Package.COUNTRY));
+        StreetAddress'Class (This).log;
    end Initialize;
 
    function Create (request_Param : access HttpServletRequest_Package.HttpServletRequest'Class) return StreetAddress_Access is
@@ -127,7 +127,7 @@ package body org.allbinary.business.user.address.StreetAddress_Package is
         This.state := state;
         This.code := code;
         This.country := country;
-        This.log;
+        StreetAddress'Class (This).log;
    end Initialize;
 
    function Create (name : Unbounded_String; street : Unbounded_String; city : Unbounded_String; state : Unbounded_String; code : Unbounded_String; country : Unbounded_String) return StreetAddress_Access is
@@ -142,20 +142,20 @@ package body org.allbinary.business.user.address.StreetAddress_Package is
       def : Unbounded_String;
    begin
       Initialize_Fields (This);
-        This.id := Unbounded_String (address.get (StreetAddressData_Package.ID));
-        This.name := Unbounded_String (address.get (StreetAddressData_Package.NAME));
-        This.street := Unbounded_String (address.get (StreetAddressData_Package.STREET));
-        This.city := Unbounded_String (address.get (StreetAddressData_Package.CITY));
-        This.state := Unbounded_String (address.get (StreetAddressData_Package.STATE));
-        This.code := Unbounded_String (address.get (StreetAddressData_Package.CODE));
-        This.country := Unbounded_String (address.get (StreetAddressData_Package.COUNTRY));
-        def := Unbounded_String (address.get (StreetAddressData_Package.DEFAULT));
+        This.id := Java_Unbox (address.get (StreetAddressData_Package.ID));
+        This.name := Java_Unbox (address.get (StreetAddressData_Package.NAME));
+        This.street := Java_Unbox (address.get (StreetAddressData_Package.STREET));
+        This.city := Java_Unbox (address.get (StreetAddressData_Package.CITY));
+        This.state := Java_Unbox (address.get (StreetAddressData_Package.STATE));
+        This.code := Java_Unbox (address.get (StreetAddressData_Package.CODE));
+        This.country := Java_Unbox (address.get (StreetAddressData_Package.COUNTRY));
+        def := Java_Unbox (address.get (StreetAddressData_Package.DEFAULT));
         if ((def) /= (Null_Unbounded_String)) and then ((def.compareTo (StreetAddressData_Package.DEFAULT)) = (0)) then
-            This.isDefault := True;
+            This.isDefault_Field := True;
         else
-            This.isDefault := False;
+            This.isDefault_Field := False;
         end if;
-        This.log;
+        StreetAddress'Class (This).log;
    end Initialize;
 
    function Create (address_Param : access HashMap_Package.HashMap'Class) return StreetAddress_Access is
@@ -168,7 +168,7 @@ package body org.allbinary.business.user.address.StreetAddress_Package is
    procedure log (This : in out StreetAddress) is
    begin
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-            This.logUtil.putF (To_Unbounded_String ("Created Address: " & ASCII.LF & "") & Java_Image (This.toHashMap), StreetAddress_Access'(This'Unchecked_Access), To_Unbounded_String ("log"));
+            This.logUtil.putF (To_Unbounded_String ("Created Address: " & ASCII.LF & "") & Java_Image (StreetAddress'Class (This).toHashMap), StreetAddress_Access'(This'Unchecked_Access), To_Unbounded_String ("log"));
         end if;
    end log;
 
@@ -244,14 +244,14 @@ package body org.allbinary.business.user.address.StreetAddress_Package is
 
    function isDefault (This : in out StreetAddress) return Boolean is
    begin
-        return This.isDefault;
+        return This.isDefault_Field;
    end isDefault;
 
    function isEmpty (This : in out StreetAddress) return Boolean is
       EMPTY_STRING : Unbounded_String;
    begin
         EMPTY_STRING := StringUtil_Package.getInstance.EMPTY_STRING;
-        if ((((((((((((This.getName) = (Null_Unbounded_String)) and then ((This.getName.compareTo (EMPTY_STRING)) = (0))) and then ((This.getStreet) = (null))) and then ((This.getStreet.compareTo (EMPTY_STRING)) = (0))) and then ((This.getCity) = (null))) and then ((This.getCity.compareTo (EMPTY_STRING)) = (0))) and then ((This.getState) = (null))) and then ((This.getState.compareTo (EMPTY_STRING)) = (0))) and then ((This.getCode) = (null))) and then ((This.getCode.compareTo (EMPTY_STRING)) = (0))) and then ((This.getCountry) = (null))) and then ((This.getCountry.compareTo (EMPTY_STRING)) = (0)) then
+        if ((((((((((((StreetAddress'Class (This).getName) = (Null_Unbounded_String)) and then ((StreetAddress'Class (This).getName.compareTo (EMPTY_STRING)) = (0))) and then ((StreetAddress'Class (This).getStreet) = (null))) and then ((StreetAddress'Class (This).getStreet.compareTo (EMPTY_STRING)) = (0))) and then ((StreetAddress'Class (This).getCity) = (null))) and then ((StreetAddress'Class (This).getCity.compareTo (EMPTY_STRING)) = (0))) and then ((StreetAddress'Class (This).getState) = (null))) and then ((StreetAddress'Class (This).getState.compareTo (EMPTY_STRING)) = (0))) and then ((StreetAddress'Class (This).getCode) = (null))) and then ((StreetAddress'Class (This).getCode.compareTo (EMPTY_STRING)) = (0))) and then ((StreetAddress'Class (This).getCountry) = (null))) and then ((StreetAddress'Class (This).getCountry.compareTo (EMPTY_STRING)) = (0)) then
             return True;
         end if;
         return False;
@@ -261,7 +261,7 @@ package body org.allbinary.business.user.address.StreetAddress_Package is
       EMPTY_STRING : Unbounded_String;
    begin
         EMPTY_STRING := StringUtil_Package.getInstance.EMPTY_STRING;
-        if ((((((((((((This.getName) = (Null_Unbounded_String)) or else ((This.getName.compareTo (EMPTY_STRING)) = (0))) or else ((This.getStreet) = (null))) or else ((This.getStreet.compareTo (EMPTY_STRING)) = (0))) or else ((This.getCity) = (null))) or else ((This.getCity.compareTo (EMPTY_STRING)) = (0))) or else ((This.getState) = (null))) or else ((This.getState.compareTo (EMPTY_STRING)) = (0))) or else ((This.getCode) = (null))) or else ((This.getCode.compareTo (EMPTY_STRING)) = (0))) or else ((This.getCountry) = (null))) or else ((This.getCountry.compareTo (EMPTY_STRING)) = (0)) then
+        if ((((((((((((StreetAddress'Class (This).getName) = (Null_Unbounded_String)) or else ((StreetAddress'Class (This).getName.compareTo (EMPTY_STRING)) = (0))) or else ((StreetAddress'Class (This).getStreet) = (null))) or else ((StreetAddress'Class (This).getStreet.compareTo (EMPTY_STRING)) = (0))) or else ((StreetAddress'Class (This).getCity) = (null))) or else ((StreetAddress'Class (This).getCity.compareTo (EMPTY_STRING)) = (0))) or else ((StreetAddress'Class (This).getState) = (null))) or else ((StreetAddress'Class (This).getState.compareTo (EMPTY_STRING)) = (0))) or else ((StreetAddress'Class (This).getCode) = (null))) or else ((StreetAddress'Class (This).getCode.compareTo (EMPTY_STRING)) = (0))) or else ((StreetAddress'Class (This).getCountry) = (null))) or else ((StreetAddress'Class (This).getCountry.compareTo (EMPTY_STRING)) = (0)) then
             return False;
         end if;
         return True;
@@ -274,27 +274,27 @@ package body org.allbinary.business.user.address.StreetAddress_Package is
         stringBuffer := StringMaker_Package.Create;
         stringBuffer.append (To_Unbounded_String ("Address Failed To Validate - All fields must contain data.<br></br>"));
         stringValidationUtil := StringValidationUtil_Package.getInstance;
-        if not (stringValidationUtil.isValidRequired (This.getName, StreetAddressData_Package.MIN, StreetAddressData_Package.MAX)) then
+        if not (stringValidationUtil.isValidRequired (StreetAddress'Class (This).getName, StreetAddressData_Package.MIN, StreetAddressData_Package.MAX)) then
             stringBuffer.append (To_Unbounded_String ("Please enter a valid name"));
             stringBuffer.append (To_Unbounded_String ("<br></br>"));
         end if;
-        if not (stringValidationUtil.isValidRequired (This.getStreet, StreetAddressData_Package.MIN, StreetAddressData_Package.MAX)) then
+        if not (stringValidationUtil.isValidRequired (StreetAddress'Class (This).getStreet, StreetAddressData_Package.MIN, StreetAddressData_Package.MAX)) then
             stringBuffer.append (To_Unbounded_String ("Please enter a valid street"));
             stringBuffer.append (To_Unbounded_String ("<br></br>"));
         end if;
-        if not (stringValidationUtil.isValidRequired (This.getCity, StreetAddressData_Package.MIN, StreetAddressData_Package.MAX)) then
+        if not (stringValidationUtil.isValidRequired (StreetAddress'Class (This).getCity, StreetAddressData_Package.MIN, StreetAddressData_Package.MAX)) then
             stringBuffer.append (To_Unbounded_String ("Please enter a valid city"));
             stringBuffer.append (To_Unbounded_String ("<br></br>"));
         end if;
-        if not (stringValidationUtil.isValidRequired (This.getState, StreetAddressData_Package.MIN, StreetAddressData_Package.MAX)) then
+        if not (stringValidationUtil.isValidRequired (StreetAddress'Class (This).getState, StreetAddressData_Package.MIN, StreetAddressData_Package.MAX)) then
             stringBuffer.append (To_Unbounded_String ("Please enter a valid state"));
             stringBuffer.append (To_Unbounded_String ("<br></br>"));
         end if;
-        if not (stringValidationUtil.isValidRequired (This.getCode, StreetAddressData_Package.MIN, StreetAddressData_Package.MAX)) then
+        if not (stringValidationUtil.isValidRequired (StreetAddress'Class (This).getCode, StreetAddressData_Package.MIN, StreetAddressData_Package.MAX)) then
             stringBuffer.append (To_Unbounded_String ("Please enter a valid zipcode"));
             stringBuffer.append (To_Unbounded_String ("<br></br>"));
         end if;
-        if not (stringValidationUtil.isValidRequired (This.getCountry, StreetAddressData_Package.MIN, StreetAddressData_Package.MAX)) then
+        if not (stringValidationUtil.isValidRequired (StreetAddress'Class (This).getCountry, StreetAddressData_Package.MIN, StreetAddressData_Package.MAX)) then
             stringBuffer.append (To_Unbounded_String ("Please enter a valid country"));
             stringBuffer.append (To_Unbounded_String ("<br></br>"));
         end if;
@@ -313,7 +313,7 @@ package body org.allbinary.business.user.address.StreetAddress_Package is
    begin
         begin
             node := document.createElement (StreetAddressData_Package.FORM);
-            node.appendChild (This.toXmlNode (document));
+            node.appendChild (StreetAddress'Class (This).toXmlNode (document));
             return node;
         exception
             when Java_Occurrence : others =>
@@ -333,13 +333,13 @@ package body org.allbinary.business.user.address.StreetAddress_Package is
       hashMap : HashMap_Access;
    begin
         hashMap := StdUtil_Package.getInstance.createHashMap;
-        hashMap.put (StreetAddressData_Package.ID, This.id);
-        hashMap.put (StreetAddressData_Package.NAME, This.name);
-        hashMap.put (StreetAddressData_Package.STREET, This.street);
-        hashMap.put (StreetAddressData_Package.CITY, This.city);
-        hashMap.put (StreetAddressData_Package.STATE, This.state);
-        hashMap.put (StreetAddressData_Package.CODE, This.code);
-        hashMap.put (StreetAddressData_Package.COUNTRY, This.country);
+        hashMap.put (StreetAddressData_Package.ID, Java_Box (This.id));
+        hashMap.put (StreetAddressData_Package.NAME, Java_Box (This.name));
+        hashMap.put (StreetAddressData_Package.STREET, Java_Box (This.street));
+        hashMap.put (StreetAddressData_Package.CITY, Java_Box (This.city));
+        hashMap.put (StreetAddressData_Package.STATE, Java_Box (This.state));
+        hashMap.put (StreetAddressData_Package.CODE, Java_Box (This.code));
+        hashMap.put (StreetAddressData_Package.COUNTRY, Java_Box (This.country));
         return hashMap;
    end toHashMap;
 
@@ -357,14 +357,14 @@ package body org.allbinary.business.user.address.StreetAddress_Package is
       i : Integer;
    begin
         stringUtil := StringUtil_Package.getInstance;
-        hashMap := This.toHashMap;
+        hashMap := StreetAddress'Class (This).toHashMap;
         keySet := hashMap.keySet;
         keyArray := keySet.toArray;
         size := keyArray'Length;
         node := document.createElement (StreetAddressData_Package.ADDRESS);
         for i in 0 .. (size) - 1 loop
-            name := Unbounded_String (keyArray (i));
-            value := stringUtil.getNonNull (Unbounded_String (hashMap.get (name)));
+            name := Java_Unbox (keyArray (i));
+            value := stringUtil.getNonNull (Java_Unbox (hashMap.get (Java_Box (name))));
             node.appendChild (ModDomHelper_Package.createNameValueNodes (document, name, value));
         end loop;
         return node;

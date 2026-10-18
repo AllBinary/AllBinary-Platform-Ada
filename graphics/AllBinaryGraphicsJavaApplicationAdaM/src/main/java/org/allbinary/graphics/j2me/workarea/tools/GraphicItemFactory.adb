@@ -45,7 +45,7 @@ package body org.allbinary.graphics.j2me.workarea.tools.GraphicItemFactory_Packa
    function getInstance (This : in out GraphicItemFactory; itemName : Unbounded_String) return GraphicsItemInterfaceFactoryInterface_Access is
       graphicsItemInterfaceFactoryInterface : GraphicsItemInterfaceFactoryInterface_Access;
    begin
-        graphicsItemInterfaceFactoryInterface := GraphicsItemInterfaceFactoryInterface_Access (This.graphicItems.get (itemName));
+        graphicsItemInterfaceFactoryInterface := GraphicsItemInterfaceFactoryInterface_Access (This.graphicItems.get (Java_Box (itemName)));
         if (graphicsItemInterfaceFactoryInterface) = (null) then
             graphicsItemInterfaceFactoryInterface := This.DEFAULT;
         end if;

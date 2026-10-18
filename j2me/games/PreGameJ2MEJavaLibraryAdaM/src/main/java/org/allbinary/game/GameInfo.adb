@@ -39,7 +39,7 @@ package body org.allbinary.game.GameInfo_Package is
       Initialize_Fields (This);
         This.gameType := gameType;
         This.gameMode := gameMode;
-        This.setHighestLevel (highestLevel);
+        GameInfo'Class (This).setHighestLevel (highestLevel);
         This.currentLevel := currentLevel;
         This.playerType := playerType;
    end Initialize;
@@ -84,27 +84,27 @@ package body org.allbinary.game.GameInfo_Package is
    procedure setCurrentLevel (This : in out GameInfo; currentLevel : Integer) is
    begin
         This.currentLevel := currentLevel;
-        This.logUtil.putF (StringMaker_Package.Create.append (This.NEW_LEVEL).appendint (This.getCurrentLevel).toString, GameInfo_Access'(This'Unchecked_Access), This.SET_CURRENT_LEVEL);
+        This.logUtil.putF (StringMaker_Package.Create.append (This.NEW_LEVEL).appendint (GameInfo'Class (This).getCurrentLevel).toString, GameInfo_Access'(This'Unchecked_Access), This.SET_CURRENT_LEVEL);
    end setCurrentLevel;
 
    procedure nextGameLevel (This : in out GameInfo) is
    begin
-        if (This.getCurrentLevel) < (This.getHighestLevel) then
+        if (GameInfo'Class (This).getCurrentLevel) < (GameInfo'Class (This).getHighestLevel) then
             This.currentLevel := This.currentLevel + 1;
         end if;
-        This.logUtil.putF (StringMaker_Package.Create.append (CommonLabels_Package.getInstance.NEXT).append (CommonSeps_Package.getInstance.SPACE).append (This.NEW_LEVEL).appendint (This.getCurrentLevel).toString, GameInfo_Access'(This'Unchecked_Access), This.NEXT_GAME_LEVEL);
+        This.logUtil.putF (StringMaker_Package.Create.append (CommonLabels_Package.getInstance.NEXT).append (CommonSeps_Package.getInstance.SPACE).append (This.NEW_LEVEL).appendint (GameInfo'Class (This).getCurrentLevel).toString, GameInfo_Access'(This'Unchecked_Access), This.NEXT_GAME_LEVEL);
    end nextGameLevel;
 
    procedure previousGameLevel (This : in out GameInfo) is
    begin
-        if (This.getCurrentLevel) > (1) then
+        if (GameInfo'Class (This).getCurrentLevel) > (1) then
             This.currentLevel := This.currentLevel - 1;
         end if;
    end previousGameLevel;
 
    function isLastLevel (This : in out GameInfo) return Boolean is
    begin
-        if (This.getCurrentLevel) >= (This.getHighestLevel) then
+        if (GameInfo'Class (This).getCurrentLevel) >= (GameInfo'Class (This).getHighestLevel) then
             return True;
         else
             return False;
@@ -115,10 +115,10 @@ package body org.allbinary.game.GameInfo_Package is
       hashtable : ABHashtable_Access;
    begin
         hashtable := StdUtil_Package.getInstance.createHashtable;
-        hashtable.put (This.gameInfoData.GAME_TYPE, This.getGameType.toString);
+        hashtable.put (This.gameInfoData.GAME_TYPE, GameInfo'Class (This).getGameType.toString);
         hashtable.put (This.gameInfoData.GAME_MODE, This.gameMode.toString);
         hashtable.put (This.gameInfoData.PLAYER_TYPE, This.playerType.toString);
-        hashtable.put (This.gameInfoData.HIGHEST_LEVEL, To_Unbounded_String (Java_Image (This.getHighestLevel)));
+        hashtable.put (This.gameInfoData.HIGHEST_LEVEL, To_Unbounded_String (Java_Image (GameInfo'Class (This).getHighestLevel)));
         hashtable.put (This.gameInfoData.CURRENT_LEVEL, To_Unbounded_String (Java_Image (This.currentLevel)));
         return hashtable;
    end toHashtable;
@@ -131,7 +131,7 @@ package body org.allbinary.game.GameInfo_Package is
         commonSeps := CommonSeps_Package.getInstance;
         stringBuffer.append (This.gameInfoData.GAME_TYPE);
         stringBuffer.append (commonSeps.EQUALS);
-        stringBuffer.append (This.getGameType.toString);
+        stringBuffer.append (GameInfo'Class (This).getGameType.toString);
         stringBuffer.append (commonSeps.COMMA_SEP);
         stringBuffer.append (This.gameInfoData.GAME_MODE);
         stringBuffer.append (commonSeps.EQUALS);
@@ -143,7 +143,7 @@ package body org.allbinary.game.GameInfo_Package is
         stringBuffer.append (commonSeps.COMMA_SEP);
         stringBuffer.append (This.gameInfoData.HIGHEST_LEVEL);
         stringBuffer.append (commonSeps.EQUALS);
-        stringBuffer.appendint (This.getHighestLevel);
+        stringBuffer.appendint (GameInfo'Class (This).getHighestLevel);
         stringBuffer.append (commonSeps.COMMA_SEP);
         stringBuffer.append (This.gameInfoData.CURRENT_LEVEL);
         stringBuffer.append (commonSeps.EQUALS);

@@ -28,7 +28,7 @@ package body org.allbinary.game.paint.ColorFillBasePaintable_Package is
    begin
       Paintable_Package.Initialize (This);
       Initialize_Fields (This);
-        This.setBasicColorP (basicColor);
+        ColorFillBasePaintable'Class (This).setBasicColorP (basicColor);
    end Initialize;
 
    function Create (basicColor_Param : access BasicColor_Package.BasicColor'Class) return ColorFillBasePaintable_Access is
@@ -42,7 +42,7 @@ package body org.allbinary.game.paint.ColorFillBasePaintable_Package is
       basicColor : constant BasicColor_Access := BasicColor_Access (basicColor_Param);
    begin
         This.basicColor := basicColor;
-        This.setColor (This.getBasicColorP.intValue);
+        ColorFillBasePaintable'Class (This).setColor (ColorFillBasePaintable'Class (This).getBasicColorP.intValue);
    end setBasicColorP;
 
    function getBasicColorP (This : in out ColorFillBasePaintable) return BasicColor_Access is

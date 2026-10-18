@@ -93,7 +93,7 @@ package body org.allbinary.time.TimeUtil_Package is
       timeDelta : Long_Long_Integer;
    begin
         time := TimeUtil_Package.calendar.getTimeInMillis;
-        This.setExpirationCalendar (TimeUtil_Package.calendar, yearString, monthString, dayString, hourString, minuteString, secondString);
+        TimeUtil'Class (This).setExpirationCalendar (TimeUtil_Package.calendar, yearString, monthString, dayString, hourString, minuteString, secondString);
         timeDelta := TimeUtil_Package.calendar.getTimeInMillis;
         return (timeDelta) - (time);
    end getTotalTime;

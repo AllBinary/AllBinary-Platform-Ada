@@ -26,7 +26,7 @@ package body org.allbinary.input.automation.robot.osgi.InputAutomationRobotInter
       inputRobotInterface : constant InputRobotInterface_Access := InputRobotInterface_Access (inputRobotInterface_Param);
    begin
       Initialize_Fields (This);
-        This.setInputRobotInterface (inputRobotInterface);
+        InputAutomationRobotInterfaceWrapper'Class (This).setInputRobotInterface (inputRobotInterface);
    end Initialize;
 
    function Create (inputRobotInterface_Param : access InputRobotInterface_Package.InputRobotInterface'Class) return InputAutomationRobotInterfaceWrapper_Access is

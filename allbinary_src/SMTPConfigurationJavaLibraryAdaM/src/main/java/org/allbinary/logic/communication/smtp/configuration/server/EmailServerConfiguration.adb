@@ -33,7 +33,7 @@ package body org.allbinary.logic.communication.smtp.configuration.server.EmailSe
             commonStrings := CommonStrings_Package.getInstance;
             This.logUtil.putF (commonStrings.START, EmailServerConfiguration_Access'(This'Unchecked_Access), commonStrings.CONSTRUCTOR);
         end if;
-        This.setSmtpServer (StringUtil_Package.getInstance.EMPTY_STRING);
+        EmailServerConfiguration'Class (This).setSmtpServer (StringUtil_Package.getInstance.EMPTY_STRING);
    end Initialize;
 
    function Create return EmailServerConfiguration_Access is
@@ -52,10 +52,10 @@ package body org.allbinary.logic.communication.smtp.configuration.server.EmailSe
             commonStrings := CommonStrings_Package.getInstance;
             This.logUtil.putF (commonStrings.START, EmailServerConfiguration_Access'(This'Unchecked_Access), To_Unbounded_String ("EmailServerConfiguration(HashMap)"));
         end if;
-        This.setAccountName (Unbounded_String (hashMap.get (EmailServerConfigurationData_Package.ACCOUNT)));
-        This.setPassword (Unbounded_String (hashMap.get (EmailServerConfigurationData_Package.PASSWORD)));
-        This.setSmtpServer (Unbounded_String (hashMap.get (EmailServerConfigurationData_Package.SERVER)));
-        This.log;
+        EmailServerConfiguration'Class (This).setAccountName (Java_Unbox (hashMap.get (EmailServerConfigurationData_Package.ACCOUNT)));
+        EmailServerConfiguration'Class (This).setPassword (Java_Unbox (hashMap.get (EmailServerConfigurationData_Package.PASSWORD)));
+        EmailServerConfiguration'Class (This).setSmtpServer (Java_Unbox (hashMap.get (EmailServerConfigurationData_Package.SERVER)));
+        EmailServerConfiguration'Class (This).log;
    end Initialize;
 
    function Create (hashMap_Param : access HashMap_Package.HashMap'Class) return EmailServerConfiguration_Access is
@@ -73,10 +73,10 @@ package body org.allbinary.logic.communication.smtp.configuration.server.EmailSe
             commonStrings := CommonStrings_Package.getInstance;
             This.logUtil.putF (commonStrings.START, EmailServerConfiguration_Access'(This'Unchecked_Access), To_Unbounded_String ("EmailServerConfiguration(HashMap)"));
         end if;
-        This.setAccountName (account);
-        This.setPassword (password);
-        This.setSmtpServer (server);
-        This.log;
+        EmailServerConfiguration'Class (This).setAccountName (account);
+        EmailServerConfiguration'Class (This).setPassword (password);
+        EmailServerConfiguration'Class (This).setSmtpServer (server);
+        EmailServerConfiguration'Class (This).log;
    end Initialize;
 
    function Create (account : Unbounded_String; password : Unbounded_String; server : Unbounded_String) return EmailServerConfiguration_Access is
@@ -119,13 +119,13 @@ package body org.allbinary.logic.communication.smtp.configuration.server.EmailSe
    procedure log (This : in out EmailServerConfiguration) is
    begin
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.EMAILLOGGING) then
-            This.logUtil.putF (This.toString, EmailServerConfiguration_Access'(This'Unchecked_Access), To_Unbounded_String ("EmailServerConfiguration"));
+            This.logUtil.putF (EmailServerConfiguration'Class (This).toString, EmailServerConfiguration_Access'(This'Unchecked_Access), To_Unbounded_String ("EmailServerConfiguration"));
         end if;
    end log;
 
    function toString (This : in out EmailServerConfiguration) return Unbounded_String is
    begin
-        return To_Unbounded_String ("Email Server Configuration:" & ASCII.LF & "") & To_Unbounded_String ("Smtp Server: " & ASCII.LF & "") & Java_Image (This.getSmtpServer) & To_Unbounded_String ("" & ASCII.LF & "Account Name: ") & Java_Image (This.getAccountName) & To_Unbounded_String ("" & ASCII.LF & "Password: ") & Java_Image (This.getPassword);
+        return To_Unbounded_String ("Email Server Configuration:" & ASCII.LF & "") & To_Unbounded_String ("Smtp Server: " & ASCII.LF & "") & Java_Image (EmailServerConfiguration'Class (This).getSmtpServer) & To_Unbounded_String ("" & ASCII.LF & "Account Name: ") & Java_Image (EmailServerConfiguration'Class (This).getAccountName) & To_Unbounded_String ("" & ASCII.LF & "Password: ") & Java_Image (EmailServerConfiguration'Class (This).getPassword);
    end toString;
 
 end org.allbinary.logic.communication.smtp.configuration.server.EmailServerConfiguration_Package;

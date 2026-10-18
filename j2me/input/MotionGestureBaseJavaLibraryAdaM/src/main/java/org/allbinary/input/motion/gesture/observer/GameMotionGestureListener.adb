@@ -50,49 +50,49 @@ package body org.allbinary.input.motion.gesture.observer.GameMotionGestureListen
    procedure onUpMotionGestureEvent (This : in out GameMotionGestureListener; ev_Param : access MotionGestureEvent_Package.MotionGestureEvent'Class) is
       ev : constant MotionGestureEvent_Access := MotionGestureEvent_Access (ev_Param);
    begin
-        This.onMotionGestureEvent (ev);
+        GameMotionGestureListener'Class (This).onMotionGestureEvent (ev);
    end onUpMotionGestureEvent;
 
    procedure onDownMotionGestureEvent (This : in out GameMotionGestureListener; ev_Param : access MotionGestureEvent_Package.MotionGestureEvent'Class) is
       ev : constant MotionGestureEvent_Access := MotionGestureEvent_Access (ev_Param);
    begin
-        This.onMotionGestureEvent (ev);
+        GameMotionGestureListener'Class (This).onMotionGestureEvent (ev);
    end onDownMotionGestureEvent;
 
    procedure onLeftMotionGestureEvent (This : in out GameMotionGestureListener; ev_Param : access MotionGestureEvent_Package.MotionGestureEvent'Class) is
       ev : constant MotionGestureEvent_Access := MotionGestureEvent_Access (ev_Param);
    begin
-        This.onMotionGestureEvent (ev);
+        GameMotionGestureListener'Class (This).onMotionGestureEvent (ev);
    end onLeftMotionGestureEvent;
 
    procedure onRightMotionGestureEvent (This : in out GameMotionGestureListener; ev_Param : access MotionGestureEvent_Package.MotionGestureEvent'Class) is
       ev : constant MotionGestureEvent_Access := MotionGestureEvent_Access (ev_Param);
    begin
-        This.onMotionGestureEvent (ev);
+        GameMotionGestureListener'Class (This).onMotionGestureEvent (ev);
    end onRightMotionGestureEvent;
 
    procedure onDiagonalDownRightMotionGestureEvent (This : in out GameMotionGestureListener; ev_Param : access MotionGestureEvent_Package.MotionGestureEvent'Class) is
       ev : constant MotionGestureEvent_Access := MotionGestureEvent_Access (ev_Param);
    begin
-        This.onMotionGestureEvent (ev);
+        GameMotionGestureListener'Class (This).onMotionGestureEvent (ev);
    end onDiagonalDownRightMotionGestureEvent;
 
    procedure onDiagonalDownLeftMotionGestureEvent (This : in out GameMotionGestureListener; ev_Param : access MotionGestureEvent_Package.MotionGestureEvent'Class) is
       ev : constant MotionGestureEvent_Access := MotionGestureEvent_Access (ev_Param);
    begin
-        This.onMotionGestureEvent (ev);
+        GameMotionGestureListener'Class (This).onMotionGestureEvent (ev);
    end onDiagonalDownLeftMotionGestureEvent;
 
    procedure onDiagonalUpRightMotionGestureEvent (This : in out GameMotionGestureListener; ev_Param : access MotionGestureEvent_Package.MotionGestureEvent'Class) is
       ev : constant MotionGestureEvent_Access := MotionGestureEvent_Access (ev_Param);
    begin
-        This.onMotionGestureEvent (ev);
+        GameMotionGestureListener'Class (This).onMotionGestureEvent (ev);
    end onDiagonalUpRightMotionGestureEvent;
 
    procedure onDiagonalUpLeftMotionGestureEvent (This : in out GameMotionGestureListener; ev_Param : access MotionGestureEvent_Package.MotionGestureEvent'Class) is
       ev : constant MotionGestureEvent_Access := MotionGestureEvent_Access (ev_Param);
    begin
-        This.onMotionGestureEvent (ev);
+        GameMotionGestureListener'Class (This).onMotionGestureEvent (ev);
    end onDiagonalUpLeftMotionGestureEvent;
 
    procedure onPressedMotionGestureEvent (This : in out GameMotionGestureListener; ev_Param : access MotionGestureEvent_Package.MotionGestureEvent'Class) is
@@ -136,9 +136,9 @@ package body org.allbinary.input.motion.gesture.observer.GameMotionGestureListen
         begin
             motionGestureInput := ev.getMotionGesture;
             if (motionGestureInput) = (TouchMotionGestureFactory_Package.getInstance.PRESSED) then
-                This.onPressedMotionGestureEvent (ev);
+                GameMotionGestureListener'Class (This).onPressedMotionGestureEvent (ev);
             elsif (motionGestureInput) = (TouchMotionGestureFactory_Package.getInstance.RELEASED) then
-                This.released (ev);
+                GameMotionGestureListener'Class (This).released (ev);
             else
                 This.motionGestureCollection.add (motionGestureInput);
                 This.signed.onMotionGestureCompleted (This.motionGestureCollection);

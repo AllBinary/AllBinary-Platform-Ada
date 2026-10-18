@@ -48,7 +48,7 @@ package body org.allbinary.logic.control.workflow.RequestWorkFlowFactory_Package
    begin
         httpRequest := HttpServletRequest_Access (request);
         requestCommand := httpRequest.getPathInfo;
-        index := (Index (requestCommand, To_String (AbPathData_Package.getInstance.SEPARATOR)) - 1);
+        index := (Index (requestCommand, Java_Image (AbPathData_Package.getInstance.SEPARATOR)) - 1);
         storeName := Unbounded_Slice (requestCommand, (0) + 1, index);
         requestName := Unbounded_Slice (requestCommand, (index) + 1, Length (requestCommand));
         return WorkFlowEntityFactory_Package.getInstance.create2.get (requestName, storeName);
@@ -62,7 +62,7 @@ package body org.allbinary.logic.control.workflow.RequestWorkFlowFactory_Package
       weblisketSession : WeblisketSession_Access;
       storeName : Unbounded_String;
    begin
-        workFlowName := Unbounded_String (pageContext.getRequest.getParameter (WorkFlowData_Package.getInstance.NAME));
+        workFlowName := Java_Unbox (pageContext.getRequest.getParameter (WorkFlowData_Package.getInstance.NAME));
         weblisketSession := WeblisketSession_Package.Create (hashMap, pageContext);
         storeName := weblisketSession.getStoreName;
         return WorkFlowEntityFactory_Package.getInstance.create2.get (workFlowName, storeName);

@@ -112,25 +112,25 @@ package body org.allbinary.animation.compound.AutoCompoundRotationAnimation_Pack
    procedure nextAnimation (This : in out AutoCompoundRotationAnimation) is
       frame : Integer;
    begin
-        frame := This.getFrame;
+        frame := AutoCompoundRotationAnimation'Class (This).getFrame;
         This.circularIndexUtil.next;
-        This.setFrame (frame);
+        AutoCompoundRotationAnimation'Class (This).setFrame (frame);
    end nextAnimation;
 
    procedure previousAnimation (This : in out AutoCompoundRotationAnimation) is
       frame : Integer;
    begin
-        frame := This.getFrame;
+        frame := AutoCompoundRotationAnimation'Class (This).getFrame;
         This.circularIndexUtil.previous;
-        This.setFrame (frame);
+        AutoCompoundRotationAnimation'Class (This).setFrame (frame);
    end previousAnimation;
 
    procedure setAnimation (This : in out AutoCompoundRotationAnimation; index : Integer) is
       frame : Integer;
    begin
-        frame := This.getFrame;
+        frame := AutoCompoundRotationAnimation'Class (This).getFrame;
         This.circularIndexUtil.setIndex (index);
-        This.setFrame (frame);
+        AutoCompoundRotationAnimation'Class (This).setFrame (frame);
    end setAnimation;
 
    procedure setFrameByDirection (This : in out AutoCompoundRotationAnimation; direction_Param : access Direction_Package.Direction'Class) is
@@ -148,7 +148,7 @@ package body org.allbinary.animation.compound.AutoCompoundRotationAnimation_Pack
    procedure adjustFrameToAngle (This : in out AutoCompoundRotationAnimation; newAngle_Param : access Angle_Package.Angle'Class) is
       newAngle : constant Angle_Access := Angle_Access (newAngle_Param);
    begin
-        This.adjustFrame (newAngle.getValue);
+        AutoCompoundRotationAnimation'Class (This).adjustFrame (newAngle.getValue);
    end adjustFrameToAngle;
 
    procedure adjustFrame (This : in out AutoCompoundRotationAnimation; angle : Short_Integer) is

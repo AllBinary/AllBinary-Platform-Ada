@@ -27,7 +27,7 @@ package body org.allbinary.image.gui.ImageIconUnique_Package is
    begin
         ImageIcon_Package.Initialize (This, bufferedImage);
         Initialize_Fields (This);
-        This.setId (index);
+        ImageIconUnique'Class (This).setId (index);
    end Initialize;
 
    function Create (bufferedImage_Param : access BufferedImage_Package.BufferedImage'Class; index : Integer) return ImageIconUnique_Access is

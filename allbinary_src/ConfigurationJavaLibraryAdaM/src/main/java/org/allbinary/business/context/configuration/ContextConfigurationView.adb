@@ -69,7 +69,7 @@ package body org.allbinary.business.context.configuration.ContextConfigurationVi
       emailServerConfigurationView : EmailServerConfigurationView_Access;
    begin
         node := document.createElement (ContextConfigurationData_Package.getInstance.NAME);
-        emailServerConfigurationView := EmailServerConfigurationView_Package.Create (This.getContextConfigurationInterface.getEmailServerConfigurationInterface);
+        emailServerConfigurationView := EmailServerConfigurationView_Package.Create (ContextConfigurationView'Class (This).getContextConfigurationInterface.getEmailServerConfigurationInterface);
         node.appendChild (emailServerConfigurationView.toXmlNode (document));
         return node;
    end toXmlNode;

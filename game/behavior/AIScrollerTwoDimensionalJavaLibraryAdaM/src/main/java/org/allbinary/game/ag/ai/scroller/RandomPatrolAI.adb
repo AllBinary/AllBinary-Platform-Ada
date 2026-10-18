@@ -29,7 +29,7 @@ package body org.allbinary.game.ag.ai.scroller.RandomPatrolAI_Package is
    begin
         BasePatrolAI_Package.Initialize (This, hashtable, ownerLayerInterface, gameInput);
         Initialize_Fields (This);
-        This.updateRandomDistance;
+        RandomPatrolAI'Class (This).updateRandomDistance;
    end Initialize;
 
    function Create (hashtable_Param : access ABHashtable_Package.ABHashtable'Class; ownerLayerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; gameInput_Param : access GameInput_Package.GameInput'Class) return RandomPatrolAI_Access is
@@ -52,7 +52,7 @@ package body org.allbinary.game.ag.ai.scroller.RandomPatrolAI_Package is
         BasePatrolAI (This).processKeyAI (This.keyDirection);
         if This.changedDirection then
             BasePatrolAI (This).processKeyAI (Canvas_Package.KEY_NUM1);
-            This.updateRandomDistance;
+            RandomPatrolAI'Class (This).updateRandomDistance;
             This.changedDirection := False;
         end if;
    end processAI;

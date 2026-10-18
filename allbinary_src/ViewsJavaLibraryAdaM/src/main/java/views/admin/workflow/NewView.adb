@@ -29,8 +29,8 @@ package body views.admin.workflow.NewView_Package is
    begin
         WorkFlowView_Package.Initialize (This, transformInfoInterface);
         Initialize_Fields (This);
-        httpTransformInfoInterface := TransformInfoHttpInterface_Access (This.getTransformInfoInterface);
-        This.workFlowInterface := NewWorkFlowFactory_Package.getInstance.getInstance (This.abeClientInformation, Unbounded_String (httpTransformInfoInterface.getPropertiesHashMap.get (DynamicObjectData_Package.NAME)));
+        httpTransformInfoInterface := TransformInfoHttpInterface_Access (NewView'Class (This).getTransformInfoInterface);
+        This.workFlowInterface := NewWorkFlowFactory_Package.getInstance.getInstance (This.abeClientInformation, Java_Unbox (httpTransformInfoInterface.getPropertiesHashMap.get (DynamicObjectData_Package.NAME)));
    end Initialize;
 
    function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return NewView_Access is

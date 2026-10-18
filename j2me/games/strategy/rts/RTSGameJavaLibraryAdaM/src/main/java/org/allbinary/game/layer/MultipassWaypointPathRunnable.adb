@@ -56,7 +56,7 @@ package body org.allbinary.game.layer.MultipassWaypointPathRunnable_Package is
    begin
         This.runningP := isRunning;
         if This.runningP then
-            This.reset;
+            MultipassWaypointPathRunnable'Class (This).reset;
             This.done := False;
         end if;
    end setRunning;
@@ -75,7 +75,7 @@ package body org.allbinary.game.layer.MultipassWaypointPathRunnable_Package is
                 begin
             commonStrings := CommonStrings_Package.getInstance;
             logUtil.put (commonStrings.EXCEPTION_Id, MultipassWaypointPathRunnable_Access'(This'Unchecked_Access), commonStrings.RUN, e);
-            This.setRunning (False);
+            MultipassWaypointPathRunnable'Class (This).setRunning (False);
                 end;
         end;
    end run;
@@ -90,7 +90,7 @@ package body org.allbinary.game.layer.MultipassWaypointPathRunnable_Package is
 
    procedure finish (This : in out MultipassWaypointPathRunnable) is
    begin
-        This.reset2;
+        MultipassWaypointPathRunnable'Class (This).reset2;
         This.currentPassRunnable := This.ALREADY_ENDED_RUNNABLE;
         This.done := True;
    end finish;
@@ -102,7 +102,7 @@ package body org.allbinary.game.layer.MultipassWaypointPathRunnable_Package is
 
    procedure reset (This : in out MultipassWaypointPathRunnable) is
    begin
-        This.reset2;
+        MultipassWaypointPathRunnable'Class (This).reset2;
         This.currentPassRunnable := This.FIRST_RUNNABLE;
         This.done := False;
    end reset;
@@ -114,7 +114,7 @@ package body org.allbinary.game.layer.MultipassWaypointPathRunnable_Package is
    begin
         begin
             This.pathFindingLayer.getWaypointRunnableLogHelper.start (This.pathFindingLayer);
-            This.reset2;
+            MultipassWaypointPathRunnable'Class (This).reset2;
             geographicMapCellPosition := This.pathFindingLayer.getCurrentGeographicMapCellPosition;
             if (geographicMapCellPosition) = (null) then
                 Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Should never be running here")));
@@ -134,8 +134,8 @@ package body org.allbinary.game.layer.MultipassWaypointPathRunnable_Package is
                 begin
             commonStrings := CommonStrings_Package.getInstance;
             This.logUtil.put (commonStrings.EXCEPTION_Id, MultipassWaypointPathRunnable_Access'(This'Unchecked_Access), commonStrings.RUN, e);
-            This.setRunning (False);
-            This.finish;
+            MultipassWaypointPathRunnable'Class (This).setRunning (False);
+            MultipassWaypointPathRunnable'Class (This).finish;
                 end;
         end;
    end processFirstRunnable;
@@ -159,8 +159,8 @@ package body org.allbinary.game.layer.MultipassWaypointPathRunnable_Package is
                 begin
             commonStrings := CommonStrings_Package.getInstance;
             This.logUtil.put (commonStrings.EXCEPTION_Id, MultipassWaypointPathRunnable_Access'(This'Unchecked_Access), commonStrings.RUN, e);
-            This.setRunning (False);
-            This.finish;
+            MultipassWaypointPathRunnable'Class (This).setRunning (False);
+            MultipassWaypointPathRunnable'Class (This).finish;
                 end;
         end;
    end processSecondRunnable;
@@ -180,10 +180,10 @@ package body org.allbinary.game.layer.MultipassWaypointPathRunnable_Package is
                 begin
             commonStrings := CommonStrings_Package.getInstance;
             This.logUtil.put (commonStrings.EXCEPTION_Id, MultipassWaypointPathRunnable_Access'(This'Unchecked_Access), commonStrings.RUN, e);
-            This.setRunning (False);
+            MultipassWaypointPathRunnable'Class (This).setRunning (False);
                 end;
         end;
-        This.finish;
+        MultipassWaypointPathRunnable'Class (This).finish;
    end processEndRunnable;
 
 end org.allbinary.game.layer.MultipassWaypointPathRunnable_Package;

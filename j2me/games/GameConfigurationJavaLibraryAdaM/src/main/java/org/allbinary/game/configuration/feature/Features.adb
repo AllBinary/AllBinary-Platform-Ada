@@ -38,7 +38,7 @@ package body org.allbinary.game.configuration.feature.Features_Package is
       Initialize_Fields (This);
         This.list := BasicArrayListD_Package.Create;
         This.defaultList := BasicArrayListD_Package.Create;
-        This.init;
+        Features'Class (This).init;
    end Initialize;
 
    function Create return Features_Access is
@@ -52,7 +52,7 @@ package body org.allbinary.game.configuration.feature.Features_Package is
    procedure addDefault (This : in out Features; gameFeature_Param : access Feature_Package.Feature'Class) is
       gameFeature : constant Feature_Access := Feature_Access (gameFeature_Param);
    begin
-        This.add (gameFeature);
+        Features'Class (This).add (gameFeature);
         if not (This.defaultList.contains (gameFeature)) then
             This.defaultList.add (gameFeature);
         end if;
@@ -74,7 +74,7 @@ package body org.allbinary.game.configuration.feature.Features_Package is
       gameFeature : constant Feature_Access := Feature_Access (gameFeature_Param);
    begin
         This.logUtil.putF (StringMaker_Package.Create.append (CommonLabels_Package.getInstance.START_LABEL).append (gameFeature.toString).toString, Features_Access'(This'Unchecked_Access), To_Unbounded_String ("removeDefault"));
-        This.remove (gameFeature);
+        Features'Class (This).remove (gameFeature);
         This.defaultList.remove (gameFeature);
    end removeDefault;
 
@@ -101,25 +101,25 @@ package body org.allbinary.game.configuration.feature.Features_Package is
             inputFeatureFactory := InputFeatureFactory_Package.getInstance;
             sensorFeatureFactory := SensorFeatureFactory_Package.getInstance;
             touchFeatureFactory := TouchFeatureFactory_Package.getInstance;
-            This.addDefault (gameFeatureFactory.ARTIFICIAL_INTELLEGENCE_PROCESSOR);
-            This.addDefault (gameFeatureFactory.COLLIDABLE_INTERFACE_LAYER_PROCESSOR);
-            This.addDefault (gameFeatureFactory.GAME_INPUT_LAYER_PROCESSOR);
-            This.addDefault (gameFeatureFactory.TICKABLE_LAYER_PROCESSOR);
-            This.addDefault (inputFeatureFactory.MULTI_KEY_PRESS);
-            This.addDefault (inputFeatureFactory.REMOVE_DUPLICATE_KEY_PRESSES);
-            This.addDefault (gameFeatureFactory.SCREEN_SHAKE);
-            This.addDefault (gameFeatureFactory.POST_IMAGE_LOADING_MODIFICATION);
+            Features'Class (This).addDefault (gameFeatureFactory.ARTIFICIAL_INTELLEGENCE_PROCESSOR);
+            Features'Class (This).addDefault (gameFeatureFactory.COLLIDABLE_INTERFACE_LAYER_PROCESSOR);
+            Features'Class (This).addDefault (gameFeatureFactory.GAME_INPUT_LAYER_PROCESSOR);
+            Features'Class (This).addDefault (gameFeatureFactory.TICKABLE_LAYER_PROCESSOR);
+            Features'Class (This).addDefault (inputFeatureFactory.MULTI_KEY_PRESS);
+            Features'Class (This).addDefault (inputFeatureFactory.REMOVE_DUPLICATE_KEY_PRESSES);
+            Features'Class (This).addDefault (gameFeatureFactory.SCREEN_SHAKE);
+            Features'Class (This).addDefault (gameFeatureFactory.POST_IMAGE_LOADING_MODIFICATION);
             operatingSystemInterface := OperatingSystemFactory_Package.getInstance.getOperatingSystemInstance;
             if operatingSystemInterface.isOverScan then
-                This.addDefault (sensorFeatureFactory.NO_ORIENTATION);
-                This.addDefault (touchFeatureFactory.HIDE_SCREEN_BUTTONS);
+                Features'Class (This).addDefault (sensorFeatureFactory.NO_ORIENTATION);
+                Features'Class (This).addDefault (touchFeatureFactory.HIDE_SCREEN_BUTTONS);
             else
-                This.addDefault (sensorFeatureFactory.ORIENTATION_SENSORS);
-                This.addDefault (touchFeatureFactory.AUTO_HIDE_SHOW_SCREEN_BUTTONS);
+                Features'Class (This).addDefault (sensorFeatureFactory.ORIENTATION_SENSORS);
+                Features'Class (This).addDefault (touchFeatureFactory.AUTO_HIDE_SHOW_SCREEN_BUTTONS);
             end if;
-            This.addDefault (touchFeatureFactory.TOUCH_ENABLED);
-            This.addDefault (MainFeatureFactory_Package.getInstance.FULL_SCREEN);
-            This.addDefault (MainFeatureFactory_Package.getInstance.LOAD_ONDEMAND);
+            Features'Class (This).addDefault (touchFeatureFactory.TOUCH_ENABLED);
+            Features'Class (This).addDefault (MainFeatureFactory_Package.getInstance.FULL_SCREEN);
+            Features'Class (This).addDefault (MainFeatureFactory_Package.getInstance.LOAD_ONDEMAND);
         exception
             when Java_Occurrence : others =>
                 declare
@@ -146,10 +146,10 @@ package body org.allbinary.game.configuration.feature.Features_Package is
    procedure toggle (This : in out Features; gameFeature_Param : access Feature_Package.Feature'Class) is
       gameFeature : constant Feature_Access := Feature_Access (gameFeature_Param);
    begin
-        if This.isFeature (gameFeature) then
-            This.remove (gameFeature);
+        if Features'Class (This).isFeature (gameFeature) then
+            Features'Class (This).remove (gameFeature);
         else
-            This.add (gameFeature);
+            Features'Class (This).add (gameFeature);
         end if;
    end toggle;
 

@@ -37,12 +37,12 @@ package body admin.taghelpers.ShippingHelper_Package is
       Initialize_Fields (This);
         This.pageContext := pageContext;
         This.request := HttpServletRequest_Access (pageContext.getRequest);
-        storeName := Unbounded_String (hashMap.get (StoreFrontData_Package.getInstance.NAME));
+        storeName := Java_Unbox (hashMap.get (StoreFrontData_Package.getInstance.NAME));
         if (storeName) /= (Null_Unbounded_String) then
             This.storeFrontInterface := StoreFrontFactory_Package.getInstance (storeName);
         end if;
         This.weblisketSession := WeblisketSession_Package.Create (hashMap, pageContext);
-        This.getFormData;
+        ShippingHelper'Class (This).getFormData;
    end Initialize;
 
    function Create (hashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) return ShippingHelper_Access is

@@ -32,7 +32,7 @@ package body org.allbinary.logic.system.security.crypt.jcehelper.AbBasicCrypt_Pa
         begin
             This.algorithm := algorithm;
             This.key := key.getBytes;
-            This.init;
+            AbBasicCrypt'Class (This).init;
         exception
             when Java_Occurrence : others =>
                 declare

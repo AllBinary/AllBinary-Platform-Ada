@@ -46,15 +46,15 @@ package body org.allbinary.game.ag.ai.scroller.BasePatrolAI_Package is
 
    procedure update (This : in out BasePatrolAI) is
    begin
-        This.updateTotalDistance;
-        This.changeDirectionIfReachedPacingAreaMax;
+        BasePatrolAI'Class (This).updateTotalDistance;
+        BasePatrolAI'Class (This).changeDirectionIfReachedPacingAreaMax;
    end update;
 
    procedure updateTotalDistance (This : in out BasePatrolAI) is
       velocityInterfaceCompositeInterface : VelocityInterfaceCompositeInterface_Access;
       velocityProperties : BasicVelocityProperties_Access;
    begin
-        velocityInterfaceCompositeInterface := VelocityInterfaceCompositeInterface_Access (This.getOwnerLayerInterface);
+        velocityInterfaceCompositeInterface := VelocityInterfaceCompositeInterface_Access (BasePatrolAI'Class (This).getOwnerLayerInterface);
         velocityProperties := velocityInterfaceCompositeInterface.getVelocityProperties;
         This.xTotalDistance := (This.xTotalDistance) + (velocityProperties.getVelocityXBasicDecimalP.getScaled);
    end updateTotalDistance;
@@ -66,7 +66,7 @@ package body org.allbinary.game.ag.ai.scroller.BasePatrolAI_Package is
         mathUtil := MathUtil_Package.getInstance;
         totalDistance := mathUtil.abs_Id (This.xTotalDistance);
         if (totalDistance) > (This.currentDistance) then
-            This.nextDirection;
+            BasePatrolAI'Class (This).nextDirection;
         end if;
    end changeDirectionIfReachedPacingAreaMax;
 

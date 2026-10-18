@@ -102,7 +102,7 @@ package body org.allbinary.logic.control.search.TableSearchRequest_Package is
    function getFileBaseNameNode (This : in out TableSearchRequest; document_Param : access Document_Package.Document'Class) return Node_Access is
       document : constant Document_Access := Document_Access (document_Param);
    begin
-        return ModDomHelper_Package.createNameValueNodes (document, SearchData_Package.FILENAME, This.getFileBaseName);
+        return ModDomHelper_Package.createNameValueNodes (document, SearchData_Package.FILENAME, TableSearchRequest'Class (This).getFileBaseName);
    end getFileBaseNameNode;
 
    procedure getFileBaseNameNode (This : in out TableSearchRequest; document_Param : access Document_Package.Document'Class) is

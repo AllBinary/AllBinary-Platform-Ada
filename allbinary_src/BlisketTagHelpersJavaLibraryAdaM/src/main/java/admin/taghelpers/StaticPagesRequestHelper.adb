@@ -34,8 +34,8 @@ package body admin.taghelpers.StaticPagesRequestHelper_Package is
         AbContext_Package.Initialize (This, propertiesHashMap, pageContext);
         Initialize_Fields (This);
         This.request := HttpServletRequest_Access (pageContext.getRequest);
-        This.xslFile := Unbounded_String (propertiesHashMap.get (TransformInfoData_Package.getInstance.TEMPLATEFILENAME));
-        This.getFormData;
+        This.xslFile := Java_Unbox (propertiesHashMap.get (TransformInfoData_Package.getInstance.TEMPLATEFILENAME));
+        StaticPagesRequestHelper'Class (This).getFormData;
    end Initialize;
 
    function Create (propertiesHashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) return StaticPagesRequestHelper_Access is
@@ -98,9 +98,9 @@ package body admin.taghelpers.StaticPagesRequestHelper_Package is
    begin
         begin
             contentType := AcceptableResponseGenerator_Package.getInstance.get (This.request);
-            searchRequest := SearchRequest_Package.Create (null, This.searchParams, This.xslFile, contentType, This.getPropertiesHashMap, This.getPageContext);
+            searchRequest := SearchRequest_Package.Create (null, This.searchParams, This.xslFile, contentType, StaticPagesRequestHelper'Class (This).getPropertiesHashMap, StaticPagesRequestHelper'Class (This).getPageContext);
             success := ProductListingFactory_Package.getInstance (searchRequest).generateAll (This.storeName);
-            This.email;
+            StaticPagesRequestHelper'Class (This).email;
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
                 This.logUtil.putF (success, StaticPagesRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("generateStaticPages()"));
             end if;

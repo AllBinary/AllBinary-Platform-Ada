@@ -54,7 +54,7 @@ package body org.allbinary.logic.io.file.FileUtil_Package is
       dataOutputStream : AbDataOutputStream_Access;
    begin
         dataOutputStream := DataOutputStreamFactory_Package.getInstance.getInstanceForAbFile (file);
-        This.write (inputStream, dataOutputStream);
+        FileUtil'Class (This).write (inputStream, dataOutputStream);
    end write;
 
    --  throws Exception
@@ -134,7 +134,7 @@ package body org.allbinary.logic.io.file.FileUtil_Package is
       path : constant AbPath_Access := AbPath_Access (path_Param);
       realPath : constant AbPath_Access := AbPath_Access (realPath_Param);
    begin
-        This.copyToCloud (file, path, realPath, cloud, False, False);
+        FileUtil'Class (This).copyToCloud (file, path, realPath, cloud, False, False);
    end copyToCloud;
 
    --  throws Exception
@@ -149,9 +149,9 @@ package body org.allbinary.logic.io.file.FileUtil_Package is
       fileInputStream : AbFileInputStream_Access;
    begin
         begin
-            outPath := This.fixPath (file, path, realPath, cloud);
+            outPath := FileUtil'Class (This).fixPath (file, path, realPath, cloud);
             outFile := AbFile_Package.createAbFileFromAbPath (outPath);
-            if not (This.copyPrepare (file, outFile, overwriteNewer, overwriteAll)) then
+            if not (FileUtil'Class (This).copyPrepare (file, outFile, overwriteNewer, overwriteAll)) then
                 return;
             else
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (This.logConfigTypeFactory.FILE) then
@@ -166,7 +166,7 @@ package body org.allbinary.logic.io.file.FileUtil_Package is
             end if;
             dataOutputStream := DataOutputStreamFactory_Package.getInstance.getInstanceForAbFile (outFile);
             fileInputStream := AbFileLocalInputStream_Package.Create (file);
-            This.copy (fileInputStream, dataOutputStream);
+            FileUtil'Class (This).copy (fileInputStream, dataOutputStream);
         exception
             when Java_Occurrence : others =>
                 declare
@@ -189,7 +189,7 @@ package body org.allbinary.logic.io.file.FileUtil_Package is
       file : constant AbFile_Access := AbFile_Access (file_Param);
       outFile : constant AbFile_Access := AbFile_Access (outFile_Param);
    begin
-        This.copyToCloud (file, outFile, False, False);
+        FileUtil'Class (This).copyToCloud (file, outFile, False, False);
    end copyToCloud;
 
    --  throws Exception
@@ -202,7 +202,7 @@ package body org.allbinary.logic.io.file.FileUtil_Package is
    begin
         begin
             stringBuffer := StringMaker_Package.Create;
-            if not (This.copyPrepare (file, outFile, overwriteNewer, overwriteAll)) then
+            if not (FileUtil'Class (This).copyPrepare (file, outFile, overwriteNewer, overwriteAll)) then
                 return;
             else
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (This.logConfigTypeFactory.FILE) then
@@ -217,7 +217,7 @@ package body org.allbinary.logic.io.file.FileUtil_Package is
             end if;
             dataOutputStream := DataOutputStreamFactory_Package.getInstance.getInstanceForAbFile (outFile);
             fileInputStream := AbFileLocalInputStream_Package.Create (file);
-            This.copy (fileInputStream, dataOutputStream);
+            FileUtil'Class (This).copy (fileInputStream, dataOutputStream);
         exception
             when Java_Occurrence : others =>
                 declare
@@ -290,7 +290,7 @@ package body org.allbinary.logic.io.file.FileUtil_Package is
       fromFile : constant AbFile_Access := AbFile_Access (fromFile_Param);
       toFile : constant AbFile_Access := AbFile_Access (toFile_Param);
    begin
-        This.copyFile (fromFile, toFile, False, False);
+        FileUtil'Class (This).copyFile (fromFile, toFile, False, False);
    end copyFile;
 
    --  throws Exception
@@ -312,12 +312,12 @@ package body org.allbinary.logic.io.file.FileUtil_Package is
                 stringBuffer.append (toFile.getPath);
                 This.logUtil.putF (stringBuffer.toString, getInstance, To_Unbounded_String ("copyFile"));
             end if;
-            if not (This.copyPrepare (fromFile, toFile, overwriteNewer, overwriteAll)) then
+            if not (FileUtil'Class (This).copyPrepare (fromFile, toFile, overwriteNewer, overwriteAll)) then
                 return;
             end if;
             dataOutputStream := DataOutputStreamFactory_Package.getInstance.getInstanceForAbFile (toFile);
             fileInputStream := AbFileInputStream_Package.Create (fromFile);
-            This.copy (fileInputStream, dataOutputStream);
+            FileUtil'Class (This).copy (fileInputStream, dataOutputStream);
         exception
             when Java_Occurrence : others =>
                 declare
@@ -410,7 +410,7 @@ package body org.allbinary.logic.io.file.FileUtil_Package is
                 end if;
                 newPath := Java_Image (toDirectoryAbPath.toFileSystemString) & path.substring (beginIndex);
                 toFile := AbFile_Package.createAbFileFromAbPath (AbPath_Package.Create (newPath, StringUtil_Package.getInstance.EMPTY_STRING));
-                This.copyFile (nextFile, toFile, overwriteNewer, overwriteAll);
+                FileUtil'Class (This).copyFile (nextFile, toFile, overwriteNewer, overwriteAll);
             end if;
         end loop;
    end copyDirectoryPortion;
@@ -457,9 +457,9 @@ package body org.allbinary.logic.io.file.FileUtil_Package is
             for index in 0 .. (size) - 1 loop
                 file := fileArray (index);
                 if file.isFile then
-                    This.copyFile (file, AbFile_Package.createAbFilePathAndName (newDirectoryAbPath.toString, file.getName));
+                    FileUtil'Class (This).copyFile (file, AbFile_Package.createAbFilePathAndName (newDirectoryAbPath.toString, file.getName));
                 elsif file.isDirectory then
-                    This.copyDirectory (file, AbFile_Package.createAbFileFromAbPath (newDirectoryAbPath));
+                    FileUtil'Class (This).copyDirectory (file, AbFile_Package.createAbFileFromAbPath (newDirectoryAbPath));
                 else
                     Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("File Copy Error")));
                 end if;
@@ -516,7 +516,7 @@ package body org.allbinary.logic.io.file.FileUtil_Package is
             if fromLocationFile.isFile then
                 if toLocationFile.isDirectory then
                     file := AbFile_Package.createAbFileWithChild (toLocationFile, fromLocationFile.getName);
-                    This.copyFile (fromLocationFile, file);
+                    FileUtil'Class (This).copyFile (fromLocationFile, file);
                     if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (This.logConfigTypeFactory.FILE) then
                         stringBuffer := StringMaker_Package.Create;
                         stringBuffer.append (To_Unbounded_String ("Copied file="));
@@ -528,7 +528,7 @@ package body org.allbinary.logic.io.file.FileUtil_Package is
                         This.logUtil.putF (stringBuffer.toString, getInstance, COPY);
                     end if;
                 else
-                    This.copyFile (fromLocationFile, toLocationFile);
+                    FileUtil'Class (This).copyFile (fromLocationFile, toLocationFile);
                     if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (This.logConfigTypeFactory.FILE) then
                         stringBuffer := StringMaker_Package.Create;
                         stringBuffer.append (To_Unbounded_String ("Copied file with new name "));
@@ -549,9 +549,9 @@ package body org.allbinary.logic.io.file.FileUtil_Package is
                         file := fileArray (index);
                         if file.isFile then
                             aFile := AbFile_Package.createAbFileWithChild (toLocationFile, file.getName);
-                            This.copyFile (file, aFile);
+                            FileUtil'Class (This).copyFile (file, aFile);
                         elsif file.isDirectory then
-                            This.copyDirectory (file, toLocationFile);
+                            FileUtil'Class (This).copyDirectory (file, toLocationFile);
                         else
                             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("File Copy Error")));
                         end if;
@@ -563,7 +563,7 @@ package body org.allbinary.logic.io.file.FileUtil_Package is
                     if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (This.logConfigTypeFactory.FILE) then
                         This.logUtil.putF (To_Unbounded_String ("Copyinhg directory"), getInstance, COPY);
                     end if;
-                    This.copyDirectory (fromLocationFile, toLocationFile);
+                    FileUtil'Class (This).copyDirectory (fromLocationFile, toLocationFile);
                     if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (This.logConfigTypeFactory.FILE) then
                         This.logUtil.putF (To_Unbounded_String ("Copied directory"), getInstance, COPY);
                     end if;

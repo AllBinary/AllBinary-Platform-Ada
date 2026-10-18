@@ -54,7 +54,7 @@ package body org.allbinary.logic.communication.log.LogUtil_Package is
         functionName := log.getFunctionName;
         exception_Id := log.getThrowable;
         if (log) /= (null) then
-            This.put (specialMessage, anyType, functionName, exception_Id);
+            LogUtil'Class (This).put (specialMessage, anyType, functionName, exception_Id);
         end if;
    end putL;
 

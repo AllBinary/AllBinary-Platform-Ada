@@ -49,7 +49,7 @@ package body views.admin.inventory.UpdateFileValidationView_Package is
       fileName : Unbounded_String;
    begin
         begin
-            command := Unbounded_String (This.getRequestHashMap.get (GLOBALS2.ADMINCOMMAND));
+            command := Java_Unbox (UpdateFileValidationView'Class (This).getRequestHashMap.get (GLOBALS2.ADMINCOMMAND));
             if ((command) = (Null_Unbounded_String)) or else ((command.compareTo (UpdateFileValidationView_Package.UPDATEPRODUCT)) /= (0)) then
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
                     This.logUtil.putF (To_Unbounded_String ("Invalid AdminCommand=") & command, UpdateFileValidationView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
@@ -62,7 +62,7 @@ package body views.admin.inventory.UpdateFileValidationView_Package is
                 end if;
                 return False;
             end if;
-            storeFrontInterface := StoreFrontFactory_Package.getInstance (This.getWeblisketSession.getStoreName);
+            storeFrontInterface := StoreFrontFactory_Package.getInstance (UpdateFileValidationView'Class (This).getWeblisketSession.getStoreName);
             stringBuffer := StringMaker_Package.Create;
             stringBuffer.append (URLGLOBALS.getWebappPath);
             stringBuffer.append (storeFrontInterface.getCurrentHostNamePath);
@@ -79,13 +79,13 @@ package body views.admin.inventory.UpdateFileValidationView_Package is
             if (inventoryEntity.getItem (This.itemInterface.getId)) = (null) then
                 return False;
             end if;
-            anyType := This.getRequestHashMap.get (This.basicItemData.IMAGE);
+            anyType := UpdateFileValidationView'Class (This).getRequestHashMap.get (This.basicItemData.IMAGE);
             if HttpFileUploadUtil_Package.getInstance.isValid (anyType) then
                 fileItem := FileItem_Access (anyType);
                 size := fileItem.getSize;
                 fileName := fileItem.getName;
                 HttpFileUploadUtil_Package.log (fileItem);
-                if (This.isValid (fileName, size)) = (False) then
+                if (UpdateFileValidationView'Class (This).isValid (fileName, size)) = (False) then
                     return False;
                 end if;
             end if;
@@ -127,13 +127,13 @@ package body views.admin.inventory.UpdateFileValidationView_Package is
       fileItemFieldName : Unbounded_String;
    begin
         stringBuffer := StringMaker_Package.Create;
-        command := Unbounded_String (This.getRequestHashMap.get (GLOBALS2.ADMINCOMMAND));
+        command := Java_Unbox (UpdateFileValidationView'Class (This).getRequestHashMap.get (GLOBALS2.ADMINCOMMAND));
         if ((command) = (Null_Unbounded_String)) or else ((command.compareTo (UpdateFileValidationView_Package.UPDATEPRODUCT)) /= (0)) then
             return CommonSeps_Package.getInstance.SPACE;
         end if;
         stringBuffer.append (BasicItemValidation_Package.Create (This.itemInterface).validationInfo);
-        storeFrontInterface := StoreFrontFactory_Package.getInstance (This.getWeblisketSession.getStoreName);
-        fullCategory := ((Unbounded_String (URLGLOBALS.getWebappPath)) + (storeFrontInterface.getCurrentHostNamePath)) + (This.itemInterface.getCategory);
+        storeFrontInterface := StoreFrontFactory_Package.getInstance (UpdateFileValidationView'Class (This).getWeblisketSession.getStoreName);
+        fullCategory := ((Java_Unbox (URLGLOBALS.getWebappPath)) + (storeFrontInterface.getCurrentHostNamePath)) + (This.itemInterface.getCategory);
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
             This.logUtil.putF (To_Unbounded_String ("Category: ") & fullCategory, UpdateFileValidationView_Access'(This'Unchecked_Access), To_Unbounded_String ("validationInfo()"));
         end if;
@@ -151,13 +151,13 @@ package body views.admin.inventory.UpdateFileValidationView_Package is
             end if;
                 end;
         end;
-        anyType := This.getRequestHashMap.get (This.basicItemData.IMAGE);
+        anyType := UpdateFileValidationView'Class (This).getRequestHashMap.get (This.basicItemData.IMAGE);
         if HttpFileUploadUtil_Package.getInstance.isValid (anyType) then
             fileItem := FileItem_Access (anyType);
             size := fileItem.getSize;
             fileName := fileItem.getName;
             fileItemFieldName := fileItem.getFieldName;
-            This.validationInfo (stringBuffer, fileName, fileItemFieldName, size);
+            UpdateFileValidationView'Class (This).validationInfo (stringBuffer, fileName, fileItemFieldName, size);
         end if;
         return stringBuffer.toString;
    end validationInfo;
@@ -184,7 +184,7 @@ package body views.admin.inventory.UpdateFileValidationView_Package is
                 end if;
                 return False;
             end if;
-            This.processImageFiles;
+            UpdateFileValidationView'Class (This).processImageFiles;
         end if;
         return True;
    end isValid;

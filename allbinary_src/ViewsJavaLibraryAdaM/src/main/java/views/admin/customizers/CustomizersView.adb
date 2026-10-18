@@ -29,7 +29,7 @@ package body views.admin.customizers.CustomizersView_Package is
    begin
         HttpStoreComponentView_Package.Initialize (This, transformInfoInterface);
         Initialize_Fields (This);
-        This.customizersVector := TransformInfoEntityBuilder_Package.getInstance.getNames (This.getWeblisketSession.getStoreName);
+        This.customizersVector := TransformInfoEntityBuilder_Package.getInstance.getNames (CustomizersView'Class (This).getWeblisketSession.getStoreName);
    end Initialize;
 
    function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return CustomizersView_Access is
@@ -54,16 +54,16 @@ package body views.admin.customizers.CustomizersView_Package is
             unsortedCustomizerViewVector := BasicArrayListD_Package.Create;
             size := This.customizersVector.size;
             for index in 0 .. (size) - 1 loop
-                viewName := Unbounded_String (This.customizersVector.get (index));
-                if (((((Index (viewName, To_String (CustomizerTransformInfoData_Package.NAME)) - 1)) > (0)) and then (((Index (viewName, To_String (GLOBALS2.EDIT)) - 1)) > (0))) and then (((Index (viewName, To_String (BodyData_Package.getInstance.VIEWNAMEKEY)) - 1)) > (0))) and then (((Index (viewName, To_String (TitleData_Package.getInstance.VIEWNAMEKEY)) - 1)) > (0)) then
+                viewName := Java_Unbox (This.customizersVector.get (index));
+                if (((((Index (viewName, Java_Image (CustomizerTransformInfoData_Package.NAME)) - 1)) > (0)) and then (((Index (viewName, Java_Image (GLOBALS2.EDIT)) - 1)) > (0))) and then (((Index (viewName, Java_Image (BodyData_Package.getInstance.VIEWNAMEKEY)) - 1)) > (0))) and then (((Index (viewName, Java_Image (TitleData_Package.getInstance.VIEWNAMEKEY)) - 1)) > (0)) then
                     unsortedCustomizerViewVector.add (viewName);
                 end if;
             end loop;
             objectArray := Java_Object_Access_Array_Access (unsortedCustomizerViewVector.toArray);
             Arrays_Package.sort (objectArray, StringComparator_Package.Create);
             for index in 0 .. (objectArray'Length) - 1 loop
-                viewName := Unbounded_String (objectArray (index));
-                viewNameNode := ModDomHelper_Package.createNameValueNodes (document, TransformTemplateCustomizerData_Package.NAME, viewName, TransformTemplateCustomizerUtil_Package.getInstance.getPageNameHack (viewName, This.getWeblisketSession.getStoreName));
+                viewName := Java_Unbox (objectArray (index));
+                viewNameNode := ModDomHelper_Package.createNameValueNodes (document, TransformTemplateCustomizerData_Package.NAME, viewName, TransformTemplateCustomizerUtil_Package.getInstance.getPageNameHack (viewName, CustomizersView'Class (This).getWeblisketSession.getStoreName));
                 node.appendChild (viewNameNode);
             end loop;
             return node;
@@ -82,14 +82,14 @@ package body views.admin.customizers.CustomizersView_Package is
 
    procedure addDomNodeInterfaces (This : in out CustomizersView) is
    begin
-        This.addDomNodeInterface (DomNodeInterface_Access (CustomizersView_Access'(This'Unchecked_Access)));
+        CustomizersView'Class (This).addDomNodeInterface (DomNodeInterface_Access (CustomizersView_Access'(This'Unchecked_Access)));
    end addDomNodeInterfaces;
 
    --  throws Exception
    function view (This : in out CustomizersView) return Unbounded_String is
    begin
         begin
-            This.addDomNodeInterfaces;
+            CustomizersView'Class (This).addDomNodeInterfaces;
             return HttpStoreComponentView (This).view;
         exception
             when Java_Occurrence : others =>

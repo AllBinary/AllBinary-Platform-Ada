@@ -36,7 +36,7 @@ package body org.allbinary.game.layer.weapon.SimpleWeaponLayer_Package is
       viewPosition : constant ViewPositionBase_Access := ViewPositionBase_Access (viewPosition_Param);
    begin
         WeaponLayer_Package.Initialize (This, name, remoteInfo, multiPlayerType, movement, animationInterface, destroyedAnimationInterface, rectangle, viewPosition);
-        This.setCollidableInferface (CollidableWeaponBehavior_Package.Create (True));
+        SimpleWeaponLayer'Class (This).setCollidableInferface (CollidableWeaponBehavior_Package.Create (True));
    end Initialize;
 
    function Create (name : Unbounded_String; remoteInfo_Param : access RemoteInfo_Package.RemoteInfo'Class; multiPlayerType : Integer; movement_Param : access Movement_Package.Movement'Class; animationInterface_Param : access Animation_Package.Animation'Class; destroyedAnimationInterface_Param : access Animation_Package.Animation'Class; rectangle_Param : access Rectangle_Package.Rectangle'Class; viewPosition_Param : access ViewPositionBase_Package.ViewPositionBase'Class) return SimpleWeaponLayer_Access is

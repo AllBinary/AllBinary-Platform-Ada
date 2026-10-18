@@ -33,8 +33,8 @@ package body views.admin.inventory.download.DownloadableInventoryItemView_Packag
    begin
         HttpStoreComponentView_Package.Initialize (This, transformInfoInterface);
         Initialize_Fields (This);
-        This.request := HttpServletRequest_Access (This.getPageContext.getRequest);
-        This.getFormData;
+        This.request := HttpServletRequest_Access (DownloadableInventoryItemView'Class (This).getPageContext.getRequest);
+        DownloadableInventoryItemView'Class (This).getFormData;
    end Initialize;
 
    function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return DownloadableInventoryItemView_Access is
@@ -49,7 +49,7 @@ package body views.admin.inventory.download.DownloadableInventoryItemView_Packag
    begin
         HttpStoreComponentView_Package.Initialize (This, transformInfoInterface);
         Initialize_Fields (This);
-        This.request := HttpServletRequest_Access (This.getPageContext.getRequest);
+        This.request := HttpServletRequest_Access (DownloadableInventoryItemView'Class (This).getPageContext.getRequest);
    end Initialize;
 
    function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class; empty : Unbounded_String) return DownloadableInventoryItemView_Access is
@@ -67,8 +67,8 @@ package body views.admin.inventory.download.DownloadableInventoryItemView_Packag
    --  throws Exception
    procedure getFormData (This : in out DownloadableInventoryItemView) is
    begin
-        This.setRequestHashMap (MultipartRequestParams_Package.Create (This.request).toHashMap);
-        This.id := Unbounded_String (This.getRequestHashMap.get (This.basicItemData.ID));
+        DownloadableInventoryItemView'Class (This).setRequestHashMap (MultipartRequestParams_Package.Create (This.request).toHashMap);
+        This.id := Java_Unbox (DownloadableInventoryItemView'Class (This).getRequestHashMap.get (This.basicItemData.ID));
    end getFormData;
 
    procedure addDomNodeInterfaces (This : in out DownloadableInventoryItemView) is
@@ -78,14 +78,14 @@ package body views.admin.inventory.download.DownloadableInventoryItemView_Packag
         if (This.downloadableItem) /= (null) then
             vector.add (DownloadableItemView_Package.Create (This.downloadableItem));
         end if;
-        This.addDomNodeInterface (BasicItemView_Package.Create (This.itemInterface, vector));
+        DownloadableInventoryItemView'Class (This).addDomNodeInterface (BasicItemView_Package.Create (This.itemInterface, vector));
    end addDomNodeInterfaces;
 
    --  throws Exception
    function view (This : in out DownloadableInventoryItemView) return Unbounded_String is
    begin
         begin
-            This.addDomNodeInterfaces;
+            DownloadableInventoryItemView'Class (This).addDomNodeInterfaces;
             return HttpStoreComponentView (This).view;
         exception
             when Java_Occurrence : others =>
@@ -111,7 +111,7 @@ package body views.admin.inventory.download.DownloadableInventoryItemView_Packag
       byteArray : Short_Short_Integer_Array_Access;
    begin
         fileName := fileItem.getName;
-        fullPath := This.getItemFilePath;
+        fullPath := DownloadableInventoryItemView'Class (This).getItemFilePath;
         itemResourceFile := AbFile_Package.createAbFile (fullPath);
         itemResourceFile.mkdir;
         stringBuffer := StringMaker_Package.Create;
@@ -134,7 +134,7 @@ package body views.admin.inventory.download.DownloadableInventoryItemView_Packag
       file : AbFile_Access;
    begin
         fileName := fileItem.getName;
-        fullPath := This.getItemFilePath;
+        fullPath := DownloadableInventoryItemView'Class (This).getItemFilePath;
         stringBuffer := StringMaker_Package.Create;
         stringBuffer.append (fullPath);
         stringBuffer.append (fileName);
@@ -149,7 +149,7 @@ package body views.admin.inventory.download.DownloadableInventoryItemView_Packag
       filePathData : FilePathData_Access;
       stringBuffer : StringMaker_Access;
    begin
-        storeFrontInterface := StoreFrontFactory_Package.getInstance (This.getWeblisketSession.getStoreName);
+        storeFrontInterface := StoreFrontFactory_Package.getInstance (DownloadableInventoryItemView'Class (This).getWeblisketSession.getStoreName);
         filePathData := FilePathData_Package.getInstance;
         stringBuffer := StringMaker_Package.Create;
         stringBuffer.append (URLGLOBALS.getWebappPath);

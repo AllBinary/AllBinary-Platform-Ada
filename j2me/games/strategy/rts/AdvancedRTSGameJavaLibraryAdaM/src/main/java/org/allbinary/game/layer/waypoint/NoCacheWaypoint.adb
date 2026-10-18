@@ -61,7 +61,7 @@ package body org.allbinary.game.layer.waypoint.NoCacheWaypoint_Package is
    function getPathsListRunnable (This : in out NoCacheWaypoint; geographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) return BasicArrayList_Access is
       geographicMapCellPosition : constant GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (geographicMapCellPosition_Param);
    begin
-        return This.createPaths (geographicMapCellPosition);
+        return NoCacheWaypoint'Class (This).createPaths (geographicMapCellPosition);
    end getPathsListRunnable;
 
    --  throws Exception
@@ -97,7 +97,7 @@ package body org.allbinary.game.layer.waypoint.NoCacheWaypoint_Package is
       pathFindingInfo : PathFindingInfo_Access;
       list : BasicArrayList_Access;
    begin
-        endGeographicMapCellPosition := This.getEndGeographicMapCellPosition (startGeographicMapCellPosition);
+        endGeographicMapCellPosition := NoCacheWaypoint'Class (This).getEndGeographicMapCellPosition (startGeographicMapCellPosition);
         if (endGeographicMapCellPosition) = (null) then
             return BasicArrayListUtil_Package.getInstance.getImmutableInstance;
         end if;
@@ -140,7 +140,7 @@ package body org.allbinary.game.layer.waypoint.NoCacheWaypoint_Package is
 
    procedure reset (This : in out NoCacheWaypoint) is
    begin
-        This.getConnectedWaypointList.clear;
+        NoCacheWaypoint'Class (This).getConnectedWaypointList.clear;
    end reset;
 
    --  throws Exception
@@ -153,13 +153,13 @@ package body org.allbinary.game.layer.waypoint.NoCacheWaypoint_Package is
         if (unitLayer.getGroupInterface (0)) /= (This.ownerLayer.getGroupInterface (0)) then
             return;
         end if;
-        size := This.getConnectedWaypointList.size;
+        size := NoCacheWaypoint'Class (This).getConnectedWaypointList.size;
         if (size) > (0) then
             unitWaypointBehavior := UnitWaypointBehavior_Access (unitLayer.getWaypointBehavior);
-            while (This.getConnectedWaypointList.size) > (0) loop
-                rtsLayer := CollidableDestroyableDamageableLayer_Access (This.getConnectedWaypointList.get (0));
+            while (NoCacheWaypoint'Class (This).getConnectedWaypointList.size) > (0) loop
+                rtsLayer := CollidableDestroyableDamageableLayer_Access (NoCacheWaypoint'Class (This).getConnectedWaypointList.get (0));
                 if rtsLayer.isDestroyed then
-                    This.getConnectedWaypointList.remove (rtsLayer);
+                    NoCacheWaypoint'Class (This).getConnectedWaypointList.remove (rtsLayer);
                 else
                     unitLayer.handleCost (This.ownerLayer);
                     unitWaypointBehavior.insertWaypoint (0, rtsLayer);

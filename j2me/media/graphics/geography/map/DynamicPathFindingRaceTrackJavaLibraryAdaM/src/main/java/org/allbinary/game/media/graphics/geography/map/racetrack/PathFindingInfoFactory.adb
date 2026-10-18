@@ -64,7 +64,7 @@ package body org.allbinary.game.media.graphics.geography.map.racetrack.PathFindi
    begin
         pathFindingInfo := PathFindingInfo_Package.Create (This.pathFindingInfo.getPathFindingNodeCostInfoFactoryInterface, BasicArrayListS_Package.Create (1), BasicArrayListS_Package.Create (1));
         RaceTrackRoadsGeographicMapCellHistoryFactory_Package.getInstance.init;
-        This.init (geographicMapInterface, pathFindingInfo, mapArray);
+        PathFindingInfoFactory'Class (This).init (geographicMapInterface, pathFindingInfo, mapArray);
         This.basicGeographicMapPathFinder.init (geographicMapInterface, This.basicGeographicMapGraph, This.pathFinderGraphVisitorFactoryInterface.getInstance (geographicMapInterface));
         pathFindingInfo.setPathFinder (This.basicGeographicMapPathFinder);
         return pathFindingInfo;
@@ -76,7 +76,7 @@ package body org.allbinary.game.media.graphics.geography.map.racetrack.PathFindi
       pathFindingInfo : constant PathFindingInfo_Access := PathFindingInfo_Access (pathFindingInfo_Param);
    begin
         BasePathFindingInfoFactory (This).init (geographicMapInterface, pathFindingInfo, mapArray);
-        This.buildPathFindingNodes (geographicMapInterface, pathFindingInfo, mapArray);
+        PathFindingInfoFactory'Class (This).buildPathFindingNodes (geographicMapInterface, pathFindingInfo, mapArray);
    end init;
 
    --  throws Exception
@@ -139,7 +139,7 @@ package body org.allbinary.game.media.graphics.geography.map.racetrack.PathFindi
         totalRows := allBinaryTiledLayer.getRows;
         for column in 0 .. (totalColumns) - 1 loop
             for row in 0 .. (totalRows) - 1 loop
-                This.buildPathFindingNodesForCellPosition (geographicMapInterface, pathFindingInfo, mapArray, geographicMapCellPositionFactory.getAt (column, row));
+                PathFindingInfoFactory'Class (This).buildPathFindingNodesForCellPosition (geographicMapInterface, pathFindingInfo, mapArray, geographicMapCellPositionFactory.getAt (column, row));
             end loop;
         end loop;
    end buildPathFindingNodes;

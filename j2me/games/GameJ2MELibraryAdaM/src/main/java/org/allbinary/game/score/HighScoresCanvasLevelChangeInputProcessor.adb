@@ -66,17 +66,17 @@ package body org.allbinary.game.score.HighScoresCanvasLevelChangeInputProcessor_
       key : Integer;
       index : Integer;
    begin
-        list := This.getGameKeyEventList;
+        list := HighScoresCanvasLevelChangeInputProcessor'Class (This).getGameKeyEventList;
         size := list.size;
         for index in 0 .. (size) - 1 loop
             anyType := list.objectArray (index);
             key := GameKeyEventUtil_Package.getKey (anyType);
             if (key) = (Canvas_Package.RIGHT) then
-                This.getHighScoresCanvas.getGameInfo.nextGameLevel;
+                HighScoresCanvasLevelChangeInputProcessor'Class (This).getHighScoresCanvas.getGameInfo.nextGameLevel;
             elsif (key) = (Canvas_Package.LEFT) then
-                This.getHighScoresCanvas.getGameInfo.previousGameLevel;
+                HighScoresCanvasLevelChangeInputProcessor'Class (This).getHighScoresCanvas.getGameInfo.previousGameLevel;
             end if;
-            This.getHighScoresCanvas.executeUpdate;
+            HighScoresCanvasLevelChangeInputProcessor'Class (This).getHighScoresCanvas.executeUpdate;
         end loop;
         list.clear;
    end update;

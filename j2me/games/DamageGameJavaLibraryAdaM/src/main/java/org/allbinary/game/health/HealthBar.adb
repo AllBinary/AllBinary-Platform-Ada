@@ -35,7 +35,7 @@ package body org.allbinary.game.health.HealthBar_Package is
         This.animationInterface := animationInterface;
         This.healthInterface := healthInterface;
         This.healthInterface.addListener (HealthBar_Access'(This'Unchecked_Access));
-        This.onHealthChange;
+        HealthBar'Class (This).onHealthChange;
    end Initialize;
 
    function Create (layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; healthInterface_Param : access Health_Package.Health'Class; animationInterface_Param : access HealthBarAnimation_Package.HealthBarAnimation'Class; direction : Integer) return HealthBar_Access is

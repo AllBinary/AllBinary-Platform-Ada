@@ -44,7 +44,7 @@ package body org.allbinary.game.ag.layer.hud.basic.level.LevelHudWidget_Package 
         This.levelString := LEVEL.toCharArray;
         This.maxlevel := maxlevel;
         This.level := maxlevel;
-        This.update;
+        LevelHudWidget'Class (This).update;
         This.updateMaxHeight := 14;
    end Initialize;
 
@@ -74,13 +74,13 @@ package body org.allbinary.game.ag.layer.hud.basic.level.LevelHudWidget_Package 
    procedure setLevel (This : in out LevelHudWidget; level : Integer) is
    begin
         This.level := level;
-        This.update;
+        LevelHudWidget'Class (This).update;
    end setLevel;
 
    procedure nextLevel (This : in out LevelHudWidget) is
    begin
         This.level := This.level + 1;
-        This.update;
+        LevelHudWidget'Class (This).update;
    end nextLevel;
 
    procedure previousLevel (This : in out LevelHudWidget) is
@@ -89,7 +89,7 @@ package body org.allbinary.game.ag.layer.hud.basic.level.LevelHudWidget_Package 
         if (This.level) < (0) then
             This.level := 0;
         end if;
-        This.update;
+        LevelHudWidget'Class (This).update;
    end previousLevel;
 
    function isComplete (This : in out LevelHudWidget) return Boolean is

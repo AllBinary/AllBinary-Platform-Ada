@@ -41,7 +41,7 @@ package body org.allbinary.media.graphics.geography.map.event.GeographicMapCellP
    procedure init (This : in out GeographicMapCellPositionEvent; anyType_Param : access Java_Object'Class) is
       anyType : constant Java_Object_Access := Java_Object_Access (anyType_Param);
    begin
-        This.setSource (anyType);
+        GeographicMapCellPositionEvent'Class (This).setSource (anyType);
    end init;
 
    procedure setGeographicMapCellPosition (This : in out GeographicMapCellPositionEvent; geographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) is
@@ -61,7 +61,7 @@ package body org.allbinary.media.graphics.geography.map.event.GeographicMapCellP
         stringBuffer := StringMaker_Package.Create;
         stringBuffer.append (To_Unbounded_String ("CellPositionEvent: "));
         stringBuffer.append (To_Unbounded_String ("" & ASCII.LF & "GeographicMapCellPosition: "));
-        stringBuffer.append (StringUtil_Package.getInstance.toString (This.getGeographicMapCellPosition));
+        stringBuffer.append (StringUtil_Package.getInstance.toString (GeographicMapCellPositionEvent'Class (This).getGeographicMapCellPosition));
         return stringBuffer.toString;
    end toString;
 

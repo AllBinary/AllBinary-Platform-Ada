@@ -71,7 +71,7 @@ package body org.allbinary.game.part.weapon.StraightMultiProjectileWeaponPart_Pa
       next : Integer;
       index : Integer;
    begin
-        sourceLayerInterface := This.getOwnerLayerInterface;
+        sourceLayerInterface := StraightMultiProjectileWeaponPart'Class (This).getOwnerLayerInterface;
         reducedWidth := (((sourceLayerInterface.getWidth) * (8)) / (10));
         halfWidth := (Java_Shift_Right_Arithmetic (reducedWidth, 1));
         x := This.relativeRelationship.getX;

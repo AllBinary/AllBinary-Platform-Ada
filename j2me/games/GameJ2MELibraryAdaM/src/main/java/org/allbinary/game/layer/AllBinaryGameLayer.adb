@@ -90,7 +90,7 @@ package body org.allbinary.game.layer.AllBinaryGameLayer_Package is
    --  throws Exception
    procedure onViewPositionChangeEvent (This : in out AllBinaryGameLayer) is
    begin
-        This.onChangeEvent (This.viewPositionEvent);
+        AllBinaryGameLayer'Class (This).onChangeEvent (This.viewPositionEvent);
    end onViewPositionChangeEvent;
 
    --  throws Exception
@@ -98,9 +98,9 @@ package body org.allbinary.game.layer.AllBinaryGameLayer_Package is
       layerManagerEvent : constant ViewPositionEvent_Access := ViewPositionEvent_Access (layerManagerEvent_Param);
    begin
         if GameLayerUtil_Package.isOnScreen (AllBinaryGameLayer_Access'(This'Unchecked_Access)) then
-            This.setVisible (True);
+            AllBinaryGameLayer'Class (This).setVisible (True);
         else
-            This.setVisible (False);
+            AllBinaryGameLayer'Class (This).setVisible (False);
         end if;
    end onChangeEvent;
 
@@ -116,23 +116,23 @@ package body org.allbinary.game.layer.AllBinaryGameLayer_Package is
       viewX : Integer;
       viewY : Integer;
    begin
-        viewPosition := This.getViewPosition;
+        viewPosition := AllBinaryGameLayer'Class (This).getViewPosition;
         viewX := viewPosition.getX;
         viewY := viewPosition.getY;
         This.basicSetColorUtil.setBasicColorP (graphics, This.RED);
-        graphics.drawRect (viewX, viewY, This.getWidth, This.getHeight);
+        graphics.drawRect (viewX, viewY, AllBinaryGameLayer'Class (This).getWidth, AllBinaryGameLayer'Class (This).getHeight);
    end paintDebug;
 
    procedure setWidth (This : in out AllBinaryGameLayer; width : Integer) is
    begin
         AllBinaryLayer (This).setLayerWidth (width);
-        This.setHalfWidth (Java_Shift_Right_Arithmetic (width, 1));
+        AllBinaryGameLayer'Class (This).setHalfWidth (Java_Shift_Right_Arithmetic (width, 1));
    end setWidth;
 
    procedure setHeight (This : in out AllBinaryGameLayer; height : Integer) is
    begin
         AllBinaryLayer (This).setLayerHeight (height);
-        This.setHalfHeight (Java_Shift_Right_Arithmetic (height, 1));
+        AllBinaryGameLayer'Class (This).setHalfHeight (Java_Shift_Right_Arithmetic (height, 1));
    end setHeight;
 
 end org.allbinary.game.layer.AllBinaryGameLayer_Package;

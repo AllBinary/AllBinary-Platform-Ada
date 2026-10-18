@@ -49,8 +49,8 @@ package body admin.taghelpers.BasicTextEmailHelper_Package is
       adminEmailInfo : EmailInfo_Access;
       adminUserEmailEventHandler : UserEmailEventHandler_Access;
    begin
-        adminEmailSubject := Unbounded_String (This.hashMap.get (To_Unbounded_String ("Subject")));
-        adminEmailTextBody := Unbounded_String (This.hashMap.get (To_Unbounded_String ("Body")));
+        adminEmailSubject := Java_Unbox (This.hashMap.get (Java_Box (To_Unbounded_String ("Subject"))));
+        adminEmailTextBody := Java_Unbox (This.hashMap.get (Java_Box (To_Unbounded_String ("Body"))));
         adminBasicEmailInfo := BasicEmailInfo_Access (AdminEmailInfo_Package.Create (adminEmailSubject, adminEmailTextBody));
         adminEmailInfo := EmailInfo_Package.Create (adminBasicEmailInfo);
         adminUserEmailEventHandler := AdminUserEmailEventHandlerSingletons_Package.getInstance.getInstance (This.abeClientInformation, UserEmailEventNameData_Package.INSTALLER);

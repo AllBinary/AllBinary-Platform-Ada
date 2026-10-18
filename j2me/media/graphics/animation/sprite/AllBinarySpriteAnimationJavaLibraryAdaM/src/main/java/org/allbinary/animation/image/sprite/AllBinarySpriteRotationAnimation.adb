@@ -54,30 +54,30 @@ package body org.allbinary.animation.image.sprite.AllBinarySpriteRotationAnimati
       angle : Angle_Access;
    begin
         angle := This.directionUtil.getFrameAngle (direction);
-        This.adjustFrameToAngle (angle);
+        AllBinarySpriteRotationAnimation'Class (This).adjustFrameToAngle (angle);
    end setFrameByDirection;
 
    procedure setFrameToAngle (This : in out AllBinarySpriteRotationAnimation; angle_Param : access Angle_Package.Angle'Class) is
       angle : constant Angle_Access := Angle_Access (angle_Param);
    begin
-        This.adjustFrameToAngle (angle);
+        AllBinarySpriteRotationAnimation'Class (This).adjustFrameToAngle (angle);
    end setFrameToAngle;
 
    procedure setFrame (This : in out AllBinarySpriteRotationAnimation; index : Integer) is
    begin
         This.sprite.setFrame (index);
-        This.angleInfo.adjustAngle (This.getFrame);
+        This.angleInfo.adjustAngle (AllBinarySpriteRotationAnimation'Class (This).getFrame);
    end setFrame;
 
    procedure adjustFrameToAngle (This : in out AllBinarySpriteRotationAnimation; angle_Param : access Angle_Package.Angle'Class) is
       angle : constant Angle_Access := Angle_Access (angle_Param);
    begin
-        This.adjustFrame (angle.getValue);
+        AllBinarySpriteRotationAnimation'Class (This).adjustFrame (angle.getValue);
    end adjustFrameToAngle;
 
    procedure adjustFrame (This : in out AllBinarySpriteRotationAnimation; angle : Short_Integer) is
    begin
-        This.setFrame (This.frameUtil.getFrameForAngle (angle, Integer (This.angleInfo.getAngleIncrementInfo.getAngleIncrement)));
+        AllBinarySpriteRotationAnimation'Class (This).setFrame (This.frameUtil.getFrameForAngle (angle, Integer (This.angleInfo.getAngleIncrementInfo.getAngleIncrement)));
    end adjustFrame;
 
 end org.allbinary.animation.image.sprite.AllBinarySpriteRotationAnimation_Package;

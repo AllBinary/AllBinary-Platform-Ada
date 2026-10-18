@@ -28,7 +28,7 @@ package body views.generic_Id.address.billing.DeleteValidationView_Package is
    begin
         BillingAddressView_Package.Initialize (This, transformInfoInterface);
         Initialize_Fields (This);
-        httpTransformInfoInterface := TransformInfoHttpInterface_Access (This.getTransformInfoInterface);
+        httpTransformInfoInterface := TransformInfoHttpInterface_Access (DeleteValidationView'Class (This).getTransformInfoInterface);
         This.value := httpTransformInfoInterface.getPageContext.getRequest.getParameter (StreetAddressData_Package.ID);
    end Initialize;
 
@@ -42,10 +42,10 @@ package body views.generic_Id.address.billing.DeleteValidationView_Package is
    function isValid (This : in out DeleteValidationView) return Boolean is
       billingAddressesEntity : BillingAddressesEntity_Access;
    begin
-        if (This.getWeblisketSession.getUserName) /= (null) then
+        if (DeleteValidationView'Class (This).getWeblisketSession.getUserName) /= (null) then
             return False;
         end if;
-        billingAddressesEntity := BillingAddressesEntity_Package.Create (This.getWeblisketSession.getUserName);
+        billingAddressesEntity := BillingAddressesEntity_Package.Create (DeleteValidationView'Class (This).getWeblisketSession.getUserName);
         This.streetAddress := billingAddressesEntity.get (This.value);
         if (This.streetAddress) = (null) then
             return False;

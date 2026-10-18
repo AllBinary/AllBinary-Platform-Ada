@@ -110,6 +110,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoBasic_Packag
    function getDataDocument (This : in out TransformInfoBasic) return Document_Access is
    begin
         Java_Throw (Java_New_Exception ("Exception", This.commonStrings.NOT_IMPLEMENTED));
+        return null;
    end getDataDocument;
 
    procedure setName (This : in out TransformInfoBasic; value : Unbounded_String) is

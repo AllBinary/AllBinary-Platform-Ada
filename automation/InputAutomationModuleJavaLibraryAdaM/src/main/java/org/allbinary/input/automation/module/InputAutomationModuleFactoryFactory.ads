@@ -21,7 +21,7 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.util.Collection_Package; use java.util.Collection_Package;
---  with java.util.HashMap_Package; use java.util.HashMap_Package;
+with java.util.HashMap_Package; use java.util.HashMap_Package;
 --  with java.util.Iterator_Package; use java.util.Iterator_Package;
 --  with javax.help.HelpSet_Package; use javax.help.HelpSet_Package;
 --  with javax.help.event.HelpSetEvent_Package; use javax.help.event.HelpSetEvent_Package;
@@ -38,6 +38,7 @@ with org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface
 
 package org.allbinary.input.automation.module.InputAutomationModuleFactoryFactory_Package is
 
+   package HashMap_Package renames Standard.java.util.HashMap_Package;
    package InputAutomationModuleConfiguration_Package renames Standard.org.allbinary.input.automation.module.configuration.InputAutomationModuleConfiguration_Package;
    package InputAutomationModuleConfigurations_Package renames Standard.org.allbinary.input.automation.module.configuration.InputAutomationModuleConfigurations_Package;
    package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;

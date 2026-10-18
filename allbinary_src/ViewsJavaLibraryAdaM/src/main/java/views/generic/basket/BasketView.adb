@@ -28,7 +28,7 @@ package body views.generic_Id.basket.BasketView_Package is
    begin
         HttpStoreComponentView_Package.Initialize (This, transformInfoInterface);
         Initialize_Fields (This);
-        This.request := HttpServletRequest_Access (This.getPageContext.getRequest);
+        This.request := HttpServletRequest_Access (BasketView'Class (This).getPageContext.getRequest);
    end Initialize;
 
    function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return BasketView_Access is
@@ -66,7 +66,7 @@ package body views.generic_Id.basket.BasketView_Package is
    begin
         begin
             inventoryEntity := InventoryEntityFactory_Package.getInstance.getInventoryEntityInstance;
-            basketInterface := This.getWeblisketSession.getOrder.getBasket;
+            basketInterface := BasketView'Class (This).getWeblisketSession.getOrder.getBasket;
             basketNode := document.createElement (BasketData_Package.BASKET);
             itemsAndNumberInBasket := basketInterface.getItems;
             numberOfResults := 1;
@@ -74,7 +74,7 @@ package body views.generic_Id.basket.BasketView_Package is
             productArray := items.toArray;
             size := productArray'Length;
             for index in 0 .. (size) - 1 loop
-                product := Java_New_String (Unbounded_String (productArray (index)));
+                product := Java_New_String (Java_Unbox (productArray (index)));
                 itemInterface := inventoryEntity.getItem (product);
                 if (itemInterface) /= (null) then
                     basicItemView := BasicItemView_Package.Create (itemInterface, BasicArrayListD_Package.Create);
@@ -119,14 +119,14 @@ package body views.generic_Id.basket.BasketView_Package is
 
    procedure addDomNodeInterfaces (This : in out BasketView) is
    begin
-        This.addDomNodeInterface (DomNodeInterface_Access (BasketView_Access'(This'Unchecked_Access)));
+        BasketView'Class (This).addDomNodeInterface (DomNodeInterface_Access (BasketView_Access'(This'Unchecked_Access)));
    end addDomNodeInterfaces;
 
    --  throws Exception
    function view (This : in out BasketView) return Unbounded_String is
    begin
         begin
-            This.addDomNodeInterfaces;
+            BasketView'Class (This).addDomNodeInterfaces;
             return HttpStoreComponentView (This).view;
         exception
             when Java_Occurrence : others =>

@@ -8,11 +8,12 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with javax.microedition.lcdui.Canvas_Package; use javax.microedition.lcdui.Canvas_Package;
+with javax.microedition.lcdui.Canvas_Package; use javax.microedition.lcdui.Canvas_Package;
 with android.view.KeyEvent_Package; use android.view.KeyEvent_Package;
 
 package org.allbinary.game.input.AndroidNumberKeyToJ2MECanvasNumberKey_Package is
 
+   package Canvas_Package renames Standard.javax.microedition.lcdui.Canvas_Package;
    package KeyEvent_Package renames Standard.android.view.KeyEvent_Package;
 
    type AndroidNumberKeyToJ2MECanvasNumberKey is tagged;

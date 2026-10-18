@@ -30,7 +30,7 @@ package body org.allbinary.physics.movement.NoZBasicConstantVelocityMovement_Pac
    begin
       Movement_Package.Initialize (This);
       Initialize_Fields (This);
-        This.setSpeedBasicDecimal (basicDecimal);
+        NoZBasicConstantVelocityMovement'Class (This).setSpeedBasicDecimal (basicDecimal);
         This.velocityProperties := velocityProperties;
    end Initialize;
 

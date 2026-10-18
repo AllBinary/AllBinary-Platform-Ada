@@ -63,7 +63,7 @@ package body org.allbinary.game.layer.building.BuildingInfoHudPaintable_Package 
         begin
             index := 0;
             basicHudFactory := BasicHudFactory_Package.getInstance;
-            basicColor := This.getBasicColorP;
+            basicColor := BuildingInfoHudPaintable'Class (This).getBasicColorP;
             textX := This.textX;
             y := This.y;
             firstIndex := index;
@@ -134,15 +134,15 @@ package body org.allbinary.game.layer.building.BuildingInfoHudPaintable_Package 
         This.efficiencyHud.paint (graphics);
         This.healthHud.paint (graphics);
         This.maxHealthHud.paint (graphics);
-        This.getAnimationInterface.paintXY (graphics, This.imageX, This.y);
+        BuildingInfoHudPaintable'Class (This).getAnimationInterface.paintXY (graphics, This.imageX, This.y);
    end paint;
 
    procedure updateSelectionInfo (This : in out BuildingInfoHudPaintable) is
       buildingLayer : BuildingLayer_Access;
    begin
         buildingLayer := BuildingLayer_Access (This.rtsLayer);
-        This.setName (buildingLayer.getName);
-        This.setAnimationInterface (buildingLayer.getVerticleBuildAnimationInterface);
+        BuildingInfoHudPaintable'Class (This).setName (buildingLayer.getName);
+        BuildingInfoHudPaintable'Class (This).setAnimationInterface (buildingLayer.getVerticleBuildAnimationInterface);
         This.productivityHud.set (buildingLayer.getProductivity);
         This.efficiencyHud.set ((buildingLayer.getEfficiency) / (100));
         This.currentHealth := buildingLayer.getHealthInterface.getHealth;

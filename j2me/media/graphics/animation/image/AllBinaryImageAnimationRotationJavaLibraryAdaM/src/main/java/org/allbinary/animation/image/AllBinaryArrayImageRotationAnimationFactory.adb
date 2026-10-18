@@ -50,7 +50,7 @@ package body org.allbinary.animation.image.AllBinaryArrayImageRotationAnimationF
         BaseImageAnimationFactory_Package.Initialize (This, image, PrimitiveIntUtil_Package.getArrayInstance, width, height, 0, 0, animationBehaviorFactory);
         Initialize_Fields (This);
         This.angleIncrement := angleIncrement;
-        This.init;
+        AllBinaryArrayImageRotationAnimationFactory'Class (This).init;
    end Initialize;
 
    function Create (image_Param : access Image_Package.Image'Class; width : Integer; height : Integer; angleIncrement : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class) return AllBinaryArrayImageRotationAnimationFactory_Access is
@@ -63,7 +63,7 @@ package body org.allbinary.animation.image.AllBinaryArrayImageRotationAnimationF
    --  throws Exception
    procedure init (This : in out AllBinaryArrayImageRotationAnimationFactory) is
    begin
-        This.setImageArray (ImageToRotationImageArrayUtil_Package.getInstance.generate (This.getImage, This.getAngleIncrement, Integer (AngleFactory_Package.getInstance.TOTAL_ANGLE)));
+        AllBinaryArrayImageRotationAnimationFactory'Class (This).setImageArray (ImageToRotationImageArrayUtil_Package.getInstance.generate (AllBinaryArrayImageRotationAnimationFactory'Class (This).getImage, AllBinaryArrayImageRotationAnimationFactory'Class (This).getAngleIncrement, Integer (AngleFactory_Package.getInstance.TOTAL_ANGLE)));
    end init;
 
    procedure initDXY (This : in out AllBinaryArrayImageRotationAnimationFactory; dx : Integer; dy : Integer) is
@@ -83,15 +83,15 @@ package body org.allbinary.animation.image.AllBinaryArrayImageRotationAnimationF
    begin
         scaledImageArray := new Image_Access_Array'(0 .. (This.imageArray'Length) - 1 => null);
         size := scaledImageArray'Length;
-        image := This.getImage;
+        image := AllBinaryArrayImageRotationAnimationFactory'Class (This).getImage;
         for index in 0 .. (size) - 1 loop
             scaledImageArray (index) := This.animationFactoryImageScaleUtil.createImage (image, image.getWidth, image.getHeight, This.scaleProperties.scaleWidth, This.scaleProperties.scaleHeight);
         end loop;
         if ((This.animationFactoryInitializationVisitor.dx) /= (0)) or else ((This.animationFactoryInitializationVisitor.dy) /= (0)) then
             This.animationFactoryImageScaleUtil.processAdjust (AllBinaryArrayImageRotationAnimationFactory_Access'(This'Unchecked_Access));
-            return AdjustedImageArrayRotationAnimation_Package.Create (scaledImageArray, AngleInfo_Package.getInstance (Short_Integer (This.getAngleIncrement)), Integer (AngleFactory_Package.getInstance.TOTAL_ANGLE), This.animationFactoryInitializationVisitor.dx, This.animationFactoryInitializationVisitor.dy, This.animationBehaviorFactory.getOrCreateInstance);
+            return AdjustedImageArrayRotationAnimation_Package.Create (scaledImageArray, AngleInfo_Package.getInstance (Short_Integer (AllBinaryArrayImageRotationAnimationFactory'Class (This).getAngleIncrement)), Integer (AngleFactory_Package.getInstance.TOTAL_ANGLE), This.animationFactoryInitializationVisitor.dx, This.animationFactoryInitializationVisitor.dy, This.animationBehaviorFactory.getOrCreateInstance);
         else
-            return ImageArrayRotationAnimation_Package.Create (scaledImageArray, AngleInfo_Package.getInstance (Short_Integer (This.getAngleIncrement)), Integer (AngleFactory_Package.getInstance.TOTAL_ANGLE), This.animationBehaviorFactory.getOrCreateInstance);
+            return ImageArrayRotationAnimation_Package.Create (scaledImageArray, AngleInfo_Package.getInstance (Short_Integer (AllBinaryArrayImageRotationAnimationFactory'Class (This).getAngleIncrement)), Integer (AngleFactory_Package.getInstance.TOTAL_ANGLE), This.animationBehaviorFactory.getOrCreateInstance);
         end if;
    end getInstance;
 

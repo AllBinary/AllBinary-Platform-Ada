@@ -68,14 +68,14 @@ package body org.allbinary.logic.visual.dhtml.html.select_Id.HtmlSelect_Package 
             lineReader := LineReader_Package.Create (fileName);
             while lineReader.hasNext loop
                 option := lineReader.next;
-                This.addOption (option);
+                HtmlSelect'Class (This).addOption (option);
             end loop;
         exception
             when Java_Occurrence : others =>
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.addOption (To_Unbounded_String ("Error"));
+            HtmlSelect'Class (This).addOption (To_Unbounded_String ("Error"));
                 end;
         end;
    end addOptions;
@@ -108,7 +108,7 @@ package body org.allbinary.logic.visual.dhtml.html.select_Id.HtmlSelect_Package 
         optionsArray := This.options.toArray;
         optionsSize := optionsArray'Length;
         for i in 0 .. (optionsSize) - 1 loop
-            value := Unbounded_String (optionsArray (i));
+            value := Java_Unbox (optionsArray (i));
             if ((value) /= (null)) and then ((value.compareTo (stringUtil.EMPTY_STRING)) /= (0)) then
                 result := result & This.STARTOPTION;
                 result := result & This.END_Id;
@@ -141,8 +141,8 @@ package body org.allbinary.logic.visual.dhtml.html.select_Id.HtmlSelect_Package 
         result := result & This.size_Case;
         result := result & To_Unbounded_String (""" ");
         for i in 0 .. (attributeSize) - 1 loop
-            key := Unbounded_String (attributeKeys (i));
-            value := Unbounded_String (This.otherAttributes.get (key));
+            key := Java_Unbox (attributeKeys (i));
+            value := Java_Unbox (This.otherAttributes.get (key));
             if ((value) /= (null)) and then ((value.compareTo (stringUtil.EMPTY_STRING)) /= (0)) then
                 result := result & key;
                 result := result & To_Unbounded_String ("=""");
@@ -150,11 +150,11 @@ package body org.allbinary.logic.visual.dhtml.html.select_Id.HtmlSelect_Package 
                 result := result & To_Unbounded_String (""" ");
             end if;
         end loop;
-        if This.isMultiple then
+        if HtmlSelect'Class (This).isMultiple then
             result := result & To_Unbounded_String (" ") & This.multiple & To_Unbounded_String (" ");
         end if;
         result := result & This.END_Id;
-        result := result & This.getOptions;
+        result := result & HtmlSelect'Class (This).getOptions;
         result := result & This.ENDSELECT;
         result := result & This.after;
         return result;

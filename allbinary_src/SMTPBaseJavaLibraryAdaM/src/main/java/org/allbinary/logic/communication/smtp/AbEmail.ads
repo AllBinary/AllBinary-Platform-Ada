@@ -20,7 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.util.HashMap_Package; use java.util.HashMap_Package;
+with java.util.HashMap_Package; use java.util.HashMap_Package;
 --  with javax.mail.internet.MimeMessage_Package; use javax.mail.internet.MimeMessage_Package;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
@@ -29,6 +29,7 @@ with org.allbinary.logic.communication.smtp.Email_Package; use org.allbinary.log
 
 package org.allbinary.logic.communication.smtp.AbEmail_Package is
 
+   package HashMap_Package renames Standard.java.util.HashMap_Package;
    package Document_Package renames Standard.org.w3c.dom.Document_Package;
    package Node_Package renames Standard.org.w3c.dom.Node_Package;
 

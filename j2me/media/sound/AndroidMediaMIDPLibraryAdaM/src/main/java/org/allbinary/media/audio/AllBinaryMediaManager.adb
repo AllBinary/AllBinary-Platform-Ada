@@ -135,6 +135,7 @@ package body org.allbinary.media.audio.AllBinaryMediaManager_Package is
       stream : constant InputStream_Access := InputStream_Access (stream_Param);
    begin
         Java_Throw (Java_New_Exception ("MediaException", To_Unbounded_String ("No Input Stream Player")));
+        return null;
    end createPlayerFromInputStream;
 
    --  throws MediaException

@@ -20,9 +20,9 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.io.InputStream_Package; use java.io.InputStream_Package;
---  with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
---  with javax.microedition.lcdui.NullImage_Package; use javax.microedition.lcdui.NullImage_Package;
+with java.io.InputStream_Package; use java.io.InputStream_Package;
+with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
+with javax.microedition.lcdui.NullImage_Package; use javax.microedition.lcdui.NullImage_Package;
 with org.allbinary.J2MEUtil_Package; use org.allbinary.J2MEUtil_Package;
 with org.allbinary.TsUtil_Package; use org.allbinary.TsUtil_Package;
 with org.allbinary.animation.image.LazyImageRotationAnimation_Package; use org.allbinary.animation.image.LazyImageRotationAnimation_Package;
@@ -52,6 +52,9 @@ with org.allbinary.image.ImageFactory_Package; use org.allbinary.image.ImageFact
 
 package org.allbinary.image.ImageCache_Package is
 
+   package InputStream_Package renames Standard.java.io.InputStream_Package;
+   package Image_Package renames Standard.javax.microedition.lcdui.Image_Package;
+   package NullImage_Package renames Standard.javax.microedition.lcdui.NullImage_Package;
    package J2MEUtil_Package renames Standard.org.allbinary.J2MEUtil_Package;
    package TsUtil_Package renames Standard.org.allbinary.TsUtil_Package;
    package LazyImageRotationAnimation_Package renames Standard.org.allbinary.animation.image.LazyImageRotationAnimation_Package;
@@ -97,7 +100,7 @@ package org.allbinary.image.ImageCache_Package is
       lock : SynchObject_Access;
       firstTime : Boolean;
       totalLoaded : Integer;
-      progressEnded : Boolean;
+      progressEnded_Field : Boolean;
       hasAnyLazyAnimationFactories : Boolean;
       processor : Processor_Access;
       endProcessor : Processor_Access;
@@ -151,9 +154,9 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.io.InputStream_Package; use java.io.InputStream_Package;
---  with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
---  with javax.microedition.lcdui.NullImage_Package; use javax.microedition.lcdui.NullImage_Package;
+with java.io.InputStream_Package; use java.io.InputStream_Package;
+with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
+with javax.microedition.lcdui.NullImage_Package; use javax.microedition.lcdui.NullImage_Package;
 with org.allbinary.J2MEUtil_Package; use org.allbinary.J2MEUtil_Package;
 with org.allbinary.TsUtil_Package; use org.allbinary.TsUtil_Package;
 with org.allbinary.animation.image.LazyImageRotationAnimation_Package; use org.allbinary.animation.image.LazyImageRotationAnimation_Package;
@@ -183,6 +186,9 @@ with org.allbinary.image.ImageFactory_Package; use org.allbinary.image.ImageFact
 
 package org.allbinary.image.NotHTMLProcessor_Package is
 
+   package InputStream_Package renames Standard.java.io.InputStream_Package;
+   package Image_Package renames Standard.javax.microedition.lcdui.Image_Package;
+   package NullImage_Package renames Standard.javax.microedition.lcdui.NullImage_Package;
    package J2MEUtil_Package renames Standard.org.allbinary.J2MEUtil_Package;
    package TsUtil_Package renames Standard.org.allbinary.TsUtil_Package;
    package LazyImageRotationAnimation_Package renames Standard.org.allbinary.animation.image.LazyImageRotationAnimation_Package;
@@ -229,9 +235,9 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.io.InputStream_Package; use java.io.InputStream_Package;
---  with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
---  with javax.microedition.lcdui.NullImage_Package; use javax.microedition.lcdui.NullImage_Package;
+with java.io.InputStream_Package; use java.io.InputStream_Package;
+with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
+with javax.microedition.lcdui.NullImage_Package; use javax.microedition.lcdui.NullImage_Package;
 with org.allbinary.J2MEUtil_Package; use org.allbinary.J2MEUtil_Package;
 with org.allbinary.TsUtil_Package; use org.allbinary.TsUtil_Package;
 with org.allbinary.animation.image.LazyImageRotationAnimation_Package; use org.allbinary.animation.image.LazyImageRotationAnimation_Package;
@@ -261,6 +267,9 @@ with org.allbinary.image.ImageFactory_Package; use org.allbinary.image.ImageFact
 
 package org.allbinary.image.NotHTMLEndProcessor_Package is
 
+   package InputStream_Package renames Standard.java.io.InputStream_Package;
+   package Image_Package renames Standard.javax.microedition.lcdui.Image_Package;
+   package NullImage_Package renames Standard.javax.microedition.lcdui.NullImage_Package;
    package J2MEUtil_Package renames Standard.org.allbinary.J2MEUtil_Package;
    package TsUtil_Package renames Standard.org.allbinary.TsUtil_Package;
    package LazyImageRotationAnimation_Package renames Standard.org.allbinary.animation.image.LazyImageRotationAnimation_Package;
@@ -307,9 +316,9 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.io.InputStream_Package; use java.io.InputStream_Package;
---  with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
---  with javax.microedition.lcdui.NullImage_Package; use javax.microedition.lcdui.NullImage_Package;
+with java.io.InputStream_Package; use java.io.InputStream_Package;
+with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
+with javax.microedition.lcdui.NullImage_Package; use javax.microedition.lcdui.NullImage_Package;
 with org.allbinary.J2MEUtil_Package; use org.allbinary.J2MEUtil_Package;
 with org.allbinary.TsUtil_Package; use org.allbinary.TsUtil_Package;
 with org.allbinary.animation.image.LazyImageRotationAnimation_Package; use org.allbinary.animation.image.LazyImageRotationAnimation_Package;
@@ -339,6 +348,9 @@ with org.allbinary.image.ImageFactory_Package; use org.allbinary.image.ImageFact
 
 package org.allbinary.image.HTMLEndProcessor_Package is
 
+   package InputStream_Package renames Standard.java.io.InputStream_Package;
+   package Image_Package renames Standard.javax.microedition.lcdui.Image_Package;
+   package NullImage_Package renames Standard.javax.microedition.lcdui.NullImage_Package;
    package J2MEUtil_Package renames Standard.org.allbinary.J2MEUtil_Package;
    package TsUtil_Package renames Standard.org.allbinary.TsUtil_Package;
    package LazyImageRotationAnimation_Package renames Standard.org.allbinary.animation.image.LazyImageRotationAnimation_Package;
@@ -385,9 +397,9 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.io.InputStream_Package; use java.io.InputStream_Package;
---  with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
---  with javax.microedition.lcdui.NullImage_Package; use javax.microedition.lcdui.NullImage_Package;
+with java.io.InputStream_Package; use java.io.InputStream_Package;
+with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
+with javax.microedition.lcdui.NullImage_Package; use javax.microedition.lcdui.NullImage_Package;
 with org.allbinary.J2MEUtil_Package; use org.allbinary.J2MEUtil_Package;
 with org.allbinary.TsUtil_Package; use org.allbinary.TsUtil_Package;
 with org.allbinary.animation.image.LazyImageRotationAnimation_Package; use org.allbinary.animation.image.LazyImageRotationAnimation_Package;
@@ -417,6 +429,9 @@ with org.allbinary.image.ImageFactory_Package; use org.allbinary.image.ImageFact
 
 package org.allbinary.image.FirstProcessor_Package is
 
+   package InputStream_Package renames Standard.java.io.InputStream_Package;
+   package Image_Package renames Standard.javax.microedition.lcdui.Image_Package;
+   package NullImage_Package renames Standard.javax.microedition.lcdui.NullImage_Package;
    package J2MEUtil_Package renames Standard.org.allbinary.J2MEUtil_Package;
    package TsUtil_Package renames Standard.org.allbinary.TsUtil_Package;
    package LazyImageRotationAnimation_Package renames Standard.org.allbinary.animation.image.LazyImageRotationAnimation_Package;

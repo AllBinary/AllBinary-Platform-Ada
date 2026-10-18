@@ -71,9 +71,9 @@ package body org.allbinary.input.automation.module.generic_Id.SavedCaptureImages
    begin
         begin
             This.logUtil.putF (This.commonStrings.START, SavedCaptureImagesWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN);
-            This.setRunning (True);
+            SavedCaptureImagesWorker'Class (This).setRunning (True);
             timeHelper := TimeDelayHelper_Package.Create (1000);
-            while This.isRunning loop
+            while SavedCaptureImagesWorker'Class (This).isRunning loop
                 timeHelper.setStartTimeTNT;
                 frame := index;
                 filePathStringBuffer := StringMaker_Package.Create;
@@ -88,12 +88,12 @@ package body org.allbinary.input.automation.module.generic_Id.SavedCaptureImages
                     SavedCaptureImagesWorker_Package.index := SavedCaptureImagesWorker_Package.index + 1;
                     CapturedBufferedImagesCacheSingleton_Package.getInstance.add (BufferedImageFrameCacheable_Package.Create (bufferedImage, frame));
                     capturedImageEvent := CapturedImageWorkerResultsEvent_Package.Create (SavedCaptureImagesWorker_Access'(This'Unchecked_Access), frame, bufferedImage);
-                    This.fireEvent (capturedImageEvent);
+                    SavedCaptureImagesWorker'Class (This).fireEvent (capturedImageEvent);
                 else
                     This.logUtil.putF (To_Unbounded_String ("Could Not Load File: ") & filePath, SavedCaptureImagesWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN);
                 end if;
                 This.logUtil.putF ((CommonLabels_Package.getInstance.ELAPSED) + (timeHelper.getElapsedTNT), SavedCaptureImagesWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN);
-                This.setRunning (False);
+                SavedCaptureImagesWorker'Class (This).setRunning (False);
             end loop;
             This.logUtil.putF (This.commonStrings.END_Id, SavedCaptureImagesWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN);
         exception

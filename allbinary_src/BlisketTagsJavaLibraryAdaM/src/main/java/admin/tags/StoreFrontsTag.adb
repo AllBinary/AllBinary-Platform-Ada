@@ -26,8 +26,8 @@ package body admin.tags.StoreFrontsTag_Package is
    begin
       TableTag_Package.Initialize (This);
       Initialize_Fields (This);
-        This.setTagHelperFactory (StoreFrontsHelperFactory_Package.Create);
-        This.setTagRequestHelperFactory (StoreFrontsRequestHelperFactory_Package.Create);
+        StoreFrontsTag'Class (This).setTagHelperFactory (StoreFrontsHelperFactory_Package.Create);
+        StoreFrontsTag'Class (This).setTagRequestHelperFactory (StoreFrontsRequestHelperFactory_Package.Create);
    end Initialize;
 
    function Create return StoreFrontsTag_Access is
@@ -45,9 +45,9 @@ package body admin.tags.StoreFrontsTag_Package is
       error : Unbounded_String;
    begin
         begin
-            anyType := This.getTagHelperFactoryInterface.getInstance (This.getPropertiesHashMap, This.pageContext);
+            anyType := StoreFrontsTag'Class (This).getTagHelperFactoryInterface.getInstance (StoreFrontsTag'Class (This).getPropertiesHashMap, This.pageContext);
             method := anyType.all'Tag.getMethod (To_Unbounded_String ("generateSelect"), null);
-            result := Unbounded_String (method.invoke (anyType, null));
+            result := Java_Unbox (method.invoke (anyType, null));
             return result;
         exception
             when Java_Occurrence : others =>
@@ -67,9 +67,9 @@ package body admin.tags.StoreFrontsTag_Package is
       error : Unbounded_String;
    begin
         begin
-            anyType := This.getTagRequestHelperFactoryInterface.getInstance (This.getPropertiesHashMap, This.pageContext);
+            anyType := StoreFrontsTag'Class (This).getTagRequestHelperFactoryInterface.getInstance (StoreFrontsTag'Class (This).getPropertiesHashMap, This.pageContext);
             method := anyType.all'Tag.getMethod (To_Unbounded_String ("install"), null);
-            result := Unbounded_String (method.invoke (anyType, null));
+            result := Java_Unbox (method.invoke (anyType, null));
             return result;
         exception
             when Java_Occurrence : others =>
@@ -89,9 +89,9 @@ package body admin.tags.StoreFrontsTag_Package is
       error : Unbounded_String;
    begin
         begin
-            anyType := This.getTagRequestHelperFactoryInterface.getInstance (This.getPropertiesHashMap, This.pageContext);
+            anyType := StoreFrontsTag'Class (This).getTagRequestHelperFactoryInterface.getInstance (StoreFrontsTag'Class (This).getPropertiesHashMap, This.pageContext);
             method := anyType.all'Tag.getMethod (To_Unbounded_String ("sendStoreCreatedEmails"), null);
-            result := Unbounded_String (method.invoke (anyType, null));
+            result := Java_Unbox (method.invoke (anyType, null));
             return result;
         exception
             when Java_Occurrence : others =>
@@ -108,20 +108,20 @@ package body admin.tags.StoreFrontsTag_Package is
       storeFrontData : StoreFrontData_Access;
    begin
         begin
-            if This.isEnabled then
-                if (This.getCommand) /= (null) then
+            if StoreFrontsTag'Class (This).isEnabled then
+                if (StoreFrontsTag'Class (This).getCommand) /= (null) then
                     storeFrontData := StoreFrontData_Package.getInstance;
-                    if (This.getCommand.compareTo (storeFrontData.SELECT_Id)) = (0) then
-                        This.pageContext.getOut.print (This.generateSelect);
-                    elsif (This.getCommand.compareTo (storeFrontData.INSTALL)) = (0) then
-                        This.getPropertiesHashMap.put (To_Unbounded_String ("current"), This.getCurrent);
-                        This.getPropertiesHashMap.put (To_Unbounded_String ("total"), This.getTotal);
-                        if (This.getCurrent.intValue) = (This.getTotal.intValue) then
+                    if (StoreFrontsTag'Class (This).getCommand.compareTo (storeFrontData.SELECT_Id)) = (0) then
+                        This.pageContext.getOut.print (StoreFrontsTag'Class (This).generateSelect);
+                    elsif (StoreFrontsTag'Class (This).getCommand.compareTo (storeFrontData.INSTALL)) = (0) then
+                        StoreFrontsTag'Class (This).getPropertiesHashMap.put (To_Unbounded_String ("current"), StoreFrontsTag'Class (This).getCurrent);
+                        StoreFrontsTag'Class (This).getPropertiesHashMap.put (To_Unbounded_String ("total"), StoreFrontsTag'Class (This).getTotal);
+                        if (StoreFrontsTag'Class (This).getCurrent.intValue) = (StoreFrontsTag'Class (This).getTotal.intValue) then
                             return TagSupport_Package.EVAL_BODY_INCLUDE;
                         end if;
-                        This.install;
-                    elsif (This.getCommand.compareTo (storeFrontData.INSTALL_COMPLETE)) = (0) then
-                        This.sendStoreCreatedEmails;
+                        StoreFrontsTag'Class (This).install;
+                    elsif (StoreFrontsTag'Class (This).getCommand.compareTo (storeFrontData.INSTALL_COMPLETE)) = (0) then
+                        StoreFrontsTag'Class (This).sendStoreCreatedEmails;
                     else
                         return TableTag (This).doStartTag;
                     end if;

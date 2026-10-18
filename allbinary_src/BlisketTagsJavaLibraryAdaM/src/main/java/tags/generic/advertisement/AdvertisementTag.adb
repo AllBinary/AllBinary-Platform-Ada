@@ -39,13 +39,13 @@ package body tags.generic_Id.advertisement.AdvertisementTag_Package is
    function doStartTag (This : in out AdvertisementTag) return Integer is
    begin
         begin
-            This.setName (To_Unbounded_String ("Basic Ad View"));
-            This.setObjectFile (To_Unbounded_String ("views.generic.advertisement.ValidationView"));
-            if (This.getCommand) /= (null) then
-                if (This.getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.VIEW)) = (0) then
+            AdvertisementTag'Class (This).setName (To_Unbounded_String ("Basic Ad View"));
+            AdvertisementTag'Class (This).setObjectFile (To_Unbounded_String ("views.generic.advertisement.ValidationView"));
+            if (AdvertisementTag'Class (This).getCommand) /= (null) then
+                if (AdvertisementTag'Class (This).getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.VIEW)) = (0) then
                     null;
                 else
-                    Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("No Such View Command: ") & Java_Image (This.getCommand)));
+                    Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("No Such View Command: ") & Java_Image (AdvertisementTag'Class (This).getCommand)));
                 end if;
                 return StoreValidationTransformTag (This).doStartTag;
             end if;

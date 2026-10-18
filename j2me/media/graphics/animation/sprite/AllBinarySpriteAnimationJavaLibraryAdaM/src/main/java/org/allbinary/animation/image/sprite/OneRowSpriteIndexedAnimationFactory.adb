@@ -83,7 +83,7 @@ package body org.allbinary.animation.image.sprite.OneRowSpriteIndexedAnimationFa
 
    procedure initW (This : in out OneRowSpriteIndexedAnimationFactory; dx : Integer) is
    begin
-        This.init (dx, 0);
+        OneRowSpriteIndexedAnimationFactory'Class (This).init (dx, 0);
         This.animationFactoryInitializationVisitor.dx := (This.animationFactoryInitializationVisitor.dx) + (-((Java_Shift_Right_Arithmetic (This.animationFactoryInitializationVisitor.width, 2))));
    end initW;
 
@@ -91,11 +91,11 @@ package body org.allbinary.animation.image.sprite.OneRowSpriteIndexedAnimationFa
    function getInstance (This : in out OneRowSpriteIndexedAnimationFactory; instanceId : Integer) return Animation_Access is
       sprite : Sprite_Access;
    begin
-        sprite := This.animationFactorySpriteScaleUtil.createImage (This.getImage, This.animationFactoryInitializationVisitor.width, This.animationFactoryInitializationVisitor.height, This.scaleProperties.scaleWidth, This.scaleProperties.scaleHeight);
+        sprite := This.animationFactorySpriteScaleUtil.createImage (OneRowSpriteIndexedAnimationFactory'Class (This).getImage, This.animationFactoryInitializationVisitor.width, This.animationFactoryInitializationVisitor.height, This.scaleProperties.scaleWidth, This.scaleProperties.scaleHeight);
         if ((This.animationFactoryInitializationVisitor.dx) /= (0)) or else ((This.animationFactoryInitializationVisitor.dy) /= (0)) then
-            return AdjustedSpriteIndexedAnimation_Package.Create (sprite, This.getImage, BasicColorUtil_Package.getInstance.ZERO_ARRAY, This.animationFactoryInitializationVisitor.dx, This.animationFactoryInitializationVisitor.dy, This.animationBehaviorFactory.getOrCreateInstance);
+            return AdjustedSpriteIndexedAnimation_Package.Create (sprite, OneRowSpriteIndexedAnimationFactory'Class (This).getImage, BasicColorUtil_Package.getInstance.ZERO_ARRAY, This.animationFactoryInitializationVisitor.dx, This.animationFactoryInitializationVisitor.dy, This.animationBehaviorFactory.getOrCreateInstance);
         else
-            return SpriteIndexedAnimation_Package.Create (sprite, This.getImage, BasicColorUtil_Package.getInstance.ZERO_ARRAY, This.animationBehaviorFactory.getOrCreateInstance);
+            return SpriteIndexedAnimation_Package.Create (sprite, OneRowSpriteIndexedAnimationFactory'Class (This).getImage, BasicColorUtil_Package.getInstance.ZERO_ARRAY, This.animationBehaviorFactory.getOrCreateInstance);
         end if;
    end getInstance;
 

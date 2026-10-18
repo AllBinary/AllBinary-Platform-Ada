@@ -45,7 +45,7 @@ package body org.allbinary.logic.visual.transform.data.TransformHttpRequestDocum
             contentTypeNode.appendChild (languageTypeNode);
             This.document.appendChild (contentTypeNode);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.putF (This.log, TransformHttpRequestDocument_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
+                This.logUtil.putF (TransformHttpRequestDocument'Class (This).log, TransformHttpRequestDocument_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
             end if;
         exception
             when Java_Occurrence : others =>

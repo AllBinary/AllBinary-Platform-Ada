@@ -43,13 +43,13 @@ package body org.allbinary.graphics.form.item.validation.TextItemUserIdentifierV
       stringValidationUtil : StringValidationUtil_Access;
       commonStrings : CommonStrings_Access;
    begin
-        value := Unbounded_String (anyType);
+        value := Java_Unbox (anyType);
         if (Length (value)) < (2) then
             charValue := Element (value, (0) + 1);
             stringValidationUtil := StringValidationUtil_Package.getInstance;
             if stringValidationUtil.isNumber (value) then
                 return BooleanFactory_Package.getInstance.TRUE;
-            elsif This.isLetter (charValue) then
+            elsif TextItemUserIdentifierVisitor'Class (This).isLetter (charValue) then
                 return BooleanFactory_Package.getInstance.TRUE;
             else
                 begin

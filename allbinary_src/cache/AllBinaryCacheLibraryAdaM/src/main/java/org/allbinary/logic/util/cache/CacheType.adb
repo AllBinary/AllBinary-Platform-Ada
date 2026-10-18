@@ -52,9 +52,9 @@ package body org.allbinary.logic.util.cache.CacheType_Package is
    begin
         stringBuffer := StringMaker_Package.Create;
         stringBuffer.append (To_Unbounded_String ("CacheType: Vendor: "));
-        stringBuffer.append (This.getVendor);
+        stringBuffer.append (CacheType'Class (This).getVendor);
         stringBuffer.append (To_Unbounded_String (" Type: "));
-        stringBuffer.append (This.getType);
+        stringBuffer.append (CacheType'Class (This).getType);
         return stringBuffer.toString;
    end toString;
 

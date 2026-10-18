@@ -49,14 +49,14 @@ package body org.allbinary.business.init.db.DbConnectionInfo_Package is
    procedure updateUrl (This : in out DbConnectionInfo) is
       stringBuffer : StringMaker_Access;
    begin
-        This.updateHost;
+        DbConnectionInfo'Class (This).updateHost;
         stringBuffer := StringMaker_Package.Create;
-        stringBuffer.append (This.getHost);
-        stringBuffer.append (This.getName);
-        stringBuffer.append (This.getUserNameKey);
-        stringBuffer.append (This.getUserName);
-        stringBuffer.append (This.getPasswordKey);
-        stringBuffer.append (This.getPassword);
+        stringBuffer.append (DbConnectionInfo'Class (This).getHost);
+        stringBuffer.append (DbConnectionInfo'Class (This).getName);
+        stringBuffer.append (DbConnectionInfo'Class (This).getUserNameKey);
+        stringBuffer.append (DbConnectionInfo'Class (This).getUserName);
+        stringBuffer.append (DbConnectionInfo'Class (This).getPasswordKey);
+        stringBuffer.append (DbConnectionInfo'Class (This).getPassword);
         This.url := stringBuffer.toString;
    end updateUrl;
 
@@ -89,12 +89,12 @@ package body org.allbinary.business.init.db.DbConnectionInfo_Package is
       stringBuffer : StringMaker_Access;
    begin
         stringBuffer := StringMaker_Package.Create;
-        stringBuffer.append (This.getSchema);
+        stringBuffer.append (DbConnectionInfo'Class (This).getSchema);
         stringBuffer.append (This.SCHEMA_SEP);
-        stringBuffer.append (This.getServer);
-        if ((This.getPort) /= (null)) and then ((This.getPort.length) > (1)) then
+        stringBuffer.append (DbConnectionInfo'Class (This).getServer);
+        if ((DbConnectionInfo'Class (This).getPort) /= (null)) and then ((DbConnectionInfo'Class (This).getPort.length) > (1)) then
             stringBuffer.append (CommonSeps_Package.getInstance.COLON);
-            stringBuffer.append (This.getPort);
+            stringBuffer.append (DbConnectionInfo'Class (This).getPort);
         end if;
         stringBuffer.append (AbPathData_Package.getInstance.SEPARATOR);
         This.host := stringBuffer.toString;
@@ -128,37 +128,37 @@ package body org.allbinary.business.init.db.DbConnectionInfo_Package is
    procedure setName (This : in out DbConnectionInfo; value : Unbounded_String) is
    begin
         This.name := value;
-        This.updateUrl;
+        DbConnectionInfo'Class (This).updateUrl;
    end setName;
 
    procedure setUserName (This : in out DbConnectionInfo; value : Unbounded_String) is
    begin
         This.userName := value;
-        This.updateUrl;
+        DbConnectionInfo'Class (This).updateUrl;
    end setUserName;
 
    procedure setPassword (This : in out DbConnectionInfo; value : Unbounded_String) is
    begin
         This.password := value;
-        This.updateUrl;
+        DbConnectionInfo'Class (This).updateUrl;
    end setPassword;
 
    procedure setSchema (This : in out DbConnectionInfo; value : Unbounded_String) is
    begin
         This.schema := value;
-        This.updateUrl;
+        DbConnectionInfo'Class (This).updateUrl;
    end setSchema;
 
    procedure setServer (This : in out DbConnectionInfo; value : Unbounded_String) is
    begin
         This.server := value;
-        This.updateUrl;
+        DbConnectionInfo'Class (This).updateUrl;
    end setServer;
 
    procedure setPort (This : in out DbConnectionInfo; value : Unbounded_String) is
    begin
         This.port := value;
-        This.updateUrl;
+        DbConnectionInfo'Class (This).updateUrl;
    end setPort;
 
    function getUserNameKey (This : in out DbConnectionInfo) return Unbounded_String is

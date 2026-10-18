@@ -59,14 +59,14 @@ package body org.allbinary.media.image.comparison.ImageComparisonWorker_Package 
    begin
         This.bufferedImageVector.add (capturedImageWorkerResultsEvent);
         if (This.bufferedImageVector.size) > (1) then
-            This.run;
+            ImageComparisonWorker'Class (This).run;
         end if;
    end onCaptureEvent;
 
    procedure onEvent (This : in out ImageComparisonWorker; allBinaryEventObject_Param : access AllBinaryEventObject_Package.AllBinaryEventObject'Class) is
       allBinaryEventObject : constant AllBinaryEventObject_Access := AllBinaryEventObject_Access (allBinaryEventObject_Param);
    begin
-        This.onCaptureEvent (CapturedImageWorkerResultsEvent_Access (allBinaryEventObject));
+        ImageComparisonWorker'Class (This).onCaptureEvent (CapturedImageWorkerResultsEvent_Access (allBinaryEventObject));
    end onEvent;
 
    procedure run (This : in out ImageComparisonWorker) is
@@ -79,7 +79,7 @@ package body org.allbinary.media.image.comparison.ImageComparisonWorker_Package 
    begin
         begin
             This.logUtil.putF (This.commonStrings.START, ImageComparisonWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN);
-            This.setRunning (True);
+            ImageComparisonWorker'Class (This).setRunning (True);
             timeHelper := TimeDelayHelper_Package.Create (1000);
             timeHelper.setStartTimeTNT;
             if This.imageComparatorConstraintsInterface.isFrameAllowed (This.index2) then
@@ -91,7 +91,7 @@ package body org.allbinary.media.image.comparison.ImageComparisonWorker_Package 
                     frame := capturedImageWorkerResultsEvent (1).getFrame;
                     imageComparisonResultFrameCacheable := ImageComparisonResultFrameCacheable_Package.Create (imageComparisonResult, frame);
                     ImageComparisonResultCacheSingleton_Package.getInstance.add (imageComparisonResultFrameCacheable);
-                    This.fireEvent (ImageComparisonResultsEvent_Package.Create (ImageComparisonWorker_Access'(This'Unchecked_Access), imageComparisonResult));
+                    ImageComparisonWorker'Class (This).fireEvent (ImageComparisonResultsEvent_Package.Create (ImageComparisonWorker_Access'(This'Unchecked_Access), imageComparisonResult));
                     This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Image Comparison Result: ")).append (imageComparisonResult.toString).append (To_Unbounded_String (" for frame: ")).appendlong (frame).toString, ImageComparisonWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN);
                 else
                     This.logUtil.putF (To_Unbounded_String ("An Image Was Not Valid: Image Worker Event Processing terminated"), ImageComparisonWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN);
@@ -101,7 +101,7 @@ package body org.allbinary.media.image.comparison.ImageComparisonWorker_Package 
             This.index2 := This.index2 + 1;
             message := StringMaker_Package.Create.append (To_Unbounded_String ("Frame: ")).appendint (This.index2).append (CommonLabels_Package.getInstance.ELAPSED).appendlong (Long_Long_Integer (timeHelper.getElapsedTNT)).toString;
             This.logUtil.putF (message, ImageComparisonWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN);
-            This.setRunning (False);
+            ImageComparisonWorker'Class (This).setRunning (False);
             This.logUtil.putF (This.commonStrings.END_Id, ImageComparisonWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN);
         exception
             when Java_Occurrence : others =>

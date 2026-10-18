@@ -53,7 +53,7 @@ package body org.allbinary.logic.communication.sql.AbSqlColumn_Package is
         stringBuffer.append (This.sqlStrings.SELECT_Id);
         stringBuffer.append (columnName);
         stringBuffer.append (This.sqlStrings.FROM);
-        stringBuffer.append (This.getTableName);
+        stringBuffer.append (AbSqlColumn'Class (This).getTableName);
         stringBuffer.append (This.sqlStrings.WHERE);
         stringBuffer.append (key);
         stringBuffer.append (This.sqlStrings.EQUAL_QUOTE);
@@ -62,7 +62,7 @@ package body org.allbinary.logic.communication.sql.AbSqlColumn_Package is
         sqlStatement := stringBuffer.toString;
         begin
             largest := 0;
-            rset := This.executeSQLStatement (sqlStatement);
+            rset := AbSqlColumn'Class (This).executeSQLStatement (sqlStatement);
             while rset.next loop
                 intValue := rset.getInt (columnName);
                 if (intValue) > (largest) then
@@ -104,10 +104,10 @@ package body org.allbinary.logic.communication.sql.AbSqlColumn_Package is
         stringBuffer.append (This.sqlStrings.SELECT_Id);
         stringBuffer.append (columnName);
         stringBuffer.append (This.sqlStrings.FROM);
-        stringBuffer.append (This.getTableName);
+        stringBuffer.append (AbSqlColumn'Class (This).getTableName);
         sqlStatement := stringBuffer.toString;
         begin
-            rset := This.executeSQLStatement (sqlStatement);
+            rset := AbSqlColumn'Class (This).executeSQLStatement (sqlStatement);
             while rset.next loop
                 field := rset.getObject (columnName).toString;
                 column.add (field);
@@ -145,7 +145,7 @@ package body org.allbinary.logic.communication.sql.AbSqlColumn_Package is
         stringBuffer.append (This.sqlStrings.SELECT_Id);
         stringBuffer.append (columnName);
         stringBuffer.append (This.sqlStrings.FROM);
-        stringBuffer.append (This.getTableName);
+        stringBuffer.append (AbSqlColumn'Class (This).getTableName);
         stringBuffer.append (This.sqlStrings.WHERE);
         stringBuffer.append (key);
         stringBuffer.append (This.sqlStrings.EQUAL_QUOTE);
@@ -156,7 +156,7 @@ package body org.allbinary.logic.communication.sql.AbSqlColumn_Package is
         rset := null;
         field := Null_Unbounded_String;
         begin
-            rset := This.executeSQLStatement (sqlStatement);
+            rset := AbSqlColumn'Class (This).executeSQLStatement (sqlStatement);
             while rset.next loop
                 field := rset.getObject (columnName).toString;
                 column.add (field);

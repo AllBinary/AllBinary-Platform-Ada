@@ -66,6 +66,7 @@ package body org.allbinary.business.user.commerce.shipping.ShippingMethods_Packa
             This.logUtil.putF (This.commonStrings.EXCEPTION_Id, ShippingMethods_Access'(This'Unchecked_Access), To_Unbounded_String ("getShippingInterface(String name)"));
         end if;
         Java_Throw (Java_New_Exception ("Exception", error));
+        return null;
    end getShippingInterface;
 
    --  throws Exception

@@ -39,35 +39,35 @@ package body tags.admin.WorkFlowsTag_Package is
    function doStartTag (This : in out WorkFlowsTag) return Integer is
    begin
         begin
-            if (This.getCommand) /= (null) then
-                if (This.getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.NEW_Id)) = (0) then
-                    This.setName (To_Unbounded_String ("New WorkFlow View"));
-                    This.setObjectFile (To_Unbounded_String ("views.admin.workflow.NewView"));
-                elsif (This.getCommand.compareTo (This.commonStrings.INSERT)) = (0) then
-                    This.setName (To_Unbounded_String ("Add Validation WorkFlow View"));
-                    This.setObjectFile (To_Unbounded_String ("views.admin.workflow.AddValidationView"));
-                elsif (This.getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.VIEW)) = (0) then
-                    This.setName (To_Unbounded_String ("Validation WorkFlow View"));
-                    This.setObjectFile (To_Unbounded_String ("views.admin.workflow.WorkflowsValidationView"));
-                elsif (This.getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.EDIT)) = (0) then
-                    This.setName (To_Unbounded_String ("Validation WorkFlow View"));
-                    This.setObjectFile (To_Unbounded_String ("views.admin.workflow.EditValidationView"));
-                elsif (This.getCommand.compareTo (This.commonStrings.UPDATE)) = (0) then
-                    This.setName (To_Unbounded_String ("Update Validation WorkFlow View"));
-                    This.setObjectFile (To_Unbounded_String ("views.admin.workflow.UpdateValidationView"));
-                elsif (This.getCommand.compareTo (This.commonStrings.DELETE)) = (0) then
-                    This.setName (To_Unbounded_String ("Delete Validation WorkFlow View"));
-                    This.setObjectFile (To_Unbounded_String ("views.admin.workflow.DeleteValidationView"));
-                elsif (This.getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.BACKUP)) = (0) then
+            if (WorkFlowsTag'Class (This).getCommand) /= (null) then
+                if (WorkFlowsTag'Class (This).getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.NEW_Id)) = (0) then
+                    WorkFlowsTag'Class (This).setName (To_Unbounded_String ("New WorkFlow View"));
+                    WorkFlowsTag'Class (This).setObjectFile (To_Unbounded_String ("views.admin.workflow.NewView"));
+                elsif (WorkFlowsTag'Class (This).getCommand.compareTo (This.commonStrings.INSERT)) = (0) then
+                    WorkFlowsTag'Class (This).setName (To_Unbounded_String ("Add Validation WorkFlow View"));
+                    WorkFlowsTag'Class (This).setObjectFile (To_Unbounded_String ("views.admin.workflow.AddValidationView"));
+                elsif (WorkFlowsTag'Class (This).getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.VIEW)) = (0) then
+                    WorkFlowsTag'Class (This).setName (To_Unbounded_String ("Validation WorkFlow View"));
+                    WorkFlowsTag'Class (This).setObjectFile (To_Unbounded_String ("views.admin.workflow.WorkflowsValidationView"));
+                elsif (WorkFlowsTag'Class (This).getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.EDIT)) = (0) then
+                    WorkFlowsTag'Class (This).setName (To_Unbounded_String ("Validation WorkFlow View"));
+                    WorkFlowsTag'Class (This).setObjectFile (To_Unbounded_String ("views.admin.workflow.EditValidationView"));
+                elsif (WorkFlowsTag'Class (This).getCommand.compareTo (This.commonStrings.UPDATE)) = (0) then
+                    WorkFlowsTag'Class (This).setName (To_Unbounded_String ("Update Validation WorkFlow View"));
+                    WorkFlowsTag'Class (This).setObjectFile (To_Unbounded_String ("views.admin.workflow.UpdateValidationView"));
+                elsif (WorkFlowsTag'Class (This).getCommand.compareTo (This.commonStrings.DELETE)) = (0) then
+                    WorkFlowsTag'Class (This).setName (To_Unbounded_String ("Delete Validation WorkFlow View"));
+                    WorkFlowsTag'Class (This).setObjectFile (To_Unbounded_String ("views.admin.workflow.DeleteValidationView"));
+                elsif (WorkFlowsTag'Class (This).getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.BACKUP)) = (0) then
                     Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("View not implemented")));
-                elsif (This.getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.RESTORE)) = (0) then
+                elsif (WorkFlowsTag'Class (This).getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.RESTORE)) = (0) then
                     Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("View not implemented")));
-                elsif (This.getCommand.compareTo (This.commonStrings.DROP)) = (0) then
+                elsif (WorkFlowsTag'Class (This).getCommand.compareTo (This.commonStrings.DROP)) = (0) then
                     Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("View not implemented")));
-                elsif (This.getCommand.compareTo (This.commonStrings.CREATE)) = (0) then
+                elsif (WorkFlowsTag'Class (This).getCommand.compareTo (This.commonStrings.CREATE)) = (0) then
                     Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("View not implemented")));
                 else
-                    Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("No Such View Command: ") & Java_Image (This.getCommand)));
+                    Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("No Such View Command: ") & Java_Image (WorkFlowsTag'Class (This).getCommand)));
                 end if;
                 return StoreValidationTransformTag (This).doStartTag;
             end if;

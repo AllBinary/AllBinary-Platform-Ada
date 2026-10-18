@@ -36,6 +36,7 @@ package body org.allbinary.game.collision.CollidableBaseBehaviorFactory_Package 
    function createBehavior (This : in out CollidableBaseBehaviorFactory) return CollidableBaseBehavior_Access is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return null;
    end createBehavior;
 
 end org.allbinary.game.collision.CollidableBaseBehaviorFactory_Package;

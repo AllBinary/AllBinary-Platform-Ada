@@ -68,7 +68,7 @@ package body org.allbinary.game.ag.layer.hud.basic.NumberStringHud_Package is
 
    procedure add (This : in out NumberStringHud; value : Integer) is
    begin
-        This.set ((This.value) + (value));
+        NumberStringHud'Class (This).set ((This.value) + (value));
    end add;
 
    procedure set (This : in out NumberStringHud; value : Integer) is
@@ -83,7 +83,7 @@ package body org.allbinary.game.ag.layer.hud.basic.NumberStringHud_Package is
 
    procedure reduce (This : in out NumberStringHud; value : Integer) is
    begin
-        This.set ((This.value) - (value));
+        NumberStringHud'Class (This).set ((This.value) - (value));
    end reduce;
 
    procedure paint (This : in out NumberStringHud; graphics_Param : access Graphics_Package.Graphics'Class) is
@@ -104,7 +104,7 @@ package body org.allbinary.game.ag.layer.hud.basic.NumberStringHud_Package is
         len := This.PREPEND_STRING'Length;
         charArray2 := This.valueString;
         len2 := This.valueTotalDigits;
-        This.basicSetColorUtil.setBasicColorP (graphics, This.getBasicColorP);
+        This.basicSetColorUtil.setBasicColorP (graphics, NumberStringHud'Class (This).getBasicColorP);
         graphics.drawChars (charArray, 0, len, x, y, 0);
         graphics.drawChars (charArray2, 0, len2, (x) - (This.offset), y, 0);
    end paintXY;

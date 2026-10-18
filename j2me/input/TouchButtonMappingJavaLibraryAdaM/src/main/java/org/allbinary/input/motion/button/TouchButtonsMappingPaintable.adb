@@ -31,7 +31,7 @@ package body org.allbinary.input.motion.button.TouchButtonsMappingPaintable_Pack
       Paintable_Package.Initialize (This);
       Initialize_Fields (This);
         This.foregroundColor := basicColor.intValue;
-        This.init;
+        TouchButtonsMappingPaintable'Class (This).init;
    end Initialize;
 
    function Create (basicColor_Param : access BasicColor_Package.BasicColor'Class) return TouchButtonsMappingPaintable_Access is
@@ -45,7 +45,7 @@ package body org.allbinary.input.motion.button.TouchButtonsMappingPaintable_Pack
       commonStrings : CommonStrings_Access;
    begin
         begin
-            This.paintableTable := This.createPaintableTable;
+            This.paintableTable := TouchButtonsMappingPaintable'Class (This).createPaintableTable;
         exception
             when Java_Occurrence : others =>
                 declare

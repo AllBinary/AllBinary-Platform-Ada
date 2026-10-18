@@ -57,7 +57,7 @@ package body org.allbinary.logic.visual.transform.template.customizer.includes.s
    begin
       Validation_Package.Initialize (This);
       Initialize_Fields (This);
-        This.getFormData (hashMap);
+        GenericCssStyleValidation'Class (This).getFormData (hashMap);
    end Initialize;
 
    function Create (hashMap_Param : access HashMap_Package.HashMap'Class) return GenericCssStyleValidation_Access is

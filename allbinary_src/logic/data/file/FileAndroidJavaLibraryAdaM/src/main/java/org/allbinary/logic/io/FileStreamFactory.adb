@@ -47,14 +47,14 @@ package body org.allbinary.logic.io.FileStreamFactory_Package is
    --  throws Exception
    function getFileInputStreamInstance (This : in out FileStreamFactory; path : Unbounded_String; fileName : Unbounded_String) return AbFileInputStream_Access is
    begin
-        return AbFileInputStream_Package.Create (This.getContext.openFileInput (fileName));
+        return AbFileInputStream_Package.Create (FileStreamFactory'Class (This).getContext.openFileInput (fileName));
    end getFileInputStreamInstance;
 
    --  throws Exception
    function getFileOutputStreamInstance (This : in out FileStreamFactory; path : Unbounded_String; fileName : Unbounded_String) return AbFileOutputStream_Access is
       context : Context_Access;
    begin
-        context := This.getContext;
+        context := FileStreamFactory'Class (This).getContext;
         context.deleteFile (fileName);
         return AbFileOutputStream_Package.Create (context.openFileOutput (fileName, 0));
    end getFileOutputStreamInstance;
@@ -62,7 +62,7 @@ package body org.allbinary.logic.io.FileStreamFactory_Package is
    --  throws Exception
    procedure delete (This : in out FileStreamFactory; path : Unbounded_String; fileName : Unbounded_String) is
    begin
-        This.getContext.deleteFile (fileName);
+        FileStreamFactory'Class (This).getContext.deleteFile (fileName);
    end delete;
 
    function getContext (This : in out FileStreamFactory) return Context_Access is

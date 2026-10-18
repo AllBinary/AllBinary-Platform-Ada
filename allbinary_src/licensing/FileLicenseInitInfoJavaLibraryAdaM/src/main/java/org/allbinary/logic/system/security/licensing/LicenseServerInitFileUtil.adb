@@ -45,7 +45,7 @@ package body org.allbinary.logic.system.security.licensing.LicenseServerInitFile
             if FileFactory_Package.getInstance.isFile (filePath) then
                 This.logUtil.putF (To_Unbounded_String ("Using Existing License File"), LicenseServerInitFileUtil_Access'(This'Unchecked_Access), This.commonStrings.INIT);
             else
-                This.write;
+                LicenseServerInitFileUtil'Class (This).write;
             end if;
         exception
             when Java_Occurrence : others =>

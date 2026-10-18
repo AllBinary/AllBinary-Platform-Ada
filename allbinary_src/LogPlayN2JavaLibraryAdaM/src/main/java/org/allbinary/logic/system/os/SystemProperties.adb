@@ -60,6 +60,7 @@ package body org.allbinary.logic.system.os.SystemProperties_Package is
    function getUserHomePath (This : in out SystemProperties) return Unbounded_String is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return Null_Unbounded_String;
    end getUserHomePath;
 
 begin

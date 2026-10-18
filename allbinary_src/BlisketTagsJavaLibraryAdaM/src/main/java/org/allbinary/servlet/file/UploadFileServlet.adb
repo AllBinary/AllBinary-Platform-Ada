@@ -53,7 +53,7 @@ package body org.allbinary.servlet.file.UploadFileServlet_Package is
         begin
             BlisketServletUtil_Package.getInstance.init (request);
             This.requestHashMap := MultipartRequestParams_Package.Create (request).toHashMap;
-            filePath := Unbounded_String (This.requestHashMap.get (FileUploadData_Package.getInstance.UPLOAD_TO_FILE_PATH));
+            filePath := Java_Unbox (This.requestHashMap.get (FileUploadData_Package.getInstance.UPLOAD_TO_FILE_PATH));
             if (filePath) = (Null_Unbounded_String) then
                 isError := True;
                 response.sendError (HttpServletResponse_Package.SC_NOT_FOUND);
@@ -63,7 +63,7 @@ package body org.allbinary.servlet.file.UploadFileServlet_Package is
             authenticationHelper := AuthenticationHelper_Access (AuthenticationHelperFactory_Package.Create.getInstance (hashMap, request));
             if authenticationHelper.isAuthenticated then
                 if AuthenticationHelperUtil_Package.getInstance.isAuthorized (authenticationHelper, filePath) then
-                    This.saveFile (filePath);
+                    UploadFileServlet'Class (This).saveFile (filePath);
                     response.setContentType (To_Unbounded_String ("text/plain"));
                     response.getOutputStream.write (To_Unbounded_String ("OK!").getBytes);
                 else
@@ -146,7 +146,7 @@ package body org.allbinary.servlet.file.UploadFileServlet_Package is
       request : constant HttpServletRequest_Access := HttpServletRequest_Access (request_Param);
       response : constant HttpServletResponse_Access := HttpServletResponse_Access (response_Param);
    begin
-        This.processRequest (request, response);
+        UploadFileServlet'Class (This).processRequest (request, response);
    end doGet;
 
    --  throws ServletException, IOException
@@ -154,7 +154,7 @@ package body org.allbinary.servlet.file.UploadFileServlet_Package is
       request : constant HttpServletRequest_Access := HttpServletRequest_Access (request_Param);
       response : constant HttpServletResponse_Access := HttpServletResponse_Access (response_Param);
    begin
-        This.processRequest (request, response);
+        UploadFileServlet'Class (This).processRequest (request, response);
    end doPost;
 
    function getServletInfo (This : in out UploadFileServlet) return Unbounded_String is

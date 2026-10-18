@@ -63,8 +63,8 @@ package body org.allbinary.business.user.commerce.shipping.modules.NoShippingMod
    begin
         begin
             shippingMethodNode := document.createElement (ShippingMethodData_Package.NAME);
-            shippingMethodNode.appendChild (ModDomHelper_Package.createNameValueNodes (document, ShippingMethodData_Package.NAME, This.getName));
-            shippingMethodNode.appendChild (ModDomHelper_Package.createNameValueNodes (document, ShippingMethodData_Package.DESCRIPTION, This.getDescription));
+            shippingMethodNode.appendChild (ModDomHelper_Package.createNameValueNodes (document, ShippingMethodData_Package.NAME, NoShippingModuleView'Class (This).getName));
+            shippingMethodNode.appendChild (ModDomHelper_Package.createNameValueNodes (document, ShippingMethodData_Package.DESCRIPTION, NoShippingModuleView'Class (This).getDescription));
             return shippingMethodNode;
         exception
             when Java_Occurrence : others =>

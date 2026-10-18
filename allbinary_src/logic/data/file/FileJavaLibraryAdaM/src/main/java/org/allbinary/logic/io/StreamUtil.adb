@@ -67,7 +67,7 @@ package body org.allbinary.logic.io.StreamUtil_Package is
    begin
         outputStream := outputStream2;
         begin
-            This.get (inputStream, outputStream, byteArray);
+            StreamUtil'Class (This).get (inputStream, outputStream, byteArray);
             return outputStream.toByteArray;
         exception
             when Java_Occurrence : others =>
@@ -79,7 +79,7 @@ package body org.allbinary.logic.io.StreamUtil_Package is
         end;
         --  finally
         begin
-            This.close (outputStream);
+            StreamUtil'Class (This).close (outputStream);
         end;
    end getByteArray;
 

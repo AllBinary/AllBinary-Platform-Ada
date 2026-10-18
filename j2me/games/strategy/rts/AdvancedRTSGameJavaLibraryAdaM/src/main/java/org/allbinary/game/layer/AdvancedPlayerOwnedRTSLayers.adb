@@ -154,15 +154,15 @@ package body org.allbinary.game.layer.AdvancedPlayerOwnedRTSLayers_Package is
       layerInterface : constant AllBinaryGameLayer_Access := AllBinaryGameLayer_Access (layerInterface_Param);
    begin
         This.buildingList.add (layerInterface);
-        if This.getBaseList.remove (layerInterface) then
+        if AdvancedPlayerOwnedRTSLayers'Class (This).getBaseList.remove (layerInterface) then
             This.rtsLayerList.remove (layerInterface);
-        elsif This.getFactoryList.remove (layerInterface) then
+        elsif AdvancedPlayerOwnedRTSLayers'Class (This).getFactoryList.remove (layerInterface) then
             This.rtsLayerList.remove (layerInterface);
-        elsif This.getGarrisonList.remove (layerInterface) then
+        elsif AdvancedPlayerOwnedRTSLayers'Class (This).getGarrisonList.remove (layerInterface) then
             This.rtsLayerList.remove (layerInterface);
-        elsif This.getLabList.remove (layerInterface) then
+        elsif AdvancedPlayerOwnedRTSLayers'Class (This).getLabList.remove (layerInterface) then
             This.rtsLayerList.remove (layerInterface);
-        elsif This.getHouseList.remove (layerInterface) then
+        elsif AdvancedPlayerOwnedRTSLayers'Class (This).getHouseList.remove (layerInterface) then
             This.rtsLayerList.remove (layerInterface);
         end if;
    end removeBuilding;
@@ -173,19 +173,19 @@ package body org.allbinary.game.layer.AdvancedPlayerOwnedRTSLayers_Package is
         stringBuffer := StringMaker_Package.Create;
         stringBuffer.append (PlayerOwnedRTSLayers (This).toString);
         stringBuffer.append (To_Unbounded_String (" Bases: "));
-        stringBuffer.appendint (This.getBaseList.size);
+        stringBuffer.appendint (AdvancedPlayerOwnedRTSLayers'Class (This).getBaseList.size);
         stringBuffer.append (To_Unbounded_String (" Factory: "));
-        stringBuffer.appendint (This.getFactoryList.size);
+        stringBuffer.appendint (AdvancedPlayerOwnedRTSLayers'Class (This).getFactoryList.size);
         stringBuffer.append (To_Unbounded_String (" Garrison: "));
-        stringBuffer.appendint (This.getGarrisonList.size);
+        stringBuffer.appendint (AdvancedPlayerOwnedRTSLayers'Class (This).getGarrisonList.size);
         stringBuffer.append (To_Unbounded_String (" Labs: "));
-        stringBuffer.appendint (This.getLabList.size);
+        stringBuffer.appendint (AdvancedPlayerOwnedRTSLayers'Class (This).getLabList.size);
         stringBuffer.append (To_Unbounded_String (" Houses: "));
-        stringBuffer.appendint (This.getHouseList.size);
+        stringBuffer.appendint (AdvancedPlayerOwnedRTSLayers'Class (This).getHouseList.size);
         stringBuffer.append (To_Unbounded_String (" Waypoints: "));
-        stringBuffer.appendint (This.getWaypointsList.size);
+        stringBuffer.appendint (AdvancedPlayerOwnedRTSLayers'Class (This).getWaypointsList.size);
         stringBuffer.append (To_Unbounded_String (" Units: "));
-        stringBuffer.appendint (This.getUnitsList.size);
+        stringBuffer.appendint (AdvancedPlayerOwnedRTSLayers'Class (This).getUnitsList.size);
         return stringBuffer.toString;
    end toString;
 

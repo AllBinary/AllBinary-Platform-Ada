@@ -20,7 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.util.HashMap_Package; use java.util.HashMap_Package;
+with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.logic.io.path.AbPathData_Package; use org.allbinary.logic.io.path.AbPathData_Package;
 with org.allbinary.logic.math.MathData_Package; use org.allbinary.logic.math.MathData_Package;
@@ -30,6 +30,7 @@ with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.s
 
 package org.allbinary.logic.string_Id.SpecialCharacterUtil_Package is
 
+   package HashMap_Package renames Standard.java.util.HashMap_Package;
    package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    package AbPathData_Package renames Standard.org.allbinary.logic.io.path.AbPathData_Package;
    package MathData_Package renames Standard.org.allbinary.logic.math.MathData_Package;

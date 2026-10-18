@@ -39,12 +39,12 @@ package body tags.admin.storefront.statistics.StoreFrontStatisticsTag_Package is
    function doStartTag (This : in out StoreFrontStatisticsTag) return Integer is
    begin
         begin
-            if (This.getCommand) /= (null) then
-                if (This.getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.VIEW)) = (0) then
-                    This.setName (To_Unbounded_String ("Validation StoreFrontStatistics View"));
-                    This.setObjectFile (To_Unbounded_String ("views.admin.storefront.statistics.ValidationStoreFrontStatisticsView"));
+            if (StoreFrontStatisticsTag'Class (This).getCommand) /= (null) then
+                if (StoreFrontStatisticsTag'Class (This).getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.VIEW)) = (0) then
+                    StoreFrontStatisticsTag'Class (This).setName (To_Unbounded_String ("Validation StoreFrontStatistics View"));
+                    StoreFrontStatisticsTag'Class (This).setObjectFile (To_Unbounded_String ("views.admin.storefront.statistics.ValidationStoreFrontStatisticsView"));
                 else
-                    Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("No Such View Command: ") & Java_Image (This.getCommand)));
+                    Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("No Such View Command: ") & Java_Image (StoreFrontStatisticsTag'Class (This).getCommand)));
                 end if;
                 return StoreValidationTransformTag (This).doStartTag;
             end if;

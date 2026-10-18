@@ -20,12 +20,14 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.util.HashMap_Package; use java.util.HashMap_Package;
---  with java.util.Map_Package; use java.util.Map_Package;
+with java.util.HashMap_Package; use java.util.HashMap_Package;
+with java.util.Map_Package; use java.util.Map_Package;
 --  with java.util.Set_Package; use java.util.Set_Package;
 
 package org.allbinary.J2SEUtil_Package is
 
+   package HashMap_Package renames Standard.java.util.HashMap_Package;
+   package Map_Package renames Standard.java.util.Map_Package;
 
    type J2SEUtil is tagged;
    type J2SEUtil_Access is access all J2SEUtil'Class;

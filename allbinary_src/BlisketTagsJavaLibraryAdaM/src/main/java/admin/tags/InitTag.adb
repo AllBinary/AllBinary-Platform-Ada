@@ -25,8 +25,8 @@ package body admin.tags.InitTag_Package is
    begin
       TableTag_Package.Initialize (This);
       Initialize_Fields (This);
-        This.setTagHelperFactory (InitHelperFactory_Package.Create);
-        This.setTagRequestHelperFactory (InitHelperFactory_Package.Create);
+        InitTag'Class (This).setTagHelperFactory (InitHelperFactory_Package.Create);
+        InitTag'Class (This).setTagRequestHelperFactory (InitHelperFactory_Package.Create);
    end Initialize;
 
    function Create return InitTag_Access is

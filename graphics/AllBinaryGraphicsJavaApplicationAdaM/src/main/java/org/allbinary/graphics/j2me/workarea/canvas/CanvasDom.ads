@@ -20,7 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.util.HashMap_Package; use java.util.HashMap_Package;
+with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.animation.vector.VectorCenterGenerator_Package; use org.allbinary.animation.vector.VectorCenterGenerator_Package;
 with org.allbinary.dom.DomHelper_Package; use org.allbinary.dom.DomHelper_Package;
 with org.allbinary.graphics.GPoint_Package; use org.allbinary.graphics.GPoint_Package;
@@ -39,6 +39,7 @@ with org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package; use org.a
 
 package org.allbinary.graphics.j2me.workarea.canvas.CanvasDom_Package is
 
+   package HashMap_Package renames Standard.java.util.HashMap_Package;
    package VectorCenterGenerator_Package renames Standard.org.allbinary.animation.vector.VectorCenterGenerator_Package;
    package DomHelper_Package renames Standard.org.allbinary.dom.DomHelper_Package;
    package GPoint_Package renames Standard.org.allbinary.graphics.GPoint_Package;

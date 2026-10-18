@@ -33,13 +33,13 @@ package body org.allbinary.game.layer.AllBinaryTiledLayer_Package is
         Layer_Package.Initialize (This, 0, 0);
         Initialize_Fields (This);
         This.dataId := dataId;
-        This.setLayerWidth (width);
-        This.setLayerHeight (height);
+        AllBinaryTiledLayer'Class (This).setLayerWidth (width);
+        AllBinaryTiledLayer'Class (This).setLayerHeight (height);
         Layer (This).setPosition (0, 0, 0);
         This.cellWidth := cellWidth;
         This.cellHeight := cellHeight;
-        This.halfWidth := (Java_Shift_Right_Arithmetic (This.getWidth, 1));
-        This.halfHeight := (Java_Shift_Right_Arithmetic (This.getHeight, 1));
+        This.halfWidth := (Java_Shift_Right_Arithmetic (AllBinaryTiledLayer'Class (This).getWidth, 1));
+        This.halfHeight := (Java_Shift_Right_Arithmetic (AllBinaryTiledLayer'Class (This).getHeight, 1));
         This.halfCellWidth := (Java_Shift_Right_Arithmetic (cellWidth, 1));
         This.halfCellHeight := (Java_Shift_Right_Arithmetic (cellHeight, 1));
    end Initialize;
@@ -64,15 +64,15 @@ package body org.allbinary.game.layer.AllBinaryTiledLayer_Package is
         stringBuffer.append (To_Unbounded_String (" c: "));
         stringBuffer.appendint (mapTwoDArray (0)'Length);
         stringBuffer.append (To_Unbounded_String (" rows: "));
-        stringBuffer.appendint (This.getRows);
+        stringBuffer.appendint (AllBinaryTiledLayer'Class (This).getRows);
         stringBuffer.append (To_Unbounded_String (" columns: "));
-        stringBuffer.appendint (This.getColumns);
+        stringBuffer.appendint (AllBinaryTiledLayer'Class (This).getColumns);
         This.logUtil.putF (stringBuffer.toString, AllBinaryTiledLayer_Access'(This'Unchecked_Access), To_Unbounded_String ("setCells"));
-        rows := This.getRows;
-        columns := This.getColumns;
+        rows := AllBinaryTiledLayer'Class (This).getRows;
+        columns := AllBinaryTiledLayer'Class (This).getColumns;
         for col in 0 .. (columns) - 1 loop
             for row in 0 .. (rows) - 1 loop
-                This.setCell (col, row, mapTwoDArray (row) (col));
+                AllBinaryTiledLayer'Class (This).setCell (col, row, mapTwoDArray (row) (col));
             end loop;
         end loop;
    end setCells;
@@ -83,13 +83,13 @@ package body org.allbinary.game.layer.AllBinaryTiledLayer_Package is
       row : Integer;
       col : Integer;
    begin
-        rows := This.getRows;
-        columns := This.getColumns;
+        rows := AllBinaryTiledLayer'Class (This).getRows;
+        columns := AllBinaryTiledLayer'Class (This).getColumns;
         for col in 0 .. (columns) - 1 loop
             for row in 0 .. (rows) - 1 loop
                 if (fromTileId) = (mapTwoDArray (row) (col)) then
                     mapTwoDArray (row) (col) := toTileId;
-                    This.setCell (col, row, mapTwoDArray (row) (col));
+                    AllBinaryTiledLayer'Class (This).setCell (col, row, mapTwoDArray (row) (col));
                 end if;
             end loop;
         end loop;
@@ -114,17 +114,17 @@ package body org.allbinary.game.layer.AllBinaryTiledLayer_Package is
 
    function getX2 (This : in out AllBinaryTiledLayer) return Integer is
    begin
-        return (This.x) + (This.getWidth);
+        return (This.x) + (AllBinaryTiledLayer'Class (This).getWidth);
    end getX2;
 
    function getY2 (This : in out AllBinaryTiledLayer) return Integer is
    begin
-        return (This.y) + (This.getHeight);
+        return (This.y) + (AllBinaryTiledLayer'Class (This).getHeight);
    end getY2;
 
    function getZ2 (This : in out AllBinaryTiledLayer) return Integer is
    begin
-        return Integer (((This.z) + (This.getDepth)));
+        return Integer (((This.z) + (AllBinaryTiledLayer'Class (This).getDepth)));
    end getZ2;
 
    function getCellWidth (This : in out AllBinaryTiledLayer) return Integer is
@@ -184,7 +184,7 @@ package body org.allbinary.game.layer.AllBinaryTiledLayer_Package is
 
    function isOnTileLayer (This : in out AllBinaryTiledLayer; column : Integer; row : Integer) return Boolean is
    begin
-        if ((((This.getColumns) > (column)) and then ((This.getRows) > (row))) and then ((row) >= (0))) and then ((column) >= (0)) then
+        if ((((AllBinaryTiledLayer'Class (This).getColumns) > (column)) and then ((AllBinaryTiledLayer'Class (This).getRows) > (row))) and then ((row) >= (0))) and then ((column) >= (0)) then
             return True;
         else
             return False;

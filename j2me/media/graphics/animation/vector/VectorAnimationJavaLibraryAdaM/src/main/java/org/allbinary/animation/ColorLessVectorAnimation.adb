@@ -37,7 +37,7 @@ package body org.allbinary.animation.ColorLessVectorAnimation_Package is
    procedure paintXY (This : in out ColorLessVectorAnimation; graphics_Param : access Graphics_Package.Graphics'Class; x : Integer; y : Integer) is
       graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
-        This.paintVectors (graphics, x, y);
+        ColorLessVectorAnimation'Class (This).paintVectors (graphics, x, y);
    end paintXY;
 
 end org.allbinary.animation.ColorLessVectorAnimation_Package;

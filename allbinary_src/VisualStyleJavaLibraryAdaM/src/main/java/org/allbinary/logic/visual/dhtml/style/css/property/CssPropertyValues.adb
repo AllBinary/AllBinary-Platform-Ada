@@ -67,12 +67,12 @@ package body org.allbinary.logic.visual.dhtml.style.css.property.CssPropertyValu
             end if;
             indexNode := DomSearchHelper_Package.getNode (DomData_Package.INDEX, cssPropertyValueNode.getChildNodes);
             indexValue := DomNodeHelper_Package.getTextNodeValue (indexNode);
-            indexPropertyValueHashMap.put (indexValue, propertyValue);
+            indexPropertyValueHashMap.put (Java_Box (indexValue), Java_Box (propertyValue));
         end loop;
         size2 := indexPropertyValueHashMap.keySet.size;
         for index in 0 .. (size2) - 1 loop
             indexInt := index;
-            propertyValue := Unbounded_String (indexPropertyValueHashMap.get (indexInt.toString));
+            propertyValue := Java_Unbox (indexPropertyValueHashMap.get (Java_Box (indexInt.toString)));
             This.propertyValueVector.add (propertyValue);
         end loop;
    end Initialize;
@@ -100,13 +100,13 @@ package body org.allbinary.logic.visual.dhtml.style.css.property.CssPropertyValu
         size := This.propertyValueVector.size;
         index := 0;
         while (index) < (size) loop
-            value := Unbounded_String (This.propertyValueVector.get (index));
+            value := Java_Unbox (This.propertyValueVector.get (index));
             stringBuffer.delete (0, stringBuffer.length);
             stringBuffer.append (cssPropertyValueData.NAME);
             stringBuffer.append (commonSeps.BRACKET_OPEN);
             stringBuffer.appendint (index);
             stringBuffer.append (commonSeps.BRACKET_CLOSE);
-            hashMap.put (stringBuffer.toString, value);
+            hashMap.put (Java_Box (stringBuffer.toString), Java_Box (value));
             index := index + 1;
             index := index + 1;
         end loop;
@@ -119,7 +119,7 @@ package body org.allbinary.logic.visual.dhtml.style.css.property.CssPropertyValu
       hashMap : HashMap_Access;
    begin
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-            hashMap := This.toHashMap;
+            hashMap := CssPropertyValues'Class (This).toHashMap;
             This.logUtil.putF (To_Unbounded_String ("CssPropertyValues HashMap: ") & hashMap.toString, CssPropertyValues_Access'(This'Unchecked_Access), To_Unbounded_String ("toXmlNode()"));
         end if;
         return ModDomHelper_Package.createNameValueIndexNodes (document, CssPropertyData_Package.getInstance.VALUES, CssPropertyValueData_Package.getInstance.NAME, This.propertyValueVector);

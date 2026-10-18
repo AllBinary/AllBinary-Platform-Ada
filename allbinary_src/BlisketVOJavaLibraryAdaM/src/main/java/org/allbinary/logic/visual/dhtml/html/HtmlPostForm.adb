@@ -24,7 +24,7 @@ package body org.allbinary.logic.visual.dhtml.html.HtmlPostForm_Package is
    procedure Initialize (This : in out HtmlPostForm'Class; action : Unbounded_String) is
    begin
         HtmlForm_Package.Initialize (This, action);
-        This.setPost;
+        HtmlPostForm'Class (This).setPost;
    end Initialize;
 
    function Create (action : Unbounded_String) return HtmlPostForm_Access is

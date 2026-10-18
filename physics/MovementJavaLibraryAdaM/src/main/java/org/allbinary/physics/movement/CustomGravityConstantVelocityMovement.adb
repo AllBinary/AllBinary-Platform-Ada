@@ -44,8 +44,8 @@ package body org.allbinary.physics.movement.CustomGravityConstantVelocityMovemen
       velocityProperties : VelocityProperties_Access;
    begin
         BasicConstantVelocityMovement (This).process (layer);
-        This.gravityUtil.process (This.getVelocityProperties, This.customGravity);
-        velocityProperties := VelocityProperties_Access (This.getVelocityProperties);
+        This.gravityUtil.process (CustomGravityConstantVelocityMovement'Class (This).getVelocityProperties, This.customGravity);
+        velocityProperties := VelocityProperties_Access (CustomGravityConstantVelocityMovement'Class (This).getVelocityProperties);
         velocityProperties.limitMaxYForwardVelocity;
    end process;
 

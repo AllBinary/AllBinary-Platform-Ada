@@ -74,36 +74,36 @@ package body org.allbinary.business.user.commerce.inventory.item.download.Downlo
       totalTime : Long_Long_Integer;
    begin
       Initialize_Fields (This);
-        This.id := Unbounded_String (hashMap.get (DownloadItemData_Package.ID));
-        This.basicItemId := Unbounded_String (hashMap.get (BasicItemData_Package.getInstance.ID));
-        This.enabled := Unbounded_String (hashMap.get (EntryData_Package.getInstance.ENABLE));
-        This.system := Unbounded_String (hashMap.get (DownloadItemData_Package.SYSTEM));
-        This.platform := Unbounded_String (hashMap.get (DownloadItemData_Package.PLATFORM));
-        This.specialName := Unbounded_String (hashMap.get (DownloadItemData_Package.SPECIAL_NAME));
-        This.version := Unbounded_String (hashMap.get (DownloadItemData_Package.VERSION));
-        This.changes := Unbounded_String (hashMap.get (DownloadItemData_Package.CHANGES));
-        This.licenseFile := Unbounded_String (hashMap.get (DownloadItemData_Package.LICENSE_FILE));
-        This.file := Unbounded_String (hashMap.get (DownloadItemData_Package.FILE));
-        value := Unbounded_String (hashMap.get (DownloadItemData_Package.SIZE));
+        This.id := Java_Unbox (hashMap.get (DownloadItemData_Package.ID));
+        This.basicItemId := Java_Unbox (hashMap.get (BasicItemData_Package.getInstance.ID));
+        This.enabled := Java_Unbox (hashMap.get (EntryData_Package.getInstance.ENABLE));
+        This.system := Java_Unbox (hashMap.get (DownloadItemData_Package.SYSTEM));
+        This.platform := Java_Unbox (hashMap.get (DownloadItemData_Package.PLATFORM));
+        This.specialName := Java_Unbox (hashMap.get (DownloadItemData_Package.SPECIAL_NAME));
+        This.version := Java_Unbox (hashMap.get (DownloadItemData_Package.VERSION));
+        This.changes := Java_Unbox (hashMap.get (DownloadItemData_Package.CHANGES));
+        This.licenseFile := Java_Unbox (hashMap.get (DownloadItemData_Package.LICENSE_FILE));
+        This.file := Java_Unbox (hashMap.get (DownloadItemData_Package.FILE));
+        value := Java_Unbox (hashMap.get (DownloadItemData_Package.SIZE));
         if not (StringValidationUtil_Package.getInstance.isEmpty (value)) then
             This.size := To_Unbounded_String (Java_Image (value));
         else
             This.size := 0;
         end if;
-        validTime := Unbounded_String (hashMap.get (DownloadItemData_Package.VALID_TIME));
+        validTime := Java_Unbox (hashMap.get (DownloadItemData_Package.VALID_TIME));
         if not (StringValidationUtil_Package.getInstance.isEmpty (validTime)) then
             This.validTime := To_Unbounded_String (Java_Image (validTime));
         else
-            totalYears := Unbounded_String (hashMap.get (DownloadItemData_Package.VALID_TIME_YEARS));
-            totalMonths := Unbounded_String (hashMap.get (DownloadItemData_Package.VALID_TIME_MONTHS));
-            totalDays := Unbounded_String (hashMap.get (DownloadItemData_Package.VALID_TIME_DAYS));
-            totalHours := Unbounded_String (hashMap.get (DownloadItemData_Package.VALID_TIME_HOURS));
-            totalMinutes := Unbounded_String (hashMap.get (DownloadItemData_Package.VALID_TIME_MINUTES));
-            totalSeconds := Unbounded_String (hashMap.get (DownloadItemData_Package.VALID_TIME_SECONDS));
+            totalYears := Java_Unbox (hashMap.get (DownloadItemData_Package.VALID_TIME_YEARS));
+            totalMonths := Java_Unbox (hashMap.get (DownloadItemData_Package.VALID_TIME_MONTHS));
+            totalDays := Java_Unbox (hashMap.get (DownloadItemData_Package.VALID_TIME_DAYS));
+            totalHours := Java_Unbox (hashMap.get (DownloadItemData_Package.VALID_TIME_HOURS));
+            totalMinutes := Java_Unbox (hashMap.get (DownloadItemData_Package.VALID_TIME_MINUTES));
+            totalSeconds := Java_Unbox (hashMap.get (DownloadItemData_Package.VALID_TIME_SECONDS));
             totalTime := TimeUtil_Package.getInstance.getTotalTime (totalYears, totalMonths, totalDays, totalHours, totalMinutes, totalSeconds);
             This.validTime := totalTime;
         end if;
-        This.retries := Unbounded_String (hashMap.get (DownloadItemData_Package.RETRIES));
+        This.retries := Java_Unbox (hashMap.get (DownloadItemData_Package.RETRIES));
    end Initialize;
 
    function Create (hashMap_Param : access HashMap_Package.HashMap'Class) return DownloadableItem_Access is
@@ -121,19 +121,19 @@ package body org.allbinary.business.user.commerce.inventory.item.download.Downlo
         calendar := Calendar_Package.getInstance;
         time := calendar.getTimeInMillis.toString;
         values := BasicArrayListD_Package.Create;
-        values.add (This.getId);
+        values.add (DownloadableItem'Class (This).getId);
         values.add (This.basicItemId);
         values.add (This.enabled);
-        values.add (This.getSpecialName);
-        values.add (This.getVersion);
-        values.add (This.getChanges);
-        values.add (This.getSystem);
-        values.add (This.getPlatform);
-        values.add (This.getLicenseFile);
-        values.add (This.getFile);
-        values.add (This.getSize.toString);
-        values.add (This.getValidTime.toString);
-        values.add (This.getRetries);
+        values.add (DownloadableItem'Class (This).getSpecialName);
+        values.add (DownloadableItem'Class (This).getVersion);
+        values.add (DownloadableItem'Class (This).getChanges);
+        values.add (DownloadableItem'Class (This).getSystem);
+        values.add (DownloadableItem'Class (This).getPlatform);
+        values.add (DownloadableItem'Class (This).getLicenseFile);
+        values.add (DownloadableItem'Class (This).getFile);
+        values.add (DownloadableItem'Class (This).getSize.toString);
+        values.add (DownloadableItem'Class (This).getValidTime.toString);
+        values.add (DownloadableItem'Class (This).getRetries);
         values.add (time);
         values.add (time);
         return values;
@@ -145,19 +145,19 @@ package body org.allbinary.business.user.commerce.inventory.item.download.Downlo
       time : Unbounded_String;
    begin
         values := StdUtil_Package.getInstance.createHashMap;
-        values.put (DownloadItemData_Package.ID, This.getId);
+        values.put (DownloadItemData_Package.ID, DownloadableItem'Class (This).getId);
         values.put (BasicItemData_Package.getInstance.ID, This.basicItemId);
         values.put (EntryData_Package.getInstance.ENABLE, This.enabled);
-        values.put (DownloadItemData_Package.SYSTEM, This.getSystem);
-        values.put (DownloadItemData_Package.PLATFORM, This.getPlatform);
-        values.put (DownloadItemData_Package.SPECIAL_NAME, This.getSpecialName);
-        values.put (DownloadItemData_Package.VERSION, This.getVersion);
-        values.put (DownloadItemData_Package.CHANGES, This.getChanges);
-        values.put (DownloadItemData_Package.LICENSE_FILE, This.getLicenseFile);
-        values.put (DownloadItemData_Package.FILE, This.getFile);
-        values.put (DownloadItemData_Package.SIZE, This.getSize.toString);
-        values.put (DownloadItemData_Package.VALID_TIME, This.getValidTime.toString);
-        values.put (DownloadItemData_Package.RETRIES, This.getRetries);
+        values.put (DownloadItemData_Package.SYSTEM, DownloadableItem'Class (This).getSystem);
+        values.put (DownloadItemData_Package.PLATFORM, DownloadableItem'Class (This).getPlatform);
+        values.put (DownloadItemData_Package.SPECIAL_NAME, DownloadableItem'Class (This).getSpecialName);
+        values.put (DownloadItemData_Package.VERSION, DownloadableItem'Class (This).getVersion);
+        values.put (DownloadItemData_Package.CHANGES, DownloadableItem'Class (This).getChanges);
+        values.put (DownloadItemData_Package.LICENSE_FILE, DownloadableItem'Class (This).getLicenseFile);
+        values.put (DownloadItemData_Package.FILE, DownloadableItem'Class (This).getFile);
+        values.put (DownloadItemData_Package.SIZE, DownloadableItem'Class (This).getSize.toString);
+        values.put (DownloadItemData_Package.VALID_TIME, DownloadableItem'Class (This).getValidTime.toString);
+        values.put (DownloadItemData_Package.RETRIES, DownloadableItem'Class (This).getRetries);
         calendar := Calendar_Package.getInstance;
         time := Java_New_String (calendar.getTimeInMillis.toString);
         values.put (EntryData_Package.getInstance.LASTMODIFIED, time);

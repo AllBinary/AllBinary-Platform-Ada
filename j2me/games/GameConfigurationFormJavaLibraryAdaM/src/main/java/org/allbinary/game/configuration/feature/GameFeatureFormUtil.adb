@@ -54,7 +54,7 @@ package body org.allbinary.game.configuration.feature.GameFeatureFormUtil_Packag
    begin
         stringMaker := StringMaker_Package.Create;
         choiceGroup := ChoiceGroup_Package.Create (name, option, StringUtil_Package.getInstance.getArrayInstance, NullImage_Package.NULL_IMAGE_ARRAY);
-        list := BasicArrayList_Access (hashtable.get (Java_Object_Access (name)));
+        list := BasicArrayList_Access (hashtable.get (Java_Box (name)));
         features := Features_Package.getInstance;
         ADD_CHOICE := To_Unbounded_String (": Adding Choice: ");
         GET_CHOICE_GROUP := To_Unbounded_String ("getChoiceGroup");
@@ -89,10 +89,10 @@ package body org.allbinary.game.configuration.feature.GameFeatureFormUtil_Packag
         objectArray := HashtableUtil_Package.getInstance.getKeysAsArray (hashtable);
         name := Null_Unbounded_String;
         for index in 0 .. (size) - 1 loop
-            name := Unbounded_String (objectArray (index));
+            name := Java_Unbox (objectArray (index));
             stringMaker.delete (0, stringMaker.length);
             This.logUtil.putF (stringMaker.append (ADDING_CHOICE_GROUP).append (name).toString, GameFeatureFormUtil_Access'(This'Unchecked_Access), ADD_CHOICE_GROUP);
-            This.meUtil.appendItem (form, This.getChoiceGroup (hashtable, name, option));
+            This.meUtil.appendItem (form, GameFeatureFormUtil'Class (This).getChoiceGroup (hashtable, name, option));
         end loop;
    end addChoiceGroup;
 

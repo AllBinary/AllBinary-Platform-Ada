@@ -48,7 +48,7 @@ package body org.allbinary.game.collision.OptimizedAllBinaryCollisionLayerProces
         collidableInterfaceCompositeInterface := CollidableCompositeLayer_Access (layerInterface);
         collidableBase := collidableInterfaceCompositeInterface.getCollidableInferface;
         if collidableBase.isCollidable (collidableInterfaceCompositeInterface) then
-            layerManager := This.getLayerManager;
+            layerManager := OptimizedAllBinaryCollisionLayerProcessorForCollidableLayer'Class (This).getLayerManager;
             size := layerManager.getSize;
             collidableInterfaceCompositeInterface2 := null;
             collidableBase2 := null;

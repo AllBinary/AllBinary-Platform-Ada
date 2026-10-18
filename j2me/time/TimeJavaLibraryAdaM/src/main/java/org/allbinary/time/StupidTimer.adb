@@ -47,7 +47,7 @@ package body org.allbinary.time.StupidTimer_Package is
         WAITING_FOR := To_Unbounded_String ("Waiting for: ");
         PreLogUtil_Package.put (StringMaker_Package.Create.append (WAITING_FOR).append (StringUtil_Package.getInstance.toString (visitorInterface)).toString, StupidTimer_Access'(This'Unchecked_Access), This.commonStrings.VISIT);
         index := 0;
-        while This.visitBool (visitorInterface) loop
+        while StupidTimer'Class (This).visitBool (visitorInterface) loop
             if ((index) rem (10)) = (0) then
                 PreLogUtil_Package.put (StringMaker_Package.Create.append (WAITING_FOR).appendint (index).toString, StupidTimer_Access'(This'Unchecked_Access), This.commonStrings.VISIT);
             end if;

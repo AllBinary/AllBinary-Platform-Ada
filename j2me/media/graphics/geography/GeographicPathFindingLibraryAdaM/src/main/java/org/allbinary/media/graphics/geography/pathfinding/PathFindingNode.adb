@@ -29,7 +29,7 @@ package body org.allbinary.media.graphics.geography.pathfinding.PathFindingNode_
    begin
       Initialize_Fields (This);
         This.parent := parent;
-        This.setGeographicMapCellPositionP (geographicMapCellPosition);
+        PathFindingNode'Class (This).setGeographicMapCellPositionP (geographicMapCellPosition);
         if (This.geographicMapCellPosition) = (SimpleGeographicMapCellPositionFactory_Package.NULL_GEOGRAPHIC_MAP_CELL_POSITION) then
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("No GeographicMapCellPosition")));
         end if;
@@ -62,7 +62,7 @@ package body org.allbinary.media.graphics.geography.pathfinding.PathFindingNode_
         stringBuffer.append (CommonLabels_Package.getInstance.COLON_SEP);
         stringBuffer.append (To_Unbounded_String (" Path: "));
         stringBuffer.append (This.geographicMapCellPosition.toString);
-        pathFindingNode := This.getParentP;
+        pathFindingNode := PathFindingNode'Class (This).getParentP;
         while (pathFindingNode) /= (null) loop
             stringBuffer.append (pathFindingNode.geographicMapCellPosition.toString);
             stringBuffer.append (CommonSeps_Package.getInstance.SPACE);

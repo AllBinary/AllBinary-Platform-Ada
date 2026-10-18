@@ -57,7 +57,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoObjectFactor
                 This.logUtil.putF (To_Unbounded_String ("Creating View: ") & transformInfoInterface.getName, TransformInfoObjectFactory_Access'(This'Unchecked_Access), commonStrings.GET_INSTANCE);
             end if;
             params := new Java_Object_Access_Array'(0 .. (1) - 1 => null);
-            classes := new Ada_Tags_Tag_Array'(0 .. (1) - 1 => null);
+            classes := new Ada_Tags_Tag_Array'(0 .. (1) - 1 => Ada.Tags.No_Tag);
             classes (0) := TransformInfoInterface_Package.TransformInfoInterface'Tag;
             params (0) := Java_Object_Access (transformInfoInterface);
             anyType := TransformInterface_Access (AbeFactory_Package.getInstance.getInstance (abeClientInformation, transformInfoInterface.getObjectFile, classes, params));

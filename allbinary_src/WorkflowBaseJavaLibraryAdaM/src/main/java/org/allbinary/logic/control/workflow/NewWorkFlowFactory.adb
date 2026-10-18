@@ -52,9 +52,9 @@ package body org.allbinary.logic.control.workflow.NewWorkFlowFactory_Package is
       commonStrings : CommonStrings_Access;
    begin
         begin
-            className := Unbounded_String (hashMap.get (DynamicObjectData_Package.NAME));
+            className := Java_Unbox (hashMap.get (DynamicObjectData_Package.NAME));
             params := new Java_Object_Access_Array'(0 .. (2) - 1 => null);
-            classes := new Ada_Tags_Tag_Array'(0 .. (2) - 1 => null);
+            classes := new Ada_Tags_Tag_Array'(0 .. (2) - 1 => Ada.Tags.No_Tag);
             classes (0) := hashMap.all'Tag;
             classes (1) := AbeFactory_Package.getInstance.getClass (abeClientInformation, To_Unbounded_String ("javax.servlet.jsp.PageContext"));
             params (0) := Java_Object_Access (hashMap);

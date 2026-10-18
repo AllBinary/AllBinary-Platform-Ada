@@ -24,7 +24,7 @@ package body org.allbinary.input.automation.module.generic_Id.constraints.NoImag
    procedure Initialize (This : in out NoImageComparatorConstraints'Class) is
    begin
         ImageComparatorConstraints_Package.Initialize (This, 1);
-        This.setMaxNonMatchingPixelDeltas (Integer_Package.MAX_VALUE);
+        NoImageComparatorConstraints'Class (This).setMaxNonMatchingPixelDeltas (Integer_Package.MAX_VALUE);
    end Initialize;
 
    function Create return NoImageComparatorConstraints_Access is

@@ -45,7 +45,7 @@ package body org.allbinary.business.user.username.UserName_Package is
       hashMap : constant HashMap_Access := HashMap_Access (hashMap_Param);
    begin
       Initialize_Fields (This);
-        This.userName := Unbounded_String (hashMap.get (UserData_Package.USERNAME));
+        This.userName := Java_Unbox (hashMap.get (UserData_Package.USERNAME));
    end Initialize;
 
    function Create (hashMap_Param : access HashMap_Package.HashMap'Class) return UserName_Access is
@@ -58,7 +58,7 @@ package body org.allbinary.business.user.username.UserName_Package is
    function isValid (This : in out UserName) return Boolean is
    begin
         begin
-            return This.isValid (This.userName);
+            return UserName'Class (This).isValid (This.userName);
         exception
             when Java_Occurrence : others =>
                 declare

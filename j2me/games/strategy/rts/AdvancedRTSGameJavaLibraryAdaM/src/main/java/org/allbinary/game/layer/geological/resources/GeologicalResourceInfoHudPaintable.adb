@@ -62,7 +62,7 @@ package body org.allbinary.game.layer.geological.resources.GeologicalResourceInf
             geographicMapCellPosition := GeologicalGeographicMapCellPosition_Access (list.get (index));
             total := (total) + (geographicMapCellPosition.getGeologicalResource.getTotal);
         end loop;
-        This.keyvalueDrawString.update (This.getPrimitiveLongUtil.getCharArray (total), This.getPrimitiveLongUtil.getCurrentTotalDigits);
+        This.keyvalueDrawString.update (GeologicalResourceInfoHudPaintable'Class (This).getPrimitiveLongUtil.getCharArray (total), GeologicalResourceInfoHudPaintable'Class (This).getPrimitiveLongUtil.getCurrentTotalDigits);
    end updateSelectionInfo;
 
    procedure paint (This : in out GeologicalResourceInfoHudPaintable; graphics_Param : access Graphics_Package.Graphics'Class) is

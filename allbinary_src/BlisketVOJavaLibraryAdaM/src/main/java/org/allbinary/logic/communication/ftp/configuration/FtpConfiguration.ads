@@ -20,12 +20,13 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.util.HashMap_Package; use java.util.HashMap_Package;
+with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.logic.communication.ftp.configuration.FtpConfigurationInterface_Package; use org.allbinary.logic.communication.ftp.configuration.FtpConfigurationInterface_Package;
 with org.allbinary.logic.communication.ftp.configuration.FtpConfigurationData_Package; use org.allbinary.logic.communication.ftp.configuration.FtpConfigurationData_Package;
 
 package org.allbinary.logic.communication.ftp.configuration.FtpConfiguration_Package is
 
+   package HashMap_Package renames Standard.java.util.HashMap_Package;
 
    type FtpConfiguration is tagged;
    type FtpConfiguration_Access is access all FtpConfiguration'Class;

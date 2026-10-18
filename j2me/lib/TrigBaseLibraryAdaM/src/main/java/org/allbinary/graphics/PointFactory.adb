@@ -18,7 +18,7 @@ package body org.allbinary.graphics.PointFactory_Package is
    procedure Initialize_Fields (This : in out PointFactory'Class) is
    begin
       null;
-      This.ZERO_ZERO := This.createXYZ (0, 0, 0);
+      This.ZERO_ZERO := PointFactory'Class (This).createXYZ (0, 0, 0);
    end Initialize_Fields;
 
 

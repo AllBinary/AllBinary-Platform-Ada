@@ -78,7 +78,7 @@ package body org.allbinary.game.score.HighScoresPaintable_Package is
         This.myFontProcessor.process (graphics);
         width := This.displayInfoSingleton.getLastWidth;
         height := This.displayInfoSingleton.getLastHeight;
-        graphics.setColor (This.getBasicColorP.intValue);
+        graphics.setColor (HighScoresPaintable'Class (This).getBasicColorP.intValue);
         heading := This.highScores.getHeading;
         topScoresWidth := (Java_Shift_Right_Arithmetic (graphics.getFont.stringWidth (heading), 1));
         charHeight := This.charHeight;

@@ -26,7 +26,7 @@ package body org.allbinary.business.time.created.TimeCreatedView_Package is
       timeCreated : constant TimeCreated_Access := TimeCreated_Access (timeCreated_Param);
    begin
       Initialize_Fields (This);
-        This.setTimeCreated (timeCreated);
+        TimeCreatedView'Class (This).setTimeCreated (timeCreated);
    end Initialize;
 
    function Create (timeCreated_Param : access TimeCreated_Package.TimeCreated'Class) return TimeCreatedView_Access is
@@ -40,7 +40,7 @@ package body org.allbinary.business.time.created.TimeCreatedView_Package is
       node : constant Node_Access := Node_Access (node_Param);
    begin
       Initialize_Fields (This);
-        This.setTimeCreated (TimeCreated_Package.Create (DomNodeHelper_Package.getTextNodeValue (node)));
+        TimeCreatedView'Class (This).setTimeCreated (TimeCreated_Package.Create (DomNodeHelper_Package.getTextNodeValue (node)));
    end Initialize;
 
    function Create (node_Param : access Node_Package.Node'Class) return TimeCreatedView_Access is
@@ -54,7 +54,7 @@ package body org.allbinary.business.time.created.TimeCreatedView_Package is
    function toXmlNode (This : in out TimeCreatedView; document_Param : access Document_Package.Document'Class) return Node_Access is
       document : constant Document_Access := Document_Access (document_Param);
    begin
-        return ModDomHelper_Package.createTextNode (document, EntryData_Package.getInstance.TIMECREATED, This.getTimeCreated.toString);
+        return ModDomHelper_Package.createTextNode (document, EntryData_Package.getInstance.TIMECREATED, TimeCreatedView'Class (This).getTimeCreated.toString);
    end toXmlNode;
 
    function getTimeCreated (This : in out TimeCreatedView) return TimeCreated_Access is

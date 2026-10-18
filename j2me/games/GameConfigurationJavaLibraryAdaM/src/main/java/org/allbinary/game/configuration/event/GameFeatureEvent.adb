@@ -44,7 +44,7 @@ package body org.allbinary.game.configuration.event.GameFeatureEvent_Package is
 
    function getGameOption (This : in out GameFeatureEvent) return Java_Object_Access is
    begin
-        return This.getSource;
+        return GameFeatureEvent'Class (This).getSource;
    end getGameOption;
 
 end org.allbinary.game.configuration.event.GameFeatureEvent_Package;

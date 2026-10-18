@@ -30,7 +30,7 @@ package body org.allbinary.logic.visual.dhtml.html.input.HtmlValueInput_Package 
         Initialize_Fields (This);
         stringUtil := StringUtil_Package.getInstance;
         This.value_Case := stringUtil.EMPTY_STRING;
-        This.addAttribute (This.VALUE, value_Case);
+        HtmlValueInput'Class (This).addAttribute (This.VALUE, value_Case);
    end Initialize;
 
    function Create (before : Unbounded_String; type_Id : Unbounded_String; name : Unbounded_String; value_Case : Unbounded_String; after : Unbounded_String) return HtmlValueInput_Access is

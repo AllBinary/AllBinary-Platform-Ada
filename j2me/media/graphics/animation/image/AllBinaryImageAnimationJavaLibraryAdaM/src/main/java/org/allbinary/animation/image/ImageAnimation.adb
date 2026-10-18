@@ -42,7 +42,7 @@ package body org.allbinary.animation.image.ImageAnimation_Package is
    --  throws Exception
    function getAnimationSize (This : in out ImageAnimation) return Integer is
    begin
-        return This.getSize;
+        return ImageAnimation'Class (This).getSize;
    end getAnimationSize;
 
    procedure nextFrame (This : in out ImageAnimation) is

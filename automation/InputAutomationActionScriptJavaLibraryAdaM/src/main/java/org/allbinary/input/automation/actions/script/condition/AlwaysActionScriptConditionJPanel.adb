@@ -37,9 +37,9 @@ package body org.allbinary.input.automation.actions.script.condition.AlwaysActio
       JPanel_Package.Initialize (This);
       Initialize_Fields (This);
         This.logUtil.putF (This.commonStrings.START, AlwaysActionScriptConditionJPanel_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
-        This.initComponents;
+        AlwaysActionScriptConditionJPanel'Class (This).initComponents;
         This.alwaysActionScriptConditionInterface := alwaysActionScriptConditionInterface;
-        This.set;
+        AlwaysActionScriptConditionJPanel'Class (This).set;
    end Initialize;
 
    function Create (alwaysActionScriptConditionInterface_Param : access AlwaysActionScriptConditionInterface_Package.AlwaysActionScriptConditionInterface'Class) return AlwaysActionScriptConditionJPanel_Access is
@@ -99,7 +99,7 @@ package body org.allbinary.input.automation.actions.script.condition.AlwaysActio
 --     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
 --        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
---                  This.okJButtonActionPerformed (evt);
+--                  AlwaysActionScriptConditionJPanel'Class (This).okJButtonActionPerformed (evt);
 --     end actionPerformed;
 );
         This.jLabel2.setText (To_Unbounded_String ("On:"));
@@ -108,19 +108,19 @@ package body org.allbinary.input.automation.actions.script.condition.AlwaysActio
         This.alwaysActionJDialog.getContentPane.setLayout (alwaysActionJDialogLayout);
         alwaysActionJDialogLayout.setHorizontalGroup (alwaysActionJDialogLayout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (alwaysActionJDialogLayout.createSequentialGroup.addGroup (alwaysActionJDialogLayout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (alwaysActionJDialogLayout.createSequentialGroup.addGap (47, 47, 47).addGroup (alwaysActionJDialogLayout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING, False).addGroup (javax_Package.swing.GroupLayout.Alignment.TRAILING, alwaysActionJDialogLayout.createSequentialGroup.addComponent (This.jLabel2).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED, javax_Package.swing.GroupLayout.DEFAULT_SIZE, Short_Package.MAX_VALUE).addComponent (This.alwaysJComboBox, javax_Package.swing.GroupLayout.PREFERRED_SIZE, javax_Package.swing.GroupLayout.DEFAULT_SIZE, javax_Package.swing.GroupLayout.PREFERRED_SIZE)).addComponent (This.titleJLabel))).addGroup (alwaysActionJDialogLayout.createSequentialGroup.addGap (79, 79, 79).addComponent (This.okJButton))).addContainerGap (45, Short_Package.MAX_VALUE)));
         alwaysActionJDialogLayout.setVerticalGroup (alwaysActionJDialogLayout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (alwaysActionJDialogLayout.createSequentialGroup.addContainerGap.addComponent (This.titleJLabel).addGap (20, 20, 20).addGroup (alwaysActionJDialogLayout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.BASELINE).addComponent (This.alwaysJComboBox, javax_Package.swing.GroupLayout.PREFERRED_SIZE, javax_Package.swing.GroupLayout.DEFAULT_SIZE, javax_Package.swing.GroupLayout.PREFERRED_SIZE).addComponent (This.jLabel2)).addGap (15, 15, 15).addComponent (This.okJButton).addContainerGap));
-        This.setMinimumSize (Dimension_Package.Create (100, 0));
+        AlwaysActionScriptConditionJPanel'Class (This).setMinimumSize (Dimension_Package.Create (100, 0));
         This.alwaysActionJButton.setText (To_Unbounded_String ("Edit"));
         This.alwaysActionJButton.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
 --     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
 --        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
---                  This.alwaysActionJButtonActionPerformed (evt);
+--                  AlwaysActionScriptConditionJPanel'Class (This).alwaysActionJButtonActionPerformed (evt);
 --     end actionPerformed;
 );
         This.jLabel1.setText (To_Unbounded_String ("Always:"));
         layout := GroupLayout_Package.Create (AlwaysActionScriptConditionJPanel_Access'(This'Unchecked_Access));
-        This.setLayout (layout);
+        AlwaysActionScriptConditionJPanel'Class (This).setLayout (layout);
         layout.setHorizontalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (layout.createSequentialGroup.addComponent (This.jLabel1).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short_Package.MAX_VALUE).addComponent (This.alwaysActionJButton)));
         layout.setVerticalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.BASELINE).addComponent (This.jLabel1).addComponent (This.alwaysActionJButton)));
    end initComponents;
@@ -128,14 +128,14 @@ package body org.allbinary.input.automation.actions.script.condition.AlwaysActio
    procedure okJButtonActionPerformed (This : in out AlwaysActionScriptConditionJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
       evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
-        This.update;
-        This.getAlwaysActionJDialog.setVisible (False);
+        AlwaysActionScriptConditionJPanel'Class (This).update;
+        AlwaysActionScriptConditionJPanel'Class (This).getAlwaysActionJDialog.setVisible (False);
    end okJButtonActionPerformed;
 
    procedure alwaysActionJButtonActionPerformed (This : in out AlwaysActionScriptConditionJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
       evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
-        This.getAlwaysActionJDialog.setVisible (True);
+        AlwaysActionScriptConditionJPanel'Class (This).getAlwaysActionJDialog.setVisible (True);
    end alwaysActionJButtonActionPerformed;
 
 end org.allbinary.input.automation.actions.script.condition.AlwaysActionScriptConditionJPanel_Package;

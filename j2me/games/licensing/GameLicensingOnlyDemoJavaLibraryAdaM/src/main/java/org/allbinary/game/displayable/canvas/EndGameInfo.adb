@@ -43,11 +43,11 @@ package body org.allbinary.game.displayable.canvas.EndGameInfo_Package is
       myCanvas : constant MyCanvas_Access := MyCanvas_Access (myCanvas_Param);
    begin
         if gameInfo.isLastLevel then
-            This.setWinStr (This.TEASER_DEMO_GAME_END_LAST_LEVEL);
-            This.setGameOverStr (This.TEASER_DEMO_GAME_END_LAST_LEVEL);
+            EndGameInfo'Class (This).setWinStr (This.TEASER_DEMO_GAME_END_LAST_LEVEL);
+            EndGameInfo'Class (This).setGameOverStr (This.TEASER_DEMO_GAME_END_LAST_LEVEL);
         else
-            This.setWinStr (This.NORMAL_GAME_OVER_WIN);
-            This.setGameOverStr (This.TEASER_DEMO_GAME_END);
+            EndGameInfo'Class (This).setWinStr (This.NORMAL_GAME_OVER_WIN);
+            EndGameInfo'Class (This).setGameOverStr (This.TEASER_DEMO_GAME_END);
         end if;
    end update;
 

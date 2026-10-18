@@ -66,6 +66,7 @@ package body org.allbinary.game.layer.waypoint.WaypointBase_Package is
       geographicMapCellPosition : constant GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (geographicMapCellPosition_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return null;
    end getPathFindingInfo;
 
    --  throws Exception
@@ -75,6 +76,7 @@ package body org.allbinary.game.layer.waypoint.WaypointBase_Package is
       multipassState : constant MultipassState_Access := MultipassState_Access (multipassState_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return null;
    end getPathsList;
 
    --  throws Exception
@@ -82,6 +84,7 @@ package body org.allbinary.game.layer.waypoint.WaypointBase_Package is
       geographicMapCellPosition : constant GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (geographicMapCellPosition_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return null;
    end getPathsListRunnable;
 
    --  throws Exception
@@ -89,6 +92,7 @@ package body org.allbinary.game.layer.waypoint.WaypointBase_Package is
       geographicMapCellPosition : constant GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (geographicMapCellPosition_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return null;
    end getPathsListFromCacheOnly;
 
    --  throws Exception

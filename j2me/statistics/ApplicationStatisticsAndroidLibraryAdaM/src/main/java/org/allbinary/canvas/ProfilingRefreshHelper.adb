@@ -48,7 +48,7 @@ package body org.allbinary.canvas.ProfilingRefreshHelper_Package is
       view : constant View_Access := View_Access (view_Param);
    begin
         AndroidGameStatistics (This).initView (view);
-        This.frameProcessingTimeElapsed := This.getTimeDelayHelper.getStartTime;
+        This.frameProcessingTimeElapsed := ProfilingRefreshHelper'Class (This).getTimeDelayHelper.getStartTime;
         This.bestFrameProcessingTime := Integer_Package.MAX_VALUE;
         This.worstFrameProcessingTime := 0;
    end initView;

@@ -27,7 +27,7 @@ package body org.allbinary.data.tables.context.module.storefronts.StoreFrontsEnt
    begin
         AbSqlBean_Package.Initialize (This, UserDbInitInfo_Package.Create);
         Initialize_Fields (This);
-        This.setTableName (This.tableName);
+        StoreFrontsEntity'Class (This).setTableName (This.tableName);
    end Initialize;
 
    function Create return StoreFrontsEntity_Access is
@@ -82,7 +82,7 @@ package body org.allbinary.data.tables.context.module.storefronts.StoreFrontsEnt
       storeHashMap : HashMap_Access;
    begin
         keysAndValues := StdUtil_Package.getInstance.createHashMap;
-        keysAndValues.put (StoreFrontData_Package.getInstance.NAME, name);
+        keysAndValues.put (StoreFrontData_Package.getInstance.NAME, Java_Box (name));
         storeHashMap := AbSqlBean (This).getRow (keysAndValues);
         if (storeHashMap) /= (null) then
             return StoreFront_Package.Create (storeHashMap);
@@ -101,7 +101,7 @@ package body org.allbinary.data.tables.context.module.storefronts.StoreFrontsEnt
    procedure update (This : in out StoreFrontsEntity; updatedValues_Param : access HashMap_Package.HashMap'Class) is
       updatedValues : constant HashMap_Access := HashMap_Access (updatedValues_Param);
    begin
-        AbSqlBean (This).updateWhere (StoreFrontData_Package.getInstance.NAME, Unbounded_String (updatedValues.get (StoreFrontData_Package.getInstance.NAME)), updatedValues);
+        AbSqlBean (This).updateWhere (StoreFrontData_Package.getInstance.NAME, Java_Unbox (updatedValues.get (StoreFrontData_Package.getInstance.NAME)), updatedValues);
    end update;
 
    function createTableStatement (This : in out StoreFrontsEntity) return Unbounded_String is
@@ -175,7 +175,7 @@ package body org.allbinary.data.tables.context.module.storefronts.StoreFrontsEnt
 
    function createTable (This : in out StoreFrontsEntity) return Unbounded_String is
    begin
-        return AbSqlBean (This).createTable (This.createTableStatement);
+        return AbSqlBean (This).createTable (StoreFrontsEntity'Class (This).createTableStatement);
    end createTable;
 
    function dropTable (This : in out StoreFrontsEntity) return Unbounded_String is

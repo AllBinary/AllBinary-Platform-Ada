@@ -20,10 +20,11 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with javax.microedition.media.Player_Package; use javax.microedition.media.Player_Package;
+with javax.microedition.media.Player_Package; use javax.microedition.media.Player_Package;
 
 package org.allbinary.media.audio.SoundInterface_Package is
 
+   package Player_Package renames Standard.javax.microedition.media.Player_Package;
 
    type SoundInterface is interface;
    type SoundInterface_Access is access all SoundInterface'Class;

@@ -12,31 +12,9 @@
 --  
 --  Generated Code Do Not Modify
 
-with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
-with Ada.Strings.Maps.Constants;
-with Ada.Characters.Handling;
-with Ada.Exceptions;
-with Ada.Numerics.Long_Elementary_Functions;
-with Ada.Tags;
-with Ada.Text_IO;
-with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.system.security.licensing.Exception_Package; use org.allbinary.logic.system.security.licensing.Exception_Package;
-
 package org.allbinary.logic.system.security.licensing.LicensingException_Package is
 
-
-   type LicensingException is tagged;
-   type LicensingException_Access is access all LicensingException'Class;
-   type LicensingException_Access_Array is array (Natural range <>) of LicensingException_Access;
-   type LicensingException_Access_Array_Access is access all LicensingException_Access_Array;
-
-   type LicensingException is new Exception with null record;
-   serialVersionUID : Long_Long_Integer;
-
-   procedure Initialize (This : in out LicensingException'Class);
-   function Create return LicensingException_Access;
-   procedure Initialize (This : in out LicensingException'Class; msg : Unbounded_String);
-   function Create (msg : Unbounded_String) return LicensingException_Access;
+   --  Java exception LicensingException extends Exception. Java exceptions are AllBinary_Java.Java_Throwable with the Java class name.
 
 end org.allbinary.logic.system.security.licensing.LicensingException_Package;
 

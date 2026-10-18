@@ -48,7 +48,7 @@ package body org.allbinary.game.configuration.SaveGameForm_Package is
         This.logUtil.putF (This.commonStrings.START, SaveGameForm_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         timeString := To_Unbounded_String (Java_Image (ABSystemWrapper_Package.getInstance.currentTimeMillis));
         This.meUtil.appendItem (SaveGameForm_Access'(This'Unchecked_Access), TextField_Package.Create (To_Unbounded_String ("Name: "), timeString, 30, TextField_Package.ANY));
-        This.initCommands (commandListener);
+        SaveGameForm'Class (This).initCommands (commandListener);
    end Initialize;
 
    function Create (commandListener_Param : access CommandListener_Package.CommandListener'Class; title : Unbounded_String; backgrounBasicColor_Param : access BasicColor_Package.BasicColor'Class; foregroundBasicColor_Param : access BasicColor_Package.BasicColor'Class) return SaveGameForm_Access is
@@ -63,10 +63,10 @@ package body org.allbinary.game.configuration.SaveGameForm_Package is
       gameCommandsFactory : GameCommandsFactory_Access;
    begin
         gameCommandsFactory := GameCommandsFactory_Package.getInstance;
-        This.removeAllCommands;
-        This.addCommand (gameCommandsFactory.SAVE);
-        This.addCommand (gameCommandsFactory.CLOSE_AND_SHOW_GAME_CANVAS);
-        This.setCommandListener (cmdListener);
+        SaveGameForm'Class (This).removeAllCommands;
+        SaveGameForm'Class (This).addCommand (gameCommandsFactory.SAVE);
+        SaveGameForm'Class (This).addCommand (gameCommandsFactory.CLOSE_AND_SHOW_GAME_CANVAS);
+        SaveGameForm'Class (This).setCommandListener (cmdListener);
    end initCommands;
 
    procedure createForm (commandListener_Param : access CommandListener_Package.CommandListener'Class; title : Unbounded_String; backgrounBasicColor_Param : access BasicColor_Package.BasicColor'Class; foregroundBasicColor_Param : access BasicColor_Package.BasicColor'Class) is

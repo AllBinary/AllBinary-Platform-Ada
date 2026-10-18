@@ -27,8 +27,8 @@ package body admin.tags.OrderHistoryTag_Package is
    begin
       TableTag_Package.Initialize (This);
       Initialize_Fields (This);
-        This.setTagHelperFactory (OrderHistoryHelperFactory_Package.Create);
-        This.setTagRequestHelperFactory (OrderHistoryRequestHelperFactory_Package.Create);
+        OrderHistoryTag'Class (This).setTagHelperFactory (OrderHistoryHelperFactory_Package.Create);
+        OrderHistoryTag'Class (This).setTagRequestHelperFactory (OrderHistoryRequestHelperFactory_Package.Create);
    end Initialize;
 
    function Create return OrderHistoryTag_Access is
@@ -56,18 +56,18 @@ package body admin.tags.OrderHistoryTag_Package is
    begin
         begin
             request := HttpServletRequest_Access (This.pageContext.getRequest);
-            anyType := OrderHistoryRequestHelperFactory_Package.Create.getInstance (This.getPropertiesHashMap, This.pageContext);
+            anyType := OrderHistoryRequestHelperFactory_Package.Create.getInstance (OrderHistoryTag'Class (This).getPropertiesHashMap, This.pageContext);
             if (This.status) = (Null_Unbounded_String) then
                 helperClass := anyType.all'Tag;
                 method := helperClass.getMethod (To_Unbounded_String ("setOrderStatus"), null);
-                result := Unbounded_String (method.invoke (anyType, null));
+                result := Java_Unbox (method.invoke (anyType, null));
                 return result;
             else
                 helperClass := anyType.all'Tag;
                 methodParams := new Ada_Tags_Tag_Array'(0 => This.status.all'Tag);
                 method := helperClass.getMethod (To_Unbounded_String ("setOrderStatus"), methodParams);
                 methodArgs := new Java_Object_Access_Array'(0 => This.status);
-                result := Unbounded_String (method.invoke (anyType, methodArgs));
+                result := Java_Unbox (method.invoke (anyType, methodArgs));
                 return result;
             end if;
         exception
@@ -84,11 +84,11 @@ package body admin.tags.OrderHistoryTag_Package is
    function doStartTag (This : in out OrderHistoryTag) return Integer is
    begin
         begin
-            if This.isEnabled then
-                if (This.getCommand) /= (null) then
-                    This.getPropertiesHashMap.put (OrderHistoryData_Package.STATUS, This.status);
-                    if (This.getCommand.compareTo (OrderHistoryData_Package.SETSTATUS)) = (0) then
-                        This.setOrderStatus;
+            if OrderHistoryTag'Class (This).isEnabled then
+                if (OrderHistoryTag'Class (This).getCommand) /= (null) then
+                    OrderHistoryTag'Class (This).getPropertiesHashMap.put (OrderHistoryData_Package.STATUS, This.status);
+                    if (OrderHistoryTag'Class (This).getCommand.compareTo (OrderHistoryData_Package.SETSTATUS)) = (0) then
+                        OrderHistoryTag'Class (This).setOrderStatus;
                     else
                         return TableTag (This).doStartTag;
                     end if;

@@ -41,7 +41,7 @@ package body org.allbinary.game.ag.ai.sequence.SequenceAI_Package is
    procedure processAI (This : in out SequenceAI; allBinaryLayerManager_Param : access AllBinaryLayerManager_Package.AllBinaryLayerManager'Class) is
       allBinaryLayerManager : constant AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (allBinaryLayerManager_Param);
    begin
-        This.getArtificialIntelligenceInterface (This.index).processAI (allBinaryLayerManager);
+        SequenceAI'Class (This).getArtificialIntelligenceInterface (This.index).processAI (allBinaryLayerManager);
    end processAI;
 
    procedure next (This : in out SequenceAI) is
@@ -49,7 +49,7 @@ package body org.allbinary.game.ag.ai.sequence.SequenceAI_Package is
       artificialIntelligenceTransitionInterface : ArtificialIntelligenceTransitionInterface_Access;
    begin
         This.index := This.index + 1;
-        artificialIntelligenceInterface := This.getSelectedArtificialIntelligenceInterface;
+        artificialIntelligenceInterface := SequenceAI'Class (This).getSelectedArtificialIntelligenceInterface;
         if (artificialIntelligenceInterface.getId) = (ArtificialIntelligence_Package.AI_ID) then
             artificialIntelligenceTransitionInterface := ArtificialIntelligenceTransitionInterface_Access (artificialIntelligenceInterface);
             artificialIntelligenceTransitionInterface.transition;
@@ -68,7 +68,7 @@ package body org.allbinary.game.ag.ai.sequence.SequenceAI_Package is
 
    function getSelectedArtificialIntelligenceInterface (This : in out SequenceAI) return ArtificialIntelligenceInterface_Access is
    begin
-        return This.getArtificialIntelligenceInterface (This.index);
+        return SequenceAI'Class (This).getArtificialIntelligenceInterface (This.index);
    end getSelectedArtificialIntelligenceInterface;
 
    function getName (This : in out SequenceAI) return Unbounded_String is
@@ -82,7 +82,7 @@ package body org.allbinary.game.ag.ai.sequence.SequenceAI_Package is
         stringBuffer := StringMaker_Package.Create;
         stringBuffer.append (ArrayAI (This).toString);
         stringBuffer.append (To_Unbounded_String (" Selected AI: "));
-        stringBuffer.append (StringUtil_Package.getInstance.toString (This.getSelectedArtificialIntelligenceInterface));
+        stringBuffer.append (StringUtil_Package.getInstance.toString (SequenceAI'Class (This).getSelectedArtificialIntelligenceInterface));
         return stringBuffer.toString;
    end toString;
 

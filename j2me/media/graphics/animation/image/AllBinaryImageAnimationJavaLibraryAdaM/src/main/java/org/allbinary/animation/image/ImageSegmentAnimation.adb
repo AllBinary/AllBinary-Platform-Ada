@@ -35,8 +35,8 @@ package body org.allbinary.animation.image.ImageSegmentAnimation_Package is
         Initialize_Fields (This);
         This.startX := 0;
         This.startY := 0;
-        This.drawWidth := This.getImage.getWidth;
-        This.drawHeight := This.getImage.getHeight;
+        This.drawWidth := ImageSegmentAnimation'Class (This).getImage.getWidth;
+        This.drawHeight := ImageSegmentAnimation'Class (This).getImage.getHeight;
         This.circularIndexUtil := CircularIndexUtil_Package.createInstance (This.drawHeight);
         This.sequenceArray := sequenceArray;
    end Initialize;

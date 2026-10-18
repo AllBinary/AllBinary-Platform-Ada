@@ -79,7 +79,7 @@ package body org.allbinary.business.user.role.BasicUserRole_Package is
    function equals (This : in out BasicUserRole; basicUserRole_Param : access BasicUserRole_Package.BasicUserRole'Class) return Boolean is
       basicUserRole : constant BasicUserRole_Access := BasicUserRole_Access (basicUserRole_Param);
    begin
-        if (This.getRoleId) = (basicUserRole.getRoleId) then
+        if (BasicUserRole'Class (This).getRoleId) = (basicUserRole.getRoleId) then
             return True;
         end if;
         return False;
@@ -87,7 +87,7 @@ package body org.allbinary.business.user.role.BasicUserRole_Package is
 
    function toString (This : in out BasicUserRole) return Unbounded_String is
    begin
-        return This.getRole;
+        return BasicUserRole'Class (This).getRole;
    end toString;
 
    --  throws Exception

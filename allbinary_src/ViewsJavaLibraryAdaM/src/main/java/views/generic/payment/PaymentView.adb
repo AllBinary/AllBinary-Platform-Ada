@@ -48,7 +48,7 @@ package body views.generic_Id.payment.PaymentView_Package is
         begin
             paymentNode := document.createElement (PaymentData_Package.PAYMENT);
             document.appendChild (paymentNode);
-            paymentVector := PaymentEntityFactory_Package.getInstance.getPaymentEntityInstance.get (This.getWeblisketSession.getUserName);
+            paymentVector := PaymentEntityFactory_Package.getInstance.getPaymentEntityInstance.get (PaymentView'Class (This).getWeblisketSession.getUserName);
             size := paymentVector.size;
             for index in 0 .. (size) - 1 loop
                 payment := Payment_Access (paymentVector.get (index));
@@ -70,14 +70,14 @@ package body views.generic_Id.payment.PaymentView_Package is
 
    procedure addDomNodeInterfaces (This : in out PaymentView) is
    begin
-        This.addDomNodeInterface (DomNodeInterface_Access (PaymentView_Access'(This'Unchecked_Access)));
+        PaymentView'Class (This).addDomNodeInterface (DomNodeInterface_Access (PaymentView_Access'(This'Unchecked_Access)));
    end addDomNodeInterfaces;
 
    function view (This : in out PaymentView) return Unbounded_String is
       error : Unbounded_String;
    begin
         begin
-            This.addDomNodeInterfaces;
+            PaymentView'Class (This).addDomNodeInterfaces;
             return HttpStoreComponentView (This).view;
         exception
             when Java_Occurrence : others =>

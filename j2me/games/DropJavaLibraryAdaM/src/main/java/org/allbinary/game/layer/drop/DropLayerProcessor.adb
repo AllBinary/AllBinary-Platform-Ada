@@ -49,7 +49,7 @@ package body org.allbinary.game.layer.drop.DropLayerProcessor_Package is
       dropLayerInterface : DropLayerInterface_Access;
       index : Integer;
    begin
-        list := This.getList;
+        list := DropLayerProcessor'Class (This).getList;
         size := list.size;
         layerInterface := null;
         dropLayerInterface := null;

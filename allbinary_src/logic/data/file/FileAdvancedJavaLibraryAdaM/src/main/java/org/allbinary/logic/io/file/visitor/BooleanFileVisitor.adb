@@ -27,8 +27,8 @@ package body org.allbinary.logic.io.file.visitor.BooleanFileVisitor_Package is
       filterStringBasicArrayList : constant BasicArrayList_Access := BasicArrayList_Access (filterStringBasicArrayList_Param);
    begin
       Initialize_Fields (This);
-        This.setFilterStringBasicArrayList (filterStringBasicArrayList);
-        PreLogUtil_Package.put (To_Unbounded_String ("Filter BasicArrayList: ") & This.getFilterStringBasicArrayList.toString, BooleanFileVisitor_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
+        BooleanFileVisitor'Class (This).setFilterStringBasicArrayList (filterStringBasicArrayList);
+        PreLogUtil_Package.put (To_Unbounded_String ("Filter BasicArrayList: ") & BooleanFileVisitor'Class (This).getFilterStringBasicArrayList.toString, BooleanFileVisitor_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
    end Initialize;
 
    function Create (filterStringBasicArrayList_Param : access BasicArrayList_Package.BasicArrayList'Class) return BooleanFileVisitor_Access is
@@ -41,7 +41,7 @@ package body org.allbinary.logic.io.file.visitor.BooleanFileVisitor_Package is
    function visit (This : in out BooleanFileVisitor; anyType_Param : access Java_Object'Class) return Java_Object_Access is
       anyType : constant Java_Object_Access := Java_Object_Access (anyType_Param);
    begin
-        return Java_Object_Access (This.visit (AbFile_Access (anyType)));
+        return Java_Object_Access (BooleanFileVisitor'Class (This).visit (AbFile_Access (anyType)));
    end visit;
 
    function visit (This : in out BooleanFileVisitor; file_Param : access AbFile_Package.AbFile'Class) return Boolean is
@@ -51,12 +51,12 @@ package body org.allbinary.logic.io.file.visitor.BooleanFileVisitor_Package is
       nextFileFilterString : Unbounded_String;
       index : Integer;
    begin
-        list := This.getFilterStringBasicArrayList;
+        list := BooleanFileVisitor'Class (This).getFilterStringBasicArrayList;
         size := list.size;
         nextFileFilterString := Null_Unbounded_String;
         for index in 0 .. (size) - 1 loop
-            nextFileFilterString := Unbounded_String (list.get (index));
-            if This.visit (file, nextFileFilterString).booleanValue then
+            nextFileFilterString := Java_Unbox (list.get (index));
+            if BooleanFileVisitor'Class (This).visit (file, nextFileFilterString).booleanValue then
                 return True;
             end if;
         end loop;

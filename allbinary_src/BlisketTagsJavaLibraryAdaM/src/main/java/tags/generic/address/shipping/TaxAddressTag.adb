@@ -39,21 +39,21 @@ package body tags.generic_Id.address.shipping.TaxAddressTag_Package is
    function doStartTag (This : in out TaxAddressTag) return Integer is
    begin
         begin
-            if (This.getCommand) /= (null) then
-                if (This.getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.VIEW)) = (0) then
-                    This.setName (To_Unbounded_String ("Basic Shipping Address View"));
-                    This.setObjectFile (To_Unbounded_String ("views.generic.address.shipping.TaxValidationView"));
-                elsif (This.getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.NEW_Id)) = (0) then
-                    This.setName (To_Unbounded_String ("Basic Shipping Address View"));
-                    This.setObjectFile (To_Unbounded_String ("views.generic.address.shipping.NewValidationView"));
-                elsif (This.getCommand.compareTo (This.commonStrings.INSERT)) = (0) then
-                    This.setName (To_Unbounded_String ("Basic Shipping Address View"));
-                    This.setObjectFile (To_Unbounded_String ("views.generic.address.shipping.AddTaxValidationView"));
-                elsif (This.getCommand.compareTo (This.commonStrings.UPDATE)) = (0) then
-                    This.setName (To_Unbounded_String ("Basic Shipping Address View"));
-                    This.setObjectFile (To_Unbounded_String ("views.generic.address.shipping.UpdateTaxValidationView"));
+            if (TaxAddressTag'Class (This).getCommand) /= (null) then
+                if (TaxAddressTag'Class (This).getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.VIEW)) = (0) then
+                    TaxAddressTag'Class (This).setName (To_Unbounded_String ("Basic Shipping Address View"));
+                    TaxAddressTag'Class (This).setObjectFile (To_Unbounded_String ("views.generic.address.shipping.TaxValidationView"));
+                elsif (TaxAddressTag'Class (This).getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.NEW_Id)) = (0) then
+                    TaxAddressTag'Class (This).setName (To_Unbounded_String ("Basic Shipping Address View"));
+                    TaxAddressTag'Class (This).setObjectFile (To_Unbounded_String ("views.generic.address.shipping.NewValidationView"));
+                elsif (TaxAddressTag'Class (This).getCommand.compareTo (This.commonStrings.INSERT)) = (0) then
+                    TaxAddressTag'Class (This).setName (To_Unbounded_String ("Basic Shipping Address View"));
+                    TaxAddressTag'Class (This).setObjectFile (To_Unbounded_String ("views.generic.address.shipping.AddTaxValidationView"));
+                elsif (TaxAddressTag'Class (This).getCommand.compareTo (This.commonStrings.UPDATE)) = (0) then
+                    TaxAddressTag'Class (This).setName (To_Unbounded_String ("Basic Shipping Address View"));
+                    TaxAddressTag'Class (This).setObjectFile (To_Unbounded_String ("views.generic.address.shipping.UpdateTaxValidationView"));
                 else
-                    Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("No Such View Command: ") & Java_Image (This.getCommand)));
+                    Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("No Such View Command: ") & Java_Image (TaxAddressTag'Class (This).getCommand)));
                 end if;
                 return StoreValidationTransformTag (This).doStartTag;
             end if;

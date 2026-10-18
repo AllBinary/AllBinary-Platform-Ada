@@ -55,7 +55,7 @@ package body org.allbinary.logic.system.security.licensing.registration.Registra
 
    function toString (This : in out RegistrationConfiguration) return Unbounded_String is
    begin
-        return StringMaker_Package.Create.append (To_Unbounded_String ("Registration Code: ")).append (This.getRegistrationCode).toString;
+        return StringMaker_Package.Create.append (To_Unbounded_String ("Registration Code: ")).append (RegistrationConfiguration'Class (This).getRegistrationCode).toString;
    end toString;
 
    procedure setRegistrationCode (This : in out RegistrationConfiguration; registrationCode : Unbounded_String) is

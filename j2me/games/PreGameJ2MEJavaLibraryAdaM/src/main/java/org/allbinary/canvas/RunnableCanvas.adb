@@ -51,7 +51,7 @@ package body org.allbinary.canvas.RunnableCanvas_Package is
         This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("RunnableCanvas delay: ")).appendint (Integer (This.loopTimeHelper.delay_Id)).toString, RunnableCanvas_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         This.runnableCanvasRefreshHelper := RunnableCanvasRefreshHelper_Package.Create (RunnableCanvas_Access'(This'Unchecked_Access));
         if (commandListener) /= (null) then
-            This.initCommands (commandListener);
+            RunnableCanvas'Class (This).initCommands (commandListener);
         elsif hasParam then
             This.logUtil.putF (To_Unbounded_String ("commandListener was null"), RunnableCanvas_Access'(This'Unchecked_Access), To_Unbounded_String ("initCommands"));
         end if;
@@ -72,7 +72,7 @@ package body org.allbinary.canvas.RunnableCanvas_Package is
 
    function isMainCanvas (This : in out RunnableCanvas) return Boolean is
    begin
-        if (This.getCustomCommandListener) /= (null) then
+        if (RunnableCanvas'Class (This).getCustomCommandListener) /= (null) then
             return True;
         else
             return False;
@@ -147,7 +147,7 @@ package body org.allbinary.canvas.RunnableCanvas_Package is
    procedure showNotify (This : in out RunnableCanvas) is
    begin
         begin
-            This.stopWaiting;
+            RunnableCanvas'Class (This).stopWaiting;
         exception
             when Java_Occurrence : others =>
                 declare
@@ -165,7 +165,7 @@ package body org.allbinary.canvas.RunnableCanvas_Package is
         begin  --  synchronized
             This.threadObjectUtil.notifyObject (RunnableCanvas_Access'(This'Unchecked_Access));
         end;
-        This.repaint;
+        RunnableCanvas'Class (This).repaint;
    end stopWaiting;
 
    --  throws Exception
@@ -205,15 +205,15 @@ package body org.allbinary.canvas.RunnableCanvas_Package is
       wait : Long_Long_Integer;
    begin
         This.runnableCanvasRefreshHelper.process;
-        if This.isPaused then
+        if RunnableCanvas'Class (This).isPaused then
             stringMaker := StringMaker_Package.Create;
-            if (This.isRunning) and then (not (This.isSingleThread)) then
+            if (RunnableCanvas'Class (This).isRunning) and then (not (RunnableCanvas'Class (This).isSingleThread)) then
                 stringMaker.delete (0, stringMaker.length);
                 currentTimeMillis := This.systemWrapper.currentTimeMillis;
                 This.logUtil.putF (stringMaker.append (This.START_PAUSE).appendlong (currentTimeMillis).append (This.PAUSE_SLEEP).appendlong (This.pauseWait).toString, RunnableCanvas_Access'(This'Unchecked_Access), This.PROCESS_LOOP_SLEEP);
-                while ((This.isPaused) and then (This.isRunning)) and then (not (This.isSingleThread)) loop
-                    This.processSleep;
-                    if not (This.isPausable) then
+                while ((RunnableCanvas'Class (This).isPaused) and then (RunnableCanvas'Class (This).isRunning)) and then (not (RunnableCanvas'Class (This).isSingleThread)) loop
+                    RunnableCanvas'Class (This).processSleep;
+                    if not (RunnableCanvas'Class (This).isPausable) then
                         stringMaker.delete (0, stringMaker.length);
                         This.logUtil.putF (stringMaker.append (This.END_PAUSE).appendlong (currentTimeMillis).toString, RunnableCanvas_Access'(This'Unchecked_Access), This.PROCESS_LOOP_SLEEP);
                         return;
@@ -226,7 +226,7 @@ package body org.allbinary.canvas.RunnableCanvas_Package is
         if (elapsedTime) > (wait) then
             elapsedTime := wait;
         else
-            This.processGameSleep ((wait) - (elapsedTime));
+            RunnableCanvas'Class (This).processGameSleep ((wait) - (elapsedTime));
         end if;
    end processLoopSleep;
 
@@ -237,7 +237,7 @@ package body org.allbinary.canvas.RunnableCanvas_Package is
 
    procedure run (This : in out RunnableCanvas) is
    begin
-        This.setCurrentThread;
+        RunnableCanvas'Class (This).setCurrentThread;
    end run;
 
    --  throws Exception

@@ -55,14 +55,14 @@ package body org.allbinary.input.automation.InputAutomationJFrame_Package is
    begin
       JFrame_Package.Initialize (This);
       Initialize_Fields (This);
-        This.initComponents;
+        InputAutomationJFrame'Class (This).initComponents;
         url := This.all'Tag.getResource (To_Unbounded_String ("/help/Help.hs"));
         This.logUtil.putF (To_Unbounded_String ("URL: ") & Java_Image (url), InputAutomationJFrame_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         This.helpSet := JavaHelpUtil_Package.getInstance.getHelpSet (url);
         url := This.all'Tag.getResource (To_Unbounded_String ("/resources/allbinaryicon8bit.jpg"));
         imageIcon := ImageIcon_Package.Create (url);
-        This.setIconImage (imageIcon.getImage);
-        This.init;
+        InputAutomationJFrame'Class (This).setIconImage (imageIcon.getImage);
+        InputAutomationJFrame'Class (This).init;
    end Initialize;
 
    function Create return InputAutomationJFrame_Access is
@@ -134,35 +134,35 @@ package body org.allbinary.input.automation.InputAutomationJFrame_Package is
         This.noModuleSelectedJDialog.getContentPane.setLayout (noModuleSelectedJDialogLayout);
         noModuleSelectedJDialogLayout.setHorizontalGroup (noModuleSelectedJDialogLayout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (noModuleSelectedJDialogLayout.createSequentialGroup.addContainerGap.addComponent (This.noModuleSelectedJLabel).addContainerGap (javax_Package.swing.GroupLayout.DEFAULT_SIZE, Short_Package.MAX_VALUE)));
         noModuleSelectedJDialogLayout.setVerticalGroup (noModuleSelectedJDialogLayout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addComponent (This.noModuleSelectedJLabel, javax_Package.swing.GroupLayout.Alignment.TRAILING, javax_Package.swing.GroupLayout.DEFAULT_SIZE, 48, Short_Package.MAX_VALUE));
-        This.setDefaultCloseOperation (javax_Package.swing.WindowConstants.EXIT_ON_CLOSE);
-        This.setMinimumSize (Dimension_Package.Create (325, 215));
-        This.setResizable (False);
-        This.addWindowFocusListener (WindowFocusListener_Package.Create  --  Java anonymous class body: implement it as a named type
+        InputAutomationJFrame'Class (This).setDefaultCloseOperation (javax_Package.swing.WindowConstants.EXIT_ON_CLOSE);
+        InputAutomationJFrame'Class (This).setMinimumSize (Dimension_Package.Create (325, 215));
+        InputAutomationJFrame'Class (This).setResizable (False);
+        InputAutomationJFrame'Class (This).addWindowFocusListener (WindowFocusListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
 --     procedure windowGainedFocus (This : in out ; evt_Param : access WindowEvent_Package.WindowEvent'Class) is
 --        evt : constant WindowEvent_Access := WindowEvent_Access (evt_Param);
 --     begin
---                  This.formWindowGainedFocus (evt);
+--                  InputAutomationJFrame'Class (This).formWindowGainedFocus (evt);
 --     end windowGainedFocus;
 --              
 --     procedure windowLostFocus (This : in out ; evt_Param : access WindowEvent_Package.WindowEvent'Class) is
 --        evt : constant WindowEvent_Access := WindowEvent_Access (evt_Param);
 --     begin
---                  This.formWindowLostFocus (evt);
+--                  InputAutomationJFrame'Class (This).formWindowLostFocus (evt);
 --     end windowLostFocus;
 );
-        This.addFocusListener (FocusAdapter_Package.Create  --  Java anonymous class body: implement it as a named type
+        InputAutomationJFrame'Class (This).addFocusListener (FocusAdapter_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
 --     procedure focusGained (This : in out ; evt_Param : access FocusEvent_Package.FocusEvent'Class) is
 --        evt : constant FocusEvent_Access := FocusEvent_Access (evt_Param);
 --     begin
---                  This.formFocusGained (evt);
+--                  InputAutomationJFrame'Class (This).formFocusGained (evt);
 --     end focusGained;
 --              
 --     procedure focusLost (This : in out ; evt_Param : access FocusEvent_Package.FocusEvent'Class) is
 --        evt : constant FocusEvent_Access := FocusEvent_Access (evt_Param);
 --     begin
---                  This.formFocusLost (evt);
+--                  InputAutomationJFrame'Class (This).formFocusLost (evt);
 --     end focusLost;
 );
         This.gameRobotJTabbedPane.setMinimumSize (Dimension_Package.Create (320, 200));
@@ -172,7 +172,7 @@ package body org.allbinary.input.automation.InputAutomationJFrame_Package is
 --     procedure valueChanged (This : in out ; evt_Param : access ListSelectionEvent_Package.ListSelectionEvent'Class) is
 --        evt : constant ListSelectionEvent_Access := ListSelectionEvent_Access (evt_Param);
 --     begin
---                  This.inputAutomationModuleJListValueChanged (evt);
+--                  InputAutomationJFrame'Class (This).inputAutomationModuleJListValueChanged (evt);
 --     end valueChanged;
 );
         This.jScrollPane1.setViewportView (This.inputAutomationModuleJList);
@@ -194,7 +194,7 @@ package body org.allbinary.input.automation.InputAutomationJFrame_Package is
 --     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
 --        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
---                  This.startJMenuItemActionPerformed (evt);
+--                  InputAutomationJFrame'Class (This).startJMenuItemActionPerformed (evt);
 --     end actionPerformed;
 );
         This.processingJMenu.add (This.startJMenuItem);
@@ -204,7 +204,7 @@ package body org.allbinary.input.automation.InputAutomationJFrame_Package is
 --     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
 --        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
---                  This.stopJMenuItemActionPerformed (evt);
+--                  InputAutomationJFrame'Class (This).stopJMenuItemActionPerformed (evt);
 --     end actionPerformed;
 );
         This.processingJMenu.add (This.stopJMenuItem);
@@ -215,7 +215,7 @@ package body org.allbinary.input.automation.InputAutomationJFrame_Package is
 --     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
 --        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
---                  This.optionsJMenuActionPerformed (evt);
+--                  InputAutomationJFrame'Class (This).optionsJMenuActionPerformed (evt);
 --     end actionPerformed;
 );
         This.stopOnFocusJCheckBoxMenuItem.setSelected (True);
@@ -226,7 +226,7 @@ package body org.allbinary.input.automation.InputAutomationJFrame_Package is
 --     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
 --        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
---                  This.stopOnFocusJCheckBoxMenuItemActionPerformed (evt);
+--                  InputAutomationJFrame'Class (This).stopOnFocusJCheckBoxMenuItemActionPerformed (evt);
 --     end actionPerformed;
 );
         This.optionsJMenu.add (This.stopOnFocusJCheckBoxMenuItem);
@@ -238,7 +238,7 @@ package body org.allbinary.input.automation.InputAutomationJFrame_Package is
 --     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
 --        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
---                  This.helpJMenuItemActionPerformed (evt);
+--                  InputAutomationJFrame'Class (This).helpJMenuItemActionPerformed (evt);
 --     end actionPerformed;
 );
         This.toolsJMenu.add (This.helpJMenuItem);
@@ -248,7 +248,7 @@ package body org.allbinary.input.automation.InputAutomationJFrame_Package is
 --     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
 --        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
---                  This.updatesJMenuItemActionPerformed (evt);
+--                  InputAutomationJFrame'Class (This).updatesJMenuItemActionPerformed (evt);
 --     end actionPerformed;
 );
         This.toolsJMenu.add (This.updatesJMenuItem);
@@ -258,7 +258,7 @@ package body org.allbinary.input.automation.InputAutomationJFrame_Package is
 --     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
 --        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
---                  This.subscriptionJMenuItemActionPerformed (evt);
+--                  InputAutomationJFrame'Class (This).subscriptionJMenuItemActionPerformed (evt);
 --     end actionPerformed;
 );
         This.toolsJMenu.add (This.subscriptionJMenuItem);
@@ -268,7 +268,7 @@ package body org.allbinary.input.automation.InputAutomationJFrame_Package is
 --     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
 --        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
---                  This.modulesJMenuItemActionPerformed (evt);
+--                  InputAutomationJFrame'Class (This).modulesJMenuItemActionPerformed (evt);
 --     end actionPerformed;
 );
         This.toolsJMenu.add (This.modulesJMenuItem);
@@ -278,17 +278,17 @@ package body org.allbinary.input.automation.InputAutomationJFrame_Package is
 --     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
 --        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
---                  This.aboutJMenuItemActionPerformed (evt);
+--                  InputAutomationJFrame'Class (This).aboutJMenuItemActionPerformed (evt);
 --     end actionPerformed;
 );
         This.toolsJMenu.add (This.aboutJMenuItem);
         This.mainJMenuBar.add (This.toolsJMenu);
-        This.setJMenuBar (This.mainJMenuBar);
-        layout := GroupLayout_Package.Create (This.getContentPane);
-        This.getContentPane.setLayout (layout);
+        InputAutomationJFrame'Class (This).setJMenuBar (This.mainJMenuBar);
+        layout := GroupLayout_Package.Create (InputAutomationJFrame'Class (This).getContentPane);
+        InputAutomationJFrame'Class (This).getContentPane.setLayout (layout);
         layout.setHorizontalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addComponent (This.gameRobotJTabbedPane, javax_Package.swing.GroupLayout.Alignment.TRAILING, javax_Package.swing.GroupLayout.DEFAULT_SIZE, 571, Short_Package.MAX_VALUE));
         layout.setVerticalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addComponent (This.gameRobotJTabbedPane, javax_Package.swing.GroupLayout.Alignment.TRAILING, javax_Package.swing.GroupLayout.DEFAULT_SIZE, 359, Short_Package.MAX_VALUE));
-        This.pack;
+        InputAutomationJFrame'Class (This).pack;
    end initComponents;
 
    procedure subscriptionJMenuItemActionPerformed (This : in out InputAutomationJFrame; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
@@ -398,11 +398,11 @@ package body org.allbinary.input.automation.InputAutomationJFrame_Package is
       layout : GroupLayout_Access;
    begin
         begin
-            gameAutomationRobotModuleNameString := Unbounded_String (This.inputAutomationModuleJList.getSelectedValue);
+            gameAutomationRobotModuleNameString := Java_Unbox (This.inputAutomationModuleJList.getSelectedValue);
             if (gameAutomationRobotModuleNameString) /= (Null_Unbounded_String) then
                 This.inputAutomationModuleInterface := This.inputAutomationModuleFactory.getInstance (gameAutomationRobotModuleNameString);
-                This.getAutomationModuleConfigurationJPanel.removeAll;
-                layout := GroupLayout_Access (This.getAutomationModuleConfigurationJPanel.getLayout);
+                InputAutomationJFrame'Class (This).getAutomationModuleConfigurationJPanel.removeAll;
+                layout := GroupLayout_Access (InputAutomationJFrame'Class (This).getAutomationModuleConfigurationJPanel.getLayout);
                 layout.setHorizontalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGap (0, 395, Short_Package.MAX_VALUE).addComponent (This.inputAutomationModuleInterface.getConfigurationJPanel, javax_Package.swing.GroupLayout.PREFERRED_SIZE, javax_Package.swing.GroupLayout.DEFAULT_SIZE, javax_Package.swing.GroupLayout.PREFERRED_SIZE));
                 layout.setVerticalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGap (0, 256, Short_Package.MAX_VALUE).addComponent (This.inputAutomationModuleInterface.getConfigurationJPanel, javax_Package.swing.GroupLayout.PREFERRED_SIZE, javax_Package.swing.GroupLayout.DEFAULT_SIZE, javax_Package.swing.GroupLayout.PREFERRED_SIZE));
                 This.gameRobotJTabbedPane.setEnabledAt (1, True);
@@ -566,7 +566,7 @@ package body org.allbinary.input.automation.InputAutomationJFrame_Package is
         begin
             This.logUtil.putF (This.commonStrings.START, InputAutomationJFrame_Access'(This'Unchecked_Access), To_Unbounded_String ("onAdd"));
             This.inputAutomationModuleConfigurations.add (inputAutomationConfigurationChangeEvent.getInputAutomationModuleConfiguration);
-            This.init;
+            InputAutomationJFrame'Class (This).init;
         exception
             when Java_Occurrence : others =>
                 declare
@@ -597,7 +597,7 @@ package body org.allbinary.input.automation.InputAutomationJFrame_Package is
             end if;
             inputAutomationModuleConfigurations := InputAutomationModuleConfigurations_Package.Create (inputAutomationConfiguration.getInputAutomationModuleConfigurationList);
             inputAutomationModuleConfigurations.remove (inputAutomationConfigurationChangeEvent.getInputAutomationModuleConfiguration);
-            This.init;
+            InputAutomationJFrame'Class (This).init;
         exception
             when Java_Occurrence : others =>
                 declare

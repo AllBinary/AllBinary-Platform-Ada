@@ -26,7 +26,7 @@ package body org.allbinary.game.input.J2MEGameKey_Package is
       inputFactory : InputFactory_Access;
    begin
         Input_Package.Initialize (This, key, keyName);
-        id := This.getId;
+        id := J2MEGameKey'Class (This).getId;
         if (id) >= (0) then
             inputFactory := InputFactory_Package.getInstance;
             inputFactory.add (id, J2MEGameKey_Access'(This'Unchecked_Access));

@@ -44,7 +44,7 @@ package body org.allbinary.input.motion.button.EndLevelTouchButtonsBuilder_Packa
             list.addAllList (BasicTouchButtonsBuilder_Package.Create.getList);
             list.addAllList (BuildingScrollTouchButtonsBuilder_Package.Create.getList);
             list.addAllList (UpgradeDowngradeTouchButtonsBuilder_Package.Create.getList);
-            This.addList (list);
+            EndLevelTouchButtonsBuilder'Class (This).addList (list);
             return list;
         exception
             when Java_Occurrence : others =>

@@ -27,7 +27,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.order.OrderHistor
    begin
         AbSqlBean_Package.Initialize (This, HistoryDbInitInfo_Package.Create);
         Initialize_Fields (This);
-        This.setTableName (This.tableName);
+        OrderHistoryEntity'Class (This).setTableName (This.tableName);
    end Initialize;
 
    function Create return OrderHistoryEntity_Access is
@@ -145,7 +145,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.order.OrderHistor
             vector.add (order.getUserCancelComments);
             vector.add (order.getStoreComments);
             vector.add (order.getStoreCancelComments);
-            This.insert (vector);
+            OrderHistoryEntity'Class (This).insert (vector);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
                 This.logUtil.putF (This.commonStrings.SUCCESS, OrderHistoryEntity_Access'(This'Unchecked_Access), INSERT);
             end if;
@@ -190,11 +190,11 @@ package body org.allbinary.data.tables.user.commerce.inventory.order.OrderHistor
             calendar := Calendar_Package.getInstance;
             time := Java_New_String (calendar.getTimeInMillis.toString);
             updateHashMap := StdUtil_Package.getInstance.createHashMap;
-            updateHashMap.put (OrderHistoryData_Package.STATUS, status);
+            updateHashMap.put (OrderHistoryData_Package.STATUS, Java_Box (status));
             if (status.compareTo (OrderHistoryData_Package.CANCELLED)) = (0) then
-                updateHashMap.put (OrderHistoryData_Package.CANCELDATE, time);
+                updateHashMap.put (OrderHistoryData_Package.CANCELDATE, Java_Box (time));
             elsif (status.compareTo (OrderHistoryData_Package.SHIPPED)) = (0) then
-                updateHashMap.put (OrderHistoryData_Package.SHIPPEDDATE, time);
+                updateHashMap.put (OrderHistoryData_Package.SHIPPEDDATE, Java_Box (time));
             end if;
             AbSqlBean (This).updateWhere (OrderData_Package.ID, orderId, updateHashMap);
         exception
@@ -218,8 +218,8 @@ package body org.allbinary.data.tables.user.commerce.inventory.order.OrderHistor
             calendar := Calendar_Package.getInstance;
             time := Java_New_String (calendar.getTimeInMillis.toString);
             updateHashMap := StdUtil_Package.getInstance.createHashMap;
-            updateHashMap.put (PaymentData_Package.METHOD, paymentMethod);
-            updateHashMap.put (OrderHistoryData_Package.TRANSDATE, time);
+            updateHashMap.put (PaymentData_Package.METHOD, Java_Box (paymentMethod));
+            updateHashMap.put (OrderHistoryData_Package.TRANSDATE, Java_Box (time));
             AbSqlBean (This).updateWhere (OrderData_Package.ID, orderId, updateHashMap);
         exception
             when Java_Occurrence : others =>
@@ -246,7 +246,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.order.OrderHistor
    begin
         orderReviewVector := BasicArrayListD_Package.Create;
         whereHashMap := StdUtil_Package.getInstance.createHashMap;
-        whereHashMap.put (StoreFrontData_Package.getInstance.NAME, storeFrontInterface.getName);
+        whereHashMap.put (StoreFrontData_Package.getInstance.NAME, Java_Box (storeFrontInterface.getName));
         orderHashMapVector := AbSqlBean (This).getRows (whereHashMap);
         size := orderHashMapVector.size;
         for i in 0 .. (size) - 1 loop
@@ -269,7 +269,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.order.OrderHistor
    begin
         orderReviewVector := BasicArrayListD_Package.Create;
         whereHashMap := StdUtil_Package.getInstance.createHashMap;
-        whereHashMap.put (UserData_Package.USERNAME, userName);
+        whereHashMap.put (UserData_Package.USERNAME, Java_Box (userName));
         orderHashMapVector := AbSqlBean (This).getRows (whereHashMap);
         size := orderHashMapVector.size;
         for index in 0 .. (size) - 1 loop
@@ -292,7 +292,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.order.OrderHistor
    begin
         orderReviewVector := BasicArrayListD_Package.Create;
         whereHashMap := StdUtil_Package.getInstance.createHashMap;
-        whereHashMap.put (OrderHistoryData_Package.STATUS, status);
+        whereHashMap.put (OrderHistoryData_Package.STATUS, Java_Box (status));
         orderHashMapVector := AbSqlBean (This).getRowsWhereBetween (whereHashMap, OrderHistoryData_Package.ORDERDATE, fromDate, toDate);
         size := orderHashMapVector.size;
         for index in 0 .. (size) - 1 loop
@@ -330,7 +330,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.order.OrderHistor
       orderHistory : OrderHistory_Access;
    begin
         whereHashMap := StdUtil_Package.getInstance.createHashMap;
-        whereHashMap.put (OrderData_Package.ID, id);
+        whereHashMap.put (OrderData_Package.ID, Java_Box (id));
         orderReviewHashMap := AbSqlBean (This).getRow (whereHashMap);
         if (orderReviewHashMap) /= (null) then
             orderHistory := OrderHistory_Package.Create (Basket_Package.Create, orderReviewHashMap);
@@ -431,7 +431,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.order.OrderHistor
 
    function createTable (This : in out OrderHistoryEntity) return Unbounded_String is
    begin
-        return AbSqlBean (This).createTable (This.createTableStatement);
+        return AbSqlBean (This).createTable (OrderHistoryEntity'Class (This).createTableStatement);
    end createTable;
 
    function dropTable (This : in out OrderHistoryEntity) return Unbounded_String is
@@ -445,7 +445,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.order.OrderHistor
       orderHashMap : constant HashMap_Access := HashMap_Access (orderHashMap_Param);
    begin
         begin
-            This.updateWhere (whereHashMap, orderHashMap);
+            OrderHistoryEntity'Class (This).updateWhere (whereHashMap, orderHashMap);
         exception
             when Java_Occurrence : others =>
                 declare

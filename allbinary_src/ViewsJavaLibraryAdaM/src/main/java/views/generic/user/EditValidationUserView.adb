@@ -28,7 +28,7 @@ package body views.generic_Id.user.EditValidationUserView_Package is
    begin
         UserView_Package.Initialize (This, transformInfoInterface);
         Initialize_Fields (This);
-        This.userName := This.getWeblisketSession.getUserName;
+        This.userName := EditValidationUserView'Class (This).getWeblisketSession.getUserName;
    end Initialize;
 
    function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return EditValidationUserView_Access is

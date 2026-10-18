@@ -76,7 +76,7 @@ package body org.allbinary.game.displayable.canvas.GameCanvasInputProcessor_Pack
    procedure keyReleasedByDevice (This : in out GameCanvasInputProcessor; canvas_Param : access Canvas_Package.Canvas'Class; keyCode : Integer; deviceId : Integer) is
       canvas : constant Canvas_Access := Canvas_Access (canvas_Param);
    begin
-        This.removeGameKeyEvent (canvas, keyCode, deviceId, False);
+        GameCanvasInputProcessor'Class (This).removeGameKeyEvent (canvas, keyCode, deviceId, False);
    end keyReleasedByDevice;
 
    procedure removeGameKeyEvent (This : in out GameCanvasInputProcessor; canvas_Param : access Canvas_Package.Canvas'Class; keyCode : Integer; deviceId : Integer; repeated : Boolean) is

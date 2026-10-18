@@ -28,7 +28,7 @@ package body org.allbinary.data.tables.category.CategoryEntity_Package is
    begin
         AbSqlBean_Package.Initialize (This, InventoryDbInitInfo_Package.Create);
         Initialize_Fields (This);
-        This.setTableName (This.tableName);
+        CategoryEntity'Class (This).setTableName (This.tableName);
    end Initialize;
 
    function Create (categoryFactoryInterface_Param : access CategoryFactoryInterface_Package.CategoryFactoryInterface'Class) return CategoryEntity_Access is
@@ -42,7 +42,7 @@ package body org.allbinary.data.tables.category.CategoryEntity_Package is
    begin
         AbSqlBean_Package.Initialize (This, InventoryDbInitInfo_Package.Create);
         Initialize_Fields (This);
-        This.setTableName (This.tableName);
+        CategoryEntity'Class (This).setTableName (This.tableName);
    end Initialize;
 
    function Create return CategoryEntity_Access is
@@ -116,13 +116,13 @@ package body org.allbinary.data.tables.category.CategoryEntity_Package is
 
    function createTable (This : in out CategoryEntity) return Unbounded_String is
    begin
-        return AbSqlBean (This).createTable (This.createTableStatement);
+        return AbSqlBean (This).createTable (CategoryEntity'Class (This).createTableStatement);
    end createTable;
 
    procedure update (This : in out CategoryEntity; updatedValues_Param : access HashMap_Package.HashMap'Class) is
       updatedValues : constant HashMap_Access := HashMap_Access (updatedValues_Param);
    begin
-        AbSqlBean (This).updateWhere (CategoryData_Package.getInstance.NAME, Unbounded_String (updatedValues.get (CategoryData_Package.getInstance.NAME)), updatedValues);
+        AbSqlBean (This).updateWhere (CategoryData_Package.getInstance.NAME, Java_Unbox (updatedValues.get (CategoryData_Package.getInstance.NAME)), updatedValues);
    end update;
 
    function dropTable (This : in out CategoryEntity) return Unbounded_String is

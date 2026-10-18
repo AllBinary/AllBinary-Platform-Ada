@@ -28,7 +28,7 @@ package body org.allbinary.business.user.commerce.money.payment.types.BasicPayme
    procedure Initialize (This : in out BasicPaymentType'Class; paymentMethod : Unbounded_String) is
    begin
       Initialize_Fields (This);
-        This.init (paymentMethod);
+        BasicPaymentType'Class (This).init (paymentMethod);
    end Initialize;
 
    function Create (paymentMethod : Unbounded_String) return BasicPaymentType_Access is
@@ -43,7 +43,7 @@ package body org.allbinary.business.user.commerce.money.payment.types.BasicPayme
       paymentGatewayDomNodeFactoryInterface : constant PaymentGatewayDomNodeFactoryInterface_Access := PaymentGatewayDomNodeFactoryInterface_Access (paymentGatewayDomNodeFactoryInterface_Param);
    begin
       Initialize_Fields (This);
-        This.init (paymentMethod);
+        BasicPaymentType'Class (This).init (paymentMethod);
         This.paymentGatewayInterfaceFactoryInterface := paymentGatewayInterfaceFactoryInterface;
         This.paymentGatewayDomNodeFactoryInterface := paymentGatewayDomNodeFactoryInterface;
    end Initialize;
@@ -62,9 +62,9 @@ package body org.allbinary.business.user.commerce.money.payment.types.BasicPayme
    begin
         hashMap := StdUtil_Package.getInstance.createHashMap;
         UNDERSCORE := To_Unbounded_String ("_");
-        hashMap.put (CommonSeps_Package.getInstance.SPACE, UNDERSCORE);
-        hashMap.put (AbPathData_Package.getInstance.EXTENSION_SEP, UNDERSCORE);
-        hashMap.put (To_Unbounded_String ("-"), UNDERSCORE);
+        hashMap.put (CommonSeps_Package.getInstance.SPACE, Java_Box (UNDERSCORE));
+        hashMap.put (AbPathData_Package.getInstance.EXTENSION_SEP, Java_Box (UNDERSCORE));
+        hashMap.put (Java_Box (To_Unbounded_String ("-")), Java_Box (UNDERSCORE));
         replace := Replace_Package.Create (hashMap);
         This.name := replace.all_Id (paymentMethod);
         This.value := paymentMethod;
@@ -101,7 +101,7 @@ package body org.allbinary.business.user.commerce.money.payment.types.BasicPayme
 
    function getKey (This : in out BasicPaymentType) return Java_Object_Access is
    begin
-        return This.getName;
+        return BasicPaymentType'Class (This).getName;
    end getKey;
 
    function toVector (This : in out BasicPaymentType) return BasicArrayList_Access is
@@ -117,8 +117,8 @@ package body org.allbinary.business.user.commerce.money.payment.types.BasicPayme
       hashMap : HashMap_Access;
    begin
         hashMap := StdUtil_Package.getInstance.createHashMap;
-        hashMap.put (PaymentGatewayData_Package.NAME.toString, This.name);
-        hashMap.put (PaymentGatewayData_Package.VALUE.toString, This.value);
+        hashMap.put (Java_Box (PaymentGatewayData_Package.NAME.toString), Java_Box (This.name));
+        hashMap.put (Java_Box (PaymentGatewayData_Package.VALUE.toString), Java_Box (This.value));
         return hashMap;
    end toHashMap;
 

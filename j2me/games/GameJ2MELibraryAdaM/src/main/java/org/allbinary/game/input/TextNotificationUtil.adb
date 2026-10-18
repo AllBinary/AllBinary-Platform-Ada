@@ -45,21 +45,21 @@ package body org.allbinary.game.input.TextNotificationUtil_Package is
    procedure fireError (This : in out TextNotificationUtil; message : Unbounded_String) is
    begin
         PrimaryPlayerQueueFactory_Package.getInstance.add (ErrorSound_Package.getInstance);
-        This.fire (message);
+        TextNotificationUtil'Class (This).fire (message);
    end fireError;
 
    --  throws Exception
    procedure fireNew (This : in out TextNotificationUtil; message : Unbounded_String) is
    begin
         PrimaryPlayerQueueFactory_Package.getInstance.add (SelectSound_Package.getInstance);
-        This.fire (message);
+        TextNotificationUtil'Class (This).fire (message);
    end fireNew;
 
    --  throws Exception
    procedure fireSuccess (This : in out TextNotificationUtil; message : Unbounded_String) is
    begin
         PrimaryPlayerQueueFactory_Package.getInstance.add (SelectSound_Package.getInstance);
-        This.fire (message);
+        TextNotificationUtil'Class (This).fire (message);
    end fireSuccess;
 
    --  throws Exception

@@ -37,16 +37,16 @@ package body org.allbinary.logic.communication.java.vm.stats.JvmStatisticsMappin
       hashMap : HashMap_Access;
    begin
         hashMap := StdUtil_Package.getInstance.createHashMap;
-        hashMap.put (JvmStatisticsData_Package.FREE_MEMORY_BYTES, This.getFreeMemoryBytesString);
-        hashMap.put (JvmStatisticsData_Package.FREE_MEMORY_KILOBYTES, This.getFreeMemoryKilobytesString);
-        hashMap.put (JvmStatisticsData_Package.FREE_MEMORY_MEGABYTES, This.getFreeMemoryMegabytesString);
-        hashMap.put (JvmStatisticsData_Package.MAX_MEMORY_BYTES, This.getMaxMemoryBytesString);
-        hashMap.put (JvmStatisticsData_Package.MAX_MEMORY_KILOBYTES, This.getMaxMemoryKilobytesString);
-        hashMap.put (JvmStatisticsData_Package.MAX_MEMORY_MEGABYTES, This.getMaxMemoryMegabytesString);
-        hashMap.put (JvmStatisticsData_Package.NUMBER_OF_THREADS, This.getNumberOfThreadsString);
-        hashMap.put (JvmStatisticsData_Package.TOTAL_MEMORY_BYTES, This.getTotalMemoryBytesString);
-        hashMap.put (JvmStatisticsData_Package.TOTAL_MEMORY_KILOBYTES, This.getTotalMemoryKilobytesString);
-        hashMap.put (JvmStatisticsData_Package.TOTAL_MEMORY_MEGABYTES, This.getTotalMemoryMegabytesString);
+        hashMap.put (JvmStatisticsData_Package.FREE_MEMORY_BYTES, JvmStatisticsMapping'Class (This).getFreeMemoryBytesString);
+        hashMap.put (JvmStatisticsData_Package.FREE_MEMORY_KILOBYTES, JvmStatisticsMapping'Class (This).getFreeMemoryKilobytesString);
+        hashMap.put (JvmStatisticsData_Package.FREE_MEMORY_MEGABYTES, JvmStatisticsMapping'Class (This).getFreeMemoryMegabytesString);
+        hashMap.put (JvmStatisticsData_Package.MAX_MEMORY_BYTES, JvmStatisticsMapping'Class (This).getMaxMemoryBytesString);
+        hashMap.put (JvmStatisticsData_Package.MAX_MEMORY_KILOBYTES, JvmStatisticsMapping'Class (This).getMaxMemoryKilobytesString);
+        hashMap.put (JvmStatisticsData_Package.MAX_MEMORY_MEGABYTES, JvmStatisticsMapping'Class (This).getMaxMemoryMegabytesString);
+        hashMap.put (JvmStatisticsData_Package.NUMBER_OF_THREADS, JvmStatisticsMapping'Class (This).getNumberOfThreadsString);
+        hashMap.put (JvmStatisticsData_Package.TOTAL_MEMORY_BYTES, JvmStatisticsMapping'Class (This).getTotalMemoryBytesString);
+        hashMap.put (JvmStatisticsData_Package.TOTAL_MEMORY_KILOBYTES, JvmStatisticsMapping'Class (This).getTotalMemoryKilobytesString);
+        hashMap.put (JvmStatisticsData_Package.TOTAL_MEMORY_MEGABYTES, JvmStatisticsMapping'Class (This).getTotalMemoryMegabytesString);
         return hashMap;
    end toHashMap;
 
@@ -61,16 +61,16 @@ package body org.allbinary.logic.communication.java.vm.stats.JvmStatisticsMappin
       vector : BasicArrayList_Access;
    begin
         vector := BasicArrayListD_Package.Create;
-        vector.add (This.getFreeMemoryBytesString);
-        vector.add (This.getFreeMemoryKilobytesString);
-        vector.add (This.getFreeMemoryMegabytesString);
-        vector.add (This.getMaxMemoryBytesString);
-        vector.add (This.getMaxMemoryKilobytesString);
-        vector.add (This.getMaxMemoryMegabytesString);
-        vector.add (This.getNumberOfThreadsString);
-        vector.add (This.getTotalMemoryBytesString);
-        vector.add (This.getTotalMemoryKilobytesString);
-        vector.add (This.getTotalMemoryMegabytesString);
+        vector.add (JvmStatisticsMapping'Class (This).getFreeMemoryBytesString);
+        vector.add (JvmStatisticsMapping'Class (This).getFreeMemoryKilobytesString);
+        vector.add (JvmStatisticsMapping'Class (This).getFreeMemoryMegabytesString);
+        vector.add (JvmStatisticsMapping'Class (This).getMaxMemoryBytesString);
+        vector.add (JvmStatisticsMapping'Class (This).getMaxMemoryKilobytesString);
+        vector.add (JvmStatisticsMapping'Class (This).getMaxMemoryMegabytesString);
+        vector.add (JvmStatisticsMapping'Class (This).getNumberOfThreadsString);
+        vector.add (JvmStatisticsMapping'Class (This).getTotalMemoryBytesString);
+        vector.add (JvmStatisticsMapping'Class (This).getTotalMemoryKilobytesString);
+        vector.add (JvmStatisticsMapping'Class (This).getTotalMemoryMegabytesString);
         return vector;
    end toVector;
 

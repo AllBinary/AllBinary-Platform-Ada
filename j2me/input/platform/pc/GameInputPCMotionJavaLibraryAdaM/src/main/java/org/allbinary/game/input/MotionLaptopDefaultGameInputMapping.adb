@@ -30,7 +30,7 @@ package body org.allbinary.game.input.MotionLaptopDefaultGameInputMapping_Packag
    begin
         PersistentInputMapping_Package.Initialize (This, GamePersistanceStrings_Package.getInstance.DEFAULT_INPUT_MAPPING_RECORD_ID);
         pcKeyFactory := PCKeyFactory_Package.getInstance;
-        inputToGameKeyMapping := This.getInputMapping;
+        inputToGameKeyMapping := MotionLaptopDefaultGameInputMapping'Class (This).getInputMapping;
         gameKeyFactory := GameKeyFactory_Package.getInstance;
         touchMotionGestureFactory := TouchMotionGestureFactory_Package.getInstance;
         basicTouchInputFactory := BasicTouchInputFactory_Package.getInstance;

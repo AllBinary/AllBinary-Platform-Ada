@@ -51,7 +51,7 @@ package body org.allbinary.logic.java.help.JavaHelpUtil_Package is
         begin
             helpSetURI := File_Package.Create (filePath).toURI;
             helpSetURL := helpSetURI.toURL;
-            return This.getHelpSet (helpSetURL);
+            return JavaHelpUtil'Class (This).getHelpSet (helpSetURL);
         exception
             when Java_Occurrence : others =>
                 declare

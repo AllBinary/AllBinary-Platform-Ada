@@ -39,7 +39,7 @@ package body org.allbinary.logic.communication.java.vm.stats.JvmStatisticsView_P
       hashMap : HashMap_Access;
       node : Node_Access;
    begin
-        hashMap := This.toHashMap;
+        hashMap := JvmStatisticsView'Class (This).toHashMap;
         node := ModDomHelper_Package.createNameValueNodes (document, JvmStatisticsData_Package.NAME, hashMap);
         return node;
    end toXmlNode;

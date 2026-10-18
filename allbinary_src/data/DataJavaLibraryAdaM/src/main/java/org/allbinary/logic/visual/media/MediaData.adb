@@ -30,7 +30,7 @@ package body org.allbinary.logic.visual.media.MediaData_Package is
         This.name := a_Name;
         This.extension := To_Unbounded_String (".") & This.name;
         This.type_Id := MediaTypeData_Package.getInstance.NOT_RESIZABLE_MEDIA;
-        MediaData_Package.hashMap.put (a_Name, MediaData_Access'(This'Unchecked_Access));
+        MediaData_Package.hashMap.put (Java_Box (a_Name), MediaData_Access'(This'Unchecked_Access));
    end Initialize;
 
    function Create (a_Name : Unbounded_String) return MediaData_Access is
@@ -66,14 +66,14 @@ package body org.allbinary.logic.visual.media.MediaData_Package is
 
    function toString (This : in out MediaData) return Unbounded_String is
    begin
-        return This.getName;
+        return MediaData'Class (This).getName;
    end toString;
 
    --  throws Exception
    function get (a_Name : Unbounded_String) return MediaData_Access is
       mediaData : MediaData_Access;
    begin
-        mediaData := MediaData_Access (MediaData_Package.hashMap.get (a_Name));
+        mediaData := MediaData_Access (MediaData_Package.hashMap.get (Java_Box (a_Name)));
         if (mediaData) /= (null) then
             return mediaData;
         else

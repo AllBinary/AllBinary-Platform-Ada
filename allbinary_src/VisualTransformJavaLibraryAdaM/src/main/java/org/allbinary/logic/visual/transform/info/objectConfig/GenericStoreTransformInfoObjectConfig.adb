@@ -47,7 +47,7 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.GenericStore
         TransformInfoObjectConfig_Package.Initialize (This, transformInfoInterface, document);
         Initialize_Fields (This);
         This.abeClientInformation := abeClientInformation;
-        This.setDocument (This.generate (This.toXmlDoc));
+        GenericStoreTransformInfoObjectConfig'Class (This).setDocument (GenericStoreTransformInfoObjectConfig'Class (This).generate (GenericStoreTransformInfoObjectConfig'Class (This).toXmlDoc));
    end Initialize;
 
    function Create (abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class; document_Param : access Document_Package.Document'Class) return GenericStoreTransformInfoObjectConfig_Access is
@@ -64,7 +64,7 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.GenericStore
         TransformInfoObjectConfig_Package.Initialize (This, transformInfoInterface, name, type_Id);
         Initialize_Fields (This);
         This.abeClientInformation := abeClientInformation;
-        This.setDocument (This.generate (This.toXmlDoc));
+        GenericStoreTransformInfoObjectConfig'Class (This).setDocument (GenericStoreTransformInfoObjectConfig'Class (This).generate (GenericStoreTransformInfoObjectConfig'Class (This).toXmlDoc));
    end Initialize;
 
    function Create (abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class; name : Unbounded_String; type_Id : Unbounded_String) return GenericStoreTransformInfoObjectConfig_Access is
@@ -85,17 +85,17 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.GenericStore
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
             stringBuffer := StringMaker_Package.Create;
             stringBuffer.append (To_Unbounded_String ("TransformInfo: "));
-            if (This.getTransformInfoInterface) /= (null) then
-                stringBuffer.append (This.getTransformInfoInterface.getName);
+            if (GenericStoreTransformInfoObjectConfig'Class (This).getTransformInfoInterface) /= (null) then
+                stringBuffer.append (GenericStoreTransformInfoObjectConfig'Class (This).getTransformInfoInterface.getName);
             else
                 stringBuffer.append (To_Unbounded_String ("No Owner!?#@"));
             end if;
             This.logUtil.putF (stringBuffer.toString, GenericStoreTransformInfoObjectConfig_Access'(This'Unchecked_Access), To_Unbounded_String ("generate()"));
         end if;
-        transformInfoHttpStoreInterface := TransformInfoHttp_Access (This.getTransformInfoInterface);
+        transformInfoHttpStoreInterface := TransformInfoHttp_Access (GenericStoreTransformInfoObjectConfig'Class (This).getTransformInfoInterface);
         objectConfigDocumentString := XmlDocumentHelper_Package.toString (objectConfigDocument);
-        replaceHashMap := This.createReplaceHashMap (transformInfoHttpStoreInterface, objectConfigDocumentString);
-        return This.generate (objectConfigDocumentString, replaceHashMap);
+        replaceHashMap := GenericStoreTransformInfoObjectConfig'Class (This).createReplaceHashMap (transformInfoHttpStoreInterface, objectConfigDocumentString);
+        return GenericStoreTransformInfoObjectConfig'Class (This).generate (objectConfigDocumentString, replaceHashMap);
    end generate;
 
    --  throws Exception
@@ -107,11 +107,11 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.GenericStore
       pageName : Unbounded_String;
    begin
         storeName := transformInfoHttpStoreInterface.getStoreName;
-        hashMap := This.createHashMap (transformInfoHttpStoreInterface, objectConfigDocumentString);
+        hashMap := GenericStoreTransformInfoObjectConfig'Class (This).createHashMap (transformInfoHttpStoreInterface, objectConfigDocumentString);
         transformInfoObjectConfigData := TransformInfoObjectConfigData_Package.getInstance;
-        hashMap.put ((transformInfoObjectConfigData.VARKEY) + (StoreFrontData_Package.getInstance.NAME), storeName);
-        pageName := TransformTemplateCustomizerUtil_Package.getInstance.getPageNameHack (This.getTransformInfoInterface.getName, storeName);
-        hashMap.put ((transformInfoObjectConfigData.VARKEY) + (TransformInfoData_Package.getInstance.PARTIAL), pageName);
+        hashMap.put ((transformInfoObjectConfigData.VARKEY) + (StoreFrontData_Package.getInstance.NAME), Java_Box (storeName));
+        pageName := TransformTemplateCustomizerUtil_Package.getInstance.getPageNameHack (GenericStoreTransformInfoObjectConfig'Class (This).getTransformInfoInterface.getName, storeName);
+        hashMap.put ((transformInfoObjectConfigData.VARKEY) + (TransformInfoData_Package.getInstance.PARTIAL), Java_Box (pageName));
         return hashMap;
    end createReplaceHashMap;
 
@@ -130,7 +130,7 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.GenericStore
         hashMap := StdUtil_Package.getInstance.createHashMap;
         storeName := transformInfoHttpStoreInterface.getStoreName;
         propertiesHashMap := transformInfoHttpStoreInterface.getPropertiesHashMap;
-        templateNameOverride := StringUtil_Package.getInstance.getNonNull (Unbounded_String (propertiesHashMap.get (TransformInfoData_Package.getInstance.PARTIAL)));
+        templateNameOverride := StringUtil_Package.getInstance.getNonNull (Java_Unbox (propertiesHashMap.get (TransformInfoData_Package.getInstance.PARTIAL)));
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
             This.logUtil.putF (To_Unbounded_String ("TemplateNameOverride: ") & templateNameOverride, GenericStoreTransformInfoObjectConfig_Access'(This'Unchecked_Access), To_Unbounded_String ("generate()"));
         end if;
@@ -140,10 +140,10 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.GenericStore
         templateNameStringBuffer.append (CommonSeps_Package.getInstance.SPACE);
         templateNameStringBuffer.append (RootTransformInfoData_Package.NAME);
         templateNameKey := (TransformInfoObjectConfigData_Package.getInstance.VARKEY) + (TransformInfoData_Package.getInstance.OWNER);
-        if ((Index (objectConfigDocumentString, To_String (templateNameKey)) - 1)) /= (-(1)) then
+        if ((Index (objectConfigDocumentString, Java_Image (templateNameKey)) - 1)) /= (-(1)) then
             templateInterface := TransformTemplateFactory_Package.getInstance.getInstance (This.abeClientInformation, templateNameStringBuffer.toString, transformInfoHttpStoreInterface.getPropertiesHashMap, transformInfoHttpStoreInterface.getPageContext);
             selectedTemplate := templateInterface.getName;
-            hashMap.put (templateNameKey, selectedTemplate);
+            hashMap.put (Java_Box (templateNameKey), Java_Box (selectedTemplate));
         end if;
         return hashMap;
    end createHashMap;

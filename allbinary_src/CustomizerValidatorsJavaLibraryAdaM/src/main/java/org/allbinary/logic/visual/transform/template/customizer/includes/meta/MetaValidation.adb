@@ -117,10 +117,10 @@ package body org.allbinary.logic.visual.transform.template.customizer.includes.m
    begin
         hashMap := StdUtil_Package.getInstance.createHashMap;
         htmlMetaAttributeDataFactory := HtmlMetaAttributeDataFactory_Package.getInstance;
-        hashMap.put (HtmlMetaData_Package.getInstance.LABEL.toString, This.label);
-        hashMap.put (htmlMetaAttributeDataFactory.NAME.toString, This.name);
-        hashMap.put (htmlMetaAttributeDataFactory.HTTP_EQUIV.toString, This.httpEquiv);
-        hashMap.put (htmlMetaAttributeDataFactory.CONTENT.toString, This.content);
+        hashMap.put (Java_Box (HtmlMetaData_Package.getInstance.LABEL.toString), Java_Box (This.label));
+        hashMap.put (Java_Box (htmlMetaAttributeDataFactory.NAME.toString), Java_Box (This.name));
+        hashMap.put (Java_Box (htmlMetaAttributeDataFactory.HTTP_EQUIV.toString), Java_Box (This.httpEquiv));
+        hashMap.put (Java_Box (htmlMetaAttributeDataFactory.CONTENT.toString), Java_Box (This.content));
         return hashMap;
    end toHashMap;
 
@@ -129,7 +129,7 @@ package body org.allbinary.logic.visual.transform.template.customizer.includes.m
       document : constant Document_Access := Document_Access (document_Param);
       node : Node_Access;
    begin
-        node := ModDomHelper_Package.createNameValueNodes (document, HtmlMetaData_Package.getInstance.NAME.toString, This.toHashMap);
+        node := ModDomHelper_Package.createNameValueNodes (document, HtmlMetaData_Package.getInstance.NAME.toString, MetaValidation'Class (This).toHashMap);
         return node;
    end toXmlNode;
 

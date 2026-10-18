@@ -21,8 +21,8 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.io.ByteArrayInputStream_Package; use java.io.ByteArrayInputStream_Package;
---  with java.io.InputStream_Package; use java.io.InputStream_Package;
---  with java.util.HashMap_Package; use java.util.HashMap_Package;
+with java.io.InputStream_Package; use java.io.InputStream_Package;
+with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.globals.URLGLOBALS_Package; use org.allbinary.globals.URLGLOBALS_Package;
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.logic.communication.http.request.session.WeblisketSession_Package; use org.allbinary.logic.communication.http.request.session.WeblisketSession_Package;
@@ -46,6 +46,8 @@ with org.allbinary.logic.visual.transform.info.objectConfig.generator.TransformI
 
 package org.allbinary.logic.visual.transform.info.objectConfig.generator.StoreFileGenerator_Package is
 
+   package InputStream_Package renames Standard.java.io.InputStream_Package;
+   package HashMap_Package renames Standard.java.util.HashMap_Package;
    package URLGLOBALS_Package renames Standard.org.allbinary.globals.URLGLOBALS_Package;
    package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    package WeblisketSession_Package renames Standard.org.allbinary.logic.communication.http.request.session.WeblisketSession_Package;

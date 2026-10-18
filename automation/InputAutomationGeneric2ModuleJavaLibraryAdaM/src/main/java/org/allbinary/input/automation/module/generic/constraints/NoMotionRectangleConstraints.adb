@@ -25,10 +25,10 @@ package body org.allbinary.input.automation.module.generic_Id.constraints.NoMoti
    begin
       MotionRectangleConstraints_Package.Initialize (This);
       Initialize_Fields (This);
-        This.setMinDimension (Dimension_Package.Create (0, 0));
-        This.setMinArea (0);
-        This.setMaxDimension (Dimension_Package.Create (Integer_Package.MAX_VALUE, Integer_Package.MAX_VALUE));
-        This.setMaxMotionRectangles (Integer_Package.MAX_VALUE);
+        NoMotionRectangleConstraints'Class (This).setMinDimension (Dimension_Package.Create (0, 0));
+        NoMotionRectangleConstraints'Class (This).setMinArea (0);
+        NoMotionRectangleConstraints'Class (This).setMaxDimension (Dimension_Package.Create (Integer_Package.MAX_VALUE, Integer_Package.MAX_VALUE));
+        NoMotionRectangleConstraints'Class (This).setMaxMotionRectangles (Integer_Package.MAX_VALUE);
    end Initialize;
 
    function Create return NoMotionRectangleConstraints_Access is

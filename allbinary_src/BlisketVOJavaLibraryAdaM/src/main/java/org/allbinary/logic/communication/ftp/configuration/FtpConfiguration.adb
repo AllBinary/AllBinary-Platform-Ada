@@ -42,10 +42,10 @@ package body org.allbinary.logic.communication.ftp.configuration.FtpConfiguratio
       hashMap : constant HashMap_Access := HashMap_Access (hashMap_Param);
    begin
       Initialize_Fields (This);
-        This.ftpServer := Unbounded_String (hashMap.get (FtpConfigurationData_Package.SERVER));
-        This.ftpPath := Unbounded_String (hashMap.get (FtpConfigurationData_Package.PATH));
-        This.ftpUserName := Unbounded_String (hashMap.get (FtpConfigurationData_Package.USERNAME));
-        This.ftpPassword := Unbounded_String (hashMap.get (FtpConfigurationData_Package.PASSWORD));
+        This.ftpServer := Java_Unbox (hashMap.get (FtpConfigurationData_Package.SERVER));
+        This.ftpPath := Java_Unbox (hashMap.get (FtpConfigurationData_Package.PATH));
+        This.ftpUserName := Java_Unbox (hashMap.get (FtpConfigurationData_Package.USERNAME));
+        This.ftpPassword := Java_Unbox (hashMap.get (FtpConfigurationData_Package.PASSWORD));
    end Initialize;
 
    function Create (hashMap_Param : access HashMap_Package.HashMap'Class) return FtpConfiguration_Access is

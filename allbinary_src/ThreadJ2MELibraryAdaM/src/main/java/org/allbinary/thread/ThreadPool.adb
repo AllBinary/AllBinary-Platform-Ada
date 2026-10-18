@@ -79,7 +79,7 @@ package body org.allbinary.thread.ThreadPool_Package is
    begin
         begin  --  synchronized
             if not (This.isAlive) then
-                This.init;
+                ThreadPool'Class (This).init;
             end if;
             if (task_Id) /= (null) then
                 size := This.taskQueue.size;
@@ -98,7 +98,7 @@ package body org.allbinary.thread.ThreadPool_Package is
                     index := This.taskQueue.indexOf (lowerPriorityRunnable);
                     This.taskQueue.addAt (index, task_Id);
                 end if;
-                This.notify;
+                ThreadPool'Class (This).notify;
             end if;
         end;
    end runTaskWithPriority;
@@ -108,11 +108,11 @@ package body org.allbinary.thread.ThreadPool_Package is
    begin
         begin  --  synchronized
             if not (This.isAlive) then
-                This.init;
+                ThreadPool'Class (This).init;
             end if;
             if (task_Id) /= (null) then
                 This.taskQueue.add (task_Id);
-                This.notify;
+                ThreadPool'Class (This).notify;
             end if;
         end;
    end runTask;
@@ -126,7 +126,7 @@ package body org.allbinary.thread.ThreadPool_Package is
                 if not (This.isAlive) then
                     return This.NULL_RUNNABLE;
                 end if;
-                This.wait;
+                ThreadPool'Class (This).wait;
             end loop;
             runnable := Runnable_Access (This.taskQueue.removeAt (0));
             return runnable;
@@ -157,7 +157,7 @@ package body org.allbinary.thread.ThreadPool_Package is
         begin  --  synchronized
             This.isAlive := False;
             This.taskQueue.clear;
-            This.notifyAll;
+            ThreadPool'Class (This).notifyAll;
         end;
    end join;
 

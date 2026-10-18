@@ -29,8 +29,8 @@ package body org.allbinary.animation.VectorBaseRotationAnimation_Package is
    begin
         RotationAnimation_Package.Initialize (This, angleInfo, CircularIndexUtil_Package.createInstance ((360) / (angleInfo.getAngleIncrementInfo.getAngleIncrement)), animationBehavior);
         Initialize_Fields (This);
-        This.setPoints (currentPoints);
-        This.setBasicColorP (basicColor);
+        VectorBaseRotationAnimation'Class (This).setPoints (currentPoints);
+        VectorBaseRotationAnimation'Class (This).setBasicColorP (basicColor);
    end Initialize;
 
    function Create (angleInfo_Param : access AngleInfo_Package.AngleInfo'Class; currentPoints : Integer_Array_Access_Array_Access_Array_Access; basicColor_Param : access BasicColor_Package.BasicColor'Class; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class) return VectorBaseRotationAnimation_Access is
@@ -43,7 +43,7 @@ package body org.allbinary.animation.VectorBaseRotationAnimation_Package is
    --  throws Exception
    function getAnimationSize (This : in out VectorBaseRotationAnimation) return Integer is
    begin
-        return This.getSize;
+        return VectorBaseRotationAnimation'Class (This).getSize;
    end getAnimationSize;
 
    function getFrame (This : in out VectorBaseRotationAnimation) return Integer is

@@ -41,7 +41,7 @@ package body org.allbinary.game.midlet.DemoGameMidletEvent_Package is
    procedure init (This : in out DemoGameMidletEvent; anyType_Param : access Java_Object'Class) is
       anyType : constant Java_Object_Access := Java_Object_Access (anyType_Param);
    begin
-        This.setSource (anyType);
+        DemoGameMidletEvent'Class (This).setSource (anyType);
    end init;
 
    procedure setDemoGameMidletState (This : in out DemoGameMidletEvent; demoGameMidletState_Param : access DemoGameMidletState_Package.DemoGameMidletState'Class) is

@@ -14,7 +14,7 @@ package body org.allbinary.game.input.AndroidGameKey_Package is
    begin
         Input_Package.Initialize (This, keyCode, name);
         inputFactory := InputFactory_Package.getInstance;
-        inputFactory.inputIntegerArray (This.getId) := AndroidGameKey_Access'(This'Unchecked_Access);
+        inputFactory.inputIntegerArray (AndroidGameKey'Class (This).getId) := AndroidGameKey_Access'(This'Unchecked_Access);
    end Initialize;
 
    function Create (keyCode : Integer; name : Unbounded_String) return AndroidGameKey_Access is

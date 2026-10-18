@@ -32,7 +32,7 @@ package body org.allbinary.game.ag.layer.hud.basic.life.LivesHudWidget_Package i
         BasicHud_Package.Initialize (This, location, direction, 2, BasicColorFactory_Package.getInstance.WHITE);
         Initialize_Fields (This);
         This.lifeInterface := lifeInterface;
-        size := Integer (This.getLifeInterface.getMaxlives);
+        size := Integer (LivesHudWidget'Class (This).getLifeInterface.getMaxlives);
         This.xArray := new Integer_Array'(0 .. (size) - 1 => 0);
         This.animationInterface := animationInterface;
         This.updateMaxWidth := (This.lifeInterface.getMaxlives) * (16);
@@ -52,9 +52,9 @@ package body org.allbinary.game.ag.layer.hud.basic.life.LivesHudWidget_Package i
       index : Integer;
    begin
         BasicHud (This).updateMeasurement (graphics);
-        maxLives := Integer (This.getLifeInterface.getMaxlives);
+        maxLives := Integer (LivesHudWidget'Class (This).getLifeInterface.getMaxlives);
         for index in 0 .. (maxLives) - 1 loop
-            This.xArray (index) := (This.getX) + (((index) * (16)));
+            This.xArray (index) := (LivesHudWidget'Class (This).getX) + (((index) * (16)));
         end loop;
    end updateMeasurement;
 
@@ -76,9 +76,9 @@ package body org.allbinary.game.ag.layer.hud.basic.life.LivesHudWidget_Package i
       index : Integer;
    begin
         This.myFontProcessor.process (graphics);
-        index := Integer (This.getLifeInterface.get);
+        index := Integer (LivesHudWidget'Class (This).getLifeInterface.get);
         while (Java_Pre_Decrement (index)) >= (0) loop
-            This.animationInterface.paintXY (graphics, This.xArray (index), This.getY);
+            This.animationInterface.paintXY (graphics, This.xArray (index), LivesHudWidget'Class (This).getY);
         end loop;
    end paint;
 

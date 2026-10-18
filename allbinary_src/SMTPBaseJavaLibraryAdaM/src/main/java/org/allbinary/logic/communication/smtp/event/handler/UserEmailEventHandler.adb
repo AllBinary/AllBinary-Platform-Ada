@@ -44,7 +44,7 @@ package body org.allbinary.logic.communication.smtp.event.handler.UserEmailEvent
    begin
         This.userEmailEventNameData := userEmailEventNameData;
         This.emailInfo := emailInfo;
-        This.fireEmailEvent;
+        UserEmailEventHandler'Class (This).fireEmailEvent;
    end receiveEmailInfo;
 
    procedure addListener (This : in out UserEmailEventHandler; vector_Param : access BasicArrayList_Package.BasicArrayList'Class) is
@@ -56,7 +56,7 @@ package body org.allbinary.logic.communication.smtp.event.handler.UserEmailEvent
         size := vector.size;
         for index in 0 .. (size) - 1 loop
             userEmailEventListenerInterface := UserEmailEventListenerInterface_Access (vector.get (index));
-            This.addListener (userEmailEventListenerInterface);
+            UserEmailEventHandler'Class (This).addListener (userEmailEventListenerInterface);
         end loop;
    end addListener;
 

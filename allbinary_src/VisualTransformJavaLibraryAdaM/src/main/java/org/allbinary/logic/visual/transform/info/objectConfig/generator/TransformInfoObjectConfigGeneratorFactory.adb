@@ -46,7 +46,7 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.generator.Tr
       type_Id : Unbounded_String;
       commonStrings : CommonStrings_Access;
    begin
-        type_Id := Unbounded_String (transformInfoInterface.getObjectConfigInterface.getOutputTypeName);
+        type_Id := Java_Unbox (transformInfoInterface.getObjectConfigInterface.getOutputTypeName);
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
             commonStrings := CommonStrings_Package.getInstance;
             This.logUtil.putF (To_Unbounded_String ("Generating Instance for type: ") & type_Id, TransformInfoObjectConfigGeneratorFactory_Access'(This'Unchecked_Access), commonStrings.GET_INSTANCE);

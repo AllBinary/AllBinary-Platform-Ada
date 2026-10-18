@@ -28,8 +28,8 @@ package body admin.tags.PaymentTag_Package is
    begin
       TableTag_Package.Initialize (This);
       Initialize_Fields (This);
-        This.setTagHelperFactory (PaymentHelperFactory_Package.Create);
-        This.setTagRequestHelperFactory (PaymentHelperFactory_Package.Create);
+        PaymentTag'Class (This).setTagHelperFactory (PaymentHelperFactory_Package.Create);
+        PaymentTag'Class (This).setTagRequestHelperFactory (PaymentHelperFactory_Package.Create);
    end Initialize;
 
    function Create return PaymentTag_Access is
@@ -53,10 +53,10 @@ package body admin.tags.PaymentTag_Package is
       error : Unbounded_String;
    begin
         begin
-            anyType := PaymentHelperFactory_Package.Create.getInstance (This.getPropertiesHashMap, This.pageContext);
+            anyType := PaymentHelperFactory_Package.Create.getInstance (PaymentTag'Class (This).getPropertiesHashMap, This.pageContext);
             addressHelperClass := anyType.all'Tag;
             method := addressHelperClass.getMethod (To_Unbounded_String ("select"), null);
-            result := Unbounded_String (method.invoke (anyType, null));
+            result := Java_Unbox (method.invoke (anyType, null));
             return result;
         exception
             when Java_Occurrence : others =>
@@ -73,12 +73,12 @@ package body admin.tags.PaymentTag_Package is
       output : Unbounded_String;
    begin
         begin
-            if This.isEnabled then
+            if PaymentTag'Class (This).isEnabled then
                 This.propertiesHashMap := StdUtil_Package.getInstance.createHashMap;
-                This.propertiesHashMap.put (StoreFrontData_Package.getInstance.NAME, This.storeName);
-                if (This.getCommand) /= (null) then
-                    if (This.getCommand.compareTo (PaymentData_Package.SELECT_Id)) = (0) then
-                        output := This.select_Id;
+                This.propertiesHashMap.put (StoreFrontData_Package.getInstance.NAME, Java_Box (This.storeName));
+                if (PaymentTag'Class (This).getCommand) /= (null) then
+                    if (PaymentTag'Class (This).getCommand.compareTo (PaymentData_Package.SELECT_Id)) = (0) then
+                        output := PaymentTag'Class (This).select_Id;
                         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAGEXTRAOUTPUT) then
                             This.pageContext.getOut.print (output & To_Unbounded_String ("<br />"));
                         end if;

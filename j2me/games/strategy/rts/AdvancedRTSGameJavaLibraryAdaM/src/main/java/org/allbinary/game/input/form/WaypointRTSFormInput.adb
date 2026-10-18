@@ -85,15 +85,15 @@ package body org.allbinary.game.input.form.WaypointRTSFormInput_Package is
       geographicMapCellPosition : GeographicMapCellPosition_Access;
    begin
         RTSFormInput (This).process (layerManager);
-        if (This.isStickyItemSelected) or else ((associatedRtsLayer) = (CollidableDestroyableDamageableLayer_Package.getNullInstance)) then
-            if (This.isStickyItemSelected) and then ((associatedRtsLayer) = (CollidableDestroyableDamageableLayer_Package.getNullInstance)) then
+        if (WaypointRTSFormInput'Class (This).isStickyItemSelected) or else ((associatedRtsLayer) = (CollidableDestroyableDamageableLayer_Package.getNullInstance)) then
+            if (WaypointRTSFormInput'Class (This).isStickyItemSelected) and then ((associatedRtsLayer) = (CollidableDestroyableDamageableLayer_Package.getNullInstance)) then
                 geographicMapCompositeInterface := GeographicMapCompositeInterface_Access (layerManager);
                 geographicMapInterface := geographicMapCompositeInterface.getGeographicMapInterface (0);
                 allBinaryTiledLayer := geographicMapInterface.getAllBinaryTiledLayer;
                 x := (point.getX) + (allBinaryTiledLayer.getXP);
                 y := (point.getY) + (allBinaryTiledLayer.getYP);
                 geographicMapCellPosition := geographicMapInterface.getCellPositionAtXY (x, y);
-                This.processCellPosition (rtsPlayerLayerInterface, layerManager, geographicMapCellPosition);
+                WaypointRTSFormInput'Class (This).processCellPosition (rtsPlayerLayerInterface, layerManager, geographicMapCellPosition);
             else
                 if not (rtsPlayerLayerInterface.implmentsArtificialIntelligenceCompositeInterface) then
                     GameNotificationEventHandler_Package.getInstance.fireEvent (This.dragToSpotGameNotificationEvent);
@@ -117,9 +117,9 @@ package body org.allbinary.game.input.form.WaypointRTSFormInput_Package is
       geographicMapCompositeInterface : GeographicMapCompositeInterface_Access;
       geographicMapInterface : BasicGeographicMap_Access;
    begin
-        itemIndex := This.getSelectedStickyItemIndex;
+        itemIndex := WaypointRTSFormInput'Class (This).getSelectedStickyItemIndex;
         if (This.newUnconstructedRTSLayerInterfaceArray (itemIndex)) = (CollidableDestroyableDamageableLayer_Package.getNullInstance) then
-            This.newUnconstructedRTSLayerInterfaceArray (itemIndex) := This.getInstance (layerManager, This.getSelectedStickyItem, geographicMapCellPosition);
+            This.newUnconstructedRTSLayerInterfaceArray (itemIndex) := WaypointRTSFormInput'Class (This).getInstance (layerManager, WaypointRTSFormInput'Class (This).getSelectedStickyItem, geographicMapCellPosition);
         else
             cellPoint := geographicMapCellPosition.getPoint;
             rtsLayer := RTSLayer_Access (This.newUnconstructedRTSLayerInterfaceArray (itemIndex));
@@ -128,7 +128,7 @@ package body org.allbinary.game.input.form.WaypointRTSFormInput_Package is
             geographicMapInterface := geographicMapCompositeInterface.getGeographicMapInterface (0);
             rtsLayer.geographicMapCellPositionAreaBase.update (geographicMapInterface);
         end if;
-        This.attemptBuild (rtsPlayerLayerInterface, layerManager, RTSLayer_Access (This.newUnconstructedRTSLayerInterfaceArray (itemIndex)), itemIndex);
+        WaypointRTSFormInput'Class (This).attemptBuild (rtsPlayerLayerInterface, layerManager, RTSLayer_Access (This.newUnconstructedRTSLayerInterfaceArray (itemIndex)), itemIndex);
    end processCellPosition;
 
    --  throws Exception
@@ -139,11 +139,11 @@ package body org.allbinary.game.input.form.WaypointRTSFormInput_Package is
       item : constant ABCustomItem_Access := ABCustomItem_Access (item_Param);
    begin
         This.logUtil.putF (To_Unbounded_String ("Set Sticking Item: ") & Java_Image (item), WaypointRTSFormInput_Access'(This'Unchecked_Access), To_Unbounded_String ("processSticky"));
-        This.setSelectedStickyItem (item);
-        This.setSelectedStickyItemIndex (index);
-        This.setStickyItemSelected (True);
+        WaypointRTSFormInput'Class (This).setSelectedStickyItem (item);
+        WaypointRTSFormInput'Class (This).setSelectedStickyItemIndex (index);
+        WaypointRTSFormInput'Class (This).setStickyItemSelected (True);
         This.stickyAssociatedRtsLayer := RTSLayer_Access (associatedRtsLayer);
-        This.getHashtable.put (Layer_Package.ID, associatedRtsLayer);
+        WaypointRTSFormInput'Class (This).getHashtable.put (Layer_Package.ID, associatedRtsLayer);
    end processStickyGameSpecific;
 
    --  throws Exception
@@ -213,7 +213,7 @@ package body org.allbinary.game.input.form.WaypointRTSFormInput_Package is
             WaypointCellPositionHistory_Package.getInstance.addList (list, layerInterface);
             geographicMapCellPosition := geographicMapInterface.getCellPositionAtXY (layerInterface.getXP, layerInterface.getYP);
             waypointLayer := WaypointLayer_Access (layerInterface);
-            This.addWayPoint (waypointLayer);
+            WaypointRTSFormInput'Class (This).addWayPoint (waypointLayer);
             rtsPlayerGameInput := RTSPlayerGameInput_Access (rtsPlayerLayerInterface.getPlayerGameInput);
             rtsPlayerGameInput.setSelectedRTSLayer (layerInterface, geographicMapCellPosition);
             advancedRTSPlayerLayerInterface := AdvancedRTSPlayerLayerInterface_Access (rtsPlayerLayerInterface);

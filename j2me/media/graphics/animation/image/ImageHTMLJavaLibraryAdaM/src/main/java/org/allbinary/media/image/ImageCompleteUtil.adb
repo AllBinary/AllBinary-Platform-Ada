@@ -45,7 +45,7 @@ package body org.allbinary.media.image.ImageCompleteUtil_Package is
       image : constant Image_Access := Image_Access (image_Param);
    begin
         This.timeDelayHelper.setStartTime;
-        This.waitForATime (image, name, This.timeDelayHelper);
+        ImageCompleteUtil'Class (This).waitForATime (image, name, This.timeDelayHelper);
    end waitForImage;
 
    --  throws Exception
@@ -91,7 +91,7 @@ package body org.allbinary.media.image.ImageCompleteUtil_Package is
         size := objectArray'Length;
         PreLogUtil_Package.put (To_Unbounded_String ("Total: ") & Java_Image (size), ImageCompleteUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("waitForAll"));
         for index in 0 .. (size) - 1 loop
-            This.waitForATime (Image_Access (hashtable.get (objectArray (index))), Unbounded_String (objectArray (index)), This.allTimeDelayHelper);
+            ImageCompleteUtil'Class (This).waitForATime (Image_Access (hashtable.get (objectArray (index))), Java_Unbox (objectArray (index)), This.allTimeDelayHelper);
         end loop;
    end waitForAll;
 

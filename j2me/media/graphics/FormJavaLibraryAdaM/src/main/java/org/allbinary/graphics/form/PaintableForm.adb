@@ -28,7 +28,7 @@ package body org.allbinary.graphics.form.PaintableForm_Package is
    begin
         ABCustomForm_Package.Initialize (This, title, items, backgroundBasicColor, foregroundBasicColor);
         Initialize_Fields (This);
-        This.setSelectedIndex (0);
+        PaintableForm'Class (This).setSelectedIndex (0);
    end Initialize;
 
    function Create (title : Unbounded_String; items : ABCustomItem_Access_Array_Access; backgroundBasicColor_Param : access BasicColor_Package.BasicColor'Class; foregroundBasicColor_Param : access BasicColor_Package.BasicColor'Class) return PaintableForm_Access is

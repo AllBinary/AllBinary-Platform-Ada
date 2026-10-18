@@ -41,14 +41,14 @@ package body admin.taghelpers.BasketRequestHelper_Package is
         This.propertiesHashMap := propertiesHashMap;
         This.pageContext := pageContext;
         This.request := HttpServletRequest_Access (pageContext.getRequest);
-        storeName := Unbounded_String (propertiesHashMap.get (StoreFrontData_Package.getInstance.NAME));
+        storeName := Java_Unbox (propertiesHashMap.get (StoreFrontData_Package.getInstance.NAME));
         if (storeName) /= (Null_Unbounded_String) then
             This.storeFrontInterface := StoreFrontFactory_Package.getInstance (storeName);
         else
             This.storeFrontInterface := StoreFront_Package.Create;
         end if;
         This.weblisketSession := WeblisketSession_Package.Create (propertiesHashMap, pageContext);
-        This.getFormData;
+        BasketRequestHelper'Class (This).getFormData;
    end Initialize;
 
    function Create (propertiesHashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) return BasketRequestHelper_Access is

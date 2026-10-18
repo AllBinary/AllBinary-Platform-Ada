@@ -38,8 +38,8 @@ package body org.allbinary.layer.SingleLayerLayerProcessor_Package is
       allBinaryLayerManager : constant AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (allBinaryLayerManager_Param);
       layerManager : LayerManager_Access;
    begin
-        layerManager := This.getLayerManager;
-        This.processAt (allBinaryLayerManager, AllBinaryLayer_Access (layerManager.getLayerAt (0)), 0);
+        layerManager := SingleLayerLayerProcessor'Class (This).getLayerManager;
+        SingleLayerLayerProcessor'Class (This).processAt (allBinaryLayerManager, AllBinaryLayer_Access (layerManager.getLayerAt (0)), 0);
    end process;
 
 end org.allbinary.layer.SingleLayerLayerProcessor_Package;

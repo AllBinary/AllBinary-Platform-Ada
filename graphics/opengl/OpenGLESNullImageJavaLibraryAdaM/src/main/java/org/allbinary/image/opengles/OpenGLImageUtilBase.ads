@@ -21,12 +21,13 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.io.IOException_Package; use java.io.IOException_Package;
---  with java.io.InputStream_Package; use java.io.InputStream_Package;
+with java.io.InputStream_Package; use java.io.InputStream_Package;
 with org.allbinary.graphics.OpenGLBitmap_Package; use org.allbinary.graphics.OpenGLBitmap_Package;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
 
 package org.allbinary.image.opengles.OpenGLImageUtilBase_Package is
 
+   package InputStream_Package renames Standard.java.io.InputStream_Package;
    package OpenGLBitmap_Package renames Standard.org.allbinary.graphics.OpenGLBitmap_Package;
    package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
 

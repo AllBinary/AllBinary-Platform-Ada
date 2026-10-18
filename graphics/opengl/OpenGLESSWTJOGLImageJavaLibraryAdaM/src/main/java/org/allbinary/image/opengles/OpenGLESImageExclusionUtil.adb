@@ -57,7 +57,7 @@ package body org.allbinary.image.opengles.OpenGLESImageExclusionUtil_Package is
             size := This.list.size;
             name := Null_Unbounded_String;
             for index in 0 .. (size) - 1 loop
-                name := Unbounded_String (This.list.get (index));
+                name := Java_Unbox (This.list.get (index));
                 if imageName.startsWith (name) then
                     isNormalScaling := True;
                 end if;

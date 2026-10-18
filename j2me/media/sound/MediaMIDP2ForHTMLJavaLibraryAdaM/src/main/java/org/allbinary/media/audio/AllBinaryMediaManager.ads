@@ -20,9 +20,9 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with javax.microedition.media.Manager_Package; use javax.microedition.media.Manager_Package;
---  with javax.microedition.media.MediaException_Package; use javax.microedition.media.MediaException_Package;
---  with javax.microedition.media.Player_Package; use javax.microedition.media.Player_Package;
+with javax.microedition.media.Manager_Package; use javax.microedition.media.Manager_Package;
+with javax.microedition.media.MediaException_Package; use javax.microedition.media.MediaException_Package;
+with javax.microedition.media.Player_Package; use javax.microedition.media.Player_Package;
 with org.allbinary.TsUtil_Package; use org.allbinary.TsUtil_Package;
 with org.allbinary.game.configuration.feature.Features_Package; use org.allbinary.game.configuration.feature.Features_Package;
 with org.allbinary.game.configuration.feature.GameFeatureFactory_Package; use org.allbinary.game.configuration.feature.GameFeatureFactory_Package;
@@ -35,6 +35,9 @@ with org.allbinary.media.audio.NoPlayer_Package; use org.allbinary.media.audio.N
 
 package org.allbinary.media.audio.AllBinaryMediaManager_Package is
 
+   package Manager_Package renames Standard.javax.microedition.media.Manager_Package;
+   package MediaException_Package renames Standard.javax.microedition.media.MediaException_Package;
+   package Player_Package renames Standard.javax.microedition.media.Player_Package;
    package TsUtil_Package renames Standard.org.allbinary.TsUtil_Package;
    package Features_Package renames Standard.org.allbinary.game.configuration.feature.Features_Package;
    package GameFeatureFactory_Package renames Standard.org.allbinary.game.configuration.feature.GameFeatureFactory_Package;

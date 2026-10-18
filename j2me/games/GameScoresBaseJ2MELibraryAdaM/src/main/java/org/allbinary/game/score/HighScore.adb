@@ -66,8 +66,8 @@ package body org.allbinary.game.score.HighScore_Package is
    begin
         byteArrayOutputStream := ByteArrayOutputStream_Package.Create;
         outputStream := DataOutputStream_Package.Create (byteArrayOutputStream);
-        outputStream.writeUTF (This.getName);
-        outputStream.writeLong (This.getScore);
+        outputStream.writeUTF (HighScore'Class (This).getName);
+        outputStream.writeLong (HighScore'Class (This).getScore);
         return byteArrayOutputStream.toByteArray;
    end getAsBytes;
 

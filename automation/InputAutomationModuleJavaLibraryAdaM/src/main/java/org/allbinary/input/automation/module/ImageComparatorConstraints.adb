@@ -29,7 +29,7 @@ package body org.allbinary.input.automation.module.ImageComparatorConstraints_Pa
    begin
       Initialize_Fields (This);
         This.doImageComparisonEveryNthFrame := doImageComparisonEveryNthFrame;
-        This.setAvoidVector (BasicArrayListD_Package.Create);
+        ImageComparatorConstraints'Class (This).setAvoidVector (BasicArrayListD_Package.Create);
    end Initialize;
 
    function Create (doImageComparisonEveryNthFrame : Integer) return ImageComparatorConstraints_Access is
@@ -49,6 +49,7 @@ package body org.allbinary.input.automation.module.ImageComparatorConstraints_Pa
       color : constant Color_Access := Color_Access (color_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return False;
    end isColorAllowed;
 
    function isCollisionWithAvoidRectangles (This : in out ImageComparatorConstraints; rectangle_Param : access Rectangle_Package.Rectangle'Class) return Boolean is
@@ -60,7 +61,7 @@ package body org.allbinary.input.automation.module.ImageComparatorConstraints_Pa
       index : Integer;
    begin
         isCollsionWithAvoidRectangles := False;
-        avoidVector := This.getAvoidVector;
+        avoidVector := ImageComparatorConstraints'Class (This).getAvoidVector;
         size := avoidVector.size;
         for index in 0 .. (size) - 1 loop
             avoidRectangle := Rectangle_Access (avoidVector.get (index));
@@ -80,7 +81,7 @@ package body org.allbinary.input.automation.module.ImageComparatorConstraints_Pa
       index : Integer;
    begin
         isCollsionWithAvoidRectangles := False;
-        avoidVector := This.getAvoidVector;
+        avoidVector := ImageComparatorConstraints'Class (This).getAvoidVector;
         size := avoidVector.size;
         for index in 0 .. (size) - 1 loop
             avoidRectangle := Rectangle_Access (avoidVector.get (index));
@@ -125,6 +126,7 @@ package body org.allbinary.input.automation.module.ImageComparatorConstraints_Pa
       bufferedImage : constant BufferedImage_Access := BufferedImage_Access (bufferedImage_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return False;
    end isImageValid;
 
    procedure log (This : in out ImageComparatorConstraints) is
@@ -133,7 +135,7 @@ package body org.allbinary.input.automation.module.ImageComparatorConstraints_Pa
       avoidRectangle : Rectangle_Access;
       index : Integer;
    begin
-        avoidVector := This.getAvoidVector;
+        avoidVector := ImageComparatorConstraints'Class (This).getAvoidVector;
         size := avoidVector.size;
         for index in 0 .. (size) - 1 loop
             avoidRectangle := Rectangle_Access (avoidVector.get (index));

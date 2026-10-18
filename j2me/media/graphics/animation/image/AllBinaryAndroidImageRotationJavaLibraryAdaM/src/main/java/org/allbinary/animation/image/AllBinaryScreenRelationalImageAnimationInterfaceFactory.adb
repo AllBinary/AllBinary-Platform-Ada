@@ -35,7 +35,7 @@ package body org.allbinary.animation.image.AllBinaryScreenRelationalImageAnimati
             androidImageInterface.getBitmap.recycle;
         end if;
         scale := ScreenRelationalUtil_Package.getInstance.getScaleImage (image);
-        This.lastImage := ImageScaleUtil_Package.getInstance.createImage (GameFeatureImageCacheFactory_Package.getInstance, This.getImage, scale, scale, False);
+        This.lastImage := ImageScaleUtil_Package.getInstance.createImage (GameFeatureImageCacheFactory_Package.getInstance, AllBinaryScreenRelationalImageAnimationInterfaceFactory'Class (This).getImage, scale, scale, False);
    end Initialize;
 
    function Create (image_Param : access Image_Package.Image'Class; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class) return AllBinaryScreenRelationalImageAnimationInterfaceFactory_Access is

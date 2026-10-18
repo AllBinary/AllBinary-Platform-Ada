@@ -112,7 +112,7 @@ package body org.allbinary.game.layer.AllBinaryGameLayerManager_Package is
         for index in 0 .. (size) - 1 loop
             layerProcessorInterfaceArray (index) := LayerProcessor_Access (list.objectArray (index));
         end loop;
-        This.setLayerProcessorArray (layerProcessorInterfaceArray);
+        AllBinaryGameLayerManager'Class (This).setLayerProcessorArray (layerProcessorInterfaceArray);
    end setLayerProcessorList;
 
    procedure setPlayerGameInputCompositeInterface (This : in out AllBinaryGameLayerManager; playerGameInputCompositeInterface_Param : access PlayerGameInputCompositeInterface_Package.PlayerGameInputCompositeInterface'Class) is

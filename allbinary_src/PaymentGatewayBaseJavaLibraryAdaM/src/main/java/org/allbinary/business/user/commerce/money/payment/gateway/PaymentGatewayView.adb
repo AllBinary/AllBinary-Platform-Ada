@@ -62,7 +62,7 @@ package body org.allbinary.business.user.commerce.money.payment.gateway.PaymentG
                 This.logUtil.putF (This.commonStrings.START, PaymentGatewayView_Access'(This'Unchecked_Access), To_Unbounded_String ("toXmlNode"));
             end if;
             hashMap := PaymentGatewayMapping_Package.Create (This.paymentGatewayInterface).toHashMap;
-            hashMap.putAll (This.toHashMap);
+            hashMap.putAll (PaymentGatewayView'Class (This).toHashMap);
             paymentGatewayNode := ModDomHelper_Package.createNodeWithValueNodes (document, PaymentGatewayData_Package.NAME.toString, hashMap);
             return paymentGatewayNode;
         exception

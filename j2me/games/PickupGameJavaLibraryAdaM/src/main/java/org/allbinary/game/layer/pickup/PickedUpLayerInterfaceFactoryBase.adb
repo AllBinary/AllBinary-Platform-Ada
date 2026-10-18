@@ -36,16 +36,19 @@ package body org.allbinary.game.layer.pickup.PickedUpLayerInterfaceFactoryBase_P
    function getIconLayer (This : in out PickedUpLayerInterfaceFactoryBase) return AllBinaryLayer_Access is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return null;
    end getIconLayer;
 
    function getAnimationInterface (This : in out PickedUpLayerInterfaceFactoryBase) return Animation_Access is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return null;
    end getAnimationInterface;
 
    function getPickedUpLayerType (This : in out PickedUpLayerInterfaceFactoryBase) return PickedUpLayerType_Access is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return null;
    end getPickedUpLayerType;
 
 begin

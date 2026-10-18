@@ -58,7 +58,7 @@ package body org.allbinary.animation.resource.BaseResourceAnimationInterfaceFact
    begin
         commonStrings := CommonStrings_Package.getInstance;
         This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Available List of Animations: ")).append (This.hashtable.toString).toString, BaseResourceAnimationInterfaceFactoryInterfaceFactory_Access'(This'Unchecked_Access), commonStrings.INIT);
-        This.setInitialized (True);
+        BaseResourceAnimationInterfaceFactoryInterfaceFactory'Class (This).setInitialized (True);
    end init;
 
    --  throws Exception
@@ -72,7 +72,7 @@ package body org.allbinary.animation.resource.BaseResourceAnimationInterfaceFact
    procedure add (This : in out BaseResourceAnimationInterfaceFactoryInterfaceFactory; resource : Unbounded_String; animationInterfaceFactoryInterface_Param : access BasicAnimationInterfaceFactoryInterface_Package.BasicAnimationInterfaceFactoryInterface'Class) is
       animationInterfaceFactoryInterface : constant BasicAnimationInterfaceFactoryInterface_Access := BasicAnimationInterfaceFactoryInterface_Access (animationInterfaceFactoryInterface_Param);
    begin
-        if This.hashtable.containsKey (Java_Object_Access (resource)) then
+        if This.hashtable.containsKey (Java_Box (resource)) then
             Java_Throw (Java_New_Exception ("Exception", StringMaker_Package.Create.append (To_Unbounded_String ("Resource Already Created: ")).append (resource).toString));
         end if;
         This.hashtable.put (resource, animationInterfaceFactoryInterface);

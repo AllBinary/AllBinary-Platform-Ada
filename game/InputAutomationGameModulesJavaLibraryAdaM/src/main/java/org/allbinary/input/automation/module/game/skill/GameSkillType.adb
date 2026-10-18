@@ -26,7 +26,7 @@ package body org.allbinary.input.automation.module.game.skill.GameSkillType_Pack
    procedure Initialize (This : in out GameSkillType'Class; name : Unbounded_String) is
    begin
       Initialize_Fields (This);
-        This.setName (name);
+        GameSkillType'Class (This).setName (name);
    end Initialize;
 
    function Create (name : Unbounded_String) return GameSkillType_Access is
@@ -48,7 +48,7 @@ package body org.allbinary.input.automation.module.game.skill.GameSkillType_Pack
 
    function toString (This : in out GameSkillType) return Unbounded_String is
    begin
-        return This.SPELL_GAME_SKILL_TYPE & This.getName;
+        return This.SPELL_GAME_SKILL_TYPE & GameSkillType'Class (This).getName;
    end toString;
 
 begin

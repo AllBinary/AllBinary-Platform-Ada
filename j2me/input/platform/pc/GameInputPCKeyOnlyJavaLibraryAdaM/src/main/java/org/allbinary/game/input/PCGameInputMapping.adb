@@ -40,9 +40,9 @@ package body org.allbinary.game.input.PCGameInputMapping_Package is
         This.logUtil.putF (This.commonStrings.START, PCGameInputMapping_Access'(This'Unchecked_Access), This.commonStrings.INIT);
         PCKeyFactory_Package.getInstance;
         PersistentInputMapping (This).init (abeClientInformation);
-        if ((This.getTotalMapped) = (0)) or else (This.isDefaultNew) then
-            This.getInputMapping.addMapping (This.getDefault);
-            This.save (abeClientInformation);
+        if ((PCGameInputMapping'Class (This).getTotalMapped) = (0)) or else (PCGameInputMapping'Class (This).isDefaultNew) then
+            PCGameInputMapping'Class (This).getInputMapping.addMapping (PCGameInputMapping'Class (This).getDefault);
+            PCGameInputMapping'Class (This).save (abeClientInformation);
         end if;
    end init;
 

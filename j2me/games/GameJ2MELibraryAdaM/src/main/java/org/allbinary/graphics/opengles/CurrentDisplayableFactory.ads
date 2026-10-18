@@ -20,7 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with javax.microedition.lcdui.Displayable_Package; use javax.microedition.lcdui.Displayable_Package;
+with javax.microedition.lcdui.Displayable_Package; use javax.microedition.lcdui.Displayable_Package;
 with org.allbinary.J2MEUtil_Package; use org.allbinary.J2MEUtil_Package;
 with org.allbinary.game.configuration.feature.Features_Package; use org.allbinary.game.configuration.feature.Features_Package;
 with org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package; use org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package;
@@ -47,6 +47,7 @@ with org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package; use org.allbi
 
 package org.allbinary.graphics.opengles.CurrentDisplayableFactory_Package is
 
+   package Displayable_Package renames Standard.javax.microedition.lcdui.Displayable_Package;
    package J2MEUtil_Package renames Standard.org.allbinary.J2MEUtil_Package;
    package Features_Package renames Standard.org.allbinary.game.configuration.feature.Features_Package;
    package AllBinaryGameCanvas_Package renames Standard.org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package;

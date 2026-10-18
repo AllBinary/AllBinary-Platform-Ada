@@ -20,17 +20,23 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with javax.microedition.lcdui.Displayable_Package; use javax.microedition.lcdui.Displayable_Package;
---  with javax.microedition.lcdui.Form_Package; use javax.microedition.lcdui.Form_Package;
---  with javax.microedition.rms.InvalidRecordIDException_Package; use javax.microedition.rms.InvalidRecordIDException_Package;
---  with javax.microedition.rms.RecordStore_Package; use javax.microedition.rms.RecordStore_Package;
---  with javax.microedition.rms.RecordStoreException_Package; use javax.microedition.rms.RecordStoreException_Package;
---  with javax.microedition.rms.RecordStoreNotOpenException_Package; use javax.microedition.rms.RecordStoreNotOpenException_Package;
+with javax.microedition.lcdui.Displayable_Package; use javax.microedition.lcdui.Displayable_Package;
+with javax.microedition.lcdui.Form_Package; use javax.microedition.lcdui.Form_Package;
+with javax.microedition.rms.InvalidRecordIDException_Package; use javax.microedition.rms.InvalidRecordIDException_Package;
+with javax.microedition.rms.RecordStore_Package; use javax.microedition.rms.RecordStore_Package;
+with javax.microedition.rms.RecordStoreException_Package; use javax.microedition.rms.RecordStoreException_Package;
+with javax.microedition.rms.RecordStoreNotOpenException_Package; use javax.microedition.rms.RecordStoreNotOpenException_Package;
 with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
 with org.allbinary.ClassLoader_Package; use org.allbinary.ClassLoader_Package;
 
 package org.allbinary.TsUtil_Package is
 
+   package Displayable_Package renames Standard.javax.microedition.lcdui.Displayable_Package;
+   package Form_Package renames Standard.javax.microedition.lcdui.Form_Package;
+   package InvalidRecordIDException_Package renames Standard.javax.microedition.rms.InvalidRecordIDException_Package;
+   package RecordStore_Package renames Standard.javax.microedition.rms.RecordStore_Package;
+   package RecordStoreException_Package renames Standard.javax.microedition.rms.RecordStoreException_Package;
+   package RecordStoreNotOpenException_Package renames Standard.javax.microedition.rms.RecordStoreNotOpenException_Package;
    package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
 
    type TsUtil is tagged;

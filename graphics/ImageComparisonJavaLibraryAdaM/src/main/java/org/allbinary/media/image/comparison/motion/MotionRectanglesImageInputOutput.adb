@@ -46,13 +46,13 @@ package body org.allbinary.media.image.comparison.motion.MotionRectanglesImageIn
         motionRectanglesResultsFrameCacheable := MotionRectanglesResultsFrameCacheable_Access ((AutomaticCacheInterface_Access (AllMotionRectanglesResultsCacheSingleton_Package.getInstance)).get (frame));
         if (motionRectanglesResultsFrameCacheable) /= (null) then
             motionRectangles := motionRectanglesResultsFrameCacheable.getMotionRectangles;
-            This.save (motionRectangles, frame);
+            MotionRectanglesImageInputOutput'Class (This).save (motionRectangles, frame);
             motionRectanglesResultsFrameCacheable := MotionRectanglesResultsFrameCacheable_Access ((AutomaticCacheInterface_Access (ConsolidatedMotionRectanglesResultsCacheSingleton_Package.getInstance)).get (frame));
             motionRectangles := motionRectanglesResultsFrameCacheable.getMotionRectangles;
-            This.save (motionRectangles, frame);
+            MotionRectanglesImageInputOutput'Class (This).save (motionRectangles, frame);
             motionRectanglesResultsFrameCacheable := MotionRectanglesResultsFrameCacheable_Access ((AutomaticCacheInterface_Access (ConstrainedMotionRectanglesResultsCacheSingleton_Package.getInstance)).get (frame));
             motionRectangles := motionRectanglesResultsFrameCacheable.getMotionRectangles;
-            This.save (motionRectangles, frame);
+            MotionRectanglesImageInputOutput'Class (This).save (motionRectangles, frame);
         else
             This.logUtil.putF (To_Unbounded_String ("No Motion Rectangle Results for Frame: ") & Java_Image (frame), MotionRectanglesImageInputOutput_Access'(This'Unchecked_Access), commonStrings.SAVE);
         end if;

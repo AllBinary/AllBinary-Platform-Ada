@@ -25,7 +25,7 @@ package body org.allbinary.emulator.device.TrueTypeFontUtilBase_Package is
       This.U_characterWidth := new Integer_Array'(0 .. (Length (This.pattern)) - 1 => 0);
       This.characterArray := new Character_Array'(0 .. (1) - 1 => ASCII.NUL);
       This.size := Length (This.pattern);
-      This.lastCapIndex := (Index (This.pattern, To_String ('Z')) - 1);
+      This.lastCapIndex := (Index (This.pattern, Java_Image ('Z')) - 1);
       This.currentFont := Font_Package.getDefaultFont;
       
       
@@ -56,7 +56,7 @@ package body org.allbinary.emulator.device.TrueTypeFontUtilBase_Package is
         This.fontSize := (((20) + (6))) * (This.scale);
         This.baseCharWidth := (This.fontSize) + (((6) * (This.scale)));
         This.cellSize := (This.fontSize) + (((6) * (This.scale)));
-        This.textureSize := This.getAsTextureSize ((This.CELLS_PER_ROW) * (This.cellSize));
+        This.textureSize := TrueTypeFontUtilBase'Class (This).getAsTextureSize ((This.CELLS_PER_ROW) * (This.cellSize));
         This.actualCellsPerRow := (This.textureSize) / (This.cellSize);
    end Initialize;
 

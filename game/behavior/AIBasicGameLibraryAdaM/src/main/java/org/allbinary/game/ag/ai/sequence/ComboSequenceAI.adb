@@ -42,10 +42,10 @@ package body org.allbinary.game.ag.ai.sequence.ComboSequenceAI_Package is
       size : Integer;
       index : Integer;
    begin
-        artificialIntelligenceInterfaceArray := This.getArtificialIntelligenceInterface;
+        artificialIntelligenceInterfaceArray := ComboSequenceAI'Class (This).getArtificialIntelligenceInterface;
         size := artificialIntelligenceInterfaceArray'Length;
         for index in 0 .. (size) - 1 loop
-            This.setIndex (index);
+            ComboSequenceAI'Class (This).setIndex (index);
             SequenceAI (This).processAI (allBinaryLayerManager);
         end loop;
    end processAI;

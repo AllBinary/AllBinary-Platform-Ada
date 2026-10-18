@@ -53,11 +53,11 @@ package body org.allbinary.logic.system.os.OperatingSystemFactory_Package is
             osName := systemProperties.getName;
             if not (This.hasDetected) then
                 This.hasDetected := True;
-                if ((Index (osName, To_String (OperatingSystems_Package.getInstance.ANDROID)) - 1)) >= (0) then
+                if ((Index (osName, Java_Image (OperatingSystems_Package.getInstance.ANDROID)) - 1)) >= (0) then
                     This.logUtil.putF (To_Unbounded_String ("Found a Android OS"), OperatingSystemFactory_Access'(This'Unchecked_Access), commonStrings.GET_INSTANCE);
                     This.genericOperatingSystem := AndroidOperatingSystemFactory_Package.getInstance.getOperatingSystemInstance;
                     This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Operating System Info: ")).append (This.genericOperatingSystem.toString).toString, OperatingSystemFactory_Access'(This'Unchecked_Access), commonStrings.GET_INSTANCE);
-                elsif ((Index (osName, To_String (OperatingSystems_Package.getInstance.HARMONY)) - 1)) >= (0) then
+                elsif ((Index (osName, Java_Image (OperatingSystems_Package.getInstance.HARMONY)) - 1)) >= (0) then
                     This.logUtil.putF (To_Unbounded_String ("Found a Harmony OS"), OperatingSystemFactory_Access'(This'Unchecked_Access), commonStrings.GET_INSTANCE);
                     This.genericOperatingSystem := AndroidOperatingSystemFactory_Package.getInstance.getOperatingSystemInstance;
                     This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Operating System Info: ")).append (This.genericOperatingSystem.toString).toString, OperatingSystemFactory_Access'(This'Unchecked_Access), commonStrings.GET_INSTANCE);

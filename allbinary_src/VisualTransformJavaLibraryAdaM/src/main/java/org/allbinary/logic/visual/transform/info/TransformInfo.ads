@@ -21,7 +21,7 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.util.Calendar_Package; use java.util.Calendar_Package;
---  with java.util.HashMap_Package; use java.util.HashMap_Package;
+with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.business.context.modules.storefront.StoreFrontData_Package; use org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
@@ -58,6 +58,7 @@ with org.allbinary.logic.visual.transform.info.TransformInfoData_Package; use or
 package org.allbinary.logic.visual.transform.info.TransformInfo_Package is
 
    package Calendar_Package renames Standard.java.util.Calendar_Package;
+   package HashMap_Package renames Standard.java.util.HashMap_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
    package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    package StoreFrontData_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
@@ -98,7 +99,7 @@ package org.allbinary.logic.visual.transform.info.TransformInfo_Package is
       logUtil : LogUtil_Access;
       commonStrings : CommonStrings_Access;
       abeClientInformation : AbeClientInformationInterface_Access;
-      isChild : Boolean;
+      isChild_Field : Boolean;
       name : Unbounded_String;
       storeName : Unbounded_String;
       objectFileName : Unbounded_String;

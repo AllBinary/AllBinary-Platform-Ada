@@ -8,10 +8,11 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with javax.microedition.khronos.opengles.GL_Package; use javax.microedition.khronos.opengles.GL_Package;
+with javax.microedition.khronos.opengles.GL_Package; use javax.microedition.khronos.opengles.GL_Package;
 
 package org.allbinary.image.opengles.OpenGLSurfaceChangedInterface_Package is
 
+   package GL_Package renames Standard.javax.microedition.khronos.opengles.GL_Package;
 
    type OpenGLSurfaceChangedInterface is interface;
    type OpenGLSurfaceChangedInterface_Access is access all OpenGLSurfaceChangedInterface'Class;

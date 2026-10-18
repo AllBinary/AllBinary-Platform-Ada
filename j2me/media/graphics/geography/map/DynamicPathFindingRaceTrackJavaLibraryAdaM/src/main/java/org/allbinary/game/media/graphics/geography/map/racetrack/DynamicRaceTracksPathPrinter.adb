@@ -48,7 +48,7 @@ package body org.allbinary.game.media.graphics.geography.map.racetrack.DynamicRa
                 geographicMapInterface := raceTrackGeographicMapInterfaceFactoryInterface.getTrackInstance (SmallIntegerSingletonFactory_Package.getInstance.getAt (index));
                 list := PathGenerator_Package.getInstance.createList (geographicMapInterface, RaceTrackRoadsGeographicMapCellHistoryFactory_Package.getInstance, pathFindingInfo, 10);
                 Ada.Text_IO.Put_Line (Java_Image (To_Unbounded_String ("Track ") & Java_Image (index)));
-                This.printPaths (list);
+                DynamicRaceTracksPathPrinter'Class (This).printPaths (list);
             end loop;
         exception
             when Java_Occurrence : others =>

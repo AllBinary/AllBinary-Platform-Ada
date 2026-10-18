@@ -34,9 +34,9 @@ package body org.allbinary.business.init.db.DbInitInfo_Package is
         Initialize_Fields (This);
         This.initFileName := initFileName;
         if read then
-            This.updateIfNeeded;
+            DbInitInfo'Class (This).updateIfNeeded;
         else
-            This.setHasRead (True);
+            DbInitInfo'Class (This).setHasRead (True);
         end if;
    end Initialize;
 
@@ -79,13 +79,13 @@ package body org.allbinary.business.init.db.DbInitInfo_Package is
             newFile.createNewFile;
             dataOutputStream := DataOutputStreamFactory_Package.getInstance.getInstanceForAbFile (newFile);
             begin
-                cryptedJdbcDriver := WeakCrypt_Package.Create (1).encrypt (This.getJdbcDriver).getBytes;
-                cryptedName := WeakCrypt_Package.Create (2).encrypt (This.getName).getBytes;
-                cryptedUserName := WeakCrypt_Package.Create (3).encrypt (This.getUserName).getBytes;
-                cryptedPassword := WeakCrypt_Package.Create (4).encrypt (This.getPassword).getBytes;
-                cryptedSchema := WeakCrypt_Package.Create (5).encrypt (This.getSchema).getBytes;
-                cryptedServer := WeakCrypt_Package.Create (6).encrypt (This.getServer).getBytes;
-                cryptedPort := WeakCrypt_Package.Create (7).encrypt (This.getPort).getBytes;
+                cryptedJdbcDriver := WeakCrypt_Package.Create (1).encrypt (DbInitInfo'Class (This).getJdbcDriver).getBytes;
+                cryptedName := WeakCrypt_Package.Create (2).encrypt (DbInitInfo'Class (This).getName).getBytes;
+                cryptedUserName := WeakCrypt_Package.Create (3).encrypt (DbInitInfo'Class (This).getUserName).getBytes;
+                cryptedPassword := WeakCrypt_Package.Create (4).encrypt (DbInitInfo'Class (This).getPassword).getBytes;
+                cryptedSchema := WeakCrypt_Package.Create (5).encrypt (DbInitInfo'Class (This).getSchema).getBytes;
+                cryptedServer := WeakCrypt_Package.Create (6).encrypt (DbInitInfo'Class (This).getServer).getBytes;
+                cryptedPort := WeakCrypt_Package.Create (7).encrypt (DbInitInfo'Class (This).getPort).getBytes;
                 dataOutputStream.writeUTF (DatabaseEncoder_Package.encode (cryptedJdbcDriver));
                 dataOutputStream.writeUTF (DatabaseEncoder_Package.encode (cryptedName));
                 dataOutputStream.writeUTF (DatabaseEncoder_Package.encode (cryptedUserName));
@@ -140,13 +140,13 @@ package body org.allbinary.business.init.db.DbInitInfo_Package is
                     decryptedSchema := Java_New_String (DatabaseEncoder_Package.decode (iData.readUTF));
                     decryptedServer := Java_New_String (DatabaseEncoder_Package.decode (iData.readUTF));
                     decryptedPort := Java_New_String (DatabaseEncoder_Package.decode (iData.readUTF));
-                    This.setJdbcDriver (WeakCrypt_Package.Create (1).decrypt (decryptedJdbcDriver));
-                    This.setName (WeakCrypt_Package.Create (2).decrypt (decryptedName));
-                    This.setUserName (WeakCrypt_Package.Create (3).decrypt (decryptedUserName));
-                    This.setPassword (WeakCrypt_Package.Create (4).decrypt (decryptedPassword));
-                    This.setSchema (WeakCrypt_Package.Create (5).decrypt (decryptedSchema));
-                    This.setServer (WeakCrypt_Package.Create (6).decrypt (decryptedServer));
-                    This.setPort (WeakCrypt_Package.Create (7).decrypt (decryptedPort));
+                    DbInitInfo'Class (This).setJdbcDriver (WeakCrypt_Package.Create (1).decrypt (decryptedJdbcDriver));
+                    DbInitInfo'Class (This).setName (WeakCrypt_Package.Create (2).decrypt (decryptedName));
+                    DbInitInfo'Class (This).setUserName (WeakCrypt_Package.Create (3).decrypt (decryptedUserName));
+                    DbInitInfo'Class (This).setPassword (WeakCrypt_Package.Create (4).decrypt (decryptedPassword));
+                    DbInitInfo'Class (This).setSchema (WeakCrypt_Package.Create (5).decrypt (decryptedSchema));
+                    DbInitInfo'Class (This).setServer (WeakCrypt_Package.Create (6).decrypt (decryptedServer));
+                    DbInitInfo'Class (This).setPort (WeakCrypt_Package.Create (7).decrypt (decryptedPort));
                     stringUtil := StringUtil_Package.getInstance;
                 end;
                 --  finally
@@ -181,7 +181,7 @@ package body org.allbinary.business.init.db.DbInitInfo_Package is
         begin
             if not (This.hasRead) then
                 This.hasRead := True;
-                This.load;
+                DbInitInfo'Class (This).load;
             end if;
         exception
             when Java_Occurrence : others =>
@@ -197,7 +197,7 @@ package body org.allbinary.business.init.db.DbInitInfo_Package is
 
    function getName (This : in out DbInitInfo) return Unbounded_String is
    begin
-        This.updateIfNeeded;
+        DbInitInfo'Class (This).updateIfNeeded;
         if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.PRELOADER) then
             PreLogUtil_Package.put (To_Unbounded_String ("Name: ") & DbConnectionInfo (This).getName, DbInitInfo_Access'(This'Unchecked_Access), To_Unbounded_String ("getName"));
         end if;
@@ -206,7 +206,7 @@ package body org.allbinary.business.init.db.DbInitInfo_Package is
 
    function getUserName (This : in out DbInitInfo) return Unbounded_String is
    begin
-        This.updateIfNeeded;
+        DbInitInfo'Class (This).updateIfNeeded;
         if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.PRELOADER) then
             PreLogUtil_Package.put (To_Unbounded_String ("Name: ") & Java_Image (DbConnectionInfo (This).getUserName), DbInitInfo_Access'(This'Unchecked_Access), To_Unbounded_String ("getUserName"));
         end if;
@@ -215,25 +215,25 @@ package body org.allbinary.business.init.db.DbInitInfo_Package is
 
    function getPassword (This : in out DbInitInfo) return Unbounded_String is
    begin
-        This.updateIfNeeded;
+        DbInitInfo'Class (This).updateIfNeeded;
         return DbConnectionInfo (This).getPassword;
    end getPassword;
 
    function getSchema (This : in out DbInitInfo) return Unbounded_String is
    begin
-        This.updateIfNeeded;
+        DbInitInfo'Class (This).updateIfNeeded;
         return DbConnectionInfo (This).getSchema;
    end getSchema;
 
    function getServer (This : in out DbInitInfo) return Unbounded_String is
    begin
-        This.updateIfNeeded;
+        DbInitInfo'Class (This).updateIfNeeded;
         return DbConnectionInfo (This).getServer;
    end getServer;
 
    function getPort (This : in out DbInitInfo) return Unbounded_String is
    begin
-        This.updateIfNeeded;
+        DbInitInfo'Class (This).updateIfNeeded;
         return DbConnectionInfo (This).getPort;
    end getPort;
 

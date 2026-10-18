@@ -47,9 +47,9 @@ package body tags.HelperTag_Package is
    begin
         if (This.anyType) = (null) then
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAG) then
-                This.logUtil.putF (To_Unbounded_String ("Creating TagHelper with: " & ASCII.LF & "") & This.getPropertiesHashMap.toString, HelperTag_Access'(This'Unchecked_Access), To_Unbounded_String ("doStartTag"));
+                This.logUtil.putF (To_Unbounded_String ("Creating TagHelper with: " & ASCII.LF & "") & HelperTag'Class (This).getPropertiesHashMap.toString, HelperTag_Access'(This'Unchecked_Access), To_Unbounded_String ("doStartTag"));
             end if;
-            This.anyType := This.tagHelperFactoryInterface.getInstance (This.getPropertiesHashMap, This.pageContext);
+            This.anyType := This.tagHelperFactoryInterface.getInstance (HelperTag'Class (This).getPropertiesHashMap, This.pageContext);
         end if;
    end setHelper;
 

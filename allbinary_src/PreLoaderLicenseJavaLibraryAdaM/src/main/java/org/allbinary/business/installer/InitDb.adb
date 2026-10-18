@@ -74,7 +74,7 @@ package body org.allbinary.business.installer.InitDb_Package is
         begin
             dynamicClass := This.anyType.all'Tag;
             method := dynamicClass.getMethod (This.METHOD_CALL_GET_HOST_NAME, null);
-            result := Unbounded_String (method.invoke (This.anyType, null));
+            result := Java_Unbox (method.invoke (This.anyType, null));
             return result;
         exception
             when Java_Occurrence : others =>

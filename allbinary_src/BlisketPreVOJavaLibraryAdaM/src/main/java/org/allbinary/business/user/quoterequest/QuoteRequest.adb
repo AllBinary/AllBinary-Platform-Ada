@@ -37,14 +37,14 @@ package body org.allbinary.business.user.quoterequest.QuoteRequest_Package is
       Initialize_Fields (This);
         quoteRequestData := QuoteRequestData_Package.getInstance;
         This.id := QuoteRequestIdGenerator_Package.Create.getNext;
-        This.setUserName (userName);
-        This.setProjectInfo (Unbounded_String (request.getParameter (quoteRequestData.PROJECT_INFO)));
-        This.setUserComments (Unbounded_String (request.getParameter (quoteRequestData.CUSTOMER_COMMENTS)));
-        This.setBudget (Unbounded_String (request.getParameter (quoteRequestData.BUDGET)));
-        This.setTimeFrame (Unbounded_String (request.getParameter (quoteRequestData.TIMEFRAME)));
-        This.setComments (Unbounded_String (request.getParameter (quoteRequestData.COMMENTS)));
+        QuoteRequest'Class (This).setUserName (userName);
+        QuoteRequest'Class (This).setProjectInfo (Java_Unbox (request.getParameter (quoteRequestData.PROJECT_INFO)));
+        QuoteRequest'Class (This).setUserComments (Java_Unbox (request.getParameter (quoteRequestData.CUSTOMER_COMMENTS)));
+        QuoteRequest'Class (This).setBudget (Java_Unbox (request.getParameter (quoteRequestData.BUDGET)));
+        QuoteRequest'Class (This).setTimeFrame (Java_Unbox (request.getParameter (quoteRequestData.TIMEFRAME)));
+        QuoteRequest'Class (This).setComments (Java_Unbox (request.getParameter (quoteRequestData.COMMENTS)));
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPER) then
-            This.logUtil.putF (To_Unbounded_String ("Created with: ") & Java_Image (This.toHashMap), QuoteRequest_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
+            This.logUtil.putF (To_Unbounded_String ("Created with: ") & Java_Image (QuoteRequest'Class (This).toHashMap), QuoteRequest_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         end if;
    end Initialize;
 
@@ -61,15 +61,15 @@ package body org.allbinary.business.user.quoterequest.QuoteRequest_Package is
    begin
       Initialize_Fields (This);
         quoteRequestData := QuoteRequestData_Package.getInstance;
-        This.id := Unbounded_String (hashMap.get (quoteRequestData.ID));
-        This.setUserName (Unbounded_String (hashMap.get (UserData_Package.USERNAME)));
-        This.setProjectInfo (Unbounded_String (hashMap.get (quoteRequestData.PROJECT_INFO)));
-        This.setUserComments (Unbounded_String (hashMap.get (quoteRequestData.CUSTOMER_COMMENTS)));
-        This.setBudget (Unbounded_String (hashMap.get (quoteRequestData.BUDGET)));
-        This.setTimeFrame (Unbounded_String (hashMap.get (quoteRequestData.TIMEFRAME)));
-        This.setComments (Unbounded_String (hashMap.get (quoteRequestData.COMMENTS)));
+        This.id := Java_Unbox (hashMap.get (quoteRequestData.ID));
+        QuoteRequest'Class (This).setUserName (Java_Unbox (hashMap.get (UserData_Package.USERNAME)));
+        QuoteRequest'Class (This).setProjectInfo (Java_Unbox (hashMap.get (quoteRequestData.PROJECT_INFO)));
+        QuoteRequest'Class (This).setUserComments (Java_Unbox (hashMap.get (quoteRequestData.CUSTOMER_COMMENTS)));
+        QuoteRequest'Class (This).setBudget (Java_Unbox (hashMap.get (quoteRequestData.BUDGET)));
+        QuoteRequest'Class (This).setTimeFrame (Java_Unbox (hashMap.get (quoteRequestData.TIMEFRAME)));
+        QuoteRequest'Class (This).setComments (Java_Unbox (hashMap.get (quoteRequestData.COMMENTS)));
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPER) then
-            This.logUtil.putF (To_Unbounded_String ("Created with: ") & Java_Image (This.toHashMap), QuoteRequest_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
+            This.logUtil.putF (To_Unbounded_String ("Created with: ") & Java_Image (QuoteRequest'Class (This).toHashMap), QuoteRequest_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         end if;
    end Initialize;
 

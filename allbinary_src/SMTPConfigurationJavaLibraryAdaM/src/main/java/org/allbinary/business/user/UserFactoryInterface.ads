@@ -21,11 +21,12 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.io.Serializable_Package; use java.io.Serializable_Package;
---  with java.util.HashMap_Package; use java.util.HashMap_Package;
+with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.business.user.UserInterface_Package; use org.allbinary.business.user.UserInterface_Package;
 
 package org.allbinary.business.user.UserFactoryInterface_Package is
 
+   package HashMap_Package renames Standard.java.util.HashMap_Package;
 
    type UserFactoryInterface is interface and Serializable;
    type UserFactoryInterface_Access is access all UserFactoryInterface'Class;

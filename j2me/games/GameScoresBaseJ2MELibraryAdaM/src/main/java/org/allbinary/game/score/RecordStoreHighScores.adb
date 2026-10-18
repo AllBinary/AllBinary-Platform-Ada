@@ -40,7 +40,7 @@ package body org.allbinary.game.score.RecordStoreHighScores_Package is
         This.abeClientInformation := abeClientInformation;
         This.gameInfo := gameInfo;
         This.recordComparatorInterface := recordComparatorInterface;
-        This.load;
+        RecordStoreHighScores'Class (This).load;
    end Initialize;
 
    function Create (abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; gameInfo_Param : access GameInfo_Package.GameInfo'Class; name : Unbounded_String; heading : Unbounded_String; columnTwoHeading : Unbounded_String; recordComparatorInterface_Param : access RecordComparator_Package.RecordComparator'Class) return RecordStoreHighScores_Access is
@@ -57,7 +57,7 @@ package body org.allbinary.game.score.RecordStoreHighScores_Package is
       highScoresCanBeNull : Java_Object_Access;
       highScores : HighScores_Access;
    begin
-        highScoresCanBeNull := RecordStoreHighScores_Package.hashTable.get (Java_Object_Access (highScoreName));
+        highScoresCanBeNull := RecordStoreHighScores_Package.hashTable.get (Java_Box (highScoreName));
         if (highScoresCanBeNull) = (null) then
             highScores := RecordStoreHighScores_Package.Create (abeClientInformation, gameInfo, highScoreName, heading, columnTwoHeading, recordComparatorInterface);
             RecordStoreHighScores_Package.hashTable.put (highScores.getName, highScores);
@@ -69,7 +69,7 @@ package body org.allbinary.game.score.RecordStoreHighScores_Package is
    function getRecordId (This : in out RecordStoreHighScores; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class) return Unbounded_String is
       abeClientInformation : constant AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
    begin
-        return This.platformRecordIdUtil.getRecordId (abeClientInformation, StringMaker_Package.Create.append (CommonSeps_Package.getInstance.UNDERSCORE).append (This.getName).append (This.RECORD_ID).toString);
+        return This.platformRecordIdUtil.getRecordId (abeClientInformation, StringMaker_Package.Create.append (CommonSeps_Package.getInstance.UNDERSCORE).append (RecordStoreHighScores'Class (This).getName).append (This.RECORD_ID).toString);
    end getRecordId;
 
    procedure addHighScore (This : in out RecordStoreHighScores; newHighScore_Param : access HighScore_Package.HighScore'Class) is
@@ -81,14 +81,14 @@ package body org.allbinary.game.score.RecordStoreHighScores_Package is
         recordStore := NullRecordStore_Package.NULL_RECORD_STORE;
         begin
             This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Adding HighScore: ")).appendlong (Long_Long_Integer (newHighScore.getScore)).toString, RecordStoreHighScores_Access'(This'Unchecked_Access), This.commonStrings.ADD);
-            if This.isTooManyHighScores then
+            if RecordStoreHighScores'Class (This).isTooManyHighScores then
                 This.logUtil.putF (To_Unbounded_String ("Removing Lowest Score"), RecordStoreHighScores_Access'(This'Unchecked_Access), This.commonStrings.ADD);
-                This.removeLowestHighScore;
+                RecordStoreHighScores'Class (This).removeLowestHighScore;
             end if;
-            recordStore := RecordStore_Package.openRecordStore (This.getRecordId (This.abeClientInformation), True);
+            recordStore := RecordStore_Package.openRecordStore (RecordStoreHighScores'Class (This).getRecordId (This.abeClientInformation), True);
             highScoreBytes := newHighScore.getAsBytes;
             recordId := recordStore.addRecord (highScoreBytes, 0, highScoreBytes'Length);
-            This.load;
+            RecordStoreHighScores'Class (This).load;
         exception
             when Java_Occurrence : others =>
                 declare
@@ -130,7 +130,7 @@ package body org.allbinary.game.score.RecordStoreHighScores_Package is
    begin
         recordStore := NullRecordStore_Package.NULL_RECORD_STORE;
         begin
-            recordStore := RecordStore_Package.openRecordStore (This.getRecordId (This.abeClientInformation), True);
+            recordStore := RecordStore_Package.openRecordStore (RecordStoreHighScores'Class (This).getRecordId (This.abeClientInformation), True);
             recordEnum := recordStore.enumerateRecords (NullRecordFilter_Package.NULL_RECORD_FILTER, NullRecordComparator_Package.NULL_RECORD_COMPARATOR, True);
             scoreComparator := (ScoreComparator_Access (This.recordComparatorInterface));
             bestHighScore := HighScore_Package.Create (-(1), To_Unbounded_String ("none"), GameInfo_Package.NONE, scoreComparator.getBestScore);
@@ -199,8 +199,8 @@ package body org.allbinary.game.score.RecordStoreHighScores_Package is
    begin
         recordStore := NullRecordStore_Package.NULL_RECORD_STORE;
         begin
-            recordStore := RecordStore_Package.openRecordStore (This.getRecordId (This.abeClientInformation), True);
-            This.setList (BasicArrayListD_Package.Create);
+            recordStore := RecordStore_Package.openRecordStore (RecordStoreHighScores'Class (This).getRecordId (This.abeClientInformation), True);
+            RecordStoreHighScores'Class (This).setList (BasicArrayListD_Package.Create);
             recordEnum := recordStore.enumerateRecords (NullRecordFilter_Package.NULL_RECORD_FILTER, NullRecordComparator_Package.NULL_RECORD_COMPARATOR, True);
             recordAsBytes := null;
             byteArrayInputStream := null;
@@ -215,7 +215,7 @@ package body org.allbinary.game.score.RecordStoreHighScores_Package is
                         name := inputStream.readUTF;
                         score := inputStream.readLong;
                         newHighScore := HighScore_Package.Create (id, name, GameInfo_Package.NONE, score);
-                        list := This.getList;
+                        list := RecordStoreHighScores'Class (This).getList;
                         size := list.size;
                         lastIndex := size;
                         for index in 0 .. (size) - 1 loop
@@ -265,7 +265,7 @@ package body org.allbinary.game.score.RecordStoreHighScores_Package is
 
    function isTooManyHighScores (This : in out RecordStoreHighScores) return Boolean is
    begin
-        if ((This.getList) /= (null)) and then ((This.getList.size) < (This.MAXHIGHSCORES)) then
+        if ((RecordStoreHighScores'Class (This).getList) /= (null)) and then ((RecordStoreHighScores'Class (This).getList.size) < (This.MAXHIGHSCORES)) then
             return False;
         else
             This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("HighScores RecordStore Max Reached: ")).appendint (This.MAXHIGHSCORES).toString, RecordStoreHighScores_Access'(This'Unchecked_Access), To_Unbounded_String ("isTooManyHighScores"));
@@ -282,11 +282,11 @@ package body org.allbinary.game.score.RecordStoreHighScores_Package is
       index : Integer;
    begin
         begin
-            if not (This.isTooManyHighScores) then
+            if not (RecordStoreHighScores'Class (This).isTooManyHighScores) then
                 This.logUtil.putF (To_Unbounded_String ("Slot Available for a High Score"), RecordStoreHighScores_Access'(This'Unchecked_Access), To_Unbounded_String ("isBestScore"));
                 return True;
             else
-                list := This.getList;
+                list := RecordStoreHighScores'Class (This).getList;
                 size := list.size;
                 for index in 0 .. (size) - 1 loop
                     highScore := HighScore_Access (list.objectArray (index));
@@ -318,7 +318,7 @@ package body org.allbinary.game.score.RecordStoreHighScores_Package is
    begin
         stringBuffer := StringMaker_Package.Create;
         stringBuffer.append (HighScores (This).toString);
-        list := This.getList;
+        list := RecordStoreHighScores'Class (This).getList;
         size := list.size;
         for index in 0 .. (size) - 1 loop
             highScore := HighScore_Access (list.objectArray (index));

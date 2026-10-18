@@ -31,9 +31,9 @@ package body org.allbinary.image.gui.ImageJPanel_Package is
    begin
       JPanel_Package.Initialize (This);
       Initialize_Fields (This);
-        This.initComponents;
+        ImageJPanel'Class (This).initComponents;
         This.bufferedImage := bufferedImage;
-        This.setSize (This.bufferedImage.getWidth (null), This.bufferedImage.getHeight (null));
+        ImageJPanel'Class (This).setSize (This.bufferedImage.getWidth (null), This.bufferedImage.getHeight (null));
    end Initialize;
 
    function Create (bufferedImage_Param : access BufferedImage_Package.BufferedImage'Class) return ImageJPanel_Access is
@@ -57,7 +57,7 @@ package body org.allbinary.image.gui.ImageJPanel_Package is
       layout : GroupLayout_Access;
    begin
         layout := GroupLayout_Package.Create (ImageJPanel_Access'(This'Unchecked_Access));
-        This.setLayout (layout);
+        ImageJPanel'Class (This).setLayout (layout);
         layout.setHorizontalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGap (0, 400, Short_Package.MAX_VALUE));
         layout.setVerticalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGap (0, 300, Short_Package.MAX_VALUE));
    end initComponents;

@@ -40,6 +40,7 @@ package body org.allbinary.logic.util.cache.CacheInterfaceFactory_Package is
       cachePolicy : constant CachePolicy_Access := CachePolicy_Access (cachePolicy_Param);
    begin
         Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("No such ") & cacheType.toString));
+        return null;
    end getInstance;
 
    procedure getInstance (cacheType_Param : access CacheType_Package.CacheType'Class; cachePolicy_Param : access CachePolicy_Package.CachePolicy'Class) is

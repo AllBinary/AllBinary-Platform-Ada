@@ -45,21 +45,21 @@ package body org.allbinary.animation.image.sprite.HackRotationSpriteIndexedAnima
    --  throws Exception
    function getAnimationSize (This : in out HackRotationSpriteIndexedAnimation) return Integer is
    begin
-        return This.getSize;
+        return HackRotationSpriteIndexedAnimation'Class (This).getSize;
    end getAnimationSize;
 
    procedure paintFrame (This : in out HackRotationSpriteIndexedAnimation; g_Param : access Graphics_Package.Graphics'Class; frame : Integer; x : Integer; y : Integer) is
       g : constant Graphics_Access := Graphics_Access (g_Param);
    begin
-        This.setFrame (frame);
-        This.paintXY (g, x, y);
+        HackRotationSpriteIndexedAnimation'Class (This).setFrame (frame);
+        HackRotationSpriteIndexedAnimation'Class (This).paintXY (g, x, y);
    end paintFrame;
 
    procedure paintXY (This : in out HackRotationSpriteIndexedAnimation; g_Param : access Graphics_Package.Graphics'Class; x : Integer; y : Integer) is
       g : constant Graphics_Access := Graphics_Access (g_Param);
    begin
         This.sprite.setPosition (x, y);
-        This.paint (g);
+        HackRotationSpriteIndexedAnimation'Class (This).paint (g);
    end paintXY;
 
    procedure paint (This : in out HackRotationSpriteIndexedAnimation; g_Param : access Graphics_Package.Graphics'Class) is

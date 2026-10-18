@@ -61,9 +61,9 @@ package body org.allbinary.logic.communication.xmlrpc.XmlRpcAbeClient_Package is
         This.server := This.start;
         stringBuffer := StringMaker_Package.Create;
         stringBuffer.append (This.START_SERVER);
-        stringBuffer.appendint (This.getServer);
+        stringBuffer.appendint (XmlRpcAbeClient'Class (This).getServer);
         stringBuffer.append (This.SEP);
-        stringBuffer.append (clientInfo.getLicenseServer (This.getServer));
+        stringBuffer.append (clientInfo.getLicenseServer (XmlRpcAbeClient'Class (This).getServer));
         This.logUtil.putF (stringBuffer.toString, XmlRpcAbeClient_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
    end Initialize;
 
@@ -86,15 +86,15 @@ package body org.allbinary.logic.communication.xmlrpc.XmlRpcAbeClient_Package is
    function tryAnother (This : in out XmlRpcAbeClient; anyType_Param : access Java_Object'Class) return Java_Object_Access is
       anyType : constant Java_Object_Access := Java_Object_Access (anyType_Param);
    begin
-        if (This.getServer) < (This.getMaxServers) then
-            This.setServer ((This.getServer) + (1));
+        if (XmlRpcAbeClient'Class (This).getServer) < (XmlRpcAbeClient'Class (This).getMaxServers) then
+            XmlRpcAbeClient'Class (This).setServer ((XmlRpcAbeClient'Class (This).getServer) + (1));
         else
-            This.setServer (0);
+            XmlRpcAbeClient'Class (This).setServer (0);
         end if;
-        if ((This.getServer) /= (This.getStart)) and then (not (This.isIsDone)) then
-            return This.get (anyType);
+        if ((XmlRpcAbeClient'Class (This).getServer) /= (XmlRpcAbeClient'Class (This).getStart)) and then (not (XmlRpcAbeClient'Class (This).isIsDone)) then
+            return XmlRpcAbeClient'Class (This).get (anyType);
         else
-            This.setIsDone (True);
+            XmlRpcAbeClient'Class (This).setIsDone (True);
         end if;
         Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Tried All Servers But Still Failed")));
    end tryAnother;

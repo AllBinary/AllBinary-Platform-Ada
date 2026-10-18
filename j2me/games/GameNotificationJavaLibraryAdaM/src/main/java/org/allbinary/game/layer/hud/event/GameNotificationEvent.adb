@@ -31,9 +31,9 @@ package body org.allbinary.game.layer.hud.event.GameNotificationEvent_Package is
    begin
         AllBinaryEventObject_Package.Initialize (This, anyType);
         Initialize_Fields (This);
-        This.setString (string_Id);
+        GameNotificationEvent'Class (This).setString (string_Id);
         This.seconds := seconds;
-        This.setBasicColorP (basicColor);
+        GameNotificationEvent'Class (This).setBasicColorP (basicColor);
         This.removeable := permanent;
    end Initialize;
 

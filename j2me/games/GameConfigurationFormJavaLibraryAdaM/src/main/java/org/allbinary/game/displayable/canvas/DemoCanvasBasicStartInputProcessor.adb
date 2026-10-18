@@ -42,14 +42,14 @@ package body org.allbinary.game.displayable.canvas.DemoCanvasBasicStartInputProc
       gameKeyEvent : GameKeyEvent_Access;
       index : Integer;
    begin
-        list := This.getGameKeyEventList;
+        list := DemoCanvasBasicStartInputProcessor'Class (This).getGameKeyEventList;
         size := list.size;
         gameKeyEvent := null;
         for index in 0 .. (size) - 1 loop
             gameKeyEvent := GameKeyEvent_Access (list.objectArray (index));
             This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Start GameKey: ")).append (StringUtil_Package.getInstance.toString (gameKeyEvent)).toString, DemoCanvasBasicStartInputProcessor_Access'(This'Unchecked_Access), GameInputStrings_Package.getInstance.PROCESS_INPUT);
         end loop;
-        This.getCanvas.getCustomCommandListener.commandAction (GameCommandsFactory_Package.getInstance.START_COMMAND, NullCanvas_Package.NULL_CANVAS);
+        DemoCanvasBasicStartInputProcessor'Class (This).getCanvas.getCustomCommandListener.commandAction (GameCommandsFactory_Package.getInstance.START_COMMAND, NullCanvas_Package.NULL_CANVAS);
         return size;
    end processInputList;
 

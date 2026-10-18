@@ -73,21 +73,21 @@ package body org.allbinary.animation.SVGAsJSONSimpleLoader_Package is
         begin
             root := JSONObject_Package.Create (svgAsJson);
             svgValue := root.opt (This.KEY_SVG);
-            svg := (if (svgValue) = (null) then root else This.asObject (svgValue, This.KEY_SVG));
+            svg := (if (svgValue) = (null) then root else SVGAsJSONSimpleLoader'Class (This).asObject (svgValue, This.KEY_SVG));
             pointVector := BasicArrayListD_Package.Create;
             keys := svg.keys;
             while keys.hasMoreElements loop
-                key := Unbounded_String (keys.nextElement);
+                key := Java_Unbox (keys.nextElement);
                 value := svg.opt (key);
                 if This.shapeTypeFactory.KEY_LINE.equals (key) then
-                    This.addShapes (pointVector, value, This.shapeTypeFactory.LINE);
+                    SVGAsJSONSimpleLoader'Class (This).addShapes (pointVector, value, This.shapeTypeFactory.LINE);
                 elsif This.shapeTypeFactory.equals (key) then
-                    This.addShapes (pointVector, value, This.shapeTypeFactory.CIRCLE);
+                    SVGAsJSONSimpleLoader'Class (This).addShapes (pointVector, value, This.shapeTypeFactory.CIRCLE);
                 elsif (This.shapeTypeFactory.KEY_RECT.equals (key)) or else (This.shapeTypeFactory.KEY_RECTANGLE.equals (key)) then
-                    This.addShapes (pointVector, value, This.shapeTypeFactory.RECTANGLE);
+                    SVGAsJSONSimpleLoader'Class (This).addShapes (pointVector, value, This.shapeTypeFactory.RECTANGLE);
                 end if;
             end loop;
-            return This.toPoints (pointVector);
+            return SVGAsJSONSimpleLoader'Class (This).toPoints (pointVector);
         exception
             when Java_Occurrence : others =>
                 declare
@@ -111,10 +111,10 @@ package body org.allbinary.animation.SVGAsJSONSimpleLoader_Package is
             array_Id := JSONArray_Access (value);
             size := array_Id.length;
             for index in 0 .. (size) - 1 loop
-                This.addShape (pointVector, array_Id.opt (index), shapeType);
+                SVGAsJSONSimpleLoader'Class (This).addShape (pointVector, array_Id.opt (index), shapeType);
             end loop;
         else
-            This.addShape (pointVector, value, shapeType);
+            SVGAsJSONSimpleLoader'Class (This).addShape (pointVector, value, shapeType);
         end if;
    end addShapes;
 
@@ -125,13 +125,13 @@ package body org.allbinary.animation.SVGAsJSONSimpleLoader_Package is
       shapeType : constant ShapeType_Access := ShapeType_Access (shapeType_Param);
       shape : JSONObject_Access;
    begin
-        shape := This.asObject (value, shapeType.getName);
+        shape := SVGAsJSONSimpleLoader'Class (This).asObject (value, shapeType.getName);
         if (shapeType) = (This.shapeTypeFactory.LINE) then
-            This.addLine (pointVector, shape);
+            SVGAsJSONSimpleLoader'Class (This).addLine (pointVector, shape);
         elsif (shapeType) = (This.shapeTypeFactory.CIRCLE) then
-            This.addCircle (pointVector, shape);
+            SVGAsJSONSimpleLoader'Class (This).addCircle (pointVector, shape);
         else
-            This.addRectangle (pointVector, shape);
+            SVGAsJSONSimpleLoader'Class (This).addRectangle (pointVector, shape);
         end if;
    end addShape;
 
@@ -140,9 +140,9 @@ package body org.allbinary.animation.SVGAsJSONSimpleLoader_Package is
       pointVector : constant BasicArrayList_Access := BasicArrayList_Access (pointVector_Param);
       line : constant JSONObject_Access := JSONObject_Access (line_Param);
    begin
-        This.addPoint (pointVector, This.readInt (line, This.KEY_X1), This.readInt (line, This.KEY_Y1));
-        This.addPoint (pointVector, This.readInt (line, This.KEY_X2), This.readInt (line, This.KEY_Y2));
-        This.addSeparator (pointVector);
+        SVGAsJSONSimpleLoader'Class (This).addPoint (pointVector, SVGAsJSONSimpleLoader'Class (This).readInt (line, This.KEY_X1), SVGAsJSONSimpleLoader'Class (This).readInt (line, This.KEY_Y1));
+        SVGAsJSONSimpleLoader'Class (This).addPoint (pointVector, SVGAsJSONSimpleLoader'Class (This).readInt (line, This.KEY_X2), SVGAsJSONSimpleLoader'Class (This).readInt (line, This.KEY_Y2));
+        SVGAsJSONSimpleLoader'Class (This).addSeparator (pointVector);
    end addLine;
 
    --  throws Exception
@@ -157,16 +157,16 @@ package body org.allbinary.animation.SVGAsJSONSimpleLoader_Package is
       y : Integer;
       index : Integer;
    begin
-        cx := This.readInt (circle, This.KEY_CX);
-        cy := This.readInt (circle, This.KEY_CY);
-        radius := This.readInt (circle, This.KEY_R);
+        cx := SVGAsJSONSimpleLoader'Class (This).readInt (circle, This.KEY_CX);
+        cy := SVGAsJSONSimpleLoader'Class (This).readInt (circle, This.KEY_CY);
+        radius := SVGAsJSONSimpleLoader'Class (This).readInt (circle, This.KEY_R);
         for index in 0 .. This.CIRCLE_SEGMENTS loop
             angle := ((((Math_Package.PI) * (2.0)) * (index))) / (This.CIRCLE_SEGMENTS);
             x := Integer (Long_Long_Integer (Long_Float'Rounding ((cx) + (((Ada.Numerics.Long_Elementary_Functions.Cos (angle)) * (radius))))));
             y := Integer (Long_Long_Integer (Long_Float'Rounding ((cy) + (((Ada.Numerics.Long_Elementary_Functions.Sin (angle)) * (radius))))));
-            This.addPoint (pointVector, x, y);
+            SVGAsJSONSimpleLoader'Class (This).addPoint (pointVector, x, y);
         end loop;
-        This.addSeparator (pointVector);
+        SVGAsJSONSimpleLoader'Class (This).addSeparator (pointVector);
    end addCircle;
 
    --  throws Exception
@@ -178,16 +178,16 @@ package body org.allbinary.animation.SVGAsJSONSimpleLoader_Package is
       width : Integer;
       height : Integer;
    begin
-        x := This.readInt (rectangle, This.KEY_X, 0);
-        y := This.readInt (rectangle, This.KEY_Y, 0);
-        width := This.readInt (rectangle, This.graphicsStrings.WIDTH);
-        height := This.readInt (rectangle, This.graphicsStrings.HEIGHT);
-        This.addPoint (pointVector, x, y);
-        This.addPoint (pointVector, (x) + (width), y);
-        This.addPoint (pointVector, (x) + (width), (y) + (height));
-        This.addPoint (pointVector, x, (y) + (height));
-        This.addPoint (pointVector, x, y);
-        This.addSeparator (pointVector);
+        x := SVGAsJSONSimpleLoader'Class (This).readInt (rectangle, This.KEY_X, 0);
+        y := SVGAsJSONSimpleLoader'Class (This).readInt (rectangle, This.KEY_Y, 0);
+        width := SVGAsJSONSimpleLoader'Class (This).readInt (rectangle, This.graphicsStrings.WIDTH);
+        height := SVGAsJSONSimpleLoader'Class (This).readInt (rectangle, This.graphicsStrings.HEIGHT);
+        SVGAsJSONSimpleLoader'Class (This).addPoint (pointVector, x, y);
+        SVGAsJSONSimpleLoader'Class (This).addPoint (pointVector, (x) + (width), y);
+        SVGAsJSONSimpleLoader'Class (This).addPoint (pointVector, (x) + (width), (y) + (height));
+        SVGAsJSONSimpleLoader'Class (This).addPoint (pointVector, x, (y) + (height));
+        SVGAsJSONSimpleLoader'Class (This).addPoint (pointVector, x, y);
+        SVGAsJSONSimpleLoader'Class (This).addSeparator (pointVector);
    end addRectangle;
 
    procedure addPoint (This : in out SVGAsJSONSimpleLoader; pointVector_Param : access BasicArrayList_Package.BasicArrayList'Class; x : Integer; y : Integer) is
@@ -211,7 +211,7 @@ package body org.allbinary.animation.SVGAsJSONSimpleLoader_Package is
         if (value) = (null) then
             Java_Throw (Java_New_Exception ("IllegalArgumentException", This.ERROR_MISSING_KEY_PREFIX & key));
         end if;
-        return This.toInt (value, key);
+        return SVGAsJSONSimpleLoader'Class (This).toInt (value, key);
    end readInt;
 
    function readInt (This : in out SVGAsJSONSimpleLoader; anyType_Param : access JSONObject_Package.JSONObject'Class; key : Unbounded_String; defaultValue : Integer) return Integer is
@@ -221,7 +221,7 @@ package body org.allbinary.animation.SVGAsJSONSimpleLoader_Package is
         begin
             if anyType.has (key) then
                 value := anyType.get (key);
-                return This.toInt (value, key);
+                return SVGAsJSONSimpleLoader'Class (This).toInt (value, key);
             end if;
         exception
             when Java_Occurrence : others =>
@@ -241,7 +241,7 @@ package body org.allbinary.animation.SVGAsJSONSimpleLoader_Package is
             return Integer (Long_Long_Integer (Long_Float'Rounding ((Number_Access (value)).doubleValue)));
         end if;
         if (value.all in String_Package.String'Class) then
-            return Integer (Long_Long_Integer (Long_Float'Rounding (Long_Float'Value (To_String (Unbounded_String (value))))));
+            return Integer (Long_Long_Integer (Long_Float'Rounding (Long_Float'Value (To_String (Java_Unbox (value))))));
         end if;
         Java_Throw (Java_New_Exception ("IllegalArgumentException", This.ERROR_INVALID_NUMBER_PREFIX & key));
    end toInt;

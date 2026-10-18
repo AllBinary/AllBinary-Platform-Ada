@@ -41,7 +41,7 @@ package body views.generic_Id.address.shipping.TaxValidationView_Package is
       aStreetAddress : StreetAddress_Access;
       index : Integer;
    begin
-        billingAddressesEntity := ShippingAddressesEntity_Package.Create (This.getWeblisketSession.getUserName);
+        billingAddressesEntity := ShippingAddressesEntity_Package.Create (TaxValidationView'Class (This).getWeblisketSession.getUserName);
         streetAddressList := billingAddressesEntity.get;
         if (streetAddressList) = (null) then
             return False;

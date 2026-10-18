@@ -20,7 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
 with org.allbinary.game.input.form.RTSFormInput_Package; use org.allbinary.game.input.form.RTSFormInput_Package;
 with org.allbinary.game.layer.MultiSelectPaintable_Package; use org.allbinary.game.layer.MultiSelectPaintable_Package;
 with org.allbinary.game.layer.RTSGameStrings_Package; use org.allbinary.game.layer.RTSGameStrings_Package;
@@ -71,6 +71,7 @@ with org.allbinary.game.input.SelectRTSLayerVisitorFactoryInterface_Package; use
 
 package org.allbinary.game.input.HumanRTSPlayerGameInput_Package is
 
+   package Graphics_Package renames Standard.javax.microedition.lcdui.Graphics_Package;
    package RTSFormInput_Package renames Standard.org.allbinary.game.input.form.RTSFormInput_Package;
    package MultiSelectPaintable_Package renames Standard.org.allbinary.game.layer.MultiSelectPaintable_Package;
    package RTSGameStrings_Package renames Standard.org.allbinary.game.layer.RTSGameStrings_Package;

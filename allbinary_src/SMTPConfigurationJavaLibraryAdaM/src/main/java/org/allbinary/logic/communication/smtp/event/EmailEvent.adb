@@ -64,9 +64,9 @@ package body org.allbinary.logic.communication.smtp.event.EmailEvent_Package is
         stringBuffer.append (To_Unbounded_String ("EmailEvent Log: " & ASCII.LF & ""));
         stringBuffer.append (To_Unbounded_String ("Event Name: "));
         stringBuffer.append (This.userEmailEventNameData.toString);
-        stringBuffer.append (This.getEmailInfo.toString);
+        stringBuffer.append (EmailEvent'Class (This).getEmailInfo.toString);
         stringBuffer.append (To_Unbounded_String ("" & ASCII.LF & "Number of Attempts: "));
-        stringBuffer.appendint (This.getAttempts);
+        stringBuffer.appendint (EmailEvent'Class (This).getAttempts);
         return stringBuffer.toString;
    end toString;
 

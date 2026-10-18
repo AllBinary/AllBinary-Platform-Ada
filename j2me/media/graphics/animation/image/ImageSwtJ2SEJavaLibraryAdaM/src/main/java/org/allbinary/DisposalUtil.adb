@@ -48,7 +48,7 @@ package body org.allbinary.DisposalUtil_Package is
         end if;
         if image.isMutable then
             mutableImage := SwtMutableImage_Access (image);
-            This.disposeResource (Resource_Access (mutableImage.getImage));
+            DisposalUtil'Class (This).disposeResource (Resource_Access (mutableImage.getImage));
         else
             null;
         end if;

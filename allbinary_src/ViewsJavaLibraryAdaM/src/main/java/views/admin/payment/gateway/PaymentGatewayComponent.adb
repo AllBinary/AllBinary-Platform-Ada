@@ -48,14 +48,14 @@ package body views.admin.payment.gateway.PaymentGatewayComponent_Package is
         paymentType := BasicPaymentTypeUtil_Package.getInstance.get (This.paymentGatewayInterface.getName);
         paymentGatewayDomNodeFactoryInterface := paymentType.getPaymentGatewayDomNodeFactoryInterface;
         domNodeInterface := DomNodeInterface_Access (paymentGatewayDomNodeFactoryInterface.getInstance (This.paymentGatewayInterface));
-        This.addDomNodeInterface (domNodeInterface);
+        PaymentGatewayComponent'Class (This).addDomNodeInterface (domNodeInterface);
    end addDomNodeInterfaces;
 
    function view (This : in out PaymentGatewayComponent) return Unbounded_String is
       error : Unbounded_String;
    begin
         begin
-            This.addDomNodeInterfaces;
+            PaymentGatewayComponent'Class (This).addDomNodeInterfaces;
             return HttpStoreComponentView (This).view;
         exception
             when Java_Occurrence : others =>

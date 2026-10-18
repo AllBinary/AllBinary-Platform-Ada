@@ -73,7 +73,7 @@ package body org.allbinary.game.layer.unit.UnitLayer_Package is
    begin
         AdvancedRTSGameLayer_Package.Initialize (This, remoteInfo, parentLayer, advancedRTSProperties, groupInterface, rootName, name, healthInterface, WaypointRTSFormInput_Package.Create (groupInterface, True), animationInterfaceFactoryInterface, emptyAnimationInterfaceFactoryInterface, baseAnimationInterfaceFactoryInterface, buildAnimationInterfaceFactoryInterface, verticleBuildAnimationInterfaceFactoryInterface, proceduralAnimationInterfaceFactoryInterface, rectangle, x, y, viewPosition);
         Initialize_Fields (This);
-        This.setCollidableInferface (CollidableUnitBehavior_Package.Create (True));
+        UnitLayer'Class (This).setCollidableInferface (CollidableUnitBehavior_Package.Create (True));
         This.waypointLayerInterfaceFactoryInterface := waypointLayerInterfaceFactoryInterface;
         This.maxResourceLoad := maxResourceLoad.shortValue;
         This.moveSoundInterface := moveSoundInterface;
@@ -85,7 +85,7 @@ package body org.allbinary.game.layer.unit.UnitLayer_Package is
             This.damageFloaters := DamageFloaters_Package.Create;
         end if;
         if Features_Package.getInstance.isFeature (GameFeatureFactory_Package.getInstance.HEALTH_BARS) then
-            This.healthBar := HealthBar_Package.Create (UnitLayer_Access'(This'Unchecked_Access), This.getHealthInterface, HealthBarTwodAnimation_Package.Create (AllBinaryLayer_Access (UnitLayer_Access'(This'Unchecked_Access)), BasicHudFactory_Package.getInstance.BOTTOMLEFT), -(1));
+            This.healthBar := HealthBar_Package.Create (UnitLayer_Access'(This'Unchecked_Access), UnitLayer'Class (This).getHealthInterface, HealthBarTwodAnimation_Package.Create (AllBinaryLayer_Access (UnitLayer_Access'(This'Unchecked_Access)), BasicHudFactory_Package.getInstance.BOTTOMLEFT), -(1));
         else
             This.healthBar := NullPaintable_Package.getInstance;
         end if;
@@ -95,7 +95,7 @@ package body org.allbinary.game.layer.unit.UnitLayer_Package is
         This.decalAnimation.setFrameByDirection (direction);
         This.rotationAnimationInterfaceP := RotationAnimation_Access (This.indexedButShouldBeRotationAnimationInterface);
         This.rotationAnimationInterfaceP.setFrameByDirection (direction);
-        This.setMaxLevel (12);
+        UnitLayer'Class (This).setMaxLevel (12);
         This.vehicleProperties := vehicleProperties;
         This.trackingEvent := TrackingEvent_Package.Create (UnitLayer_Access'(This'Unchecked_Access));
         This.initPathAnimation := PathAnimation_Package.Create (UnitLayer_Access'(This'Unchecked_Access), LinePathRelativeAnimation_Package.getInstance);
@@ -124,15 +124,15 @@ package body org.allbinary.game.layer.unit.UnitLayer_Package is
       waypoint : WaypointBase_Access;
    begin
         hashtable := StdUtil_Package.getInstance.createHashtable;
-        hashtable.put (This.groupCommonFactory.ID, This.getGroupInterface);
+        hashtable.put (This.groupCommonFactory.ID, UnitLayer'Class (This).getGroupInterface);
         hashtable.put (Layer_Package.ID, UnitLayer_Access'(This'Unchecked_Access));
         hashtable.put (AllBinaryGameLayerManager_Package.ID, This.allBinaryGameLayerManagerP);
-        This.setWaypointBehavior (UnitWaypointBehavior2_Package.Create (UnitLayer_Access'(This'Unchecked_Access), AdvancedRTSGameLayer_Access (This.waypointLayerInterfaceFactoryInterface.getNextInstance (hashtable, This.x, This.y, This.z))));
+        UnitLayer'Class (This).setWaypointBehavior (UnitWaypointBehavior2_Package.Create (UnitLayer_Access'(This'Unchecked_Access), AdvancedRTSGameLayer_Access (This.waypointLayerInterfaceFactoryInterface.getNextInstance (hashtable, This.x, This.y, This.z))));
         features := Features_Package.getInstance;
         waypoint := (if J2MEUtil_Package.isHTML then MultipassNoCacheWaypoint_Package.Create (UnitLayer_Access'(This'Unchecked_Access), AttackSound_Package.getInstance) else NoCacheWaypoint_Package.Create (UnitLayer_Access'(This'Unchecked_Access), AttackSound_Package.getInstance));
-        This.getWaypointBehavior.setWaypoint (waypoint);
+        UnitLayer'Class (This).getWaypointBehavior.setWaypoint (waypoint);
         AdvancedRTSGameLayer (This).updateWaypointBehavior (geographicMapInterface);
-        This.initRangeHack;
+        UnitLayer'Class (This).initRangeHack;
    end updateWaypointBehavior;
 
    --  throws Exception
@@ -141,11 +141,11 @@ package body org.allbinary.game.layer.unit.UnitLayer_Package is
    begin
         AdvancedRTSGameLayer (This).construct (rtsPlayerLayerInterface);
         TrackingEventHandler_Package.getInstance.addListenerInterface (UnitLayer_Access'(This'Unchecked_Access));
-        WaypointEventHandlerFactory_Package.getInstance (This.getGroupInterface (0)).addListenerInterface (This.getUnitWaypointBehavior);
+        WaypointEventHandlerFactory_Package.getInstance (UnitLayer'Class (This).getGroupInterface (0)).addListenerInterface (UnitLayer'Class (This).getUnitWaypointBehavior);
         BuildingEventHandler_Package.getInstance.addListenerInterface (UnitLayer_Access'(This'Unchecked_Access));
-        This.getUnitWaypointBehavior.setCurrentPathGeographicMapCellPosition (This.getCurrentGeographicMapCellPosition);
-        This.updateSensorGeographicMapCellPositionList;
-        This.getUnitWaypointBehavior.setLastPathGeographicMapCellPosition (This.getUnitWaypointBehavior.getCurrentPathGeographicMapCellPosition);
+        UnitLayer'Class (This).getUnitWaypointBehavior.setCurrentPathGeographicMapCellPosition (UnitLayer'Class (This).getCurrentGeographicMapCellPosition);
+        UnitLayer'Class (This).updateSensorGeographicMapCellPositionList;
+        UnitLayer'Class (This).getUnitWaypointBehavior.setLastPathGeographicMapCellPosition (UnitLayer'Class (This).getUnitWaypointBehavior.getCurrentPathGeographicMapCellPosition);
    end construct;
 
    --  throws Exception
@@ -168,7 +168,7 @@ package body org.allbinary.game.layer.unit.UnitLayer_Package is
       index : Integer;
    begin
         if VisibleCellPositionsSingleton_Package.getInstance.shouldProcess then
-            currentGeographicMapCellPosition := This.getCurrentGeographicMapCellPosition;
+            currentGeographicMapCellPosition := UnitLayer'Class (This).getCurrentGeographicMapCellPosition;
             This.sensorGeographicMapCellPositionList.clear;
             This.sensorGeographicMapCellPositionList.add (currentGeographicMapCellPosition);
             sensorRange := (This.weaponRange) * (UnitLayer_Package.SENSOR_RANGE_MULTIPLIER);
@@ -265,7 +265,7 @@ package body org.allbinary.game.layer.unit.UnitLayer_Package is
         if (closestIndex) >= (0) then
             geographicMapCellPositionBasicArrayList := BasicArrayList_Access (pathsList.get (closestIndex));
             geographicMapCellPosition := GeographicMapCellPosition_Access (geographicMapCellPositionBasicArrayList.get (0));
-            This.teleportTo (geographicMapCellPosition);
+            UnitLayer'Class (This).teleportTo (geographicMapCellPosition);
         end if;
    end setClosestGeographicMapCellHistory;
 
@@ -283,9 +283,9 @@ package body org.allbinary.game.layer.unit.UnitLayer_Package is
    begin
         begin
             layerInterface := AdvancedRTSGameLayer_Access (trackingEvent.getLayerInterface);
-            if (layerInterface.getGroupInterface (0)) /= (This.getGroupInterface (0)) then
-                This.getUnitWaypointBehavior.getPossibleTargetList.add (layerInterface);
-                layerInterface.onMovementFound (This.getTrackingEvent);
+            if (layerInterface.getGroupInterface (0)) /= (UnitLayer'Class (This).getGroupInterface (0)) then
+                UnitLayer'Class (This).getUnitWaypointBehavior.getPossibleTargetList.add (layerInterface);
+                layerInterface.onMovementFound (UnitLayer'Class (This).getTrackingEvent);
             end if;
         exception
             when Java_Occurrence : others =>
@@ -303,8 +303,8 @@ package body org.allbinary.game.layer.unit.UnitLayer_Package is
       layerInterface : AdvancedRTSGameLayer_Access;
    begin
         layerInterface := AdvancedRTSGameLayer_Access (trackingEvent.getLayerInterface);
-        if (layerInterface.getGroupInterface (0)) /= (This.getGroupInterface (0)) then
-            This.getUnitWaypointBehavior.getPossibleTargetList.add (layerInterface);
+        if (layerInterface.getGroupInterface (0)) /= (UnitLayer'Class (This).getGroupInterface (0)) then
+            UnitLayer'Class (This).getUnitWaypointBehavior.getPossibleTargetList.add (layerInterface);
         end if;
    end onMovementFound;
 
@@ -313,13 +313,13 @@ package body org.allbinary.game.layer.unit.UnitLayer_Package is
       weaponProperties : WeaponProperties_Access;
       sensorRange : Integer;
    begin
-        basicWeaponPart := BasicWeaponPart_Access (This.getPartInterfaceArray (0));
+        basicWeaponPart := BasicWeaponPart_Access (UnitLayer'Class (This).getPartInterfaceArray (0));
         weaponProperties := basicWeaponPart.getWeaponProperties;
         This.weaponRange := weaponProperties.getRange;
-        This.initRangeAnimation := AdjustedCircleAnimation_Package.createW (This.weaponRange, This.weaponRange, This.getWidth, This.basicColorFactory.GREEN);
+        This.initRangeAnimation := AdjustedCircleAnimation_Package.createW (This.weaponRange, This.weaponRange, UnitLayer'Class (This).getWidth, This.basicColorFactory.GREEN);
         sensorRange := (This.weaponRange) * (UnitLayer_Package.SENSOR_RANGE_MULTIPLIER);
-        This.initSensorRangeAnimation := AdjustedCircleAnimation_Package.createW (sensorRange, sensorRange, This.getWidth, This.basicColorFactory.RED);
-        This.getUnitWaypointBehavior.initRange (This.weaponRange);
+        This.initSensorRangeAnimation := AdjustedCircleAnimation_Package.createW (sensorRange, sensorRange, UnitLayer'Class (This).getWidth, This.basicColorFactory.RED);
+        UnitLayer'Class (This).getUnitWaypointBehavior.initRange (This.weaponRange);
         This.fireTimeHelper.delay_Id := (Integer (weaponProperties.getReloadTime));
    end initRangeHack;
 
@@ -329,29 +329,29 @@ package body org.allbinary.game.layer.unit.UnitLayer_Package is
       currentFrame : Integer;
       size : Integer;
    begin
-        if not (This.getHealthInterface.isAlive) then
-            if This.isReadyForExplosion then
+        if not (UnitLayer'Class (This).getHealthInterface.isAlive) then
+            if UnitLayer'Class (This).isReadyForExplosion then
                 currentFrame := This.destroyAnimationInterface.getFrame;
                 size := (This.destroyAnimationInterface.getSize) - (1);
                 if (currentFrame) = (size) then
-                    if not (This.getHealthInterface.isAlive) then
-                        This.setDestroyed (True);
+                    if not (UnitLayer'Class (This).getHealthInterface.isAlive) then
+                        UnitLayer'Class (This).setDestroyed (True);
                     end if;
                 else
                     This.destroyAnimationInterface.nextFrame;
                 end if;
             else
-                This.setAnimationInterface (This.destroyAnimationInterface);
+                UnitLayer'Class (This).setAnimationInterface (This.destroyAnimationInterface);
                 SecondaryPlayerQueueFactory_Package.getInstance.add (ExplosionBasicSound_Package.getInstance);
                 This.shakeListener.onSmallShakeEvent;
                 This.vibration.vibrate (This.duration, 0, 0);
-                This.setReadyForExplosion (True);
+                UnitLayer'Class (This).setReadyForExplosion (True);
             end if;
         else
             AdvancedRTSGameLayer (This).processBuiltTick (allBinaryLayerManager);
         end if;
         This.captionAnimationHelper.tick;
-        This.getUnitWaypointBehavior.processTick (allBinaryLayerManager);
+        UnitLayer'Class (This).getUnitWaypointBehavior.processTick (allBinaryLayerManager);
    end processBuiltTick;
 
    procedure teleportTo (This : in out UnitLayer; geographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) is
@@ -359,7 +359,7 @@ package body org.allbinary.game.layer.unit.UnitLayer_Package is
       point : GPoint_Access;
    begin
         point := geographicMapCellPosition.getMidPoint;
-        This.setPosition ((point.getX) - (This.getHalfWidth), (point.getY) - (This.getHalfHeight), This.z);
+        UnitLayer'Class (This).setPosition ((point.getX) - (UnitLayer'Class (This).getHalfWidth), (point.getY) - (UnitLayer'Class (This).getHalfHeight), This.z);
    end teleportTo;
 
    --  throws Exception
@@ -371,7 +371,7 @@ package body org.allbinary.game.layer.unit.UnitLayer_Package is
    begin
         geographicMapCompositeInterface := GeographicMapCompositeInterface_Access (This.allBinaryGameLayerManagerP);
         geographicMapInterface := geographicMapCompositeInterface.getGeographicMapInterface (0);
-        geographicMapCellPosition := geographicMapInterface.getCellPositionAtXY ((This.x) + (This.getHalfWidth), (This.y) + (This.getHalfHeight));
+        geographicMapCellPosition := geographicMapInterface.getCellPositionAtXY ((This.x) + (UnitLayer'Class (This).getHalfWidth), (This.y) + (UnitLayer'Class (This).getHalfHeight));
         raceTrackGeographicMap := RaceTrackGeographicMap_Access (geographicMapInterface);
         if not (raceTrackGeographicMap.isValid (geographicMapCellPosition)) then
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Position is not really on the map: ") & Java_Image (geographicMapCellPosition)));
@@ -385,9 +385,9 @@ package body org.allbinary.game.layer.unit.UnitLayer_Package is
       gameKeyEvent : constant GameKeyEvent_Access := GameKeyEvent_Access (gameKeyEvent_Param);
    begin
         if This.fireTimeHelper.isTimeTNT then
-            This.fireAll (layerManager);
+            UnitLayer'Class (This).fireAll (layerManager);
         else
-            This.reload;
+            UnitLayer'Class (This).reload;
         end if;
    end fire;
 
@@ -410,18 +410,18 @@ package body org.allbinary.game.layer.unit.UnitLayer_Package is
    procedure down (This : in out UnitLayer) is
       velocityProperties : VelocityProperties_Access;
    begin
-        velocityProperties := This.getVehicleProperties.getVelocityProperties;
+        velocityProperties := UnitLayer'Class (This).getVehicleProperties.getVelocityProperties;
         if not (velocityProperties.isOverXYMaxForwardVelocity) then
-            This.accelerate (This.decelerationBasicDecimal);
+            UnitLayer'Class (This).accelerate (This.decelerationBasicDecimal);
         end if;
    end down;
 
    procedure up (This : in out UnitLayer) is
       velocityProperties : VelocityProperties_Access;
    begin
-        velocityProperties := This.getVehicleProperties.getVelocityProperties;
+        velocityProperties := UnitLayer'Class (This).getVehicleProperties.getVelocityProperties;
         if not (velocityProperties.isOverXYMaxForwardVelocity) then
-            This.accelerate (This.accelerationBasicDecimal);
+            UnitLayer'Class (This).accelerate (This.accelerationBasicDecimal);
         end if;
    end up;
 
@@ -445,7 +445,7 @@ package body org.allbinary.game.layer.unit.UnitLayer_Package is
       key : Integer;
       index : Integer;
    begin
-        list := This.getGameKeyEventList;
+        list := UnitLayer'Class (This).getGameKeyEventList;
         size := list.size;
         for index in 0 .. (size) - 1 loop
             anyType := list.get (index);
@@ -453,14 +453,14 @@ package body org.allbinary.game.layer.unit.UnitLayer_Package is
             This.inputProcessorArray (key).processEvent (layerManager, GameKeyEvent_Package.NONE);
         end loop;
         list.clear;
-        This.groundFriction;
-        This.move_Case;
+        UnitLayer'Class (This).groundFriction;
+        UnitLayer'Class (This).move_Case;
    end processInput;
 
    procedure accelerate (This : in out UnitLayer; accelerate_Param : access BasicDecimal_Package.BasicDecimal'Class) is
       accelerate : constant BasicDecimal_Access := BasicDecimal_Access (accelerate_Param);
    begin
-        This.getVehicleProperties.getVelocityProperties.addVelocityi (accelerate.getUnscaled, Integer (This.rotationAnimationInterfaceP.getAngleInfoP.getAngle), 90);
+        UnitLayer'Class (This).getVehicleProperties.getVelocityProperties.addVelocityi (accelerate.getUnscaled, Integer (This.rotationAnimationInterfaceP.getAngleInfoP.getAngle), 90);
    end accelerate;
 
    --  throws Exception
@@ -473,13 +473,13 @@ package body org.allbinary.game.layer.unit.UnitLayer_Package is
         angleInfo := This.rotationAnimationInterfaceP.getAngleInfoP;
         angle := Integer (((angleInfo.getAngle) + (This.slightAngle)));
         This.hashtable.put (SmallIntegerSingletonFactory_Package.getInstance.getAt (1), SmallIntegerSingletonFactory_Package.getInstance.getAt (Integer (AngleFactory_Package.getInstance.getAt (angle).getValue)));
-        salvoInterface := SalvoInterface_Access (This.getPartInterfaceArray (0));
+        salvoInterface := SalvoInterface_Access (UnitLayer'Class (This).getPartInterfaceArray (0));
         salvoInterface.process (layerManager, Short_Integer (angle), Short_Integer (90));
    end fireAll;
 
    procedure downgrade (This : in out UnitLayer) is
    begin
-        if (This.getLevel) > (1) then
+        if (UnitLayer'Class (This).getLevel) > (1) then
             AdvancedRTSGameLayer (This).downgrade;
         end if;
    end downgrade;
@@ -487,14 +487,14 @@ package body org.allbinary.game.layer.unit.UnitLayer_Package is
    procedure upgrade (This : in out UnitLayer) is
    begin
         AdvancedRTSGameLayer (This).upgrade;
-        This.initRangeHack;
+        UnitLayer'Class (This).initRangeHack;
    end upgrade;
 
    procedure groundFriction (This : in out UnitLayer) is
       vehicleFrictionProperties : VehicleFrictionProperties_Access;
    begin
-        vehicleFrictionProperties := This.getVehicleProperties.getVehicleFrictionProperties;
-        This.getVehicleProperties.getVehicleFrictionProperties.friction (This.getVehicleProperties.getVelocityProperties, vehicleFrictionProperties.getTireFrictionNominator);
+        vehicleFrictionProperties := UnitLayer'Class (This).getVehicleProperties.getVehicleFrictionProperties;
+        UnitLayer'Class (This).getVehicleProperties.getVehicleFrictionProperties.friction (UnitLayer'Class (This).getVehicleProperties.getVelocityProperties, vehicleFrictionProperties.getTireFrictionNominator);
    end groundFriction;
 
    --  throws Exception
@@ -508,10 +508,10 @@ package body org.allbinary.game.layer.unit.UnitLayer_Package is
         waypointBehaviorBase := WaypointBehaviorBase_Access (This.waypointBehaviorBase);
         nextUnvisitedPathGeographicMapCellPosition := waypointBehaviorBase.getNextUnvisitedPathGeographicMapCellPosition;
         point := nextUnvisitedPathGeographicMapCellPosition.getMidPoint;
-        dx := (((This.getXP) + (This.getHalfWidth))) - (point.getX);
-        dy := (((This.getYP) + (This.getHalfHeight))) - (point.getY);
+        dx := (((UnitLayer'Class (This).getXP) + (UnitLayer'Class (This).getHalfWidth))) - (point.getX);
+        dy := (((UnitLayer'Class (This).getYP) + (UnitLayer'Class (This).getHalfHeight))) - (point.getY);
         This.rtsLogHelper.trackTo (UnitLayer_Access'(This'Unchecked_Access), nextUnvisitedPathGeographicMapCellPosition, dx, dy, reason);
-        This.trackToDXY (dx, dy);
+        UnitLayer'Class (This).trackToDXY (dx, dy);
    end trackTo;
 
    --  throws Exception
@@ -519,7 +519,7 @@ package body org.allbinary.game.layer.unit.UnitLayer_Package is
       angleOfTarget : Integer;
    begin
         angleOfTarget := 0;
-        This.trackToDXYTargetAngle (dx, dy, angleOfTarget);
+        UnitLayer'Class (This).trackToDXYTargetAngle (dx, dy, angleOfTarget);
    end trackToDXY;
 
    --  throws Exception
@@ -536,7 +536,7 @@ package body org.allbinary.game.layer.unit.UnitLayer_Package is
         waypointBehaviorBase := WaypointBehaviorBase_Access (This.waypointBehaviorBase);
         nextUnvisitedPathGeographicMapCellPosition := waypointBehaviorBase.getNextUnvisitedPathGeographicMapCellPosition;
         evading := False;
-        if (This.getUnitWaypointBehavior.getSensorAction) = (SensorActionFactory_Package.getInstance.EVADE) then
+        if (UnitLayer'Class (This).getUnitWaypointBehavior.getSensorAction) = (SensorActionFactory_Package.getInstance.EVADE) then
             This.rtsLogHelper.evade (UnitLayer_Access'(This'Unchecked_Access));
             evading := True;
             targetAngle := (targetAngle) + (180);
@@ -567,29 +567,29 @@ package body org.allbinary.game.layer.unit.UnitLayer_Package is
             end if;
             This.rtsLogHelper.currentMoveEnded (UnitLayer_Access'(This'Unchecked_Access));
             if ((This.movementAngle) = (This.angleFactory.LEFT)) or else ((This.movementAngle) = (This.angleFactory.RIGHT)) then
-                This.handleDeltalY (dx, dy);
+                UnitLayer'Class (This).handleDeltalY (dx, dy);
             elsif ((This.movementAngle) = (This.angleFactory.UP)) or else ((This.movementAngle) = (This.angleFactory.DOWN)) then
-                This.handleDeltalX (dx, dy);
+                UnitLayer'Class (This).handleDeltalX (dx, dy);
             end if;
             return True;
         else
             if (nextUnvisitedPathGeographicMapCellPosition) /= (SimpleGeographicMapCellPositionFactory_Package.NULL_GEOGRAPHIC_MAP_CELL_POSITION) then
                 if (This.steeringInsideGeographicMapCellPosition) /= (nextUnvisitedPathGeographicMapCellPosition) then
                     if ((abs (dx)) > (abs (dy))) and then ((dy) /= (0)) then
-                        This.handleDeltalY (dx, dy);
+                        UnitLayer'Class (This).handleDeltalY (dx, dy);
                     elsif (dx) /= (0) then
-                        This.handleDeltalX (dx, dy);
+                        UnitLayer'Class (This).handleDeltalX (dx, dy);
                     else
-                        This.handleDeltalY (dx, dy);
+                        UnitLayer'Class (This).handleDeltalY (dx, dy);
                     end if;
                 end if;
                 deltaAngle2 := (This.movementAngle.getValue) - (angle);
                 if (deltaAngle2) > (0) then
                     This.rtsLogHelper.rotateRight (UnitLayer_Access'(This'Unchecked_Access));
-                    This.getGameKeyEventList.add (gameKeyEventFactory.getInstanceForKey (UnitLayer_Access'(This'Unchecked_Access), Canvas_Package.RIGHT));
+                    UnitLayer'Class (This).getGameKeyEventList.add (gameKeyEventFactory.getInstanceForKey (UnitLayer_Access'(This'Unchecked_Access), Canvas_Package.RIGHT));
                 else
                     This.rtsLogHelper.rotateLeft (UnitLayer_Access'(This'Unchecked_Access));
-                    This.getGameKeyEventList.add (gameKeyEventFactory.getInstanceForKey (UnitLayer_Access'(This'Unchecked_Access), Canvas_Package.LEFT));
+                    UnitLayer'Class (This).getGameKeyEventList.add (gameKeyEventFactory.getInstanceForKey (UnitLayer_Access'(This'Unchecked_Access), Canvas_Package.LEFT));
                 end if;
                 return True;
             else
@@ -638,7 +638,7 @@ package body org.allbinary.game.layer.unit.UnitLayer_Package is
       anyType : Java_Object_Access;
       index : Integer;
    begin
-        list := This.getUnitWaypointBehavior.getSteeringVisitorList;
+        list := UnitLayer'Class (This).getUnitWaypointBehavior.getSteeringVisitorList;
         if (list.size) > (0) then
             for index in reverse 0 .. (list.size) - (1) loop
                 steeringVisitor := SteeringVisitor_Access (list.get (index));
@@ -647,9 +647,9 @@ package body org.allbinary.game.layer.unit.UnitLayer_Package is
                     list.removeAt (index);
                 end if;
             end loop;
-            This.fireOrMove;
-        elsif not (This.turnTo (dx, dy, targetAngle)) then
-            This.fireOrMove;
+            UnitLayer'Class (This).fireOrMove;
+        elsif not (UnitLayer'Class (This).turnTo (dx, dy, targetAngle)) then
+            UnitLayer'Class (This).fireOrMove;
         end if;
    end trackToDXYTargetAngle;
 
@@ -658,18 +658,18 @@ package body org.allbinary.game.layer.unit.UnitLayer_Package is
       gameKeyEventFactory : GameKeyEventFactory_Access;
    begin
         gameKeyEventFactory := GameKeyEventFactory_Package.getInstance;
-        if This.getUnitWaypointBehavior.needToMove then
+        if UnitLayer'Class (This).getUnitWaypointBehavior.needToMove then
             This.rtsLayer2LogHelper.steeringUp (UnitLayer_Access'(This'Unchecked_Access));
             if (This.showMoreCaptionStates) and then (not (This.captionAnimationHelper.isShowing)) then
                 This.captionAnimationHelper.update (UnitLayer_Package.MOVE, This.basicColorFactory.GREEN);
             end if;
-            This.getGameKeyEventList.add (gameKeyEventFactory.getInstanceForKey (UnitLayer_Access'(This'Unchecked_Access), Canvas_Package.UP));
+            UnitLayer'Class (This).getGameKeyEventList.add (gameKeyEventFactory.getInstanceForKey (UnitLayer_Access'(This'Unchecked_Access), Canvas_Package.UP));
         else
             This.captionAnimationHelper.update (CommonPhoneStrings_Package.getInstance.FIRE, This.basicColorFactory.RED);
             This.rtsLayer2LogHelper.steeringFireOrStop (UnitLayer_Access'(This'Unchecked_Access));
-            This.allStop;
-            This.getGameKeyEventList.add (gameKeyEventFactory.getInstanceForKey (UnitLayer_Access'(This'Unchecked_Access), Canvas_Package.KEY_NUM0));
-            TrackingEventHandler_Package.getInstance.fireEvent (This.getTrackingEvent);
+            UnitLayer'Class (This).allStop;
+            UnitLayer'Class (This).getGameKeyEventList.add (gameKeyEventFactory.getInstanceForKey (UnitLayer_Access'(This'Unchecked_Access), Canvas_Package.KEY_NUM0));
+            TrackingEventHandler_Package.getInstance.fireEvent (UnitLayer'Class (This).getTrackingEvent);
         end if;
    end fireOrMove;
 
@@ -687,12 +687,12 @@ package body org.allbinary.game.layer.unit.UnitLayer_Package is
       y : Integer;
    begin
         begin
-            velocityProperties := This.getVehicleProperties.getVelocityProperties;
+            velocityProperties := UnitLayer'Class (This).getVehicleProperties.getVelocityProperties;
             velocityXScaled := Long_Long_Integer (velocityProperties.getVelocityXBasicDecimalP.getScaled);
             velocityYScaled := Long_Long_Integer (velocityProperties.getVelocityYBasicDecimalP.getScaled);
-            This.getUnitWaypointBehavior.move_Case;
+            UnitLayer'Class (This).getUnitWaypointBehavior.move_Case;
             if ((velocityXScaled) /= (0)) or else ((velocityYScaled) /= (0)) then
-                This.getUnitWaypointBehavior.setMoving (True);
+                UnitLayer'Class (This).getUnitWaypointBehavior.setMoving (True);
                 geographicMapCompositeInterface := GeographicMapCompositeInterface_Access (This.allBinaryGameLayerManagerP);
                 geographicMapInterface := geographicMapCompositeInterface.getGeographicMapInterface (0);
                 This.layerPartialCellPositionsUtil.getAllDXY (geographicMapInterface, UnitLayer_Access'(This'Unchecked_Access), Integer (velocityXScaled), Integer (velocityYScaled), UnitLayer_Package.getPartialpositionlist);
@@ -702,21 +702,21 @@ package body org.allbinary.game.layer.unit.UnitLayer_Package is
                     tiledLayerUtil := TiledLayerUtil_Package.getInstance;
                     x := (This.x) + (Integer (velocityXScaled));
                     y := (This.y) + (Integer (velocityYScaled));
-                    x := tiledLayerUtil.keepOnMapX (tiledLayer, x, This.getWidth);
-                    y := tiledLayerUtil.keepOnMapY (tiledLayer, y, This.getHeight);
-                    This.setPosition (x, y, This.z);
+                    x := tiledLayerUtil.keepOnMapX (tiledLayer, x, UnitLayer'Class (This).getWidth);
+                    y := tiledLayerUtil.keepOnMapY (tiledLayer, y, UnitLayer'Class (This).getHeight);
+                    UnitLayer'Class (This).setPosition (x, y, This.z);
                 else
                     allbinaryLayer := DropCellPositionHistory_Package.getInstance.getLayerInterface (cellPosition);
-                    This.getUnitWaypointBehavior.setMovingFromStopped (False);
-                    This.getUnitWaypointBehavior.addBuildingChase (allbinaryLayer, cellPosition);
+                    UnitLayer'Class (This).getUnitWaypointBehavior.setMovingFromStopped (False);
+                    UnitLayer'Class (This).getUnitWaypointBehavior.addBuildingChase (allbinaryLayer, cellPosition);
                 end if;
             end if;
-            if This.getUnitWaypointBehavior.isMoving then
-                TrackingEventHandler_Package.getInstance.fireEvent (This.getTrackingEvent);
+            if UnitLayer'Class (This).getUnitWaypointBehavior.isMoving then
+                TrackingEventHandler_Package.getInstance.fireEvent (UnitLayer'Class (This).getTrackingEvent);
             else
-                This.getUnitWaypointBehavior.setMovingFromStopped (False);
+                UnitLayer'Class (This).getUnitWaypointBehavior.setMovingFromStopped (False);
             end if;
-            if (This.getUnitWaypointBehavior.isMovingFromStopped) and then (This.isVisible) then
+            if (UnitLayer'Class (This).getUnitWaypointBehavior.isMovingFromStopped) and then (UnitLayer'Class (This).isVisible) then
                 SecondaryPlayerQueueFactory_Package.getInstance.add (This.moveSoundInterface);
             end if;
         exception
@@ -732,7 +732,7 @@ package body org.allbinary.game.layer.unit.UnitLayer_Package is
    procedure allStop (This : in out UnitLayer) is
       velocityProperties : VelocityProperties_Access;
    begin
-        velocityProperties := This.getVehicleProperties.getVelocityProperties;
+        velocityProperties := UnitLayer'Class (This).getVehicleProperties.getVelocityProperties;
         velocityProperties.getVelocityXBasicDecimalP.setint (0);
         velocityProperties.getVelocityYBasicDecimalP.setint (0);
    end allStop;
@@ -743,9 +743,9 @@ package body org.allbinary.game.layer.unit.UnitLayer_Package is
       viewX : Integer;
       viewY : Integer;
    begin
-        if This.isVisible then
+        if UnitLayer'Class (This).isVisible then
             AdvancedRTSGameLayer (This).paint (graphics);
-            viewPosition := This.getViewPosition;
+            viewPosition := UnitLayer'Class (This).getViewPosition;
             viewX := viewPosition.getX;
             viewY := viewPosition.getY;
             This.decalAnimation.paintXY (graphics, viewX, viewY);
@@ -765,7 +765,7 @@ package body org.allbinary.game.layer.unit.UnitLayer_Package is
       buildingLayer : BuildingLayer_Access;
    begin
         buildingLayer := BuildingLayer_Access (event.getRtsLayer);
-        This.getUnitWaypointBehavior.moveAwayFromBuilding (buildingLayer);
+        UnitLayer'Class (This).getUnitWaypointBehavior.moveAwayFromBuilding (buildingLayer);
    end onBuildingEvent;
 
    function getVehicleProperties (This : in out UnitLayer) return VehicleProperties_Access is
@@ -779,7 +779,7 @@ package body org.allbinary.game.layer.unit.UnitLayer_Package is
         AdvancedRTSGameLayer (This).damage (damage, damageType);
         This.damageFloaters.add (damage);
         if (damage) > (0) then
-            This.getHealthInterface.damage (damage);
+            UnitLayer'Class (This).getHealthInterface.damage (damage);
         end if;
    end damage;
 
@@ -795,12 +795,12 @@ package body org.allbinary.game.layer.unit.UnitLayer_Package is
    begin
         This.logUtil.putF (This.commonStrings.START, UnitLayer_Access'(This'Unchecked_Access), To_Unbounded_String ("setDestroyed"));
         AdvancedRTSGameLayer (This).setDestroyed (destroyed);
-        if This.isDestroyed then
-            WaypointEventHandlerFactory_Package.getInstance (This.getGroupInterface (0)).removeListener (This.getUnitWaypointBehavior);
+        if UnitLayer'Class (This).isDestroyed then
+            WaypointEventHandlerFactory_Package.getInstance (UnitLayer'Class (This).getGroupInterface (0)).removeListener (UnitLayer'Class (This).getUnitWaypointBehavior);
             TrackingEventHandler_Package.getInstance.removeListener (UnitLayer_Access'(This'Unchecked_Access));
             BuildingEventHandler_Package.getInstance.removeListener (UnitLayer_Access'(This'Unchecked_Access));
-            if not (This.getHealthInterface.isAlive) then
-                damage := This.getHealthInterface.getMaxHealth;
+            if not (UnitLayer'Class (This).getHealthInterface.isAlive) then
+                damage := UnitLayer'Class (This).getHealthInterface.getMaxHealth;
                 if (damage) > (10) then
                     SecondaryPlayerQueueFactory_Package.getInstance.add (ExplosionBasicSound_Package.getInstance);
                     if (damage) < (100) then
@@ -835,7 +835,7 @@ package body org.allbinary.game.layer.unit.UnitLayer_Package is
         if (resource) > (0) then
             This.resourceAnimation := This.initResourceAnimation;
         else
-            This.clearResourceAnimation;
+            UnitLayer'Class (This).clearResourceAnimation;
         end if;
         This.resourceLoad := resource;
    end setLoad;
@@ -849,10 +849,10 @@ package body org.allbinary.game.layer.unit.UnitLayer_Package is
    procedure handleCost (This : in out UnitLayer; ownerLayer_Param : access PathFindingLayerInterface_Package.PathFindingLayerInterface'Class) is
       ownerLayer : constant PathFindingLayerInterface_Access := PathFindingLayerInterface_Access (ownerLayer_Param);
    begin
-        if (This.getLoad) > (0) then
-            This.CAPITAL_EVENT.setValue (This.getLoad);
+        if (UnitLayer'Class (This).getLoad) > (0) then
+            This.CAPITAL_EVENT.setValue (UnitLayer'Class (This).getLoad);
             CapitalEventHandlerFactory_Package.getInstance (ownerLayer.getGroupInterface (0)).fireEvent (This.CAPITAL_EVENT);
-            This.setLoad (0);
+            UnitLayer'Class (This).setLoad (0);
         end if;
    end handleCost;
 
@@ -884,7 +884,7 @@ package body org.allbinary.game.layer.unit.UnitLayer_Package is
 
    function getUnitWaypointBehavior (This : in out UnitLayer) return UnitWaypointBehavior_Access is
    begin
-        return UnitWaypointBehavior_Access (This.getWaypointBehavior);
+        return UnitWaypointBehavior_Access (UnitLayer'Class (This).getWaypointBehavior);
    end getUnitWaypointBehavior;
 
    function getTrackingEvent (This : in out UnitLayer) return TrackingEvent_Access is

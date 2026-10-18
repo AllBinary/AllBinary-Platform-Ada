@@ -21,7 +21,7 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.android.NullParcelable_Package; use org.allbinary.android.NullParcelable_Package;
---  with javax.microedition.lcdui.Command_Package; use javax.microedition.lcdui.Command_Package;
+with javax.microedition.lcdui.Command_Package; use javax.microedition.lcdui.Command_Package;
 with android.app.PendingIntent_Package; use android.app.PendingIntent_Package;
 with android.content.Context_Package; use android.content.Context_Package;
 with android.os.Parcelable_Package; use android.os.Parcelable_Package;
@@ -29,6 +29,7 @@ with android.os.Parcelable_Package; use android.os.Parcelable_Package;
 package org.allbinary.content.NotificationBuilder_Package is
 
    package NullParcelable_Package renames Standard.org.allbinary.android.NullParcelable_Package;
+   package Command_Package renames Standard.javax.microedition.lcdui.Command_Package;
    package PendingIntent_Package renames Standard.android.app.PendingIntent_Package;
    package Context_Package renames Standard.android.content.Context_Package;
    package Parcelable_Package renames Standard.android.os.Parcelable_Package;

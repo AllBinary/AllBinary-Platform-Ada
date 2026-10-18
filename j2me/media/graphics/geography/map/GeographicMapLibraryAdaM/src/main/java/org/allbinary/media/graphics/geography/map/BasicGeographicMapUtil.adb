@@ -103,7 +103,7 @@ package body org.allbinary.media.graphics.geography.map.BasicGeographicMapUtil_P
       tiledLayerArray : Layer_Access_Array_Access;
    begin
         tiledLayerArray := new Layer_Access_Array'(0 .. (geographicMapInterfaceArray'Length) - 1 => null);
-        return This.getAllBinaryTiledLayerArray (geographicMapInterfaceArray, tiledLayerArray, 0);
+        return BasicGeographicMapUtil'Class (This).getAllBinaryTiledLayerArray (geographicMapInterfaceArray, tiledLayerArray, 0);
    end createAllBinaryTiledLayerArray;
 
    function getAllBinaryTiledLayerArray (This : in out BasicGeographicMapUtil; geographicMapInterfaceArray : BasicGeographicMap_Access_Array_Access; tiledLayerArray : Layer_Access_Array_Access; startIndex : Integer) return Layer_Access_Array_Access is

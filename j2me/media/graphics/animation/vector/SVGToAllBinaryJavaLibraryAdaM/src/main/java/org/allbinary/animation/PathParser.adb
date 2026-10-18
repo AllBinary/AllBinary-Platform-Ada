@@ -178,7 +178,7 @@ package body org.allbinary.animation.PathParser_Package is
       c : Character;
    begin
         c := Element (tok, (0) + 1);
-        return ((Index (To_Unbounded_String ("MmLlVvCcZz"), To_String (c)) - 1)) >= (0);
+        return ((Index (To_Unbounded_String ("MmLlVvCcZz"), Java_Image (c)) - 1)) >= (0);
    end isCommand;
 
    procedure tokenize (d : Unbounded_String) is

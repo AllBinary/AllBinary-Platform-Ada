@@ -45,11 +45,11 @@ package body org.allbinary.graphics.form.item.SelectableTextItem_Package is
       stringComponent : ABStringComponent_Access;
    begin
         This.myFontProcessor.process (graphics);
-        stringComponent := This.getLabelStringComponent;
+        stringComponent := SelectableTextItem'Class (This).getLabelStringComponent;
         if (stringComponent) /= (null) then
             graphics.setColor (stringComponent.getForegroundBasicColor.intValue);
         end if;
-        graphics.drawString (This.getLabel, (x) + (2), y, 0);
+        graphics.drawString (SelectableTextItem'Class (This).getLabel, (x) + (2), y, 0);
    end paintXY;
 
 end org.allbinary.graphics.form.item.SelectableTextItem_Package;

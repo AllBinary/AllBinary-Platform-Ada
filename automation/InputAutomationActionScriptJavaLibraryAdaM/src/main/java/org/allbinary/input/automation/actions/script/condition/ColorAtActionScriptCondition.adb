@@ -51,28 +51,28 @@ package body org.allbinary.input.automation.actions.script.condition.ColorAtActi
                     This.point.y := To_Unbounded_String (Java_Image (locationY));
                 elsif (childNode.getNodeName.compareTo (ColorAtActionScriptConditionData_Package.MIN_RED)) = (0) then
                     string_Id := DomNodeHelper_Package.getTextNodeValue (childNode);
-                    This.getColorRangeInterface.setMinRed (To_Unbounded_String (Java_Image (string_Id)));
+                    ColorAtActionScriptCondition'Class (This).getColorRangeInterface.setMinRed (To_Unbounded_String (Java_Image (string_Id)));
                 elsif (childNode.getNodeName.compareTo (ColorAtActionScriptConditionData_Package.MAX_RED)) = (0) then
                     string_Id := DomNodeHelper_Package.getTextNodeValue (childNode);
-                    This.getColorRangeInterface.setMaxRed (To_Unbounded_String (Java_Image (string_Id)));
+                    ColorAtActionScriptCondition'Class (This).getColorRangeInterface.setMaxRed (To_Unbounded_String (Java_Image (string_Id)));
                 elsif (childNode.getNodeName.compareTo (ColorAtActionScriptConditionData_Package.MIN_GREEN)) = (0) then
                     string_Id := DomNodeHelper_Package.getTextNodeValue (childNode);
-                    This.getColorRangeInterface.setMinGreen (To_Unbounded_String (Java_Image (string_Id)));
+                    ColorAtActionScriptCondition'Class (This).getColorRangeInterface.setMinGreen (To_Unbounded_String (Java_Image (string_Id)));
                 elsif (childNode.getNodeName.compareTo (ColorAtActionScriptConditionData_Package.MAX_GREEN)) = (0) then
                     string_Id := DomNodeHelper_Package.getTextNodeValue (childNode);
-                    This.getColorRangeInterface.setMaxGreen (To_Unbounded_String (Java_Image (string_Id)));
+                    ColorAtActionScriptCondition'Class (This).getColorRangeInterface.setMaxGreen (To_Unbounded_String (Java_Image (string_Id)));
                 elsif (childNode.getNodeName.compareTo (ColorAtActionScriptConditionData_Package.MIN_BLUE)) = (0) then
                     string_Id := DomNodeHelper_Package.getTextNodeValue (childNode);
-                    This.getColorRangeInterface.setMinBlue (To_Unbounded_String (Java_Image (string_Id)));
+                    ColorAtActionScriptCondition'Class (This).getColorRangeInterface.setMinBlue (To_Unbounded_String (Java_Image (string_Id)));
                 elsif (childNode.getNodeName.compareTo (ColorAtActionScriptConditionData_Package.MAX_BLUE)) = (0) then
                     string_Id := DomNodeHelper_Package.getTextNodeValue (childNode);
-                    This.getColorRangeInterface.setMaxBlue (To_Unbounded_String (Java_Image (string_Id)));
+                    ColorAtActionScriptCondition'Class (This).getColorRangeInterface.setMaxBlue (To_Unbounded_String (Java_Image (string_Id)));
                 end if;
             end loop;
         else
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Color At Action Script Condition Node Null")));
         end if;
-        This.init;
+        ColorAtActionScriptCondition'Class (This).init;
    end Initialize;
 
    function Create (node_Param : access Node_Package.Node'Class) return ColorAtActionScriptCondition_Access is
@@ -87,7 +87,7 @@ package body org.allbinary.input.automation.actions.script.condition.ColorAtActi
         BasicProfileActionScriptCondition_Package.Initialize (This, ColorAtActionScriptCondition_Package.NAME);
         Initialize_Fields (This);
         This.point := Point_Package.Create (0, 0);
-        This.init;
+        ColorAtActionScriptCondition'Class (This).init;
    end Initialize;
 
    function Create return ColorAtActionScriptCondition_Access is
@@ -122,14 +122,14 @@ package body org.allbinary.input.automation.actions.script.condition.ColorAtActi
       hashMap : HashMap_Access;
    begin
         hashMap := StdUtil_Package.getInstance.createHashMap;
-        hashMap.put (ColorAtActionScriptConditionData_Package.LOCATION_X, To_Unbounded_String (Java_Image (This.getPoint.x)));
-        hashMap.put (ColorAtActionScriptConditionData_Package.LOCATION_Y, To_Unbounded_String (Java_Image (This.getPoint.y)));
-        hashMap.put (ColorAtActionScriptConditionData_Package.MIN_RED, To_Unbounded_String (Java_Image (This.getColorRangeInterface.getMinRed)));
-        hashMap.put (ColorAtActionScriptConditionData_Package.MAX_RED, To_Unbounded_String (Java_Image (This.getColorRangeInterface.getMaxRed)));
-        hashMap.put (ColorAtActionScriptConditionData_Package.MIN_GREEN, To_Unbounded_String (Java_Image (This.getColorRangeInterface.getMinGreen)));
-        hashMap.put (ColorAtActionScriptConditionData_Package.MAX_GREEN, To_Unbounded_String (Java_Image (This.getColorRangeInterface.getMaxGreen)));
-        hashMap.put (ColorAtActionScriptConditionData_Package.MIN_BLUE, To_Unbounded_String (Java_Image (This.getColorRangeInterface.getMinBlue)));
-        hashMap.put (ColorAtActionScriptConditionData_Package.MAX_BLUE, To_Unbounded_String (Java_Image (This.getColorRangeInterface.getMaxBlue)));
+        hashMap.put (ColorAtActionScriptConditionData_Package.LOCATION_X, Java_Box (To_Unbounded_String (Java_Image (ColorAtActionScriptCondition'Class (This).getPoint.x))));
+        hashMap.put (ColorAtActionScriptConditionData_Package.LOCATION_Y, Java_Box (To_Unbounded_String (Java_Image (ColorAtActionScriptCondition'Class (This).getPoint.y))));
+        hashMap.put (ColorAtActionScriptConditionData_Package.MIN_RED, Java_Box (To_Unbounded_String (Java_Image (ColorAtActionScriptCondition'Class (This).getColorRangeInterface.getMinRed))));
+        hashMap.put (ColorAtActionScriptConditionData_Package.MAX_RED, Java_Box (To_Unbounded_String (Java_Image (ColorAtActionScriptCondition'Class (This).getColorRangeInterface.getMaxRed))));
+        hashMap.put (ColorAtActionScriptConditionData_Package.MIN_GREEN, Java_Box (To_Unbounded_String (Java_Image (ColorAtActionScriptCondition'Class (This).getColorRangeInterface.getMinGreen))));
+        hashMap.put (ColorAtActionScriptConditionData_Package.MAX_GREEN, Java_Box (To_Unbounded_String (Java_Image (ColorAtActionScriptCondition'Class (This).getColorRangeInterface.getMaxGreen))));
+        hashMap.put (ColorAtActionScriptConditionData_Package.MIN_BLUE, Java_Box (To_Unbounded_String (Java_Image (ColorAtActionScriptCondition'Class (This).getColorRangeInterface.getMinBlue))));
+        hashMap.put (ColorAtActionScriptConditionData_Package.MAX_BLUE, Java_Box (To_Unbounded_String (Java_Image (ColorAtActionScriptCondition'Class (This).getColorRangeInterface.getMaxBlue))));
         This.logUtil.putF (To_Unbounded_String ("HashMap: ") & hashMap.toString, ColorAtActionScriptCondition_Access'(This'Unchecked_Access), To_Unbounded_String ("toHashMap()"));
         return hashMap;
    end toHashMap;
@@ -140,7 +140,7 @@ package body org.allbinary.input.automation.actions.script.condition.ColorAtActi
       node : Node_Access;
    begin
         node := BasicProfileActionScriptCondition (This).toXmlNode (document);
-        node.appendChild (ModDomHelper_Package.createNodeWithValueNodes (document, ColorAtActionScriptConditionData_Package.NAME, This.toHashMap));
+        node.appendChild (ModDomHelper_Package.createNodeWithValueNodes (document, ColorAtActionScriptConditionData_Package.NAME, ColorAtActionScriptCondition'Class (This).toHashMap));
         return node;
    end toXmlNode;
 
@@ -156,7 +156,7 @@ package body org.allbinary.input.automation.actions.script.condition.ColorAtActi
         capturedBufferedImageCacheable := BufferedImageFrameCacheable_Access ((AutomaticCacheInterface_Access (CapturedBufferedImagesCacheSingleton_Package.getInstance)).get (To_Unbounded_String (Java_Image (frame))));
         bufferedImage := capturedBufferedImageCacheable.getBufferedImage;
         automaticCacheInterface := ColorCacheFactory_Package.getInstance;
-        colorInteger := To_Unbounded_String (Java_Image (bufferedImage.getRGB (This.getPoint.x, This.getPoint.y)));
+        colorInteger := To_Unbounded_String (Java_Image (bufferedImage.getRGB (ColorAtActionScriptCondition'Class (This).getPoint.x, ColorAtActionScriptCondition'Class (This).getPoint.y)));
         colorCacheable := ColorCacheable_Access (automaticCacheInterface.get (colorInteger));
         color := colorCacheable.getColor;
         if This.colorRangeInterface.isInRange (color) then
@@ -168,7 +168,7 @@ package body org.allbinary.input.automation.actions.script.condition.ColorAtActi
    procedure log (This : in out ColorAtActionScriptCondition) is
       message : Unbounded_String;
    begin
-        message := StringMaker_Package.Create.append (To_Unbounded_String ("getPoint(): ")).append (This.getPoint.toString).append (CommonSeps_Package.getInstance.NEW_LINE).append (This.getColorRangeInterface.toString).toString;
+        message := StringMaker_Package.Create.append (To_Unbounded_String ("getPoint(): ")).append (ColorAtActionScriptCondition'Class (This).getPoint.toString).append (CommonSeps_Package.getInstance.NEW_LINE).append (ColorAtActionScriptCondition'Class (This).getColorRangeInterface.toString).toString;
         This.logUtil.putF (message, ColorAtActionScriptCondition_Access'(This'Unchecked_Access), To_Unbounded_String ("log"));
    end log;
 

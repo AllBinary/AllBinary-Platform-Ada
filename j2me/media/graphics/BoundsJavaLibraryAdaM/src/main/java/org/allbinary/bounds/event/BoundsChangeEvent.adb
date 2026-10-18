@@ -36,7 +36,7 @@ package body org.allbinary.bounds.event.BoundsChangeEvent_Package is
 
    function getRectangle (This : in out BoundsChangeEvent) return Rectangle_Access is
    begin
-        return Rectangle_Access (This.getSource);
+        return Rectangle_Access (BoundsChangeEvent'Class (This).getSource);
    end getRectangle;
 
 end org.allbinary.bounds.event.BoundsChangeEvent_Package;

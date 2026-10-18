@@ -57,14 +57,14 @@ package body views.admin.workflow.WorkFlowView_Package is
 
    procedure addDomNodeInterfaces (This : in out WorkFlowView) is
    begin
-        This.addDomNodeInterface (DomNodeInterface_Access (WorkFlowView_Access'(This'Unchecked_Access)));
+        WorkFlowView'Class (This).addDomNodeInterface (DomNodeInterface_Access (WorkFlowView_Access'(This'Unchecked_Access)));
    end addDomNodeInterfaces;
 
    --  throws Exception
    function view (This : in out WorkFlowView) return Unbounded_String is
    begin
         begin
-            This.addDomNodeInterfaces;
+            WorkFlowView'Class (This).addDomNodeInterfaces;
             return HttpStoreComponentView (This).view;
         exception
             when Java_Occurrence : others =>

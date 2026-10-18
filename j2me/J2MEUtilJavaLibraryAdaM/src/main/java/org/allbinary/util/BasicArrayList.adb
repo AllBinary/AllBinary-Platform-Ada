@@ -37,7 +37,7 @@ package body org.allbinary.util.BasicArrayList_Package is
             stringBuffer.appendint (This.currentIndex);
             Java_Throw (Java_New_Exception ("IndexOutOfBoundsException", stringBuffer.toString));
         end if;
-        This.ensureCapacity ((This.currentIndex) + (1));
+        BasicArrayList'Class (This).ensureCapacity ((This.currentIndex) + (1));
         Java_Array_Copy (This.objectArray, index, This.objectArray, (index) + (1), (This.currentIndex) - (index));
         This.objectArray (index) := element;
         This.currentIndex := This.currentIndex + 1;
@@ -46,7 +46,7 @@ package body org.allbinary.util.BasicArrayList_Package is
    function add (This : in out BasicArrayList; anyType_Param : access Java_Object'Class) return Boolean is
       anyType : constant Java_Object_Access := Java_Object_Access (anyType_Param);
    begin
-        This.ensureCapacity ((This.currentIndex) + (1));
+        BasicArrayList'Class (This).ensureCapacity ((This.currentIndex) + (1));
         This.objectArray (Java_Post_Increment (This.currentIndex)) := anyType;
         return True;
    end add;
@@ -113,7 +113,7 @@ package body org.allbinary.util.BasicArrayList_Package is
         result := True;
         size_Case := list.size_Case;
         for index in 0 .. (size_Case) - 1 loop
-            if This.remove (list.get (index)) then
+            if BasicArrayList'Class (This).remove (list.get (index)) then
                 null;
             else
                 result := False;
@@ -127,7 +127,7 @@ package body org.allbinary.util.BasicArrayList_Package is
       listSize : Integer;
       index : Integer;
    begin
-        This.ensureCapacity ((This.currentIndex) + (list.currentIndex));
+        BasicArrayList'Class (This).ensureCapacity ((This.currentIndex) + (list.currentIndex));
         listSize := list.currentIndex;
         for index in 0 .. (listSize) - 1 loop
             This.objectArray (Java_Post_Increment (This.currentIndex)) := list.objectArray (index);
@@ -140,14 +140,14 @@ package body org.allbinary.util.BasicArrayList_Package is
       newObjectArray : Java_Object_Access_Array_Access;
    begin
         newObjectArray := list.toArray;
-        return This.addAll (newObjectArray);
+        return BasicArrayList'Class (This).addAll (newObjectArray);
    end addAllList;
 
    function addAll (This : in out BasicArrayList; newObjectArray : Java_Object_Access_Array_Access) return Boolean is
       numSize : Integer;
    begin
         numSize := newObjectArray'Length;
-        This.ensureCapacity ((This.currentIndex) + (numSize));
+        BasicArrayList'Class (This).ensureCapacity ((This.currentIndex) + (numSize));
         Java_Array_Copy (newObjectArray, 0, This.objectArray, This.currentIndex, numSize);
         This.currentIndex := (This.currentIndex) + (numSize);
         return (numSize) /= (0);
@@ -270,7 +270,7 @@ package body org.allbinary.util.BasicArrayList_Package is
    function contains (This : in out BasicArrayList; anyType_Param : access Java_Object'Class) return Boolean is
       anyType : constant Java_Object_Access := Java_Object_Access (anyType_Param);
    begin
-        return (This.indexOf (anyType)) >= (0);
+        return (BasicArrayList'Class (This).indexOf (anyType)) >= (0);
    end contains;
 
    function toArray (This : in out BasicArrayList) return Java_Object_Access_Array_Access is
@@ -296,7 +296,7 @@ package body org.allbinary.util.BasicArrayList_Package is
       anyType : Java_Object_Access;
       index : Integer;
    begin
-        size_Case := This.size_Case;
+        size_Case := BasicArrayList'Class (This).size_Case;
         list := BasicArrayListS_Package.Create (size_Case);
         anyType := null;
         for index in 0 .. (size_Case) - 1 loop

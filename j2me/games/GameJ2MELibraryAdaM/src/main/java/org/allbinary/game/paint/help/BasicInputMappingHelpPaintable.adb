@@ -29,7 +29,7 @@ package body org.allbinary.game.paint.help.BasicInputMappingHelpPaintable_Packag
         HelpPaintable_Package.Initialize (This, To_Unbounded_String ("Help Screen"), BasicColorFactory_Package.getInstance.BLACK, basicColor);
         Initialize_Fields (This);
         This.gameInputMappingArray := gameInputMappingArray;
-        This.update (This.NONE, This.NONE);
+        BasicInputMappingHelpPaintable'Class (This).update (This.NONE, This.NONE);
    end Initialize;
 
    function Create (gameInputMappingArray : GameInputMapping_Access_Array_Access; basicColor_Param : access BasicColor_Package.BasicColor'Class) return BasicInputMappingHelpPaintable_Access is
@@ -65,7 +65,7 @@ package body org.allbinary.game.paint.help.BasicInputMappingHelpPaintable_Packag
             gameKey := gameInputMapping.getGameKey;
             list := gameKeyMapping.getInputMapping.getMappedInput (gameKey);
             stringMaker.delete (0, stringMaker.length);
-            keyInfo (index) := stringMaker.append (gameInputMapping.getName).append (EQUAL).append (This.get (list)).toString;
+            keyInfo (index) := stringMaker.append (gameInputMapping.getName).append (EQUAL).append (BasicInputMappingHelpPaintable'Class (This).get (list)).toString;
         end loop;
         HelpPaintable (This).setInputInfoP (keyInfo);
    end update;

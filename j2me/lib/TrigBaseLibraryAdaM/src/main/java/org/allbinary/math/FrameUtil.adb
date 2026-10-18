@@ -41,14 +41,14 @@ package body org.allbinary.math.FrameUtil_Package is
 
    function getFrameForAngle (This : in out FrameUtil; angle : Short_Integer; angleIncrement : Integer) return Integer is
    begin
-        return (This.adjustAngleToFrameAngle (Integer (angle))) / (angleIncrement);
+        return (FrameUtil'Class (This).adjustAngleToFrameAngle (Integer (angle))) / (angleIncrement);
    end getFrameForAngle;
 
    function getFrameAngle (This : in out FrameUtil; frame : Integer; angleIncrement : Integer) return Integer is
       frameAngle : Integer;
    begin
         frameAngle := ((angleIncrement) * (frame)) - (90);
-        return This.adjustAngleToFrameAngle (frameAngle);
+        return FrameUtil'Class (This).adjustAngleToFrameAngle (frameAngle);
    end getFrameAngle;
 
    function adjustAngleToFrameAngle (This : in out FrameUtil; currentAngle_Param : Integer) return Integer is

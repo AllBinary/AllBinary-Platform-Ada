@@ -20,7 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with javax.microedition.midlet.MIDlet_Package; use javax.microedition.midlet.MIDlet_Package;
+with javax.microedition.midlet.MIDlet_Package; use javax.microedition.midlet.MIDlet_Package;
 with org.allbinary.AppletUtil_Package; use org.allbinary.AppletUtil_Package;
 with org.allbinary.J2MEUtil_Package; use org.allbinary.J2MEUtil_Package;
 with org.allbinary.canvas.Processor_Package; use org.allbinary.canvas.Processor_Package;
@@ -28,6 +28,7 @@ with org.allbinary.midlet.MidletExitProcessor_Package; use org.allbinary.midlet.
 
 package org.allbinary.midlet.MidletExitProcessorFactory_Package is
 
+   package MIDlet_Package renames Standard.javax.microedition.midlet.MIDlet_Package;
    package AppletUtil_Package renames Standard.org.allbinary.AppletUtil_Package;
    package J2MEUtil_Package renames Standard.org.allbinary.J2MEUtil_Package;
    package Processor_Package renames Standard.org.allbinary.canvas.Processor_Package;

@@ -8,11 +8,12 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
+with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
 with org.allbinary.graphics.displayable.DisplayInfoSingleton_Package; use org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
 
 package org.allbinary.graphics.displayable.ScreenRelationalUtil_Package is
 
+   package Image_Package renames Standard.javax.microedition.lcdui.Image_Package;
 
    type ScreenRelationalUtil is tagged;
    type ScreenRelationalUtil_Access is access all ScreenRelationalUtil'Class;

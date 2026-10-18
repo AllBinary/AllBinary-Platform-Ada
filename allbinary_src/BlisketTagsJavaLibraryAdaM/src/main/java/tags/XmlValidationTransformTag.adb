@@ -43,9 +43,9 @@ package body tags.XmlValidationTransformTag_Package is
       result : Boolean;
    begin
         begin
-            helperClass := This.getHelper.all'Tag;
+            helperClass := XmlValidationTransformTag'Class (This).getHelper.all'Tag;
             method := helperClass.getMethod (This.commonStrings.IS_VALID, null);
-            result := Boolean (method.invoke (This.getHelper, null));
+            result := Boolean (method.invoke (XmlValidationTransformTag'Class (This).getHelper, null));
             return result.booleanValue;
         exception
             when Java_Occurrence : others =>
@@ -64,8 +64,8 @@ package body tags.XmlValidationTransformTag_Package is
    function doStartTag (This : in out XmlValidationTransformTag) return Integer is
    begin
         begin
-            This.setHelper;
-            if This.isValid then
+            XmlValidationTransformTag'Class (This).setHelper;
+            if XmlValidationTransformTag'Class (This).isValid then
                 TransformTag (This).doStartTag;
                 return This.EVAL_BODY_INCLUDE;
             else

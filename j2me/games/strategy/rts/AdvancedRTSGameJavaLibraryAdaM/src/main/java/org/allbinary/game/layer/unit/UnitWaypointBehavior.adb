@@ -49,7 +49,7 @@ package body org.allbinary.game.layer.unit.UnitWaypointBehavior_Package is
         This.completeTimeDelayHelper := TimeDelayHelper_Package.Create (30000);
         This.targetList := BasicArrayListD_Package.Create;
         This.possibleTargetList := BasicArrayListD_Package.Create;
-        This.setWaypointPathsList (BasicArrayListUtil_Package.getInstance.getImmutableInstance);
+        UnitWaypointBehavior'Class (This).setWaypointPathsList (BasicArrayListUtil_Package.getInstance.getImmutableInstance);
         This.currentGeographicMapCellHistoryP := GeographicMapCellHistory_Package.Create;
         This.FAKE_WAYPOINT_LAYER := fakeWaypoint;
    end Initialize;
@@ -80,9 +80,9 @@ package body org.allbinary.game.layer.unit.UnitWaypointBehavior_Package is
         advancedRTSGameLayer := AdvancedRTSGameLayer_Access (event.getRtsLayer);
         This.associatedAdvancedRTSGameLayer.waypointLogHelperP.onWaypointEvent (This.associatedAdvancedRTSGameLayer, advancedRTSGameLayer);
         if This.associatedAdvancedRTSGameLayer.isSelected then
-            This.addWaypointFromUser (advancedRTSGameLayer);
+            UnitWaypointBehavior'Class (This).addWaypointFromUser (advancedRTSGameLayer);
         elsif advancedRTSGameLayer.shouldAddWaypointFromBuilding then
-            This.addWaypointFromBuilding (advancedRTSGameLayer);
+            UnitWaypointBehavior'Class (This).addWaypointFromBuilding (advancedRTSGameLayer);
         end if;
    end onWaypointEvent;
 
@@ -118,13 +118,13 @@ package body org.allbinary.game.layer.unit.UnitWaypointBehavior_Package is
    function insertWaypoint (This : in out UnitWaypointBehavior; index : Integer; rtsLayer_Param : access CollidableDestroyableDamageableLayer_Package.CollidableDestroyableDamageableLayer'Class) return Boolean is
       rtsLayer : constant CollidableDestroyableDamageableLayer_Access := CollidableDestroyableDamageableLayer_Access (rtsLayer_Param);
    begin
-        if This.canInsertWaypoint (index, rtsLayer) then
-            This.associatedAdvancedRTSGameLayer.waypointLogHelperP.insertWaypoint (This.associatedAdvancedRTSGameLayer, index, rtsLayer, This.getName);
+        if UnitWaypointBehavior'Class (This).canInsertWaypoint (index, rtsLayer) then
+            This.associatedAdvancedRTSGameLayer.waypointLogHelperP.insertWaypoint (This.associatedAdvancedRTSGameLayer, index, rtsLayer, UnitWaypointBehavior'Class (This).getName);
             if rtsLayer.isDestroyed then
                 Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Trying to add a dead: ") & Java_Image (rtsLayer)));
             end if;
             This.targetList.addAt (index, rtsLayer);
-            This.associatedAdvancedRTSGameLayer.waypointLogHelperP.insertWaypointList (This.associatedAdvancedRTSGameLayer, index, rtsLayer, This.getName, This.targetList);
+            This.associatedAdvancedRTSGameLayer.waypointLogHelperP.insertWaypointList (This.associatedAdvancedRTSGameLayer, index, rtsLayer, UnitWaypointBehavior'Class (This).getName, This.targetList);
             return True;
         end if;
         return False;
@@ -132,12 +132,12 @@ package body org.allbinary.game.layer.unit.UnitWaypointBehavior_Package is
 
    procedure move (This : in out UnitWaypointBehavior) is
    begin
-        if This.isMoving then
-            This.setMovingFromStopped (False);
+        if UnitWaypointBehavior'Class (This).isMoving then
+            UnitWaypointBehavior'Class (This).setMovingFromStopped (False);
         else
-            This.setMovingFromStopped (True);
+            UnitWaypointBehavior'Class (This).setMovingFromStopped (True);
         end if;
-        This.setMoving (False);
+        UnitWaypointBehavior'Class (This).setMoving (False);
    end move;
 
    --  throws Exception
@@ -150,7 +150,7 @@ package body org.allbinary.game.layer.unit.UnitWaypointBehavior_Package is
         This.associatedAdvancedRTSGameLayer.waypointLogHelperP.setRandomGeographicMapCellHistoryList (This.associatedAdvancedRTSGameLayer, pathsList);
         if (size) > (0) then
             geographicMapCellPositionBasicArrayList := BasicArrayList_Access (BasicArrayListUtil_Package.getInstance.getRandom (pathsList));
-            This.setGeographicMapCellHistoryPath (geographicMapCellPositionBasicArrayList);
+            UnitWaypointBehavior'Class (This).setGeographicMapCellHistoryPath (geographicMapCellPositionBasicArrayList);
         end if;
    end setRandomGeographicMapCellHistory;
 
@@ -164,8 +164,8 @@ package body org.allbinary.game.layer.unit.UnitWaypointBehavior_Package is
         end if;
         This.currentGeographicMapCellHistoryP.init;
         This.associatedAdvancedRTSGameLayer.init (This.currentGeographicMapCellHistoryP, geographicMapCellPositionBasicArrayList);
-        This.setTrackingWaypoint (True);
-        This.getCompleteTimeDelayHelper.setStartTimeTNT;
+        UnitWaypointBehavior'Class (This).setTrackingWaypoint (True);
+        UnitWaypointBehavior'Class (This).getCompleteTimeDelayHelper.setStartTimeTNT;
    end setGeographicMapCellHistoryPath;
 
    function canInsertWaypoint (This : in out UnitWaypointBehavior; index : Integer; rtsLayer_Param : access CollidableDestroyableDamageableLayer_Package.CollidableDestroyableDamageableLayer'Class) return Boolean is
@@ -199,9 +199,9 @@ package body org.allbinary.game.layer.unit.UnitWaypointBehavior_Package is
         geographicMapCellPosition := This.associatedAdvancedRTSGameLayer.getCurrentGeographicMapCellPosition;
         list := buildingLayer.geographicMapCellPositionAreaBase.getOccupyingGeographicMapCellPositionList;
         if list.contains (geographicMapCellPosition) then
-            if This.insertWaypoint (0, This.FAKE_WAYPOINT_LAYER) then
+            if UnitWaypointBehavior'Class (This).insertWaypoint (0, This.FAKE_WAYPOINT_LAYER) then
                 This.associatedAdvancedRTSGameLayer.waypointLogHelperP.moveAwayFromBuilding (This.associatedAdvancedRTSGameLayer);
-                This.setCurrentTargetLayerInterface (CollidableDestroyableDamageableLayer_Access (This.FAKE_WAYPOINT_LAYER));
+                UnitWaypointBehavior'Class (This).setCurrentTargetLayerInterface (CollidableDestroyableDamageableLayer_Access (This.FAKE_WAYPOINT_LAYER));
                 pathsList := buildingLayer.getMoveOutOfBuildAreaPath (geographicMapCellPosition);
                 This.associatedAdvancedRTSGameLayer.setClosestGeographicMapCellHistory (pathsList);
             end if;
@@ -212,12 +212,12 @@ package body org.allbinary.game.layer.unit.UnitWaypointBehavior_Package is
       message : Unbounded_String;
    begin
         This.associatedAdvancedRTSGameLayer.waypointLogHelperP.needToMove (This.associatedAdvancedRTSGameLayer, UnitWaypointBehavior_Access'(This'Unchecked_Access));
-        if ((This.isTrackingWaypoint) or else ((This.sensorAction) = (SensorActionFactory_Package.getInstance.EVADE))) or else ((((This.currentTargetLayerInterfaceP) /= (CollidableDestroyableDamageableLayer_Package.getNullInstance)) and then ((This.getCurrentTargetDistance) >= ((This.longWeaponRange) + (This.currentTargetLayerInterfaceP.getHalfHeight))))) then
+        if ((UnitWaypointBehavior'Class (This).isTrackingWaypoint) or else ((This.sensorAction) = (SensorActionFactory_Package.getInstance.EVADE))) or else ((((This.currentTargetLayerInterfaceP) /= (CollidableDestroyableDamageableLayer_Package.getNullInstance)) and then ((UnitWaypointBehavior'Class (This).getCurrentTargetDistance) >= ((This.longWeaponRange) + (This.currentTargetLayerInterfaceP.getHalfHeight))))) then
             This.repeatedToLong.setStartTimeTNT;
             return True;
         end if;
         if This.repeatedToLong.isTimeTNT then
-            message := To_Unbounded_String ("Repeating too long: ") & Java_Image (This.getMovementLogicAsString);
+            message := To_Unbounded_String ("Repeating too long: ") & Java_Image (UnitWaypointBehavior'Class (This).getMovementLogicAsString);
             ForcedLogUtil_Package.log (message, This.associatedAdvancedRTSGameLayer);
         end if;
         return False;
@@ -228,14 +228,14 @@ package body org.allbinary.game.layer.unit.UnitWaypointBehavior_Package is
    begin
         stringBuffer := StringMaker_Package.Create;
         stringBuffer.append (To_Unbounded_String ("isTrackingWaypoint: "));
-        stringBuffer.appendboolean (This.isTrackingWaypoint);
+        stringBuffer.appendboolean (UnitWaypointBehavior'Class (This).isTrackingWaypoint);
         stringBuffer.append (To_Unbounded_String (" sensorAction: "));
         stringBuffer.append (This.sensorAction.name);
         stringBuffer.append (To_Unbounded_String (" getCurrentTargetLayerInterface: "));
         stringBuffer.append (StringUtil_Package.getInstance.toString (This.currentTargetLayerInterfaceP));
         if (This.currentTargetLayerInterfaceP) /= (CollidableDestroyableDamageableLayer_Package.getNullInstance) then
             stringBuffer.append (To_Unbounded_String (" Target Range: "));
-            stringBuffer.appendint (This.getCurrentTargetDistance);
+            stringBuffer.appendint (UnitWaypointBehavior'Class (This).getCurrentTargetDistance);
             stringBuffer.append (To_Unbounded_String (" >= "));
             stringBuffer.appendint (Integer ((This.longWeaponRange) + (This.currentTargetLayerInterfaceP.getHalfHeight)));
         end if;

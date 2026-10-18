@@ -30,7 +30,7 @@ package body org.allbinary.animation.image.ImageArrayAnimation_Package is
    begin
         IndexedAnimation_Package.Initialize (This, animationBehavior);
         Initialize_Fields (This);
-        This.setImageArray (imageArray);
+        ImageArrayAnimation'Class (This).setImageArray (imageArray);
    end Initialize;
 
    function Create (imageArray : Image_Access_Array_Access; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class) return ImageArrayAnimation_Access is
@@ -43,7 +43,7 @@ package body org.allbinary.animation.image.ImageArrayAnimation_Package is
    --  throws Exception
    function getAnimationSize (This : in out ImageArrayAnimation) return Integer is
    begin
-        return This.getSize;
+        return ImageArrayAnimation'Class (This).getSize;
    end getAnimationSize;
 
    procedure nextFrame (This : in out ImageArrayAnimation) is

@@ -48,7 +48,7 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
             nodeList := document.getElementsByTagName (GenericProfilesData_Package.NAME);
             This.logUtil.putF (To_Unbounded_String ("Number Of Profiles Specified: ") & Java_Image (nodeList.getLength), GenericProfiles_Access'(This'Unchecked_Access), To_Unbounded_String ("Contructor"));
             if (nodeList) /= (null) then
-                This.initProfiles (nodeList.item (0));
+                GenericProfiles'Class (This).initProfiles (nodeList.item (0));
             else
                 Java_Throw (Java_New_Exception ("Exception", Java_Image (GenericProfileActionData_Package.NAME) & To_Unbounded_String (" Name Node Node Children")));
             end if;
@@ -56,7 +56,7 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
         else
             This.logUtil.putF (To_Unbounded_String ("No Generic Profile: ") & fileName, GenericProfiles_Access'(This'Unchecked_Access), To_Unbounded_String ("Contructor"));
         end if;
-        This.getDefaultListModelHelper.initDefaultModelList;
+        GenericProfiles'Class (This).getDefaultListModelHelper.initDefaultModelList;
    end Initialize;
 
    function Create (fileName : Unbounded_String) return GenericProfiles_Access is
@@ -79,8 +79,8 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
             profileNameNode := nodeList.item (index);
             if (profileNameNode.getNodeName.compareTo (GenericProfileData_Package.NAME)) = (0) then
                 genericProfile := GenericProfile_Package.Create (profileNameNode);
-                This.hashMap.put (genericProfile.getName, genericProfile);
-                This.getDefaultListModelHelper.add (genericProfile.getName);
+                This.hashMap.put (Java_Box (genericProfile.getName), genericProfile);
+                GenericProfiles'Class (This).getDefaultListModelHelper.add (genericProfile.getName);
             end if;
         end loop;
    end initProfiles;
@@ -95,7 +95,7 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
       genericProfile : GenericProfile_Access;
       commonStrings : CommonStrings_Access;
    begin
-        genericProfile := GenericProfile_Access (This.hashMap.get (name));
+        genericProfile := GenericProfile_Access (This.hashMap.get (Java_Box (name)));
         if (genericProfile) = (null) then
             commonStrings := CommonStrings_Package.getInstance;
             This.logUtil.putF (To_Unbounded_String ("No Generic Profile Named: ") & name & To_Unbounded_String (" availability was: ") & Java_Image (This.hashMap), GenericProfiles_Access'(This'Unchecked_Access), commonStrings.GET);
@@ -106,19 +106,19 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
    --  throws Exception
    procedure add (This : in out GenericProfiles; name : Unbounded_String) is
    begin
-        This.hashMap.put (name, GenericProfile_Package.Create (name));
-        This.getDefaultListModelHelper.add (name);
-        This.getDefaultListModelHelper.initDefaultModelList;
-        This.save;
+        This.hashMap.put (Java_Box (name), GenericProfile_Package.Create (name));
+        GenericProfiles'Class (This).getDefaultListModelHelper.add (name);
+        GenericProfiles'Class (This).getDefaultListModelHelper.initDefaultModelList;
+        GenericProfiles'Class (This).save;
    end add;
 
    --  throws Exception
    procedure remove (This : in out GenericProfiles; name : Unbounded_String) is
    begin
-        This.hashMap.remove (name);
-        This.getDefaultListModelHelper.remove (name);
-        This.getDefaultListModelHelper.initDefaultModelList;
-        This.save;
+        This.hashMap.remove (Java_Box (name));
+        GenericProfiles'Class (This).getDefaultListModelHelper.remove (name);
+        GenericProfiles'Class (This).getDefaultListModelHelper.initDefaultModelList;
+        GenericProfiles'Class (This).save;
    end remove;
 
    --  throws Exception
@@ -136,7 +136,7 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
         nameArray := set.toArray;
         size := nameArray'Length;
         for index in 0 .. (size) - 1 loop
-            genericProfile := GenericProfile_Access (This.hashMap.get (Unbounded_String (nameArray (index))));
+            genericProfile := GenericProfile_Access (This.hashMap.get (Java_Unbox (nameArray (index))));
             node.appendChild (genericProfile.toXmlNode (document));
         end loop;
         return node;
@@ -148,7 +148,7 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
       node : Node_Access;
    begin
         document := DomDocumentHelper_Package.create;
-        node := This.toXmlNode (document);
+        node := GenericProfiles'Class (This).toXmlNode (document);
         document.appendChild (node);
         return document;
    end toXmlDoc;
@@ -161,7 +161,7 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
    begin
         idFile := FileOutputStream_Package.Create (This.fileName);
         idOutData := DataOutputStream_Package.Create (idFile);
-        documentString := XmlDocumentHelper_Package.toString (This.toXmlDoc);
+        documentString := XmlDocumentHelper_Package.toString (GenericProfiles'Class (This).toXmlDoc);
         idOutData.writeBytes (documentString);
    end save;
 

@@ -20,10 +20,11 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with javax.microedition.media.Control_Package; use javax.microedition.media.Control_Package;
+with javax.microedition.media.Control_Package; use javax.microedition.media.Control_Package;
 
 package org.allbinary.media.audio.NullControl_Package is
 
+   package Control_Package renames Standard.javax.microedition.media.Control_Package;
 
    type NullControl is tagged;
    type NullControl_Access is access all NullControl'Class;

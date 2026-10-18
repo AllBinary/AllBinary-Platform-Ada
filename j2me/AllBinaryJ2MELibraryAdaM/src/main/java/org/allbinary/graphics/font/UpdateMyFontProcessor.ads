@@ -20,12 +20,13 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
 with org.allbinary.graphics.font.MyFontProcessor_Package; use org.allbinary.graphics.font.MyFontProcessor_Package;
 with org.allbinary.graphics.font.UpdateMyFontInterface_Package; use org.allbinary.graphics.font.UpdateMyFontInterface_Package;
 
 package org.allbinary.graphics.font.UpdateMyFontProcessor_Package is
 
+   package Graphics_Package renames Standard.javax.microedition.lcdui.Graphics_Package;
 
    type UpdateMyFontProcessor is tagged;
    type UpdateMyFontProcessor_Access is access all UpdateMyFontProcessor'Class;

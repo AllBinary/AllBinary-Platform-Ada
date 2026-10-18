@@ -29,7 +29,7 @@ package body org.allbinary.logic.communication.log.config.LogConfig_Package is
    procedure Initialize (This : in out LogConfig'Class; aName : Unbounded_String; aDescription : Unbounded_String; aPath : Unbounded_String; aFileName : Unbounded_String) is
    begin
       Initialize_Fields (This);
-        This.isEnabled := False;
+        This.isEnabled_Field := False;
         This.name := aName;
         This.description := aDescription;
         This.path := aPath;
@@ -55,7 +55,7 @@ package body org.allbinary.logic.communication.log.config.LogConfig_Package is
       Initialize_Fields (This);
         enabledValueNode := DomSearchHelper_Package.getNode (EntryData_Package.getInstance.ENABLE, node.getChildNodes);
         isEnabledString := DomNodeHelper_Package.getTextNodeValue (enabledValueNode);
-        This.isEnabled := BooleanUtil_Package.getInstance.getFromString (isEnabledString);
+        This.isEnabled_Field := BooleanUtil_Package.getInstance.getFromString (isEnabledString);
         logConfigData := LogConfigData_Package.getInstance;
         nameValueNode := DomSearchHelper_Package.getNode (logConfigData.NAME, node.getChildNodes);
         This.name := DomNodeHelper_Package.getTextNodeValue (nameValueNode);
@@ -79,17 +79,17 @@ package body org.allbinary.logic.communication.log.config.LogConfig_Package is
 
    function isEnabled (This : in out LogConfig) return Boolean is
    begin
-        return This.isEnabled;
+        return This.isEnabled_Field;
    end isEnabled;
 
    procedure enable (This : in out LogConfig) is
    begin
-        This.isEnabled := True;
+        This.isEnabled_Field := True;
    end enable;
 
    procedure disable (This : in out LogConfig) is
    begin
-        This.isEnabled := False;
+        This.isEnabled_Field := False;
    end disable;
 
    function getDescription (This : in out LogConfig) return Unbounded_String is
@@ -131,7 +131,7 @@ package body org.allbinary.logic.communication.log.config.LogConfig_Package is
         stringBuffer := StringMaker_Package.Create;
         stringBuffer.append (URLGLOBALS.getWebappPath);
         stringBuffer.append (PATH_GLOBALS.getInstance.INIT_PATH);
-        stringBuffer.append (This.getFileName);
+        stringBuffer.append (LogConfig'Class (This).getFileName);
         file := AbFile_Package.createAbFile (stringBuffer.toString);
         document := DomDocumentHelper_Package.create (AbFileLocalInputStream_Package.Create (file));
         return document;
@@ -150,7 +150,7 @@ package body org.allbinary.logic.communication.log.config.LogConfig_Package is
       i : Integer;
    begin
         logKeyVector := BasicArrayListD_Package.Create;
-        document := This.getDoc;
+        document := LogConfig'Class (This).getDoc;
         logConfigTypesNodeList := document.getElementsByTagName (LogConfigTypesData_Package.getInstance.NAME);
         logConfigTypesNode := logConfigTypesNodeList.item (0);
         logConfigTypeNodeVector := DomSearchHelper_Package.getAllNodes (LogConfigTypeData_Package.getInstance.NAME, logConfigTypesNode.getChildNodes);

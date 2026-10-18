@@ -34,8 +34,8 @@ package body org.allbinary.logic.visual.transform.data.TransformStoreDocument_Pa
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
                 This.logUtil.putF (To_Unbounded_String ("Using Session StoreName: ") & storeName, TransformStoreDocument_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
             end if;
-            This.getBaseNode.appendChild (StoreFrontViewFactory_Package.getInstance (storeName).toXmlNode (This.getDoc));
-            This.getBaseNode.appendChild (RequestParams_Package.Create (HttpServletRequest_Access (pageContext.getRequest)).toXmlNode (This.getDoc));
+            TransformStoreDocument'Class (This).getBaseNode.appendChild (StoreFrontViewFactory_Package.getInstance (storeName).toXmlNode (TransformStoreDocument'Class (This).getDoc));
+            TransformStoreDocument'Class (This).getBaseNode.appendChild (RequestParams_Package.Create (HttpServletRequest_Access (pageContext.getRequest)).toXmlNode (TransformStoreDocument'Class (This).getDoc));
         exception
             when Java_Occurrence : others =>
                 declare
@@ -62,8 +62,8 @@ package body org.allbinary.logic.visual.transform.data.TransformStoreDocument_Pa
         TransformHttpRequestDocument_Package.Initialize (This, searchRequest);
         Initialize_Fields (This);
         begin
-            This.getBaseNode.appendChild (StoreFrontViewFactory_Package.getInstance (searchRequest.getStoreFront.getName).toXmlNode (This.getDoc));
-            This.getBaseNode.appendChild (searchRequest.getParams.getParamsNode (This.getDoc));
+            TransformStoreDocument'Class (This).getBaseNode.appendChild (StoreFrontViewFactory_Package.getInstance (searchRequest.getStoreFront.getName).toXmlNode (TransformStoreDocument'Class (This).getDoc));
+            TransformStoreDocument'Class (This).getBaseNode.appendChild (searchRequest.getParams.getParamsNode (TransformStoreDocument'Class (This).getDoc));
         exception
             when Java_Occurrence : others =>
                 declare

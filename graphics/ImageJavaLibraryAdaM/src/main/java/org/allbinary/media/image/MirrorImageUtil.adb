@@ -101,7 +101,7 @@ package body org.allbinary.media.image.MirrorImageUtil_Package is
             bufferedImageArray (index) := bufferedImage.getSubimage (x, y, cellWidth, cellHeight);
         end loop;
         for index in 0 .. (numberOfFramesPerOrientation) - 1 loop
-            bufferedImageArray ((index) + (numberOfFramesPerOrientation)) := This.getImage (bufferedImageArray (index), verticle, horizontal);
+            bufferedImageArray ((index) + (numberOfFramesPerOrientation)) := MirrorImageUtil'Class (This).getImage (bufferedImageArray (index), verticle, horizontal);
         end loop;
         return bufferedImageArray;
    end getImages;

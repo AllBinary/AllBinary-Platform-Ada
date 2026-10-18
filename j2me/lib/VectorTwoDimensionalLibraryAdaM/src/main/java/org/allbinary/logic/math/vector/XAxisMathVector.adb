@@ -25,7 +25,7 @@ package body org.allbinary.logic.math.vector.XAxisMathVector_Package is
       magnitudeBasicDecimal : constant BasicDecimal_Access := BasicDecimal_Access (magnitudeBasicDecimal_Param);
    begin
         MathVector_Package.Initialize (This, magnitudeBasicDecimal, direction);
-        This.calculate;
+        XAxisMathVector'Class (This).calculate;
    end Initialize;
 
    function Create (magnitudeBasicDecimal_Param : access BasicDecimal_Package.BasicDecimal'Class; direction : Integer) return XAxisMathVector_Access is
@@ -38,7 +38,7 @@ package body org.allbinary.logic.math.vector.XAxisMathVector_Package is
    procedure calculate (This : in out XAxisMathVector) is
       result : Long_Long_Integer;
    begin
-        result := YAxisMathVectorUtil_Package.calculate (This.getMagnitude.getUnscaled, This.getDirection);
+        result := YAxisMathVectorUtil_Package.calculate (XAxisMathVector'Class (This).getMagnitude.getUnscaled, XAxisMathVector'Class (This).getDirection);
         This.resultBasicDecimal := BasicDecimal_Package.Create (result);
    end calculate;
 

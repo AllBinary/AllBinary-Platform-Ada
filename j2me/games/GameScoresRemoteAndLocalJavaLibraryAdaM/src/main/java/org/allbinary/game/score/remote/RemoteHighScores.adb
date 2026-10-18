@@ -36,7 +36,7 @@ package body org.allbinary.game.score.remote.RemoteHighScores_Package is
         Initialize_Fields (This);
         This.abeClientInformation := abeClientInformation;
         This.softwareInformation := softwareInformation;
-        This.setAscending (ascending_Case);
+        RemoteHighScores'Class (This).setAscending (ascending_Case);
         if preload then
             RemoteHighScoresProcessorFactory_Package.getInstance.process (RemoteHighScores_Access'(This'Unchecked_Access), This.abeClientInformation, gameInfo);
         end if;
@@ -106,17 +106,17 @@ package body org.allbinary.game.score.remote.RemoteHighScores_Package is
       highScore : HighScore_Access;
       index : Integer;
    begin
-        This.getList.clear;
+        RemoteHighScores'Class (This).getList.clear;
         vector := BasicArrayList_Access (hashtable.get (Java_Object_Access (RemoteHighScoresData_Package.getInstance.HIGH_SCORES)));
         if (vector) /= (null) then
             size := vector.size;
             for index in 0 .. (size) - 1 loop
                 highScoreVector := BasicArrayList_Access (vector.get (index));
-                displayName := Unbounded_String (highScoreVector.get (0));
-                score := Unbounded_String (highScoreVector.get (1));
+                displayName := Java_Unbox (highScoreVector.get (0));
+                score := Java_Unbox (highScoreVector.get (1));
                 longScore := Long_Long_Integer'Value (To_String (score));
                 highScore := HighScore_Package.Create (-(1), displayName, null, longScore);
-                This.getList.add (highScore);
+                RemoteHighScores'Class (This).getList.add (highScore);
             end loop;
         else
             NEXT_ELEMENT := StringMaker_Package.Create.append (CommonLabels_Package.getInstance.NEXT).append (To_Unbounded_String ("Element: ")).toString;

@@ -44,10 +44,10 @@ package body admin.tags.PaymentProcessTag_Package is
       result : Unbounded_String;
    begin
         begin
-            anyType := PaymentProcessHelperFactory_Package.Create.getInstance (This.getPropertiesHashMap, This.pageContext);
+            anyType := PaymentProcessHelperFactory_Package.Create.getInstance (PaymentProcessTag'Class (This).getPropertiesHashMap, This.pageContext);
             helperClass := anyType.all'Tag;
             method := helperClass.getMethod (This.commonStrings.PROCESS, null);
-            result := Unbounded_String (method.invoke (anyType, null));
+            result := Java_Unbox (method.invoke (anyType, null));
             return result;
         exception
             when Java_Occurrence : others =>
@@ -66,9 +66,9 @@ package body admin.tags.PaymentProcessTag_Package is
    function doStartTag (This : in out PaymentProcessTag) return Integer is
    begin
         begin
-            if (((This.getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.AUTHORIZEORDEREVALBODYONERROR)) = (0)) or else ((This.getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.AUTHORIZEORDERANDEVALBODY)) = (0))) or else ((This.getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.AUTHORIZEFORMEVALBODYONERROR)) = (0)) then
-                This.pageContext.getOut.print (Java_Image (This.process) & To_Unbounded_String ("<br />"));
-                if (This.getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.AUTHORIZEORDEREVALBODYONERROR)) = (0) then
+            if (((PaymentProcessTag'Class (This).getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.AUTHORIZEORDEREVALBODYONERROR)) = (0)) or else ((PaymentProcessTag'Class (This).getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.AUTHORIZEORDERANDEVALBODY)) = (0))) or else ((PaymentProcessTag'Class (This).getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.AUTHORIZEFORMEVALBODYONERROR)) = (0)) then
+                This.pageContext.getOut.print (Java_Image (PaymentProcessTag'Class (This).process) & To_Unbounded_String ("<br />"));
+                if (PaymentProcessTag'Class (This).getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.AUTHORIZEORDEREVALBODYONERROR)) = (0) then
                     return This.SKIP_BODY;
                 else
                     return This.EVAL_BODY_INCLUDE;

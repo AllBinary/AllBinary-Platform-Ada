@@ -28,7 +28,7 @@ package body org.allbinary.game.identification.Group_Package is
    begin
       Initialize_Fields (This);
         This.teamId := teamId;
-        This.setName (teamName);
+        Group'Class (This).setName (teamName);
    end Initialize;
 
    function Create (teamName : Unbounded_String; teamId : Short_Integer) return Group_Access is

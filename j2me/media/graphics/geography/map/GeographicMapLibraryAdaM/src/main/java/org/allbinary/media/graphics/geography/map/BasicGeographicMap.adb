@@ -77,7 +77,7 @@ package body org.allbinary.media.graphics.geography.map.BasicGeographicMap_Packa
                     return SimpleGeographicMapCellPositionFactory_Package.NULL_GEOGRAPHIC_MAP_CELL_POSITION;
                 end if;
             when 1 =>
-                if ((oldGeographicMapCellPosition.getColumn) + (1)) < (This.getAllBinaryTiledLayer.getColumns) then
+                if ((oldGeographicMapCellPosition.getColumn) + (1)) < (BasicGeographicMap'Class (This).getAllBinaryTiledLayer.getColumns) then
                     return This.geographicMapCellPositionFactory.getAt ((oldGeographicMapCellPosition.getColumn) + (1), oldGeographicMapCellPosition.getRow);
                 else
                     return SimpleGeographicMapCellPositionFactory_Package.NULL_GEOGRAPHIC_MAP_CELL_POSITION;
@@ -89,7 +89,7 @@ package body org.allbinary.media.graphics.geography.map.BasicGeographicMap_Packa
                     return SimpleGeographicMapCellPositionFactory_Package.NULL_GEOGRAPHIC_MAP_CELL_POSITION;
                 end if;
             when 3 =>
-                if ((oldGeographicMapCellPosition.getRow) + (1)) < (This.getAllBinaryTiledLayer.getRows) then
+                if ((oldGeographicMapCellPosition.getRow) + (1)) < (BasicGeographicMap'Class (This).getAllBinaryTiledLayer.getRows) then
                     return This.geographicMapCellPositionFactory.getAt (oldGeographicMapCellPosition.getColumn, (oldGeographicMapCellPosition.getRow) + (1));
                 else
                     return SimpleGeographicMapCellPositionFactory_Package.NULL_GEOGRAPHIC_MAP_CELL_POSITION;
@@ -106,7 +106,7 @@ package body org.allbinary.media.graphics.geography.map.BasicGeographicMap_Packa
       index : Integer;
    begin
         for index in 0 .. (4) - 1 loop
-            if (newGeographicMapCellPosition) = (This.getCellPositionNoThrow (index, oldGeographicMapCellPosition)) then
+            if (newGeographicMapCellPosition) = (BasicGeographicMap'Class (This).getCellPositionNoThrow (index, oldGeographicMapCellPosition)) then
                 return True;
             end if;
         end loop;
@@ -119,7 +119,7 @@ package body org.allbinary.media.graphics.geography.map.BasicGeographicMap_Packa
       i_column : Integer;
       i_row : Integer;
    begin
-        allBinaryTiledLayer := This.getAllBinaryTiledLayer;
+        allBinaryTiledLayer := BasicGeographicMap'Class (This).getAllBinaryTiledLayer;
         i_column := This.mathUtil.abs_Id ((x) / (allBinaryTiledLayer.getCellHeight));
         i_row := This.mathUtil.abs_Id ((y) / (allBinaryTiledLayer.getCellWidth));
         return This.geographicMapCellPositionFactory.getAt (i_column, i_row);
@@ -130,7 +130,7 @@ package body org.allbinary.media.graphics.geography.map.BasicGeographicMap_Packa
       i_column : Integer;
       i_row : Integer;
    begin
-        allBinaryTiledLayer := This.getAllBinaryTiledLayer;
+        allBinaryTiledLayer := BasicGeographicMap'Class (This).getAllBinaryTiledLayer;
         i_column := This.mathUtil.abs_Id ((x) / (allBinaryTiledLayer.getCellHeight));
         i_row := This.mathUtil.abs_Id ((y) / (allBinaryTiledLayer.getCellWidth));
         if ((allBinaryTiledLayer.getColumns) > (i_column)) and then ((allBinaryTiledLayer.getRows) > (i_row)) then
@@ -156,7 +156,7 @@ package body org.allbinary.media.graphics.geography.map.BasicGeographicMap_Packa
       i_column : Integer;
       i_row : Integer;
    begin
-        allBinaryTiledLayer := This.getAllBinaryTiledLayer;
+        allBinaryTiledLayer := BasicGeographicMap'Class (This).getAllBinaryTiledLayer;
         i_column := geographicMapCellPosition.getColumn;
         i_row := geographicMapCellPosition.getRow;
         if ((allBinaryTiledLayer.getColumns) > (i_column)) and then ((allBinaryTiledLayer.getRows) > (i_row)) then
@@ -178,7 +178,7 @@ package body org.allbinary.media.graphics.geography.map.BasicGeographicMap_Packa
       columnIndex : Integer;
    begin
         geographicMapCellPositionList.clear;
-        allBinaryTiledLayer := This.getAllBinaryTiledLayer;
+        allBinaryTiledLayer := BasicGeographicMap'Class (This).getAllBinaryTiledLayer;
         i_columnMin := This.mathUtil.abs_Id ((x) / (allBinaryTiledLayer.getCellHeight));
         i_rowMin := This.mathUtil.abs_Id ((y) / (allBinaryTiledLayer.getCellWidth));
         i_columnMax := (This.mathUtil.abs_Id ((x2) / (allBinaryTiledLayer.getCellHeight))) + (1);
@@ -215,7 +215,7 @@ package body org.allbinary.media.graphics.geography.map.BasicGeographicMap_Packa
             for index2 in 0 .. (size2) - 1 loop
                 x := (xPortion) * (index);
                 y := (yPortion) * (index);
-                cellPositionArray (index) (index2) := This.getCellPositionAtXY (x, y);
+                cellPositionArray (index) (index2) := BasicGeographicMap'Class (This).getCellPositionAtXY (x, y);
                 if (currentCellPositionArray (index) (index2)) /= (cellPositionArray (index) (index2)) then
                     hasChanged := True;
                 end if;
@@ -228,8 +228,8 @@ package body org.allbinary.media.graphics.geography.map.BasicGeographicMap_Packa
    function getCellTypeAtXY (This : in out BasicGeographicMap; x : Integer; y : Integer) return GeographicMapCellType_Access is
       cellPosition : GeographicMapCellPosition_Access;
    begin
-        cellPosition := This.getCellPositionAtXY (x, y);
-        return This.getCellTypeAt (cellPosition);
+        cellPosition := BasicGeographicMap'Class (This).getCellPositionAtXY (x, y);
+        return BasicGeographicMap'Class (This).getCellTypeAt (cellPosition);
    end getCellTypeAtXY;
 
    function getGeographicMapCellPositionFactory (This : in out BasicGeographicMap) return BasicGeographicMapCellPositionFactory_Access is

@@ -59,7 +59,7 @@ package body org.allbinary.business.user.commerce.money.payment.gateway.PaymentG
       hashMap : constant HashMap_Access := HashMap_Access (hashMap_Param);
    begin
       Initialize_Fields (This);
-        This.getFormData (hashMap);
+        PaymentGateway'Class (This).getFormData (hashMap);
    end Initialize;
 
    function Create (hashMap_Param : access HashMap_Package.HashMap'Class) return PaymentGateway_Access is
@@ -76,115 +76,115 @@ package body org.allbinary.business.user.commerce.money.payment.gateway.PaymentG
    begin
         stringUtil := StringUtil_Package.getInstance;
         empty := stringUtil.EMPTY_STRING;
-        This.storeName := Unbounded_String (hashMap.get (StoreFrontData_Package.getInstance.NAME.toString));
-        This.name := Unbounded_String (hashMap.get (PaymentGatewayData_Package.NAME.toString));
-        This.enable := stringUtil.getNonNull (Unbounded_String (hashMap.get (EntryData_Package.getInstance.ENABLE.toString)));
-        This.paymentMethod := stringUtil.getNonNull (Unbounded_String (hashMap.get (PaymentData_Package.METHOD.toString)));
-        This.mode := stringUtil.getNonNull (Unbounded_String (hashMap.get (PaymentGatewayData_Package.MODE.toString)));
-        This.testProtocol := stringUtil.getNonNull (Unbounded_String (hashMap.get (PaymentGatewayData_Package.TESTPROTOCOL.toString)));
-        This.testServer := stringUtil.getNonNull (Unbounded_String (hashMap.get (PaymentGatewayData_Package.TESTSERVER.toString)));
-        This.testPort := stringUtil.getNonNull (Unbounded_String (hashMap.get (PaymentGatewayData_Package.TESTPORT.toString)));
-        This.testPath := Unbounded_String (hashMap.get (PaymentGatewayData_Package.TESTPATH.toString));
+        This.storeName := Java_Unbox (hashMap.get (Java_Box (StoreFrontData_Package.getInstance.NAME.toString)));
+        This.name := Java_Unbox (hashMap.get (Java_Box (PaymentGatewayData_Package.NAME.toString)));
+        This.enable := stringUtil.getNonNull (Java_Unbox (hashMap.get (Java_Box (EntryData_Package.getInstance.ENABLE.toString))));
+        This.paymentMethod := stringUtil.getNonNull (Java_Unbox (hashMap.get (Java_Box (PaymentData_Package.METHOD.toString))));
+        This.mode := stringUtil.getNonNull (Java_Unbox (hashMap.get (Java_Box (PaymentGatewayData_Package.MODE.toString))));
+        This.testProtocol := stringUtil.getNonNull (Java_Unbox (hashMap.get (Java_Box (PaymentGatewayData_Package.TESTPROTOCOL.toString))));
+        This.testServer := stringUtil.getNonNull (Java_Unbox (hashMap.get (Java_Box (PaymentGatewayData_Package.TESTSERVER.toString))));
+        This.testPort := stringUtil.getNonNull (Java_Unbox (hashMap.get (Java_Box (PaymentGatewayData_Package.TESTPORT.toString))));
+        This.testPath := Java_Unbox (hashMap.get (Java_Box (PaymentGatewayData_Package.TESTPATH.toString)));
         if (This.testPath) = (Null_Unbounded_String) then
             This.testPath := empty;
         end if;
-        This.serverProtocol := Unbounded_String (hashMap.get (PaymentGatewayData_Package.SERVERPROTOCOL.toString));
+        This.serverProtocol := Java_Unbox (hashMap.get (Java_Box (PaymentGatewayData_Package.SERVERPROTOCOL.toString)));
         if (This.serverProtocol) = (Null_Unbounded_String) then
             This.serverProtocol := empty;
         end if;
-        This.server := Unbounded_String (hashMap.get (PaymentGatewayData_Package.SERVER.toString));
+        This.server := Java_Unbox (hashMap.get (Java_Box (PaymentGatewayData_Package.SERVER.toString)));
         if (This.server) = (Null_Unbounded_String) then
             This.server := empty;
         end if;
-        This.serverPort := Unbounded_String (hashMap.get (PaymentGatewayData_Package.SERVERPORT.toString));
+        This.serverPort := Java_Unbox (hashMap.get (Java_Box (PaymentGatewayData_Package.SERVERPORT.toString)));
         if (This.serverPort) = (Null_Unbounded_String) then
             This.serverPort := empty;
         end if;
-        This.serverPath := Unbounded_String (hashMap.get (PaymentGatewayData_Package.SERVERPATH.toString));
+        This.serverPath := Java_Unbox (hashMap.get (Java_Box (PaymentGatewayData_Package.SERVERPATH.toString)));
         if (This.serverPath) = (Null_Unbounded_String) then
             This.serverPath := empty;
         end if;
-        This.userName := Unbounded_String (hashMap.get (UserData_Package.USERNAME.toString));
+        This.userName := Java_Unbox (hashMap.get (Java_Box (UserData_Package.USERNAME.toString)));
         if (This.userName) = (Null_Unbounded_String) then
             This.userName := empty;
         end if;
-        This.password := Unbounded_String (hashMap.get (UserData_Package.PASSWORD.toString));
+        This.password := Java_Unbox (hashMap.get (Java_Box (UserData_Package.PASSWORD.toString)));
         if (This.password) = (Null_Unbounded_String) then
             This.password := empty;
         end if;
-        This.timeout := Unbounded_String (hashMap.get (PaymentGatewayData_Package.TIMEOUT.toString));
+        This.timeout := Java_Unbox (hashMap.get (Java_Box (PaymentGatewayData_Package.TIMEOUT.toString)));
         if (This.timeout) = (Null_Unbounded_String) then
             This.timeout := empty;
         end if;
-        This.proxyProtocol := Unbounded_String (hashMap.get (PaymentGatewayData_Package.PROXYPROTOCOL.toString));
+        This.proxyProtocol := Java_Unbox (hashMap.get (Java_Box (PaymentGatewayData_Package.PROXYPROTOCOL.toString)));
         if (This.proxyProtocol) = (Null_Unbounded_String) then
             This.proxyProtocol := empty;
         end if;
-        This.proxyServer := Unbounded_String (hashMap.get (PaymentGatewayData_Package.PROXYSERVER.toString));
+        This.proxyServer := Java_Unbox (hashMap.get (Java_Box (PaymentGatewayData_Package.PROXYSERVER.toString)));
         if (This.proxyServer) = (Null_Unbounded_String) then
             This.proxyServer := empty;
         end if;
-        This.proxyPort := Unbounded_String (hashMap.get (PaymentGatewayData_Package.PROXYPORT.toString));
+        This.proxyPort := Java_Unbox (hashMap.get (Java_Box (PaymentGatewayData_Package.PROXYPORT.toString)));
         if (This.proxyPort) = (Null_Unbounded_String) then
             This.proxyPort := empty;
         end if;
-        This.proxyPath := Unbounded_String (hashMap.get (PaymentGatewayData_Package.PROXYPATH.toString));
+        This.proxyPath := Java_Unbox (hashMap.get (Java_Box (PaymentGatewayData_Package.PROXYPATH.toString)));
         if (This.proxyPath) = (Null_Unbounded_String) then
             This.proxyPath := empty;
         end if;
-        This.proxyUserName := Unbounded_String (hashMap.get (PaymentGatewayData_Package.PROXYUSERNAME.toString));
+        This.proxyUserName := Java_Unbox (hashMap.get (Java_Box (PaymentGatewayData_Package.PROXYUSERNAME.toString)));
         if (This.proxyUserName) = (Null_Unbounded_String) then
             This.proxyUserName := empty;
         end if;
-        This.proxyPassword := Unbounded_String (hashMap.get (PaymentGatewayData_Package.PROXYPASSWORD.toString));
+        This.proxyPassword := Java_Unbox (hashMap.get (Java_Box (PaymentGatewayData_Package.PROXYPASSWORD.toString)));
         if (This.proxyPassword) = (Null_Unbounded_String) then
             This.proxyPassword := empty;
         end if;
-        This.proxyTimeout := Unbounded_String (hashMap.get (PaymentGatewayData_Package.PROXYTIMEOUT.toString));
+        This.proxyTimeout := Java_Unbox (hashMap.get (Java_Box (PaymentGatewayData_Package.PROXYTIMEOUT.toString)));
         if (This.proxyTimeout) = (Null_Unbounded_String) then
             This.proxyTimeout := empty;
         end if;
-        This.special1 := Unbounded_String (hashMap.get (PaymentGatewayData_Package.SPECIAL1.toString));
+        This.special1 := Java_Unbox (hashMap.get (Java_Box (PaymentGatewayData_Package.SPECIAL1.toString)));
         if (This.special1) = (Null_Unbounded_String) then
             This.special1 := empty;
         end if;
-        This.special2 := Unbounded_String (hashMap.get (PaymentGatewayData_Package.SPECIAL2.toString));
+        This.special2 := Java_Unbox (hashMap.get (Java_Box (PaymentGatewayData_Package.SPECIAL2.toString)));
         if (This.special2) = (Null_Unbounded_String) then
             This.special2 := empty;
         end if;
-        This.special3 := Unbounded_String (hashMap.get (PaymentGatewayData_Package.SPECIAL3.toString));
+        This.special3 := Java_Unbox (hashMap.get (Java_Box (PaymentGatewayData_Package.SPECIAL3.toString)));
         if (This.special3) = (Null_Unbounded_String) then
             This.special3 := empty;
         end if;
-        This.special4 := Unbounded_String (hashMap.get (PaymentGatewayData_Package.SPECIAL4.toString));
+        This.special4 := Java_Unbox (hashMap.get (Java_Box (PaymentGatewayData_Package.SPECIAL4.toString)));
         if (This.special4) = (Null_Unbounded_String) then
             This.special4 := empty;
         end if;
-        This.special5 := Unbounded_String (hashMap.get (PaymentGatewayData_Package.SPECIAL5.toString));
+        This.special5 := Java_Unbox (hashMap.get (Java_Box (PaymentGatewayData_Package.SPECIAL5.toString)));
         if (This.special5) = (Null_Unbounded_String) then
             This.special5 := empty;
         end if;
-        This.special6 := Unbounded_String (hashMap.get (PaymentGatewayData_Package.SPECIAL6.toString));
+        This.special6 := Java_Unbox (hashMap.get (Java_Box (PaymentGatewayData_Package.SPECIAL6.toString)));
         if (This.special6) = (Null_Unbounded_String) then
             This.special6 := empty;
         end if;
-        This.special7 := Unbounded_String (hashMap.get (PaymentGatewayData_Package.SPECIAL7.toString));
+        This.special7 := Java_Unbox (hashMap.get (Java_Box (PaymentGatewayData_Package.SPECIAL7.toString)));
         if (This.special7) = (Null_Unbounded_String) then
             This.special7 := empty;
         end if;
-        This.special8 := Unbounded_String (hashMap.get (PaymentGatewayData_Package.SPECIAL8.toString));
+        This.special8 := Java_Unbox (hashMap.get (Java_Box (PaymentGatewayData_Package.SPECIAL8.toString)));
         if (This.special8) = (Null_Unbounded_String) then
             This.special8 := empty;
         end if;
-        This.special9 := Unbounded_String (hashMap.get (PaymentGatewayData_Package.SPECIAL9.toString));
+        This.special9 := Java_Unbox (hashMap.get (Java_Box (PaymentGatewayData_Package.SPECIAL9.toString)));
         if (This.special9) = (Null_Unbounded_String) then
             This.special9 := empty;
         end if;
-        This.lastModified := Unbounded_String (hashMap.get (EntryData_Package.getInstance.LASTMODIFIED.toString));
+        This.lastModified := Java_Unbox (hashMap.get (Java_Box (EntryData_Package.getInstance.LASTMODIFIED.toString)));
         if (This.lastModified) = (Null_Unbounded_String) then
             This.lastModified := empty;
         end if;
-        This.timeEntered := Unbounded_String (hashMap.get (EntryData_Package.getInstance.TIMECREATED.toString));
+        This.timeEntered := Java_Unbox (hashMap.get (Java_Box (EntryData_Package.getInstance.TIMECREATED.toString)));
         if (This.timeEntered) = (Null_Unbounded_String) then
             This.timeEntered := empty;
         end if;
@@ -533,7 +533,7 @@ package body org.allbinary.business.user.commerce.money.payment.gateway.PaymentG
    --  throws Exception
    function toHashMap (This : in out PaymentGateway) return HashMap_Access is
    begin
-        return This.toHashMap (True);
+        return PaymentGateway'Class (This).toHashMap (True);
    end toHashMap;
 
    --  throws Exception
@@ -542,63 +542,63 @@ package body org.allbinary.business.user.commerce.money.payment.gateway.PaymentG
       superCrypt : SuperCrypt_Access;
    begin
         paymentGatewayHashMap := StdUtil_Package.getInstance.createHashMap;
-        paymentGatewayHashMap.put (EntryData_Package.getInstance.ENABLE, This.enable);
-        paymentGatewayHashMap.put (StoreFrontData_Package.getInstance.NAME.toString, This.storeName);
-        paymentGatewayHashMap.put (PaymentGatewayData_Package.NAME.toString, This.getName);
-        paymentGatewayHashMap.put (PaymentData_Package.METHOD.toString, This.paymentMethod);
-        paymentGatewayHashMap.put (PaymentGatewayData_Package.MODE.toString, This.mode);
-        paymentGatewayHashMap.put (PaymentGatewayData_Package.TESTPROTOCOL.toString, This.testProtocol);
-        paymentGatewayHashMap.put (PaymentGatewayData_Package.TESTSERVER.toString, This.testServer);
-        paymentGatewayHashMap.put (PaymentGatewayData_Package.TESTPORT.toString, This.testPort);
-        paymentGatewayHashMap.put (PaymentGatewayData_Package.TESTPATH.toString, This.testPath);
-        paymentGatewayHashMap.put (PaymentGatewayData_Package.SERVERPROTOCOL.toString, This.serverProtocol);
-        paymentGatewayHashMap.put (PaymentGatewayData_Package.SERVER.toString, This.server);
-        paymentGatewayHashMap.put (PaymentGatewayData_Package.SERVERPORT.toString, This.serverPort);
-        paymentGatewayHashMap.put (PaymentGatewayData_Package.SERVERPATH.toString, This.serverPath);
+        paymentGatewayHashMap.put (EntryData_Package.getInstance.ENABLE, Java_Box (This.enable));
+        paymentGatewayHashMap.put (Java_Box (StoreFrontData_Package.getInstance.NAME.toString), Java_Box (This.storeName));
+        paymentGatewayHashMap.put (Java_Box (PaymentGatewayData_Package.NAME.toString), Java_Box (PaymentGateway'Class (This).getName));
+        paymentGatewayHashMap.put (Java_Box (PaymentData_Package.METHOD.toString), Java_Box (This.paymentMethod));
+        paymentGatewayHashMap.put (Java_Box (PaymentGatewayData_Package.MODE.toString), Java_Box (This.mode));
+        paymentGatewayHashMap.put (Java_Box (PaymentGatewayData_Package.TESTPROTOCOL.toString), Java_Box (This.testProtocol));
+        paymentGatewayHashMap.put (Java_Box (PaymentGatewayData_Package.TESTSERVER.toString), Java_Box (This.testServer));
+        paymentGatewayHashMap.put (Java_Box (PaymentGatewayData_Package.TESTPORT.toString), Java_Box (This.testPort));
+        paymentGatewayHashMap.put (Java_Box (PaymentGatewayData_Package.TESTPATH.toString), Java_Box (This.testPath));
+        paymentGatewayHashMap.put (Java_Box (PaymentGatewayData_Package.SERVERPROTOCOL.toString), Java_Box (This.serverProtocol));
+        paymentGatewayHashMap.put (Java_Box (PaymentGatewayData_Package.SERVER.toString), Java_Box (This.server));
+        paymentGatewayHashMap.put (Java_Box (PaymentGatewayData_Package.SERVERPORT.toString), Java_Box (This.serverPort));
+        paymentGatewayHashMap.put (Java_Box (PaymentGatewayData_Package.SERVERPATH.toString), Java_Box (This.serverPath));
         if isEncrypted then
             superCrypt := SuperCrypt_Package.Create (PaymentGatewayData_Package.CRYPTNUM);
-            paymentGatewayHashMap.put (UserData_Package.USERNAME.toString, superCrypt.encrypt (This.userName));
-            paymentGatewayHashMap.put (UserData_Package.PASSWORD.toString, superCrypt.encrypt (This.password));
+            paymentGatewayHashMap.put (Java_Box (UserData_Package.USERNAME.toString), superCrypt.encrypt (This.userName));
+            paymentGatewayHashMap.put (Java_Box (UserData_Package.PASSWORD.toString), superCrypt.encrypt (This.password));
         else
-            paymentGatewayHashMap.put (UserData_Package.USERNAME.toString, This.userName);
-            paymentGatewayHashMap.put (UserData_Package.PASSWORD.toString, This.password);
+            paymentGatewayHashMap.put (Java_Box (UserData_Package.USERNAME.toString), Java_Box (This.userName));
+            paymentGatewayHashMap.put (Java_Box (UserData_Package.PASSWORD.toString), Java_Box (This.password));
         end if;
-        paymentGatewayHashMap.put (PaymentGatewayData_Package.TIMEOUT.toString, This.timeout);
-        paymentGatewayHashMap.put (PaymentGatewayData_Package.PROXYPROTOCOL.toString, This.proxyProtocol);
-        paymentGatewayHashMap.put (PaymentGatewayData_Package.PROXYSERVER.toString, This.proxyServer);
-        paymentGatewayHashMap.put (PaymentGatewayData_Package.PROXYPORT.toString, This.proxyPort);
-        paymentGatewayHashMap.put (PaymentGatewayData_Package.PROXYPATH.toString, This.proxyPath);
-        paymentGatewayHashMap.put (PaymentGatewayData_Package.PROXYUSERNAME.toString, This.proxyUserName);
-        paymentGatewayHashMap.put (PaymentGatewayData_Package.PROXYPASSWORD.toString, This.proxyPassword);
-        paymentGatewayHashMap.put (PaymentGatewayData_Package.PROXYTIMEOUT.toString, This.proxyTimeout);
+        paymentGatewayHashMap.put (Java_Box (PaymentGatewayData_Package.TIMEOUT.toString), Java_Box (This.timeout));
+        paymentGatewayHashMap.put (Java_Box (PaymentGatewayData_Package.PROXYPROTOCOL.toString), Java_Box (This.proxyProtocol));
+        paymentGatewayHashMap.put (Java_Box (PaymentGatewayData_Package.PROXYSERVER.toString), Java_Box (This.proxyServer));
+        paymentGatewayHashMap.put (Java_Box (PaymentGatewayData_Package.PROXYPORT.toString), Java_Box (This.proxyPort));
+        paymentGatewayHashMap.put (Java_Box (PaymentGatewayData_Package.PROXYPATH.toString), Java_Box (This.proxyPath));
+        paymentGatewayHashMap.put (Java_Box (PaymentGatewayData_Package.PROXYUSERNAME.toString), Java_Box (This.proxyUserName));
+        paymentGatewayHashMap.put (Java_Box (PaymentGatewayData_Package.PROXYPASSWORD.toString), Java_Box (This.proxyPassword));
+        paymentGatewayHashMap.put (Java_Box (PaymentGatewayData_Package.PROXYTIMEOUT.toString), Java_Box (This.proxyTimeout));
         if isEncrypted then
             superCrypt := SuperCrypt_Package.Create (PaymentGatewayData_Package.CRYPTNUM);
-            paymentGatewayHashMap.put (PaymentGatewayData_Package.SPECIAL1.toString, superCrypt.encrypt (This.special1));
-            paymentGatewayHashMap.put (PaymentGatewayData_Package.SPECIAL2.toString, superCrypt.encrypt (This.special2));
-            paymentGatewayHashMap.put (PaymentGatewayData_Package.SPECIAL3.toString, superCrypt.encrypt (This.special3));
-            paymentGatewayHashMap.put (PaymentGatewayData_Package.SPECIAL4.toString, superCrypt.encrypt (This.special4));
-            paymentGatewayHashMap.put (PaymentGatewayData_Package.SPECIAL5.toString, superCrypt.encrypt (This.special5));
-            paymentGatewayHashMap.put (PaymentGatewayData_Package.SPECIAL6.toString, superCrypt.encrypt (This.special6));
-            paymentGatewayHashMap.put (PaymentGatewayData_Package.SPECIAL7.toString, superCrypt.encrypt (This.special7));
-            paymentGatewayHashMap.put (PaymentGatewayData_Package.SPECIAL8.toString, superCrypt.encrypt (This.special8));
+            paymentGatewayHashMap.put (Java_Box (PaymentGatewayData_Package.SPECIAL1.toString), superCrypt.encrypt (This.special1));
+            paymentGatewayHashMap.put (Java_Box (PaymentGatewayData_Package.SPECIAL2.toString), superCrypt.encrypt (This.special2));
+            paymentGatewayHashMap.put (Java_Box (PaymentGatewayData_Package.SPECIAL3.toString), superCrypt.encrypt (This.special3));
+            paymentGatewayHashMap.put (Java_Box (PaymentGatewayData_Package.SPECIAL4.toString), superCrypt.encrypt (This.special4));
+            paymentGatewayHashMap.put (Java_Box (PaymentGatewayData_Package.SPECIAL5.toString), superCrypt.encrypt (This.special5));
+            paymentGatewayHashMap.put (Java_Box (PaymentGatewayData_Package.SPECIAL6.toString), superCrypt.encrypt (This.special6));
+            paymentGatewayHashMap.put (Java_Box (PaymentGatewayData_Package.SPECIAL7.toString), superCrypt.encrypt (This.special7));
+            paymentGatewayHashMap.put (Java_Box (PaymentGatewayData_Package.SPECIAL8.toString), superCrypt.encrypt (This.special8));
         else
-            paymentGatewayHashMap.put (PaymentGatewayData_Package.SPECIAL1.toString, This.special1);
-            paymentGatewayHashMap.put (PaymentGatewayData_Package.SPECIAL2.toString, This.special2);
-            paymentGatewayHashMap.put (PaymentGatewayData_Package.SPECIAL3.toString, This.special3);
-            paymentGatewayHashMap.put (PaymentGatewayData_Package.SPECIAL4.toString, This.special4);
-            paymentGatewayHashMap.put (PaymentGatewayData_Package.SPECIAL5.toString, This.special5);
-            paymentGatewayHashMap.put (PaymentGatewayData_Package.SPECIAL6.toString, This.special6);
-            paymentGatewayHashMap.put (PaymentGatewayData_Package.SPECIAL7.toString, This.special7);
-            paymentGatewayHashMap.put (PaymentGatewayData_Package.SPECIAL8.toString, This.special8);
-            paymentGatewayHashMap.put (PaymentGatewayData_Package.SPECIAL9.toString, This.special9);
+            paymentGatewayHashMap.put (Java_Box (PaymentGatewayData_Package.SPECIAL1.toString), Java_Box (This.special1));
+            paymentGatewayHashMap.put (Java_Box (PaymentGatewayData_Package.SPECIAL2.toString), Java_Box (This.special2));
+            paymentGatewayHashMap.put (Java_Box (PaymentGatewayData_Package.SPECIAL3.toString), Java_Box (This.special3));
+            paymentGatewayHashMap.put (Java_Box (PaymentGatewayData_Package.SPECIAL4.toString), Java_Box (This.special4));
+            paymentGatewayHashMap.put (Java_Box (PaymentGatewayData_Package.SPECIAL5.toString), Java_Box (This.special5));
+            paymentGatewayHashMap.put (Java_Box (PaymentGatewayData_Package.SPECIAL6.toString), Java_Box (This.special6));
+            paymentGatewayHashMap.put (Java_Box (PaymentGatewayData_Package.SPECIAL7.toString), Java_Box (This.special7));
+            paymentGatewayHashMap.put (Java_Box (PaymentGatewayData_Package.SPECIAL8.toString), Java_Box (This.special8));
+            paymentGatewayHashMap.put (Java_Box (PaymentGatewayData_Package.SPECIAL9.toString), Java_Box (This.special9));
         end if;
-        paymentGatewayHashMap.put (EntryData_Package.getInstance.LASTMODIFIED.toString, This.lastModified);
+        paymentGatewayHashMap.put (Java_Box (EntryData_Package.getInstance.LASTMODIFIED.toString), Java_Box (This.lastModified));
         return paymentGatewayHashMap;
    end toHashMap;
 
    function toVector (This : in out PaymentGateway) return BasicArrayList_Access is
    begin
-        return This.toVector (True);
+        return PaymentGateway'Class (This).toVector (True);
    end toVector;
 
    function toVector (This : in out PaymentGateway; isEncrypted : Boolean) return BasicArrayList_Access is
@@ -608,7 +608,7 @@ package body org.allbinary.business.user.commerce.money.payment.gateway.PaymentG
         updateVector := BasicArrayListD_Package.Create;
         updateVector.add (This.enable);
         updateVector.add (This.storeName);
-        updateVector.add (This.getName);
+        updateVector.add (PaymentGateway'Class (This).getName);
         updateVector.add (This.paymentMethod);
         updateVector.add (This.mode);
         updateVector.add (This.testProtocol);
@@ -663,7 +663,7 @@ package body org.allbinary.business.user.commerce.money.payment.gateway.PaymentG
    --  throws Exception
    function getKey (This : in out PaymentGateway) return Java_Object_Access is
    begin
-        return Java_Object_Access (PaymentGatewayPrimaryKey_Package.Create (This.getStoreName, This.getName));
+        return Java_Object_Access (PaymentGatewayPrimaryKey_Package.Create (PaymentGateway'Class (This).getStoreName, PaymentGateway'Class (This).getName));
    end getKey;
 
    procedure toHashMap (This : in out PaymentGateway; isEncrypted : Boolean) is

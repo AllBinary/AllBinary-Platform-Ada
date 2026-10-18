@@ -32,8 +32,8 @@ package body views.business.context.modules.storefront.customizer.template.Inser
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
             This.logUtil.putF (To_Unbounded_String ("View Name: ") & transformInfoInterface.getName, InsertCustomizerValidationView_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         end if;
-        requestHashMap := RequestParams_Package.Create (This.getPageContext).toHashMap;
-        This.viewName := Unbounded_String (requestHashMap.get (TransformInfoData_Package.getInstance.NAME));
+        requestHashMap := RequestParams_Package.Create (InsertCustomizerValidationView'Class (This).getPageContext).toHashMap;
+        This.viewName := Java_Unbox (requestHashMap.get (TransformInfoData_Package.getInstance.NAME));
    end Initialize;
 
    function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return InsertCustomizerValidationView_Access is
@@ -72,7 +72,7 @@ package body views.business.context.modules.storefront.customizer.template.Inser
             if StringValidationUtil_Package.getInstance.isEmpty (This.viewName) then
                 isValid := False;
             else
-                objectConfig := NoTemplateTransformInfoObjectConfig_Package.Create (This.getTransformInfoInterface, This.getTransformInfoInterface.getObjectConfigInterface.toXmlDoc);
+                objectConfig := NoTemplateTransformInfoObjectConfig_Package.Create (InsertCustomizerValidationView'Class (This).getTransformInfoInterface, InsertCustomizerValidationView'Class (This).getTransformInfoInterface.getObjectConfigInterface.toXmlDoc);
                 componentVector := objectConfig.getGroupTransforms;
                 size := componentVector.size;
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
@@ -88,26 +88,26 @@ package body views.business.context.modules.storefront.customizer.template.Inser
                     if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
                         This.logUtil.putF (To_Unbounded_String ("Setting Template Component with ViewName: ") & transformInfoName, InsertCustomizerValidationView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
                     end if;
-                    componentInterface := TransformFactory_Package.getInstance.getInstance (This.abeClientInformation, transformInfoName, This.getTransformInfoInterface);
+                    componentInterface := TransformFactory_Package.getInstance.getInstance (This.abeClientInformation, transformInfoName, InsertCustomizerValidationView'Class (This).getTransformInfoInterface);
                     templateViewObjectConfig := InsertTemplateCustomizerTransformInfoObjectConfig_Package.Create (componentInterface.getTransformInfoInterface, componentInterface.getTransformInfoInterface.getObjectConfigInterface.toXmlDoc);
-                    storeName := This.getTransformInfoInterface.getStoreName;
-                    endIndex := ((Index (This.viewName, To_String (storeName)) - 1)) + (Length (storeName));
+                    storeName := InsertCustomizerValidationView'Class (This).getTransformInfoInterface.getStoreName;
+                    endIndex := ((Index (This.viewName, Java_Image (storeName)) - 1)) + (Length (storeName));
                     storePrepend := Unbounded_Slice (This.viewName, (0) + 1, endIndex);
                     viewNamePostfix := Unbounded_Slice (This.viewName, (endIndex) + 1, Length (This.viewName));
                     newViewNameStringBuffer := StringMaker_Package.Create;
                     newViewNameStringBuffer.append (storePrepend);
                     commonSeps := CommonSeps_Package.getInstance;
                     transformInfosData := TransformInfosData_Package.getInstance;
-                    if ((Index (transformInfoName, To_String (transformInfosData.SMALL_PREVIEW)) - 1)) >= (0) then
+                    if ((Index (transformInfoName, Java_Image (transformInfosData.SMALL_PREVIEW)) - 1)) >= (0) then
                         newViewNameStringBuffer.append (commonSeps.SPACE);
                         newViewNameStringBuffer.append (transformInfosData.SMALL_PREVIEW);
-                    elsif ((Index (transformInfoName, To_String (transformInfosData.PREVIEW)) - 1)) >= (0) then
+                    elsif ((Index (transformInfoName, Java_Image (transformInfosData.PREVIEW)) - 1)) >= (0) then
                         newViewNameStringBuffer.append (commonSeps.SPACE);
                         newViewNameStringBuffer.append (transformInfosData.PREVIEW);
                     end if;
                     newViewNameStringBuffer.append (commonSeps.SPACE);
                     newViewNameStringBuffer.append (viewNamePostfix);
-                    if ((Index (transformInfoName, To_String (GeneratorTransformInfoData_Package.NAME)) - 1)) >= (0) then
+                    if ((Index (transformInfoName, Java_Image (GeneratorTransformInfoData_Package.NAME)) - 1)) >= (0) then
                         newViewNameStringBuffer.append (commonSeps.SPACE);
                         newViewNameStringBuffer.append (GeneratorTransformInfoData_Package.NAME);
                     end if;

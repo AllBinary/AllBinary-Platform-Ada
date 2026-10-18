@@ -72,7 +72,7 @@ package body org.allbinary.canvas.AndroidGameStatistics_Package is
         for index in 0 .. (stringArray'Length) - 1 loop
             This.ANDROID_STRING_ARRAY (index) := stringArray (index);
         end loop;
-        totalTime := This.getTimeDelayHelper.getElapsed (This.gameTickTimeDelayHelper.startTime);
+        totalTime := AndroidGameStatistics'Class (This).getTimeDelayHelper.getElapsed (This.gameTickTimeDelayHelper.startTime);
         totalTime := ((totalTime) / (10000));
         This.ANDROID_STRING_ARRAY (10) := This.TOTAL_ONDRAWS;
         This.ANDROID_STRING_ARRAY (11) := To_Unbounded_String (Java_Image (This.totalOnDraws));
@@ -86,7 +86,7 @@ package body org.allbinary.canvas.AndroidGameStatistics_Package is
       stringBuffer : StringMaker_Access;
       drawsOverTime : Unbounded_String;
    begin
-        totalTime := This.getTimeDelayHelper.getElapsed (This.gameTickTimeDelayHelper.startTime);
+        totalTime := AndroidGameStatistics'Class (This).getTimeDelayHelper.getElapsed (This.gameTickTimeDelayHelper.startTime);
         totalTime := ((totalTime) / (1000));
         if (totalTime) > (0) then
             stringBuffer := StringMaker_Package.Create;

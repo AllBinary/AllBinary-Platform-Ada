@@ -37,7 +37,7 @@ package body org.allbinary.logic.io.file.directory.DirectoryBooleanFileVisitor_P
    function visit (This : in out DirectoryBooleanFileVisitor; anyType_Param : access Java_Object'Class) return Java_Object_Access is
       anyType : constant Java_Object_Access := Java_Object_Access (anyType_Param);
    begin
-        return Java_Object_Access (This.visit (AbFile_Access (anyType)));
+        return Java_Object_Access (DirectoryBooleanFileVisitor'Class (This).visit (AbFile_Access (anyType)));
    end visit;
 
    function visit (This : in out DirectoryBooleanFileVisitor; file_Param : access AbFile_Package.AbFile'Class) return Boolean is

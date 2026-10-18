@@ -48,7 +48,7 @@ package body org.allbinary.business.init.InitSql_Package is
       databaseConnectionInfoInterface : constant DbConnectionInfo_Access := DbConnectionInfo_Access (databaseConnectionInfoInterface_Param);
    begin
       Initialize_Fields (This);
-        This.setDatabaseConnectionInfoInterface (databaseConnectionInfoInterface);
+        InitSql'Class (This).setDatabaseConnectionInfoInterface (databaseConnectionInfoInterface);
    end Initialize;
 
    function Create (databaseConnectionInfoInterface_Param : access DbConnectionInfo_Package.DbConnectionInfo'Class) return InitSql_Access is
@@ -77,7 +77,7 @@ package body org.allbinary.business.init.InitSql_Package is
             stringBuffer.append (To_Unbounded_String ("Creating Table: "));
             stringBuffer.append (tableData);
             PreLogUtil_Package.put (stringBuffer.toString, This.INIT_SQL, To_Unbounded_String ("createTable()"));
-            This.executeSQLStatement (tableData);
+            InitSql'Class (This).executeSQLStatement (tableData);
             return True;
         exception
             when Java_Occurrence : others =>
@@ -97,7 +97,7 @@ package body org.allbinary.business.init.InitSql_Package is
    begin
         sqlStatement := Java_Image (This.sqlStrings.DROP_TABLE) & This.tableName;
         begin
-            This.executeSQLStatement (sqlStatement);
+            InitSql'Class (This).executeSQLStatement (sqlStatement);
             return True;
         exception
             when Java_Occurrence : others =>
@@ -140,11 +140,11 @@ package body org.allbinary.business.init.InitSql_Package is
             keyArray := set.toArray;
             size := keyArray'Length;
             for i in 0 .. (size) - 1 loop
-                key := Unbounded_String (keyArray (i));
-                value := Java_New_String (Unbounded_String (keysAndValues.get (key)));
+                key := Java_Unbox (keyArray (i));
+                value := Java_New_String (Java_Unbox (keysAndValues.get (Java_Box (key))));
                 stringBuffer.append (key);
                 stringBuffer.append (This.sqlStrings.EQUAL_QUOTE);
-                stringBuffer.append (This.getValue (value));
+                stringBuffer.append (InitSql'Class (This).getValue (value));
                 stringBuffer.append (This.sqlStrings.CLOSE_QUOTE);
                 if (i) < ((size) - (1)) then
                     stringBuffer.append (This.sqlStrings.AND_Id);
@@ -154,7 +154,7 @@ package body org.allbinary.business.init.InitSql_Package is
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
                 PreLogUtil_Package.put (Java_Image (This.sqlStrings.SQL_STATEMENT_LABEL) & sqlStatement, This.INIT_SQL, This.METHOD_GET_ROW);
             end if;
-            rset := This.executeSQLStatement (sqlStatement);
+            rset := InitSql'Class (This).executeSQLStatement (sqlStatement);
             resultSetMetaData := rset.getMetaData;
             while rset.next loop
                 result := This.stdUtil.createHashMap;
@@ -162,7 +162,7 @@ package body org.allbinary.business.init.InitSql_Package is
                 for index in 1 .. columnCount loop
                     columnName := resultSetMetaData.getColumnName (index);
                     field := rset.getString (columnName);
-                    result.put (columnName, field);
+                    result.put (Java_Box (columnName), Java_Box (field));
                 end loop;
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
                     PreLogUtil_Package.put (This.ROW_VALUE_LABEL & result.toString, This.INIT_SQL, This.METHOD_GET_ROW);
@@ -208,13 +208,13 @@ package body org.allbinary.business.init.InitSql_Package is
                 stringBuffer.append (This.commonSeps.SPACE);
                 stringBuffer.append (columnName);
                 stringBuffer.append (This.EQUAL_QUOTE);
-                columnValue := Unbounded_String (updatedKeyValuePairs.get (columnName));
+                columnValue := Java_Unbox (updatedKeyValuePairs.get (Java_Box (columnName)));
                 if (columnValue) = (Null_Unbounded_String) then
                     columnValue := This.stringUtil.EMPTY_STRING;
                 else
                     null;
                 end if;
-                stringBuffer.append (This.getValue (columnValue));
+                stringBuffer.append (InitSql'Class (This).getValue (columnValue));
                 stringBuffer.append (This.sqlStrings.CLOSE_QUOTE);
                 if (i) < ((size) - (1)) then
                     stringBuffer.append (This.commonSeps.COMMA);
@@ -223,10 +223,10 @@ package body org.allbinary.business.init.InitSql_Package is
             stringBuffer.append (This.sqlStrings.WHERE);
             stringBuffer.append (key);
             stringBuffer.append (This.sqlStrings.EQUAL_QUOTE);
-            stringBuffer.append (This.getValue (value));
+            stringBuffer.append (InitSql'Class (This).getValue (value));
             stringBuffer.append (This.sqlStrings.CLOSE_QUOTE);
             sqlStatement := stringBuffer.toString;
-            This.executeSQLStatement (sqlStatement);
+            InitSql'Class (This).executeSQLStatement (sqlStatement);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
                 PreLogUtil_Package.put (This.SUCCESS_SQL_STATEMENT & sqlStatement, This.INIT_SQL, This.METHOD_UPDATE_WHERE);
             end if;
@@ -257,15 +257,15 @@ package body org.allbinary.business.init.InitSql_Package is
         begin
             size := values.size;
             for i in 0 .. ((size) - (1)) - 1 loop
-                value := This.getValue (Unbounded_String (values.get (i)));
+                value := InitSql'Class (This).getValue (Java_Unbox (values.get (i)));
                 stringBuffer.append (value);
                 stringBuffer.append (This.sqlStrings.SINGLE_QUOTE_COMMA_SEP);
             end loop;
-            value := This.getValue (Unbounded_String (values.get ((values.size) - (1))));
+            value := InitSql'Class (This).getValue (Java_Unbox (values.get ((values.size) - (1))));
             stringBuffer.append (value);
             stringBuffer.append (This.INSERT_END);
             sqlStatement := stringBuffer.toString;
-            This.executeSQLStatement (sqlStatement);
+            InitSql'Class (This).executeSQLStatement (sqlStatement);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
                 PreLogUtil_Package.put (This.SUCCESS_SQL_STATEMENT & sqlStatement, This.INIT_SQL, This.INSERT);
             end if;
@@ -297,7 +297,7 @@ package body org.allbinary.business.init.InitSql_Package is
    begin
         begin
             if (This.conn) = (null) then
-                This.initialize;
+                InitSql'Class (This).initialize;
             end if;
             stmt := This.conn.createStatement;
             stmt.execute (statement);
@@ -360,7 +360,7 @@ package body org.allbinary.business.init.InitSql_Package is
             if ((This.userid) = (Null_Unbounded_String)) and then ((This.password) = (Null_Unbounded_String)) then
                 This.useridAndPassword := True;
             end if;
-            This.createConnection;
+            InitSql'Class (This).createConnection;
         exception
             when Java_Occurrence : others =>
                 declare

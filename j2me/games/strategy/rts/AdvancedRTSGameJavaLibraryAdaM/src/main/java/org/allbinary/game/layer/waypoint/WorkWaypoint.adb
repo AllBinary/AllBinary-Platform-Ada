@@ -51,7 +51,7 @@ package body org.allbinary.game.layer.waypoint.WorkWaypoint_Package is
         if (unitLayer.getGroupInterface (0)) /= (This.ownerLayer.getGroupInterface (0)) then
             return;
         end if;
-        size := This.getConnectedWaypointList.size;
+        size := WorkWaypoint'Class (This).getConnectedWaypointList.size;
         if (size) > (0) then
             occupyList := This.ownerLayer.getGeographicMapCellPositionArea.getOccupyingGeographicMapCellPositionList;
             outOfResources := True;
@@ -75,10 +75,10 @@ package body org.allbinary.game.layer.waypoint.WorkWaypoint_Package is
             if not (outOfResources) then
                 unitWaypointBehavior := UnitWaypointBehavior_Access (unitLayer.getWaypointBehavior);
                 rtsLayer := null;
-                while (This.getConnectedWaypointList.size) > (0) loop
-                    rtsLayer := RTSLayer_Access (This.getConnectedWaypointList.get (0));
+                while (WorkWaypoint'Class (This).getConnectedWaypointList.size) > (0) loop
+                    rtsLayer := RTSLayer_Access (WorkWaypoint'Class (This).getConnectedWaypointList.get (0));
                     if rtsLayer.isDestroyed then
-                        This.getConnectedWaypointList.remove (rtsLayer);
+                        WorkWaypoint'Class (This).getConnectedWaypointList.remove (rtsLayer);
                     else
                         unitWaypointBehavior.insertWaypoint (0, rtsLayer);
                         exit;

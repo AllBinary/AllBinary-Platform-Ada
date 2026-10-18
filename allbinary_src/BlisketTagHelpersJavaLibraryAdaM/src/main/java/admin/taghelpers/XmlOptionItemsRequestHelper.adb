@@ -36,7 +36,7 @@ package body admin.taghelpers.XmlOptionItemsRequestHelper_Package is
       ModifyTable_Package.Initialize (This);
       Initialize_Fields (This);
         This.request := HttpServletRequest_Access (pageContext.getRequest);
-        This.getFormData;
+        XmlOptionItemsRequestHelper'Class (This).getFormData;
    end Initialize;
 
    function Create (hashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) return XmlOptionItemsRequestHelper_Access is
@@ -61,12 +61,12 @@ package body admin.taghelpers.XmlOptionItemsRequestHelper_Package is
       time : Unbounded_String;
    begin
         values := StdUtil_Package.getInstance.createHashMap;
-        values.put (This.basicItemData.ID, This.id);
-        values.put (XmlOptionItemData_Package.XML_FILE_STATUS, This.xmlFileStatus);
-        values.put (XmlOptionItemData_Package.OPTION_XML_FILE, This.optionXmlFile);
+        values.put (This.basicItemData.ID, Java_Box (This.id));
+        values.put (XmlOptionItemData_Package.XML_FILE_STATUS, Java_Box (This.xmlFileStatus));
+        values.put (XmlOptionItemData_Package.OPTION_XML_FILE, Java_Box (This.optionXmlFile));
         calendar := Calendar_Package.getInstance;
         time := Java_New_String (calendar.getTimeInMillis.toString);
-        values.put (EntryData_Package.getInstance.LASTMODIFIED, time);
+        values.put (EntryData_Package.getInstance.LASTMODIFIED, Java_Box (time));
         return values;
    end getHashMap;
 
@@ -81,11 +81,11 @@ package body admin.taghelpers.XmlOptionItemsRequestHelper_Package is
             calendar := Calendar_Package.getInstance;
             time := Java_New_String (calendar.getTimeInMillis.toString);
             values := BasicArrayListD_Package.Create;
-            values.add (This.id);
-            values.add (This.xmlFileStatus);
-            values.add (This.optionXmlFile);
-            values.add (time);
-            values.add (time);
+            values.add (Java_Box (This.id));
+            values.add (Java_Box (This.xmlFileStatus));
+            values.add (Java_Box (This.optionXmlFile));
+            values.add (Java_Box (time));
+            values.add (Java_Box (time));
             XmlOptionItemsEntityFactory_Package.getInstance.getXmlOptionItemsEntityInstance.insert (values);
             success := To_Unbounded_String ("Successfully inserted ") & This.id & To_Unbounded_String (" into items table");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
@@ -138,7 +138,7 @@ package body admin.taghelpers.XmlOptionItemsRequestHelper_Package is
    begin
         begin
             success := To_Unbounded_String ("Update Successful");
-            values := This.getHashMap;
+            values := XmlOptionItemsRequestHelper'Class (This).getHashMap;
             XmlOptionItemsEntityFactory_Package.getInstance.getXmlOptionItemsEntityInstance.update (values);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
                 This.logUtil.putF (StringMaker_Package.Create.append (This.id).append (CommonSeps_Package.getInstance.SPACE).append (success).toString, XmlOptionItemsRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("update()"));

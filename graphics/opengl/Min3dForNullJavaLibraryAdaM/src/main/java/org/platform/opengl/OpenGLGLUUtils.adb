@@ -30,6 +30,7 @@ package body org.platform.opengl.OpenGLGLUUtils_Package is
       bmp : constant OpenGLBitmap_Access := OpenGLBitmap_Access (bmp_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return null;
    end makeByteBuffer;
 
    procedure texImage2D (This : in out OpenGLGLUUtils; gl_Param : access GL10_Package.GL10'Class; glVersion : Unbounded_String; target : Integer; level : Integer; generateMipMap : Boolean; openGLESImage_Param : access OpenGLESImage_Package.OpenGLESImage'Class; border : Integer; flip : Boolean) is

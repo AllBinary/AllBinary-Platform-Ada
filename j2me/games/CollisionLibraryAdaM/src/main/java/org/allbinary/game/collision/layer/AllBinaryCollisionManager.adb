@@ -50,7 +50,7 @@ package body org.allbinary.game.collision.layer.AllBinaryCollisionManager_Packag
         size := layerManager.getSize;
         for index in (startIndex) + (1) .. (size) - 1 loop
             collidableInterfaceCompositeInterface2 := CollidableInterfaceCompositeInterface_Access (layerManager.getLayerAt (index));
-            This.collide (layerManager, collidableInterfaceCompositeInterface, collidableInterfaceCompositeInterface2);
+            AllBinaryCollisionManager'Class (This).collide (layerManager, collidableInterfaceCompositeInterface, collidableInterfaceCompositeInterface2);
         end loop;
    end process;
 

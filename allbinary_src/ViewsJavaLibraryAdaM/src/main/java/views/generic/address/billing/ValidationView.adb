@@ -37,7 +37,7 @@ package body views.generic_Id.address.billing.ValidationView_Package is
    function isValid (This : in out ValidationView) return Boolean is
       billingAddressesEntity : BillingAddressesEntity_Access;
    begin
-        billingAddressesEntity := BillingAddressesEntity_Package.Create (This.getWeblisketSession.getUserName);
+        billingAddressesEntity := BillingAddressesEntity_Package.Create (ValidationView'Class (This).getWeblisketSession.getUserName);
         This.streetAddresses := billingAddressesEntity.get;
         if (This.streetAddresses) = (null) then
             return False;

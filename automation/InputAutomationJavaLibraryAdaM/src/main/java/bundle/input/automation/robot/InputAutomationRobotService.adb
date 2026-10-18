@@ -25,7 +25,7 @@ package body bundle.input.automation.robot.InputAutomationRobotService_Package i
    procedure Initialize (This : in out InputAutomationRobotService'Class; inputRobotInterfaceArray : InputRobotInterface_Access_Array_Access) is
    begin
       Initialize_Fields (This);
-        This.setInputRobotInterfaceArray (inputRobotInterfaceArray);
+        InputAutomationRobotService'Class (This).setInputRobotInterfaceArray (inputRobotInterfaceArray);
    end Initialize;
 
    function Create (inputRobotInterfaceArray : InputRobotInterface_Access_Array_Access) return InputAutomationRobotService_Access is

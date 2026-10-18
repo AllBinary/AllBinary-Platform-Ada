@@ -46,7 +46,7 @@ package body org.allbinary.game.combat.destroy.DestroyableSimpleBehavior_Package
    procedure setDestroyed (This : in out DestroyableSimpleBehavior; destroyed : Boolean) is
    begin
         This.destroyed := destroyed;
-        if This.isDestroyed then
+        if DestroyableSimpleBehavior'Class (This).isDestroyed then
             DestroyedLayerProcessor_Package.getInstance.add (This.ownerLayer);
         end if;
    end setDestroyed;

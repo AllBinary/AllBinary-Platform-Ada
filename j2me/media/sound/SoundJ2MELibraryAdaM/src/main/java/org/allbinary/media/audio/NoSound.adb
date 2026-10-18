@@ -29,7 +29,7 @@ package body org.allbinary.media.audio.NoSound_Package is
    procedure Initialize (This : in out NoSound'Class) is
    begin
         Sound_Package.Initialize (This, StringUtil_Package.getInstance.EMPTY_STRING);
-        This.setPlayerP (NoPlayer_Package.NO_PLAYER);
+        NoSound'Class (This).setPlayerP (NoPlayer_Package.NO_PLAYER);
    end Initialize;
 
    function Create return NoSound_Access is

@@ -53,7 +53,7 @@ package body org.allbinary.animation.special.TitleAnimation_Package is
         This.dyArray := dyArray;
         This.y := y;
         This.widthP := width;
-        This.reset;
+        TitleAnimation'Class (This).reset;
    end Initialize;
 
    function Create (animationInterfaceArray : IndexedAnimation_Access_Array_Access; basicColorArray : BasicColor_Access_Array_Access; dxArray : Integer_Array_Access; dyArray : Integer_Array_Access; y : Integer; width : Integer; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class) return TitleAnimation_Access is
@@ -70,9 +70,9 @@ package body org.allbinary.animation.special.TitleAnimation_Package is
    begin
         currentTime := This.systemWrapper.currentTimeMillis;
         totalTimeElapsed := (currentTime) - (This.lastFrameStartTime);
-        indexedAnimationBehavior := IndexedAnimationBehavior_Access (This.getAnimationBehavior);
+        indexedAnimationBehavior := IndexedAnimationBehavior_Access (TitleAnimation'Class (This).getAnimationBehavior);
         if (totalTimeElapsed) > (indexedAnimationBehavior.frameDelayTime) then
-            This.previousFrame;
+            TitleAnimation'Class (This).previousFrame;
             This.lastFrameStartTime := currentTime;
         end if;
         if (This.animationInterfaceArray (0).getFrame) = (0) then
@@ -83,8 +83,8 @@ package body org.allbinary.animation.special.TitleAnimation_Package is
    function isComplete (This : in out TitleAnimation) return Boolean is
       indexedAnimationBehavior : IndexedAnimationBehavior_Access;
    begin
-        indexedAnimationBehavior := IndexedAnimationBehavior_Access (This.getAnimationBehavior);
-        if (((indexedAnimationBehavior.loopTotal) = (-(1))) or else ((indexedAnimationBehavior.loopIndex) < (indexedAnimationBehavior.loopTotal))) or else ((This.getFrame) /= (0)) then
+        indexedAnimationBehavior := IndexedAnimationBehavior_Access (TitleAnimation'Class (This).getAnimationBehavior);
+        if (((indexedAnimationBehavior.loopTotal) = (-(1))) or else ((indexedAnimationBehavior.loopIndex) < (indexedAnimationBehavior.loopTotal))) or else ((TitleAnimation'Class (This).getFrame) /= (0)) then
             return False;
         else
             return True;
@@ -121,14 +121,14 @@ package body org.allbinary.animation.special.TitleAnimation_Package is
 
    procedure setLastFrame (This : in out TitleAnimation) is
    begin
-        This.setFrame ((This.getSize) - (1));
+        TitleAnimation'Class (This).setFrame ((TitleAnimation'Class (This).getSize) - (1));
    end setLastFrame;
 
    procedure reset (This : in out TitleAnimation) is
       indexedAnimationBehavior : IndexedAnimationBehavior_Access;
    begin
-        This.setLastFrame;
-        indexedAnimationBehavior := (IndexedAnimationBehavior_Access (This.getAnimationBehavior));
+        TitleAnimation'Class (This).setLastFrame;
+        indexedAnimationBehavior := (IndexedAnimationBehavior_Access (TitleAnimation'Class (This).getAnimationBehavior));
         indexedAnimationBehavior.reset;
    end reset;
 
@@ -143,8 +143,8 @@ package body org.allbinary.animation.special.TitleAnimation_Package is
    procedure paintFrameXY (This : in out TitleAnimation; graphics_Param : access Graphics_Package.Graphics'Class; frame : Integer; x : Integer; y : Integer) is
       graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
-        This.setFrame (frame);
-        This.paintXY (graphics, x, y);
+        TitleAnimation'Class (This).setFrame (frame);
+        TitleAnimation'Class (This).paintXY (graphics, x, y);
    end paintFrameXY;
 
    procedure paintXY (This : in out TitleAnimation; graphics_Param : access Graphics_Package.Graphics'Class; ax : Integer; ay : Integer) is

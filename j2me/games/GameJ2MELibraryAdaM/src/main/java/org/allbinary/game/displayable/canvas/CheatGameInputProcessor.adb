@@ -49,7 +49,7 @@ package body org.allbinary.game.displayable.canvas.CheatGameInputProcessor_Packa
    begin
         begin
             gameLayerManager := This.gameCanvas.getLayerManager;
-            list := This.getGameKeyEventList;
+            list := CheatGameInputProcessor'Class (This).getGameKeyEventList;
             size := list.size;
             for index in 0 .. (size) - 1 loop
                 anyType := list.objectArray (index);

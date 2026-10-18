@@ -48,7 +48,7 @@ package body org.allbinary.graphics.displayable.screen.WebCommandProcessor_Packa
       commonStrings : CommonStrings_Access;
    begin
         begin
-            PlayN_Package.openURL (Unbounded_String (This.list.removeAt (0)));
+            PlayN_Package.openURL (Java_Unbox (This.list.removeAt (0)));
         exception
             when Java_Occurrence : others =>
                 declare

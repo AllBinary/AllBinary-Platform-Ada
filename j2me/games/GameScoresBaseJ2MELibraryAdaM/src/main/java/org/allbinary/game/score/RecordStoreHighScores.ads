@@ -21,14 +21,14 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.io.ByteArrayInputStream_Package; use java.io.ByteArrayInputStream_Package;
---  with java.io.DataInputStream_Package; use java.io.DataInputStream_Package;
+with java.io.DataInputStream_Package; use java.io.DataInputStream_Package;
 --  with java.io.EOFException_Package; use java.io.EOFException_Package;
 --  with java.io.IOException_Package; use java.io.IOException_Package;
---  with javax.microedition.rms.RecordComparator_Package; use javax.microedition.rms.RecordComparator_Package;
---  with javax.microedition.rms.RecordEnumeration_Package; use javax.microedition.rms.RecordEnumeration_Package;
---  with javax.microedition.rms.RecordStore_Package; use javax.microedition.rms.RecordStore_Package;
---  with javax.microedition.rms.RecordStoreException_Package; use javax.microedition.rms.RecordStoreException_Package;
---  with javax.microedition.rms.RecordStoreNotFoundException_Package; use javax.microedition.rms.RecordStoreNotFoundException_Package;
+with javax.microedition.rms.RecordComparator_Package; use javax.microedition.rms.RecordComparator_Package;
+with javax.microedition.rms.RecordEnumeration_Package; use javax.microedition.rms.RecordEnumeration_Package;
+with javax.microedition.rms.RecordStore_Package; use javax.microedition.rms.RecordStore_Package;
+with javax.microedition.rms.RecordStoreException_Package; use javax.microedition.rms.RecordStoreException_Package;
+with javax.microedition.rms.RecordStoreNotFoundException_Package; use javax.microedition.rms.RecordStoreNotFoundException_Package;
 with org.allbinary.TsUtil_Package; use org.allbinary.TsUtil_Package;
 with org.allbinary.game.GameInfo_Package; use org.allbinary.game.GameInfo_Package;
 with org.allbinary.game.configuration.persistance.NullRecordComparator_Package; use org.allbinary.game.configuration.persistance.NullRecordComparator_Package;
@@ -51,6 +51,12 @@ with org.allbinary.game.score.ScoreComparator_Package; use org.allbinary.game.sc
 
 package org.allbinary.game.score.RecordStoreHighScores_Package is
 
+   package DataInputStream_Package renames Standard.java.io.DataInputStream_Package;
+   package RecordComparator_Package renames Standard.javax.microedition.rms.RecordComparator_Package;
+   package RecordEnumeration_Package renames Standard.javax.microedition.rms.RecordEnumeration_Package;
+   package RecordStore_Package renames Standard.javax.microedition.rms.RecordStore_Package;
+   package RecordStoreException_Package renames Standard.javax.microedition.rms.RecordStoreException_Package;
+   package RecordStoreNotFoundException_Package renames Standard.javax.microedition.rms.RecordStoreNotFoundException_Package;
    package TsUtil_Package renames Standard.org.allbinary.TsUtil_Package;
    package GameInfo_Package renames Standard.org.allbinary.game.GameInfo_Package;
    package NullRecordComparator_Package renames Standard.org.allbinary.game.configuration.persistance.NullRecordComparator_Package;

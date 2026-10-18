@@ -22,13 +22,14 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.util.Enumeration_Package; use java.util.Enumeration_Package;
 with java.util.Hashtable_Package; use java.util.Hashtable_Package;
---  with java.util.Map_Package; use java.util.Map_Package;
+with java.util.Map_Package; use java.util.Map_Package;
 --  with java.util.Set_Package; use java.util.Set_Package;
 with jsinterop.annotations.JsType_Package; use jsinterop.annotations.JsType_Package;
 
 package org.allbinary.util.ABHashtable_Package is
 
    package Hashtable_Package renames Standard.java.util.Hashtable_Package;
+   package Map_Package renames Standard.java.util.Map_Package;
    package JsType_Package renames Standard.jsinterop.annotations.JsType_Package;
 
    type ABHashtable is tagged;

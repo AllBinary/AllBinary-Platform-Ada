@@ -50,11 +50,11 @@ package body org.allbinary.game.behavior.topview.GeographicMapTopViewGameLayerBe
    begin
         if (geographicMapCellPosition) /= (SimpleGeographicMapCellPositionFactory_Package.NULL_GEOGRAPHIC_MAP_CELL_POSITION) then
             This.geographicMapBehavior.getCellTypeAt (geographicMapInterfaceArray, geographicMapCellTypeArray, geographicMapCellPosition);
-            hasSolidBlock := This.hasSolidBlock (geographicMapInterfaceArray, geographicMapCellTypeArray);
+            hasSolidBlock := GeographicMapTopViewGameLayerBehavior1'Class (This).hasSolidBlock (geographicMapInterfaceArray, geographicMapCellTypeArray);
             if not (hasSolidBlock) then
                 This.gravityUtil.process (velocityProperties, This.gravityUtil.GAME_GRAVITY_VELOCITY);
                 velocityProperties.limitXYToForwardAndReverseMaxVelocity;
-                This.gravity;
+                GeographicMapTopViewGameLayerBehavior1'Class (This).gravity;
             else
                 null;
             end if;
@@ -103,13 +103,13 @@ package body org.allbinary.game.behavior.topview.GeographicMapTopViewGameLayerBe
       tiledLayer : AllBinaryTiledLayer_Access;
       hasSolidBlock : Boolean;
    begin
-        geographicMapCellPosition := This.getPosition (geographicMapInterfaceArray, layer, x, y);
+        geographicMapCellPosition := GeographicMapTopViewGameLayerBehavior1'Class (This).getPosition (geographicMapInterfaceArray, layer, x, y);
         if ((This.previousGeographicMapCellPosition) /= (geographicMapCellPosition)) and then ((geographicMapCellPosition) /= (SimpleGeographicMapCellPositionFactory_Package.NULL_GEOGRAPHIC_MAP_CELL_POSITION)) then
             possibleStepGeographicMapCellPosition := geographicMapCellPosition;
             tiledLayer := geographicMapInterfaceArray (0).getAllBinaryTiledLayer;
             if ((((possibleStepGeographicMapCellPosition.getColumn) > (0)) and then ((possibleStepGeographicMapCellPosition.getRow) > (0))) and then ((possibleStepGeographicMapCellPosition.getColumn) < (tiledLayer.getColumns))) and then ((possibleStepGeographicMapCellPosition.getRow) < (tiledLayer.getRows)) then
                 This.geographicMapBehavior.getCellTypeAt (geographicMapInterfaceArray, geographicMapCellTypeArray, possibleStepGeographicMapCellPosition);
-                hasSolidBlock := This.hasSolidBlock (geographicMapInterfaceArray, geographicMapCellTypeArray);
+                hasSolidBlock := GeographicMapTopViewGameLayerBehavior1'Class (This).hasSolidBlock (geographicMapInterfaceArray, geographicMapCellTypeArray);
                 if hasSolidBlock then
                     velocityProperties.getVelocityXBasicDecimalP.setint (0);
                     This.previousGeographicMapCellPosition := SimpleGeographicMapCellPositionFactory_Package.NULL_GEOGRAPHIC_MAP_CELL_POSITION;
@@ -145,8 +145,8 @@ package body org.allbinary.game.behavior.topview.GeographicMapTopViewGameLayerBe
       layer : constant AllBinaryLayer_Access := AllBinaryLayer_Access (layer_Param);
       geographicMapCellPosition : GeographicMapCellPosition_Access;
    begin
-        geographicMapCellPosition := This.getGeographicMapCellPositionIfNotSolidBlockOrOffMapLocation (geographicMapInterfaceArray, geographicMapCellTypeArray, velocityProperties, layer, x, y);
-        This.moveAndLand (geographicMapInterfaceArray, geographicMapCellTypeArray, geographicMapCellPosition, velocityProperties, layer, x, y);
+        geographicMapCellPosition := GeographicMapTopViewGameLayerBehavior1'Class (This).getGeographicMapCellPositionIfNotSolidBlockOrOffMapLocation (geographicMapInterfaceArray, geographicMapCellTypeArray, velocityProperties, layer, x, y);
+        GeographicMapTopViewGameLayerBehavior1'Class (This).moveAndLand (geographicMapInterfaceArray, geographicMapCellTypeArray, geographicMapCellPosition, velocityProperties, layer, x, y);
         if (geographicMapCellPosition) = (SimpleGeographicMapCellPositionFactory_Package.NULL_GEOGRAPHIC_MAP_CELL_POSITION) then
             return False;
         else
@@ -163,11 +163,11 @@ package body org.allbinary.game.behavior.topview.GeographicMapTopViewGameLayerBe
       hasSolidBlock : Boolean;
       topViewCharacterInterface : TopViewCharacterInterface_Access;
    begin
-        geographicMapCellPosition := This.getLeftPosition (geographicMapInterfaceArray, layer);
+        geographicMapCellPosition := GeographicMapTopViewGameLayerBehavior1'Class (This).getLeftPosition (geographicMapInterfaceArray, layer);
         if (geographicMapCellPosition) /= (SimpleGeographicMapCellPositionFactory_Package.NULL_GEOGRAPHIC_MAP_CELL_POSITION) then
             possibleStepGeographicMapCellPosition := geographicMapInterfaceArray (0).getGeographicMapCellPositionFactory.getAt (geographicMapCellPosition.getColumn, (geographicMapCellPosition.getRow) - (1));
             This.geographicMapBehavior.getCellTypeAt (geographicMapInterfaceArray, geographicMapCellTypeArray, possibleStepGeographicMapCellPosition);
-            hasSolidBlock := This.hasSolidBlock (geographicMapInterfaceArray, geographicMapCellTypeArray);
+            hasSolidBlock := GeographicMapTopViewGameLayerBehavior1'Class (This).hasSolidBlock (geographicMapInterfaceArray, geographicMapCellTypeArray);
             if hasSolidBlock then
                 if This.autoStepBlocks then
                     topViewCharacterInterface := (TopViewCharacterInterface_Access (layer));
@@ -191,11 +191,11 @@ package body org.allbinary.game.behavior.topview.GeographicMapTopViewGameLayerBe
       hasSolidBlock : Boolean;
       topViewCharacterInterface : TopViewCharacterInterface_Access;
    begin
-        geographicMapCellPosition := This.getRightPosition (geographicMapInterfaceArray, layer);
+        geographicMapCellPosition := GeographicMapTopViewGameLayerBehavior1'Class (This).getRightPosition (geographicMapInterfaceArray, layer);
         if (geographicMapCellPosition) /= (SimpleGeographicMapCellPositionFactory_Package.NULL_GEOGRAPHIC_MAP_CELL_POSITION) then
             possibleStepGeographicMapCellPosition := geographicMapInterfaceArray (0).getGeographicMapCellPositionFactory.getAt (geographicMapCellPosition.getColumn, (geographicMapCellPosition.getRow) - (1));
             This.geographicMapBehavior.getCellTypeAt (geographicMapInterfaceArray, geographicMapCellTypeArray, possibleStepGeographicMapCellPosition);
-            hasSolidBlock := This.hasSolidBlock (geographicMapInterfaceArray, geographicMapCellTypeArray);
+            hasSolidBlock := GeographicMapTopViewGameLayerBehavior1'Class (This).hasSolidBlock (geographicMapInterfaceArray, geographicMapCellTypeArray);
             if hasSolidBlock then
                 if This.autoStepBlocks then
                     topViewCharacterInterface := (TopViewCharacterInterface_Access (layer));

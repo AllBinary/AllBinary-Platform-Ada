@@ -50,7 +50,7 @@ package body admin.taghelpers.HelperFactory_Package is
         logUtil := LogUtil_Package.getInstance;
         begin
             params := new Java_Object_Access_Array'(0 .. (2) - 1 => null);
-            classes := new Ada_Tags_Tag_Array'(0 .. (2) - 1 => null);
+            classes := new Ada_Tags_Tag_Array'(0 .. (2) - 1 => Ada.Tags.No_Tag);
             abeFactory := AbeFactory_Package.getInstance;
             classes (0) := hashMap.all'Tag;
             classes (1) := abeFactory.getClass (abeClientInformation, To_Unbounded_String ("javax.servlet.http.HttpServletRequest"));
@@ -88,7 +88,7 @@ package body admin.taghelpers.HelperFactory_Package is
         logUtil := LogUtil_Package.getInstance;
         begin
             params := new Java_Object_Access_Array'(0 .. (2) - 1 => null);
-            classes := new Ada_Tags_Tag_Array'(0 .. (2) - 1 => null);
+            classes := new Ada_Tags_Tag_Array'(0 .. (2) - 1 => Ada.Tags.No_Tag);
             abeFactory := AbeFactory_Package.getInstance;
             classes (0) := hashMap.all'Tag;
             classes (1) := abeFactory.getClass (abeClientInformation, To_Unbounded_String ("javax.servlet.jsp.PageContext"));
@@ -127,7 +127,7 @@ package body admin.taghelpers.HelperFactory_Package is
         logUtil := LogUtil_Package.getInstance;
         begin
             params := new Java_Object_Access_Array'(0 .. (3) - 1 => null);
-            classes := new Ada_Tags_Tag_Array'(0 .. (3) - 1 => null);
+            classes := new Ada_Tags_Tag_Array'(0 .. (3) - 1 => Ada.Tags.No_Tag);
             abeFactory := AbeFactory_Package.getInstance;
             classes (0) := hashMap.all'Tag;
             classes (1) := specialhashMap.all'Tag;

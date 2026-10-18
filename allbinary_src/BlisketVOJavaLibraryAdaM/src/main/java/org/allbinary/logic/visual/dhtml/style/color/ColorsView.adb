@@ -104,7 +104,7 @@ package body org.allbinary.logic.visual.dhtml.style.color.ColorsView_Package is
             while (greenIndex) < ((This.MAX) / (2)) loop
                 redIndex := 0;
                 while (redIndex) < ((This.MAX) / (2)) loop
-                    node.appendChild (This.getColorNode (document, redIndex, greenIndex, blueIndex));
+                    node.appendChild (ColorsView'Class (This).getColorNode (document, redIndex, greenIndex, blueIndex));
                     redIndex := (redIndex) + (This.delta_Id);
                 end loop;
                 greenIndex := (greenIndex) + (This.delta_Id);
@@ -117,7 +117,7 @@ package body org.allbinary.logic.visual.dhtml.style.color.ColorsView_Package is
             while (greenIndex) < ((This.MAX) / (2)) loop
                 blueIndex := 0;
                 while (blueIndex) < ((This.MAX) / (2)) loop
-                    node.appendChild (This.getColorNode (document, redIndex, greenIndex, blueIndex));
+                    node.appendChild (ColorsView'Class (This).getColorNode (document, redIndex, greenIndex, blueIndex));
                     blueIndex := (blueIndex) + (This.delta_Id);
                 end loop;
                 greenIndex := (greenIndex) + (This.delta_Id);
@@ -130,7 +130,7 @@ package body org.allbinary.logic.visual.dhtml.style.color.ColorsView_Package is
             while (redIndex) < ((This.MAX) / (2)) loop
                 blueIndex := 0;
                 while (blueIndex) < ((This.MAX) / (2)) loop
-                    node.appendChild (This.getColorNode (document, redIndex, greenIndex, blueIndex));
+                    node.appendChild (ColorsView'Class (This).getColorNode (document, redIndex, greenIndex, blueIndex));
                     blueIndex := (blueIndex) + (This.delta_Id);
                 end loop;
                 redIndex := (redIndex) + (This.delta_Id);
@@ -143,7 +143,7 @@ package body org.allbinary.logic.visual.dhtml.style.color.ColorsView_Package is
             while (redIndex) < (This.MAX) loop
                 blueIndex := 0;
                 while (blueIndex) < (This.MAX) loop
-                    node.appendChild (This.getColorNode (document, redIndex, greenIndex, blueIndex));
+                    node.appendChild (ColorsView'Class (This).getColorNode (document, redIndex, greenIndex, blueIndex));
                     blueIndex := (blueIndex) + ((2) * (This.delta_Id));
                 end loop;
                 redIndex := (redIndex) + ((2) * (This.delta_Id));

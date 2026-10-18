@@ -59,7 +59,7 @@ package body org.allbinary.game.score.HighScores_Package is
 
    function getTotal (This : in out HighScores) return Integer is
    begin
-        return This.getList.size;
+        return HighScores'Class (This).getList.size;
    end getTotal;
 
    procedure addHighScore (This : in out HighScores; newHighScore_Param : access HighScore_Package.HighScore'Class) is

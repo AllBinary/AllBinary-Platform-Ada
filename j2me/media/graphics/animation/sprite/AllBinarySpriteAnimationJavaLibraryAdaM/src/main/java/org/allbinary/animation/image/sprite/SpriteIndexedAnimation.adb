@@ -34,8 +34,8 @@ package body org.allbinary.animation.image.sprite.SpriteIndexedAnimation_Package
         This.sprite := sprite;
         This.image := image;
         This.basicColorArray := basicColorArray;
-        if ((This.basicColorArray'Length) /= (0)) and then ((This.getSize) /= (This.basicColorArray'Length)) then
-            Java_Throw (Java_New_Exception ("Exception", StringMaker_Package.Create.append (CommonLabels_Package.getInstance.TOTAL_LABEL).appendint (This.getSize).append (To_Unbounded_String ("!=")).appendint (This.basicColorArray'Length).toString));
+        if ((This.basicColorArray'Length) /= (0)) and then ((SpriteIndexedAnimation'Class (This).getSize) /= (This.basicColorArray'Length)) then
+            Java_Throw (Java_New_Exception ("Exception", StringMaker_Package.Create.append (CommonLabels_Package.getInstance.TOTAL_LABEL).appendint (SpriteIndexedAnimation'Class (This).getSize).append (To_Unbounded_String ("!=")).appendint (This.basicColorArray'Length).toString));
         end if;
    end Initialize;
 
@@ -49,7 +49,7 @@ package body org.allbinary.animation.image.sprite.SpriteIndexedAnimation_Package
    --  throws Exception
    function getAnimationSize (This : in out SpriteIndexedAnimation) return Integer is
    begin
-        return This.getSize;
+        return SpriteIndexedAnimation'Class (This).getSize;
    end getAnimationSize;
 
    procedure setBasicColorP (This : in out SpriteIndexedAnimation; basicColor_Param : access BasicColor_Package.BasicColor'Class) is
@@ -58,7 +58,7 @@ package body org.allbinary.animation.image.sprite.SpriteIndexedAnimation_Package
    begin
         for index in 0 .. (This.basicColorArray'Length) - 1 loop
             if (basicColor) = (This.basicColorArray (index)) then
-                This.setFrame (index);
+                SpriteIndexedAnimation'Class (This).setFrame (index);
                 exit;
             end if;
         end loop;
@@ -66,8 +66,8 @@ package body org.allbinary.animation.image.sprite.SpriteIndexedAnimation_Package
 
    function getBasicColorP (This : in out SpriteIndexedAnimation) return BasicColor_Access is
    begin
-        if (This.basicColorArray'Length) < (This.getFrame) then
-            return This.basicColorArray (This.getFrame);
+        if (This.basicColorArray'Length) < (SpriteIndexedAnimation'Class (This).getFrame) then
+            return This.basicColorArray (SpriteIndexedAnimation'Class (This).getFrame);
         else
             return BasicColorFactory_Package.getInstance.WHITE;
         end if;
@@ -76,7 +76,7 @@ package body org.allbinary.animation.image.sprite.SpriteIndexedAnimation_Package
    procedure paintFrame (This : in out SpriteIndexedAnimation; graphics_Param : access Graphics_Package.Graphics'Class; frame : Integer; x : Integer; y : Integer) is
       graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
-        This.setFrame (frame);
+        SpriteIndexedAnimation'Class (This).setFrame (frame);
         This.sprite.setPosition (x, y);
         This.sprite.paint (graphics);
    end paintFrame;
@@ -121,7 +121,7 @@ package body org.allbinary.animation.image.sprite.SpriteIndexedAnimation_Package
 
    function isLastFrame (This : in out SpriteIndexedAnimation) return Boolean is
    begin
-        if (This.sprite.getFrame) = ((This.getSize) - (1)) then
+        if (This.sprite.getFrame) = ((SpriteIndexedAnimation'Class (This).getSize) - (1)) then
             return True;
         else
             return False;
@@ -130,7 +130,7 @@ package body org.allbinary.animation.image.sprite.SpriteIndexedAnimation_Package
 
    function getLastFrame (This : in out SpriteIndexedAnimation) return Integer is
    begin
-        return This.getSize;
+        return SpriteIndexedAnimation'Class (This).getSize;
    end getLastFrame;
 
    procedure setSequence (This : in out SpriteIndexedAnimation; sequence : Integer_Array_Access) is

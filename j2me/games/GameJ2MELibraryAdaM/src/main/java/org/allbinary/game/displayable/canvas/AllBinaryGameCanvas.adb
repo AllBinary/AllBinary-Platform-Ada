@@ -95,7 +95,7 @@ package body org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package i
       This.gameCanvasStartListener := NullDemoPaintable_Package.NULL_DEMO_PAINTABLE;
       This.rawGameInputProcessor := GameCanvasInputProcessor_Package.Create (AllBinaryGameCanvas_Access'(This'Unchecked_Access));
       This.rawInputProcessor := FormInputProcessor_Package.Create (AllBinaryGameCanvas_Access'(This'Unchecked_Access));
-      This.inputProcessor := This.getRawGameInputProcessor;
+      This.inputProcessor := AllBinaryGameCanvas'Class (This).getRawGameInputProcessor;
       This.YIELD_SLEEP := 100;
    end Initialize_Fields;
 
@@ -110,18 +110,18 @@ package body org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package i
         Initialize_Fields (This);
         This.highScoresHelper := highScoresFactoryInterface.createHighScoresHelper;
         This.gameInitializationInterfaceFactoryInterface := gameInitializationInterfaceFactoryInterface;
-        This.init (gameLayerManager, buffered);
+        AllBinaryGameCanvas'Class (This).init (gameLayerManager, buffered);
         This.highScoresFactoryInterface := highScoresFactoryInterface;
         if ((This.gameLayerManager.getGameInfo.getGameType) = (This.gameTypeFactory.BOT)) or else ((This.gameLayerManager.getGameInfo.getGameType) = (This.gameTypeFactory.NONE)) then
             This.gameBehavior := DemoGameBehavior_Package.getInstance;
             This.menuBehavior := BaseMenuBehavior_Package.getInstance;
         else
             This.gameBehavior := BaseGameBehavior_Package.getInstance;
-            This.menuBehavior := This.getInGameMenuBehavior;
+            This.menuBehavior := AllBinaryGameCanvas'Class (This).getInGameMenuBehavior;
         end if;
-        This.initPopupMenu;
-        This.initMenu;
-        This.initSpecialPaint;
+        AllBinaryGameCanvas'Class (This).initPopupMenu;
+        AllBinaryGameCanvas'Class (This).initMenu;
+        AllBinaryGameCanvas'Class (This).initSpecialPaint;
         DisplayChangeEventHandler_Package.getInstance.addListenerInterface (AllBinaryGameCanvas_Access'(This'Unchecked_Access));
    end Initialize;
 
@@ -145,10 +145,10 @@ package body org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package i
             This.fontHeightP := font.getHeight;
             This.myFormUtil.updateMeasurement (graphics);
             popupMenuRectangle := This.myFormUtil.getPopupMenuRectangle;
-            basicPopupMenuPaintable := (BasicPopupMenuPaintable_Access (This.getOpenMenuPaintable));
+            basicPopupMenuPaintable := (BasicPopupMenuPaintable_Access (AllBinaryGameCanvas'Class (This).getOpenMenuPaintable));
             basicPopupMenuPaintable.init (popupMenuRectangle);
-            if (This.getPopupMenuInputProcessor) /= (NoMenuInputProcessor_Package.getInstance) then
-                popupMenuInputProcessor := (PopupMenuInputProcessor_Access (This.getPopupMenuInputProcessor));
+            if (AllBinaryGameCanvas'Class (This).getPopupMenuInputProcessor) /= (NoMenuInputProcessor_Package.getInstance) then
+                popupMenuInputProcessor := (PopupMenuInputProcessor_Access (AllBinaryGameCanvas'Class (This).getPopupMenuInputProcessor));
                 popupMenuInputProcessor.init (popupMenuRectangle);
             end if;
             This.myFontProcessor := MyFontProcessor_Package.getInstance;
@@ -209,7 +209,7 @@ package body org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package i
         rectangle := This.formUtil.createFormRectangle;
         This.menuForm.init (rectangle, formType);
         if (This.currentTouchInputFactory) /= (NoButtonsTouchInputFactory_Package.getInstance) then
-            This.touchButtonFactory.toggle (This.isPaused, This.currentTouchInputFactory.getList);
+            This.touchButtonFactory.toggle (AllBinaryGameCanvas'Class (This).isPaused, This.currentTouchInputFactory.getList);
         end if;
         This.myFontProcessor := This.updateMyFontProcessor;
    end updateMenuFromEvent;
@@ -237,8 +237,8 @@ package body org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package i
             features := Features_Package.getInstance;
             popupMenuRectangle := This.myFormUtil.getPopupMenuRectangle;
             if features.isFeature (This.touchFeatureFactory.TOUCH_ENABLED) then
-                This.setOpenMenuPaintable (BasicPopupMenuPaintable_Package.Create (popupMenuRectangle, This.gameLayerManager.getBackgroundBasicColor, This.gameLayerManager.getForegroundBasicColor));
-                This.setPopupMenuInputProcessor (PopupMenuInputProcessor_Package.Create (BasicArrayListD_Package.Create, -(1), AllBinaryGameCanvas_Access'(This'Unchecked_Access), popupMenuRectangle));
+                AllBinaryGameCanvas'Class (This).setOpenMenuPaintable (BasicPopupMenuPaintable_Package.Create (popupMenuRectangle, This.gameLayerManager.getBackgroundBasicColor, This.gameLayerManager.getForegroundBasicColor));
+                AllBinaryGameCanvas'Class (This).setPopupMenuInputProcessor (PopupMenuInputProcessor_Package.Create (BasicArrayListD_Package.Create, -(1), AllBinaryGameCanvas_Access'(This'Unchecked_Access), popupMenuRectangle));
             end if;
         else
             null;
@@ -269,27 +269,27 @@ package body org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package i
       scrollSelectionForm : ScrollSelectionForm_Access;
       features : Features_Access;
    begin
-        This.closeMenu;
+        AllBinaryGameCanvas'Class (This).closeMenu;
         formType := FormTypeFactory_Package.getInstance.getFormType;
         gameLimitedCommandTextItemArrayFactory := GameLimitedCommandTextItemArrayFactory_Package.getInstance;
         commandTextItemArrayFactory := gameLimitedCommandTextItemArrayFactory.getCommandTextItemArrayFactory;
-        items := commandTextItemArrayFactory.getInstance (This.getCommandStack, This.gameLayerManager.getBackgroundBasicColor, This.gameLayerManager.getForegroundBasicColor);
+        items := commandTextItemArrayFactory.getInstance (AllBinaryGameCanvas'Class (This).getCommandStack, This.gameLayerManager.getBackgroundBasicColor, This.gameLayerManager.getForegroundBasicColor);
         rectangle := This.formUtil.createFormRectangle;
-        This.setMenuForm (CommandCurrentSelectionFormFactory_Package.getInstance (StringUtil_Package.getInstance.EMPTY_STRING, items, rectangle, formType, 25, False, This.gameLayerManager.getBackgroundBasicColor, This.gameLayerManager.getForegroundBasicColor));
-        scrollSelectionForm := This.getMenuForm;
+        AllBinaryGameCanvas'Class (This).setMenuForm (CommandCurrentSelectionFormFactory_Package.getInstance (StringUtil_Package.getInstance.EMPTY_STRING, items, rectangle, formType, 25, False, This.gameLayerManager.getBackgroundBasicColor, This.gameLayerManager.getForegroundBasicColor));
+        scrollSelectionForm := AllBinaryGameCanvas'Class (This).getMenuForm;
         features := Features_Package.getInstance;
         if features.isFeature (This.touchFeatureFactory.TOUCH_ENABLED) then
-            This.mainMenuInputProcessor := PopupCommandFormInputProcessor_Package.Create (BasicArrayListD_Package.Create, -(1), AllBinaryGameCanvas_Access'(This'Unchecked_Access), scrollSelectionForm, PopupMenuInputProcessor_Access (This.getPopupMenuInputProcessor));
+            This.mainMenuInputProcessor := PopupCommandFormInputProcessor_Package.Create (BasicArrayListD_Package.Create, -(1), AllBinaryGameCanvas_Access'(This'Unchecked_Access), scrollSelectionForm, PopupMenuInputProcessor_Access (AllBinaryGameCanvas'Class (This).getPopupMenuInputProcessor));
         else
             null;
         end if;
-        This.setMenuInputProcessor (This.getPopupMenuInputProcessor);
+        AllBinaryGameCanvas'Class (This).setMenuInputProcessor (AllBinaryGameCanvas'Class (This).getPopupMenuInputProcessor);
         if (scrollSelectionForm) /= (ScrollSelectionFormNoneFactory_Package.getInstance) then
-            This.setFormPaintable (FormPaintable_Package.Create (scrollSelectionForm));
+            AllBinaryGameCanvas'Class (This).setFormPaintable (FormPaintable_Package.Create (scrollSelectionForm));
         else
             null;
         end if;
-        This.closeMenu;
+        AllBinaryGameCanvas'Class (This).closeMenu;
    end initMenu2;
 
    procedure updateMenu (This : in out AllBinaryGameCanvas) is
@@ -317,11 +317,11 @@ package body org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package i
       formType : FormType_Access;
       rectangle : Rectangle_Access;
    begin
-        scrollSelectionForm := This.getMenuForm;
+        scrollSelectionForm := AllBinaryGameCanvas'Class (This).getMenuForm;
         scrollSelectionForm.deleteAll;
         gameLimitedCommandTextItemArrayFactory := GameLimitedCommandTextItemArrayFactory_Package.getInstance;
         commandTextItemArrayFactory := gameLimitedCommandTextItemArrayFactory.getCommandTextItemArrayFactory;
-        items := commandTextItemArrayFactory.getInstance (This.getCommandStack, This.gameLayerManager.getBackgroundBasicColor, This.gameLayerManager.getForegroundBasicColor);
+        items := commandTextItemArrayFactory.getInstance (AllBinaryGameCanvas'Class (This).getCommandStack, This.gameLayerManager.getBackgroundBasicColor, This.gameLayerManager.getForegroundBasicColor);
         size := items'Length;
         for index in 0 .. (size) - 1 loop
             scrollSelectionForm.append (items (index));
@@ -334,19 +334,19 @@ package body org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package i
    procedure pause (This : in out AllBinaryGameCanvas) is
    begin
         This.gameBehavior.pause (AllBinaryGameCanvas_Access'(This'Unchecked_Access));
-        This.closeMenu;
+        AllBinaryGameCanvas'Class (This).closeMenu;
         RunnableCanvas (This).pause;
-        This.touchButtonFactory.toggle (This.isPaused, BasicArrayListUtil_Package.getInstance.getImmutableInstance);
+        This.touchButtonFactory.toggle (AllBinaryGameCanvas'Class (This).isPaused, BasicArrayListUtil_Package.getInstance.getImmutableInstance);
         This.tsUtil.gc;
    end pause;
 
    procedure unPause (This : in out AllBinaryGameCanvas) is
    begin
         This.logUtil.putF (This.commonStrings.START, AllBinaryGameCanvas_Access'(This'Unchecked_Access), This.gameStrings.UNPAUSE);
-        This.closeMenu;
+        AllBinaryGameCanvas'Class (This).closeMenu;
         This.tsUtil.gc;
         RunnableCanvas (This).unPause;
-        This.touchButtonFactory.toggle (This.isPaused, BasicArrayListUtil_Package.getInstance.getImmutableInstance);
+        This.touchButtonFactory.toggle (AllBinaryGameCanvas'Class (This).isPaused, BasicArrayListUtil_Package.getInstance.getImmutableInstance);
         This.gameBehavior.unPause (AllBinaryGameCanvas_Access'(This'Unchecked_Access));
    end unPause;
 
@@ -369,8 +369,8 @@ package body org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package i
    procedure popupMenu2 (This : in out AllBinaryGameCanvas) is
    begin
         This.primaryPlayerQueue.add (SelectSound_Package.getInstance);
-        This.setMenuPaintable (This.getFormPaintable);
-        This.setMenuInputProcessor (This.mainMenuInputProcessor);
+        AllBinaryGameCanvas'Class (This).setMenuPaintable (AllBinaryGameCanvas'Class (This).getFormPaintable);
+        AllBinaryGameCanvas'Class (This).setMenuInputProcessor (This.mainMenuInputProcessor);
         This.basicMotionGesturesHandler.addListenerInterface (This.mainMenuInputProcessor);
         This.gameKeyEventHandler.addListener (This.mainMenuInputProcessor);
    end popupMenu2;
@@ -379,13 +379,13 @@ package body org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package i
    procedure toggleMenu (This : in out AllBinaryGameCanvas) is
    begin
         This.logUtil.putF (This.commonStrings.START, AllBinaryGameCanvas_Access'(This'Unchecked_Access), This.gameStrings.TOGGLE_MENU);
-        if (This.getMenuPaintable) = (This.getOpenMenuPaintable) then
-            This.pause;
-            This.updateMenu;
-            This.popupMenu;
-        elsif (This.getMenuPaintable) = (This.getFormPaintable) then
+        if (AllBinaryGameCanvas'Class (This).getMenuPaintable) = (AllBinaryGameCanvas'Class (This).getOpenMenuPaintable) then
+            AllBinaryGameCanvas'Class (This).pause;
+            AllBinaryGameCanvas'Class (This).updateMenu;
+            AllBinaryGameCanvas'Class (This).popupMenu;
+        elsif (AllBinaryGameCanvas'Class (This).getMenuPaintable) = (AllBinaryGameCanvas'Class (This).getFormPaintable) then
             This.primaryPlayerQueue.add (SelectSound_Package.getInstance);
-            This.unPause;
+            AllBinaryGameCanvas'Class (This).unPause;
         end if;
    end toggleMenu;
 
@@ -396,10 +396,10 @@ package body org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package i
 
    procedure closeMenu2 (This : in out AllBinaryGameCanvas) is
    begin
-        This.setMenuPaintable (This.getOpenMenuPaintable);
+        AllBinaryGameCanvas'Class (This).setMenuPaintable (AllBinaryGameCanvas'Class (This).getOpenMenuPaintable);
         This.basicMotionGesturesHandler.removeListener (This.mainMenuInputProcessor);
         This.gameKeyEventHandler.removeListener (This.mainMenuInputProcessor);
-        This.setMenuInputProcessor (This.getPopupMenuInputProcessor);
+        AllBinaryGameCanvas'Class (This).setMenuInputProcessor (AllBinaryGameCanvas'Class (This).getPopupMenuInputProcessor);
    end closeMenu2;
 
    procedure open (This : in out AllBinaryGameCanvas) is
@@ -419,13 +419,13 @@ package body org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package i
    --  throws Exception
    procedure processorInit (This : in out AllBinaryGameCanvas) is
    begin
-        This.setMainStateProcessor (Processor_Package.getInstance);
-        This.setProcessGameProcessorInit;
+        AllBinaryGameCanvas'Class (This).setMainStateProcessor (Processor_Package.getInstance);
+        AllBinaryGameCanvas'Class (This).setProcessGameProcessorInit;
    end processorInit;
 
    procedure setProcessGameProcessorInit (This : in out AllBinaryGameCanvas) is
    begin
-        This.setProcessGameProcessor (GameProcessor_Package.Create (AllBinaryGameCanvas_Access'(This'Unchecked_Access)));
+        AllBinaryGameCanvas'Class (This).setProcessGameProcessor (GameProcessor_Package.Create (AllBinaryGameCanvas_Access'(This'Unchecked_Access)));
    end setProcessGameProcessorInit;
 
    procedure initSpecialPaint (This : in out AllBinaryGameCanvas) is
@@ -440,15 +440,15 @@ package body org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package i
       features : Features_Access;
    begin
         This.gameStateTimeHelper.setStartTimeTNT;
-        This.setHighScoreSubmitted (False);
-        This.setLayerManager (gameLayerManager);
+        AllBinaryGameCanvas'Class (This).setHighScoreSubmitted (False);
+        AllBinaryGameCanvas'Class (This).setLayerManager (gameLayerManager);
         if not (buffered) then
             BUFF_MESSAGE := To_Unbounded_String ("XXX Not Buffering Causes Concurrency Issues XXX");
             This.logUtil.putF (BUFF_MESSAGE, AllBinaryGameCanvas_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         else
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Buffering is disabled")));
         end if;
-        This.setGameInputProcessor (Processor_Package.getInstance);
+        AllBinaryGameCanvas'Class (This).setGameInputProcessor (Processor_Package.getInstance);
         features := Features_Package.getInstance;
         if features.isFeature (GameFeatureFactory_Package.getInstance.CHEATING) then
             This.isCheating := True;
@@ -459,13 +459,13 @@ package body org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package i
             This.cheatProcessor := NoPlayerGameInput_Package.getInstance;
         end if;
         This.realEndGameProcessor := EndGameProcessor_Package.Create (AllBinaryGameCanvas_Access'(This'Unchecked_Access));
-        This.setEndGameProcessor (Processor_Package.getInstance);
+        AllBinaryGameCanvas'Class (This).setEndGameProcessor (Processor_Package.getInstance);
         This.realStartIntermissionProcessor := StartIntermissionProcessor_Package.Create (AllBinaryGameCanvas_Access'(This'Unchecked_Access));
         This.startIntermissionProcessor := Processor_Package.getInstance;
-        This.setEndGameStatePaintable (EndGamePaintable_Package.Create (AllBinaryGameCanvas_Access'(This'Unchecked_Access)));
-        This.setEndGamePaintable (NullPaintable_Package.getInstance);
-        This.setIntermissionPaintable (NullPaintable_Package.getInstance);
-        This.getStartIntermissionInterface.setListener (AllBinaryGameCanvas_Access'(This'Unchecked_Access));
+        AllBinaryGameCanvas'Class (This).setEndGameStatePaintable (EndGamePaintable_Package.Create (AllBinaryGameCanvas_Access'(This'Unchecked_Access)));
+        AllBinaryGameCanvas'Class (This).setEndGamePaintable (NullPaintable_Package.getInstance);
+        AllBinaryGameCanvas'Class (This).setIntermissionPaintable (NullPaintable_Package.getInstance);
+        AllBinaryGameCanvas'Class (This).getStartIntermissionInterface.setListener (AllBinaryGameCanvas_Access'(This'Unchecked_Access));
    end init;
 
    procedure notifyIntermission (This : in out AllBinaryGameCanvas; enable : Boolean) is
@@ -476,9 +476,9 @@ package body org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package i
             This.startIntermissionProcessor := Processor_Package.getInstance;
         end if;
         if enable then
-            This.setIntermissionPaintable (This.getStartIntermissionPaintable);
+            AllBinaryGameCanvas'Class (This).setIntermissionPaintable (AllBinaryGameCanvas'Class (This).getStartIntermissionPaintable);
         else
-            This.setIntermissionPaintable (NullPaintable_Package.getInstance);
+            AllBinaryGameCanvas'Class (This).setIntermissionPaintable (NullPaintable_Package.getInstance);
         end if;
    end notifyIntermission;
 
@@ -506,7 +506,7 @@ package body org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package i
         if changedGameFeatureListener.isChangedFeature (gameFeatureFactory.SOUND) then
             features := Features_Package.getInstance;
             This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Sound Changing To: ")).appendboolean (features.isFeature (gameFeatureFactory.SOUND)).toString, AllBinaryGameCanvas_Access'(This'Unchecked_Access), To_Unbounded_String ("initConfigurable"));
-            This.mediaInit;
+            AllBinaryGameCanvas'Class (This).mediaInit;
             changedGameFeatureListener.remove (gameFeatureFactory.SOUND);
         end if;
         sensorFeatureFactory := SensorFeatureFactory_Package.getInstance;
@@ -516,18 +516,18 @@ package body org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package i
             changedGameFeatureListener.remove (sensorFeatureFactory.SIMULATED_ORIENTATION_SENSORS);
         end if;
         resourceLoadingLevelFactory := ResourceLoadingLevelFactory_Package.getInstance;
-        This.loadResourceLoadingLevel (resourceLoadingLevelFactory.LOAD_GAME);
+        AllBinaryGameCanvas'Class (This).loadResourceLoadingLevel (resourceLoadingLevelFactory.LOAD_GAME);
    end initConfigurable;
 
    --  throws Exception
    procedure initApp (This : in out AllBinaryGameCanvas; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class) is
       abeClientInformation : constant AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
    begin
-        This.initConfigurable (abeClientInformation);
-        This.processorInit;
+        AllBinaryGameCanvas'Class (This).initConfigurable (abeClientInformation);
+        AllBinaryGameCanvas'Class (This).processorInit;
         This.sensorGameUpdateProcessor.process (This.gameLayerManager);
         This.sensorGameUpdateProcessor.sendNotifications (This.gameLayerManager);
-        This.initTouch;
+        AllBinaryGameCanvas'Class (This).initTouch;
    end initApp;
 
    --  throws Exception
@@ -540,8 +540,8 @@ package body org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package i
         gameInitializedEvent.setResourceLoadingLevel (resourceLoadingLevelFactory.LOAD_TOUCH);
         GameInitializedEventHandler_Package.getInstance.fireEvent (gameInitializedEvent);
         This.touchButtonFactory.defaultList;
-        This.updateTouch;
-        This.postInitTouch;
+        AllBinaryGameCanvas'Class (This).updateTouch;
+        AllBinaryGameCanvas'Class (This).postInitTouch;
    end initTouch;
 
    --  throws Exception
@@ -551,7 +551,7 @@ package body org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package i
         if (nextTouchInput) /= (This.currentTouchInputFactory) then
             This.currentTouchInputFactory := nextTouchInput;
             PreLogUtil_Package.put (This.currentTouchInputFactory.toString, AllBinaryGameCanvas_Access'(This'Unchecked_Access), This.gameInputStrings.UDPATE_CURRENT_TOUCH_INPUT_FACTORY);
-            This.touchButtonFactory.toggle (This.isPaused, This.currentTouchInputFactory.getList);
+            This.touchButtonFactory.toggle (AllBinaryGameCanvas'Class (This).isPaused, This.currentTouchInputFactory.getList);
         end if;
    end updateCurrentTouchInputFactory;
 
@@ -567,8 +567,8 @@ package body org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package i
    begin
         features := Features_Package.getInstance;
         if features.isFeature (This.touchFeatureFactory.AUTO_HIDE_SHOW_SCREEN_BUTTONS) then
-            if ((This.gameLayerManager.getGameInfo.getCurrentLevel) - (This.getStartLevel)) = (1) then
-                This.setTouchPaintableP (NullPaintable_Package.getInstance);
+            if ((This.gameLayerManager.getGameInfo.getCurrentLevel) - (AllBinaryGameCanvas'Class (This).getStartLevel)) = (1) then
+                AllBinaryGameCanvas'Class (This).setTouchPaintableP (NullPaintable_Package.getInstance);
             end if;
         end if;
    end updateTouch2;
@@ -576,16 +576,16 @@ package body org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package i
    --  throws Exception
    procedure postInitTouch (This : in out AllBinaryGameCanvas) is
    begin
-        This.setTouchButtonsPaintable (TouchButtonsPaintableFactory_Package.getInstance (This.gameLayerManager.getForegroundBasicColor));
-        This.updateScreenButtonPaintable;
+        AllBinaryGameCanvas'Class (This).setTouchButtonsPaintable (TouchButtonsPaintableFactory_Package.getInstance (This.gameLayerManager.getForegroundBasicColor));
+        AllBinaryGameCanvas'Class (This).updateScreenButtonPaintable;
    end postInitTouch;
 
    procedure initCommands (This : in out AllBinaryGameCanvas; cmdListener_Param : access CommandListener_Package.CommandListener'Class) is
       cmdListener : constant CommandListener_Access := CommandListener_Access (cmdListener_Param);
    begin
-        This.removeAllCommands;
-        This.addCommands;
-        This.setCommandListener (cmdListener);
+        AllBinaryGameCanvas'Class (This).removeAllCommands;
+        AllBinaryGameCanvas'Class (This).addCommands;
+        AllBinaryGameCanvas'Class (This).setCommandListener (cmdListener);
    end initCommands;
 
    procedure addCommands (This : in out AllBinaryGameCanvas) is
@@ -596,11 +596,11 @@ package body org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package i
         gameCommandsFactory := GameCommandsFactory_Package.getInstance;
         myCommandsFactory := MyCommandsFactory_Package.getInstance;
         if (DebugFactory_Package.getInstance) /= (NoDebug_Package.getInstance) then
-            This.addCommand (gameCommandsFactory.START_TRACE);
+            AllBinaryGameCanvas'Class (This).addCommand (gameCommandsFactory.START_TRACE);
         end if;
-        This.addCommand (gameCommandsFactory.RESTART_COMMAND);
-        This.addCommand (myCommandsFactory.PAUSE_COMMAND);
-        This.addCommand (gameCommandsFactory.QUIT_COMMAND);
+        AllBinaryGameCanvas'Class (This).addCommand (gameCommandsFactory.RESTART_COMMAND);
+        AllBinaryGameCanvas'Class (This).addCommand (myCommandsFactory.PAUSE_COMMAND);
+        AllBinaryGameCanvas'Class (This).addCommand (gameCommandsFactory.QUIT_COMMAND);
         isOverScan := OperatingSystemFactory_Package.getInstance.getOperatingSystemInstance.isOverScan;
         if J2MEUtil_Package.isHTML then
             null;
@@ -608,10 +608,10 @@ package body org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package i
             null;
         elsif not (isOverScan) then
             if (TouchScreenFactory_Package.getInstance.isTouch) and then (InGameFeatures_Package.Create.isAny) then
-                This.addCommand (InGameOptionsForm_Package.DISPLAY);
+                AllBinaryGameCanvas'Class (This).addCommand (InGameOptionsForm_Package.DISPLAY);
             end if;
-            This.addCommand (gameCommandsFactory.SAVE);
-            This.addCommand (gameCommandsFactory.DISPLAY_LOAD_FORM);
+            AllBinaryGameCanvas'Class (This).addCommand (gameCommandsFactory.SAVE);
+            AllBinaryGameCanvas'Class (This).addCommand (gameCommandsFactory.DISPLAY_LOAD_FORM);
         end if;
    end addCommands;
 
@@ -632,8 +632,8 @@ package body org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package i
                 end if;
             end if;
             This.sensorGameUpdateProcessor.process (This.gameLayerManager);
-            This.updateTouch;
-            This.updateScreenButtonPaintable;
+            AllBinaryGameCanvas'Class (This).updateTouch;
+            AllBinaryGameCanvas'Class (This).updateScreenButtonPaintable;
             This.sensorGameUpdateProcessor.sendNotifications (This.gameLayerManager);
         exception
             when Java_Occurrence : others =>
@@ -656,14 +656,14 @@ package body org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package i
    begin
         features := Features_Package.getInstance;
         if features.isFeature (This.touchFeatureFactory.AUTO_HIDE_SHOW_SCREEN_BUTTONS) then
-            This.setTouchPaintableP (This.getTouchButtonsPaintable);
-            This.setStartLevel (This.gameLayerManager.getGameInfo.getCurrentLevel);
+            AllBinaryGameCanvas'Class (This).setTouchPaintableP (AllBinaryGameCanvas'Class (This).getTouchButtonsPaintable);
+            AllBinaryGameCanvas'Class (This).setStartLevel (This.gameLayerManager.getGameInfo.getCurrentLevel);
         elsif features.isFeature (This.touchFeatureFactory.SHOW_SCREEN_BUTTONS) then
-            This.setTouchPaintableP (This.getTouchButtonsPaintable);
+            AllBinaryGameCanvas'Class (This).setTouchPaintableP (AllBinaryGameCanvas'Class (This).getTouchButtonsPaintable);
         elsif features.isFeature (This.touchFeatureFactory.HIDE_SCREEN_BUTTONS) then
-            This.setTouchPaintableP (NullPaintable_Package.getInstance);
+            AllBinaryGameCanvas'Class (This).setTouchPaintableP (NullPaintable_Package.getInstance);
         else
-            This.setTouchPaintableP (NullPaintable_Package.getInstance);
+            AllBinaryGameCanvas'Class (This).setTouchPaintableP (NullPaintable_Package.getInstance);
         end if;
    end updateScreenButtonPaintable2;
 
@@ -692,10 +692,10 @@ package body org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package i
    procedure processGameOver (This : in out AllBinaryGameCanvas) is
    begin
         PreLogUtil_Package.put (This.commonStrings.START, AllBinaryGameCanvas_Access'(This'Unchecked_Access), This.gameStrings.SET_GAME_OVER);
-        This.setGameOver (True);
-        This.removePauseCommand;
-        This.setGameState (This.gameStateFactory.SHOW_END_RESULT_GAME_STATE);
-        This.setEndGamePaintable (This.getEndGameStatePaintable);
+        AllBinaryGameCanvas'Class (This).setGameOver (True);
+        AllBinaryGameCanvas'Class (This).removePauseCommand;
+        AllBinaryGameCanvas'Class (This).setGameState (This.gameStateFactory.SHOW_END_RESULT_GAME_STATE);
+        AllBinaryGameCanvas'Class (This).setEndGamePaintable (AllBinaryGameCanvas'Class (This).getEndGameStatePaintable);
    end processGameOver;
 
    function isHighScoreSubmitted (This : in out AllBinaryGameCanvas) return Boolean is
@@ -725,8 +725,8 @@ package body org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package i
         This.logUtil.putF (StringMaker_Package.Create.append (This.gameStrings.GAME_STATE).append (This.stringUtil.toString (gameState)).toString, AllBinaryGameCanvas_Access'(This'Unchecked_Access), This.gameStrings.SET_GAME_STATE);
         This.gameState := gameState;
         This.gameStateTimeHelper.setStartTimeTNT;
-        This.updateEndGameProcessor;
-        This.updateGameKeyEventProcessor;
+        AllBinaryGameCanvas'Class (This).updateEndGameProcessor;
+        AllBinaryGameCanvas'Class (This).updateGameKeyEventProcessor;
         This.gameBehavior.setGameState (AllBinaryGameCanvas_Access'(This'Unchecked_Access));
    end setGameState;
 
@@ -743,7 +743,7 @@ package body org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package i
 
    procedure updateGameKeyEventProcessor (This : in out AllBinaryGameCanvas) is
    begin
-        if ((This.getGameState) /= (This.gameStateFactory.PLAYING_GAME_STATE)) or else (This.isCheating) then
+        if ((AllBinaryGameCanvas'Class (This).getGameState) /= (This.gameStateFactory.PLAYING_GAME_STATE)) or else (This.isCheating) then
             null;
         else
             null;
@@ -752,7 +752,7 @@ package body org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package i
 
    procedure removeAllGameKeyInputListenersOnBuild (This : in out AllBinaryGameCanvas) is
    begin
-        This.removeAllGameKeyInputListeners;
+        AllBinaryGameCanvas'Class (This).removeAllGameKeyInputListeners;
    end removeAllGameKeyInputListenersOnBuild;
 
    procedure removeAllGameKeyInputListeners (This : in out AllBinaryGameCanvas) is
@@ -767,7 +767,7 @@ package body org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package i
         This.logUtil.putF (To_Unbounded_String ("Remove PlayerInput Listeners"), AllBinaryGameCanvas_Access'(This'Unchecked_Access), To_Unbounded_String ("removeAllGameKeyInputListeners"));
         for index in reverse 0 .. (This.localPlayerGameInputList.size) - (1) loop
             playerGameInput := PlayerGameInput_Access (This.localPlayerGameInputList.get (index));
-            This.removeKeyInputListener (playerGameInput);
+            AllBinaryGameCanvas'Class (This).removeKeyInputListener (playerGameInput);
             playerGameInput.removeNonAIInputGameKeyEvents;
         end loop;
    end removeAllGameKeyInputListeners2;
@@ -787,10 +787,10 @@ package body org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package i
    --  throws Exception
    procedure updateEndGameProcessor2 (This : in out AllBinaryGameCanvas) is
    begin
-        if ((This.getGameState) = (This.gameStateFactory.SHOW_END_RESULT_GAME_STATE)) or else ((This.getGameState) = (This.gameStateFactory.SHOW_HIGH_SCORE_GAME_STATE)) then
-            This.setEndGameProcessor (This.realEndGameProcessor);
+        if ((AllBinaryGameCanvas'Class (This).getGameState) = (This.gameStateFactory.SHOW_END_RESULT_GAME_STATE)) or else ((AllBinaryGameCanvas'Class (This).getGameState) = (This.gameStateFactory.SHOW_HIGH_SCORE_GAME_STATE)) then
+            AllBinaryGameCanvas'Class (This).setEndGameProcessor (This.realEndGameProcessor);
         else
-            This.setEndGameProcessor (Processor_Package.getInstance);
+            AllBinaryGameCanvas'Class (This).setEndGameProcessor (Processor_Package.getInstance);
         end if;
    end updateEndGameProcessor2;
 
@@ -847,33 +847,33 @@ package body org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package i
         progressCanvas := ProgressCanvasFactory_Package.getInstance;
         features := Features_Package.getInstance;
         progressCanvas.addNormalPortion (portion, To_Unbounded_String ("Generic Build"));
-        This.removeAllGameKeyInputListenersOnBuild;
-        This.updateTouch;
+        AllBinaryGameCanvas'Class (This).removeAllGameKeyInputListenersOnBuild;
+        AllBinaryGameCanvas'Class (This).updateTouch;
         progressCanvas.addNormalPortion (portion, To_Unbounded_String ("High Scores"));
         This.highScoresFactoryInterface.fetchHighScores (This.gameLayerManager.getGameInfo, This.highScoresHelper);
-        This.setHighScoresPaintable (NullPaintable_Package.getInstance);
+        AllBinaryGameCanvas'Class (This).setHighScoresPaintable (NullPaintable_Package.getInstance);
         progressCanvas.addNormalPortion (portion, To_Unbounded_String ("Finishing."));
-        This.getEndGameInfoP.update (This.getLayerManager.getGameInfo, AllBinaryGameCanvas_Access'(This'Unchecked_Access));
+        AllBinaryGameCanvas'Class (This).getEndGameInfoP.update (AllBinaryGameCanvas'Class (This).getLayerManager.getGameInfo, AllBinaryGameCanvas_Access'(This'Unchecked_Access));
         This.isSingleKeyRepeatableProcessing := features.isFeature (InputFeatureFactory_Package.getInstance.SINGLE_KEY_REPEAT_PRESS);
-        This.setGameOver (False);
+        AllBinaryGameCanvas'Class (This).setGameOver (False);
         progressCanvas.addNormalPortion (portion, To_Unbounded_String ("Finishing.."));
-        This.updateColor;
-        This.getStartIntermissionPaintable.update;
-        if not (This.isRunningInAnotherThread) then
+        AllBinaryGameCanvas'Class (This).updateColor;
+        AllBinaryGameCanvas'Class (This).getStartIntermissionPaintable.update;
+        if not (AllBinaryGameCanvas'Class (This).isRunningInAnotherThread) then
             return;
         end if;
         progressCanvas.addNormalPortion (portion, To_Unbounded_String ("Finishing..."));
-        if (This.isMainCanvas) or else (not (This.isInitialized)) then
+        if (AllBinaryGameCanvas'Class (This).isMainCanvas) or else (not (AllBinaryGameCanvas'Class (This).isInitialized)) then
             if features.isFeature (MainFeatureFactory_Package.getInstance.LOAD_ONDEMAND) then
-                if (This.getCustomCommandListener) /= (null) then
+                if (AllBinaryGameCanvas'Class (This).getCustomCommandListener) /= (null) then
                     progressCanvas.end_Id;
                 end if;
             else
                 progressCanvas.end_Id;
             end if;
-            This.setInitialized (True);
+            AllBinaryGameCanvas'Class (This).setInitialized (True);
         end if;
-        if (This.getCustomCommandListener) = (NullCommandListener_Package.NULL_COMMAND_LISTENER) then
+        if (AllBinaryGameCanvas'Class (This).getCustomCommandListener) = (NullCommandListener_Package.NULL_COMMAND_LISTENER) then
             This.logUtil.putF (To_Unbounded_String ("Show Game Paintable in DemoCanvas Thread"), AllBinaryGameCanvas_Access'(This'Unchecked_Access), This.BUILD_GAME);
             This.gameCanvasStartListener.showGamePaintable;
         else
@@ -893,7 +893,7 @@ package body org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package i
             playerGameInput := PlayerGameInput_Access (This.localPlayerGameInputList.get (index));
             PreLogUtil_Package.put (StringMaker_Package.Create.append (This.gameInputStrings.ENABLE_PLAYER_GAME_INPUT).append (playerGameInput.toString).toString, AllBinaryGameCanvas_Access'(This'Unchecked_Access), This.BUILD_GAME);
             playerGameInput.removeNonAIInputGameKeyEvents;
-            This.addKeyInputListener (playerGameInput);
+            AllBinaryGameCanvas'Class (This).addKeyInputListener (playerGameInput);
         end loop;
    end buildGame2;
 
@@ -917,9 +917,9 @@ package body org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package i
       gameInfo : GameInfo_Access;
    begin
         This.logUtil.putF (This.commonStrings.START, AllBinaryGameCanvas_Access'(This'Unchecked_Access), This.commonStrings.LOAD);
-        hashtable := This.getLoadStateHashtable;
+        hashtable := AllBinaryGameCanvas'Class (This).getLoadStateHashtable;
         if ((hashtable) /= (null)) and then ((hashtable.size) > (0)) then
-            levelAsString := Unbounded_String (hashtable.get (Java_Object_Access (GameInfo_Package.LEVEL_NAME)));
+            levelAsString := Java_Unbox (hashtable.get (Java_Object_Access (GameInfo_Package.LEVEL_NAME)));
             level := To_Unbounded_String (Java_Image (levelAsString)).intValue;
             gameInfo := This.gameLayerManager.getGameInfo;
             gameInfo.setCurrentLevel (level);
@@ -976,7 +976,7 @@ package body org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package i
    begin
         This.myFontProcessor.process (graphics);
         This.baseGameStatistics.nextRefresh;
-        This.draw (graphics);
+        AllBinaryGameCanvas'Class (This).draw (graphics);
         This.menuPaintable.paint (graphics);
         This.progressPaintable.paint (graphics);
    end paint;
@@ -998,7 +998,7 @@ package body org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package i
    begin
         This.endGamePaintable.paint (graphics);
         This.intermissionPaintable.paint (graphics);
-        This.paintIntermission (graphics);
+        AllBinaryGameCanvas'Class (This).paintIntermission (graphics);
         This.touchPaintable.paint (graphics);
    end nonBotPaint;
 
@@ -1010,17 +1010,17 @@ package body org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package i
 
    procedure keyPressed (This : in out AllBinaryGameCanvas; keyCode : Integer) is
    begin
-        This.keyPressedByDevice (keyCode, 0);
+        AllBinaryGameCanvas'Class (This).keyPressedByDevice (keyCode, 0);
    end keyPressed;
 
    procedure keyReleased (This : in out AllBinaryGameCanvas; keyCode : Integer) is
    begin
-        This.keyReleasedByDevice (keyCode, 0);
+        AllBinaryGameCanvas'Class (This).keyReleasedByDevice (keyCode, 0);
    end keyReleased;
 
    procedure keyRepeated (This : in out AllBinaryGameCanvas; keyCode : Integer) is
    begin
-        This.keyRepeatedByDevice (keyCode, 0);
+        AllBinaryGameCanvas'Class (This).keyRepeatedByDevice (keyCode, 0);
    end keyRepeated;
 
    procedure keyPressedByDevice (This : in out AllBinaryGameCanvas; keyCode : Integer; deviceId : Integer) is
@@ -1052,11 +1052,11 @@ package body org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package i
       progressCanvas : ProgressCanvas_Access;
    begin
         portion := 30;
-        if (isProgress) and then (This.isMainCanvas) then
+        if (isProgress) and then (AllBinaryGameCanvas'Class (This).isMainCanvas) then
             myCommandsFactory := MyCommandsFactory_Package.getInstance;
             progressCanvas := ProgressCanvasFactory_Package.getInstance;
             progressCanvas.start;
-            This.getCustomCommandListener.commandAction (myCommandsFactory.SET_DISPLAYABLE, progressCanvas);
+            AllBinaryGameCanvas'Class (This).getCustomCommandListener.commandAction (myCommandsFactory.SET_DISPLAYABLE, progressCanvas);
             portion := 4;
         end if;
         return portion;
@@ -1128,17 +1128,17 @@ package body org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package i
             This.logUtil.putF (This.commonStrings.START_RUNNABLE, AllBinaryGameCanvas_Access'(This'Unchecked_Access), This.commonStrings.RUN);
             progressCanvas := ProgressCanvasFactory_Package.getInstance;
             progressCanvas.addNormalPortion (50, To_Unbounded_String ("Game Thread"));
-            This.setCurrentThread;
-            This.setRunning (True);
-            if (This.getCustomCommandListener) = (NullCommandListener_Package.NULL_COMMAND_LISTENER) then
+            AllBinaryGameCanvas'Class (This).setCurrentThread;
+            AllBinaryGameCanvas'Class (This).setRunning (True);
+            if (AllBinaryGameCanvas'Class (This).getCustomCommandListener) = (NullCommandListener_Package.NULL_COMMAND_LISTENER) then
                 Java_Sleep (This.YIELD_SLEEP);
             end if;
-            This.shouldWait;
-            This.threadInit;
-            if (This.getCustomCommandListener) = (NullCommandListener_Package.NULL_COMMAND_LISTENER) then
+            AllBinaryGameCanvas'Class (This).shouldWait;
+            AllBinaryGameCanvas'Class (This).threadInit;
+            if (AllBinaryGameCanvas'Class (This).getCustomCommandListener) = (NullCommandListener_Package.NULL_COMMAND_LISTENER) then
                 Java_Sleep (This.YIELD_SLEEP);
             end if;
-            This.open;
+            AllBinaryGameCanvas'Class (This).open;
             gameAdState := This.gameAdStateFactory.getCurrentInstance;
             gameAdState.init;
             gameAdState.setGameIsReady (True);
@@ -1174,16 +1174,16 @@ package body org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package i
         elsif features.isDefault (This.openGLFeatureFactory.OPENGL_AND_GAME_HAVE_DIFFERENT_THREADS) then
             This.logUtil.putF (This.openGLFeatureFactory.OPENGL_AND_GAME_HAVE_DIFFERENT_THREADS.getName, AllBinaryGameCanvas_Access'(This'Unchecked_Access), This.commonStrings.RUN);
             OpenGLThreadUtil_Package.getInstance.onResume;
-            while This.isRunning loop
-                This.run3;
+            while AllBinaryGameCanvas'Class (This).isRunning loop
+                AllBinaryGameCanvas'Class (This).run3;
             end loop;
-            This.end_Id;
+            AllBinaryGameCanvas'Class (This).end_Id;
         else
             This.logUtil.putF (To_Unbounded_String ("this thread"), AllBinaryGameCanvas_Access'(This'Unchecked_Access), This.commonStrings.RUN);
-            while This.isRunning loop
-                This.run3;
+            while AllBinaryGameCanvas'Class (This).isRunning loop
+                AllBinaryGameCanvas'Class (This).run3;
             end loop;
-            This.end_Id;
+            AllBinaryGameCanvas'Class (This).end_Id;
         end if;
    end run2;
 
@@ -1192,8 +1192,8 @@ package body org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package i
    begin
         This.loopTimeHelper.setStartTime (This.gameTickTimeDelayHelper.setStartTime);
         This.gameTickDisplayInfoSingleton.update;
-        This.processGame;
-        This.processLoopSleep;
+        AllBinaryGameCanvas'Class (This).processGame;
+        AllBinaryGameCanvas'Class (This).processLoopSleep;
    end run3;
 
    procedure setRunning (This : in out AllBinaryGameCanvas; running : Boolean) is
@@ -1211,7 +1211,7 @@ package body org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package i
                         currentDisplayableFactory := CurrentDisplayableFactory_Package.getInstance;
                         currentDisplayableFactory.clearRunnable;
                     end if;
-                    This.end_Id;
+                    AllBinaryGameCanvas'Class (This).end_Id;
                 end if;
             end if;
         exception
@@ -1231,9 +1231,9 @@ package body org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package i
         This.baseGameStatistics.add (StringMaker_Package.Create.append (This.baseGameStatistics.toString).append (CommonSeps_Package.getInstance.NEW_LINE).toString);
         This.baseGameStatistics.init;
         This.gameKeyEventHandler.removeListener (This.cheatProcessor);
-        This.close;
-        This.removeAllGameKeyInputListeners;
-        This.endGameThread;
+        AllBinaryGameCanvas'Class (This).close;
+        AllBinaryGameCanvas'Class (This).removeAllGameKeyInputListeners;
+        AllBinaryGameCanvas'Class (This).endGameThread;
    end end_Id;
 
    --  throws Exception
@@ -1266,10 +1266,10 @@ package body org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package i
       highScore : HighScore_Access;
       textBox : HighScoreTextBox_Access;
    begin
-        highScore := This.createHighScore (score);
-        textBox := HighScoreTextBox_Package.Create (This.highScoresFactoryInterface, This.highScoresHelper, abeClientInformation, This.gameLayerManager.getGameInfo, This.getCustomCommandListener, name, highScore, This.gameLayerManager.getBackgroundBasicColor, This.gameLayerManager.getForegroundBasicColor);
+        highScore := AllBinaryGameCanvas'Class (This).createHighScore (score);
+        textBox := HighScoreTextBox_Package.Create (This.highScoresFactoryInterface, This.highScoresHelper, abeClientInformation, This.gameLayerManager.getGameInfo, AllBinaryGameCanvas'Class (This).getCustomCommandListener, name, highScore, This.gameLayerManager.getBackgroundBasicColor, This.gameLayerManager.getForegroundBasicColor);
         if isLast then
-            This.getCustomCommandListener.commandAction (GameCommandsFactory_Package.getInstance.SET_MENU_DISPLAYABLE, textBox);
+            AllBinaryGameCanvas'Class (This).getCustomCommandListener.commandAction (GameCommandsFactory_Package.getInstance.SET_MENU_DISPLAYABLE, textBox);
         end if;
         if autoSubmit then
             --  Java nested class SaveHighScoreRunnable: move it to its own package
@@ -1600,7 +1600,7 @@ package body org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package i
         if features.isDefault (openGLFeatureFactory.OPENGL_AS_GAME_THREAD) then
             return True;
         else
-            return This.isRunning;
+            return AllBinaryGameCanvas'Class (This).isRunning;
         end if;
    end isRunningInAnotherThread;
 

@@ -99,7 +99,7 @@ package body taghelpers.transform.info.TransformInfoRequestHelper_Package is
    begin
         begin
             success := To_Unbounded_String ("Delete Successfully");
-            TransformInfoEntityBuilder_Package.getInstance.delete (Unbounded_String (This.transformInfoInterface.getKey));
+            TransformInfoEntityBuilder_Package.getInstance.delete (Java_Unbox (This.transformInfoInterface.getKey));
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
                 This.logUtil.putF (success, TransformInfoRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("delete()"));
             end if;

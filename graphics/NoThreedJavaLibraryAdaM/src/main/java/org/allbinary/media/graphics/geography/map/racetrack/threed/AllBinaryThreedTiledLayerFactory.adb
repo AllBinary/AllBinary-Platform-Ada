@@ -44,6 +44,7 @@ package body org.allbinary.media.graphics.geography.map.racetrack.threed.AllBina
       raceTrackData : constant RaceTrackData_Access := RaceTrackData_Access (raceTrackData_Param);
    begin
         Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("No Threed")));
+        return null;
    end getInstance;
 
    procedure getInstance (This : in out AllBinaryThreedTiledLayerFactory; raceTrackInfo_Param : access RaceTrackInfo_Package.RaceTrackInfo'Class; raceTrackData_Param : access RaceTrackData_Package.RaceTrackData'Class) is

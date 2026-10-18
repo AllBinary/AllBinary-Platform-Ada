@@ -103,11 +103,11 @@ package body org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Pa
    procedure start (This : in out ProgressCanvas) is
    begin
         This.logUtil.putF (This.commonStrings.START, ProgressCanvas_Access'(This'Unchecked_Access), This.commonStrings.START_METHOD_NAME);
-        This.setBackground (True);
+        ProgressCanvas'Class (This).setBackground (True);
         This.gauge.setHeight (30);
         This.gauge.setLabel (This.commonStrings.PLEASE_WAIT);
-        This.setText (This.TEXT);
-        This.setValue (0);
+        ProgressCanvas'Class (This).setText (This.TEXT);
+        ProgressCanvas'Class (This).setValue (0);
         This.inGameProcessor := Processor_Package.getInstance;
         This.paintable := This.GAUGE_PAINTABLE;
         This.inProgress := True;
@@ -116,11 +116,11 @@ package body org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Pa
    procedure startBackground (This : in out ProgressCanvas; background : Boolean) is
    begin
         This.logUtil.putF (This.commonStrings.START, ProgressCanvas_Access'(This'Unchecked_Access), This.START_BACKGROUND);
-        This.setBackground (background);
+        ProgressCanvas'Class (This).setBackground (background);
         This.myFontProcessor := This.updateMyFontProcessor;
         This.gauge.setLabel (This.backgroundLabel);
-        This.setText (This.TEXT);
-        This.setValue (0);
+        ProgressCanvas'Class (This).setText (This.TEXT);
+        ProgressCanvas'Class (This).setValue (0);
         This.inGameProcessor := Processor_Package.getInstance;
         This.paintable := This.GAUGE_PAINTABLE;
    end startBackground;
@@ -129,7 +129,7 @@ package body org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Pa
    begin
         This.allbinaryMidlet.commandAction (GameCommandsFactory_Package.getInstance.SHOW_GAME_CANVAS, NullCanvas_Package.NULL_CANVAS);
         This.inProgress := False;
-        This.inGame;
+        ProgressCanvas'Class (This).inGame;
    end endActual;
 
    procedure inGame (This : in out ProgressCanvas) is
@@ -141,15 +141,15 @@ package body org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Pa
    procedure end_Id (This : in out ProgressCanvas) is
    begin
         This.logUtil.putF (This.commonStrings.START, ProgressCanvas_Access'(This'Unchecked_Access), This.commonStrings.END_METHOD_NAME);
-        This.gauge.setValue (This.getMaxValue);
-        This.endActual;
+        This.gauge.setValue (ProgressCanvas'Class (This).getMaxValue);
+        ProgressCanvas'Class (This).endActual;
         This.paintable := NullPaintable_Package.getInstance;
    end end_Id;
 
    procedure endFromInitialLazyLoadingComplete (This : in out ProgressCanvas) is
    begin
         This.progressEndListener.onEndEvent;
-        This.gauge.setValue (This.getMaxValue);
+        This.gauge.setValue (ProgressCanvas'Class (This).getMaxValue);
         This.inGameProcessor := This.IN_GAME_PROCESSOR;
    end endFromInitialLazyLoadingComplete;
 
@@ -168,15 +168,15 @@ package body org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Pa
 
    procedure addEarlyPortion (This : in out ProgressCanvas; value : Integer; text_Case : Unbounded_String; index : Integer) is
    begin
-        This.setText (StringMaker_Package.Create.append (text_Case).append (SmallIntegerSingletonFactory_Package.getInstance.getAt (index).toString).toString);
-        This.gauge.setValue ((This.gauge.getValue) + ((This.getMaxValue) / (Float (value))));
+        ProgressCanvas'Class (This).setText (StringMaker_Package.Create.append (text_Case).append (SmallIntegerSingletonFactory_Package.getInstance.getAt (index).toString).toString);
+        This.gauge.setValue ((This.gauge.getValue) + ((ProgressCanvas'Class (This).getMaxValue) / (Float (value))));
    end addEarlyPortion;
 
    procedure addPortion (This : in out ProgressCanvas; value : Integer; text_Case : Unbounded_String; index : Integer) is
    begin
-        This.setText (StringMaker_Package.Create.append (text_Case).append (SmallIntegerSingletonFactory_Package.getInstance.getAt (index).toString).toString);
+        ProgressCanvas'Class (This).setText (StringMaker_Package.Create.append (text_Case).append (SmallIntegerSingletonFactory_Package.getInstance.getAt (index).toString).toString);
         PreLogUtil_Package.put (This.text_Case, ProgressCanvas_Access'(This'Unchecked_Access), This.ADD_PORTION);
-        This.gauge.setValue ((This.gauge.getValue) + ((This.getMaxValue) / (Float (value))));
+        This.gauge.setValue ((This.gauge.getValue) + ((ProgressCanvas'Class (This).getMaxValue) / (Float (value))));
    end addPortion;
 
    procedure addNormalPortion (This : in out ProgressCanvas; value : Integer; text_Case : Unbounded_String) is
@@ -184,8 +184,8 @@ package body org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Pa
         if (This.text_Case) /= (text_Case) then
             PreLogUtil_Package.put (text_Case, ProgressCanvas_Access'(This'Unchecked_Access), This.ADD_PORTION);
         end if;
-        This.setText (text_Case);
-        This.gauge.setValue ((This.gauge.getValue) + ((This.getMaxValue) / (Float (value))));
+        ProgressCanvas'Class (This).setText (text_Case);
+        This.gauge.setValue ((This.gauge.getValue) + ((ProgressCanvas'Class (This).getMaxValue) / (Float (value))));
    end addNormalPortion;
 
    procedure setValue (This : in out ProgressCanvas; value : Integer) is

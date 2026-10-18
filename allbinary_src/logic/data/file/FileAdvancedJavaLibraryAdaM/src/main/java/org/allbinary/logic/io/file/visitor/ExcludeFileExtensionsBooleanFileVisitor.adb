@@ -37,7 +37,7 @@ package body org.allbinary.logic.io.file.visitor.ExcludeFileExtensionsBooleanFil
    function visit (This : in out ExcludeFileExtensionsBooleanFileVisitor; file_Param : access AbFile_Package.AbFile'Class) return Boolean is
       file : constant AbFile_Access := AbFile_Access (file_Param);
    begin
-        if (This.getFilterStringBasicArrayList.size) = (0) then
+        if (ExcludeFileExtensionsBooleanFileVisitor'Class (This).getFilterStringBasicArrayList.size) = (0) then
             return True;
         end if;
         return BooleanFileVisitor (This).visit (file);

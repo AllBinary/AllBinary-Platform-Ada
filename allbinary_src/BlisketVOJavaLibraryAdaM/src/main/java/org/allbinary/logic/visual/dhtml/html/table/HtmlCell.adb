@@ -39,8 +39,8 @@ package body org.allbinary.logic.visual.dhtml.html.table.HtmlCell_Package is
         This.after := Java_New_String (after);
         This.height_Case := Java_New_String (height_Case);
         This.width_Case := Java_New_String (width_Case);
-        This.addAttribute (This.HEIGHT, This.height_Case);
-        This.addAttribute (This.WIDTH, This.width_Case);
+        HtmlCell'Class (This).addAttribute (This.HEIGHT, This.height_Case);
+        HtmlCell'Class (This).addAttribute (This.WIDTH, This.width_Case);
    end Initialize;
 
    function Create (before : Unbounded_String; width_Case : Unbounded_String; height_Case : Unbounded_String; after : Unbounded_String) return HtmlCell_Access is
@@ -72,8 +72,8 @@ package body org.allbinary.logic.visual.dhtml.html.table.HtmlCell_Package is
         result := result & This.START;
         result := result & To_Unbounded_String (" ");
         for i in 0 .. (attributeSize) - 1 loop
-            key := Unbounded_String (attributeKeys (i));
-            value := Unbounded_String (This.otherAttributes.get (key));
+            key := Java_Unbox (attributeKeys (i));
+            value := Java_Unbox (This.otherAttributes.get (key));
             if ((value) /= (Null_Unbounded_String)) and then ((value.compareTo (stringUtil.EMPTY_STRING)) /= (0)) then
                 result := result & key;
                 result := result & To_Unbounded_String ("=""");

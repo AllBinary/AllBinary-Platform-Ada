@@ -41,13 +41,13 @@ package body org.allbinary.logic.visual.dhtml.html.input.HtmlLengthInput_Package
    procedure setMaxLength (This : in out HtmlLengthInput; length : Integer) is
    begin
         This'Length := Java_New_String (length);
-        This.addAttribute (This.MAXLENGTH, This'Length);
+        HtmlLengthInput'Class (This).addAttribute (This.MAXLENGTH, This'Length);
    end setMaxLength;
 
    procedure setSize (This : in out HtmlLengthInput; size_Case : Integer) is
    begin
         This.size_Case := Java_New_String (size_Case);
-        This.addAttribute (This.MAXLENGTH, This.size_Case);
+        HtmlLengthInput'Class (This).addAttribute (This.MAXLENGTH, This.size_Case);
    end setSize;
 
 end org.allbinary.logic.visual.dhtml.html.input.HtmlLengthInput_Package;

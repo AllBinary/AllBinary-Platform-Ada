@@ -26,8 +26,8 @@ package body org.allbinary.media.image.ImageUnifierCell_Package is
    procedure Initialize (This : in out ImageUnifierCell'Class; width : Integer; height : Integer) is
    begin
       Initialize_Fields (This);
-        This.setWidth (width);
-        This.setHeight (height);
+        ImageUnifierCell'Class (This).setWidth (width);
+        ImageUnifierCell'Class (This).setHeight (height);
    end Initialize;
 
    function Create (width : Integer; height : Integer) return ImageUnifierCell_Access is

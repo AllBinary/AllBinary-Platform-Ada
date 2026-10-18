@@ -34,7 +34,7 @@ package body org.allbinary.game.input.motion.action.GameKeyCompleteMotionGesture
         Initialize_Fields (This);
         This.inputToGameKeyMapping := inputToGameKeyMapping;
         GameKeyCompleteMotionGestureInputEventFactory_Package.getInstance.add (GameKeyCompleteMotionGestureInputEvent_Access'(This'Unchecked_Access));
-        This.update;
+        GameKeyCompleteMotionGestureInputEvent'Class (This).update;
    end Initialize;
 
    function Create (name : Unbounded_String; motionGestureInput_Param : access MotionGestureInput_Package.MotionGestureInput'Class; inputToGameKeyMapping_Param : access InputToGameKeyMapping_Package.InputToGameKeyMapping'Class) return GameKeyCompleteMotionGestureInputEvent_Access is
@@ -53,8 +53,8 @@ package body org.allbinary.game.input.motion.action.GameKeyCompleteMotionGesture
       commonStrings : CommonStrings_Access;
    begin
         begin
-            This.setGameKey (This.inputToGameKeyMapping.getInstance (This.getMotionGestureInput.getId));
-            This.setGameKeyEvent (This.gameKeyEventFactory.getInstanceForInput (GameKeyCompleteMotionGestureInputEvent_Access'(This'Unchecked_Access), This.getGameKey));
+            GameKeyCompleteMotionGestureInputEvent'Class (This).setGameKey (This.inputToGameKeyMapping.getInstance (GameKeyCompleteMotionGestureInputEvent'Class (This).getMotionGestureInput.getId));
+            GameKeyCompleteMotionGestureInputEvent'Class (This).setGameKeyEvent (This.gameKeyEventFactory.getInstanceForInput (GameKeyCompleteMotionGestureInputEvent_Access'(This'Unchecked_Access), GameKeyCompleteMotionGestureInputEvent'Class (This).getGameKey));
         exception
             when Java_Occurrence : others =>
                 declare

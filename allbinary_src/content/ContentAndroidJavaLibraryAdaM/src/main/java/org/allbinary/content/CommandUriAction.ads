@@ -20,7 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with javax.microedition.lcdui.Command_Package; use javax.microedition.lcdui.Command_Package;
+with javax.microedition.lcdui.Command_Package; use javax.microedition.lcdui.Command_Package;
 with android.content.Intent_Package; use android.content.Intent_Package;
 with android.net.Uri_Package; use android.net.Uri_Package;
 with org.allbinary.data.resource.ResourceUtil_Package; use org.allbinary.data.resource.ResourceUtil_Package;
@@ -31,6 +31,7 @@ with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_
 
 package org.allbinary.content.CommandUriAction_Package is
 
+   package Command_Package renames Standard.javax.microedition.lcdui.Command_Package;
    package Intent_Package renames Standard.android.content.Intent_Package;
    package Uri_Package renames Standard.android.net.Uri_Package;
    package ResourceUtil_Package renames Standard.org.allbinary.data.resource.ResourceUtil_Package;

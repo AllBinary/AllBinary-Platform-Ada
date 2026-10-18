@@ -28,7 +28,7 @@ package body org.allbinary.logic.system.security.licensing.registration.XmlRpcRe
    begin
         XmlRpcAbeClient_Package.Initialize (This, clientInfo, To_Unbounded_String ("LicenseRegistrationServer.process"));
         Initialize_Fields (This);
-        This.setServer (0);
+        XmlRpcRemoteLicenseRegistrationClient'Class (This).setServer (0);
    end Initialize;
 
    function Create (clientInfo_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class) return XmlRpcRemoteLicenseRegistrationClient_Access is
@@ -52,24 +52,24 @@ package body org.allbinary.logic.system.security.licensing.registration.XmlRpcRe
       result : Java_Object_Access;
    begin
         begin
-            server := This.getClientInfo.getLicenseServer (This.getServer);
+            server := XmlRpcRemoteLicenseRegistrationClient'Class (This).getClientInfo.getLicenseServer (XmlRpcRemoteLicenseRegistrationClient'Class (This).getServer);
             stringBuffer := StringMaker_Package.Create;
             stringBuffer.append (TRYING);
-            stringBuffer.appendint (Integer (This.getServer));
+            stringBuffer.appendint (Integer (XmlRpcRemoteLicenseRegistrationClient'Class (This).getServer));
             stringBuffer.append (SEP_Package);
             stringBuffer.append (server);
             This.logUtil.putF (Java_Image (CommonLabels_Package.getInstance.START_LABEL) & stringBuffer.toString, XmlRpcRemoteLicenseRegistrationClient_Access'(This'Unchecked_Access), This.commonStrings.GET);
             param := BasicArrayListD_Package.Create;
-            serverUrl := This.getClientInfo.getLicenseServer (This.getServer);
+            serverUrl := XmlRpcRemoteLicenseRegistrationClient'Class (This).getClientInfo.getLicenseServer (XmlRpcRemoteLicenseRegistrationClient'Class (This).getServer);
             index := serverUrl.lastIndexOf (To_Unbounded_String ("/"));
             serverUrl := Unbounded_Slice (serverUrl, (0) + 1, (index) + (1)) & This.PAGE;
             xmlRpcClient := XmlRpcClient_Package.Create (serverUrl);
-            This.setClient (xmlRpcClient);
+            XmlRpcRemoteLicenseRegistrationClient'Class (This).setClient (xmlRpcClient);
             xmlRpcClient.setBasicAuthentication (null, null);
             hashtable := ABHashtable_Access (anyType);
             This.logUtil.putF (Java_Image (CLIENT_INFO) & hashtable.toString, XmlRpcRemoteLicenseRegistrationClient_Access'(This'Unchecked_Access), This.commonStrings.GET);
             param.add (hashtable);
-            result := xmlRpcClient.execute (This.getRemoteMethod, param, cryptInterface);
+            result := xmlRpcClient.execute (XmlRpcRemoteLicenseRegistrationClient'Class (This).getRemoteMethod, param, cryptInterface);
             This.logUtil.putF (Java_Image (RESULT) & result.toString, XmlRpcRemoteLicenseRegistrationClient_Access'(This'Unchecked_Access), This.commonStrings.GET);
             This.isOnline := True;
             return result;
@@ -80,7 +80,7 @@ package body org.allbinary.logic.system.security.licensing.registration.XmlRpcRe
                 begin
             This.logUtil.putF ((TRYING_OTHER_SERVERS) + (ExceptionUtil_Package.getInstance.getStackTrace (e)), XmlRpcRemoteLicenseRegistrationClient_Access'(This'Unchecked_Access), This.commonStrings.GET);
             if not (Java_Get_Message (e).startsWith (HOST_NOT_RESOLVED)) then
-                return This.tryAnother (anyType);
+                return XmlRpcRemoteLicenseRegistrationClient'Class (This).tryAnother (anyType);
             else
                 Java_Throw (Java_New_Exception ("Exception", HOST_NOT_RESOLVED_MSG));
             end if;

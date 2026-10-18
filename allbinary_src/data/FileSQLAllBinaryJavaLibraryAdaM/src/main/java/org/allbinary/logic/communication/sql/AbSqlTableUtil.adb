@@ -78,7 +78,7 @@ package body org.allbinary.logic.communication.sql.AbSqlTableUtil_Package is
             backupFilePath := AbPath_Package.Create (backupPath, fileName);
             backupFile := AbFile_Package.createAbFile (backupFilePath);
             if backupFile.exists then
-                This.backupFile (backupFilePath, backupPath, tableName);
+                AbSqlTableUtil'Class (This).backupFile (backupFilePath, backupPath, tableName);
                 backupFile.delete;
             end if;
             backupFile.createNewFile;
@@ -200,13 +200,13 @@ package body org.allbinary.logic.communication.sql.AbSqlTableUtil_Package is
             colNum := rsmd.getColumnCount;
             QUERY_START := StringBuilder_Package.Create.append (This.sqlStrings.INSERT_INTO).append (tableName).append (This.sqlStrings.VALUES).toString;
             stringBuffer := StringMaker_Package.Create;
-            outputStream := This.getOutputStream (path, tableName);
+            outputStream := AbSqlTableUtil'Class (This).getOutputStream (path, tableName);
             while rset.next loop
                 stringBuffer.delete (0, stringBuffer.length);
                 stringBuffer.append (QUERY_START);
                 for i in 1 .. (colNum) - 1 loop
                     value := rset.getString (i);
-                    stringBuffer.append (This.convertNewLines (value));
+                    stringBuffer.append (AbSqlTableUtil'Class (This).convertNewLines (value));
                     stringBuffer.append (This.sqlStrings.SINGLE_QUOTE_COMMA_SEP);
                 end loop;
                 stringBuffer.append (rset.getString (colNum));

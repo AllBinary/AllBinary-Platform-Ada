@@ -156,7 +156,7 @@ package body admin.taghelpers.StoreFrontsHelper_Package is
             storeSelect.addAttribute (StoreFrontsHelper_Package.CLASS, StoreFrontsHelper_Package.TEXT);
             size := storeNamesVector.size;
             for index in 0 .. (size) - 1 loop
-                storeName := Unbounded_String (storeNamesVector.get (index));
+                storeName := Java_Unbox (storeNamesVector.get (index));
                 storeSelect.addOption (storeName);
             end loop;
             success := success & storeSelect;

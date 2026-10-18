@@ -68,6 +68,7 @@ package body javax.microedition.lcdui.PlatformImage_Package is
       image : constant Image_Access := Image_Access (image_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return null;
    end getGraphics;
 
    procedure drawImage (This : in out PlatformImage; image_Param : access Image_Package.Image'Class; x : Integer; y : Integer; anchor : Integer; g2_Param : access Graphics_Package.Graphics'Class; g_Param : access Java_Object'Class) is

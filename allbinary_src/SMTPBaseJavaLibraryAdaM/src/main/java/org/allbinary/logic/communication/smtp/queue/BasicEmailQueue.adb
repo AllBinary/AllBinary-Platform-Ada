@@ -48,15 +48,15 @@ package body org.allbinary.logic.communication.smtp.queue.BasicEmailQueue_Packag
    function offer (This : in out BasicEmailQueue; emailInterface_Param : access EmailInterface_Package.EmailInterface'Class) return Boolean is
       emailInterface : constant EmailInterface_Access := EmailInterface_Access (emailInterface_Param);
    begin
-        This.offer (Java_Object_Access (emailInterface));
-        This.post (emailInterface);
+        BasicEmailQueue'Class (This).offer (Java_Object_Access (emailInterface));
+        BasicEmailQueue'Class (This).post (emailInterface);
         return True;
    end offer;
 
    procedure remove (This : in out BasicEmailQueue; emailInterface_Param : access EmailInterface_Package.EmailInterface'Class) is
       emailInterface : constant EmailInterface_Access := EmailInterface_Access (emailInterface_Param);
    begin
-        This.remove (Java_Object_Access (emailInterface));
+        BasicEmailQueue'Class (This).remove (Java_Object_Access (emailInterface));
    end remove;
 
    function remove (This : in out BasicEmailQueue) return EmailInterface_Access is
@@ -68,9 +68,9 @@ package body org.allbinary.logic.communication.smtp.queue.BasicEmailQueue_Packag
    procedure post (This : in out BasicEmailQueue; emailInterface_Param : access EmailInterface_Package.EmailInterface'Class) is
       emailInterface : constant EmailInterface_Access := EmailInterface_Access (emailInterface_Param);
    begin
-        if This.send (emailInterface) then
-            This.remove (emailInterface);
-            This.processAllUnsent;
+        if BasicEmailQueue'Class (This).send (emailInterface) then
+            BasicEmailQueue'Class (This).remove (emailInterface);
+            BasicEmailQueue'Class (This).processAllUnsent;
         end if;
    end post;
 
@@ -83,9 +83,9 @@ package body org.allbinary.logic.communication.smtp.queue.BasicEmailQueue_Packag
         size := This.queueVector.size;
         for index in 0 .. (size) - 1 loop
             emailInterface := EmailInterface_Access (This.queueVector.get (index));
-            if This.send (emailInterface) then
-                This.remove (emailInterface);
-                This.processAllUnsent;
+            if BasicEmailQueue'Class (This).send (emailInterface) then
+                BasicEmailQueue'Class (This).remove (emailInterface);
+                BasicEmailQueue'Class (This).processAllUnsent;
             end if;
         end loop;
    end processAllUnsent;

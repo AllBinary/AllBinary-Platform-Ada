@@ -45,7 +45,7 @@ package body org.allbinary.logic.util.cache.PoolType_Package is
       POOL_TYPE : Unbounded_String;
    begin
         POOL_TYPE := To_Unbounded_String ("PoolType: ");
-        return POOL_TYPE & This.getCacheType.toString;
+        return POOL_TYPE & PoolType'Class (This).getCacheType.toString;
    end toString;
 
 end org.allbinary.logic.util.cache.PoolType_Package;

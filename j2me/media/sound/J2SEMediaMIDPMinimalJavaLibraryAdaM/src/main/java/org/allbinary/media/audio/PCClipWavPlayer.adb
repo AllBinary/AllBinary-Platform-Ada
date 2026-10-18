@@ -35,7 +35,7 @@ package body org.allbinary.media.audio.PCClipWavPlayer_Package is
         clip := NullClip_Package.Create;
         begin
             audioInputStream := AudioSystem_Package.getAudioInputStream (inputStream);
-            clip := This.create (audioInputStream);
+            clip := PCClipWavPlayer'Class (This).create (audioInputStream);
             if (clip) = (null) then
                 This.logUtil.put (To_Unbounded_String ("Clip was null"), PCClipWavPlayer_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR, Java_New_Exception ("Exception"));
                 Java_Throw (Java_New_Exception ("RuntimeException"));
@@ -66,7 +66,7 @@ package body org.allbinary.media.audio.PCClipWavPlayer_Package is
 --     procedure run (This : in out ) is
 --     begin
 --                  begin
---                      This.close2;
+--                      PCClipWavPlayer'Class (This).close2;
 --                  exception
 --                      when Java_Occurrence : others =>
 --                          declare
@@ -100,7 +100,7 @@ package body org.allbinary.media.audio.PCClipWavPlayer_Package is
 --     procedure run (This : in out ) is
 --     begin
 --                  begin
---                      This.start2;
+--                      PCClipWavPlayer'Class (This).start2;
 --                  exception
 --                      when Java_Occurrence : others =>
 --                          declare
@@ -117,7 +117,7 @@ package body org.allbinary.media.audio.PCClipWavPlayer_Package is
    procedure start2 (This : in out PCClipWavPlayer) is
    begin
         This.clip.setFramePosition (0);
-        This.clip.loop_Id (This.getLoopCount);
+        This.clip.loop_Id (PCClipWavPlayer'Class (This).getLoopCount);
         This.clip.start;
         BasicPlayer (This).start;
    end start2;
@@ -141,7 +141,7 @@ package body org.allbinary.media.audio.PCClipWavPlayer_Package is
 --     procedure run (This : in out ) is
 --     begin
 --                  begin
---                      This.stop2;
+--                      PCClipWavPlayer'Class (This).stop2;
 --                  exception
 --                      when Java_Occurrence : others =>
 --                          declare
@@ -173,7 +173,7 @@ package body org.allbinary.media.audio.PCClipWavPlayer_Package is
 
    procedure setVolume (This : in out PCClipWavPlayer; leftVolume : Integer; rightVolume : Integer) is
    begin
-        This.setVolumeF (((Float (leftVolume))) / (100.0));
+        PCClipWavPlayer'Class (This).setVolumeF (((Float (leftVolume))) / (100.0));
    end setVolume;
 
    function getVolume (This : in out PCClipWavPlayer) return Float is

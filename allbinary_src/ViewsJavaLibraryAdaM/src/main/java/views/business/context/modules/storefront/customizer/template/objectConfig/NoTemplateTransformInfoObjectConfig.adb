@@ -42,7 +42,7 @@ package body views.business.context.modules.storefront.customizer.template.objec
    begin
         TransformInfoObjectConfig_Package.Initialize (This, transformInfoInterface, document);
         Initialize_Fields (This);
-        This.setDocument (This.generate (This.toXmlDoc));
+        NoTemplateTransformInfoObjectConfig'Class (This).setDocument (NoTemplateTransformInfoObjectConfig'Class (This).generate (NoTemplateTransformInfoObjectConfig'Class (This).toXmlDoc));
    end Initialize;
 
    function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class; document_Param : access Document_Package.Document'Class) return NoTemplateTransformInfoObjectConfig_Access is
@@ -57,7 +57,7 @@ package body views.business.context.modules.storefront.customizer.template.objec
    begin
         TransformInfoObjectConfig_Package.Initialize (This, transformInfoInterface, name, type_Id);
         Initialize_Fields (This);
-        This.setDocument (This.generate (This.toXmlDoc));
+        NoTemplateTransformInfoObjectConfig'Class (This).setDocument (NoTemplateTransformInfoObjectConfig'Class (This).generate (NoTemplateTransformInfoObjectConfig'Class (This).toXmlDoc));
    end Initialize;
 
    function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class; name : Unbounded_String; type_Id : Unbounded_String) return NoTemplateTransformInfoObjectConfig_Access is
@@ -83,14 +83,14 @@ package body views.business.context.modules.storefront.customizer.template.objec
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
             This.logUtil.putF (To_Unbounded_String ("Initial ObjectConfig: ") & docString, NoTemplateTransformInfoObjectConfig_Access'(This'Unchecked_Access), To_Unbounded_String ("generate()"));
         end if;
-        storeName := This.getTransformInfoInterface.getStoreName;
-        viewName := This.getTransformInfoInterface.getName;
+        storeName := NoTemplateTransformInfoObjectConfig'Class (This).getTransformInfoInterface.getStoreName;
+        viewName := NoTemplateTransformInfoObjectConfig'Class (This).getTransformInfoInterface.getName;
         hashMap := StdUtil_Package.getInstance.createHashMap;
         VARKEY := TransformInfoObjectConfigData_Package.getInstance.VARKEY;
-        hashMap.put (VARKEY & Java_Image (StoreFrontData_Package.getInstance.NAME), storeName);
-        hashMap.put (VARKEY & Java_Image (TransformInfoData_Package.getInstance.OWNER), viewName);
-        pageName := TransformTemplateCustomizerUtil_Package.getInstance.getPageNameHack (This.getTransformInfoInterface.getName, This.getTransformInfoInterface.getStoreName);
-        hashMap.put (VARKEY & Java_Image (TransformInfoData_Package.getInstance.PARTIAL), pageName);
+        hashMap.put (Java_Box (VARKEY & Java_Image (StoreFrontData_Package.getInstance.NAME)), Java_Box (storeName));
+        hashMap.put (Java_Box (VARKEY & Java_Image (TransformInfoData_Package.getInstance.OWNER)), Java_Box (viewName));
+        pageName := TransformTemplateCustomizerUtil_Package.getInstance.getPageNameHack (NoTemplateTransformInfoObjectConfig'Class (This).getTransformInfoInterface.getName, NoTemplateTransformInfoObjectConfig'Class (This).getTransformInfoInterface.getStoreName);
+        hashMap.put (Java_Box (VARKEY & Java_Image (TransformInfoData_Package.getInstance.PARTIAL)), Java_Box (pageName));
         replace := Replace_Package.Create (hashMap);
         newObjectConfigDocument := DomDocumentHelper_Package.create (replace.all_Id (docString));
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then

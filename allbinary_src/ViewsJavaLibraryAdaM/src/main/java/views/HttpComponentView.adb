@@ -35,7 +35,7 @@ package body views.HttpComponentView_Package is
             This.logUtil.putF (To_Unbounded_String ("View Name: ") & transformInfoInterface.getName, HttpComponentView_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         end if;
         This.domNodeInterfaceVector := BasicArrayListD_Package.Create;
-        This.setTransformDocumentInterface (TransformHttpRequestDocumentFactory_Package.getInstance (This.getPageContext, This.getWeblisketSession));
+        HttpComponentView'Class (This).setTransformDocumentInterface (TransformHttpRequestDocumentFactory_Package.getInstance (HttpComponentView'Class (This).getPageContext, HttpComponentView'Class (This).getWeblisketSession));
    end Initialize;
 
    function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return HttpComponentView_Access is
@@ -79,7 +79,7 @@ package body views.HttpComponentView_Package is
                 domNodeInterface := DomNodeInterface_Access (This.domNodeInterfaceVector.get (index));
                 This.transformDocumentInterface.getBaseNode.appendChild (domNodeInterface.toXmlNode (This.transformDocumentInterface.getDoc));
             end loop;
-            return This.getTransformDocumentInterface.getDoc;
+            return HttpComponentView'Class (This).getTransformDocumentInterface.getDoc;
         exception
             when Java_Occurrence : others =>
                 declare
@@ -99,15 +99,15 @@ package body views.HttpComponentView_Package is
       node : Node_Access;
       dataNode : Node_Access;
    begin
-        document := This.getTransformInfoInterface.getDataDocument;
+        document := HttpComponentView'Class (This).getTransformInfoInterface.getDataDocument;
         node := DomNodeHelper_Package.getFirstChildElement (document);
         if (node) /= (null) then
-            dataNode := This.getTransformDocumentInterface.getDoc.importNode (node, True);
+            dataNode := HttpComponentView'Class (This).getTransformDocumentInterface.getDoc.importNode (node, True);
             if (dataNode) /= (null) then
-                This.getTransformDocumentInterface.getBaseNode.appendChild (dataNode);
+                HttpComponentView'Class (This).getTransformDocumentInterface.getBaseNode.appendChild (dataNode);
             end if;
         end if;
-        return This.getTransformDocumentInterface.getDoc;
+        return HttpComponentView'Class (This).getTransformDocumentInterface.getDoc;
    end getDoc;
 
    --  throws Exception
@@ -116,9 +116,9 @@ package body views.HttpComponentView_Package is
       result : Unbounded_String;
    begin
         begin
-            This.toXmlDoc;
-            success := XmlDocumentHelper_Package.toString (This.getDoc);
-            result := BasicTransformer_Package.Create (This.abeClientInformation, This.getTransformInfoInterface).translate (success);
+            HttpComponentView'Class (This).toXmlDoc;
+            success := XmlDocumentHelper_Package.toString (HttpComponentView'Class (This).getDoc);
+            result := BasicTransformer_Package.Create (This.abeClientInformation, HttpComponentView'Class (This).getTransformInfoInterface).translate (success);
             return result;
         exception
             when Java_Occurrence : others =>

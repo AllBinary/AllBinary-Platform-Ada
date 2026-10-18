@@ -39,30 +39,30 @@ package body tags.generic_Id.address.billing.BillingAddressTag_Package is
    function doStartTag (This : in out BillingAddressTag) return Integer is
    begin
         begin
-            if (This.getCommand) /= (null) then
-                if (This.getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.VIEW)) = (0) then
-                    This.setName (To_Unbounded_String ("Basic Billing Address View"));
-                    This.setObjectFile (To_Unbounded_String ("views.generic.address.billing.ValidationView"));
-                elsif (This.getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.EDIT)) = (0) then
-                    This.setName (To_Unbounded_String ("Basic Billing Address View"));
-                    This.setObjectFile (To_Unbounded_String ("views.generic.address.billing.EditValidationView"));
-                elsif (This.getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.NEW_Id)) = (0) then
-                    This.setName (To_Unbounded_String ("Basic Billing Address View"));
-                    This.setObjectFile (To_Unbounded_String ("views.generic.address.billing.NewValidationView"));
-                elsif (This.getCommand.compareTo (This.commonStrings.INSERT)) = (0) then
-                    This.setName (To_Unbounded_String ("Basic Billing Address View"));
-                    This.setObjectFile (To_Unbounded_String ("views.generic.address.billing.AddValidationView"));
-                elsif (This.getCommand.compareTo (This.commonStrings.DELETE)) = (0) then
-                    This.setName (To_Unbounded_String ("Basic Billing Address View"));
-                    This.setObjectFile (To_Unbounded_String ("views.generic.address.billing.DeleteValidationView"));
-                elsif (This.getCommand.compareTo (BillingAddressData_Package.SELECT_Id)) = (0) then
-                    This.setName (To_Unbounded_String ("Basic Billing Address View"));
-                    This.setObjectFile (To_Unbounded_String ("views.generic.address.billing.SelectValidationView"));
-                elsif (This.getCommand.compareTo (BillingAddressData_Package.SETTOSHIPPINGADDRESS)) = (0) then
-                    This.setName (To_Unbounded_String ("Basic Billing Address View"));
-                    This.setObjectFile (To_Unbounded_String ("views.generic.address.billing.SetValidationView"));
+            if (BillingAddressTag'Class (This).getCommand) /= (null) then
+                if (BillingAddressTag'Class (This).getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.VIEW)) = (0) then
+                    BillingAddressTag'Class (This).setName (To_Unbounded_String ("Basic Billing Address View"));
+                    BillingAddressTag'Class (This).setObjectFile (To_Unbounded_String ("views.generic.address.billing.ValidationView"));
+                elsif (BillingAddressTag'Class (This).getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.EDIT)) = (0) then
+                    BillingAddressTag'Class (This).setName (To_Unbounded_String ("Basic Billing Address View"));
+                    BillingAddressTag'Class (This).setObjectFile (To_Unbounded_String ("views.generic.address.billing.EditValidationView"));
+                elsif (BillingAddressTag'Class (This).getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.NEW_Id)) = (0) then
+                    BillingAddressTag'Class (This).setName (To_Unbounded_String ("Basic Billing Address View"));
+                    BillingAddressTag'Class (This).setObjectFile (To_Unbounded_String ("views.generic.address.billing.NewValidationView"));
+                elsif (BillingAddressTag'Class (This).getCommand.compareTo (This.commonStrings.INSERT)) = (0) then
+                    BillingAddressTag'Class (This).setName (To_Unbounded_String ("Basic Billing Address View"));
+                    BillingAddressTag'Class (This).setObjectFile (To_Unbounded_String ("views.generic.address.billing.AddValidationView"));
+                elsif (BillingAddressTag'Class (This).getCommand.compareTo (This.commonStrings.DELETE)) = (0) then
+                    BillingAddressTag'Class (This).setName (To_Unbounded_String ("Basic Billing Address View"));
+                    BillingAddressTag'Class (This).setObjectFile (To_Unbounded_String ("views.generic.address.billing.DeleteValidationView"));
+                elsif (BillingAddressTag'Class (This).getCommand.compareTo (BillingAddressData_Package.SELECT_Id)) = (0) then
+                    BillingAddressTag'Class (This).setName (To_Unbounded_String ("Basic Billing Address View"));
+                    BillingAddressTag'Class (This).setObjectFile (To_Unbounded_String ("views.generic.address.billing.SelectValidationView"));
+                elsif (BillingAddressTag'Class (This).getCommand.compareTo (BillingAddressData_Package.SETTOSHIPPINGADDRESS)) = (0) then
+                    BillingAddressTag'Class (This).setName (To_Unbounded_String ("Basic Billing Address View"));
+                    BillingAddressTag'Class (This).setObjectFile (To_Unbounded_String ("views.generic.address.billing.SetValidationView"));
                 else
-                    Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("No Such View Command: ") & Java_Image (This.getCommand)));
+                    Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("No Such View Command: ") & Java_Image (BillingAddressTag'Class (This).getCommand)));
                 end if;
                 return StoreValidationTransformTag (This).doStartTag;
             end if;

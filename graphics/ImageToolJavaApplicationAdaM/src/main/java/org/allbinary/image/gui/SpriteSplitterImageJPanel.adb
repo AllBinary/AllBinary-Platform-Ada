@@ -51,7 +51,7 @@ package body org.allbinary.image.gui.SpriteSplitterImageJPanel_Package is
    begin
         JPanel_Package.Initialize (This);
         Initialize_Fields (This);
-        This.initComponents;
+        SpriteSplitterImageJPanel'Class (This).initComponents;
         This.imageProcessorInput := imageProcessorInput;
    end Initialize;
 
@@ -80,14 +80,14 @@ package body org.allbinary.image.gui.SpriteSplitterImageJPanel_Package is
 --                  logUtil := LogUtil_Package.getInstance;
 --                  begin
 --                      spriteSplitterUtil := SpriteSplitterUtil_Package.getInstance;
---                      spriteType := Unbounded_String (This.spriteTypeJComboBox.getSelectedItem);
---                      totalFrames := To_Unbounded_String (Java_Image (Unbounded_String (This.totalFramesJComboBox.getSelectedItem)));
---                      totalAnimations := To_Unbounded_String (Java_Image (Unbounded_String (This.totalAnimationsJComboBox.getSelectedItem)));
+--                      spriteType := Java_Unbox (This.spriteTypeJComboBox.getSelectedItem);
+--                      totalFrames := To_Unbounded_String (Java_Image (Java_Unbox (This.totalFramesJComboBox.getSelectedItem)));
+--                      totalAnimations := To_Unbounded_String (Java_Image (Java_Unbox (This.totalAnimationsJComboBox.getSelectedItem)));
 --                      widthReduction := To_Unbounded_String (Java_Image (This.widthReductionTextField.getText));
 --                      heightReduction := To_Unbounded_String (Java_Image (This.heightReductionTextField.getText));
 --                      increaseWidth := To_Unbounded_String (Java_Image (This.increaseWidthTextField.getText));
 --                      increaseHeight := To_Unbounded_String (Java_Image (This.increaseHeightTextField.getText));
---                      spriteSplitterUtil.process (This.getImageProcessorInput, totalFrames, totalAnimations, widthReduction, heightReduction, increaseWidth, increaseHeight, spriteType, SpriteSplitterImageJPanel_Access'(This'Unchecked_Access));
+--                      spriteSplitterUtil.process (SpriteSplitterImageJPanel'Class (This).getImageProcessorInput, totalFrames, totalAnimations, widthReduction, heightReduction, increaseWidth, increaseHeight, spriteType, SpriteSplitterImageJPanel_Access'(This'Unchecked_Access));
 --                  exception
 --                      when Java_Occurrence : others =>
 --                          declare
@@ -155,7 +155,7 @@ package body org.allbinary.image.gui.SpriteSplitterImageJPanel_Package is
 --     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
 --        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
---                  This.writeOverOriginalJCheckBoxActionPerformed (evt);
+--                  SpriteSplitterImageJPanel'Class (This).writeOverOriginalJCheckBoxActionPerformed (evt);
 --     end actionPerformed;
 );
         This.widthReductionTextField.setText (CommonPhoneStrings_Package.getInstance.ZERO);
@@ -164,7 +164,7 @@ package body org.allbinary.image.gui.SpriteSplitterImageJPanel_Package is
 --     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
 --        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
---                  This.widthReductionTextFieldActionPerformed (evt);
+--                  SpriteSplitterImageJPanel'Class (This).widthReductionTextFieldActionPerformed (evt);
 --     end actionPerformed;
 );
         This.jLabel5.setText (To_Unbounded_String ("Less Width:"));
@@ -181,7 +181,7 @@ package body org.allbinary.image.gui.SpriteSplitterImageJPanel_Package is
 --     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
 --        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
---                  This.generateJButtonActionPerformed (evt);
+--                  SpriteSplitterImageJPanel'Class (This).generateJButtonActionPerformed (evt);
 --     end actionPerformed;
 );
         This.jLabel1.setText (To_Unbounded_String ("Row Total:"));
@@ -191,7 +191,7 @@ package body org.allbinary.image.gui.SpriteSplitterImageJPanel_Package is
 --     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
 --        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
---                  This.totalFramesJComboBoxActionPerformed (evt);
+--                  SpriteSplitterImageJPanel'Class (This).totalFramesJComboBoxActionPerformed (evt);
 --     end actionPerformed;
 );
         This.jLabel2.setText (To_Unbounded_String ("Column Total :"));
@@ -201,7 +201,7 @@ package body org.allbinary.image.gui.SpriteSplitterImageJPanel_Package is
 --     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
 --        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
---                  This.totalAnimationsJComboBoxActionPerformed (evt);
+--                  SpriteSplitterImageJPanel'Class (This).totalAnimationsJComboBoxActionPerformed (evt);
 --     end actionPerformed;
 );
         This.jLabel3.setText (To_Unbounded_String ("Type:"));
@@ -210,7 +210,7 @@ package body org.allbinary.image.gui.SpriteSplitterImageJPanel_Package is
 --     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
 --        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
---                  This.spriteTypeJComboBoxActionPerformed (evt);
+--                  SpriteSplitterImageJPanel'Class (This).spriteTypeJComboBoxActionPerformed (evt);
 --     end actionPerformed;
 );
         jPanel2Layout := GroupLayout_Package.Create (This.jPanel2);
@@ -224,13 +224,13 @@ package body org.allbinary.image.gui.SpriteSplitterImageJPanel_Package is
 --     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
 --        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
---                  This.increaseWidthTextFieldActionPerformed (evt);
+--                  SpriteSplitterImageJPanel'Class (This).increaseWidthTextFieldActionPerformed (evt);
 --     end actionPerformed;
 );
         This.jLabel8.setText (To_Unbounded_String ("More Height:"));
         This.increaseHeightTextField.setText (CommonPhoneStrings_Package.getInstance.ZERO);
         layout := GroupLayout_Package.Create (SpriteSplitterImageJPanel_Access'(This'Unchecked_Access));
-        This.setLayout (layout);
+        SpriteSplitterImageJPanel'Class (This).setLayout (layout);
         layout.setHorizontalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (layout.createSequentialGroup.addComponent (This.jPanel2, javax_Package.swing.GroupLayout.PREFERRED_SIZE, 415, Short_Package.MAX_VALUE).addGap (78, 78, 78)).addGroup (layout.createSequentialGroup.addContainerGap.addGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addComponent (This.jPanel1, javax_Package.swing.GroupLayout.DEFAULT_SIZE, javax_Package.swing.GroupLayout.DEFAULT_SIZE, Short_Package.MAX_VALUE).addGroup (layout.createSequentialGroup.addGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (layout.createSequentialGroup.addComponent (This.writeOverOriginalJCheckBox).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent (This.generateJButton)).addGroup (layout.createSequentialGroup.addComponent (This.jLabel5).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent (This.widthReductionTextField, javax_Package.swing.GroupLayout.PREFERRED_SIZE, 41, javax_Package.swing.GroupLayout.PREFERRED_SIZE).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent (This.jLabel6).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent (This.heightReductionTextField, javax_Package.swing.GroupLayout.PREFERRED_SIZE, 46, javax_Package.swing.GroupLayout.PREFERRED_SIZE).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent (This.jLabel7).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent (This.increaseWidthTextField, javax_Package.swing.GroupLayout.PREFERRED_SIZE, 41, javax_Package.swing.GroupLayout.PREFERRED_SIZE).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent (This.jLabel8).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent (This.increaseHeightTextField, javax_Package.swing.GroupLayout.PREFERRED_SIZE, 46, javax_Package.swing.GroupLayout.PREFERRED_SIZE))).addGap (0, 0, Short_Package.MAX_VALUE))).addContainerGap));
         layout.setVerticalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (layout.createSequentialGroup.addComponent (This.jPanel2, javax_Package.swing.GroupLayout.PREFERRED_SIZE, javax_Package.swing.GroupLayout.DEFAULT_SIZE, javax_Package.swing.GroupLayout.PREFERRED_SIZE).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.BASELINE).addComponent (This.jLabel7).addComponent (This.increaseWidthTextField, javax_Package.swing.GroupLayout.PREFERRED_SIZE, 22, javax_Package.swing.GroupLayout.PREFERRED_SIZE).addComponent (This.jLabel8).addComponent (This.increaseHeightTextField, javax_Package.swing.GroupLayout.PREFERRED_SIZE, javax_Package.swing.GroupLayout.DEFAULT_SIZE, javax_Package.swing.GroupLayout.PREFERRED_SIZE)).addGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.BASELINE).addComponent (This.jLabel5).addComponent (This.widthReductionTextField, javax_Package.swing.GroupLayout.PREFERRED_SIZE, 22, javax_Package.swing.GroupLayout.PREFERRED_SIZE).addComponent (This.jLabel6).addComponent (This.heightReductionTextField, javax_Package.swing.GroupLayout.PREFERRED_SIZE, javax_Package.swing.GroupLayout.DEFAULT_SIZE, javax_Package.swing.GroupLayout.PREFERRED_SIZE))).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.BASELINE).addComponent (This.writeOverOriginalJCheckBox).addComponent (This.generateJButton)).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent (This.jPanel1, javax_Package.swing.GroupLayout.DEFAULT_SIZE, javax_Package.swing.GroupLayout.DEFAULT_SIZE, Short_Package.MAX_VALUE)));
    end initComponents;
@@ -244,7 +244,7 @@ package body org.allbinary.image.gui.SpriteSplitterImageJPanel_Package is
    procedure generateJButtonActionPerformed (This : in out SpriteSplitterImageJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
       evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
-        This.process;
+        SpriteSplitterImageJPanel'Class (This).process;
    end generateJButtonActionPerformed;
 
    procedure spriteTypeJComboBoxActionPerformed (This : in out SpriteSplitterImageJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
@@ -301,11 +301,11 @@ package body org.allbinary.image.gui.SpriteSplitterImageJPanel_Package is
    begin
         This.logUtil.putF (This.commonStrings.VISIT, SpriteSplitterImageJPanel_Access'(This'Unchecked_Access), This.commonStrings.VISIT);
         This.result := generatedBufferedImage;
-        This.getParent.repaint;
+        SpriteSplitterImageJPanel'Class (This).getParent.repaint;
         file := This.imageProcessorInput.getFiles (index);
         if not (This.writeOverOriginalJCheckBox.isSelected) then
             filePath := file.getAbsolutePath;
-            extensionIndex := (Index (filePath, To_String (This.imageStrings.PNG_EXTENSION)) - 1);
+            extensionIndex := (Index (filePath, Java_Image (This.imageStrings.PNG_EXTENSION)) - 1);
             filePath := StringMaker_Package.Create.append (Unbounded_Slice (filePath, (0) + 1, extensionIndex)).append (This.commonSeps.UNDERSCORE).append (name).append (This.imageStrings.PNG_EXTENSION).toString;
             file := File_Package.Create (filePath);
         end if;

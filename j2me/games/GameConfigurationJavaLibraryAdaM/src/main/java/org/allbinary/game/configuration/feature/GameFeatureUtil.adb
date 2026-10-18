@@ -163,7 +163,7 @@ package body org.allbinary.game.configuration.feature.GameFeatureUtil_Package is
             This.logUtil.putF (stringBuffer.toString, GameFeatureUtil_Access'(This'Unchecked_Access), METHOD_NAME);
             if isSelected then
                 selectedChoiceLabel := choiceGroup.getString (index);
-                This.updateExclusive (selectedChoiceLabel);
+                GameFeatureUtil'Class (This).updateExclusive (selectedChoiceLabel);
             end if;
         end loop;
    end updateExclusiveForChoiceGroup;
@@ -175,7 +175,7 @@ package body org.allbinary.game.configuration.feature.GameFeatureUtil_Package is
         enumeration := GameFeatureChoiceGroups_Package.getExclusiveInstance.get.keys;
         name := Null_Unbounded_String;
         while This.enumerationUtil.hasMoreElements (enumeration) loop
-            name := Unbounded_String (This.enumerationUtil.nextElement (enumeration));
+            name := Java_Unbox (This.enumerationUtil.nextElement (enumeration));
             if (This.tsUtil.compareTo (itemLabel, name)) = (0) then
                 return True;
             end if;
@@ -203,7 +203,7 @@ package body org.allbinary.game.configuration.feature.GameFeatureUtil_Package is
         for index in 0 .. (size) - 1 loop
             anyType := Java_Object_Access (objectArray (index));
             basicArrayList := BasicArrayList_Access (hashtable.get (anyType));
-            This.updateExclusiveList (gameFeature, basicArrayList);
+            GameFeatureUtil'Class (This).updateExclusiveList (gameFeature, basicArrayList);
         end loop;
    end updateExclusive;
 

@@ -41,28 +41,28 @@ package body org.allbinary.business.user.commerce.inventory.basket.Basket_Packag
       numInt : Integer;
       newNumInt : Integer;
    begin
-        if This.items.containsKey (id) then
-            oldNumStr := Java_New_String (Unbounded_String (This.items.get (id)));
+        if This.items.containsKey (Java_Box (id)) then
+            oldNumStr := Java_New_String (Java_Unbox (This.items.get (Java_Box (id))));
             oldNumInt := To_Unbounded_String (Java_Image (oldNumStr));
             numInt := To_Unbounded_String (Java_Image (num));
             newNumInt := (oldNumInt.intValue) + (numInt.intValue);
-            This.items.put (id, newNumInt.toString);
+            This.items.put (Java_Box (id), Java_Box (newNumInt.toString));
         else
-            This.items.put (id, num);
+            This.items.put (Java_Box (id), Java_Box (num));
         end if;
    end addItem;
 
    procedure removeItem (This : in out Basket; id : Unbounded_String) is
    begin
-        This.items.remove (id);
+        This.items.remove (Java_Box (id));
    end removeItem;
 
    procedure adjustItem (This : in out Basket; id : Unbounded_String; num : Unbounded_String) is
    begin
         if (To_Unbounded_String (Java_Image (num)).intValue) > (0) then
-            This.items.put (id, num);
+            This.items.put (Java_Box (id), Java_Box (num));
         else
-            This.items.remove (id);
+            This.items.remove (Java_Box (id));
         end if;
    end adjustItem;
 
@@ -76,7 +76,7 @@ package body org.allbinary.business.user.commerce.inventory.basket.Basket_Packag
       size : Integer;
       index : Integer;
    begin
-        itemsAndNumberInBasket := This.getItems;
+        itemsAndNumberInBasket := Basket'Class (This).getItems;
         totalWeight := Money_Package.Create;
         if (itemsAndNumberInBasket.size) > (0) then
             items := itemsAndNumberInBasket.keySet;
@@ -85,9 +85,9 @@ package body org.allbinary.business.user.commerce.inventory.basket.Basket_Packag
             itemArray := items.toArray;
             size := itemArray'Length;
             for index in 0 .. (size) - 1 loop
-                product := Java_New_String (Unbounded_String (itemArray (index)));
+                product := Java_New_String (Java_Unbox (itemArray (index)));
                 weightFloat := InventoryEntity_Package.Create.getWeight (product);
-                weightFloat := (This.getNumberOf (product).floatValue) * (weightFloat.floatValue);
+                weightFloat := (Basket'Class (This).getNumberOf (product).floatValue) * (weightFloat.floatValue);
                 totalWeight.add (weightFloat.toString);
             end loop;
         end if;
@@ -114,7 +114,7 @@ package body org.allbinary.business.user.commerce.inventory.basket.Basket_Packag
    function getNumberOf (This : in out Basket; product : Unbounded_String) return Integer is
       numStr : Unbounded_String;
    begin
-        numStr := Unbounded_String (This.items.get (product));
+        numStr := Java_Unbox (This.items.get (Java_Box (product)));
         return To_Unbounded_String (Java_Image (numStr));
    end getNumberOf;
 
@@ -132,7 +132,7 @@ package body org.allbinary.business.user.commerce.inventory.basket.Basket_Packag
       productTotal : Money_Access;
       index : Integer;
    begin
-        itemsAndNumberInBasket := This.getItems;
+        itemsAndNumberInBasket := Basket'Class (This).getItems;
         subTotal := Money_Package.Create;
         if (itemsAndNumberInBasket.size) > (0) then
             items := itemsAndNumberInBasket.keySet;
@@ -141,10 +141,10 @@ package body org.allbinary.business.user.commerce.inventory.basket.Basket_Packag
             itemArray := items.toArray;
             size := itemArray'Length;
             for index in 0 .. (size) - 1 loop
-                product := Java_New_String (Unbounded_String (itemArray (index)));
+                product := Java_New_String (Java_Unbox (itemArray (index)));
                 itemInterface := inventoryEntity.getItem (product);
                 productTotal := itemInterface.getPrice;
-                productTotal.multiply (This.getNumberOf (product).intValue);
+                productTotal.multiply (Basket'Class (This).getNumberOf (product).intValue);
                 subTotal.add (productTotal.toString);
             end loop;
         end if;

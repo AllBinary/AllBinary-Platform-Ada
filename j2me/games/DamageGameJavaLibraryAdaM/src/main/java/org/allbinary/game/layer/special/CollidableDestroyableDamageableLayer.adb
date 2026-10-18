@@ -64,7 +64,7 @@ package body org.allbinary.game.layer.special.CollidableDestroyableDamageableLay
    --  throws Exception
    procedure initPosition (This : in out CollidableDestroyableDamageableLayer) is
    begin
-        This.setPosition (This.initX, This.initY, This.initZ);
+        CollidableDestroyableDamageableLayer'Class (This).setPosition (This.initX, This.initY, This.initZ);
    end initPosition;
 
    --  throws Exception
@@ -91,12 +91,14 @@ package body org.allbinary.game.layer.special.CollidableDestroyableDamageableLay
    function getDamage (This : in out CollidableDestroyableDamageableLayer; damageType : Integer) return Integer is
    begin
         Java_Throw (Java_New_Exception ("Exception", This.commonStrings.NOT_IMPLEMENTED));
+        return 0;
    end getDamage;
 
    --  throws Exception
    function isDestroyed (This : in out CollidableDestroyableDamageableLayer) return Boolean is
    begin
         Java_Throw (Java_New_Exception ("Exception", This.commonStrings.NOT_IMPLEMENTED));
+        return False;
    end isDestroyed;
 
    function getGroupInterface (This : in out CollidableDestroyableDamageableLayer) return Group_Access_Array_Access is
@@ -320,13 +322,13 @@ package body org.allbinary.game.layer.special.CollidableDestroyableDamageableLay
         positionStrings := PositionStrings_Package.getInstance;
         CollidableCompositeLayer (This).toStringAppend (stringBuffer);
         stringBuffer.append (commonSeps.NEW_LINE);
-        groupInterfaceArray := This.getGroupInterface;
+        groupInterfaceArray := CollidableDestroyableDamageableLayer'Class (This).getGroupInterface;
         size := groupInterfaceArray'Length;
         for index in 0 .. (size) - 1 loop
             stringBuffer.append (groupInterfaceArray (index).toString);
             stringBuffer.append (commonSeps.COMMA);
         end loop;
-        pickupBehavior := This.getPickupBehavior;
+        pickupBehavior := CollidableDestroyableDamageableLayer'Class (This).getPickupBehavior;
         if (pickupBehavior) /= (null) then
             stringBuffer.append (commonSeps.NEW_LINE);
             stringBuffer.append (pickupBehavior.toString);
@@ -349,7 +351,7 @@ package body org.allbinary.game.layer.special.CollidableDestroyableDamageableLay
       stringBuffer : StringMaker_Access;
    begin
         stringBuffer := StringMaker_Package.Create;
-        This.toStringAppend (stringBuffer);
+        CollidableDestroyableDamageableLayer'Class (This).toStringAppend (stringBuffer);
         return stringBuffer.toString;
    end toString;
 

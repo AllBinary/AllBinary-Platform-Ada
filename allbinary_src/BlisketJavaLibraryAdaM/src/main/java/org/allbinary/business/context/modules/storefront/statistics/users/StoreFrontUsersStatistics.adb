@@ -42,7 +42,7 @@ package body org.allbinary.business.context.modules.storefront.statistics.users.
         for index in 0 .. (size) - 1 loop
             userInterface := UserInterface_Access (userVector.get (index));
             nextUserRole := userInterface.getRole;
-            currentNumberOfUsersForRole := This.getNewTotal (nextUserRole);
+            currentNumberOfUsersForRole := StoreFrontUsersStatistics'Class (This).getNewTotal (nextUserRole);
             This.totalUsersByRoleHashMap.put (nextUserRole, currentNumberOfUsersForRole);
         end loop;
    end Initialize;
@@ -73,7 +73,7 @@ package body org.allbinary.business.context.modules.storefront.statistics.users.
    function getNumberOfUsersByRole (This : in out StoreFrontUsersStatistics; role : Unbounded_String) return Long_Long_Integer is
       totalForRole : Long_Long_Integer;
    begin
-        totalForRole := Long_Long_Integer (This.totalUsersByRoleHashMap.get (role));
+        totalForRole := Long_Long_Integer (This.totalUsersByRoleHashMap.get (Java_Box (role)));
         return totalForRole;
    end getNumberOfUsersByRole;
 
@@ -87,7 +87,7 @@ package body org.allbinary.business.context.modules.storefront.statistics.users.
       index : Integer;
    begin
         hashMap := StdUtil_Package.getInstance.createHashMap;
-        hashMap.put (StoreFrontUsersStatisticsData_Package.getInstance.NUMBEROFUSERS, This.getNumberOfUsers.toString);
+        hashMap.put (StoreFrontUsersStatisticsData_Package.getInstance.NUMBEROFUSERS, Java_Box (StoreFrontUsersStatistics'Class (This).getNumberOfUsers.toString));
         setOfUserRoles := This.totalUsersByRoleHashMap.keySet;
         nextUserRole := null;
         userRoleArray := setOfUserRoles.toArray;
@@ -95,7 +95,7 @@ package body org.allbinary.business.context.modules.storefront.statistics.users.
         for index in 0 .. (size) - 1 loop
             nextUserRole := UserRole_Access (userRoleArray (index));
             totalForRole := Long_Long_Integer (This.totalUsersByRoleHashMap.get (nextUserRole));
-            hashMap.put (nextUserRole.toString, totalForRole.toString);
+            hashMap.put (Java_Box (nextUserRole.toString), Java_Box (totalForRole.toString));
         end loop;
         return hashMap;
    end toHashMap;

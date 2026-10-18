@@ -36,9 +36,9 @@ package body org.allbinary.business.category.properties.root.store.RootStoreCate
         This.transformInfoInterface := transformInfoInterface;
         This.abPath := AbPath_Package.createAbPath;
         This.category := CategoryData_Package.getInstance.ROOTCATEGORY;
-        This.isRealRoot := True;
-        This.initPath;
-        This.log;
+        This.isRealRoot_Field := True;
+        RootStoreCategoryProperties'Class (This).initPath;
+        RootStoreCategoryProperties'Class (This).log;
    end Initialize;
 
    function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return RootStoreCategoryProperties_Access is
@@ -57,11 +57,11 @@ package body org.allbinary.business.category.properties.root.store.RootStoreCate
         This.abPath := categoryAbPath;
         This.category := This.pathData.getNameFromPath (categoryAbPath.toString);
         if StringValidationUtil_Package.getInstance.isEmpty (This.category) then
-            This.isRealRoot := True;
+            This.isRealRoot_Field := True;
             This.category := CategoryData_Package.getInstance.ROOTCATEGORY;
         end if;
-        This.initPath;
-        This.log;
+        RootStoreCategoryProperties'Class (This).initPath;
+        RootStoreCategoryProperties'Class (This).log;
    end Initialize;
 
    function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class; categoryAbPath_Param : access AbPath_Package.AbPath'Class) return RootStoreCategoryProperties_Access is
@@ -82,11 +82,11 @@ package body org.allbinary.business.category.properties.root.store.RootStoreCate
         This.abPath := AbPath_Package.Create (categoryPath, StringUtil_Package.getInstance.EMPTY_STRING);
         This.category := This.pathData.getNameFromPath (categoryPath);
         if StringValidationUtil_Package.getInstance.isEmpty (This.category) then
-            This.isRealRoot := True;
+            This.isRealRoot_Field := True;
             This.category := CategoryData_Package.getInstance.ROOTCATEGORY;
         end if;
-        This.initPath;
-        This.log;
+        RootStoreCategoryProperties'Class (This).initPath;
+        RootStoreCategoryProperties'Class (This).log;
    end Initialize;
 
    function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class; node_Param : access Node_Package.Node'Class) return RootStoreCategoryProperties_Access is
@@ -103,15 +103,15 @@ package body org.allbinary.business.category.properties.root.store.RootStoreCate
    begin
       Initialize_Fields (This);
         This.transformInfoInterface := transformInfoInterface;
-        categoryPath := Java_New_String (Unbounded_String (categoryPropertiesHashMap.get (CategoryData_Package.getInstance.NAME)));
+        categoryPath := Java_New_String (Java_Unbox (categoryPropertiesHashMap.get (CategoryData_Package.getInstance.NAME)));
         This.abPath := AbPath_Package.Create (categoryPath, StringUtil_Package.getInstance.EMPTY_STRING);
         This.category := This.pathData.getNameFromPath (categoryPath);
         if StringValidationUtil_Package.getInstance.isEmpty (This.category) then
-            This.isRealRoot := True;
+            This.isRealRoot_Field := True;
             This.category := CategoryData_Package.getInstance.ROOTCATEGORY;
         end if;
-        This.initPath;
-        This.log;
+        RootStoreCategoryProperties'Class (This).initPath;
+        RootStoreCategoryProperties'Class (This).log;
    end Initialize;
 
    function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class; categoryPropertiesHashMap_Param : access HashMap_Package.HashMap'Class) return RootStoreCategoryProperties_Access is
@@ -133,12 +133,12 @@ package body org.allbinary.business.category.properties.root.store.RootStoreCate
         postPath := (storeFrontInterface.getCurrentHostNamePath) + (storeFrontInterface.getCategoryPath);
         httpServletRequest := HttpServletRequest_Access (transformInfoHttpStoreInterface.getPageContext.getRequest);
         This.webAppAbPath := AbPath_Package.Create (Java_Image (httpServletRequest.getContextPath) & postPath, StringUtil_Package.getInstance.EMPTY_STRING);
-        This.setRootFilePath (AbPath_Package.Create (Java_Image (URLGLOBALS.getMainPath) & postPath, StringUtil_Package.getInstance.EMPTY_STRING));
+        RootStoreCategoryProperties'Class (This).setRootFilePath (AbPath_Package.Create (Java_Image (URLGLOBALS.getMainPath) & postPath, StringUtil_Package.getInstance.EMPTY_STRING));
    end initPath;
 
    function isRealRoot (This : in out RootStoreCategoryProperties) return Boolean is
    begin
-        return This.isRealRoot;
+        return This.isRealRoot_Field;
    end isRealRoot;
 
    function isRoot (This : in out RootStoreCategoryProperties) return Boolean is
@@ -148,7 +148,7 @@ package body org.allbinary.business.category.properties.root.store.RootStoreCate
 
    function getKey (This : in out RootStoreCategoryProperties) return Java_Object_Access is
    begin
-        return Java_Object_Access (This.getValue);
+        return Java_Object_Access (RootStoreCategoryProperties'Class (This).getValue);
    end getKey;
 
    procedure setPath (This : in out RootStoreCategoryProperties; path_Param : access AbPath_Package.AbPath'Class) is
@@ -187,7 +187,7 @@ package body org.allbinary.business.category.properties.root.store.RootStoreCate
 
    function getFileName (This : in out RootStoreCategoryProperties) return Unbounded_String is
    begin
-        return ((This.getValue) + (AbPathData_Package.getInstance.EXTENSION_SEP)) + (CategoryData_Package.getInstance.UNCRYPTED_EXTENSION);
+        return ((RootStoreCategoryProperties'Class (This).getValue) + (AbPathData_Package.getInstance.EXTENSION_SEP)) + (CategoryData_Package.getInstance.UNCRYPTED_EXTENSION);
    end getFileName;
 
    procedure setValue (This : in out RootStoreCategoryProperties; value : Unbounded_String) is
@@ -204,7 +204,7 @@ package body org.allbinary.business.category.properties.root.store.RootStoreCate
       categoryHashMap : HashMap_Access;
    begin
         categoryHashMap := StdUtil_Package.getInstance.createHashMap;
-        categoryHashMap.put (CategoryData_Package.getInstance.NAME, This.getValue);
+        categoryHashMap.put (CategoryData_Package.getInstance.NAME, RootStoreCategoryProperties'Class (This).getValue);
         return categoryHashMap;
    end toHashMap;
 
@@ -212,7 +212,7 @@ package body org.allbinary.business.category.properties.root.store.RootStoreCate
       categoryVector : BasicArrayList_Access;
    begin
         categoryVector := BasicArrayListD_Package.Create;
-        categoryVector.add (This.getValue);
+        categoryVector.add (RootStoreCategoryProperties'Class (This).getValue);
         return categoryVector;
    end toVector;
 

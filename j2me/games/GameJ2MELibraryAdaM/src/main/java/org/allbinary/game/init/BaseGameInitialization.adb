@@ -70,14 +70,14 @@ package body org.allbinary.game.init.BaseGameInitialization_Package is
       progressCanvas : ProgressCanvas_Access;
    begin
         resourceLoadingLevelFactory := ResourceLoadingLevelFactory_Package.getInstance;
-        if (not (This.isInitialized)) and then ((((level) = (resourceLoadingLevelFactory.LOAD_ALL.getLevel)) or else ((level) = (resourceLoadingLevelFactory.LOAD_EARLY.getLevel)))) then
+        if (not (BaseGameInitialization'Class (This).isInitialized)) and then ((((level) = (resourceLoadingLevelFactory.LOAD_ALL.getLevel)) or else ((level) = (resourceLoadingLevelFactory.LOAD_EARLY.getLevel)))) then
             localPortion := 40;
             if (level) = (resourceLoadingLevelFactory.LOAD_EARLY.getLevel) then
                 localPortion := 8;
             end if;
-            This.setInitialized (True);
-            This.initKey (This.getPortion);
-            This.initKeyMapping (abeClientInformation, This.getPortion);
+            BaseGameInitialization'Class (This).setInitialized (True);
+            BaseGameInitialization'Class (This).initKey (BaseGameInitialization'Class (This).getPortion);
+            BaseGameInitialization'Class (This).initKeyMapping (abeClientInformation, BaseGameInitialization'Class (This).getPortion);
             GameKeyEventFactory_Package.getInstance.init;
             progressCanvas := ProgressCanvasFactory_Package.getInstance;
             progressCanvas.addNormalPortion (localPortion, To_Unbounded_String ("Game Key Events"));
@@ -97,13 +97,13 @@ package body org.allbinary.game.init.BaseGameInitialization_Package is
       resourceLoadingLevelFactory : ResourceLoadingLevelFactory_Access;
    begin
         resourceLoadingLevelFactory := ResourceLoadingLevelFactory_Package.getInstance;
-        if (This.resourceAnimationChange) and then ((level) = (resourceLoadingLevelFactory.LOAD_EARLY.getLevel)) then
-            This.clearResources;
+        if (BaseGameInitialization'Class (This).resourceAnimationChange) and then ((level) = (resourceLoadingLevelFactory.LOAD_EARLY.getLevel)) then
+            BaseGameInitialization'Class (This).clearResources;
             This.resourceInitializationArray (This.EARLY_CHANGABLE_RESOURCES).init;
         end if;
-        if (This.resourceAnimationChange) and then ((level) = (resourceLoadingLevelFactory.LOAD_ALL.getLevel)) then
+        if (BaseGameInitialization'Class (This).resourceAnimationChange) and then ((level) = (resourceLoadingLevelFactory.LOAD_ALL.getLevel)) then
             if This.allLoaded then
-                This.clearResources;
+                BaseGameInitialization'Class (This).clearResources;
             end if;
             if (FeaturedAnimationInterfaceFactoryInterfaceFactory_Package.getInstance.getList.size) = (0) then
                 This.resourceInitializationArray (This.EARLY_CHANGABLE_RESOURCES).init;

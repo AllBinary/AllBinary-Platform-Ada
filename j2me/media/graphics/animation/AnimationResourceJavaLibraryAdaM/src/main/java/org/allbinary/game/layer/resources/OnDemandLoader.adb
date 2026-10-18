@@ -53,10 +53,10 @@ package body org.allbinary.game.layer.resources.OnDemandLoader_Package is
             if This.resourceAnimationInterfaceFactoryInterfaceFactory.isInitialized then
                 return;
             end if;
-            This.initAll (imageCache, loadingString);
+            OnDemandLoader'Class (This).initAll (imageCache, loadingString);
         elsif (level) /= (resourceLoadingLevelFactory.LOAD_ALL.getLevel) then
             layerPlacementInterfaceBasicArrayListFactoryInterface := This.gameLayerPlacementInterfaceBasicArrayListFactoryInterfaceFactory.getInstance (level);
-            This.initLevel (layerPlacementInterfaceBasicArrayListFactoryInterface, imageCache, level, loadingString);
+            OnDemandLoader'Class (This).initLevel (layerPlacementInterfaceBasicArrayListFactoryInterface, imageCache, level, loadingString);
         end if;
    end init;
 

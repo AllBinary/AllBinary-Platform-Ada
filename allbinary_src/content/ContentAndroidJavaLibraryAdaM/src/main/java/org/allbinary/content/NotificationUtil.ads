@@ -20,7 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with javax.microedition.lcdui.Command_Package; use javax.microedition.lcdui.Command_Package;
+with javax.microedition.lcdui.Command_Package; use javax.microedition.lcdui.Command_Package;
 with android.app.Notification_Package; use android.app.Notification_Package;
 with android.app.NotificationManager_Package; use android.app.NotificationManager_Package;
 with android.app.PendingIntent_Package; use android.app.PendingIntent_Package;
@@ -36,6 +36,7 @@ with org.allbinary.content.CommandUriAction_Package; use org.allbinary.content.C
 
 package org.allbinary.content.NotificationUtil_Package is
 
+   package Command_Package renames Standard.javax.microedition.lcdui.Command_Package;
    package Notification_Package renames Standard.android.app.Notification_Package;
    package NotificationManager_Package renames Standard.android.app.NotificationManager_Package;
    package PendingIntent_Package renames Standard.android.app.PendingIntent_Package;

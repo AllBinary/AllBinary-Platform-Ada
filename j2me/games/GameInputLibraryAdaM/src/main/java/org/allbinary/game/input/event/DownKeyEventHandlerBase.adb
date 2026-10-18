@@ -89,7 +89,7 @@ package body org.allbinary.game.input.event.DownKeyEventHandlerBase_Package is
         while (index) < (This.eventListenerInterfaceList.size) loop
             begin
                 eventListenerInterface := EventListenerInterface_Access (This.eventListenerInterfaceList.get (index));
-                This.processI (eventObject, eventListenerInterface);
+                DownKeyEventHandlerBase'Class (This).processI (eventObject, eventListenerInterface);
             exception
                 when Java_Occurrence : others =>
                     declare
@@ -130,7 +130,7 @@ package body org.allbinary.game.input.event.DownKeyEventHandlerBase_Package is
         while (index) < (This.eventListenerInterfaceList.size) loop
             begin
                 eventListenerInterface := EventListenerInterface_Access (This.eventListenerInterfaceList.get (index));
-                This.processEvent (eventObject, eventListenerInterface);
+                DownKeyEventHandlerBase'Class (This).processEvent (eventObject, eventListenerInterface);
             exception
                 when Java_Occurrence : others =>
                     declare

@@ -105,7 +105,7 @@ package body org.allbinary.animation.image.sprite.AllBinarySpriteRotationAnimati
 
    procedure initWH (This : in out AllBinarySpriteRotationAnimationFactory; dx : Integer; dy : Integer) is
    begin
-        This.init (dx, dy);
+        AllBinarySpriteRotationAnimationFactory'Class (This).init (dx, dy);
         This.animationFactoryInitializationVisitor.dx := (This.animationFactoryInitializationVisitor.dx) + ((-(This.animationFactoryInitializationVisitor.width)) / (5));
         This.animationFactoryInitializationVisitor.dy := (This.animationFactoryInitializationVisitor.dy) + ((-(This.animationFactoryInitializationVisitor.height)) / (5));
    end initWH;
@@ -114,11 +114,11 @@ package body org.allbinary.animation.image.sprite.AllBinarySpriteRotationAnimati
    function getInstance (This : in out AllBinarySpriteRotationAnimationFactory; instanceId : Integer) return Animation_Access is
       sprite : Sprite_Access;
    begin
-        sprite := This.animationFactorySpriteScaleUtil.createImage (This.getImage, This.animationFactoryInitializationVisitor.width, This.animationFactoryInitializationVisitor.height, This.scaleProperties.scaleWidth, This.scaleProperties.scaleHeight);
+        sprite := This.animationFactorySpriteScaleUtil.createImage (AllBinarySpriteRotationAnimationFactory'Class (This).getImage, This.animationFactoryInitializationVisitor.width, This.animationFactoryInitializationVisitor.height, This.scaleProperties.scaleWidth, This.scaleProperties.scaleHeight);
         if ((This.animationFactoryInitializationVisitor.dx) /= (0)) or else ((This.animationFactoryInitializationVisitor.dy) /= (0)) then
-            return AllBinaryAdjustedSpriteRotationAnimation_Package.Create (sprite, This.getImage, This.animationFactoryInitializationVisitor.dx, This.animationFactoryInitializationVisitor.dy, This.animationBehaviorFactory.getOrCreateInstance);
+            return AllBinaryAdjustedSpriteRotationAnimation_Package.Create (sprite, AllBinarySpriteRotationAnimationFactory'Class (This).getImage, This.animationFactoryInitializationVisitor.dx, This.animationFactoryInitializationVisitor.dy, This.animationBehaviorFactory.getOrCreateInstance);
         else
-            return AllBinarySpriteRotationAnimation_Package.Create (sprite, This.getImage, This.animationBehaviorFactory.getOrCreateInstance);
+            return AllBinarySpriteRotationAnimation_Package.Create (sprite, AllBinarySpriteRotationAnimationFactory'Class (This).getImage, This.animationBehaviorFactory.getOrCreateInstance);
         end if;
    end getInstance;
 
@@ -126,7 +126,7 @@ package body org.allbinary.animation.image.sprite.AllBinarySpriteRotationAnimati
    function getInstanceAnimation (This : in out AllBinarySpriteRotationAnimationFactory; animationInterface_Param : access Animation_Package.Animation'Class) return Animation_Access is
       animationInterface : constant Animation_Access := Animation_Access (animationInterface_Param);
    begin
-        return This.getInstance (0);
+        return AllBinarySpriteRotationAnimationFactory'Class (This).getInstance (0);
    end getInstanceAnimation;
 
    procedure createWHDY (image_Param : access Image_Package.Image'Class; dx : Integer; dy : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class) is

@@ -74,7 +74,7 @@ package body org.allbinary.media.graphics.geography.map.racetrack.drop.RaceTrack
       index : Integer;
       size : Integer;
    begin
-        This.init;
+        RaceTrackDropCellPositionGenerator'Class (This).init;
         baseRaceTrackGeographicMap := BaseRaceTrackGeographicMap_Access (geographicMapInterface);
         This.raceTrackGeographicMap := baseRaceTrackGeographicMap;
         This.raceTrackGeographicMapCellTypeFactory := RaceTrackGeographicMapCellTypeFactory_Access (baseRaceTrackGeographicMap.getGeographicMapCellTypeFactory);
@@ -88,7 +88,7 @@ package body org.allbinary.media.graphics.geography.map.racetrack.drop.RaceTrack
             geographicMapCellPosition := GeographicMapCellPosition_Access (trackedList.get (index));
             total := 0;
             ahead := index;
-            while This.isDropAllowedAt (GeographicMapCellPosition_Access (trackedList.get (ahead))) loop
+            while RaceTrackDropCellPositionGenerator'Class (This).isDropAllowedAt (GeographicMapCellPosition_Access (trackedList.get (ahead))) loop
                 total := total + 1;
                 if (total) > (This.STRAIGHTAWAY) then
                     This.list.add (geographicMapCellPosition);
@@ -102,7 +102,7 @@ package body org.allbinary.media.graphics.geography.map.racetrack.drop.RaceTrack
         end loop;
         size := This.list.size;
         for index in reverse 0 .. (size) - (1) loop
-            This.drop (allBinaryGameLayerManager, index);
+            RaceTrackDropCellPositionGenerator'Class (This).drop (allBinaryGameLayerManager, index);
         end loop;
    end update;
 
@@ -113,7 +113,7 @@ package body org.allbinary.media.graphics.geography.map.racetrack.drop.RaceTrack
    begin
         if This.timeDelayHelper.isTime (GameTickTimeDelayHelperFactory_Package.getInstance.startTime) then
             index := This.basicArrayListUtil.getRandomIndex (This.list);
-            This.drop (allBinaryLayerManager, index);
+            RaceTrackDropCellPositionGenerator'Class (This).drop (allBinaryLayerManager, index);
         end if;
    end processTick;
 

@@ -50,8 +50,8 @@ package body org.allbinary.business.user.commerce.inventory.order.status.OrderSt
    --  throws Exception
    procedure process (This : in out OrderStatusEmail) is
    begin
-        This.notifyStoreAdmin;
-        This.notifyUser;
+        OrderStatusEmail'Class (This).notifyStoreAdmin;
+        OrderStatusEmail'Class (This).notifyUser;
    end process;
 
    --  throws Exception

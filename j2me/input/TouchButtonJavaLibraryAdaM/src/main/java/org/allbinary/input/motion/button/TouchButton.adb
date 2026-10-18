@@ -60,8 +60,8 @@ package body org.allbinary.input.motion.button.TouchButton_Package is
         This.cellPositionP := cellPosition;
         This.xBorder := xBorder;
         This.yBorder := yBorder;
-        This.updateRectangle;
-        This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Created: ")).append (This.toString).toString, TouchButton_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
+        TouchButton'Class (This).updateRectangle;
+        This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Created: ")).append (TouchButton'Class (This).toString).toString, TouchButton_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
    end Initialize;
 
    function Create (touchButtonInput_Param : access TouchButtonInput_Package.TouchButtonInput'Class; animationInterface_Param : access Animation_Package.Animation'Class; hintAnimationInterface_Param : access Animation_Package.Animation'Class; rawRectangle_Param : access Rectangle_Package.Rectangle'Class; cellPosition_Param : access CellPosition_Package.CellPosition'Class; xBorder : Integer; yBorder : Integer) return TouchButton_Access is
@@ -130,7 +130,7 @@ package body org.allbinary.input.motion.button.TouchButton_Package is
         stringBuffer := StringMaker_Package.Create;
         stringUtil := StringUtil_Package.getInstance;
         stringBuffer.append (To_Unbounded_String ("TouchButton: "));
-        stringBuffer.append (stringUtil.toString (This.getRectangle));
+        stringBuffer.append (stringUtil.toString (TouchButton'Class (This).getRectangle));
         stringBuffer.append (To_Unbounded_String (" CellPosition: "));
         stringBuffer.append (stringUtil.toString (This.cellPositionP));
         stringBuffer.append (To_Unbounded_String (" xBorder: "));

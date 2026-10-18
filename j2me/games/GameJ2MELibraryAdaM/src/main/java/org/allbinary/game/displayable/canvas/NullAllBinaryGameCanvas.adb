@@ -36,6 +36,7 @@ package body org.allbinary.game.displayable.canvas.NullAllBinaryGameCanvas_Packa
    function getLayerManager (This : in out NullAllBinaryGameCanvas) return AllBinaryGameLayerManager_Access is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return null;
    end getLayerManager;
 
    procedure addCommand (This : in out NullAllBinaryGameCanvas; cmd_Param : access Command_Package.Command'Class) is
@@ -47,11 +48,13 @@ package body org.allbinary.game.displayable.canvas.NullAllBinaryGameCanvas_Packa
    function getHeight (This : in out NullAllBinaryGameCanvas) return Integer is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return 0;
    end getHeight;
 
    function getWidth (This : in out NullAllBinaryGameCanvas) return Integer is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return 0;
    end getWidth;
 
    procedure removeCommand (This : in out NullAllBinaryGameCanvas; cmd_Param : access Command_Package.Command'Class) is

@@ -20,11 +20,11 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.io.DataOutputStream_Package; use java.io.DataOutputStream_Package;
+with java.io.DataOutputStream_Package; use java.io.DataOutputStream_Package;
 --  with java.io.File_Package; use java.io.File_Package;
 --  with java.io.FileInputStream_Package; use java.io.FileInputStream_Package;
 --  with java.io.FileOutputStream_Package; use java.io.FileOutputStream_Package;
---  with java.util.HashMap_Package; use java.util.HashMap_Package;
+with java.util.HashMap_Package; use java.util.HashMap_Package;
 --  with java.util.Set_Package; use java.util.Set_Package;
 with org.allbinary.data.tree.dom.DomNodeInterface_Package; use org.allbinary.data.tree.dom.DomNodeInterface_Package;
 with org.allbinary.data.tree.dom.document.DomDocumentHelper_Package; use org.allbinary.data.tree.dom.document.DomDocumentHelper_Package;
@@ -44,6 +44,8 @@ with org.allbinary.input.automation.module.generic_Id.configuration.profile.Gene
 
 package org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfiles_Package is
 
+   package DataOutputStream_Package renames Standard.java.io.DataOutputStream_Package;
+   package HashMap_Package renames Standard.java.util.HashMap_Package;
    package DomNodeInterface_Package renames Standard.org.allbinary.data.tree.dom.DomNodeInterface_Package;
    package DomDocumentHelper_Package renames Standard.org.allbinary.data.tree.dom.document.DomDocumentHelper_Package;
    package XmlDocumentHelper_Package renames Standard.org.allbinary.data.tree.dom.document.XmlDocumentHelper_Package;

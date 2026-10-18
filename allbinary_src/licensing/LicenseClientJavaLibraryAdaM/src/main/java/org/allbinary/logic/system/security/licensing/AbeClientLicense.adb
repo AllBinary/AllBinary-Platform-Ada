@@ -45,7 +45,7 @@ package body org.allbinary.logic.system.security.licensing.AbeClientLicense_Pack
                 This.hashtable.put (abeClientInformationData.KEY, keyValue);
             end if;
         end if;
-        This.id := Unbounded_String (hashtable.get (abeClientInformationData.LICENSEID));
+        This.id := Java_Unbox (hashtable.get (abeClientInformationData.LICENSEID));
         vector := BasicArrayList_Access (hashtable.get (abeClientInformationData.LICENSESERVERS));
         This.servers := BasicArrayListD_Package.Create;
         size := vector.size;
@@ -53,8 +53,8 @@ package body org.allbinary.logic.system.security.licensing.AbeClientLicense_Pack
             This.servers.add (vector.get (index));
         end loop;
         stringUtil := StringUtil_Package.getInstance;
-        This.setSpecial (stringUtil.getNonNull (Unbounded_String (hashtable.get (abeClientInformationData.SPECIAL))));
-        licenseTypeString := stringUtil.getNonNull (Unbounded_String (hashtable.get (abeClientInformationData.LICENSE_TYPE)));
+        AbeClientLicense'Class (This).setSpecial (stringUtil.getNonNull (Java_Unbox (hashtable.get (abeClientInformationData.SPECIAL))));
+        licenseTypeString := stringUtil.getNonNull (Java_Unbox (hashtable.get (abeClientInformationData.LICENSE_TYPE)));
         This.licenseType := LicenseTypeFactory_Package.getInstance.getInstance (licenseTypeString);
    end Initialize;
 
@@ -79,12 +79,12 @@ package body org.allbinary.logic.system.security.licensing.AbeClientLicense_Pack
 
    function hasKey (This : in out AbeClientLicense) return Boolean is
    begin
-        return This.isValid;
+        return AbeClientLicense'Class (This).isValid;
    end hasKey;
 
    function getKey (This : in out AbeClientLicense; keyName : Unbounded_String) return Unbounded_String is
    begin
-        return Unbounded_String (This.hashtable.get (keyName));
+        return Java_Unbox (This.hashtable.get (keyName));
    end getKey;
 
    function getLicenseId (This : in out AbeClientLicense) return Unbounded_String is
@@ -101,7 +101,7 @@ package body org.allbinary.logic.system.security.licensing.AbeClientLicense_Pack
       stringValidationUtil : StringValidationUtil_Access;
    begin
         stringValidationUtil := StringValidationUtil_Package.getInstance;
-        if not (stringValidationUtil.isEmpty (This.getKey (AbeClientInformationData_Package.getInstance.KEY))) then
+        if not (stringValidationUtil.isEmpty (AbeClientLicense'Class (This).getKey (AbeClientInformationData_Package.getInstance.KEY))) then
             return True;
         end if;
         return False;
@@ -118,18 +118,18 @@ package body org.allbinary.logic.system.security.licensing.AbeClientLicense_Pack
         stringBuffer := StringMaker_Package.Create;
         BREAK := To_Unbounded_String ("<br/>");
         stringBuffer.append (To_Unbounded_String ("License Id: "));
-        stringBuffer.append (This.getLicenseId);
+        stringBuffer.append (AbeClientLicense'Class (This).getLicenseId);
         stringBuffer.append (BREAK);
         stringBuffer.append (To_Unbounded_String ("Is Valid: "));
-        stringBuffer.appendboolean (This.isValid);
+        stringBuffer.appendboolean (AbeClientLicense'Class (This).isValid);
         stringBuffer.append (BREAK);
         stringBuffer.append (To_Unbounded_String ("Keys: "));
         stringBuffer.append (This.hashtable.toString);
         stringBuffer.append (BREAK);
-        serverVector := This.getServers;
+        serverVector := AbeClientLicense'Class (This).getServers;
         size := serverVector.size;
         for index in 0 .. (size) - 1 loop
-            nextServerString := Unbounded_String (serverVector.get (index));
+            nextServerString := Java_Unbox (serverVector.get (index));
             stringBuffer.append (To_Unbounded_String ("Server: "));
             stringBuffer.append (nextServerString);
             stringBuffer.append (BREAK);

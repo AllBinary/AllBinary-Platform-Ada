@@ -25,8 +25,8 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
    procedure Initialize (This : in out GenericProfileDataWorkerType'Class; name : Unbounded_String) is
    begin
       Initialize_Fields (This);
-        This.setName (name);
-        GenericProfileDataWorkerType_Package.hashMap.put (This.getName, GenericProfileDataWorkerType_Access'(This'Unchecked_Access));
+        GenericProfileDataWorkerType'Class (This).setName (name);
+        GenericProfileDataWorkerType_Package.hashMap.put (Java_Box (GenericProfileDataWorkerType'Class (This).getName), GenericProfileDataWorkerType_Access'(This'Unchecked_Access));
    end Initialize;
 
    function Create (name : Unbounded_String) return GenericProfileDataWorkerType_Access is
@@ -57,7 +57,7 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
 
    function toString (This : in out GenericProfileDataWorkerType) return Unbounded_String is
    begin
-        return To_Unbounded_String ("GenericProfileDataWorkerType: ") & This.getName;
+        return To_Unbounded_String ("GenericProfileDataWorkerType: ") & GenericProfileDataWorkerType'Class (This).getName;
    end toString;
 
    function getInstance (node_Param : access Node_Package.Node'Class) return GenericProfileDataWorkerType_Access is
@@ -65,7 +65,7 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
       name : Unbounded_String;
    begin
         name := DomNodeHelper_Package.getTextNodeValue (node);
-        return GenericProfileDataWorkerType_Access (GenericProfileDataWorkerType_Package.hashMap.get (name));
+        return GenericProfileDataWorkerType_Access (GenericProfileDataWorkerType_Package.hashMap.get (Java_Box (name)));
    end getInstance;
 
    procedure toXmlNode (This : in out GenericProfileDataWorkerType; document_Param : access Document_Package.Document'Class) is

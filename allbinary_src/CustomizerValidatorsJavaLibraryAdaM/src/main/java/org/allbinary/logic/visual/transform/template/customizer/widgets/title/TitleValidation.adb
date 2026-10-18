@@ -71,7 +71,7 @@ package body org.allbinary.logic.visual.transform.template.customizer.widgets.ti
                 This.logUtil.putF (To_Unbounded_String ("TitleValidation"), TitleValidation_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
             end if;
             valid := True;
-            if not (StringValidationUtil_Package.getInstance.isValidRequired (This.getTitle, 1, TitleData_Package.getInstance.MAXLEN)) then
+            if not (StringValidationUtil_Package.getInstance.isValidRequired (TitleValidation'Class (This).getTitle, 1, TitleData_Package.getInstance.MAXLEN)) then
                 valid := False;
             end if;
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then

@@ -28,8 +28,8 @@ package body org.allbinary.game.layer.Driver_Package is
       aggression : constant Aggression_Access := Aggression_Access (aggression_Param);
    begin
       Initialize_Fields (This);
-        This.setTurnSpeed (turnSpeed);
-        This.setTrackPathSelectionSkill (trackPathSelectionSkill);
+        Driver'Class (This).setTurnSpeed (turnSpeed);
+        Driver'Class (This).setTrackPathSelectionSkill (trackPathSelectionSkill);
         This.aggression := aggression;
    end Initialize;
 

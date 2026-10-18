@@ -73,11 +73,13 @@ package body org.allbinary.android.activity.MidletActivityBase_Package is
    function getRootView (This : in out MidletActivityBase) return View_Access is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return null;
    end getRootView;
 
    function getView (This : in out MidletActivityBase) return View_Access is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return null;
    end getView;
 
    procedure setKeyInputView (This : in out MidletActivityBase; keyInputView_Param : access View_Package.View'Class) is
@@ -90,6 +92,7 @@ package body org.allbinary.android.activity.MidletActivityBase_Package is
       event : constant MotionEvent_Access := MotionEvent_Access (event_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return False;
    end onGenericMotionEvent;
 
    procedure onGenericMotionEvent (This : in out MidletActivityBase; event_Param : access MotionEvent_Package.MotionEvent'Class) is

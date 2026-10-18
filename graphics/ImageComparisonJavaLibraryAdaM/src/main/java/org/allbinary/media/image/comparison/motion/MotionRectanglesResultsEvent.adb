@@ -30,7 +30,7 @@ package body org.allbinary.media.image.comparison.motion.MotionRectanglesResults
         AllBinaryEventObject_Package.Initialize (This, anyType);
         Initialize_Fields (This);
         This.frame := frame;
-        This.setMotionRectangles (motionRectangles);
+        MotionRectanglesResultsEvent'Class (This).setMotionRectangles (motionRectangles);
    end Initialize;
 
    function Create (anyType_Param : access Java_Object'Class; frame : Long_Long_Integer; motionRectangles_Param : access MotionRectangles_Package.MotionRectangles'Class) return MotionRectanglesResultsEvent_Access is

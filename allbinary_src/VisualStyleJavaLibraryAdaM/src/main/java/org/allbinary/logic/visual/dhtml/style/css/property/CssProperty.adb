@@ -47,7 +47,7 @@ package body org.allbinary.logic.visual.dhtml.style.css.property.CssProperty_Pac
         propertyNode := DomSearchHelper_Package.getNode (DomData_Package.VALUE, node.getChildNodes);
         This.propertyName := DomNodeHelper_Package.getTextNodeValue (propertyNode);
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.STYLE) then
-            This.logUtil.putF (To_Unbounded_String ("Name: ") & This.getName, CssProperty_Access'(This'Unchecked_Access), To_Unbounded_String ("CssProperty()"));
+            This.logUtil.putF (To_Unbounded_String ("Name: ") & CssProperty'Class (This).getName, CssProperty_Access'(This'Unchecked_Access), To_Unbounded_String ("CssProperty()"));
         end if;
         propertyValuesNode := DomSearchHelper_Package.getNode (CssPropertyData_Package.getInstance.VALUES, node.getChildNodes);
         This.cssPropertyValues := CssPropertyValues_Package.Create (propertyValuesNode);
@@ -69,7 +69,7 @@ package body org.allbinary.logic.visual.dhtml.style.css.property.CssProperty_Pac
       hashMap : HashMap_Access;
    begin
         hashMap := StdUtil_Package.getInstance.createHashMap;
-        hashMap.put (CssPropertyData_Package.getInstance.NAME, This.propertyName);
+        hashMap.put (CssPropertyData_Package.getInstance.NAME, Java_Box (This.propertyName));
         return hashMap;
    end toHashMap;
 
@@ -79,7 +79,7 @@ package body org.allbinary.logic.visual.dhtml.style.css.property.CssProperty_Pac
       hashMap : HashMap_Access;
       node : Node_Access;
    begin
-        hashMap := This.toHashMap;
+        hashMap := CssProperty'Class (This).toHashMap;
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
             This.logUtil.putF (To_Unbounded_String ("CssView HashMap: ") & hashMap.toString, CssProperty_Access'(This'Unchecked_Access), To_Unbounded_String ("toXmlNode()"));
         end if;

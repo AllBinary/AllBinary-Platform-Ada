@@ -42,7 +42,7 @@ package body org.allbinary.input.automation.module.osgi.InputAutomationModuleSer
       registration : constant ServiceRegistration_Access := ServiceRegistration_Access (registration_Param);
    begin
         This.logUtil.putF (This.commonStrings.START, InputAutomationModuleServiceFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("getService"));
-        return InputAutomationModuleService_Package.Create (This.getInputAutomationModuleInterfaceArray);
+        return InputAutomationModuleService_Package.Create (InputAutomationModuleServiceFactory'Class (This).getInputAutomationModuleInterfaceArray);
    end getService;
 
    procedure ungetService (This : in out InputAutomationModuleServiceFactory; bundle_Param : access Bundle_Package.Bundle'Class; registration_Param : access ServiceRegistration_Package.ServiceRegistration'Class; service_Param : access Java_Object'Class) is

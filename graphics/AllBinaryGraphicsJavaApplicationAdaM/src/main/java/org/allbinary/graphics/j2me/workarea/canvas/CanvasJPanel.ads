@@ -20,7 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.util.HashMap_Package; use java.util.HashMap_Package;
+with java.util.HashMap_Package; use java.util.HashMap_Package;
 --  with javax.swing.tree.DefaultMutableTreeNode_Package; use javax.swing.tree.DefaultMutableTreeNode_Package;
 --  with javax.swing.tree.MutableTreeNode_Package; use javax.swing.tree.MutableTreeNode_Package;
 with org.allbinary.animation.VectorExplosionGenerator_Package; use org.allbinary.animation.VectorExplosionGenerator_Package;
@@ -68,6 +68,7 @@ with org.allbinary.graphics.j2me.workarea.canvas.Graphics_Package; use org.allbi
 
 package org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package is
 
+   package HashMap_Package renames Standard.java.util.HashMap_Package;
    package VectorExplosionGenerator_Package renames Standard.org.allbinary.animation.VectorExplosionGenerator_Package;
    package VectorMirrorGenerator_Package renames Standard.org.allbinary.animation.VectorMirrorGenerator_Package;
    package VectorCenterGenerator_Package renames Standard.org.allbinary.animation.vector.VectorCenterGenerator_Package;

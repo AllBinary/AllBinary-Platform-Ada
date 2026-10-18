@@ -34,7 +34,7 @@ package body org.allbinary.data.tables.transform.info.TransformInfoEntity_Packag
    begin
         AbSqlBean_Package.Initialize (This, UserDbInitInfo_Package.Create);
         Initialize_Fields (This);
-        This.setTableName (This.tableName);
+        TransformInfoEntity'Class (This).setTableName (This.tableName);
         This.transformInfoObjectConfigGeneratorFactoryInterface := transformInfoObjectConfigGeneratorFactoryInterface;
         This.transformInfoObjectConfigAndManipulatorFactoryInterface := transformInfoObjectConfigAndManipulatorFactoryInterface;
         This.transformInfoFactoryInterface := transformInfoFactoryInterface;
@@ -99,17 +99,17 @@ package body org.allbinary.data.tables.transform.info.TransformInfoEntity_Packag
    begin
         transformInfoData := TransformInfoData_Package.getInstance;
         keysAndValues := StdUtil_Package.getInstance.createHashMap;
-        keysAndValues.put (transformInfoData.NAME, name);
+        keysAndValues.put (transformInfoData.NAME, Java_Box (name));
         hashMap := AbSqlBean (This).getRow (keysAndValues);
         if (hashMap) /= (null) then
             anyType := hashMap.get (transformInfoData.OBJECTCONFIG);
             if (anyType) /= (null) then
-                string_Id := Unbounded_String (anyType);
+                string_Id := Java_Unbox (anyType);
                 hashMap.put (transformInfoData.OBJECTCONFIG, Java_New_String (Encoder_Package.decode (string_Id)));
             end if;
             objectData := hashMap.get (transformInfoData.DATA);
             if (objectData) /= (null) then
-                string_Id := Unbounded_String (objectData);
+                string_Id := Java_Unbox (objectData);
                 hashMap.put (transformInfoData.DATA, Java_New_String (Encoder_Package.decode (string_Id)));
             end if;
             return This.transformInfoFactoryInterface.getInstance (hashMap, propertiesHashMap, pageContext);
@@ -127,10 +127,10 @@ package body org.allbinary.data.tables.transform.info.TransformInfoEntity_Packag
       i : Integer;
    begin
         objectConfigVector := BasicArrayListD_Package.Create;
-        objectConfigColumnVector := This.getColumnWhere (TransformInfoData_Package.getInstance.OBJECTCONFIG, StoreFrontData_Package.getInstance.NAME, storeName);
+        objectConfigColumnVector := TransformInfoEntity'Class (This).getColumnWhere (TransformInfoData_Package.getInstance.OBJECTCONFIG, StoreFrontData_Package.getInstance.NAME, storeName);
         size := objectConfigColumnVector.size;
         for i in 0 .. (size) - 1 loop
-            objectConfigString := Unbounded_String (objectConfigColumnVector.get (i));
+            objectConfigString := Java_Unbox (objectConfigColumnVector.get (i));
             objectConfigString := Java_New_String (Encoder_Package.decode (objectConfigString));
             objectConfigVector.add (This.transformInfoObjectConfigAndManipulatorFactoryInterface.getInstance (This.abeClientInformation, TransformInfoInterface_Access (TransformInfoEntity_Access'(This'Unchecked_Access)), DomDocumentHelper_Package.create (objectConfigString)));
         end loop;
@@ -146,10 +146,10 @@ package body org.allbinary.data.tables.transform.info.TransformInfoEntity_Packag
       i : Integer;
    begin
         viewNameVector := BasicArrayListD_Package.Create;
-        columnVector := This.getColumnWhere (TransformInfoData_Package.getInstance.NAME, StoreFrontData_Package.getInstance.NAME, storeName);
+        columnVector := TransformInfoEntity'Class (This).getColumnWhere (TransformInfoData_Package.getInstance.NAME, StoreFrontData_Package.getInstance.NAME, storeName);
         size := columnVector.size;
         for i in 0 .. (size) - 1 loop
-            viewNameString := Unbounded_String (columnVector.get (i));
+            viewNameString := Java_Unbox (columnVector.get (i));
             viewNameVector.add (viewNameString);
         end loop;
         return viewNameVector;
@@ -195,13 +195,13 @@ package body org.allbinary.data.tables.transform.info.TransformInfoEntity_Packag
 
    function createTable (This : in out TransformInfoEntity) return Unbounded_String is
    begin
-        return AbSqlBean (This).createTable (This.createTableStatement);
+        return AbSqlBean (This).createTable (TransformInfoEntity'Class (This).createTableStatement);
    end createTable;
 
    procedure update (This : in out TransformInfoEntity; updatedValues_Param : access HashMap_Package.HashMap'Class) is
       updatedValues : constant HashMap_Access := HashMap_Access (updatedValues_Param);
    begin
-        AbSqlBean (This).updateWhere (TransformInfoData_Package.getInstance.NAME, Unbounded_String (updatedValues.get (TransformInfoData_Package.getInstance.NAME)), updatedValues);
+        AbSqlBean (This).updateWhere (TransformInfoData_Package.getInstance.NAME, Java_Unbox (updatedValues.get (TransformInfoData_Package.getInstance.NAME)), updatedValues);
    end update;
 
    function dropTable (This : in out TransformInfoEntity) return Unbounded_String is

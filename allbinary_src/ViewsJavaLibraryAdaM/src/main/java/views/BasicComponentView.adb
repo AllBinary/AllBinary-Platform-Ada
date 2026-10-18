@@ -34,8 +34,8 @@ package body views.BasicComponentView_Package is
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
             This.logUtil.putF (To_Unbounded_String ("View Name: ") & transformInfoInterface.getName, BasicComponentView_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         end if;
-        This.setTransformInfoInterface (transformInfoInterface);
-        This.setTransformDocumentInterface (TransformDocumentFactory_Package.getInstance);
+        BasicComponentView'Class (This).setTransformInfoInterface (transformInfoInterface);
+        BasicComponentView'Class (This).setTransformDocumentInterface (TransformDocumentFactory_Package.getInstance);
    end Initialize;
 
    function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return BasicComponentView_Access is
@@ -82,12 +82,12 @@ package body views.BasicComponentView_Package is
       document : Document_Access;
       dataNode : Node_Access;
    begin
-        document := This.getTransformInfoInterface.getDataDocument;
-        dataNode := This.getTransformDocumentInterface.getDoc.importNode (document.getFirstChild, True);
+        document := BasicComponentView'Class (This).getTransformInfoInterface.getDataDocument;
+        dataNode := BasicComponentView'Class (This).getTransformDocumentInterface.getDoc.importNode (document.getFirstChild, True);
         if (dataNode) /= (null) then
-            This.getTransformDocumentInterface.getBaseNode.appendChild (dataNode);
+            BasicComponentView'Class (This).getTransformDocumentInterface.getBaseNode.appendChild (dataNode);
         end if;
-        return This.getTransformDocumentInterface.getDoc;
+        return BasicComponentView'Class (This).getTransformDocumentInterface.getDoc;
    end getDoc;
 
    --  throws Exception
@@ -96,8 +96,8 @@ package body views.BasicComponentView_Package is
       result : Unbounded_String;
    begin
         begin
-            success := XmlDocumentHelper_Package.toString (This.getDoc);
-            result := BasicTransformer_Package.Create (This.abeClientInformation, This.getTransformInfoInterface).translate (success);
+            success := XmlDocumentHelper_Package.toString (BasicComponentView'Class (This).getDoc);
+            result := BasicTransformer_Package.Create (This.abeClientInformation, BasicComponentView'Class (This).getTransformInfoInterface).translate (success);
             return result;
         exception
             when Java_Occurrence : others =>

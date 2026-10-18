@@ -57,7 +57,7 @@ package body org.allbinary.game.displayable.canvas.CommandFormInputProcessor_Pac
             return 1;
         elsif (key) = (Canvas_Package.FIRE) then
             PrimaryPlayerQueueFactory_Package.getInstance.add (SelectSound_Package.getInstance);
-            return This.processCommand;
+            return CommandFormInputProcessor'Class (This).processCommand;
         end if;
         return 0;
    end processInput;
@@ -95,8 +95,8 @@ package body org.allbinary.game.displayable.canvas.CommandFormInputProcessor_Pac
       index : Integer;
    begin
         begin
-            motionInputsIndex := This.processMotionInputs;
-            list := This.getGameKeyEventList;
+            motionInputsIndex := CommandFormInputProcessor'Class (This).processMotionInputs;
+            list := CommandFormInputProcessor'Class (This).getGameKeyEventList;
             size := list.size;
             key := 0;
             gameKeyEvent := null;
@@ -104,12 +104,12 @@ package body org.allbinary.game.displayable.canvas.CommandFormInputProcessor_Pac
                 gameKeyEvent := GameKeyEvent_Access (list.objectArray (index));
                 key := gameKeyEvent.getKey;
                 if (gameKeyEvent.getSourceId) /= (This.MOTION_GESTURE_SOURCE_ID) then
-                    if (This.processInput (key)) = (1) then
+                    if (CommandFormInputProcessor'Class (This).processInput (key)) = (1) then
                         exit;
                     end if;
                 end if;
             end loop;
-            This.clear;
+            CommandFormInputProcessor'Class (This).clear;
             if ((size) > (0)) or else ((motionInputsIndex) >= (0)) then
                 return 1;
             else
@@ -134,7 +134,7 @@ package body org.allbinary.game.displayable.canvas.CommandFormInputProcessor_Pac
         lastIndex := (This.motionGestureEventList.size) - (1);
         if (lastIndex) >= (0) then
             motionGestureEvent := MotionGestureEvent_Access (This.motionGestureEventList.objectArray (lastIndex));
-            This.processMotionInput (motionGestureEvent);
+            CommandFormInputProcessor'Class (This).processMotionInput (motionGestureEvent);
         end if;
         This.motionGestureEventList.clear;
         return lastIndex;
@@ -158,7 +158,7 @@ package body org.allbinary.game.displayable.canvas.CommandFormInputProcessor_Pac
                     PrimaryPlayerQueueFactory_Package.getInstance.add (SelectSound_Package.getInstance);
                     if (index) = (This.form.getSelectedIndex) then
                         if This.clickTimeHelper.isTimeTNT then
-                            This.processCommand;
+                            CommandFormInputProcessor'Class (This).processCommand;
                         end if;
                     else
                         This.form.setSelectedIndex (index);
@@ -170,7 +170,7 @@ package body org.allbinary.game.displayable.canvas.CommandFormInputProcessor_Pac
             if This.hasPressed then
                 if not (This.doubleClickTimeHelper.isTimeTNT) then
                     This.logUtil.putF (To_Unbounded_String ("Double Press"), CommandFormInputProcessor_Access'(This'Unchecked_Access), This.gameInputStrings.PROCESS_MOTION_INPUT);
-                    This.processCommand;
+                    CommandFormInputProcessor'Class (This).processCommand;
                 end if;
                 This.doubleClickTimeHelper.delay_Id := This.DOUBLE_CLICK_DELAY;
                 This.doubleClickTimeHelper.setStartTimeTNT;

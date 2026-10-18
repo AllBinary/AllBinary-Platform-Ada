@@ -118,23 +118,23 @@ package body org.allbinary.graphics.displayable.MyCanvas_Package is
 
    procedure removePauseCommand (This : in out MyCanvas) is
    begin
-        This.removeCommand (MyCommandsFactory_Package.getInstance.PAUSE_COMMAND);
+        MyCanvas'Class (This).removeCommand (MyCommandsFactory_Package.getInstance.PAUSE_COMMAND);
    end removePauseCommand;
 
    procedure pause (This : in out MyCanvas) is
    begin
         This.logUtil.putF (This.commonStrings.START, MyCanvas_Access'(This'Unchecked_Access), This.canvasStrings.PAUSE);
-        This.removePauseCommand;
-        This.addCommand (MyCommandsFactory_Package.getInstance.RESUME_COMMAND);
-        This.setPaused (True);
+        MyCanvas'Class (This).removePauseCommand;
+        MyCanvas'Class (This).addCommand (MyCommandsFactory_Package.getInstance.RESUME_COMMAND);
+        MyCanvas'Class (This).setPaused (True);
    end pause;
 
    procedure unPause (This : in out MyCanvas) is
    begin
         This.logUtil.putF (This.commonStrings.START, MyCanvas_Access'(This'Unchecked_Access), This.canvasStrings.UN_PAUSE);
-        This.removeCommand (MyCommandsFactory_Package.getInstance.RESUME_COMMAND);
-        This.addCommand (MyCommandsFactory_Package.getInstance.PAUSE_COMMAND);
-        This.setPaused (False);
+        MyCanvas'Class (This).removeCommand (MyCommandsFactory_Package.getInstance.RESUME_COMMAND);
+        MyCanvas'Class (This).addCommand (MyCommandsFactory_Package.getInstance.PAUSE_COMMAND);
+        MyCanvas'Class (This).setPaused (False);
    end unPause;
 
    --  throws Exception

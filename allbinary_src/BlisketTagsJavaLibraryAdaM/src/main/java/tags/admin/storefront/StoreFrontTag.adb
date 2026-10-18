@@ -39,31 +39,31 @@ package body tags.admin.storefront.StoreFrontTag_Package is
    function doStartTag (This : in out StoreFrontTag) return Integer is
    begin
         begin
-            if (This.getCommand) /= (null) then
-                if (This.getCommand.compareTo (This.commonStrings.INSERT)) = (0) then
-                    This.setName (To_Unbounded_String ("Add Validation StoreFront View"));
-                    This.setObjectFile (To_Unbounded_String ("views.admin.storefront.AddValidationStoreFrontView"));
-                elsif (This.getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.VIEW)) = (0) then
+            if (StoreFrontTag'Class (This).getCommand) /= (null) then
+                if (StoreFrontTag'Class (This).getCommand.compareTo (This.commonStrings.INSERT)) = (0) then
+                    StoreFrontTag'Class (This).setName (To_Unbounded_String ("Add Validation StoreFront View"));
+                    StoreFrontTag'Class (This).setObjectFile (To_Unbounded_String ("views.admin.storefront.AddValidationStoreFrontView"));
+                elsif (StoreFrontTag'Class (This).getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.VIEW)) = (0) then
                     Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("View not implemented")));
-                elsif (This.getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.EDIT)) = (0) then
-                    This.setName (To_Unbounded_String ("Edit Validation StoreFront View"));
-                    This.setObjectFile (To_Unbounded_String ("views.admin.storefront.EditValidationStoreFrontView"));
-                elsif (This.getCommand.compareTo (This.commonStrings.UPDATE)) = (0) then
-                    This.setName (To_Unbounded_String ("Update Validation StoreFront View"));
-                    This.setObjectFile (To_Unbounded_String ("views.admin.storefront.UpdateValidationStoreFrontView"));
-                elsif (This.getCommand.compareTo (This.commonStrings.DELETE)) = (0) then
-                    This.setName (To_Unbounded_String ("Delete Validation StoreFront View"));
-                    This.setObjectFile (To_Unbounded_String ("views.admin.storefront.DeleteValidationStoreFrontView"));
-                elsif (This.getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.BACKUP)) = (0) then
+                elsif (StoreFrontTag'Class (This).getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.EDIT)) = (0) then
+                    StoreFrontTag'Class (This).setName (To_Unbounded_String ("Edit Validation StoreFront View"));
+                    StoreFrontTag'Class (This).setObjectFile (To_Unbounded_String ("views.admin.storefront.EditValidationStoreFrontView"));
+                elsif (StoreFrontTag'Class (This).getCommand.compareTo (This.commonStrings.UPDATE)) = (0) then
+                    StoreFrontTag'Class (This).setName (To_Unbounded_String ("Update Validation StoreFront View"));
+                    StoreFrontTag'Class (This).setObjectFile (To_Unbounded_String ("views.admin.storefront.UpdateValidationStoreFrontView"));
+                elsif (StoreFrontTag'Class (This).getCommand.compareTo (This.commonStrings.DELETE)) = (0) then
+                    StoreFrontTag'Class (This).setName (To_Unbounded_String ("Delete Validation StoreFront View"));
+                    StoreFrontTag'Class (This).setObjectFile (To_Unbounded_String ("views.admin.storefront.DeleteValidationStoreFrontView"));
+                elsif (StoreFrontTag'Class (This).getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.BACKUP)) = (0) then
                     Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("View not implemented")));
-                elsif (This.getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.RESTORE)) = (0) then
+                elsif (StoreFrontTag'Class (This).getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.RESTORE)) = (0) then
                     Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("View not implemented")));
-                elsif (This.getCommand.compareTo (This.commonStrings.DROP)) = (0) then
+                elsif (StoreFrontTag'Class (This).getCommand.compareTo (This.commonStrings.DROP)) = (0) then
                     Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("View not implemented")));
-                elsif (This.getCommand.compareTo (This.commonStrings.CREATE)) = (0) then
+                elsif (StoreFrontTag'Class (This).getCommand.compareTo (This.commonStrings.CREATE)) = (0) then
                     Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("View not implemented")));
                 else
-                    Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("No Such View Command: ") & Java_Image (This.getCommand)));
+                    Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("No Such View Command: ") & Java_Image (StoreFrontTag'Class (This).getCommand)));
                 end if;
                 return StoreValidationTransformTag (This).doStartTag;
             end if;

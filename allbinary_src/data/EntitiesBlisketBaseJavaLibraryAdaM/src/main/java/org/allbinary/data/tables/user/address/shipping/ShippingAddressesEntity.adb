@@ -26,7 +26,7 @@ package body org.allbinary.data.tables.user.address.shipping.ShippingAddressesEn
    begin
         StreetAddressesEntity_Package.Initialize (This, userName);
         Initialize_Fields (This);
-        This.setTableName (This.TABLENAME);
+        ShippingAddressesEntity'Class (This).setTableName (This.TABLENAME);
    end Initialize;
 
    function Create (userName : Unbounded_String) return ShippingAddressesEntity_Access is

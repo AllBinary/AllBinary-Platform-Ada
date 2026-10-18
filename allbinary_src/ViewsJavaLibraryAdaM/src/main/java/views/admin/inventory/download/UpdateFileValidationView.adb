@@ -55,7 +55,7 @@ package body views.admin.inventory.download.UpdateFileValidationView_Package is
       downloadableItemValidation : DownloadableItemValidation_Access;
    begin
         begin
-            command := Unbounded_String (This.getRequestHashMap.get (GLOBALS2.ADMINCOMMAND));
+            command := Java_Unbox (UpdateFileValidationView'Class (This).getRequestHashMap.get (GLOBALS2.ADMINCOMMAND));
             if (StringValidationUtil_Package.getInstance.isEmpty (command)) or else ((command.compareTo (This.commonStrings.UPDATE)) /= (0)) then
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
                     This.logUtil.putF (To_Unbounded_String ("Invalid AdminCommand=") & command, UpdateFileValidationView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
@@ -87,7 +87,7 @@ package body views.admin.inventory.download.UpdateFileValidationView_Package is
                 end if;
                 return False;
             end if;
-            storeFrontInterface := StoreFrontFactory_Package.getInstance (This.getWeblisketSession.getStoreName);
+            storeFrontInterface := StoreFrontFactory_Package.getInstance (UpdateFileValidationView'Class (This).getWeblisketSession.getStoreName);
             fullCategory := StringMaker_Package.Create.append (URLGLOBALS.getWebappPath).append (storeFrontInterface.getCurrentHostNamePath).append (This.itemInterface.getCategory).toString;
             categoryFile := AbFile_Package.createAbFile (fullCategory);
             if not (categoryFile.isDirectory) then
@@ -96,61 +96,61 @@ package body views.admin.inventory.download.UpdateFileValidationView_Package is
                 end if;
                 return False;
             end if;
-            downloadableFileObject := This.getRequestHashMap.get (DownloadItemData_Package.FILE);
+            downloadableFileObject := UpdateFileValidationView'Class (This).getRequestHashMap.get (DownloadItemData_Package.FILE);
             if HttpFileUploadUtil_Package.getInstance.isValid (downloadableFileObject) then
                 fileItem := FileItem_Access (downloadableFileObject);
                 fileName := fileItem.getName;
                 size := fileItem.getSize;
                 HttpFileUploadUtil_Package.log (fileItem);
-                if (This.isValid (fileName, size)) = (False) then
+                if (UpdateFileValidationView'Class (This).isValid (fileName, size)) = (False) then
                     return False;
                 else
-                    This.processFile (fileItem);
-                    This.getRequestHashMap.put (DownloadItemData_Package.SIZE, To_Unbounded_String (Java_Image (size)));
+                    UpdateFileValidationView'Class (This).processFile (fileItem);
+                    UpdateFileValidationView'Class (This).getRequestHashMap.put (DownloadItemData_Package.SIZE, To_Unbounded_String (Java_Image (size)));
                 end if;
             else
-                This.getRequestHashMap.remove (DownloadItemData_Package.FILE);
+                UpdateFileValidationView'Class (This).getRequestHashMap.remove (DownloadItemData_Package.FILE);
             end if;
-            licenseFileObject := This.getRequestHashMap.get (DownloadItemData_Package.LICENSE_FILE);
+            licenseFileObject := UpdateFileValidationView'Class (This).getRequestHashMap.get (DownloadItemData_Package.LICENSE_FILE);
             if HttpFileUploadUtil_Package.getInstance.isValid (licenseFileObject) then
                 fileItem := FileItem_Access (licenseFileObject);
                 fileName := fileItem.getName;
                 size := fileItem.getSize;
                 HttpFileUploadUtil_Package.log (fileItem);
-                if (This.isValid (fileName, size)) = (False) then
+                if (UpdateFileValidationView'Class (This).isValid (fileName, size)) = (False) then
                     null;
                 else
-                    This.processFile (fileItem);
+                    UpdateFileValidationView'Class (This).processFile (fileItem);
                 end if;
             else
-                This.getRequestHashMap.remove (DownloadItemData_Package.LICENSE_FILE);
+                UpdateFileValidationView'Class (This).getRequestHashMap.remove (DownloadItemData_Package.LICENSE_FILE);
             end if;
-            extraFilesObject := This.getRequestHashMap.get (DownloadItemData_Package.EXTRA_FILES);
+            extraFilesObject := UpdateFileValidationView'Class (This).getRequestHashMap.get (DownloadItemData_Package.EXTRA_FILES);
             if HttpFileUploadUtil_Package.getInstance.isValid (extraFilesObject) then
                 fileItem := FileItem_Access (extraFilesObject);
                 fileName := fileItem.getName;
                 size := fileItem.getSize;
                 HttpFileUploadUtil_Package.log (fileItem);
-                if (This.isValid (fileName, size)) = (False) then
+                if (UpdateFileValidationView'Class (This).isValid (fileName, size)) = (False) then
                     null;
                 else
-                    This.processFile (fileItem);
-                    This.unzip (fileItem);
+                    UpdateFileValidationView'Class (This).processFile (fileItem);
+                    UpdateFileValidationView'Class (This).unzip (fileItem);
                 end if;
             else
-                This.getRequestHashMap.remove (DownloadItemData_Package.EXTRA_FILES);
+                UpdateFileValidationView'Class (This).getRequestHashMap.remove (DownloadItemData_Package.EXTRA_FILES);
             end if;
-            hashMap := This.getRequestHashMap;
+            hashMap := UpdateFileValidationView'Class (This).getRequestHashMap;
             hashMap.put (This.basicItemData.ID, This.itemInterface.getId);
             licenseObject := hashMap.get (DownloadItemData_Package.LICENSE_FILE);
             if (licenseObject) /= (null) then
-                hashMap.put (DownloadItemData_Package.LICENSE_FILE, (FileItem_Access (licenseObject)).getName);
+                hashMap.put (DownloadItemData_Package.LICENSE_FILE, Java_Box ((FileItem_Access (licenseObject)).getName));
             else
                 hashMap.put (DownloadItemData_Package.LICENSE_FILE, StringUtil_Package.getInstance.EMPTY_STRING);
             end if;
             fileObject := hashMap.get (DownloadItemData_Package.FILE);
             if (fileObject) /= (null) then
-                hashMap.put (DownloadItemData_Package.FILE, (FileItem_Access (fileObject)).getName);
+                hashMap.put (DownloadItemData_Package.FILE, Java_Box ((FileItem_Access (fileObject)).getName));
             else
                 hashMap.put (DownloadItemData_Package.FILE, StringUtil_Package.getInstance.EMPTY_STRING);
             end if;
@@ -206,7 +206,7 @@ package body views.admin.inventory.download.UpdateFileValidationView_Package is
    begin
         begin
             stringBuffer := StringMaker_Package.Create;
-            command := Unbounded_String (This.getRequestHashMap.get (GLOBALS2.ADMINCOMMAND));
+            command := Java_Unbox (UpdateFileValidationView'Class (This).getRequestHashMap.get (GLOBALS2.ADMINCOMMAND));
             if (StringValidationUtil_Package.getInstance.isEmpty (command)) or else ((command.compareTo (This.commonStrings.UPDATE)) /= (0)) then
                 return StringUtil_Package.getInstance.EMPTY_STRING;
             end if;
@@ -222,7 +222,7 @@ package body views.admin.inventory.download.UpdateFileValidationView_Package is
                 stringBuffer.append (basicItemValidation.validationInfo);
                 stringBuffer.append (To_Unbounded_String ("<br/>"));
             end if;
-            storeFrontInterface := StoreFrontFactory_Package.getInstance (This.getWeblisketSession.getStoreName);
+            storeFrontInterface := StoreFrontFactory_Package.getInstance (UpdateFileValidationView'Class (This).getWeblisketSession.getStoreName);
             fullCategory := StringMaker_Package.Create.append (URLGLOBALS.getWebappPath).append (storeFrontInterface.getCurrentHostNamePath).append (This.itemInterface.getCategory).toString;
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
                 This.logUtil.putF (To_Unbounded_String ("Category: ") & fullCategory, UpdateFileValidationView_Access'(This'Unchecked_Access), To_Unbounded_String ("validationInfo()"));
@@ -234,31 +234,31 @@ package body views.admin.inventory.download.UpdateFileValidationView_Package is
                 stringBuffer.append (To_Unbounded_String (" does not exist."));
                 stringBuffer.append (To_Unbounded_String ("<br />"));
             end if;
-            downloadableFileObject := This.getRequestHashMap.get (DownloadItemData_Package.FILE);
+            downloadableFileObject := UpdateFileValidationView'Class (This).getRequestHashMap.get (DownloadItemData_Package.FILE);
             if HttpFileUploadUtil_Package.getInstance.isValid (downloadableFileObject) then
                 fileItem := FileItem_Access (downloadableFileObject);
                 fileName := fileItem.getName;
                 size := fileItem.getSize;
-                This.validationInfo (stringBuffer, fileName, size);
+                UpdateFileValidationView'Class (This).validationInfo (stringBuffer, fileName, size);
             else
                 stringBuffer.append (To_Unbounded_String ("Download File Missing"));
                 stringBuffer.append (To_Unbounded_String ("<br/>"));
             end if;
-            licenseFileObject := This.getRequestHashMap.get (DownloadItemData_Package.LICENSE_FILE);
+            licenseFileObject := UpdateFileValidationView'Class (This).getRequestHashMap.get (DownloadItemData_Package.LICENSE_FILE);
             if HttpFileUploadUtil_Package.getInstance.isValid (licenseFileObject) then
                 fileItem := FileItem_Access (licenseFileObject);
                 fileName := fileItem.getName;
                 size := fileItem.getSize;
-                This.validationInfo (stringBuffer, fileName, size);
+                UpdateFileValidationView'Class (This).validationInfo (stringBuffer, fileName, size);
             else
                 null;
             end if;
-            extraFilesObject := This.getRequestHashMap.get (DownloadItemData_Package.EXTRA_FILES);
+            extraFilesObject := UpdateFileValidationView'Class (This).getRequestHashMap.get (DownloadItemData_Package.EXTRA_FILES);
             if HttpFileUploadUtil_Package.getInstance.isValid (extraFilesObject) then
                 fileItem := FileItem_Access (extraFilesObject);
                 fileName := fileItem.getName;
                 size := fileItem.getSize;
-                This.validationInfo (stringBuffer, fileName, size);
+                UpdateFileValidationView'Class (This).validationInfo (stringBuffer, fileName, size);
             else
                 null;
             end if;

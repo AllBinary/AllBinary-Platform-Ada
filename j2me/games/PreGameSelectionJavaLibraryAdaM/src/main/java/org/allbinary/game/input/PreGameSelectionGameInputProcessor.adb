@@ -32,17 +32,17 @@ package body org.allbinary.game.input.PreGameSelectionGameInputProcessor_Package
 --        commonStrings : CommonStrings_Access;
 --     begin
 --              begin
---                  This.setRunning (True);
+--                  PreGameSelectionGameInputProcessor'Class (This).setRunning (True);
 --                  SecondaryPlayerQueueFactory_Package.getInstance.add (SelectSound_Package.getInstance);
 --                  This.gameCanvas.setGameState (This.nextGameState);
---                  GameKeyEventHandler_Package.getInstance.removeListener (This.getPlayerGameInput);
---                  This.setRunning (False);
+--                  GameKeyEventHandler_Package.getInstance.removeListener (PreGameSelectionGameInputProcessor'Class (This).getPlayerGameInput);
+--                  PreGameSelectionGameInputProcessor'Class (This).setRunning (False);
 --              exception
 --                  when Java_Occurrence : others =>
 --                      declare
 --                          e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
 --                      begin
---                  This.setRunning (False);
+--                  PreGameSelectionGameInputProcessor'Class (This).setRunning (False);
 --                  logUtil := LogUtil_Package.getInstance;
 --                  commonStrings := CommonStrings_Package.getInstance;
 --                  logUtil.put (commonStrings.EXCEPTION_Id, PreGameSelectionGameInputProcessor_Access'(This'Unchecked_Access), commonStrings.RUN, e);
@@ -77,7 +77,7 @@ package body org.allbinary.game.input.PreGameSelectionGameInputProcessor_Package
    --  throws Exception
    procedure process (This : in out PreGameSelectionGameInputProcessor) is
    begin
-        This.getPlayerGameInput.update;
+        PreGameSelectionGameInputProcessor'Class (This).getPlayerGameInput.update;
    end process;
 
    --  throws Exception
@@ -96,7 +96,7 @@ package body org.allbinary.game.input.PreGameSelectionGameInputProcessor_Package
             if ((((key) = (Canvas_Package.LEFT)) or else ((key) = (Canvas_Package.RIGHT))) or else ((key) = (Canvas_Package.UP))) or else ((key) = (Canvas_Package.DOWN)) then
                 if This.inputTimeHelper.isTimeTNT then
                     SecondaryPlayerQueueFactory_Package.getInstance.add (SelectSound_Package.getInstance);
-                    This.getPreGameSelectorPaintable.getPreGameSelectionForm.processInputKey (key);
+                    PreGameSelectionGameInputProcessor'Class (This).getPreGameSelectorPaintable.getPreGameSelectionForm.processInputKey (key);
                     exit;
                 end if;
             elsif (key) = (Canvas_Package.KEY_NUM0) then
@@ -134,7 +134,7 @@ package body org.allbinary.game.input.PreGameSelectionGameInputProcessor_Package
 
    function getName (This : in out PreGameSelectionGameInputProcessor) return Unbounded_String is
    begin
-        return This.toString;
+        return PreGameSelectionGameInputProcessor'Class (This).toString;
    end getName;
 
    function getPlayerGameInput (This : in out PreGameSelectionGameInputProcessor) return PlayerGameInput_Access is

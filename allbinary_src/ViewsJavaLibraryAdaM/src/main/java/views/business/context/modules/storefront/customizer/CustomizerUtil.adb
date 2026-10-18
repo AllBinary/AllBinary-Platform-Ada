@@ -75,7 +75,7 @@ package body views.business.context.modules.storefront.customizer.CustomizerUtil
         viewName := transformInfoInterface.getName;
         httpTransformInfoInterface := TransformInfoHttpInterface_Access (customizerTransformInfoInterface);
         customizedTransformInfoInterface := transformInfoEntityInterface.get (viewName, httpTransformInfoInterface.getPropertiesHashMap, httpTransformInfoInterface.getPageContext);
-        return This.getTransformInfoObjectConfigComponentNodes (customizedTransformInfoInterface);
+        return CustomizerUtil'Class (This).getTransformInfoObjectConfigComponentNodes (customizedTransformInfoInterface);
    end getTransformInfoObjectConfigComponentNodesToCustomize;
 
    --  throws Exception
@@ -122,7 +122,7 @@ package body views.business.context.modules.storefront.customizer.CustomizerUtil
             This.logUtil.putF (To_Unbounded_String ("View Name: ") & transformInfoInterface.getName, CustomizerUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("insert()"));
         end if;
         transformInfoEntityInterface := TransformInfoEntityBuilder_Package.getInstance;
-        allViewsToBeModified := This.getTransformInfoObjectConfigGroupComponentNodes (transformInfoInterface);
+        allViewsToBeModified := CustomizerUtil'Class (This).getTransformInfoObjectConfigGroupComponentNodes (transformInfoInterface);
         document := DomDocumentHelper_Package.create;
         document.appendChild (domNodeInterface.toXmlNode (document));
         documentString := XmlDocumentHelper_Package.toString (document);
@@ -170,7 +170,7 @@ package body views.business.context.modules.storefront.customizer.CustomizerUtil
                     stringBuffer.append (documentString);
                     This.logUtil.putF (stringBuffer.toString, CustomizerUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("insert()"));
                 end if;
-                This.write (specifiedTransformInfoInterface, documentString);
+                CustomizerUtil'Class (This).write (specifiedTransformInfoInterface, documentString);
             end if;
         end loop;
    end insert;

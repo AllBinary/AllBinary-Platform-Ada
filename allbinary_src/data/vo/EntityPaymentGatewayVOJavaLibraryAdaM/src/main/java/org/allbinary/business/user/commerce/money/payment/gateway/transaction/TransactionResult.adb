@@ -122,13 +122,13 @@ package body org.allbinary.business.user.commerce.money.payment.gateway.transact
       stringUtil : StringUtil_Access;
       i : Integer;
    begin
-        keyVector := This.getAllPossibleKeys;
+        keyVector := TransactionResult'Class (This).getAllPossibleKeys;
         valueVector := BasicArrayListD_Package.Create;
         size := keyVector.size;
         for i in 0 .. (size) - 1 loop
-            key := Unbounded_String (keyVector.get (i));
-            if This.keyValuePairs.containsKey (key) then
-                valueVector.add (This.keyValuePairs.get (key));
+            key := Java_Unbox (keyVector.get (i));
+            if This.keyValuePairs.containsKey (Java_Box (key)) then
+                valueVector.add (This.keyValuePairs.get (Java_Box (key)));
             else
                 stringUtil := StringUtil_Package.getInstance;
                 valueVector.add (stringUtil.EMPTY_STRING);
@@ -139,107 +139,107 @@ package body org.allbinary.business.user.commerce.money.payment.gateway.transact
 
    function getPnRef (This : in out TransactionResult) return Unbounded_String is
    begin
-        return Unbounded_String (This.keyValuePairs.get (PaymentTransactionKeysFactory_Package.getInstance.PNREF.toString));
+        return Java_Unbox (This.keyValuePairs.get (Java_Box (PaymentTransactionKeysFactory_Package.getInstance.PNREF.toString)));
    end getPnRef;
 
    function getRespMsg (This : in out TransactionResult) return Unbounded_String is
    begin
-        return Unbounded_String (This.keyValuePairs.get (PaymentTransactionKeysFactory_Package.getInstance.RESPMSG.toString));
+        return Java_Unbox (This.keyValuePairs.get (Java_Box (PaymentTransactionKeysFactory_Package.getInstance.RESPMSG.toString)));
    end getRespMsg;
 
    function getResult (This : in out TransactionResult) return Unbounded_String is
    begin
-        return Unbounded_String (This.keyValuePairs.get (PaymentTransactionKeysFactory_Package.getInstance.RESULT.toString));
+        return Java_Unbox (This.keyValuePairs.get (Java_Box (PaymentTransactionKeysFactory_Package.getInstance.RESULT.toString)));
    end getResult;
 
    function getScore (This : in out TransactionResult) return Unbounded_String is
    begin
-        return Unbounded_String (This.keyValuePairs.get (PaymentTransactionKeysFactory_Package.getInstance.SCORE.toString));
+        return Java_Unbox (This.keyValuePairs.get (Java_Box (PaymentTransactionKeysFactory_Package.getInstance.SCORE.toString)));
    end getScore;
 
    function getStatus (This : in out TransactionResult) return Unbounded_String is
    begin
-        return Unbounded_String (This.keyValuePairs.get (PaymentTransactionKeysFactory_Package.getInstance.STATUS.toString));
+        return Java_Unbox (This.keyValuePairs.get (Java_Box (PaymentTransactionKeysFactory_Package.getInstance.STATUS.toString)));
    end getStatus;
 
    function getFraudCode (This : in out TransactionResult) return Unbounded_String is
    begin
-        return Unbounded_String (This.keyValuePairs.get (PaymentTransactionKeysFactory_Package.getInstance.FRAUDCODE.toString));
+        return Java_Unbox (This.keyValuePairs.get (Java_Box (PaymentTransactionKeysFactory_Package.getInstance.FRAUDCODE.toString)));
    end getFraudCode;
 
    function getFraudMsg (This : in out TransactionResult) return Unbounded_String is
    begin
-        return Unbounded_String (This.keyValuePairs.get (PaymentTransactionKeysFactory_Package.getInstance.FRAUDMSG.toString));
+        return Java_Unbox (This.keyValuePairs.get (Java_Box (PaymentTransactionKeysFactory_Package.getInstance.FRAUDMSG.toString)));
    end getFraudMsg;
 
    function getOrigResult (This : in out TransactionResult) return Unbounded_String is
    begin
-        return Unbounded_String (This.keyValuePairs.get (PaymentTransactionKeysFactory_Package.getInstance.ORIGRESULT.toString));
+        return Java_Unbox (This.keyValuePairs.get (Java_Box (PaymentTransactionKeysFactory_Package.getInstance.ORIGRESULT.toString)));
    end getOrigResult;
 
    function getAvsAddr (This : in out TransactionResult) return Unbounded_String is
    begin
-        return Unbounded_String (This.keyValuePairs.get (PaymentTransactionKeysFactory_Package.getInstance.AVSADDR.toString));
+        return Java_Unbox (This.keyValuePairs.get (Java_Box (PaymentTransactionKeysFactory_Package.getInstance.AVSADDR.toString)));
    end getAvsAddr;
 
    function getAvsZip (This : in out TransactionResult) return Unbounded_String is
    begin
-        return Unbounded_String (This.keyValuePairs.get (PaymentTransactionKeysFactory_Package.getInstance.AVSZIP.toString));
+        return Java_Unbox (This.keyValuePairs.get (Java_Box (PaymentTransactionKeysFactory_Package.getInstance.AVSZIP.toString)));
    end getAvsZip;
 
    function getErrCode (This : in out TransactionResult) return Unbounded_String is
    begin
-        return Unbounded_String (This.keyValuePairs.get (PaymentTransactionKeysFactory_Package.getInstance.ERRCODE.toString));
+        return Java_Unbox (This.keyValuePairs.get (Java_Box (PaymentTransactionKeysFactory_Package.getInstance.ERRCODE.toString)));
    end getErrCode;
 
    function getException1 (This : in out TransactionResult) return Unbounded_String is
    begin
-        return Unbounded_String (This.keyValuePairs.get (PaymentTransactionKeysFactory_Package.getInstance.EXCEPTION1.toString));
+        return Java_Unbox (This.keyValuePairs.get (Java_Box (PaymentTransactionKeysFactory_Package.getInstance.EXCEPTION1.toString)));
    end getException1;
 
    function getException2 (This : in out TransactionResult) return Unbounded_String is
    begin
-        return Unbounded_String (This.keyValuePairs.get (PaymentTransactionKeysFactory_Package.getInstance.EXCEPTION2.toString));
+        return Java_Unbox (This.keyValuePairs.get (Java_Box (PaymentTransactionKeysFactory_Package.getInstance.EXCEPTION2.toString)));
    end getException2;
 
    function getException3 (This : in out TransactionResult) return Unbounded_String is
    begin
-        return Unbounded_String (This.keyValuePairs.get (PaymentTransactionKeysFactory_Package.getInstance.EXCEPTION3.toString));
+        return Java_Unbox (This.keyValuePairs.get (Java_Box (PaymentTransactionKeysFactory_Package.getInstance.EXCEPTION3.toString)));
    end getException3;
 
    function getException4 (This : in out TransactionResult) return Unbounded_String is
    begin
-        return Unbounded_String (This.keyValuePairs.get (PaymentTransactionKeysFactory_Package.getInstance.EXCEPTION4.toString));
+        return Java_Unbox (This.keyValuePairs.get (Java_Box (PaymentTransactionKeysFactory_Package.getInstance.EXCEPTION4.toString)));
    end getException4;
 
    function getException5 (This : in out TransactionResult) return Unbounded_String is
    begin
-        return Unbounded_String (This.keyValuePairs.get (PaymentTransactionKeysFactory_Package.getInstance.EXCEPTION5.toString));
+        return Java_Unbox (This.keyValuePairs.get (Java_Box (PaymentTransactionKeysFactory_Package.getInstance.EXCEPTION5.toString)));
    end getException5;
 
    function getException6 (This : in out TransactionResult) return Unbounded_String is
    begin
-        return Unbounded_String (This.keyValuePairs.get (PaymentTransactionKeysFactory_Package.getInstance.EXCEPTION6.toString));
+        return Java_Unbox (This.keyValuePairs.get (Java_Box (PaymentTransactionKeysFactory_Package.getInstance.EXCEPTION6.toString)));
    end getException6;
 
    function getException7 (This : in out TransactionResult) return Unbounded_String is
    begin
-        return Unbounded_String (This.keyValuePairs.get (PaymentTransactionKeysFactory_Package.getInstance.EXCEPTION7.toString));
+        return Java_Unbox (This.keyValuePairs.get (Java_Box (PaymentTransactionKeysFactory_Package.getInstance.EXCEPTION7.toString)));
    end getException7;
 
    function getReason1 (This : in out TransactionResult) return Unbounded_String is
    begin
-        return Unbounded_String (This.keyValuePairs.get (PaymentTransactionKeysFactory_Package.getInstance.REASON1.toString));
+        return Java_Unbox (This.keyValuePairs.get (Java_Box (PaymentTransactionKeysFactory_Package.getInstance.REASON1.toString)));
    end getReason1;
 
    function getReason2 (This : in out TransactionResult) return Unbounded_String is
    begin
-        return Unbounded_String (This.keyValuePairs.get (PaymentTransactionKeysFactory_Package.getInstance.REASON2.toString));
+        return Java_Unbox (This.keyValuePairs.get (Java_Box (PaymentTransactionKeysFactory_Package.getInstance.REASON2.toString)));
    end getReason2;
 
    function getReason3 (This : in out TransactionResult) return Unbounded_String is
    begin
-        return Unbounded_String (This.keyValuePairs.get (PaymentTransactionKeysFactory_Package.getInstance.REASON3.toString));
+        return Java_Unbox (This.keyValuePairs.get (Java_Box (PaymentTransactionKeysFactory_Package.getInstance.REASON3.toString)));
    end getReason3;
 
 end org.allbinary.business.user.commerce.money.payment.gateway.transaction.TransactionResult_Package;

@@ -41,6 +41,7 @@ package body org.allbinary.logic.util.cache.PoolInterfaceFactory_Package is
       cachePolicy : constant CachePolicy_Access := CachePolicy_Access (cachePolicy_Param);
    begin
         Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("No Such PoolType: ") & poolType.toString));
+        return null;
    end getInstance;
 
    procedure getInstance (cacheableInterfaceFactoryInterface_Param : access CacheableInterfaceFactoryInterface_Package.CacheableInterfaceFactoryInterface'Class; poolType_Param : access PoolType_Package.PoolType'Class; cachePolicy_Param : access CachePolicy_Package.CachePolicy'Class) is

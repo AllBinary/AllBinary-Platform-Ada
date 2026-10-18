@@ -20,11 +20,12 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with javax.microedition.midlet.MIDlet_Package; use javax.microedition.midlet.MIDlet_Package;
+with javax.microedition.midlet.MIDlet_Package; use javax.microedition.midlet.MIDlet_Package;
 with org.allbinary.canvas.Processor_Package; use org.allbinary.canvas.Processor_Package;
 
 package org.allbinary.midlet.MidletExitProcessor_Package is
 
+   package MIDlet_Package renames Standard.javax.microedition.midlet.MIDlet_Package;
    package Processor_Package renames Standard.org.allbinary.canvas.Processor_Package;
 
    type MidletExitProcessor is tagged;

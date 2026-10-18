@@ -48,14 +48,14 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.generator.St
         stringBuffer.append (weblisketSession.getStoreName);
         stringBuffer.append (AbPathData_Package.getInstance.SEPARATOR);
         abPath := AbPath_Package.Create (stringBuffer.toString, StringUtil_Package.getInstance.EMPTY_STRING);
-        fileName := Unbounded_String (httpTransformInfoInterface.getPropertiesHashMap.get (InputOutputTypeData_Package.getInstance.FILE));
+        fileName := Java_Unbox (httpTransformInfoInterface.getPropertiesHashMap.get (InputOutputTypeData_Package.getInstance.FILE));
         stringValidationUtil := StringValidationUtil_Package.getInstance;
         if stringValidationUtil.isEmpty (fileName) then
             transformInfoHttpStoreInterface := TransformInfoHttpStoreInterface_Access (transformInfoInterface);
             fileName := transformInfoInterface.getName.substring ((transformInfoHttpStoreInterface.getStoreName.length) + (1));
             outputMappingHashMap := StdUtil_Package.getInstance.createHashMap;
-            outputMappingHashMap.put (TransformInfosData_Package.getInstance.PREVIEW, To_Unbounded_String ("Preview"));
-            outputMappingHashMap.put (TransformInfosData_Package.getInstance.SMALL_PREVIEW, To_Unbounded_String ("SmallPreview"));
+            outputMappingHashMap.put (TransformInfosData_Package.getInstance.PREVIEW, Java_Box (To_Unbounded_String ("Preview")));
+            outputMappingHashMap.put (TransformInfosData_Package.getInstance.SMALL_PREVIEW, Java_Box (To_Unbounded_String ("SmallPreview")));
             outputMappingHashMap.put (CommonSeps_Package.getInstance.SPACE, StringUtil_Package.getInstance.EMPTY_STRING);
             replace := Replace_Package.Create (outputMappingHashMap);
             fileName := replace.all_Id (fileName);
@@ -63,7 +63,7 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.generator.St
         if stringValidationUtil.isEmpty (fileName) then
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("TransformInfoObjectConfigGenerator FileName Not Specified")));
         end if;
-        tempOutput := Unbounded_String (httpTransformInfoInterface.getPropertiesHashMap.get (InputOutputTypeData_Package.getInstance.NAME));
+        tempOutput := Java_Unbox (httpTransformInfoInterface.getPropertiesHashMap.get (InputOutputTypeData_Package.getInstance.NAME));
         if stringValidationUtil.isEmpty (tempOutput) then
             tempOutput := InputOutputTypeData_Package.getInstance.DEFAULT;
         end if;

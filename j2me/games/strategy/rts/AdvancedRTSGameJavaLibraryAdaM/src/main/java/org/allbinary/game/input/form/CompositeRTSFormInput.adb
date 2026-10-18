@@ -70,8 +70,8 @@ package body org.allbinary.game.input.form.CompositeRTSFormInput_Package is
    begin
         scrollSelectionForm := rtsPlayerLayerInterface.getCurrentScrollSelectionForm;
         index := scrollSelectionForm.getSelectedIndexForPoint (point);
-        if (This.isStickyItemSelected) and then ((associatedRtsLayer) = (CollidableDestroyableDamageableLayer_Package.getNullInstance)) then
-            if (This.getSelectedStickyItemIndex) <= (This.itemIndex (0)) then
+        if (CompositeRTSFormInput'Class (This).isStickyItemSelected) and then ((associatedRtsLayer) = (CollidableDestroyableDamageableLayer_Package.getNullInstance)) then
+            if (CompositeRTSFormInput'Class (This).getSelectedStickyItemIndex) <= (This.itemIndex (0)) then
                 This.rtsFormInputArray (0).processAtPoint (associatedRtsLayer, rtsPlayerLayerInterface, layerManager, point);
             end if;
         elsif (index) > (This.itemIndex (0)) then
@@ -89,8 +89,8 @@ package body org.allbinary.game.input.form.CompositeRTSFormInput_Package is
    begin
         commonStrings := CommonStrings_Package.getInstance;
         This.logUtil.putF (Java_Image ((CommonLabels_Package.getInstance.INDEX_LABEL) + (index)) & To_Unbounded_String (" > ") & Java_Image (This.itemIndex (0)), CompositeRTSFormInput_Access'(This'Unchecked_Access), commonStrings.PROCESS);
-        if (This.isStickyItemSelected) and then ((associatedRtsLayer) = (CollidableDestroyableDamageableLayer_Package.getNullInstance)) then
-            if (This.getSelectedStickyItemIndex) <= (This.itemIndex (0)) then
+        if (CompositeRTSFormInput'Class (This).isStickyItemSelected) and then ((associatedRtsLayer) = (CollidableDestroyableDamageableLayer_Package.getNullInstance)) then
+            if (CompositeRTSFormInput'Class (This).getSelectedStickyItemIndex) <= (This.itemIndex (0)) then
                 This.rtsFormInputArray (0).processGameSpecific (associatedRtsLayer, rtsPlayerLayerInterface, layerManager, item, index);
             end if;
         elsif (index) > (This.itemIndex (0)) then

@@ -21,7 +21,7 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.io.ByteArrayOutputStream_Package; use java.io.ByteArrayOutputStream_Package;
---  with java.io.DataOutputStream_Package; use java.io.DataOutputStream_Package;
+with java.io.DataOutputStream_Package; use java.io.DataOutputStream_Package;
 with org.allbinary.game.GameInfo_Package; use org.allbinary.game.GameInfo_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
@@ -29,6 +29,7 @@ with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.Com
 package org.allbinary.game.score.HighScore_Package is
 
    package ByteArrayOutputStream_Package renames Standard.java.io.ByteArrayOutputStream_Package;
+   package DataOutputStream_Package renames Standard.java.io.DataOutputStream_Package;
    package GameInfo_Package renames Standard.org.allbinary.game.GameInfo_Package;
    package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;

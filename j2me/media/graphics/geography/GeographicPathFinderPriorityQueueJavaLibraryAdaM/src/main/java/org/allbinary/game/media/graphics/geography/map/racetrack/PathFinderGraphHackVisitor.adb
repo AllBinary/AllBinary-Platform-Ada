@@ -40,9 +40,9 @@ package body org.allbinary.game.media.graphics.geography.map.racetrack.PathFinde
       startPathFindingNodeList : constant BasicArrayList_Access := BasicArrayList_Access (startPathFindingNodeList_Param);
       endPathFindingNodeList : constant BasicArrayList_Access := BasicArrayList_Access (endPathFindingNodeList_Param);
    begin
-        This.fixStart (graph, startPathFindingNodeList);
-        This.fixEnd (graph, endPathFindingNodeList);
-        This.fixOverPassEdges (graph);
+        PathFinderGraphHackVisitor'Class (This).fixStart (graph, startPathFindingNodeList);
+        PathFinderGraphHackVisitor'Class (This).fixEnd (graph, endPathFindingNodeList);
+        PathFinderGraphHackVisitor'Class (This).fixOverPassEdges (graph);
    end visit;
 
    --  throws Exception

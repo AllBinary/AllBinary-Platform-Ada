@@ -45,8 +45,8 @@ package body org.allbinary.animation.VectorAnimation_Package is
    begin
         IndexedAnimation_Package.Initialize (This, animationBehavior);
         Initialize_Fields (This);
-        This.setPoints (currentPoints);
-        This.setBasicColorP (basicColor);
+        VectorAnimation'Class (This).setPoints (currentPoints);
+        VectorAnimation'Class (This).setBasicColorP (basicColor);
    end Initialize;
 
    function Create (currentPoints : Integer_Array_Access_Array_Access_Array_Access; basicColor_Param : access BasicColor_Package.BasicColor'Class; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class) return VectorAnimation_Access is
@@ -61,12 +61,12 @@ package body org.allbinary.animation.VectorAnimation_Package is
       changed : Boolean;
    begin
         changed := False;
-        if ((This.getBasicColorP) = (null)) or else ((This.getBasicColorP.intValue) /= (basicColor.intValue)) then
+        if ((VectorAnimation'Class (This).getBasicColorP) = (null)) or else ((VectorAnimation'Class (This).getBasicColorP.intValue) /= (basicColor.intValue)) then
             changed := True;
         end if;
         IndexedAnimation (This).setBasicColorP (basicColor);
         if changed then
-            This.updateModifiers;
+            VectorAnimation'Class (This).updateModifiers;
         end if;
    end setBasicColorP;
 
@@ -75,12 +75,12 @@ package body org.allbinary.animation.VectorAnimation_Package is
       changed : Boolean;
    begin
         changed := False;
-        if ((This.getChangeBasicColor) = (null)) or else ((This.getChangeBasicColor.intValue) /= (basicColor.intValue)) then
+        if ((VectorAnimation'Class (This).getChangeBasicColor) = (null)) or else ((VectorAnimation'Class (This).getChangeBasicColor.intValue) /= (basicColor.intValue)) then
             changed := True;
         end if;
         IndexedAnimation (This).changeBasicColor (basicColor);
         if changed then
-            This.updateModifiers;
+            VectorAnimation'Class (This).updateModifiers;
         end if;
    end changeBasicColor;
 
@@ -93,7 +93,7 @@ package body org.allbinary.animation.VectorAnimation_Package is
         end if;
         IndexedAnimation (This).setAlpha (alpha);
         if changed then
-            This.updateModifiers;
+            VectorAnimation'Class (This).updateModifiers;
         end if;
    end setAlpha;
 
@@ -115,7 +115,7 @@ package body org.allbinary.animation.VectorAnimation_Package is
    --  throws Exception
    function getAnimationSize (This : in out VectorAnimation) return Integer is
    begin
-        return This.getSize;
+        return VectorAnimation'Class (This).getSize;
    end getAnimationSize;
 
    function getSize (This : in out VectorAnimation) return Integer is
@@ -186,7 +186,7 @@ package body org.allbinary.animation.VectorAnimation_Package is
       graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
         This.basicSetColorUtil.setBasicColorP (graphics, This.basicColor);
-        This.paintVectors (graphics, x, y);
+        VectorAnimation'Class (This).paintVectors (graphics, x, y);
    end paintXY;
 
    function getFrame (This : in out VectorAnimation) return Integer is

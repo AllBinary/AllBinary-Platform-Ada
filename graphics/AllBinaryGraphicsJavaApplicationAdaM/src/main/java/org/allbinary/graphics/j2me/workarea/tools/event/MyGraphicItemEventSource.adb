@@ -45,7 +45,7 @@ package body org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEvent
       Initialize_Fields (This);
         This.command := command;
         This.treeNode := treeNode;
-        This.setAngle (angle);
+        MyGraphicItemEventSource'Class (This).setAngle (angle);
    end Initialize;
 
    function Create (command : Unbounded_String; angle : Long_Float; treeNode_Param : access MutableTreeNode_Package.MutableTreeNode'Class) return MyGraphicItemEventSource_Access is

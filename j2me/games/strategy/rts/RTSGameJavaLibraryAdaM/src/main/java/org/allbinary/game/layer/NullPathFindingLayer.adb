@@ -36,27 +36,32 @@ package body org.allbinary.game.layer.NullPathFindingLayer_Package is
    function getName (This : in out NullPathFindingLayer) return Unbounded_String is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return Null_Unbounded_String;
    end getName;
 
    --  throws Exception
    function getEndGeographicMapCellPositionList (This : in out NullPathFindingLayer) return BasicArrayList_Access is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return null;
    end getEndGeographicMapCellPositionList;
 
    function shouldHandleStartSameAsEnd (This : in out NullPathFindingLayer) return Boolean is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return False;
    end shouldHandleStartSameAsEnd;
 
    function getGeographicMapCellPositionArea (This : in out NullPathFindingLayer) return GeographicMapCellPositionAreaBase_Access is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return null;
    end getGeographicMapCellPositionArea;
 
    function getHudPaintable (This : in out NullPathFindingLayer) return SelectionHudPaintable_Access is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return null;
    end getHudPaintable;
 
    --  throws Exception
@@ -69,11 +74,13 @@ package body org.allbinary.game.layer.NullPathFindingLayer_Package is
    function getParentLayer (This : in out NullPathFindingLayer) return PathFindingLayerInterface_Access is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return null;
    end getParentLayer;
 
    function getRTSLayer2LogHelper (This : in out NullPathFindingLayer) return RTSLayer2LogHelper_Access is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return null;
    end getRTSLayer2LogHelper;
 
    --  throws Exception
@@ -95,6 +102,7 @@ package body org.allbinary.game.layer.NullPathFindingLayer_Package is
       geographicMapCellPosition : constant GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (geographicMapCellPosition_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return null;
    end getMoveOutOfBuildAreaPath;
 
    --  throws Exception
@@ -120,21 +128,25 @@ package body org.allbinary.game.layer.NullPathFindingLayer_Package is
    function getSurroundingGeographicMapCellPositionList (This : in out NullPathFindingLayer) return BasicArrayList_Access is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return null;
    end getSurroundingGeographicMapCellPositionList;
 
    function isSelected (This : in out NullPathFindingLayer) return Boolean is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return False;
    end isSelected;
 
    function shouldAddWaypointFromBuilding (This : in out NullPathFindingLayer) return Boolean is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return False;
    end shouldAddWaypointFromBuilding;
 
    function isShowMoreCaptionStates (This : in out NullPathFindingLayer) return Boolean is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return False;
    end isShowMoreCaptionStates;
 
    --  throws Exception
@@ -155,11 +167,13 @@ package body org.allbinary.game.layer.NullPathFindingLayer_Package is
       cellPosition : constant GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (cellPosition_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return False;
    end buildingChase;
 
    function getTrackingEvent (This : in out NullPathFindingLayer) return TrackingEvent_Access is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return null;
    end getTrackingEvent;
 
    procedure allStop (This : in out NullPathFindingLayer) is
@@ -170,59 +184,70 @@ package body org.allbinary.game.layer.NullPathFindingLayer_Package is
    function isWaypointListEmptyOrOnlyTargets (This : in out NullPathFindingLayer) return Boolean is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return False;
    end isWaypointListEmptyOrOnlyTargets;
 
    --  throws Exception
    function getCurrentGeographicMapCellPosition (This : in out NullPathFindingLayer) return GeographicMapCellPosition_Access is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return null;
    end getCurrentGeographicMapCellPosition;
 
    --  throws Exception
    function getTopLeftGeographicMapCellPosition (This : in out NullPathFindingLayer) return GeographicMapCellPosition_Access is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return null;
    end getTopLeftGeographicMapCellPosition;
 
    function getCaptionAnimationHelper (This : in out NullPathFindingLayer) return CaptionAnimationHelperBase_Access is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return null;
    end getCaptionAnimationHelper;
 
    function getWaypointBehavior (This : in out NullPathFindingLayer) return WaypointBehaviorBase_Access is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return null;
    end getWaypointBehavior;
 
    function getWaypointLogHelper (This : in out NullPathFindingLayer) return WaypointLogHelper_Access is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return null;
    end getWaypointLogHelper;
 
    function getWaypoint2LogHelper (This : in out NullPathFindingLayer) return Waypoint2LogHelper_Access is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return null;
    end getWaypoint2LogHelper;
 
    function getWaypointRunnableLogHelper (This : in out NullPathFindingLayer) return WaypointRunnableLogHelper_Access is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return null;
    end getWaypointRunnableLogHelper;
 
    function getGroupInterface (This : in out NullPathFindingLayer) return Group_Access_Array_Access is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return null;
    end getGroupInterface;
 
    --  throws Exception
    function isDestroyed (This : in out NullPathFindingLayer) return Boolean is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return False;
    end isDestroyed;
 
    function getSourceId (This : in out NullPathFindingLayer) return Integer is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return 0;
    end getSourceId;
 
    procedure getMoveOutOfBuildAreaPath (This : in out NullPathFindingLayer; geographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) is

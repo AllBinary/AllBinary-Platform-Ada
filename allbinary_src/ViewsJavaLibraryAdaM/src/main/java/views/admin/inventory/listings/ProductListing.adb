@@ -64,7 +64,7 @@ package body views.admin.inventory.listings.ProductListing_Package is
         subStoreVector := storeFront.getSubStores;
         size := subStoreVector.size;
         for index in 0 .. (size) - 1 loop
-            subStore := Unbounded_String (subStoreVector.get (index));
+            subStore := Java_Unbox (subStoreVector.get (index));
             substoreKeywords := inventoryColumnUtil.getColumnWhereLike (This.inventory_Case, Java_Image (AbPathData_Package.getInstance.SEPARATOR) & subStore, This.basicItemData.CATEGORY);
             keywords.addAllList (substoreKeywords);
         end loop;
@@ -138,7 +138,7 @@ package body views.admin.inventory.listings.ProductListing_Package is
             if (index) > (0) then
                 indexStr := index.toString;
             end if;
-            keywordFilenameHashMap.put (keywordData, pageName & indexStr);
+            keywordFilenameHashMap.put (Java_Box (keywordData), Java_Box (pageName & indexStr));
             stringBuffer.delete (0, stringBuffer.length);
             stringBuffer.append (staticPath.toString);
             stringBuffer.append (pageName);
@@ -149,7 +149,7 @@ package body views.admin.inventory.listings.ProductListing_Package is
             if not (This.directory.create (staticPath)) then
                 Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Could Not Create Directory: ") & Java_Image (staticPath)));
             end if;
-            This.savePage (file, productListingPages (index));
+            ProductListing'Class (This).savePage (file, productListingPages (index));
         end loop;
    end create;
 
@@ -169,8 +169,8 @@ package body views.admin.inventory.listings.ProductListing_Package is
         size := keywordArray'Length;
         for index in 0 .. (size) - 1 loop
             insertVector := BasicArrayListD_Package.Create;
-            keywordData := Unbounded_String (keywordArray (index));
-            fileName := Unbounded_String (keywordFilenameHashMap.get (keywordData));
+            keywordData := Java_Unbox (keywordArray (index));
+            fileName := Java_Unbox (keywordFilenameHashMap.get (Java_Box (keywordData)));
             insertVector.add (storeFront.getName);
             insertVector.add (keywordData);
             insertVector.add (fileName);
@@ -203,7 +203,7 @@ package body views.admin.inventory.listings.ProductListing_Package is
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.STATICPAGEGENERATIONLOGGING) then
                 This.logUtil.putF (To_Unbounded_String ("Store Static Pages Path: ") & Java_Image (staticPath), ProductListing_Access'(This'Unchecked_Access), To_Unbounded_String ("generateAll()"));
             end if;
-            keywordHashSet := This.getHashSet (storeFront);
+            keywordHashSet := ProductListing'Class (This).getHashSet (storeFront);
             keywordArray := keywordHashSet.toArray;
             size := keywordArray'Length;
             keywordFilenameHashMap := StdUtil_Package.getInstance.createHashMap;
@@ -217,12 +217,12 @@ package body views.admin.inventory.listings.ProductListing_Package is
             inventorySearchUtil := InventorySearchUtil_Package.getInstance;
             vector := inventorySearchUtil.getBasicItemIdColumn (This.searchRequest);
             for index in 0 .. (size) - 1 loop
-                keywordData := Unbounded_String (keywordArray (index));
+                keywordData := Java_Unbox (keywordArray (index));
                 if (Length (keywordData)) > (1) then
-                    This.create (keywordData, keywordFilenameHashMap, vector, staticPath);
+                    ProductListing'Class (This).create (keywordData, keywordFilenameHashMap, vector, staticPath);
                 end if;
             end loop;
-            This.addStaticPageInfoToDatabase (storeFront, keywordFilenameHashMap);
+            ProductListing'Class (This).addStaticPageInfoToDatabase (storeFront, keywordFilenameHashMap);
             stringBuffer.delete (0, stringBuffer.length);
             stringBuffer.append (To_Unbounded_String ("Static Files Generated Successfully For "));
             stringBuffer.append (storeFront.getName);
@@ -253,15 +253,15 @@ package body views.admin.inventory.listings.ProductListing_Package is
             if (storeName) /= (Null_Unbounded_String) then
                 if (storeName.compareTo (GLOBALS2.GENERATEALLSTORES)) /= (0) then
                     This.searchRequest.setStoreFront (This.storeFronts.getStoreFrontInterface (storeName));
-                    stringBuffer.append (This.generateAll);
+                    stringBuffer.append (ProductListing'Class (This).generateAll);
                     stringBuffer.append (To_Unbounded_String ("<br />"));
                 else
                     storeFrontVector := This.storeFronts.getStoreFrontNames;
                     size := storeFrontVector.size;
                     for index in 0 .. (size) - 1 loop
-                        storeName := Unbounded_String (storeFrontVector.get (index));
+                        storeName := Java_Unbox (storeFrontVector.get (index));
                         This.searchRequest.setStoreFront (This.storeFronts.getStoreFrontInterface (storeName));
-                        stringBuffer.append (This.generateAll);
+                        stringBuffer.append (ProductListing'Class (This).generateAll);
                         stringBuffer.append (To_Unbounded_String ("<br />"));
                     end loop;
                 end if;

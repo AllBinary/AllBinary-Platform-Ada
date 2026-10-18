@@ -20,7 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
 with org.allbinary.math.AngleFactory_Package; use org.allbinary.math.AngleFactory_Package;
 with org.allbinary.math.AngleInfo_Package; use org.allbinary.math.AngleInfo_Package;
 with org.allbinary.media.ScaleProperties_Package; use org.allbinary.media.ScaleProperties_Package;
@@ -34,6 +34,7 @@ with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Anim
 
 package org.allbinary.animation.NullRotationAnimationFactory_Package is
 
+   package Graphics_Package renames Standard.javax.microedition.lcdui.Graphics_Package;
    package AngleFactory_Package renames Standard.org.allbinary.math.AngleFactory_Package;
    package AngleInfo_Package renames Standard.org.allbinary.math.AngleInfo_Package;
    package ScaleProperties_Package renames Standard.org.allbinary.media.ScaleProperties_Package;
@@ -69,7 +70,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
 with org.allbinary.math.AngleFactory_Package; use org.allbinary.math.AngleFactory_Package;
 with org.allbinary.math.AngleInfo_Package; use org.allbinary.math.AngleInfo_Package;
 with org.allbinary.media.ScaleProperties_Package; use org.allbinary.media.ScaleProperties_Package;
@@ -83,6 +84,7 @@ with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Anim
 
 package org.allbinary.animation.NullRotationAnimation2_Package is
 
+   package Graphics_Package renames Standard.javax.microedition.lcdui.Graphics_Package;
    package AngleFactory_Package renames Standard.org.allbinary.math.AngleFactory_Package;
    package AngleInfo_Package renames Standard.org.allbinary.math.AngleInfo_Package;
    package ScaleProperties_Package renames Standard.org.allbinary.media.ScaleProperties_Package;

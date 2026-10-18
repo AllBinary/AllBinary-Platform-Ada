@@ -40,8 +40,8 @@ package body views.business.context.modules.storefront.customizer.bodies.generic
    --  throws Exception
    procedure addDomNodeInterfaces (This : in out TitleBodyCustomizerView) is
    begin
-        This.addDomNodeInterface (DomNodeInterface_Access (This.titleBody));
-        This.addDomNodeInterface (DomNodeInterface_Access (TitleBodyCustomizerView_Access'(This'Unchecked_Access)));
+        TitleBodyCustomizerView'Class (This).addDomNodeInterface (DomNodeInterface_Access (This.titleBody));
+        TitleBodyCustomizerView'Class (This).addDomNodeInterface (DomNodeInterface_Access (TitleBodyCustomizerView_Access'(This'Unchecked_Access)));
    end addDomNodeInterfaces;
 
    --  throws Exception
@@ -49,7 +49,7 @@ package body views.business.context.modules.storefront.customizer.bodies.generic
       document : constant Document_Access := Document_Access (document_Param);
       pageName : Unbounded_String;
    begin
-        pageName := TransformTemplateCustomizerUtil_Package.getInstance.getPageNameHack (This.getTransformInfoInterface.getName, This.getWeblisketSession.getStoreName);
+        pageName := TransformTemplateCustomizerUtil_Package.getInstance.getPageNameHack (TitleBodyCustomizerView'Class (This).getTransformInfoInterface.getName, TitleBodyCustomizerView'Class (This).getWeblisketSession.getStoreName);
         if StringValidationUtil_Package.getInstance.isEmpty (pageName) then
             pageName := TitleBodyCustomizerView_Package.NAME;
         end if;
@@ -62,8 +62,8 @@ package body views.business.context.modules.storefront.customizer.bodies.generic
       result : Unbounded_String;
    begin
         begin
-            success := XmlDocumentHelper_Package.toString (This.getDoc);
-            result := StoreTransformer_Package.Create (This.abeClientInformation, This.getTransformInfoInterface).translate (success);
+            success := XmlDocumentHelper_Package.toString (TitleBodyCustomizerView'Class (This).getDoc);
+            result := StoreTransformer_Package.Create (This.abeClientInformation, TitleBodyCustomizerView'Class (This).getTransformInfoInterface).translate (success);
             return StringEscapeUtils_Package.unescapeHtml3 (result);
         exception
             when Java_Occurrence : others =>

@@ -104,10 +104,10 @@ package body org.allbinary.logic.communication.sql.AbDatabaseManagement_Package 
       hostName : Unbounded_String;
    begin
         begin
-            This.addDbUser (This.AT_LOCALHOST, db, userName, password);
-            hostName := This.getHostName;
+            AbDatabaseManagement'Class (This).addDbUser (This.AT_LOCALHOST, db, userName, password);
+            hostName := AbDatabaseManagement'Class (This).getHostName;
             if (hostName) /= (Null_Unbounded_String) then
-                This.addDbUser (hostName, db, userName, password);
+                AbDatabaseManagement'Class (This).addDbUser (hostName, db, userName, password);
             end if;
             return True;
         exception

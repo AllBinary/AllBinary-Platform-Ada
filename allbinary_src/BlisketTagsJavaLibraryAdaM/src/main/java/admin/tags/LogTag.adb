@@ -25,8 +25,8 @@ package body admin.tags.LogTag_Package is
    begin
       TableTag_Package.Initialize (This);
       Initialize_Fields (This);
-        This.setTagHelperFactory (LogHelperFactory_Package.Create);
-        This.setTagRequestHelperFactory (LogHelperFactory_Package.Create);
+        LogTag'Class (This).setTagHelperFactory (LogHelperFactory_Package.Create);
+        LogTag'Class (This).setTagRequestHelperFactory (LogHelperFactory_Package.Create);
    end Initialize;
 
    function Create return LogTag_Access is

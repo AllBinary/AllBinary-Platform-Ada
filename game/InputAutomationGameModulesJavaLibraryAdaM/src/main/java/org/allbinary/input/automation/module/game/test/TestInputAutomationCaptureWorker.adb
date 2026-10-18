@@ -36,7 +36,7 @@ package body org.allbinary.input.automation.module.game.test.TestInputAutomation
         AbstractInputAutomationWorker_Package.Initialize (This, inputAutomationActionInterface);
         Initialize_Fields (This);
         This.logUtil.putF (This.MESSAGE, TestInputAutomationCaptureWorker_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
-        This.setGenericProfileActions (genericProfileActions);
+        TestInputAutomationCaptureWorker'Class (This).setGenericProfileActions (genericProfileActions);
    end Initialize;
 
    function Create (inputAutomationActionInterface_Param : access InputAutomationActionInterface_Package.InputAutomationActionInterface'Class; genericProfileActions_Param : access GenericProfileActions_Package.GenericProfileActions'Class; imageComparatorConstraintsInterface_Param : access ImageComparatorConstraintsInterface_Package.ImageComparatorConstraintsInterface'Class; motionRectangleConstraintsInterface_Param : access MotionRectangleConstraintsInterface_Package.MotionRectangleConstraintsInterface'Class) return TestInputAutomationCaptureWorker_Access is
@@ -64,13 +64,13 @@ package body org.allbinary.input.automation.module.game.test.TestInputAutomation
         if (cacheInterface.keySet.size) > (0) then
             This.logUtil.putF (This.IMAGE_AVAILABLE_SO_PROCESSING, TestInputAutomationCaptureWorker_Access'(This'Unchecked_Access), This.PROCESS_DATA_WORKER_RESULTS);
             anyType := cacheInterface.keySet.toArray (0);
-            hashMap := This.getGenericProfileActions.getHashMap;
+            hashMap := TestInputAutomationCaptureWorker'Class (This).getGenericProfileActions.getHashMap;
             set := hashMap.keySet;
             actionNameArray := set.toArray;
             size := actionNameArray'Length;
             for index in 0 .. (size) - 1 loop
-                actionNameString := Unbounded_String (actionNameArray (index));
-                genericProfileAction := GenericProfileAction_Access (hashMap.get (actionNameString));
+                actionNameString := Java_Unbox (actionNameArray (index));
+                genericProfileAction := GenericProfileAction_Access (hashMap.get (Java_Box (actionNameString)));
                 genericProfileActionScript := genericProfileAction.getGenericProfileActionScript;
                 vector := genericProfileActionScript.getProfileActionConditionInterfaceVector;
             end loop;
@@ -84,8 +84,8 @@ package body org.allbinary.input.automation.module.game.test.TestInputAutomation
    procedure process (This : in out TestInputAutomationCaptureWorker) is
    begin
         This.logUtil.putF (This.commonStrings.START, TestInputAutomationCaptureWorker_Access'(This'Unchecked_Access), This.commonStrings.PROCESS);
-        This.startDataWorkers;
-        This.processDataWorkerResults;
+        TestInputAutomationCaptureWorker'Class (This).startDataWorkers;
+        TestInputAutomationCaptureWorker'Class (This).processDataWorkerResults;
    end process;
 
    function getGenericProfileActions (This : in out TestInputAutomationCaptureWorker) return GenericProfileActions_Access is

@@ -26,8 +26,8 @@ package body org.allbinary.game.physics.acceleration.BasicAccelerationProperties
    procedure Initialize (This : in out BasicAccelerationProperties'Class; forward : Integer; reverse_Id : Integer) is
    begin
       Initialize_Fields (This);
-        This.setForward (forward);
-        This.setReverse (reverse_Id);
+        BasicAccelerationProperties'Class (This).setForward (forward);
+        BasicAccelerationProperties'Class (This).setReverse (reverse_Id);
    end Initialize;
 
    function Create (forward : Integer; reverse_Id : Integer) return BasicAccelerationProperties_Access is

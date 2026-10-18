@@ -69,7 +69,7 @@ package body org.allbinary.game.ai.path.BasicDirectionAIHelper_Package is
    begin
         angle := Short_Integer (This.angleInfo.getAngleIncrementInfo.getFrameAngle (frame.intValue));
         if (This.angleInfo.getAngle) /= (angle) then
-            return This.turnAI (frame.intValue);
+            return BasicDirectionAIHelper'Class (This).turnAI (frame.intValue);
         else
             return Canvas_Package.UP;
         end if;
@@ -85,13 +85,13 @@ package body org.allbinary.game.ai.path.BasicDirectionAIHelper_Package is
         angleIncrementInfo := This.angleInfo.getAngleIncrementInfo;
         directionFactory := DirectionFactory_Package.getInstance;
         if (geographicMapDirectionData) = (directionFactory.DOWN) then
-            keyDirection := This.getAIKeyPressed (angleIncrementInfo.DOWN_FRAME);
+            keyDirection := BasicDirectionAIHelper'Class (This).getAIKeyPressed (angleIncrementInfo.DOWN_FRAME);
         elsif (geographicMapDirectionData) = (directionFactory.UP) then
-            keyDirection := This.getAIKeyPressed (angleIncrementInfo.UP_FRAME);
+            keyDirection := BasicDirectionAIHelper'Class (This).getAIKeyPressed (angleIncrementInfo.UP_FRAME);
         elsif (geographicMapDirectionData) = (directionFactory.LEFT) then
-            keyDirection := This.getAIKeyPressed (angleIncrementInfo.LEFT_FRAME);
+            keyDirection := BasicDirectionAIHelper'Class (This).getAIKeyPressed (angleIncrementInfo.LEFT_FRAME);
         elsif (geographicMapDirectionData) = (directionFactory.RIGHT) then
-            keyDirection := This.getAIKeyPressed (angleIncrementInfo.RIGHT_FRAME);
+            keyDirection := BasicDirectionAIHelper'Class (This).getAIKeyPressed (angleIncrementInfo.RIGHT_FRAME);
         end if;
         return keyDirection;
    end getAIKeyPressedFromDirection;

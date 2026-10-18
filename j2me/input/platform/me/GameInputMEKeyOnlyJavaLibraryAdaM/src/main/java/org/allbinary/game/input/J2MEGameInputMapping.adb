@@ -40,9 +40,9 @@ package body org.allbinary.game.input.J2MEGameInputMapping_Package is
         This.logUtil.putF (This.commonStrings.START, J2MEGameInputMapping_Access'(This'Unchecked_Access), This.commonStrings.INIT);
         J2MEKeyFactory_Package.getInstance.init;
         PersistentInputMapping (This).init (abeClientInformation);
-        if ((This.getTotalMapped) = (0)) or else (This.isDefaultNew) then
-            This.getInputMapping.addMapping (This.getDefault);
-            This.save (abeClientInformation);
+        if ((J2MEGameInputMapping'Class (This).getTotalMapped) = (0)) or else (J2MEGameInputMapping'Class (This).isDefaultNew) then
+            J2MEGameInputMapping'Class (This).getInputMapping.addMapping (J2MEGameInputMapping'Class (This).getDefault);
+            J2MEGameInputMapping'Class (This).save (abeClientInformation);
         end if;
    end init;
 

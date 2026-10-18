@@ -66,7 +66,7 @@ package body org.allbinary.content.CommandUriAction_Package is
       command : constant Command_Access := Command_Access (command_Param);
       url : Unbounded_String;
    begin
-        url := Unbounded_String (This.hashtable.get (command));
+        url := Java_Unbox (This.hashtable.get (command));
         return This.intent;
    end getIntent;
 

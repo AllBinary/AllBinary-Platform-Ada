@@ -27,13 +27,13 @@ package body org.allbinary.logic.system.security.licensing.MobileClientInformati
       commonStrings : CommonStrings_Access;
    begin
         AbeClientInformation_Package.Initialize (This, name, version, StringMaker_Package.Create.append (specialName).append (CommonSeps_Package.getInstance.SPACE).append (PartnerIdentifierFileUtil_Package.getInstance.get).toString, shortName);
-        string_Id := This.getSpecialName;
+        string_Id := MobileClientInformation'Class (This).getSpecialName;
         number := Unbounded_Slice (string_Id, ((Length (string_Id)) - (1)) + 1, Length (string_Id));
         if (Integer_Package.getInteger (number)) = (null) then
-            This.setHardSale (False);
+            MobileClientInformation'Class (This).setHardSale (False);
         end if;
         commonStrings := CommonStrings_Package.getInstance;
-        if This.isHardSale then
+        if MobileClientInformation'Class (This).isHardSale then
             This.logUtil.putF (To_Unbounded_String ("Use Hard Coded Selling"), MobileClientInformation_Access'(This'Unchecked_Access), commonStrings.CONSTRUCTOR);
         else
             This.logUtil.putF (To_Unbounded_String ("Don't Use Hard Coded Selling"), MobileClientInformation_Access'(This'Unchecked_Access), commonStrings.CONSTRUCTOR);

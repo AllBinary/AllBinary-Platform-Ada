@@ -53,22 +53,26 @@ package body org.allbinary.media.graphics.geography.map.GeographicMapCellTypeFac
    function getStartType (This : in out GeographicMapCellTypeFactory) return Integer is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return 0;
    end getStartType;
 
    function getEndType (This : in out GeographicMapCellTypeFactory) return Integer is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return 0;
    end getEndType;
 
    function getEmptyType (This : in out GeographicMapCellTypeFactory) return Integer is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return 0;
    end getEmptyType;
 
    function isPath (This : in out GeographicMapCellTypeFactory; cellType_Param : access GeographicMapCellType_Package.GeographicMapCellType'Class) return Boolean is
       cellType : constant GeographicMapCellType_Access := GeographicMapCellType_Access (cellType_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return False;
    end isPath;
 
    procedure get (This : in out GeographicMapCellTypeFactory; type_Id : Integer) is

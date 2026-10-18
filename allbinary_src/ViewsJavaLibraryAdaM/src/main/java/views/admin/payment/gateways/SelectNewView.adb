@@ -44,9 +44,9 @@ package body views.admin.payment.gateways.SelectNewView_Package is
    begin
         begin
             paymentGatewayEntityInterface := PaymentGatewayEntityFactory_Package.getInstance;
-            existingGateways := paymentGatewayEntityInterface.findPaymentTypeVectorByStore (This.getPaymentGatewayPrimaryKey.getStoreName);
+            existingGateways := paymentGatewayEntityInterface.findPaymentTypeVectorByStore (SelectNewView'Class (This).getPaymentGatewayPrimaryKey.getStoreName);
             allGatewaysLessExisting := BasicPaymentTypeUtil_Package.getInstance.difference (existingGateways);
-            return PaymentGatewaysView_Package.Create (This.getTransformInfoInterface, allGatewaysLessExisting).view;
+            return PaymentGatewaysView_Package.Create (SelectNewView'Class (This).getTransformInfoInterface, allGatewaysLessExisting).view;
         exception
             when Java_Occurrence : others =>
                 declare

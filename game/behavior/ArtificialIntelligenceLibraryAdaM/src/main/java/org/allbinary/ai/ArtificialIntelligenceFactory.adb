@@ -38,6 +38,7 @@ package body org.allbinary.ai.ArtificialIntelligenceFactory_Package is
       anyType : constant Java_Object_Access := Java_Object_Access (anyType_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return null;
    end getInstance;
 
    procedure getInstance (This : in out ArtificialIntelligenceFactory; anyType_Param : access Java_Object'Class) is

@@ -26,7 +26,7 @@ package body org.allbinary.animation.VectorRotationAnimation_Package is
       animationBehavior : constant AnimationBehavior_Access := AnimationBehavior_Access (animationBehavior_Param);
    begin
         VectorBaseRotationAnimation_Package.Initialize (This, AngleInfo_Package.getInstance (Short_Integer (((AngleFactory_Package.getInstance.TOTAL_ANGLE) / (currentPoints'Length)))), currentPoints, basicColor, animationBehavior);
-        This.angleInfo.adjustAngle (This.getFrame);
+        This.angleInfo.adjustAngle (VectorRotationAnimation'Class (This).getFrame);
    end Initialize;
 
    function Create (currentPoints : Integer_Array_Access_Array_Access_Array_Access; basicColor_Param : access BasicColor_Package.BasicColor'Class; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class) return VectorRotationAnimation_Access is
@@ -41,30 +41,30 @@ package body org.allbinary.animation.VectorRotationAnimation_Package is
       angle : Angle_Access;
    begin
         angle := This.directionUtil.getFrameAngle (direction);
-        This.adjustFrameToAngle (angle);
+        VectorRotationAnimation'Class (This).adjustFrameToAngle (angle);
    end setFrameByDirection;
 
    procedure setFrameToAngle (This : in out VectorRotationAnimation; angle_Param : access Angle_Package.Angle'Class) is
       angle : constant Angle_Access := Angle_Access (angle_Param);
    begin
-        This.adjustFrameToAngle (angle);
+        VectorRotationAnimation'Class (This).adjustFrameToAngle (angle);
    end setFrameToAngle;
 
    procedure setFrame (This : in out VectorRotationAnimation; index : Integer) is
    begin
         VectorBaseRotationAnimation (This).setFrame (index);
-        This.angleInfo.adjustAngle (This.getFrame);
+        This.angleInfo.adjustAngle (VectorRotationAnimation'Class (This).getFrame);
    end setFrame;
 
    procedure adjustFrame (This : in out VectorRotationAnimation; newAngle : Short_Integer) is
    begin
-        This.setFrame (This.frameUtil.getFrameForAngle (newAngle, Integer (This.angleInfo.getAngleIncrementInfo.getAngleIncrement)));
+        VectorRotationAnimation'Class (This).setFrame (This.frameUtil.getFrameForAngle (newAngle, Integer (This.angleInfo.getAngleIncrementInfo.getAngleIncrement)));
    end adjustFrame;
 
    procedure adjustFrameToAngle (This : in out VectorRotationAnimation; newAngle_Param : access Angle_Package.Angle'Class) is
       newAngle : constant Angle_Access := Angle_Access (newAngle_Param);
    begin
-        This.adjustFrame (newAngle.getValue);
+        VectorRotationAnimation'Class (This).adjustFrame (newAngle.getValue);
    end adjustFrameToAngle;
 
 end org.allbinary.animation.VectorRotationAnimation_Package;

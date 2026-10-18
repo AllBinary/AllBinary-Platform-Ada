@@ -31,8 +31,8 @@ package body org.allbinary.image.opengles.OpenGLESGL11ExtImage_Package is
    begin
         OpenGLESImage_Package.Initialize (This, image, bitmapFactory, textureFactory);
         Initialize_Fields (This);
-        This.onDisplayChangeEvent (null);
-        This.rectangle := new Integer_Array'(0, This.getHeight, This.getWidth, -(This.getHeight));
+        OpenGLESGL11ExtImage'Class (This).onDisplayChangeEvent (null);
+        This.rectangle := new Integer_Array'(0, OpenGLESGL11ExtImage'Class (This).getHeight, OpenGLESGL11ExtImage'Class (This).getWidth, -(OpenGLESGL11ExtImage'Class (This).getHeight));
    end Initialize;
 
    function Create (image_Param : access Image_Package.Image'Class; bitmapFactory_Param : access PlatformBitmapBaseFactory_Package.PlatformBitmapBaseFactory'Class; textureFactory_Param : access PlatformTextureBaseFactory_Package.PlatformTextureBaseFactory'Class) return OpenGLESGL11ExtImage_Access is
@@ -47,7 +47,7 @@ package body org.allbinary.image.opengles.OpenGLESGL11ExtImage_Package is
    begin
         begin
             This.logUtil.putF (This.commonStrings.START, OpenGLESGL11ExtImage_Access'(This'Unchecked_Access), To_Unbounded_String ("onResize"));
-            This.a := (DisplayInfoSingleton_Package.getInstance.getLastHeight) - (This.getHeight);
+            This.a := (DisplayInfoSingleton_Package.getInstance.getLastHeight) - (OpenGLESGL11ExtImage'Class (This).getHeight);
         exception
             when Java_Occurrence : others =>
                 declare
@@ -62,7 +62,7 @@ package body org.allbinary.image.opengles.OpenGLESGL11ExtImage_Package is
       gl : constant GL_Access := GL_Access (gl_Param);
       gl11 : GL11_Access;
    begin
-        This.onDisplayChangeEvent (null);
+        OpenGLESGL11ExtImage'Class (This).onDisplayChangeEvent (null);
         gl11 := GL11_Access (gl);
         if OpenGLESImage (This).initTexture (gl11) then
             This.textureFactory.load (gl11, GL10.GL_TEXTURE_2D, 0, OpenGLESGL11ExtImage_Access'(This'Unchecked_Access), 0, True);
@@ -77,7 +77,7 @@ package body org.allbinary.image.opengles.OpenGLESGL11ExtImage_Package is
    begin
         gl.glEnable (GL10.GL_TEXTURE_2D);
         gl.glBindTexture (GL10.GL_TEXTURE_2D, This.openGLESImageProperties.textureID);
-        (GL11Ext_Access (gl)).glDrawTexfOES (x, (This.a) - (y), z, This.getWidth, This.getHeight);
+        (GL11Ext_Access (gl)).glDrawTexfOES (x, (This.a) - (y), z, OpenGLESGL11ExtImage'Class (This).getWidth, OpenGLESGL11ExtImage'Class (This).getHeight);
         gl.glDisable (GL10.GL_TEXTURE_2D);
    end draw;
 

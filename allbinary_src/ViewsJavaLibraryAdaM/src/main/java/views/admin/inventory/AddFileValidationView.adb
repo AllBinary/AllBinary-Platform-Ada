@@ -50,7 +50,7 @@ package body views.admin.inventory.AddFileValidationView_Package is
       size : Long_Long_Integer;
    begin
         begin
-            command := Unbounded_String (This.getRequestHashMap.get (GLOBALS2.ADMINCOMMAND));
+            command := Java_Unbox (AddFileValidationView'Class (This).getRequestHashMap.get (GLOBALS2.ADMINCOMMAND));
             if (StringValidationUtil_Package.getInstance.isEmpty (command)) or else ((((command.compareTo (AddFileValidationView_Package.ADDPRODUCT)) /= (0)) and then ((command.compareTo (NEXTSTEP)) /= (0)))) then
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
                     stringBuffer := StringMaker_Package.Create;
@@ -71,7 +71,7 @@ package body views.admin.inventory.AddFileValidationView_Package is
                 end if;
                 return False;
             end if;
-            storeFrontInterface := StoreFrontFactory_Package.getInstance (This.getWeblisketSession.getStoreName);
+            storeFrontInterface := StoreFrontFactory_Package.getInstance (AddFileValidationView'Class (This).getWeblisketSession.getStoreName);
             This.itemInterface.setCategory ((storeFrontInterface.getCategoryPath) + (This.itemInterface.getCategory));
             fullCategory := StringMaker_Package.Create.append (URLGLOBALS.getWebappPath).append (storeFrontInterface.getCurrentHostNamePath).append (This.itemInterface.getCategory).toString;
             categoryFile := AbFile_Package.createAbFile (fullCategory);
@@ -87,13 +87,13 @@ package body views.admin.inventory.AddFileValidationView_Package is
                 end if;
                 return False;
             end if;
-            imageFileItemObject := This.getRequestHashMap.get (This.basicItemData.IMAGE);
+            imageFileItemObject := AddFileValidationView'Class (This).getRequestHashMap.get (This.basicItemData.IMAGE);
             if HttpFileUploadUtil_Package.getInstance.isValid (imageFileItemObject) then
                 fileItem := FileItem_Access (imageFileItemObject);
                 fileName := fileItem.getName;
                 size := fileItem.getSize;
                 HttpFileUploadUtil_Package.log (fileItem);
-                if (This.isValid (fileName, size)) = (False) then
+                if (AddFileValidationView'Class (This).isValid (fileName, size)) = (False) then
                     return False;
                 end if;
             end if;
@@ -137,7 +137,7 @@ package body views.admin.inventory.AddFileValidationView_Package is
    begin
         begin
             stringBuffer := StringMaker_Package.Create;
-            command := Unbounded_String (This.getRequestHashMap.get (GLOBALS2.ADMINCOMMAND));
+            command := Java_Unbox (AddFileValidationView'Class (This).getRequestHashMap.get (GLOBALS2.ADMINCOMMAND));
             if (StringValidationUtil_Package.getInstance.isEmpty (command)) or else ((((command.compareTo (AddFileValidationView_Package.ADDPRODUCT)) /= (0)) and then ((command.compareTo (NEXTSTEP)) /= (0)))) then
                 return StringUtil_Package.getInstance.EMPTY_STRING;
             end if;
@@ -146,7 +146,7 @@ package body views.admin.inventory.AddFileValidationView_Package is
                 stringBuffer.append (basicItemValidation.validationInfo);
                 stringBuffer.append (To_Unbounded_String ("<br/>"));
             end if;
-            storeFrontInterface := StoreFrontFactory_Package.getInstance (This.getWeblisketSession.getStoreName);
+            storeFrontInterface := StoreFrontFactory_Package.getInstance (AddFileValidationView'Class (This).getWeblisketSession.getStoreName);
             fullCategory := StringMaker_Package.Create.append (URLGLOBALS.getWebappPath).append (storeFrontInterface.getCurrentHostNamePath).append (This.itemInterface.getCategory).toString;
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
                 This.logUtil.putF (To_Unbounded_String ("Category: ") & fullCategory, AddFileValidationView_Access'(This'Unchecked_Access), To_Unbounded_String ("validationInfo()"));
@@ -171,13 +171,13 @@ package body views.admin.inventory.AddFileValidationView_Package is
                 end if;
                     end;
             end;
-            anyType := This.getRequestHashMap.get (This.basicItemData.IMAGE);
+            anyType := AddFileValidationView'Class (This).getRequestHashMap.get (This.basicItemData.IMAGE);
             if HttpFileUploadUtil_Package.getInstance.isValid (anyType) then
                 fileItem := FileItem_Access (anyType);
                 fileName := fileItem.getName;
                 fileItemFieldName := fileItem.getFieldName;
                 size := fileItem.getSize;
-                This.validationInfo (stringBuffer, fileName, fileItemFieldName, size);
+                AddFileValidationView'Class (This).validationInfo (stringBuffer, fileName, fileItemFieldName, size);
             end if;
             return stringBuffer.toString;
         exception
@@ -225,7 +225,7 @@ package body views.admin.inventory.AddFileValidationView_Package is
                 end if;
                 return False;
             end if;
-            This.processImageFiles;
+            AddFileValidationView'Class (This).processImageFiles;
         else
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
                 stringBuffer := StringMaker_Package.Create;

@@ -45,9 +45,9 @@ package body org.allbinary.logic.control.workflow.StoreWorkFlowWrapper_Package i
       commonStrings : CommonStrings_Access;
    begin
         begin
-            helperClass := This.getWorkFlowObject.all'Tag;
+            helperClass := StoreWorkFlowWrapper'Class (This).getWorkFlowObject.all'Tag;
             method := helperClass.getMethod (To_Unbounded_String ("getStoreName"), null);
-            result := Unbounded_String (method.invoke (This.getWorkFlowObject, null));
+            result := Java_Unbox (method.invoke (StoreWorkFlowWrapper'Class (This).getWorkFlowObject, null));
             return result;
         exception
             when Java_Occurrence : others =>

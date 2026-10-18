@@ -66,11 +66,11 @@ package body org.allbinary.input.automation.module.osgi.InputAutomationNewBundle
       index : Integer;
    begin
         This.logUtil.putF (This.commonStrings.START, InputAutomationNewBundleRunnable_Access'(This'Unchecked_Access), To_Unbounded_String ("updateModules"));
-        list := This.findNewModules;
+        list := InputAutomationNewBundleRunnable'Class (This).findNewModules;
         size := list.size;
         bundle := null;
         for index in 0 .. (size) - 1 loop
-            bundle := This.install (URL_Access (list.get (index)));
+            bundle := InputAutomationNewBundleRunnable'Class (This).install (URL_Access (list.get (index)));
             if (bundle) /= (null) then
                 bundle.start (InputAutomationNewBundleRunnable_Package.MODULES_START_LEVEL);
             end if;
@@ -91,7 +91,7 @@ package body org.allbinary.input.automation.module.osgi.InputAutomationNewBundle
    begin
         This.logUtil.putF (This.commonStrings.START, InputAutomationNewBundleRunnable_Access'(This'Unchecked_Access), To_Unbounded_String ("getAllJarSymbolicNameHashMap"));
         hashMap := StdUtil_Package.getInstance.createHashMap;
-        jarFileBasicArrayList := This.getJarModuleFileBasicArrayList;
+        jarFileBasicArrayList := InputAutomationNewBundleRunnable'Class (This).getJarModuleFileBasicArrayList;
         This.logUtil.putF (To_Unbounded_String ("Jar Module Files: ") & Java_Image (jarFileBasicArrayList), InputAutomationNewBundleRunnable_Access'(This'Unchecked_Access), To_Unbounded_String ("getAllJarSymbolicNameHashMap"));
         size := jarFileBasicArrayList.size;
         file_Case := null;
@@ -106,7 +106,7 @@ package body org.allbinary.input.automation.module.osgi.InputAutomationNewBundle
                 else
                     symbolicName := manifest.getMainAttributes.getValue (Constants_Package.BUNDLE_SYMBOLICNAME);
                     if (symbolicName) /= (Null_Unbounded_String) then
-                        hashMap.put (symbolicName, URL_Package.Create ((InputAutomationNewBundleRunnable_Package.FILE) + (file_Case.getAbsolutePath)));
+                        hashMap.put (Java_Box (symbolicName), URL_Package.Create ((InputAutomationNewBundleRunnable_Package.FILE) + (file_Case.getAbsolutePath)));
                     end if;
                 end if;
             end if;
@@ -123,7 +123,7 @@ package body org.allbinary.input.automation.module.osgi.InputAutomationNewBundle
         This.logUtil.putF (This.commonStrings.START, InputAutomationNewBundleRunnable_Access'(This'Unchecked_Access), To_Unbounded_String ("getJarModuleFileBasicArrayList"));
         baseJarPath := Java_Get_Property (JAR_DIR_PROP);
         if baseJarPath.startsWith (InputAutomationNewBundleRunnable_Package.FILE) then
-            baseJarPath := Unbounded_Slice (baseJarPath, (InputAutomationNewBundleRunnable_Package.FILE.length) + 1, Length (baseJarPath));
+            baseJarPath := Unbounded_Slice (baseJarPath, (Length (InputAutomationNewBundleRunnable_Package.FILE)) + 1, Length (baseJarPath));
         end if;
         jarFileFilter := BasicFileFilterUtil_Package.getInstance (To_Unbounded_String (".jar"));
         path := baseJarPath & Java_Image (InputAutomationNewBundleRunnable_Package.INPUT_AUTMATION_MODULE_BUNDLE_JAR_PATH);
@@ -163,11 +163,11 @@ package body org.allbinary.input.automation.module.osgi.InputAutomationNewBundle
       index : Integer;
    begin
         This.logUtil.putF (Java_Image (CommonLabels_Package.getInstance.START) & symbolicName, InputAutomationNewBundleRunnable_Access'(This'Unchecked_Access), To_Unbounded_String ("isInstalled"));
-        list := This.getInstalledJarSymbolicNameBasicArrayList;
+        list := InputAutomationNewBundleRunnable'Class (This).getInstalledJarSymbolicNameBasicArrayList;
         size := list.size;
         nextSymbolicName := Null_Unbounded_String;
         for index in 0 .. (size) - 1 loop
-            nextSymbolicName := Unbounded_String (list.get (index));
+            nextSymbolicName := Java_Unbox (list.get (index));
             if (nextSymbolicName.compareTo (symbolicName)) = (0) then
                 return True;
             end if;
@@ -187,15 +187,15 @@ package body org.allbinary.input.automation.module.osgi.InputAutomationNewBundle
    begin
         This.logUtil.putF (This.commonStrings.START, InputAutomationNewBundleRunnable_Access'(This'Unchecked_Access), To_Unbounded_String ("findNewModules"));
         vector := BasicArrayListD_Package.Create;
-        hashMap := This.getAllJarSymbolicNameHashMap;
+        hashMap := InputAutomationNewBundleRunnable'Class (This).getAllJarSymbolicNameHashMap;
         This.logUtil.putF (To_Unbounded_String ("All: ") & Java_Image (hashMap), InputAutomationNewBundleRunnable_Access'(This'Unchecked_Access), To_Unbounded_String ("findNewModules"));
         set := hashMap.keySet;
         symbolicNameArray := set.toArray;
         size := symbolicNameArray'Length;
         for index in 0 .. (size) - 1 loop
-            symbolicName := Unbounded_String (symbolicNameArray (index));
-            if not (This.isInstalled (symbolicName)) then
-                vector.add (hashMap.get (symbolicName));
+            symbolicName := Java_Unbox (symbolicNameArray (index));
+            if not (InputAutomationNewBundleRunnable'Class (This).isInstalled (symbolicName)) then
+                vector.add (hashMap.get (Java_Box (symbolicName)));
             end if;
         end loop;
         return vector;
@@ -216,12 +216,12 @@ package body org.allbinary.input.automation.module.osgi.InputAutomationNewBundle
    begin
         begin
             This.logUtil.putF (This.commonStrings.START, InputAutomationNewBundleRunnable_Access'(This'Unchecked_Access), This.commonStrings.RUN);
-            This.setRunning (True);
+            InputAutomationNewBundleRunnable'Class (This).setRunning (True);
             timeHelper := TimeDelayHelper_Package.Create (1000);
-            while This.isRunning loop
+            while InputAutomationNewBundleRunnable'Class (This).isRunning loop
                 timeHelper.setStartTimeTNT;
                 This.logUtil.putF ((CommonLabels_Package.getInstance.ELAPSED) + (timeHelper.getElapsedTNT), InputAutomationNewBundleRunnable_Access'(This'Unchecked_Access), This.commonStrings.RUN);
-                This.updateModules;
+                InputAutomationNewBundleRunnable'Class (This).updateModules;
                 exit;
             end loop;
             This.logUtil.putF (This.commonStrings.END_Id, InputAutomationNewBundleRunnable_Access'(This'Unchecked_Access), This.commonStrings.RUN);

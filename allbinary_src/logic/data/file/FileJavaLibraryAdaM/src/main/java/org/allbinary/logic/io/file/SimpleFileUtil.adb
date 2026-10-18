@@ -76,6 +76,7 @@ package body org.allbinary.logic.io.file.SimpleFileUtil_Package is
 --     function append (This : in out ; c : Character) return Writer_Access is
 --     begin
 --                  return SimpleFileUtil_Access'(This'Unchecked_Access);
+--          return null;
 --     end append;
 --              
 --     --  throws IOException
@@ -83,6 +84,7 @@ package body org.allbinary.logic.io.file.SimpleFileUtil_Package is
 --        csq : constant CharSequence_Access := CharSequence_Access (csq_Param);
 --     begin
 --                  return SimpleFileUtil_Access'(This'Unchecked_Access);
+--          return null;
 --     end append;
 --              
 --     --  throws IOException
@@ -90,6 +92,7 @@ package body org.allbinary.logic.io.file.SimpleFileUtil_Package is
 --        csq : constant CharSequence_Access := CharSequence_Access (csq_Param);
 --     begin
 --                  return SimpleFileUtil_Access'(This'Unchecked_Access);
+--          return null;
 --     end append;
 --              
 --     --  throws IOException
@@ -138,12 +141,14 @@ package body org.allbinary.logic.io.file.SimpleFileUtil_Package is
 --     function read (This : in out ) return Integer is
 --     begin
 --                  return -(1);
+--          return 0;
 --     end read;
 --              
 --     --  throws IOException
 --     function read (This : in out ; cbuf : Character_Array_Access; off : Integer; len : Integer) return Integer is
 --     begin
 --                  return -(1);
+--          return 0;
 --     end read;
 --              
 --     --  throws IOException
@@ -151,18 +156,21 @@ package body org.allbinary.logic.io.file.SimpleFileUtil_Package is
 --        target : constant CharBuffer_Access := CharBuffer_Access (target_Param);
 --     begin
 --                  return -(1);
+--          return 0;
 --     end read;
 --              
 --     --  throws IOException
 --     function ready (This : in out ) return Boolean is
 --     begin
 --                  return False;
+--          return False;
 --     end ready;
 --              
 --     --  throws IOException
 --     function skip (This : in out ; n : Long_Long_Integer) return Long_Long_Integer is
 --     begin
 --                  return 0;
+--          return 0;
 --     end skip;
 --              
 --     procedure close (This : in out ) is
@@ -175,7 +183,7 @@ package body org.allbinary.logic.io.file.SimpleFileUtil_Package is
    function loadFileAsList (This : in out SimpleFileUtil; inputStream_Param : access InputStream_Package.InputStream'Class; max : Integer; byteArray1 : Short_Short_Integer_Array_Access) return BasicArrayList_Access is
       inputStream : constant InputStream_Access := InputStream_Access (inputStream_Param);
    begin
-        return This.loadFileAsListReturnLine (inputStream, max, byteArray1, 0);
+        return SimpleFileUtil'Class (This).loadFileAsListReturnLine (inputStream, max, byteArray1, 0);
    end loadFileAsList;
 
    function loadFileAsListReturnLine (This : in out SimpleFileUtil; inputStream_Param : access InputStream_Package.InputStream'Class; max : Integer; byteArray1 : Short_Short_Integer_Array_Access; includeReturnLine : Integer) return BasicArrayList_Access is

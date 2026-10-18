@@ -94,6 +94,7 @@ package body taghelpers.ViewHelper_Package is
             Java_Throw (e);
                 end;
         end;
+        return null;
    end toXmlDoc;
 
    function getViewObject (This : in out ViewHelper) return TransformInterface_Access is

@@ -42,8 +42,8 @@ package body org.allbinary.game.displayable.canvas.EndGameInfo_Package is
       gameInfo : constant GameInfo_Access := GameInfo_Access (gameInfo_Param);
       myCanvas : constant MyCanvas_Access := MyCanvas_Access (myCanvas_Param);
    begin
-        This.setGameOverStr (This.NORMAL_GAME_OVER);
-        This.setWinStr (This.NORMAL_GAME_OVER_WIN);
+        EndGameInfo'Class (This).setGameOverStr (This.NORMAL_GAME_OVER);
+        EndGameInfo'Class (This).setWinStr (This.NORMAL_GAME_OVER_WIN);
    end update;
 
    function getGameOverStr (This : in out EndGameInfo) return Unbounded_String is

@@ -62,7 +62,7 @@ package body org.allbinary.init.crypt.jcehelper.BasicCryptUtil_Package is
         end loop;
         decrypted := cryptInterface.decrypt (buffer.toByteArray);
         decryptedString := Java_New_String (decrypted);
-        index := (Index (decryptedString, To_String (This.XML_START)) - 1);
+        index := (Index (decryptedString, Java_Image (This.XML_START)) - 1);
         if (index) > (0) then
             decryptedString := Unbounded_Slice (decryptedString, (index) + 1, Length (decryptedString));
         end if;

@@ -54,7 +54,7 @@ package body org.allbinary.media.graphics.geography.map.racetrack.RaceTracksPath
         size := list.size;
         for index in 0 .. (size) - 1 loop
             Ada.Text_IO.Put_Line (Java_Image (StringMaker_Package.Create.append (To_Unbounded_String (" Path ")).appendint (index).append (CommonLabels_Package.getInstance.COLON_SEP).toString));
-            This.printPath (BasicArrayList_Access (list.get (index)));
+            RaceTracksPathPrinter'Class (This).printPath (BasicArrayList_Access (list.get (index)));
         end loop;
    end printPaths;
 

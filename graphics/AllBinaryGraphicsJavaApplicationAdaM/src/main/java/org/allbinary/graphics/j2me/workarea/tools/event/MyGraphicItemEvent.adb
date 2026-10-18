@@ -47,21 +47,21 @@ package body org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEvent
    function getCommand (This : in out MyGraphicItemEvent) return Unbounded_String is
       myEventSource : MyGraphicItemEventSource_Access;
    begin
-        myEventSource := MyGraphicItemEventSource_Access (This.getSource);
+        myEventSource := MyGraphicItemEventSource_Access (MyGraphicItemEvent'Class (This).getSource);
         return myEventSource.getCommand;
    end getCommand;
 
    function getTreeNode (This : in out MyGraphicItemEvent) return MutableTreeNode_Access is
       myEventSource : MyGraphicItemEventSource_Access;
    begin
-        myEventSource := MyGraphicItemEventSource_Access (This.getSource);
+        myEventSource := MyGraphicItemEventSource_Access (MyGraphicItemEvent'Class (This).getSource);
         return myEventSource.getTreeNode;
    end getTreeNode;
 
    function getAngle (This : in out MyGraphicItemEvent) return Long_Float is
       myEventSource : MyGraphicItemEventSource_Access;
    begin
-        myEventSource := MyGraphicItemEventSource_Access (This.getSource);
+        myEventSource := MyGraphicItemEventSource_Access (MyGraphicItemEvent'Class (This).getSource);
         return myEventSource.getAngle;
    end getAngle;
 

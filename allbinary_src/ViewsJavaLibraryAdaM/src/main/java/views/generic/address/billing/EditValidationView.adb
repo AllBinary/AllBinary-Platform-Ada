@@ -27,7 +27,7 @@ package body views.generic_Id.address.billing.EditValidationView_Package is
    begin
         BillingAddressView_Package.Initialize (This, transformInfoInterface);
         Initialize_Fields (This);
-        This.value := This.getPageContext.getRequest.getParameter (StreetAddressData_Package.ID);
+        This.value := EditValidationView'Class (This).getPageContext.getRequest.getParameter (StreetAddressData_Package.ID);
    end Initialize;
 
    function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return EditValidationView_Access is
@@ -40,10 +40,10 @@ package body views.generic_Id.address.billing.EditValidationView_Package is
    function isValid (This : in out EditValidationView) return Boolean is
       billingAddressesEntity : BillingAddressesEntity_Access;
    begin
-        if (This.getWeblisketSession.getUserName) /= (null) then
+        if (EditValidationView'Class (This).getWeblisketSession.getUserName) /= (null) then
             return False;
         end if;
-        billingAddressesEntity := BillingAddressesEntity_Package.Create (This.getWeblisketSession.getUserName);
+        billingAddressesEntity := BillingAddressesEntity_Package.Create (EditValidationView'Class (This).getWeblisketSession.getUserName);
         This.streetAddress := billingAddressesEntity.get (This.value);
         if (This.streetAddress) = (null) then
             return False;

@@ -20,11 +20,12 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with javax.microedition.midlet.MIDlet_Package; use javax.microedition.midlet.MIDlet_Package;
+with javax.microedition.midlet.MIDlet_Package; use javax.microedition.midlet.MIDlet_Package;
 with org.allbinary.midlet.AllBinaryMidlet_Package; use org.allbinary.midlet.AllBinaryMidlet_Package;
 
 package org.allbinary.midlet.MidletFactoryInterface_Package is
 
+   package MIDlet_Package renames Standard.javax.microedition.midlet.MIDlet_Package;
 
    type MidletFactoryInterface is tagged;
    type MidletFactoryInterface_Access is access all MidletFactoryInterface'Class;

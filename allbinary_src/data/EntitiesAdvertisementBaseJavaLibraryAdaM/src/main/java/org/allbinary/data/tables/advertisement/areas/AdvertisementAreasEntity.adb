@@ -27,7 +27,7 @@ package body org.allbinary.data.tables.advertisement.areas.AdvertisementAreasEnt
    begin
         AbSqlBean_Package.Initialize (This, UserDbInitInfo_Package.Create);
         Initialize_Fields (This);
-        This.setTableName (This.tableName);
+        AdvertisementAreasEntity'Class (This).setTableName (This.tableName);
    end Initialize;
 
    function Create return AdvertisementAreasEntity_Access is
@@ -66,7 +66,7 @@ package body org.allbinary.data.tables.advertisement.areas.AdvertisementAreasEnt
       index : Integer;
    begin
         keysAndValues := StdUtil_Package.getInstance.createHashMap;
-        keysAndValues.put (StoreFrontData_Package.getInstance.NAME, storeName);
+        keysAndValues.put (StoreFrontData_Package.getInstance.NAME, Java_Box (storeName));
         hashMapVector := AbSqlBean (This).getRows (keysAndValues);
         vector := BasicArrayListD_Package.Create;
         size := hashMapVector.size;
@@ -85,8 +85,8 @@ package body org.allbinary.data.tables.advertisement.areas.AdvertisementAreasEnt
       hashMap : HashMap_Access;
    begin
         keysAndValues := StdUtil_Package.getInstance.createHashMap;
-        keysAndValues.put (StoreFrontData_Package.getInstance.NAME, storeName);
-        keysAndValues.put (AdvertisementAreaData_Package.getInstance.NAME, advertisementAreaName);
+        keysAndValues.put (StoreFrontData_Package.getInstance.NAME, Java_Box (storeName));
+        keysAndValues.put (AdvertisementAreaData_Package.getInstance.NAME, Java_Box (advertisementAreaName));
         hashMap := AbSqlBean (This).getRow (keysAndValues);
         if (hashMap) /= (null) then
             return AdvertisementAreaInterface_Access (AdvertisementArea_Package.Create (hashMap));
@@ -102,7 +102,7 @@ package body org.allbinary.data.tables.advertisement.areas.AdvertisementAreasEnt
         advertisementAreaData := AdvertisementAreaData_Package.getInstance;
         stringBuffer := StringMaker_Package.Create;
         stringBuffer.append (This.sqlStrings.CREATE_TABLE);
-        stringBuffer.append (This.getTableName);
+        stringBuffer.append (AdvertisementAreasEntity'Class (This).getTableName);
         stringBuffer.append (This.sqlStrings.START);
         stringBuffer.append (advertisementAreaData.NAME).append (This.sqlTypeStrings.MAX_CHAR_COLUMN_NOT_NULL).append (StoreFrontData_Package.getInstance.NAME).append (This.sqlTypeStrings.MAX_CHAR_COLUMN_NOT_NULL).append (advertisementAreaData.DESCRIPTION).append (This.sqlTypeStrings.MAX_CHAR_COLUMN_NOT_NULL).append (advertisementAreaData.CONSTRAINTS).append (This.sqlTypeStrings.BLOB_NOT_NULL).append (AdvertisementCampaignData_Package.getInstance.NAME).append (This.sqlTypeStrings.MAX_CHAR_COLUMN_NOT_NULL).append (EntryData_Package.getInstance.TIMECREATED).append (This.sqlTypeStrings.MAX_BIG_INT_UNSIGNED_NOT_NULL).append (EntryData_Package.getInstance.LASTMODIFIED).append (This.sqlTypeStrings.MAX_BIG_INT_UNSIGNED_NOT_NULL).append (This.sqlStrings.PRIMARY_KEY).append (advertisementAreaData.NAME).append (This.sqlStrings.END_Id);
         return stringBuffer.toString;
@@ -111,14 +111,14 @@ package body org.allbinary.data.tables.advertisement.areas.AdvertisementAreasEnt
    function createTable (This : in out AdvertisementAreasEntity) return Unbounded_String is
       returnStr : Unbounded_String;
    begin
-        returnStr := AbSqlBean (This).createTable (This.createTableStatement);
+        returnStr := AbSqlBean (This).createTable (AdvertisementAreasEntity'Class (This).createTableStatement);
         return returnStr;
    end createTable;
 
    procedure update (This : in out AdvertisementAreasEntity; updatedValues_Param : access HashMap_Package.HashMap'Class) is
       updatedValues : constant HashMap_Access := HashMap_Access (updatedValues_Param);
    begin
-        AbSqlBean (This).updateWhere (AdvertisementAreaData_Package.getInstance.NAME, Unbounded_String (updatedValues.get (AdvertisementAreaData_Package.getInstance.NAME)), updatedValues);
+        AbSqlBean (This).updateWhere (AdvertisementAreaData_Package.getInstance.NAME, Java_Unbox (updatedValues.get (AdvertisementAreaData_Package.getInstance.NAME)), updatedValues);
    end update;
 
    function dropTable (This : in out AdvertisementAreasEntity) return Unbounded_String is

@@ -20,7 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.util.HashMap_Package; use java.util.HashMap_Package;
+with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.log.LOGGING_Package; use org.allbinary.log.LOGGING_Package;
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
@@ -34,6 +34,7 @@ with org.allbinary.graphics.j2me.workarea.tools.GraphicItemInterface_Package; us
 
 package org.allbinary.graphics.j2me.workarea.tools.GraphicItemFactory_Package is
 
+   package HashMap_Package renames Standard.java.util.HashMap_Package;
    package LOGGING_Package renames Standard.org.allbinary.log.LOGGING_Package;
    package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;

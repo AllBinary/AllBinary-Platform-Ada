@@ -31,7 +31,7 @@ package body views.business.context.modules.storefront.HttpStoreComponentView_Pa
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
             This.logUtil.putF (To_Unbounded_String ("View Name: ") & transformInfoInterface.getName, HttpStoreComponentView_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         end if;
-        This.setTransformDocumentInterface (TransformStoreDocumentFactory_Package.getInstance (This.getPageContext, This.getWeblisketSession));
+        HttpStoreComponentView'Class (This).setTransformDocumentInterface (TransformStoreDocumentFactory_Package.getInstance (HttpStoreComponentView'Class (This).getPageContext, HttpStoreComponentView'Class (This).getWeblisketSession));
    end Initialize;
 
    function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return HttpStoreComponentView_Access is
@@ -50,9 +50,9 @@ package body views.business.context.modules.storefront.HttpStoreComponentView_Pa
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
                 This.logUtil.putF (This.commonStrings.START, HttpStoreComponentView_Access'(This'Unchecked_Access), To_Unbounded_String ("view"));
             end if;
-            This.toXmlDoc;
-            success := XmlDocumentHelper_Package.toString (This.getDoc);
-            result := StoreTransformer_Package.Create (This.abeClientInformation, This.getTransformInfoInterface).translate (success);
+            HttpStoreComponentView'Class (This).toXmlDoc;
+            success := XmlDocumentHelper_Package.toString (HttpStoreComponentView'Class (This).getDoc);
+            result := StoreTransformer_Package.Create (This.abeClientInformation, HttpStoreComponentView'Class (This).getTransformInfoInterface).translate (success);
             return result;
         exception
             when Java_Occurrence : others =>

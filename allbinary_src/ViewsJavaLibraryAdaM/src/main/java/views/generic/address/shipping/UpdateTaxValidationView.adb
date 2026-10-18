@@ -44,12 +44,12 @@ package body views.generic_Id.address.shipping.UpdateTaxValidationView_Package i
       aStreetAddress : StreetAddress_Access;
       index : Integer;
    begin
-        This.streetAddress := StreetAddress_Package.Create (This.getRequest);
-        storeFrontInterface := StoreFrontFactory_Package.getInstance (This.getTransformInfoInterface.getStoreName);
+        This.streetAddress := StreetAddress_Package.Create (UpdateTaxValidationView'Class (This).getRequest);
+        storeFrontInterface := StoreFrontFactory_Package.getInstance (UpdateTaxValidationView'Class (This).getTransformInfoInterface.getStoreName);
         if (TaxFactory_Package.getInstance.getInstance (This.abeClientInformation, storeFrontInterface).isValid (This.streetAddress, storeFrontInterface)) = (False) then
             return False;
         end if;
-        billingAddressesEntity := ShippingAddressesEntity_Package.Create (This.getWeblisketSession.getUserName);
+        billingAddressesEntity := ShippingAddressesEntity_Package.Create (UpdateTaxValidationView'Class (This).getWeblisketSession.getUserName);
         streetAddressList := billingAddressesEntity.get;
         if (streetAddressList) = (null) then
             return False;

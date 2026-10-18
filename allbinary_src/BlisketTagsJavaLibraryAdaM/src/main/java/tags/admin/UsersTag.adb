@@ -45,14 +45,14 @@ package body tags.admin.UsersTag_Package is
    function doStartTag (This : in out UsersTag) return Integer is
    begin
         begin
-            This.setName (To_Unbounded_String ("Admin Users View"));
-            This.setObjectFile (To_Unbounded_String ("views.admin.user.UsersValidationView"));
-            if (This.getCommand) /= (null) then
-                This.getPropertiesHashMap.put (UserRoleData_Package.NAME, This.role);
-                if (This.getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.VIEW)) = (0) then
+            UsersTag'Class (This).setName (To_Unbounded_String ("Admin Users View"));
+            UsersTag'Class (This).setObjectFile (To_Unbounded_String ("views.admin.user.UsersValidationView"));
+            if (UsersTag'Class (This).getCommand) /= (null) then
+                UsersTag'Class (This).getPropertiesHashMap.put (UserRoleData_Package.NAME, This.role);
+                if (UsersTag'Class (This).getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.VIEW)) = (0) then
                     null;
                 else
-                    Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("No Such View Command: ") & Java_Image (This.getCommand)));
+                    Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("No Such View Command: ") & Java_Image (UsersTag'Class (This).getCommand)));
                 end if;
                 return StoreValidationTransformTag (This).doStartTag;
             end if;

@@ -28,7 +28,7 @@ package body views.admin.workflow.WorkFlowsView_Package is
    begin
         HttpStoreComponentView_Package.Initialize (This, transformInfoInterface);
         Initialize_Fields (This);
-        This.workFlowsVector := WorkFlowEntityFactory_Package.getInstance.create2.get (This.getWeblisketSession.getStoreName);
+        This.workFlowsVector := WorkFlowEntityFactory_Package.getInstance.create2.get (WorkFlowsView'Class (This).getWeblisketSession.getStoreName);
    end Initialize;
 
    function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return WorkFlowsView_Access is
@@ -40,14 +40,14 @@ package body views.admin.workflow.WorkFlowsView_Package is
 
    procedure addDomNodeInterfaces (This : in out WorkFlowsView) is
    begin
-        This.addDomNodeInterface (DomNodeInterface_Access (WorkFlowsView_Access'(This'Unchecked_Access)));
+        WorkFlowsView'Class (This).addDomNodeInterface (DomNodeInterface_Access (WorkFlowsView_Access'(This'Unchecked_Access)));
    end addDomNodeInterfaces;
 
    --  throws Exception
    function view (This : in out WorkFlowsView) return Unbounded_String is
    begin
         begin
-            This.addDomNodeInterfaces;
+            WorkFlowsView'Class (This).addDomNodeInterfaces;
             return HttpStoreComponentView (This).view;
         exception
             when Java_Occurrence : others =>

@@ -36,8 +36,8 @@ package body org.allbinary.input.motion.touch.action.ReleaseTouchInputToGameKeyE
         GameKeyCompleteMotionGestureInputEvent_Package.Initialize (This, To_Unbounded_String ("Release Action"), TouchMotionGestureFactory_Package.getInstance.RELEASED, PlatformInputMappingFactory_Package.getInstance.getPersistentInputMappingInstance.getInputMapping);
         Initialize_Fields (This);
         begin
-            This.setGameKey (This.NONE);
-            This.setGameKeyEvent (GameKeyEventFactory_Package.getInstance.getInstanceForInput (ReleaseTouchInputToGameKeyEventAction_Access'(This'Unchecked_Access), This.NONE));
+            ReleaseTouchInputToGameKeyEventAction'Class (This).setGameKey (This.NONE);
+            ReleaseTouchInputToGameKeyEventAction'Class (This).setGameKeyEvent (GameKeyEventFactory_Package.getInstance.getInstanceForInput (ReleaseTouchInputToGameKeyEventAction_Access'(This'Unchecked_Access), This.NONE));
         exception
             when Java_Occurrence : others =>
                 declare

@@ -44,6 +44,7 @@ package body org.allbinary.logic.java.exception_Id.ExceptionUtil_Package is
       e : constant Java_Throwable := Java_Throwable (e_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return Null_Unbounded_String;
    end getStackTrace;
 
    procedure getStackTrace (This : in out ExceptionUtil; e_Param : access Java_Throwable_Object'Class) is

@@ -68,7 +68,7 @@ package body org.allbinary.business.category.store.theme.StoreThemeCategory_Pack
         Initialize_Fields (This);
         This.transformInfoInterface := transformInfoInterface;
         This.themeVector := BasicArrayListD_Package.Create;
-        This.addThemes (node);
+        StoreThemeCategory'Class (This).addThemes (node);
    end Initialize;
 
    function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class; node_Param : access Node_Package.Node'Class; categoryPropertiesFactoryInterface_Param : access CategoryPropertiesFactoryInterface_Package.CategoryPropertiesFactoryInterface'Class; level : Integer) return StoreThemeCategory_Access is
@@ -89,7 +89,7 @@ package body org.allbinary.business.category.store.theme.StoreThemeCategory_Pack
         Initialize_Fields (This);
         This.transformInfoInterface := transformInfoInterface;
         This.themeVector := BasicArrayListD_Package.Create;
-        This.addThemes (node);
+        StoreThemeCategory'Class (This).addThemes (node);
    end Initialize;
 
    function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class; node_Param : access Node_Package.Node'Class; rootCategoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class; parentCategoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class; categoryPropertiesFactoryInterface_Param : access CategoryPropertiesFactoryInterface_Package.CategoryPropertiesFactoryInterface'Class) return StoreThemeCategory_Access is

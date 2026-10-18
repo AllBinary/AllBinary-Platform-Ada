@@ -53,12 +53,24 @@ package body org.allbinary.TsUtil_Package is
         anyType.wait (timeoutMillis);
    end waitFor;
 
+   function compareTo (This : in out TsUtil; a : Unbounded_String; b : Unbounded_String) return Integer is
+   begin
+        return a.compareTo (b);
+   end compareTo;
+
    procedure hashCode (This : in out TsUtil; anyType_Param : access Java_Object'Class) is
       Java_Result : constant Integer := TsUtil'Class (This).hashCode (anyType_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end hashCode;
+
+   procedure compareTo (This : in out TsUtil; a : Unbounded_String; b : Unbounded_String) is
+      Java_Result : constant Integer := TsUtil'Class (This).compareTo (a, b);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end compareTo;
 
 begin
    null;

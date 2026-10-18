@@ -44,7 +44,7 @@ package body org.allbinary.media.image.ImageScaleUtil_Package is
       imageCache : constant ImageCache_Access := ImageCache_Access (imageCache_Param);
       originalImage : constant Image_Access := Image_Access (originalImage_Param);
    begin
-        return This.createImage3 (imageCache, originalImage, scaleNominatorX, scaleDenominatorX, scaleNominatorY, scaleDenominatorY, cached, True);
+        return ImageScaleUtil'Class (This).createImage3 (imageCache, originalImage, scaleNominatorX, scaleDenominatorX, scaleNominatorY, scaleDenominatorY, cached, True);
    end createImage2;
 
    --  throws Exception

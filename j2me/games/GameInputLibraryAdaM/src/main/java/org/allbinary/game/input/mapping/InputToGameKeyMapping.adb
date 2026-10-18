@@ -38,7 +38,7 @@ package body org.allbinary.game.input.mapping.InputToGameKeyMapping_Package is
       InputMapping_Package.Initialize (This);
       Initialize_Fields (This);
         This.logUtil.putF (This.commonStrings.START, InputToGameKeyMapping_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
-        This.clear;
+        InputToGameKeyMapping'Class (This).clear;
    end Initialize;
 
    function Create return InputToGameKeyMapping_Access is
@@ -59,7 +59,7 @@ package body org.allbinary.game.input.mapping.InputToGameKeyMapping_Package is
    procedure removeAll (This : in out InputToGameKeyMapping) is
    begin
         InputMapping (This).removeAll;
-        This.clear;
+        InputToGameKeyMapping'Class (This).clear;
    end removeAll;
 
    procedure addMapping (This : in out InputToGameKeyMapping; inputToGameKeyMapping_Param : access InputToGameKeyMapping_Package.InputToGameKeyMapping'Class) is
@@ -70,7 +70,7 @@ package body org.allbinary.game.input.mapping.InputToGameKeyMapping_Package is
         for index in reverse 0 .. (inputToGameKeyMapping.getMaxMappable) - (1) loop
             input := inputToGameKeyMapping.getInstance (index);
             if (input) /= (This.gameKeyFactory.NONE) then
-                This.addAll (input, inputToGameKeyMapping.getMappedInput (input));
+                InputToGameKeyMapping'Class (This).addAll (input, inputToGameKeyMapping.getMappedInput (input));
             end if;
         end loop;
    end addMapping;
@@ -83,7 +83,7 @@ package body org.allbinary.game.input.mapping.InputToGameKeyMapping_Package is
    begin
         for index in reverse 0 .. (list.size) - (1) loop
             mappedToInput := Input_Access (list.objectArray (index));
-            This.add (input, mappedToInput);
+            InputToGameKeyMapping'Class (This).add (input, mappedToInput);
         end loop;
    end addAll;
 
@@ -92,7 +92,7 @@ package body org.allbinary.game.input.mapping.InputToGameKeyMapping_Package is
       mappedToInput : constant Input_Access := Input_Access (mappedToInput_Param);
    begin
         InputMapping (This).add (input, mappedToInput);
-        This.set (input, mappedToInput);
+        InputToGameKeyMapping'Class (This).set (input, mappedToInput);
    end add;
 
    procedure remove (This : in out InputToGameKeyMapping; input_Param : access Input_Package.Input'Class; mappedToInput_Param : access Input_Package.Input'Class) is
@@ -101,7 +101,7 @@ package body org.allbinary.game.input.mapping.InputToGameKeyMapping_Package is
    begin
         This.logUtil.putF (StringMaker_Package.Create.append (CommonLabels_Package.getInstance.START_LABEL).append (StringUtil_Package.getInstance.toString (input)).append (To_Unbounded_String (" == ")).append (StringUtil_Package.getInstance.toString (mappedToInput)).toString, InputToGameKeyMapping_Access'(This'Unchecked_Access), To_Unbounded_String ("InputToGameKeyMapping::remove"));
         InputMapping (This).remove (input, mappedToInput);
-        This.set (input, This.gameKeyFactory.NONE);
+        InputToGameKeyMapping'Class (This).set (input, This.gameKeyFactory.NONE);
    end remove;
 
    procedure set (This : in out InputToGameKeyMapping; input_Param : access Input_Package.Input'Class; mappedToInput_Param : access Input_Package.Input'Class) is
@@ -184,7 +184,7 @@ package body org.allbinary.game.input.mapping.InputToGameKeyMapping_Package is
    begin
         begin
             negativePlatformToGameKeyMapping := new GameKey_Access_Array'(0 .. (0) - 1 => null);
-            smallestKey := This.getSmallestCanvasGameKeyCode (canvas);
+            smallestKey := InputToGameKeyMapping'Class (This).getSmallestCanvasGameKeyCode (canvas);
             if (smallestKey) < (0) then
                 smallestKey := smallestKey - 1;
                 if (smallestKey) < (-(256)) then
@@ -199,7 +199,7 @@ package body org.allbinary.game.input.mapping.InputToGameKeyMapping_Package is
             end if;
             index := This.mappedGameKeys'Length;
             while (Java_Pre_Decrement (index)) >= (0) loop
-                This.initGameKey (canvas, This.mappedGameKeys (index));
+                InputToGameKeyMapping'Class (This).initGameKey (canvas, This.mappedGameKeys (index));
             end loop;
         exception
             when Java_Occurrence : others =>

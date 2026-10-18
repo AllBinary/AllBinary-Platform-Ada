@@ -33,7 +33,7 @@ package body org.allbinary.game.paint.BasicGameDemoPaintable_Package is
       StatePaintable_Package.Initialize (This);
       Initialize_Fields (This);
         This.mainDemoStatePaintable := mainDemoStatePaintable;
-        This.setCurrentStatePaintable (NullPaintable_Package.getInstance);
+        BasicGameDemoPaintable'Class (This).setCurrentStatePaintable (NullPaintable_Package.getInstance);
         This.ownershipPaintable := ownershipPaintable;
         This.helpPaintableInterface := helpPaintableInterface;
    end Initialize;
@@ -48,18 +48,18 @@ package body org.allbinary.game.paint.BasicGameDemoPaintable_Package is
    procedure setState (This : in out BasicGameDemoPaintable; state : Integer) is
    begin
         if (state) = (0) then
-            This.setCurrentStatePaintable (This.getMainDemoStatePaintable);
+            BasicGameDemoPaintable'Class (This).setCurrentStatePaintable (BasicGameDemoPaintable'Class (This).getMainDemoStatePaintable);
         elsif (state) = (1) then
-            This.setCurrentStatePaintable (This.helpPaintableInterface);
+            BasicGameDemoPaintable'Class (This).setCurrentStatePaintable (This.helpPaintableInterface);
         else
-            This.setCurrentStatePaintable (This.ownershipPaintable);
+            BasicGameDemoPaintable'Class (This).setCurrentStatePaintable (This.ownershipPaintable);
         end if;
    end setState;
 
    procedure paint (This : in out BasicGameDemoPaintable; graphics_Param : access Graphics_Package.Graphics'Class) is
       graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
-        This.getCurrentStatePaintable.paint (graphics);
+        BasicGameDemoPaintable'Class (This).getCurrentStatePaintable.paint (graphics);
    end paint;
 
    function getHelpPaintableInterface (This : in out BasicGameDemoPaintable) return Paintable_Access is

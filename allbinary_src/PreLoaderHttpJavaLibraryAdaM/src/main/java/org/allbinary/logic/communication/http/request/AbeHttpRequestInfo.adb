@@ -36,12 +36,12 @@ package body org.allbinary.logic.communication.http.request.AbeHttpRequestInfo_P
    begin
       Initialize_Fields (This);
         stringUtil := StringUtil_Package.getInstance;
-        This.httpUserAgent := stringUtil.getNonNull (Unbounded_String (hashMap.get (This.abeHttpRequestInfoData.HTTP_USER_AGENT)));
-        This.remoteAddress := stringUtil.getNonNull (Unbounded_String (hashMap.get (This.abeHttpRequestInfoData.REMOTE_ADDRESS)));
-        This.remoteHost := stringUtil.getNonNull (Unbounded_String (hashMap.get (This.abeHttpRequestInfoData.REMOTE_HOST)));
-        This.remoteHostByAddr := stringUtil.getNonNull (Unbounded_String (hashMap.get (This.abeHttpRequestInfoData.REMOTE_HOST_BY_ADDRESS)));
-        This.remotePort := stringUtil.getNonNull (Unbounded_String (hashMap.get (This.abeHttpRequestInfoData.REMOTE_PORT)));
-        This.requestedFilePath := stringUtil.getNonNull (Unbounded_String (hashMap.get (This.abeHttpRequestInfoData.REQUEST_FILE_PATH)));
+        This.httpUserAgent := stringUtil.getNonNull (Java_Unbox (hashMap.get (This.abeHttpRequestInfoData.HTTP_USER_AGENT)));
+        This.remoteAddress := stringUtil.getNonNull (Java_Unbox (hashMap.get (This.abeHttpRequestInfoData.REMOTE_ADDRESS)));
+        This.remoteHost := stringUtil.getNonNull (Java_Unbox (hashMap.get (This.abeHttpRequestInfoData.REMOTE_HOST)));
+        This.remoteHostByAddr := stringUtil.getNonNull (Java_Unbox (hashMap.get (This.abeHttpRequestInfoData.REMOTE_HOST_BY_ADDRESS)));
+        This.remotePort := stringUtil.getNonNull (Java_Unbox (hashMap.get (This.abeHttpRequestInfoData.REMOTE_PORT)));
+        This.requestedFilePath := stringUtil.getNonNull (Java_Unbox (hashMap.get (This.abeHttpRequestInfoData.REQUEST_FILE_PATH)));
    end Initialize;
 
    function Create (hashMap_Param : access HashMap_Package.HashMap'Class) return AbeHttpRequestInfo_Access is
@@ -63,9 +63,9 @@ package body org.allbinary.logic.communication.http.request.AbeHttpRequestInfo_P
         This.httpUserAgent := stringUtil.EMPTY_STRING;
         enumuration := httpServletRequest.getHeaderNames;
         while enumuration.hasMoreElements loop
-            key := Unbounded_String (enumuration.nextElement);
+            key := Java_Unbox (enumuration.nextElement);
             value := httpServletRequest.getHeader (key);
-            if ((Index (key, To_String (To_Unbounded_String ("user"))) - 1)) >= (0) then
+            if ((Index (key, Java_Image (To_Unbounded_String ("user"))) - 1)) >= (0) then
                 This.httpUserAgent := To_Unbounded_String ("key: ") & key & To_Unbounded_String (" value: ") & value;
             end if;
         end loop;
@@ -87,12 +87,12 @@ package body org.allbinary.logic.communication.http.request.AbeHttpRequestInfo_P
       hashMap : HashMap_Access;
    begin
         hashMap := StdUtil_Package.getInstance.createHashMap;
-        hashMap.put (This.abeHttpRequestInfoData.HTTP_USER_AGENT, This.httpUserAgent);
-        hashMap.put (This.abeHttpRequestInfoData.REMOTE_ADDRESS, This.remoteAddress);
-        hashMap.put (This.abeHttpRequestInfoData.REMOTE_HOST, This.remoteHost);
-        hashMap.put (This.abeHttpRequestInfoData.REMOTE_HOST_BY_ADDRESS, This.remoteHostByAddr);
-        hashMap.put (This.abeHttpRequestInfoData.REMOTE_PORT, This.remotePort);
-        hashMap.put (This.abeHttpRequestInfoData.REQUEST_FILE_PATH, This.requestedFilePath);
+        hashMap.put (This.abeHttpRequestInfoData.HTTP_USER_AGENT, Java_Box (This.httpUserAgent));
+        hashMap.put (This.abeHttpRequestInfoData.REMOTE_ADDRESS, Java_Box (This.remoteAddress));
+        hashMap.put (This.abeHttpRequestInfoData.REMOTE_HOST, Java_Box (This.remoteHost));
+        hashMap.put (This.abeHttpRequestInfoData.REMOTE_HOST_BY_ADDRESS, Java_Box (This.remoteHostByAddr));
+        hashMap.put (This.abeHttpRequestInfoData.REMOTE_PORT, Java_Box (This.remotePort));
+        hashMap.put (This.abeHttpRequestInfoData.REQUEST_FILE_PATH, Java_Box (This.requestedFilePath));
         return hashMap;
    end toHashMap;
 

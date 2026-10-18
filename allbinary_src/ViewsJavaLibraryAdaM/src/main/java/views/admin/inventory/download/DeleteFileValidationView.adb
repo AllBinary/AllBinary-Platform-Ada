@@ -27,7 +27,7 @@ package body views.admin.inventory.download.DeleteFileValidationView_Package is
    begin
         DownloadableInventoryItemView_Package.Initialize (This, transformInfoInterface, StringUtil_Package.getInstance.EMPTY_STRING);
         Initialize_Fields (This);
-        This.getFormData;
+        DeleteFileValidationView'Class (This).getFormData;
    end Initialize;
 
    function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return DeleteFileValidationView_Access is
@@ -45,8 +45,8 @@ package body views.admin.inventory.download.DeleteFileValidationView_Package is
         if (hashMap) = (null) then
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("No Request Params Found")));
         end if;
-        This.id := Unbounded_String (hashMap.get (This.basicItemData.ID));
-        This.downloadItemId := Unbounded_String (hashMap.get (DownloadItemData_Package.ID));
+        This.id := Java_Unbox (hashMap.get (This.basicItemData.ID));
+        This.downloadItemId := Java_Unbox (hashMap.get (DownloadItemData_Package.ID));
    end getFormData;
 
    function isValid (This : in out DeleteFileValidationView) return Boolean is

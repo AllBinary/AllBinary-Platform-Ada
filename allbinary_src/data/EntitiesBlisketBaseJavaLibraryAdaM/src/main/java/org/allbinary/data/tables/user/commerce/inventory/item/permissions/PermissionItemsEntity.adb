@@ -28,7 +28,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.item.permissions.
    begin
         AbSqlBean_Package.Initialize (This, InventoryDbInitInfo_Package.Create);
         Initialize_Fields (This);
-        This.setTableName (This.tableName);
+        PermissionItemsEntity'Class (This).setTableName (This.tableName);
    end Initialize;
 
    function Create return PermissionItemsEntity_Access is
@@ -88,13 +88,13 @@ package body org.allbinary.data.tables.user.commerce.inventory.item.permissions.
 
    function createTable (This : in out PermissionItemsEntity) return Unbounded_String is
    begin
-        return AbSqlBean (This).createTable (This.createTableStatement);
+        return AbSqlBean (This).createTable (PermissionItemsEntity'Class (This).createTableStatement);
    end createTable;
 
    procedure update (This : in out PermissionItemsEntity; updatedValues_Param : access HashMap_Package.HashMap'Class) is
       updatedValues : constant HashMap_Access := HashMap_Access (updatedValues_Param);
    begin
-        AbSqlBean (This).updateWhere (This.basicItemData.ID, Unbounded_String (updatedValues.get (This.basicItemData.ID)), updatedValues);
+        AbSqlBean (This).updateWhere (This.basicItemData.ID, Java_Unbox (updatedValues.get (This.basicItemData.ID)), updatedValues);
    end update;
 
    function dropTable (This : in out PermissionItemsEntity) return Unbounded_String is

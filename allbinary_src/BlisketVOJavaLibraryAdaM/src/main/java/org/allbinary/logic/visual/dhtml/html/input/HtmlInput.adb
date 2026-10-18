@@ -69,8 +69,8 @@ package body org.allbinary.logic.visual.dhtml.html.input.HtmlInput_Package is
         result := result & This.name_Case;
         result := result & To_Unbounded_String (""" ");
         for i in 0 .. (attributeSize) - 1 loop
-            key := Unbounded_String (attributeKeys (i));
-            value := Unbounded_String (This.otherAttributes.get (key));
+            key := Java_Unbox (attributeKeys (i));
+            value := Java_Unbox (This.otherAttributes.get (key));
             if ((value) /= (Null_Unbounded_String)) and then ((value.compareTo (stringUtil.EMPTY_STRING)) /= (0)) then
                 result := result & key;
                 result := result & To_Unbounded_String ("=""");

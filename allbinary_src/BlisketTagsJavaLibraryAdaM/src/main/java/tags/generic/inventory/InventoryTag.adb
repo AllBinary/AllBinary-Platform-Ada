@@ -44,10 +44,10 @@ package body tags.generic_Id.inventory.InventoryTag_Package is
       error : Unbounded_String;
    begin
         begin
-            anyType := InventoryHelperFactory_Package.Create.getInstance (This.getPropertiesHashMap, This.pageContext);
+            anyType := InventoryHelperFactory_Package.Create.getInstance (InventoryTag'Class (This).getPropertiesHashMap, This.pageContext);
             addressHelperClass := anyType.all'Tag;
             method := addressHelperClass.getMethod (To_Unbounded_String ("search"), null);
-            result := Unbounded_String (method.invoke (anyType, null));
+            result := Java_Unbox (method.invoke (anyType, null));
             This.pageContext.getOut.print (result);
         exception
             when Java_Occurrence : others =>
@@ -68,10 +68,10 @@ package body tags.generic_Id.inventory.InventoryTag_Package is
       error : Unbounded_String;
    begin
         begin
-            anyType := InventoryHelperFactory_Package.Create.getInstance (This.getPropertiesHashMap, This.pageContext);
+            anyType := InventoryHelperFactory_Package.Create.getInstance (InventoryTag'Class (This).getPropertiesHashMap, This.pageContext);
             helperClass := anyType.all'Tag;
             method := helperClass.getMethod (To_Unbounded_String ("viewSummary"), null);
-            result := Unbounded_String (method.invoke (anyType, null));
+            result := Java_Unbox (method.invoke (anyType, null));
             This.pageContext.getOut.print (result);
         exception
             when Java_Occurrence : others =>
@@ -87,23 +87,23 @@ package body tags.generic_Id.inventory.InventoryTag_Package is
    function doStartTag (This : in out InventoryTag) return Integer is
    begin
         begin
-            if (This.getCommand) /= (null) then
-                if (This.getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.SEARCH)) = (0) then
-                    This.setName (To_Unbounded_String ("Basic Search Inventory View"));
-                    This.setObjectFile (To_Unbounded_String ("views.generic.inventory.AutoSearchValidationInventoryView"));
-                    This.search;
+            if (InventoryTag'Class (This).getCommand) /= (null) then
+                if (InventoryTag'Class (This).getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.SEARCH)) = (0) then
+                    InventoryTag'Class (This).setName (To_Unbounded_String ("Basic Search Inventory View"));
+                    InventoryTag'Class (This).setObjectFile (To_Unbounded_String ("views.generic.inventory.AutoSearchValidationInventoryView"));
+                    InventoryTag'Class (This).search;
                     return EVAL_BODY_INCLUDE;
-                elsif (This.getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.VIEWSUMMARY)) = (0) then
-                    This.setName (To_Unbounded_String ("Basic Inventory View"));
-                    This.setObjectFile (To_Unbounded_String ("views.generic.inventory.AutoValidationInventoryView"));
-                    This.viewSummary;
+                elsif (InventoryTag'Class (This).getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.VIEWSUMMARY)) = (0) then
+                    InventoryTag'Class (This).setName (To_Unbounded_String ("Basic Inventory View"));
+                    InventoryTag'Class (This).setObjectFile (To_Unbounded_String ("views.generic.inventory.AutoValidationInventoryView"));
+                    InventoryTag'Class (This).viewSummary;
                     return EVAL_BODY_INCLUDE;
-                elsif (This.getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.VIEW)) = (0) then
-                    This.setName (To_Unbounded_String ("Basic Inventory View"));
-                    This.setObjectFile (To_Unbounded_String ("views.generic.inventory.AutoValidationInventoryView"));
+                elsif (InventoryTag'Class (This).getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.VIEW)) = (0) then
+                    InventoryTag'Class (This).setName (To_Unbounded_String ("Basic Inventory View"));
+                    InventoryTag'Class (This).setObjectFile (To_Unbounded_String ("views.generic.inventory.AutoValidationInventoryView"));
                     return StoreValidationTransformTag (This).doStartTag;
                 else
-                    Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("No Such View Command: ") & Java_Image (This.getCommand)));
+                    Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("No Such View Command: ") & Java_Image (InventoryTag'Class (This).getCommand)));
                 end if;
             end if;
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Command Null")));

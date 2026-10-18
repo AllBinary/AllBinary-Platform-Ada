@@ -51,8 +51,8 @@ package body org.allbinary.game.layer.waypoint.WaypointInfoHudPaintable_Package 
       rtsLayer : RTSLayer_Access;
    begin
         rtsLayer := RTSLayer_Access (This.rtsLayerP);
-        This.setName (rtsLayer.getName);
-        This.setAnimationInterface (rtsLayer.getVerticleBuildAnimationInterface);
+        WaypointInfoHudPaintable'Class (This).setName (rtsLayer.getName);
+        WaypointInfoHudPaintable'Class (This).setAnimationInterface (rtsLayer.getVerticleBuildAnimationInterface);
         This.keyvalueDrawString.update (rtsLayer.getParentLayer.getName);
    end updateSelectionInfo;
 
@@ -72,7 +72,7 @@ package body org.allbinary.game.layer.waypoint.WaypointInfoHudPaintable_Package 
    begin
         SelectionHudPaintable (This).paint (graphics);
         This.keyvalueDrawString.paint (graphics, This.textLine2Y);
-        This.getAnimationInterface.paintXY (graphics, This.imageX, This.y);
+        WaypointInfoHudPaintable'Class (This).getAnimationInterface.paintXY (graphics, This.imageX, This.y);
    end paint;
 
 end org.allbinary.game.layer.waypoint.WaypointInfoHudPaintable_Package;

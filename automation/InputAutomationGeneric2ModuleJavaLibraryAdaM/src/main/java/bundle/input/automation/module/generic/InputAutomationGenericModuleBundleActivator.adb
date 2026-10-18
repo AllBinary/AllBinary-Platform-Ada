@@ -40,8 +40,8 @@ package body bundle.input.automation.module.generic_Id.InputAutomationGenericMod
       inputAutomationGenericModuleServiceFactory : InputAutomationGenericModuleServiceFactory_Access;
    begin
         inputAutomationGenericModuleServiceFactory := InputAutomationGenericModuleServiceFactory_Package.getInstance;
-        This.setInputAutomationModuleInterface (inputAutomationGenericModuleServiceFactory.getInputAutomationModuleInterfaceArray);
-        This.setServiceFactory (inputAutomationGenericModuleServiceFactory);
+        InputAutomationGenericModuleBundleActivator'Class (This).setInputAutomationModuleInterface (inputAutomationGenericModuleServiceFactory.getInputAutomationModuleInterfaceArray);
+        InputAutomationGenericModuleBundleActivator'Class (This).setServiceFactory (inputAutomationGenericModuleServiceFactory);
    end init;
 
 end bundle.input.automation.module.generic_Id.InputAutomationGenericModuleBundleActivator_Package;

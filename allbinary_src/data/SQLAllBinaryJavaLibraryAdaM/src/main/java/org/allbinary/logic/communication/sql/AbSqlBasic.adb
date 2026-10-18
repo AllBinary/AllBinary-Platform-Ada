@@ -69,14 +69,14 @@ package body org.allbinary.logic.communication.sql.AbSqlBasic_Package is
       tempConnection : Connection_Access;
    begin
         begin
-            This.initialize;
+            AbSqlBasic'Class (This).initialize;
             stmt := This.conn.createStatement;
             stmt.execute (statement);
             rset := stmt.getResultSet;
             stmt.close;
             tempConnection := This.conn;
             This.conn := null;
-            This.sqlConnectionPool.add (This.getDatabaseConnectionInfoInterface.getUrl, tempConnection);
+            This.sqlConnectionPool.add (AbSqlBasic'Class (This).getDatabaseConnectionInfoInterface.getUrl, tempConnection);
             return rset;
         exception
             when Java_Occurrence : others =>
@@ -96,7 +96,7 @@ package body org.allbinary.logic.communication.sql.AbSqlBasic_Package is
    function create (This : in out AbSqlBasic; databaseName : Unbounded_String) return Unbounded_String is
    begin
         begin
-            This.executeSQLStatement (Java_Image (This.sqlStrings.CREATE_DATABASE) & databaseName);
+            AbSqlBasic'Class (This).executeSQLStatement (Java_Image (This.sqlStrings.CREATE_DATABASE) & databaseName);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
                 This.logUtil.putF (This.DATABASE_CREATED_LABEL & databaseName, AbSqlBasic_Access'(This'Unchecked_Access), This.METHOD_CREATE);
             end if;
@@ -117,7 +117,7 @@ package body org.allbinary.logic.communication.sql.AbSqlBasic_Package is
    procedure createConnection (This : in out AbSqlBasic) is
    begin
         begin
-            This.conn := This.sqlConnectionPool.get (This.getDatabaseConnectionInfoInterface.getUrl);
+            This.conn := This.sqlConnectionPool.get (AbSqlBasic'Class (This).getDatabaseConnectionInfoInterface.getUrl);
         exception
             when Java_Occurrence : others =>
                 declare
@@ -130,7 +130,7 @@ package body org.allbinary.logic.communication.sql.AbSqlBasic_Package is
                 Thread_Package.currentThread.sleep (2000);
                 if (This.connectAttemptCounter) < (10) then
                     This.connectAttemptCounter := This.connectAttemptCounter + 1;
-                    This.initialize;
+                    AbSqlBasic'Class (This).initialize;
                 end if;
             exception
                 when Java_Occurrence : others =>
@@ -154,7 +154,7 @@ package body org.allbinary.logic.communication.sql.AbSqlBasic_Package is
             begin
                 begin
                     loader := Thread_Package.currentThread.getContextClassLoader;
-                    jdbcDriverClass := loader.loadClass (This.getDatabaseConnectionInfoInterface.getJdbcDriver);
+                    jdbcDriverClass := loader.loadClass (AbSqlBasic'Class (This).getDatabaseConnectionInfoInterface.getJdbcDriver);
                     jdbcDriverClass.newInstance;
                 exception
                     when Java_Occurrence : others =>
@@ -162,12 +162,12 @@ package body org.allbinary.logic.communication.sql.AbSqlBasic_Package is
                             e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                         begin
                     if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGINGERROR) then
-                        This.logUtil.put (This.LOAD_JDBC_DRIVER_FAILED_LABEL & Java_Image (This.getDatabaseConnectionInfoInterface.getJdbcDriver), AbSqlBasic_Access'(This'Unchecked_Access), This.METHOD_INITIALIZE, e);
+                        This.logUtil.put (This.LOAD_JDBC_DRIVER_FAILED_LABEL & Java_Image (AbSqlBasic'Class (This).getDatabaseConnectionInfoInterface.getJdbcDriver), AbSqlBasic_Access'(This'Unchecked_Access), This.METHOD_INITIALIZE, e);
                     end if;
                         end;
                 end;
             end;
-            This.createConnection;
+            AbSqlBasic'Class (This).createConnection;
         exception
             when Java_Occurrence : others =>
                 declare

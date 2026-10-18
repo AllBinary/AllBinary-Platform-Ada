@@ -56,7 +56,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoHttpStore_Pa
             stringBuffer.append (propertiesHashMap.toString);
             This.logUtil.putF (stringBuffer.toString, TransformInfoHttpStore_Access'(This'Unchecked_Access), To_Unbounded_String ("Constructor(HashMap, HashMap , PageContext)"));
         end if;
-        This.setStoreName (Unbounded_String (databaseHashMap.get (StoreFrontData_Package.getInstance.NAME)));
+        TransformInfoHttpStore'Class (This).setStoreName (Java_Unbox (databaseHashMap.get (StoreFrontData_Package.getInstance.NAME)));
    end Initialize;
 
    function Create (databaseHashMap_Param : access HashMap_Package.HashMap'Class; propertiesHashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) return TransformInfoHttpStore_Access is
@@ -76,7 +76,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoHttpStore_Pa
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
             This.logUtil.putF (To_Unbounded_String ("Properties HashMap: ") & propertiesHashMap.toString, TransformInfoHttpStore_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         end if;
-        This.setStoreName (storeFrontInterface.getName);
+        TransformInfoHttpStore'Class (This).setStoreName (storeFrontInterface.getName);
    end Initialize;
 
    function Create (storeFrontInterface_Param : access StoreFrontInterface_Package.StoreFrontInterface'Class; propertiesHashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) return TransformInfoHttpStore_Access is
@@ -93,7 +93,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoHttpStore_Pa
         stringBuffer := StringMaker_Package.Create;
         stringBuffer.append (URLGLOBALS.getMainPath);
         stringBuffer.append (FREEBLISKET_PATH_GLOBALS.getInstance.XSLPATH);
-        stringBuffer.append (This.getStoreName);
+        stringBuffer.append (TransformInfoHttpStore'Class (This).getStoreName);
         stringBuffer.append (AbPathData_Package.getInstance.SEPARATOR);
         return stringBuffer.toString;
    end getPath;
@@ -101,19 +101,19 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoHttpStore_Pa
    --  throws Exception
    function getTemplateFilePath (This : in out TransformInfoHttpStore) return AbPath_Access is
    begin
-        return AbPath_Package.Create (This.getPath, This.getTemplateFile);
+        return AbPath_Package.Create (TransformInfoHttpStore'Class (This).getPath, TransformInfoHttpStore'Class (This).getTemplateFile);
    end getTemplateFilePath;
 
    --  throws Exception
    function getObjectConfigFilePath (This : in out TransformInfoHttpStore) return AbPath_Access is
    begin
-        return AbPath_Package.Create (This.getPath, This.getObjectConfigFile);
+        return AbPath_Package.Create (TransformInfoHttpStore'Class (This).getPath, TransformInfoHttpStore'Class (This).getObjectConfigFile);
    end getObjectConfigFilePath;
 
    --  throws Exception
    function getDataFilePath (This : in out TransformInfoHttpStore) return AbPath_Access is
    begin
-        return AbPath_Package.Create (This.getPath, This.getDataFile);
+        return AbPath_Package.Create (TransformInfoHttpStore'Class (This).getPath, TransformInfoHttpStore'Class (This).getDataFile);
    end getDataFilePath;
 
 end org.allbinary.logic.visual.transform.info.TransformInfoHttpStore_Package;

@@ -39,7 +39,7 @@ package body admin.taghelpers.BasicOptionItemsRequestHelper_Package is
       ModifyTable_Package.Initialize (This);
       Initialize_Fields (This);
         This.request := HttpServletRequest_Access (pageContext.getRequest);
-        This.getFormData;
+        BasicOptionItemsRequestHelper'Class (This).getFormData;
    end Initialize;
 
    function Create (hashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) return BasicOptionItemsRequestHelper_Access is
@@ -85,7 +85,7 @@ package body admin.taghelpers.BasicOptionItemsRequestHelper_Package is
       time : Unbounded_String;
    begin
         values := StdUtil_Package.getInstance.createHashMap;
-        values.put (This.basicItemData.ID, This.id);
+        values.put (This.basicItemData.ID, Java_Box (This.id));
         values.put (BasicOptionItemData_Package.OPTION_ONE_ONE_ITEM, This.optionItem.get (0));
         values.put (BasicOptionItemData_Package.OPTION_ONE_ONE_VALUE, This.optionValue.get (0));
         values.put (BasicOptionItemData_Package.OPTION_ONE_TWO_ITEM, This.optionItem.get (1));
@@ -106,7 +106,7 @@ package body admin.taghelpers.BasicOptionItemsRequestHelper_Package is
         values.put (BasicOptionItemData_Package.OPTION_ONE_NINE_VALUE, This.optionValue.get (8));
         calendar := Calendar_Package.getInstance;
         time := Java_New_String (calendar.getTimeInMillis.toString);
-        values.put (EntryData_Package.getInstance.LASTMODIFIED, time);
+        values.put (EntryData_Package.getInstance.LASTMODIFIED, Java_Box (time));
         return values;
    end getHashMap;
 
@@ -123,14 +123,14 @@ package body admin.taghelpers.BasicOptionItemsRequestHelper_Package is
             calendar := Calendar_Package.getInstance;
             time := Java_New_String (calendar.getTimeInMillis.toString);
             values := BasicArrayListD_Package.Create;
-            values.add (This.id);
+            values.add (Java_Box (This.id));
             size := This.optionValue.size;
             for index in 0 .. (size) - 1 loop
                 values.add (This.optionValue.get (index));
                 values.add (This.optionItem.get (index));
             end loop;
-            values.add (time);
-            values.add (time);
+            values.add (Java_Box (time));
+            values.add (Java_Box (time));
             BasicOptionItemsEntityFactory_Package.getInstance.getBasicOptionItemsEntityInstance.insert (values);
             success := To_Unbounded_String ("Successfully inserted ") & This.id & To_Unbounded_String (" into items table");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
@@ -183,7 +183,7 @@ package body admin.taghelpers.BasicOptionItemsRequestHelper_Package is
    begin
         begin
             success := To_Unbounded_String ("Update Pricing Successful");
-            values := This.getHashMap;
+            values := BasicOptionItemsRequestHelper'Class (This).getHashMap;
             BasicOptionItemsEntityFactory_Package.getInstance.getBasicOptionItemsEntityInstance.update (values);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
                 This.logUtil.putF (StringMaker_Package.Create.append (This.id).append (CommonSeps_Package.getInstance.SPACE).append (success).toString, BasicOptionItemsRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("update()"));

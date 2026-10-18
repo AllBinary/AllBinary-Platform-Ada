@@ -69,35 +69,35 @@ package body org.allbinary.business.installer.InitDbCrypted_Package is
             CUSTOMERDB := This.userDbInitInfo.getName;
             CUSTOMERDBUSER := This.userDbInitInfo.getUserName;
             CUSTOMERDBPASSWORD := This.userDbInitInfo.getPassword;
-            if not (This.addDbUser (CUSTOMERDB, CUSTOMERDBUSER, CUSTOMERDBPASSWORD)) then
+            if not (InitDbCrypted'Class (This).addDbUser (CUSTOMERDB, CUSTOMERDBUSER, CUSTOMERDBPASSWORD)) then
                 This.logUtil.putF (Java_Image (This.UNABLE_TO_CREATE_USER) & CUSTOMERDBUSER, InitDbCrypted_Access'(This'Unchecked_Access), This.METHOD_ADD_USERS);
                 return False;
             end if;
             INVENTORYDB := This.inventoryDbInitInfo.getName;
             INVENTORYDBUSER := This.inventoryDbInitInfo.getUserName;
             INVENTORYDBPASSWORD := This.inventoryDbInitInfo.getPassword;
-            if not (This.addDbUser (INVENTORYDB, INVENTORYDBUSER, INVENTORYDBPASSWORD)) then
+            if not (InitDbCrypted'Class (This).addDbUser (INVENTORYDB, INVENTORYDBUSER, INVENTORYDBPASSWORD)) then
                 This.logUtil.putF (Java_Image (This.UNABLE_TO_CREATE_USER) & INVENTORYDBUSER, InitDbCrypted_Access'(This'Unchecked_Access), This.METHOD_ADD_USERS);
                 return False;
             end if;
             HISTORYDB := This.historyDbInitInfo.getName;
             HISTORYDBUSER := This.historyDbInitInfo.getUserName;
             HISTORYDBPASSWORD := This.historyDbInitInfo.getPassword;
-            if not (This.addDbUser (HISTORYDB, HISTORYDBUSER, HISTORYDBPASSWORD)) then
+            if not (InitDbCrypted'Class (This).addDbUser (HISTORYDB, HISTORYDBUSER, HISTORYDBPASSWORD)) then
                 This.logUtil.putF (Java_Image (This.UNABLE_TO_CREATE_USER) & HISTORYDBUSER, InitDbCrypted_Access'(This'Unchecked_Access), This.METHOD_ADD_USERS);
                 return False;
             end if;
             STATICPAGESDB := This.staticpagesDbInitInfo.getName;
             STATICPAGESDBUSER := This.staticpagesDbInitInfo.getUserName;
             STATICPAGESDBPASSWORD := This.staticpagesDbInitInfo.getPassword;
-            if not (This.addDbUser (STATICPAGESDB, STATICPAGESDBUSER, STATICPAGESDBPASSWORD)) then
+            if not (InitDbCrypted'Class (This).addDbUser (STATICPAGESDB, STATICPAGESDBUSER, STATICPAGESDBPASSWORD)) then
                 This.logUtil.putF (Java_Image (This.UNABLE_TO_CREATE_USER) & STATICPAGESDBUSER, InitDbCrypted_Access'(This'Unchecked_Access), This.METHOD_ADD_USERS);
                 return False;
             end if;
             LOGDB := This.logDbInitInfo.getName;
             LOGDBUSER := This.logDbInitInfo.getUserName;
             LOGDBPASSWORD := This.logDbInitInfo.getPassword;
-            if not (This.addDbUser (LOGDB, LOGDBUSER, LOGDBPASSWORD)) then
+            if not (InitDbCrypted'Class (This).addDbUser (LOGDB, LOGDBUSER, LOGDBPASSWORD)) then
                 This.logUtil.putF (Java_Image (This.UNABLE_TO_CREATE_USER) & LOGDBUSER, InitDbCrypted_Access'(This'Unchecked_Access), This.METHOD_ADD_USERS);
                 return False;
             end if;
@@ -131,27 +131,27 @@ package body org.allbinary.business.installer.InitDbCrypted_Package is
             This.staticpagesDbInitInfo := StaticPagesDbInitInfo_Package.Create;
             This.logDbInitInfo := LogDbInitInfo_Package.Create;
             CUSTOMERDB := This.userDbInitInfo.getName;
-            if not (This.addDb (CUSTOMERDB)) then
+            if not (InitDbCrypted'Class (This).addDb (CUSTOMERDB)) then
                 This.logUtil.putF (Java_Image (This.UNABLE_TO_CREATE_DATABASE) & CUSTOMERDB, InitDbCrypted_Access'(This'Unchecked_Access), This.METHOD_ADD_DATABASES);
                 return False;
             end if;
             INVENTORYDB := This.inventoryDbInitInfo.getName;
-            if not (This.addDb (INVENTORYDB)) then
+            if not (InitDbCrypted'Class (This).addDb (INVENTORYDB)) then
                 This.logUtil.putF (Java_Image (This.UNABLE_TO_CREATE_DATABASE) & INVENTORYDB, InitDbCrypted_Access'(This'Unchecked_Access), This.METHOD_ADD_DATABASES);
                 return False;
             end if;
             HISTORYDB := This.historyDbInitInfo.getName;
-            if not (This.addDb (HISTORYDB)) then
+            if not (InitDbCrypted'Class (This).addDb (HISTORYDB)) then
                 This.logUtil.putF (Java_Image (This.UNABLE_TO_CREATE_DATABASE) & HISTORYDB, InitDbCrypted_Access'(This'Unchecked_Access), This.METHOD_ADD_DATABASES);
                 return False;
             end if;
             STATICPAGESDB := This.staticpagesDbInitInfo.getName;
-            if not (This.addDb (STATICPAGESDB)) then
+            if not (InitDbCrypted'Class (This).addDb (STATICPAGESDB)) then
                 This.logUtil.putF (Java_Image (This.UNABLE_TO_CREATE_DATABASE) & STATICPAGESDB, InitDbCrypted_Access'(This'Unchecked_Access), This.METHOD_ADD_DATABASES);
                 return False;
             end if;
             LOGDB := This.logDbInitInfo.getName;
-            if not (This.addDb (LOGDB)) then
+            if not (InitDbCrypted'Class (This).addDb (LOGDB)) then
                 This.logUtil.putF (Java_Image (This.UNABLE_TO_CREATE_DATABASE) & LOGDB, InitDbCrypted_Access'(This'Unchecked_Access), This.METHOD_ADD_DATABASES);
                 return False;
             end if;

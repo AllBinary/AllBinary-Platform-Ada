@@ -26,7 +26,7 @@ package body org.allbinary.input.automation.module.configuration.BlankModuleConf
    begin
       JPanel_Package.Initialize (This);
       Initialize_Fields (This);
-        This.initComponents;
+        BlankModuleConfigurationJPanel'Class (This).initComponents;
    end Initialize;
 
    function Create return BlankModuleConfigurationJPanel_Access is
@@ -42,7 +42,7 @@ package body org.allbinary.input.automation.module.configuration.BlankModuleConf
         This.jLabel1 := JLabel_Package.Create;
         This.jLabel1.setText (To_Unbounded_String ("No Configuration Available"));
         layout := GroupLayout_Package.Create (BlankModuleConfigurationJPanel_Access'(This'Unchecked_Access));
-        This.setLayout (layout);
+        BlankModuleConfigurationJPanel'Class (This).setLayout (layout);
         layout.setHorizontalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (javax_Package.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup.addContainerGap (231, Short_Package.MAX_VALUE).addComponent (This.jLabel1).addGap (225, 225, 225)));
         layout.setVerticalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (layout.createSequentialGroup.addContainerGap.addComponent (This.jLabel1).addContainerGap (362, Short_Package.MAX_VALUE)));
    end initComponents;

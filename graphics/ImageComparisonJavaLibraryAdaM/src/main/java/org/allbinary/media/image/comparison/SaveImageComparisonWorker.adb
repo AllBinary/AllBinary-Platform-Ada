@@ -42,13 +42,13 @@ package body org.allbinary.media.image.comparison.SaveImageComparisonWorker_Pack
       imageComparisonResultsEvent : constant ImageComparisonResultsEvent_Access := ImageComparisonResultsEvent_Access (imageComparisonResultsEvent_Param);
    begin
         This.imageComparisonInfoVector.add (imageComparisonResultsEvent);
-        This.run;
+        SaveImageComparisonWorker'Class (This).run;
    end onImageComparisonResultsEvent;
 
    procedure onEvent (This : in out SaveImageComparisonWorker; allBinaryEventObject_Param : access AllBinaryEventObject_Package.AllBinaryEventObject'Class) is
       allBinaryEventObject : constant AllBinaryEventObject_Access := AllBinaryEventObject_Access (allBinaryEventObject_Param);
    begin
-        This.onImageComparisonResultsEvent (ImageComparisonResultsEvent_Access (allBinaryEventObject));
+        SaveImageComparisonWorker'Class (This).onImageComparisonResultsEvent (ImageComparisonResultsEvent_Access (allBinaryEventObject));
    end onEvent;
 
    function isRunning (This : in out SaveImageComparisonWorker) return Boolean is
@@ -68,7 +68,7 @@ package body org.allbinary.media.image.comparison.SaveImageComparisonWorker_Pack
    begin
         begin
             This.logUtil.putF (This.commonStrings.START, SaveImageComparisonWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN);
-            This.setRunning (True);
+            SaveImageComparisonWorker'Class (This).setRunning (True);
             timeHelper := TimeDelayHelper_Package.Create (1000);
             timeHelper.setStartTimeTNT;
             imageComparisonResultsEvent := ImageComparisonResultsEvent_Access (This.imageComparisonInfoVector.get (0));

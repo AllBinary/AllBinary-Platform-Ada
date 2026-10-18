@@ -36,7 +36,7 @@ package body org.allbinary.media.audio.CompositeSound_Package is
    --  throws Exception
    procedure init (This : in out CompositeSound) is
    begin
-        This.setPlayerP (PlayerComposite_Package.Create (AllBinaryMediaManager_Package.createPlayer (This.getResource), 570));
+        CompositeSound'Class (This).setPlayerP (PlayerComposite_Package.Create (AllBinaryMediaManager_Package.createPlayer (CompositeSound'Class (This).getResource), 570));
    end init;
 
 end org.allbinary.media.audio.CompositeSound_Package;

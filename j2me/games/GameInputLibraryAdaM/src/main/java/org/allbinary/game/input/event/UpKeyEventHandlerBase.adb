@@ -89,7 +89,7 @@ package body org.allbinary.game.input.event.UpKeyEventHandlerBase_Package is
         while (index) < (This.eventListenerInterfaceList.size) loop
             begin
                 eventListenerInterface := EventListenerInterface_Access (This.eventListenerInterfaceList.get (index));
-                This.processForInteger (eventObject, eventListenerInterface);
+                UpKeyEventHandlerBase'Class (This).processForInteger (eventObject, eventListenerInterface);
             exception
                 when Java_Occurrence : others =>
                     declare

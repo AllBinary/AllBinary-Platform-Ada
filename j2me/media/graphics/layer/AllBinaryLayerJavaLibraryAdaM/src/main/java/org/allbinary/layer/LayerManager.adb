@@ -72,11 +72,11 @@ package body org.allbinary.layer.LayerManager_Package is
         for index in 0 .. (size) - 1 loop
             nextLayerInterface := AllBinaryLayer_Access (This.list.get (index));
             if (layerInterface.getZP) > (nextLayerInterface.getZP) then
-                This.appendAt (layerInterface, index);
+                LayerManager'Class (This).appendAt (layerInterface, index);
                 return;
             end if;
         end loop;
-        This.append (layerInterface);
+        LayerManager'Class (This).append (layerInterface);
    end insert;
 
    --  throws Exception

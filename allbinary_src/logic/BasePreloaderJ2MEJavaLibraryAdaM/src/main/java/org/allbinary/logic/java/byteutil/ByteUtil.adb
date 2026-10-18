@@ -100,7 +100,7 @@ package body org.allbinary.logic.java.byteutil.ByteUtil_Package is
         if (index) = (7) then
             mask := Short_Short_Integer (-(127));
         end if;
-        return This.xor_Id (array_Id, mask);
+        return ByteUtil'Class (This).xor_Id (array_Id, mask);
    end xorByte;
 
    function compare (This : in out ByteUtil; newByteArray : Short_Short_Integer_Array_Access; oldByteArray : Short_Short_Integer_Array_Access) return Boolean is

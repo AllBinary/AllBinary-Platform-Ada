@@ -34,7 +34,7 @@ package body org.allbinary.animation.image.ImageArrayBaseRotationAnimation_Packa
         RotationAnimation_Package.Initialize (This, angleInfo, CircularIndexUtil_Package.createInstance ((360) / (angleInfo.getAngleIncrementInfo.getAngleIncrement)), animationBehavior);
         Initialize_Fields (This);
         This.originalImageArray := originalImageArray;
-        This.setImageArray (This.imageModifierUtil.getImageArray (originalImageArray));
+        ImageArrayBaseRotationAnimation'Class (This).setImageArray (This.imageModifierUtil.getImageArray (originalImageArray));
         This.currentImage := This.imageArray (This.circularIndexUtil.getIndex);
    end Initialize;
 
@@ -48,7 +48,7 @@ package body org.allbinary.animation.image.ImageArrayBaseRotationAnimation_Packa
    --  throws Exception
    function getAnimationSize (This : in out ImageArrayBaseRotationAnimation) return Integer is
    begin
-        return This.getSize;
+        return ImageArrayBaseRotationAnimation'Class (This).getSize;
    end getAnimationSize;
 
    procedure setAlpha (This : in out ImageArrayBaseRotationAnimation; alpha : Integer) is

@@ -113,9 +113,9 @@ package body org.allbinary.logic.visual.dhtml.style.css.CssElementView_Package i
       hashMap : HashMap_Access;
    begin
         hashMap := StdUtil_Package.getInstance.createHashMap;
-        hashMap.put (DomData_Package.VALUE, This.value);
-        hashMap.put (This.TITLE, This.title_Case);
-        hashMap.put (This.DESCRIPTION, This.description_Case);
+        hashMap.put (DomData_Package.VALUE, Java_Box (This.value));
+        hashMap.put (Java_Box (This.TITLE), Java_Box (This.title_Case));
+        hashMap.put (Java_Box (This.DESCRIPTION), Java_Box (This.description_Case));
         return hashMap;
    end toHashMap;
 
@@ -130,7 +130,7 @@ package body org.allbinary.logic.visual.dhtml.style.css.CssElementView_Package i
       size2 : Integer;
       cssElementDomNodeInterface : DomNodeInterface_Access;
    begin
-        hashMap := This.toHashMap;
+        hashMap := CssElementView'Class (This).toHashMap;
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
             This.logUtil.putF (To_Unbounded_String ("CssView HashMap: ") & hashMap.toString, CssElementView_Access'(This'Unchecked_Access), To_Unbounded_String ("toXmlNode"));
         end if;

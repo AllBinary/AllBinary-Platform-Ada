@@ -41,7 +41,7 @@ package body views.business.context.modules.storefront.customizer.bodies.generic
       isValid : Boolean;
    begin
         begin
-            document := CustomizerUtil_Package.getInstance.getViewDataForComponentsInObjectConfig (This.getTransformInfoInterface);
+            document := CustomizerUtil_Package.getInstance.getViewDataForComponentsInObjectConfig (EditGenericBodyValidationView'Class (This).getTransformInfoInterface);
             This.body_Id := GenericBodyValidation_Package.Create (document);
             isValid := This.body_Id.isValid;
             return isValid;

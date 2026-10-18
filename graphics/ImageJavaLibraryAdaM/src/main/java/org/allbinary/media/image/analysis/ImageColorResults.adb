@@ -26,14 +26,14 @@ package body org.allbinary.media.image.analysis.ImageColorResults_Package is
    procedure Initialize (This : in out ImageColorResults'Class) is
    begin
       Initialize_Fields (This);
-        This.setColorRange (ColorRange_Package.Create);
-        This.getColorRange.setMaxRed (-(1));
-        This.getColorRange.setMaxGreen (-(1));
-        This.getColorRange.setMaxBlue (-(1));
-        This.getColorRange.setMinRed (256);
-        This.getColorRange.setMinGreen (256);
-        This.getColorRange.setMinBlue (256);
-        This.setColorAverage (ColorAverage_Package.Create);
+        ImageColorResults'Class (This).setColorRange (ColorRange_Package.Create);
+        ImageColorResults'Class (This).getColorRange.setMaxRed (-(1));
+        ImageColorResults'Class (This).getColorRange.setMaxGreen (-(1));
+        ImageColorResults'Class (This).getColorRange.setMaxBlue (-(1));
+        ImageColorResults'Class (This).getColorRange.setMinRed (256);
+        ImageColorResults'Class (This).getColorRange.setMinGreen (256);
+        ImageColorResults'Class (This).getColorRange.setMinBlue (256);
+        ImageColorResults'Class (This).setColorAverage (ColorAverage_Package.Create);
    end Initialize;
 
    function Create return ImageColorResults_Access is

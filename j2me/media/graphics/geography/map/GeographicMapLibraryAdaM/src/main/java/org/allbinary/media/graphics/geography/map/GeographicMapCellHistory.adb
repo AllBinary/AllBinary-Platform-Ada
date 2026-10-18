@@ -37,7 +37,7 @@ package body org.allbinary.media.graphics.geography.map.GeographicMapCellHistory
       Initialize_Fields (This);
         This.list := BasicArrayListD_Package.Create;
         This.visitedList := BasicArrayListD_Package.Create;
-        This.init;
+        GeographicMapCellHistory'Class (This).init;
    end Initialize;
 
    function Create return GeographicMapCellHistory_Access is
@@ -63,7 +63,7 @@ package body org.allbinary.media.graphics.geography.map.GeographicMapCellHistory
 
    function getTotalNotVisited (This : in out GeographicMapCellHistory) return Integer is
    begin
-        return (This.getSize) - (This.totalVisited);
+        return (GeographicMapCellHistory'Class (This).getSize) - (This.totalVisited);
    end getTotalNotVisited;
 
    function getSize (This : in out GeographicMapCellHistory) return Integer is
@@ -83,7 +83,7 @@ package body org.allbinary.media.graphics.geography.map.GeographicMapCellHistory
         geographicMapCellPosition := null;
         for index in 0 .. (size) - 1 loop
             geographicMapCellPosition := GeographicMapCellPosition_Access (list.get (index));
-            This.track (geographicMapCellPosition);
+            GeographicMapCellHistory'Class (This).track (geographicMapCellPosition);
         end loop;
    end trackAll;
 
@@ -220,7 +220,7 @@ package body org.allbinary.media.graphics.geography.map.GeographicMapCellHistory
    --  throws Exception
    function isAllVisited (This : in out GeographicMapCellHistory) return Boolean is
    begin
-        if (This.totalVisited) = ((This.getSize) - (1)) then
+        if (This.totalVisited) = ((GeographicMapCellHistory'Class (This).getSize) - (1)) then
             return True;
         else
             return False;
@@ -230,7 +230,7 @@ package body org.allbinary.media.graphics.geography.map.GeographicMapCellHistory
    --  throws Exception
    function isAllVisited2 (This : in out GeographicMapCellHistory) return Boolean is
    begin
-        if (This.totalVisited) = (This.getSize) then
+        if (This.totalVisited) = (GeographicMapCellHistory'Class (This).getSize) then
             return True;
         else
             return False;
@@ -244,9 +244,9 @@ package body org.allbinary.media.graphics.geography.map.GeographicMapCellHistory
       numberRequired : Integer;
       numberNotVisited : Integer;
    begin
-        size := This.getSize;
+        size := GeographicMapCellHistory'Class (This).getSize;
         numberRequired := ((Java_Shift_Left (size, basicDecimal.getScaledFactor))) / (Integer (basicDecimal.getUnscaled));
-        numberNotVisited := ((This.getSize) - (1)) - (This.totalVisited);
+        numberNotVisited := ((GeographicMapCellHistory'Class (This).getSize) - (1)) - (This.totalVisited);
         if ((size) - (numberNotVisited)) > (numberRequired) then
             return True;
         else
@@ -309,7 +309,7 @@ package body org.allbinary.media.graphics.geography.map.GeographicMapCellHistory
                 geographicMapCellPosition := GeographicMapCellPosition_Access (This.list.get (index));
                 isCellVisitedBoolean := Boolean (localVisitedList.get (index));
                 if not (isCellVisitedBoolean.booleanValue) then
-                    This.paintNotVisitedRelativeToPoint (graphics, geographicMapInterface.getAllBinaryTiledLayer, geographicMapCellPosition.getPoint);
+                    GeographicMapCellHistory'Class (This).paintNotVisitedRelativeToPoint (graphics, geographicMapInterface.getAllBinaryTiledLayer, geographicMapCellPosition.getPoint);
                 end if;
             end loop;
         exception

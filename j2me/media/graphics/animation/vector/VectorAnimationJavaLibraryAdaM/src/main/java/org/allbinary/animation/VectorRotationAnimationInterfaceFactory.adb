@@ -30,7 +30,7 @@ package body org.allbinary.animation.VectorRotationAnimationInterfaceFactory_Pac
    begin
       Initialize_Fields (This);
         This.currentPoints := currentPoints;
-        This.setBasicColorP (basicColor);
+        VectorRotationAnimationInterfaceFactory'Class (This).setBasicColorP (basicColor);
         This.animationBehaviorFactory := animationBehaviorFactory;
    end Initialize;
 
@@ -44,7 +44,7 @@ package body org.allbinary.animation.VectorRotationAnimationInterfaceFactory_Pac
    --  throws Exception
    function getInstance (This : in out VectorRotationAnimationInterfaceFactory; instanceId : Integer) return Animation_Access is
    begin
-        return VectorRotationAnimation_Package.Create (This.currentPoints, This.getBasicColorP, This.animationBehaviorFactory.getOrCreateInstance);
+        return VectorRotationAnimation_Package.Create (This.currentPoints, VectorRotationAnimationInterfaceFactory'Class (This).getBasicColorP, This.animationBehaviorFactory.getOrCreateInstance);
    end getInstance;
 
    procedure setBasicColorP (This : in out VectorRotationAnimationInterfaceFactory; basicColor_Param : access BasicColor_Package.BasicColor'Class) is

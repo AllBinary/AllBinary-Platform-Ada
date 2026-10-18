@@ -68,15 +68,15 @@ package body org.allbinary.image.ImageCache_Package is
       image : Image_Access;
       widths : Integer_Array_Access;
    begin
-        foundIndex := This.getIndexWH (width, height);
-        image := This.getFromAvailable (foundIndex, width, height);
+        foundIndex := ImageCache'Class (This).getIndexWH (width, height);
+        image := ImageCache'Class (This).getFromAvailable (foundIndex, width, height);
         if (image) = (NullImage_Package.NULL_IMAGE) then
             This.volume := (This.volume) + ((width) * (height));
             if (This.volume) > (32000) then
                 This.tsUtil.gc;
                 This.volume := 0;
             end if;
-            image := This.createImage (caller, width, height);
+            image := ImageCache'Class (This).createImage (caller, width, height);
             widths := This.widths;
             if (This.nextIndex) > ((widths'Length) - (1)) then
                 if (foundIndex) = (-(1)) then
@@ -98,15 +98,15 @@ package body org.allbinary.image.ImageCache_Package is
       resourceUtil : ResourceUtil_Access;
       resourceInputStream : InputStream_Access;
    begin
-        image := This.getImage (key);
+        image := ImageCache'Class (This).getImage (key);
         if (image) = (NullImage_Package.NULL_IMAGE) then
             resourceUtil := ResourceUtil_Package.getInstance;
-            resourceInputStream := resourceUtil.getResourceAsStream (Unbounded_String (key));
+            resourceInputStream := resourceUtil.getResourceAsStream (Java_Unbox (key));
             if (resourceInputStream) = (null) then
                 Java_Throw (Java_New_Exception ("RuntimeException", StringMaker_Package.Create.append (To_Unbounded_String ("Image resource is not available for key: ")).append (StringUtil_Package.getInstance.toString (key)).toString));
             end if;
             begin
-                image := This.createImageFromInputStream (key, resourceInputStream);
+                image := ImageCache'Class (This).createImageFromInputStream (key, resourceInputStream);
             exception
                 when Java_Occurrence : others =>
                     declare
@@ -118,7 +118,7 @@ package body org.allbinary.image.ImageCache_Package is
                 This.tsUtil.gc;
                 This.logUtil.putF (Memory_Package.getInfo, ImageCache_Access'(This'Unchecked_Access), This.commonStrings.GET);
                 Java_Sleep (100);
-                image := This.createImageFromInputStream (key, resourceInputStream);
+                image := ImageCache'Class (This).createImageFromInputStream (key, resourceInputStream);
                     end;
             end;
             if J2MEUtil_Package.isHTML then

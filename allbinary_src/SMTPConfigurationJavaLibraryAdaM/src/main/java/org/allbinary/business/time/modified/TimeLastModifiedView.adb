@@ -26,7 +26,7 @@ package body org.allbinary.business.time.modified.TimeLastModifiedView_Package i
       timeLastModified : constant TimeLastModified_Access := TimeLastModified_Access (timeLastModified_Param);
    begin
       Initialize_Fields (This);
-        This.setTimeLastModified (timeLastModified);
+        TimeLastModifiedView'Class (This).setTimeLastModified (timeLastModified);
    end Initialize;
 
    function Create (timeLastModified_Param : access TimeLastModified_Package.TimeLastModified'Class) return TimeLastModifiedView_Access is
@@ -40,7 +40,7 @@ package body org.allbinary.business.time.modified.TimeLastModifiedView_Package i
       node : constant Node_Access := Node_Access (node_Param);
    begin
       Initialize_Fields (This);
-        This.setTimeLastModified (TimeLastModified_Package.Create (DomNodeHelper_Package.getTextNodeValue (node)));
+        TimeLastModifiedView'Class (This).setTimeLastModified (TimeLastModified_Package.Create (DomNodeHelper_Package.getTextNodeValue (node)));
    end Initialize;
 
    function Create (node_Param : access Node_Package.Node'Class) return TimeLastModifiedView_Access is
@@ -54,7 +54,7 @@ package body org.allbinary.business.time.modified.TimeLastModifiedView_Package i
    function toXmlNode (This : in out TimeLastModifiedView; document_Param : access Document_Package.Document'Class) return Node_Access is
       document : constant Document_Access := Document_Access (document_Param);
    begin
-        return ModDomHelper_Package.createTextNode (document, EntryData_Package.getInstance.TIMECREATED, This.getTimeLastModified.toString);
+        return ModDomHelper_Package.createTextNode (document, EntryData_Package.getInstance.TIMECREATED, TimeLastModifiedView'Class (This).getTimeLastModified.toString);
    end toXmlNode;
 
    function getTimeLastModified (This : in out TimeLastModifiedView) return TimeLastModified_Access is

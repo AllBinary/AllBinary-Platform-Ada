@@ -47,6 +47,7 @@ package body org.allbinary.game.layer.pickup.CountedPickedUpLayerInterfaceFactor
       hashtable : constant ABHashtable_Access := ABHashtable_Access (hashtable_Param);
    begin
         Java_Throw (Java_New_Exception ("Exception", CommonStrings_Package.getInstance.NOT_IMPLEMENTED));
+        return null;
    end getNextInstance;
 
    function getTotal (This : in out CountedPickedUpLayerInterfaceFactory) return Integer is

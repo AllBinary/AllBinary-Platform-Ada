@@ -67,7 +67,7 @@ package body org.allbinary.media.image.ImageModifierUtil_Package is
    begin
         alphaF := Float (alpha);
         alphaFloat := (alphaF) / (255.0);
-        This.setAlphaF (originalImage, image, imageIndex, alphaFloat);
+        ImageModifierUtil'Class (This).setAlphaF (originalImage, image, imageIndex, alphaFloat);
    end setAlpha;
 
    procedure setAlphaF (This : in out ImageModifierUtil; originalImage_Param : access Image_Package.Image'Class; image_Param : access Image_Package.Image'Class; imageIndex : Integer; alpha : Float) is
@@ -76,7 +76,7 @@ package body org.allbinary.media.image.ImageModifierUtil_Package is
    begin
         if This.alphaArray (imageIndex) then
             This.alphaArray (imageIndex) := False;
-            This.setAlpha2 (originalImage, image, imageIndex, alpha);
+            ImageModifierUtil'Class (This).setAlpha2 (originalImage, image, imageIndex, alpha);
         end if;
    end setAlphaF;
 
@@ -123,7 +123,7 @@ package body org.allbinary.media.image.ImageModifierUtil_Package is
         imageArray := new Image_Access_Array'(0 .. (size) - 1 => null);
         for index in 0 .. (size) - 1 loop
             imageArray (index) := originalImageArray (index);
-            This.handleImage (imageArray, index, originalImageArray (index));
+            ImageModifierUtil'Class (This).handleImage (imageArray, index, originalImageArray (index));
         end loop;
         return imageArray;
    end getImageArray;
@@ -136,7 +136,7 @@ package body org.allbinary.media.image.ImageModifierUtil_Package is
         image3 := CoreImage_Access ((PlaynImage_Access (image)).getImage);
         if (image3) /= (null) then
             if ((image3.isReady) or else (((image3.width) + (image3.height)) <= (0))) or else ((image.getName) = (This.resourceCallbackStrings.FROM_DATA)) then
-                This.copy (imageArray, index, image, image3);
+                ImageModifierUtil'Class (This).copy (imageArray, index, image, image3);
             else
                 callback := Callback_Package.Create  --  Java anonymous class body: implement it as a named type
 --                      
@@ -146,7 +146,7 @@ package body org.allbinary.media.image.ImageModifierUtil_Package is
 --     begin
 --                          logUtil := LogUtil_Package.getInstance;
 --                          logUtil.putF (Java_Image (This.resourceCallbackStrings.DONE) & image.getName, ImageModifierUtil_Access'(This'Unchecked_Access), This.resourceCallbackStrings.HANDLE_IMAGE);
---                          This.copy (imageArray, index, image, image3);
+--                          ImageModifierUtil'Class (This).copy (imageArray, index, image, image3);
 --     end onSuccess;
 --                      
 --     procedure onFailure (This : in out ; e_Param : access Java_Throwable_Object'Class) is

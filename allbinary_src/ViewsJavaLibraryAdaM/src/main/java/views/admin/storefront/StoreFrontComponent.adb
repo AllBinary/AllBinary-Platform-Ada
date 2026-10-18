@@ -28,9 +28,9 @@ package body views.admin.storefront.StoreFrontComponent_Package is
    begin
         HttpStoreComponentView_Package.Initialize (This, transformInfoInterface);
         Initialize_Fields (This);
-        This.newStoreFrontInterface := StoreFrontInterface_Access (StoreFront_Package.Create (HttpServletRequest_Access (This.getPageContext.getRequest)));
+        This.newStoreFrontInterface := StoreFrontInterface_Access (StoreFront_Package.Create (HttpServletRequest_Access (StoreFrontComponent'Class (This).getPageContext.getRequest)));
         if (This.newStoreFrontInterface.getName) = (Null_Unbounded_String) then
-            This.newStoreFrontInterface.setName (This.getWeblisketSession.getStoreName);
+            This.newStoreFrontInterface.setName (StoreFrontComponent'Class (This).getWeblisketSession.getStoreName);
         end if;
    end Initialize;
 

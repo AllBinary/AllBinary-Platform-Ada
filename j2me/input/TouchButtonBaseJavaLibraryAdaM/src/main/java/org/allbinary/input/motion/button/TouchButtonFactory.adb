@@ -46,7 +46,7 @@ package body org.allbinary.input.motion.button.TouchButtonFactory_Package is
    procedure defaultList (This : in out TouchButtonFactory) is
    begin
         This.list_Case := This.LIST;
-        This.toggle (False, This.LIST);
+        TouchButtonFactory'Class (This).toggle (False, This.LIST);
    end defaultList;
 
    procedure toggle (This : in out TouchButtonFactory; save : Boolean; list_Case_Param : access BasicArrayList_Package.BasicArrayList'Class) is

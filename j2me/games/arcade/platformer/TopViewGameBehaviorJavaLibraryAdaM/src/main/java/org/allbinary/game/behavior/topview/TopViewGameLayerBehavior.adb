@@ -52,7 +52,7 @@ package body org.allbinary.game.behavior.topview.TopViewGameLayerBehavior_Packag
       velocityProperties : constant VelocityProperties_Access := VelocityProperties_Access (velocityProperties_Param);
    begin
         velocityProperties.getVelocityYBasicDecimalP.setint (0);
-        This.landReset;
+        TopViewGameLayerBehavior'Class (This).landReset;
    end land;
 
    procedure landReset (This : in out TopViewGameLayerBehavior) is

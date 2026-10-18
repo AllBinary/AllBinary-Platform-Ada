@@ -65,7 +65,7 @@ package body org.allbinary.midlet.AllBinaryMidlet_Package is
                 This.logUtil.putF (StringMaker_Package.Create.append (This.SETTING_NO_TITLE).append (StringUtil_Package.getInstance.toString (newDisplay)).toString, AllBinaryMidlet_Access'(This'Unchecked_Access), This.SET_DISPLAY);
             end if;
         end if;
-        display := This.getDisplay;
+        display := AllBinaryMidlet'Class (This).getDisplay;
         display.setCurrent (newDisplay);
    end setDisplay;
 
@@ -112,7 +112,7 @@ package body org.allbinary.midlet.AllBinaryMidlet_Package is
         begin
             This.logUtil.putF (This.commonStrings.START, AllBinaryMidlet_Access'(This'Unchecked_Access), METHOD_NAME);
             PreLogUtil_Package.put (Memory_Package.getInfo, AllBinaryMidlet_Access'(This'Unchecked_Access), METHOD_NAME);
-            This.setDestroyed (True);
+            AllBinaryMidlet'Class (This).setDestroyed (True);
         exception
             when Java_Occurrence : others =>
                 declare

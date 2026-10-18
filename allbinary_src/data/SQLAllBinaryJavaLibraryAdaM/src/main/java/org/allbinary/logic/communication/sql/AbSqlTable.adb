@@ -54,7 +54,7 @@ package body org.allbinary.logic.communication.sql.AbSqlTable_Package is
    function createTable (This : in out AbSqlTable; data : Unbounded_String) return Unbounded_String is
    begin
         begin
-            This.executeSQLStatement (data);
+            AbSqlTable'Class (This).executeSQLStatement (data);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
                 This.logUtil.putF (This.TABLE_CREATION_SUCCESS & This.tableName & To_Unbounded_String (" with statement: ") & data, AbSqlTable_Access'(This'Unchecked_Access), This.METHOD_CREATED_TABLE);
             end if;
@@ -77,7 +77,7 @@ package body org.allbinary.logic.communication.sql.AbSqlTable_Package is
    begin
         sqlStatement := Java_Image (This.sqlStrings.DROP_TABLE) & This.tableName;
         begin
-            This.executeSQLStatement (sqlStatement);
+            AbSqlTable'Class (This).executeSQLStatement (sqlStatement);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
                 This.logUtil.putF (Java_Image (This.SUCCESS_SQL_STATEMENT) & sqlStatement, AbSqlTable_Access'(This'Unchecked_Access), This.METHOD_DROP_TABLE);
             end if;

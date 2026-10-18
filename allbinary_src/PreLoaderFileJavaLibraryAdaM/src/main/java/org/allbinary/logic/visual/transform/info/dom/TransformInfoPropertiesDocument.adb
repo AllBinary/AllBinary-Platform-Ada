@@ -63,7 +63,7 @@ package body org.allbinary.logic.visual.transform.info.dom.TransformInfoProperti
             for index in 0 .. (size) - 1 loop
                 node := Node_Access (transformInfoNodeVector.get (index));
                 transformInfoProperties := TransformInfoPropertiesFactory_Package.getInstance.getInstance (node);
-                transformInfoPropertiesHashMap.put (transformInfoProperties.getName, transformInfoProperties);
+                transformInfoPropertiesHashMap.put (Java_Box (transformInfoProperties.getName), transformInfoProperties);
             end loop;
             return transformInfoPropertiesHashMap;
         exception

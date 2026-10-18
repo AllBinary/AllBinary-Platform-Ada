@@ -83,26 +83,26 @@ package body org.allbinary.game.input.HumanRTSPlayerGameInput_Package is
       point : GPoint_Access;
       previousRtsFormInput : RTSFormInput_Access;
    begin
-        motionGestureEvent := MotionGestureEvent_Access (This.getMotionGestureInputList.get ((This.getMotionGestureInputList.size) - (1)));
+        motionGestureEvent := MotionGestureEvent_Access (HumanRTSPlayerGameInput'Class (This).getMotionGestureInputList.get ((HumanRTSPlayerGameInput'Class (This).getMotionGestureInputList.size) - (1)));
         motionGestureInput := motionGestureEvent.getMotionGesture;
-        rtsFormInput := This.getSelectedRtsFormInput;
+        rtsFormInput := HumanRTSPlayerGameInput'Class (This).getSelectedRtsFormInput;
         if (motionGestureInput) = (This.PRESSED) then
             point := motionGestureEvent.getCurrentPoint;
-            if This.getRtsPlayerLayerInterface.getCurrentScrollSelectionForm.isInForm (point) then
-                This.isDragging := rtsFormInput.processSticky (This.getSelectedRtsLayer, This.getRtsPlayerLayerInterface, layerManager, point);
+            if HumanRTSPlayerGameInput'Class (This).getRtsPlayerLayerInterface.getCurrentScrollSelectionForm.isInForm (point) then
+                This.isDragging := rtsFormInput.processSticky (HumanRTSPlayerGameInput'Class (This).getSelectedRtsLayer, HumanRTSPlayerGameInput'Class (This).getRtsPlayerLayerInterface, layerManager, point);
             end if;
         elsif (motionGestureInput) = (This.RELEASED) then
             point := motionGestureEvent.getCurrentPoint;
-            if This.getRtsPlayerLayerInterface.getCurrentScrollSelectionForm.isInForm (point) then
-                rtsFormInput.processAtPoint (This.getSelectedRtsLayer, This.getRtsPlayerLayerInterface, layerManager, point);
+            if HumanRTSPlayerGameInput'Class (This).getRtsPlayerLayerInterface.getCurrentScrollSelectionForm.isInForm (point) then
+                rtsFormInput.processAtPoint (HumanRTSPlayerGameInput'Class (This).getSelectedRtsLayer, HumanRTSPlayerGameInput'Class (This).getRtsPlayerLayerInterface, layerManager, point);
             elsif rtsFormInput.isStickyItemSelected then
                 previousRtsFormInput := rtsFormInput;
-                This.select_Id (motionGestureEvent);
-                This.getSelectedBuildingPlayerGameInput.selectAllPreselected;
-                previousRtsFormInput.processAtPoint (This.getSelectedRtsLayer, This.getRtsPlayerLayerInterface, layerManager, point);
-                This.getSelectedBuildingPlayerGameInput.deselectAllPreselected;
+                HumanRTSPlayerGameInput'Class (This).select_Id (motionGestureEvent);
+                HumanRTSPlayerGameInput'Class (This).getSelectedBuildingPlayerGameInput.selectAllPreselected;
+                previousRtsFormInput.processAtPoint (HumanRTSPlayerGameInput'Class (This).getSelectedRtsLayer, HumanRTSPlayerGameInput'Class (This).getRtsPlayerLayerInterface, layerManager, point);
+                HumanRTSPlayerGameInput'Class (This).getSelectedBuildingPlayerGameInput.deselectAllPreselected;
             else
-                This.select_Id (motionGestureEvent);
+                HumanRTSPlayerGameInput'Class (This).select_Id (motionGestureEvent);
             end if;
             rtsFormInput.setStickyItemSelected (False);
             rtsFormInput.setSelectedStickyItem (ABCustomItem_Package.getNullInstance);
@@ -125,7 +125,7 @@ package body org.allbinary.game.input.HumanRTSPlayerGameInput_Package is
       gameLayer : CollidableDestroyableDamageableLayer_Access;
       lastRTSLayer : RTSLayer_Access;
    begin
-        rtsLayerList := This.getRtsPlayerLayerInterface.getPlayerOwnedRTSLayers.rtsLayerList;
+        rtsLayerList := HumanRTSPlayerGameInput'Class (This).getRtsPlayerLayerInterface.getPlayerOwnedRTSLayers.rtsLayerList;
         rectX1 := This.startPoint.getX;
         rectY1 := This.startPoint.getY;
         rectX2 := This.endPoint.getX;
@@ -164,18 +164,18 @@ package body org.allbinary.game.input.HumanRTSPlayerGameInput_Package is
             if This.rectangleCollisionUtil.isInside (rectX1, rectY1, rectX2, rectY2, (viewPosition.getX) + (rtsLayer.getHalfWidth), (viewPosition.getY) + (rtsLayer.getHalfHeight)) then
                 This.logUtil.putF (StringMaker_Package.Create.append (This.ADDING).append (rtsLayer.getName).toString, HumanRTSPlayerGameInput_Access'(This'Unchecked_Access), This.METHOD);
                 rtsLayer.select_Id;
-                This.getSelectedBuildingPlayerGameInput.addSelectedRTSLayer (rtsLayer);
+                HumanRTSPlayerGameInput'Class (This).getSelectedBuildingPlayerGameInput.addSelectedRTSLayer (rtsLayer);
             end if;
         end loop;
-        gameLayer := This.getSelectedBuildingPlayerGameInput.getLastSelectedRtsLayer;
+        gameLayer := HumanRTSPlayerGameInput'Class (This).getSelectedBuildingPlayerGameInput.getLastSelectedRtsLayer;
         if (gameLayer) /= (CollidableDestroyableDamageableLayer_Package.getNullInstance) then
             lastRTSLayer := RTSLayer_Access (gameLayer);
             if (lastRTSLayer.getScrollSelectionForm) /= (ScrollSelectionForm_Package.getNullScrollSelectionForm) then
-                This.updateForm (lastRTSLayer.getScrollSelectionForm, lastRTSLayer.getRTSFormInput);
-                This.setSelectedRtsLayer (lastRTSLayer);
+                HumanRTSPlayerGameInput'Class (This).updateForm (lastRTSLayer.getScrollSelectionForm, lastRTSLayer.getRTSFormInput);
+                HumanRTSPlayerGameInput'Class (This).setSelectedRtsLayer (lastRTSLayer);
             end if;
         end if;
-        This.updatePaintable;
+        HumanRTSPlayerGameInput'Class (This).updatePaintable;
    end makeSelection;
 
    --  throws Exception
@@ -186,8 +186,8 @@ package body org.allbinary.game.input.HumanRTSPlayerGameInput_Package is
       point : GPoint_Access;
       index : Integer;
    begin
-        for index in reverse 0 .. (This.getMotionGestureInputList.size) - (1) loop
-            motionGestureEvent := MotionGestureEvent_Access (This.getMotionGestureInputList.get (index));
+        for index in reverse 0 .. (HumanRTSPlayerGameInput'Class (This).getMotionGestureInputList.size) - (1) loop
+            motionGestureEvent := MotionGestureEvent_Access (HumanRTSPlayerGameInput'Class (This).getMotionGestureInputList.get (index));
             motionGestureInput := motionGestureEvent.getMotionGesture;
             point := motionGestureEvent.getCurrentPoint;
             if (motionGestureInput) = (This.touchMotionGestureFactory.PRESSED) then
@@ -195,7 +195,7 @@ package body org.allbinary.game.input.HumanRTSPlayerGameInput_Package is
                 This.endPoint := point;
             elsif (motionGestureInput) = (This.touchMotionGestureFactory.RELEASED) then
                 This.endPoint := point;
-                This.makeSelection;
+                HumanRTSPlayerGameInput'Class (This).makeSelection;
                 This.startPoint := PointFactory_Package.getInstance.ZERO_ZERO;
                 This.endPoint := PointFactory_Package.getInstance.ZERO_ZERO;
             else
@@ -209,16 +209,16 @@ package body org.allbinary.game.input.HumanRTSPlayerGameInput_Package is
       layerManager : constant AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (layerManager_Param);
       endDrag : Boolean;
    begin
-        if (This.getMotionGestureInputList.size) > (0) then
-            endDrag := This.processDraggingMotionInput (layerManager);
+        if (HumanRTSPlayerGameInput'Class (This).getMotionGestureInputList.size) > (0) then
+            endDrag := HumanRTSPlayerGameInput'Class (This).processDraggingMotionInput (layerManager);
             if not (This.isDragging) then
-                This.processSelectionBoxMotionInput (layerManager);
+                HumanRTSPlayerGameInput'Class (This).processSelectionBoxMotionInput (layerManager);
             end if;
             if endDrag then
                 This.isDragging := False;
             end if;
         end if;
-        This.getMotionGestureInputList.clear;
+        HumanRTSPlayerGameInput'Class (This).getMotionGestureInputList.clear;
    end processMotionInput;
 
    procedure setSelectedRtsFormInput (This : in out HumanRTSPlayerGameInput; selectedRtsFormInput_Param : access RTSFormInput_Package.RTSFormInput'Class) is
@@ -228,7 +228,7 @@ package body org.allbinary.game.input.HumanRTSPlayerGameInput_Package is
         logUtil := LogUtil_Package.getInstance;
         This.logUtil.putF (StringMaker_Package.Create.append (CommonLabels_Package.getInstance.START).append (StringUtil_Package.getInstance.toString (selectedRtsFormInput)).toString, HumanRTSPlayerGameInput_Access'(This'Unchecked_Access), To_Unbounded_String ("setSelectedRtsFormInput"));
         RTSPlayerGameInput (This).setSelectedRtsFormInput (selectedRtsFormInput);
-        This.setSelectedRtsLayer (CollidableDestroyableDamageableLayer_Package.getNullInstance);
+        HumanRTSPlayerGameInput'Class (This).setSelectedRtsLayer (CollidableDestroyableDamageableLayer_Package.getNullInstance);
    end setSelectedRtsFormInput;
 
    procedure updateFormForLayer (This : in out HumanRTSPlayerGameInput; rtsLayer_Param : access RTSLayer_Package.RTSLayer'Class) is
@@ -236,14 +236,14 @@ package body org.allbinary.game.input.HumanRTSPlayerGameInput_Package is
       scrollSelectionForm : ScrollSelectionForm_Access;
    begin
         scrollSelectionForm := rtsLayer.getScrollSelectionForm;
-        if ((scrollSelectionForm) /= (ScrollSelectionForm_Package.getNullScrollSelectionForm)) and then ((This.getRtsPlayerLayerInterface.getGroupInterface (0)) = (rtsLayer.getGroupInterface (0))) then
-            This.updateForm (scrollSelectionForm, rtsLayer.getRTSFormInput);
-            This.getSelectedBuildingPlayerGameInput.setSelectedRTSLayer (CollidableDestroyableDamageableLayer_Package.getNullInstance);
-            This.setSelectedRtsLayer (rtsLayer);
+        if ((scrollSelectionForm) /= (ScrollSelectionForm_Package.getNullScrollSelectionForm)) and then ((HumanRTSPlayerGameInput'Class (This).getRtsPlayerLayerInterface.getGroupInterface (0)) = (rtsLayer.getGroupInterface (0))) then
+            HumanRTSPlayerGameInput'Class (This).updateForm (scrollSelectionForm, rtsLayer.getRTSFormInput);
+            HumanRTSPlayerGameInput'Class (This).getSelectedBuildingPlayerGameInput.setSelectedRTSLayer (CollidableDestroyableDamageableLayer_Package.getNullInstance);
+            HumanRTSPlayerGameInput'Class (This).setSelectedRtsLayer (rtsLayer);
         else
-            This.getRtsPlayerLayerInterface.setCurrentScrollSelectionForm (This.getRtsPlayerLayerInterface.getBuildingScrollSelectionForm);
-            This.setSelectedRtsFormInput (This.getRtsPlayerLayerInterface.getRTSFormInput);
-            This.getSelectedBuildingPlayerGameInput.setSelectedRTSLayer (CollidableDestroyableDamageableLayer_Package.getNullInstance);
+            HumanRTSPlayerGameInput'Class (This).getRtsPlayerLayerInterface.setCurrentScrollSelectionForm (HumanRTSPlayerGameInput'Class (This).getRtsPlayerLayerInterface.getBuildingScrollSelectionForm);
+            HumanRTSPlayerGameInput'Class (This).setSelectedRtsFormInput (HumanRTSPlayerGameInput'Class (This).getRtsPlayerLayerInterface.getRTSFormInput);
+            HumanRTSPlayerGameInput'Class (This).getSelectedBuildingPlayerGameInput.setSelectedRTSLayer (CollidableDestroyableDamageableLayer_Package.getNullInstance);
         end if;
    end updateFormForLayer;
 
@@ -251,8 +251,8 @@ package body org.allbinary.game.input.HumanRTSPlayerGameInput_Package is
       scrollSelectionForm : constant ScrollSelectionForm_Access := ScrollSelectionForm_Access (scrollSelectionForm_Param);
       rtfFormInput : constant RTSFormInput_Access := RTSFormInput_Access (rtfFormInput_Param);
    begin
-        This.getRtsPlayerLayerInterface.setCurrentScrollSelectionForm (scrollSelectionForm);
-        This.setSelectedRtsFormInput (rtfFormInput);
+        HumanRTSPlayerGameInput'Class (This).getRtsPlayerLayerInterface.setCurrentScrollSelectionForm (scrollSelectionForm);
+        HumanRTSPlayerGameInput'Class (This).setSelectedRtsFormInput (rtfFormInput);
    end updateForm;
 
    --  throws Exception
@@ -264,17 +264,17 @@ package body org.allbinary.game.input.HumanRTSPlayerGameInput_Package is
       rtsLayer : RTSLayer_Access;
       endLevelTouchButtonsBuilder : EndLevelTouchButtonsBuilder_Access;
    begin
-        if ((rtSLayer) /= (CollidableDestroyableDamageableLayer_Package.getNullInstance)) and then ((This.getRtsPlayerLayerInterface.getGroupInterface (0)) /= (rtSLayer.getGroupInterface (0))) then
-            This.getRtsPlayerLayerInterface.add (ErrorSound_Package.getInstance);
+        if ((rtSLayer) /= (CollidableDestroyableDamageableLayer_Package.getNullInstance)) and then ((HumanRTSPlayerGameInput'Class (This).getRtsPlayerLayerInterface.getGroupInterface (0)) /= (rtSLayer.getGroupInterface (0))) then
+            HumanRTSPlayerGameInput'Class (This).getRtsPlayerLayerInterface.add (ErrorSound_Package.getInstance);
             GameNotificationEventHandler_Package.getInstance.fireEvent (This.notYoursGameNotificationEvent);
             return;
         end if;
-        gameCanvas := This.getGameCanvas;
+        gameCanvas := HumanRTSPlayerGameInput'Class (This).getGameCanvas;
         if (rtSLayer) /= (CollidableDestroyableDamageableLayer_Package.getNullInstance) then
-            This.getRtsPlayerLayerInterface.add (SelectBuildingSound_Package.getInstance);
+            HumanRTSPlayerGameInput'Class (This).getRtsPlayerLayerInterface.add (SelectBuildingSound_Package.getInstance);
             rtsLayer := RTSLayer_Access (rtSLayer);
             rtsLayer.select_Id;
-            This.updateFormForLayer (rtsLayer);
+            HumanRTSPlayerGameInput'Class (This).updateFormForLayer (rtsLayer);
             if (gameCanvas.getGameState) = (This.gameStateFactory.PLAYING_GAME_STATE) then
                 if rtsLayer.isSelfUpgradeable then
                     gameCanvas.updateCurrentTouchInputFactory (RTSTouchButtonsBuilder_Package.Create);
@@ -290,9 +290,9 @@ package body org.allbinary.game.input.HumanRTSPlayerGameInput_Package is
             end if;
         else
             This.logUtil.putF (To_Unbounded_String ("Set Player Default Form"), HumanRTSPlayerGameInput_Access'(This'Unchecked_Access), To_Unbounded_String ("setSelectedRTSLayer"));
-            This.getRtsPlayerLayerInterface.setCurrentScrollSelectionForm (This.getRtsPlayerLayerInterface.getBuildingScrollSelectionForm);
-            This.setSelectedRtsFormInput (This.getRtsPlayerLayerInterface.getRTSFormInput);
-            This.getSelectedBuildingPlayerGameInput.setSelectedRTSLayer (CollidableDestroyableDamageableLayer_Package.getNullInstance);
+            HumanRTSPlayerGameInput'Class (This).getRtsPlayerLayerInterface.setCurrentScrollSelectionForm (HumanRTSPlayerGameInput'Class (This).getRtsPlayerLayerInterface.getBuildingScrollSelectionForm);
+            HumanRTSPlayerGameInput'Class (This).setSelectedRtsFormInput (HumanRTSPlayerGameInput'Class (This).getRtsPlayerLayerInterface.getRTSFormInput);
+            HumanRTSPlayerGameInput'Class (This).getSelectedBuildingPlayerGameInput.setSelectedRTSLayer (CollidableDestroyableDamageableLayer_Package.getNullInstance);
             if (gameCanvas.getGameState) = (This.gameStateFactory.PLAYING_GAME_STATE) then
                 gameCanvas.updateCurrentTouchInputFactory (NoBuildingSelectedTouchButtonsBuilder_Package.Create);
             else
@@ -303,9 +303,9 @@ package body org.allbinary.game.input.HumanRTSPlayerGameInput_Package is
                 gameCanvas.updateCurrentTouchInputFactory (endLevelNoBuildingSelectedTouchButtonsBuilder);
             end if;
         end if;
-        This.getSelectedRtsFormInput.setSelectedGeographicCellPosition (geographicMapCellPosition);
-        This.getSelectedBuildingPlayerGameInput.setSelectedRTSLayer (rtSLayer);
-        This.updatePaintable;
+        HumanRTSPlayerGameInput'Class (This).getSelectedRtsFormInput.setSelectedGeographicCellPosition (geographicMapCellPosition);
+        HumanRTSPlayerGameInput'Class (This).getSelectedBuildingPlayerGameInput.setSelectedRTSLayer (rtSLayer);
+        HumanRTSPlayerGameInput'Class (This).updatePaintable;
    end setSelectedRTSLayer;
 
    procedure updatePaintable (This : in out HumanRTSPlayerGameInput) is
@@ -314,18 +314,18 @@ package body org.allbinary.game.input.HumanRTSPlayerGameInput_Package is
       geographicMapCompositeInterface : GeographicMapCompositeInterface_Access;
       geographicMapInterface : BasicGeographicMap_Access;
    begin
-        list := This.getSelectedBuildingPlayerGameInput.getSelectedBasicArrayList;
+        list := HumanRTSPlayerGameInput'Class (This).getSelectedBuildingPlayerGameInput.getSelectedBasicArrayList;
         if (list.size) > (1) then
-            geographicMapCompositeInterface := GeographicMapCompositeInterface_Access (This.getGameCanvas);
+            geographicMapCompositeInterface := GeographicMapCompositeInterface_Access (HumanRTSPlayerGameInput'Class (This).getGameCanvas);
             geographicMapInterface := geographicMapCompositeInterface.getGeographicMapInterface (0);
             This.multiSelectPaintable.setBasicColorP (geographicMapInterface.getForegroundBasicColor);
             This.multiSelectPaintable.update (list);
-            This.getRTSLayerInfoPaintable.updateRTSLayerInfoSelection (This.multiSelectPaintable);
+            HumanRTSPlayerGameInput'Class (This).getRTSLayerInfoPaintable.updateRTSLayerInfoSelection (This.multiSelectPaintable);
         elsif (list.size) = (1) then
             rtsLayer := RTSLayer_Access (list.get (0));
-            This.getRTSLayerInfoPaintable.updateRTSLayerInfoSelection (rtsLayer.createHudPaintable);
+            HumanRTSPlayerGameInput'Class (This).getRTSLayerInfoPaintable.updateRTSLayerInfoSelection (rtsLayer.createHudPaintable);
         else
-            This.getRTSLayerInfoPaintable.updateRTSLayerInfoInit (NullInitUpdatePaintable_Package.getInstance);
+            HumanRTSPlayerGameInput'Class (This).getRTSLayerInfoPaintable.updateRTSLayerInfoInit (NullInitUpdatePaintable_Package.getInstance);
         end if;
    end updatePaintable;
 
@@ -358,7 +358,7 @@ package body org.allbinary.game.input.HumanRTSPlayerGameInput_Package is
    procedure onMotionGestureEvent (This : in out HumanRTSPlayerGameInput; motionGestureEvent_Param : access MotionGestureEvent_Package.MotionGestureEvent'Class) is
       motionGestureEvent : constant MotionGestureEvent_Access := MotionGestureEvent_Access (motionGestureEvent_Param);
    begin
-        This.getMotionGestureInputList.add (motionGestureEvent);
+        HumanRTSPlayerGameInput'Class (This).getMotionGestureInputList.add (motionGestureEvent);
    end onMotionGestureEvent;
 
    procedure onScrolledMotionGestureEvent (This : in out HumanRTSPlayerGameInput; motionGestureEvent_Param : access MotionGestureEvent_Package.MotionGestureEvent'Class) is

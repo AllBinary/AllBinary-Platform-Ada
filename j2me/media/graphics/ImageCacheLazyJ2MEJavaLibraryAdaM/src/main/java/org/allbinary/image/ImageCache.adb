@@ -32,7 +32,7 @@ package body org.allbinary.image.ImageCache_Package is
       This.lock := SynchObject_Package.Create;
       This.firstTime := True;
       This.totalLoaded := 0;
-      This.progressEnded := False;
+      This.progressEnded_Field := False;
       This.hasAnyLazyAnimationFactories := False;
       This.processor := FirstProcessor_Package.Create;
       This.endProcessor := Processor_Package.getInstance;
@@ -67,7 +67,7 @@ package body org.allbinary.image.ImageCache_Package is
             This.processor := NotHTMLProcessor_Package.Create;
             This.endProcessor := NotHTMLEndProcessor_Package.Create;
             begin
-                This.runTask;
+                ImageCache'Class (This).runTask;
             exception
                 when Java_Occurrence : others =>
                     declare
@@ -93,7 +93,7 @@ package body org.allbinary.image.ImageCache_Package is
         if This.firstTime then
             abToGBUtil := ABToGBUtil_Package.getInstance;
             abCanvas := AllBinaryGameCanvas_Access (abToGBUtil.abCanvas);
-            while ((This.loadNowList.isEmpty) and then (((not (abCanvas.isInitialized)) or else (((abCanvas.isInitialized) and then (This.hasAnyLazyAnimationFactories)))))) and then (not (This.progressEnded)) loop
+            while ((This.loadNowList.isEmpty) and then (((not (abCanvas.isInitialized)) or else (((abCanvas.isInitialized) and then (This.hasAnyLazyAnimationFactories)))))) and then (not (This.progressEnded_Field)) loop
                 Java_Sleep (120);
             end loop;
             This.firstTime := False;
@@ -119,18 +119,18 @@ package body org.allbinary.image.ImageCache_Package is
                         elsif This.gameGlobalsFactory.newCanvas then
                             null;
                         else
-                            This.loadNextImage;
+                            ImageCache'Class (This).loadNextImage;
                         end if;
                         return;
                     else
                         lazyImageRotationAnimation := LazyImageRotationAnimation_Access (This.loadAfterList.get (0));
-                        if This.loadImageForLazyAnimation (lazyImageRotationAnimation) then
+                        if ImageCache'Class (This).loadImageForLazyAnimation (lazyImageRotationAnimation) then
                             This.loadAfterList.remove (lazyImageRotationAnimation);
                         end if;
                     end if;
                 else
                     lazyImageRotationAnimation := LazyImageRotationAnimation_Access (This.loadSoonList.get (0));
-                    if This.loadImageForLazyAnimation (lazyImageRotationAnimation) then
+                    if ImageCache'Class (This).loadImageForLazyAnimation (lazyImageRotationAnimation) then
                         This.loadSoonList.remove (lazyImageRotationAnimation);
                     end if;
                 end if;
@@ -138,12 +138,12 @@ package body org.allbinary.image.ImageCache_Package is
             end if;
             lazyImageRotationAnimation := LazyImageRotationAnimation_Access (This.loadNowList.get (0));
         end;
-        if This.loadImageForLazyAnimation (lazyImageRotationAnimation) then
+        if ImageCache'Class (This).loadImageForLazyAnimation (lazyImageRotationAnimation) then
             begin  --  synchronized
                 This.loadNowList.remove (lazyImageRotationAnimation);
             end;
             if (lazyImageRotationAnimation.layoutIndex) /= (0) then
-                list := This.getAssociated (lazyImageRotationAnimation);
+                list := ImageCache'Class (This).getAssociated (lazyImageRotationAnimation);
                 begin  --  synchronized
                     size := list.size;
                     if (size) > (0) then
@@ -167,8 +167,8 @@ package body org.allbinary.image.ImageCache_Package is
    procedure loadImages (This : in out ImageCache) is
    begin
         while (not (This.loadList.isEmpty)) or else (not (This.loadNowList.isEmpty)) loop
-            This.loadImageForAnimations;
-            This.loadNextImage;
+            ImageCache'Class (This).loadImageForAnimations;
+            ImageCache'Class (This).loadNextImage;
         end loop;
    end loadImages;
 
@@ -176,7 +176,7 @@ package body org.allbinary.image.ImageCache_Package is
    procedure loadImageForAnimations (This : in out ImageCache) is
    begin
         while not (This.loadNowList.isEmpty) loop
-            This.loadImageForAnimation;
+            ImageCache'Class (This).loadImageForAnimation;
         end loop;
    end loadImageForAnimations;
 
@@ -186,7 +186,7 @@ package body org.allbinary.image.ImageCache_Package is
    begin
         while (not (This.loadAfterList.isEmpty)) or else (not (This.loadNowList.isEmpty)) loop
             while not (This.loadNowList.isEmpty) loop
-                This.loadImageForAnimation;
+                ImageCache'Class (This).loadImageForAnimation;
             end loop;
             lazyImageRotationAnimation := null;
             begin  --  synchronized
@@ -195,7 +195,7 @@ package body org.allbinary.image.ImageCache_Package is
                 end if;
             end;
             if (lazyImageRotationAnimation) /= (null) then
-                This.loadImageForLazyAnimation (lazyImageRotationAnimation);
+                ImageCache'Class (This).loadImageForLazyAnimation (lazyImageRotationAnimation);
             end if;
         end loop;
    end loadRemainingAnimations;
@@ -206,7 +206,7 @@ package body org.allbinary.image.ImageCache_Package is
       image : Image_Access;
    begin
         image := lazyImageRotationAnimation.animationInterfaceFactoryInterface.getImage;
-        if This.loadImage (image) then
+        if ImageCache'Class (This).loadImage (image) then
             lazyImageRotationAnimation.setRealAnimation;
             return True;
         end if;
@@ -224,7 +224,7 @@ package body org.allbinary.image.ImageCache_Package is
             end if;
             image := Image_Access (This.loadList.removeAt (0));
         end;
-        This.loadImage (image);
+        ImageCache'Class (This).loadImage (image);
    end loadNextImage;
 
    --  throws Exception
@@ -245,9 +245,9 @@ package body org.allbinary.image.ImageCache_Package is
                 end if;
             else
                 key := image.getName;
-                image2 := This.creatImage (key);
+                image2 := ImageCache'Class (This).creatImage (key);
                 if image2.isReady then
-                    This.init (image, image2);
+                    ImageCache'Class (This).init (image, image2);
                     return True;
                 else
                     image.setImage (image2.getImage);
@@ -281,15 +281,15 @@ package body org.allbinary.image.ImageCache_Package is
       foundIndex : Integer;
       image : Image_Access;
    begin
-        foundIndex := This.getIndexWH (width, height);
-        image := This.getFromAvailable (foundIndex, width, height);
+        foundIndex := ImageCache'Class (This).getIndexWH (width, height);
+        image := ImageCache'Class (This).getFromAvailable (foundIndex, width, height);
         if (image) = (NullImage_Package.NULL_IMAGE) then
             This.volume := (This.volume) + ((width) * (height));
             if (This.volume) > (32000) then
                 This.tsUtil.gc;
                 This.volume := 0;
             end if;
-            image := This.createImage (caller, width, height);
+            image := ImageCache'Class (This).createImage (caller, width, height);
             if (This.nextIndex) > ((This.widths'Length) - (1)) then
                 if (foundIndex) = (-(1)) then
                     foundIndex := This.nextIndex;
@@ -309,11 +309,11 @@ package body org.allbinary.image.ImageCache_Package is
       image : Image_Access;
       inputStream : InputStream_Access;
    begin
-        image := This.getImage (key);
+        image := ImageCache'Class (This).getImage (key);
         if (image) = (NullImage_Package.NULL_IMAGE) then
             inputStream := null;
             begin
-                image := This.createImageFromInputStream (key, inputStream);
+                image := ImageCache'Class (This).createImageFromInputStream (key, inputStream);
             exception
                 when Java_Occurrence : others =>
                     declare
@@ -325,7 +325,7 @@ package body org.allbinary.image.ImageCache_Package is
                 This.tsUtil.gc;
                 This.logUtil.putF (Memory_Package.getInfo, ImageCache_Access'(This'Unchecked_Access), This.commonStrings.GET);
                 Java_Sleep (100);
-                image := This.createImageFromInputStream (key, inputStream);
+                image := ImageCache'Class (This).createImageFromInputStream (key, inputStream);
                     end;
             end;
             This.hashtable.put (key, image);
@@ -369,14 +369,14 @@ package body org.allbinary.image.ImageCache_Package is
         size := resourceStringArray'Length;
         for index in 0 .. (size) - 1 loop
             if (key) = (resourceStringArray (index)) then
-                return This.creatImage (Unbounded_String (key));
+                return ImageCache'Class (This).creatImage (key);
             end if;
         end loop;
-        This.runTask;
-        index := This.getIndex (key);
+        ImageCache'Class (This).runTask;
+        index := ImageCache'Class (This).getIndex (key);
         width := gdLazyResources.imageResourceWidthArray (index);
         height := gdLazyResources.imageResourceHeightArray (index);
-        image := This.createImageLater (Unbounded_String (key), width, height);
+        image := ImageCache'Class (This).createImageLater (key, width, height);
         begin  --  synchronized
             This.loadList.add (image);
         end;
@@ -435,12 +435,12 @@ package body org.allbinary.image.ImageCache_Package is
                 This.loadAfterList.remove (lazyImageRotationAnimation);
             end;
         end if;
-        This.runTask;
+        ImageCache'Class (This).runTask;
    end insertFirst;
 
    procedure progressEnded (This : in out ImageCache) is
    begin
-        This.progressEnded := True;
+        This.progressEnded_Field := True;
    end progressEnded;
 
    --  throws Exception
@@ -653,7 +653,7 @@ package body org.allbinary.image.FirstProcessor_Package is
     
    procedure process (This : in out FirstProcessor) is
    begin
-            This.firstProcess;
+            ImageCache'Class (This).firstProcess;
    end process;
 
 end org.allbinary.image.FirstProcessor_Package;

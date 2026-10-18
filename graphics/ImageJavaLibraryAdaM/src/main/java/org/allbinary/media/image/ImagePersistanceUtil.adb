@@ -55,7 +55,7 @@ package body org.allbinary.media.image.ImagePersistanceUtil_Package is
    procedure saveWithImageIO (This : in out ImagePersistanceUtil; filePath : Unbounded_String; bufferedImage_Param : access BufferedImage_Package.BufferedImage'Class) is
       bufferedImage : constant BufferedImage_Access := BufferedImage_Access (bufferedImage_Param);
    begin
-        This.saveWithImageIO (File_Package.Create (filePath), bufferedImage);
+        ImagePersistanceUtil'Class (This).saveWithImageIO (File_Package.Create (filePath), bufferedImage);
    end saveWithImageIO;
 
    procedure saveWithImageIO (This : in out ImagePersistanceUtil; file_Param : access File_Package.File'Class; bufferedImage_Param : access BufferedImage_Package.BufferedImage'Class) is

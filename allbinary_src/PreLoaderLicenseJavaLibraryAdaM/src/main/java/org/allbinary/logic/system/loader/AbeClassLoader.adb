@@ -44,13 +44,13 @@ package body org.allbinary.logic.system.loader.AbeClassLoader_Package is
 
    function findLoadedClass1 (This : in out AbeClassLoader; name : Unbounded_String) return Ada.Tags.Tag is
    begin
-        return Ada.Tags.Tag (AbeClassLoader_Package.classes.get (name));
+        return Ada.Tags.Tag (AbeClassLoader_Package.classes.get (Java_Box (name)));
    end findLoadedClass1;
 
    --  throws ClassNotFoundException
    function loadClass (This : in out AbeClassLoader; name : Unbounded_String) return Ada.Tags.Tag is
    begin
-        return This.loadClass (name, False);
+        return AbeClassLoader'Class (This).loadClass (name, False);
    end loadClass;
 
    --  throws ClassNotFoundException
@@ -64,7 +64,7 @@ package body org.allbinary.logic.system.loader.AbeClassLoader_Package is
         loadedWith := To_Unbounded_String ("findLoadedClass1");
         logBuffer := LogBuffer_Package.Create;
         begin
-            myClass := This.findLoadedClass1 (name);
+            myClass := AbeClassLoader'Class (This).findLoadedClass1 (name);
             if (myClass) = (null) then
                 begin
                     loadedWith := To_Unbounded_String ("super.loadClass");
@@ -80,19 +80,19 @@ package body org.allbinary.logic.system.loader.AbeClassLoader_Package is
                     logBuffer.add (LogFactory_Package.getInstance (To_Unbounded_String ("Failed to Load Class: ") & name & To_Unbounded_String ("" & ASCII.LF & "with: ") & loadedWith, AbeClassLoader_Access'(This'Unchecked_Access), This.LOAD_CLASS, e));
                         end;
                 end;
-                classBytes := This.loadClassBytesFromFile (name);
+                classBytes := AbeClassLoader'Class (This).loadClassBytesFromFile (name);
                 if (classBytes) = (null) then
                     Java_Throw (Java_New_Exception ("ClassNotFoundException", To_Unbounded_String ("My Bytes not loaded for: ") & name & To_Unbounded_String ("" & ASCII.LF & "with: ") & To_Unbounded_String ("loadClassBytes")));
                 end if;
-                myClass := This.defineClass (name, classBytes, 0, classBytes'Length);
+                myClass := AbeClassLoader'Class (This).defineClass (name, classBytes, 0, classBytes'Length);
                 if (myClass) = (null) then
                     Java_Throw (Java_New_Exception ("ClassNotFoundException", To_Unbounded_String ("My Class Not Defineable for: ") & name & To_Unbounded_String ("" & ASCII.LF & "with: ") & To_Unbounded_String ("loadClassBytes")));
                 end if;
-                AbeClassLoader_Package.classes.put (name, myClass);
+                AbeClassLoader_Package.classes.put (Java_Box (name), Java_Box (myClass));
             else
                 logBuffer.add (LogFactory_Package.getInstanceF (To_Unbounded_String ("Already Loaded: ") & name & To_Unbounded_String ("" & ASCII.LF & "with: ") & loadedWith, AbeClassLoader_Access'(This'Unchecked_Access), This.LOAD_CLASS));
             end if;
-            This.resolveClass (myClass);
+            AbeClassLoader'Class (This).resolveClass (myClass);
             return myClass;
         exception
             when Java_Occurrence : others =>
@@ -144,7 +144,7 @@ package body org.allbinary.logic.system.loader.AbeClassLoader_Package is
    begin
         loadedWith := To_Unbounded_String ("findLoadedClass1");
         begin
-            myClass := This.findLoadedClass1 (name);
+            myClass := AbeClassLoader'Class (This).findLoadedClass1 (name);
             if (myClass) = (null) then
                 begin
                     loadedWith := To_Unbounded_String ("super.loadClass");
@@ -163,21 +163,21 @@ package body org.allbinary.logic.system.loader.AbeClassLoader_Package is
                         end;
                 end;
                 loadedWith := To_Unbounded_String ("loadClassBytes");
-                classBytes := This.loadClassBytesFromFile (name);
+                classBytes := AbeClassLoader'Class (This).loadClassBytesFromFile (name);
                 if (classBytes) = (null) then
                     Java_Throw (Java_New_Exception ("ClassNotFoundException", To_Unbounded_String ("Bytes not loaded for: ") & name));
                 end if;
-                myClass := This.defineClass (name, classBytes, 0, classBytes'Length);
+                myClass := AbeClassLoader'Class (This).defineClass (name, classBytes, 0, classBytes'Length);
                 if (myClass) = (null) then
                     Java_Throw (Java_New_Exception ("ClassNotFoundException", To_Unbounded_String ("Class Not Defineable for: ") & name));
                 end if;
-                AbeClassLoader_Package.classes.put (name, myClass);
+                AbeClassLoader_Package.classes.put (Java_Box (name), Java_Box (myClass));
             else
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.LOADER) then
                     This.logUtil.putF (To_Unbounded_String ("Already Loaded: ") & name & To_Unbounded_String (" with: ") & loadedWith, AbeClassLoader_Access'(This'Unchecked_Access), This.LOAD_CLASS);
                 end if;
             end if;
-            This.resolveClass (myClass);
+            AbeClassLoader'Class (This).resolveClass (myClass);
             return myClass;
         exception
             when Java_Occurrence : others =>

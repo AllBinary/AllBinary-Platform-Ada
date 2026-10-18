@@ -39,7 +39,7 @@ package body admin.taghelpers.SpecialItemsRequestHelper_Package is
       ModifyTable_Package.Initialize (This);
       Initialize_Fields (This);
         This.request := HttpServletRequest_Access (pageContext.getRequest);
-        This.getFormData;
+        SpecialItemsRequestHelper'Class (This).getFormData;
    end Initialize;
 
    function Create (hashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) return SpecialItemsRequestHelper_Access is
@@ -67,15 +67,15 @@ package body admin.taghelpers.SpecialItemsRequestHelper_Package is
       time : Unbounded_String;
    begin
         values := StdUtil_Package.getInstance.createHashMap;
-        values.put (This.basicItemData.ID, This.id);
-        values.put (This.basicItemData.NUMBER, This.number);
-        values.put (EntryData_Package.getInstance.ENABLE, This.enabled);
-        values.put (SpecialItemData_Package.START_TIME, This.startTime);
-        values.put (SpecialItemData_Package.END_TIME, This.endTime);
-        values.put (This.basicItemData.PRICE, This.price);
+        values.put (This.basicItemData.ID, Java_Box (This.id));
+        values.put (This.basicItemData.NUMBER, Java_Box (This.number));
+        values.put (EntryData_Package.getInstance.ENABLE, Java_Box (This.enabled));
+        values.put (SpecialItemData_Package.START_TIME, Java_Box (This.startTime));
+        values.put (SpecialItemData_Package.END_TIME, Java_Box (This.endTime));
+        values.put (This.basicItemData.PRICE, Java_Box (This.price));
         calendar := Calendar_Package.getInstance;
         time := Java_New_String (calendar.getTimeInMillis.toString);
-        values.put (EntryData_Package.getInstance.LASTMODIFIED, time);
+        values.put (EntryData_Package.getInstance.LASTMODIFIED, Java_Box (time));
         return values;
    end getHashMap;
 
@@ -90,14 +90,14 @@ package body admin.taghelpers.SpecialItemsRequestHelper_Package is
             calendar := Calendar_Package.getInstance;
             time := Java_New_String (calendar.getTimeInMillis.toString);
             values := BasicArrayListD_Package.Create;
-            values.add (This.id);
-            values.add (This.number);
-            values.add (This.enabled);
-            values.add (This.startTime);
-            values.add (This.endTime);
-            values.add (This.price);
-            values.add (time);
-            values.add (time);
+            values.add (Java_Box (This.id));
+            values.add (Java_Box (This.number));
+            values.add (Java_Box (This.enabled));
+            values.add (Java_Box (This.startTime));
+            values.add (Java_Box (This.endTime));
+            values.add (Java_Box (This.price));
+            values.add (Java_Box (time));
+            values.add (Java_Box (time));
             SpecialItemsEntityFactory_Package.getInstance.getSpecialItemsEntityInstance.insert (values);
             success := To_Unbounded_String ("Successfully inserted ") & This.id & To_Unbounded_String (" into items table");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
@@ -150,7 +150,7 @@ package body admin.taghelpers.SpecialItemsRequestHelper_Package is
    begin
         begin
             success := To_Unbounded_String ("Update Successful");
-            values := This.getHashMap;
+            values := SpecialItemsRequestHelper'Class (This).getHashMap;
             SpecialItemsEntityFactory_Package.getInstance.getSpecialItemsEntityInstance.update (values);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
                 This.logUtil.putF (StringMaker_Package.Create.append (This.id).append (CommonSeps_Package.getInstance.SPACE).append (success).toString, SpecialItemsRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("update()"));

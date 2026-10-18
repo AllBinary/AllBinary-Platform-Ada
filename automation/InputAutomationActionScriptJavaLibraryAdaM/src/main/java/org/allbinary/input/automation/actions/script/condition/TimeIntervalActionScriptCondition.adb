@@ -41,7 +41,7 @@ package body org.allbinary.input.automation.actions.script.condition.TimeInterva
                 childNode := nodeList.item (index);
                 if (childNode.getNodeName.compareTo (TimeIntervalActionScriptConditionData_Package.TIME)) = (0) then
                     interval := DomNodeHelper_Package.getTextNodeValue (childNode);
-                    This.setTimeDelayHelper (TimeDelayHelper_Package.Create (To_Unbounded_String (Java_Image (interval))));
+                    TimeIntervalActionScriptCondition'Class (This).setTimeDelayHelper (TimeDelayHelper_Package.Create (To_Unbounded_String (Java_Image (interval))));
                 else
                     Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Time Interval Action Script Condition Unknown Node")));
                 end if;
@@ -49,7 +49,7 @@ package body org.allbinary.input.automation.actions.script.condition.TimeInterva
         else
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Time Interval Action Script Condition Node Null")));
         end if;
-        This.init;
+        TimeIntervalActionScriptCondition'Class (This).init;
    end Initialize;
 
    function Create (node_Param : access Node_Package.Node'Class) return TimeIntervalActionScriptCondition_Access is
@@ -63,8 +63,8 @@ package body org.allbinary.input.automation.actions.script.condition.TimeInterva
    begin
         BasicProfileActionScriptCondition_Package.Initialize (This, TimeIntervalActionScriptCondition_Package.NAME);
         Initialize_Fields (This);
-        This.setTimeDelayHelper (TimeDelayHelper_Package.Create (0));
-        This.init;
+        TimeIntervalActionScriptCondition'Class (This).setTimeDelayHelper (TimeDelayHelper_Package.Create (0));
+        TimeIntervalActionScriptCondition'Class (This).init;
    end Initialize;
 
    function Create return TimeIntervalActionScriptCondition_Access is
@@ -88,7 +88,7 @@ package body org.allbinary.input.automation.actions.script.condition.TimeInterva
       hashMap : HashMap_Access;
    begin
         hashMap := StdUtil_Package.getInstance.createHashMap;
-        hashMap.put (TimeIntervalActionScriptConditionData_Package.TIME, To_Unbounded_String (Java_Image (This.timeHelper.delay_Id)));
+        hashMap.put (TimeIntervalActionScriptConditionData_Package.TIME, Java_Box (To_Unbounded_String (Java_Image (This.timeHelper.delay_Id))));
         This.logUtil.putF (To_Unbounded_String ("HashMap: ") & hashMap.toString, TimeIntervalActionScriptCondition_Access'(This'Unchecked_Access), To_Unbounded_String ("toHashMap()"));
         return hashMap;
    end toHashMap;
@@ -99,7 +99,7 @@ package body org.allbinary.input.automation.actions.script.condition.TimeInterva
       node : Node_Access;
    begin
         node := BasicProfileActionScriptCondition (This).toXmlNode (document);
-        node.appendChild (ModDomHelper_Package.createNodeWithValueNodes (document, TimeIntervalActionScriptConditionData_Package.NAME, This.toHashMap));
+        node.appendChild (ModDomHelper_Package.createNodeWithValueNodes (document, TimeIntervalActionScriptConditionData_Package.NAME, TimeIntervalActionScriptCondition'Class (This).toHashMap));
         return node;
    end toXmlNode;
 
@@ -123,7 +123,7 @@ package body org.allbinary.input.automation.actions.script.condition.TimeInterva
    function shouldProcess (This : in out TimeIntervalActionScriptCondition; frame : Long_Long_Integer) return Boolean is
       timeHelper : TimeDelayHelper_Access;
    begin
-        timeHelper := This.getTimeDelayHelper;
+        timeHelper := TimeIntervalActionScriptCondition'Class (This).getTimeDelayHelper;
         if timeHelper.isTimeTNT then
             timeHelper.setStartTimeTNT;
             return BasicProfileActionScriptCondition (This).shouldProcess (frame);

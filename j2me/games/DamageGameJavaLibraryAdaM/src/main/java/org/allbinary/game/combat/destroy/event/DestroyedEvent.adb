@@ -28,7 +28,7 @@ package body org.allbinary.game.combat.destroy.event.DestroyedEvent_Package is
    begin
         AllBinaryEventObject_Package.Initialize (This, DestroyedEventHandler_Package.getInstance);
         Initialize_Fields (This);
-        This.setAllBinaryGameCanvas (combatGameCanvas);
+        DestroyedEvent'Class (This).setAllBinaryGameCanvas (combatGameCanvas);
    end Initialize;
 
    function Create (combatGameCanvas_Param : access AllBinaryGameCanvas_Package.AllBinaryGameCanvas'Class) return DestroyedEvent_Access is
@@ -68,7 +68,7 @@ package body org.allbinary.game.combat.destroy.event.DestroyedEvent_Package is
         stringBuffer.append (To_Unbounded_String ("AllBinaryLayerInterface: "));
         stringBuffer.append (This.allBinaryLayerInterface.toString);
         stringBuffer.append (To_Unbounded_String ("" & ASCII.LF & "AllBinaryGameCanvas: "));
-        stringBuffer.append (StringUtil_Package.getInstance.toString (This.getAllBinaryGameCanvas));
+        stringBuffer.append (StringUtil_Package.getInstance.toString (DestroyedEvent'Class (This).getAllBinaryGameCanvas));
         return stringBuffer.toString;
    end toString;
 

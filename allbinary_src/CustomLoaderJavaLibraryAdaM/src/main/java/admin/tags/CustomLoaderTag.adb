@@ -84,7 +84,7 @@ package body admin.tags.CustomLoaderTag_Package is
             if (This.command) /= (Null_Unbounded_String) then
                 This.propertiesHashMap := StdUtil_Package.getInstance.createHashMap;
                 if (This.command.compareTo (org_Package.allbinary.globals.GLOBALS2.SET)) = (0) then
-                    This.setCustomLoaderWebappPath;
+                    CustomLoaderTag'Class (This).setCustomLoaderWebappPath;
                 end if;
             end if;
             return SKIP_BODY;

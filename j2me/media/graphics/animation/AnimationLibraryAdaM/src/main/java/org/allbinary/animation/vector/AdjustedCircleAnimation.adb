@@ -77,7 +77,7 @@ package body org.allbinary.animation.vector.AdjustedCircleAnimation_Package is
    procedure paintXY (This : in out AdjustedCircleAnimation; graphics_Param : access Graphics_Package.Graphics'Class; x : Integer; y : Integer) is
       graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
-        This.basicSetColorUtil.setBasicColorP3 (graphics, This.getBasicColorP, This.getColor);
+        This.basicSetColorUtil.setBasicColorP3 (graphics, AdjustedCircleAnimation'Class (This).getBasicColorP, AdjustedCircleAnimation'Class (This).getColor);
         graphics.drawArc ((x) + (This.xAdjustment), (y) + (This.yAdjustment), This.width, This.height, 0, This.TOTAL_ANGLE);
    end paintXY;
 

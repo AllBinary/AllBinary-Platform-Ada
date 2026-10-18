@@ -80,8 +80,8 @@ package body org.allbinary.graphics.j2me.MyFrame_Package is
    begin
       JFrame_Package.Initialize (This);
       Initialize_Fields (This);
-        This.initComponents;
-        This.setSize (Dimension_Package.Create (550, 400));
+        MyFrame'Class (This).initComponents;
+        MyFrame'Class (This).setSize (Dimension_Package.Create (550, 400));
         This.mainJPanel.setSize (Dimension_Package.Create (550, 400));
         This.jTabbedPane.setSize (Dimension_Package.Create (550, 400));
         This.fileJDialog := FileJDialog_Package.Create;
@@ -145,12 +145,12 @@ package body org.allbinary.graphics.j2me.MyFrame_Package is
         This.autoSheildMenuItem := JMenuItem_Package.Create;
         This.autoShrinkJMenuItem := JMenuItem_Package.Create;
         This.jMenu1 := JMenu_Package.Create;
-        This.addWindowListener (WindowAdapter_Package.Create  --  Java anonymous class body: implement it as a named type
+        MyFrame'Class (This).addWindowListener (WindowAdapter_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
 --     procedure windowClosing (This : in out ; evt_Param : access WindowEvent_Package.WindowEvent'Class) is
 --        evt : constant WindowEvent_Access := WindowEvent_Access (evt_Param);
 --     begin
---                  This.exitForm (evt);
+--                  MyFrame'Class (This).exitForm (evt);
 --     end windowClosing;
 );
         This.jButton2.setText (To_Unbounded_String ("New"));
@@ -159,7 +159,7 @@ package body org.allbinary.graphics.j2me.MyFrame_Package is
 --     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
 --        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
---                  This.jButton2ActionPerformed (evt);
+--                  MyFrame'Class (This).jButton2ActionPerformed (evt);
 --     end actionPerformed;
 );
         This.jToolBar1.add (This.jButton2);
@@ -169,7 +169,7 @@ package body org.allbinary.graphics.j2me.MyFrame_Package is
 --     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
 --        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
---                  This.saveJButtonActionPerformed (evt);
+--                  MyFrame'Class (This).saveJButtonActionPerformed (evt);
 --     end actionPerformed;
 );
         This.jToolBar1.add (This.saveJButton);
@@ -179,7 +179,7 @@ package body org.allbinary.graphics.j2me.MyFrame_Package is
 --     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
 --        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
---                  This.jButton1ActionPerformed (evt);
+--                  MyFrame'Class (This).jButton1ActionPerformed (evt);
 --     end actionPerformed;
 );
         This.jToolBar1.add (This.jButton1);
@@ -189,7 +189,7 @@ package body org.allbinary.graphics.j2me.MyFrame_Package is
 --     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
 --        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
---                  This.openJButtonActionPerformed (evt);
+--                  MyFrame'Class (This).openJButtonActionPerformed (evt);
 --     end actionPerformed;
 );
         This.jToolBar1.add (This.openJButton);
@@ -209,7 +209,7 @@ package body org.allbinary.graphics.j2me.MyFrame_Package is
 --     procedure mousePressed (This : in out ; evt_Param : access MouseEvent_Package.MouseEvent'Class) is
 --        evt : constant MouseEvent_Access := MouseEvent_Access (evt_Param);
 --     begin
---                  This.playJButtonMousePressed (evt);
+--                  MyFrame'Class (This).playJButtonMousePressed (evt);
 --     end mousePressed;
 );
         This.jToolBar1.add (This.playJButton);
@@ -219,11 +219,11 @@ package body org.allbinary.graphics.j2me.MyFrame_Package is
 --     procedure mousePressed (This : in out ; evt_Param : access MouseEvent_Package.MouseEvent'Class) is
 --        evt : constant MouseEvent_Access := MouseEvent_Access (evt_Param);
 --     begin
---                  This.stopJjButtonMousePressed (evt);
+--                  MyFrame'Class (This).stopJjButtonMousePressed (evt);
 --     end mousePressed;
 );
         This.jToolBar1.add (This.stopJjButton);
-        This.getContentPane.add (This.jToolBar1, java_Package.awt.BorderLayout.NORTH);
+        MyFrame'Class (This).getContentPane.add (This.jToolBar1, java_Package.awt.BorderLayout.NORTH);
         This.jPanel1.setLayout (GridLayout_Package.Create (1, 0));
         This.mainJPanel.setLayout (GridLayout_Package.Create (1, 0));
         This.jTabbedPane.setMinimumSize (Dimension_Package.Create (550, 400));
@@ -232,23 +232,23 @@ package body org.allbinary.graphics.j2me.MyFrame_Package is
 --     procedure stateChanged (This : in out ; evt_Param : access ChangeEvent_Package.ChangeEvent'Class) is
 --        evt : constant ChangeEvent_Access := ChangeEvent_Access (evt_Param);
 --     begin
---                  This.jTabbedPaneStateChanged (evt);
+--                  MyFrame'Class (This).jTabbedPaneStateChanged (evt);
 --     end stateChanged;
 );
         This.mainJPanel.add (This.jTabbedPane);
         This.jPanel1.add (This.mainJPanel);
-        This.getContentPane.add (This.jPanel1, java_Package.awt.BorderLayout.CENTER);
+        MyFrame'Class (This).getContentPane.add (This.jPanel1, java_Package.awt.BorderLayout.CENTER);
         This.statusJPanel.setLayout (GridLayout_Package.Create (1, 0));
         MyFrame_Package.statusJLabel.setText (To_Unbounded_String ("Status Bar"));
         This.statusJPanel.add (MyFrame_Package.statusJLabel);
-        This.getContentPane.add (This.statusJPanel, java_Package.awt.BorderLayout.SOUTH);
+        MyFrame'Class (This).getContentPane.add (This.statusJPanel, java_Package.awt.BorderLayout.SOUTH);
         This.fileJMenu.setText (To_Unbounded_String ("File"));
         This.fileJMenu.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
 --     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
 --        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
---                  This.fileJMenuActionPerformed (evt);
+--                  MyFrame'Class (This).fileJMenuActionPerformed (evt);
 --     end actionPerformed;
 );
         This.newJMenuItem.setText (To_Unbounded_String ("New"));
@@ -257,7 +257,7 @@ package body org.allbinary.graphics.j2me.MyFrame_Package is
 --     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
 --        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
---                  This.newJMenuItemActionPerformed (evt);
+--                  MyFrame'Class (This).newJMenuItemActionPerformed (evt);
 --     end actionPerformed;
 );
         This.fileJMenu.add (This.newJMenuItem);
@@ -267,7 +267,7 @@ package body org.allbinary.graphics.j2me.MyFrame_Package is
 --     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
 --        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
---                  This.openJMenuItemActionPerformed (evt);
+--                  MyFrame'Class (This).openJMenuItemActionPerformed (evt);
 --     end actionPerformed;
 );
         This.fileJMenu.add (This.openJMenuItem);
@@ -277,7 +277,7 @@ package body org.allbinary.graphics.j2me.MyFrame_Package is
 --     procedure mousePressed (This : in out ; evt_Param : access MouseEvent_Package.MouseEvent'Class) is
 --        evt : constant MouseEvent_Access := MouseEvent_Access (evt_Param);
 --     begin
---                  This.saveJMenuItemMousePressed (evt);
+--                  MyFrame'Class (This).saveJMenuItemMousePressed (evt);
 --     end mousePressed;
 );
         This.fileJMenu.add (This.saveJMenuItem);
@@ -289,7 +289,7 @@ package body org.allbinary.graphics.j2me.MyFrame_Package is
 --     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
 --        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
---                  This.exportJMenuItem1ActionPerformed (evt);
+--                  MyFrame'Class (This).exportJMenuItem1ActionPerformed (evt);
 --     end actionPerformed;
 );
         This.fileJMenu.add (This.exportJMenuItem1);
@@ -299,7 +299,7 @@ package body org.allbinary.graphics.j2me.MyFrame_Package is
 --     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
 --        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
---                  This.exitJMenuItemActionPerformed (evt);
+--                  MyFrame'Class (This).exitJMenuItemActionPerformed (evt);
 --     end actionPerformed;
 );
         This.fileJMenu.add (This.exitJMenuItem);
@@ -311,7 +311,7 @@ package body org.allbinary.graphics.j2me.MyFrame_Package is
 --     procedure mousePressed (This : in out ; evt_Param : access MouseEvent_Package.MouseEvent'Class) is
 --        evt : constant MouseEvent_Access := MouseEvent_Access (evt_Param);
 --     begin
---                  This.zoomInJMenuItemMousePressed (evt);
+--                  MyFrame'Class (This).zoomInJMenuItemMousePressed (evt);
 --     end mousePressed;
 );
         This.viewJMenu.add (This.zoomInJMenuItem);
@@ -321,7 +321,7 @@ package body org.allbinary.graphics.j2me.MyFrame_Package is
 --     procedure mousePressed (This : in out ; evt_Param : access MouseEvent_Package.MouseEvent'Class) is
 --        evt : constant MouseEvent_Access := MouseEvent_Access (evt_Param);
 --     begin
---                  This.zoomOutJMenuItemMousePressed (evt);
+--                  MyFrame'Class (This).zoomOutJMenuItemMousePressed (evt);
 --     end mousePressed;
 );
         This.viewJMenu.add (This.zoomOutJMenuItem);
@@ -333,7 +333,7 @@ package body org.allbinary.graphics.j2me.MyFrame_Package is
 --     procedure mousePressed (This : in out ; evt_Param : access MouseEvent_Package.MouseEvent'Class) is
 --        evt : constant MouseEvent_Access := MouseEvent_Access (evt_Param);
 --     begin
---                  This.explodeAllJMenuItemMousePressed (evt);
+--                  MyFrame'Class (This).explodeAllJMenuItemMousePressed (evt);
 --     end mousePressed;
 );
         This.objectJMenu.add (This.explodeAllJMenuItem);
@@ -344,7 +344,7 @@ package body org.allbinary.graphics.j2me.MyFrame_Package is
 --     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
 --        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
---                  This.frameJMenuActionPerformed (evt);
+--                  MyFrame'Class (This).frameJMenuActionPerformed (evt);
 --     end actionPerformed;
 );
         This.previousFrameJMenuItem.setText (To_Unbounded_String ("Previous"));
@@ -367,7 +367,7 @@ package body org.allbinary.graphics.j2me.MyFrame_Package is
 --     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
 --        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
---                  This.centerJMenuItemActionPerformed (evt);
+--                  MyFrame'Class (This).centerJMenuItemActionPerformed (evt);
 --     end actionPerformed;
 );
         This.generateJMenu.add (This.centerJMenuItem);
@@ -379,7 +379,7 @@ package body org.allbinary.graphics.j2me.MyFrame_Package is
 --     procedure mousePressed (This : in out ; evt_Param : access MouseEvent_Package.MouseEvent'Class) is
 --        evt : constant MouseEvent_Access := MouseEvent_Access (evt_Param);
 --     begin
---                  This.autoExplodeJMenuItemMousePressed (evt);
+--                  MyFrame'Class (This).autoExplodeJMenuItemMousePressed (evt);
 --     end mousePressed;
 );
         This.generateJMenu.add (This.autoExplodeJMenuItem);
@@ -391,7 +391,7 @@ package body org.allbinary.graphics.j2me.MyFrame_Package is
 --     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
 --        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
---                  This.jMenuItem1ActionPerformed (evt);
+--                  MyFrame'Class (This).jMenuItem1ActionPerformed (evt);
 --     end actionPerformed;
 );
         This.generateJMenu.add (This.jMenuItem1);
@@ -401,7 +401,7 @@ package body org.allbinary.graphics.j2me.MyFrame_Package is
 --     procedure mousePressed (This : in out ; evt_Param : access MouseEvent_Package.MouseEvent'Class) is
 --        evt : constant MouseEvent_Access := MouseEvent_Access (evt_Param);
 --     begin
---                  This.autoRotateGenerationJMenuItemMousePressed (evt);
+--                  MyFrame'Class (This).autoRotateGenerationJMenuItemMousePressed (evt);
 --     end mousePressed;
 );
         This.generateJMenu.add (This.autoRotateGenerationJMenuItem);
@@ -412,8 +412,8 @@ package body org.allbinary.graphics.j2me.MyFrame_Package is
         This.menuJMenuBar.add (This.generateJMenu);
         This.jMenu1.setText (To_Unbounded_String ("Help"));
         This.menuJMenuBar.add (This.jMenu1);
-        This.setJMenuBar (This.menuJMenuBar);
-        This.pack;
+        MyFrame'Class (This).setJMenuBar (This.menuJMenuBar);
+        MyFrame'Class (This).pack;
    end initComponents;
 
    procedure explodeAllJMenuItemMousePressed (This : in out MyFrame; evt_Param : access MouseEvent_Package.MouseEvent'Class) is
@@ -449,13 +449,13 @@ package body org.allbinary.graphics.j2me.MyFrame_Package is
    procedure stopJjButtonMousePressed (This : in out MyFrame; evt_Param : access MouseEvent_Package.MouseEvent'Class) is
       evt : constant MouseEvent_Access := MouseEvent_Access (evt_Param);
    begin
-        This.getSelectedWorkArea.stop;
+        MyFrame'Class (This).getSelectedWorkArea.stop;
    end stopJjButtonMousePressed;
 
    procedure playJButtonMousePressed (This : in out MyFrame; evt_Param : access MouseEvent_Package.MouseEvent'Class) is
       evt : constant MouseEvent_Access := MouseEvent_Access (evt_Param);
    begin
-        This.getSelectedWorkArea.play;
+        MyFrame'Class (This).getSelectedWorkArea.play;
    end playJButtonMousePressed;
 
    procedure autoRotateGenerationJMenuItemMousePressed (This : in out MyFrame; evt_Param : access MouseEvent_Package.MouseEvent'Class) is
@@ -467,37 +467,37 @@ package body org.allbinary.graphics.j2me.MyFrame_Package is
    procedure zoomOutJMenuItemMousePressed (This : in out MyFrame; evt_Param : access MouseEvent_Package.MouseEvent'Class) is
       evt : constant MouseEvent_Access := MouseEvent_Access (evt_Param);
    begin
-        This.getSelectedWorkArea.changeZoom (-(1));
+        MyFrame'Class (This).getSelectedWorkArea.changeZoom (-(1));
    end zoomOutJMenuItemMousePressed;
 
    procedure zoomInJMenuItemMousePressed (This : in out MyFrame; evt_Param : access MouseEvent_Package.MouseEvent'Class) is
       evt : constant MouseEvent_Access := MouseEvent_Access (evt_Param);
    begin
-        This.getSelectedWorkArea.changeZoom (1);
+        MyFrame'Class (This).getSelectedWorkArea.changeZoom (1);
    end zoomInJMenuItemMousePressed;
 
    procedure openJMenuItemActionPerformed (This : in out MyFrame; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
       evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
-        This.openGraphics;
+        MyFrame'Class (This).openGraphics;
    end openJMenuItemActionPerformed;
 
    procedure exportJMenuItem1ActionPerformed (This : in out MyFrame; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
       evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
-        This.export;
+        MyFrame'Class (This).export;
    end exportJMenuItem1ActionPerformed;
 
    procedure saveJMenuItemMousePressed (This : in out MyFrame; evt_Param : access MouseEvent_Package.MouseEvent'Class) is
       evt : constant MouseEvent_Access := MouseEvent_Access (evt_Param);
    begin
-        This.save;
+        MyFrame'Class (This).save;
    end saveJMenuItemMousePressed;
 
    procedure jTabbedPaneStateChanged (This : in out MyFrame; evt_Param : access ChangeEvent_Package.ChangeEvent'Class) is
       evt : constant ChangeEvent_Access := ChangeEvent_Access (evt_Param);
    begin
-        This.updateSelectedWorkArea;
+        MyFrame'Class (This).updateSelectedWorkArea;
    end jTabbedPaneStateChanged;
 
    procedure frameJMenuActionPerformed (This : in out MyFrame; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
@@ -515,7 +515,7 @@ package body org.allbinary.graphics.j2me.MyFrame_Package is
    procedure newJMenuItemActionPerformed (This : in out MyFrame; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
       evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
-        This.newGraphics;
+        MyFrame'Class (This).newGraphics;
    end newJMenuItemActionPerformed;
 
    procedure fileJMenuActionPerformed (This : in out MyFrame; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
@@ -533,13 +533,13 @@ package body org.allbinary.graphics.j2me.MyFrame_Package is
    procedure openJButtonActionPerformed (This : in out MyFrame; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
       evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
-        This.openGraphics;
+        MyFrame'Class (This).openGraphics;
    end openJButtonActionPerformed;
 
    procedure jButton2ActionPerformed (This : in out MyFrame; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
       evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
-        This.newGraphics;
+        MyFrame'Class (This).newGraphics;
    end jButton2ActionPerformed;
 
    procedure centerJMenuItemActionPerformed (This : in out MyFrame; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
@@ -560,20 +560,20 @@ package body org.allbinary.graphics.j2me.MyFrame_Package is
    procedure saveJButtonActionPerformed (This : in out MyFrame; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
       evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
-        This.save;
+        MyFrame'Class (This).save;
    end saveJButtonActionPerformed;
 
    procedure jButton1ActionPerformed (This : in out MyFrame; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
       evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
-        This.export;
+        MyFrame'Class (This).export;
    end jButton1ActionPerformed;
 
    procedure jMenuItem1ActionPerformed (This : in out MyFrame; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
       evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
         begin
-            This.getSelectedWorkArea.autoMirror;
+            MyFrame'Class (This).getSelectedWorkArea.autoMirror;
         exception
             when Java_Occurrence : others =>
                 declare
@@ -593,9 +593,9 @@ package body org.allbinary.graphics.j2me.MyFrame_Package is
             This.logUtil.putF (To_Unbounded_String ("Reading: ") & Java_Image (files), MyFrame_Access'(This'Unchecked_Access), To_Unbounded_String ("onFiles"));
             for index in 0 .. (files'Length) - 1 loop
                 document := DomHelper_Package.getInstance.createDocument (files (index));
-                workAreaJPanel := WorkAreaJPanel_Package.Create (WorkAreaDom_Package.Create (document), This.getSize);
+                workAreaJPanel := WorkAreaJPanel_Package.Create (WorkAreaDom_Package.Create (document), MyFrame'Class (This).getSize);
                 workAreaJPanel.setLayout (GridLayout_Package.Create (1, 1));
-                This.add (WorkAreaJPanelInterface_Access (workAreaJPanel));
+                MyFrame'Class (This).add (WorkAreaJPanelInterface_Access (workAreaJPanel));
             end loop;
             This.fileJDialog.setVisible (False);
         exception
@@ -615,7 +615,7 @@ package body org.allbinary.graphics.j2me.MyFrame_Package is
    begin
         begin
             newName := To_Unbounded_String ("graphic") & Java_Image (MyFrame_Package.numberOfWorkAreas);
-            dim := This.getSize;
+            dim := MyFrame'Class (This).getSize;
             newDialog := NewWorkAreaJDialog_Package.Create (MyFrame_Access'(This'Unchecked_Access), False, dim, newName);
         exception
             when Java_Occurrence : others =>
@@ -695,7 +695,7 @@ package body org.allbinary.graphics.j2me.MyFrame_Package is
    begin
         angleIncrementInteger := Integer (hashMap.get (To_Unbounded_String (Java_Image (0))));
         totalRotationInteger := Integer (hashMap.get (To_Unbounded_String (Java_Image (1))));
-        This.getSelectedWorkArea.autoRotate (angleIncrementInteger.intValue, totalRotationInteger.intValue);
+        MyFrame'Class (This).getSelectedWorkArea.autoRotate (angleIncrementInteger.intValue, totalRotationInteger.intValue);
    end onHashMap;
 
    function getSelectedWorkArea (This : in out MyFrame) return WorkAreaJPanelInterface_Access is
@@ -733,7 +733,7 @@ package body org.allbinary.graphics.j2me.MyFrame_Package is
             This.jTabbedPane.setSelectedComponent (JPanel_Access (newCanvasInterface));
             animationThread := Thread_Package.Create (Runnable_Access (newCanvasInterface));
             animationThread.start;
-            This.updateSelectedWorkArea;
+            MyFrame'Class (This).updateSelectedWorkArea;
         exception
             when Java_Occurrence : others =>
                 declare
@@ -749,7 +749,7 @@ package body org.allbinary.graphics.j2me.MyFrame_Package is
    procedure keyPressed (This : in out MyFrame; keyEvent_Param : access KeyEvent_Package.KeyEvent'Class) is
       keyEvent : constant KeyEvent_Access := KeyEvent_Access (keyEvent_Param);
    begin
-        This.getSelectedWorkArea.keyPressed (keyEvent);
+        MyFrame'Class (This).getSelectedWorkArea.keyPressed (keyEvent);
    end keyPressed;
 
    procedure keyReleased (This : in out MyFrame; keyEvent_Param : access KeyEvent_Package.KeyEvent'Class) is

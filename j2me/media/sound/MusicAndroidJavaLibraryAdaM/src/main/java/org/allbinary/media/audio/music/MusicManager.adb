@@ -53,7 +53,7 @@ package body org.allbinary.media.audio.music.MusicManager_Package is
         This.nextSongSound := nextSongSound;
         This.leftVolume := leftVolume;
         This.rightVolume := rightVolume;
-        This.reset;
+        MusicManager'Class (This).reset;
    end nextSong;
 
    procedure reset (This : in out MusicManager) is
@@ -67,14 +67,14 @@ package body org.allbinary.media.audio.music.MusicManager_Package is
             return;
         end if;
         if This.timeDelayHelper.isTime (This.gameTickTimeDelayHelper.startTime) then
-            This.startNewSong;
+            MusicManager'Class (This).startNewSong;
             return;
         end if;
         if This.timeDelayHelper2.isTime (This.gameTickTimeDelayHelper.startTime) then
             if This.androidServicesUtil.isServiceRunning (To_Unbounded_String (Ada.Tags.Expanded_Name (This.musicServiceClass))) then
                 null;
             else
-                This.startNewSong;
+                MusicManager'Class (This).startNewSong;
             end if;
         end if;
    end process;

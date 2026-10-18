@@ -60,17 +60,17 @@ package body org.allbinary.logic.system.os.OperatingSystemFactory_Package is
             if not (This.hasDetected) then
                 This.logUtil.putF (To_Unbounded_String ("osName: ") & osName, OperatingSystemFactory_Access'(This'Unchecked_Access), This.commonStrings.GET_INSTANCE);
                 This.hasDetected := True;
-                if ((Index (osName, To_String (operatingSystems.LINUX)) - 1)) >= (0) then
+                if ((Index (osName, Java_Image (operatingSystems.LINUX)) - 1)) >= (0) then
                     if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.FACTORYERROR) then
                         This.logUtil.putF (To_Unbounded_String ("Found a Linux OS"), OperatingSystemFactory_Access'(This'Unchecked_Access), This.commonStrings.GET_INSTANCE);
                     end if;
                     This.genericOperatingSystem := LinuxOperatingSystemFactory_Package.getInstance.getOperatingSystemInstance;
-                elsif ((Index (osName, To_String (operatingSystems.WINDOWS)) - 1)) >= (0) then
+                elsif ((Index (osName, Java_Image (operatingSystems.WINDOWS)) - 1)) >= (0) then
                     if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.FACTORYERROR) then
                         This.logUtil.putF (To_Unbounded_String ("Found a Windows OS"), OperatingSystemFactory_Access'(This'Unchecked_Access), This.commonStrings.GET_INSTANCE);
                     end if;
                     This.genericOperatingSystem := WindowsOperatingSystemFactory_Package.getInstance.getOperatingSystemInstance;
-                elsif ((Index (osName, To_String (operatingSystems.SOLARIS)) - 1)) >= (0) then
+                elsif ((Index (osName, Java_Image (operatingSystems.SOLARIS)) - 1)) >= (0) then
                     if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.FACTORYERROR) then
                         This.logUtil.putF (To_Unbounded_String ("Found a Solaris OS"), OperatingSystemFactory_Access'(This'Unchecked_Access), This.commonStrings.GET_INSTANCE);
                     end if;

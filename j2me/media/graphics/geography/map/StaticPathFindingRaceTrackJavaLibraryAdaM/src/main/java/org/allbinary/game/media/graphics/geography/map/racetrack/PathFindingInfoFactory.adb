@@ -50,7 +50,7 @@ package body org.allbinary.game.media.graphics.geography.map.racetrack.PathFindi
         PreLogUtil_Package.put (commonStrings.START, PathFindingInfoFactory_Access'(This'Unchecked_Access), commonStrings.GET_INSTANCE);
         pathFindingInfo := PathFindingInfo_Package.Create (PathFindingNodeCostInfoFactoryBase_Package.Create, BasicArrayListS_Package.Create (1), BasicArrayListS_Package.Create (1));
         RaceTrackRoadsGeographicMapCellHistoryFactory_Package.getInstance.init;
-        This.init (geographicMapInterface, pathFindingInfo, graphArray);
+        PathFindingInfoFactory'Class (This).init (geographicMapInterface, pathFindingInfo, graphArray);
         return pathFindingInfo;
    end getInstancePathFindingInfo;
 

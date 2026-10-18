@@ -47,14 +47,14 @@ package body org.allbinary.media.image.comparison.motion.TestInputForMotionRecta
    procedure onMotionRectanglesImageComparisonResultsEvent (This : in out TestInputForMotionRectanglesResultsWorker; motionRectanglesImageComparisonResultsEvent_Param : access MotionRectanglesResultsEvent_Package.MotionRectanglesResultsEvent'Class) is
       motionRectanglesImageComparisonResultsEvent : constant MotionRectanglesResultsEvent_Access := MotionRectanglesResultsEvent_Access (motionRectanglesImageComparisonResultsEvent_Param);
    begin
-        This.getMotionRectanglesVector.add (motionRectanglesImageComparisonResultsEvent.getMotionRectangles);
-        This.run;
+        TestInputForMotionRectanglesResultsWorker'Class (This).getMotionRectanglesVector.add (motionRectanglesImageComparisonResultsEvent.getMotionRectangles);
+        TestInputForMotionRectanglesResultsWorker'Class (This).run;
    end onMotionRectanglesImageComparisonResultsEvent;
 
    procedure onEvent (This : in out TestInputForMotionRectanglesResultsWorker; allBinaryEventObject_Param : access AllBinaryEventObject_Package.AllBinaryEventObject'Class) is
       allBinaryEventObject : constant AllBinaryEventObject_Access := AllBinaryEventObject_Access (allBinaryEventObject_Param);
    begin
-        This.onMotionRectanglesImageComparisonResultsEvent (MotionRectanglesResultsEvent_Access (allBinaryEventObject));
+        TestInputForMotionRectanglesResultsWorker'Class (This).onMotionRectanglesImageComparisonResultsEvent (MotionRectanglesResultsEvent_Access (allBinaryEventObject));
    end onEvent;
 
    function isRunning (This : in out TestInputForMotionRectanglesResultsWorker) return Boolean is
@@ -81,10 +81,10 @@ package body org.allbinary.media.image.comparison.motion.TestInputForMotionRecta
    begin
         begin
             This.logUtil.putF (This.commonStrings.START, TestInputForMotionRectanglesResultsWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN);
-            This.setRunning (True);
+            TestInputForMotionRectanglesResultsWorker'Class (This).setRunning (True);
             timeHelper := TimeDelayHelper_Package.Create (1000);
             timeHelper.setStartTimeTNT;
-            motionRectangles := MotionRectangles_Access (This.getMotionRectanglesVector.get (0));
+            motionRectangles := MotionRectangles_Access (TestInputForMotionRectanglesResultsWorker'Class (This).getMotionRectanglesVector.get (0));
             motionRectangleVector := motionRectangles.getVector;
             if (motionRectangleVector.size) > (0) then
                 rectangle := Rectangle_Access (motionRectangleVector.get (0));
@@ -92,7 +92,7 @@ package body org.allbinary.media.image.comparison.motion.TestInputForMotionRecta
                 inputTypeNameArray := robotHashtable.keySet.toArray;
                 size := inputTypeNameArray'Length;
                 for index in 0 .. (size) - 1 loop
-                    inputTypeNameString := Unbounded_String (inputTypeNameArray (index));
+                    inputTypeNameString := Java_Unbox (inputTypeNameArray (index));
                     inputRobotInterface := InputRobotInterface_Access (robotHashtable.get (inputTypeNameString));
                     inputRobotInterface.mouseMoveToTarget (rectangle);
                     if (inputRobotInterface.getName.compareTo (TempInputRobotNames_Package.DX_NAME)) = (0) then
@@ -124,7 +124,7 @@ package body org.allbinary.media.image.comparison.motion.TestInputForMotionRecta
                 end loop;
             end if;
             This.index := This.index + 1;
-            This.getMotionRectanglesVector.remove (motionRectangles);
+            TestInputForMotionRectanglesResultsWorker'Class (This).getMotionRectanglesVector.remove (motionRectangles);
             This.logUtil.putF ((CommonLabels_Package.getInstance.ELAPSED) + (timeHelper.getElapsedTNT), TestInputForMotionRectanglesResultsWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN);
             This.logUtil.putF (This.commonStrings.END_Id, TestInputForMotionRectanglesResultsWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN);
         exception

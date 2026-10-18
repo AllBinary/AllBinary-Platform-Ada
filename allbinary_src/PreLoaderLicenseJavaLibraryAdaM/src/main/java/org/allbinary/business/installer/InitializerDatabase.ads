@@ -20,8 +20,8 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.util.HashMap_Package; use java.util.HashMap_Package;
---  with java.util.Map_Package; use java.util.Map_Package;
+with java.util.HashMap_Package; use java.util.HashMap_Package;
+with java.util.Map_Package; use java.util.Map_Package;
 --  with java.util.Set_Package; use java.util.Set_Package;
 with org.allbinary.business.init.db.DatabaseConnectionInfoInterface_Package; use org.allbinary.business.init.db.DatabaseConnectionInfoInterface_Package;
 with org.allbinary.business.init.db.DbConnectionInfo_Package; use org.allbinary.business.init.db.DbConnectionInfo_Package;
@@ -37,6 +37,8 @@ with org.allbinary.business.installer.InitializerData_Package; use org.allbinary
 
 package org.allbinary.business.installer.InitializerDatabase_Package is
 
+   package HashMap_Package renames Standard.java.util.HashMap_Package;
+   package Map_Package renames Standard.java.util.Map_Package;
    package DatabaseConnectionInfoInterface_Package renames Standard.org.allbinary.business.init.db.DatabaseConnectionInfoInterface_Package;
    package DbConnectionInfo_Package renames Standard.org.allbinary.business.init.db.DbConnectionInfo_Package;
    package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;

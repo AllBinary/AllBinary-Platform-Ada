@@ -28,7 +28,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.item.downloads.Do
    begin
         AbSqlBean_Package.Initialize (This, InventoryDbInitInfo_Package.Create);
         Initialize_Fields (This);
-        This.setTableName (This.tableName);
+        DownloadItemsEntity'Class (This).setTableName (This.tableName);
    end Initialize;
 
    function Create return DownloadItemsEntity_Access is
@@ -80,7 +80,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.item.downloads.Do
    procedure update (This : in out DownloadItemsEntity; updatedValues_Param : access HashMap_Package.HashMap'Class) is
       updatedValues : constant HashMap_Access := HashMap_Access (updatedValues_Param);
    begin
-        AbSqlBean (This).updateWhere (DownloadItemData_Package.ID, Unbounded_String (updatedValues.get (DownloadItemData_Package.ID)), updatedValues);
+        AbSqlBean (This).updateWhere (DownloadItemData_Package.ID, Java_Unbox (updatedValues.get (DownloadItemData_Package.ID)), updatedValues);
    end update;
 
    function getForItem (This : in out DownloadItemsEntity; id : Unbounded_String) return BasicArrayList_Access is
@@ -93,7 +93,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.item.downloads.Do
    begin
         returnVector := BasicArrayListD_Package.Create;
         keysAndValues := StdUtil_Package.getInstance.createHashMap;
-        keysAndValues.put (This.basicItemData.ID, id);
+        keysAndValues.put (This.basicItemData.ID, Java_Box (id));
         vector := AbSqlBean (This).getRows (keysAndValues);
         size := vector.size;
         for index in 0 .. (size) - 1 loop
@@ -116,8 +116,8 @@ package body org.allbinary.data.tables.user.commerce.inventory.item.downloads.Do
    begin
         returnVector := BasicArrayListD_Package.Create;
         keysAndValues := StdUtil_Package.getInstance.createHashMap;
-        keysAndValues.put (This.basicItemData.ID, id);
-        keysAndValues.put (DownloadItemData_Package.ID, downloadItemId);
+        keysAndValues.put (This.basicItemData.ID, Java_Box (id));
+        keysAndValues.put (DownloadItemData_Package.ID, Java_Box (downloadItemId));
         vector := AbSqlBean (This).getRows (keysAndValues);
         size := vector.size;
         for index in 0 .. (size) - 1 loop
@@ -141,7 +141,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.item.downloads.Do
 
    function createTable (This : in out DownloadItemsEntity) return Unbounded_String is
    begin
-        return AbSqlBean (This).createTable (This.createTableStatement);
+        return AbSqlBean (This).createTable (DownloadItemsEntity'Class (This).createTableStatement);
    end createTable;
 
    function dropTable (This : in out DownloadItemsEntity) return Unbounded_String is

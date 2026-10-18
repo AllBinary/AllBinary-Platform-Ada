@@ -38,26 +38,26 @@ package body org.allbinary.game.ag.layer.weapon.mine.MineLayer_Package is
 
    procedure initXYZ (This : in out MineLayer; x : Integer; y : Integer; z : Integer) is
    begin
-        This.setPosition ((x) + (5), (y) + (5), z);
+        MineLayer'Class (This).setPosition ((x) + (5), (y) + (5), z);
         This.viewPositionEventHandler.addListener (AllBinaryLayer_Access (MineLayer_Access'(This'Unchecked_Access)));
         SecondaryPlayerQueueFactory_Package.getInstance.add (DropWeaponSound_Package.getInstance);
    end initXYZ;
 
    procedure damage (This : in out MineLayer; damage : Integer; damageType : Integer) is
    begin
-        This.totalDamage := (This.getInitDamage) + (1);
+        This.totalDamage := (MineLayer'Class (This).getInitDamage) + (1);
    end damage;
 
    function getDamage (This : in out MineLayer; damageType : Integer) return Integer is
    begin
         SimpleWeaponLayer (This).getDamage (damageType);
-        return This.getInitDamage;
+        return MineLayer'Class (This).getInitDamage;
    end getDamage;
 
    procedure setDestroyed (This : in out MineLayer; destroyed : Boolean) is
    begin
         SimpleWeaponLayer (This).setDestroyed (destroyed);
-        if This.isDestroyed then
+        if MineLayer'Class (This).isDestroyed then
             This.viewPositionEventHandler.removeListener (MineLayer_Access'(This'Unchecked_Access));
         end if;
    end setDestroyed;

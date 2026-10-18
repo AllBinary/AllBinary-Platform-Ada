@@ -41,7 +41,7 @@ package body org.allbinary.game.layer.RTSLayerEvent_Package is
         stringBuffer := StringMaker_Package.Create;
         stringBuffer.append (To_Unbounded_String ("RTSLayerEvent: " & ASCII.LF & ""));
         stringBuffer.append (To_Unbounded_String ("RTSLayer: "));
-        stringBuffer.append (This.getRtsLayer.toString);
+        stringBuffer.append (RTSLayerEvent'Class (This).getRtsLayer.toString);
         return stringBuffer.toString;
    end toString;
 

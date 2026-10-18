@@ -62,7 +62,7 @@ package body org.allbinary.android.AndroidServicesUtil_Package is
             runningServiceInfo := runningServicesList.get (index);
             serviceComponent := runningServiceInfo.service;
             serviceName := serviceComponent.toString;
-            if ((Index (serviceName, To_String (name)) - 1)) >= (0) then
+            if ((Index (serviceName, Java_Image (name)) - 1)) >= (0) then
                 return True;
             end if;
         end loop;

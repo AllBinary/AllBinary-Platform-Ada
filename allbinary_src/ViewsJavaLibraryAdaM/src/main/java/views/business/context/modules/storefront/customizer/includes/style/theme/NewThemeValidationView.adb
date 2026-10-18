@@ -46,7 +46,7 @@ package body views.business.context.modules.storefront.customizer.includes.style
    function isValid (This : in out NewThemeValidationView) return Boolean is
    begin
         begin
-            CustomizerUtil_Package.getInstance.insert (This.getTransformInfoInterface, DomNodeInterface_Access (This.styleValidationInterface));
+            CustomizerUtil_Package.getInstance.insert (NewThemeValidationView'Class (This).getTransformInfoInterface, DomNodeInterface_Access (This.styleValidationInterface));
             return True;
         exception
             when Java_Occurrence : others =>

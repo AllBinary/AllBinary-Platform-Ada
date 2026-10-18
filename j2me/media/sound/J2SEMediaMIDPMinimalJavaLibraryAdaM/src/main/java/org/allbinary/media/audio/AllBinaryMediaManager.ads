@@ -23,10 +23,10 @@ with AllBinary_Java; use AllBinary_Java;
 --  with java.io.BufferedInputStream_Package; use java.io.BufferedInputStream_Package;
 --  with java.io.ByteArrayInputStream_Package; use java.io.ByteArrayInputStream_Package;
 --  with java.io.IOException_Package; use java.io.IOException_Package;
---  with java.io.InputStream_Package; use java.io.InputStream_Package;
---  with javax.microedition.media.Manager_Package; use javax.microedition.media.Manager_Package;
---  with javax.microedition.media.MediaException_Package; use javax.microedition.media.MediaException_Package;
---  with javax.microedition.media.Player_Package; use javax.microedition.media.Player_Package;
+with java.io.InputStream_Package; use java.io.InputStream_Package;
+with javax.microedition.media.Manager_Package; use javax.microedition.media.Manager_Package;
+with javax.microedition.media.MediaException_Package; use javax.microedition.media.MediaException_Package;
+with javax.microedition.media.Player_Package; use javax.microedition.media.Player_Package;
 with org.allbinary.TsUtil_Package; use org.allbinary.TsUtil_Package;
 with org.allbinary.audio.AudioContentTypeDataFactory_Package; use org.allbinary.audio.AudioContentTypeDataFactory_Package;
 with org.allbinary.data.resource.ResourceUtil_Package; use org.allbinary.data.resource.ResourceUtil_Package;
@@ -43,6 +43,10 @@ with org.allbinary.media.audio.PCClipWavPlayer_Package; use org.allbinary.media.
 
 package org.allbinary.media.audio.AllBinaryMediaManager_Package is
 
+   package InputStream_Package renames Standard.java.io.InputStream_Package;
+   package Manager_Package renames Standard.javax.microedition.media.Manager_Package;
+   package MediaException_Package renames Standard.javax.microedition.media.MediaException_Package;
+   package Player_Package renames Standard.javax.microedition.media.Player_Package;
    package TsUtil_Package renames Standard.org.allbinary.TsUtil_Package;
    package AudioContentTypeDataFactory_Package renames Standard.org.allbinary.audio.AudioContentTypeDataFactory_Package;
    package ResourceUtil_Package renames Standard.org.allbinary.data.resource.ResourceUtil_Package;

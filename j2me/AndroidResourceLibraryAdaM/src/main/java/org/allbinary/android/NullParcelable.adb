@@ -36,6 +36,7 @@ package body org.allbinary.android.NullParcelable_Package is
    function describeContents (This : in out NullParcelable) return Integer is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return 0;
    end describeContents;
 
    procedure writeToParcel (This : in out NullParcelable; dest_Param : access Parcel_Package.Parcel'Class; flags : Integer) is

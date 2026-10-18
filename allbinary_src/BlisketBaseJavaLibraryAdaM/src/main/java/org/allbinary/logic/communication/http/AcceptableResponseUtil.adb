@@ -48,12 +48,12 @@ package body org.allbinary.logic.communication.http.AcceptableResponseUtil_Packa
 
    function get (This : in out AcceptableResponseUtil; index : Integer) return Unbounded_String is
    begin
-        return Unbounded_String (This.candidateVector.get (index));
+        return Java_Unbox (This.candidateVector.get (index));
    end get;
 
    function getTagName (This : in out AcceptableResponseUtil; index : Integer) return Unbounded_String is
    begin
-        return Unbounded_String (This.tagNameVector.get (index));
+        return Java_Unbox (This.tagNameVector.get (index));
    end getTagName;
 
    function size (This : in out AcceptableResponseUtil) return Integer is

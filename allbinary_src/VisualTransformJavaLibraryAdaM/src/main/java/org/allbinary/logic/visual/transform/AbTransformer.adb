@@ -69,7 +69,7 @@ package body org.allbinary.logic.visual.transform.AbTransformer_Package is
 
    function getStreamSource (This : in out AbTransformer) return StreamSource_Access is
    begin
-        return StreamSource_Package.Create (This.getInputStream);
+        return StreamSource_Package.Create (AbTransformer'Class (This).getInputStream);
    end getStreamSource;
 
    --  throws Exception
@@ -81,14 +81,14 @@ package body org.allbinary.logic.visual.transform.AbTransformer_Package is
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.XMLLOGGING) then
                 This.logUtil.putF (To_Unbounded_String ("xml: " & ASCII.LF & "") & xmlDocumentStr, AbTransformer_Access'(This'Unchecked_Access), To_Unbounded_String ("translate(String xmlDocumentStr)"));
             end if;
-            if (This.getURIResolver) = (null) then
+            if (AbTransformer'Class (This).getURIResolver) = (null) then
                 Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("No URIResolver")));
             end if;
-            result := XslHelper_Package.getInstance.translate (This.getURIResolver, StreamSource_Package.Create (This.getInputStream), StreamSource_Package.Create (StringBufferInputStream_Package.Create (xmlDocumentStr)));
+            result := XslHelper_Package.getInstance.translate (AbTransformer'Class (This).getURIResolver, StreamSource_Package.Create (AbTransformer'Class (This).getInputStream), StreamSource_Package.Create (StringBufferInputStream_Package.Create (xmlDocumentStr)));
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.XSLLOGGING) then
                 This.logUtil.putF (To_Unbounded_String ("translated xml: ") & result, AbTransformer_Access'(This'Unchecked_Access), To_Unbounded_String ("translate(String xmlDocumentStr)"));
             end if;
-            transformInfoObjectConfigGeneratorInterface := TransformInfoObjectConfigGeneratorFactory_Package.getInstance.getInstance (This.getTransformInfoInterface);
+            transformInfoObjectConfigGeneratorInterface := TransformInfoObjectConfigGeneratorFactory_Package.getInstance.getInstance (AbTransformer'Class (This).getTransformInfoInterface);
             return transformInfoObjectConfigGeneratorInterface.process (result);
         exception
             when Java_Occurrence : others =>

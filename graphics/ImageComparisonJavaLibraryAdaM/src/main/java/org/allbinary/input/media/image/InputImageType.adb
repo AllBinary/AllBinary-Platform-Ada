@@ -29,7 +29,7 @@ package body org.allbinary.input.media.image.InputImageType_Package is
         This.name := name;
         This.index := index;
         InputImageType_Package.TYPE_VECTOR.add (InputImageType_Access'(This'Unchecked_Access));
-        InputImageType_Package.hashMap.put (This.getName, InputImageType_Access'(This'Unchecked_Access));
+        InputImageType_Package.hashMap.put (Java_Box (InputImageType'Class (This).getName), InputImageType_Access'(This'Unchecked_Access));
    end Initialize;
 
    function Create (name : Unbounded_String; index : Integer) return InputImageType_Access is
@@ -41,7 +41,7 @@ package body org.allbinary.input.media.image.InputImageType_Package is
 
    function toString (This : in out InputImageType) return Unbounded_String is
    begin
-        return To_Unbounded_String ("ImageType: ") & This.getName;
+        return To_Unbounded_String ("ImageType: ") & InputImageType'Class (This).getName;
    end toString;
 
    function getName (This : in out InputImageType) return Unbounded_String is
@@ -51,7 +51,7 @@ package body org.allbinary.input.media.image.InputImageType_Package is
 
    function getInstance (imageTypeString : Unbounded_String) return InputImageType_Access is
    begin
-        return InputImageType_Access (InputImageType_Package.hashMap.get (imageTypeString));
+        return InputImageType_Access (InputImageType_Package.hashMap.get (Java_Box (imageTypeString)));
    end getInstance;
 
    function getAllAsVector return BasicArrayList_Access is

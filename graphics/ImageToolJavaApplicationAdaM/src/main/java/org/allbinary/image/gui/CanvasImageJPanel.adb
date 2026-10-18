@@ -45,7 +45,7 @@ package body org.allbinary.image.gui.CanvasImageJPanel_Package is
    begin
         JPanel_Package.Initialize (This);
         Initialize_Fields (This);
-        This.initComponents;
+        CanvasImageJPanel'Class (This).initComponents;
         This.imageProcessorInput := imageProcessorInput;
    end Initialize;
 
@@ -78,9 +78,9 @@ package body org.allbinary.image.gui.CanvasImageJPanel_Package is
 --                      widthReduction := To_Unbounded_String (Java_Image (This.widthReductionTextField.getText));
 --                      heightReduction := To_Unbounded_String (Java_Image (This.heightReductionTextField.getText));
 --                      if ((((leftReduction) <= (0)) or else ((topReduction) <= (0))) or else ((widthReduction) <= (0))) or else ((heightReduction) <= (0)) then
---                          canvasTrimUtil.process (This.getImageProcessorInput, -(leftReduction), -(topReduction), -(widthReduction), -(heightReduction), CanvasImageJPanel_Access'(This'Unchecked_Access));
+--                          canvasTrimUtil.process (CanvasImageJPanel'Class (This).getImageProcessorInput, -(leftReduction), -(topReduction), -(widthReduction), -(heightReduction), CanvasImageJPanel_Access'(This'Unchecked_Access));
 --                      else
---                          canvasExpandUtil.process (This.getImageProcessorInput, leftReduction, topReduction, CanvasImageJPanel_Access'(This'Unchecked_Access));
+--                          canvasExpandUtil.process (CanvasImageJPanel'Class (This).getImageProcessorInput, leftReduction, topReduction, CanvasImageJPanel_Access'(This'Unchecked_Access));
 --                      end if;
 --                  exception
 --                      when Java_Occurrence : others =>
@@ -128,7 +128,7 @@ package body org.allbinary.image.gui.CanvasImageJPanel_Package is
 --     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
 --        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
---                  This.writeOverOriginalJCheckBoxActionPerformed (evt);
+--                  CanvasImageJPanel'Class (This).writeOverOriginalJCheckBoxActionPerformed (evt);
 --     end actionPerformed;
 );
         jPanel1Layout := GroupLayout_Package.Create (This.jPanel1);
@@ -141,7 +141,7 @@ package body org.allbinary.image.gui.CanvasImageJPanel_Package is
 --     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
 --        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
---                  This.generateJButtonActionPerformed (evt);
+--                  CanvasImageJPanel'Class (This).generateJButtonActionPerformed (evt);
 --     end actionPerformed;
 );
         This.jLabel4.setText (To_Unbounded_String ("Results:"));
@@ -152,7 +152,7 @@ package body org.allbinary.image.gui.CanvasImageJPanel_Package is
 --     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
 --        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
---                  This.widthReductionTextFieldActionPerformed (evt);
+--                  CanvasImageJPanel'Class (This).widthReductionTextFieldActionPerformed (evt);
 --     end actionPerformed;
 );
         This.jLabel6.setText (To_Unbounded_String ("Bottom"));
@@ -163,7 +163,7 @@ package body org.allbinary.image.gui.CanvasImageJPanel_Package is
 --     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
 --        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
---                  This.widthReductionTextField1ActionPerformed (evt);
+--                  CanvasImageJPanel'Class (This).widthReductionTextField1ActionPerformed (evt);
 --     end actionPerformed;
 );
         This.jLabel7.setText (To_Unbounded_String ("Top"));
@@ -174,7 +174,7 @@ package body org.allbinary.image.gui.CanvasImageJPanel_Package is
         jPanel2Layout.setHorizontalGroup (jPanel2Layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (jPanel2Layout.createSequentialGroup.addContainerGap.addComponent (This.jLabel8).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent (This.widthReductionTextField1, javax_Package.swing.GroupLayout.PREFERRED_SIZE, 41, javax_Package.swing.GroupLayout.PREFERRED_SIZE).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent (This.jLabel5).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent (This.widthReductionTextField, javax_Package.swing.GroupLayout.PREFERRED_SIZE, 41, javax_Package.swing.GroupLayout.PREFERRED_SIZE).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent (This.jLabel7).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent (This.heightReductionTextField1, javax_Package.swing.GroupLayout.PREFERRED_SIZE, 46, javax_Package.swing.GroupLayout.PREFERRED_SIZE).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent (This.jLabel6).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent (This.heightReductionTextField, javax_Package.swing.GroupLayout.PREFERRED_SIZE, 46, javax_Package.swing.GroupLayout.PREFERRED_SIZE).addContainerGap (140, Short_Package.MAX_VALUE)));
         jPanel2Layout.setVerticalGroup (jPanel2Layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (javax_Package.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup.addGap (0, 16, Short_Package.MAX_VALUE).addGroup (jPanel2Layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (jPanel2Layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.BASELINE).addComponent (This.jLabel6).addComponent (This.heightReductionTextField, javax_Package.swing.GroupLayout.PREFERRED_SIZE, javax_Package.swing.GroupLayout.DEFAULT_SIZE, javax_Package.swing.GroupLayout.PREFERRED_SIZE)).addGroup (jPanel2Layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.BASELINE).addComponent (This.jLabel8).addComponent (This.widthReductionTextField1, javax_Package.swing.GroupLayout.PREFERRED_SIZE, 22, javax_Package.swing.GroupLayout.PREFERRED_SIZE).addComponent (This.jLabel7).addComponent (This.heightReductionTextField1, javax_Package.swing.GroupLayout.PREFERRED_SIZE, javax_Package.swing.GroupLayout.DEFAULT_SIZE, javax_Package.swing.GroupLayout.PREFERRED_SIZE)).addGroup (jPanel2Layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.BASELINE).addComponent (This.jLabel5).addComponent (This.widthReductionTextField, javax_Package.swing.GroupLayout.PREFERRED_SIZE, 22, javax_Package.swing.GroupLayout.PREFERRED_SIZE)))));
         layout := GroupLayout_Package.Create (CanvasImageJPanel_Access'(This'Unchecked_Access));
-        This.setLayout (layout);
+        CanvasImageJPanel'Class (This).setLayout (layout);
         layout.setHorizontalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (layout.createSequentialGroup.addComponent (This.jPanel2, javax_Package.swing.GroupLayout.DEFAULT_SIZE, javax_Package.swing.GroupLayout.DEFAULT_SIZE, Short_Package.MAX_VALUE).addGap (78, 78, 78)).addGroup (layout.createSequentialGroup.addGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (layout.createSequentialGroup.addContainerGap.addComponent (This.jPanel1, javax_Package.swing.GroupLayout.DEFAULT_SIZE, javax_Package.swing.GroupLayout.DEFAULT_SIZE, Short_Package.MAX_VALUE)).addGroup (layout.createSequentialGroup.addGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addComponent (This.jLabel4).addGroup (layout.createSequentialGroup.addComponent (This.writeOverOriginalJCheckBox).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent (This.generateJButton))).addGap (0, 0, Short_Package.MAX_VALUE))).addContainerGap));
         layout.setVerticalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (layout.createSequentialGroup.addComponent (This.jPanel2, javax_Package.swing.GroupLayout.PREFERRED_SIZE, javax_Package.swing.GroupLayout.DEFAULT_SIZE, javax_Package.swing.GroupLayout.PREFERRED_SIZE).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addComponent (This.generateJButton).addComponent (This.writeOverOriginalJCheckBox)).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent (This.jLabel4).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent (This.jPanel1, javax_Package.swing.GroupLayout.DEFAULT_SIZE, javax_Package.swing.GroupLayout.DEFAULT_SIZE, Short_Package.MAX_VALUE)));
    end initComponents;
@@ -188,7 +188,7 @@ package body org.allbinary.image.gui.CanvasImageJPanel_Package is
    procedure generateJButtonActionPerformed (This : in out CanvasImageJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
       evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
-        This.process;
+        CanvasImageJPanel'Class (This).process;
    end generateJButtonActionPerformed;
 
    procedure widthReductionTextFieldActionPerformed (This : in out CanvasImageJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
@@ -224,11 +224,11 @@ package body org.allbinary.image.gui.CanvasImageJPanel_Package is
    begin
         This.logUtil.putF (This.commonStrings.VISIT, CanvasImageJPanel_Access'(This'Unchecked_Access), This.commonStrings.VISIT);
         This.result := generatedBufferedImage;
-        This.getParent.repaint;
+        CanvasImageJPanel'Class (This).getParent.repaint;
         file := This.imageProcessorInput.getFiles (index);
         if not (This.writeOverOriginalJCheckBox.isSelected) then
             filePath := file.getAbsolutePath;
-            extensionIndex := (Index (filePath, To_String (This.imageStrings.PNG_EXTENSION)) - 1);
+            extensionIndex := (Index (filePath, Java_Image (This.imageStrings.PNG_EXTENSION)) - 1);
             filePath := StringMaker_Package.Create.append (Unbounded_Slice (filePath, (0) + 1, extensionIndex)).append (This.commonSeps.UNDERSCORE).append (name).append (This.imageStrings.PNG_EXTENSION).toString;
             file := File_Package.Create (filePath);
         end if;

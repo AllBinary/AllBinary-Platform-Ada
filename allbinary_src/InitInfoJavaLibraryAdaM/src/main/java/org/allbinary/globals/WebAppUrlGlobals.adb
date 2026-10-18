@@ -66,7 +66,7 @@ package body org.allbinary.globals.WebAppUrlGlobals_Package is
         if not (StringValidationUtil_Package.getInstance.isEmpty (mainPath)) then
             return mainPath;
         elsif This.isWebappPathSet then
-            return This.getWebappPath;
+            return WebAppUrlGlobals'Class (This).getWebappPath;
         else
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Webapp Path is not set")));
         end if;

@@ -60,7 +60,7 @@ package body org.allbinary.media.graphics.geography.map.racetrack.CustomMapGener
         startIndex2 := (mapArray (0)'Length) - (1);
         for index in reverse 0 .. (mapArray'Length) - (1) loop
             for index2 in reverse 0 .. startIndex2 loop
-                This.customMapArray (index) (index2) := This.getCustomType (index2, index, mapArray (index) (index2));
+                This.customMapArray (index) (index2) := CustomMapGenerator'Class (This).getCustomType (index2, index, mapArray (index) (index2));
             end loop;
         end loop;
    end copyMapIntoCustomMap;

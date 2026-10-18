@@ -51,7 +51,7 @@ package body org.allbinary.game.score.HighScoresHelper2_Package is
    begin
         HighScoresHelperBase (This).setHighScoresArray (highScoresArrayP);
         This.circularIndexUtil.setSize (This.highScoresArrayP'Length);
-        This.selectHighScores;
+        HighScoresHelper2'Class (This).selectHighScores;
    end setHighScoresArray;
 
    procedure selectHighScores (This : in out HighScoresHelper2) is
@@ -59,7 +59,7 @@ package body org.allbinary.game.score.HighScoresHelper2_Package is
       index : Integer;
    begin
         if (This.highScoresArrayP'Length) = (0) then
-            This.setSelectedHighScores (NullHighScoresSingletonFactory_Package.getInstance);
+            HighScoresHelper2'Class (This).setSelectedHighScores (NullHighScoresSingletonFactory_Package.getInstance);
             return;
         end if;
         This.circularIndexUtil.next;
@@ -69,7 +69,7 @@ package body org.allbinary.game.score.HighScoresHelper2_Package is
             highScores := This.highScoresArrayP (This.circularIndexUtil.next);
             index := index + 1;
         end loop;
-        This.setSelectedHighScores (highScores);
+        HighScoresHelper2'Class (This).setSelectedHighScores (highScores);
    end selectHighScores;
 
 end org.allbinary.game.score.HighScoresHelper2_Package;

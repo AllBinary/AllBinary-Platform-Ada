@@ -31,9 +31,9 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
       genericProfileActionsJPanel : constant GenericProfileActionsJPanel_Access := GenericProfileActionsJPanel_Access (genericProfileActionsJPanel_Param);
    begin
       Initialize_Fields (This);
-        This.setName (name);
-        This.init (genericProfileActionsJPanel);
-        This.load;
+        GenericProfileActions'Class (This).setName (name);
+        GenericProfileActions'Class (This).init (genericProfileActionsJPanel);
+        GenericProfileActions'Class (This).load;
    end Initialize;
 
    function Create (genericProfileActionsJPanel_Param : access GenericProfileActionsJPanel_Package.GenericProfileActionsJPanel'Class; name : Unbounded_String) return GenericProfileActions_Access is
@@ -48,9 +48,9 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
       abPath : constant AbPath_Access := AbPath_Access (abPath_Param);
    begin
       Initialize_Fields (This);
-        This.setName (name);
-        This.init (genericProfileActionsJPanel);
-        This.load;
+        GenericProfileActions'Class (This).setName (name);
+        GenericProfileActions'Class (This).init (genericProfileActionsJPanel);
+        GenericProfileActions'Class (This).load;
    end Initialize;
 
    function Create (genericProfileActionsJPanel_Param : access GenericProfileActionsJPanel_Package.GenericProfileActionsJPanel'Class; abPath_Param : access AbPath_Package.AbPath'Class; name : Unbounded_String) return GenericProfileActions_Access is
@@ -65,9 +65,9 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
       fileInputStream : constant FileInputStream_Access := FileInputStream_Access (fileInputStream_Param);
    begin
       Initialize_Fields (This);
-        This.setName (name);
-        This.init (genericProfileActionsJPanel);
-        This.fileInit (fileInputStream);
+        GenericProfileActions'Class (This).setName (name);
+        GenericProfileActions'Class (This).init (genericProfileActionsJPanel);
+        GenericProfileActions'Class (This).fileInit (fileInputStream);
    end Initialize;
 
    function Create (genericProfileActionsJPanel_Param : access GenericProfileActionsJPanel_Package.GenericProfileActionsJPanel'Class; fileInputStream_Param : access FileInputStream_Package.FileInputStream'Class; name : Unbounded_String) return GenericProfileActions_Access is
@@ -81,9 +81,9 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
    procedure init (This : in out GenericProfileActions; genericProfileActionsJPanel_Param : access GenericProfileActionsJPanel_Package.GenericProfileActionsJPanel'Class) is
       genericProfileActionsJPanel : constant GenericProfileActionsJPanel_Access := GenericProfileActionsJPanel_Access (genericProfileActionsJPanel_Param);
    begin
-        This.setGenericProfileActionsJPanel (genericProfileActionsJPanel);
+        GenericProfileActions'Class (This).setGenericProfileActionsJPanel (genericProfileActionsJPanel);
         This.actionsDefaultListModelHelper := DefaultListModelHelper_Package.Create;
-        This.setHashMap (HashMap_Package.Create);
+        GenericProfileActions'Class (This).setHashMap (HashMap_Package.Create);
    end init;
 
    --  throws Exception
@@ -91,9 +91,9 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
       idFile : FileOutputStream_Access;
       idOutData : DataOutputStream_Access;
    begin
-        idFile := FileOutputStream_Package.Create (Java_Image (GenericProfileActions_Package.DEFAULT_PROFILE_ACTIONS_PATH) & This.getName & Java_Image (This.commonFileStrings.U_XML));
+        idFile := FileOutputStream_Package.Create (Java_Image (GenericProfileActions_Package.DEFAULT_PROFILE_ACTIONS_PATH) & GenericProfileActions'Class (This).getName & Java_Image (This.commonFileStrings.U_XML));
         idOutData := DataOutputStream_Package.Create (idFile);
-        idOutData.writeBytes (XmlDocumentHelper_Package.toString (This.toXmlDoc));
+        idOutData.writeBytes (XmlDocumentHelper_Package.toString (GenericProfileActions'Class (This).toXmlDoc));
    end save;
 
    function getFile (This : in out GenericProfileActions; name : Unbounded_String) return File_Access is
@@ -108,10 +108,10 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
       file : File_Access;
       idFile : FileInputStream_Access;
    begin
-        file := This.getFile (This.getName);
+        file := GenericProfileActions'Class (This).getFile (GenericProfileActions'Class (This).getName);
         if file.isFile then
             idFile := FileInputStream_Package.Create (file);
-            This.fileInit (idFile);
+            GenericProfileActions'Class (This).fileInit (idFile);
         else
             This.logUtil.putF (To_Unbounded_String ("No Profile: ") & Java_Image (file.getAbsolutePath), GenericProfileActions_Access'(This'Unchecked_Access), To_Unbounded_String ("Contructor"));
         end if;
@@ -141,13 +141,13 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
             node := nameNodeList.item (index);
             nodeList := node.getChildNodes;
             if (nodeList) /= (null) then
-                This.initActions (nodeList);
+                GenericProfileActions'Class (This).initActions (nodeList);
             else
                 Java_Throw (Java_New_Exception ("Exception", Java_Image (GenericProfileActionData_Package.NAME) & To_Unbounded_String (" Name Node Node Children")));
             end if;
         end loop;
-        This.logUtil.putF (To_Unbounded_String ("Loaded: ") & Java_Image (This.getHashMap.size) & To_Unbounded_String (" Configuration Profile Action(s)"), GenericProfileActions_Access'(This'Unchecked_Access), To_Unbounded_String ("Contructor"));
-        This.getDefaultListModelHelper.initDefaultModelList;
+        This.logUtil.putF (To_Unbounded_String ("Loaded: ") & Java_Image (GenericProfileActions'Class (This).getHashMap.size) & To_Unbounded_String (" Configuration Profile Action(s)"), GenericProfileActions_Access'(This'Unchecked_Access), To_Unbounded_String ("Contructor"));
+        GenericProfileActions'Class (This).getDefaultListModelHelper.initDefaultModelList;
    end fileInit;
 
    --  throws Exception
@@ -160,9 +160,9 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
         for index in 0 .. (nodeList.getLength) - 1 loop
             actionNode := nodeList.item (index);
             if (actionNode) /= (null) then
-                genericConfigurationProfileAction := GenericProfileAction_Package.Create (This.getGenericProfileActionsJPanel.getGenericProfileActionJPanel, actionNode);
-                This.getHashMap.put (genericConfigurationProfileAction.getName, genericConfigurationProfileAction);
-                This.getDefaultListModelHelper.add (genericConfigurationProfileAction.getName);
+                genericConfigurationProfileAction := GenericProfileAction_Package.Create (GenericProfileActions'Class (This).getGenericProfileActionsJPanel.getGenericProfileActionJPanel, actionNode);
+                GenericProfileActions'Class (This).getHashMap.put (genericConfigurationProfileAction.getName, genericConfigurationProfileAction);
+                GenericProfileActions'Class (This).getDefaultListModelHelper.add (genericConfigurationProfileAction.getName);
             else
                 Java_Throw (Java_New_Exception ("Exception", Java_Image (GenericProfileActionData_Package.NAME) & To_Unbounded_String (" Node Null")));
             end if;
@@ -176,7 +176,7 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
 
    function getAction (This : in out GenericProfileActions; string_Id : Unbounded_String) return GenericProfileAction_Access is
    begin
-        return GenericProfileAction_Access (This.getHashMap.get (string_Id));
+        return GenericProfileAction_Access (GenericProfileActions'Class (This).getHashMap.get (string_Id));
    end getAction;
 
    --  throws Exception
@@ -184,19 +184,19 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
       genericProfileAction : GenericProfileAction_Access;
    begin
         genericProfileAction := GenericProfileAction_Package.Create (name);
-        This.getHashMap.put (genericProfileAction.getName, genericProfileAction);
-        This.getDefaultListModelHelper.add (genericProfileAction.getName);
-        This.getDefaultListModelHelper.initDefaultModelList;
-        This.save;
+        GenericProfileActions'Class (This).getHashMap.put (genericProfileAction.getName, genericProfileAction);
+        GenericProfileActions'Class (This).getDefaultListModelHelper.add (genericProfileAction.getName);
+        GenericProfileActions'Class (This).getDefaultListModelHelper.initDefaultModelList;
+        GenericProfileActions'Class (This).save;
    end add;
 
    --  throws Exception
    procedure remove (This : in out GenericProfileActions; name : Unbounded_String) is
    begin
-        This.getHashMap.remove (name);
-        This.getDefaultListModelHelper.remove (name);
-        This.getDefaultListModelHelper.initDefaultModelList;
-        This.save;
+        GenericProfileActions'Class (This).getHashMap.remove (name);
+        GenericProfileActions'Class (This).getDefaultListModelHelper.remove (name);
+        GenericProfileActions'Class (This).getDefaultListModelHelper.initDefaultModelList;
+        GenericProfileActions'Class (This).save;
    end remove;
 
    function toHashMap (This : in out GenericProfileActions) return HashMap_Access is
@@ -219,12 +219,12 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
       index : Integer;
    begin
         node := document.createElement (GenericProfileActionsData_Package.NAME);
-        set := This.getHashMap.keySet;
+        set := GenericProfileActions'Class (This).getHashMap.keySet;
         actionNameArray := set.toArray;
         size := actionNameArray'Length;
         for index in 0 .. (size) - 1 loop
-            nextActionName := Unbounded_String (actionNameArray (index));
-            nextGenericProfileAction := GenericProfileAction_Access (This.getAction (nextActionName));
+            nextActionName := Java_Unbox (actionNameArray (index));
+            nextGenericProfileAction := GenericProfileAction_Access (GenericProfileActions'Class (This).getAction (nextActionName));
             node.appendChild (nextGenericProfileAction.toXmlNode (document));
         end loop;
         return node;
@@ -236,7 +236,7 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
       node : Node_Access;
    begin
         document := DomDocumentHelper_Package.create;
-        node := This.toXmlNode (document);
+        node := GenericProfileActions'Class (This).toXmlNode (document);
         document.appendChild (node);
         return document;
    end toXmlDoc;

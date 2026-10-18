@@ -61,9 +61,9 @@ package body org.allbinary.game.layer.MultiSelectPaintable_Package is
       stringBuffer : StringMaker_Access;
       rootName : Unbounded_String;
    begin
-        This.clear;
+        MultiSelectPaintable'Class (This).clear;
         size := list.size;
-        This.totalCharArray := This.getPrimitiveLongUtil.getCharArray (size);
+        This.totalCharArray := MultiSelectPaintable'Class (This).getPrimitiveLongUtil.getCharArray (size);
         for index in reverse 0 .. (list.size) - (1) loop
             rtsLayer := RTSLayer_Access (list.get (index));
             if not (This.rootNameList.contains (rtsLayer.getRootName)) then
@@ -73,7 +73,7 @@ package body org.allbinary.game.layer.MultiSelectPaintable_Package is
         COMMA_SEP := CommonSeps_Package.getInstance.COMMA_SEP;
         stringBuffer := StringMaker_Package.Create;
         for index in reverse 0 .. (This.rootNameList.size) - (1) loop
-            rootName := Unbounded_String (This.rootNameList.get (index));
+            rootName := Java_Unbox (This.rootNameList.get (index));
             stringBuffer.append (rootName);
             if (index) /= (0) then
                 stringBuffer.append (COMMA_SEP);
@@ -91,10 +91,10 @@ package body org.allbinary.game.layer.MultiSelectPaintable_Package is
       graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
         graphics.setColor (This.backgroundColor);
-        graphics.drawRect (This.getX, This.y, This.getWidth, This.getHeight);
-        graphics.setColor (This.getColor);
+        graphics.drawRect (MultiSelectPaintable'Class (This).getX, This.y, MultiSelectPaintable'Class (This).getWidth, MultiSelectPaintable'Class (This).getHeight);
+        graphics.setColor (MultiSelectPaintable'Class (This).getColor);
         graphics.drawString (This.TOTAL, This.textX, This.y, 0);
-        graphics.drawChars (This.totalCharArray, 0, This.getPrimitiveLongUtil.getCurrentTotalDigits, (This.textX) + (This.totalWidth), This.y, 0);
+        graphics.drawChars (This.totalCharArray, 0, MultiSelectPaintable'Class (This).getPrimitiveLongUtil.getCurrentTotalDigits, (This.textX) + (This.totalWidth), This.y, 0);
         graphics.drawString (This.rootNamesString, This.textX, This.textLine2Y, 0);
    end paint;
 

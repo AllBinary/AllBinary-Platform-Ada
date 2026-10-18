@@ -36,24 +36,24 @@ package body org.allbinary.input.automation.module.game.MeteredGameObject_Packag
       index : Integer;
    begin
       Initialize_Fields (This);
-        This.setRatios (new Long_Float_Array'(0 .. (bufferedImage'Length) - 1 => null));
-        This.setMinX (minX);
-        This.setMaxX (maxX);
-        This.setY (y);
-        This.setSize ((maxX) - (minX));
+        MeteredGameObject'Class (This).setRatios (new Long_Float_Array'(0 .. (bufferedImage'Length) - 1 => null));
+        MeteredGameObject'Class (This).setMinX (minX);
+        MeteredGameObject'Class (This).setMaxX (maxX);
+        MeteredGameObject'Class (This).setY (y);
+        MeteredGameObject'Class (This).setSize ((maxX) - (minX));
         for index in 0 .. (bufferedImage'Length) - 1 loop
-            nominator := GraphicsAnalysisUtil_Package.getNominator (bufferedImage (index), This.getMinX, This.getMaxX, This.getY);
-            This.getRatios (index) := (nominator) / (This.getSize);
+            nominator := GraphicsAnalysisUtil_Package.getNominator (bufferedImage (index), MeteredGameObject'Class (This).getMinX, MeteredGameObject'Class (This).getMaxX, MeteredGameObject'Class (This).getY);
+            MeteredGameObject'Class (This).getRatios (index) := (nominator) / (MeteredGameObject'Class (This).getSize);
         end loop;
-        if (This.getRatios ((bufferedImage'Length) - (1)).doubleValue) > (0.93) then
-            This.setGood (True);
+        if (MeteredGameObject'Class (This).getRatios ((bufferedImage'Length) - (1)).doubleValue) > (0.93) then
+            MeteredGameObject'Class (This).setGood (True);
         else
-            This.setGood (False);
+            MeteredGameObject'Class (This).setGood (False);
         end if;
-        if (This.getRatios ((bufferedImage'Length) - (1)).doubleValue) < (This.getRatios (0).doubleValue) then
-            This.setDropping (True);
+        if (MeteredGameObject'Class (This).getRatios ((bufferedImage'Length) - (1)).doubleValue) < (MeteredGameObject'Class (This).getRatios (0).doubleValue) then
+            MeteredGameObject'Class (This).setDropping (True);
         else
-            This.setDropping (False);
+            MeteredGameObject'Class (This).setDropping (False);
         end if;
    end Initialize;
 
@@ -98,18 +98,18 @@ package body org.allbinary.input.automation.module.game.MeteredGameObject_Packag
         commonSeps := CommonSeps_Package.getInstance;
         stringBuffer.append (commonSeps.NEW_LINE);
         stringBuffer.append (This.RATIOS_LABEL);
-        for index in 0 .. (This.getRatios'Length) - 1 loop
-            stringBuffer.append (This.getRatios (index).toString);
-            if (index) < ((This.getRatios'Length) - (1)) then
+        for index in 0 .. (MeteredGameObject'Class (This).getRatios'Length) - 1 loop
+            stringBuffer.append (MeteredGameObject'Class (This).getRatios (index).toString);
+            if (index) < ((MeteredGameObject'Class (This).getRatios'Length) - (1)) then
                 stringBuffer.append (commonSeps.COMMA_SEP);
             end if;
         end loop;
         stringBuffer.append (commonSeps.NEW_LINE);
         stringBuffer.append (This.IS_GOOD_LABEL);
-        stringBuffer.appendboolean (This.isGood);
+        stringBuffer.appendboolean (MeteredGameObject'Class (This).isGood);
         stringBuffer.append (commonSeps.NEW_LINE);
         stringBuffer.append (This.IS_DROPPPING_LABEL);
-        stringBuffer.appendboolean (This.isDropping);
+        stringBuffer.appendboolean (MeteredGameObject'Class (This).isDropping);
         return stringBuffer.toString;
    end toString;
 

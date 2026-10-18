@@ -28,9 +28,9 @@ package body views.admin.storefront.AddValidationStoreFrontView_Package is
    begin
         HttpContextView_Package.Initialize (This, transformInfoInterface);
         Initialize_Fields (This);
-        This.newStoreFrontInterface := StoreFrontInterface_Access (StoreFront_Package.Create (HttpServletRequest_Access (This.getPageContext.getRequest)));
+        This.newStoreFrontInterface := StoreFrontInterface_Access (StoreFront_Package.Create (HttpServletRequest_Access (AddValidationStoreFrontView'Class (This).getPageContext.getRequest)));
         if (This.newStoreFrontInterface.getName) = (Null_Unbounded_String) then
-            This.newStoreFrontInterface.setName (This.getWeblisketSession.getStoreName);
+            This.newStoreFrontInterface.setName (AddValidationStoreFrontView'Class (This).getWeblisketSession.getStoreName);
         end if;
    end Initialize;
 
@@ -52,7 +52,7 @@ package body views.admin.storefront.AddValidationStoreFrontView_Package is
             if (StoreFrontFactory_Package.getInstance (This.newStoreFrontInterface.getName)) /= (null) then
                 valid := False;
             end if;
-            if AbFile_Package.createAbFileFromAbPath (AbPath_Package.Create (This.getStoreViewsPath, StringUtil_Package.getInstance.EMPTY_STRING)).isFile then
+            if AbFile_Package.createAbFileFromAbPath (AbPath_Package.Create (AddValidationStoreFrontView'Class (This).getStoreViewsPath, StringUtil_Package.getInstance.EMPTY_STRING)).isFile then
                 valid := False;
             end if;
             return valid;
@@ -91,7 +91,7 @@ package body views.admin.storefront.AddValidationStoreFrontView_Package is
             if (StoreFrontFactory_Package.getInstance (This.newStoreFrontInterface.getName)) /= (null) then
                 stringBuffer.append (To_Unbounded_String ("Store name already used<br/>"));
             end if;
-            if AbFile_Package.createAbFileFromAbPath (AbPath_Package.Create (This.getStoreViewsPath, StringUtil_Package.getInstance.EMPTY_STRING)).isFile then
+            if AbFile_Package.createAbFileFromAbPath (AbPath_Package.Create (AddValidationStoreFrontView'Class (This).getStoreViewsPath, StringUtil_Package.getInstance.EMPTY_STRING)).isFile then
                 stringBuffer.append (To_Unbounded_String ("Store name clashes with template name<br/>"));
             end if;
             return stringBuffer.toString;

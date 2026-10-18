@@ -41,6 +41,7 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.TransformInf
       objectConfigFileAbPath : constant AbPath_Access := AbPath_Access (objectConfigFileAbPath_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return null;
    end getInstance;
 
    --  throws Exception
@@ -49,6 +50,7 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.TransformInf
       transformInfoInterface : constant TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return null;
    end getInstance;
 
    --  throws Exception
@@ -58,6 +60,7 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.TransformInf
       document : constant Document_Access := Document_Access (document_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
+        return null;
    end getInstance;
 
    procedure getInstance (This : in out TransformInfoObjectConfigAndManipulatorFactoryBase; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class; objectConfigFileAbPath_Param : access AbPath_Package.AbPath'Class) is

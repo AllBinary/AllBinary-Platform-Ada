@@ -27,9 +27,9 @@ package body org.allbinary.media.image.analysis.ColorAverage_Package is
    procedure Initialize (This : in out ColorAverage'Class) is
    begin
       Initialize_Fields (This);
-        This.setAvgRed (0);
-        This.setAvgGreen (0);
-        This.setAvgBlue (0);
+        ColorAverage'Class (This).setAvgRed (0);
+        ColorAverage'Class (This).setAvgGreen (0);
+        ColorAverage'Class (This).setAvgBlue (0);
    end Initialize;
 
    function Create return ColorAverage_Access is
@@ -44,13 +44,13 @@ package body org.allbinary.media.image.analysis.ColorAverage_Package is
    begin
         stringBuffer := StringMaker_Package.Create;
         stringBuffer.append (To_Unbounded_String ("getAvgRed(): "));
-        stringBuffer.appendfloat (This.getAvgRed);
+        stringBuffer.appendfloat (ColorAverage'Class (This).getAvgRed);
         stringBuffer.append (CommonSeps_Package.getInstance.NEW_LINE);
         stringBuffer.append (To_Unbounded_String ("getAvgRed(): "));
-        stringBuffer.appendfloat (This.getAvgRed);
+        stringBuffer.appendfloat (ColorAverage'Class (This).getAvgRed);
         stringBuffer.append (CommonSeps_Package.getInstance.NEW_LINE);
         stringBuffer.append (To_Unbounded_String ("getAvgGreen(): "));
-        stringBuffer.appendfloat (This.getAvgGreen);
+        stringBuffer.appendfloat (ColorAverage'Class (This).getAvgGreen);
         stringBuffer.append (CommonSeps_Package.getInstance.NEW_LINE);
         return stringBuffer.toString;
    end toString;

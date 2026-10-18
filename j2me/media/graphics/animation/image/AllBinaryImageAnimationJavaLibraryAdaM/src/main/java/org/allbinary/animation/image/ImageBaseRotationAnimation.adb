@@ -43,7 +43,7 @@ package body org.allbinary.animation.image.ImageBaseRotationAnimation_Package is
    --  throws Exception
    function getAnimationSize (This : in out ImageBaseRotationAnimation) return Integer is
    begin
-        return This.getSize;
+        return ImageBaseRotationAnimation'Class (This).getSize;
    end getAnimationSize;
 
    procedure setSequence (This : in out ImageBaseRotationAnimation; sequence : Integer_Array_Access) is

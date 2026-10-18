@@ -18,7 +18,7 @@ package body org.allbinary.game.ag.layer.hud.basic.NumberStringHudFactory_Packag
    procedure Initialize_Fields (This : in out NumberStringHudFactory'Class) is
    begin
       null;
-      This.NULL_NUMBER_STRING_HUD := This.createHud;
+      This.NULL_NUMBER_STRING_HUD := NumberStringHudFactory'Class (This).createHud;
    end Initialize_Fields;
 
    procedure Initialize (This : in out NumberStringHudFactory'Class) is

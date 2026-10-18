@@ -53,7 +53,7 @@ package body org.allbinary.logic.control.workflow.WorkFlowWrapper_Package is
         begin
             helperClass := This.anyType.all'Tag;
             method := helperClass.getMethod (To_Unbounded_String ("getName"), null);
-            result := Unbounded_String (method.invoke (This.anyType, null));
+            result := Java_Unbox (method.invoke (This.anyType, null));
             return result;
         exception
             when Java_Occurrence : others =>
@@ -79,7 +79,7 @@ package body org.allbinary.logic.control.workflow.WorkFlowWrapper_Package is
         begin
             helperClass := This.anyType.all'Tag;
             method := helperClass.getMethod (To_Unbounded_String ("getStoreName"), null);
-            result := Unbounded_String (method.invoke (This.anyType, null));
+            result := Java_Unbox (method.invoke (This.anyType, null));
             return result;
         exception
             when Java_Occurrence : others =>

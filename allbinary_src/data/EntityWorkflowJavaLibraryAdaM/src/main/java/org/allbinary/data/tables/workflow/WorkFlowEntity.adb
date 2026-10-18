@@ -30,7 +30,7 @@ package body org.allbinary.data.tables.workflow.WorkFlowEntity_Package is
    begin
         AbSqlBean_Package.Initialize (This, UserDbInitInfo_Package.Create);
         Initialize_Fields (This);
-        This.setTableName (This.tableName);
+        WorkFlowEntity'Class (This).setTableName (This.tableName);
    end Initialize;
 
    function Create return WorkFlowEntity_Access is
@@ -65,8 +65,8 @@ package body org.allbinary.data.tables.workflow.WorkFlowEntity_Package is
    begin
         begin
             keysAndValues := StdUtil_Package.getInstance.createHashMap;
-            keysAndValues.put (WorkFlowData_Package.getInstance.NAME, name);
-            keysAndValues.put (StoreFrontData_Package.getInstance.NAME, storeName);
+            keysAndValues.put (WorkFlowData_Package.getInstance.NAME, Java_Box (name));
+            keysAndValues.put (StoreFrontData_Package.getInstance.NAME, Java_Box (storeName));
             AbSqlBean (This).deleteWhere (keysAndValues);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
                 This.logUtil.putF (This.commonStrings.SUCCESS, WorkFlowEntity_Access'(This'Unchecked_Access), This.commonStrings.delete);
@@ -90,8 +90,8 @@ package body org.allbinary.data.tables.workflow.WorkFlowEntity_Package is
    begin
         begin
             keysAndValues := StdUtil_Package.getInstance.createHashMap;
-            keysAndValues.put (WorkFlowData_Package.getInstance.NAME, name);
-            keysAndValues.put (StoreFrontData_Package.getInstance.NAME, storeName);
+            keysAndValues.put (WorkFlowData_Package.getInstance.NAME, Java_Box (name));
+            keysAndValues.put (StoreFrontData_Package.getInstance.NAME, Java_Box (storeName));
             hashMap := AbSqlBean (This).getRow (keysAndValues);
             return WorkFlowInterface_Access (DbWorkFlowFactory_Package.getInstance.getInstance (This.abeClientInformation, hashMap));
         exception
@@ -118,7 +118,7 @@ package body org.allbinary.data.tables.workflow.WorkFlowEntity_Package is
         begin
             workFlowsVector := BasicArrayListD_Package.Create;
             keysAndValues := StdUtil_Package.getInstance.createHashMap;
-            keysAndValues.put (StoreFrontData_Package.getInstance.NAME, storeName);
+            keysAndValues.put (StoreFrontData_Package.getInstance.NAME, Java_Box (storeName));
             hashMapVector := AbSqlBean (This).getRows (keysAndValues);
             size := hashMapVector.size;
             for i in 0 .. (size) - 1 loop
@@ -147,8 +147,8 @@ package body org.allbinary.data.tables.workflow.WorkFlowEntity_Package is
    begin
         begin
             wherekeysAndValues := StdUtil_Package.getInstance.createHashMap;
-            wherekeysAndValues.put (WorkFlowData_Package.getInstance.NAME, Unbounded_String (updatedValues.get (WorkFlowData_Package.getInstance.NAME)));
-            wherekeysAndValues.put (StoreFrontData_Package.getInstance.NAME, Unbounded_String (updatedValues.get (StoreFrontData_Package.getInstance.NAME)));
+            wherekeysAndValues.put (WorkFlowData_Package.getInstance.NAME, Java_Unbox (updatedValues.get (WorkFlowData_Package.getInstance.NAME)));
+            wherekeysAndValues.put (StoreFrontData_Package.getInstance.NAME, Java_Unbox (updatedValues.get (StoreFrontData_Package.getInstance.NAME)));
             AbSqlBean (This).updateWhere (wherekeysAndValues, updatedValues);
         exception
             when Java_Occurrence : others =>
@@ -174,7 +174,7 @@ package body org.allbinary.data.tables.workflow.WorkFlowEntity_Package is
 
    function createTable (This : in out WorkFlowEntity) return Unbounded_String is
    begin
-        return AbSqlBean (This).createTable (This.createTableStatement);
+        return AbSqlBean (This).createTable (WorkFlowEntity'Class (This).createTableStatement);
    end createTable;
 
    function dropTable (This : in out WorkFlowEntity) return Unbounded_String is

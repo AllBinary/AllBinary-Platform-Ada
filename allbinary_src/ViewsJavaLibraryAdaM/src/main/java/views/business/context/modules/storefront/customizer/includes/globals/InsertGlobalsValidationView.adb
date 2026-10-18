@@ -47,7 +47,7 @@ package body views.business.context.modules.storefront.customizer.includes.globa
    begin
         begin
             isValid := True;
-            CustomizerUtil_Package.getInstance.insert (This.getTransformInfoInterface, DomNodeInterface_Access (InsertGlobalsValidationView_Access'(This'Unchecked_Access)));
+            CustomizerUtil_Package.getInstance.insert (InsertGlobalsValidationView'Class (This).getTransformInfoInterface, DomNodeInterface_Access (InsertGlobalsValidationView_Access'(This'Unchecked_Access)));
             return isValid;
         exception
             when Java_Occurrence : others =>

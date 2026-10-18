@@ -34,7 +34,7 @@ package body org.allbinary.game.part.CountedLayerInterfaceFactoryPart_Package is
    begin
       Initialize_Fields (This);
         This.primitiveLongUtil := PrimitiveLongUtil_Package.createPowerOfTen (1000);
-        This.init (total, countedPickedUpLayerInterfaceFactory);
+        CountedLayerInterfaceFactoryPart'Class (This).init (total, countedPickedUpLayerInterfaceFactory);
    end Initialize;
 
    function Create (total : Integer; countedPickedUpLayerInterfaceFactory_Param : access CountedPickedUpLayerInterfaceFactory_Package.CountedPickedUpLayerInterfaceFactory'Class) return CountedLayerInterfaceFactoryPart_Access is
@@ -49,14 +49,14 @@ package body org.allbinary.game.part.CountedLayerInterfaceFactoryPart_Package is
       font : Font_Access;
    begin
         font := graphics.getFont;
-        This.setXOffset ((font.charsWidth (This.totalString, 0, This.primitiveLongUtil.getCurrentTotalDigits)) + ((Java_Shift_Right_Arithmetic (font.getSize, 1))));
+        CountedLayerInterfaceFactoryPart'Class (This).setXOffset ((font.charsWidth (This.totalString, 0, This.primitiveLongUtil.getCurrentTotalDigits)) + ((Java_Shift_Right_Arithmetic (font.getSize, 1))));
         This.myFontProcessor := MyFontProcessor_Package.getInstance;
    end updateMeasurement;
 
    procedure init (This : in out CountedLayerInterfaceFactoryPart; total : Integer; countedPickedUpLayerInterfaceFactory_Param : access CountedPickedUpLayerInterfaceFactory_Package.CountedPickedUpLayerInterfaceFactory'Class) is
       countedPickedUpLayerInterfaceFactory : constant CountedPickedUpLayerInterfaceFactory_Access := CountedPickedUpLayerInterfaceFactory_Access (countedPickedUpLayerInterfaceFactory_Param);
    begin
-        This.setCountedPickedUpLayerInterfaceFactory (countedPickedUpLayerInterfaceFactory);
+        CountedLayerInterfaceFactoryPart'Class (This).setCountedPickedUpLayerInterfaceFactory (countedPickedUpLayerInterfaceFactory);
         This.total := total;
    end init;
 
@@ -65,8 +65,8 @@ package body org.allbinary.game.part.CountedLayerInterfaceFactoryPart_Package is
       hashtable : constant ABHashtable_Access := ABHashtable_Access (hashtable_Param);
    begin
         if (This.total) > (0) then
-            This.setTotal ((This.total) - (1));
-            return This.getCountedPickedUpLayerInterfaceFactory.getNextInstance (hashtable, x, y, z);
+            CountedLayerInterfaceFactoryPart'Class (This).setTotal ((This.total) - (1));
+            return CountedLayerInterfaceFactoryPart'Class (This).getCountedPickedUpLayerInterfaceFactory.getNextInstance (hashtable, x, y, z);
         else
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("No more left. Could use a listener to automatically remove")));
         end if;

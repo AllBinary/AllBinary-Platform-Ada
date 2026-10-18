@@ -52,24 +52,24 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
                     vector.add (To_Unbounded_String (Java_Image (keyString)));
                 elsif (childNode.getNodeName.compareTo (KeyboardActionScriptInputData_Package.DELAY_BETWEEN_KEYS)) = (0) then
                     time := DomNodeHelper_Package.getTextNodeValue (childNode);
-                    This.setDelayBetweenKeys (To_Unbounded_String (Java_Image (time)).intValue);
+                    KeyboardActionScriptInput'Class (This).setDelayBetweenKeys (To_Unbounded_String (Java_Image (time)).intValue);
                 elsif (childNode.getNodeName.compareTo (KeyboardActionScriptInputData_Package.PRESS)) = (0) then
                     value := DomNodeHelper_Package.getTextNodeValue (childNode);
-                    This.setPress (To_Unbounded_String (Java_Image (value)));
+                    KeyboardActionScriptInput'Class (This).setPress (To_Unbounded_String (Java_Image (value)));
                 elsif (childNode.getNodeName.compareTo (KeyboardActionScriptInputData_Package.RELEASE)) = (0) then
                     value := DomNodeHelper_Package.getTextNodeValue (childNode);
-                    This.setRelease (To_Unbounded_String (Java_Image (value)));
+                    KeyboardActionScriptInput'Class (This).setRelease (To_Unbounded_String (Java_Image (value)));
                 else
                     Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Action Script Input Unknown Node")));
                 end if;
             end loop;
-            This.setKeyArray (Integer_Array_Access (vector.toArrayType (new Integer_Array'(0 .. (vector.size) - 1 => null))));
+            KeyboardActionScriptInput'Class (This).setKeyArray (Integer_Array_Access (vector.toArrayType (new Integer_Array'(0 .. (vector.size) - 1 => null))));
         else
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Action Script Input Node Null")));
         end if;
-        This.setAllowsChildren (False);
-        if (not (This.isPress)) and then (not (This.isRelease)) then
-            This.setNormal;
+        KeyboardActionScriptInput'Class (This).setAllowsChildren (False);
+        if (not (KeyboardActionScriptInput'Class (This).isPress)) and then (not (KeyboardActionScriptInput'Class (This).isRelease)) then
+            KeyboardActionScriptInput'Class (This).setNormal;
         end if;
         This.keyboardActionScriptInputJPanel := KeyboardActionScriptInputJPanel_Package.Create (KeyboardActionScriptInput_Access'(This'Unchecked_Access));
    end Initialize;
@@ -85,11 +85,11 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
    begin
         BasicProfileActionScriptInput_Package.Initialize (This, NAME);
         Initialize_Fields (This);
-        if (not (This.isPress)) and then (not (This.isRelease)) then
-            This.setNormal;
+        if (not (KeyboardActionScriptInput'Class (This).isPress)) and then (not (KeyboardActionScriptInput'Class (This).isRelease)) then
+            KeyboardActionScriptInput'Class (This).setNormal;
         end if;
-        This.setAllowsChildren (False);
-        This.setTime (120);
+        KeyboardActionScriptInput'Class (This).setAllowsChildren (False);
+        KeyboardActionScriptInput'Class (This).setTime (120);
         This.keyboardActionScriptInputJPanel := KeyboardActionScriptInputJPanel_Package.Create (KeyboardActionScriptInput_Access'(This'Unchecked_Access));
    end Initialize;
 
@@ -132,13 +132,13 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
 
    function isNormal (This : in out KeyboardActionScriptInput) return Boolean is
    begin
-        return (This.isRelease) and then (This.isPress);
+        return (KeyboardActionScriptInput'Class (This).isRelease) and then (KeyboardActionScriptInput'Class (This).isPress);
    end isNormal;
 
    procedure setNormal (This : in out KeyboardActionScriptInput) is
    begin
-        This.setPress (True);
-        This.setRelease (True);
+        KeyboardActionScriptInput'Class (This).setPress (True);
+        KeyboardActionScriptInput'Class (This).setRelease (True);
    end setNormal;
 
    function getKeyArray (This : in out KeyboardActionScriptInput) return Integer_Array_Access is
@@ -161,15 +161,15 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
 
    function getText (This : in out KeyboardActionScriptInput) return Unbounded_String is
    begin
-        return This.getText (This.getKeyArray);
+        return KeyboardActionScriptInput'Class (This).getText (KeyboardActionScriptInput'Class (This).getKeyArray);
    end getText;
 
    procedure setText (This : in out KeyboardActionScriptInput; text : Unbounded_String) is
       integerArray : Integer_Array_Access;
    begin
         This.logUtil.putF (Java_Image (CommonLabels_Package.getInstance.START) & text, KeyboardActionScriptInput_Access'(This'Unchecked_Access), To_Unbounded_String ("setText"));
-        integerArray := This.integerArrayValue (text);
-        This.setKeyArray (integerArray);
+        integerArray := KeyboardActionScriptInput'Class (This).integerArrayValue (text);
+        KeyboardActionScriptInput'Class (This).setKeyArray (integerArray);
    end setText;
 
    function getText (integerArray : Integer_Array_Access) return Unbounded_String is
@@ -229,12 +229,12 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
       index : Integer;
    begin
         hashMap := StdUtil_Package.getInstance.createHashMap;
-        for index in 0 .. (This.getKeyArray'Length) - 1 loop
-            hashMap.put ((KeyboardActionScriptInputData_Package.KEY) + (index), To_Unbounded_String (Java_Image (This.getKeyArray (index))));
+        for index in 0 .. (KeyboardActionScriptInput'Class (This).getKeyArray'Length) - 1 loop
+            hashMap.put ((KeyboardActionScriptInputData_Package.KEY) + (index), Java_Box (To_Unbounded_String (Java_Image (KeyboardActionScriptInput'Class (This).getKeyArray (index)))));
         end loop;
-        hashMap.put (KeyboardActionScriptInputData_Package.DELAY_BETWEEN_KEYS, To_Unbounded_String (Java_Image (This.getDelayBetweenKeys)));
-        hashMap.put (KeyboardActionScriptInputData_Package.PRESS, To_Unbounded_String (Java_Image (This.isPress)));
-        hashMap.put (KeyboardActionScriptInputData_Package.RELEASE, To_Unbounded_String (Java_Image (This.isRelease)));
+        hashMap.put (KeyboardActionScriptInputData_Package.DELAY_BETWEEN_KEYS, Java_Box (To_Unbounded_String (Java_Image (KeyboardActionScriptInput'Class (This).getDelayBetweenKeys))));
+        hashMap.put (KeyboardActionScriptInputData_Package.PRESS, Java_Box (To_Unbounded_String (Java_Image (KeyboardActionScriptInput'Class (This).isPress))));
+        hashMap.put (KeyboardActionScriptInputData_Package.RELEASE, Java_Box (To_Unbounded_String (Java_Image (KeyboardActionScriptInput'Class (This).isRelease))));
         This.logUtil.putF (To_Unbounded_String ("HashMap: ") & hashMap.toString, KeyboardActionScriptInput_Access'(This'Unchecked_Access), To_Unbounded_String ("toHashMap()"));
         return hashMap;
    end toHashMap;
@@ -245,7 +245,7 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
       node : Node_Access;
    begin
         node := BasicProfileActionScriptInput (This).toXmlNode (document);
-        node.appendChild (ModDomHelper_Package.createNodeWithValueNodes (document, KeyboardActionScriptInputData_Package.NAME, This.toHashMap));
+        node.appendChild (ModDomHelper_Package.createNodeWithValueNodes (document, KeyboardActionScriptInputData_Package.NAME, KeyboardActionScriptInput'Class (This).toHashMap));
         return node;
    end toXmlNode;
 
@@ -257,7 +257,7 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
 
    procedure log (This : in out KeyboardActionScriptInput) is
    begin
-        This.logUtil.putF (This.toString, KeyboardActionScriptInput_Access'(This'Unchecked_Access), To_Unbounded_String ("log"));
+        This.logUtil.putF (KeyboardActionScriptInput'Class (This).toString, KeyboardActionScriptInput_Access'(This'Unchecked_Access), To_Unbounded_String ("log"));
    end log;
 
    function toString (This : in out KeyboardActionScriptInput) return Unbounded_String is
@@ -266,13 +266,13 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
         stringBuffer := StringMaker_Package.Create;
         stringBuffer.append (BasicProfileActionScriptInput (This).toString);
         stringBuffer.append (To_Unbounded_String (" Text: "));
-        stringBuffer.append (This.getText);
+        stringBuffer.append (KeyboardActionScriptInput'Class (This).getText);
         stringBuffer.append (To_Unbounded_String (" isPress: "));
-        stringBuffer.appendboolean (This.isPress);
+        stringBuffer.appendboolean (KeyboardActionScriptInput'Class (This).isPress);
         stringBuffer.append (To_Unbounded_String (" isRelease: "));
-        stringBuffer.appendboolean (This.isRelease);
+        stringBuffer.appendboolean (KeyboardActionScriptInput'Class (This).isRelease);
         stringBuffer.append (To_Unbounded_String (" Between Key Delay: "));
-        stringBuffer.appendint (This.getDelayBetweenKeys);
+        stringBuffer.appendint (KeyboardActionScriptInput'Class (This).getDelayBetweenKeys);
         return stringBuffer.toString;
    end toString;
 

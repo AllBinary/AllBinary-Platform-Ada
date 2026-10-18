@@ -29,7 +29,7 @@ package body org.allbinary.animation.image.AllBinaryFlickerAndroidImageRotationA
       animationBehaviorFactory : constant AnimationBehaviorFactory_Access := AnimationBehaviorFactory_Access (animationBehaviorFactory_Param);
    begin
       Initialize_Fields (This);
-        This.setImage (image);
+        AllBinaryFlickerAndroidImageRotationAnimationFactory'Class (This).setImage (image);
         This.angleIncrement := angleIncrement;
         This.animationBehaviorFactory := animationBehaviorFactory;
    end Initialize;
@@ -45,8 +45,8 @@ package body org.allbinary.animation.image.AllBinaryFlickerAndroidImageRotationA
    function getInstance (This : in out AllBinaryFlickerAndroidImageRotationAnimationFactory; instanceId : Integer) return Animation_Access is
       image : Image_Access;
    begin
-        image := ImageCopyUtil_Package.getInstance.createImage (This.getImage);
-        return AllBinaryFlickerAndroidImageRotationAnimation_Package.Create (This.getImage, image, AngleInfo_Package.getInstance (This.angleIncrement), AngleFactory_Package.getInstance.TOTAL_ANGLE, This.animationBehaviorFactory.getOrCreateInstance);
+        image := ImageCopyUtil_Package.getInstance.createImage (AllBinaryFlickerAndroidImageRotationAnimationFactory'Class (This).getImage);
+        return AllBinaryFlickerAndroidImageRotationAnimation_Package.Create (AllBinaryFlickerAndroidImageRotationAnimationFactory'Class (This).getImage, image, AngleInfo_Package.getInstance (This.angleIncrement), AngleFactory_Package.getInstance.TOTAL_ANGLE, This.animationBehaviorFactory.getOrCreateInstance);
    end getInstance;
 
    function getAngleIncrement (This : in out AllBinaryFlickerAndroidImageRotationAnimationFactory) return Short_Integer is

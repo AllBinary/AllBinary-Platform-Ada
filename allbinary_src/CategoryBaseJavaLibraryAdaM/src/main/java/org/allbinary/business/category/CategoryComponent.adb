@@ -63,7 +63,7 @@ package body org.allbinary.business.category.CategoryComponent_Package is
       document : Document_Access;
    begin
         document := DomDocumentHelper_Package.create;
-        document.appendChild (CategoryView_Package.Create (This.getCategoryInterface).toXmlNode (document));
+        document.appendChild (CategoryView_Package.Create (CategoryComponent'Class (This).getCategoryInterface).toXmlNode (document));
         return document;
    end toXmlDoc;
 

@@ -38,7 +38,7 @@ package body org.allbinary.game.midlet.DemoGameMidlet_Package is
    function isContinue (This : in out DemoGameMidlet) return Boolean is
       hashtable : ABHashtable_Access;
    begin
-        hashtable := This.getStartStateHashtable;
+        hashtable := DemoGameMidlet'Class (This).getStartStateHashtable;
         if ((hashtable) /= (null)) and then ((hashtable.size) > (0)) then
             return True;
         else
@@ -63,12 +63,13 @@ package body org.allbinary.game.midlet.DemoGameMidlet_Package is
       allBinaryGameLayerManager : constant AllBinaryGameLayerManager_Access := AllBinaryGameLayerManager_Access (allBinaryGameLayerManager_Param);
    begin
         Java_Throw (Java_New_Exception ("Exception", This.commonStrings.NOT_IMPLEMENTED));
+        return null;
    end createGameCanvasRunnable;
 
    --  throws Exception
    function createGameCanvasRunnableInterface (This : in out DemoGameMidlet) return GameCanvasRunnableInterface_Access is
    begin
-        return This.createGameCanvasRunnable (This.createGameLayerManager);
+        return DemoGameMidlet'Class (This).createGameCanvasRunnable (DemoGameMidlet'Class (This).createGameLayerManager);
    end createGameCanvasRunnableInterface;
 
    procedure demoSetup (This : in out DemoGameMidlet) is
@@ -101,8 +102,8 @@ package body org.allbinary.game.midlet.DemoGameMidlet_Package is
         This.logUtil.putF (This.commonStrings.START, DemoGameMidlet_Access'(This'Unchecked_Access), CREATE_GAME);
         progressCanvas := ProgressCanvasFactory_Package.getInstance;
         progressCanvas.start;
-        hashtable := This.getStartStateHashtable;
-        This.setStartStateHashtable (StdUtil_Package.getInstance.NULL_TABLE);
+        hashtable := DemoGameMidlet'Class (This).getStartStateHashtable;
+        DemoGameMidlet'Class (This).setStartStateHashtable (StdUtil_Package.getInstance.NULL_TABLE);
         PrimaryThreadPool_Package.getInstance.runTask (CreateGameRunnable_Package.Create (DemoGameMidlet_Access'(This'Unchecked_Access), hashtable));
         This.logUtil.putF (This.commonStrings.END_Id, DemoGameMidlet_Access'(This'Unchecked_Access), CREATE_GAME);
    end createGame;

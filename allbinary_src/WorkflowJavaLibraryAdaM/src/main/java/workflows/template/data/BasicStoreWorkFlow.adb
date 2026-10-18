@@ -38,7 +38,7 @@ package body workflows.template.data.BasicStoreWorkFlow_Package is
    --  throws Exception
    function getStoreName (This : in out BasicStoreWorkFlow) return Unbounded_String is
    begin
-        return Unbounded_String (This.getPropertiesHashMap.get (StoreFrontData_Package.getInstance.NAME));
+        return Java_Unbox (BasicStoreWorkFlow'Class (This).getPropertiesHashMap.get (StoreFrontData_Package.getInstance.NAME));
    end getStoreName;
 
 end workflows.template.data.BasicStoreWorkFlow_Package;

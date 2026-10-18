@@ -38,7 +38,7 @@ package body org.allbinary.media.graphics.geography.map.BasicGeographicMapCellPo
         This.columns := This.tiledLayer.getColumns;
         This.rows := This.tiledLayer.getRows;
         This.geographicMapCellPositionArray := new GeographicMapCellPosition_Access_Array_Access_Array'(0 .. (This.rows) - 1 => new GeographicMapCellPosition_Access_Array'(0 .. (This.columns) - 1 => null));
-        This.init;
+        BasicGeographicMapCellPositionFactory'Class (This).init;
    end Initialize;
 
    function Create (geographicMapInterface_Param : access BasicGeographicMap_Package.BasicGeographicMap'Class) return BasicGeographicMapCellPositionFactory_Access is
@@ -59,13 +59,13 @@ package body org.allbinary.media.graphics.geography.map.BasicGeographicMapCellPo
       column : Integer;
    begin
         tiledLayer := This.tiledLayer;
-        columns := This.getColumns;
-        rows := This.getRows;
+        columns := BasicGeographicMapCellPositionFactory'Class (This).getColumns;
+        rows := BasicGeographicMapCellPositionFactory'Class (This).getRows;
         width := tiledLayer.getCellWidth;
         height := tiledLayer.getCellHeight;
         for column in 0 .. (columns) - 1 loop
             for row in 0 .. (rows) - 1 loop
-                This.createInstance (column, row, width, height);
+                BasicGeographicMapCellPositionFactory'Class (This).createInstance (column, row, width, height);
             end loop;
         end loop;
    end init;
@@ -82,13 +82,13 @@ package body org.allbinary.media.graphics.geography.map.BasicGeographicMapCellPo
       commonSeps : CommonSeps_Access;
    begin
         tiledLayer := This.tiledLayer;
-        columns := This.getColumns;
-        rows := This.getRows;
+        columns := BasicGeographicMapCellPositionFactory'Class (This).getColumns;
+        rows := BasicGeographicMapCellPositionFactory'Class (This).getRows;
         begin
             cellPosition := null;
             for column in 0 .. (columns) - 1 loop
                 for row in 0 .. (rows) - 1 loop
-                    cellPosition := This.getAt (column, row);
+                    cellPosition := BasicGeographicMapCellPositionFactory'Class (This).getAt (column, row);
                     geographicMapCelPositionFactoryInitVisitorInterface.visit (tiledLayer, cellPosition);
                 end loop;
             end loop;
@@ -114,7 +114,7 @@ package body org.allbinary.media.graphics.geography.map.BasicGeographicMapCellPo
    function getInstance (This : in out BasicGeographicMapCellPositionFactory; anotherMapGeographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) return GeographicMapCellPosition_Access is
       anotherMapGeographicMapCellPosition : constant GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (anotherMapGeographicMapCellPosition_Param);
    begin
-        return This.getAt (anotherMapGeographicMapCellPosition.getColumn, anotherMapGeographicMapCellPosition.getRow);
+        return BasicGeographicMapCellPositionFactory'Class (This).getAt (anotherMapGeographicMapCellPosition.getColumn, anotherMapGeographicMapCellPosition.getRow);
    end getInstance;
 
    --  throws Exception

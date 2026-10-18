@@ -48,14 +48,14 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
       JPanel_Package.Initialize (This);
       Initialize_Fields (This);
         This.logUtil.putF ((CommonLabels_Package.getInstance.START) + (mouseActionScriptInputInterface), MouseActionScriptInputJPanel_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
-        This.initComponents;
+        MouseActionScriptInputJPanel'Class (This).initComponents;
         This.mouseActionScriptInputInterface := mouseActionScriptInputInterface;
         defaultComboBoxModel := DefaultComboBoxModel_Package.Create;
         defaultComboBoxModel.addElement (TempInputRobotNames_Package.LOW_NAME);
         defaultComboBoxModel.addElement (TempInputRobotNames_Package.SYS_NAME);
         defaultComboBoxModel.addElement (InputRobot_Package.NAME);
         This.inputAutomationTypeJComboBox.setModel (defaultComboBoxModel);
-        This.set;
+        MouseActionScriptInputJPanel'Class (This).set;
    end Initialize;
 
    function Create (mouseActionScriptInputInterface_Param : access MouseActionScriptInputInterface_Package.MouseActionScriptInputInterface'Class) return MouseActionScriptInputJPanel_Access is
@@ -92,7 +92,7 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
       selectedItem : Unbounded_String;
    begin
         comboBoxModel := This.inputAutomationTypeJComboBox.getModel;
-        selectedItem := Unbounded_String (comboBoxModel.getSelectedItem);
+        selectedItem := Java_Unbox (comboBoxModel.getSelectedItem);
         if not (StringValidationUtil_Package.getInstance.isEmpty (selectedItem)) then
             This.mouseActionScriptInputInterface.setInputRobotInterface (InputRobotFactory_Package.getInstance.get (selectedItem));
         end if;
@@ -103,7 +103,7 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
       mouseXString : Unbounded_String;
       mouseYString : Unbounded_String;
    begin
-        This.updateInputType;
+        MouseActionScriptInputJPanel'Class (This).updateInputType;
         This.mouseActionScriptInputInterface.setTime (To_Unbounded_String (Java_Image (This.mouseDelayJTextField.getText)));
         This.logUtil.putF (To_Unbounded_String ("Button State: ") & Java_Image (This.mouseActionScriptInputInterface.getButtonClicks), MouseActionScriptInputJPanel_Access'(This'Unchecked_Access), To_Unbounded_String ("update"));
         if This.button1JCheckBox.isSelected then
@@ -179,7 +179,7 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
 --     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
 --        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
---                  This.okJButtonActionPerformed (evt);
+--                  MouseActionScriptInputJPanel'Class (This).okJButtonActionPerformed (evt);
 --     end actionPerformed;
 );
         This.jLabel2.setText (To_Unbounded_String ("Buttons:"));
@@ -195,7 +195,7 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
 --     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
 --        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
---                  This.button2JCheckBoxActionPerformed (evt);
+--                  MouseActionScriptInputJPanel'Class (This).button2JCheckBoxActionPerformed (evt);
 --     end actionPerformed;
 );
         This.jLabel4.setText (To_Unbounded_String ("x:"));
@@ -209,19 +209,19 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
         This.mouseActionJDialog.getContentPane.setLayout (mouseActionJDialogLayout);
         mouseActionJDialogLayout.setHorizontalGroup (mouseActionJDialogLayout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (mouseActionJDialogLayout.createSequentialGroup.addContainerGap.addGroup (mouseActionJDialogLayout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addComponent (This.inputTypeJLabel).addGroup (javax_Package.swing.GroupLayout.Alignment.TRAILING, mouseActionJDialogLayout.createSequentialGroup.addGroup (mouseActionJDialogLayout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (javax_Package.swing.GroupLayout.Alignment.TRAILING, mouseActionJDialogLayout.createSequentialGroup.addComponent (This.jLabel2).addGap (25, 25, 25)).addGroup (mouseActionJDialogLayout.createSequentialGroup.addGroup (mouseActionJDialogLayout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addComponent (This.jLabel3).addComponent (This.jLabel6)).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED))).addGroup (mouseActionJDialogLayout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addComponent (This.mouseDelayJTextField, javax_Package.swing.GroupLayout.Alignment.TRAILING, javax_Package.swing.GroupLayout.DEFAULT_SIZE, 154, Short_Package.MAX_VALUE).addGroup (mouseActionJDialogLayout.createSequentialGroup.addComponent (This.titleJLabel).addGap (45, 45, 45)).addGroup (javax_Package.swing.GroupLayout.Alignment.TRAILING, mouseActionJDialogLayout.createSequentialGroup.addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent (This.inputAutomationTypeJComboBox, 0, 154, Short_Package.MAX_VALUE)).addGroup (mouseActionJDialogLayout.createSequentialGroup.addComponent (This.button1JCheckBox).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent (This.button2JCheckBox)).addGroup (mouseActionJDialogLayout.createSequentialGroup.addGroup (mouseActionJDialogLayout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.TRAILING).addGroup (mouseActionJDialogLayout.createSequentialGroup.addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent (This.okJButton)).addGroup (mouseActionJDialogLayout.createSequentialGroup.addComponent (This.jLabel4).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED, 5, Short_Package.MAX_VALUE).addComponent (This.mouseXJTextField, javax_Package.swing.GroupLayout.PREFERRED_SIZE, 59, javax_Package.swing.GroupLayout.PREFERRED_SIZE))).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent (This.jLabel5).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent (This.mouseYJTextField, javax_Package.swing.GroupLayout.DEFAULT_SIZE, 62, Short_Package.MAX_VALUE))))).addContainerGap));
         mouseActionJDialogLayout.setVerticalGroup (mouseActionJDialogLayout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (mouseActionJDialogLayout.createSequentialGroup.addComponent (This.titleJLabel).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addGroup (mouseActionJDialogLayout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.BASELINE).addComponent (This.inputTypeJLabel).addComponent (This.inputAutomationTypeJComboBox, javax_Package.swing.GroupLayout.PREFERRED_SIZE, javax_Package.swing.GroupLayout.DEFAULT_SIZE, javax_Package.swing.GroupLayout.PREFERRED_SIZE)).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addGroup (mouseActionJDialogLayout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addComponent (This.jLabel2, javax_Package.swing.GroupLayout.PREFERRED_SIZE, 15, javax_Package.swing.GroupLayout.PREFERRED_SIZE).addGroup (mouseActionJDialogLayout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.BASELINE).addComponent (This.button1JCheckBox).addComponent (This.button2JCheckBox))).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addGroup (mouseActionJDialogLayout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.BASELINE).addComponent (This.jLabel6).addComponent (This.mouseDelayJTextField, javax_Package.swing.GroupLayout.PREFERRED_SIZE, javax_Package.swing.GroupLayout.DEFAULT_SIZE, javax_Package.swing.GroupLayout.PREFERRED_SIZE)).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addGroup (mouseActionJDialogLayout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.BASELINE).addComponent (This.jLabel3).addComponent (This.jLabel4).addComponent (This.jLabel5).addComponent (This.mouseYJTextField, javax_Package.swing.GroupLayout.PREFERRED_SIZE, javax_Package.swing.GroupLayout.DEFAULT_SIZE, javax_Package.swing.GroupLayout.PREFERRED_SIZE).addComponent (This.mouseXJTextField, javax_Package.swing.GroupLayout.PREFERRED_SIZE, javax_Package.swing.GroupLayout.DEFAULT_SIZE, javax_Package.swing.GroupLayout.PREFERRED_SIZE)).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED, javax_Package.swing.GroupLayout.DEFAULT_SIZE, Short_Package.MAX_VALUE).addComponent (This.okJButton).addContainerGap));
-        This.setMinimumSize (Dimension_Package.Create (100, 0));
+        MouseActionScriptInputJPanel'Class (This).setMinimumSize (Dimension_Package.Create (100, 0));
         This.mouseActionJButton.setText (To_Unbounded_String ("Edit"));
         This.mouseActionJButton.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
 --     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
 --        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
---                  This.mouseActionJButtonActionPerformed (evt);
+--                  MouseActionScriptInputJPanel'Class (This).mouseActionJButtonActionPerformed (evt);
 --     end actionPerformed;
 );
         This.jLabel1.setText (To_Unbounded_String ("Mouse:"));
         layout := GroupLayout_Package.Create (MouseActionScriptInputJPanel_Access'(This'Unchecked_Access));
-        This.setLayout (layout);
+        MouseActionScriptInputJPanel'Class (This).setLayout (layout);
         layout.setHorizontalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (layout.createSequentialGroup.addComponent (This.jLabel1).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short_Package.MAX_VALUE).addComponent (This.mouseActionJButton)));
         layout.setVerticalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.BASELINE).addComponent (This.jLabel1).addComponent (This.mouseActionJButton)));
    end initComponents;
@@ -236,8 +236,8 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
       evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
         begin
-            This.update;
-            This.getMouseActionJDialog.setVisible (False);
+            MouseActionScriptInputJPanel'Class (This).update;
+            MouseActionScriptInputJPanel'Class (This).getMouseActionJDialog.setVisible (False);
         exception
             when Java_Occurrence : others =>
                 declare
@@ -251,7 +251,7 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
    procedure mouseActionJButtonActionPerformed (This : in out MouseActionScriptInputJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
       evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
-        This.getMouseActionJDialog.setVisible (True);
+        MouseActionScriptInputJPanel'Class (This).getMouseActionJDialog.setVisible (True);
    end mouseActionJButtonActionPerformed;
 
 end org.allbinary.input.automation.actions.script.condition.processors.input.MouseActionScriptInputJPanel_Package;

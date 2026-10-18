@@ -31,7 +31,7 @@ package body org.allbinary.input.motion.button.TouchButtonInput_Package is
         Input_Package.Initialize (This, id, name);
         Initialize_Fields (This);
         inputFactory := InputFactory_Package.getInstance;
-        inputFactory.add (This.getId, TouchButtonInput_Access'(This'Unchecked_Access));
+        inputFactory.add (TouchButtonInput'Class (This).getId, TouchButtonInput_Access'(This'Unchecked_Access));
    end Initialize;
 
    function Create (id : Integer; name : Unbounded_String) return TouchButtonInput_Access is
@@ -47,7 +47,7 @@ package body org.allbinary.input.motion.button.TouchButtonInput_Package is
       commonStrings : CommonStrings_Access;
    begin
         begin
-            gameKey := inputToGameKeyMapping.getInstance (This.getId);
+            gameKey := inputToGameKeyMapping.getInstance (TouchButtonInput'Class (This).getId);
             This.gameKeyEvent := This.gameKeyEventFactory.getInstanceForInput (TouchButtonInput_Access'(This'Unchecked_Access), gameKey);
         exception
             when Java_Occurrence : others =>
