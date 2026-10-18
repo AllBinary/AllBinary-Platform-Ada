@@ -20,10 +20,11 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.text.SimpleDateFormat_Package; use java.text.SimpleDateFormat_Package;
+with java.text.SimpleDateFormat_Package; use java.text.SimpleDateFormat_Package;
 
 package org.allbinary.time.TimeStampUtil_Package is
 
+   package SimpleDateFormat_Package renames Standard.java.text.SimpleDateFormat_Package;
 
    type TimeStampUtil is tagged;
    type TimeStampUtil_Access is access all TimeStampUtil'Class;
