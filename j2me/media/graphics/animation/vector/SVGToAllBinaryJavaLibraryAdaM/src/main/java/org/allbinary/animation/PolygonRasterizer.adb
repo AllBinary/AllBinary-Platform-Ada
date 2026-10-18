@@ -35,9 +35,9 @@ package body org.allbinary.animation.PolygonRasterizer_Package is
    begin
         pointCount := PathParser_Package.parsePath (svgPath, pathX, pathY, pathX'Length);
         for i in 0 .. (pixelBuffer'Length) - 1 loop
-            pixelBuffer (i) := 16#FFFFFFFF#;
+            pixelBuffer (i) := (-1);
         end loop;
-        PolygonRasterizer_Package.getInstance.fillPolygon (pathX, pathY, pointCount, pixelBuffer, width, height, 16#FFFF00FF#);
+        PolygonRasterizer_Package.getInstance.fillPolygon (pathX, pathY, pointCount, pixelBuffer, width, height, (-65281));
         return pixelBuffer;
    end getPixelBuffer;
 

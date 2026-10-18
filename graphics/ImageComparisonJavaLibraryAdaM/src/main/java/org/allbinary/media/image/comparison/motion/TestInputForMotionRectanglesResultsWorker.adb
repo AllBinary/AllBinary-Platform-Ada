@@ -109,7 +109,7 @@ package body org.allbinary.media.image.comparison.motion.TestInputForMotionRecta
                 size := inputTypeNameArray'Length;
                 for index in 0 .. (size) - 1 loop
                     inputTypeNameString := Java_Unbox (inputTypeNameArray (index));
-                    inputRobotInterface := InputRobotInterface_Access (robotHashtable.get (inputTypeNameString));
+                    inputRobotInterface := InputRobotInterface_Access (robotHashtable.get (Java_Box (inputTypeNameString)));
                     inputRobotInterface.mouseMoveToTarget (rectangle);
                     if (inputRobotInterface.getName.compareTo (TempInputRobotNames_Package.DX_NAME)) = (0) then
                         inputRobotInterface.mousePress (InputEvent_Package.BUTTON1_MASK);

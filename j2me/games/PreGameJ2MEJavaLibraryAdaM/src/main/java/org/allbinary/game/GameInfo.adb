@@ -128,11 +128,11 @@ package body org.allbinary.game.GameInfo_Package is
       hashtable : ABHashtable_Access;
    begin
         hashtable := StdUtil_Package.getInstance.createHashtable;
-        hashtable.put (This.gameInfoData.GAME_TYPE, GameInfo'Class (This).getGameType.toString);
-        hashtable.put (This.gameInfoData.GAME_MODE, This.gameMode.toString);
-        hashtable.put (This.gameInfoData.PLAYER_TYPE, This.playerType.toString);
-        hashtable.put (This.gameInfoData.HIGHEST_LEVEL, To_Unbounded_String (Java_Image (GameInfo'Class (This).getHighestLevel)));
-        hashtable.put (This.gameInfoData.CURRENT_LEVEL, To_Unbounded_String (Java_Image (This.currentLevel)));
+        hashtable.put (This.gameInfoData.GAME_TYPE, Java_Box (GameInfo'Class (This).getGameType.toString));
+        hashtable.put (This.gameInfoData.GAME_MODE, Java_Box (This.gameMode.toString));
+        hashtable.put (This.gameInfoData.PLAYER_TYPE, Java_Box (This.playerType.toString));
+        hashtable.put (This.gameInfoData.HIGHEST_LEVEL, Java_Box (To_Unbounded_String (Java_Image (GameInfo'Class (This).getHighestLevel))));
+        hashtable.put (This.gameInfoData.CURRENT_LEVEL, Java_Box (To_Unbounded_String (Java_Image (This.currentLevel))));
         return hashtable;
    end toHashtable;
 

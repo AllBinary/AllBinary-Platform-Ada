@@ -120,17 +120,17 @@ package body org.allbinary.logic.system.security.licensing.ClientInformation_Pac
         abeClientInformationData := AbeClientInformationData_Package.getInstance;
         genericOperatingSystem := ClientInformation'Class (This).getOperatingSystemInterface;
         clientInfoHashtable := StdUtil_Package.getInstance.createHashtable;
-        clientInfoHashtable.put (abeClientInformationData.NAME, This.name);
-        clientInfoHashtable.put (abeClientInformationData.VERSION, This.version);
-        clientInfoHashtable.put (abeClientInformationData.SPECIALNAME, This.specialName);
+        clientInfoHashtable.put (abeClientInformationData.NAME, Java_Box (This.name));
+        clientInfoHashtable.put (abeClientInformationData.VERSION, Java_Box (This.version));
+        clientInfoHashtable.put (abeClientInformationData.SPECIALNAME, Java_Box (This.specialName));
         clientInfoHashtable.put (abeClientInformationData.LICENSEID, ClientInformation'Class (This).getLicenseId);
-        clientInfoHashtable.put (abeClientInformationData.OSNAME, genericOperatingSystem.getName);
+        clientInfoHashtable.put (abeClientInformationData.OSNAME, Java_Box (genericOperatingSystem.getName));
         clientInfoHashtable.put (abeClientInformationData.OSARCH, genericOperatingSystem.getArch);
         clientInfoHashtable.put (abeClientInformationData.OSVERSION, genericOperatingSystem.getVersion);
-        clientInfoHashtable.put (abeClientInformationData.OS, genericOperatingSystem.toString);
+        clientInfoHashtable.put (abeClientInformationData.OS, Java_Box (genericOperatingSystem.toString));
         hardwareInterface := SystemHardwareFactory_Package.getInstance.getInstance (genericOperatingSystem);
         hardwareString := Java_Object'Class (hardwareInterface.all).toString;
-        clientInfoHashtable.put (abeClientInformationData.HARDWARE, hardwareString);
+        clientInfoHashtable.put (abeClientInformationData.HARDWARE, Java_Box (hardwareString));
         return clientInfoHashtable;
    end toHashtable;
 

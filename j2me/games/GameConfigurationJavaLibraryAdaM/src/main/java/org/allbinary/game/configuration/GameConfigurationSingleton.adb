@@ -49,7 +49,7 @@ package body org.allbinary.game.configuration.GameConfigurationSingleton_Package
 
    function getInstanceByName (This : in out GameConfigurationSingleton; name : Unbounded_String) return GameConfiguration_Access is
    begin
-        return GameConfiguration_Access (This.hashtable.get (name));
+        return GameConfiguration_Access (This.hashtable.get (Java_Box (name)));
    end getInstanceByName;
 
    function getOptionsBasicArrayList (This : in out GameConfigurationSingleton) return BasicArrayList_Access is

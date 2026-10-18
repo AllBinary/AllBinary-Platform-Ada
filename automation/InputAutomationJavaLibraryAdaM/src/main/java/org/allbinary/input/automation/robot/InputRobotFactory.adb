@@ -183,7 +183,7 @@ package body org.allbinary.input.automation.robot.InputRobotFactory_Package is
    function get (This : in out InputRobotFactory; name : Unbounded_String) return InputRobotInterface_Access is
    begin
         This.logUtil.putF (To_Unbounded_String ("Getting Robot: ") & name, InputRobotFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("getRobots"));
-        return InputRobotInterface_Access (This.hashtable.get (name));
+        return InputRobotInterface_Access (This.hashtable.get (Java_Box (name)));
    end get;
 
    procedure get (This : in out InputRobotFactory; name : Unbounded_String) is

@@ -19,8 +19,8 @@ package body org.allbinary.graphics.ItemColorFactory_Package is
    procedure Initialize_Fields (This : in out ItemColorFactory'Class) is
    begin
       null;
-      This.INVERT_PAINT := 16#FF000000#;
-      This.PAINT := 16#FFe07718#;
+      This.INVERT_PAINT := (-16777216);
+      This.PAINT := (-2066664);
       This.TEXT_FIELD_NO_FOCUS := 16#7F7F7F#;
    end Initialize_Fields;
 

@@ -1118,7 +1118,7 @@ package body org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package i
    begin
         hashtable := This.stdUtil.createHashtable;
         level := This.gameLayerManager.getGameInfo.getCurrentLevel;
-        hashtable.put (GameInfo_Package.LEVEL_NAME.toString, To_Unbounded_String (Java_Image (level)));
+        hashtable.put (Java_Box (GameInfo_Package.LEVEL_NAME.toString), Java_Box (To_Unbounded_String (Java_Image (level))));
         This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("End: ")).append (This.stringUtil.toString (hashtable)).toString, AllBinaryGameCanvas_Access'(This'Unchecked_Access), To_Unbounded_String ("getCurrentStateHashtable"));
         return hashtable;
    end getCurrentStateHashtable;

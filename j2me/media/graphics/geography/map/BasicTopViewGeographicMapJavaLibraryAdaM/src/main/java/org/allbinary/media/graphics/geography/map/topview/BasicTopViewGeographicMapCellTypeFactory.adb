@@ -90,7 +90,7 @@ package body org.allbinary.media.graphics.geography.map.topview.BasicTopViewGeog
         basicPlatormGeographicMapCellType := null;
         for index in 0 .. (size) - 1 loop
             key := Java_Unbox (keyArray (index));
-            idsWithTypeList := BasicArrayList_Access (tileTypeToTileIdsMap.get (key));
+            idsWithTypeList := BasicArrayList_Access (tileTypeToTileIdsMap.get (Java_Box (key)));
             if (key = basicTopViewGeographicMapStrings.WALL) then
                 basicPlatormGeographicMapCellType := BasicTopViewGeographicMapCellType_Package.Create (basicTopViewGeographicMapStrings.WALL, idsWithTypeList, 1000);
                 BLOCK_CELL_TYPE := basicPlatormGeographicMapCellType;

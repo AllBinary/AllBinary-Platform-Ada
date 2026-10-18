@@ -20,7 +20,7 @@ package body org.allbinary.graphics.color.BasicColorUtil_Package is
    begin
       null;
       This.ZERO_ARRAY := new BasicColor_Access_Array'(0 .. (0) - 1 => null);
-      This.ALPHA := 16#FF000000#;
+      This.ALPHA := (-16777216);
       This.isAlpha := True;
       This.ffOpaque := True;
    end Initialize_Fields;

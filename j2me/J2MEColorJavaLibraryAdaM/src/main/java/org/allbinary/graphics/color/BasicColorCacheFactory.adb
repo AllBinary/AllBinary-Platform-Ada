@@ -47,16 +47,16 @@ package body org.allbinary.graphics.color.BasicColorCacheFactory_Package is
    procedure add (This : in out BasicColorCacheFactory; basicDefaultColor_Param : access BasicColor_Package.BasicColor'Class) is
       basicDefaultColor : constant BasicColor_Access := BasicColor_Access (basicDefaultColor_Param);
    begin
-        This.hashtable.put (basicDefaultColor.intValue, basicDefaultColor);
+        This.hashtable.put (Java_Box (basicDefaultColor.intValue), basicDefaultColor);
    end add;
 
    function getAndOrCreate (This : in out BasicColorCacheFactory; integer_Id : Integer) return BasicColor_Access is
       basicColor : BasicColor_Access;
    begin
-        basicColor := BasicColor_Access (This.hashtable.get (integer_Id));
+        basicColor := BasicColor_Access (This.hashtable.get (Java_Box (integer_Id)));
         if (basicColor) = (null) then
             basicColor := BasicColorFactory_Package.getInstance.createInstance (Integer (integer_Id));
-            This.hashtable.put (integer_Id, basicColor);
+            This.hashtable.put (Java_Box (integer_Id), basicColor);
         end if;
         return basicColor;
    end getAndOrCreate;

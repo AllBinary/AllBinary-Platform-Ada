@@ -66,7 +66,7 @@ package body org.allbinary.graphics.color.SmallBasicColorCacheFactory_Package is
                 return This.BASIC_COLOR_ARRAY (index);
             end if;
         end loop;
-        ALPHA_MASK := 16#FF000000#;
+        ALPHA_MASK := (-16777216);
         basicColor := BasicColorFactory_Package.getInstance.createInstanceAN (Java_And (colorAsInt, ALPHA_MASK), Java_And (colorAsInt, 16#00FFFFFF#), StringUtil_Package.getInstance.EMPTY_STRING);
         SmallBasicColorCacheFactory'Class (This).add (basicColor);
         return basicColor;

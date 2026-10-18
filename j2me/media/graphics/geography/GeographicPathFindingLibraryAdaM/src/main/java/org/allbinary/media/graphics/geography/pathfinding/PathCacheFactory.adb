@@ -52,12 +52,12 @@ package body org.allbinary.media.graphics.geography.pathfinding.PathCacheFactory
    procedure add (This : in out PathCacheFactory; pathId : Integer; list_Param : access BasicArrayList_Package.BasicArrayList'Class) is
       list : constant BasicArrayList_Access := BasicArrayList_Access (list_Param);
    begin
-        This.hashtable.put (pathId, list);
+        This.hashtable.put (Java_Box (pathId), list);
    end add;
 
    procedure remove (This : in out PathCacheFactory; pathId : Integer) is
    begin
-        This.hashtable.remove (pathId);
+        This.hashtable.remove (Java_Box (pathId));
    end remove;
 
    --  throws Exception
@@ -73,7 +73,7 @@ package body org.allbinary.media.graphics.geography.pathfinding.PathCacheFactory
    function getOrCreate (This : in out PathCacheFactory; pathIdInteger : Integer) return BasicArrayList_Access is
       listCanBeNull : Java_Object_Access;
    begin
-        listCanBeNull := This.hashtable.get (pathIdInteger);
+        listCanBeNull := This.hashtable.get (Java_Box (pathIdInteger));
         if (listCanBeNull) = (null) then
             listCanBeNull := This.basicArrayListUtil.getImmutableInstance;
         end if;

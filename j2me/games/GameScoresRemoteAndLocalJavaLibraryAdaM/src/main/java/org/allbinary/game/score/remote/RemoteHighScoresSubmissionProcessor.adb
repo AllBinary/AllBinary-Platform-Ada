@@ -68,14 +68,14 @@ package body org.allbinary.game.score.remote.RemoteHighScoresSubmissionProcessor
             gameInfoData := GameInfoData_Package.getInstance;
             hashtable := abeClientInformation.toHashtable;
             HashtableUtil_Package.getInstance.putAll (highScore.getGameInfo.toHashtable, hashtable);
-            hashtable.put (RemoteHighScoresData_Package.getInstance.CUSTOMER_USER_NAME, To_Unbounded_String ("None"));
-            hashtable.put (RemoteHighScoresData_Package.getInstance.DISPLAY_NAME, highScore.getName);
-            hashtable.put (gameInfoData.SOFTWARE_INFORMATION, remoteHighScores.getSoftwareInformation.toString);
-            hashtable.put (remoteHighScores.ASCENDING, remoteHighScores.getAscending.toString);
+            hashtable.put (RemoteHighScoresData_Package.getInstance.CUSTOMER_USER_NAME, Java_Box (To_Unbounded_String ("None")));
+            hashtable.put (RemoteHighScoresData_Package.getInstance.DISPLAY_NAME, Java_Box (highScore.getName));
+            hashtable.put (gameInfoData.SOFTWARE_INFORMATION, Java_Box (remoteHighScores.getSoftwareInformation.toString));
+            hashtable.put (remoteHighScores.ASCENDING, Java_Box (remoteHighScores.getAscending.toString));
             displayInfoSingleton := DisplayInfoSingleton_Package.getInstance;
             hashtable.put (displayInfoSingleton.ORIENTATION, BooleanFactory_Package.getInstance.toStringb (displayInfoSingleton.isPortrait));
-            hashtable.put (RemoteHighScoresData_Package.getInstance.GAME_CONFIGURATION, GameConfigurationCentral_Package.getInstance.toString);
-            hashtable.put (RemoteHighScoresData_Package.getInstance.SCORE, To_Unbounded_String (Java_Image (highScore.getScore)));
+            hashtable.put (RemoteHighScoresData_Package.getInstance.GAME_CONFIGURATION, Java_Box (GameConfigurationCentral_Package.getInstance.toString));
+            hashtable.put (RemoteHighScoresData_Package.getInstance.SCORE, Java_Box (To_Unbounded_String (Java_Image (highScore.getScore))));
             if XmlRpcAbeClient_Package.isOnline then
                 resultHashtable := ABHashtable_Access (XmlRpcRemoteHighScoresClient_Package.Create (abeClientInformation, To_Unbounded_String ("highscoresubmissionservicessl.php"), To_Unbounded_String ("HighScoreSubmissionService.process")).get (hashtable, This.noCrypt));
                 remoteHighScores.update (resultHashtable);

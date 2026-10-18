@@ -116,7 +116,7 @@ package body org.allbinary.logic.communication.log.LogUtil_Package is
                     This.stringBuffer.append (message);
                     This.stringBuffer.append (CommonSeps_Package.getInstance.SPACE);
                     This.stringBuffer.append (SpecialMessageUtil_Package.getInstance.get);
-                    hashtable.put (This.MESSAGE, This.stringBuffer.toString);
+                    hashtable.put (Java_Box (This.MESSAGE), Java_Box (This.stringBuffer.toString));
                     XmlRpcRemoteLogClient_Package.Create (This.abeClientInformation).get (hashtable);
                 exception
                     when Java_Occurrence : others =>

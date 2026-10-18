@@ -97,7 +97,7 @@ package body org.allbinary.logic.system.security.licensing.AbeClientLicense_Pack
 
    function getKey (This : in out AbeClientLicense; keyName : Unbounded_String) return Unbounded_String is
    begin
-        return Java_Unbox (This.hashtable.get (keyName));
+        return Java_Unbox (This.hashtable.get (Java_Box (keyName)));
    end getKey;
 
    function getLicenseId (This : in out AbeClientLicense) return Unbounded_String is

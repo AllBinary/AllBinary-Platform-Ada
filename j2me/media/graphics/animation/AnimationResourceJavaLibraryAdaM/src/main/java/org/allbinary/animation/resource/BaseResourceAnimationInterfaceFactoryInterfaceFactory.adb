@@ -86,14 +86,14 @@ package body org.allbinary.animation.resource.BaseResourceAnimationInterfaceFact
         if This.hashtable.containsKey (Java_Box (resource)) then
             Java_Throw (Java_New_Exception ("Exception", StringMaker_Package.Create.append (To_Unbounded_String ("Resource Already Created: ")).append (resource).toString));
         end if;
-        This.hashtable.put (resource, animationInterfaceFactoryInterface);
+        This.hashtable.put (Java_Box (resource), animationInterfaceFactoryInterface);
    end add;
 
    --  throws Exception
    function getBasicAnimationInterfaceFactoryInstance (This : in out BaseResourceAnimationInterfaceFactoryInterfaceFactory; resource : Unbounded_String) return BasicAnimationInterfaceFactoryInterface_Access is
       basicAnimationInterfaceFactoryInterfaceCanBeNull : Java_Object_Access;
    begin
-        basicAnimationInterfaceFactoryInterfaceCanBeNull := This.hashtable.get (resource);
+        basicAnimationInterfaceFactoryInterfaceCanBeNull := This.hashtable.get (Java_Box (resource));
         if (basicAnimationInterfaceFactoryInterfaceCanBeNull) = (null) then
             return NullAnimationFactory_Package.NULL_NOT_FOR_USE_ANIMATION_FACTORY;
         end if;
@@ -104,7 +104,7 @@ package body org.allbinary.animation.resource.BaseResourceAnimationInterfaceFact
    function getRectangle (This : in out BaseResourceAnimationInterfaceFactoryInterfaceFactory; resource : Unbounded_String) return Rectangle_Access is
       rectangleCanBeNull : Java_Object_Access;
    begin
-        rectangleCanBeNull := This.rectangleHashtable.get (resource);
+        rectangleCanBeNull := This.rectangleHashtable.get (Java_Box (resource));
         if (rectangleCanBeNull) = (null) then
             return RectangleFactory_Package.SINGLETON;
         end if;
@@ -115,19 +115,19 @@ package body org.allbinary.animation.resource.BaseResourceAnimationInterfaceFact
    procedure addRectangle (This : in out BaseResourceAnimationInterfaceFactoryInterfaceFactory; resource : Unbounded_String; rectangle_Param : access Rectangle_Package.Rectangle'Class) is
       rectangle : constant Rectangle_Access := Rectangle_Access (rectangle_Param);
    begin
-        This.rectangleHashtable.put (resource, rectangle);
+        This.rectangleHashtable.put (Java_Box (resource), rectangle);
    end addRectangle;
 
    --  throws Exception
    function getRectangleArrayOfArrays (This : in out BaseResourceAnimationInterfaceFactoryInterfaceFactory; resource : Unbounded_String) return Rectangle_Access_Array_Access_Array_Access is
    begin
-        return Rectangle_Access_Array_Access_Array_Access (This.rectangleArrayOfArraysHashtable.get (resource));
+        return Rectangle_Access_Array_Access_Array_Access (This.rectangleArrayOfArraysHashtable.get (Java_Box (resource)));
    end getRectangleArrayOfArrays;
 
    --  throws Exception
    procedure addRectangleArrayOfArrays (This : in out BaseResourceAnimationInterfaceFactoryInterfaceFactory; resource : Unbounded_String; rectangleArrayOfArrays : Rectangle_Access_Array_Access_Array_Access) is
    begin
-        This.rectangleArrayOfArraysHashtable.put (resource, rectangleArrayOfArrays);
+        This.rectangleArrayOfArraysHashtable.put (Java_Box (resource), rectangleArrayOfArrays);
    end addRectangleArrayOfArrays;
 
    function isFeature (This : in out BaseResourceAnimationInterfaceFactoryInterfaceFactory) return Boolean is

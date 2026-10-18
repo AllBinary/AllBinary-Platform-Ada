@@ -56,7 +56,7 @@ package body org.allbinary.game.configuration.feature.GameFeatureChoiceGroups_Pa
    procedure add (This : in out GameFeatureChoiceGroups; name : Unbounded_String; list_Param : access BasicArrayList_Package.BasicArrayList'Class) is
       list : constant BasicArrayList_Access := BasicArrayList_Access (list_Param);
    begin
-        This.hashtable.put (name, list);
+        This.hashtable.put (Java_Box (name), list);
    end add;
 
 begin

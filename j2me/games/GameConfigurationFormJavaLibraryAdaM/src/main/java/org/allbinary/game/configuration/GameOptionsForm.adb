@@ -109,7 +109,7 @@ package body org.allbinary.game.configuration.GameOptionsForm_Package is
         key := OrientationData_Package.getInstance.ORIENTATION_SENSOR_INPUT;
         hashtable := GameFeatureChoiceGroups_Package.getExclusiveInstance.get;
         if (hashtable) /= (null) then
-            listCanBeNull := hashtable.get (key);
+            listCanBeNull := hashtable.get (Java_Box (key));
             if (listCanBeNull) /= (null) then
                 list := BasicArrayList_Access (listCanBeNull);
                 if list.contains (SensorFeatureFactory_Package.getInstance.SIMULATED_ORIENTATION_SENSORS) then
@@ -206,7 +206,7 @@ package body org.allbinary.game.configuration.GameOptionsForm_Package is
         GameConfigurationUtil_Package.getInstance.updateCompetitionValue;
         hashtable := StdUtil_Package.getInstance.createHashtable;
         SCALE := GameConfigurationCentral_Package.getInstance.SCALE;
-        hashtable.put (SCALE.getName, SCALE.getValue.toString);
+        hashtable.put (Java_Box (SCALE.getName), Java_Box (SCALE.getValue.toString));
         keyValuePersistance := GameConfigurationPersistanceSingleton_Package.getInstance;
         keyValuePersistance.clear;
         keyValuePersistance.loadAll (abeClientInformation);

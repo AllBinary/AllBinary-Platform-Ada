@@ -90,7 +90,7 @@ package body org.allbinary.game.score.RecordStoreHighScores_Package is
         highScoresCanBeNull := RecordStoreHighScores_Package.hashTable.get (Java_Box (highScoreName));
         if (highScoresCanBeNull) = (null) then
             highScores := HighScores_Access (RecordStoreHighScores_Package.Create (abeClientInformation, gameInfo, highScoreName, heading, columnTwoHeading, recordComparatorInterface));
-            RecordStoreHighScores_Package.hashTable.put (highScores.getName, highScores);
+            RecordStoreHighScores_Package.hashTable.put (Java_Box (highScores.getName), highScores);
             return highScores;
         end if;
         return HighScores_Access (highScoresCanBeNull);

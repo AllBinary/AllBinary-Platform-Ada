@@ -44,13 +44,13 @@ package body org.allbinary.game.configuration.feature.Feature_Package is
 
    function getInstance (name : Unbounded_String) return Feature_Access is
    begin
-        return Feature_Access (Feature_Package.hashtable.get (name));
+        return Feature_Access (Feature_Package.hashtable.get (Java_Box (name)));
    end getInstance;
 
    procedure add (name : Unbounded_String; gameFeature_Param : access Feature_Package.Feature'Class) is
       gameFeature : constant Feature_Access := Feature_Access (gameFeature_Param);
    begin
-        Feature_Package.hashtable.put (name, gameFeature);
+        Feature_Package.hashtable.put (Java_Box (name), gameFeature);
    end add;
 
    function toString (This : in out Feature) return Unbounded_String is

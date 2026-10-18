@@ -187,7 +187,7 @@ package body org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package is
         size := This.canvasJPanelList.size;
         for index in 0 .. (size) - 1 loop
             canvasJPanel := CanvasJPanel_Access (This.canvasJPanelList.get (index));
-            canvasJPanelHashMap.put (canvasJPanel.getTreeNode, index);
+            canvasJPanelHashMap.put (canvasJPanel.getTreeNode, Java_Box (index));
         end loop;
         return canvasJPanelHashMap;
    end getCanvasHashMap;

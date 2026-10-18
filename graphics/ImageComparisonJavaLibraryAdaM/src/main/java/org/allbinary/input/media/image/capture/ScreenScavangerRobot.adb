@@ -58,7 +58,7 @@ package body org.allbinary.input.media.image.capture.ScreenScavangerRobot_Packag
         robotHashtable := InputRobotFactory_Package.getInstance.get;
         bufferedImageArray := new BufferedImage_Access_Array'(0 .. (1) - 1 => null);
         index := 0;
-        inputRobotInterface := InputRobotInterface_Access (robotHashtable.get (To_Unbounded_String ("Java Robot")));
+        inputRobotInterface := InputRobotInterface_Access (robotHashtable.get (Java_Box (To_Unbounded_String ("Java Robot"))));
         bufferedImageArray (index) := inputRobotInterface.createScreenCapture (rectScreenSize);
         This.logUtil.putF (To_Unbounded_String ("Finish"), ScreenScavangerRobot_Access'(This'Unchecked_Access), To_Unbounded_String ("getScreenAsBufferedImages"));
         return bufferedImageArray;

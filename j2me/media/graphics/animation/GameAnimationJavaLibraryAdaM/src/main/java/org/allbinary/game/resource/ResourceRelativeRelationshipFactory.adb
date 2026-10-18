@@ -51,7 +51,7 @@ package body org.allbinary.game.resource.ResourceRelativeRelationshipFactory_Pac
    function getResourceRelativeRelationshipList (This : in out ResourceRelativeRelationshipFactory; resource : Unbounded_String) return BasicArrayList_Access is
       listCanBeNull : Java_Object_Access;
    begin
-        listCanBeNull := This.hashtable.get (resource);
+        listCanBeNull := This.hashtable.get (Java_Box (resource));
         if (listCanBeNull) = (null) then
             return This.basicArrayListUtil.getImmutableInstance;
         end if;
@@ -68,7 +68,7 @@ package body org.allbinary.game.resource.ResourceRelativeRelationshipFactory_Pac
             list := BasicArrayList_Access (BasicArrayListD_Package.Create);
         end if;
         list.add (Java_Object_Access (hardPoint));
-        This.hashtable.put (resource, list);
+        This.hashtable.put (Java_Box (resource), list);
    end addResourceRelativeRelationship;
 
    function isLoadingLevel (This : in out ResourceRelativeRelationshipFactory; level : Integer) return Boolean is

@@ -89,7 +89,7 @@ package body org.allbinary.data.resource.ResourceUtil_Package is
    function getResourceId (This : in out ResourceUtil; resource : Unbounded_String) return Integer is
       value : Integer;
    begin
-        value := Integer (This.hashMap.get (resource));
+        value := Integer (This.hashMap.get (Java_Box (resource)));
         if (DebugFactory_Package.getInstance) /= (NoDebug_Package.getInstance) then
             PreLogUtil_Package.put (StringMaker_Package.Create.append (resource).append (CommonSeps_Package.getInstance.COLON).append (To_Unbounded_String (Java_Image (value))).toString, ResourceUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("getResourceId"));
         end if;
@@ -104,7 +104,7 @@ package body org.allbinary.data.resource.ResourceUtil_Package is
                 ForcedLogUtil_Package.log (StringMaker_Package.Create.append (To_Unbounded_String ("Found Duplicate Resource: ")).append (resource).toString, ResourceUtil_Access'(This'Unchecked_Access));
             end if;
         end if;
-        This.hashMap.put (resource, value);
+        This.hashMap.put (Java_Box (resource), Java_Box (value));
    end addResource;
 
    function containsDuplicate (This : in out ResourceUtil; resource : Unbounded_String; value : Integer) return Boolean is
@@ -141,7 +141,7 @@ package body org.allbinary.data.resource.ResourceUtil_Package is
       resources : Resources_Access;
       inputStream : InputStream_Access;
    begin
-        integer_Id := Integer (This.hashMap.get (resource));
+        integer_Id := Integer (This.hashMap.get (Java_Box (resource)));
         id := Integer (integer_Id);
         resources := (Resources_Access (This.resources));
         inputStream := resources.openRawResource (id);

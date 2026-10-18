@@ -52,7 +52,7 @@ package body org.allbinary.content.CommandUriAction_Package is
    procedure add (This : in out CommandUriAction; command_Param : access Command_Package.Command'Class; url : Unbounded_String) is
       command : constant Command_Access := Command_Access (command_Param);
    begin
-        This.hashtable.put (command, url);
+        This.hashtable.put (command, Java_Box (url));
    end add;
 
    procedure process (This : in out CommandUriAction; command_Param : access Command_Package.Command'Class) is

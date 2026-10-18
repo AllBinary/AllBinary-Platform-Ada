@@ -109,7 +109,7 @@ package body org.allbinary.game.configuration.persistance.KeyValuePersistance_Pa
                         name := inputStream.readUTF;
                         inputStream.readUTF;
                         value := inputStream.readUTF;
-                        hashtable.put (name, value);
+                        hashtable.put (Java_Box (name), Java_Box (value));
                     end loop;
                     This.valueList.add (Java_Object_Access (hashtable));
                     This.idList.add (smallIntegerSingletonFactory.getAt (id));

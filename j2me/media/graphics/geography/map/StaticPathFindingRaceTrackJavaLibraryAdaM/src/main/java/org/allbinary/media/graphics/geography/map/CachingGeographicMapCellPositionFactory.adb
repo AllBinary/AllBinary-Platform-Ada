@@ -48,11 +48,11 @@ package body org.allbinary.media.graphics.geography.map.CachingGeographicMapCell
    begin
         hashtable := GeographicMapCellPositionFactory_Package.getHashtable;
         cellPositionKey := CellPosition_Package.toStringColRow (i_column, i_row);
-        cellPositionCanBeNull := hashtable.get (cellPositionKey);
+        cellPositionCanBeNull := hashtable.get (Java_Box (cellPositionKey));
         if (cellPositionCanBeNull) = (null) then
             cellPositionCanBeNull := This.geographicMapCellPositionFactoryInterface.getInstance (This.geographicMapInterface, i_column, i_row, CachingGeographicMapCellPositionFactory'Class (This).getColumns, CachingGeographicMapCellPositionFactory'Class (This).getRows, width, height);
             This.geographicMapCellPositionArray (i_row) (i_column) := GeographicMapCellPosition_Access (cellPositionCanBeNull);
-            hashtable.put (cellPositionKey, cellPositionCanBeNull);
+            hashtable.put (Java_Box (cellPositionKey), cellPositionCanBeNull);
         end if;
         return GeographicMapCellPosition_Access (cellPositionCanBeNull);
    end createInstance;

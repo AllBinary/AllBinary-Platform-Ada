@@ -95,7 +95,7 @@ package body org.allbinary.graphics.color.BasicColorFactory_Package is
    function createInstanceARGB (This : in out BasicColorFactory; alphaValue : Integer; r : Integer; g : Integer; b : Integer; name : Unbounded_String) return BasicColor_Access is
       ALPHA_MASK : Integer;
    begin
-        ALPHA_MASK := 16#FF000000#;
+        ALPHA_MASK := (-16777216);
         return BasicColor_Package.Create (alphaValue, ((((Java_And ((Java_Shift_Left (alphaValue, 24)), ALPHA_MASK))) + ((Java_And ((Java_Shift_Left (r, 16)), 16#00FF0000#)))) + ((Java_And ((Java_Shift_Left (g, 8)), 16#0000FF00#)))) + ((Java_And (b, 16#000000FF#))), StringUtil_Package.getInstance.EMPTY_STRING);
    end createInstanceARGB;
 

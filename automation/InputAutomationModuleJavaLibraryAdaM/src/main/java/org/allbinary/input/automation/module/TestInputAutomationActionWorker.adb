@@ -71,7 +71,7 @@ package body org.allbinary.input.automation.module.TestInputAutomationActionWork
         size := inputTypeNameArray'Length;
         for index in 0 .. (size) - 1 loop
             inputTypeNameString := Java_Unbox (inputTypeNameArray (index));
-            robot := InputRobotInterface_Access (hashtable.get (inputTypeNameString));
+            robot := InputRobotInterface_Access (hashtable.get (Java_Box (inputTypeNameString)));
             if (This.sleep) > (0) then
                 Java_Sleep (This.sleep);
             end if;
