@@ -492,11 +492,11 @@ package body org.allbinary.logic.visual.transform.info.TransformInfo_Package is
         hashMap.put (transformInfoData.OBJECTFILENAME, Java_Box (This.objectFileName));
         hashMap.put (transformInfoData.OBJECT, This.anyType);
         hashMap.put (transformInfoData.OBJECTCONFIGFILENAME, TransformInfo'Class (This).getObjectConfigFile);
-        hashMap.put (transformInfoData.OBJECTCONFIG, Encoder_Package.encode (TransformInfo'Class (This).getObjectConfigInterface.toString.getBytes));
+        hashMap.put (transformInfoData.OBJECTCONFIG, Encoder_Package.encode (Java_Get_Bytes (TransformInfo'Class (This).getObjectConfigInterface.toString)));
         hashMap.put (transformInfoData.TEMPLATEFILENAME, Java_Box (This.templateFileName));
         hashMap.put (transformInfoData.TEMPLATE, Java_Box (This.template));
         hashMap.put (transformInfoData.DATAFILENAME, Java_Box (This.dataFileName));
-        hashMap.put (transformInfoData.DATA, Encoder_Package.encode (This.data.getBytes));
+        hashMap.put (transformInfoData.DATA, Encoder_Package.encode (Java_Get_Bytes (This.data)));
         calendar := Calendar_Package.getInstance;
         time := Java_New_String (calendar.getTimeInMillis.toString);
         hashMap.put (EntryData_Package.getInstance.LASTMODIFIED, Java_Box (time));
@@ -514,11 +514,11 @@ package body org.allbinary.logic.visual.transform.info.TransformInfo_Package is
         vector.add (This.objectFileName);
         vector.add (This.anyType);
         vector.add (TransformInfo'Class (This).getObjectConfigFile);
-        vector.add (Encoder_Package.encode (TransformInfo'Class (This).getObjectConfigInterface.toString.getBytes));
+        vector.add (Encoder_Package.encode (Java_Get_Bytes (TransformInfo'Class (This).getObjectConfigInterface.toString)));
         vector.add (This.templateFileName);
         vector.add (This.template);
         vector.add (This.dataFileName);
-        vector.add (Encoder_Package.encode (This.data.getBytes));
+        vector.add (Encoder_Package.encode (Java_Get_Bytes (This.data)));
         calendar := Calendar_Package.getInstance;
         time := Java_New_String (calendar.getTimeInMillis.toString);
         vector.add (time);

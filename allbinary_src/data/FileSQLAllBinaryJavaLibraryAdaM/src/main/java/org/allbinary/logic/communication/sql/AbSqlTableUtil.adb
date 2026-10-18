@@ -236,7 +236,7 @@ package body org.allbinary.logic.communication.sql.AbSqlTableUtil_Package is
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
                     This.logUtil.putF (This.APPENDING & sqlStatementLine, AbSqlTableUtil_Access'(This'Unchecked_Access), This.METHOD_BACKUP_TABLE);
                 end if;
-                outputStream.write (sqlStatementLine.getBytes);
+                outputStream.write (Java_Get_Bytes (sqlStatementLine));
             end loop;
             StreamUtil_Package.getInstance.close (outputStream);
             return This.TABLE_LABEL & tableName & This.BACKUP_SUCCESS;

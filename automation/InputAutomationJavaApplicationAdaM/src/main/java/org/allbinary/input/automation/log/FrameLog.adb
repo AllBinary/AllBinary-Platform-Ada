@@ -83,13 +83,13 @@ package body org.allbinary.input.automation.log.FrameLog_Package is
         filePath := filePathStringBuffer.toString;
         fileOutputStream := FileOutputStream_Package.Create (File_Package.Create (filePath));
         fileOutputStream.write (FrameLog_Package.frameBytes);
-        fileOutputStream.write (FrameLog'Class (This).getFrame.toString.getBytes);
+        fileOutputStream.write (Java_Get_Bytes (FrameLog'Class (This).getFrame.toString));
         fileOutputStream.write (ASCII.LF);
         fileOutputStream.write (FrameLog_Package.info);
-        fileOutputStream.write (This.infoStringBuffer.toString.getBytes);
+        fileOutputStream.write (Java_Get_Bytes (This.infoStringBuffer.toString));
         fileOutputStream.write (ASCII.LF);
         fileOutputStream.write (FrameLog_Package.actions);
-        fileOutputStream.write (This.actionsStringBuffer.toString.getBytes);
+        fileOutputStream.write (Java_Get_Bytes (This.actionsStringBuffer.toString));
         fileOutputStream.close;
    end write;
 

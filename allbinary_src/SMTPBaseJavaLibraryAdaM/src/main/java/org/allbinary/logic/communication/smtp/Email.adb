@@ -85,7 +85,7 @@ package body org.allbinary.logic.communication.smtp.Email_Package is
                 if not (stringValidationUtil.isEmpty (contentBase)) then
                     internetHeaders.addHeader (To_Unbounded_String ("Content-Base"), contentBase);
                 end if;
-                mimeBodyParts (1) := MimeBodyPart_Package.Create (internetHeaders, htmlAttachment.getBytes);
+                mimeBodyParts (1) := MimeBodyPart_Package.Create (internetHeaders, Java_Get_Bytes (htmlAttachment));
             end if;
             Email'Class (This).init (server, Authenticator_Access (null), new InternetAddress_Access_Array'(0 => InternetAddress_Package.Create (from)), new InternetAddress_Access_Array'(0 => InternetAddress_Package.Create (to)), InternetAddress_Access_Array_Access (null), InternetAddress_Access_Array_Access (null), subject, mimeBodyParts);
         exception

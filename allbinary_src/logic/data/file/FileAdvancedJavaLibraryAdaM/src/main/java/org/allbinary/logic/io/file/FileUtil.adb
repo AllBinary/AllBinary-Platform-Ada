@@ -643,7 +643,7 @@ package body org.allbinary.logic.io.file.FileUtil_Package is
             fileInputStreamFactory := FileStreamFactory_Package.getInstance;
             fileOutputStream := fileInputStreamFactory.getFileOutputStreamInstance (StringUtil_Package.getInstance.EMPTY_STRING, filePath);
             dataOutputStream := AbDataOutputStream_Package.Create (fileOutputStream);
-            dataOutputStream.write (string_Id.getBytes, 0, Length (string_Id));
+            dataOutputStream.write (Java_Get_Bytes (string_Id), 0, Length (string_Id));
             dataOutputStream.flush;
         end;
         --  finally

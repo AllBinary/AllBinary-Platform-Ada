@@ -134,7 +134,7 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.generator.St
             This.file.createNewFile;
         end if;
         if This.file.exists then
-            inputStream := InputStream_Access (ByteArrayInputStream_Package.Create (input.getBytes));
+            inputStream := InputStream_Access (ByteArrayInputStream_Package.Create (Java_Get_Bytes (input)));
             FileUtil_Package.getInstance.write (inputStream, This.file);
         else
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Could Not Create: ") & This.fileAbPath.toString));

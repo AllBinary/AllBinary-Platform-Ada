@@ -67,7 +67,7 @@ package body org.allbinary.TsUtil_Package is
 
    function equalIgnoreCase (This : in out TsUtil; a : Unbounded_String; b : Unbounded_String) return Boolean is
    begin
-        return Ada.Strings.Equal_Case_Insensitive (To_String (a), To_String (b));
+        return Java_Equals_Ignore_Case (a, b);
    end equalIgnoreCase;
 
    function equalsNotstring (This : in out TsUtil; anyType_Param : access Java_Object'Class; object2_Param : access Java_Object'Class) return Boolean is
@@ -89,7 +89,7 @@ package body org.allbinary.TsUtil_Package is
 
    function getByteArray (This : in out TsUtil; string_Id : Unbounded_String) return Short_Short_Integer_Array_Access is
    begin
-        return string_Id.getBytes;
+        return Java_Get_Bytes (string_Id);
    end getByteArray;
 
    function isItemListener (This : in out TsUtil; owner_Param : access Java_Object'Class) return Boolean is

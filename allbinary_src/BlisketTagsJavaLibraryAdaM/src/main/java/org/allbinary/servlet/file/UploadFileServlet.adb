@@ -98,7 +98,7 @@ package body org.allbinary.servlet.file.UploadFileServlet_Package is
                 if AuthenticationHelperUtil_Package.getInstance.isAuthorized (authenticationHelper, filePath) then
                     UploadFileServlet'Class (This).saveFile (filePath);
                     response.setContentType (To_Unbounded_String ("text/plain"));
-                    response.getOutputStream.write (To_Unbounded_String ("OK!").getBytes);
+                    response.getOutputStream.write (Java_Get_Bytes (To_Unbounded_String ("OK!")));
                 else
                     isError := True;
                     response.sendError (HttpServletResponse_Package.SC_UNAUTHORIZED, To_Unbounded_String ("You are not Authorized"));
