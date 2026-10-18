@@ -122,7 +122,7 @@ package body org.allbinary.logic.communication.http.file.upload.media.UploadMedi
    begin
         if hashMap.containsKey (Java_Box (mediaFileType)) then
             mediaType := Java_Unbox (hashMap.get (Java_Box (mediaFileType)));
-            if (mediaType.compareTo (aMediaType)) = (0) then
+            if (Java_Compare_To (mediaType, aMediaType)) = (0) then
                 return True;
             else
                 return False;

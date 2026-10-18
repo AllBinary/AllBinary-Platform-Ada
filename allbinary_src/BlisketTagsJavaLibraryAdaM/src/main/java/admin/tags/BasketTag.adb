@@ -59,7 +59,7 @@ package body admin.tags.BasketTag_Package is
             anyType := BasketHelperFactory_Package.Create.getInstance (This.propertiesHashMap, This.pageContext);
             method := anyType.all'Tag.getMethod (To_Unbounded_String ("isBasketEmpty"), null);
             emptyBoolean := Boolean (method.invoke (anyType, null));
-            return emptyBoolean.booleanValue;
+            return emptyBoolean;
         exception
             when Java_Occurrence : others =>
                 declare
@@ -81,7 +81,7 @@ package body admin.tags.BasketTag_Package is
             anyType := BasketRequestHelperFactory_Package.Create.getInstance (This.propertiesHashMap, This.pageContext);
             method := anyType.all'Tag.getMethod (To_Unbounded_String ("addItemToBasket"), null);
             emptyBoolean := Boolean (method.invoke (anyType, null));
-            return emptyBoolean.booleanValue;
+            return emptyBoolean;
         exception
             when Java_Occurrence : others =>
                 declare
@@ -103,7 +103,7 @@ package body admin.tags.BasketTag_Package is
             anyType := BasketRequestHelperFactory_Package.Create.getInstance (This.propertiesHashMap, This.pageContext);
             method := anyType.all'Tag.getMethod (To_Unbounded_String ("removeItemFromBasket"), null);
             emptyBoolean := Boolean (method.invoke (anyType, null));
-            return emptyBoolean.booleanValue;
+            return emptyBoolean;
         exception
             when Java_Occurrence : others =>
                 declare
@@ -125,7 +125,7 @@ package body admin.tags.BasketTag_Package is
             anyType := BasketRequestHelperFactory_Package.Create.getInstance (This.propertiesHashMap, This.pageContext);
             method := anyType.all'Tag.getMethod (To_Unbounded_String ("adjustBasket"), null);
             emptyBoolean := Boolean (method.invoke (anyType, null));
-            return emptyBoolean.booleanValue;
+            return emptyBoolean;
         exception
             when Java_Occurrence : others =>
                 declare
@@ -143,15 +143,15 @@ package body admin.tags.BasketTag_Package is
             if (This.command) /= (Null_Unbounded_String) then
                 This.propertiesHashMap := StdUtil_Package.getInstance.createHashMap;
                 This.propertiesHashMap.put (StoreFrontData_Package.getInstance.NAME, Java_Box (This.storeName));
-                if (This.command.compareTo (BasketData_Package.INSERT)) = (0) then
+                if (Java_Compare_To (This.command, BasketData_Package.INSERT)) = (0) then
                     if not (BasketTag'Class (This).addItemToBasket) then
                         This.pageContext.getOut.println (To_Unbounded_String ("Item is not currently being sold.<p/>"));
                     end if;
-                elsif (This.command.compareTo (BasketData_Package.DELETE)) = (0) then
+                elsif (Java_Compare_To (This.command, BasketData_Package.DELETE)) = (0) then
                     BasketTag'Class (This).removeItemFromBasket;
-                elsif (This.command.compareTo (BasketData_Package.ADJUST)) = (0) then
+                elsif (Java_Compare_To (This.command, BasketData_Package.ADJUST)) = (0) then
                     BasketTag'Class (This).adjustBasket;
-                elsif (This.command.compareTo (BasketData_Package.ISEMPTY)) = (0) then
+                elsif (Java_Compare_To (This.command, BasketData_Package.ISEMPTY)) = (0) then
                     if BasketTag'Class (This).isBasketEmpty then
                         return This.EVAL_BODY_INCLUDE;
                     else

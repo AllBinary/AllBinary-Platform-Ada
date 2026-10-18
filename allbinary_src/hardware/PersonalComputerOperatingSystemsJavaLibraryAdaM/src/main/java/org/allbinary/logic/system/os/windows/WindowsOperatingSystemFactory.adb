@@ -50,17 +50,17 @@ package body org.allbinary.logic.system.os.windows.WindowsOperatingSystemFactory
             operatingSystems := OperatingSystems_Package.getInstance;
             osName := SystemProperties_Package.getInstance.getName;
             operatingSystemInterface := null;
-            if (osName.compareTo (operatingSystems.WINDOWS_NT)) = (0) then
+            if (Java_Compare_To (osName, operatingSystems.WINDOWS_NT)) = (0) then
                 operatingSystemInterface := WindowsOS_Package.Create;
-            elsif (osName.compareTo (operatingSystems.WINDOWS_10)) = (0) then
+            elsif (Java_Compare_To (osName, operatingSystems.WINDOWS_10)) = (0) then
                 operatingSystemInterface := WindowsOS_Package.Create;
-            elsif (osName.compareTo (operatingSystems.WINDOWS_11)) = (0) then
+            elsif (Java_Compare_To (osName, operatingSystems.WINDOWS_11)) = (0) then
                 operatingSystemInterface := WindowsOS_Package.Create;
-            elsif (osName.compareTo (operatingSystems.WINDOWS2000)) = (0) then
+            elsif (Java_Compare_To (osName, operatingSystems.WINDOWS2000)) = (0) then
                 operatingSystemInterface := WindowsOS_Package.Create;
-            elsif (osName.compareTo (operatingSystems.WINDOWS_XP)) = (0) then
+            elsif (Java_Compare_To (osName, operatingSystems.WINDOWS_XP)) = (0) then
                 operatingSystemInterface := WindowsOS_Package.Create;
-            elsif (osName.compareTo (operatingSystems.WINDOWS_VISTA)) = (0) then
+            elsif (Java_Compare_To (osName, operatingSystems.WINDOWS_VISTA)) = (0) then
                 operatingSystemInterface := WindowsOS_Package.Create;
             else
                 if operatingSystems.isUnknownSpecificOSAllowed then

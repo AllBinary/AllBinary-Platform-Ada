@@ -34,7 +34,7 @@ package body org.allbinary.game.ag.ai.scroller.BasePatrolAI_Package is
         BasicAI_Package.Initialize (This, ownerLayerInterface, gameInput);
         Initialize_Fields (This);
         This.maxDistance := Integer (hashtable.get (BasePatrolAI_Package.MAX_DISTANCE));
-        This.currentDistance := This.maxDistance.intValue;
+        This.currentDistance := Integer (This.maxDistance);
    end Initialize;
 
    function Create (hashtable_Param : access ABHashtable_Package.ABHashtable'Class; ownerLayerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; gameInput_Param : access GameInput_Package.GameInput'Class) return BasePatrolAI_Access is

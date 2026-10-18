@@ -50,7 +50,7 @@ package body org.allbinary.business.user.commerce.money.payment.Payment_Package 
         This.number := Java_Unbox (SuperCrypt_Package.Create (This.encryption.intValue).decrypt (Java_Unbox (payment.get (PaymentData_Package.NUMBER))));
         This.id := Java_Unbox (payment.get (PaymentData_Package.ID));
         def := Java_Unbox (payment.get (EntryData_Package.getInstance.DEFAULT));
-        if ((def) /= (Null_Unbounded_String)) and then ((def.compareTo (EntryData_Package.getInstance.DEFAULT)) = (0)) then
+        if ((def) /= (Null_Unbounded_String)) and then ((Java_Compare_To (def, EntryData_Package.getInstance.DEFAULT)) = (0)) then
             This.isDefault_Field := True;
         else
             This.isDefault_Field := False;
@@ -120,16 +120,16 @@ package body org.allbinary.business.user.commerce.money.payment.Payment_Package 
    begin
         stringUtil := StringUtil_Package.getInstance;
         aFalse := False;
-        if ((This.name) = (Null_Unbounded_String)) or else ((This.name.compareTo (stringUtil.EMPTY_STRING)) = (0)) then
+        if ((This.name) = (Null_Unbounded_String)) or else ((Java_Compare_To (This.name, stringUtil.EMPTY_STRING)) = (0)) then
             return aFalse;
         end if;
-        if ((This.type_Id) = (Null_Unbounded_String)) or else ((This.type_Id.compareTo (stringUtil.EMPTY_STRING)) = (0)) then
+        if ((This.type_Id) = (Null_Unbounded_String)) or else ((Java_Compare_To (This.type_Id, stringUtil.EMPTY_STRING)) = (0)) then
             return aFalse;
         end if;
-        if ((This.expiration) = (Null_Unbounded_String)) or else ((This.expiration.compareTo (stringUtil.EMPTY_STRING)) = (0)) then
+        if ((This.expiration) = (Null_Unbounded_String)) or else ((Java_Compare_To (This.expiration, stringUtil.EMPTY_STRING)) = (0)) then
             return aFalse;
         end if;
-        if ((This.number) = (Null_Unbounded_String)) or else ((This.number.compareTo (stringUtil.EMPTY_STRING)) = (0)) then
+        if ((This.number) = (Null_Unbounded_String)) or else ((Java_Compare_To (This.number, stringUtil.EMPTY_STRING)) = (0)) then
             return aFalse;
         end if;
         if (Length (This.number)) > (org_Package.allbinary.business.user.commerce.money.payment.types.CreditCardType.MAXLEN) then

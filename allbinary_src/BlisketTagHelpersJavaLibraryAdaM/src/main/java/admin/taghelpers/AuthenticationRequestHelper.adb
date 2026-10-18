@@ -148,7 +148,7 @@ package body admin.taghelpers.AuthenticationRequestHelper_Package is
                 end if;
                 return False;
             end if;
-            if (newPassword.compareTo (newReenteredPassword)) /= (0) then
+            if (Java_Compare_To (newPassword, newReenteredPassword)) /= (0) then
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPER) then
                     This.logUtil.putF (To_Unbounded_String ("New Password Fields Do Not Match"), AuthenticationRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("changePassword()"));
                 end if;
@@ -158,7 +158,7 @@ package body admin.taghelpers.AuthenticationRequestHelper_Package is
             userEntityInterface := UserEntityFactory_Package.getInstance;
             userInterface := userEntityInterface.getUser (userName);
             login := userEntityInterface.login (userName, passwordString);
-            if (login.compareTo (GLOBALS2.LOGINSUCCESS)) = (0) then
+            if (Java_Compare_To (login, GLOBALS2.LOGINSUCCESS)) = (0) then
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPER) then
                     This.logUtil.putF (To_Unbounded_String ("Authentication Successful"), AuthenticationRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("changePassword()"));
                 end if;

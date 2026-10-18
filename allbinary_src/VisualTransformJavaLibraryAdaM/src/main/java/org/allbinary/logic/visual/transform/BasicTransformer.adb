@@ -150,7 +150,7 @@ package body org.allbinary.logic.visual.transform.BasicTransformer_Package is
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPERFACTORY) then
                     This.logUtil.putF (BasicTransformer'Class (This).getTransformInfoInterface.log, BasicTransformer_Access'(This'Unchecked_Access), To_Unbounded_String ("setTemplateAsInputStream()"));
                 end if;
-                if (extension.compareTo (transformInfoTemplateData.UNCRYPTED_EXTENSION)) = (0) then
+                if (Java_Compare_To (extension, transformInfoTemplateData.UNCRYPTED_EXTENSION)) = (0) then
                     stringBuffer := StringMaker_Package.Create;
                     stringBuffer.append (filePath);
                     stringBuffer.append (AbPathData_Package.getInstance.EXTENSION_SEP);
@@ -190,7 +190,7 @@ package body org.allbinary.logic.visual.transform.BasicTransformer_Package is
                             return;
                         end if;
                     end if;
-                elsif (extension.compareTo (transformInfoTemplateData.ENCRYPTED_EXTENSION)) = (0) then
+                elsif (Java_Compare_To (extension, transformInfoTemplateData.ENCRYPTED_EXTENSION)) = (0) then
                     stringBuffer := StringMaker_Package.Create;
                     stringBuffer.append (filePath);
                     stringBuffer.append (AbPathData_Package.getInstance.EXTENSION_SEP);

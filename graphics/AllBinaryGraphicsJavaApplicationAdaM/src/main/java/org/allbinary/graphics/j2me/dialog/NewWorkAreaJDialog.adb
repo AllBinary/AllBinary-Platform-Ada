@@ -101,7 +101,7 @@ package body org.allbinary.graphics.j2me.dialog.NewWorkAreaJDialog_Package is
             if (newName) = (Null_Unbounded_String) then
                 Java_Throw (Java_New_Exception ("GraphicsException", To_Unbounded_String ("No Name"), NewWorkAreaJDialog_Access'(This'Unchecked_Access), To_Unbounded_String ("disposeNewDialog")));
             end if;
-            workAreaJPanel := WorkAreaJPanel_Package.Create (newName, This.dimension, canvasWidth.intValue, canvasHeight.intValue);
+            workAreaJPanel := WorkAreaJPanel_Package.Create (newName, This.dimension, Integer (canvasWidth), Integer (canvasHeight));
             workAreaJPanel.setLayout (GridLayout_Package.Create (1, 1));
             This.parent.add (WorkAreaJPanelInterface_Access (workAreaJPanel));
             NewWorkAreaJDialog'Class (This).dispose;

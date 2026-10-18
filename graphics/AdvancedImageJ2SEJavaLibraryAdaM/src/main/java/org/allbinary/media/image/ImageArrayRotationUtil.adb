@@ -62,7 +62,7 @@ package body org.allbinary.media.image.ImageArrayRotationUtil_Package is
         bufferedImageArray := imageProcessorInput.getBufferedImageArray;
         for index in 0 .. (bufferedImageArray'Length) - 1 loop
             This.logUtil.putF (This.TOTAL_ANGLE & Java_Image (totalAngle), ImageArrayRotationUtil_Access'(This'Unchecked_Access), This.commonStrings.RUN);
-            generatedBufferedImage := ImageJ2SERotationUtil_Package.getInstance.getRotatedImage (bufferedImageArray (index), totalAngle.intValue);
+            generatedBufferedImage := ImageJ2SERotationUtil_Package.getInstance.getRotatedImage (bufferedImageArray (index), Integer (totalAngle));
             visitor.visit (generatedBufferedImage, input, index);
         end loop;
    end process;

@@ -90,7 +90,7 @@ package body org.allbinary.game.ag.layer.hud.basic.PlayerGameNotificationHud_Pac
    procedure add (This : in out PlayerGameNotificationHud; string_Id : Unbounded_String; seconds : Integer; basicColor_Param : access BasicColor_Package.BasicColor'Class; permanent : Boolean) is
       basicColor : constant BasicColor_Access := BasicColor_Access (basicColor_Param);
    begin
-        if permanent.booleanValue then
+        if permanent then
             if (This.lastString) /= (string_Id) then
                 This.lastString := string_Id;
                 This.logUtil.putF (StringMaker_Package.Create.append (This.PERMANENT_GAME_NOTIFICATION).append (string_Id).toString, PlayerGameNotificationHud_Access'(This'Unchecked_Access), This.commonStrings.ADD);
@@ -139,7 +139,7 @@ package body org.allbinary.game.ag.layer.hud.basic.PlayerGameNotificationHud_Pac
         This.point.setX (PlayerGameNotificationHud'Class (This).getX);
         This.point.setY (PlayerGameNotificationHud'Class (This).getY);
         time := Integer (This.gameNotification.timeList.removeAt (0));
-        iTime := (time.intValue) * (1000);
+        iTime := (Integer (time)) * (1000);
         if (iTime) = (0) then
             iTime := 500;
         end if;
@@ -166,7 +166,7 @@ package body org.allbinary.game.ag.layer.hud.basic.PlayerGameNotificationHud_Pac
         This.point.setX (PlayerGameNotificationHud'Class (This).getX);
         This.point.setY (PlayerGameNotificationHud'Class (This).getY);
         time := Integer (This.permanentGameNotification.timeList.objectArray (index));
-        This.timeDelayHelper.delay_Id := (time.intValue) * (1000);
+        This.timeDelayHelper.delay_Id := (Integer (time)) * (1000);
         PlayerGameNotificationHud'Class (This).setBasicColorP (BasicColor_Access (This.permanentGameNotification.colorList.objectArray (index)));
         This.circularIndexUtil.next;
    end setNextUnremoveableProcess;

@@ -89,7 +89,7 @@ package body org.allbinary.logic.system.security.crypt.DatabaseEncoder_Package i
             aByte := null;
             for index in 0 .. (size) - 1 loop
                 aByte := Short_Short_Integer (byteVector.objectArray (index));
-                decode (decodeIndex) := aByte.byteValue;
+                decode (decodeIndex) := Short_Short_Integer (aByte);
                 decodeIndex := decodeIndex + 1;
             end loop;
             return decode;

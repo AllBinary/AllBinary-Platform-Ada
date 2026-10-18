@@ -60,7 +60,7 @@ package body org.allbinary.graphics.j2me.workarea.canvas.CanvasDom_Package is
         This.grid_Case.grid_Case := PointFactory_Package.getInstance.createXY (0, 0);
         This.dimension := IntegerDimension_Package.Create (0, 0);
         name := canvasNode.getNodeName;
-        if (name.compareTo (CanvasDom_Package.FRAME)) = (0) then
+        if (Java_Compare_To (name, CanvasDom_Package.FRAME)) = (0) then
             This.graphicItemHashMap := StdUtil_Package.getInstance.createHashMap;
             angleNode := DomHelper_Package.getInstance.searchNodeList (ROTATE, canvasNode.getChildNodes);
             angleTextNode := angleNode.getFirstChild;

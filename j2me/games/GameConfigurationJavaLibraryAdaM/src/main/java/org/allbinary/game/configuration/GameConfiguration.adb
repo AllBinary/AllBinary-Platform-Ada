@@ -52,7 +52,7 @@ package body org.allbinary.game.configuration.GameConfiguration_Package is
         if (This.value) /= (value) then
             oldValue := This.value;
             This.value := value;
-            GameFeatureEventHandler_Package.getInstance.fireEvent (GameFeatureEvent_Package.Create (GameConfiguration_Access'(This'Unchecked_Access), StringMaker_Package.Create.append (This.name).append (To_Unbounded_String (" value: from: ")).appendint (Integer (oldValue.intValue)).append (To_Unbounded_String (" to ")).appendint (Integer (This.value.intValue)).toString));
+            GameFeatureEventHandler_Package.getInstance.fireEvent (GameFeatureEvent_Package.Create (GameConfiguration_Access'(This'Unchecked_Access), StringMaker_Package.Create.append (This.name).append (To_Unbounded_String (" value: from: ")).appendint (Integer (Integer (oldValue))).append (To_Unbounded_String (" to ")).appendint (Integer (Integer (This.value))).toString));
         end if;
    end setValue;
 

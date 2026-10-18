@@ -43,15 +43,15 @@ package body org.allbinary.input.automation.module.game.GraphicsAnalysisUtil_Pac
       color : Color_Access;
       index : Integer;
    begin
-        for index in reverse (min_x.intValue) + 1 .. max_x.intValue loop
-            colorInteger := To_Unbounded_String (Java_Image (bufferedImage.getRGB (index, y.intValue)));
+        for index in reverse (Integer (min_x)) + 1 .. Integer (max_x) loop
+            colorInteger := To_Unbounded_String (Java_Image (bufferedImage.getRGB (index, Integer (y))));
             automaticCacheInterface := ColorCacheFactory_Package.getInstance;
             colorCacheable := ColorCacheable_Access (automaticCacheInterface.get (colorInteger));
             color := colorCacheable.getColor;
             if (((color.getRed) < (GraphicsAnalysisUtil_Package.MAX)) and then ((color.getGreen) < (GraphicsAnalysisUtil_Package.MAX))) and then ((color.getBlue) < (GraphicsAnalysisUtil_Package.MAX)) then
                 null;
             else
-                return (index) - (min_x.intValue);
+                return (index) - (Integer (min_x));
             end if;
         end loop;
         return 0.0;

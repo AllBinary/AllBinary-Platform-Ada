@@ -84,7 +84,7 @@ package body views.generic_Id.shipping.ShippingMethodsView_Package is
                 tax.multiply (taxRate);
                 total.add (tax.toString);
                 shippingMethodNode.appendChild (ModDomHelper_Package.createNameValueNodes (document, ShippingMethodsData_Package.SHIPPINGCOST, shippingCost.toString));
-                shippingMethodNode.appendChild (ModDomHelper_Package.createNameValueNodes (document, ShippingMethodsData_Package.TAXRATE, taxRate.toString));
+                shippingMethodNode.appendChild (ModDomHelper_Package.createNameValueNodes (document, ShippingMethodsData_Package.TAXRATE, To_Unbounded_String (Java_Image (taxRate))));
                 shippingMethodNode.appendChild (ModDomHelper_Package.createNameValueNodes (document, ShippingMethodsData_Package.SUBTOTAL, subTotal.toString));
                 shippingMethodNode.appendChild (ModDomHelper_Package.createNameValueNodes (document, ShippingMethodsData_Package.TAX, tax.toString));
                 shippingMethodNode.appendChild (ModDomHelper_Package.createNameValueNodes (document, ShippingMethodsData_Package.TOTAL, total.toString));

@@ -42,7 +42,7 @@ package body org.allbinary.logic.control.sort.StringComparator_Package is
    begin
         string_Id := Java_Unbox (anyType);
         string2 := Java_Unbox (object2);
-        return string_Id.compareTo (string2);
+        return Java_Compare_To (string_Id, string2);
    end compare;
 
    procedure compare (This : in out StringComparator; anyType_Param : access Java_Object'Class; object2_Param : access Java_Object'Class) is

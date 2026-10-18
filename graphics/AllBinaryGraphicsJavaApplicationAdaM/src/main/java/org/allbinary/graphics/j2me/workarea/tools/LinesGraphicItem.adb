@@ -176,7 +176,7 @@ package body org.allbinary.graphics.j2me.workarea.tools.LinesGraphicItem_Package
         yNode := DomHelper_Package.getInstance.searchNodeList (PositionStrings_Package.getInstance.Y, list);
         yTextNode := yNode.getFirstChild;
         yInteger := yTextNode.getNodeValue;
-        point := PointFactory_Package.getInstance.createXY (xInteger.intValue, yInteger.intValue);
+        point := PointFactory_Package.getInstance.createXY (Integer (xInteger), Integer (yInteger));
         LinesGraphicItem'Class (This).addPoint (point);
    end addPoint;
 

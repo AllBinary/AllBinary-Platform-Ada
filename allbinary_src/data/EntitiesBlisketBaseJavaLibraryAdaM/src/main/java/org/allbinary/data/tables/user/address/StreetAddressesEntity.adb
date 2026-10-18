@@ -56,7 +56,7 @@ package body org.allbinary.data.tables.user.address.StreetAddressesEntity_Packag
         begin
             whereHashMap := StdUtil_Package.getInstance.createHashMap;
             whereHashMap.put (UserData_Package.USERNAME, Java_Box (This.userName));
-            whereHashMap.put (StreetAddressData_Package.ID, index.toString);
+            whereHashMap.put (StreetAddressData_Package.ID, To_Unbounded_String (Java_Image (index)));
             AbSqlBean (This).deleteWhere (whereHashMap);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
                 This.logUtil.putF (This.commonStrings.SUCCESS, StreetAddressesEntity_Access'(This'Unchecked_Access), To_Unbounded_String ("remove"));
@@ -191,7 +191,7 @@ package body org.allbinary.data.tables.user.address.StreetAddressesEntity_Packag
         begin
             keyAndValue := StdUtil_Package.getInstance.createHashMap;
             keyAndValue.put (UserData_Package.USERNAME, Java_Box (This.userName));
-            keyAndValue.put (StreetAddressData_Package.ID, Java_Box (index.toString));
+            keyAndValue.put (StreetAddressData_Package.ID, Java_Box (To_Unbounded_String (Java_Image (index))));
             addressHashMap := AbSqlBean (This).getRow (keyAndValue);
             if (addressHashMap) /= (null) then
                 return StreetAddress_Package.Create (addressHashMap);

@@ -46,7 +46,7 @@ package body org.allbinary.logic.io.AbIOSystem_Package is
 
    function isType (This : in out AbIOSystem; type_Id : Unbounded_String) return Boolean is
    begin
-        if (This.type_Id.compareTo (type_Id)) = (0) then
+        if (Java_Compare_To (This.type_Id, type_Id)) = (0) then
             return True;
         else
             return False;

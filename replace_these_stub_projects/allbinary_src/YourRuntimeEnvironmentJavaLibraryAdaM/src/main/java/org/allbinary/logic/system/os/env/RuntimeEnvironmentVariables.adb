@@ -61,11 +61,11 @@ package body org.allbinary.logic.system.os.env.RuntimeEnvironmentVariables_Packa
             windowsCommand := To_Unbounded_String ("cmd.exe /c set");
             solarisCommand := linuxCommand;
             operatingSystems := OperatingSystems_Package.getInstance;
-            if (osName.compareTo (operatingSystems.LINUX)) = (0) then
+            if (Java_Compare_To (osName, operatingSystems.LINUX)) = (0) then
                 process := Runtime_Package.getRuntime.exec (linuxCommand);
             elsif ((Index (osName, Java_Image (operatingSystems.WINDOWS)) - 1)) >= (0) then
                 process := Runtime_Package.getRuntime.exec (windowsCommand);
-            elsif (osName.compareTo (operatingSystems.SOLARIS)) = (0) then
+            elsif (Java_Compare_To (osName, operatingSystems.SOLARIS)) = (0) then
                 process := Runtime_Package.getRuntime.exec (solarisCommand);
             else
                 Java_Throw (Java_New_Exception ("Exception"));
@@ -225,11 +225,11 @@ package body org.allbinary.logic.system.os.env.RuntimeEnvironmentVariables_Packa
             operatingSystems := OperatingSystems_Package.getInstance;
             osName := operatingSystemInterface.getName;
             windowsCommand := To_Unbounded_String ("cmd.exe /c set") & var & To_Unbounded_String ("=") & val;
-            if (osName.compareTo (operatingSystems.LINUX)) = (0) then
+            if (Java_Compare_To (osName, operatingSystems.LINUX)) = (0) then
                 Java_Throw (Java_New_Exception ("Exception"));
             elsif ((Index (osName, Java_Image (operatingSystems.WINDOWS)) - 1)) >= (0) then
                 process := Runtime_Package.getRuntime.exec (windowsCommand);
-            elsif (osName.compareTo (operatingSystems.SOLARIS)) = (0) then
+            elsif (Java_Compare_To (osName, operatingSystems.SOLARIS)) = (0) then
                 Java_Throw (Java_New_Exception ("Exception"));
             else
                 Java_Throw (Java_New_Exception ("Exception"));

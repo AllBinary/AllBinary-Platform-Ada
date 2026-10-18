@@ -80,7 +80,7 @@ package body org.allbinary.business.user.commerce.shipping.ShippingMethodsFactor
             This.shippingVector.add (shippingMethodInterface);
             defaultShippingMethodNameNode := DomSearchHelper_Package.getNode (ShippingMethodData_Package.DEFAULT, shippingMethodNameNode.getChildNodes);
             defaultShippingMethodNameNodeValue := DomNodeHelper_Package.getTextNodeValue (defaultShippingMethodNameNode);
-            if ((defaultShippingMethodNameNodeValue) /= (Null_Unbounded_String)) and then ((defaultShippingMethodNameNodeValue.compareTo (ShippingMethodData_Package.DEFAULT)) = (0)) then
+            if ((defaultShippingMethodNameNodeValue) /= (Null_Unbounded_String)) and then ((Java_Compare_To (defaultShippingMethodNameNodeValue, ShippingMethodData_Package.DEFAULT)) = (0)) then
                 This.defaultShippingMethodInterface := shippingMethodInterface;
             end if;
         end loop;

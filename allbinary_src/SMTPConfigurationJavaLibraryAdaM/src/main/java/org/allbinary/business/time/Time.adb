@@ -55,7 +55,7 @@ package body org.allbinary.business.time.Time_Package is
 
    function getlong (This : in out Time) return Long_Long_Integer is
    begin
-        return This.timeLong.longValue;
+        return Long_Long_Integer (This.timeLong);
    end getlong;
 
    function toString (This : in out Time) return Unbounded_String is

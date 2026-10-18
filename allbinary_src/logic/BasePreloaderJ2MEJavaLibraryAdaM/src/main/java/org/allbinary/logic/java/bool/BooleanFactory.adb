@@ -20,8 +20,8 @@ package body org.allbinary.logic.java.bool.BooleanFactory_Package is
       null;
       This.TRUE := True;
       This.FALSE := False;
-      This.TRUE_STRING := This.TRUE.toString;
-      This.FALSE_STRING := This.FALSE.toString;
+      This.TRUE_STRING := To_Unbounded_String (Java_Image (This.TRUE));
+      This.FALSE_STRING := To_Unbounded_String (Java_Image (This.FALSE));
       This.YES := To_Unbounded_String ("yes");
       This.NO := To_Unbounded_String ("no");
    end Initialize_Fields;

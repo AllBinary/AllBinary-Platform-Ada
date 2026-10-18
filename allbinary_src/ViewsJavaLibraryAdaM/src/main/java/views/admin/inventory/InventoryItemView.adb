@@ -152,7 +152,7 @@ package body views.admin.inventory.InventoryItemView_Package is
         size := fieldNameArray'Length;
         for index in 0 .. (size) - 1 loop
             fieldName := Java_Unbox (fieldNameArray (index));
-            if (fieldName.compareTo (This.basicItemData.IMAGE)) = (0) then
+            if (Java_Compare_To (fieldName, This.basicItemData.IMAGE)) = (0) then
                 storeFrontInterface := StoreFrontFactory_Package.getInstance (InventoryItemView'Class (This).getWeblisketSession.getStoreName);
                 inventoryUploadMediaUtil := InventoryUploadMediaUtil_Package.Create (storeFrontInterface, This.itemInterface);
                 fileItem := FileItem_Access (InventoryItemView'Class (This).getRequestHashMap.get (This.basicItemData.IMAGE));

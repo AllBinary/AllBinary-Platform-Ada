@@ -62,7 +62,7 @@ package body org.allbinary.business.context.modules.storefront.statistics.users.
         if (numberOfUsersForRoleLong) = (null) then
             numberOfUsersForRoleLong := 0;
         end if;
-        return (numberOfUsersForRoleLong.longValue) + (1);
+        return (Long_Long_Integer (numberOfUsersForRoleLong)) + (1);
    end getNewTotal;
 
    function getNumberOfUsers (This : in out StoreFrontUsersStatistics) return Long_Long_Integer is
@@ -95,7 +95,7 @@ package body org.allbinary.business.context.modules.storefront.statistics.users.
         for index in 0 .. (size) - 1 loop
             nextUserRole := UserRole_Access (userRoleArray (index));
             totalForRole := Long_Long_Integer (This.totalUsersByRoleHashMap.get (nextUserRole));
-            hashMap.put (Java_Box (nextUserRole.toString), Java_Box (totalForRole.toString));
+            hashMap.put (Java_Box (nextUserRole.toString), Java_Box (To_Unbounded_String (Java_Image (totalForRole))));
         end loop;
         return hashMap;
    end toHashMap;

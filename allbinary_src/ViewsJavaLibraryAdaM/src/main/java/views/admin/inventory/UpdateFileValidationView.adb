@@ -50,7 +50,7 @@ package body views.admin.inventory.UpdateFileValidationView_Package is
    begin
         begin
             command := Java_Unbox (UpdateFileValidationView'Class (This).getRequestHashMap.get (GLOBALS2.ADMINCOMMAND));
-            if ((command) = (Null_Unbounded_String)) or else ((command.compareTo (UpdateFileValidationView_Package.UPDATEPRODUCT)) /= (0)) then
+            if ((command) = (Null_Unbounded_String)) or else ((Java_Compare_To (command, UpdateFileValidationView_Package.UPDATEPRODUCT)) /= (0)) then
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
                     This.logUtil.putF (To_Unbounded_String ("Invalid AdminCommand=") & command, UpdateFileValidationView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
                 end if;
@@ -128,7 +128,7 @@ package body views.admin.inventory.UpdateFileValidationView_Package is
    begin
         stringBuffer := StringMaker_Package.Create;
         command := Java_Unbox (UpdateFileValidationView'Class (This).getRequestHashMap.get (GLOBALS2.ADMINCOMMAND));
-        if ((command) = (Null_Unbounded_String)) or else ((command.compareTo (UpdateFileValidationView_Package.UPDATEPRODUCT)) /= (0)) then
+        if ((command) = (Null_Unbounded_String)) or else ((Java_Compare_To (command, UpdateFileValidationView_Package.UPDATEPRODUCT)) /= (0)) then
             return CommonSeps_Package.getInstance.SPACE;
         end if;
         stringBuffer.append (BasicItemValidation_Package.Create (This.itemInterface).validationInfo);
@@ -195,7 +195,7 @@ package body views.admin.inventory.UpdateFileValidationView_Package is
    begin
         fileData := FileData_Package.getInstance;
         if (size) > (fileData.MINIMAGEFILESIZE) then
-            if (fileItemFieldName.compareTo (This.basicItemData.IMAGE)) = (0) then
+            if (Java_Compare_To (fileItemFieldName, This.basicItemData.IMAGE)) = (0) then
                 if (size) < (fileData.MAXIMAGEFILESIZE) then
                     if not (StringValidationUtil_Package.getInstance.isValidRequired (fileName, fileData.MINLEN, fileData.MAXLEN)) then
                         stringBuffer.append (To_Unbounded_String ("FileName must be >"));

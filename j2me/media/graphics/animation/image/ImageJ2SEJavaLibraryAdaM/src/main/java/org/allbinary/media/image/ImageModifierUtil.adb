@@ -86,7 +86,7 @@ package body org.allbinary.media.image.ImageModifierUtil_Package is
                 gx := colorModel.getGreen (dataElements);
                 bx := colorModel.getBlue (dataElements);
                 if (((rx) /= (0)) or else ((gx) /= (0))) or else ((bx) /= (0)) then
-                    newBufferedImage.setRGB (index, index2, Java_Or (Java_Or (Java_Or ((Java_Shift_Left (ax, 24)), (Java_Shift_Left (r, 16))), (Java_Shift_Left (g, 8))), Integer ((b))));
+                    newBufferedImage.setRGB (index, index2, Java_Or (Java_Or (Java_Or ((Java_Shift_Left (ax, 24)), (Java_Shift_Left (Integer (r), 16))), (Java_Shift_Left (Integer (g), 8))), Integer (Integer ((b)))));
                 end if;
             end loop;
         end loop;
@@ -160,7 +160,7 @@ package body org.allbinary.media.image.ImageModifierUtil_Package is
         for index in 0 .. (width) - 1 loop
             for index2 in 0 .. (height) - 1 loop
                 raster.getPixel (index, index2, This.colorArray);
-                This.colorArray (0) := Java_And (Integer (alpha), This.colorArray (0));
+                This.colorArray (0) := Java_And (Integer (Integer (alpha)), This.colorArray (0));
                 raster.setPixel (index, index2, This.colorArray);
             end loop;
         end loop;

@@ -149,7 +149,7 @@ package body org.allbinary.business.init.InstallerInfo_Package is
    function isValid (This : in out InstallerInfo; userName : Unbounded_String; password : Unbounded_String) return Boolean is
    begin
         InstallerInfo'Class (This).updateIfNeeded;
-        if ((((userName) /= (Null_Unbounded_String)) and then ((userName.compareTo (userName)) = (0))) and then ((password) /= (Null_Unbounded_String))) and then ((password.compareTo (password)) = (0)) then
+        if ((((userName) /= (Null_Unbounded_String)) and then ((Java_Compare_To (userName, userName)) = (0))) and then ((password) /= (Null_Unbounded_String))) and then ((Java_Compare_To (password, password)) = (0)) then
             return True;
         end if;
         return False;

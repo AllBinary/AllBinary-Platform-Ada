@@ -54,7 +54,7 @@ package body org.allbinary.logic.java.help.JavaHelpSetNotifier_Package is
         urlArray := JavaHelpSetNotifier_Package.vector.toArray;
         for i in 0 .. (size) - 1 loop
             nextURL := URL_Access (urlArray (i));
-            if (url.toString.compareTo (nextURL.toString)) = (0) then
+            if (Java_Compare_To (url.toString, nextURL.toString)) = (0) then
                 isNotified := True;
             end if;
         end loop;

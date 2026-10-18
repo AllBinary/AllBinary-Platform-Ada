@@ -104,7 +104,7 @@ package body org.allbinary.logic.visual.transform.template.customizer.hedges.hea
             else
                 This.logo.processLogoFile;
             end if;
-            if (not (titleValid.booleanValue)) and then (not (logoValid.booleanValue)) then
+            if (not (titleValid)) and then (not (logoValid)) then
                 valid := False;
             end if;
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
@@ -141,10 +141,10 @@ package body org.allbinary.logic.visual.transform.template.customizer.hedges.hea
             if not (This.logo.isValid.booleanValue) then
                 logoValid := False;
             end if;
-            if (not (titleValid.booleanValue)) and then (not (logoValid.booleanValue)) then
+            if (not (titleValid)) and then (not (logoValid)) then
                 valid := False;
             end if;
-            if not (valid.booleanValue) then
+            if not (valid) then
                 stringBuffer.append (To_Unbounded_String ("Include a title and/or logo for the header."));
             end if;
             return stringBuffer.toString;

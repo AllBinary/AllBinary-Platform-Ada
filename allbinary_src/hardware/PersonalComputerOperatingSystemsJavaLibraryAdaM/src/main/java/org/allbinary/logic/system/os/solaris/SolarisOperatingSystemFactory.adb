@@ -50,7 +50,7 @@ package body org.allbinary.logic.system.os.solaris.SolarisOperatingSystemFactory
             operatingSystems := OperatingSystems_Package.getInstance;
             osName := SystemProperties_Package.getInstance.getName;
             operatingSystemInterface := null;
-            if (osName.compareTo (operatingSystems.SOLARIS)) = (0) then
+            if (Java_Compare_To (osName, operatingSystems.SOLARIS)) = (0) then
                 operatingSystemInterface := SolarisOS_Package.Create;
             else
                 if operatingSystems.isUnknownSpecificOSAllowed then

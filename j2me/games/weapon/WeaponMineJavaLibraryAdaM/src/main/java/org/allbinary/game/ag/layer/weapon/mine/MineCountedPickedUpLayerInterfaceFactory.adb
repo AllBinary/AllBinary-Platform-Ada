@@ -63,7 +63,7 @@ package body org.allbinary.game.ag.layer.weapon.mine.MineCountedPickedUpLayerInt
         sourceLayerInterface := AllBinaryLayer_Access (hashtable.get (Java_Object_Access (This.smallIntegerSingletonFactory.getAt (0))));
         angle := Integer (hashtable.get (Java_Object_Access (This.smallIntegerSingletonFactory.getAt (1))));
         scoreableInterface := ScoreableInterface_Access (sourceLayerInterface);
-        return This.weaponLayerCircularStaticPool.getInstanceWeaponLayer (sourceLayerInterface, x, y, z, Integer (angle.intValue), 0, This.weaponProperties, scoreableInterface);
+        return This.weaponLayerCircularStaticPool.getInstanceWeaponLayer (sourceLayerInterface, x, y, z, Integer (Integer (angle)), 0, This.weaponProperties, scoreableInterface);
    end getNextInstance;
 
    procedure getNextInstance (This : in out MineCountedPickedUpLayerInterfaceFactory; hashtable_Param : access ABHashtable_Package.ABHashtable'Class; x : Integer; y : Integer; z : Integer) is

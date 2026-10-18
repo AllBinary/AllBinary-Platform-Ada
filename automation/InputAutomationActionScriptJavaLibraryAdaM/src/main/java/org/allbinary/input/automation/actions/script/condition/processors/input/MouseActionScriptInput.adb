@@ -59,7 +59,7 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
                     mouseYNode := DomSearchHelper_Package.getNode (MouseActionScriptInputData_Package.MOVE_Y, childNode.getChildNodes);
                     mouseYString := DomNodeHelper_Package.getTextNodeValue (mouseYNode);
                     mouseYInteger := To_Unbounded_String (Java_Image (mouseYString));
-                    newPoint := Point_Package.Create (mouseXInteger.intValue, mouseYInteger.intValue);
+                    newPoint := Point_Package.Create (Integer (mouseXInteger), Integer (mouseYInteger));
                     MouseActionScriptInput'Class (This).setPoint (newPoint);
                 else
                     Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Action Script Input Unknown Node")));

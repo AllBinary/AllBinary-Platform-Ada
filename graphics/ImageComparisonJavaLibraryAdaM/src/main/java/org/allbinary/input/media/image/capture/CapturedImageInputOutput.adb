@@ -57,7 +57,7 @@ package body org.allbinary.input.media.image.capture.CapturedImageInputOutput_Pa
         imageUtil := ImageUtil_Package.getInstance;
         filePathStringBuffer := StringMaker_Package.Create;
         filePathStringBuffer.append (ImageOutputData_Package.SAVE_PATH);
-        filePathStringBuffer.append (LongUtil_Package.fillIn (frame.toString));
+        filePathStringBuffer.append (LongUtil_Package.fillIn (To_Unbounded_String (Java_Image (frame))));
         filePathStringBuffer.append (MediaDataFactory_Package.getInstance.JPG.getExtension);
         filePath := filePathStringBuffer.toString;
         This.logUtil.putF ((To_Unbounded_String ("Image File Path: ") & filePath & imageUtil.toString (bufferedImage)), CapturedImageInputOutput_Access'(This'Unchecked_Access), commonStrings.SAVE);

@@ -46,21 +46,21 @@ package body org.allbinary.logic.system.hardware.linux.PCComponentFactory_Packag
    begin
         begin
             if (component) /= (Null_Unbounded_String) then
-                if (component.compareTo (This.componentFactory.ETHERNET.toString)) = (0) then
+                if (Java_Compare_To (component, This.componentFactory.ETHERNET.toString)) = (0) then
                     return HardwareComponentInterface_Access (Ethernet_Package.Create (componentData));
-                elsif (component.compareTo (This.componentFactory.BRIDGE.toString)) = (0) then
+                elsif (Java_Compare_To (component, This.componentFactory.BRIDGE.toString)) = (0) then
                     return HardwareComponentInterface_Access (Bridge_Package.Create (componentData));
-                elsif (component.compareTo (This.componentFactory.IDE.toString)) = (0) then
+                elsif (Java_Compare_To (component, This.componentFactory.IDE.toString)) = (0) then
                     return HardwareComponentInterface_Access (HardDriveController_Package.Create (componentData));
-                elsif (component.compareTo (This.componentFactory.MULTIMEDIA.toString)) = (0) then
+                elsif (Java_Compare_To (component, This.componentFactory.MULTIMEDIA.toString)) = (0) then
                     return HardwareComponentInterface_Access (Media_Package.Create (componentData));
-                elsif (component.compareTo (This.componentFactory.SCSI.toString)) = (0) then
+                elsif (Java_Compare_To (component, This.componentFactory.SCSI.toString)) = (0) then
                     return HardwareComponentInterface_Access (HardDriveController_Package.Create (componentData));
-                elsif (component.compareTo (This.componentFactory.USB.toString)) = (0) then
+                elsif (Java_Compare_To (component, This.componentFactory.USB.toString)) = (0) then
                     return HardwareComponentInterface_Access (Usb_Package.Create (componentData));
-                elsif (component.compareTo (This.componentFactory.VGA.toString)) = (0) then
+                elsif (Java_Compare_To (component, This.componentFactory.VGA.toString)) = (0) then
                     return HardwareComponentInterface_Access (Video_Package.Create (componentData));
-                elsif (component.compareTo (This.componentFactory.PCI.toString)) = (0) then
+                elsif (Java_Compare_To (component, This.componentFactory.PCI.toString)) = (0) then
                     return HardwareComponentInterface_Access (PCI_Package.Create (componentData));
                 end if;
             end if;
@@ -95,7 +95,7 @@ package body org.allbinary.logic.system.hardware.linux.PCComponentFactory_Packag
             return This.componentFactory.USB.toString;
         elsif ((Index (component, Java_Image (This.componentFactory.VGA.toString)) - 1)) >= (0) then
             return This.componentFactory.VGA.toString;
-        elsif (component.compareTo (This.componentFactory.PCI.toString)) = (0) then
+        elsif (Java_Compare_To (component, This.componentFactory.PCI.toString)) = (0) then
             return This.componentFactory.PCI.toString;
         end if;
         return This.componentFactory.UNKNOWN.toString;

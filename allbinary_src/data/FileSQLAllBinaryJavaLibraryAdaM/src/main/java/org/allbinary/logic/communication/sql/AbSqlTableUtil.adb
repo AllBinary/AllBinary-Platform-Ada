@@ -110,7 +110,7 @@ package body org.allbinary.logic.communication.sql.AbSqlTableUtil_Package is
         begin
             calendar := Calendar_Package.getInstance;
             timeLong := calendar.getTimeInMillis;
-            time := timeLong.toString;
+            time := To_Unbounded_String (Java_Image (timeLong));
             stringBuffer := StringMaker_Package.Create;
             fileName := tableName & This.EXTENSION;
             stringBuffer.append (backupPath);

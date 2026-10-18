@@ -100,9 +100,9 @@ package body admin.tags.StoreFrontTag_Package is
             if (This.command) /= (Null_Unbounded_String) then
                 This.propertiesHashMap := StdUtil_Package.getInstance.createHashMap;
                 This.propertiesHashMap.put (StoreFrontData_Package.getInstance.NAME, Java_Box (This.storeName));
-                if (This.command.compareTo (org_Package.allbinary.globals.GLOBALS2.GETCURRENTLOCATION)) = (0) then
+                if (Java_Compare_To (This.command, org_Package.allbinary.globals.GLOBALS2.GETCURRENTLOCATION)) = (0) then
                     This.pageContext.getOut.print (StoreFrontTag'Class (This).getCurrentLocation);
-                elsif (This.command.compareTo (org_Package.allbinary.globals.GLOBALS2.GETCURRENTHOMELOCATION)) = (0) then
+                elsif (Java_Compare_To (This.command, org_Package.allbinary.globals.GLOBALS2.GETCURRENTHOMELOCATION)) = (0) then
                     This.pageContext.getOut.print (StoreFrontTag'Class (This).getCurrentHomeLocation);
                 end if;
             end if;

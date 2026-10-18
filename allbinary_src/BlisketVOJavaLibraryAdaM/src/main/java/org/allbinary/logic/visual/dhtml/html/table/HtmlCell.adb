@@ -74,7 +74,7 @@ package body org.allbinary.logic.visual.dhtml.html.table.HtmlCell_Package is
         for i in 0 .. (attributeSize) - 1 loop
             key := Java_Unbox (attributeKeys (i));
             value := Java_Unbox (This.otherAttributes.get (key));
-            if ((value) /= (Null_Unbounded_String)) and then ((value.compareTo (stringUtil.EMPTY_STRING)) /= (0)) then
+            if ((value) /= (Null_Unbounded_String)) and then ((Java_Compare_To (value, stringUtil.EMPTY_STRING)) /= (0)) then
                 result := result & key;
                 result := result & To_Unbounded_String ("=""");
                 result := result & value;

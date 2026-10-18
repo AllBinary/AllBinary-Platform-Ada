@@ -37,7 +37,7 @@ package body org.allbinary.input.automation.osgi.DesktopBundle_Package is
             for index in 0 .. (bundleArray'Length) - 1 loop
                 bundle := bundleArray (index);
                 symbolicName := bundle.getSymbolicName;
-                if (symbolicName.compareTo (DesktopBundle_Package.DESKTOP_SYMBOLIC_NAME)) = (0) then
+                if (Java_Compare_To (symbolicName, DesktopBundle_Package.DESKTOP_SYMBOLIC_NAME)) = (0) then
                     This.bundle := bundle;
                 end if;
             end loop;

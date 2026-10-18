@@ -191,7 +191,7 @@ package body org.allbinary.logic.communication.sql.AbSqlBean_Package is
                 for i in 0 .. (size2) - 1 loop
                     columnName := keyArray2 (i).toString;
                     field := rset.getObject (columnName).toString;
-                    if (field.compareTo (Java_Unbox (columnsAndValues.get (Java_Box (columnName))))) /= (0) then
+                    if (Java_Compare_To (field, Java_Unbox (columnsAndValues.get (Java_Box (columnName))))) /= (0) then
                         return org_Package.allbinary.globals.GLOBALS2.NOTASUBSET;
                     end if;
                 end loop;

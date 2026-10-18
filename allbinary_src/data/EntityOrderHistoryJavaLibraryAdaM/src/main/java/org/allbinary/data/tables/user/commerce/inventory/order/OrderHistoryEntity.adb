@@ -191,9 +191,9 @@ package body org.allbinary.data.tables.user.commerce.inventory.order.OrderHistor
             time := Java_New_String (calendar.getTimeInMillis.toString);
             updateHashMap := StdUtil_Package.getInstance.createHashMap;
             updateHashMap.put (OrderHistoryData_Package.STATUS, Java_Box (status));
-            if (status.compareTo (OrderHistoryData_Package.CANCELLED)) = (0) then
+            if (Java_Compare_To (status, OrderHistoryData_Package.CANCELLED)) = (0) then
                 updateHashMap.put (OrderHistoryData_Package.CANCELDATE, Java_Box (time));
-            elsif (status.compareTo (OrderHistoryData_Package.SHIPPED)) = (0) then
+            elsif (Java_Compare_To (status, OrderHistoryData_Package.SHIPPED)) = (0) then
                 updateHashMap.put (OrderHistoryData_Package.SHIPPEDDATE, Java_Box (time));
             end if;
             AbSqlBean (This).updateWhere (OrderData_Package.ID, orderId, updateHashMap);

@@ -114,7 +114,7 @@ package body admin.taghelpers.MultipartRequestParamForwardHelper_Package is
    begin
         hashMap := This.requestMapInterface.getRequestHashMap;
         requestCommand := Java_Unbox (hashMap.get (GLOBALS2.ADMINCOMMAND));
-        if (StringValidationUtil_Package.getInstance.isEmpty (This.command)) or else (((not (StringValidationUtil_Package.getInstance.isEmpty (requestCommand))) and then ((This.command.compareTo (requestCommand)) = (0)))) then
+        if (StringValidationUtil_Package.getInstance.isEmpty (This.command)) or else (((not (StringValidationUtil_Package.getInstance.isEmpty (requestCommand))) and then ((Java_Compare_To (This.command, requestCommand)) = (0)))) then
             return True;
         end if;
         return False;

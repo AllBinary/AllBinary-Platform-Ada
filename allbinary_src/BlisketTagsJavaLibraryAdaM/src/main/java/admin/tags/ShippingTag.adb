@@ -80,7 +80,7 @@ package body admin.tags.ShippingTag_Package is
             if (This.command) /= (Null_Unbounded_String) then
                 This.propertiesHashMap := StdUtil_Package.getInstance.createHashMap;
                 This.propertiesHashMap.put (StoreFrontData_Package.getInstance.NAME, Java_Box (This.storeName));
-                if (This.command.compareTo (org_Package.allbinary.globals.GLOBALS2.SETSHIPPINGTYPE)) = (0) then
+                if (Java_Compare_To (This.command, org_Package.allbinary.globals.GLOBALS2.SETSHIPPINGTYPE)) = (0) then
                     ShippingTag'Class (This).setShippingType;
                 end if;
             end if;

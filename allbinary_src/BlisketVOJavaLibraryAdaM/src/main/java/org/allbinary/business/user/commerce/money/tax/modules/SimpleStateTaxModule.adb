@@ -79,8 +79,8 @@ package body org.allbinary.business.user.commerce.money.tax.modules.SimpleStateT
             streetAddressNode := DomSearchHelper_Package.getNode (StreetAddressData_Package.NAME, taxNodeChildren);
             taxableStreetAddress := StreetAddress_Package.Create (streetAddressNode);
             stringValidationUtil := StringValidationUtil_Package.getInstance;
-            if ((not (stringValidationUtil.isEmpty (country))) and then (not (stringValidationUtil.isEmpty (taxableStreetAddress.getCountry)))) and then ((country.compareTo (taxableStreetAddress.getCountry)) = (0)) then
-                if (((state) /= (Null_Unbounded_String)) and then ((taxableStreetAddress.getState) /= (null))) and then ((state.compareTo (taxableStreetAddress.getState)) = (0)) then
+            if ((not (stringValidationUtil.isEmpty (country))) and then (not (stringValidationUtil.isEmpty (taxableStreetAddress.getCountry)))) and then ((Java_Compare_To (country, taxableStreetAddress.getCountry)) = (0)) then
+                if (((state) /= (Null_Unbounded_String)) and then ((taxableStreetAddress.getState) /= (null))) and then ((Java_Compare_To (state, taxableStreetAddress.getState)) = (0)) then
                     rateNode := DomSearchHelper_Package.getNode (TaxData_Package.RATE, taxNodeChildren);
                     taxRate := DomNodeHelper_Package.getTextNodeValue (rateNode);
                     taxRateFloat := (taxRate.floatValue) * (0.01);
@@ -139,7 +139,7 @@ package body org.allbinary.business.user.commerce.money.tax.modules.SimpleStateT
                 if ((not (stringValidationUtil.isEmpty (country))) and then (not (stringValidationUtil.isEmpty (taxableStreetAddress.getCountry)))) and then ((taxableStreetAddress.getCountry.compareTo (This.ALL_Id)) = (0)) then
                     return True;
                 end if;
-                if ((not (stringValidationUtil.isEmpty (country))) and then (not (stringValidationUtil.isEmpty (taxableStreetAddress.getCountry)))) and then ((country.compareTo (taxableStreetAddress.getCountry)) = (0)) then
+                if ((not (stringValidationUtil.isEmpty (country))) and then (not (stringValidationUtil.isEmpty (taxableStreetAddress.getCountry)))) and then ((Java_Compare_To (country, taxableStreetAddress.getCountry)) = (0)) then
                     state := This.streetAddress.getState;
                     if (state) /= (Null_Unbounded_String) then
                         return True;

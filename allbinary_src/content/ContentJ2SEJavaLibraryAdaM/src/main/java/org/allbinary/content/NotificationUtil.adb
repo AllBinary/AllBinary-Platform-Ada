@@ -50,7 +50,7 @@ package body org.allbinary.content.NotificationUtil_Package is
         context := ResourceUtil_Package.getInstance.getContext;
         intent := CommandUriAction_Package.getInstance.getIntent (command);
         integer_Id := ResourceUtil_Package.getInstance.getResourceId (resource);
-        notification := Notification_Package.Create (integer_Id.intValue, message, Java_Current_Time_Millis);
+        notification := Notification_Package.Create (Integer (integer_Id), message, Java_Current_Time_Millis);
         pendingIntent := PendingIntent_Package.getActivity (context, 0, intent, 0);
         notification.setLatestEventInfo (context, command.getLabel, message, pendingIntent);
         This.notificationManager.notify (TsUtil_Package.getInstance.hashCode (command), notification);

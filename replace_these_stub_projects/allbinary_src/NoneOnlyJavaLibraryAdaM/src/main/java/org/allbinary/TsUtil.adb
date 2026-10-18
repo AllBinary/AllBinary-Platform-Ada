@@ -61,7 +61,7 @@ package body org.allbinary.TsUtil_Package is
 
    function compareTo (This : in out TsUtil; a : Unbounded_String; b : Unbounded_String) return Integer is
    begin
-        return a.compareTo (b);
+        return Java_Compare_To (a, b);
    end compareTo;
 
    function equalIgnoreCase (This : in out TsUtil; a : Unbounded_String; b : Unbounded_String) return Boolean is

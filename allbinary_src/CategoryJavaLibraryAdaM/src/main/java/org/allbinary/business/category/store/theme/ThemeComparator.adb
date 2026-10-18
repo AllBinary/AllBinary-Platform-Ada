@@ -42,7 +42,7 @@ package body org.allbinary.business.category.store.theme.ThemeComparator_Package
    begin
         string_Id := Java_Unbox (anyType);
         string2 := Java_Unbox (object2);
-        return string_Id.compareTo (string2);
+        return Java_Compare_To (string_Id, string2);
    end compare;
 
    procedure compare (This : in out ThemeComparator; anyType_Param : access Java_Object'Class; object2_Param : access Java_Object'Class) is

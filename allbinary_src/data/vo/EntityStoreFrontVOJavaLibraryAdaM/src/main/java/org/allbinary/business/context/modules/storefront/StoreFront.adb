@@ -113,7 +113,7 @@ package body org.allbinary.business.context.modules.storefront.StoreFront_Packag
 
    function isColumn (This : in out StoreFront; columnName : Unbounded_String) return Boolean is
    begin
-        if ((columnName.compareTo (StoreFrontData_Package.getInstance.NAME)) = (0)) or else ((columnName.compareTo (UserData_Package.MAINEMAIL)) = (0)) then
+        if ((Java_Compare_To (columnName, StoreFrontData_Package.getInstance.NAME)) = (0)) or else ((Java_Compare_To (columnName, UserData_Package.MAINEMAIL)) = (0)) then
             return True;
         else
             return False;
@@ -203,7 +203,7 @@ package body org.allbinary.business.context.modules.storefront.StoreFront_Packag
         else
             isEscapedCharactersContained := False;
             storeNameEscaped := StringEscapeUtils_Package.escapeHtml3 (This.name);
-            if (This.name.compareTo (storeNameEscaped)) /= (0) then
+            if (Java_Compare_To (This.name, storeNameEscaped)) /= (0) then
                 isEscapedCharactersContained := True;
             end if;
             stringValidationUtil := StringValidationUtil_Package.getInstance;
@@ -299,7 +299,7 @@ package body org.allbinary.business.context.modules.storefront.StoreFront_Packag
         if not (stringValidationUtil.isValidNotRequired (This.testFtpPassword, This.MINCHAR, This.MAXCHAR)) then
             valid := False;
         end if;
-        if (valid.booleanValue) = (True) then
+        if (valid) = (True) then
             return True;
         else
             return False;

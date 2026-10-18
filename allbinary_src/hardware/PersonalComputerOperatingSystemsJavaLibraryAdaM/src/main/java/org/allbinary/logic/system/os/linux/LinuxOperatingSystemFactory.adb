@@ -50,7 +50,7 @@ package body org.allbinary.logic.system.os.linux.LinuxOperatingSystemFactory_Pac
             operatingSystems := OperatingSystems_Package.getInstance;
             osName := SystemProperties_Package.getInstance.getName;
             operatingSystemInterface := null;
-            if (osName.compareTo (operatingSystems.LINUX)) = (0) then
+            if (Java_Compare_To (osName, operatingSystems.LINUX)) = (0) then
                 operatingSystemInterface := LinuxOS_Package.Create;
             else
                 if operatingSystems.isUnknownSpecificOSAllowed then

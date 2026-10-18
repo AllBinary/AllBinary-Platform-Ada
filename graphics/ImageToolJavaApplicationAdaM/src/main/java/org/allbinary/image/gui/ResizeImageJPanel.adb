@@ -92,9 +92,9 @@ package body org.allbinary.image.gui.ResizeImageJPanel_Package is
 --                      imageProcessorInput := ResizeImageJPanel'Class (This).getImageProcessorInput;
 --                      files := imageProcessorInput.getFiles;
 --                      generatedBufferedImageArray := null;
---                      if (percentAsFloat.intValue) /= (-(1)) then
+--                      if (Integer (percentAsFloat)) /= (-(1)) then
 --                          generatedBufferedImageArray := imageUtil.createBufferedImage2 (imageProcessorInput.getBufferedImageArray, percentAsFloat, True);
---                      elsif (percent.intValue) /= (-(1)) then
+--                      elsif (Integer (percent)) /= (-(1)) then
 --                          generatedBufferedImageArray := imageUtil.createBufferedImageForResize (imageProcessorInput.getBufferedImageArray, percent, True);
 --                      else
 --                          width := To_Unbounded_String (Java_Image (Java_Unbox (This.jTextField1.getText)));

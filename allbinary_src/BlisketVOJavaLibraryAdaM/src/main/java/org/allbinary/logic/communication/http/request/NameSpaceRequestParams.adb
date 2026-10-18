@@ -116,7 +116,7 @@ package body org.allbinary.logic.communication.http.request.NameSpaceRequestPara
         multiElementPackage := Unbounded_Slice (packageName, (0) + 1, beginIndex);
         selectedValue := nameSpaceRequestParam.getValue;
         propertyValue := Java_Unbox (packagePropertiesHashMap.get (DomData_Package.VALUE));
-        if (propertyValue.compareTo (NameSpaceRequestParamData_Package.VALUE)) /= (0) then
+        if (Java_Compare_To (propertyValue, NameSpaceRequestParamData_Package.VALUE)) /= (0) then
             selectedValue := propertyValue;
         end if;
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.HTTPREQUEST) then
@@ -184,7 +184,7 @@ package body org.allbinary.logic.communication.http.request.NameSpaceRequestPara
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.HTTPREQUEST) then
                     This.logUtil.putF (To_Unbounded_String ("" & ASCII.LF & "If property: """) & nextPropertyName & To_Unbounded_String (" is the same as:" & ASCII.LF & "") & To_Unbounded_String ("Node: ") & Java_Image (node.getNodeName) & To_Unbounded_String (" then: ") & propertyValue & To_Unbounded_String ("==") & existingElementNodeTextNodeValue, NameSpaceRequestParams_Access'(This'Unchecked_Access), To_Unbounded_String ("addNewProperties"));
                 end if;
-                if (propertyValue.compareTo (existingElementNodeTextNodeValue)) /= (0) then
+                if (Java_Compare_To (propertyValue, existingElementNodeTextNodeValue)) /= (0) then
                     if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.HTTPREQUEST) then
                         This.logUtil.putF (To_Unbounded_String ("At least one Property from NameSpaceRequest Package was different from Node"), NameSpaceRequestParams_Access'(This'Unchecked_Access), To_Unbounded_String ("addNewProperties"));
                     end if;
@@ -216,7 +216,7 @@ package body org.allbinary.logic.communication.http.request.NameSpaceRequestPara
         valueNode := DomSearchHelper_Package.getNodeNoThrow (DomData_Package.VALUE, node.getChildNodes);
         if (valueNode) /= (null) then
             existingElementNodeTextNodeValue := DomNodeHelper_Package.getTextNodeValue (valueNode);
-            if (propertyValue.compareTo (existingElementNodeTextNodeValue)) = (0) then
+            if (Java_Compare_To (propertyValue, existingElementNodeTextNodeValue)) = (0) then
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.HTTPREQUEST) then
                     This.logUtil.putF (To_Unbounded_String ("Value Node is the same"), NameSpaceRequestParams_Access'(This'Unchecked_Access), To_Unbounded_String ("isElementValueTextNodeEqual"));
                 end if;

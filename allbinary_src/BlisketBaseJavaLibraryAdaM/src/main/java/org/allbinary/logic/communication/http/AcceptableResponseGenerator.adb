@@ -61,7 +61,7 @@ package body org.allbinary.logic.communication.http.AcceptableResponseGenerator_
             if (acceptable) /= (Null_Unbounded_String) then
                 size := acceptableResponseUtil.size;
                 for index in 0 .. (size) - 1 loop
-                    if (acceptable.compareTo (acceptableResponseUtil.get (index))) = (0) then
+                    if (Java_Compare_To (acceptable, acceptableResponseUtil.get (index))) = (0) then
                         result := acceptableResponseUtil.getTagName (index);
                     end if;
                 end loop;

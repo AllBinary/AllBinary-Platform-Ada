@@ -150,7 +150,7 @@ package body org.allbinary.business.user.address.StreetAddress_Package is
         This.code := Java_Unbox (address.get (StreetAddressData_Package.CODE));
         This.country := Java_Unbox (address.get (StreetAddressData_Package.COUNTRY));
         def := Java_Unbox (address.get (StreetAddressData_Package.DEFAULT));
-        if ((def) /= (Null_Unbounded_String)) and then ((def.compareTo (StreetAddressData_Package.DEFAULT)) = (0)) then
+        if ((def) /= (Null_Unbounded_String)) and then ((Java_Compare_To (def, StreetAddressData_Package.DEFAULT)) = (0)) then
             This.isDefault_Field := True;
         else
             This.isDefault_Field := False;

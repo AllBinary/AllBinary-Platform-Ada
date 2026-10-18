@@ -51,7 +51,7 @@ package body org.allbinary.logic.java.byteutil.ByteUtil_Package is
         currentByte := 0;
         while (index) < (size) loop
             currentByte := array_Id (index);
-            bytes (index) := Short_Short_Integer ((Java_Xor (currentByte, mask)));
+            bytes (index) := Short_Short_Integer ((Java_Xor (Integer (currentByte), Integer (mask))));
             index := index + 1;
         end loop;
         return bytes;
@@ -66,7 +66,7 @@ package body org.allbinary.logic.java.byteutil.ByteUtil_Package is
         size := array_Id'Length;
         index := 0;
         while (index) < (size) loop
-            bytes (index) := Short_Short_Integer (Java_Not (array_Id (index)));
+            bytes (index) := Short_Short_Integer (Java_Not (Integer (array_Id (index))));
             index := index + 1;
         end loop;
         return bytes;

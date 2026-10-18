@@ -104,9 +104,9 @@ package body admin.tags.OrderTag_Package is
             if (This.command) /= (Null_Unbounded_String) then
                 This.propertiesHashMap := StdUtil_Package.getInstance.createHashMap;
                 This.propertiesHashMap.put (StoreFrontData_Package.getInstance.NAME, Java_Box (This.storeName));
-                if (This.command.compareTo (org_Package.allbinary.globals.GLOBALS2.PROCESS)) = (0) then
+                if (Java_Compare_To (This.command, org_Package.allbinary.globals.GLOBALS2.PROCESS)) = (0) then
                     OrderTag'Class (This).process;
-                elsif (This.command.compareTo (PaymentGatewayData_Package.NAME.toString)) = (0) then
+                elsif (Java_Compare_To (This.command, PaymentGatewayData_Package.NAME.toString)) = (0) then
                     if (OrderTag'Class (This).setPaymentGateway) = (True) then
                         return TagSupport_Package.EVAL_BODY_INCLUDE;
                     end if;

@@ -56,7 +56,7 @@ package body admin.taghelpers.OrderHistoryRequestHelper_Package is
       error : Unbounded_String;
    begin
         begin
-            if (This.groupId.compareTo (CommonPhoneStrings_Package.getInstance.ZERO)) /= (0) then
+            if (Java_Compare_To (This.groupId, CommonPhoneStrings_Package.getInstance.ZERO)) /= (0) then
                 if OrderItemsEntityFactory_Package.getInstance.isEverythingShipped (This.id) then
                     This.status := OrderHistoryData_Package.SHIPPED;
                 else

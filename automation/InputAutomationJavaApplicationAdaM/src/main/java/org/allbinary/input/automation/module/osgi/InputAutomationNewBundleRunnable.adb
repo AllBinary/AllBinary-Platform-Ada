@@ -168,7 +168,7 @@ package body org.allbinary.input.automation.module.osgi.InputAutomationNewBundle
         nextSymbolicName := Null_Unbounded_String;
         for index in 0 .. (size) - 1 loop
             nextSymbolicName := Java_Unbox (list.get (index));
-            if (nextSymbolicName.compareTo (symbolicName)) = (0) then
+            if (Java_Compare_To (nextSymbolicName, symbolicName)) = (0) then
                 return True;
             end if;
         end loop;

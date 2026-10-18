@@ -64,7 +64,7 @@ package body org.allbinary.media.audio.Sounds_Package is
             soundInterface := soundInterfaceArray (i);
             if (soundInterface) /= (null) then
                 indexInteger := smallIntegerSingletonFactory.getAt (i);
-                indexString := indexInteger.toString;
+                indexString := To_Unbounded_String (Java_Image (indexInteger));
                 stringBuffer.delete (0, stringBuffer.length);
                 stringBuffer.append (commonLabels.INDEX_LABEL);
                 stringBuffer.append (indexString);

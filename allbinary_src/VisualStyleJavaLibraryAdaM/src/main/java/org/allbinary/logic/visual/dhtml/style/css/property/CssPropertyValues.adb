@@ -72,7 +72,7 @@ package body org.allbinary.logic.visual.dhtml.style.css.property.CssPropertyValu
         size2 := indexPropertyValueHashMap.keySet.size;
         for index in 0 .. (size2) - 1 loop
             indexInt := index;
-            propertyValue := Java_Unbox (indexPropertyValueHashMap.get (Java_Box (indexInt.toString)));
+            propertyValue := Java_Unbox (indexPropertyValueHashMap.get (Java_Box (To_Unbounded_String (Java_Image (indexInt)))));
             This.propertyValueVector.add (propertyValue);
         end loop;
    end Initialize;

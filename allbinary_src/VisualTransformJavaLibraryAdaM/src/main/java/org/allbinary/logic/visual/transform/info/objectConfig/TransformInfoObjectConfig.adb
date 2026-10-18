@@ -286,7 +286,7 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.TransformInf
                 attributes := node.getAttributes;
                 attrNode := Attr_Access (attributes.getNamedItem (GROUP));
                 value := attrNode.getValue;
-                if (value.compareTo (group)) = (0) then
+                if (Java_Compare_To (value, group)) = (0) then
                     componentsNode := node;
                     exit;
                 end if;

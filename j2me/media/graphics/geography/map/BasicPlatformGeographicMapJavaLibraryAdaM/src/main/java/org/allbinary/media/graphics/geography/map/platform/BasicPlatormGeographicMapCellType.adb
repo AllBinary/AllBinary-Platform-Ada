@@ -47,7 +47,7 @@ package body org.allbinary.media.graphics.geography.map.platform.BasicPlatormGeo
         type_Id := 0;
         for index in 0 .. (size) - 1 loop
             typeAsInteger := (Integer (types.get (index)));
-            type_Id := typeAsInteger.intValue;
+            type_Id := Integer (typeAsInteger);
             GeographicMapCellType_Package.Create (type_Id, 0);
             typeArray (index) := type_Id;
         end loop;

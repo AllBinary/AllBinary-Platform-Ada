@@ -38,7 +38,7 @@ package body org.allbinary.business.user.commerce.money.payment.types.Transactio
    function isEqual (This : in out TransactionType; transactionType_Param : access TransactionType_Package.TransactionType'Class) return Boolean is
       transactionType : constant TransactionType_Access := TransactionType_Access (transactionType_Param);
    begin
-        if (TransactionType'Class (This).toString.compareTo (transactionType.toString)) = (0) then
+        if (Java_Compare_To (TransactionType'Class (This).toString, transactionType.toString)) = (0) then
             return True;
         else
             return False;

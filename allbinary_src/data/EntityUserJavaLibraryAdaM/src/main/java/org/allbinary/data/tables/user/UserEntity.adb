@@ -193,8 +193,8 @@ package body org.allbinary.data.tables.user.UserEntity_Package is
             isUserNameAndPasswordCorrect := 0;
             result := AbSqlBean (This).getField (UserData_Package.USERNAME, userName, UserData_Package.PASSWORD);
             encryption := AbSqlBean (This).getField (UserData_Package.USERNAME, userName, EntryData_Package.getInstance.ENCRYPTION);
-            if ((encryption) /= (Null_Unbounded_String)) and then ((encryption.compareTo (This.stringUtil.EMPTY_STRING)) /= (0)) then
-                isUserNameAndPasswordCorrect := result.compareTo (SuperCrypt_Package.Create (encryption.intValue).encrypt (password));
+            if ((encryption) /= (Null_Unbounded_String)) and then ((Java_Compare_To (encryption, This.stringUtil.EMPTY_STRING)) /= (0)) then
+                isUserNameAndPasswordCorrect := Java_Compare_To (result, SuperCrypt_Package.Create (encryption.intValue).encrypt (password));
             else
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
                     This.logUtil.putF (To_Unbounded_String ("Command Success but login failed for user: ") & userName & To_Unbounded_String (" because user did not exist"), UserEntity_Access'(This'Unchecked_Access), To_Unbounded_String ("login"));

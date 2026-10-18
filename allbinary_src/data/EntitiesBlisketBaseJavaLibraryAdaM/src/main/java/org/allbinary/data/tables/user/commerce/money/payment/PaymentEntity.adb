@@ -58,7 +58,7 @@ package body org.allbinary.data.tables.user.commerce.money.payment.PaymentEntity
                 AbSqlBean (This).updateWhere (whereKeyAndValue, updateKeyAndValue);
             end if;
             updateKeyAndValue.put (EntryData_Package.getInstance.DEFAULT, EntryData_Package.getInstance.DEFAULT);
-            whereKeyAndValue.put (PaymentData_Package.ID, Java_Box (index.toString));
+            whereKeyAndValue.put (PaymentData_Package.ID, Java_Box (To_Unbounded_String (Java_Image (index))));
             AbSqlBean (This).updateWhere (whereKeyAndValue, updateKeyAndValue);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
                 This.logUtil.putF (This.commonStrings.SUCCESS, PaymentEntity_Access'(This'Unchecked_Access), To_Unbounded_String ("setDefault"));
@@ -150,7 +150,7 @@ package body org.allbinary.data.tables.user.commerce.money.payment.PaymentEntity
         begin
             whereHashMap := StdUtil_Package.getInstance.createHashMap;
             whereHashMap.put (UserData_Package.USERNAME, Java_Box (userName));
-            whereHashMap.put (PaymentData_Package.ID, index.toString);
+            whereHashMap.put (PaymentData_Package.ID, To_Unbounded_String (Java_Image (index)));
             AbSqlBean (This).deleteWhere (whereHashMap);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
                 This.logUtil.putF (This.commonStrings.SUCCESS, PaymentEntity_Access'(This'Unchecked_Access), To_Unbounded_String ("remove"));

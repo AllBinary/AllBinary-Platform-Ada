@@ -308,7 +308,7 @@ package body org.allbinary.media.graphics.geography.map.GeographicMapCellHistory
             while (Java_Pre_Decrement (index)) >= (0) loop
                 geographicMapCellPosition := GeographicMapCellPosition_Access (This.list.get (index));
                 isCellVisitedBoolean := Boolean (localVisitedList.get (index));
-                if not (isCellVisitedBoolean.booleanValue) then
+                if not (isCellVisitedBoolean) then
                     GeographicMapCellHistory'Class (This).paintNotVisitedRelativeToPoint (graphics, geographicMapInterface.getAllBinaryTiledLayer, geographicMapCellPosition.getPoint);
                 end if;
             end loop;

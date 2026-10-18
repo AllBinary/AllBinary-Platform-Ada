@@ -80,7 +80,7 @@ package body org.allbinary.business.user.commerce.money.Money_Package is
 
    function isValid (This : in out Money) return Boolean is
    begin
-        if (((This.units) /= (null)) and then ((This.units.longValue) > (0))) and then ((This.units.longValue) < (Long_Package.MAX_VALUE)) then
+        if (((This.units) /= (null)) and then ((Long_Long_Integer (This.units)) > (0))) and then ((Long_Long_Integer (This.units)) < (Long_Package.MAX_VALUE)) then
             return True;
         else
             return False;
@@ -95,22 +95,22 @@ package body org.allbinary.business.user.commerce.money.Money_Package is
 
    procedure add (This : in out Money; usDollarStr : Unbounded_String) is
    begin
-        This.units := (This.units.longValue) + (Money'Class (This).convertUsdToUnits (usDollarStr));
+        This.units := (Long_Long_Integer (This.units)) + (Money'Class (This).convertUsdToUnits (usDollarStr));
    end add;
 
    procedure subtract (This : in out Money; usDollarStr : Unbounded_String) is
    begin
-        This.units := (This.units.longValue) - (Money'Class (This).convertUsdToUnits (usDollarStr));
+        This.units := (Long_Long_Integer (This.units)) - (Money'Class (This).convertUsdToUnits (usDollarStr));
    end subtract;
 
    procedure multiply (This : in out Money; multiplier : Float) is
    begin
-        This.units := (This.units.longValue) * (multiplier.floatValue).longValue;
+        This.units := (Long_Long_Integer (This.units)) * (Float (multiplier)).longValue;
    end multiply;
 
    procedure multiply (This : in out Money; multiplier : Integer) is
    begin
-        This.units := (This.units.longValue) * (multiplier);
+        This.units := (Long_Long_Integer (This.units)) * (multiplier);
    end multiply;
 
    function convertUnitsTo (This : in out Money; currency : Unbounded_String) return Unbounded_String is
@@ -119,9 +119,9 @@ package body org.allbinary.business.user.commerce.money.Money_Package is
       cents : Long_Long_Integer;
    begin
         stringBuffer := StringMaker_Package.Create;
-        if (currency.compareTo (This.DEFAULT_CURRENCY)) = (0) then
-            dollar := (This.units.longValue) / (100);
-            cents := (This.units.longValue) - (((dollar) * (100)));
+        if (Java_Compare_To (currency, This.DEFAULT_CURRENCY)) = (0) then
+            dollar := (Long_Long_Integer (This.units)) / (100);
+            cents := (Long_Long_Integer (This.units)) - (((dollar) * (100)));
             stringBuffer.append (dollar.toString);
             stringBuffer.append (AbPathData_Package.getInstance.EXTENSION_SEP);
             if (cents) < (10) then
@@ -158,7 +158,7 @@ package body org.allbinary.business.user.commerce.money.Money_Package is
 
    function getUnits (This : in out Money) return Long_Long_Integer is
    begin
-        return This.units.longValue;
+        return Long_Long_Integer (This.units);
    end getUnits;
 
    function getUnitsLong (This : in out Money) return Long_Long_Integer is

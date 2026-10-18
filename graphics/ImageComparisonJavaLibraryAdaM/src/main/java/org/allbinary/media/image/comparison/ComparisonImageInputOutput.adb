@@ -71,7 +71,7 @@ package body org.allbinary.media.image.comparison.ComparisonImageInputOutput_Pac
         commonStrings := CommonStrings_Package.getInstance;
         filePathStringBuffer := StringMaker_Package.Create;
         filePathStringBuffer.append (ImageOutputData_Package.SAVE_PATH);
-        filePathStringBuffer.append (LongUtil_Package.fillIn (frame.toString));
+        filePathStringBuffer.append (LongUtil_Package.fillIn (To_Unbounded_String (Java_Image (frame))));
         filePathStringBuffer.append (ComparisonImageInputOutput_Package.ROOT_NAME);
         filePathStringBuffer1 := StringMaker_Package.Create;
         filePathStringBuffer1.append (filePathStringBuffer.toString);

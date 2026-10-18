@@ -695,7 +695,7 @@ package body org.allbinary.graphics.j2me.MyFrame_Package is
    begin
         angleIncrementInteger := Integer (hashMap.get (To_Unbounded_String (Java_Image (0))));
         totalRotationInteger := Integer (hashMap.get (To_Unbounded_String (Java_Image (1))));
-        MyFrame'Class (This).getSelectedWorkArea.autoRotate (angleIncrementInteger.intValue, totalRotationInteger.intValue);
+        MyFrame'Class (This).getSelectedWorkArea.autoRotate (Integer (angleIncrementInteger), Integer (totalRotationInteger));
    end onHashMap;
 
    function getSelectedWorkArea (This : in out MyFrame) return WorkAreaJPanelInterface_Access is

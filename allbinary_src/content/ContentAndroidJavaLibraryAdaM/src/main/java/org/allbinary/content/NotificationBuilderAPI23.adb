@@ -40,7 +40,7 @@ package body org.allbinary.content.NotificationBuilderAPI23_Package is
       pendingIntent : constant PendingIntent_Access := PendingIntent_Access (pendingIntent_Param);
       notification : Notification_Access;
    begin
-        notification := Builder_Package.Create (context).setSmallIcon (integer_Id.intValue).setTicker (message).setWhen (Java_Current_Time_Millis).setContentTitle (command.getLabel).setContentText (message).setContentIntent (pendingIntent).build;
+        notification := Builder_Package.Create (context).setSmallIcon (Integer (integer_Id)).setTicker (message).setWhen (Java_Current_Time_Millis).setContentTitle (command.getLabel).setContentText (message).setContentIntent (pendingIntent).build;
         return notification;
    end build;
 

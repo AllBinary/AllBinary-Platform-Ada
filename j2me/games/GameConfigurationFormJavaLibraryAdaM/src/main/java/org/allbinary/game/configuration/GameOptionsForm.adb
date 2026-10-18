@@ -171,7 +171,7 @@ package body org.allbinary.game.configuration.GameOptionsForm_Package is
         integer_Id := null;
         for index in 0 .. (size2) - 1 loop
             integer_Id := Integer (list.objectArray (index));
-            keyValuePersistance.delete (abeClientInformation, integer_Id.intValue);
+            keyValuePersistance.delete (abeClientInformation, Integer (integer_Id));
         end loop;
    end save;
 

@@ -53,7 +53,7 @@ package body admin.tags.TableTag_Package is
    function isEnabled (This : in out TableTag) return Boolean is
    begin
         if not (StringValidationUtil_Package.getInstance.isEmpty (This.enabled)) then
-            if (BooleanUtil_Package.getInstance.getFromString (This.enabled)) or else ((This.enabled.compareTo (To_Unbounded_String ("on"))) = (0)) then
+            if (BooleanUtil_Package.getInstance.getFromString (This.enabled)) or else ((Java_Compare_To (This.enabled, To_Unbounded_String ("on"))) = (0)) then
                 return True;
             end if;
         end if;

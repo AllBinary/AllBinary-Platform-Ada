@@ -126,7 +126,7 @@ package body views.admin.orderhistory.DateRangeOrderHistoryView_Package is
                 This.logUtil.putF (stringBuffer.toString, DateRangeOrderHistoryView_Access'(This'Unchecked_Access), To_Unbounded_String ("view"));
             end if;
             node := document.createElement (OrderData_Package.ORDERS);
-            if ((This.preprocessing) /= (Null_Unbounded_String)) and then ((This.preprocessing.compareTo (This.ON)) = (0)) then
+            if ((This.preprocessing) /= (Null_Unbounded_String)) and then ((Java_Compare_To (This.preprocessing, This.ON)) = (0)) then
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
                     This.logUtil.putF (To_Unbounded_String ("Adding Preprocessing Orders"), DateRangeOrderHistoryView_Access'(This'Unchecked_Access), To_Unbounded_String ("toXmlNode"));
                 end if;
@@ -137,7 +137,7 @@ package body views.admin.orderhistory.DateRangeOrderHistoryView_Package is
                     node.appendChild (orderHistory.toXmlNode (document));
                 end loop;
             end if;
-            if ((This.shipped) /= (Null_Unbounded_String)) and then ((This.shipped.compareTo (This.ON)) = (0)) then
+            if ((This.shipped) /= (Null_Unbounded_String)) and then ((Java_Compare_To (This.shipped, This.ON)) = (0)) then
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
                     This.logUtil.putF (To_Unbounded_String ("Adding Shipped Orders"), DateRangeOrderHistoryView_Access'(This'Unchecked_Access), To_Unbounded_String ("toXmlNode"));
                 end if;
@@ -148,7 +148,7 @@ package body views.admin.orderhistory.DateRangeOrderHistoryView_Package is
                     node.appendChild (orderHistory.toXmlNode (document));
                 end loop;
             end if;
-            if ((This.partiallyShipped) /= (Null_Unbounded_String)) and then ((This.partiallyShipped.compareTo (This.ON)) = (0)) then
+            if ((This.partiallyShipped) /= (Null_Unbounded_String)) and then ((Java_Compare_To (This.partiallyShipped, This.ON)) = (0)) then
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
                     This.logUtil.putF (To_Unbounded_String ("Adding Partially Shipped Orders"), DateRangeOrderHistoryView_Access'(This'Unchecked_Access), To_Unbounded_String ("toDomNode"));
                 end if;
@@ -159,7 +159,7 @@ package body views.admin.orderhistory.DateRangeOrderHistoryView_Package is
                     node.appendChild (orderHistory.toXmlNode (document));
                 end loop;
             end if;
-            if ((This.processing) /= (Null_Unbounded_String)) and then ((This.processing.compareTo (This.ON)) = (0)) then
+            if ((This.processing) /= (Null_Unbounded_String)) and then ((Java_Compare_To (This.processing, This.ON)) = (0)) then
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
                     This.logUtil.putF (To_Unbounded_String ("Adding Processing Orders"), DateRangeOrderHistoryView_Access'(This'Unchecked_Access), To_Unbounded_String ("toXmlNode"));
                 end if;
@@ -170,7 +170,7 @@ package body views.admin.orderhistory.DateRangeOrderHistoryView_Package is
                     node.appendChild (orderHistory.toXmlNode (document));
                 end loop;
             end if;
-            if ((This.cancelled) /= (Null_Unbounded_String)) and then ((This.cancelled.compareTo (This.ON)) = (0)) then
+            if ((This.cancelled) /= (Null_Unbounded_String)) and then ((Java_Compare_To (This.cancelled, This.ON)) = (0)) then
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
                     This.logUtil.putF (To_Unbounded_String ("Adding Cancelled Orders"), DateRangeOrderHistoryView_Access'(This'Unchecked_Access), To_Unbounded_String ("view"));
                 end if;
@@ -216,34 +216,34 @@ package body views.admin.orderhistory.DateRangeOrderHistoryView_Package is
    begin
         begin
             isValid := True;
-            if ((This.dateType) = (Null_Unbounded_String)) or else ((((This.dateType.compareTo (OrderHistoryData_Package.TYPELONG)) /= (0)) and then ((This.dateType.compareTo (OrderHistoryData_Package.TYPECAESAR)) /= (0)))) then
+            if ((This.dateType) = (Null_Unbounded_String)) or else ((((Java_Compare_To (This.dateType, OrderHistoryData_Package.TYPELONG)) /= (0)) and then ((Java_Compare_To (This.dateType, OrderHistoryData_Package.TYPECAESAR)) /= (0)))) then
                 isValid := False;
             end if;
             if (This.dateType) /= (Null_Unbounded_String) then
-                if (This.dateType.compareTo (OrderHistoryData_Package.TYPELONG)) = (0) then
+                if (Java_Compare_To (This.dateType, OrderHistoryData_Package.TYPELONG)) = (0) then
                     calendar := Calendar_Package.getInstance;
                     currentTime := calendar.getTimeInMillis;
                     rangeDate := StringUtil_Package.getInstance.EMPTY_STRING;
-                    if (This.command.compareTo (This.VIEWORDERSINLASTHOUR)) = (0) then
+                    if (Java_Compare_To (This.command, This.VIEWORDERSINLASTHOUR)) = (0) then
                         oneHour := ((60) * (60)) * (1000);
                         rangeDate := oneHour.toString;
-                    elsif (This.command.compareTo (This.VIEWORDERSINLASTDAY)) = (0) then
+                    elsif (Java_Compare_To (This.command, This.VIEWORDERSINLASTDAY)) = (0) then
                         oneDay := (((24) * (60)) * (60)) * (1000);
                         rangeDate := oneDay.toString;
-                    elsif (This.command.compareTo (This.VIEWORDERSINLASTWEEK)) = (0) then
+                    elsif (Java_Compare_To (This.command, This.VIEWORDERSINLASTWEEK)) = (0) then
                         oneWeek := ((((7) * (24)) * (60)) * (60)) * (1000);
                         rangeDate := oneWeek.toString;
-                    elsif (This.command.compareTo (This.VIEWORDERSINLAST30DAYS)) = (0) then
+                    elsif (Java_Compare_To (This.command, This.VIEWORDERSINLAST30DAYS)) = (0) then
                         thirtyDays := ((((30) * (24)) * (60)) * (60)) * (1000);
                         rangeDate := thirtyDays.toString;
-                    elsif (This.command.compareTo (This.VIEWALLORDERS)) = (0) then
+                    elsif (Java_Compare_To (This.command, This.VIEWALLORDERS)) = (0) then
                         rangeDate := currentTime.toString;
                     end if;
                     rangeDateLong := rangeDate.longValue;
                     This.fromDate := (currentTime) - (rangeDateLong).toString;
                     time := Java_New_String (currentTime.toString);
                     This.toDate := time;
-                elsif (This.dateType.compareTo (OrderHistoryData_Package.TYPECAESAR)) = (0) then
+                elsif (Java_Compare_To (This.dateType, OrderHistoryData_Package.TYPECAESAR)) = (0) then
                     calendar := Calendar_Package.getInstance;
                     TimeUtil_Package.getInstance.setCalendar (calendar, This.fromYear, This.fromMonth, This.fromDay, This.fromHour);
                     This.fromDate := calendar.getTimeInMillis.toString;
@@ -297,7 +297,7 @@ package body views.admin.orderhistory.DateRangeOrderHistoryView_Package is
    begin
         begin
             result := StringMaker_Package.Create;
-            if ((This.dateType) = (Null_Unbounded_String)) or else ((((This.dateType.compareTo (OrderHistoryData_Package.TYPELONG)) /= (0)) and then ((This.dateType.compareTo (OrderHistoryData_Package.TYPECAESAR)) /= (0)))) then
+            if ((This.dateType) = (Null_Unbounded_String)) or else ((((Java_Compare_To (This.dateType, OrderHistoryData_Package.TYPELONG)) /= (0)) and then ((Java_Compare_To (This.dateType, OrderHistoryData_Package.TYPECAESAR)) /= (0)))) then
                 result.append (To_Unbounded_String ("DATETYPE not recognized"));
             end if;
             if (StringValidationUtil_Package.getInstance.isEmpty (This.toDate)) or else ((Length (This.toDate)) > (This.MAXLEN)) then

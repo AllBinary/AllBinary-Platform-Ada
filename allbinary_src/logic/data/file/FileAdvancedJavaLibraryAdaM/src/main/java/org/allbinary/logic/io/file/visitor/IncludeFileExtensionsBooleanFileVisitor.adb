@@ -53,7 +53,7 @@ package body org.allbinary.logic.io.file.visitor.IncludeFileExtensionsBooleanFil
         if (Length (fileNameAndExtension)) > (Length (fileNameString)) then
             startIndex := (Length (fileNameAndExtension)) - (Length (fileNameString));
             fileName := Unbounded_Slice (fileNameAndExtension, (startIndex) + 1, Length (fileNameAndExtension));
-            if (fileName.compareTo (fileNameString)) = (0) then
+            if (Java_Compare_To (fileName, fileNameString)) = (0) then
                 return True;
             end if;
         end if;

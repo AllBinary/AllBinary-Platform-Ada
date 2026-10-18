@@ -90,9 +90,9 @@ package body org.allbinary.media.image.ImageScaleUtil_Package is
         alreadyAvailable := False;
         if (index) >= (0) then
             scaleX2Float := Float (This.scaleXBasicArrayList.get (index));
-            scaleX2 := scaleX2Float.floatValue;
+            scaleX2 := Float (scaleX2Float);
             scaleY2Float := Float (This.scaleYBasicArrayList.get (index));
-            scaleY2 := scaleY2Float.floatValue;
+            scaleY2 := Float (scaleY2Float);
             if ((scaleX2) = (scaleX)) and then ((scaleY2) = (scaleY)) then
                 alreadyAvailable := True;
             end if;

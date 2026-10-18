@@ -73,9 +73,9 @@ package body org.allbinary.data.generator.UniqueIdGenerator_Package is
    begin
         begin
             idLong := This.idGeneratorEntity.get (This.name);
-            newValue := To_Unbounded_String (Java_Image ((idLong.longValue) + (1)));
+            newValue := To_Unbounded_String (Java_Image ((Long_Long_Integer (idLong)) + (1)));
             This.idGeneratorEntity.update (This.name, newValue);
-            return idLong.toString;
+            return To_Unbounded_String (Java_Image (idLong));
         exception
             when Java_Occurrence : others =>
                 declare

@@ -46,7 +46,7 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
         keyArray := KeySingletonFactory_Package.getArray;
         for index in 0 .. (keyArray'Length) - 1 loop
             nextKey := keyArray (index);
-            keyStroke := KeyStroke_Package.getKeyStroke (nextKey.intValue, 0);
+            keyStroke := KeyStroke_Package.getKeyStroke (Integer (nextKey), 0);
             keyChar := KeyStrokeMap_Package.getChar (keyStroke);
             defaultComboBoxModel.addElement (To_Unbounded_String (Java_Image (keyChar)));
         end loop;

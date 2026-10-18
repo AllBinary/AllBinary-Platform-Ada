@@ -102,10 +102,10 @@ package body org.allbinary.graphics.form.item.validation.NumberTextFieldItemVali
         if ((textLength) > (0)) and then ((textLength) < (This.maxChars)) then
             begin
                 number := smallIntegerSingletonFactory.createInstance (Integer'Value (To_String (This.textFieldItem.getString)));
-                if (number.intValue) > (This.min) then
+                if (Integer (number)) > (This.min) then
                     stringMaker.delete (0, stringMaker.length);
                     list.add (stringMaker.append (name).append (To_Unbounded_String (" is to small")).toString);
-                elsif (number.intValue) > (This.max) then
+                elsif (Integer (number)) > (This.max) then
                     stringMaker.delete (0, stringMaker.length);
                     list.add (stringMaker.append (name).append (To_Unbounded_String (" is to large")).toString);
                 end if;

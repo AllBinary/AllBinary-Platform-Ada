@@ -90,7 +90,7 @@ package body views.business.context.modules.storefront.customizer.generic_Id.pag
                 end if;
                 hashMap := StdUtil_Package.getInstance.createHashMap;
                 title := specifiedTransformInfoInterface.getName.substring (PageValidationView'Class (This).getTransformInfoInterface.getStoreName.length);
-                if (title.compareTo (To_Unbounded_String ("index"))) = (0) then
+                if (Java_Compare_To (title, To_Unbounded_String ("index"))) = (0) then
                     hashMap.put (TitleData_Package.getInstance.TEXT, Java_Box (Java_Image (PageValidationView'Class (This).getTransformInfoInterface.getStoreName) & To_Unbounded_String (" - Home Page")));
                 else
                     hashMap.put (TitleData_Package.getInstance.TEXT, Java_Box (Java_Image (PageValidationView'Class (This).getTransformInfoInterface.getStoreName) & To_Unbounded_String (" -") & title));
@@ -157,7 +157,7 @@ package body views.business.context.modules.storefront.customizer.generic_Id.pag
                 specifiedTransformInfoInterface := transformInfoEntityInterface.get (viewNameOfViewToBeModified, httpTransformInfoInterface.getPropertiesHashMap, httpTransformInfoInterface.getPageContext);
                 hashMap := StdUtil_Package.getInstance.createHashMap;
                 title := specifiedTransformInfoInterface.getName.substring (PageValidationView'Class (This).getTransformInfoInterface.getStoreName.length);
-                if (title.compareTo (To_Unbounded_String ("index"))) = (0) then
+                if (Java_Compare_To (title, To_Unbounded_String ("index"))) = (0) then
                     hashMap.put (TitleData_Package.getInstance.TEXT, Java_Box (Java_Image (PageValidationView'Class (This).getTransformInfoInterface.getStoreName) & To_Unbounded_String (" - Home Page")));
                 else
                     hashMap.put (TitleData_Package.getInstance.TEXT, Java_Box (Java_Image (PageValidationView'Class (This).getTransformInfoInterface.getStoreName) & To_Unbounded_String (" -") & title));

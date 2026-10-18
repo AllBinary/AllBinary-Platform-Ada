@@ -251,7 +251,7 @@ package body views.admin.inventory.listings.ProductListing_Package is
         begin
             stringBuffer := StringMaker_Package.Create;
             if (storeName) /= (Null_Unbounded_String) then
-                if (storeName.compareTo (GLOBALS2.GENERATEALLSTORES)) /= (0) then
+                if (Java_Compare_To (storeName, GLOBALS2.GENERATEALLSTORES)) /= (0) then
                     This.searchRequest.setStoreFront (This.storeFronts.getStoreFrontInterface (storeName));
                     stringBuffer.append (ProductListing'Class (This).generateAll);
                     stringBuffer.append (To_Unbounded_String ("<br />"));

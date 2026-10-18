@@ -132,7 +132,7 @@ package body org.allbinary.logic.string_Id.tokens.UniqueTokens_Package is
       index : Integer;
    begin
         for index in 0 .. (This.specialCharacters.size) - 1 loop
-            if (subCleaningString.compareTo (Java_Unbox (This.specialCharacters.get (index)))) = (0) then
+            if (Java_Compare_To (subCleaningString, Java_Unbox (This.specialCharacters.get (index)))) = (0) then
                 return True;
             end if;
         end loop;

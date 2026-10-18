@@ -67,7 +67,7 @@ package body org.allbinary.input.automation.log.FrameLog_Package is
    begin
         filePathStringBuffer := StringMaker_Package.Create;
         filePathStringBuffer.append (ImageOutputData_Package.SAVE_PATH);
-        filePathStringBuffer.append (LongUtil_Package.fillIn (This.frame.toString));
+        filePathStringBuffer.append (LongUtil_Package.fillIn (To_Unbounded_String (Java_Image (This.frame))));
         filePathStringBuffer.append (To_Unbounded_String (".txt"));
         filePath := filePathStringBuffer.toString;
         fileOutputStream := FileOutputStream_Package.Create (File_Package.Create (filePath));

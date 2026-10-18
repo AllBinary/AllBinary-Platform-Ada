@@ -76,7 +76,7 @@ package body admin.tags.CustomLoaderTag_Package is
                 This.logUtil.putF (This.commonStrings.START, CustomLoaderTag_Access'(This'Unchecked_Access), This.tagStrings.DO_START_TAG);
             end if;
             if (This.command) /= (Null_Unbounded_String) then
-                if (This.command.compareTo (GLOBALS2.SET)) = (0) then
+                if (Java_Compare_To (This.command, GLOBALS2.SET)) = (0) then
                     CustomLoaderTag'Class (This).setCustomLoaderWebappPath;
                 end if;
             end if;

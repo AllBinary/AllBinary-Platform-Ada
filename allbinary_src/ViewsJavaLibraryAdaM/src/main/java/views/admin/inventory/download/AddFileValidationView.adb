@@ -56,7 +56,7 @@ package body views.admin.inventory.download.AddFileValidationView_Package is
    begin
         begin
             command := Java_Unbox (AddFileValidationView'Class (This).getRequestHashMap.get (GLOBALS2.ADMINCOMMAND));
-            if (StringValidationUtil_Package.getInstance.isEmpty (command)) or else ((((command.compareTo (AddFileValidationView_Package.ADDPRODUCT)) /= (0)) and then ((command.compareTo (ADDANOTHERDOWNLOADABLE)) /= (0)))) then
+            if (StringValidationUtil_Package.getInstance.isEmpty (command)) or else ((((Java_Compare_To (command, AddFileValidationView_Package.ADDPRODUCT)) /= (0)) and then ((Java_Compare_To (command, ADDANOTHERDOWNLOADABLE)) /= (0)))) then
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
                     This.logUtil.putF (To_Unbounded_String ("Invalid AdminCommand=") & command, AddFileValidationView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
                 end if;
@@ -207,7 +207,7 @@ package body views.admin.inventory.download.AddFileValidationView_Package is
         begin
             stringBuffer := StringMaker_Package.Create;
             command := Java_Unbox (AddFileValidationView'Class (This).getRequestHashMap.get (GLOBALS2.ADMINCOMMAND));
-            if (StringValidationUtil_Package.getInstance.isEmpty (command)) or else ((((command.compareTo (AddFileValidationView_Package.ADDPRODUCT)) /= (0)) and then ((command.compareTo (ADDANOTHERDOWNLOADABLE)) /= (0)))) then
+            if (StringValidationUtil_Package.getInstance.isEmpty (command)) or else ((((Java_Compare_To (command, AddFileValidationView_Package.ADDPRODUCT)) /= (0)) and then ((Java_Compare_To (command, ADDANOTHERDOWNLOADABLE)) /= (0)))) then
                 return StringUtil_Package.getInstance.EMPTY_STRING;
             end if;
             if (This.itemInterface) = (null) then

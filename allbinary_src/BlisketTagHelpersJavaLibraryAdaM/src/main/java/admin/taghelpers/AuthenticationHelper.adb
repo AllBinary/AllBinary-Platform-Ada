@@ -266,8 +266,8 @@ package body admin.taghelpers.AuthenticationHelper_Package is
 
    procedure nextAttempt (This : in out AuthenticationHelper) is
    begin
-        if ((This.attemptsInteger) /= (null)) and then ((This.attemptsInteger.intValue) > (0)) then
-            This.weblisketSession.setAttempts ((This.attemptsInteger.intValue) + (1));
+        if ((This.attemptsInteger) /= (null)) and then ((Integer (This.attemptsInteger)) > (0)) then
+            This.weblisketSession.setAttempts ((Integer (This.attemptsInteger)) + (1));
         else
             This.weblisketSession.setAttempts (1);
         end if;
@@ -282,11 +282,11 @@ package body admin.taghelpers.AuthenticationHelper_Package is
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.AUTHENTICATIONERROR) then
                 This.logUtil.putF (To_Unbounded_String ("Starting: ") & userName, AuthenticationHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("processIfNewLogin()"));
             end if;
-            if ((((userName) /= (Null_Unbounded_String)) and then ((userName.compareTo (StringUtil_Package.getInstance.EMPTY_STRING)) /= (0))) and then ((password) /= (Null_Unbounded_String))) and then ((password.compareTo (StringUtil_Package.getInstance.EMPTY_STRING)) /= (0)) then
+            if ((((userName) /= (Null_Unbounded_String)) and then ((Java_Compare_To (userName, StringUtil_Package.getInstance.EMPTY_STRING)) /= (0))) and then ((password) /= (Null_Unbounded_String))) and then ((Java_Compare_To (password, StringUtil_Package.getInstance.EMPTY_STRING)) /= (0)) then
                 login := Null_Unbounded_String;
                 userEntityInterface := UserEntityFactory_Package.getInstance;
                 login := userEntityInterface.login (userName, password);
-                if (login.compareTo (GLOBALS2.LOGINSUCCESS)) = (0) then
+                if (Java_Compare_To (login, GLOBALS2.LOGINSUCCESS)) = (0) then
                     userInterface := userEntityInterface.getUser (userName);
                     if userInterface.isSessionValid.booleanValue then
                         This.weblisketSession.setAttempts (0);

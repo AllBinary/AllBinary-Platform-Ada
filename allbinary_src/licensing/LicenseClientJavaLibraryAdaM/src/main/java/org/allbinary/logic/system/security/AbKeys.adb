@@ -46,7 +46,7 @@ package body org.allbinary.logic.system.security.AbKeys_Package is
    begin
         begin
             This.logUtil.putF (To_Unbounded_String ("Getting Key: ") & keyName, AbKeys_Access'(This'Unchecked_Access), To_Unbounded_String ("getKey"));
-            if ((((keyName.compareTo (To_Unbounded_String ("DirectX 8"))) = (0)) or else ((keyName.compareTo (To_Unbounded_String ("DirectX"))) = (0))) or else ((keyName.compareTo (To_Unbounded_String ("Low Level"))) = (0))) or else ((keyName.compareTo (To_Unbounded_String ("System Drivers"))) = (0)) then
+            if ((((Java_Compare_To (keyName, To_Unbounded_String ("DirectX 8"))) = (0)) or else ((Java_Compare_To (keyName, To_Unbounded_String ("DirectX"))) = (0))) or else ((Java_Compare_To (keyName, To_Unbounded_String ("Low Level"))) = (0))) or else ((Java_Compare_To (keyName, To_Unbounded_String ("System Drivers"))) = (0)) then
                 return To_Unbounded_String ("Temp For Input Library");
             end if;
             return AbeLicenseInterfaceFactory_Package.getInstance.getLicenseInstance (abeClientInformation).getKey (keyName);

@@ -45,8 +45,8 @@ package body org.allbinary.business.user.commerce.inventory.basket.Basket_Packag
             oldNumStr := Java_New_String (Java_Unbox (This.items.get (Java_Box (id))));
             oldNumInt := To_Unbounded_String (Java_Image (oldNumStr));
             numInt := To_Unbounded_String (Java_Image (num));
-            newNumInt := (oldNumInt.intValue) + (numInt.intValue);
-            This.items.put (Java_Box (id), Java_Box (newNumInt.toString));
+            newNumInt := (Integer (oldNumInt)) + (Integer (numInt));
+            This.items.put (Java_Box (id), Java_Box (To_Unbounded_String (Java_Image (newNumInt))));
         else
             This.items.put (Java_Box (id), Java_Box (num));
         end if;
@@ -87,8 +87,8 @@ package body org.allbinary.business.user.commerce.inventory.basket.Basket_Packag
             for index in 0 .. (size) - 1 loop
                 product := Java_New_String (Java_Unbox (itemArray (index)));
                 weightFloat := InventoryEntity_Package.Create.getWeight (product);
-                weightFloat := (Basket'Class (This).getNumberOf (product).floatValue) * (weightFloat.floatValue);
-                totalWeight.add (weightFloat.toString);
+                weightFloat := (Basket'Class (This).getNumberOf (product).floatValue) * (Float (weightFloat));
+                totalWeight.add (To_Unbounded_String (Java_Image (weightFloat)));
             end loop;
         end if;
         return totalWeight.toString;

@@ -51,7 +51,7 @@ package body org.allbinary.graphics.color.BasicColorCacheFactory_Package is
    begin
         basicColor := BasicColor_Access (This.hashtable.get (integer_Id));
         if (basicColor) = (null) then
-            basicColor := BasicColorFactory_Package.getInstance.createInstance (integer_Id.intValue);
+            basicColor := BasicColorFactory_Package.getInstance.createInstance (Integer (integer_Id));
             This.hashtable.put (integer_Id, basicColor);
         end if;
         return basicColor;

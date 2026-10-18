@@ -83,7 +83,7 @@ package body org.allbinary.media.image.comparison.motion.MotionRectanglesImageIn
         commonStrings := CommonStrings_Package.getInstance;
         filePathStringBuffer := StringMaker_Package.Create;
         filePathStringBuffer.append (ImageOutputData_Package.SAVE_PATH);
-        filePathStringBuffer.append (LongUtil_Package.fillIn (frame.toString));
+        filePathStringBuffer.append (LongUtil_Package.fillIn (To_Unbounded_String (Java_Image (frame))));
         filePathStringBuffer.append (To_Unbounded_String ("_"));
         filePathStringBuffer.append (motionRectangles.getName);
         filePathStringBuffer1 := StringMaker_Package.Create;

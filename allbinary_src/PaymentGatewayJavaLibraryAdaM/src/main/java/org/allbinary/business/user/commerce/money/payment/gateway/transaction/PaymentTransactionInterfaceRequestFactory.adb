@@ -63,7 +63,7 @@ package body org.allbinary.business.user.commerce.money.payment.gateway.transact
             pageContext := httpTransformInfoInterface.getPageContext;
             httpServletRequest := HttpServletRequest_Access (pageContext.getRequest);
             command := httpServletRequest.getParameter (org_Package.allbinary.globals.GLOBALS2.ADMINCOMMAND);
-            if ((command) /= (Null_Unbounded_String)) and then ((command.compareTo (org_Package.allbinary.globals.GLOBALS2.AUTHORIZEFORMEVALBODYONERROR)) = (0)) then
+            if ((command) /= (Null_Unbounded_String)) and then ((Java_Compare_To (command, org_Package.allbinary.globals.GLOBALS2.AUTHORIZEFORMEVALBODYONERROR)) = (0)) then
                 return PaymentTransactionInterfaceRequestFactory'Class (This).generateFromTestData (transformInfoInterface);
             else
                 propertiesHashMap := httpTransformInfoInterface.getPropertiesHashMap;
@@ -149,7 +149,7 @@ package body org.allbinary.business.user.commerce.money.payment.gateway.transact
             orderReview.setPaymentMethod (gatewayName);
             orderReview.setUserName (To_Unbounded_String ("testing"));
             orderId := httpServletRequest.getParameter (To_Unbounded_String ("orderNumber"));
-            if ((orderId) = (Null_Unbounded_String)) or else ((orderId.compareTo (StringUtil_Package.getInstance.EMPTY_STRING)) = (0)) then
+            if ((orderId) = (Null_Unbounded_String)) or else ((Java_Compare_To (orderId, StringUtil_Package.getInstance.EMPTY_STRING)) = (0)) then
                 orderId := OrderIdGenerator_Package.Create.getNext;
                 orderReview.setId (orderId);
                 account := httpServletRequest.getParameter (To_Unbounded_String ("account"));

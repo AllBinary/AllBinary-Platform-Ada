@@ -67,19 +67,19 @@ package body org.allbinary.math.AngleIncrementInfo_Package is
       closestDirection : Integer;
    begin
         closestDirection := SmallIntegerSingletonFactory_Package.getInstance.getAt (360);
-        if ((This.UP_FRAME.intValue) - (angle)) < ((closestDirection.intValue) - (angle)) then
+        if ((Integer (This.UP_FRAME)) - (angle)) < ((Integer (closestDirection)) - (angle)) then
             closestDirection := This.UP_FRAME;
         end if;
-        if ((This.DOWN_FRAME.intValue) - (angle)) < ((closestDirection.intValue) - (angle)) then
+        if ((Integer (This.DOWN_FRAME)) - (angle)) < ((Integer (closestDirection)) - (angle)) then
             closestDirection := This.DOWN_FRAME;
         end if;
-        if ((This.LEFT_FRAME.intValue) - (angle)) < ((closestDirection.intValue) - (angle)) then
+        if ((Integer (This.LEFT_FRAME)) - (angle)) < ((Integer (closestDirection)) - (angle)) then
             closestDirection := This.LEFT_FRAME;
         end if;
-        if ((This.RIGHT_FRAME.intValue) - (angle)) < ((closestDirection.intValue) - (angle)) then
+        if ((Integer (This.RIGHT_FRAME)) - (angle)) < ((Integer (closestDirection)) - (angle)) then
             closestDirection := This.RIGHT_FRAME;
         end if;
-        return closestDirection.intValue;
+        return Integer (closestDirection);
    end getClosestGeneralDirection;
 
    procedure getFrameAngle (This : in out AngleIncrementInfo; frame : Integer) is

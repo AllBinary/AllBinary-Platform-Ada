@@ -59,7 +59,7 @@ package body tags.ValidationTransformTag_Package is
             helperClass := ValidationTransformTag'Class (This).getHelper.all'Tag;
             method := helperClass.getMethod (This.commonStrings.IS_VALID, null);
             result := Boolean (method.invoke (ValidationTransformTag'Class (This).getHelper, null));
-            return result.booleanValue;
+            return result;
         exception
             when Java_Occurrence : others =>
                 declare

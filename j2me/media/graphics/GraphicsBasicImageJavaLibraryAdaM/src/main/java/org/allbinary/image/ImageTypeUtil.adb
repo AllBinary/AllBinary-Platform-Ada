@@ -48,7 +48,7 @@ package body org.allbinary.image.ImageTypeUtil_Package is
         mediaFileType := Translate (mediaFileType, Ada.Strings.Maps.Constants.Lower_Case_Map);
         for index in reverse 0 .. (This.list.size) - (1) loop
             name := Java_Unbox (This.list.get (index));
-            if (mediaFileType.compareTo (name)) = (0) then
+            if (Java_Compare_To (mediaFileType, name)) = (0) then
                 return True;
             end if;
         end loop;

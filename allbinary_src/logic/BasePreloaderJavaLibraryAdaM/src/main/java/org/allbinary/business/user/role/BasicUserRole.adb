@@ -101,7 +101,7 @@ package body org.allbinary.business.user.role.BasicUserRole_Package is
         size := roleVector.size;
         for index in 0 .. (size) - 1 loop
             userRole := BasicUserRole_Access (roleVector.get (index));
-            if (role.compareTo (userRole.toString)) = (0) then
+            if (Java_Compare_To (role, userRole.toString)) = (0) then
                 return userRole;
             end if;
         end loop;

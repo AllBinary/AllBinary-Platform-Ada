@@ -58,7 +58,7 @@ package body org.allbinary.game.configuration.persistance.BasicPersitance_Packag
         size := This.idList.size;
         for index in 0 .. (size) - 1 loop
             integer_Id := Integer (This.idList.objectArray (index));
-            BasicPersitance'Class (This).delete (abeClientInformation, integer_Id.intValue);
+            BasicPersitance'Class (This).delete (abeClientInformation, Integer (integer_Id));
         end loop;
         BasicPersitance'Class (This).clear;
    end deleteAll;

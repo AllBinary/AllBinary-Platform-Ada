@@ -77,15 +77,15 @@ package body taghelpers.OrderHistoryHelper_Package is
             success := To_Unbounded_String ("Status successfully set to: ") & This.status;
             orderReviewInterface := OrderHistoryFactory_Package.getInstance (This.id);
             status := orderReviewInterface.getStatus;
-            if (status.compareTo (OrderHistoryData_Package.CANCELLED)) = (0) then
+            if (Java_Compare_To (status, OrderHistoryData_Package.CANCELLED)) = (0) then
                 return To_Unbounded_String ("Order ") & This.id & To_Unbounded_String (" Already Cancelled<br/>");
-            elsif (status.compareTo (OrderHistoryData_Package.SHIPPED)) = (0) then
+            elsif (Java_Compare_To (status, OrderHistoryData_Package.SHIPPED)) = (0) then
                 return To_Unbounded_String ("Order ") & This.id & To_Unbounded_String (" Already Shipped. You can't cancel a shipped order.<br/>");
-            elsif (status.compareTo (OrderHistoryData_Package.PREPROCESSING)) = (0) then
+            elsif (Java_Compare_To (status, OrderHistoryData_Package.PREPROCESSING)) = (0) then
                 return To_Unbounded_String ("Order ") & This.id & To_Unbounded_String (" has been cancelled.<br/>");
-            elsif (status.compareTo (OrderHistoryData_Package.PARTIALLYSHIPPED)) = (0) then
+            elsif (Java_Compare_To (status, OrderHistoryData_Package.PARTIALLYSHIPPED)) = (0) then
                 return To_Unbounded_String ("Order ") & This.id & To_Unbounded_String (" Partially Shipped. You can cancel unshipped items, but not the whole order.<br/>");
-            elsif (status.compareTo (OrderHistoryData_Package.PROCESSING)) = (0) then
+            elsif (Java_Compare_To (status, OrderHistoryData_Package.PROCESSING)) = (0) then
                 orderHistoryEntityInterface := OrderHistoryEntityFactory_Package.getInstance;
                 orderHistoryEntityInterface.setStatus (This.id, This.newStatus);
                 return To_Unbounded_String ("Order ") & This.id & To_Unbounded_String (" has been cancelled.<br/>");

@@ -78,7 +78,7 @@ package body org.allbinary.input.automation.module.generic_Id.SavedCaptureImages
                 frame := index;
                 filePathStringBuffer := StringMaker_Package.Create;
                 filePathStringBuffer.append (This.savedCaptureGenericProfileDataWorkerType.getPath);
-                filePathStringBuffer.append (LongUtil_Package.fillIn (frame.toString));
+                filePathStringBuffer.append (LongUtil_Package.fillIn (To_Unbounded_String (Java_Image (frame))));
                 filePathStringBuffer.append (MediaDataFactory_Package.getInstance.JPG.getExtension);
                 filePath := filePathStringBuffer.toString;
                 This.logUtil.putF (To_Unbounded_String ("Loading Image File Path: ") & filePath, SavedCaptureImagesWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN);

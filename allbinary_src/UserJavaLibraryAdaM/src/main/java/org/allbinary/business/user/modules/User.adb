@@ -126,7 +126,7 @@ package body org.allbinary.business.user.modules.User_Package is
         This.fax := stringUtil.getNonNull (Java_Unbox (userHashMap.get (UserData_Package.FAX)));
         This.role := UserRoleB_Package.getRole (Java_Unbox (userHashMap.get (Java_Box (UserRoleData_Package.NAME.toString))));
         This.permissions := stringUtil.getNonNull (Java_Unbox (userHashMap.get (UserData_Package.PERMISSIONS)));
-        if (not (stringValidationUtil.isEmpty (This.permissions))) and then ((This.permissions.compareTo (StoreFrontData_Package.getInstance.NAME)) = (0)) then
+        if (not (stringValidationUtil.isEmpty (This.permissions))) and then ((Java_Compare_To (This.permissions, StoreFrontData_Package.getInstance.NAME)) = (0)) then
             This.permissions := stringUtil.getNonNull (Java_Unbox (userHashMap.get (StoreFrontData_Package.getInstance.NAME)));
         elsif (This.permissions) = (Null_Unbounded_String) then
             This.permissions := To_Unbounded_String ("No Permissions");

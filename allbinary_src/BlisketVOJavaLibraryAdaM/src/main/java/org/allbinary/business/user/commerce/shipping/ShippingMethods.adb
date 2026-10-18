@@ -57,7 +57,7 @@ package body org.allbinary.business.user.commerce.shipping.ShippingMethods_Packa
         size := This.shippingVector.size;
         for index in 0 .. (size) - 1 loop
             shipping := ShippingInterface_Access (This.shippingVector.get (index));
-            if (name.compareTo (shipping.getName)) = (0) then
+            if (Java_Compare_To (name, shipping.getName)) = (0) then
                 return shipping;
             end if;
         end loop;

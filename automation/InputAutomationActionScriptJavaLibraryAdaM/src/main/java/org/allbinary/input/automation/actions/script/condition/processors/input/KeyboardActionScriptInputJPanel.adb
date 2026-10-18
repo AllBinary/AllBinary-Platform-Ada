@@ -292,7 +292,7 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
       newKey : Unbounded_String;
    begin
         if (integer_Id) /= (null) then
-            newKey := To_Unbounded_String ("&#") & integer_Id.toString & To_Unbounded_String (";");
+            newKey := To_Unbounded_String ("&#") & To_Unbounded_String (Java_Image (integer_Id)) & To_Unbounded_String (";");
             This.textJTextField.setText (newKey & Java_Image (This.textJTextField.getText));
         end if;
    end prependText;

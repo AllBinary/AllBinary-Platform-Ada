@@ -101,7 +101,7 @@ package body taghelpers.InventoryHelper_Package is
         begin
             stringUtil := StringUtil_Package.getInstance;
             keywords := Java_Unbox (This.searchRequest.getParams.get.get (This.basicItemData.KEYWORDS));
-            if ((keywords) = (Null_Unbounded_String)) or else ((keywords.compareTo (stringUtil.EMPTY_STRING)) = (0)) then
+            if ((keywords) = (Null_Unbounded_String)) or else ((Java_Compare_To (keywords, stringUtil.EMPTY_STRING)) = (0)) then
                 return To_Unbounded_String ("Please enter a keyword in the search field above the Search button.");
             end if;
             inventoryViewSearchInterface := InventoryViewFactory_Package.getInstance (This.searchRequest);

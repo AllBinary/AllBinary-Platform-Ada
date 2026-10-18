@@ -51,9 +51,9 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.generator.Tr
             commonStrings := CommonStrings_Package.getInstance;
             This.logUtil.putF (To_Unbounded_String ("Generating Instance for type: ") & type_Id, TransformInfoObjectConfigGeneratorFactory_Access'(This'Unchecked_Access), commonStrings.GET_INSTANCE);
         end if;
-        if (((type_Id) = (Null_Unbounded_String)) or else ((type_Id.compareTo (InputOutputTypeData_Package.getInstance.RESPONSE)) = (0))) or else (transformInfoInterface.isChild) then
+        if (((type_Id) = (Null_Unbounded_String)) or else ((Java_Compare_To (type_Id, InputOutputTypeData_Package.getInstance.RESPONSE)) = (0))) or else (transformInfoInterface.isChild) then
             return BasicGenerator_Package.Create;
-        elsif (type_Id.compareTo (InputOutputTypeData_Package.getInstance.FILE)) = (0) then
+        elsif (Java_Compare_To (type_Id, InputOutputTypeData_Package.getInstance.FILE)) = (0) then
             return StoreFileGenerator_Package.Create (transformInfoInterface);
         else
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("No Such TransformInfoObjectConfigGenerator Type")));

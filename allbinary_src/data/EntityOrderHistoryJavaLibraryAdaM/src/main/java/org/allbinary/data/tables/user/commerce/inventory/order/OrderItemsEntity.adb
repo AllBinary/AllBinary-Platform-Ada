@@ -159,7 +159,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.order.OrderItemsE
             size := itemStatusVector.size;
             for index in 0 .. (size) - 1 loop
                 status := Java_Unbox (itemStatusVector.get (index));
-                if (status.compareTo (OrderHistoryData_Package.SHIPPED)) /= (0) then
+                if (Java_Compare_To (status, OrderHistoryData_Package.SHIPPED)) /= (0) then
                     return False;
                 end if;
             end loop;

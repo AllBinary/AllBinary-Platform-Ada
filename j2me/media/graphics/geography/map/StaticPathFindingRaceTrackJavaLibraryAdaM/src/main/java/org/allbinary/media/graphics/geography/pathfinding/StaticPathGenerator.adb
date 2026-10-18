@@ -91,7 +91,7 @@ package body org.allbinary.media.graphics.geography.pathfinding.StaticPathGenera
                 list := BasicArrayListD_Package.Create;
                 smallIntegerSingletonFactory := SmallIntegerSingletonFactory_Package.getInstance;
                 geographicMapCellPositionFactory := geographicMapInterface.getGeographicMapCellPositionFactory;
-                id := (PathData_Package.getInstance.OFFSET) + (mapIdInteger.intValue);
+                id := (PathData_Package.getInstance.OFFSET) + (Integer (mapIdInteger));
                 basicList := pathCacheFactory.getOrCreate (smallIntegerSingletonFactory.getAt (id));
                 size := basicList.size;
                 pathList := null;

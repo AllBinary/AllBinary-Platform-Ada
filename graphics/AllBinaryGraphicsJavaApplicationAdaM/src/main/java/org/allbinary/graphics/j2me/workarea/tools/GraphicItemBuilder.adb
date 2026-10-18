@@ -40,7 +40,7 @@ package body org.allbinary.graphics.j2me.workarea.tools.GraphicItemBuilder_Packa
       graphicItemName : Unbounded_String;
    begin
         graphicItemName := node.getNodeName;
-        if (graphicItemName.compareTo (PointsDomUtil_Package.getInstance.LINES)) = (0) then
+        if (Java_Compare_To (graphicItemName, PointsDomUtil_Package.getInstance.LINES)) = (0) then
             return LinesGraphicItem_Package.Create (node);
         else
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Graphic Item Does Not Exist: ") & graphicItemName));

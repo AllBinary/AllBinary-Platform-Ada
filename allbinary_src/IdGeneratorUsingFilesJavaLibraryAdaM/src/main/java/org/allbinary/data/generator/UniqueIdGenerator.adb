@@ -83,7 +83,7 @@ package body org.allbinary.data.generator.UniqueIdGenerator_Package is
             idOutData := AbDataOutputStream_Package.Create (idOutFile);
             idOutData.writeLong ((This.id) + (1));
             idLong := This.id;
-            return idLong.toString;
+            return To_Unbounded_String (Java_Image (idLong));
         exception
             when Java_Occurrence : others =>
                 declare

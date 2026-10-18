@@ -267,7 +267,7 @@ package body org.allbinary.business.user.commerce.inventory.item.BasicItem_Packa
         This.downloads := value;
         if not (StringValidationUtil_Package.getInstance.isEmpty (This.downloads)) then
             downloadInteger := To_Unbounded_String (Java_Image (This.downloads));
-            if (downloadInteger.intValue) /= (0) then
+            if (Integer (downloadInteger)) /= (0) then
                 BasicItem'Class (This).setDownloadable (True);
             end if;
         end if;

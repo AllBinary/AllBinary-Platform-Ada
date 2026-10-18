@@ -68,7 +68,7 @@ package body org.allbinary.logic.java.bool.BooleanUtil_Package is
    begin
         booleanFactory := BooleanFactory_Package.getInstance;
         booleanStringLowerCase := Translate (booleanString, Ada.Strings.Maps.Constants.Lower_Case_Map);
-        if ((booleanStringLowerCase.compareTo (booleanFactory.TRUE_STRING)) = (0)) or else ((booleanStringLowerCase.compareTo (booleanFactory.FALSE_STRING)) = (0)) then
+        if ((Java_Compare_To (booleanStringLowerCase, booleanFactory.TRUE_STRING)) = (0)) or else ((Java_Compare_To (booleanStringLowerCase, booleanFactory.FALSE_STRING)) = (0)) then
             return True;
         end if;
         return False;

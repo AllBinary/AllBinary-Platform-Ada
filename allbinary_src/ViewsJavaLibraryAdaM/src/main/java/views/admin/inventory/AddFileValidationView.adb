@@ -51,7 +51,7 @@ package body views.admin.inventory.AddFileValidationView_Package is
    begin
         begin
             command := Java_Unbox (AddFileValidationView'Class (This).getRequestHashMap.get (GLOBALS2.ADMINCOMMAND));
-            if (StringValidationUtil_Package.getInstance.isEmpty (command)) or else ((((command.compareTo (AddFileValidationView_Package.ADDPRODUCT)) /= (0)) and then ((command.compareTo (NEXTSTEP)) /= (0)))) then
+            if (StringValidationUtil_Package.getInstance.isEmpty (command)) or else ((((Java_Compare_To (command, AddFileValidationView_Package.ADDPRODUCT)) /= (0)) and then ((Java_Compare_To (command, NEXTSTEP)) /= (0)))) then
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
                     stringBuffer := StringMaker_Package.Create;
                     stringBuffer.append (To_Unbounded_String ("Invalid AdminCommand: "));
@@ -138,7 +138,7 @@ package body views.admin.inventory.AddFileValidationView_Package is
         begin
             stringBuffer := StringMaker_Package.Create;
             command := Java_Unbox (AddFileValidationView'Class (This).getRequestHashMap.get (GLOBALS2.ADMINCOMMAND));
-            if (StringValidationUtil_Package.getInstance.isEmpty (command)) or else ((((command.compareTo (AddFileValidationView_Package.ADDPRODUCT)) /= (0)) and then ((command.compareTo (NEXTSTEP)) /= (0)))) then
+            if (StringValidationUtil_Package.getInstance.isEmpty (command)) or else ((((Java_Compare_To (command, AddFileValidationView_Package.ADDPRODUCT)) /= (0)) and then ((Java_Compare_To (command, NEXTSTEP)) /= (0)))) then
                 return StringUtil_Package.getInstance.EMPTY_STRING;
             end if;
             basicItemValidation := BasicItemValidation_Package.Create (This.itemInterface);
@@ -249,7 +249,7 @@ package body views.admin.inventory.AddFileValidationView_Package is
    begin
         fileData := FileData_Package.getInstance;
         if (size) > (fileData.MINIMAGEFILESIZE) then
-            if (fileItemFieldName.compareTo (This.basicItemData.IMAGE)) = (0) then
+            if (Java_Compare_To (fileItemFieldName, This.basicItemData.IMAGE)) = (0) then
                 if (size) < (fileData.MAXIMAGEFILESIZE) then
                     if not (StringValidationUtil_Package.getInstance.isValidRequired (fileName, fileData.MINLEN, fileData.MAXLEN)) then
                         stringBuffer.append (To_Unbounded_String ("FileName must be >"));

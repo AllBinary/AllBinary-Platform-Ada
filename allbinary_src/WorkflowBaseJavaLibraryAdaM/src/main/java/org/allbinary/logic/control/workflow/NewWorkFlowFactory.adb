@@ -84,7 +84,7 @@ package body org.allbinary.logic.control.workflow.NewWorkFlowFactory_Package is
    begin
         begin
             stringUtil := StringUtil_Package.getInstance;
-            if ((className) /= (Null_Unbounded_String)) and then ((className.compareTo (stringUtil.EMPTY_STRING)) /= (0)) then
+            if ((className) /= (Null_Unbounded_String)) and then ((Java_Compare_To (className, stringUtil.EMPTY_STRING)) /= (0)) then
                 anyType := AbeFactory_Package.getInstance.getInstance (abeClientInformation, className, null, null);
                 return WorkFlowInterface_Access (WorkFlowWrapper_Package.Create (anyType));
             else
