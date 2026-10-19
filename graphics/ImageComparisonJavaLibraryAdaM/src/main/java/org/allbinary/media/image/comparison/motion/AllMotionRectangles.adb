@@ -14,13 +14,11 @@
 
 
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.media.image.comparison.motion.Rectangle_Package; use org.allbinary.media.image.comparison.motion.Rectangle_Package;
 
 package body org.allbinary.media.image.comparison.motion.AllMotionRectangles_Package is
 
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    procedure Initialize_Fields (This : in out AllMotionRectangles'Class) is
    begin
       null;

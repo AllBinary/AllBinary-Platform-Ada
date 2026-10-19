@@ -14,7 +14,6 @@
 
 
 with java.util.HashMap_Package; use java.util.HashMap_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.globals.GLOBALS2_Package; use org.allbinary.globals.GLOBALS2_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringValidationUtil_Package; use org.allbinary.logic.string_Id.StringValidationUtil_Package;
@@ -25,7 +24,6 @@ with admin.taghelpers.InventoryItemViewParentTagHelper_Package; use admin.taghel
 package body admin.taghelpers.MultipartRequestParamForwardHelper_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    package GLOBALS2_Package renames Standard.org.allbinary.globals.GLOBALS2_Package;
    package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    package StringValidationUtil_Package renames Standard.org.allbinary.logic.string_Id.StringValidationUtil_Package;

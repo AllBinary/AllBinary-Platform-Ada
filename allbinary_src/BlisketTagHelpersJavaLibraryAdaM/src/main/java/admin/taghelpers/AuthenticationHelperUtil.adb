@@ -14,7 +14,6 @@
 
 
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.business.user.role.BasicUserRole_Package; use org.allbinary.business.user.role.BasicUserRole_Package;
 with org.allbinary.business.user.role.UserRole_Package; use org.allbinary.business.user.role.UserRole_Package;
 with org.allbinary.globals.URLGLOBALS_Package; use org.allbinary.globals.URLGLOBALS_Package;
@@ -27,7 +26,6 @@ with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.C
 package body admin.taghelpers.AuthenticationHelperUtil_Package is
 
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    package BasicUserRole_Package renames Standard.org.allbinary.business.user.role.BasicUserRole_Package;
    package UserRole_Package renames Standard.org.allbinary.business.user.role.UserRole_Package;
    package URLGLOBALS_Package renames Standard.org.allbinary.globals.URLGLOBALS_Package;

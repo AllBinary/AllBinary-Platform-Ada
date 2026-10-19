@@ -18,7 +18,6 @@ with org.eclipse.swt.graphics.GC_Package; use org.eclipse.swt.graphics.GC_Packag
 with org.eclipse.swt.graphics.ImageData_Package; use org.eclipse.swt.graphics.ImageData_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
-with org.eclipse.swt.events.PaintEvent_Package; use org.eclipse.swt.events.PaintEvent_Package;
 with org.eclipse.swt.events.PaintListener_Package; use org.eclipse.swt.events.PaintListener_Package;
 with org.eclipse.swt.graphics.Transform_Package; use org.eclipse.swt.graphics.Transform_Package;
 with org.eclipse.swt.widgets.Display_Package; use org.eclipse.swt.widgets.Display_Package;
@@ -31,7 +30,6 @@ package body org.allbinary.media.image.ImageUtil_Package is
    package ImageData_Package renames Standard.org.eclipse.swt.graphics.ImageData_Package;
    package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
-   package PaintEvent_Package renames Standard.org.eclipse.swt.events.PaintEvent_Package;
    package PaintListener_Package renames Standard.org.eclipse.swt.events.PaintListener_Package;
    package Transform_Package renames Standard.org.eclipse.swt.graphics.Transform_Package;
    package Display_Package renames Standard.org.eclipse.swt.widgets.Display_Package;

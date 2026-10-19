@@ -14,7 +14,6 @@
 
 
 with org.allbinary.globals.FREEBLISKET_PATH_GLOBALS_Package; use org.allbinary.globals.FREEBLISKET_PATH_GLOBALS_Package;
-with org.allbinary.globals.URLGLOBALS_Package; use org.allbinary.globals.URLGLOBALS_Package;
 with org.allbinary.logic.control.crypt.file.CryptFileReader_Package; use org.allbinary.logic.control.crypt.file.CryptFileReader_Package;
 with org.allbinary.logic.io.path.AbFilePath_Package; use org.allbinary.logic.io.path.AbFilePath_Package;
 with org.allbinary.logic.io.path.AbPath_Package; use org.allbinary.logic.io.path.AbPath_Package;
@@ -25,7 +24,6 @@ with org.allbinary.logic.visual.transform.info.template.TransformInfoTemplateDat
 package body org.allbinary.data.tree.dom.CustomUriResolver_Package is
 
    package FREEBLISKET_PATH_GLOBALS_Package renames Standard.org.allbinary.globals.FREEBLISKET_PATH_GLOBALS_Package;
-   package URLGLOBALS_Package renames Standard.org.allbinary.globals.URLGLOBALS_Package;
    package CryptFileReader_Package renames Standard.org.allbinary.logic.control.crypt.file.CryptFileReader_Package;
    package AbFilePath_Package renames Standard.org.allbinary.logic.io.path.AbFilePath_Package;
    package AbPath_Package renames Standard.org.allbinary.logic.io.path.AbPath_Package;

@@ -13,12 +13,10 @@
 --  Generated Code Do Not Modify
 
 
-with java.util.Map_Package; use java.util.Map_Package;
 with jsinterop.annotations.JsType_Package; use jsinterop.annotations.JsType_Package;
 
 package body org.allbinary.util.ABHashtable_Package is
 
-   package Map_Package renames Standard.java.util.Map_Package;
    package JsType_Package renames Standard.jsinterop.annotations.JsType_Package;
    procedure Initialize_Fields (This : in out ABHashtable'Class) is
    begin

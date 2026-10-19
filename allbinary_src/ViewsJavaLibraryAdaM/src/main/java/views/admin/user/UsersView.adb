@@ -13,14 +13,12 @@
 --  Generated Code Do Not Modify
 
 
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.business.user.UserDomNode_Package; use org.allbinary.business.user.UserDomNode_Package;
 with org.allbinary.business.user.UsersData_Package; use org.allbinary.business.user.UsersData_Package;
 with org.allbinary.business.user.modules.User_Package; use org.allbinary.business.user.modules.User_Package;
 
 package body views.admin.user.UsersView_Package is
 
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    package UserDomNode_Package renames Standard.org.allbinary.business.user.UserDomNode_Package;
    package UsersData_Package renames Standard.org.allbinary.business.user.UsersData_Package;
    package User_Package renames Standard.org.allbinary.business.user.modules.User_Package;

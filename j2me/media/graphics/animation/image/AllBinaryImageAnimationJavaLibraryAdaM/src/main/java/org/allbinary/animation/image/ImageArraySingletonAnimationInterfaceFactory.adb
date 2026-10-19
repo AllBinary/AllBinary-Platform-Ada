@@ -13,18 +13,12 @@
 --  Generated Code Do Not Modify
 
 
-with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Animation_Package;
 with org.allbinary.animation.AnimationBehavior_Package; use org.allbinary.animation.AnimationBehavior_Package;
-with org.allbinary.animation.IndexedAnimation_Package; use org.allbinary.animation.IndexedAnimation_Package;
-with org.allbinary.image.IndexedAnimationToImageArrayUtil_Package; use org.allbinary.image.IndexedAnimationToImageArrayUtil_Package;
 with org.allbinary.animation.image.ImageArrayAnimation_Package; use org.allbinary.animation.image.ImageArrayAnimation_Package;
 
 package body org.allbinary.animation.image.ImageArraySingletonAnimationInterfaceFactory_Package is
 
-   package Animation_Package renames Standard.org.allbinary.animation.Animation_Package;
    package AnimationBehavior_Package renames Standard.org.allbinary.animation.AnimationBehavior_Package;
-   package IndexedAnimation_Package renames Standard.org.allbinary.animation.IndexedAnimation_Package;
-   package IndexedAnimationToImageArrayUtil_Package renames Standard.org.allbinary.image.IndexedAnimationToImageArrayUtil_Package;
    procedure Initialize_Fields (This : in out ImageArraySingletonAnimationInterfaceFactory'Class) is
    begin
       null;

@@ -14,14 +14,12 @@
 
 
 with org.allbinary.animation.AnimationBehavior_Package; use org.allbinary.animation.AnimationBehavior_Package;
-with org.allbinary.logic.communication.log.ForcedLogUtil_Package; use org.allbinary.logic.communication.log.ForcedLogUtil_Package;
 with org.allbinary.animation.image.ImageArrayAnimation_Package; use org.allbinary.animation.image.ImageArrayAnimation_Package;
 with org.allbinary.animation.image.AdjustedImageArrayAnimation_Package; use org.allbinary.animation.image.AdjustedImageArrayAnimation_Package;
 
 package body org.allbinary.animation.image.ImageArrayAnimationFactory_Package is
 
    package AnimationBehavior_Package renames Standard.org.allbinary.animation.AnimationBehavior_Package;
-   package ForcedLogUtil_Package renames Standard.org.allbinary.logic.communication.log.ForcedLogUtil_Package;
    procedure Initialize_Fields (This : in out ImageArrayAnimationFactory'Class) is
    begin
       null;

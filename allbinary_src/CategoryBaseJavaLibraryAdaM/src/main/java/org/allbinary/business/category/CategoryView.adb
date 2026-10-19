@@ -14,7 +14,6 @@
 
 
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.business.category.properties.CategoryPropertiesInterface_Package; use org.allbinary.business.category.properties.CategoryPropertiesInterface_Package;
 with org.allbinary.business.category.properties.CategoryPropertiesView_Package; use org.allbinary.business.category.properties.CategoryPropertiesView_Package;
 with org.allbinary.logic.java.anyType.InterfaceUtil_Package; use org.allbinary.logic.java.anyType.InterfaceUtil_Package;
@@ -24,7 +23,6 @@ with org.allbinary.business.category.CategoryData_Package; use org.allbinary.bus
 package body org.allbinary.business.category.CategoryView_Package is
 
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    package CategoryPropertiesInterface_Package renames Standard.org.allbinary.business.category.properties.CategoryPropertiesInterface_Package;
    package CategoryPropertiesView_Package renames Standard.org.allbinary.business.category.properties.CategoryPropertiesView_Package;
    package InterfaceUtil_Package renames Standard.org.allbinary.logic.java.anyType.InterfaceUtil_Package;

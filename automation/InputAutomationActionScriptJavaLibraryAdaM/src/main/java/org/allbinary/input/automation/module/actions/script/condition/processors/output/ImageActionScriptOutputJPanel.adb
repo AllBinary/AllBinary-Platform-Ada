@@ -14,7 +14,6 @@
 
 
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.input.media.image.InputImageType_Package; use org.allbinary.input.media.image.InputImageType_Package;
 with org.allbinary.input.automation.module.actions.script.condition.processors.output.ImageTypes_Package; use org.allbinary.input.automation.module.actions.script.condition.processors.output.ImageTypes_Package;
 with org.allbinary.input.automation.module.actions.script.condition.processors.output.DefaultListModel_Package; use org.allbinary.input.automation.module.actions.script.condition.processors.output.DefaultListModel_Package;
@@ -22,7 +21,6 @@ with org.allbinary.input.automation.module.actions.script.condition.processors.o
 package body org.allbinary.input.automation.module.actions.script.condition.processors.output.ImageActionScriptOutputJPanel_Package is
 
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    package InputImageType_Package renames Standard.org.allbinary.input.media.image.InputImageType_Package;
    procedure Initialize_Fields (This : in out ImageActionScriptOutputJPanel'Class) is
    begin

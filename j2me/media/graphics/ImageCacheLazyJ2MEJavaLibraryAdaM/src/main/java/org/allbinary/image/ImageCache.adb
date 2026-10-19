@@ -26,7 +26,6 @@ with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.s
 with org.allbinary.system.Memory_Package; use org.allbinary.system.Memory_Package;
 with org.allbinary.thread.ConcurrentImageLoadingProcessor_Package; use org.allbinary.thread.ConcurrentImageLoadingProcessor_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
-with org.allbinary.logic.ABSystemWrapper_Package; use org.allbinary.logic.ABSystemWrapper_Package;
 with java.lang.Thread_Package; use java.lang.Thread_Package;
 with org.allbinary.image.ImageFactory_Package; use org.allbinary.image.ImageFactory_Package;
 
@@ -45,7 +44,6 @@ package body org.allbinary.image.ImageCache_Package is
    package Memory_Package renames Standard.org.allbinary.system.Memory_Package;
    package ConcurrentImageLoadingProcessor_Package renames Standard.org.allbinary.thread.ConcurrentImageLoadingProcessor_Package;
    package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
-   package ABSystemWrapper_Package renames Standard.org.allbinary.logic.ABSystemWrapper_Package;
    package Thread_Package renames Standard.java.lang.Thread_Package;
    procedure Initialize_Fields (This : in out ImageCache'Class) is
    begin
@@ -605,7 +603,6 @@ with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.s
 with org.allbinary.system.Memory_Package; use org.allbinary.system.Memory_Package;
 with org.allbinary.thread.ConcurrentImageLoadingProcessor_Package; use org.allbinary.thread.ConcurrentImageLoadingProcessor_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
-with org.allbinary.logic.ABSystemWrapper_Package; use org.allbinary.logic.ABSystemWrapper_Package;
 with java.lang.Thread_Package; use java.lang.Thread_Package;
 with org.allbinary.image.ImageFactory_Package; use org.allbinary.image.ImageFactory_Package;
 
@@ -624,7 +621,6 @@ package body org.allbinary.image.NotHTMLProcessor_Package is
    package Memory_Package renames Standard.org.allbinary.system.Memory_Package;
    package ConcurrentImageLoadingProcessor_Package renames Standard.org.allbinary.thread.ConcurrentImageLoadingProcessor_Package;
    package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
-   package ABSystemWrapper_Package renames Standard.org.allbinary.logic.ABSystemWrapper_Package;
    package Thread_Package renames Standard.java.lang.Thread_Package;
    procedure Initialize_Fields (This : in out NotHTMLProcessor'Class) is
    begin
@@ -666,7 +662,6 @@ with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.s
 with org.allbinary.system.Memory_Package; use org.allbinary.system.Memory_Package;
 with org.allbinary.thread.ConcurrentImageLoadingProcessor_Package; use org.allbinary.thread.ConcurrentImageLoadingProcessor_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
-with org.allbinary.logic.ABSystemWrapper_Package; use org.allbinary.logic.ABSystemWrapper_Package;
 with java.lang.Thread_Package; use java.lang.Thread_Package;
 with org.allbinary.image.ImageFactory_Package; use org.allbinary.image.ImageFactory_Package;
 
@@ -685,7 +680,6 @@ package body org.allbinary.image.NotHTMLEndProcessor_Package is
    package Memory_Package renames Standard.org.allbinary.system.Memory_Package;
    package ConcurrentImageLoadingProcessor_Package renames Standard.org.allbinary.thread.ConcurrentImageLoadingProcessor_Package;
    package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
-   package ABSystemWrapper_Package renames Standard.org.allbinary.logic.ABSystemWrapper_Package;
    package Thread_Package renames Standard.java.lang.Thread_Package;
    procedure Initialize_Fields (This : in out NotHTMLEndProcessor'Class) is
    begin
@@ -729,7 +723,6 @@ with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.s
 with org.allbinary.system.Memory_Package; use org.allbinary.system.Memory_Package;
 with org.allbinary.thread.ConcurrentImageLoadingProcessor_Package; use org.allbinary.thread.ConcurrentImageLoadingProcessor_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
-with org.allbinary.logic.ABSystemWrapper_Package; use org.allbinary.logic.ABSystemWrapper_Package;
 with java.lang.Thread_Package; use java.lang.Thread_Package;
 with org.allbinary.image.ImageFactory_Package; use org.allbinary.image.ImageFactory_Package;
 
@@ -748,7 +741,6 @@ package body org.allbinary.image.HTMLEndProcessor_Package is
    package Memory_Package renames Standard.org.allbinary.system.Memory_Package;
    package ConcurrentImageLoadingProcessor_Package renames Standard.org.allbinary.thread.ConcurrentImageLoadingProcessor_Package;
    package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
-   package ABSystemWrapper_Package renames Standard.org.allbinary.logic.ABSystemWrapper_Package;
    package Thread_Package renames Standard.java.lang.Thread_Package;
    procedure Initialize_Fields (This : in out HTMLEndProcessor'Class) is
    begin
@@ -800,7 +792,6 @@ with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.s
 with org.allbinary.system.Memory_Package; use org.allbinary.system.Memory_Package;
 with org.allbinary.thread.ConcurrentImageLoadingProcessor_Package; use org.allbinary.thread.ConcurrentImageLoadingProcessor_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
-with org.allbinary.logic.ABSystemWrapper_Package; use org.allbinary.logic.ABSystemWrapper_Package;
 with java.lang.Thread_Package; use java.lang.Thread_Package;
 with org.allbinary.image.ImageFactory_Package; use org.allbinary.image.ImageFactory_Package;
 
@@ -819,7 +810,6 @@ package body org.allbinary.image.FirstProcessor_Package is
    package Memory_Package renames Standard.org.allbinary.system.Memory_Package;
    package ConcurrentImageLoadingProcessor_Package renames Standard.org.allbinary.thread.ConcurrentImageLoadingProcessor_Package;
    package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
-   package ABSystemWrapper_Package renames Standard.org.allbinary.logic.ABSystemWrapper_Package;
    package Thread_Package renames Standard.java.lang.Thread_Package;
    procedure Initialize_Fields (This : in out FirstProcessor'Class) is
    begin

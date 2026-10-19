@@ -14,7 +14,6 @@
 
 
 with java.util.HashMap_Package; use java.util.HashMap_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with admin.taghelpers.MultipartRequestParamForwardHelper_Package; use admin.taghelpers.MultipartRequestParamForwardHelper_Package;
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.logic.communication.http.request.AbResponseHandler_Package; use org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
@@ -26,7 +25,6 @@ with admin.tags.AbTagData_Package; use admin.tags.AbTagData_Package;
 package body admin.tags.MultipartRequestParamForwardTag_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    package MultipartRequestParamForwardHelper_Package renames Standard.admin.taghelpers.MultipartRequestParamForwardHelper_Package;
    package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    package AbResponseHandler_Package renames Standard.org.allbinary.logic.communication.http.request.AbResponseHandler_Package;

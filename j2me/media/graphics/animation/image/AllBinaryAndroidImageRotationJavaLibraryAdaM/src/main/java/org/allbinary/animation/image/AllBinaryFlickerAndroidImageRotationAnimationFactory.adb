@@ -14,7 +14,6 @@
 
 
 with javax.microedition.lcdui.NullImage_Package; use javax.microedition.lcdui.NullImage_Package;
-with org.allbinary.logic.communication.log.ForcedLogUtil_Package; use org.allbinary.logic.communication.log.ForcedLogUtil_Package;
 with org.allbinary.media.image.ImageCopyUtil_Package; use org.allbinary.media.image.ImageCopyUtil_Package;
 with org.allbinary.math.AngleFactory_Package; use org.allbinary.math.AngleFactory_Package;
 with org.allbinary.math.AngleInfo_Package; use org.allbinary.math.AngleInfo_Package;
@@ -23,7 +22,6 @@ with org.allbinary.animation.image.AllBinaryFlickerAndroidImageRotationAnimation
 package body org.allbinary.animation.image.AllBinaryFlickerAndroidImageRotationAnimationFactory_Package is
 
    package NullImage_Package renames Standard.javax.microedition.lcdui.NullImage_Package;
-   package ForcedLogUtil_Package renames Standard.org.allbinary.logic.communication.log.ForcedLogUtil_Package;
    package ImageCopyUtil_Package renames Standard.org.allbinary.media.image.ImageCopyUtil_Package;
    package AngleFactory_Package renames Standard.org.allbinary.math.AngleFactory_Package;
    package AngleInfo_Package renames Standard.org.allbinary.math.AngleInfo_Package;

@@ -14,7 +14,6 @@
 
 
 with java.util.Calendar_Package; use java.util.Calendar_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.business.user.UserInterface_Package; use org.allbinary.business.user.UserInterface_Package;
 with org.allbinary.business.user.role.BasicUserRole_Package; use org.allbinary.business.user.role.BasicUserRole_Package;
 with org.allbinary.business.user.role.UserRoleFactory_Package; use org.allbinary.business.user.role.UserRoleFactory_Package;
@@ -29,7 +28,6 @@ with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.s
 package body admin.taghelpers.AuthenticationHelper_Package is
 
    package Calendar_Package renames Standard.java.util.Calendar_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    package UserInterface_Package renames Standard.org.allbinary.business.user.UserInterface_Package;
    package BasicUserRole_Package renames Standard.org.allbinary.business.user.role.BasicUserRole_Package;
    package UserRoleFactory_Package renames Standard.org.allbinary.business.user.role.UserRoleFactory_Package;

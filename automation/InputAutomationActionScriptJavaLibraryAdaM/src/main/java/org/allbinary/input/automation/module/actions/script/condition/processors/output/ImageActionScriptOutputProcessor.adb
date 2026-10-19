@@ -14,7 +14,6 @@
 
 
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.input.media.image.InputImageIOInterfaceFactory_Package; use org.allbinary.input.media.image.InputImageIOInterfaceFactory_Package;
 with org.allbinary.input.media.image.InputImageType_Package; use org.allbinary.input.media.image.InputImageType_Package;
 with org.allbinary.media.image.io.ImageIOInterface_Package; use org.allbinary.media.image.io.ImageIOInterface_Package;
@@ -24,7 +23,6 @@ with org.allbinary.input.automation.module.actions.script.condition.processors.o
 package body org.allbinary.input.automation.module.actions.script.condition.processors.output.ImageActionScriptOutputProcessor_Package is
 
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    package InputImageIOInterfaceFactory_Package renames Standard.org.allbinary.input.media.image.InputImageIOInterfaceFactory_Package;
    package InputImageType_Package renames Standard.org.allbinary.input.media.image.InputImageType_Package;
    package ImageIOInterface_Package renames Standard.org.allbinary.media.image.io.ImageIOInterface_Package;

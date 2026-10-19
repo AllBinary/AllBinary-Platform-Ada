@@ -13,7 +13,6 @@
 --  Generated Code Do Not Modify
 
 
-with org.allbinary.game.configuration.GameConfigurationCentral_Package; use org.allbinary.game.configuration.GameConfigurationCentral_Package;
 with org.allbinary.logic.math.PrimitiveIntUtil_Package; use org.allbinary.logic.math.PrimitiveIntUtil_Package;
 with org.allbinary.media.image.ImageCopyUtil_Package; use org.allbinary.media.image.ImageCopyUtil_Package;
 with org.allbinary.math.AngleFactory_Package; use org.allbinary.math.AngleFactory_Package;
@@ -23,7 +22,6 @@ with org.allbinary.animation.image.AllBinaryAdjustedHTMLImageRotationAnimation_P
 
 package body org.allbinary.animation.image.AllBinaryHTMLImageRotationAnimationFactory_Package is
 
-   package GameConfigurationCentral_Package renames Standard.org.allbinary.game.configuration.GameConfigurationCentral_Package;
    package PrimitiveIntUtil_Package renames Standard.org.allbinary.logic.math.PrimitiveIntUtil_Package;
    package ImageCopyUtil_Package renames Standard.org.allbinary.media.image.ImageCopyUtil_Package;
    package AngleFactory_Package renames Standard.org.allbinary.math.AngleFactory_Package;

@@ -14,14 +14,12 @@
 
 
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
-with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.logic.string_Id.StringValidationUtil_Package; use org.allbinary.logic.string_Id.StringValidationUtil_Package;
 with org.allbinary.business.user.role.UserRoleFactory_Package; use org.allbinary.business.user.role.UserRoleFactory_Package;
 
 package body org.allbinary.business.user.role.UserRoleB_Package is
 
    package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
-   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    package StringValidationUtil_Package renames Standard.org.allbinary.logic.string_Id.StringValidationUtil_Package;
    procedure Initialize_Fields (This : in out UserRoleB'Class) is
    begin

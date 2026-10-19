@@ -13,13 +13,11 @@
 --  Generated Code Do Not Modify
 
 
-with javax.microedition.lcdui.NullImage_Package; use javax.microedition.lcdui.NullImage_Package;
 with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
 with org.allbinary.logic.math.PrimitiveIntUtil_Package; use org.allbinary.logic.math.PrimitiveIntUtil_Package;
 
 package body org.allbinary.animation.VectorAnimation_Package is
 
-   package NullImage_Package renames Standard.javax.microedition.lcdui.NullImage_Package;
    package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
    package PrimitiveIntUtil_Package renames Standard.org.allbinary.logic.math.PrimitiveIntUtil_Package;
    procedure Initialize_Fields (This : in out VectorAnimation'Class) is

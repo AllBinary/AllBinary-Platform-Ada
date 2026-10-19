@@ -19,7 +19,6 @@ with org.allbinary.game.combat.destroy.DestroyedLayerProcessor_Package; use org.
 with org.allbinary.game.configuration.GameConfigurationUtil_Package; use org.allbinary.game.configuration.GameConfigurationUtil_Package;
 with org.allbinary.game.identification.BasicGroupFactory_Package; use org.allbinary.game.identification.BasicGroupFactory_Package;
 with org.allbinary.game.score.NoScoreable_Package; use org.allbinary.game.score.NoScoreable_Package;
-with org.allbinary.view.ViewPosition_Package; use org.allbinary.view.ViewPosition_Package;
 
 package body org.allbinary.game.layer.weapon.WeaponLayer_Package is
 
@@ -29,7 +28,6 @@ package body org.allbinary.game.layer.weapon.WeaponLayer_Package is
    package GameConfigurationUtil_Package renames Standard.org.allbinary.game.configuration.GameConfigurationUtil_Package;
    package BasicGroupFactory_Package renames Standard.org.allbinary.game.identification.BasicGroupFactory_Package;
    package NoScoreable_Package renames Standard.org.allbinary.game.score.NoScoreable_Package;
-   package ViewPosition_Package renames Standard.org.allbinary.view.ViewPosition_Package;
    procedure Initialize_Fields (This : in out WeaponLayer'Class) is
    begin
       null;

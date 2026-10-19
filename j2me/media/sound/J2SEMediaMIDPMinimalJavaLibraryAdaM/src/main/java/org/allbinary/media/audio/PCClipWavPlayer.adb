@@ -17,7 +17,6 @@ with org.allbinary.thread.ARunnable_Package; use org.allbinary.thread.ARunnable_
 with javax.microedition.media.MediaException_Package; use javax.microedition.media.MediaException_Package;
 with javax.microedition.media.PlayerListener_Package; use javax.microedition.media.PlayerListener_Package;
 with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
-with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.thread.MusicThreadPool_Package; use org.allbinary.thread.MusicThreadPool_Package;
 with org.allbinary.media.audio.NullAudioFormat_Package; use org.allbinary.media.audio.NullAudioFormat_Package;
@@ -30,7 +29,6 @@ package body org.allbinary.media.audio.PCClipWavPlayer_Package is
    package MediaException_Package renames Standard.javax.microedition.media.MediaException_Package;
    package PlayerListener_Package renames Standard.javax.microedition.media.PlayerListener_Package;
    package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
-   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
    package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    package MusicThreadPool_Package renames Standard.org.allbinary.thread.MusicThreadPool_Package;
    procedure Initialize_Fields (This : in out PCClipWavPlayer'Class) is

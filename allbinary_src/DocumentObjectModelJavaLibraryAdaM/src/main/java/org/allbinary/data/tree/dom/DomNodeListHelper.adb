@@ -14,13 +14,11 @@
 
 
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
-with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.data.tree.dom.DomNodeHelper_Package; use org.allbinary.data.tree.dom.DomNodeHelper_Package;
 
 package body org.allbinary.data.tree.dom.DomNodeListHelper_Package is
 
    package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
-   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    procedure Initialize_Fields (This : in out DomNodeListHelper'Class) is
    begin
       null;

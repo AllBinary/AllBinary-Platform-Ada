@@ -13,24 +13,14 @@
 --  Generated Code Do Not Modify
 
 
-with javax.microedition.lcdui.Font_Package; use javax.microedition.lcdui.Font_Package;
-with org.allbinary.AndroidUtil_Package; use org.allbinary.AndroidUtil_Package;
-with org.allbinary.J2MEUtil_Package; use org.allbinary.J2MEUtil_Package;
 with org.allbinary.graphics.Anchor_Package; use org.allbinary.graphics.Anchor_Package;
-with org.allbinary.graphics.opengles.OpenGLFeatureUtil_Package; use org.allbinary.graphics.opengles.OpenGLFeatureUtil_Package;
-with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
 with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 
 package body org.allbinary.graphics.draw.DrawStringUtil_Package is
 
-   package Font_Package renames Standard.javax.microedition.lcdui.Font_Package;
-   package AndroidUtil_Package renames Standard.org.allbinary.AndroidUtil_Package;
-   package J2MEUtil_Package renames Standard.org.allbinary.J2MEUtil_Package;
    package Anchor_Package renames Standard.org.allbinary.graphics.Anchor_Package;
-   package OpenGLFeatureUtil_Package renames Standard.org.allbinary.graphics.opengles.OpenGLFeatureUtil_Package;
-   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
    package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
    package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;

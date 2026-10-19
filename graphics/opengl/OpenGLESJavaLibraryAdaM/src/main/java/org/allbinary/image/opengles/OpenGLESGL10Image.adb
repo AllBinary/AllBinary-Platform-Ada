@@ -13,17 +13,15 @@
 --  Generated Code Do Not Modify
 
 
-with org.allbinary.graphics.displayable.DisplayInfoSingleton_Package; use org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
+with java.nio.ByteBuffer_Package; use java.nio.ByteBuffer_Package;
 with org.allbinary.graphics.opengles.OpenGLLogUtil_Package; use org.allbinary.graphics.opengles.OpenGLLogUtil_Package;
-with org.allbinary.opengles.GLUtil_Package; use org.allbinary.opengles.GLUtil_Package;
 with org.allbinary.image.opengles.OpenGLESImageProperties_Package; use org.allbinary.image.opengles.OpenGLESImageProperties_Package;
 with org.allbinary.image.opengles.OpenGLESImageProcessor_Package; use org.allbinary.image.opengles.OpenGLESImageProcessor_Package;
 
 package body org.allbinary.image.opengles.OpenGLESGL10Image_Package is
 
-   package DisplayInfoSingleton_Package renames Standard.org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
+   package ByteBuffer_Package renames Standard.java.nio.ByteBuffer_Package;
    package OpenGLLogUtil_Package renames Standard.org.allbinary.graphics.opengles.OpenGLLogUtil_Package;
-   package GLUtil_Package renames Standard.org.allbinary.opengles.GLUtil_Package;
    procedure Initialize_Fields (This : in out OpenGLESGL10Image'Class) is
    begin
       null;

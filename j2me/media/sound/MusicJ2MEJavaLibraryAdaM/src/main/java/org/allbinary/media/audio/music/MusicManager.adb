@@ -1,7 +1,6 @@
 --  Generated Code Do Not Modify
 
 
-with org.allbinary.thread.ARunnable_Package; use org.allbinary.thread.ARunnable_Package;
 with org.allbinary.AvianUtil_Package; use org.allbinary.AvianUtil_Package;
 with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
@@ -13,7 +12,6 @@ with java.lang.Thread_Package; use java.lang.Thread_Package;
 
 package body org.allbinary.media.audio.music.MusicManager_Package is
 
-   package ARunnable_Package renames Standard.org.allbinary.thread.ARunnable_Package;
    package AvianUtil_Package renames Standard.org.allbinary.AvianUtil_Package;
    package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
    package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
@@ -205,7 +203,6 @@ package body org.allbinary.media.audio.music.MusicManager_Package is
 end org.allbinary.media.audio.music.MusicManager_Package;
 
 
-with org.allbinary.thread.ARunnable_Package; use org.allbinary.thread.ARunnable_Package;
 with org.allbinary.AvianUtil_Package; use org.allbinary.AvianUtil_Package;
 with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
@@ -217,7 +214,6 @@ with java.lang.Thread_Package; use java.lang.Thread_Package;
 
 package body org.allbinary.media.audio.music.MusicManagerPlayerListener_Package is
 
-   package ARunnable_Package renames Standard.org.allbinary.thread.ARunnable_Package;
    package AvianUtil_Package renames Standard.org.allbinary.AvianUtil_Package;
    package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
    package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;

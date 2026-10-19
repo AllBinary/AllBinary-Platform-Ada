@@ -8,13 +8,14 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.nio.ByteBuffer_Package; use java.nio.ByteBuffer_Package;
+with java.nio.ByteBuffer_Package; use java.nio.ByteBuffer_Package;
 with javax.microedition.khronos.opengles.GL10_Package; use javax.microedition.khronos.opengles.GL10_Package;
 with org.allbinary.graphics.OpenGLBitmap_Package; use org.allbinary.graphics.OpenGLBitmap_Package;
 with org.allbinary.image.opengles.OpenGLESImage_Package; use org.allbinary.image.opengles.OpenGLESImage_Package;
 
 package org.platform.opengl.OpenGLGLUUtils_Package is
 
+   package ByteBuffer_Package renames Standard.java.nio.ByteBuffer_Package;
    package GL10_Package renames Standard.javax.microedition.khronos.opengles.GL10_Package;
    package OpenGLBitmap_Package renames Standard.org.allbinary.graphics.OpenGLBitmap_Package;
    package OpenGLESImage_Package renames Standard.org.allbinary.image.opengles.OpenGLESImage_Package;

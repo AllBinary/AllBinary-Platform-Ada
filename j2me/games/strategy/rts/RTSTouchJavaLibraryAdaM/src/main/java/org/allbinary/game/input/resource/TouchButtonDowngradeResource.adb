@@ -13,11 +13,9 @@
 --  Generated Code Do Not Modify
 
 
-with org.allbinary.input.motion.button.TouchButtonBlankResource_Package; use org.allbinary.input.motion.button.TouchButtonBlankResource_Package;
 
 package body org.allbinary.game.input.resource.TouchButtonDowngradeResource_Package is
 
-   package TouchButtonBlankResource_Package renames Standard.org.allbinary.input.motion.button.TouchButtonBlankResource_Package;
    procedure Initialize_Fields (This : in out TouchButtonDowngradeResource'Class) is
    begin
       null;

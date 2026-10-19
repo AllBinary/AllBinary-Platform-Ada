@@ -14,12 +14,10 @@
 
 
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
-with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 
 package body org.allbinary.log.LOGGING_Package is
 
    package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
-   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    procedure Initialize_Fields (This : in out LOGGING'Class) is
    begin
       null;

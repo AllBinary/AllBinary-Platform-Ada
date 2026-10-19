@@ -13,13 +13,9 @@
 --  Generated Code Do Not Modify
 
 
-with java.util.Calendar_Package; use java.util.Calendar_Package;
-with java.util.Date_Package; use java.util.Date_Package;
 
 package body org.allbinary.time.TimeStampUtil_Package is
 
-   package Calendar_Package renames Standard.java.util.Calendar_Package;
-   package Date_Package renames Standard.java.util.Date_Package;
    procedure Initialize_Fields (This : in out TimeStampUtil'Class) is
    begin
       null;

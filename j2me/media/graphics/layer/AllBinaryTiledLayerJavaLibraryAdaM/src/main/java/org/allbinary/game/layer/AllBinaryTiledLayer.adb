@@ -14,14 +14,10 @@
 
 
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 
 package body org.allbinary.game.layer.AllBinaryTiledLayer_Package is
 
    package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
-   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    procedure Initialize_Fields (This : in out AllBinaryTiledLayer'Class) is
    begin
       null;

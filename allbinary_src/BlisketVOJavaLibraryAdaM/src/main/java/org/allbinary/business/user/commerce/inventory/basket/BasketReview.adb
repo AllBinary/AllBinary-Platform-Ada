@@ -15,14 +15,12 @@
 
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.business.user.commerce.inventory.item.ItemView_Package; use org.allbinary.business.user.commerce.inventory.item.ItemView_Package;
-with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.business.user.commerce.inventory.basket.BasketData_Package; use org.allbinary.business.user.commerce.inventory.basket.BasketData_Package;
 
 package body org.allbinary.business.user.commerce.inventory.basket.BasketReview_Package is
 
    package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    package ItemView_Package renames Standard.org.allbinary.business.user.commerce.inventory.item.ItemView_Package;
-   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    procedure Initialize_Fields (This : in out BasketReview'Class) is
    begin
       null;

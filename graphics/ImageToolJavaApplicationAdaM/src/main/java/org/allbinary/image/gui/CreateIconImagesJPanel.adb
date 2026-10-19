@@ -13,26 +13,10 @@
 --  Generated Code Do Not Modify
 
 
-with java.io.File_Package; use java.io.File_Package;
-with org.allbinary.graphics.displayable.CanvasStrings_Package; use org.allbinary.graphics.displayable.CanvasStrings_Package;
-with org.allbinary.logic.io.file.AbFile_Package; use org.allbinary.logic.io.file.AbFile_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
-with org.allbinary.media.image.ImagePersistanceUtil_Package; use org.allbinary.media.image.ImagePersistanceUtil_Package;
-with org.allbinary.media.image.ImageUtil_Package; use org.allbinary.media.image.ImageUtil_Package;
-with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with java.lang.Thread_Package; use java.lang.Thread_Package;
 
 package body org.allbinary.image.gui.CreateIconImagesJPanel_Package is
 
-   package File_Package renames Standard.java.io.File_Package;
-   package CanvasStrings_Package renames Standard.org.allbinary.graphics.displayable.CanvasStrings_Package;
-   package AbFile_Package renames Standard.org.allbinary.logic.io.file.AbFile_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
-   package ImagePersistanceUtil_Package renames Standard.org.allbinary.media.image.ImagePersistanceUtil_Package;
-   package ImageUtil_Package renames Standard.org.allbinary.media.image.ImageUtil_Package;
-   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    package Thread_Package renames Standard.java.lang.Thread_Package;
    procedure Initialize_Fields (This : in out CreateIconImagesJPanel'Class) is
    begin

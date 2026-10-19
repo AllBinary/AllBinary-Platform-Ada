@@ -14,7 +14,6 @@
 
 
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.business.entry_Id.EntryData_Package; use org.allbinary.business.entry_Id.EntryData_Package;
 with org.allbinary.business.user.NewUserFactory_Package; use org.allbinary.business.user.NewUserFactory_Package;
 with org.allbinary.business.user.UserData_Package; use org.allbinary.business.user.UserData_Package;
@@ -31,7 +30,6 @@ with org.allbinary.logic.string_Id.StringValidationUtil_Package; use org.allbina
 package body admin.taghelpers.UserHelper_Package is
 
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    package EntryData_Package renames Standard.org.allbinary.business.entry_Id.EntryData_Package;
    package NewUserFactory_Package renames Standard.org.allbinary.business.user.NewUserFactory_Package;
    package UserData_Package renames Standard.org.allbinary.business.user.UserData_Package;

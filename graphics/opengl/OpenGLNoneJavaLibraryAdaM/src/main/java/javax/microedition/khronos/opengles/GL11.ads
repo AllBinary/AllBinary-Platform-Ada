@@ -8,13 +8,16 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.nio.Buffer_Package; use java.nio.Buffer_Package;
---  with java.nio.FloatBuffer_Package; use java.nio.FloatBuffer_Package;
---  with java.nio.IntBuffer_Package; use java.nio.IntBuffer_Package;
+with java.nio.Buffer_Package; use java.nio.Buffer_Package;
+with java.nio.FloatBuffer_Package; use java.nio.FloatBuffer_Package;
+with java.nio.IntBuffer_Package; use java.nio.IntBuffer_Package;
 with javax.microedition.khronos.opengles.GL10_Package; use javax.microedition.khronos.opengles.GL10_Package;
 
 package javax.microedition.khronos.opengles.GL11_Package is
 
+   package Buffer_Package renames Standard.java.nio.Buffer_Package;
+   package FloatBuffer_Package renames Standard.java.nio.FloatBuffer_Package;
+   package IntBuffer_Package renames Standard.java.nio.IntBuffer_Package;
 
    type GL11 is interface and GL10;
    type GL11_Access is access all GL11'Class;

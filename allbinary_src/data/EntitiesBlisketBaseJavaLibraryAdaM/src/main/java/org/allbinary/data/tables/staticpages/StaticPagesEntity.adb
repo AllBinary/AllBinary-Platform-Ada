@@ -13,7 +13,6 @@
 --  Generated Code Do Not Modify
 
 
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.business.context.modules.storefront.StoreFrontData_Package; use org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
 with org.allbinary.business.init.db.StaticPagesDbInitInfo_Package; use org.allbinary.business.init.db.StaticPagesDbInitInfo_Package;
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
@@ -23,7 +22,6 @@ with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.Com
 
 package body org.allbinary.data.tables.staticpages.StaticPagesEntity_Package is
 
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    package StoreFrontData_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
    package StaticPagesDbInitInfo_Package renames Standard.org.allbinary.business.init.db.StaticPagesDbInitInfo_Package;
    package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;

@@ -14,7 +14,6 @@
 
 
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
-with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.media.image.comparison.ImageComparisonResult_Package; use org.allbinary.media.image.comparison.ImageComparisonResult_Package;
 with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
 with org.allbinary.time.TimeDelayHelper_Package; use org.allbinary.time.TimeDelayHelper_Package;
@@ -31,7 +30,6 @@ with org.allbinary.media.image.comparison.motion.MotionRectangles_Package; use o
 package body org.allbinary.media.image.comparison.motion.MotionRectanglesWorker_Package is
 
    package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
-   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    package ImageComparisonResult_Package renames Standard.org.allbinary.media.image.comparison.ImageComparisonResult_Package;
    package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
    package TimeDelayHelper_Package renames Standard.org.allbinary.time.TimeDelayHelper_Package;

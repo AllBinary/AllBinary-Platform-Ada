@@ -13,21 +13,13 @@
 --  Generated Code Do Not Modify
 
 
-with java.io.File_Package; use java.io.File_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
-with org.allbinary.media.image.ImageJ2SERotationUtil_Package; use org.allbinary.media.image.ImageJ2SERotationUtil_Package;
 with org.allbinary.string_Id.CommonPhoneStrings_Package; use org.allbinary.string_Id.CommonPhoneStrings_Package;
-with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with java.lang.Thread_Package; use java.lang.Thread_Package;
 with org.allbinary.image.gui.Graphics_Package; use org.allbinary.image.gui.Graphics_Package;
 
 package body org.allbinary.image.gui.RotationSpriteImageJPanel_Package is
 
-   package File_Package renames Standard.java.io.File_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
-   package ImageJ2SERotationUtil_Package renames Standard.org.allbinary.media.image.ImageJ2SERotationUtil_Package;
    package CommonPhoneStrings_Package renames Standard.org.allbinary.string_Id.CommonPhoneStrings_Package;
-   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
    package Thread_Package renames Standard.java.lang.Thread_Package;
    procedure Initialize_Fields (This : in out RotationSpriteImageJPanel'Class) is
    begin

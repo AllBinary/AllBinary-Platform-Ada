@@ -17,7 +17,6 @@ with org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package; use org.allbi
 with org.allbinary.image.opengles.OpenGLESImage_Package; use org.allbinary.image.opengles.OpenGLESImage_Package;
 with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
 with org.eclipse.swt.graphics.GC_Package; use org.eclipse.swt.graphics.GC_Package;
-with org.microemu.device.swt.SwtImmutableImage_Package; use org.microemu.device.swt.SwtImmutableImage_Package;
 with org.microemu.device.swt.SwtMutableImage_Package; use org.microemu.device.swt.SwtMutableImage_Package;
 
 package body org.allbinary.media.image.ImageRotationUtil_Package is
@@ -26,7 +25,6 @@ package body org.allbinary.media.image.ImageRotationUtil_Package is
    package OpenGLESImage_Package renames Standard.org.allbinary.image.opengles.OpenGLESImage_Package;
    package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
    package GC_Package renames Standard.org.eclipse.swt.graphics.GC_Package;
-   package SwtImmutableImage_Package renames Standard.org.microemu.device.swt.SwtImmutableImage_Package;
    package SwtMutableImage_Package renames Standard.org.microemu.device.swt.SwtMutableImage_Package;
    procedure Initialize_Fields (This : in out ImageRotationUtil'Class) is
    begin

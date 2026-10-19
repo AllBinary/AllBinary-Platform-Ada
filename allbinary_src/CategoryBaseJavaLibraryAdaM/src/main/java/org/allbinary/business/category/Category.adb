@@ -16,7 +16,6 @@
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.business.category.hierarchy.CategoryHierarchy_Package; use org.allbinary.business.category.hierarchy.CategoryHierarchy_Package;
 with org.allbinary.business.category.properties.root.RootCategoryPropertiesInterface_Package; use org.allbinary.business.category.properties.root.RootCategoryPropertiesInterface_Package;
-with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 
@@ -25,7 +24,6 @@ package body org.allbinary.business.category.Category_Package is
    package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    package CategoryHierarchy_Package renames Standard.org.allbinary.business.category.hierarchy.CategoryHierarchy_Package;
    package RootCategoryPropertiesInterface_Package renames Standard.org.allbinary.business.category.properties.root.RootCategoryPropertiesInterface_Package;
-   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    procedure Initialize_Fields (This : in out Category'Class) is

@@ -14,7 +14,6 @@
 
 
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.business.user.commerce.money.payment.Payment_Package; use org.allbinary.business.user.commerce.money.payment.Payment_Package;
 with org.allbinary.business.user.commerce.money.payment.PaymentData_Package; use org.allbinary.business.user.commerce.money.payment.PaymentData_Package;
 with org.allbinary.data.tables.user.commerce.money.payment.PaymentEntityFactory_Package; use org.allbinary.data.tables.user.commerce.money.payment.PaymentEntityFactory_Package;
@@ -22,7 +21,6 @@ with org.allbinary.data.tables.user.commerce.money.payment.PaymentEntityFactory_
 package body views.generic_Id.payment.PaymentView_Package is
 
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    package Payment_Package renames Standard.org.allbinary.business.user.commerce.money.payment.Payment_Package;
    package PaymentData_Package renames Standard.org.allbinary.business.user.commerce.money.payment.PaymentData_Package;
    package PaymentEntityFactory_Package renames Standard.org.allbinary.data.tables.user.commerce.money.payment.PaymentEntityFactory_Package;

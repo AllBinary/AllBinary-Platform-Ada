@@ -20,9 +20,8 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.nio.ByteBuffer_Package; use java.nio.ByteBuffer_Package;
 --  with java.nio.ByteOrder_Package; use java.nio.ByteOrder_Package;
---  with java.nio.FloatBuffer_Package; use java.nio.FloatBuffer_Package;
+with java.nio.FloatBuffer_Package; use java.nio.FloatBuffer_Package;
 with javax.microedition.khronos.opengles.GL_Package; use javax.microedition.khronos.opengles.GL_Package;
 with javax.microedition.khronos.opengles.GL10_Package; use javax.microedition.khronos.opengles.GL10_Package;
 with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
@@ -33,6 +32,7 @@ with org.allbinary.image.opengles.OpenGLESImage_Package; use org.allbinary.image
 
 package org.allbinary.image.opengles.OpenGLESGL11VBOImage_Package is
 
+   package FloatBuffer_Package renames Standard.java.nio.FloatBuffer_Package;
    package GL_Package renames Standard.javax.microedition.khronos.opengles.GL_Package;
    package GL10_Package renames Standard.javax.microedition.khronos.opengles.GL10_Package;
    package Image_Package renames Standard.javax.microedition.lcdui.Image_Package;

@@ -13,12 +13,10 @@
 --  Generated Code Do Not Modify
 
 
-with org.allbinary.logic.communication.log.ForcedLogUtil_Package; use org.allbinary.logic.communication.log.ForcedLogUtil_Package;
 with org.allbinary.animation.compound.SimultaneousCompoundIndexAnimation_Package; use org.allbinary.animation.compound.SimultaneousCompoundIndexAnimation_Package;
 
 package body org.allbinary.animation.compound.SimultaneousCompoundIndexAnimationInterfaceFactory_Package is
 
-   package ForcedLogUtil_Package renames Standard.org.allbinary.logic.communication.log.ForcedLogUtil_Package;
    procedure Initialize_Fields (This : in out SimultaneousCompoundIndexAnimationInterfaceFactory'Class) is
    begin
       null;

@@ -20,7 +20,6 @@ with org.allbinary.business.context.modules.storefront.StoreFrontInterface_Packa
 with org.allbinary.business.user.commerce.inventory.item.BasicItemView_Package; use org.allbinary.business.user.commerce.inventory.item.BasicItemView_Package;
 with org.allbinary.business.user.commerce.inventory.item.download.DownloadableItemView_Package; use org.allbinary.business.user.commerce.inventory.item.download.DownloadableItemView_Package;
 with org.allbinary.globals.URLGLOBALS_Package; use org.allbinary.globals.URLGLOBALS_Package;
-with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.logic.communication.http.request.MultipartRequestParams_Package; use org.allbinary.logic.communication.http.request.MultipartRequestParams_Package;
 with org.allbinary.logic.io.file.AbFile_Package; use org.allbinary.logic.io.file.AbFile_Package;
 with org.allbinary.logic.io.file.FilePathData_Package; use org.allbinary.logic.io.file.FilePathData_Package;
@@ -37,7 +36,6 @@ package body views.admin.inventory.download.DownloadableInventoryItemView_Packag
    package BasicItemView_Package renames Standard.org.allbinary.business.user.commerce.inventory.item.BasicItemView_Package;
    package DownloadableItemView_Package renames Standard.org.allbinary.business.user.commerce.inventory.item.download.DownloadableItemView_Package;
    package URLGLOBALS_Package renames Standard.org.allbinary.globals.URLGLOBALS_Package;
-   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    package MultipartRequestParams_Package renames Standard.org.allbinary.logic.communication.http.request.MultipartRequestParams_Package;
    package AbFile_Package renames Standard.org.allbinary.logic.io.file.AbFile_Package;
    package FilePathData_Package renames Standard.org.allbinary.logic.io.file.FilePathData_Package;

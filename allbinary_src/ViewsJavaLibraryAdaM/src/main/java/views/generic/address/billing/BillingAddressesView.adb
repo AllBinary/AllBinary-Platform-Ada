@@ -13,7 +13,6 @@
 --  Generated Code Do Not Modify
 
 
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.business.user.address.BillingAddressData_Package; use org.allbinary.business.user.address.BillingAddressData_Package;
 with org.allbinary.business.user.address.StreetAddress_Package; use org.allbinary.business.user.address.StreetAddress_Package;
 with org.allbinary.business.user.address.StreetAddressData_Package; use org.allbinary.business.user.address.StreetAddressData_Package;
@@ -22,7 +21,6 @@ with org.allbinary.logic.visual.transform.info.TransformInfoHttpInterface_Packag
 
 package body views.generic_Id.address.billing.BillingAddressesView_Package is
 
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    package BillingAddressData_Package renames Standard.org.allbinary.business.user.address.BillingAddressData_Package;
    package StreetAddress_Package renames Standard.org.allbinary.business.user.address.StreetAddress_Package;
    package StreetAddressData_Package renames Standard.org.allbinary.business.user.address.StreetAddressData_Package;

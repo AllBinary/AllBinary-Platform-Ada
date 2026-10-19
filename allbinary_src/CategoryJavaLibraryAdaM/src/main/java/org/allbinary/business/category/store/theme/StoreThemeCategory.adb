@@ -15,7 +15,6 @@
 
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.data.tree.dom.DomSearchHelper_Package; use org.allbinary.data.tree.dom.DomSearchHelper_Package;
-with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.logic.visual.theme.ThemeData_Package; use org.allbinary.logic.visual.theme.ThemeData_Package;
 with org.allbinary.logic.visual.theme.ThemesData_Package; use org.allbinary.logic.visual.theme.ThemesData_Package;
 with org.w3c.dom.NodeList_Package; use org.w3c.dom.NodeList_Package;
@@ -24,7 +23,6 @@ package body org.allbinary.business.category.store.theme.StoreThemeCategory_Pack
 
    package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    package DomSearchHelper_Package renames Standard.org.allbinary.data.tree.dom.DomSearchHelper_Package;
-   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    package ThemeData_Package renames Standard.org.allbinary.logic.visual.theme.ThemeData_Package;
    package ThemesData_Package renames Standard.org.allbinary.logic.visual.theme.ThemesData_Package;
    package NodeList_Package renames Standard.org.w3c.dom.NodeList_Package;

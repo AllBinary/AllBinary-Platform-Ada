@@ -17,7 +17,6 @@ with org.allbinary.game.input.event.GameKeyEvent_Package; use org.allbinary.game
 with org.allbinary.game.input.event.GameKeyEventUtil_Package; use org.allbinary.game.input.event.GameKeyEventUtil_Package;
 with org.allbinary.game.layer.AllBinaryGameLayerManager_Package; use org.allbinary.game.layer.AllBinaryGameLayerManager_Package;
 with org.allbinary.game.layer.special.SpecialGameInputFactory_Package; use org.allbinary.game.layer.special.SpecialGameInputFactory_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 
@@ -27,7 +26,6 @@ package body org.allbinary.game.displayable.canvas.CheatGameInputProcessor_Packa
    package GameKeyEventUtil_Package renames Standard.org.allbinary.game.input.event.GameKeyEventUtil_Package;
    package AllBinaryGameLayerManager_Package renames Standard.org.allbinary.game.layer.AllBinaryGameLayerManager_Package;
    package SpecialGameInputFactory_Package renames Standard.org.allbinary.game.layer.special.SpecialGameInputFactory_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
    package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    procedure Initialize_Fields (This : in out CheatGameInputProcessor'Class) is

@@ -17,7 +17,6 @@ with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArr
 with org.allbinary.data.tree.dom.DomNodeHelper_Package; use org.allbinary.data.tree.dom.DomNodeHelper_Package;
 with org.allbinary.data.tree.dom.ModDomHelper_Package; use org.allbinary.data.tree.dom.ModDomHelper_Package;
 with org.allbinary.input.media.image.InputImageType_Package; use org.allbinary.input.media.image.InputImageType_Package;
-with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.w3c.dom.NodeList_Package; use org.w3c.dom.NodeList_Package;
 with org.allbinary.input.automation.module.actions.script.condition.processors.output.ImageActionScriptOutputData_Package; use org.allbinary.input.automation.module.actions.script.condition.processors.output.ImageActionScriptOutputData_Package;
@@ -28,7 +27,6 @@ package body org.allbinary.input.automation.module.actions.script.condition.proc
    package DomNodeHelper_Package renames Standard.org.allbinary.data.tree.dom.DomNodeHelper_Package;
    package ModDomHelper_Package renames Standard.org.allbinary.data.tree.dom.ModDomHelper_Package;
    package InputImageType_Package renames Standard.org.allbinary.input.media.image.InputImageType_Package;
-   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    package NodeList_Package renames Standard.org.w3c.dom.NodeList_Package;
    procedure Initialize_Fields (This : in out ImageTypes'Class) is

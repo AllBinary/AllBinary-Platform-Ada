@@ -14,13 +14,11 @@
 
 
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
-with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.media.image.ImageUtil_Package; use org.allbinary.media.image.ImageUtil_Package;
 
 package body org.allbinary.media.image.search.ImageComparisonSearch_Package is
 
    package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
-   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    package ImageUtil_Package renames Standard.org.allbinary.media.image.ImageUtil_Package;
    procedure Initialize_Fields (This : in out ImageComparisonSearch'Class) is
    begin

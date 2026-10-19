@@ -13,7 +13,6 @@
 --  Generated Code Do Not Modify
 
 
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.business.user.commerce.inventory.item.ItemInterface_Package; use org.allbinary.business.user.commerce.inventory.item.ItemInterface_Package;
 with org.allbinary.data.tables.user.commerce.inventory.item.InventoryEntityFactory_Package; use org.allbinary.data.tables.user.commerce.inventory.item.InventoryEntityFactory_Package;
 with org.allbinary.data.tables.user.commerce.inventory.item.InventoryEntityInterface_Package; use org.allbinary.data.tables.user.commerce.inventory.item.InventoryEntityInterface_Package;
@@ -22,7 +21,6 @@ with org.allbinary.business.context.modules.storefront.statistics.inventory.Stor
 
 package body org.allbinary.business.context.modules.storefront.statistics.inventory.StoreFrontInventoryStatistics_Package is
 
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    package ItemInterface_Package renames Standard.org.allbinary.business.user.commerce.inventory.item.ItemInterface_Package;
    package InventoryEntityFactory_Package renames Standard.org.allbinary.data.tables.user.commerce.inventory.item.InventoryEntityFactory_Package;
    package InventoryEntityInterface_Package renames Standard.org.allbinary.data.tables.user.commerce.inventory.item.InventoryEntityInterface_Package;

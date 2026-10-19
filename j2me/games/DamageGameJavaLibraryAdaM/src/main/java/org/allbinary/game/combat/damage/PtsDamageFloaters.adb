@@ -16,7 +16,6 @@
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
 with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
 with org.allbinary.logic.java.character_Id.CharArrayFactory_Package; use org.allbinary.logic.java.character_Id.CharArrayFactory_Package;
-with org.allbinary.view.ViewPosition_Package; use org.allbinary.view.ViewPosition_Package;
 with org.allbinary.view.ViewPositionBase_Package; use org.allbinary.view.ViewPositionBase_Package;
 
 package body org.allbinary.game.combat.damage.PtsDamageFloaters_Package is
@@ -24,7 +23,6 @@ package body org.allbinary.game.combat.damage.PtsDamageFloaters_Package is
    package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
    package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
    package CharArrayFactory_Package renames Standard.org.allbinary.logic.java.character_Id.CharArrayFactory_Package;
-   package ViewPosition_Package renames Standard.org.allbinary.view.ViewPosition_Package;
    package ViewPositionBase_Package renames Standard.org.allbinary.view.ViewPositionBase_Package;
    procedure Initialize_Fields (This : in out PtsDamageFloaters'Class) is
    begin

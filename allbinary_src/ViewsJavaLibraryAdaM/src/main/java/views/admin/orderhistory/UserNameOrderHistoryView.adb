@@ -14,7 +14,6 @@
 
 
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.business.user.UserData_Package; use org.allbinary.business.user.UserData_Package;
 with org.allbinary.business.user.commerce.inventory.order.OrderData_Package; use org.allbinary.business.user.commerce.inventory.order.OrderData_Package;
 with org.allbinary.business.user.commerce.inventory.order.OrderHistory_Package; use org.allbinary.business.user.commerce.inventory.order.OrderHistory_Package;
@@ -27,7 +26,6 @@ with org.allbinary.globals.GLOBALS2_Package; use org.allbinary.globals.GLOBALS2_
 package body views.admin.orderhistory.UserNameOrderHistoryView_Package is
 
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    package UserData_Package renames Standard.org.allbinary.business.user.UserData_Package;
    package OrderData_Package renames Standard.org.allbinary.business.user.commerce.inventory.order.OrderData_Package;
    package OrderHistory_Package renames Standard.org.allbinary.business.user.commerce.inventory.order.OrderHistory_Package;

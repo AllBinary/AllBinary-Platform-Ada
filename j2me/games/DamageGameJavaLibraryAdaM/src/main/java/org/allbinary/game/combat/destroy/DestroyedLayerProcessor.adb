@@ -17,8 +17,6 @@ with org.allbinary.game.combat.destroy.event.DestroyEventCircularStaticPool_Pack
 with org.allbinary.game.combat.destroy.event.DestroyedEvent_Package; use org.allbinary.game.combat.destroy.event.DestroyedEvent_Package;
 with org.allbinary.game.combat.destroy.event.DestroyedEventHandler_Package; use org.allbinary.game.combat.destroy.event.DestroyedEventHandler_Package;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 
@@ -28,8 +26,6 @@ package body org.allbinary.game.combat.destroy.DestroyedLayerProcessor_Package i
    package DestroyedEvent_Package renames Standard.org.allbinary.game.combat.destroy.event.DestroyedEvent_Package;
    package DestroyedEventHandler_Package renames Standard.org.allbinary.game.combat.destroy.event.DestroyedEventHandler_Package;
    package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
    procedure Initialize_Fields (This : in out DestroyedLayerProcessor'Class) is

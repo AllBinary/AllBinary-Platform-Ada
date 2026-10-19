@@ -18,7 +18,6 @@ with javax.microedition.lcdui.TextField_Package; use javax.microedition.lcdui.Te
 with org.allbinary.graphics.form.item.CustomTextBox_Package; use org.allbinary.graphics.form.item.CustomTextBox_Package;
 with org.allbinary.game.canvas.ABToGBUtil_Package; use org.allbinary.game.canvas.ABToGBUtil_Package;
 with org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package; use org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.animation.text.CustomTextBox2_Package; use org.allbinary.animation.text.CustomTextBox2_Package;
 with org.allbinary.animation.text.CustomTextBoxIndexedAnimation_Package; use org.allbinary.animation.text.CustomTextBoxIndexedAnimation_Package;
@@ -30,7 +29,6 @@ package body org.allbinary.animation.text.CustomTextBoxIndexedAnimationFactory_P
    package CustomTextBox_Package renames Standard.org.allbinary.graphics.form.item.CustomTextBox_Package;
    package ABToGBUtil_Package renames Standard.org.allbinary.game.canvas.ABToGBUtil_Package;
    package AllBinaryGameCanvas_Package renames Standard.org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    procedure Initialize_Fields (This : in out CustomTextBoxIndexedAnimationFactory'Class) is
    begin

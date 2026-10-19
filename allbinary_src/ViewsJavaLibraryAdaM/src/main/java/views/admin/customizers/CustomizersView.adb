@@ -17,7 +17,6 @@ with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArr
 with org.allbinary.data.tables.transform.info.TransformInfoEntityBuilder_Package; use org.allbinary.data.tables.transform.info.TransformInfoEntityBuilder_Package;
 with org.allbinary.data.tree.dom.ModDomHelper_Package; use org.allbinary.data.tree.dom.ModDomHelper_Package;
 with org.allbinary.globals.GLOBALS2_Package; use org.allbinary.globals.GLOBALS2_Package;
-with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.logic.control.sort.StringComparator_Package; use org.allbinary.logic.control.sort.StringComparator_Package;
 with org.allbinary.logic.visual.transform.info.CustomizerTransformInfoData_Package; use org.allbinary.logic.visual.transform.info.CustomizerTransformInfoData_Package;
 with org.allbinary.logic.visual.transform.template.customizer.TransformTemplateCustomizerData_Package; use org.allbinary.logic.visual.transform.template.customizer.TransformTemplateCustomizerData_Package;
@@ -32,7 +31,6 @@ package body views.admin.customizers.CustomizersView_Package is
    package TransformInfoEntityBuilder_Package renames Standard.org.allbinary.data.tables.transform.info.TransformInfoEntityBuilder_Package;
    package ModDomHelper_Package renames Standard.org.allbinary.data.tree.dom.ModDomHelper_Package;
    package GLOBALS2_Package renames Standard.org.allbinary.globals.GLOBALS2_Package;
-   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    package StringComparator_Package renames Standard.org.allbinary.logic.control.sort.StringComparator_Package;
    package CustomizerTransformInfoData_Package renames Standard.org.allbinary.logic.visual.transform.info.CustomizerTransformInfoData_Package;
    package TransformTemplateCustomizerData_Package renames Standard.org.allbinary.logic.visual.transform.template.customizer.TransformTemplateCustomizerData_Package;

@@ -14,7 +14,6 @@
 
 
 with java.util.HashMap_Package; use java.util.HashMap_Package;
-with org.allbinary.business.user.commerce.inventory.item.BasicItemData_Package; use org.allbinary.business.user.commerce.inventory.item.BasicItemData_Package;
 with org.allbinary.business.user.commerce.money.MoneyException_Package; use org.allbinary.business.user.commerce.money.MoneyException_Package;
 with org.allbinary.data.tables.user.commerce.inventory.item.InventoryEntityFactory_Package; use org.allbinary.data.tables.user.commerce.inventory.item.InventoryEntityFactory_Package;
 with org.allbinary.data.tables.user.commerce.inventory.item.downloads.DownloadItemsEntity_Package; use org.allbinary.data.tables.user.commerce.inventory.item.downloads.DownloadItemsEntity_Package;
@@ -27,7 +26,6 @@ with org.allbinary.logic.string_Id.StringValidationUtil_Package; use org.allbina
 package body views.admin.inventory.EditValidationView_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
-   package BasicItemData_Package renames Standard.org.allbinary.business.user.commerce.inventory.item.BasicItemData_Package;
    package MoneyException_Package renames Standard.org.allbinary.business.user.commerce.money.MoneyException_Package;
    package InventoryEntityFactory_Package renames Standard.org.allbinary.data.tables.user.commerce.inventory.item.InventoryEntityFactory_Package;
    package DownloadItemsEntity_Package renames Standard.org.allbinary.data.tables.user.commerce.inventory.item.downloads.DownloadItemsEntity_Package;

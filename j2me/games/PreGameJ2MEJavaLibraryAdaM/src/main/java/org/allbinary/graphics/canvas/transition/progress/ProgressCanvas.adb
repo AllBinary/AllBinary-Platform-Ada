@@ -24,8 +24,6 @@ with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary
 with org.allbinary.logic.math.SmallIntegerSingletonFactory_Package; use org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
-with org.allbinary.thread.PathFindingThreadPool_Package; use org.allbinary.thread.PathFindingThreadPool_Package;
-with org.allbinary.thread.ThreadPool_Package; use org.allbinary.thread.ThreadPool_Package;
 
 package body org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package is
 
@@ -40,8 +38,6 @@ package body org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Pa
    package SmallIntegerSingletonFactory_Package renames Standard.org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
    package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
-   package PathFindingThreadPool_Package renames Standard.org.allbinary.thread.PathFindingThreadPool_Package;
-   package ThreadPool_Package renames Standard.org.allbinary.thread.ThreadPool_Package;
    procedure Initialize_Fields (This : in out ProgressCanvas'Class) is
    begin
       null;
@@ -282,8 +278,6 @@ with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary
 with org.allbinary.logic.math.SmallIntegerSingletonFactory_Package; use org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
-with org.allbinary.thread.PathFindingThreadPool_Package; use org.allbinary.thread.PathFindingThreadPool_Package;
-with org.allbinary.thread.ThreadPool_Package; use org.allbinary.thread.ThreadPool_Package;
 
 package body org.allbinary.graphics.canvas.transition.progress.ProgressPaintable_Package is
 
@@ -298,8 +292,6 @@ package body org.allbinary.graphics.canvas.transition.progress.ProgressPaintable
    package SmallIntegerSingletonFactory_Package renames Standard.org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
    package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
-   package PathFindingThreadPool_Package renames Standard.org.allbinary.thread.PathFindingThreadPool_Package;
-   package ThreadPool_Package renames Standard.org.allbinary.thread.ThreadPool_Package;
    procedure Initialize_Fields (This : in out ProgressPaintable'Class) is
    begin
       null;

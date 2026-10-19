@@ -13,11 +13,13 @@
 --  Generated Code Do Not Modify
 
 
+with java.nio.ByteBuffer_Package; use java.nio.ByteBuffer_Package;
 with org.allbinary.graphics.opengles.OpenGLLogUtil_Package; use org.allbinary.graphics.opengles.OpenGLLogUtil_Package;
 with org.allbinary.graphics.displayable.DisplayInfoSingleton_Package; use org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
 
 package body org.allbinary.image.opengles.OpenGLESGL11VBOImage_Package is
 
+   package ByteBuffer_Package renames Standard.java.nio.ByteBuffer_Package;
    package OpenGLLogUtil_Package renames Standard.org.allbinary.graphics.opengles.OpenGLLogUtil_Package;
    package DisplayInfoSingleton_Package renames Standard.org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
    procedure Initialize_Fields (This : in out OpenGLESGL11VBOImage'Class) is

@@ -15,7 +15,6 @@
 
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
 with org.allbinary.graphics.Anchor_Package; use org.allbinary.graphics.Anchor_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.microemu.device.playn.PlaynImage_Package; use org.microemu.device.playn.PlaynImage_Package;
 with playn.core.Callback_Package; use playn.core.Callback_Package;
 with playn.core.Canvas_Package; use playn.core.Canvas_Package;
@@ -25,7 +24,6 @@ package body org.allbinary.media.image.ImageModifierUtil_Package is
 
    package Graphics_Package renames Standard.javax.microedition.lcdui.Graphics_Package;
    package Anchor_Package renames Standard.org.allbinary.graphics.Anchor_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    package PlaynImage_Package renames Standard.org.microemu.device.playn.PlaynImage_Package;
    package Callback_Package renames Standard.playn.core.Callback_Package;
    package Canvas_Package renames Standard.playn.core.Canvas_Package;

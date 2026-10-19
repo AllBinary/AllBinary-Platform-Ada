@@ -20,13 +20,16 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.nio.Buffer_Package; use java.nio.Buffer_Package;
---  with java.nio.ByteBuffer_Package; use java.nio.ByteBuffer_Package;
+with java.nio.Buffer_Package; use java.nio.Buffer_Package;
+with java.nio.ByteBuffer_Package; use java.nio.ByteBuffer_Package;
 --  with java.nio.ByteOrder_Package; use java.nio.ByteOrder_Package;
---  with java.nio.FloatBuffer_Package; use java.nio.FloatBuffer_Package;
+with java.nio.FloatBuffer_Package; use java.nio.FloatBuffer_Package;
 
 package org.allbinary.opengles.GLUtil_Package is
 
+   package Buffer_Package renames Standard.java.nio.Buffer_Package;
+   package ByteBuffer_Package renames Standard.java.nio.ByteBuffer_Package;
+   package FloatBuffer_Package renames Standard.java.nio.FloatBuffer_Package;
 
    type GLUtil is tagged;
    type GLUtil_Access is access all GLUtil'Class;

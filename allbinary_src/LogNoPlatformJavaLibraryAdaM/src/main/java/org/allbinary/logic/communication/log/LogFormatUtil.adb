@@ -13,23 +13,9 @@
 --  Generated Code Do Not Modify
 
 
-with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
-with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package; use org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
-with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
-with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
-with org.allbinary.time.TimeStampUtil_Package; use org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.logic.communication.log.LogFormatUtil_Package is
 
-   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
-   package ExceptionUtil_Package renames Standard.org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
-   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
-   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
-   package TimeStampUtil_Package renames Standard.org.allbinary.time.TimeStampUtil_Package;
    procedure Initialize_Fields (This : in out LogFormatUtil'Class) is
    begin
       null;

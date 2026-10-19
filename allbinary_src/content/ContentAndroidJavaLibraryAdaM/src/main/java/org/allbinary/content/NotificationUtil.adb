@@ -13,7 +13,6 @@
 --  Generated Code Do Not Modify
 
 
-with android.app.Notification_Package; use android.app.Notification_Package;
 with android.app.PendingIntent_Package; use android.app.PendingIntent_Package;
 with android.content.Context_Package; use android.content.Context_Package;
 with android.content.Intent_Package; use android.content.Intent_Package;
@@ -25,7 +24,6 @@ with org.allbinary.content.CommandUriAction_Package; use org.allbinary.content.C
 
 package body org.allbinary.content.NotificationUtil_Package is
 
-   package Notification_Package renames Standard.android.app.Notification_Package;
    package PendingIntent_Package renames Standard.android.app.PendingIntent_Package;
    package Context_Package renames Standard.android.content.Context_Package;
    package Intent_Package renames Standard.android.content.Intent_Package;

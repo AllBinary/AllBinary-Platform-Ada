@@ -13,13 +13,11 @@
 --  Generated Code Do Not Modify
 
 
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.util.BasicArrayListUtil_Package; use org.allbinary.util.BasicArrayListUtil_Package;
 
 package body org.allbinary.input.motion.button.BasicTouchButtonsBuilder_Package is
 
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    package BasicArrayListUtil_Package renames Standard.org.allbinary.util.BasicArrayListUtil_Package;
    procedure Initialize_Fields (This : in out BasicTouchButtonsBuilder'Class) is

@@ -19,7 +19,6 @@ with org.allbinary.graphics.PointFactory_Package; use org.allbinary.graphics.Poi
 with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
 with org.allbinary.graphics.j2me.StatusFactory_Package; use org.allbinary.graphics.j2me.StatusFactory_Package;
 with org.allbinary.graphics.pipeline.BasicGraphicsPipeline_Package; use org.allbinary.graphics.pipeline.BasicGraphicsPipeline_Package;
-with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.math.PositionStrings_Package; use org.allbinary.math.PositionStrings_Package;
 with org.allbinary.graphics.j2me.workarea.tools.PointsDomUtil_Package; use org.allbinary.graphics.j2me.workarea.tools.PointsDomUtil_Package;
 with org.allbinary.graphics.j2me.workarea.tools.Graphics2D_Package; use org.allbinary.graphics.j2me.workarea.tools.Graphics2D_Package;
@@ -34,7 +33,6 @@ package body org.allbinary.graphics.j2me.workarea.tools.LinesGraphicItem_Package
    package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
    package StatusFactory_Package renames Standard.org.allbinary.graphics.j2me.StatusFactory_Package;
    package BasicGraphicsPipeline_Package renames Standard.org.allbinary.graphics.pipeline.BasicGraphicsPipeline_Package;
-   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    package PositionStrings_Package renames Standard.org.allbinary.math.PositionStrings_Package;
    procedure Initialize_Fields (This : in out LinesGraphicItem'Class) is
    begin

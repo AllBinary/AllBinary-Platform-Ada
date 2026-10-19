@@ -14,14 +14,10 @@
 
 
 with org.allbinary.thread.ARunnable_Package; use org.allbinary.thread.ARunnable_Package;
-with org.allbinary.image.gui.ImageToolJFrame_Package; use org.allbinary.image.gui.ImageToolJFrame_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 
 package body org.allbinary.image.ImageTool_Package is
 
    package ARunnable_Package renames Standard.org.allbinary.thread.ARunnable_Package;
-   package ImageToolJFrame_Package renames Standard.org.allbinary.image.gui.ImageToolJFrame_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    procedure Initialize_Fields (This : in out ImageTool'Class) is
    begin
       null;

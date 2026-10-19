@@ -15,7 +15,6 @@
 
 with javax.microedition.lcdui.Font_Package; use javax.microedition.lcdui.Font_Package;
 with javax.microedition.lcdui.TextField_Package; use javax.microedition.lcdui.TextField_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.game.commands.GameCommandsFactory_Package; use org.allbinary.game.commands.GameCommandsFactory_Package;
 with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
@@ -27,7 +26,6 @@ package body org.allbinary.game.displayable.screen.LicenseRegistrationTextBox_Pa
 
    package Font_Package renames Standard.javax.microedition.lcdui.Font_Package;
    package TextField_Package renames Standard.javax.microedition.lcdui.TextField_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    package GameCommandsFactory_Package renames Standard.org.allbinary.game.commands.GameCommandsFactory_Package;
    package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;

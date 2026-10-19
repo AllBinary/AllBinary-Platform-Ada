@@ -14,13 +14,11 @@
 
 
 with java.io.InputStream_Package; use java.io.InputStream_Package;
-with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 
 package body org.allbinary.logic.io.file.AbFileSystem_Package is
 
    package InputStream_Package renames Standard.java.io.InputStream_Package;
-   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
    package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    procedure Initialize_Fields (This : in out AbFileSystem'Class) is
    begin

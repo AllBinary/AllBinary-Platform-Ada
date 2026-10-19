@@ -14,7 +14,6 @@
 
 
 with org.allbinary.animation.NullAnimationFactory_Package; use org.allbinary.animation.NullAnimationFactory_Package;
-with org.allbinary.logic.communication.log.ForcedLogUtil_Package; use org.allbinary.logic.communication.log.ForcedLogUtil_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
@@ -22,7 +21,6 @@ with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.Com
 package body org.allbinary.animation.image.BaseImageAnimationFactory_Package is
 
    package NullAnimationFactory_Package renames Standard.org.allbinary.animation.NullAnimationFactory_Package;
-   package ForcedLogUtil_Package renames Standard.org.allbinary.logic.communication.log.ForcedLogUtil_Package;
    package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
    package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;

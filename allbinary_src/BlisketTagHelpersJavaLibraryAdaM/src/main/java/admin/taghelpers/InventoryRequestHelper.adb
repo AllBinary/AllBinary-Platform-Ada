@@ -14,7 +14,6 @@
 
 
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with admin.tags.AbTagData_Package; use admin.tags.AbTagData_Package;
 with org.allbinary.data.tables.TableMappingInterface_Package; use org.allbinary.data.tables.TableMappingInterface_Package;
 with org.allbinary.data.tables.user.commerce.inventory.item.InventoryEntityFactory_Package; use org.allbinary.data.tables.user.commerce.inventory.item.InventoryEntityFactory_Package;
@@ -26,7 +25,6 @@ with admin.taghelpers.InventoryItemViewParentTagHelper_Package; use admin.taghel
 package body admin.taghelpers.InventoryRequestHelper_Package is
 
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    package AbTagData_Package renames Standard.admin.tags.AbTagData_Package;
    package TableMappingInterface_Package renames Standard.org.allbinary.data.tables.TableMappingInterface_Package;
    package InventoryEntityFactory_Package renames Standard.org.allbinary.data.tables.user.commerce.inventory.item.InventoryEntityFactory_Package;

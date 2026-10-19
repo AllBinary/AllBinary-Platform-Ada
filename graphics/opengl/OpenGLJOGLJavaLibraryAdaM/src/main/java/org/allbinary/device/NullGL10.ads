@@ -21,13 +21,16 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with javax.microedition.khronos.opengles.GL10_Package; use javax.microedition.khronos.opengles.GL10_Package;
---  with java.nio.Buffer_Package; use java.nio.Buffer_Package;
---  with java.nio.FloatBuffer_Package; use java.nio.FloatBuffer_Package;
---  with java.nio.IntBuffer_Package; use java.nio.IntBuffer_Package;
+with java.nio.Buffer_Package; use java.nio.Buffer_Package;
+with java.nio.FloatBuffer_Package; use java.nio.FloatBuffer_Package;
+with java.nio.IntBuffer_Package; use java.nio.IntBuffer_Package;
 
 package org.allbinary.device.NullGL10_Package is
 
    package GL10_Package renames Standard.javax.microedition.khronos.opengles.GL10_Package;
+   package Buffer_Package renames Standard.java.nio.Buffer_Package;
+   package FloatBuffer_Package renames Standard.java.nio.FloatBuffer_Package;
+   package IntBuffer_Package renames Standard.java.nio.IntBuffer_Package;
 
    type NullGL10 is tagged;
    type NullGL10_Access is access all NullGL10'Class;

@@ -13,15 +13,9 @@
 --  Generated Code Do Not Modify
 
 
-with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 
 package body org.allbinary.image.opengles.OpenGLImageSpecificFactory_Package is
 
-   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    procedure Initialize_Fields (This : in out OpenGLImageSpecificFactory'Class) is
    begin
       null;

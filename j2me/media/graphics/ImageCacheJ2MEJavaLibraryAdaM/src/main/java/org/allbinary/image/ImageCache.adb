@@ -18,7 +18,6 @@ with javax.microedition.lcdui.NullImage_Package; use javax.microedition.lcdui.Nu
 with org.allbinary.J2MEUtil_Package; use org.allbinary.J2MEUtil_Package;
 with org.allbinary.data.resource.ResourceUtil_Package; use org.allbinary.data.resource.ResourceUtil_Package;
 with org.allbinary.game.gd.resource.GDResources_Package; use org.allbinary.game.gd.resource.GDResources_Package;
-with org.allbinary.logic.ABSystemWrapper_Package; use org.allbinary.logic.ABSystemWrapper_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.system.Memory_Package; use org.allbinary.system.Memory_Package;
@@ -31,7 +30,6 @@ package body org.allbinary.image.ImageCache_Package is
    package J2MEUtil_Package renames Standard.org.allbinary.J2MEUtil_Package;
    package ResourceUtil_Package renames Standard.org.allbinary.data.resource.ResourceUtil_Package;
    package GDResources_Package renames Standard.org.allbinary.game.gd.resource.GDResources_Package;
-   package ABSystemWrapper_Package renames Standard.org.allbinary.logic.ABSystemWrapper_Package;
    package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    package Memory_Package renames Standard.org.allbinary.system.Memory_Package;

@@ -22,7 +22,6 @@ with org.allbinary.data.tree.dom.DomSearchHelper_Package; use org.allbinary.data
 with org.allbinary.data.tree.dom.document.DomDocumentHelper_Package; use org.allbinary.data.tree.dom.document.DomDocumentHelper_Package;
 with org.allbinary.globals.FREEBLISKET_PATH_GLOBALS_Package; use org.allbinary.globals.FREEBLISKET_PATH_GLOBALS_Package;
 with org.allbinary.globals.URLGLOBALS_Package; use org.allbinary.globals.URLGLOBALS_Package;
-with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.logic.control.crypt.file.CryptFileReader_Package; use org.allbinary.logic.control.crypt.file.CryptFileReader_Package;
 with org.allbinary.logic.io.path.AbPath_Package; use org.allbinary.logic.io.path.AbPath_Package;
 with org.allbinary.logic.io.path.AbPathData_Package; use org.allbinary.logic.io.path.AbPathData_Package;
@@ -45,7 +44,6 @@ package body org.allbinary.business.user.commerce.shipping.ShippingMethodsFactor
    package DomDocumentHelper_Package renames Standard.org.allbinary.data.tree.dom.document.DomDocumentHelper_Package;
    package FREEBLISKET_PATH_GLOBALS_Package renames Standard.org.allbinary.globals.FREEBLISKET_PATH_GLOBALS_Package;
    package URLGLOBALS_Package renames Standard.org.allbinary.globals.URLGLOBALS_Package;
-   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    package CryptFileReader_Package renames Standard.org.allbinary.logic.control.crypt.file.CryptFileReader_Package;
    package AbPath_Package renames Standard.org.allbinary.logic.io.path.AbPath_Package;
    package AbPathData_Package renames Standard.org.allbinary.logic.io.path.AbPathData_Package;

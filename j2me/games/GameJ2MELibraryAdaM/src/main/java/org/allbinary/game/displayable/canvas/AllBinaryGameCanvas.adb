@@ -72,7 +72,6 @@ with org.allbinary.input.gyro.SingleSensorGameUpdateProcessor_Package; use org.a
 with org.allbinary.input.motion.button.NoButtonsTouchInputFactory_Package; use org.allbinary.input.motion.button.NoButtonsTouchInputFactory_Package;
 with org.allbinary.input.motion.button.TouchButtonsPaintableFactory_Package; use org.allbinary.input.motion.button.TouchButtonsPaintableFactory_Package;
 with org.allbinary.input.motion.button.TouchScreenFactory_Package; use org.allbinary.input.motion.button.TouchScreenFactory_Package;
-with org.allbinary.logic.ABSystemWrapper_Package; use org.allbinary.logic.ABSystemWrapper_Package;
 with org.allbinary.logic.communication.log.ForcedLogUtil_Package; use org.allbinary.logic.communication.log.ForcedLogUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
@@ -170,7 +169,6 @@ package body org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package i
    package NoButtonsTouchInputFactory_Package renames Standard.org.allbinary.input.motion.button.NoButtonsTouchInputFactory_Package;
    package TouchButtonsPaintableFactory_Package renames Standard.org.allbinary.input.motion.button.TouchButtonsPaintableFactory_Package;
    package TouchScreenFactory_Package renames Standard.org.allbinary.input.motion.button.TouchScreenFactory_Package;
-   package ABSystemWrapper_Package renames Standard.org.allbinary.logic.ABSystemWrapper_Package;
    package ForcedLogUtil_Package renames Standard.org.allbinary.logic.communication.log.ForcedLogUtil_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;

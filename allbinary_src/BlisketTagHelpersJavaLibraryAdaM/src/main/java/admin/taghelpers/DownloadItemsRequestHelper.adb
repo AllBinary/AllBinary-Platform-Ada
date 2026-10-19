@@ -14,7 +14,6 @@
 
 
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with admin.tags.AbTagData_Package; use admin.tags.AbTagData_Package;
 with org.allbinary.data.tables.user.commerce.inventory.item.downloads.DownloadItemsEntityFactory_Package; use org.allbinary.data.tables.user.commerce.inventory.item.downloads.DownloadItemsEntityFactory_Package;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
@@ -25,7 +24,6 @@ with admin.taghelpers.InventoryItemViewParentTagHelper_Package; use admin.taghel
 package body admin.taghelpers.DownloadItemsRequestHelper_Package is
 
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    package AbTagData_Package renames Standard.admin.tags.AbTagData_Package;
    package DownloadItemsEntityFactory_Package renames Standard.org.allbinary.data.tables.user.commerce.inventory.item.downloads.DownloadItemsEntityFactory_Package;
    package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;

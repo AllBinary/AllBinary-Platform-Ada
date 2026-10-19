@@ -13,7 +13,6 @@
 --  Generated Code Do Not Modify
 
 
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.util.event.EventStrings_Package; use org.allbinary.logic.util.event.EventStrings_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.game.input.event.GameKeyEvent_Package; use org.allbinary.game.input.event.GameKeyEvent_Package;
@@ -21,7 +20,6 @@ with org.allbinary.game.input.event.PressGameKeyEventListenerInterface_Package; 
 
 package body org.allbinary.game.input.event.PressGameKeyEventHandler_Package is
 
-   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package EventStrings_Package renames Standard.org.allbinary.logic.util.event.EventStrings_Package;
    package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    procedure Initialize_Fields (This : in out PressGameKeyEventHandler'Class) is

@@ -14,13 +14,11 @@
 
 
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
-with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.logic.io.StreamUtil_Package; use org.allbinary.logic.io.StreamUtil_Package;
 
 package body org.allbinary.logic.io.file.FileLockUtil_Package is
 
    package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
-   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    package StreamUtil_Package renames Standard.org.allbinary.logic.io.StreamUtil_Package;
    procedure Initialize_Fields (This : in out FileLockUtil'Class) is
    begin

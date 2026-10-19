@@ -14,7 +14,6 @@
 
 
 with java.util.HashMap_Package; use java.util.HashMap_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.business.entry_Id.EntryData_Package; use org.allbinary.business.entry_Id.EntryData_Package;
 with org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayData_Package; use org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayData_Package;
 with org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewaysData_Package; use org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewaysData_Package;
@@ -25,7 +24,6 @@ with org.allbinary.data.tree.dom.ModDomHelper_Package; use org.allbinary.data.tr
 package body views.admin.payment.gateways.PaymentGatewaysView_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    package EntryData_Package renames Standard.org.allbinary.business.entry_Id.EntryData_Package;
    package PaymentGatewayData_Package renames Standard.org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayData_Package;
    package PaymentGatewaysData_Package renames Standard.org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewaysData_Package;

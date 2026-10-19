@@ -14,7 +14,6 @@
 
 
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
-with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.logic.control.validate.ValidationInterface_Package; use org.allbinary.logic.control.validate.ValidationInterface_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.allbinary.logic.visual.dhtml.style.css.CssElementValidationFactory_Package; use org.allbinary.logic.visual.dhtml.style.css.CssElementValidationFactory_Package;
@@ -22,7 +21,6 @@ with org.allbinary.logic.visual.dhtml.style.css.CssElementValidationFactory_Pack
 package body org.allbinary.logic.visual.dhtml.style.css.CssElementsValidationFactory_Package is
 
    package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
-   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    package ValidationInterface_Package renames Standard.org.allbinary.logic.control.validate.ValidationInterface_Package;
    package Node_Package renames Standard.org.w3c.dom.Node_Package;
    procedure Initialize_Fields (This : in out CssElementsValidationFactory'Class) is

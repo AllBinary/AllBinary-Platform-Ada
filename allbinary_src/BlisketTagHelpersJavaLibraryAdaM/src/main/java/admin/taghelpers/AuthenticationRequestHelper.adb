@@ -13,7 +13,6 @@
 --  Generated Code Do Not Modify
 
 
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.business.user.UserData_Package; use org.allbinary.business.user.UserData_Package;
 with org.allbinary.business.user.UserInterface_Package; use org.allbinary.business.user.UserInterface_Package;
 with org.allbinary.business.user.password.Password_Package; use org.allbinary.business.user.password.Password_Package;
@@ -29,7 +28,6 @@ with org.allbinary.logic.system.security.licensing.ServiceClientInformationInter
 
 package body admin.taghelpers.AuthenticationRequestHelper_Package is
 
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    package UserData_Package renames Standard.org.allbinary.business.user.UserData_Package;
    package UserInterface_Package renames Standard.org.allbinary.business.user.UserInterface_Package;
    package Password_Package renames Standard.org.allbinary.business.user.password.Password_Package;

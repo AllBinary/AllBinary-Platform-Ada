@@ -13,8 +13,6 @@
 --  Generated Code Do Not Modify
 
 
-with org.allbinary.graphics.Anchor_Package; use org.allbinary.graphics.Anchor_Package;
-with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
 with org.microemu.device.playn.PlaynImmutableImage_Package; use org.microemu.device.playn.PlaynImmutableImage_Package;
 with org.microemu.device.playn.PlaynMutableImage_Package; use org.microemu.device.playn.PlaynMutableImage_Package;
 with playn.core.CanvasImage_Package; use playn.core.CanvasImage_Package;
@@ -23,8 +21,6 @@ with org.allbinary.media.image.ImageCreationUtil_Package; use org.allbinary.medi
 
 package body org.allbinary.media.image.ImageScaleUtil_Package is
 
-   package Anchor_Package renames Standard.org.allbinary.graphics.Anchor_Package;
-   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
    package PlaynImmutableImage_Package renames Standard.org.microemu.device.playn.PlaynImmutableImage_Package;
    package PlaynMutableImage_Package renames Standard.org.microemu.device.playn.PlaynMutableImage_Package;
    package CanvasImage_Package renames Standard.playn.core.CanvasImage_Package;

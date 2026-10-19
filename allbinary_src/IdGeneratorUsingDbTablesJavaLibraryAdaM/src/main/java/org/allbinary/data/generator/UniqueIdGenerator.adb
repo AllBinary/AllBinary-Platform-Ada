@@ -16,7 +16,6 @@
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.data.tables.generator.IdGeneratorEntityFactory_Package; use org.allbinary.data.tables.generator.IdGeneratorEntityFactory_Package;
-with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 
 package body org.allbinary.data.generator.UniqueIdGenerator_Package is
@@ -24,7 +23,6 @@ package body org.allbinary.data.generator.UniqueIdGenerator_Package is
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
    package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    package IdGeneratorEntityFactory_Package renames Standard.org.allbinary.data.tables.generator.IdGeneratorEntityFactory_Package;
-   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    procedure Initialize_Fields (This : in out UniqueIdGenerator'Class) is
    begin

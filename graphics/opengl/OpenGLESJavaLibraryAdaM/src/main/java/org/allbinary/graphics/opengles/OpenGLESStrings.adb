@@ -13,11 +13,9 @@
 --  Generated Code Do Not Modify
 
 
-with javax.microedition.lcdui.Font_Package; use javax.microedition.lcdui.Font_Package;
 
 package body org.allbinary.graphics.opengles.OpenGLESStrings_Package is
 
-   package Font_Package renames Standard.javax.microedition.lcdui.Font_Package;
    procedure Initialize_Fields (This : in out OpenGLESStrings'Class) is
    begin
       null;

@@ -17,7 +17,6 @@ with javax.microedition.lcdui.Font_Package; use javax.microedition.lcdui.Font_Pa
 with org.allbinary.graphics.Anchor_Package; use org.allbinary.graphics.Anchor_Package;
 with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
 with org.allbinary.graphics.font.UpdateMyFontProcessor_Package; use org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 
 package body org.allbinary.game.paint.OwnershipPaintable_Package is
 
@@ -25,7 +24,6 @@ package body org.allbinary.game.paint.OwnershipPaintable_Package is
    package Anchor_Package renames Standard.org.allbinary.graphics.Anchor_Package;
    package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
    package UpdateMyFontProcessor_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
-   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    procedure Initialize_Fields (This : in out OwnershipPaintable'Class) is
    begin
       null;
