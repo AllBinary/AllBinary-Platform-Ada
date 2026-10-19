@@ -255,7 +255,7 @@ package body org.allbinary.animation.SVGAsJSONSimpleLoader_Package is
       value : constant Java_Object_Access := Java_Object_Access (value_Param);
    begin
         if (value.all in Number_Package.Number'Class) then
-            return Integer (Long_Long_Integer (Long_Float'Rounding ((Number_Access (value)).doubleValue)));
+            return Integer (Long_Long_Integer (Long_Float'Rounding (Number_Access (value).doubleValue)));
         end if;
         if (value.all in String_Package.String'Class) then
             return Integer (Long_Long_Integer (Long_Float'Rounding (Long_Float'Value (To_String (Java_Unbox (value))))));

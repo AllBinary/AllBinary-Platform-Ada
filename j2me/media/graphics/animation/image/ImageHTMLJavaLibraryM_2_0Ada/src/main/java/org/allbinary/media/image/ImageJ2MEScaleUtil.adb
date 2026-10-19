@@ -91,8 +91,8 @@ package body org.allbinary.media.image.ImageJ2MEScaleUtil_Package is
         scaledImage := Image_Package.createImageWH (width, height);
         htmlImage := PlaynMutableImage_Access (scaledImage);
         scaledPlayNImage := ImageImpl_Access (htmlImage.getImage);
-        canvas := (HtmlGraphics_Access (PlayN_Package.getInstance.graphics)).get (HtmlImage_Access (scaledPlayNImage));
-        (ImageImpl_Access (originalPlayNImage)).draw (canvas.gc, 0, 0, scaledImage.getWidth, scaledImage.getHeight, 0, 0, image.getWidth, image.getHeight);
+        canvas := HtmlGraphics_Access (PlayN_Package.getInstance.graphics).get (HtmlImage_Access (scaledPlayNImage));
+        ImageImpl_Access (originalPlayNImage).draw (canvas.gc, 0, 0, scaledImage.getWidth, scaledImage.getHeight, 0, 0, image.getWidth, image.getHeight);
         return scaledImage;
    end scale;
 

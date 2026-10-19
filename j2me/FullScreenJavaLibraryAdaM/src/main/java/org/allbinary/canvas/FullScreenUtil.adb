@@ -49,7 +49,7 @@ package body org.allbinary.canvas.FullScreenUtil_Package is
       fullScreenInterface : constant Canvas_Access := Canvas_Access (fullScreenInterface_Param);
       commandListener : constant CommandListener_Access := CommandListener_Access (commandListener_Param);
    begin
-        (RunnableCanvas_Access (fullScreenInterface)).waitOnNotify (0);
+        RunnableCanvas_Access (fullScreenInterface).waitOnNotify (0);
         if (commandListener) /= (null) then
             FullScreenUtil'Class (This).init (fullScreenInterface);
         end if;

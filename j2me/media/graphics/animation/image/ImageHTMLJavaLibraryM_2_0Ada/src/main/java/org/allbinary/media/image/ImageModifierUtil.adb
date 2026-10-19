@@ -103,7 +103,7 @@ package body org.allbinary.media.image.ImageModifierUtil_Package is
    begin
         htmlImage := PlaynImage_Access (image);
         canvasImage := ImageImpl_Access (htmlImage.getImage);
-        originalPlaynImage := CoreImage_Access ((PlaynImage_Access (originalImage)).getImage);
+        originalPlaynImage := CoreImage_Access (PlaynImage_Access (originalImage).getImage);
         canvas := This.playnUtil.getCanvas (canvasImage);
         canvas.clear;
         canvas.setAlpha (alpha);
@@ -146,7 +146,7 @@ package body org.allbinary.media.image.ImageModifierUtil_Package is
       image3 : CoreImage_Access;
       callback : Callback_Access;
    begin
-        image3 := CoreImage_Access ((PlaynImage_Access (image)).getImage);
+        image3 := CoreImage_Access (PlaynImage_Access (image).getImage);
         if (image3) /= (null) then
             if ((image3.isReady) or else (((image3.width) + (image3.height)) <= (0))) or else ((image.getName) = (This.resourceCallbackStrings.FROM_DATA)) then
                 ImageModifierUtil'Class (This).copy (imageArray, index, image, image3);

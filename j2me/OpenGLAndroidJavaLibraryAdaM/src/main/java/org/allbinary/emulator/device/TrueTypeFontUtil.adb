@@ -81,7 +81,7 @@ package body org.allbinary.emulator.device.TrueTypeFontUtil_Package is
             path := (file.getAbsolutePath) + (CanvasStrings_Package.getInstance.FONT_ATLAS);
             This.logUtil.putF (path, TrueTypeFontUtil_Access'(This'Unchecked_Access), commonStrings.CONSTRUCTOR);
             fos := FileOutputStream_Package.Create (path);
-            bitmap := (AndroidImageInterface_Access (This.fontImage.openGLBitmap.getImage)).getBitmap;
+            bitmap := AndroidImageInterface_Access (This.fontImage.openGLBitmap.getImage).getBitmap;
             bitmap.compress (Bitmap_Package.CompressFormat.PNG, 100, fos);
         exception
             when Java_Occurrence : others =>

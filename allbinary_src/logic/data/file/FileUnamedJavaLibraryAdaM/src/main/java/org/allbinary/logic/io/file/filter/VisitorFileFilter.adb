@@ -45,7 +45,7 @@ package body org.allbinary.logic.io.file.filter.VisitorFileFilter_Package is
       isFileAcceptable : Boolean;
    begin
         abFile := FileWrapperUtil_Package.wrapFile (file);
-        isFileAcceptable := (Boolean (This.booleanVisitorInterface.visit (abFile))).booleanValue;
+        isFileAcceptable := Boolean (This.booleanVisitorInterface.visit (abFile)).booleanValue;
         return (isFileAcceptable) or else (file.isDirectory);
    end accept_Id;
 
@@ -53,7 +53,7 @@ package body org.allbinary.logic.io.file.filter.VisitorFileFilter_Package is
       file : constant AbFile_Access := AbFile_Access (file_Param);
       isFileAcceptable : Boolean;
    begin
-        isFileAcceptable := (Boolean (This.booleanVisitorInterface.visit (file))).booleanValue;
+        isFileAcceptable := Boolean (This.booleanVisitorInterface.visit (file)).booleanValue;
         return (isFileAcceptable) or else (file.isDirectory);
    end accept_Id;
 

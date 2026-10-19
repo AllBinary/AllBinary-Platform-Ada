@@ -95,7 +95,7 @@ package body org.allbinary.graphics.j2me.dialog.RotateJDialog_Package is
         begin
             This.hashMap.put (To_Unbounded_String (Java_Image (0)), To_Unbounded_String (Java_Image (This.angleIncrementJTextField.getText)));
             This.hashMap.put (To_Unbounded_String (Java_Image (1)), To_Unbounded_String (Java_Image (This.totalRotationJTextField.getText)));
-            (HashMapJDialogListenerInterface_Access (RotateJDialog'Class (This).getParent)).onHashMap (This.hashMap);
+            HashMapJDialogListenerInterface_Access (RotateJDialog'Class (This).getParent).onHashMap (This.hashMap);
             RotateJDialog'Class (This).setVisible (False);
         exception
             when Java_Occurrence : others =>

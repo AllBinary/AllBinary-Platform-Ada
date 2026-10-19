@@ -133,7 +133,7 @@ package body org.allbinary.emulator.device.TrueTypeFontUtil_Package is
    begin
         image := TrueTypeFontUtil'Class (This).getFontBitmap (null, This.cellSize, BasicColorFactory_Package.getInstance.WHITE);
         imageLoader := ImageLoader_Package.Create;
-        imageData := (SwtMutableImage_Access (image)).image.getImageData;
+        imageData := SwtMutableImage_Access (image).image.getImageData;
         imageData.transparentPixel := imageData.getPixel (0, 0);
         imageLoader.data := new ImageData_Access_Array'(0 => imageData);
         imageLoader.save ((CommonSeps_Package.getInstance.PERIOD) + (CanvasStrings_Package.getInstance.FONT_ATLAS), SWT_Package.IMAGE_PNG);

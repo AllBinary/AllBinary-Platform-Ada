@@ -181,13 +181,13 @@ package body views.admin.inventory.download.UpdateFileValidationView_Package is
             hashMap.put (This.basicItemData.ID, This.itemInterface.getId);
             licenseObject := hashMap.get (DownloadItemData_Package.LICENSE_FILE);
             if (licenseObject) /= (null) then
-                hashMap.put (DownloadItemData_Package.LICENSE_FILE, Java_Box ((FileItem_Access (licenseObject)).getName));
+                hashMap.put (DownloadItemData_Package.LICENSE_FILE, Java_Box (FileItem_Access (licenseObject).getName));
             else
                 hashMap.put (DownloadItemData_Package.LICENSE_FILE, StringUtil_Package.getInstance.EMPTY_STRING);
             end if;
             fileObject := hashMap.get (DownloadItemData_Package.FILE);
             if (fileObject) /= (null) then
-                hashMap.put (DownloadItemData_Package.FILE, Java_Box ((FileItem_Access (fileObject)).getName));
+                hashMap.put (DownloadItemData_Package.FILE, Java_Box (FileItem_Access (fileObject).getName));
             else
                 hashMap.put (DownloadItemData_Package.FILE, StringUtil_Package.getInstance.EMPTY_STRING);
             end if;

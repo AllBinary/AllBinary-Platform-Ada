@@ -105,7 +105,7 @@ package body org.allbinary.graphics.opengles.OpenGLUtil_Package is
         graphics.update;
         progressCanvas := ProgressCanvasFactory_Package.getInstance;
         progressCanvas.update (graphics);
-        (OpenGLImageCache_Access (OpenGLImageCacheFactory_Package.getInstance)).update (gl);
+        OpenGLImageCache_Access (OpenGLImageCacheFactory_Package.getInstance).update (gl);
         OpenGLUtil'Class (This).processRunnables;
         OpenGLUtil'Class (This).set (gl);
    end onSurfaceChanged;
@@ -169,7 +169,7 @@ package body org.allbinary.graphics.opengles.OpenGLUtil_Package is
         image := null;
         for index2 in 0 .. (size) - 1 loop
             image := This.list.get (index2);
-            (OpenGLESImage_Access (image)).set (gl);
+            OpenGLESImage_Access (image).set (gl);
         end loop;
    end set;
 

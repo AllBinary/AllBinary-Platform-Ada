@@ -112,7 +112,7 @@ package body org.allbinary.animation.image.BaseImageAnimationFactory_Package is
         commonSeps := CommonSeps_Package.getInstance;
         commonLabels := CommonLabels_Package.getInstance;
         stringBuffer := StringMaker_Package.Create;
-        stringBuffer.append ( (This).toString);
+        stringBuffer.append (Java_Object (This).toString);
         stringBuffer.append (commonLabels.HEIGHT_LABEL);
         stringBuffer.appendint (Integer (This.image.getHeight));
         stringBuffer.append (commonSeps.SPACE);

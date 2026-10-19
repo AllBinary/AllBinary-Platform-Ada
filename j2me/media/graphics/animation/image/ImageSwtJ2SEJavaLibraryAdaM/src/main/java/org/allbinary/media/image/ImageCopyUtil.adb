@@ -303,7 +303,7 @@ package body org.allbinary.media.image.ImageCopyUtil_Package is
         end if;
         image := ImageCopyUtil'Class (This).createImageWH (originalImage, newWidth, newHeight, True);
         if image.isMutable then
-            originalImageData := (Image_Access (originalImage.getImage)).getImageData;
+            originalImageData := Image_Access (originalImage.getImage).getImageData;
             mutableImage2 := SwtMutableImage_Access (image);
             halfWidthDelta := (((newWidth) - (originalImage.getWidth))) / (2);
             halfHeightDelta := (((newHeight) - (originalImage.getHeight))) / (2);
@@ -319,11 +319,11 @@ package body org.allbinary.media.image.ImageCopyUtil_Package is
                     newPixelArray ((index) + (((index2) * (width)))) := originalPixelArray ((((index) - (halfWidthDelta))) + (((((index2) - (halfHeightDelta))) * (width))));
                 end loop;
             end loop;
-            (Image_Access (mutableImage2.getImage)).getImageData.setPixels (0, 0, image.getWidth, newPixelArray, 0);
+            Image_Access (mutableImage2.getImage).getImageData.setPixels (0, 0, image.getWidth, newPixelArray, 0);
             return image;
         else
             originalImmutableImage := SwtImmutableImage_Access (image);
-            originalImageData := (Image_Access (originalImage.getImage)).getImageData;
+            originalImageData := Image_Access (originalImage.getImage).getImageData;
             halfWidthDelta := (((newWidth) - (originalImage.getWidth))) / (2);
             halfHeightDelta := (((newHeight) - (originalImage.getHeight))) / (2);
             originalPixelArray := new Integer_Array'(0 .. ((originalImage.getWidth) * (originalImage.getHeight)) - 1 => 0);
@@ -338,7 +338,7 @@ package body org.allbinary.media.image.ImageCopyUtil_Package is
                     newPixelArray ((index) + (((index2) * (width)))) := originalPixelArray ((((index) - (halfWidthDelta))) + (((((index2) - (halfHeightDelta))) * (width))));
                 end loop;
             end loop;
-            (Image_Access (originalImmutableImage.getImage)).getImageData.setPixels (0, 0, image.getWidth, newPixelArray, 0);
+            Image_Access (originalImmutableImage.getImage).getImageData.setPixels (0, 0, image.getWidth, newPixelArray, 0);
             return image;
         end if;
    end createImageScale;

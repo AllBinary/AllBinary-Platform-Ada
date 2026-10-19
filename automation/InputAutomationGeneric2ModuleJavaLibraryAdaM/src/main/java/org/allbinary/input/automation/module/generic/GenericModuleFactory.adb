@@ -53,7 +53,7 @@ package body org.allbinary.input.automation.module.generic_Id.GenericModuleFacto
       genericProfile : GenericProfile_Access;
       inputAutomationActionInterface : InputAutomationActionInterface_Access;
    begin
-        genericProfile := (GenericModuleConfigurationJPanel_Access (GenericModuleFactory'Class (This).getConfigurationJPanel)).getSelectedGenericProfile;
+        genericProfile := GenericModuleConfigurationJPanel_Access (GenericModuleFactory'Class (This).getConfigurationJPanel).getSelectedGenericProfile;
         inputAutomationActionInterface := InputAutomationActionInterface_Access (GenericInputAutomationAction_Package.Create);
         return RunnableInterface_Access (GenericInputAutomationWorker_Package.Create (inputAutomationActionInterface, genericProfile, NoMotionRectangleConstraints_Package.Create, NoImageComparatorConstraints_Package.Create));
    end getInstance;

@@ -87,14 +87,14 @@ package body org.allbinary.media.audio.PlayerComposite_Package is
 
    function getTimeBase (This : in out PlayerComposite) return TimeBase_Access is
    begin
-        return (TimeBaseInterface_Access (This.player)).getTimeBase;
+        return TimeBaseInterface_Access (This.player).getTimeBase;
    end getTimeBase;
 
    --  throws MediaException
    procedure setTimeBase (This : in out PlayerComposite; timeBase_Param : access TimeBase_Package.TimeBase'Class) is
       timeBase : constant TimeBase_Access := TimeBase_Access (timeBase_Param);
    begin
-        (TimeBaseInterface_Access (This.player)).setTimeBase (timeBase);
+        TimeBaseInterface_Access (This.player).setTimeBase (timeBase);
    end setTimeBase;
 
    procedure prefetch (This : in out PlayerComposite) is

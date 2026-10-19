@@ -31,7 +31,7 @@ package body org.allbinary.animation.image.ImageArrayRotationAnimationCacheable_
       anyType : constant Java_Object_Access := Java_Object_Access (anyType_Param);
       animationBehavior : constant AnimationBehavior_Access := AnimationBehavior_Access (animationBehavior_Param);
    begin
-        AdjustedImageArrayRotationAnimation_Package.Initialize (This, (ImageArrayRotationAnimationInfo_Access (anyType)).getImageArray, (ImageArrayRotationAnimationInfo_Access (anyType)).getAngleInfoP, (ImageArrayRotationAnimationInfo_Access (anyType)).getTotalAngle, (ImageArrayRotationAnimationInfo_Access (anyType)).getDx, (ImageArrayRotationAnimationInfo_Access (anyType)).getDy, animationBehavior);
+        AdjustedImageArrayRotationAnimation_Package.Initialize (This, ImageArrayRotationAnimationInfo_Access (anyType).getImageArray, ImageArrayRotationAnimationInfo_Access (anyType).getAngleInfoP, ImageArrayRotationAnimationInfo_Access (anyType).getTotalAngle, ImageArrayRotationAnimationInfo_Access (anyType).getDx, ImageArrayRotationAnimationInfo_Access (anyType).getDy, animationBehavior);
    end Initialize;
 
    function Create (anyType_Param : access Java_Object'Class; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class) return ImageArrayRotationAnimationCacheable_Access is

@@ -86,7 +86,7 @@ package body org.allbinary.image.opengles.OpenGLESGL11ExtImage_Package is
    begin
         gl.glEnable (GL10_Package.GL_TEXTURE_2D);
         gl.glBindTexture (GL10_Package.GL_TEXTURE_2D, This.openGLESImageProperties.textureID);
-        (GL11Ext_Access (gl)).glDrawTexfOES (x, (This.a) - (y), z, OpenGLESGL11ExtImage'Class (This).getWidth, OpenGLESGL11ExtImage'Class (This).getHeight);
+        GL11Ext_Access (gl).glDrawTexfOES (x, (This.a) - (y), z, OpenGLESGL11ExtImage'Class (This).getWidth, OpenGLESGL11ExtImage'Class (This).getHeight);
         gl.glDisable (GL10_Package.GL_TEXTURE_2D);
    end draw;
 

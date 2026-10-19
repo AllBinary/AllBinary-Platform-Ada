@@ -165,7 +165,7 @@ package body admin.taghelpers.QuoteHelper_Package is
             id := 0;
             size := vector.size;
             for index in 0 .. (size) - 1 loop
-                nextId := (Integer (vector.get (index))).intValue;
+                nextId := Integer (vector.get (index)).intValue;
                 if (id) < (nextId) then
                     id := nextId;
                 end if;

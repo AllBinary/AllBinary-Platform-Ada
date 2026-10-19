@@ -60,7 +60,7 @@ package body org.allbinary.input.media.image.capture.CapturedImageInputOutput_Pa
       capturedBufferedImageCacheable : BufferedImageFrameCacheable_Access;
    begin
         commonStrings := CommonStrings_Package.getInstance;
-        capturedBufferedImageCacheable := (BufferedImageFrameCacheable_Access ((AutomaticCacheInterface_Access (CapturedBufferedImagesCacheSingleton_Package.getInstance)).get (frame)));
+        capturedBufferedImageCacheable := (BufferedImageFrameCacheable_Access (AutomaticCacheInterface_Access (CapturedBufferedImagesCacheSingleton_Package.getInstance).get (frame)));
         This.logUtil.putF ((To_Unbounded_String ("Saving: ") & capturedBufferedImageCacheable.toString), CapturedImageInputOutput_Access'(This'Unchecked_Access), commonStrings.SAVE);
         CapturedImageInputOutput'Class (This).save (capturedBufferedImageCacheable.getBufferedImage, frame);
    end save;

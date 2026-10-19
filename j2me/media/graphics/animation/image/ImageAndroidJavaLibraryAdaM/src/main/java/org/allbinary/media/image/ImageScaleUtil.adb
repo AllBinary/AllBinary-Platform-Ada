@@ -151,7 +151,7 @@ package body org.allbinary.media.image.ImageScaleUtil_Package is
       canvas : Canvas_Access;
    begin
         matrix.setScale (scaleX, scaleY);
-        canvas := (AndroidImageInterface_Access (image)).getCanvas;
+        canvas := AndroidImageInterface_Access (image).getCanvas;
         canvas.concat (matrix);
    end scale;
 

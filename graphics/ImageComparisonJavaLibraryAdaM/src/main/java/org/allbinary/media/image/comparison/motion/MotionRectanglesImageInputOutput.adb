@@ -80,14 +80,14 @@ package body org.allbinary.media.image.comparison.motion.MotionRectanglesImageIn
       motionRectangles : MotionRectangles_Access;
    begin
         commonStrings := CommonStrings_Package.getInstance;
-        motionRectanglesResultsFrameCacheable := MotionRectanglesResultsFrameCacheable_Access ((AutomaticCacheInterface_Access (AllMotionRectanglesResultsCacheSingleton_Package.getInstance)).get (frame));
+        motionRectanglesResultsFrameCacheable := MotionRectanglesResultsFrameCacheable_Access (AutomaticCacheInterface_Access (AllMotionRectanglesResultsCacheSingleton_Package.getInstance).get (frame));
         if (motionRectanglesResultsFrameCacheable) /= (null) then
             motionRectangles := motionRectanglesResultsFrameCacheable.getMotionRectangles;
             MotionRectanglesImageInputOutput'Class (This).save (motionRectangles, frame);
-            motionRectanglesResultsFrameCacheable := MotionRectanglesResultsFrameCacheable_Access ((AutomaticCacheInterface_Access (ConsolidatedMotionRectanglesResultsCacheSingleton_Package.getInstance)).get (frame));
+            motionRectanglesResultsFrameCacheable := MotionRectanglesResultsFrameCacheable_Access (AutomaticCacheInterface_Access (ConsolidatedMotionRectanglesResultsCacheSingleton_Package.getInstance).get (frame));
             motionRectangles := motionRectanglesResultsFrameCacheable.getMotionRectangles;
             MotionRectanglesImageInputOutput'Class (This).save (motionRectangles, frame);
-            motionRectanglesResultsFrameCacheable := MotionRectanglesResultsFrameCacheable_Access ((AutomaticCacheInterface_Access (ConstrainedMotionRectanglesResultsCacheSingleton_Package.getInstance)).get (frame));
+            motionRectanglesResultsFrameCacheable := MotionRectanglesResultsFrameCacheable_Access (AutomaticCacheInterface_Access (ConstrainedMotionRectanglesResultsCacheSingleton_Package.getInstance).get (frame));
             motionRectangles := motionRectanglesResultsFrameCacheable.getMotionRectangles;
             MotionRectanglesImageInputOutput'Class (This).save (motionRectangles, frame);
         else

@@ -112,7 +112,7 @@ package body org.allbinary.media.audio.AllBinaryMediaManager_Package is
                 if (soundInterfaceArray (i)) /= (null) then
                     player := soundInterfaceArray (i).getPlayerP;
                     if (player) /= (null) then
-                        player2 := (PlayerComposite_Access (player)).getPlayerP;
+                        player2 := PlayerComposite_Access (player).getPlayerP;
                         if (player2.all in AndroidMediaPlayerWrapper_Package.AndroidMediaPlayerWrapper'Class) then
                             androidMediaPlayerWrapper := AndroidMediaPlayerWrapper_Access (player2);
                             MediaPlayerUtil_Package.getInstance.waitForMediaPlayer (androidMediaPlayerWrapper.getMediaPlayer);

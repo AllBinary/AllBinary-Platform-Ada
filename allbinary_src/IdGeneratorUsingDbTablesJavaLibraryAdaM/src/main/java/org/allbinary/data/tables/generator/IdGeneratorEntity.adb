@@ -57,7 +57,7 @@ package body org.allbinary.data.tables.generator.IdGeneratorEntity_Package is
         keysAndValues := StdUtil_Package.getInstance.createHashMap;
         keysAndValues.put (Java_Box (This.NAME), Java_Box (name));
         hashMap := AbSqlBean (This).getRow (keysAndValues);
-        if ((Java_Unbox (hashMap.get (Java_Box (This.NAME)))).compareTo (name)) /= (0) then
+        if (Java_Unbox (hashMap.get (Java_Box (This.NAME))).compareTo (name)) /= (0) then
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("results do not match")));
         end if;
         value := Java_Unbox (hashMap.get (Java_Box (This.VALUE)));

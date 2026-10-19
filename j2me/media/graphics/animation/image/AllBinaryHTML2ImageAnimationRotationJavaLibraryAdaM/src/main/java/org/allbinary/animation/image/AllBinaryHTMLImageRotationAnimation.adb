@@ -76,7 +76,7 @@ package body org.allbinary.animation.image.AllBinaryHTMLImageRotationAnimation_P
         htmlImage := PlaynMutableImage_Access (image);
         canvasImage := ImageImpl_Access (htmlImage.getImage);
         playN := PlayN_Package.getInstance;
-        canvas := (HtmlGraphics_Access (playN.graphics)).get (HtmlImage_Access (canvasImage));
+        canvas := HtmlGraphics_Access (playN.graphics).get (HtmlImage_Access (canvasImage));
         canvas.translate ((This.originalImage.getWidth) / (2), (This.originalImage.getHeight) / (2));
         return canvas;
    end getCanvasSurface;

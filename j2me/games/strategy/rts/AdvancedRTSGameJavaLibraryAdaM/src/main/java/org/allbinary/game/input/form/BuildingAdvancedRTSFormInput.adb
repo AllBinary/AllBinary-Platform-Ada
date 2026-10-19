@@ -117,7 +117,7 @@ package body org.allbinary.game.input.form.BuildingAdvancedRTSFormInput_Package 
    begin
         This.BUILD_BUILDING_RTS_LAYER_EVENT.setRtsLayer (layerInterface);
         BuildingEventHandler_Package.getInstance.fireEvent (This.BUILD_BUILDING_RTS_LAYER_EVENT);
-        if (AdvancedRTSPlayerLayerInterface_Access (rtsPlayerLayerInterface)).isLocalPlayer then
+        if AdvancedRTSPlayerLayerInterface_Access (rtsPlayerLayerInterface).isLocalPlayer then
             LocalPlayerBuildingEventHandler_Package.getInstance.fireEvent (This.BUILD_BUILDING_RTS_LAYER_EVENT);
         end if;
         BuildingRTSFormInput (This).add (rtsPlayerLayerInterface, layerManager, layerInterface);

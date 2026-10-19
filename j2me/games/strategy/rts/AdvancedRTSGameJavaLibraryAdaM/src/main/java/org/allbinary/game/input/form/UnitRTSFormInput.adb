@@ -117,7 +117,7 @@ package body org.allbinary.game.input.form.UnitRTSFormInput_Package is
         geographicMapCellPositionArea := associatedRtsLayer2.geographicMapCellPositionAreaBase;
         geographicMapCellPosition := geographicMapCellPositionArea.getNextSurroundingGeographicMapCellPosition;
         UnitRTSFormInput'Class (This).getHashtable.put (Layer_Package.ID, associatedRtsLayer);
-        UnitRTSFormInput'Class (This).getHashtable.put (UnitRTSFormInput_Package.DECAL_ID, (AdvancedRTSPlayerLayerInterface_Access (rtsPlayerLayerInterface)).getDecalBasicColor);
+        UnitRTSFormInput'Class (This).getHashtable.put (UnitRTSFormInput_Package.DECAL_ID, AdvancedRTSPlayerLayerInterface_Access (rtsPlayerLayerInterface).getDecalBasicColor);
         if (This.newUnconstructedRTSLayerInterfaceArray (itemIndex)) = (CollidableDestroyableDamageableLayer_Package.getNullInstance) then
             This.newUnconstructedRTSLayerInterfaceArray (itemIndex) := UnitRTSFormInput'Class (This).getInstance (layerManager, item, geographicMapCellPosition);
         else

@@ -62,11 +62,11 @@ package body org.allbinary.media.image.ImageRotationUtil_Package is
    begin
         image := ImageCreationUtil_Package.getInstance.createImageWH (originalImage.getWidth, originalImage.getHeight);
         if image.isMutable then
-            bitmap := (AndroidImageInterface_Access (image)).getBitmap;
+            bitmap := AndroidImageInterface_Access (image).getBitmap;
             width := bitmap.getWidth;
             height := bitmap.getHeight;
             This.matrix.setRotate (Float (rotationInDegrees), Float ((Java_Shift_Right_Arithmetic (width, 1))), Float ((Java_Shift_Right_Arithmetic (height, 1))));
-            canvas := (AndroidImageInterface_Access (image)).getCanvas;
+            canvas := AndroidImageInterface_Access (image).getCanvas;
             canvas.concat (This.matrix);
             image.getGraphics.drawImage (originalImage, 0, 0, This.anchor);
             return image;

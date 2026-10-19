@@ -63,7 +63,7 @@ package body org.allbinary.media.image.comparison.ComparisonImageInputOutput_Pac
    begin
         commonStrings := CommonStrings_Package.getInstance;
         if (frame) > (0) then
-            imageComparisonResultFrameCacheable := ImageComparisonResultFrameCacheable_Access ((AutomaticCacheInterface_Access (ImageComparisonResultCacheSingleton_Package.getInstance)).get (frame));
+            imageComparisonResultFrameCacheable := ImageComparisonResultFrameCacheable_Access (AutomaticCacheInterface_Access (ImageComparisonResultCacheSingleton_Package.getInstance).get (frame));
             if (imageComparisonResultFrameCacheable) /= (null) then
                 imageComparisonResult := imageComparisonResultFrameCacheable.getImageComparisonResult;
                 ComparisonImageInputOutput'Class (This).save (imageComparisonResult, imageComparisonResultFrameCacheable.getFrame);
