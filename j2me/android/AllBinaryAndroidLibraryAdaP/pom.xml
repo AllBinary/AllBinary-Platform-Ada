@@ -42,7 +42,7 @@
         
         <!-- Several Move to PostPlatforms -->
         
-        <module>../../media/sound/MusicJ2MEJavaLibraryAdaM</module>
+        <!--<module>../../media/sound/MusicJ2MEJavaLibraryAdaM</module>-->
         <module>../../media/sound/NullMusicAndroidJavaLibraryAdaM</module>
         <module>../../media/sound/MusicAndroidJavaLibraryAdaM</module>
 
