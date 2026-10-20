@@ -215,7 +215,7 @@ package body org.allbinary.game.configuration.GameOptionsForm_Package is
         size2 := list.size;
         integer_Id := 0;
         for index in 0 .. (size2) - 1 loop
-            integer_Id := Integer (list.objectArray (index));
+            integer_Id := Java_Unbox_Integer (list.objectArray (index));
             keyValuePersistance.delete (abeClientInformation, Integer (integer_Id));
         end loop;
    end save;

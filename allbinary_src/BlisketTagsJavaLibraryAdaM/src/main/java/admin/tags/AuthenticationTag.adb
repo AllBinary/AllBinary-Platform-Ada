@@ -99,7 +99,7 @@ package body admin.tags.AuthenticationTag_Package is
             anyType := AuthenticationRequestHelperFactory_Package.Create.getInstance (This.propertiesHashMap, This.pageContext);
             addressHelperClass := anyType.all'Tag;
             method := addressHelperClass.getMethod (To_Unbounded_String ("changePassword"), null);
-            result := Boolean (method.invoke (anyType, null));
+            result := Java_Unbox_Boolean (method.invoke (anyType, null));
             return result;
         exception
             when Java_Occurrence : others =>
@@ -122,7 +122,7 @@ package body admin.tags.AuthenticationTag_Package is
             anyType := AuthenticationRequestHelperFactory_Package.Create.getInstance (This.propertiesHashMap, This.pageContext);
             addressHelperClass := anyType.all'Tag;
             method := addressHelperClass.getMethod (To_Unbounded_String ("newPassword"), null);
-            result := Boolean (method.invoke (anyType, null));
+            result := Java_Unbox_Boolean (method.invoke (anyType, null));
             return result;
         exception
             when Java_Occurrence : others =>
@@ -145,7 +145,7 @@ package body admin.tags.AuthenticationTag_Package is
             anyType := AuthenticationHelperFactory_Package.Create.getInstance (This.propertiesHashMap, This.pageContext);
             addressHelperClass := anyType.all'Tag;
             method := addressHelperClass.getMethod (To_Unbounded_String ("invalidateSession"), null);
-            resultInteger := Integer (method.invoke (anyType, null));
+            resultInteger := Java_Unbox_Integer (method.invoke (anyType, null));
             return Integer (resultInteger);
         exception
             when Java_Occurrence : others =>
@@ -168,7 +168,7 @@ package body admin.tags.AuthenticationTag_Package is
             anyType := AuthenticationHelperFactory_Package.Create.getInstance (This.propertiesHashMap, This.pageContext);
             helperClass := anyType.all'Tag;
             method := helperClass.getMethod (To_Unbounded_String ("isSessionOld"), null);
-            resultBoolean := Boolean (method.invoke (anyType, null));
+            resultBoolean := Java_Unbox_Boolean (method.invoke (anyType, null));
             return resultBoolean;
         exception
             when Java_Occurrence : others =>
@@ -195,7 +195,7 @@ package body admin.tags.AuthenticationTag_Package is
             methodParams := new Ada_Tags_Tag_Array'(This.userName.all'Tag, This.password.all'Tag, This.roles.all'Tag);
             method := addressHelperClass.getMethod (To_Unbounded_String ("isRoleValid"), methodParams);
             methodArgs := new Java_Object_Access_Array'(This.userName, This.password, This.roles);
-            resultBoolean := Boolean (method.invoke (anyType, methodArgs));
+            resultBoolean := Java_Unbox_Boolean (method.invoke (anyType, methodArgs));
             return resultBoolean;
         exception
             when Java_Occurrence : others =>
@@ -270,7 +270,7 @@ package body admin.tags.AuthenticationTag_Package is
             methodParams := new Ada_Tags_Tag_Array'(0 => This.roles.all'Tag);
             method := addressHelperClass.getMethod (To_Unbounded_String ("isAuthenticationSessionValid"), methodParams);
             methodArgs := new Java_Object_Access_Array'(0 => This.roles);
-            resultBoolean := Boolean (method.invoke (anyType, methodArgs));
+            resultBoolean := Java_Unbox_Boolean (method.invoke (anyType, methodArgs));
             return resultBoolean;
         exception
             when Java_Occurrence : others =>
@@ -297,7 +297,7 @@ package body admin.tags.AuthenticationTag_Package is
             methodParams := new Ada_Tags_Tag_Array'(This.userName.all'Tag, This.password.all'Tag);
             method := helperClass.getMethod (To_Unbounded_String ("processIfNewLogin"), methodParams);
             methodArgs := new Java_Object_Access_Array'(This.userName, This.password);
-            resultBoolean := Boolean (method.invoke (anyType, methodArgs));
+            resultBoolean := Java_Unbox_Boolean (method.invoke (anyType, methodArgs));
             return resultBoolean;
         exception
             when Java_Occurrence : others =>
@@ -320,7 +320,7 @@ package body admin.tags.AuthenticationTag_Package is
             anyType := AuthenticationHelperFactory_Package.Create.getInstance (This.propertiesHashMap, This.pageContext);
             addressHelperClass := anyType.all'Tag;
             method := addressHelperClass.getMethod (To_Unbounded_String ("processInvalidation"), null);
-            resultBoolean := Boolean (method.invoke (anyType, null));
+            resultBoolean := Java_Unbox_Boolean (method.invoke (anyType, null));
             return resultBoolean;
         exception
             when Java_Occurrence : others =>

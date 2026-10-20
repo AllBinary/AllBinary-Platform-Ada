@@ -67,7 +67,7 @@ package body tags.StoreWorkFlowTag_Package is
             end if;
             helperClass := StoreWorkFlowTag'Class (This).getHelper.all'Tag;
             method := helperClass.getMethod (This.commonStrings.PROCESS, null);
-            result := Integer (method.invoke (StoreWorkFlowTag'Class (This).getHelper, null));
+            result := Java_Unbox_Integer (method.invoke (StoreWorkFlowTag'Class (This).getHelper, null));
             return Integer (result);
         exception
             when Java_Occurrence : others =>

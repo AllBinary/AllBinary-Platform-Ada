@@ -38,7 +38,7 @@ package body org.allbinary.logic.io.file.directory.DirectoryFileVisitor_Package 
    function accept_Id (This : in out DirectoryFileVisitor; arg0_Param : access File_Package.File'Class) return Boolean is
       arg0 : constant File_Access := File_Access (arg0_Param);
    begin
-        return Boolean (DirectoryFileVisitor'Class (This).visit (Java_Object_Access (arg0))).booleanValue;
+        return Java_Unbox_Boolean (DirectoryFileVisitor'Class (This).visit (Java_Object_Access (arg0))).booleanValue;
    end accept_Id;
 
    function visit (This : in out DirectoryFileVisitor; anyType_Param : access Java_Object'Class) return Java_Object_Access is

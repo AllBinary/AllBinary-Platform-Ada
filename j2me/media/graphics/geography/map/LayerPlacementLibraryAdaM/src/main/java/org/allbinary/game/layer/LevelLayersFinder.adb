@@ -65,7 +65,7 @@ package body org.allbinary.game.layer.LevelLayersFinder_Package is
         cachedIntegerCanBeNull := 0;
         while This.enumerationUtil.hasMoreElements (enumeration) loop
             layerHashtableCanBeNull := ABHashtable_Access (hashtable.get (Java_Object_Access (This.enumerationUtil.nextElement (enumeration))));
-            integerCanBeNull := Integer (layerHashtableCanBeNull.get (Java_Object_Access (Layer_Package.ID)));
+            integerCanBeNull := Java_Unbox_Integer (layerHashtableCanBeNull.get (Java_Object_Access (Layer_Package.ID)));
             cachedIntegerCanBeNull := smallIntegerSingletonFactory.getAt (Integer (integerCanBeNull));
             if not (list.contains (cachedIntegerCanBeNull)) then
                 list.add (cachedIntegerCanBeNull);

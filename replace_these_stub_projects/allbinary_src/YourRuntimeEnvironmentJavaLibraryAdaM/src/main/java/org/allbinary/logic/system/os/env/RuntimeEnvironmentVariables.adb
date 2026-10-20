@@ -5,13 +5,14 @@ with org.allbinary.logic.system.os.GenericOperatingSystem_Package; use org.allbi
 with org.allbinary.logic.system.os.OperatingSystemFactory_Package; use org.allbinary.logic.system.os.OperatingSystemFactory_Package;
 with org.allbinary.logic.system.os.OperatingSystems_Package; use org.allbinary.logic.system.os.OperatingSystems_Package;
 with org.allbinary.logic.system.os.env.Process_Package; use org.allbinary.logic.system.os.env.Process_Package;
-with org.allbinary.logic.system.os.env.Runtime_Package; use org.allbinary.logic.system.os.env.Runtime_Package;
+with java.lang.Runtime_Package; use java.lang.Runtime_Package;
 
 package body org.allbinary.logic.system.os.env.RuntimeEnvironmentVariables_Package is
 
    package GenericOperatingSystem_Package renames Standard.org.allbinary.logic.system.os.GenericOperatingSystem_Package;
    package OperatingSystemFactory_Package renames Standard.org.allbinary.logic.system.os.OperatingSystemFactory_Package;
    package OperatingSystems_Package renames Standard.org.allbinary.logic.system.os.OperatingSystems_Package;
+   package Runtime_Package renames Standard.java.lang.Runtime_Package;
    procedure Initialize_Fields (This : in out RuntimeEnvironmentVariables'Class) is
    begin
       null;

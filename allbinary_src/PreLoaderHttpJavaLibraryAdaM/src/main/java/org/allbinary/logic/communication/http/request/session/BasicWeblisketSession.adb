@@ -125,7 +125,7 @@ package body org.allbinary.logic.communication.http.request.session.BasicWeblisk
 
    function getAttempts (This : in out BasicWeblisketSession) return Integer is
    begin
-        return Integer (This.session.getAttribute (WeblisketSessionData_Package.ATTEMPTS));
+        return Java_Unbox_Integer (This.session.getAttribute (WeblisketSessionData_Package.ATTEMPTS));
    end getAttempts;
 
    function getTimeout (This : in out BasicWeblisketSession) return Unbounded_String is

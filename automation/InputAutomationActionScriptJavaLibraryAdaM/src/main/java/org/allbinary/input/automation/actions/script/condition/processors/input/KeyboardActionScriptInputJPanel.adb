@@ -131,7 +131,7 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
         comboBoxModel := This.keyNameJComboBox.getModel;
         selectedItem := Java_Unbox (comboBoxModel.getSelectedItem);
         if not (StringValidationUtil_Package.getInstance.isEmpty (selectedItem)) then
-            return Integer (KeySingletonFactory_Package.getHashtable.get (selectedItem));
+            return Java_Unbox_Integer (KeySingletonFactory_Package.getHashtable.get (selectedItem));
         end if;
         return null;
    end getSelectedKey;

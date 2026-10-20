@@ -146,7 +146,7 @@ package body org.allbinary.media.graphics.geography.map.GeographicMapCellHistory
         size := localVisitedList.size;
         value := False;
         for index in 0 .. (size) - 1 loop
-            value := Boolean (This.visitedList.get (index));
+            value := Java_Unbox_Boolean (This.visitedList.get (index));
             if (value) = (This.booleanFactory.FALSE) then
                 return GeographicMapCellPosition_Access (localList.get (index));
             end if;
@@ -164,7 +164,7 @@ package body org.allbinary.media.graphics.geography.map.GeographicMapCellHistory
         size := localVisitedList.size;
         value := False;
         for index in 0 .. (size) - 1 loop
-            value := Boolean (This.visitedList.get (index));
+            value := Java_Unbox_Boolean (This.visitedList.get (index));
             if (value) = (This.booleanFactory.FALSE) then
                 return index;
             end if;
@@ -200,7 +200,7 @@ package body org.allbinary.media.graphics.geography.map.GeographicMapCellHistory
    begin
         index := This.list.indexOf (Java_Object_Access (geographicMapCellPosition));
         if (index) /= (-(1)) then
-            value := Boolean (This.visitedList.get (index));
+            value := Java_Unbox_Boolean (This.visitedList.get (index));
             if (value) = (This.booleanFactory.TRUE) then
                 return True;
             end if;
@@ -219,7 +219,7 @@ package body org.allbinary.media.graphics.geography.map.GeographicMapCellHistory
         index := This.list.indexOf (Java_Object_Access (geographicMapCellPosition));
         value := False;
         if (index) /= (-(1)) then
-            value := Boolean (This.visitedList.get (index));
+            value := Java_Unbox_Boolean (This.visitedList.get (index));
             TRUE := This.booleanFactory.TRUE;
             if (value) /= (TRUE) then
                 This.visitedList.set (index, TRUE);
@@ -322,7 +322,7 @@ package body org.allbinary.media.graphics.geography.map.GeographicMapCellHistory
             index := size;
             while (Java_Pre_Decrement (index)) >= (0) loop
                 geographicMapCellPosition := GeographicMapCellPosition_Access (This.list.get (index));
-                isCellVisitedBoolean := Boolean (localVisitedList.get (index));
+                isCellVisitedBoolean := Java_Unbox_Boolean (localVisitedList.get (index));
                 if not (isCellVisitedBoolean) then
                     GeographicMapCellHistory'Class (This).paintNotVisitedRelativeToPoint (graphics, geographicMapInterface.getAllBinaryTiledLayer, geographicMapCellPosition.getPoint);
                 end if;

@@ -44,7 +44,7 @@ package body org.allbinary.game.ag.ai.scroller.FlockingAI_Package is
    begin
         BasicAI_Package.Initialize (This, ownerLayerInterface, gameInput);
         Initialize_Fields (This);
-        allowedDistance := Integer (hashtable.get (BasePatrolAI_Package.MAX_DISTANCE));
+        allowedDistance := Java_Unbox_Integer (hashtable.get (BasePatrolAI_Package.MAX_DISTANCE));
         This.allowedDistance := allowedDistance.intValue;
    end Initialize;
 

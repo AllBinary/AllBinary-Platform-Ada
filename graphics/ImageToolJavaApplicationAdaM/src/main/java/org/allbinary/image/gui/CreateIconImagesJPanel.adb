@@ -100,8 +100,8 @@ package body org.allbinary.image.gui.CreateIconImagesJPanel_Package is
 --                      width := 0;
 --                      height := 0;
 --                      for index2 in 0 .. (size) - 1 loop
---                          width := Integer (iconWidthList.get (index2)).intValue;
---                          height := Integer (iconHeightList.get (index2)).intValue;
+--                          width := Java_Unbox_Integer (iconWidthList.get (index2)).intValue;
+--                          height := Java_Unbox_Integer (iconHeightList.get (index2)).intValue;
 --                          generatedBufferedImageArray := imageUtil.createBufferedImage3 (imageProcessorInput.getBufferedImageArray, width, height, True);
 --                          imagePersistanceUtil := ImagePersistanceUtil_Package.getInstance;
 --                          for index in 0 .. (generatedBufferedImageArray'Length) - 1 loop

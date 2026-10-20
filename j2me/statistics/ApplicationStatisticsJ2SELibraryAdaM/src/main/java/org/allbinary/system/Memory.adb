@@ -14,11 +14,12 @@
 
 
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
-with org.allbinary.system.Runtime_Package; use org.allbinary.system.Runtime_Package;
+with java.lang.Runtime_Package; use java.lang.Runtime_Package;
 
 package body org.allbinary.system.Memory_Package is
 
    package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package Runtime_Package renames Standard.java.lang.Runtime_Package;
    procedure Initialize_Fields (This : in out Memory'Class) is
    begin
       null;

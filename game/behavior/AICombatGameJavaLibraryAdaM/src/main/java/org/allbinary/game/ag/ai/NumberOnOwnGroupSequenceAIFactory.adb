@@ -83,7 +83,7 @@ package body org.allbinary.game.ag.ai.NumberOnOwnGroupSequenceAIFactory_Package 
         end if;
         numberOnSameTeam := new Integer_Array'(0 .. (list.size) - 1 => 0);
         for index in 0 .. (numberOnSameTeam'Length) - 1 loop
-            numberOnSameTeam (index) := Integer (list.objectArray (index));
+            numberOnSameTeam (index) := Java_Unbox_Integer (list.objectArray (index));
         end loop;
         return ArtificialIntelligenceInterface_Access (NumberOnOwnGroupSequenceAI_Package.Create (numberOnSameTeam, artificialIntelligenceInterface, ownerLayerInterface, gameInput));
    end getInstance;

@@ -50,7 +50,7 @@ package body tags.XmlValidationTransformTag_Package is
         begin
             helperClass := XmlValidationTransformTag'Class (This).getHelper.all'Tag;
             method := helperClass.getMethod (This.commonStrings.IS_VALID, null);
-            result := Boolean (method.invoke (XmlValidationTransformTag'Class (This).getHelper, null));
+            result := Java_Unbox_Boolean (method.invoke (XmlValidationTransformTag'Class (This).getHelper, null));
             return result;
         exception
             when Java_Occurrence : others =>

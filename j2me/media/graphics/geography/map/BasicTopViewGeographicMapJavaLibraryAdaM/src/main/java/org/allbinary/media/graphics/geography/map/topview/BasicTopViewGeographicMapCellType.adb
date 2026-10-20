@@ -58,7 +58,7 @@ package body org.allbinary.media.graphics.geography.map.topview.BasicTopViewGeog
         typeAsInteger := 0;
         type_Id := 0;
         for index in 0 .. (size) - 1 loop
-            typeAsInteger := (Integer (types.get (index)));
+            typeAsInteger := (Java_Unbox_Integer (types.get (index)));
             type_Id := Integer (typeAsInteger);
             if (GeographicMapCellTypeFactory_Package.getInstance.getGeographicMapCellTypeArray (type_Id)) = (null) then
                 RaceTrackGeographicMapCellType_Package.Create (name, type_Id, cost, 0);

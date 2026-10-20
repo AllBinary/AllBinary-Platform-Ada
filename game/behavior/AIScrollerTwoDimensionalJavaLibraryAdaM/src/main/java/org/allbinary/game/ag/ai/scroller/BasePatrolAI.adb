@@ -44,7 +44,7 @@ package body org.allbinary.game.ag.ai.scroller.BasePatrolAI_Package is
    begin
         BasicAI_Package.Initialize (This, ownerLayerInterface, gameInput);
         Initialize_Fields (This);
-        This.maxDistance := Integer (hashtable.get (BasePatrolAI_Package.MAX_DISTANCE));
+        This.maxDistance := Java_Unbox_Integer (hashtable.get (BasePatrolAI_Package.MAX_DISTANCE));
         This.currentDistance := Integer (This.maxDistance);
    end Initialize;
 

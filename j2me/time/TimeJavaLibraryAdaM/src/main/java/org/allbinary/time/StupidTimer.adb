@@ -37,7 +37,7 @@ package body org.allbinary.time.StupidTimer_Package is
       result : Boolean;
       result2 : Boolean;
    begin
-        result := Boolean (visitorInterface.visit (This.nullUtil.NULL_OBJECT));
+        result := Java_Unbox_Boolean (visitorInterface.visit (This.nullUtil.NULL_OBJECT));
         result2 := result;
         return result2;
    end visitBool;

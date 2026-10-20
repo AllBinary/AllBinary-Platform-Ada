@@ -40,7 +40,7 @@ package body org.allbinary.game.ag.ai.KeyPressesAI_Package is
         objectArray := HashtableUtil_Package.getInstance.getKeysAsArray (hashtable);
         size := objectArray'Length;
         for index in 0 .. (size) - 1 loop
-            This.keys (index) := Integer (hashtable.get (Java_Object_Access (objectArray (index))));
+            This.keys (index) := Java_Unbox_Integer (hashtable.get (Java_Object_Access (objectArray (index))));
         end loop;
    end Initialize;
 

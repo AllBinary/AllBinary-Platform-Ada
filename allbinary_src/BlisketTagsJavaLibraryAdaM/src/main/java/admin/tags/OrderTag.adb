@@ -98,7 +98,7 @@ package body admin.tags.OrderTag_Package is
             anyType := OrderHelperFactory_Package.Create.getInstance (This.propertiesHashMap, This.pageContext);
             addressHelperClass := anyType.all'Tag;
             method := addressHelperClass.getMethod (To_Unbounded_String ("setPaymentGateway"), null);
-            result := Boolean (method.invoke (anyType, null));
+            result := Java_Unbox_Boolean (method.invoke (anyType, null));
             return result;
         exception
             when Java_Occurrence : others =>

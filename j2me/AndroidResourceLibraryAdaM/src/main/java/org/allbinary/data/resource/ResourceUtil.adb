@@ -89,7 +89,7 @@ package body org.allbinary.data.resource.ResourceUtil_Package is
    function getResourceId (This : in out ResourceUtil; resource : Unbounded_String) return Integer is
       value : Integer;
    begin
-        value := Integer (This.hashMap.get (Java_Box (resource)));
+        value := Java_Unbox_Integer (This.hashMap.get (Java_Box (resource)));
         if (DebugFactory_Package.getInstance) /= (NoDebug_Package.getInstance) then
             PreLogUtil_Package.put (StringMaker_Package.Create.append (resource).append (CommonSeps_Package.getInstance.COLON).append (To_Unbounded_String (Java_Image (value))).toString, ResourceUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("getResourceId"));
         end if;
@@ -115,7 +115,7 @@ package body org.allbinary.data.resource.ResourceUtil_Package is
         objectArray := HashtableUtil_Package.getInstance.getKeysAsArray (This.hashMap);
         index := objectArray'Length;
         while (Java_Pre_Decrement (index)) >= (0) loop
-            integer_Id := Integer (This.hashMap.get (Java_Object_Access (objectArray (index))));
+            integer_Id := Java_Unbox_Integer (This.hashMap.get (Java_Object_Access (objectArray (index))));
             if (resource) /= (objectArray (index)) then
                 if (value) /= (integer_Id) then
                     if (Integer (value)) = (Integer (integer_Id)) then
@@ -141,7 +141,7 @@ package body org.allbinary.data.resource.ResourceUtil_Package is
       resources : Resources_Access;
       inputStream : InputStream_Access;
    begin
-        integer_Id := Integer (This.hashMap.get (Java_Box (resource)));
+        integer_Id := Java_Unbox_Integer (This.hashMap.get (Java_Box (resource)));
         id := Integer (integer_Id);
         resources := (Resources_Access (This.resources));
         inputStream := resources.openRawResource (id);

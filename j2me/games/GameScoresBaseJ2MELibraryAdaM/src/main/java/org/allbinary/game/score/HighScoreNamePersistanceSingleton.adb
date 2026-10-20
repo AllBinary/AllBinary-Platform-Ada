@@ -91,7 +91,7 @@ package body org.allbinary.game.score.HighScoreNamePersistanceSingleton_Package 
    begin
         size := This.nameBasicArrayList.size;
         for index in 0 .. (size) - 1 loop
-            integer_Id := Integer (This.nameBasicArrayList.objectArray (index));
+            integer_Id := Java_Unbox_Integer (This.nameBasicArrayList.objectArray (index));
             HighScoreNamePersistanceSingleton'Class (This).delete (abeClientInformation, gameInfo, Integer (integer_Id));
         end loop;
         HighScoreNamePersistanceSingleton'Class (This).clear;

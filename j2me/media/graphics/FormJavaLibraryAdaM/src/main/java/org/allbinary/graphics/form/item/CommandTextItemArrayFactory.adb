@@ -83,7 +83,7 @@ package body org.allbinary.graphics.form.item.CommandTextItemArrayFactory_Packag
         for index in 0 .. (size) - 1 loop
             command := Command_Access (vectorUtil.elementAt (vector, index));
             if (command.getPriority) < (priorityLimit) then
-                aBoolean := Boolean (This.visitorInterface.visit (command));
+                aBoolean := Java_Unbox_Boolean (This.visitorInterface.visit (command));
                 if aBoolean then
                     textItem := CommandTextItem_Package.Create (command, ImageItem_Package.LAYOUT_DEFAULT, StringUtil_Package.getInstance.EMPTY_STRING, backgroundBasicColor, foregroundBasicColor);
                     This.list.add (Java_Object_Access (textItem));

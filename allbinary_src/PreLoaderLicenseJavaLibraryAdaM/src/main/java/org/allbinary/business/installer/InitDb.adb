@@ -97,7 +97,7 @@ package body org.allbinary.business.installer.InitDb_Package is
         begin
             dynamicClass := This.anyType.all'Tag;
             method := dynamicClass.getMethod (This.METHOD_CALL_ADD_USERS, null);
-            result := Boolean (method.invoke (This.anyType, null));
+            result := Java_Unbox_Boolean (method.invoke (This.anyType, null));
             return result.booleanValue;
         exception
             when Java_Occurrence : others =>
@@ -117,7 +117,7 @@ package body org.allbinary.business.installer.InitDb_Package is
         begin
             dynamicClass := This.anyType.all'Tag;
             method := dynamicClass.getMethod (This.METHOD_CALL_ADD_DATABASES, null);
-            result := Boolean (method.invoke (This.anyType, null));
+            result := Java_Unbox_Boolean (method.invoke (This.anyType, null));
             return result.booleanValue;
         exception
             when Java_Occurrence : others =>
@@ -137,7 +137,7 @@ package body org.allbinary.business.installer.InitDb_Package is
         begin
             dynamicClass := This.anyType.all'Tag;
             method := dynamicClass.getMethod (This.METHOD_CALL_ADD_TABLES, null);
-            result := Boolean (method.invoke (This.anyType, null));
+            result := Java_Unbox_Boolean (method.invoke (This.anyType, null));
             return result.booleanValue;
         exception
             when Java_Occurrence : others =>
@@ -157,7 +157,7 @@ package body org.allbinary.business.installer.InitDb_Package is
         begin
             dynamicClass := This.anyType.all'Tag;
             method := dynamicClass.getMethod (This.METHOD_CALL_TEMP_MAIN_PATH, null);
-            result := Boolean (method.invoke (This.anyType, null));
+            result := Java_Unbox_Boolean (method.invoke (This.anyType, null));
             return result.booleanValue;
         exception
             when Java_Occurrence : others =>
@@ -177,7 +177,7 @@ package body org.allbinary.business.installer.InitDb_Package is
         begin
             dynamicClass := This.anyType.all'Tag;
             method := dynamicClass.getMethod (This.METHOD_CALL_MAIN_PATH, null);
-            result := Boolean (method.invoke (This.anyType, null));
+            result := Java_Unbox_Boolean (method.invoke (This.anyType, null));
             return result.booleanValue;
         exception
             when Java_Occurrence : others =>

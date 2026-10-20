@@ -29,7 +29,7 @@ package body org.allbinary.graphics.color.ColorCacheable_Package is
    begin
       Initialize_Fields (This);
         This.key := key;
-        This.color := Color_Package.Create (Integer (key).intValue);
+        This.color := Color_Package.Create (Java_Unbox_Integer (key).intValue);
    end Initialize;
 
    function Create (key_Param : access Java_Object'Class) return ColorCacheable_Access is

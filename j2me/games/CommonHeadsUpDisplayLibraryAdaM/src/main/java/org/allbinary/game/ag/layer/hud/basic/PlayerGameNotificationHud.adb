@@ -157,7 +157,7 @@ package body org.allbinary.game.ag.layer.hud.basic.PlayerGameNotificationHud_Pac
         PlayerGameNotificationHud'Class (This).setX (Java_Shift_Right_Arithmetic (((This.displayInfo.getLastWidth) - (This.width)), 1));
         This.point.setX (PlayerGameNotificationHud'Class (This).getX);
         This.point.setY (PlayerGameNotificationHud'Class (This).getY);
-        time := Integer (This.gameNotification.timeList.removeAt (0));
+        time := Java_Unbox_Integer (This.gameNotification.timeList.removeAt (0));
         iTime := (Integer (time)) * (1000);
         if (iTime) = (0) then
             iTime := 500;
@@ -184,7 +184,7 @@ package body org.allbinary.game.ag.layer.hud.basic.PlayerGameNotificationHud_Pac
         PlayerGameNotificationHud'Class (This).setX (Java_Shift_Right_Arithmetic (((This.displayInfo.getLastWidth) - (This.width)), 1));
         This.point.setX (PlayerGameNotificationHud'Class (This).getX);
         This.point.setY (PlayerGameNotificationHud'Class (This).getY);
-        time := Integer (This.permanentGameNotification.timeList.objectArray (index));
+        time := Java_Unbox_Integer (This.permanentGameNotification.timeList.objectArray (index));
         This.timeDelayHelper.delay_Id := (Integer (time)) * (1000);
         PlayerGameNotificationHud'Class (This).setBasicColorP (BasicColor_Access (This.permanentGameNotification.colorList.objectArray (index)));
         declare Java_Result renames This.circularIndexUtil.next; pragma Unreferenced (Java_Result); begin null; end;

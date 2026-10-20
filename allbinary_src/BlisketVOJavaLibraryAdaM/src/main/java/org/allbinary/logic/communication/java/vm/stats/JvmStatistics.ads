@@ -20,10 +20,11 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.communication.java.vm.stats.Runtime_Package; use org.allbinary.logic.communication.java.vm.stats.Runtime_Package;
+with java.lang.Runtime_Package; use java.lang.Runtime_Package;
 
 package org.allbinary.logic.communication.java.vm.stats.JvmStatistics_Package is
 
+   package Runtime_Package renames Standard.java.lang.Runtime_Package;
 
    type JvmStatistics is tagged;
    type JvmStatistics_Access is access all JvmStatistics'Class;

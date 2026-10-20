@@ -72,7 +72,7 @@ package body org.allbinary.game.ag.layer.weapon.mine.MineCountedPickedUpLayerInt
       scoreableInterface : ScoreableInterface_Access;
    begin
         sourceLayerInterface := AllBinaryLayer_Access (hashtable.get (Java_Object_Access (This.smallIntegerSingletonFactory.getAt (0))));
-        angle := Integer (hashtable.get (Java_Object_Access (This.smallIntegerSingletonFactory.getAt (1))));
+        angle := Java_Unbox_Integer (hashtable.get (Java_Object_Access (This.smallIntegerSingletonFactory.getAt (1))));
         scoreableInterface := ScoreableInterface_Access (sourceLayerInterface);
         return This.weaponLayerCircularStaticPool.getInstanceWeaponLayer (sourceLayerInterface, x, y, z, Integer (Integer (angle)), 0, This.weaponProperties, scoreableInterface);
    end getNextInstance;

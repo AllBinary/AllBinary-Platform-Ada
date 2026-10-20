@@ -106,7 +106,7 @@ package body org.allbinary.logic.control.workflow.WorkFlowWrapper_Package is
         begin
             helperClass := This.anyType.all'Tag;
             method := helperClass.getMethod (This.commonStrings.PROCESS, null);
-            result := Integer (method.invoke (This.anyType, null));
+            result := Java_Unbox_Integer (method.invoke (This.anyType, null));
             return result;
         exception
             when Java_Occurrence : others =>

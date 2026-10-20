@@ -67,7 +67,7 @@ package body org.allbinary.layer.LayerInterfaceFactory_Package is
    begin
         commonStrings := CommonStrings_Package.getInstance;
         This.logUtil.putF (StringMaker_Package.Create.append (This.HASHTABLE_LABEL).append (StringUtil_Package.getInstance.toString (hashtable)).toString, LayerInterfaceFactory_Access'(This'Unchecked_Access), commonStrings.GET_INSTANCE);
-        typeInteger := Integer (hashtable.get (Java_Object_Access (Layer_Package.ID)));
+        typeInteger := Java_Unbox_Integer (hashtable.get (Java_Object_Access (Layer_Package.ID)));
         layerInterfaceFactoryInterface := LayerInterfaceFactoryInterface_Access (This.list.objectArray ((Integer (typeInteger)) - (1)));
         return layerInterfaceFactoryInterface.getNextInstance (hashtable, x, y, z);
    end getNexInstance;

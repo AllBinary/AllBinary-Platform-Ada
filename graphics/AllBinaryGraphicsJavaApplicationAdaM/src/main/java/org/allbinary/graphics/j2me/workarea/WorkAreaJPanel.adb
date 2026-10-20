@@ -281,7 +281,7 @@ package body org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package is
    begin
         canvasJPanelHashMap := WorkAreaJPanel'Class (This).getCanvasHashMap;
         if canvasJPanelHashMap.containsKey (treeNode) then
-            frameInteger := Integer (canvasJPanelHashMap.get (treeNode));
+            frameInteger := Java_Unbox_Integer (canvasJPanelHashMap.get (treeNode));
             canvasJPanel := CanvasJPanel_Access (This.canvasJPanelList.get (Integer (frameInteger)));
             WorkAreaJPanel'Class (This).initDuplicate (canvasJPanel.duplicate);
         end if;
@@ -357,7 +357,7 @@ package body org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package is
       frameInteger : Integer;
    begin
         canvasJPanelHashMap := WorkAreaJPanel'Class (This).getCanvasHashMap;
-        frameInteger := Integer (canvasJPanelHashMap.get (treeNode));
+        frameInteger := Java_Unbox_Integer (canvasJPanelHashMap.get (treeNode));
         if (frameInteger) /= (0) then
             WorkAreaJPanel'Class (This).select_Id (Integer (frameInteger));
         end if;
@@ -466,7 +466,7 @@ package body org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package is
         canvasJPanelHashMap := WorkAreaJPanel'Class (This).getCanvasHashMap;
         if canvasJPanelHashMap.containsKey (evt.getTreeNode) then
             This.canvasHolderJPanel.removeAll;
-            frameInt := Integer (canvasJPanelHashMap.get (evt.getTreeNode));
+            frameInt := Java_Unbox_Integer (canvasJPanelHashMap.get (evt.getTreeNode));
             This.canvasJPanelList.remove (Integer (frameInt));
             WorkAreaJPanel'Class (This).select_Id (Integer (frameInt));
         end if;
@@ -495,7 +495,7 @@ package body org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package is
    begin
         canvasJPanelHashMap := WorkAreaJPanel'Class (This).getCanvasHashMap;
         treeNode := evt.getTreeNode;
-        frameInt := Integer (canvasJPanelHashMap.get (evt.getTreeNode));
+        frameInt := Java_Unbox_Integer (canvasJPanelHashMap.get (evt.getTreeNode));
         canvasJPanel := CanvasJPanel_Access (This.canvasJPanelList.get (Integer (frameInt)));
         if (canvasJPanel) /= (null) then
             canvasJPanel.addAngle (evt.getAngle);

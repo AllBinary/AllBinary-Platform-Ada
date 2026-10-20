@@ -73,7 +73,7 @@ package body admin.tags.BasketTag_Package is
         begin
             anyType := BasketHelperFactory_Package.Create.getInstance (This.propertiesHashMap, This.pageContext);
             method := anyType.all'Tag.getMethod (To_Unbounded_String ("isBasketEmpty"), null);
-            emptyBoolean := Boolean (method.invoke (anyType, null));
+            emptyBoolean := Java_Unbox_Boolean (method.invoke (anyType, null));
             return emptyBoolean;
         exception
             when Java_Occurrence : others =>
@@ -95,7 +95,7 @@ package body admin.tags.BasketTag_Package is
         begin
             anyType := BasketRequestHelperFactory_Package.Create.getInstance (This.propertiesHashMap, This.pageContext);
             method := anyType.all'Tag.getMethod (To_Unbounded_String ("addItemToBasket"), null);
-            emptyBoolean := Boolean (method.invoke (anyType, null));
+            emptyBoolean := Java_Unbox_Boolean (method.invoke (anyType, null));
             return emptyBoolean;
         exception
             when Java_Occurrence : others =>
@@ -117,7 +117,7 @@ package body admin.tags.BasketTag_Package is
         begin
             anyType := BasketRequestHelperFactory_Package.Create.getInstance (This.propertiesHashMap, This.pageContext);
             method := anyType.all'Tag.getMethod (To_Unbounded_String ("removeItemFromBasket"), null);
-            emptyBoolean := Boolean (method.invoke (anyType, null));
+            emptyBoolean := Java_Unbox_Boolean (method.invoke (anyType, null));
             return emptyBoolean;
         exception
             when Java_Occurrence : others =>
@@ -139,7 +139,7 @@ package body admin.tags.BasketTag_Package is
         begin
             anyType := BasketRequestHelperFactory_Package.Create.getInstance (This.propertiesHashMap, This.pageContext);
             method := anyType.all'Tag.getMethod (To_Unbounded_String ("adjustBasket"), null);
-            emptyBoolean := Boolean (method.invoke (anyType, null));
+            emptyBoolean := Java_Unbox_Boolean (method.invoke (anyType, null));
             return emptyBoolean;
         exception
             when Java_Occurrence : others =>

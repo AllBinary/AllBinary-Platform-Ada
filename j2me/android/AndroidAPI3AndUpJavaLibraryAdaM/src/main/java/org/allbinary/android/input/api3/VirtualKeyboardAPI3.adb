@@ -65,7 +65,7 @@ package body org.allbinary.android.input.api3.VirtualKeyboardAPI3_Package is
       virtualKeyboardEvent : constant VirtualKeyboardEvent_Access := VirtualKeyboardEvent_Access (virtualKeyboardEvent_Param);
       isShow : Boolean;
    begin
-        isShow := Boolean (virtualKeyboardEvent.getSource);
+        isShow := Java_Unbox_Boolean (virtualKeyboardEvent.getSource);
         if isShow then
             VirtualKeyboardAPI3'Class (This).showVirtualKeyboard;
         else

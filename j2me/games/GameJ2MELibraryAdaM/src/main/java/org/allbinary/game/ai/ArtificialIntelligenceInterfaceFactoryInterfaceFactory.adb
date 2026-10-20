@@ -56,7 +56,7 @@ package body org.allbinary.game.ai.ArtificialIntelligenceInterfaceFactoryInterfa
       type_Id : Integer;
       artificialIntelligenceInterfaceFactoryInterface : ArtificialIntelligenceInterfaceFactoryInterface_Access;
    begin
-        typeInteger := Integer (hashtable.get (Java_Object_Access (BasicAI_Package.ID)));
+        typeInteger := Java_Unbox_Integer (hashtable.get (Java_Object_Access (BasicAI_Package.ID)));
         type_Id := Integer (typeInteger);
         artificialIntelligenceInterfaceFactoryInterface := ArtificialIntelligenceInterfaceFactoryInterface_Access (This.list.objectArray ((type_Id) - (1)));
         return artificialIntelligenceInterfaceFactoryInterface;
