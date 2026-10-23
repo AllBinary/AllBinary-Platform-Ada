@@ -96,7 +96,7 @@ package body org.allbinary.logic.system.security.licensing.registration.XmlRpcRe
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             This.logUtil.putF ((TRYING_OTHER_SERVERS) + (ExceptionUtil_Package.getInstance.getStackTrace (e)), XmlRpcRemoteLicenseRegistrationClient_Access'(This'Unchecked_Access), This.commonStrings.GET);
-            if not (Java_Get_Message (e).startsWith (HOST_NOT_RESOLVED)) then
+            if not (Java_Starts_With (Java_Get_Message (e), HOST_NOT_RESOLVED)) then
                 return XmlRpcRemoteLicenseRegistrationClient'Class (This).tryAnother (anyType);
             else
                 Java_Throw (Java_New_Exception ("Exception", HOST_NOT_RESOLVED_MSG));

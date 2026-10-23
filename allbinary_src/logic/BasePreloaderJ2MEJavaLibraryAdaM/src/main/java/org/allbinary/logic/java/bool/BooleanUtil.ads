@@ -20,11 +20,10 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.TsUtil_Package; use org.allbinary.TsUtil_Package;
+--  with org.allbinary.TsUtil_Package; use org.allbinary.TsUtil_Package;
 
 package org.allbinary.logic.java.bool.BooleanUtil_Package is
 
-   package TsUtil_Package renames Standard.org.allbinary.TsUtil_Package;
 
    type BooleanUtil is tagged;
    type BooleanUtil_Access is access all BooleanUtil'Class;
@@ -33,9 +32,7 @@ package org.allbinary.logic.java.bool.BooleanUtil_Package is
    type BooleanUtil_Access_Array_Access_Array is array (Natural range <>) of BooleanUtil_Access_Array_Access;
    type BooleanUtil_Access_Array_Access_Array_Access is access all BooleanUtil_Access_Array_Access_Array;
 
-   type BooleanUtil is new Java_Object with record
-      tsUtil : TsUtil_Access;
-   end record;
+   type BooleanUtil is new Java_Object with null record;
    instance : BooleanUtil_Access;
 
    procedure Initialize (This : in out BooleanUtil'Class);

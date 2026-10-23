@@ -21,7 +21,7 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with javax.microedition.lcdui.ChoiceGroup_Package; use javax.microedition.lcdui.ChoiceGroup_Package;
-with org.allbinary.TsUtil_Package; use org.allbinary.TsUtil_Package;
+--  with org.allbinary.TsUtil_Package; use org.allbinary.TsUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.EnumerationUtil_Package; use org.allbinary.util.EnumerationUtil_Package;
@@ -30,7 +30,6 @@ with org.allbinary.game.configuration.feature.Feature_Package; use org.allbinary
 package org.allbinary.game.configuration.feature.GameFeatureUtil_Package is
 
    package ChoiceGroup_Package renames Standard.javax.microedition.lcdui.ChoiceGroup_Package;
-   package TsUtil_Package renames Standard.org.allbinary.TsUtil_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
    package EnumerationUtil_Package renames Standard.org.allbinary.util.EnumerationUtil_Package;
@@ -44,7 +43,6 @@ package org.allbinary.game.configuration.feature.GameFeatureUtil_Package is
 
    type GameFeatureUtil is new Java_Object with record
       logUtil : LogUtil_Access;
-      tsUtil : TsUtil_Access;
       enumerationUtil : EnumerationUtil_Access;
       ON_GAME_FEATURE_CHANGE : Unbounded_String;
       GAME_FEATURE_CHANGED : Unbounded_String;

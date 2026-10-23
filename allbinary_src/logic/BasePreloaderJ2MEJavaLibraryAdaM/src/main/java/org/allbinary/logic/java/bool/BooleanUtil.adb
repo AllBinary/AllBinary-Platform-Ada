@@ -24,7 +24,6 @@ package body org.allbinary.logic.java.bool.BooleanUtil_Package is
    procedure Initialize_Fields (This : in out BooleanUtil'Class) is
    begin
       null;
-      This.tsUtil := TsUtil_Package.getInstance;
    end Initialize_Fields;
 
 
@@ -58,9 +57,9 @@ package body org.allbinary.logic.java.bool.BooleanUtil_Package is
             return False;
         end if;
         booleanStringLowerCase := Translate (booleanString, Ada.Strings.Maps.Constants.Lower_Case_Map);
-        if (This.tsUtil.compareTo (booleanStringLowerCase, booleanFactory.TRUE_STRING)) = (0) then
+        if (Java_Compare_To (booleanStringLowerCase, booleanFactory.TRUE_STRING)) = (0) then
             return True;
-        elsif (This.tsUtil.compareTo (booleanStringLowerCase, booleanFactory.FALSE_STRING)) = (0) then
+        elsif (Java_Compare_To (booleanStringLowerCase, booleanFactory.FALSE_STRING)) = (0) then
             return False;
         else
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Invalid booleanString - Must be true or false")));

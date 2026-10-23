@@ -152,7 +152,6 @@ package body org.allbinary.game.midlet.GameMidlet_Package is
       This.gameStrings := GameStrings_Package.getInstance;
       This.gameAdStateFactory := GameAdStateFactory_Package.getInstance;
       This.gameStateFactory := GameStateFactory_Package.getInstance;
-      This.tsUtil := TsUtil_Package.getInstance;
       This.DISPLAYABLE := To_Unbounded_String (" Displayable: ");
       This.COMMAND_NAME := To_Unbounded_String ("command Name/Label: ");
       This.NO_COMMAND := To_Unbounded_String ("No Command");
@@ -586,7 +585,7 @@ package body org.allbinary.game.midlet.GameMidlet_Package is
             elsif (command) = (gameCommandsFactory.TOGGLE_KEYBOARD) then
                 virtualKeyboardEventHandler := VirtualKeyboardEventHandler_Package.getInstance;
                 virtualKeyboardEventHandler.fireEvent (virtualKeyboardEventHandler.SHOW_EVENT);
-            elsif (This.tsUtil.compareTo (command.getLabel, gameCommandsFactory.TOGGLE_FULLSCREEN.getLabel)) = (0) then
+            elsif (Java_Compare_To (command.getLabel, gameCommandsFactory.TOGGLE_FULLSCREEN.getLabel)) = (0) then
                 mainFeatureFactory := MainFeatureFactory_Package.getInstance;
                 isFullScreen := This.features.isFeature (mainFeatureFactory.FULL_SCREEN);
                 if isFullScreen then

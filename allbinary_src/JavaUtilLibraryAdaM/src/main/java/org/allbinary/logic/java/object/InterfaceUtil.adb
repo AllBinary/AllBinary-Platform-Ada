@@ -62,7 +62,7 @@ package body org.allbinary.logic.java.anyType.InterfaceUtil_Package is
    begin
         if (((interfaceName) /= (Null_Unbounded_String)) and then ((interfaces) /= (null))) and then ((interfaces'Length) > (0)) then
             for index in 0 .. (interfaces'Length) - 1 loop
-                if (To_Unbounded_String (Ada.Tags.Expanded_Name (interfaces (index))).indexOf (interfaceName)) >= (0) then
+                if (Java_Index_Of (To_Unbounded_String (Ada.Tags.Expanded_Name (interfaces (index))), Java_Image (interfaceName))) >= (0) then
                     return interfaces (index);
                 end if;
             end loop;
@@ -77,7 +77,7 @@ package body org.allbinary.logic.java.anyType.InterfaceUtil_Package is
    begin
         classes := anyType.all'Tag.getInterfaces;
         for index in 0 .. (classes'Length) - 1 loop
-            if (To_Unbounded_String (Ada.Tags.Expanded_Name (clazz)).compareTo (To_Unbounded_String (Ada.Tags.Expanded_Name (classes (index))))) = (0) then
+            if (Java_Compare_To (To_Unbounded_String (Ada.Tags.Expanded_Name (clazz)), To_Unbounded_String (Ada.Tags.Expanded_Name (classes (index))))) = (0) then
                 return True;
             end if;
         end loop;
@@ -91,7 +91,7 @@ package body org.allbinary.logic.java.anyType.InterfaceUtil_Package is
    begin
         classes := anyType.all'Tag.getInterfaces;
         for index in 0 .. (classes'Length) - 1 loop
-            if (To_Unbounded_String (Ada.Tags.Expanded_Name (classes (index))).indexOf (className)) = (0) then
+            if (Java_Index_Of (To_Unbounded_String (Ada.Tags.Expanded_Name (classes (index))), Java_Image (className))) = (0) then
                 return True;
             end if;
         end loop;

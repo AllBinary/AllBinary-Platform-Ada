@@ -99,7 +99,7 @@ package body org.allbinary.game.input.form.BuildingAdvancedRTSFormInput_Package 
         advancedRTSPlayerLayerInterface := AdvancedRTSPlayerLayerInterface_Access (rtsPlayerLayerInterface);
         advancedPlayerOwnedRTSLayers := advancedRTSPlayerLayerInterface.getAdvancedPlayerOwnedRTSLayers;
         totalHouses := advancedPlayerOwnedRTSLayers.getHouseList.size;
-        if ((totalHouses) < (1)) and then ((layerInterface.getName.indexOf (To_Unbounded_String (" House"))) < (0)) then
+        if ((totalHouses) < (1)) and then ((Java_Index_Of (layerInterface.getName, Java_Image (To_Unbounded_String (" House")))) < (0)) then
             rtsPlayerLayerInterface.add (ErrorSound_Package.getInstance);
             if not (rtsPlayerLayerInterface.implmentsArtificialIntelligenceCompositeInterface) then
                 GameNotificationEventHandler_Package.getInstance.fireEvent (This.atLeastOneHouseGameNotificationEvent);

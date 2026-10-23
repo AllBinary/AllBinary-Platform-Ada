@@ -23,7 +23,7 @@ with AllBinary_Java; use AllBinary_Java;
 with javax.microedition.lcdui.Command_Package; use javax.microedition.lcdui.Command_Package;
 with javax.microedition.lcdui.CommandListener_Package; use javax.microedition.lcdui.CommandListener_Package;
 with javax.microedition.lcdui.Displayable_Package; use javax.microedition.lcdui.Displayable_Package;
-with org.allbinary.TsUtil_Package; use org.allbinary.TsUtil_Package;
+--  with org.allbinary.TsUtil_Package; use org.allbinary.TsUtil_Package;
 with org.allbinary.business.advertisement.GameAdStateFactory_Package; use org.allbinary.business.advertisement.GameAdStateFactory_Package;
 with org.allbinary.canvas.FullScreenUtil_Package; use org.allbinary.canvas.FullScreenUtil_Package;
 with org.allbinary.debug.DebugInterface_Package; use org.allbinary.debug.DebugInterface_Package;
@@ -56,7 +56,6 @@ package org.allbinary.game.midlet.GameMidlet_Package is
    package Command_Package renames Standard.javax.microedition.lcdui.Command_Package;
    package CommandListener_Package renames Standard.javax.microedition.lcdui.CommandListener_Package;
    package Displayable_Package renames Standard.javax.microedition.lcdui.Displayable_Package;
-   package TsUtil_Package renames Standard.org.allbinary.TsUtil_Package;
    package GameAdStateFactory_Package renames Standard.org.allbinary.business.advertisement.GameAdStateFactory_Package;
    package FullScreenUtil_Package renames Standard.org.allbinary.canvas.FullScreenUtil_Package;
    package DebugInterface_Package renames Standard.org.allbinary.debug.DebugInterface_Package;
@@ -99,7 +98,6 @@ package org.allbinary.game.midlet.GameMidlet_Package is
       gameStrings : GameStrings_Access;
       gameAdStateFactory : GameAdStateFactory_Access;
       gameStateFactory : GameStateFactory_Access;
-      tsUtil : TsUtil_Access;
       DISPLAYABLE : Unbounded_String;
       COMMAND_NAME : Unbounded_String;
       NO_COMMAND : Unbounded_String;

@@ -219,7 +219,7 @@ package body org.allbinary.media.image.ImageCopyUtil_Package is
                 openGLESImageProperties.scaleX := openGLESImageProperties.scaleX2;
                 openGLESImageProperties.scaleY2 := Float ((((Float (height))) / (openGLESImage.getHeight)));
                 openGLESImageProperties.scaleY := openGLESImageProperties.scaleY2;
-                if image.getName.startsWith (This.INFORMATION) then
+                if Java_Starts_With (image.getName, This.INFORMATION) then
                     openGLESImage.openGLESImageTranslate := OpenGLESDeviceImageTranslate_Package.Create;
                     openGLESDeviceImageTranslate := OpenGLESDeviceImageTranslate_Access (openGLESImage.openGLESImageTranslate);
                     openGLESDeviceImageTranslate.translateX := ((displayInfoSingleton.getLastWidth) / (1.4)) / (openGLESImageProperties.scaleX);
@@ -229,12 +229,12 @@ package body org.allbinary.media.image.ImageCopyUtil_Package is
                 else
                     openGLESImageProperties.scaleX := (openGLESImageProperties.scaleX) * (0.75);
                     openGLESImageProperties.scaleY := (openGLESImageProperties.scaleY) * (0.75);
-                    if image.getName.startsWith (This.LEADERBOARD) then
+                    if Java_Starts_With (image.getName, This.LEADERBOARD) then
                         openGLESImage.openGLESImageTranslate := OpenGLESDeviceImageTranslate_Package.Create;
                         openGLESDeviceImageTranslate := OpenGLESDeviceImageTranslate_Access (openGLESImage.openGLESImageTranslate);
                         openGLESDeviceImageTranslate.translateX := ((-(displayInfoSingleton.getLastWidth)) / (40)) / (openGLESImageProperties.scaleX);
                     end if;
-                    if image.getName.startsWith (This.LEADERBOARD) then
+                    if Java_Starts_With (image.getName, This.LEADERBOARD) then
                         null;
                     else
                         openGLESImageProperties.scaleX := 1.0;

@@ -20,13 +20,12 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.TsUtil_Package; use org.allbinary.TsUtil_Package;
+--  with org.allbinary.TsUtil_Package; use org.allbinary.TsUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.system.os.GenericOperatingSystem_Package; use org.allbinary.logic.system.os.GenericOperatingSystem_Package;
 
 package org.allbinary.logic.system.os.android.AndroidOperatingSystemFactory_Package is
 
-   package TsUtil_Package renames Standard.org.allbinary.TsUtil_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package GenericOperatingSystem_Package renames Standard.org.allbinary.logic.system.os.GenericOperatingSystem_Package;
 
@@ -39,7 +38,6 @@ package org.allbinary.logic.system.os.android.AndroidOperatingSystemFactory_Pack
 
    type AndroidOperatingSystemFactory is new Java_Object with record
       logUtil : LogUtil_Access;
-      tsUtil : TsUtil_Access;
    end record;
    instance : AndroidOperatingSystemFactory_Access;
 

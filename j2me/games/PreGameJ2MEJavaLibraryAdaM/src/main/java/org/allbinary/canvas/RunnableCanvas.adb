@@ -33,7 +33,6 @@ package body org.allbinary.canvas.RunnableCanvas_Package is
       This.nullUtil := NullUtil_Package.getInstance;
       This.stdUtil := StdUtil_Package.getInstance;
       This.systemWrapper := ABSystemWrapper_Package.getInstance;
-      This.tsUtil := TsUtil_Package.getInstance;
       This.thread_Case := NullThread_Package.NULL_THREAD;
       This.currentThread := NullThread_Package.NULL_THREAD;
       This.running := False;

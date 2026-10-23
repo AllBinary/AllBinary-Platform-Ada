@@ -118,7 +118,7 @@ package body views.business.context.modules.storefront.customizer.generic_Id.pag
                     This.logUtil.putF (stringBuffer.toString, PageValidationView_Access'(This'Unchecked_Access), To_Unbounded_String ("insert()"));
                 end if;
                 hashMap := StdUtil_Package.getInstance.createHashMap;
-                title := specifiedTransformInfoInterface.getName.substring (PageValidationView'Class (This).getTransformInfoInterface.getStoreName.length);
+                title := Unbounded_Slice (specifiedTransformInfoInterface.getName, (PageValidationView'Class (This).getTransformInfoInterface.getStoreName.length) + 1, Length (specifiedTransformInfoInterface.getName));
                 if (Java_Compare_To (title, To_Unbounded_String ("index"))) = (0) then
                     hashMap.put (TitleData_Package.getInstance.TEXT, Java_Box (Java_Image (PageValidationView'Class (This).getTransformInfoInterface.getStoreName) & To_Unbounded_String (" - Home Page")));
                 else
@@ -185,7 +185,7 @@ package body views.business.context.modules.storefront.customizer.generic_Id.pag
                 viewNameOfViewToBeModified := transformInfoInterface.getName;
                 specifiedTransformInfoInterface := TransformInfoInterface_Access (transformInfoEntityInterface.get (viewNameOfViewToBeModified, httpTransformInfoInterface.getPropertiesHashMap, httpTransformInfoInterface.getPageContext));
                 hashMap := StdUtil_Package.getInstance.createHashMap;
-                title := specifiedTransformInfoInterface.getName.substring (PageValidationView'Class (This).getTransformInfoInterface.getStoreName.length);
+                title := Unbounded_Slice (specifiedTransformInfoInterface.getName, (PageValidationView'Class (This).getTransformInfoInterface.getStoreName.length) + 1, Length (specifiedTransformInfoInterface.getName));
                 if (Java_Compare_To (title, To_Unbounded_String ("index"))) = (0) then
                     hashMap.put (TitleData_Package.getInstance.TEXT, Java_Box (Java_Image (PageValidationView'Class (This).getTransformInfoInterface.getStoreName) & To_Unbounded_String (" - Home Page")));
                 else

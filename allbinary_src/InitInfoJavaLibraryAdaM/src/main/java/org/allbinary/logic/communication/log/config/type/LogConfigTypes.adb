@@ -99,7 +99,7 @@ package body org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes
         logConfigType := null;
         for index in 0 .. (size) - 1 loop
             logConfigType := LogConfigType_Access (availableLogConfigTypes.get (index));
-            if (logConfigType.getName.compareTo (name)) = (0) then
+            if (Java_Compare_To (logConfigType.getName, name)) = (0) then
                 return logConfigType;
             end if;
         end loop;

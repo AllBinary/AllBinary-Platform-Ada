@@ -83,7 +83,7 @@ package body views.generic_Id.address.shipping.AddTaxValidationView_Package is
             size := streetAddressList.size;
             for index in 0 .. (size) - 1 loop
                 aStreetAddress := StreetAddress_Access (streetAddressList.get (index));
-                if (aStreetAddress.getName.compareTo (ShippingAddressData_Package.TAX)) = (0) then
+                if (Java_Compare_To (aStreetAddress.getName, ShippingAddressData_Package.TAX)) = (0) then
                     return False;
                 end if;
             end loop;
@@ -128,7 +128,7 @@ package body views.generic_Id.address.shipping.AddTaxValidationView_Package is
             size := streetAddressList.size;
             for index in 0 .. (size) - 1 loop
                 aStreetAddress := StreetAddress_Access (streetAddressList.get (index));
-                if (aStreetAddress.getName.compareTo (ShippingAddressData_Package.TAX)) = (0) then
+                if (Java_Compare_To (aStreetAddress.getName, ShippingAddressData_Package.TAX)) = (0) then
                     stringBuffer.append (To_Unbounded_String ("Not a valid tax location<br/>"));
                 end if;
             end loop;

@@ -103,7 +103,7 @@ package body org.allbinary.logic.system.security.licensing.client.XmlRpcAbeLicen
                 begin
             This.logUtil.put (EXCEPTION_IN_CLIENT, XmlRpcAbeLicenseRetrievalClient_Access'(This'Unchecked_Access), This.commonStrings.GET, e);
             This.logUtil.putF ((TRYING_OTHER_SERVERS) + (ExceptionUtil_Package.getInstance.getStackTrace (e)), XmlRpcAbeLicenseRetrievalClient_Access'(This'Unchecked_Access), This.commonStrings.GET);
-            if not (Java_Get_Message (e).startsWith (HOST_NOT_RESOLVED)) then
+            if not (Java_Starts_With (Java_Get_Message (e), HOST_NOT_RESOLVED)) then
                 return XmlRpcAbeLicenseRetrievalClient'Class (This).tryAnother (anyType);
             else
                 This.isOnline := False;

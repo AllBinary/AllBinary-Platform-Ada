@@ -93,7 +93,7 @@ package body org.allbinary.game.score.remote.XmlRpcRemoteHighScoresClient_Packag
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             This.logUtil.put ((TRYING_OTHER_SERVERS) + (ExceptionUtil_Package.getInstance.getStackTrace (e)), XmlRpcRemoteHighScoresClient_Access'(This'Unchecked_Access), This.commonStrings.GET, e);
-            if not (Java_Get_Message (e).startsWith (HOST_NOT_RESOLVED)) then
+            if not (Java_Starts_With (Java_Get_Message (e), HOST_NOT_RESOLVED)) then
                 return XmlRpcRemoteHighScoresClient'Class (This).tryAnother (anyType);
             else
                 Java_Throw (Java_New_Exception ("Exception", HOST_NOT_RESOLVED_MSG));

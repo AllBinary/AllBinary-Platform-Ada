@@ -27,7 +27,6 @@ package body org.allbinary.logic.system.hardware.HardwareFactory_Package is
    begin
       null;
       This.logUtil := LogUtil_Package.getInstance;
-      This.tsUtil := TsUtil_Package.getInstance;
    end Initialize_Fields;
 
 
@@ -57,9 +56,9 @@ package body org.allbinary.logic.system.hardware.HardwareFactory_Package is
    begin
         begin
             operatingSystems := OperatingSystems_Package.getInstance;
-            if (This.tsUtil.compareTo (os.getName, operatingSystems.ANDROID)) = (0) then
+            if (Java_Compare_To (os.getName, operatingSystems.ANDROID)) = (0) then
                 return HardwareInterface_Access (AndroidHardware_Package.Create);
-            elsif (This.tsUtil.compareTo (os.getName, operatingSystems.HARMONY)) = (0) then
+            elsif (Java_Compare_To (os.getName, operatingSystems.HARMONY)) = (0) then
                 return HardwareInterface_Access (AndroidHardware_Package.Create);
             end if;
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("No Hardware Imp for: ") & os.getName));

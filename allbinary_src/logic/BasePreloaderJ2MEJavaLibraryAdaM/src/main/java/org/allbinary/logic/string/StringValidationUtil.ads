@@ -20,12 +20,11 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.TsUtil_Package; use org.allbinary.TsUtil_Package;
+--  with org.allbinary.TsUtil_Package; use org.allbinary.TsUtil_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 
 package org.allbinary.logic.string_Id.StringValidationUtil_Package is
 
-   package TsUtil_Package renames Standard.org.allbinary.TsUtil_Package;
 
    type StringValidationUtil is tagged;
    type StringValidationUtil_Access is access all StringValidationUtil'Class;
@@ -36,7 +35,6 @@ package org.allbinary.logic.string_Id.StringValidationUtil_Package is
 
    type StringValidationUtil is new Java_Object with record
       stringUtil : StringUtil_Access;
-      tsUtil : TsUtil_Access;
    end record;
    instance : StringValidationUtil_Access;
 

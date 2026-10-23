@@ -194,7 +194,7 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.TransformInf
             viewNode := viewNodeList.item (index);
             viewAttributes := viewNode.getAttributes;
             attrNode := Attr_Access (viewAttributes.getNamedItem (TransformInfoData_Package.getInstance.NAME));
-            if (transformInfoInterface.getName.compareTo (attrNode.getValue)) = (0) then
+            if (Java_Compare_To (transformInfoInterface.getName, attrNode.getValue)) = (0) then
                 return True;
             end if;
         end loop;

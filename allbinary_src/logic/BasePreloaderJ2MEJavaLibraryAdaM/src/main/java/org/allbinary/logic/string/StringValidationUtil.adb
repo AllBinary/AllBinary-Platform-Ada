@@ -20,7 +20,6 @@ package body org.allbinary.logic.string_Id.StringValidationUtil_Package is
    begin
       null;
       This.stringUtil := StringUtil_Package.getInstance;
-      This.tsUtil := TsUtil_Package.getInstance;
    end Initialize_Fields;
 
 
@@ -111,7 +110,7 @@ package body org.allbinary.logic.string_Id.StringValidationUtil_Package is
    function isValidNotRequiredNumber (This : in out StringValidationUtil; value : Unbounded_String; min : Integer; max : Integer) return Boolean is
    begin
         if (value) /= (Null_Unbounded_String) then
-            if (((This.tsUtil.compareTo (value, This.stringUtil.NULL_STRING)) = (0)) or else ((Length (value)) < (min))) or else ((Length (value)) > (max)) then
+            if (((Java_Compare_To (value, This.stringUtil.NULL_STRING)) = (0)) or else ((Length (value)) < (min))) or else ((Length (value)) > (max)) then
                 return False;
             end if;
             if not (StringValidationUtil'Class (This).isNumber (value)) then
@@ -123,7 +122,7 @@ package body org.allbinary.logic.string_Id.StringValidationUtil_Package is
 
    function isEmpty (This : in out StringValidationUtil; string_Id : Unbounded_String) return Boolean is
    begin
-        if (((string_Id) /= (Null_Unbounded_String)) and then ((This.tsUtil.compareTo (string_Id, This.stringUtil.NULL_STRING)) /= (0))) and then ((This.tsUtil.compareTo (string_Id, This.stringUtil.EMPTY_STRING)) /= (0)) then
+        if (((string_Id) /= (Null_Unbounded_String)) and then ((Java_Compare_To (string_Id, This.stringUtil.NULL_STRING)) /= (0))) and then ((Java_Compare_To (string_Id, This.stringUtil.EMPTY_STRING)) /= (0)) then
             return False;
         else
             return True;

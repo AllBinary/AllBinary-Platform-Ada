@@ -37,7 +37,6 @@ package body org.allbinary.logic.system.security.licensing.ClientInformation_Pac
    begin
       null;
       This.operatingSystemInterface := NoOperatingSystem_Package.NO_OPERATING_SYSTEM;
-      This.tsUtil := TsUtil_Package.getInstance;
       
       
       
@@ -136,7 +135,7 @@ package body org.allbinary.logic.system.security.licensing.ClientInformation_Pac
 
    function isSameId (This : in out ClientInformation; alicenseId : Unbounded_String) return Boolean is
    begin
-        if (This.tsUtil.compareTo (ClientInformation'Class (This).getLicenseId, alicenseId)) = (0) then
+        if (Java_Compare_To (ClientInformation'Class (This).getLicenseId, alicenseId)) = (0) then
             return True;
         else
             return False;
@@ -161,7 +160,7 @@ package body org.allbinary.logic.system.security.licensing.ClientInformation_Pac
             newServerName := Java_Unbox (list.objectArray (index));
             for index2 in reverse 0 .. currentSize loop
                 nextOldServerName := Java_Unbox (This.licenseServers.objectArray (index));
-                if (This.tsUtil.compareTo (newServerName, nextOldServerName)) /= (0) then
+                if (Java_Compare_To (newServerName, nextOldServerName)) /= (0) then
                     return True;
                 end if;
             end loop;

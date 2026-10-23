@@ -80,7 +80,7 @@ package body org.allbinary.logic.communication.log.XmlRpcRemoteLogClient_Package
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             Ada.Text_IO.Put_Line (Java_Image (To_Unbounded_String ("IOException Trying Other Servers")));
-            if not (Java_Get_Message (e).startsWith (HOST_NOT_RESOLVED)) then
+            if not (Java_Starts_With (Java_Get_Message (e), HOST_NOT_RESOLVED)) then
                 return XmlRpcRemoteLogClient'Class (This).tryAnother (anyType);
             else
                 Java_Throw (Java_New_Exception ("Exception", HOST_NOT_RESOLVED_MSG));

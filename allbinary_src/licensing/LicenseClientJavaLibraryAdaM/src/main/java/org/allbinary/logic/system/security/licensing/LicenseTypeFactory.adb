@@ -46,9 +46,9 @@ package body org.allbinary.logic.system.security.licensing.LicenseTypeFactory_Pa
 
    function getInstance (This : in out LicenseTypeFactory; name : Unbounded_String) return LicenseType_Access is
    begin
-        if (This.DEMO.getName.compareTo (name)) = (0) then
+        if (Java_Compare_To (This.DEMO.getName, name)) = (0) then
             return This.DEMO;
-        elsif (This.NORMAL.getName.compareTo (name)) = (0) then
+        elsif (Java_Compare_To (This.NORMAL.getName, name)) = (0) then
             return This.NORMAL;
         end if;
         return This.UNKNOWN;

@@ -53,7 +53,6 @@ package body org.allbinary.graphics.opengles.OpenGLConfiguration_Package is
       This.logUtil := LogUtil_Package.getInstance;
       This.FILE := To_Unbounded_String ("OpenGLConfiguration.dat");
       This.commonStrings := CommonStrings_Package.getInstance;
-      This.tsUtil := TsUtil_Package.getInstance;
       This.opengl := False;
       This.type_Id := OpenGLFeatureFactory_Package.getInstance.OPENGL_AS_GAME_THREAD;
       This.imageColor := OpenGLFeatureFactory_Package.getInstance.IMAGE_COLOR_DEPTH_4444;
@@ -121,37 +120,37 @@ package body org.allbinary.graphics.opengles.OpenGLConfiguration_Package is
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Invalid OpenGL Setting")));
         end if;
         version := dataInputStream.readUTF;
-        if (This.tsUtil.compareTo (version, openGLFeatureFactory.OPENGL_AUTO_SELECT.getName)) = (0) then
+        if (Java_Compare_To (version, openGLFeatureFactory.OPENGL_AUTO_SELECT.getName)) = (0) then
             OpenGLConfiguration'Class (This).setVersionSelector (openGLFeatureFactory.OPENGL_AUTO_SELECT);
-        elsif (This.tsUtil.compareTo (version, openGLFeatureFactory.OPENGL_MINIMUM.getName)) = (0) then
+        elsif (Java_Compare_To (version, openGLFeatureFactory.OPENGL_MINIMUM.getName)) = (0) then
             OpenGLConfiguration'Class (This).setVersionSelector (openGLFeatureFactory.OPENGL_MINIMUM);
         else
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("OpenGLConfiguration: Error reading version selector: ") & version));
         end if;
         type_Id := dataInputStream.readUTF;
-        if (This.tsUtil.compareTo (type_Id, openGLFeatureFactory.OPENGL_AS_GAME_THREAD.getName)) = (0) then
+        if (Java_Compare_To (type_Id, openGLFeatureFactory.OPENGL_AS_GAME_THREAD.getName)) = (0) then
             OpenGLConfiguration'Class (This).setType (openGLFeatureFactory.OPENGL_AS_GAME_THREAD);
-        elsif (This.tsUtil.compareTo (type_Id, openGLFeatureFactory.OPENGL_AND_GAME_HAVE_DIFFERENT_THREADS.getName)) = (0) then
+        elsif (Java_Compare_To (type_Id, openGLFeatureFactory.OPENGL_AND_GAME_HAVE_DIFFERENT_THREADS.getName)) = (0) then
             OpenGLConfiguration'Class (This).setType (openGLFeatureFactory.OPENGL_AND_GAME_HAVE_DIFFERENT_THREADS);
         else
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("OpenGLConfiguration: Error reading image color")));
         end if;
         imageColor := dataInputStream.readUTF;
-        if (This.tsUtil.compareTo (imageColor, openGLFeatureFactory.IMAGE_COLOR_DEPTH_4444.getName)) = (0) then
+        if (Java_Compare_To (imageColor, openGLFeatureFactory.IMAGE_COLOR_DEPTH_4444.getName)) = (0) then
             OpenGLConfiguration'Class (This).setImageColor (openGLFeatureFactory.IMAGE_COLOR_DEPTH_4444);
-        elsif (This.tsUtil.compareTo (imageColor, openGLFeatureFactory.IMAGE_COLOR_DEPTH_4444.getName)) = (0) then
+        elsif (Java_Compare_To (imageColor, openGLFeatureFactory.IMAGE_COLOR_DEPTH_4444.getName)) = (0) then
             OpenGLConfiguration'Class (This).setImageColor (openGLFeatureFactory.IMAGE_COLOR_DEPTH_4444);
-        elsif (This.tsUtil.compareTo (imageColor, openGLFeatureFactory.IMAGE_COLOR_DEPTH_4444.getName)) = (0) then
+        elsif (Java_Compare_To (imageColor, openGLFeatureFactory.IMAGE_COLOR_DEPTH_4444.getName)) = (0) then
             OpenGLConfiguration'Class (This).setImageColor (openGLFeatureFactory.IMAGE_COLOR_DEPTH_4444);
         else
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("OpenGLConfiguration: Error reading image color: ") & Java_Image (imageColor)));
         end if;
         color := dataInputStream.readUTF;
-        if (This.tsUtil.compareTo (color, openGLFeatureFactory.OPENGL_COLOR_DEPTH_4444.getName)) = (0) then
+        if (Java_Compare_To (color, openGLFeatureFactory.OPENGL_COLOR_DEPTH_4444.getName)) = (0) then
             OpenGLConfiguration'Class (This).setColor (openGLFeatureFactory.OPENGL_COLOR_DEPTH_4444);
-        elsif (This.tsUtil.compareTo (color, openGLFeatureFactory.OPENGL_COLOR_DEPTH_565.getName)) = (0) then
+        elsif (Java_Compare_To (color, openGLFeatureFactory.OPENGL_COLOR_DEPTH_565.getName)) = (0) then
             OpenGLConfiguration'Class (This).setColor (openGLFeatureFactory.OPENGL_COLOR_DEPTH_565);
-        elsif (This.tsUtil.compareTo (color, openGLFeatureFactory.OPENGL_COLOR_DEPTH_8888.getName)) = (0) then
+        elsif (Java_Compare_To (color, openGLFeatureFactory.OPENGL_COLOR_DEPTH_8888.getName)) = (0) then
             OpenGLConfiguration'Class (This).setColor (openGLFeatureFactory.OPENGL_COLOR_DEPTH_8888);
         else
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("OpenGLConfiguration: Error reading color: ") & Java_Image (color)));

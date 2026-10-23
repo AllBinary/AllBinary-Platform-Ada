@@ -32,7 +32,6 @@ package body org.allbinary.game.configuration.feature.GameFeatureUtil_Package is
    begin
       null;
       This.logUtil := LogUtil_Package.getInstance;
-      This.tsUtil := TsUtil_Package.getInstance;
       This.enumerationUtil := EnumerationUtil_Package.getInstance;
       This.ON_GAME_FEATURE_CHANGE := To_Unbounded_String ("onGameFeatureChange");
       This.GAME_FEATURE_CHANGED := To_Unbounded_String ("Game Feature Changed: ");
@@ -189,7 +188,7 @@ package body org.allbinary.game.configuration.feature.GameFeatureUtil_Package is
         name := Null_Unbounded_String;
         while This.enumerationUtil.hasMoreElements (enumeration) loop
             name := Java_Unbox (This.enumerationUtil.nextElement (enumeration));
-            if (This.tsUtil.compareTo (itemLabel, name)) = (0) then
+            if (Java_Compare_To (itemLabel, name)) = (0) then
                 return True;
             end if;
         end loop;

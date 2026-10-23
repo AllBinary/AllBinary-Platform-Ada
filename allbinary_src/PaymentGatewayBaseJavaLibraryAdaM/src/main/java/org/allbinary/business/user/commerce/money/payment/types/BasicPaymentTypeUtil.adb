@@ -64,7 +64,7 @@ package body org.allbinary.business.user.commerce.money.payment.types.BasicPayme
         size := This.paymentTypeVector.size;
         for i in 0 .. (size) - 1 loop
             paymentType := BasicPaymentType_Access (This.paymentTypeVector.get (i));
-            if (paymentType.getName.compareTo (paymentTypeString)) = (0) then
+            if (Java_Compare_To (paymentType.getName, paymentTypeString)) = (0) then
                 return paymentType;
             end if;
         end loop;

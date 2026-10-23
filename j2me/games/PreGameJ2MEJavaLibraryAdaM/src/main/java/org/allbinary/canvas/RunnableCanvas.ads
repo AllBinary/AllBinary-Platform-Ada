@@ -21,7 +21,7 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with javax.microedition.lcdui.CommandListener_Package; use javax.microedition.lcdui.CommandListener_Package;
-with org.allbinary.TsUtil_Package; use org.allbinary.TsUtil_Package;
+--  with org.allbinary.TsUtil_Package; use org.allbinary.TsUtil_Package;
 with org.allbinary.graphics.displayable.MyCanvas_Package; use org.allbinary.graphics.displayable.MyCanvas_Package;
 with org.allbinary.logic.ABSystemWrapper_Package; use org.allbinary.logic.ABSystemWrapper_Package;
 with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
@@ -37,7 +37,6 @@ with org.allbinary.canvas.Processor_Package; use org.allbinary.canvas.Processor_
 package org.allbinary.canvas.RunnableCanvas_Package is
 
    package CommandListener_Package renames Standard.javax.microedition.lcdui.CommandListener_Package;
-   package TsUtil_Package renames Standard.org.allbinary.TsUtil_Package;
    package MyCanvas_Package renames Standard.org.allbinary.graphics.displayable.MyCanvas_Package;
    package ABSystemWrapper_Package renames Standard.org.allbinary.logic.ABSystemWrapper_Package;
    package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
@@ -60,7 +59,6 @@ package org.allbinary.canvas.RunnableCanvas_Package is
       nullUtil : NullUtil_Access;
       stdUtil : StdUtil_Access;
       systemWrapper : ABSystemWrapper_Access;
-      tsUtil : TsUtil_Access;
       thread_Case : Thread_Access;
       currentThread : Thread_Access;
       running : Boolean;

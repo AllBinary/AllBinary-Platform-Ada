@@ -73,7 +73,7 @@ package body views.generic_Id.address.shipping.UpdateTaxValidationView_Package i
         size := streetAddressList.size;
         for index in 0 .. (size) - 1 loop
             aStreetAddress := StreetAddress_Access (streetAddressList.get (index));
-            if (aStreetAddress.getName.compareTo (ShippingAddressData_Package.TAX)) = (0) then
+            if (Java_Compare_To (aStreetAddress.getName, ShippingAddressData_Package.TAX)) = (0) then
                 count := count + 1;
             end if;
         end loop;

@@ -21,7 +21,7 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.io.Closeable_Package; use java.io.Closeable_Package;
-with org.allbinary.TsUtil_Package; use org.allbinary.TsUtil_Package;
+--  with org.allbinary.TsUtil_Package; use org.allbinary.TsUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.game.configuration.feature.Feature_Package; use org.allbinary.game.configuration.feature.Feature_Package;
@@ -29,7 +29,6 @@ with org.allbinary.graphics.opengles.OpenGLFeature_Package; use org.allbinary.gr
 
 package org.allbinary.graphics.opengles.OpenGLConfiguration_Package is
 
-   package TsUtil_Package renames Standard.org.allbinary.TsUtil_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package Feature_Package renames Standard.org.allbinary.game.configuration.feature.Feature_Package;
@@ -45,7 +44,6 @@ package org.allbinary.graphics.opengles.OpenGLConfiguration_Package is
       logUtil : LogUtil_Access;
       FILE : Unbounded_String;
       commonStrings : CommonStrings_Access;
-      tsUtil : TsUtil_Access;
       opengl : Boolean;
       type_Id : OpenGLFeature_Access;
       imageColor : OpenGLFeature_Access;

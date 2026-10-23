@@ -53,9 +53,9 @@ package body org.allbinary.logic.system.hardware.HardwareFactory_Package is
    begin
         begin
             operatingSystems := OperatingSystems_Package.getInstance;
-            if (os.getName.compareTo (operatingSystems.LINUX)) = (0) then
+            if (Java_Compare_To (os.getName, operatingSystems.LINUX)) = (0) then
                 return HardwareInterface_Access (LinuxHardware_Package.Create);
-            elsif (os.getName.indexOf (operatingSystems.WINDOWS)) >= (0) then
+            elsif (Java_Index_Of (os.getName, Java_Image (operatingSystems.WINDOWS))) >= (0) then
                 return HardwareInterface_Access (WindowsHardware_Package.Create);
             end if;
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("No Hardware Imp for: ") & os.getName));

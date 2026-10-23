@@ -85,9 +85,9 @@ package body views.business.context.OverrideObjectConfigRootContextView_Package 
             stringBuffer.append (OverrideObjectConfigRootContextView'Class (This).getTransformInfoInterface.getStoreName);
             stringBuffer.append (CommonSeps_Package.getInstance.SPACE);
             nameStart := stringBuffer.toString;
-            if (OverrideObjectConfigRootContextView'Class (This).getTransformInfoInterface.getName.indexOf (GeneratorTransformInfoData_Package.NAME)) > (0) then
+            if (Java_Index_Of (OverrideObjectConfigRootContextView'Class (This).getTransformInfoInterface.getName, Java_Image (GeneratorTransformInfoData_Package.NAME))) > (0) then
                 rootTransformInfoInterface.setName (nameStart & Java_Image (GeneratorTransformInfoData_Package.NAME));
-            elsif (OverrideObjectConfigRootContextView'Class (This).getTransformInfoInterface.getName.indexOf (RootTransformInfoData_Package.NAME)) > (0) then
+            elsif (Java_Index_Of (OverrideObjectConfigRootContextView'Class (This).getTransformInfoInterface.getName, Java_Image (RootTransformInfoData_Package.NAME))) > (0) then
                 rootTransformInfoInterface.setName (nameStart & Java_Image (RootTransformInfoData_Package.NAME));
             else
                 Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Override Currently Not Supported")));

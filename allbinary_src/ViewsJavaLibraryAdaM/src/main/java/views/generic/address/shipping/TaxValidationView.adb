@@ -60,7 +60,7 @@ package body views.generic_Id.address.shipping.TaxValidationView_Package is
         size := streetAddressList.size;
         for index in 0 .. (size) - 1 loop
             aStreetAddress := StreetAddress_Access (streetAddressList.get (index));
-            if (aStreetAddress.getName.compareTo (ShippingAddressData_Package.TAX)) = (0) then
+            if (Java_Compare_To (aStreetAddress.getName, ShippingAddressData_Package.TAX)) = (0) then
                 This.streetAddress := aStreetAddress;
                 return True;
             end if;

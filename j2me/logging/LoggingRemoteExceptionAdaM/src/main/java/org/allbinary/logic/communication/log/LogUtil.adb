@@ -93,10 +93,10 @@ package body org.allbinary.logic.communication.log.LogUtil_Package is
       hashtable : ABHashtable_Access;
    begin
         if (exception_Id) /= (null) then
-            if (To_Unbounded_String (Ada.Tags.Expanded_Name (exception_Id.all'Tag)).compareTo (XmlRpcException_Package.XmlRpcException'Tag.getName)) = (0) then
+            if (Java_Compare_To (To_Unbounded_String (Ada.Tags.Expanded_Name (exception_Id.all'Tag)), XmlRpcException_Package.XmlRpcException'Tag.getName)) = (0) then
                 return;
             end if;
-            if (To_Unbounded_String (Ada.Tags.Expanded_Name (exception_Id.all'Tag)).compareTo (IOException_Package.IOException'Tag.getName)) = (0) then
+            if (Java_Compare_To (To_Unbounded_String (Ada.Tags.Expanded_Name (exception_Id.all'Tag)), IOException_Package.IOException'Tag.getName)) = (0) then
                 return;
             end if;
             if (This.isFirstException) or else (This.timeDelayHelper.isTimeTNT) then

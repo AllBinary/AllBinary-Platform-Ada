@@ -85,7 +85,7 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.generator.St
         stringValidationUtil := StringValidationUtil_Package.getInstance;
         if stringValidationUtil.isEmpty (fileName) then
             transformInfoHttpStoreInterface := TransformInfoHttpStoreInterface_Access (transformInfoInterface);
-            fileName := transformInfoInterface.getName.substring ((transformInfoHttpStoreInterface.getStoreName.length) + (1));
+            fileName := Unbounded_Slice (transformInfoInterface.getName, ((transformInfoHttpStoreInterface.getStoreName.length) + (1)) + 1, Length (transformInfoInterface.getName));
             outputMappingHashMap := StdUtil_Package.getInstance.createHashMap;
             outputMappingHashMap.put (TransformInfosData_Package.getInstance.PREVIEW, Java_Box (To_Unbounded_String ("Preview")));
             outputMappingHashMap.put (TransformInfosData_Package.getInstance.SMALL_PREVIEW, Java_Box (To_Unbounded_String ("SmallPreview")));

@@ -20,7 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.TsUtil_Package; use org.allbinary.TsUtil_Package;
+--  with org.allbinary.TsUtil_Package; use org.allbinary.TsUtil_Package;
 with org.allbinary.logic.system.os.GenericOperatingSystem_Package; use org.allbinary.logic.system.os.GenericOperatingSystem_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
@@ -28,7 +28,6 @@ with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface
 
 package org.allbinary.logic.system.security.licensing.ClientInformation_Package is
 
-   package TsUtil_Package renames Standard.org.allbinary.TsUtil_Package;
    package GenericOperatingSystem_Package renames Standard.org.allbinary.logic.system.os.GenericOperatingSystem_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
    package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
@@ -42,7 +41,6 @@ package org.allbinary.logic.system.security.licensing.ClientInformation_Package 
 
    type ClientInformation is new Java_Object and AbeClientInformationInterface with record
       operatingSystemInterface : GenericOperatingSystem_Access;
-      tsUtil : TsUtil_Access;
       name : Unbounded_String;
       shortName : Unbounded_String;
       version : Unbounded_String;

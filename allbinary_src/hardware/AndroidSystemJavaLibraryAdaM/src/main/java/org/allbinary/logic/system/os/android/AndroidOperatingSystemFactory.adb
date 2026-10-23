@@ -29,7 +29,6 @@ package body org.allbinary.logic.system.os.android.AndroidOperatingSystemFactory
    begin
       null;
       This.logUtil := LogUtil_Package.getInstance;
-      This.tsUtil := TsUtil_Package.getInstance;
    end Initialize_Fields;
 
 
@@ -62,7 +61,7 @@ package body org.allbinary.logic.system.os.android.AndroidOperatingSystemFactory
             GenericOperatingSystem := null;
             systemProperties := SystemProperties_Package.getInstance;
             osName := systemProperties.getName;
-            if (This.tsUtil.compareTo (osName, OperatingSystems_Package.getInstance.ANDROID)) = (0) then
+            if (Java_Compare_To (osName, OperatingSystems_Package.getInstance.ANDROID)) = (0) then
                 GenericOperatingSystem := GenericOperatingSystem_Access (AndroidOS_Package.Create);
             else
                 if OperatingSystems_Package.getInstance.isUnknownSpecificOSAllowed then
