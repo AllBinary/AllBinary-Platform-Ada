@@ -56,23 +56,23 @@ package body org.allbinary.game.layer.special.AnalogInputBuilder_Package is
    procedure disable (This : in out AnalogInputBuilder; inputProcessorArray : GameInputProcessor_Access_Array_Access; collidableDestroyableDamageableLayer_Param : access CollidableDestroyableDamageableLayer_Package.CollidableDestroyableDamageableLayer'Class) is
       collidableDestroyableDamageableLayer : constant CollidableDestroyableDamageableLayer_Access := CollidableDestroyableDamageableLayer_Access (collidableDestroyableDamageableLayer_Param);
    begin
-        inputProcessorArray (Canvas_Package.UP) := SpecialUpGameInputProcessor_Package.Create (collidableDestroyableDamageableLayer);
-        inputProcessorArray (Canvas_Package.DOWN) := SpecialDownGameInputProcessor_Package.Create (collidableDestroyableDamageableLayer);
-        inputProcessorArray (Canvas_Package.RIGHT) := SpecialRightGameInputProcessor_Package.Create (collidableDestroyableDamageableLayer);
-        inputProcessorArray (Canvas_Package.LEFT) := SpecialLeftGameInputProcessor_Package.Create (collidableDestroyableDamageableLayer);
-        inputProcessorArray (Canvas_Package.KEY_NUM0) := Special1GameInputProcessor_Package.Create (collidableDestroyableDamageableLayer);
-        inputProcessorArray (Canvas_Package.KEY_NUM5) := Special3GameInputProcessor_Package.Create (collidableDestroyableDamageableLayer);
+        inputProcessorArray (Canvas_Package.UP) := GameInputProcessor_Access (SpecialUpGameInputProcessor_Package.Create (collidableDestroyableDamageableLayer));
+        inputProcessorArray (Canvas_Package.DOWN) := GameInputProcessor_Access (SpecialDownGameInputProcessor_Package.Create (collidableDestroyableDamageableLayer));
+        inputProcessorArray (Canvas_Package.RIGHT) := GameInputProcessor_Access (SpecialRightGameInputProcessor_Package.Create (collidableDestroyableDamageableLayer));
+        inputProcessorArray (Canvas_Package.LEFT) := GameInputProcessor_Access (SpecialLeftGameInputProcessor_Package.Create (collidableDestroyableDamageableLayer));
+        inputProcessorArray (Canvas_Package.KEY_NUM0) := GameInputProcessor_Access (Special1GameInputProcessor_Package.Create (collidableDestroyableDamageableLayer));
+        inputProcessorArray (Canvas_Package.KEY_NUM5) := GameInputProcessor_Access (Special3GameInputProcessor_Package.Create (collidableDestroyableDamageableLayer));
    end disable;
 
    procedure enable (This : in out AnalogInputBuilder; inputProcessorArray : GameInputProcessor_Access_Array_Access; collidableDestroyableDamageableLayer_Param : access CollidableDestroyableDamageableLayer_Package.CollidableDestroyableDamageableLayer'Class) is
       collidableDestroyableDamageableLayer : constant CollidableDestroyableDamageableLayer_Access := CollidableDestroyableDamageableLayer_Access (collidableDestroyableDamageableLayer_Param);
    begin
-        inputProcessorArray (Canvas_Package.UP) := SpecialAnalogUpGameInputProcessor_Package.Create (collidableDestroyableDamageableLayer);
-        inputProcessorArray (Canvas_Package.DOWN) := SpecialAnalogDownGameInputProcessor_Package.Create (collidableDestroyableDamageableLayer);
-        inputProcessorArray (Canvas_Package.RIGHT) := SpecialAnalogRightGameInputProcessor_Package.Create (collidableDestroyableDamageableLayer);
-        inputProcessorArray (Canvas_Package.LEFT) := SpecialAnalogLeftGameInputProcessor_Package.Create (collidableDestroyableDamageableLayer);
-        inputProcessorArray (Canvas_Package.KEY_NUM0) := SpecialAnalogLeftTriggerGameInputProcessor_Package.Create (collidableDestroyableDamageableLayer);
-        inputProcessorArray (Canvas_Package.KEY_NUM5) := SpecialAnalogRightTriggerGameInputProcessor_Package.Create (collidableDestroyableDamageableLayer);
+        inputProcessorArray (Canvas_Package.UP) := GameInputProcessor_Access (SpecialAnalogUpGameInputProcessor_Package.Create (collidableDestroyableDamageableLayer));
+        inputProcessorArray (Canvas_Package.DOWN) := GameInputProcessor_Access (SpecialAnalogDownGameInputProcessor_Package.Create (collidableDestroyableDamageableLayer));
+        inputProcessorArray (Canvas_Package.RIGHT) := GameInputProcessor_Access (SpecialAnalogRightGameInputProcessor_Package.Create (collidableDestroyableDamageableLayer));
+        inputProcessorArray (Canvas_Package.LEFT) := GameInputProcessor_Access (SpecialAnalogLeftGameInputProcessor_Package.Create (collidableDestroyableDamageableLayer));
+        inputProcessorArray (Canvas_Package.KEY_NUM0) := GameInputProcessor_Access (SpecialAnalogLeftTriggerGameInputProcessor_Package.Create (collidableDestroyableDamageableLayer));
+        inputProcessorArray (Canvas_Package.KEY_NUM5) := GameInputProcessor_Access (SpecialAnalogRightTriggerGameInputProcessor_Package.Create (collidableDestroyableDamageableLayer));
    end enable;
 
 begin

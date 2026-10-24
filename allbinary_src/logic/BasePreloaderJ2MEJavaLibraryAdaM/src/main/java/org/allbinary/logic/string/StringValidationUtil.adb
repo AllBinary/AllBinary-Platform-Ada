@@ -57,10 +57,10 @@ package body org.allbinary.logic.string_Id.StringValidationUtil_Package is
         numberOfDecimalPoints := 0;
         for index in 0 .. (Length (value)) - 1 loop
             digit := Element (value, (index) + 1);
-            if (not (StringValidationUtil'Class (This).isNumberFromChar (digit))) and then ((digit) /= ('.')) then
+            if (not (StringValidationUtil'Class (This).isNumberFromChar (digit))) and then ((Integer (Character'Pos (digit))) /= (Integer (Character'Pos ('.')))) then
                 return False;
             end if;
-            if (digit) = ('.') then
+            if (Integer (Character'Pos (digit))) = (Integer (Character'Pos ('.'))) then
                 numberOfDecimalPoints := numberOfDecimalPoints + 1;
                 if (numberOfDecimalPoints) > (1) then
                     return False;
@@ -72,7 +72,7 @@ package body org.allbinary.logic.string_Id.StringValidationUtil_Package is
 
    function isNumberFromChar (This : in out StringValidationUtil; digit : Character) return Boolean is
    begin
-        if ((((((((((digit) /= ('0')) and then ((digit) /= ('1'))) and then ((digit) /= ('2'))) and then ((digit) /= ('3'))) and then ((digit) /= ('4'))) and then ((digit) /= ('5'))) and then ((digit) /= ('6'))) and then ((digit) /= ('7'))) and then ((digit) /= ('8'))) and then ((digit) /= ('9')) then
+        if ((((((((((Integer (Character'Pos (digit))) /= (Integer (Character'Pos ('0')))) and then ((Integer (Character'Pos (digit))) /= (Integer (Character'Pos ('1'))))) and then ((Integer (Character'Pos (digit))) /= (Integer (Character'Pos ('2'))))) and then ((Integer (Character'Pos (digit))) /= (Integer (Character'Pos ('3'))))) and then ((Integer (Character'Pos (digit))) /= (Integer (Character'Pos ('4'))))) and then ((Integer (Character'Pos (digit))) /= (Integer (Character'Pos ('5'))))) and then ((Integer (Character'Pos (digit))) /= (Integer (Character'Pos ('6'))))) and then ((Integer (Character'Pos (digit))) /= (Integer (Character'Pos ('7'))))) and then ((Integer (Character'Pos (digit))) /= (Integer (Character'Pos ('8'))))) and then ((Integer (Character'Pos (digit))) /= (Integer (Character'Pos ('9')))) then
             return False;
         end if;
         return True;

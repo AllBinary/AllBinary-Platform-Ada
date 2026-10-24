@@ -60,7 +60,7 @@ package body org.allbinary.math.AngleInfo_Package is
    procedure adjustAngle (This : in out AngleInfo; frame : Integer) is
       newAngle : Integer;
    begin
-        newAngle := ((This.angleIncrementInfo.getAngleIncrement) * (frame)) - (90);
+        newAngle := ((Integer (This.angleIncrementInfo.getAngleIncrement)) * (frame)) - (90);
         AngleInfo'Class (This).setAngle (Short_Integer (This.frameUtil.adjustAngleToFrameAngle (newAngle)));
    end adjustAngle;
 

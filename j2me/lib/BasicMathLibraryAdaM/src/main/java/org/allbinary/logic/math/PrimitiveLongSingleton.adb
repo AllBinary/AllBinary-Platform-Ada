@@ -53,7 +53,7 @@ package body org.allbinary.logic.math.PrimitiveLongSingleton_Package is
    begin
         size := This.NUMBER_CHAR_ARRAY'Length;
         for index in 0 .. (size) - 1 loop
-            if (This.NUMBER_CHAR_ARRAY (index)) = (numberAsChar) then
+            if (Integer (Character'Pos (This.NUMBER_CHAR_ARRAY (index)))) = (Integer (Character'Pos (numberAsChar))) then
                 return This.NUMBER_ARRAY (index);
             end if;
         end loop;

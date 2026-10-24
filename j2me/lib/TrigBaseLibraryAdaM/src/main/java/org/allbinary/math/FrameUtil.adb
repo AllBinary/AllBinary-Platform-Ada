@@ -65,15 +65,15 @@ package body org.allbinary.math.FrameUtil_Package is
    begin
         angleFactory := AngleFactory_Package.getInstance;
         if (currentAngle) > (359) then
-            currentAngle := ((currentAngle) - (angleFactory.TOTAL_ANGLE));
+            currentAngle := ((currentAngle) - (Integer (angleFactory.TOTAL_ANGLE)));
             while (currentAngle) > (359) loop
-                currentAngle := ((currentAngle) - (angleFactory.TOTAL_ANGLE));
+                currentAngle := ((currentAngle) - (Integer (angleFactory.TOTAL_ANGLE)));
             end loop;
         end if;
         if (currentAngle) < (0) then
-            currentAngle := ((currentAngle) + (angleFactory.TOTAL_ANGLE));
+            currentAngle := ((currentAngle) + (Integer (angleFactory.TOTAL_ANGLE)));
             while (currentAngle) < (0) loop
-                currentAngle := ((currentAngle) + (angleFactory.TOTAL_ANGLE));
+                currentAngle := ((currentAngle) + (Integer (angleFactory.TOTAL_ANGLE)));
             end loop;
         end if;
         return currentAngle;

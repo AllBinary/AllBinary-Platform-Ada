@@ -55,7 +55,7 @@ package body org.allbinary.game.combat.weapon.WeaponProperties_Package is
         WeaponProperties'Class (This).setDamage (damage);
         WeaponProperties'Class (This).setDissipation (dissipation);
         WeaponProperties'Class (This).setSpeed (BasicDecimal_Package.Create (speed));
-        if (dissipation) /= (This.ZERO) then
+        if (Integer (dissipation)) /= (Integer (This.ZERO)) then
             unscaledDamage := (This.speed.getUnscaled) * (damage);
             scaledDissipation := (dissipation) * (This.speed.getScaledFactorValue);
             value := ((unscaledDamage) / (Long_Long_Integer (scaledDissipation)));

@@ -35,12 +35,12 @@ package body org.allbinary.input.automation.module.game.HitPointGameObject_Packa
    begin
         MeteredGameObject_Package.Initialize (This, bufferedImage, minX, maxX, y);
         Initialize_Fields (This);
-        if (HitPointGameObject'Class (This).getRatios ((bufferedImage'Length) - (1)).doubleValue) < (1.0) then
+        if (HitPointGameObject'Class (This).getRatios ((bufferedImage'Length) - (1)).doubleValue) < (Long_Float (1.0)) then
             HitPointGameObject'Class (This).setDamaged (True);
         else
             HitPointGameObject'Class (This).setDamaged (False);
         end if;
-        if (HitPointGameObject'Class (This).getRatios ((bufferedImage'Length) - (1)).doubleValue) > (0.25) then
+        if (HitPointGameObject'Class (This).getRatios ((bufferedImage'Length) - (1)).doubleValue) > (Long_Float (0.25)) then
             This.closeDeath := False;
         else
             This.closeDeath := True;
@@ -56,7 +56,7 @@ package body org.allbinary.input.automation.module.game.HitPointGameObject_Packa
 
    function isMoreThan (This : in out HitPointGameObject; aFloat : Float) return Boolean is
    begin
-        if (HitPointGameObject'Class (This).getRatios ((HitPointGameObject'Class (This).getRatios'Length) - (1)).doubleValue) > (aFloat) then
+        if (HitPointGameObject'Class (This).getRatios ((HitPointGameObject'Class (This).getRatios'Length) - (1)).doubleValue) > (Long_Float (aFloat)) then
             return True;
         else
             return False;

@@ -51,7 +51,7 @@ package body org.allbinary.logic.communication.http.request.AbResponseHandler_Pa
         logUtil := LogUtil_Package.getInstance;
         begin
             if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.JSPTAGERROR) then
-                logUtil.put (To_Unbounded_String ("Jsp Tag Exception"), To_Unbounded_String ("AbResponseHandler"), To_Unbounded_String ("sendJspRedirect()"), e);
+                logUtil.put (To_Unbounded_String ("Jsp Tag Exception"), Java_Box (To_Unbounded_String ("AbResponseHandler")), To_Unbounded_String ("sendJspRedirect()"), e);
             end if;
             AbResponseHandler_Package.sendRedirect (pageContext, FREEBLISKET_PATH_GLOBALS_Package.getInstance.ERRORPAGE);
         exception
@@ -60,7 +60,7 @@ package body org.allbinary.logic.communication.http.request.AbResponseHandler_Pa
                     e2 : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.LICENSINGERROR) then
-                logUtil.put (To_Unbounded_String ("Exception in Redirect Handling"), To_Unbounded_String ("AbResponseHandler"), To_Unbounded_String ("sendJspRedirect"), e);
+                logUtil.put (To_Unbounded_String ("Exception in Redirect Handling"), Java_Box (To_Unbounded_String ("AbResponseHandler")), To_Unbounded_String ("sendJspRedirect"), e);
             end if;
             Java_Throw (Java_New_Exception ("JspTagException"));
                 end;
@@ -76,7 +76,7 @@ package body org.allbinary.logic.communication.http.request.AbResponseHandler_Pa
         logUtil := LogUtil_Package.getInstance;
         begin
             if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.JSPTAGERROR) then
-                logUtil.put (To_Unbounded_String ("Jsp Tag Exception"), To_Unbounded_String ("AbResponseHandler"), To_Unbounded_String ("sendJspRedirect()"), e);
+                logUtil.put (To_Unbounded_String ("Jsp Tag Exception"), Java_Box (To_Unbounded_String ("AbResponseHandler")), To_Unbounded_String ("sendJspRedirect()"), e);
             end if;
             AbResponseHandler_Package.sendRedirect (pageContext, FREEBLISKET_PATH_GLOBALS_Package.getInstance.ERRORPAGE);
         exception
@@ -85,7 +85,7 @@ package body org.allbinary.logic.communication.http.request.AbResponseHandler_Pa
                     e2 : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.LICENSINGERROR) then
-                logUtil.put (To_Unbounded_String ("Exception in Redirect Handling"), To_Unbounded_String ("AbResponseHandler"), To_Unbounded_String ("sendJspRedirect"), e);
+                logUtil.put (To_Unbounded_String ("Exception in Redirect Handling"), Java_Box (To_Unbounded_String ("AbResponseHandler")), To_Unbounded_String ("sendJspRedirect"), e);
             end if;
             Java_Throw (Java_New_Exception ("ServletException"));
                 end;
@@ -101,7 +101,7 @@ package body org.allbinary.logic.communication.http.request.AbResponseHandler_Pa
         logUtil := LogUtil_Package.getInstance;
         begin
             if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.JSPTAGERROR) then
-                logUtil.put (To_Unbounded_String ("Licensing Exception"), To_Unbounded_String ("AbResponseHandler"), To_Unbounded_String ("sendJspTagLicensingRedirect()"), e);
+                logUtil.put (To_Unbounded_String ("Licensing Exception"), Java_Box (To_Unbounded_String ("AbResponseHandler")), To_Unbounded_String ("sendJspTagLicensingRedirect()"), e);
             end if;
             AbResponseHandler_Package.sendRedirect (pageContext, FREEBLISKET_PATH_GLOBALS_Package.getInstance.LICENSEERRORPAGE);
         exception
@@ -110,7 +110,7 @@ package body org.allbinary.logic.communication.http.request.AbResponseHandler_Pa
                     e2 : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.LICENSINGERROR) then
-                logUtil.put (To_Unbounded_String ("Exception in Redirect Handling"), To_Unbounded_String ("AbResponseHandler"), To_Unbounded_String ("sendJspTagLicensingRedirect"), e);
+                logUtil.put (To_Unbounded_String ("Exception in Redirect Handling"), Java_Box (To_Unbounded_String ("AbResponseHandler")), To_Unbounded_String ("sendJspTagLicensingRedirect"), e);
             end if;
             Java_Throw (Java_New_Exception ("JspTagException"));
                 end;
@@ -126,7 +126,7 @@ package body org.allbinary.logic.communication.http.request.AbResponseHandler_Pa
         logUtil := LogUtil_Package.getInstance;
         begin
             if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.JSPTAGERROR) then
-                logUtil.put (To_Unbounded_String ("Licensing Exception"), To_Unbounded_String ("AbResponseHandler"), To_Unbounded_String ("sendServletLicensingRedirect()"), e);
+                logUtil.put (To_Unbounded_String ("Licensing Exception"), Java_Box (To_Unbounded_String ("AbResponseHandler")), To_Unbounded_String ("sendServletLicensingRedirect()"), e);
             end if;
             AbResponseHandler_Package.sendRedirect (pageContext, FREEBLISKET_PATH_GLOBALS_Package.getInstance.LICENSEERRORPAGE);
         exception
@@ -135,7 +135,7 @@ package body org.allbinary.logic.communication.http.request.AbResponseHandler_Pa
                     e2 : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.LICENSINGERROR) then
-                logUtil.put (To_Unbounded_String ("Exception in Redirect Handling"), To_Unbounded_String ("AbResponseHandler"), To_Unbounded_String ("sendServletLicensingRedirect"), e);
+                logUtil.put (To_Unbounded_String ("Exception in Redirect Handling"), Java_Box (To_Unbounded_String ("AbResponseHandler")), To_Unbounded_String ("sendServletLicensingRedirect"), e);
             end if;
             Java_Throw (Java_New_Exception ("ServletException"));
                 end;

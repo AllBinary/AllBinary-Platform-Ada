@@ -158,9 +158,9 @@ package body admin.taghelpers.StoreFrontsRequestHelper_Package is
         begin
             stringBuffer := StringMaker_Package.Create;
             stringBuffer.append (To_Unbounded_String ("Intall StoreFront Successfully: "));
-            stringBuffer.appendint (Integer (This.portion.getCurrent.intValue));
+            stringBuffer.appendint (This.portion.getCurrent.intValue);
             stringBuffer.append (To_Unbounded_String (" of "));
-            stringBuffer.appendint (Integer (This.portion.getTotal.intValue));
+            stringBuffer.appendint (This.portion.getTotal.intValue);
             success := stringBuffer.toString;
             This.modifyingStoreFrontInterface.install (This.portion.getCurrent.intValue, This.portion.getTotal.intValue);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then

@@ -43,7 +43,7 @@ package body org.allbinary.game.ag.life.Life_Package is
    begin
       Initialize_Fields (This);
         This.maxlives := maxlives;
-        if (lives) > (This.maxlives) then
+        if (Integer (lives)) > (Integer (This.maxlives)) then
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("To Many Lives")));
         end if;
         This.lives := lives;
@@ -75,8 +75,8 @@ package body org.allbinary.game.ag.life.Life_Package is
    procedure add (This : in out Life; lives : Short_Integer) is
    begin
         if not (Life'Class (This).reachedLimit) then
-            if ((This.lives) + (lives)) <= (Integer (Life'Class (This).getMaxlives)) then
-                This.lives := Short_Integer (((This.lives) + (lives)));
+            if ((Integer (This.lives)) + (Integer (lives))) <= (Integer (Life'Class (This).getMaxlives)) then
+                This.lives := Short_Integer (((Integer (This.lives)) + (Integer (lives))));
             else
                 This.lives := Life'Class (This).getMaxlives;
             end if;
@@ -99,7 +99,7 @@ package body org.allbinary.game.ag.life.Life_Package is
 
    function reachedLimit (This : in out Life) return Boolean is
    begin
-        if ((This.lives) > (This.maxlives)) or else ((Integer (This.lives)) < (0)) then
+        if ((Integer (This.lives)) > (Integer (This.maxlives))) or else ((Integer (This.lives)) < (0)) then
             return True;
         else
             return False;
@@ -109,8 +109,8 @@ package body org.allbinary.game.ag.life.Life_Package is
    procedure deaths (This : in out Life; lives : Short_Integer) is
    begin
         if not (Life'Class (This).reachedLimit) then
-            if ((This.lives) - (lives)) >= (0) then
-                This.lives := Short_Integer (((This.lives) - (lives)));
+            if ((Integer (This.lives)) - (Integer (lives))) >= (0) then
+                This.lives := Short_Integer (((Integer (This.lives)) - (Integer (lives))));
             else
                 This.lives := 0;
             end if;

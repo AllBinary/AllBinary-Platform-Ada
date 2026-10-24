@@ -54,7 +54,7 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
    begin
         logUtil := LogUtil_Package.getInstance;
         commonStrings := CommonStrings_Package.getInstance;
-        logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Start - Processing Mouse Input at: ")).append (mouseActionScriptInputInterface.getPoint.toString).append (To_Unbounded_String (" clicks: ")).appendint (Integer (mouseActionScriptInputInterface.getButtonClicks)).toString, To_Unbounded_String ("MouseInputAutomationProcessor"), commonStrings.PROCESS);
+        logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Start - Processing Mouse Input at: ")).append (mouseActionScriptInputInterface.getPoint.toString).append (To_Unbounded_String (" clicks: ")).appendint (Integer (mouseActionScriptInputInterface.getButtonClicks)).toString, Java_Box (To_Unbounded_String ("MouseInputAutomationProcessor")), commonStrings.PROCESS);
         inputRobotInterface := InputRobotInterface_Access (mouseActionScriptInputInterface.getInputRobotInterface);
         if ((mouseActionScriptInputInterface.getPoint.x) /= (-(1))) and then ((mouseActionScriptInputInterface.getPoint.y) /= (-(1))) then
             inputRobotInterface.mouseMove (mouseActionScriptInputInterface.getPoint);

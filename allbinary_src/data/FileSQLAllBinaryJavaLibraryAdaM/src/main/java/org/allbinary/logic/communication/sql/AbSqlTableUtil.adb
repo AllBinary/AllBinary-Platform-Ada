@@ -282,7 +282,7 @@ package body org.allbinary.logic.communication.sql.AbSqlTableUtil_Package is
             backupFile := AbFile_Package.createAbFile (path, tableName & This.EXTENSION);
             bufferedLineReader := BufferedLineReader_Package.Create (backupFile);
             size := bufferedLineReader.getSize;
-            section := ((size) / (portion.getTotal.intValue)) + (1);
+            section := ((size) / (Long_Long_Integer (portion.getTotal.intValue))) + (1);
             start := (section) * (Long_Long_Integer (current));
             end_Id := (start) + (section);
             if (end_Id) > (size) then

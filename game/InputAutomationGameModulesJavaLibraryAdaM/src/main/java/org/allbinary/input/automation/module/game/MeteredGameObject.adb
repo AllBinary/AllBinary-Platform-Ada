@@ -51,7 +51,7 @@ package body org.allbinary.input.automation.module.game.MeteredGameObject_Packag
             nominator := GraphicsAnalysisUtil_Package.getNominator (bufferedImage (index), MeteredGameObject'Class (This).getMinX, MeteredGameObject'Class (This).getMaxX, MeteredGameObject'Class (This).getY);
             MeteredGameObject'Class (This).getRatios (index) := (nominator) / (MeteredGameObject'Class (This).getSize);
         end loop;
-        if (MeteredGameObject'Class (This).getRatios ((bufferedImage'Length) - (1)).doubleValue) > (0.93) then
+        if (MeteredGameObject'Class (This).getRatios ((bufferedImage'Length) - (1)).doubleValue) > (Long_Float (0.93)) then
             MeteredGameObject'Class (This).setGood (True);
         else
             MeteredGameObject'Class (This).setGood (False);

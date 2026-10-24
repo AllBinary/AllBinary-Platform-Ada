@@ -116,12 +116,12 @@ package body org.allbinary.business.user.commerce.money.Money_Package is
 
    procedure multiply (This : in out Money; multiplier : Float) is
    begin
-        This.units := (Long_Long_Integer (This.units)) * (Float (multiplier)).longValue;
+        This.units := (Float (Long_Long_Integer (This.units))) * (Float (multiplier)).longValue;
    end multiply;
 
    procedure multiply (This : in out Money; multiplier : Integer) is
    begin
-        This.units := (Long_Long_Integer (This.units)) * (multiplier);
+        This.units := (Long_Long_Integer (This.units)) * (Long_Long_Integer (multiplier));
    end multiply;
 
    function convertUnitsTo (This : in out Money; currency : Unbounded_String) return Unbounded_String is

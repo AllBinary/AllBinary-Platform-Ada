@@ -229,7 +229,7 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
         index := 0;
         while (index) < (Length (text)) loop
             aChar := Element (text, (index) + 1);
-            if (aChar) = ('&') then
+            if (Integer (Character'Pos (aChar))) = (Integer (Character'Pos ('&'))) then
                 if (Element (text, ((index) + (1)) + 1)) = ('#') then
                     endIndex := Java_Index_Of (text, Java_Image (';'), (index) + (1));
                     if (endIndex) /= (-(1)) then

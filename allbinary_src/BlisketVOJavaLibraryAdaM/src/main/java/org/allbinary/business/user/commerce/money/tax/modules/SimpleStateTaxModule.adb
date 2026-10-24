@@ -116,7 +116,7 @@ package body org.allbinary.business.user.commerce.money.tax.modules.SimpleStateT
                 if (((state) /= (Null_Unbounded_String)) and then ((taxableStreetAddress.getState) /= (null))) and then ((Java_Compare_To (state, taxableStreetAddress.getState)) = (0)) then
                     rateNode := DomSearchHelper_Package.getNode (TaxData_Package.RATE, taxNodeChildren);
                     taxRate := DomNodeHelper_Package.getTextNodeValue (rateNode);
-                    taxRateFloat := (taxRate.floatValue) * (0.01);
+                    taxRateFloat := (Long_Float (taxRate.floatValue)) * (0.01);
                     return taxRateFloat;
                 end if;
             end if;

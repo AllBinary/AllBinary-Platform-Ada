@@ -66,7 +66,7 @@ package body org.allbinary.game.configuration.GameConfiguration_Package is
         if (This.value) /= (value) then
             oldValue := This.value;
             This.value := value;
-            GameFeatureEventHandler_Package.getInstance.fireEvent (GameFeatureEvent_Package.Create (GameConfiguration_Access'(This'Unchecked_Access), StringMaker_Package.Create.append (This.name).append (To_Unbounded_String (" value: from: ")).appendint (Integer (Integer (oldValue))).append (To_Unbounded_String (" to ")).appendint (Integer (Integer (This.value))).toString));
+            GameFeatureEventHandler_Package.getInstance.fireEvent (GameFeatureEvent_Package.Create (GameConfiguration_Access'(This'Unchecked_Access), StringMaker_Package.Create.append (This.name).append (To_Unbounded_String (" value: from: ")).appendint (Integer (oldValue)).append (To_Unbounded_String (" to ")).appendint (Integer (This.value)).toString));
         end if;
    end setValue;
 
@@ -128,13 +128,13 @@ package body org.allbinary.game.configuration.GameConfiguration_Package is
         stringBuffer.append (To_Unbounded_String ("Name: "));
         stringBuffer.append (This.name);
         stringBuffer.append (To_Unbounded_String (" Min: "));
-        stringBuffer.appendint (Integer (GameConfiguration'Class (This).getMinValue.intValue));
+        stringBuffer.appendint (GameConfiguration'Class (This).getMinValue.intValue);
         stringBuffer.append (To_Unbounded_String (" Max: "));
-        stringBuffer.appendint (Integer (GameConfiguration'Class (This).getMaxValue.intValue));
+        stringBuffer.appendint (GameConfiguration'Class (This).getMaxValue.intValue);
         stringBuffer.append (To_Unbounded_String (" Value: "));
-        stringBuffer.appendint (Integer (GameConfiguration'Class (This).getValue.intValue));
+        stringBuffer.appendint (GameConfiguration'Class (This).getValue.intValue);
         stringBuffer.append (To_Unbounded_String (" Default: "));
-        stringBuffer.appendint (Integer (GameConfiguration'Class (This).getDefaultValue.intValue));
+        stringBuffer.appendint (GameConfiguration'Class (This).getDefaultValue.intValue);
         stringBuffer.append (To_Unbounded_String (" Modifiable: "));
         stringBuffer.appendboolean (GameConfiguration'Class (This).isModifiable.booleanValue);
         return stringBuffer.toString;

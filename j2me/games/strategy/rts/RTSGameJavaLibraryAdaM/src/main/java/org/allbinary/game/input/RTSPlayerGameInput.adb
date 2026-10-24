@@ -153,11 +153,11 @@ package body org.allbinary.game.input.RTSPlayerGameInput_Package is
 
    procedure initInputProcessors (This : in out RTSPlayerGameInput) is
    begin
-        This.inputProcessorArray (Canvas_Package.LEFT) := RTSPlayerLeftGameInputProcessor_Package.Create (RTSPlayerGameInput_Access'(This'Unchecked_Access));
+        This.inputProcessorArray (Canvas_Package.LEFT) := GameInputProcessor_Access (RTSPlayerLeftGameInputProcessor_Package.Create (RTSPlayerGameInput_Access'(This'Unchecked_Access)));
         This.inputProcessorArray (Canvas_Package.KEY_NUM0) := This.inputProcessorArray (Canvas_Package.LEFT);
-        This.inputProcessorArray (Canvas_Package.RIGHT) := RTSPlayerRightGameInputProcessor_Package.Create (RTSPlayerGameInput_Access'(This'Unchecked_Access));
+        This.inputProcessorArray (Canvas_Package.RIGHT) := GameInputProcessor_Access (RTSPlayerRightGameInputProcessor_Package.Create (RTSPlayerGameInput_Access'(This'Unchecked_Access)));
         This.inputProcessorArray (Canvas_Package.KEY_POUND) := This.inputProcessorArray (Canvas_Package.RIGHT);
-        This.removeInputProcessorArray (Canvas_Package.KEY_NUM1) := RTSPlayerFireGameInputProcessor_Package.Create (RTSPlayerGameInput_Access'(This'Unchecked_Access));
+        This.removeInputProcessorArray (Canvas_Package.KEY_NUM1) := GameInputProcessor_Access (RTSPlayerFireGameInputProcessor_Package.Create (RTSPlayerGameInput_Access'(This'Unchecked_Access)));
         This.removeInputProcessorArray (Canvas_Package.KEY_NUM3) := This.removeInputProcessorArray (Canvas_Package.KEY_NUM1);
         This.removeInputProcessorArray (Canvas_Package.KEY_NUM3) := This.removeInputProcessorArray (Canvas_Package.KEY_NUM1);
         This.removeInputProcessorArray (Canvas_Package.LEFT) := This.removeInputProcessorArray (Canvas_Package.KEY_NUM1);

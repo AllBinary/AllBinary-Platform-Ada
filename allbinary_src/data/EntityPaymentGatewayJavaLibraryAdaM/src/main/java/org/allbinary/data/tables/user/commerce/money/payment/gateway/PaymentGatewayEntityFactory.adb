@@ -54,7 +54,7 @@ package body org.allbinary.data.tables.user.commerce.money.payment.gateway.Payme
                 begin
             commonStrings := CommonStrings_Package.getInstance;
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.ENTITYFACTORYERROR) then
-                logUtil.put (commonStrings.EXCEPTION_Id, To_Unbounded_String ("PaymentGatewayEntityFactory"), commonStrings.GET_INSTANCE, e);
+                logUtil.put (commonStrings.EXCEPTION_Id, Java_Box (To_Unbounded_String ("PaymentGatewayEntityFactory")), commonStrings.GET_INSTANCE, e);
             end if;
             Java_Throw (e);
                 end;

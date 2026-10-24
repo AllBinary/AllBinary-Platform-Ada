@@ -52,7 +52,7 @@ package body org.allbinary.data.tables.generator.IdGeneratorEntityFactory_Packag
                 begin
             logUtil := LogUtil_Package.getInstance;
             commonStrings := CommonStrings_Package.getInstance;
-            logUtil.put (commonStrings.EXCEPTION_Id, To_Unbounded_String ("ServerLicenseRequestEntityFactory"), commonStrings.GET_INSTANCE, e);
+            logUtil.put (commonStrings.EXCEPTION_Id, Java_Box (To_Unbounded_String ("ServerLicenseRequestEntityFactory")), commonStrings.GET_INSTANCE, e);
             return null;
                 end;
         end;

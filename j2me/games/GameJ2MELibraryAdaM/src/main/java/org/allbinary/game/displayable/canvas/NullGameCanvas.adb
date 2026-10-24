@@ -44,7 +44,7 @@ package body org.allbinary.game.displayable.canvas.NullGameCanvas_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            LogUtil_Package.getInstance.put (CommonStrings_Package.getInstance.EXCEPTION_Id, To_Unbounded_String ("NullGameCanvas"), CommonStrings_Package.getInstance.GET_INSTANCE, e);
+            LogUtil_Package.getInstance.put (CommonStrings_Package.getInstance.EXCEPTION_Id, Java_Box (To_Unbounded_String ("NullGameCanvas")), CommonStrings_Package.getInstance.GET_INSTANCE, e);
             Java_Throw (Java_New_Exception ("RuntimeException"));
                 end;
         end;

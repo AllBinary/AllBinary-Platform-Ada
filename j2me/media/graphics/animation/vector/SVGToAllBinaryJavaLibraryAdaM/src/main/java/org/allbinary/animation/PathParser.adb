@@ -39,12 +39,12 @@ package body org.allbinary.animation.PathParser_Package is
         sb := StringBuffer_Package.Create;
         for i in 0 .. (Length (d)) - 1 loop
             c := Element (d, (i) + 1);
-            if (((((c) = (' ')) or else ((c) = (','))) or else ((c) = (ASCII.HT))) or else ((c) = (ASCII.LF))) or else ((c) = (ASCII.CR)) then
+            if (((((Integer (Character'Pos (c))) = (Integer (Character'Pos (' ')))) or else ((Integer (Character'Pos (c))) = (Integer (Character'Pos (','))))) or else ((Integer (Character'Pos (c))) = (Integer (Character'Pos (ASCII.HT))))) or else ((Integer (Character'Pos (c))) = (Integer (Character'Pos (ASCII.LF))))) or else ((Integer (Character'Pos (c))) = (Integer (Character'Pos (ASCII.CR)))) then
                 if (sb.length) > (0) then
                     tokens.add (sb.toString);
                     sb.setLength (0);
                 end if;
-            elsif ((((((((((c) = ('M')) or else ((c) = ('m'))) or else ((c) = ('L'))) or else ((c) = ('l'))) or else ((c) = ('V'))) or else ((c) = ('v'))) or else ((c) = ('C'))) or else ((c) = ('c'))) or else ((c) = ('Z'))) or else ((c) = ('z')) then
+            elsif ((((((((((Integer (Character'Pos (c))) = (Integer (Character'Pos ('M')))) or else ((Integer (Character'Pos (c))) = (Integer (Character'Pos ('m'))))) or else ((Integer (Character'Pos (c))) = (Integer (Character'Pos ('L'))))) or else ((Integer (Character'Pos (c))) = (Integer (Character'Pos ('l'))))) or else ((Integer (Character'Pos (c))) = (Integer (Character'Pos ('V'))))) or else ((Integer (Character'Pos (c))) = (Integer (Character'Pos ('v'))))) or else ((Integer (Character'Pos (c))) = (Integer (Character'Pos ('C'))))) or else ((Integer (Character'Pos (c))) = (Integer (Character'Pos ('c'))))) or else ((Integer (Character'Pos (c))) = (Integer (Character'Pos ('Z'))))) or else ((Integer (Character'Pos (c))) = (Integer (Character'Pos ('z')))) then
                 if (sb.length) > (0) then
                     tokens.add (sb.toString);
                     sb.setLength (0);
@@ -93,10 +93,10 @@ package body org.allbinary.animation.PathParser_Package is
         while (idx) < (tokens'Length) loop
             tok := tokens (Java_Post_Increment (idx));
             cmd := Element (tok, (0) + 1);
-            if ((cmd) = ('M')) or else ((cmd) = ('m')) then
+            if ((Integer (Character'Pos (cmd))) = (Integer (Character'Pos ('M')))) or else ((Integer (Character'Pos (cmd))) = (Integer (Character'Pos ('m')))) then
                 x := fixedPoint.toFixed (Long_Float'Value (To_String (tokens (Java_Post_Increment (idx)))));
                 y := fixedPoint.toFixed (Long_Float'Value (To_String (tokens (Java_Post_Increment (idx)))));
-                if (cmd) = ('m') then
+                if (Integer (Character'Pos (cmd))) = (Integer (Character'Pos ('m'))) then
                     x := (x) + (curX);
                     y := (y) + (curY);
                 end if;
@@ -107,10 +107,10 @@ package body org.allbinary.animation.PathParser_Package is
                 outX (count (0)) := curX;
                 outY (count (0)) := curY;
                 count (0) := count (0) + 1;
-            elsif ((cmd) = ('L')) or else ((cmd) = ('l')) then
+            elsif ((Integer (Character'Pos (cmd))) = (Integer (Character'Pos ('L')))) or else ((Integer (Character'Pos (cmd))) = (Integer (Character'Pos ('l')))) then
                 x := fixedPoint.toFixed (Long_Float'Value (To_String (tokens (Java_Post_Increment (idx)))));
                 y := fixedPoint.toFixed (Long_Float'Value (To_String (tokens (Java_Post_Increment (idx)))));
-                if (cmd) = ('l') then
+                if (Integer (Character'Pos (cmd))) = (Integer (Character'Pos ('l'))) then
                     x := (x) + (curX);
                     y := (y) + (curY);
                 end if;
@@ -119,23 +119,23 @@ package body org.allbinary.animation.PathParser_Package is
                 outX (count (0)) := curX;
                 outY (count (0)) := curY;
                 count (0) := count (0) + 1;
-            elsif ((cmd) = ('V')) or else ((cmd) = ('v')) then
+            elsif ((Integer (Character'Pos (cmd))) = (Integer (Character'Pos ('V')))) or else ((Integer (Character'Pos (cmd))) = (Integer (Character'Pos ('v')))) then
                 y := fixedPoint.toFixed (Long_Float'Value (To_String (tokens (Java_Post_Increment (idx)))));
-                if (cmd) = ('v') then
+                if (Integer (Character'Pos (cmd))) = (Integer (Character'Pos ('v'))) then
                     y := (y) + (curY);
                 end if;
                 curY := y;
                 outX (count (0)) := curX;
                 outY (count (0)) := curY;
                 count (0) := count (0) + 1;
-            elsif ((cmd) = ('C')) or else ((cmd) = ('c')) then
+            elsif ((Integer (Character'Pos (cmd))) = (Integer (Character'Pos ('C')))) or else ((Integer (Character'Pos (cmd))) = (Integer (Character'Pos ('c')))) then
                 x1 := fixedPoint.toFixed (Long_Float'Value (To_String (tokens (Java_Post_Increment (idx)))));
                 y1 := fixedPoint.toFixed (Long_Float'Value (To_String (tokens (Java_Post_Increment (idx)))));
                 x2 := fixedPoint.toFixed (Long_Float'Value (To_String (tokens (Java_Post_Increment (idx)))));
                 y2 := fixedPoint.toFixed (Long_Float'Value (To_String (tokens (Java_Post_Increment (idx)))));
                 x3 := fixedPoint.toFixed (Long_Float'Value (To_String (tokens (Java_Post_Increment (idx)))));
                 y3 := fixedPoint.toFixed (Long_Float'Value (To_String (tokens (Java_Post_Increment (idx)))));
-                if (cmd) = ('c') then
+                if (Integer (Character'Pos (cmd))) = (Integer (Character'Pos ('c'))) then
                     x1 := (x1) + (curX);
                     y1 := (y1) + (curY);
                     x2 := (x2) + (curX);
@@ -146,7 +146,7 @@ package body org.allbinary.animation.PathParser_Package is
                 PGUtil_Package.getInstance.flattenCubicBezier (curX, curY, x1, y1, x2, y2, x3, y3, outX, outY, count, maxPoints);
                 curX := x3;
                 curY := y3;
-            elsif ((cmd) = ('Z')) or else ((cmd) = ('z')) then
+            elsif ((Integer (Character'Pos (cmd))) = (Integer (Character'Pos ('Z')))) or else ((Integer (Character'Pos (cmd))) = (Integer (Character'Pos ('z')))) then
                 curX := startX;
                 curY := startY;
                 outX (count (0)) := curX;
@@ -154,10 +154,10 @@ package body org.allbinary.animation.PathParser_Package is
                 count (0) := count (0) + 1;
             end if;
             while ((idx) < (tokens'Length)) and then (not (isCommand (tokens (idx)))) loop
-                if ((((cmd) = ('M')) or else ((cmd) = ('m'))) or else ((cmd) = ('L'))) or else ((cmd) = ('l')) then
+                if ((((Integer (Character'Pos (cmd))) = (Integer (Character'Pos ('M')))) or else ((Integer (Character'Pos (cmd))) = (Integer (Character'Pos ('m'))))) or else ((Integer (Character'Pos (cmd))) = (Integer (Character'Pos ('L'))))) or else ((Integer (Character'Pos (cmd))) = (Integer (Character'Pos ('l')))) then
                     x := fixedPoint.toFixed (Long_Float'Value (To_String (tokens (Java_Post_Increment (idx)))));
                     y := fixedPoint.toFixed (Long_Float'Value (To_String (tokens (Java_Post_Increment (idx)))));
-                    if ((cmd) = ('m')) or else ((cmd) = ('l')) then
+                    if ((Integer (Character'Pos (cmd))) = (Integer (Character'Pos ('m')))) or else ((Integer (Character'Pos (cmd))) = (Integer (Character'Pos ('l')))) then
                         x := (x) + (curX);
                         y := (y) + (curY);
                     end if;
@@ -166,9 +166,9 @@ package body org.allbinary.animation.PathParser_Package is
                     outX (count (0)) := curX;
                     outY (count (0)) := curY;
                     count (0) := count (0) + 1;
-                elsif ((cmd) = ('V')) or else ((cmd) = ('v')) then
+                elsif ((Integer (Character'Pos (cmd))) = (Integer (Character'Pos ('V')))) or else ((Integer (Character'Pos (cmd))) = (Integer (Character'Pos ('v')))) then
                     y := fixedPoint.toFixed (Long_Float'Value (To_String (tokens (Java_Post_Increment (idx)))));
-                    if (cmd) = ('v') then
+                    if (Integer (Character'Pos (cmd))) = (Integer (Character'Pos ('v'))) then
                         y := (y) + (curY);
                     end if;
                     curY := y;

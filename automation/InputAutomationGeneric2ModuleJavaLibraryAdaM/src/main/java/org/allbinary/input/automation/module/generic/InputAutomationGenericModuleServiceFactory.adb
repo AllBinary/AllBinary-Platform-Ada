@@ -33,7 +33,7 @@ package body org.allbinary.input.automation.module.generic_Id.InputAutomationGen
       Initialize_Fields (This);
         begin
             inputAutomationModuleInterfaceArray := new InputAutomationModuleFactoryInterface_Access_Array'(0 .. (1) - 1 => null);
-            inputAutomationModuleInterfaceArray (0) := GenericModuleFactory_Package.Create;
+            inputAutomationModuleInterfaceArray (0) := InputAutomationModuleFactoryInterface_Access (GenericModuleFactory_Package.Create);
             InputAutomationGenericModuleServiceFactory'Class (This).setInputAutomationModuleInterfaceArray (inputAutomationModuleInterfaceArray);
         exception
             when Java_Occurrence : others =>

@@ -51,7 +51,7 @@ package body org.allbinary.input.automation.module.generic_Id.CaptureWorkerUtil_
    begin
         logUtil := LogUtil_Package.getInstance;
         commonStrings := CommonStrings_Package.getInstance;
-        logUtil.putF (commonStrings.START, To_Unbounded_String ("CaptureWorkerUtil"), To_Unbounded_String ("processProfileActionConditions"));
+        logUtil.putF (commonStrings.START, Java_Box (To_Unbounded_String ("CaptureWorkerUtil")), To_Unbounded_String ("processProfileActionConditions"));
         size := vector.size;
         for index in 0 .. (size) - 1 loop
             profileActionConditionInterface := ProfileActionScriptConditionInterface_Access (vector.get (index));

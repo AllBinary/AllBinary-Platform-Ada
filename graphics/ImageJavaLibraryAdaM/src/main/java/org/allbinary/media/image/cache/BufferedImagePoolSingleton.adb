@@ -45,15 +45,15 @@ package body org.allbinary.media.image.cache.BufferedImagePoolSingleton_Package 
         STATIC_BLOCK := To_Unbounded_String ("Static Block");
         instance := To_Unbounded_String ("BufferedImagePoolSingleton");
         begin
-            logUtil.putF (commonStrings.START, instance, STATIC_BLOCK);
+            logUtil.putF (commonStrings.START, Java_Box (instance), STATIC_BLOCK);
             BufferedImagePoolSingleton_Package.poolInterface := PoolInterfaceFactory_Package.getInstance (BufferedImageCacheableFactory_Package.Create, PoolTypeFactory_Package.getInstance.VECTOR_POOL, CachePolicyFactory_Package.getInstance.MAX_TIME_THOUSAND_MAX);
-            logUtil.putF (commonStrings.END_Id, instance, STATIC_BLOCK);
+            logUtil.putF (commonStrings.END_Id, Java_Box (instance), STATIC_BLOCK);
         exception
             when Java_Occurrence : others =>
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            logUtil.put (commonStrings.EXCEPTION_Id, instance, STATIC_BLOCK, e);
+            logUtil.put (commonStrings.EXCEPTION_Id, Java_Box (instance), STATIC_BLOCK, e);
                 end;
         end;
    end Initializer;

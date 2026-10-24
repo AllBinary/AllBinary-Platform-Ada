@@ -104,9 +104,9 @@ package body org.allbinary.animation.image.AllBinaryArrayImageRotationAnimationF
         end loop;
         if ((This.animationFactoryInitializationVisitor.dx) /= (0)) or else ((This.animationFactoryInitializationVisitor.dy) /= (0)) then
             This.animationFactoryImageScaleUtil.processAdjust (AllBinaryArrayImageRotationAnimationFactory_Access'(This'Unchecked_Access));
-            return Animation_Access (AdjustedImageArrayRotationAnimation_Package.Create (scaledImageArray, AngleInfo_Package.getInstance (Short_Integer (AllBinaryArrayImageRotationAnimationFactory'Class (This).getAngleIncrement)), Integer (AngleFactory_Package.getInstance.TOTAL_ANGLE), This.animationFactoryInitializationVisitor.dx, This.animationFactoryInitializationVisitor.dy, This.animationBehaviorFactory.getOrCreateInstance));
+            return Animation_Access (AdjustedImageArrayRotationAnimation_Package.Create (scaledImageArray, AngleInfo_Package.getInstance (AllBinaryArrayImageRotationAnimationFactory'Class (This).getAngleIncrement), Integer (AngleFactory_Package.getInstance.TOTAL_ANGLE), This.animationFactoryInitializationVisitor.dx, This.animationFactoryInitializationVisitor.dy, This.animationBehaviorFactory.getOrCreateInstance));
         else
-            return Animation_Access (ImageArrayRotationAnimation_Package.Create (scaledImageArray, AngleInfo_Package.getInstance (Short_Integer (AllBinaryArrayImageRotationAnimationFactory'Class (This).getAngleIncrement)), Integer (AngleFactory_Package.getInstance.TOTAL_ANGLE), This.animationBehaviorFactory.getOrCreateInstance));
+            return Animation_Access (ImageArrayRotationAnimation_Package.Create (scaledImageArray, AngleInfo_Package.getInstance (AllBinaryArrayImageRotationAnimationFactory'Class (This).getAngleIncrement), Integer (AngleFactory_Package.getInstance.TOTAL_ANGLE), This.animationBehaviorFactory.getOrCreateInstance));
         end if;
    end getInstance;
 

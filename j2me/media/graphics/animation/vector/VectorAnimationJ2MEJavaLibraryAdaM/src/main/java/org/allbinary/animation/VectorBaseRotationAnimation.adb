@@ -34,7 +34,7 @@ package body org.allbinary.animation.VectorBaseRotationAnimation_Package is
       basicColor : constant BasicColor_Access := BasicColor_Access (basicColor_Param);
       animationBehavior : constant AnimationBehavior_Access := AnimationBehavior_Access (animationBehavior_Param);
    begin
-        RotationAnimation_Package.Initialize (This, angleInfo, CircularIndexUtil_Package.createInstance ((360) / (angleInfo.getAngleIncrementInfo.getAngleIncrement)), animationBehavior);
+        RotationAnimation_Package.Initialize (This, angleInfo, CircularIndexUtil_Package.createInstance ((360) / (Integer (angleInfo.getAngleIncrementInfo.getAngleIncrement))), animationBehavior);
         Initialize_Fields (This);
         VectorBaseRotationAnimation'Class (This).setPoints (currentPoints);
         VectorBaseRotationAnimation'Class (This).setBasicColorP (basicColor);

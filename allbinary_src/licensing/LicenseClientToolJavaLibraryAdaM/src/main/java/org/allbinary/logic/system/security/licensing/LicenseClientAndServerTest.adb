@@ -149,7 +149,7 @@ package body org.allbinary.logic.system.security.licensing.LicenseClientAndServe
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             logUtil := LogUtil_Package.getInstance;
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, To_Unbounded_String ("main()"), To_Unbounded_String ("main()"), e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, Java_Box (To_Unbounded_String ("main()")), To_Unbounded_String ("main()"), e);
                 end;
         end;
    end main;

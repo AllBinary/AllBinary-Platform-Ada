@@ -195,8 +195,8 @@ package body org.allbinary.game.input.SelectedRTSLayersPlayerGameInput_Package i
 
    procedure initInputProcessors (This : in out SelectedRTSLayersPlayerGameInput) is
    begin
-        This.inputProcessorArray (Canvas_Package.KEY_NUM1) := SelectedRTSLayersPlayerUpgradeGameInputProcessor_Package.Create (SelectedRTSLayersPlayerGameInput_Access'(This'Unchecked_Access));
-        This.inputProcessorArray (Canvas_Package.KEY_NUM3) := SelectedRTSLayersPlayerDowngradeGameInputProcessor_Package.Create (SelectedRTSLayersPlayerGameInput_Access'(This'Unchecked_Access));
+        This.inputProcessorArray (Canvas_Package.KEY_NUM1) := GameInputProcessor_Access (SelectedRTSLayersPlayerUpgradeGameInputProcessor_Package.Create (SelectedRTSLayersPlayerGameInput_Access'(This'Unchecked_Access)));
+        This.inputProcessorArray (Canvas_Package.KEY_NUM3) := GameInputProcessor_Access (SelectedRTSLayersPlayerDowngradeGameInputProcessor_Package.Create (SelectedRTSLayersPlayerGameInput_Access'(This'Unchecked_Access)));
         GameInputProcessorUtil_Package.init (This.inputProcessorArray);
    end initInputProcessors;
 

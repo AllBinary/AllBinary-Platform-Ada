@@ -72,7 +72,7 @@ package body admin.taghelpers.HelperFactory_Package is
                 begin
             error := To_Unbounded_String ("Failed To Get Instance Args: HashMap=") & hashMap.toString & To_Unbounded_String (" HttpServletRequest=") & Java_Image (httpServletRequest);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPERFACTORYERROR) then
-                logUtil.put (error, factoryName & To_Unbounded_String ("->HelperFactory"), To_Unbounded_String ("getInstance(String, String, HashMap, PageContext)"), e);
+                logUtil.put (error, Java_Box (factoryName & To_Unbounded_String ("->HelperFactory")), To_Unbounded_String ("getInstance(String, String, HashMap, PageContext)"), e);
             end if;
             Java_Throw (e);
                 end;
@@ -110,7 +110,7 @@ package body admin.taghelpers.HelperFactory_Package is
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPERFACTORYERROR) then
                 error := To_Unbounded_String ("Failed To Get Instance Args: HashMap=") & hashMap.toString & To_Unbounded_String (" PageContext=") & Java_Image (pageContext);
-                logUtil.put (error, factoryName & To_Unbounded_String ("->HelperFactory"), To_Unbounded_String ("getInstance(String, String, HashMap, PageContext)"), e);
+                logUtil.put (error, Java_Box (factoryName & To_Unbounded_String ("->HelperFactory")), To_Unbounded_String ("getInstance(String, String, HashMap, PageContext)"), e);
             end if;
             Java_Throw (e);
                 end;
@@ -151,7 +151,7 @@ package body admin.taghelpers.HelperFactory_Package is
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPERFACTORYERROR) then
                 error := To_Unbounded_String ("Failed To Get Instance Args: HashMap=") & hashMap.toString & To_Unbounded_String (" PageContext=") & Java_Image (pageContext);
-                logUtil.put (error, factoryName & To_Unbounded_String ("->HelperFactory"), To_Unbounded_String ("getInstance(String, String, HashMap, PageContext)"), e);
+                logUtil.put (error, Java_Box (factoryName & To_Unbounded_String ("->HelperFactory")), To_Unbounded_String ("getInstance(String, String, HashMap, PageContext)"), e);
             end if;
             Java_Throw (e);
                 end;
@@ -176,7 +176,7 @@ package body admin.taghelpers.HelperFactory_Package is
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPERFACTORYERROR) then
                 commonStrings := CommonStrings_Package.getInstance;
-                logUtil.put (commonStrings.EXCEPTION_Id, factoryName & To_Unbounded_String ("->HelperFactory"), To_Unbounded_String ("getInstance(String, String, HashMap, PageContext)"), e);
+                logUtil.put (commonStrings.EXCEPTION_Id, Java_Box (factoryName & To_Unbounded_String ("->HelperFactory")), To_Unbounded_String ("getInstance(String, String, HashMap, PageContext)"), e);
             end if;
             Java_Throw (e);
                 end;

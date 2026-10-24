@@ -83,9 +83,9 @@ package body org.allbinary.game.configuration.GameConfigurationUtil_Package is
         stringBuffer.append (This.GAUGE_UPDATE);
         stringBuffer.append (gameConfiguration.getName);
         stringBuffer.append (This.FROM);
-        stringBuffer.appendint (Integer (gameConfiguration.getValue.intValue));
+        stringBuffer.appendint (gameConfiguration.getValue.intValue);
         stringBuffer.append (This.TO);
-        stringBuffer.appendint (Integer (Integer (value)));
+        stringBuffer.appendint (Integer (value));
         This.logUtil.putF (stringBuffer.toString, GameConfigurationUtil_Access'(This'Unchecked_Access), This.commonStrings.UPDATE);
         gameConfiguration.setValue (value);
    end update;
@@ -103,7 +103,7 @@ package body org.allbinary.game.configuration.GameConfigurationUtil_Package is
         stringBuffer.append (To_Unbounded_String ("Gauge Default: "));
         stringBuffer.append (gameConfiguration.getName);
         stringBuffer.append (This.TO);
-        stringBuffer.appendint (Integer (gameConfiguration.getDefaultValue.intValue));
+        stringBuffer.appendint (gameConfiguration.getDefaultValue.intValue);
         This.logUtil.putF (stringBuffer.toString, GameConfigurationUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("setDefault"));
         gauge.setValue ((gameConfiguration.getDefaultValue.intValue) - (gameConfiguration.getMinValue.intValue));
         gameConfiguration.setValue (gameConfiguration.getDefaultValue);

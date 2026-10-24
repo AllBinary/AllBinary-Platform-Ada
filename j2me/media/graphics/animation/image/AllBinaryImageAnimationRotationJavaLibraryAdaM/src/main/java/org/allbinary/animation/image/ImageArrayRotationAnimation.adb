@@ -54,7 +54,7 @@ package body org.allbinary.animation.image.ImageArrayRotationAnimation_Package i
    procedure init (This : in out ImageArrayRotationAnimation; imageArray : Image_Access_Array_Access; angleInfo_Param : access AngleInfo_Package.AngleInfo'Class; totalAngle : Integer) is
       angleInfo : constant AngleInfo_Access := AngleInfo_Access (angleInfo_Param);
    begin
-        This.expectedTotalFrames := (totalAngle) / (This.angleInfo.getAngleIncrementInfo.getAngleIncrement);
+        This.expectedTotalFrames := (totalAngle) / (Integer (This.angleInfo.getAngleIncrementInfo.getAngleIncrement));
         This.angleInfo.adjustAngle (0);
         if (This.expectedTotalFrames) /= (ImageArrayRotationAnimation'Class (This).getSize) then
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Wrong Number of Frames")));

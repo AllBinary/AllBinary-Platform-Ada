@@ -52,7 +52,7 @@ package body org.allbinary.logic.java.byteutil.ByteUtil_Package is
         currentByte := 0;
         while (index) < (size) loop
             currentByte := array_Id (index);
-            bytes (index) := Short_Short_Integer ((Java_Xor (Integer (currentByte), Integer (mask))));
+            bytes (index) := Short_Short_Integer ((Java_Xor (Integer (Integer (currentByte)), Integer (Integer (mask)))));
             index := index + 1;
         end loop;
         return bytes;
@@ -115,7 +115,7 @@ package body org.allbinary.logic.java.byteutil.ByteUtil_Package is
         end if;
         size := newByteArray'Length;
         for index in 0 .. (size) - 1 loop
-            if (newByteArray (index)) /= (oldByteArray (index)) then
+            if (Integer (newByteArray (index))) /= (Integer (oldByteArray (index))) then
                 return False;
             end if;
         end loop;
@@ -137,7 +137,7 @@ package body org.allbinary.logic.java.byteutil.ByteUtil_Package is
         stats (1) := 0;
         size := newSize;
         for index in 0 .. (size) - 1 loop
-            if (newByteArray (index)) /= (oldByteArray (index)) then
+            if (Integer (newByteArray (index))) /= (Integer (oldByteArray (index))) then
                 return False;
             end if;
             stats (1) := stats (1) + 1;

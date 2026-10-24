@@ -44,8 +44,8 @@ package body org.allbinary.game.input.form.CompositeRTSFormInput_Package is
         This.itemIndex := itemIndex;
         This.isPrimaryWaypointCreator := isPrimaryWaypointCreator;
         This.rtsFormInputArray := new RTSFormInput_Access_Array'(0 .. (2) - 1 => null);
-        This.rtsFormInputArray (0) := WaypointRTSFormInput_Package.Create (This.groupInterfaceArray, isPrimaryWaypointCreator);
-        This.rtsFormInputArray (1) := UnitRTSFormInput_Package.Create (This.groupInterfaceArray);
+        This.rtsFormInputArray (0) := RTSFormInput_Access (WaypointRTSFormInput_Package.Create (This.groupInterfaceArray, isPrimaryWaypointCreator));
+        This.rtsFormInputArray (1) := RTSFormInput_Access (UnitRTSFormInput_Package.Create (This.groupInterfaceArray));
    end Initialize;
 
    function Create (groupInterface : Group_Access_Array_Access; isPrimaryWaypointCreator : Boolean; itemIndex : Integer_Array_Access) return CompositeRTSFormInput_Access is

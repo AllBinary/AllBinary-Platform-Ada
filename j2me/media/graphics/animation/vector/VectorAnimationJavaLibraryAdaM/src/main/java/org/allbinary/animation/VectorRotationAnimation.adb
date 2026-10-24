@@ -30,7 +30,7 @@ package body org.allbinary.animation.VectorRotationAnimation_Package is
       basicColor : constant BasicColor_Access := BasicColor_Access (basicColor_Param);
       animationBehavior : constant AnimationBehavior_Access := AnimationBehavior_Access (animationBehavior_Param);
    begin
-        VectorBaseRotationAnimation_Package.Initialize (This, AngleInfo_Package.getInstance (Short_Integer (((AngleFactory_Package.getInstance.TOTAL_ANGLE) / (currentPoints'Length)))), currentPoints, basicColor, animationBehavior);
+        VectorBaseRotationAnimation_Package.Initialize (This, AngleInfo_Package.getInstance (Short_Integer (((Integer (AngleFactory_Package.getInstance.TOTAL_ANGLE)) / (currentPoints'Length)))), currentPoints, basicColor, animationBehavior);
         This.angleInfo.adjustAngle (VectorRotationAnimation'Class (This).getFrame);
    end Initialize;
 

@@ -71,7 +71,7 @@ package body org.allbinary.animation.image.VectorToImageArrayRotationAnimationFa
    function getInstance (This : in out VectorToImageArrayRotationAnimationFactory; instanceId : Integer) return Animation_Access is
    begin
         if ((This.animationFactoryInitializationVisitor.dx) /= (0)) or else ((This.animationFactoryInitializationVisitor.dy) /= (0)) then
-            return Animation_Access (AdjustedImageArrayRotationAnimation_Package.Create (This.imageArray, AngleInfo_Package.getInstance (Short_Integer (VectorToImageArrayRotationAnimationFactory'Class (This).getAngleIncrement)), Integer (AngleFactory_Package.getInstance.TOTAL_ANGLE), This.animationFactoryInitializationVisitor.dx, This.animationFactoryInitializationVisitor.dy, This.animationBehaviorFactory.getOrCreateInstance));
+            return Animation_Access (AdjustedImageArrayRotationAnimation_Package.Create (This.imageArray, AngleInfo_Package.getInstance (VectorToImageArrayRotationAnimationFactory'Class (This).getAngleIncrement), Integer (AngleFactory_Package.getInstance.TOTAL_ANGLE), This.animationFactoryInitializationVisitor.dx, This.animationFactoryInitializationVisitor.dy, This.animationBehaviorFactory.getOrCreateInstance));
         else
             return AdjustedImageArrayRotationAnimation_Package.createAnimation (This.imageArray, AngleInfo_Package.getInstance (Short_Integer (This.angleIncrement)), Integer (AngleFactory_Package.getInstance.TOTAL_ANGLE), This.animationBehaviorFactory.getOrCreateInstance);
         end if;

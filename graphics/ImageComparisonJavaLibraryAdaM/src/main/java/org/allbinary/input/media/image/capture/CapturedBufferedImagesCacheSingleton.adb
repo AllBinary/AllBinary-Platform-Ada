@@ -61,15 +61,15 @@ package body org.allbinary.input.media.image.capture.CapturedBufferedImagesCache
         STATIC_BLOCK := To_Unbounded_String ("Static Block");
         instance := To_Unbounded_String ("CapturedBufferedImagesCacheSingleton");
         begin
-            logUtil.putF (commonStrings.START, instance, STATIC_BLOCK);
+            logUtil.putF (commonStrings.START, Java_Box (instance), STATIC_BLOCK);
             CapturedBufferedImagesCacheSingleton_Package.cacheInterface := AutomaticCacheInterface_Access (CacheInterfaceFactory_Package.getInstance ((CacheTypeFactory_Package.getInstance.SET), (CachePolicyFactory_Package.getInstance.ONE_MINUTE_FIVE_MAX)));
-            logUtil.putF (commonStrings.END_Id, instance, STATIC_BLOCK);
+            logUtil.putF (commonStrings.END_Id, Java_Box (instance), STATIC_BLOCK);
         exception
             when Java_Occurrence : others =>
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            logUtil.put (commonStrings.EXCEPTION_Id, instance, STATIC_BLOCK, e);
+            logUtil.put (commonStrings.EXCEPTION_Id, Java_Box (instance), STATIC_BLOCK, e);
                 end;
         end;
    end Initializer;

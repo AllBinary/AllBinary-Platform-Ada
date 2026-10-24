@@ -174,10 +174,10 @@ package body org.allbinary.game.input.ScrollMapPlayerGameInput_Package is
 
    procedure initInputProcessors (This : in out ScrollMapPlayerGameInput) is
    begin
-        This.inputProcessorArray (Canvas_Package.UP) := ScrollMapUpGameInputProcessor_Package.Create (ScrollMapPlayerGameInput_Access'(This'Unchecked_Access));
-        This.inputProcessorArray (Canvas_Package.DOWN) := ScrollMapDownGameInputProcessor_Package.Create (ScrollMapPlayerGameInput_Access'(This'Unchecked_Access));
-        This.inputProcessorArray (Canvas_Package.KEY_NUM9) := ScrollMapRightGameInputProcessor_Package.Create (ScrollMapPlayerGameInput_Access'(This'Unchecked_Access));
-        This.inputProcessorArray (Canvas_Package.KEY_NUM7) := ScrollMapLeftGameInputProcessor_Package.Create (ScrollMapPlayerGameInput_Access'(This'Unchecked_Access));
+        This.inputProcessorArray (Canvas_Package.UP) := GameInputProcessor_Access (ScrollMapUpGameInputProcessor_Package.Create (ScrollMapPlayerGameInput_Access'(This'Unchecked_Access)));
+        This.inputProcessorArray (Canvas_Package.DOWN) := GameInputProcessor_Access (ScrollMapDownGameInputProcessor_Package.Create (ScrollMapPlayerGameInput_Access'(This'Unchecked_Access)));
+        This.inputProcessorArray (Canvas_Package.KEY_NUM9) := GameInputProcessor_Access (ScrollMapRightGameInputProcessor_Package.Create (ScrollMapPlayerGameInput_Access'(This'Unchecked_Access)));
+        This.inputProcessorArray (Canvas_Package.KEY_NUM7) := GameInputProcessor_Access (ScrollMapLeftGameInputProcessor_Package.Create (ScrollMapPlayerGameInput_Access'(This'Unchecked_Access)));
         GameInputProcessorUtil_Package.init (This.inputProcessorArray);
    end initInputProcessors;
 

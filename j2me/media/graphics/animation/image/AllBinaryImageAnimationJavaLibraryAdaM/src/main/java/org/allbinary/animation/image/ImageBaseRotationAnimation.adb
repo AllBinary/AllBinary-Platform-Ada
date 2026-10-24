@@ -37,7 +37,7 @@ package body org.allbinary.animation.image.ImageBaseRotationAnimation_Package is
       angleInfo : constant AngleInfo_Access := AngleInfo_Access (angleInfo_Param);
       animationBehavior : constant AnimationBehavior_Access := AnimationBehavior_Access (animationBehavior_Param);
    begin
-        RotationAnimation_Package.Initialize (This, angleInfo, CircularIndexUtil_Package.createInstance ((totalAngle) / (angleInfo.getAngleIncrementInfo.getAngleIncrement)), animationBehavior);
+        RotationAnimation_Package.Initialize (This, angleInfo, CircularIndexUtil_Package.createInstance ((Integer (totalAngle)) / (Integer (angleInfo.getAngleIncrementInfo.getAngleIncrement))), animationBehavior);
         Initialize_Fields (This);
         This.image := image;
    end Initialize;

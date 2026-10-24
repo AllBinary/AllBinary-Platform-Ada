@@ -49,10 +49,10 @@ package body org.allbinary.image.ImageCacheBase_Package is
    begin
       Initialize_Fields (This);
         for index in reverse 0 .. (This.listOfList'Length) - (1) loop
-            This.listOfList (index) := BasicArrayListD_Package.Create;
+            This.listOfList (index) := BasicArrayList_Access (BasicArrayListD_Package.Create);
         end loop;
         for index in reverse 0 .. (This.availableListOfList'Length) - (1) loop
-            This.availableListOfList (index) := BasicArrayListD_Package.Create;
+            This.availableListOfList (index) := BasicArrayList_Access (BasicArrayListD_Package.Create);
         end loop;
    end Initialize;
 

@@ -34,7 +34,7 @@ package body org.allbinary.animation.image.sprite.HackRotationSpriteIndexedAnima
       angleInfo : constant AngleInfo_Access := AngleInfo_Access (angleInfo_Param);
       animationBehavior : constant AnimationBehavior_Access := AnimationBehavior_Access (animationBehavior_Param);
    begin
-        RotationAnimation_Package.Initialize (This, angleInfo, CircularIndexUtil_Package.createInstance ((360) / (angleInfo.getAngleIncrementInfo.getAngleIncrement)), animationBehavior);
+        RotationAnimation_Package.Initialize (This, angleInfo, CircularIndexUtil_Package.createInstance ((360) / (Integer (angleInfo.getAngleIncrementInfo.getAngleIncrement))), animationBehavior);
         Initialize_Fields (This);
         This.sprite := sprite;
         This.image := image;

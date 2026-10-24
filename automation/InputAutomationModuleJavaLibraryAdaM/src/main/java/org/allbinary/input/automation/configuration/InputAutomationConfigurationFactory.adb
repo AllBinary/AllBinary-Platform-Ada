@@ -68,13 +68,13 @@ package body org.allbinary.input.automation.configuration.InputAutomationConfigu
         INPUT_AUTOMATION_CONFIGURATION := To_Unbounded_String ("InputAutomationConfiguration");
         file := InputAutomationConfiguration_Package.getFile;
         if file.isFile then
-            logUtil.putF (To_Unbounded_String ("LoadingConfiguration"), INPUT_AUTOMATION_CONFIGURATION, commonStrings.INIT);
+            logUtil.putF (To_Unbounded_String ("LoadingConfiguration"), Java_Box (INPUT_AUTOMATION_CONFIGURATION), commonStrings.INIT);
             jaxbContext := JAXBContext_Package.newInstance (InputAutomationConfiguration_Package.InputAutomationConfiguration'Tag);
             unmarshaller := jaxbContext.createUnmarshaller;
             root := unmarshaller.unmarshal (StreamSource_Package.Create (FileInputStream_Package.Create (file)), InputAutomationConfiguration_Package.InputAutomationConfiguration'Tag);
             This.inputAutomationConfiguration := InputAutomationConfiguration_Access (root.getValue);
             inputAutomationModuleConfigurationList := This.inputAutomationConfiguration.getInputAutomationModuleConfigurationList;
-            logUtil.putF (To_Unbounded_String ("isInstalled: ") & Java_Image (This.inputAutomationConfiguration.isInstalled) & To_Unbounded_String (" inputAutomationModuleConfigurationList: ") & Java_Image (inputAutomationModuleConfigurationList), INPUT_AUTOMATION_CONFIGURATION, commonStrings.INIT);
+            logUtil.putF (To_Unbounded_String ("isInstalled: ") & Java_Image (This.inputAutomationConfiguration.isInstalled) & To_Unbounded_String (" inputAutomationModuleConfigurationList: ") & Java_Image (inputAutomationModuleConfigurationList), Java_Box (INPUT_AUTOMATION_CONFIGURATION), commonStrings.INIT);
             if (inputAutomationModuleConfigurationList) /= (null) then
                 size := inputAutomationModuleConfigurationList.size;
                 inputAutomationModuleConfiguration := null;
@@ -83,9 +83,9 @@ package body org.allbinary.input.automation.configuration.InputAutomationConfigu
                     inputAutomationModuleConfiguration.init (abeClientInformation);
                 end loop;
             end if;
-            logUtil.putF (To_Unbounded_String ("LoadedConfiguration"), INPUT_AUTOMATION_CONFIGURATION, commonStrings.INIT);
+            logUtil.putF (To_Unbounded_String ("LoadedConfiguration"), Java_Box (INPUT_AUTOMATION_CONFIGURATION), commonStrings.INIT);
         else
-            logUtil.putF (To_Unbounded_String ("New Configuration"), INPUT_AUTOMATION_CONFIGURATION, commonStrings.INIT);
+            logUtil.putF (To_Unbounded_String ("New Configuration"), Java_Box (INPUT_AUTOMATION_CONFIGURATION), commonStrings.INIT);
             This.inputAutomationConfiguration := InputAutomationConfiguration_Package.Create;
         end if;
    end init;

@@ -35,7 +35,7 @@ package body org.allbinary.logic.communication.log.TestRemoteLogUtil_Package is
         Globals_Package.getInstance.init (This.all'Tag.getClassLoader, TestRemoteLogUtil_Package.PATH);
         logUtil := LogUtil_Package.getInstance;
         commonStrings := CommonStrings_Package.getInstance;
-        logUtil.put (commonStrings.EXCEPTION_Id, To_Unbounded_String ("Test"), To_Unbounded_String ("TestClass"), Java_New_Exception ("Exception", To_Unbounded_String ("Pretend Exception")));
+        logUtil.put (commonStrings.EXCEPTION_Id, Java_Box (To_Unbounded_String ("Test")), To_Unbounded_String ("TestClass"), Java_New_Exception ("Exception", To_Unbounded_String ("Pretend Exception")));
    end Initialize;
 
    function Create return TestRemoteLogUtil_Access is

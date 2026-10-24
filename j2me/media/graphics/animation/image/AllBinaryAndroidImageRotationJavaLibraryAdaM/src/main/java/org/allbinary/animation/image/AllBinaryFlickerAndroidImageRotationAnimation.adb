@@ -40,7 +40,7 @@ package body org.allbinary.animation.image.AllBinaryFlickerAndroidImageRotationA
         This.originalImage := originalImage;
         This.halfWidth := (Java_Shift_Right_Arithmetic (image.getWidth, 1));
         This.halfHeight := (Java_Shift_Right_Arithmetic (image.getHeight, 1));
-        This.increment := Short_Integer ((This.angleInfo.getAngleIncrementInfo.getAngleIncrement));
+        This.increment := (This.angleInfo.getAngleIncrementInfo.getAngleIncrement);
    end Initialize;
 
    function Create (originalImage_Param : access Image_Package.Image'Class; image_Param : access Image_Package.Image'Class; angleInfo_Param : access AngleInfo_Package.AngleInfo'Class; totalAngle : Short_Integer; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class) return AllBinaryFlickerAndroidImageRotationAnimation_Access is

@@ -141,7 +141,7 @@ package body org.allbinary.logic.system.loader.AbeClassLoader_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.LOADERERROR) then
-                This.logUtil.put (To_Unbounded_String ("(Before LogBuffer Output) Failure loading Encrypted: ") & name & To_Unbounded_String (" File: ") & cname, To_Unbounded_String ("AbeClassLoader"), To_Unbounded_String ("loadClassBytes"), e);
+                This.logUtil.put (To_Unbounded_String ("(Before LogBuffer Output) Failure loading Encrypted: ") & name & To_Unbounded_String (" File: ") & cname, Java_Box (To_Unbounded_String ("AbeClassLoader")), To_Unbounded_String ("loadClassBytes"), e);
             end if;
             StreamUtil_Package.getInstance.close (in_Id);
                 end;
@@ -199,7 +199,7 @@ package body org.allbinary.logic.system.loader.AbeClassLoader_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.LOADERERROR) then
-                This.logUtil.put (To_Unbounded_String ("Failure loading: ") & name, To_Unbounded_String ("AbeClassLoader"), This.LOAD_CLASS, e);
+                This.logUtil.put (To_Unbounded_String ("Failure loading: ") & name, Java_Box (To_Unbounded_String ("AbeClassLoader")), This.LOAD_CLASS, e);
             end if;
             return null;
                 end;

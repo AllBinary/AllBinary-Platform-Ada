@@ -48,7 +48,7 @@ package body org.allbinary.input.KeySingletonFactory_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            logUtil.put (commonStrings.EXCEPTION_Id, To_Unbounded_String ("KeySingleFactory"), STATIC_BLOCK, e);
+            logUtil.put (commonStrings.EXCEPTION_Id, Java_Box (To_Unbounded_String ("KeySingleFactory")), STATIC_BLOCK, e);
                 end;
         end;
    end Initializer;

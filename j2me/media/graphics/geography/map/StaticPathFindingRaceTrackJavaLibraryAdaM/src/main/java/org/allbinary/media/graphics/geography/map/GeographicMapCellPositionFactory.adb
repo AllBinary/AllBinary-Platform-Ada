@@ -55,12 +55,12 @@ package body org.allbinary.media.graphics.geography.map.GeographicMapCellPositio
         allBinaryTiledLayer := geographicMapInterface.getAllBinaryTiledLayer;
         geographicMapCellPositionFactoryCanBeNull := GeographicMapCellPositionFactory_Package.hashtable.get (allBinaryTiledLayer.getDataId);
         if (geographicMapCellPositionFactoryCanBeNull) = (null) then
-            This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Creating GeographicMapCellPositionFactory for TileLayer: ")).appendint (Integer (allBinaryTiledLayer.getDataId.intValue)).toString, GeographicMapCellPositionFactory_Access'(This'Unchecked_Access), commonStrings.GET_INSTANCE);
+            This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Creating GeographicMapCellPositionFactory for TileLayer: ")).appendint (allBinaryTiledLayer.getDataId.intValue).toString, GeographicMapCellPositionFactory_Access'(This'Unchecked_Access), commonStrings.GET_INSTANCE);
             geographicMapCellPositionFactoryCanBeNull := Java_Object_Access (BasicGeographicMapCellPositionFactory_Package.Create (geographicMapInterface));
             GeographicMapCellPositionFactory_Package.hashtable.put (allBinaryTiledLayer.getDataId, geographicMapCellPositionFactoryCanBeNull);
             return BasicGeographicMapCellPositionFactory_Access (geographicMapCellPositionFactoryCanBeNull);
         else
-            This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Reusing GeographicMapCellPositionFactory for TileLayer: ")).appendint (Integer (allBinaryTiledLayer.getDataId.intValue)).toString, GeographicMapCellPositionFactory_Access'(This'Unchecked_Access), commonStrings.GET_INSTANCE);
+            This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Reusing GeographicMapCellPositionFactory for TileLayer: ")).appendint (allBinaryTiledLayer.getDataId.intValue).toString, GeographicMapCellPositionFactory_Access'(This'Unchecked_Access), commonStrings.GET_INSTANCE);
             return BasicGeographicMapCellPositionFactory_Access (geographicMapCellPositionFactoryCanBeNull);
         end if;
    end getInstance;

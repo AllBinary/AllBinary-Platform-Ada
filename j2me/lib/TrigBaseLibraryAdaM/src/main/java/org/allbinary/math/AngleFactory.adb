@@ -63,23 +63,23 @@ package body org.allbinary.math.AngleFactory_Package is
         commonPhoneStrings := CommonPhoneStrings_Package.getInstance;
         total := Short_Integer (This.angleArray'Length);
         This.UP := NamedAngle_Package.Create (Short_Integer (0), commonPhoneStrings.UP);
-        This.angleArray (0) := This.UP;
+        This.angleArray (0) := Angle_Access (This.UP);
         for index in 1 .. (90) - 1 loop
             This.angleArray (index) := Angle_Package.Create (Short_Integer (index));
         end loop;
         This.RIGHT := NamedAngle_Package.Create (Short_Integer (90), commonPhoneStrings.RIGHT);
-        This.angleArray (90) := This.RIGHT;
+        This.angleArray (90) := Angle_Access (This.RIGHT);
         for index in 91 .. (180) - 1 loop
             This.angleArray (index) := Angle_Package.Create (Short_Integer (index));
         end loop;
         This.DOWN := NamedAngle_Package.Create (Short_Integer (180), commonPhoneStrings.DOWN);
-        This.angleArray (180) := This.DOWN;
+        This.angleArray (180) := Angle_Access (This.DOWN);
         for index in 181 .. (270) - 1 loop
             This.angleArray (index) := Angle_Package.Create (Short_Integer (index));
         end loop;
         This.LEFT := NamedAngle_Package.Create (Short_Integer (270), commonPhoneStrings.LEFT);
-        This.angleArray (270) := This.LEFT;
-        for index in 271 .. (total) - 1 loop
+        This.angleArray (270) := Angle_Access (This.LEFT);
+        for index in 271 .. (Integer (total)) - 1 loop
             This.angleArray (index) := Angle_Package.Create (Short_Integer (index));
         end loop;
    end Initialize;
@@ -127,7 +127,7 @@ package body org.allbinary.math.AngleFactory_Package is
         for index in 0 .. (360) - 1 loop
             stringMaker.appendint (index).append (CommonSeps_Package.getInstance.FORWARD_SLASH).appendshort (Short_Integer (angleFactory_Var.getClosestDirection (index).getValue)).append (CommonSeps_Package.getInstance.NEW_LINE);
         end loop;
-        LogUtil_Package.getInstance.putF (stringMaker.toString, To_Unbounded_String ("main"), To_Unbounded_String ("main"));
+        LogUtil_Package.getInstance.putF (stringMaker.toString, Java_Box (To_Unbounded_String ("main")), To_Unbounded_String ("main"));
    end main;
 
    procedure getAt (This : in out AngleFactory; index : Integer) is

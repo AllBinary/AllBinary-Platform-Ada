@@ -46,8 +46,8 @@ package body org.allbinary.game.ag.ai.scroller.RandomPatrolFlockingFiringAIFacto
       artificialIntelligenceInterface : ArtificialIntelligenceInterface_Access_Array_Access;
    begin
         artificialIntelligenceInterface := new ArtificialIntelligenceInterface_Access_Array'(0 .. (2) - 1 => null);
-        artificialIntelligenceInterface (0) := RandomPatrolAI_Package.Create (hashtable, ownerLayerInterface, gameInput);
-        artificialIntelligenceInterface (1) := TimedFireAI_Package.Create (1800, ownerLayerInterface, gameInput);
+        artificialIntelligenceInterface (0) := ArtificialIntelligenceInterface_Access (RandomPatrolAI_Package.Create (hashtable, ownerLayerInterface, gameInput));
+        artificialIntelligenceInterface (1) := ArtificialIntelligenceInterface_Access (TimedFireAI_Package.Create (1800, ownerLayerInterface, gameInput));
         return ArtificialIntelligenceInterface_Access (ArrayAI_Package.Create (artificialIntelligenceInterface, ownerLayerInterface, gameInput));
    end getInstance;
 

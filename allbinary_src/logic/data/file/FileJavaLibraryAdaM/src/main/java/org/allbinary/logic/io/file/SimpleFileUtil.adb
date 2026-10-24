@@ -231,11 +231,11 @@ package body org.allbinary.logic.io.file.SimpleFileUtil_Package is
         returnLine := 0;
         while (index) < (size) loop
             startIndex := index;
-            while ((index) < ((size) - (1))) and then ((byteArray (index)) /= (Short_Short_Integer (Character'Pos (ASCII.LF)))) loop
+            while ((index) < ((size) - (1))) and then ((Integer (byteArray (index))) /= (Integer (Short_Short_Integer (Character'Pos (ASCII.LF))))) loop
                 index := index + 1;
             end loop;
             if (includeReturnLine) = (0) then
-                if ((index) > (0)) and then ((byteArray ((index) - (1))) = (Short_Short_Integer (Character'Pos (ASCII.CR)))) then
+                if ((index) > (0)) and then ((Integer (byteArray ((index) - (1)))) = (Integer (Short_Short_Integer (Character'Pos (ASCII.CR))))) then
                     returnLine := 1;
                 else
                     returnLine := 0;

@@ -54,7 +54,7 @@ package body views.admin.inventory.listings.ProductListingFactory_Package is
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.FACTORYERROR) then
                 commonStrings := CommonStrings_Package.getInstance;
-                logUtil.put (commonStrings.EXCEPTION_Id, To_Unbounded_String ("ProductListingFactory"), commonStrings.GET_INSTANCE, e);
+                logUtil.put (commonStrings.EXCEPTION_Id, Java_Box (To_Unbounded_String ("ProductListingFactory")), commonStrings.GET_INSTANCE, e);
             end if;
             return null;
                 end;

@@ -45,7 +45,7 @@ package body org.allbinary.animation.image.AllBinaryNoFlickerAndroidImageRotatio
         This.originalImage := originalImage;
         This.halfWidth := (Java_Shift_Right_Arithmetic (image.getWidth, 1));
         This.halfHeight := (Java_Shift_Right_Arithmetic (image.getHeight, 1));
-        This.increment := Short_Integer ((This.angleInfo.getAngleIncrementInfo.getAngleIncrement));
+        This.increment := (This.angleInfo.getAngleIncrementInfo.getAngleIncrement);
         This.imageToShow := image;
         This.twoImages (0) := image;
         This.twoImages (1) := ImageCopyUtil_Package.getInstance.createImage (image);

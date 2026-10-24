@@ -59,7 +59,7 @@ package body views.admin.inventory.listings.InventoryViewFactory_Package is
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPERFACTORYERROR) then
                 commonStrings := CommonStrings_Package.getInstance;
-                logUtil.put (commonStrings.EXCEPTION_Id, To_Unbounded_String ("InventoryViewFactory"), To_Unbounded_String ("getInstance(SearchRequest)"), e);
+                logUtil.put (commonStrings.EXCEPTION_Id, Java_Box (To_Unbounded_String ("InventoryViewFactory")), To_Unbounded_String ("getInstance(SearchRequest)"), e);
             end if;
             return null;
                 end;

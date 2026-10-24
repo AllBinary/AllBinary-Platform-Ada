@@ -49,10 +49,10 @@ package body org.allbinary.math.AngleIncrementInfo_Package is
         This.angleIncrement := angleIncrement;
         angleFactory := AngleFactory_Package.getInstance;
         smallIntegerSingletonFactory := SmallIntegerSingletonFactory_Package.getInstance;
-        This.DOWN_FRAME := smallIntegerSingletonFactory.getAt ((angleFactory.DOWN.getValue) / (This.angleIncrement));
+        This.DOWN_FRAME := smallIntegerSingletonFactory.getAt ((Integer (angleFactory.DOWN.getValue)) / (Integer (This.angleIncrement)));
         This.UP_FRAME := smallIntegerSingletonFactory.getAt (Integer (angleFactory.UP.getValue));
-        This.LEFT_FRAME := smallIntegerSingletonFactory.getAt ((angleFactory.LEFT.getValue) / (This.angleIncrement));
-        This.RIGHT_FRAME := smallIntegerSingletonFactory.getAt ((angleFactory.RIGHT.getValue) / (This.angleIncrement));
+        This.LEFT_FRAME := smallIntegerSingletonFactory.getAt ((Integer (angleFactory.LEFT.getValue)) / (Integer (This.angleIncrement)));
+        This.RIGHT_FRAME := smallIntegerSingletonFactory.getAt ((Integer (angleFactory.RIGHT.getValue)) / (Integer (This.angleIncrement)));
    end Initialize;
 
    function Create (angleIncrement : Short_Integer) return AngleIncrementInfo_Access is
@@ -81,16 +81,16 @@ package body org.allbinary.math.AngleIncrementInfo_Package is
       closestDirection : Integer;
    begin
         closestDirection := SmallIntegerSingletonFactory_Package.getInstance.getAt (360);
-        if ((Integer (This.UP_FRAME)) - (angle)) < ((Integer (closestDirection)) - (angle)) then
+        if ((Integer (This.UP_FRAME)) - (Integer (angle))) < ((Integer (closestDirection)) - (Integer (angle))) then
             closestDirection := This.UP_FRAME;
         end if;
-        if ((Integer (This.DOWN_FRAME)) - (angle)) < ((Integer (closestDirection)) - (angle)) then
+        if ((Integer (This.DOWN_FRAME)) - (Integer (angle))) < ((Integer (closestDirection)) - (Integer (angle))) then
             closestDirection := This.DOWN_FRAME;
         end if;
-        if ((Integer (This.LEFT_FRAME)) - (angle)) < ((Integer (closestDirection)) - (angle)) then
+        if ((Integer (This.LEFT_FRAME)) - (Integer (angle))) < ((Integer (closestDirection)) - (Integer (angle))) then
             closestDirection := This.LEFT_FRAME;
         end if;
-        if ((Integer (This.RIGHT_FRAME)) - (angle)) < ((Integer (closestDirection)) - (angle)) then
+        if ((Integer (This.RIGHT_FRAME)) - (Integer (angle))) < ((Integer (closestDirection)) - (Integer (angle))) then
             closestDirection := This.RIGHT_FRAME;
         end if;
         return Integer (closestDirection);

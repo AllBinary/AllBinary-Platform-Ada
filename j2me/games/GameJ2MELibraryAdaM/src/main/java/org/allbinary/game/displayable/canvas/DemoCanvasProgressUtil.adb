@@ -56,8 +56,8 @@ package body org.allbinary.game.displayable.canvas.DemoCanvasProgressUtil_Packag
         progressCanvas := ProgressCanvasFactory_Package.getInstance;
         progressCanvas.startBackground (background);
         paintableArray := new PaintableInterface_Access_Array'(0 .. (2) - 1 => null);
-        paintableArray (0) := progressCanvas;
-        paintableArray (1) := demoCanvas.getDefaultPaintableInterface;
+        paintableArray (0) := PaintableInterface_Access (progressCanvas);
+        paintableArray (1) := PaintableInterface_Access (demoCanvas.getDefaultPaintableInterface);
         demoCanvas.setDefaultPaintableInterface (PaintableComposite_Package.Create (paintableArray));
         demoCanvas.setPaintableInterface (demoCanvas.getDefaultPaintableInterface);
    end showProgressOptionallyInTheBackground;

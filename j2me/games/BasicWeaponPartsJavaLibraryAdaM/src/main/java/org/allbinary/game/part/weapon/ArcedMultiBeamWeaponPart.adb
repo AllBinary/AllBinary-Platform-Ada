@@ -66,7 +66,7 @@ package body org.allbinary.game.part.weapon.ArcedMultiBeamWeaponPart_Package is
         next := 0;
         weaponLayer := null;
         for index in 0 .. (This.total) - 1 loop
-            weaponLayer := This.weaponLayerCircularStaticPool.getInstanceWeaponLayer (ArcedMultiBeamWeaponPart'Class (This).getOwnerLayerInterface, This.relativeRelationship.getX, This.relativeRelationship.getY, 0, ((minAngle) + (increment)), Integer (otherAngle), weaponProperties, scoreableInterface);
+            weaponLayer := This.weaponLayerCircularStaticPool.getInstanceWeaponLayer (ArcedMultiBeamWeaponPart'Class (This).getOwnerLayerInterface, This.relativeRelationship.getX, This.relativeRelationship.getY, 0, ((Integer (minAngle)) + (Integer (increment))), Integer (otherAngle), weaponProperties, scoreableInterface);
             allbinaryLayerManager.append (weaponLayer);
             next := (next) + (Integer (increment));
         end loop;

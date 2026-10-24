@@ -129,7 +129,7 @@ package body org.allbinary.input.automation.robot.InputRobotFactory_Package is
       iterator : Iterator_Access;
    begin
         logUtil := LogUtil_Package.getInstance;
-        logUtil.putF (To_Unbounded_String ("Loading Libraries"), To_Unbounded_String ("InputRobotFactory"), To_Unbounded_String ("loadLibraries"));
+        logUtil.putF (To_Unbounded_String ("Loading Libraries"), Java_Box (To_Unbounded_String ("InputRobotFactory")), To_Unbounded_String ("loadLibraries"));
         iterator := collection.iterator;
         while iterator.hasNext loop
             InputRobotFactory_Package.loadLibrary (InputRobotInterface_Access (iterator.next));
@@ -144,7 +144,7 @@ package body org.allbinary.input.automation.robot.InputRobotFactory_Package is
    begin
         logUtil := LogUtil_Package.getInstance;
         if InterfaceUtil_Package.isImplemented (SecuredNativeLibraryInterface_Package.SecuredNativeLibraryInterface'Tag, inputRobotInterface) then
-            logUtil.putF (To_Unbounded_String ("Loading Library: ") & inputRobotInterface.getName, To_Unbounded_String ("InputRobotFactory"), To_Unbounded_String ("loadLibraries"));
+            logUtil.putF (To_Unbounded_String ("Loading Library: ") & inputRobotInterface.getName, Java_Box (To_Unbounded_String ("InputRobotFactory")), To_Unbounded_String ("loadLibraries"));
             securedNativeLibraryInterface := SecuredNativeLibraryInterface_Access (inputRobotInterface);
             securedNativeLibraryInterface.load;
         end if;

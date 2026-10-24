@@ -59,7 +59,7 @@ package body org.allbinary.input.automation.module.game.GraphicsAnalysisUtil_Pac
             if (((color.getRed) < (GraphicsAnalysisUtil_Package.MAX)) and then ((color.getGreen) < (GraphicsAnalysisUtil_Package.MAX))) and then ((color.getBlue) < (GraphicsAnalysisUtil_Package.MAX)) then
                 null;
             else
-                return (index) - (Integer (min_x));
+                return Long_Float ((index) - (Integer (min_x)));
             end if;
         end loop;
         return 0.0;

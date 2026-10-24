@@ -16,7 +16,7 @@ package body org.allbinary.animation.NullRotationAnimation_Package is
       angleInfo : constant AngleInfo_Access := AngleInfo_Access (angleInfo_Param);
       animationBehavior : constant AnimationBehavior_Access := AnimationBehavior_Access (animationBehavior_Param);
    begin
-        return NullRotationAnimation_Package.Create (angleInfo, CircularIndexUtil_Package.createInstance ((totalAngle) / (angleInfo.getAngleIncrementInfo.getAngleIncrement)), animationBehavior);
+        return NullRotationAnimation_Package.Create (angleInfo, CircularIndexUtil_Package.createInstance ((Integer (totalAngle)) / (Integer (angleInfo.getAngleIncrementInfo.getAngleIncrement))), animationBehavior);
    end createTotalAngle;
 
    function createQuarter (animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class) return NullRotationAnimation_Access is

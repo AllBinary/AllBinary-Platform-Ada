@@ -88,7 +88,7 @@ package body org.allbinary.business.user.password.Password_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VALIDATIONERROR) then
-                This.logUtil.put (To_Unbounded_String ("Failed to validate form"), To_Unbounded_String ("Password"), commonStrings.IS_VALID, e);
+                This.logUtil.put (To_Unbounded_String ("Failed to validate form"), Java_Box (To_Unbounded_String ("Password")), commonStrings.IS_VALID, e);
             end if;
             return False;
                 end;

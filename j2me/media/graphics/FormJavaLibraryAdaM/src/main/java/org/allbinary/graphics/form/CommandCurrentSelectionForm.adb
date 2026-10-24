@@ -107,15 +107,15 @@ package body org.allbinary.graphics.form.CommandCurrentSelectionForm_Package is
         rectWidth := ((width) + (This.border)) - (adjustedBorder);
         rectHeight := ((height) + (This.border)) - (adjustedBorder);
         if (J2MEUtil_Package.isJ2ME) or else (J2MEUtil_Package.isHTML) then
-            This.selectedAnimationArray (index) := RectangleAdjustedAnimation_Package.Create (rectWidth, rectHeight, offset, offset, selectedButtonColor);
+            This.selectedAnimationArray (index) := Animation_Access (RectangleAdjustedAnimation_Package.Create (rectWidth, rectHeight, offset, offset, selectedButtonColor));
         else
-            This.selectedAnimationArray (index) := RectangleFilledAdjustedAnimation_Package.Create (rectWidth, rectHeight, offset, offset, selectedButtonColor);
+            This.selectedAnimationArray (index) := Animation_Access (RectangleFilledAdjustedAnimation_Package.Create (rectWidth, rectHeight, offset, offset, selectedButtonColor));
         end if;
         adjustedBorder := 4;
         if (J2MEUtil_Package.isJ2ME) or else (J2MEUtil_Package.isHTML) then
-            This.unSelectedAnimationArray (index) := RectangleAdjustedAnimation_Package.Create (rectWidth, rectHeight, offset, offset, buttonColor);
+            This.unSelectedAnimationArray (index) := Animation_Access (RectangleAdjustedAnimation_Package.Create (rectWidth, rectHeight, offset, offset, buttonColor));
         else
-            This.unSelectedAnimationArray (index) := RectangleFilledAdjustedAnimation_Package.Create (rectWidth, rectHeight, offset, offset, buttonColor);
+            This.unSelectedAnimationArray (index) := Animation_Access (RectangleFilledAdjustedAnimation_Package.Create (rectWidth, rectHeight, offset, offset, buttonColor));
         end if;
    end addAt;
 

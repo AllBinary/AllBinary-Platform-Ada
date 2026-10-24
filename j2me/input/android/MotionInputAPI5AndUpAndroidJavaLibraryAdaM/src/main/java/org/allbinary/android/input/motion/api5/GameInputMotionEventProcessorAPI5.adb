@@ -53,7 +53,7 @@ package body org.allbinary.android.input.motion.api5.GameInputMotionEventProcess
         This.motionRecognizerArray := new AllMotionRecognizer_Access_Array'(0 .. (size) - 1 => null);
         This.TOTAL_MINUS_ONE := size;
         for index in 0 .. (size) - 1 loop
-            This.motionRecognizerArray (index) := AllMotionRecognizer_Package.Create;
+            This.motionRecognizerArray (index) := MotionRecognizer_Access (AllMotionRecognizer_Package.Create);
         end loop;
    end Initialize;
 
