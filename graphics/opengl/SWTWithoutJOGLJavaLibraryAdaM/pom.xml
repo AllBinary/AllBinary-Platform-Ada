@@ -55,7 +55,7 @@
 
         <dependency>
             <groupId>org.microemu</groupId>
-            <artifactId>microemu-midpAda</artifactId>
+            <artifactId>microemu-midp-for-polyglotAda</artifactId>
             <version>2.0.4</version>
             <optional>true</optional>
         </dependency>
@@ -163,7 +163,7 @@
 
                     <exclusions>
                         <exclusion>
-                            <groupId>org.microemu</groupId><artifactId>microemu-midpAda</artifactId>
+                            <groupId>org.microemu</groupId><artifactId>microemu-midp-for-polyglotAda</artifactId>
                         </exclusion>
                         <exclusion>
                             <groupId>org.microemu</groupId><artifactId>microemu-jsr-135Ada</artifactId>

@@ -144,7 +144,7 @@
         <module>../../games/GameResourceJavaLibraryAdaM</module>
         <module>../../games/GameSoundsJavaLibraryAdaM</module>
 
-        <module>../../input/TouchInputLibraryP</module>
+        <module>../../input/TouchInputLibraryAdaP</module>
 
         <module>../../media/MediaDataAdaM</module>
         <module>../../media/sound/NotDeviceSpecificNoMediaMIDP1LibraryAdaM</module>
@@ -189,4 +189,3 @@
     </modules>
 
 </project>
-
