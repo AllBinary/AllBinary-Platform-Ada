@@ -333,22 +333,23 @@ with org.allbinary.graphics.paint.Paintable_Package; use org.allbinary.graphics.
 with org.allbinary.graphics.paint.Paintable_Package_References;
 with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.graphics.form.ScrollSelectionForm_Package; use org.allbinary.graphics.form.ScrollSelectionForm_Package;
+with org.allbinary.graphics.form.ScrollSelectionForm_Package_References;
 with org.allbinary.graphics.form.ItemPaintableFactory_Package; use org.allbinary.graphics.form.ItemPaintableFactory_Package;
 with org.allbinary.graphics.form.ItemPaintableFactory_Package_References;
 with org.allbinary.graphics.form.FormType_Package; use org.allbinary.graphics.form.FormType_Package;
 with org.allbinary.graphics.form.FormType_Package_References;
-with org.allbinary.graphics.form.ItemIndexPaintable_Package; use org.allbinary.graphics.form.ItemIndexPaintable_Package;
 with org.allbinary.graphics.form.MPaintable_Package; use org.allbinary.graphics.form.MPaintable_Package;
 with org.allbinary.graphics.form.FormTypeFactory_Package; use org.allbinary.graphics.form.FormTypeFactory_Package;
 with org.allbinary.graphics.form.MultipleScrollSelectionFormVerticalPaintable_Package; use org.allbinary.graphics.form.MultipleScrollSelectionFormVerticalPaintable_Package;
 with org.allbinary.graphics.form.FormType_Package;
 with org.allbinary.graphics.form.FormTypeFactory_Package;
 with org.allbinary.graphics.form.ItemIndexDx_Package;
-with org.allbinary.graphics.form.ItemIndexPaintable_Package;
 with org.allbinary.graphics.form.ItemPaintable_Package;
 with org.allbinary.graphics.form.ItemPaintableFactory_Package;
 with org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_Package;
 with org.allbinary.graphics.form.PaintableForm_Package;
+with org.allbinary.graphics.form.ScrollSelectionForm_Package;
 
 package body org.allbinary.graphics.form.MultipleScrollSelectionFormHorizontalPaintable_Package is
 
@@ -520,22 +521,23 @@ with org.allbinary.graphics.paint.Paintable_Package; use org.allbinary.graphics.
 with org.allbinary.graphics.paint.Paintable_Package_References;
 with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.graphics.form.ScrollSelectionForm_Package; use org.allbinary.graphics.form.ScrollSelectionForm_Package;
+with org.allbinary.graphics.form.ScrollSelectionForm_Package_References;
 with org.allbinary.graphics.form.ItemPaintableFactory_Package; use org.allbinary.graphics.form.ItemPaintableFactory_Package;
 with org.allbinary.graphics.form.ItemPaintableFactory_Package_References;
 with org.allbinary.graphics.form.FormType_Package; use org.allbinary.graphics.form.FormType_Package;
 with org.allbinary.graphics.form.FormType_Package_References;
-with org.allbinary.graphics.form.ItemIndexPaintable_Package; use org.allbinary.graphics.form.ItemIndexPaintable_Package;
 with org.allbinary.graphics.form.MPaintable_Package; use org.allbinary.graphics.form.MPaintable_Package;
 with org.allbinary.graphics.form.FormTypeFactory_Package; use org.allbinary.graphics.form.FormTypeFactory_Package;
 with org.allbinary.graphics.form.MultipleScrollSelectionFormHorizontalPaintable_Package; use org.allbinary.graphics.form.MultipleScrollSelectionFormHorizontalPaintable_Package;
 with org.allbinary.graphics.form.FormType_Package;
 with org.allbinary.graphics.form.FormTypeFactory_Package;
 with org.allbinary.graphics.form.ItemIndexDx_Package;
-with org.allbinary.graphics.form.ItemIndexPaintable_Package;
 with org.allbinary.graphics.form.ItemPaintable_Package;
 with org.allbinary.graphics.form.ItemPaintableFactory_Package;
 with org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_Package;
 with org.allbinary.graphics.form.PaintableForm_Package;
+with org.allbinary.graphics.form.ScrollSelectionForm_Package;
 
 package body org.allbinary.graphics.form.MultipleScrollSelectionFormVerticalPaintable_Package is
 

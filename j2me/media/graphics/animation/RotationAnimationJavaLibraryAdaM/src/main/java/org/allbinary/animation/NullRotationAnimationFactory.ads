@@ -152,11 +152,13 @@ limited with javax.microedition.lcdui.Graphics_Package;
 with javax.microedition.lcdui.Graphics_Package_References;
 limited with org.allbinary.media.ScaleProperties_Package;
 with org.allbinary.media.ScaleProperties_Package_References;
-with org.allbinary.animation.AnimationInterfaceFactoryInterface_Package; use org.allbinary.animation.AnimationInterfaceFactoryInterface_Package;
-with org.allbinary.animation.ProceduralAnimationInterfaceFactoryInterface_Package; use org.allbinary.animation.ProceduralAnimationInterfaceFactoryInterface_Package;
+with org.allbinary.animation.NullRotationAnimation_Package; use org.allbinary.animation.NullRotationAnimation_Package;
+limited with org.allbinary.animation.AnimationInterfaceFactoryInterface_Package;
+with org.allbinary.animation.AnimationInterfaceFactoryInterface_Package_References;
+limited with org.allbinary.animation.ProceduralAnimationInterfaceFactoryInterface_Package;
+with org.allbinary.animation.ProceduralAnimationInterfaceFactoryInterface_Package_References;
 limited with org.allbinary.animation.RotationAnimation_Package;
 with org.allbinary.animation.RotationAnimation_Package_References;
-with org.allbinary.animation.NullRotationAnimation_Package; use org.allbinary.animation.NullRotationAnimation_Package;
 limited with org.allbinary.animation.Animation_Package;
 with org.allbinary.animation.Animation_Package_References;
 

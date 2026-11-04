@@ -306,11 +306,11 @@ limited with org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package_References;
 limited with org.allbinary.math.RectangleCollisionUtil_Package;
 with org.allbinary.math.RectangleCollisionUtil_Package_References;
+with org.allbinary.input.motion.button.ReleaseHelper_Package; use org.allbinary.input.motion.button.ReleaseHelper_Package;
 limited with org.allbinary.input.motion.button.TouchButtonInput_Package;
 with org.allbinary.input.motion.button.TouchButtonInput_Package_References;
 limited with org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingleton_Package;
 with org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingleton_Package_References;
-with org.allbinary.input.motion.button.ReleaseHelper_Package; use org.allbinary.input.motion.button.ReleaseHelper_Package;
 
 package org.allbinary.input.motion.button.MultitouchReleaseHelper_Package is
 

@@ -392,6 +392,8 @@ with org.allbinary.graphics.font.UpdateMyFontInterface_Package_References;
 with org.allbinary.graphics.font.UpdateMyFontProcessor_Package; use org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
 with org.allbinary.graphics.form.item.ABCustomItem_Package; use org.allbinary.graphics.form.item.ABCustomItem_Package;
 with org.allbinary.graphics.form.item.ABCustomItem_Package_References;
+with org.allbinary.graphics.form.ScrollSelectionForm_Package; use org.allbinary.graphics.form.ScrollSelectionForm_Package;
+with org.allbinary.graphics.form.ScrollSelectionForm_Package_References;
 with org.allbinary.graphics.form.ItemIndexDx_Package; use org.allbinary.graphics.form.ItemIndexDx_Package;
 with org.allbinary.graphics.form.ItemIndexDx_Package_References;
 with org.allbinary.graphics.form.ItemPaintableFactory_Package; use org.allbinary.graphics.form.ItemPaintableFactory_Package;
@@ -412,6 +414,7 @@ with org.allbinary.graphics.form.ItemPaintable_Package;
 with org.allbinary.graphics.form.ItemPaintableFactory_Package;
 with org.allbinary.graphics.form.PaintableForm_Package;
 with org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package;
+with org.allbinary.graphics.form.ScrollSelectionForm_Package;
 
 package body org.allbinary.graphics.form.TempHorizontalFormProcessor_Package is
 
@@ -562,6 +565,8 @@ with org.allbinary.graphics.font.UpdateMyFontInterface_Package_References;
 with org.allbinary.graphics.font.UpdateMyFontProcessor_Package; use org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
 with org.allbinary.graphics.form.item.ABCustomItem_Package; use org.allbinary.graphics.form.item.ABCustomItem_Package;
 with org.allbinary.graphics.form.item.ABCustomItem_Package_References;
+with org.allbinary.graphics.form.ScrollSelectionForm_Package; use org.allbinary.graphics.form.ScrollSelectionForm_Package;
+with org.allbinary.graphics.form.ScrollSelectionForm_Package_References;
 with org.allbinary.graphics.form.ItemIndexDx_Package; use org.allbinary.graphics.form.ItemIndexDx_Package;
 with org.allbinary.graphics.form.ItemIndexDx_Package_References;
 with org.allbinary.graphics.form.ItemPaintableFactory_Package; use org.allbinary.graphics.form.ItemPaintableFactory_Package;
@@ -582,6 +587,7 @@ with org.allbinary.graphics.form.ItemPaintable_Package;
 with org.allbinary.graphics.form.ItemPaintableFactory_Package;
 with org.allbinary.graphics.form.PaintableForm_Package;
 with org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package;
+with org.allbinary.graphics.form.ScrollSelectionForm_Package;
 
 package body org.allbinary.graphics.form.HorizontalFormProcessor_Package is
 
@@ -732,6 +738,8 @@ with org.allbinary.graphics.font.UpdateMyFontInterface_Package_References;
 with org.allbinary.graphics.font.UpdateMyFontProcessor_Package; use org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
 with org.allbinary.graphics.form.item.ABCustomItem_Package; use org.allbinary.graphics.form.item.ABCustomItem_Package;
 with org.allbinary.graphics.form.item.ABCustomItem_Package_References;
+with org.allbinary.graphics.form.ScrollSelectionForm_Package; use org.allbinary.graphics.form.ScrollSelectionForm_Package;
+with org.allbinary.graphics.form.ScrollSelectionForm_Package_References;
 with org.allbinary.graphics.form.ItemIndexDx_Package; use org.allbinary.graphics.form.ItemIndexDx_Package;
 with org.allbinary.graphics.form.ItemIndexDx_Package_References;
 with org.allbinary.graphics.form.ItemPaintableFactory_Package; use org.allbinary.graphics.form.ItemPaintableFactory_Package;
@@ -752,6 +760,7 @@ with org.allbinary.graphics.form.ItemPaintable_Package;
 with org.allbinary.graphics.form.ItemPaintableFactory_Package;
 with org.allbinary.graphics.form.PaintableForm_Package;
 with org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package;
+with org.allbinary.graphics.form.ScrollSelectionForm_Package;
 
 package body org.allbinary.graphics.form.VerticalFormProcessor_Package is
 
@@ -903,7 +912,8 @@ with org.allbinary.graphics.font.UpdateMyFontInterface_Package_References;
 with org.allbinary.graphics.font.UpdateMyFontProcessor_Package; use org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
 with org.allbinary.graphics.form.item.ABCustomItem_Package; use org.allbinary.graphics.form.item.ABCustomItem_Package;
 with org.allbinary.graphics.form.item.ABCustomItem_Package_References;
-with org.allbinary.graphics.form.ItemIndexDx_Package; use org.allbinary.graphics.form.ItemIndexDx_Package;
+with org.allbinary.graphics.form.ScrollSelectionForm_Package; use org.allbinary.graphics.form.ScrollSelectionForm_Package;
+with org.allbinary.graphics.form.ScrollSelectionForm_Package_References;
 with org.allbinary.graphics.form.ItemPaintableFactory_Package; use org.allbinary.graphics.form.ItemPaintableFactory_Package;
 with org.allbinary.graphics.form.ItemPaintableFactory_Package_References;
 with org.allbinary.graphics.form.FormTypeFactory_Package; use org.allbinary.graphics.form.FormTypeFactory_Package;
@@ -916,12 +926,12 @@ with org.allbinary.graphics.form.FormType_Package; use org.allbinary.graphics.fo
 with org.allbinary.graphics.form.FormType_Package_References;
 with org.allbinary.graphics.form.FormType_Package;
 with org.allbinary.graphics.form.FormTypeFactory_Package;
-with org.allbinary.graphics.form.ItemIndexDx_Package;
 with org.allbinary.graphics.form.ItemIndexPaintable_Package;
 with org.allbinary.graphics.form.ItemPaintable_Package;
 with org.allbinary.graphics.form.ItemPaintableFactory_Package;
 with org.allbinary.graphics.form.PaintableForm_Package;
 with org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package;
+with org.allbinary.graphics.form.ScrollSelectionForm_Package;
 
 package body org.allbinary.graphics.form.TempHorizontalItemIndexDx_Package is
 
@@ -1080,7 +1090,8 @@ with org.allbinary.graphics.font.UpdateMyFontInterface_Package_References;
 with org.allbinary.graphics.font.UpdateMyFontProcessor_Package; use org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
 with org.allbinary.graphics.form.item.ABCustomItem_Package; use org.allbinary.graphics.form.item.ABCustomItem_Package;
 with org.allbinary.graphics.form.item.ABCustomItem_Package_References;
-with org.allbinary.graphics.form.ItemIndexDx_Package; use org.allbinary.graphics.form.ItemIndexDx_Package;
+with org.allbinary.graphics.form.ScrollSelectionForm_Package; use org.allbinary.graphics.form.ScrollSelectionForm_Package;
+with org.allbinary.graphics.form.ScrollSelectionForm_Package_References;
 with org.allbinary.graphics.form.ItemPaintableFactory_Package; use org.allbinary.graphics.form.ItemPaintableFactory_Package;
 with org.allbinary.graphics.form.ItemPaintableFactory_Package_References;
 with org.allbinary.graphics.form.FormTypeFactory_Package; use org.allbinary.graphics.form.FormTypeFactory_Package;
@@ -1093,12 +1104,12 @@ with org.allbinary.graphics.form.FormType_Package; use org.allbinary.graphics.fo
 with org.allbinary.graphics.form.FormType_Package_References;
 with org.allbinary.graphics.form.FormType_Package;
 with org.allbinary.graphics.form.FormTypeFactory_Package;
-with org.allbinary.graphics.form.ItemIndexDx_Package;
 with org.allbinary.graphics.form.ItemIndexPaintable_Package;
 with org.allbinary.graphics.form.ItemPaintable_Package;
 with org.allbinary.graphics.form.ItemPaintableFactory_Package;
 with org.allbinary.graphics.form.PaintableForm_Package;
 with org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package;
+with org.allbinary.graphics.form.ScrollSelectionForm_Package;
 
 package body org.allbinary.graphics.form.HorizontalItemIndexDx_Package is
 
@@ -1257,7 +1268,8 @@ with org.allbinary.graphics.font.UpdateMyFontInterface_Package_References;
 with org.allbinary.graphics.font.UpdateMyFontProcessor_Package; use org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
 with org.allbinary.graphics.form.item.ABCustomItem_Package; use org.allbinary.graphics.form.item.ABCustomItem_Package;
 with org.allbinary.graphics.form.item.ABCustomItem_Package_References;
-with org.allbinary.graphics.form.ItemIndexDx_Package; use org.allbinary.graphics.form.ItemIndexDx_Package;
+with org.allbinary.graphics.form.ScrollSelectionForm_Package; use org.allbinary.graphics.form.ScrollSelectionForm_Package;
+with org.allbinary.graphics.form.ScrollSelectionForm_Package_References;
 with org.allbinary.graphics.form.ItemPaintableFactory_Package; use org.allbinary.graphics.form.ItemPaintableFactory_Package;
 with org.allbinary.graphics.form.ItemPaintableFactory_Package_References;
 with org.allbinary.graphics.form.FormTypeFactory_Package; use org.allbinary.graphics.form.FormTypeFactory_Package;
@@ -1270,12 +1282,12 @@ with org.allbinary.graphics.form.FormType_Package; use org.allbinary.graphics.fo
 with org.allbinary.graphics.form.FormType_Package_References;
 with org.allbinary.graphics.form.FormType_Package;
 with org.allbinary.graphics.form.FormTypeFactory_Package;
-with org.allbinary.graphics.form.ItemIndexDx_Package;
 with org.allbinary.graphics.form.ItemIndexPaintable_Package;
 with org.allbinary.graphics.form.ItemPaintable_Package;
 with org.allbinary.graphics.form.ItemPaintableFactory_Package;
 with org.allbinary.graphics.form.PaintableForm_Package;
 with org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package;
+with org.allbinary.graphics.form.ScrollSelectionForm_Package;
 
 package body org.allbinary.graphics.form.VerticalItemIndexDx_Package is
 

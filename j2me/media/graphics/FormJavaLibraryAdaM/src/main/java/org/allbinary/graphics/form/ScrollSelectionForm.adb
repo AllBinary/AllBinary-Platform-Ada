@@ -682,9 +682,10 @@ with org.allbinary.math.RectangleCollisionUtil_Package_References;
 with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.graphics.form.PaintableForm_Package; use org.allbinary.graphics.form.PaintableForm_Package;
+with org.allbinary.graphics.form.PaintableForm_Package_References;
 with org.allbinary.graphics.form.ItemPaintableFactory_Package; use org.allbinary.graphics.form.ItemPaintableFactory_Package;
 with org.allbinary.graphics.form.ItemPaintableFactory_Package_References;
-with org.allbinary.graphics.form.ItemIndexPaintable_Package; use org.allbinary.graphics.form.ItemIndexPaintable_Package;
 with org.allbinary.graphics.form.ItemIndexDx_Package; use org.allbinary.graphics.form.ItemIndexDx_Package;
 with org.allbinary.graphics.form.ItemIndexDx_Package_References;
 with org.allbinary.graphics.form.ItemPaintable_Package; use org.allbinary.graphics.form.ItemPaintable_Package;
@@ -700,9 +701,9 @@ with org.allbinary.graphics.form.FormType_Package_References;
 with org.allbinary.graphics.form.FormType_Package;
 with org.allbinary.graphics.form.FormTypeFactory_Package;
 with org.allbinary.graphics.form.ItemIndexDx_Package;
-with org.allbinary.graphics.form.ItemIndexPaintable_Package;
 with org.allbinary.graphics.form.ItemPaintable_Package;
 with org.allbinary.graphics.form.ItemPaintableFactory_Package;
+with org.allbinary.graphics.form.PaintableForm_Package;
 with org.allbinary.graphics.form.ScrollSelectionForm_Package;
 
 package body org.allbinary.graphics.form.ScrollSelectionFormHorizontalPaintable_Package is
@@ -887,9 +888,10 @@ with org.allbinary.math.RectangleCollisionUtil_Package_References;
 with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.graphics.form.PaintableForm_Package; use org.allbinary.graphics.form.PaintableForm_Package;
+with org.allbinary.graphics.form.PaintableForm_Package_References;
 with org.allbinary.graphics.form.ItemPaintableFactory_Package; use org.allbinary.graphics.form.ItemPaintableFactory_Package;
 with org.allbinary.graphics.form.ItemPaintableFactory_Package_References;
-with org.allbinary.graphics.form.ItemIndexPaintable_Package; use org.allbinary.graphics.form.ItemIndexPaintable_Package;
 with org.allbinary.graphics.form.ItemIndexDx_Package; use org.allbinary.graphics.form.ItemIndexDx_Package;
 with org.allbinary.graphics.form.ItemIndexDx_Package_References;
 with org.allbinary.graphics.form.ItemPaintable_Package; use org.allbinary.graphics.form.ItemPaintable_Package;
@@ -905,9 +907,9 @@ with org.allbinary.graphics.form.FormType_Package_References;
 with org.allbinary.graphics.form.FormType_Package;
 with org.allbinary.graphics.form.FormTypeFactory_Package;
 with org.allbinary.graphics.form.ItemIndexDx_Package;
-with org.allbinary.graphics.form.ItemIndexPaintable_Package;
 with org.allbinary.graphics.form.ItemPaintable_Package;
 with org.allbinary.graphics.form.ItemPaintableFactory_Package;
+with org.allbinary.graphics.form.PaintableForm_Package;
 with org.allbinary.graphics.form.ScrollSelectionForm_Package;
 
 package body org.allbinary.graphics.form.ScrollSelectionFormVerticalPaintable_Package is
@@ -1092,9 +1094,10 @@ with org.allbinary.math.RectangleCollisionUtil_Package_References;
 with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.graphics.form.PaintableForm_Package; use org.allbinary.graphics.form.PaintableForm_Package;
+with org.allbinary.graphics.form.PaintableForm_Package_References;
 with org.allbinary.graphics.form.ItemPaintableFactory_Package; use org.allbinary.graphics.form.ItemPaintableFactory_Package;
 with org.allbinary.graphics.form.ItemPaintableFactory_Package_References;
-with org.allbinary.graphics.form.ItemIndexPaintable_Package; use org.allbinary.graphics.form.ItemIndexPaintable_Package;
 with org.allbinary.graphics.form.ItemIndexDx_Package; use org.allbinary.graphics.form.ItemIndexDx_Package;
 with org.allbinary.graphics.form.ItemIndexDx_Package_References;
 with org.allbinary.graphics.form.ItemPaintable_Package; use org.allbinary.graphics.form.ItemPaintable_Package;
@@ -1110,9 +1113,9 @@ with org.allbinary.graphics.form.FormType_Package_References;
 with org.allbinary.graphics.form.FormType_Package;
 with org.allbinary.graphics.form.FormTypeFactory_Package;
 with org.allbinary.graphics.form.ItemIndexDx_Package;
-with org.allbinary.graphics.form.ItemIndexPaintable_Package;
 with org.allbinary.graphics.form.ItemPaintable_Package;
 with org.allbinary.graphics.form.ItemPaintableFactory_Package;
+with org.allbinary.graphics.form.PaintableForm_Package;
 with org.allbinary.graphics.form.ScrollSelectionForm_Package;
 
 package body org.allbinary.graphics.form.ScrollSelectionFormTempHorizontalPaintable_Package is
@@ -1297,11 +1300,12 @@ with org.allbinary.math.RectangleCollisionUtil_Package_References;
 with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.graphics.form.PaintableForm_Package; use org.allbinary.graphics.form.PaintableForm_Package;
+with org.allbinary.graphics.form.PaintableForm_Package_References;
 with org.allbinary.graphics.form.ItemPaintableFactory_Package; use org.allbinary.graphics.form.ItemPaintableFactory_Package;
 with org.allbinary.graphics.form.ItemPaintableFactory_Package_References;
 with org.allbinary.graphics.form.ItemIndexPaintable_Package; use org.allbinary.graphics.form.ItemIndexPaintable_Package;
 with org.allbinary.graphics.form.ItemIndexPaintable_Package_References;
-with org.allbinary.graphics.form.ItemIndexDx_Package; use org.allbinary.graphics.form.ItemIndexDx_Package;
 with org.allbinary.graphics.form.ItemPaintable_Package; use org.allbinary.graphics.form.ItemPaintable_Package;
 with org.allbinary.graphics.form.ItemPaintable_Package_References;
 with org.allbinary.graphics.form.FormTypeFactory_Package; use org.allbinary.graphics.form.FormTypeFactory_Package;
@@ -1314,10 +1318,10 @@ with org.allbinary.graphics.form.FormType_Package; use org.allbinary.graphics.fo
 with org.allbinary.graphics.form.FormType_Package_References;
 with org.allbinary.graphics.form.FormType_Package;
 with org.allbinary.graphics.form.FormTypeFactory_Package;
-with org.allbinary.graphics.form.ItemIndexDx_Package;
 with org.allbinary.graphics.form.ItemIndexPaintable_Package;
 with org.allbinary.graphics.form.ItemPaintable_Package;
 with org.allbinary.graphics.form.ItemPaintableFactory_Package;
+with org.allbinary.graphics.form.PaintableForm_Package;
 with org.allbinary.graphics.form.ScrollSelectionForm_Package;
 
 package body org.allbinary.graphics.form.ScrollSelectionFormHorizontalDx_Package is
@@ -1501,11 +1505,12 @@ with org.allbinary.math.RectangleCollisionUtil_Package_References;
 with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.graphics.form.PaintableForm_Package; use org.allbinary.graphics.form.PaintableForm_Package;
+with org.allbinary.graphics.form.PaintableForm_Package_References;
 with org.allbinary.graphics.form.ItemPaintableFactory_Package; use org.allbinary.graphics.form.ItemPaintableFactory_Package;
 with org.allbinary.graphics.form.ItemPaintableFactory_Package_References;
 with org.allbinary.graphics.form.ItemIndexPaintable_Package; use org.allbinary.graphics.form.ItemIndexPaintable_Package;
 with org.allbinary.graphics.form.ItemIndexPaintable_Package_References;
-with org.allbinary.graphics.form.ItemIndexDx_Package; use org.allbinary.graphics.form.ItemIndexDx_Package;
 with org.allbinary.graphics.form.ItemPaintable_Package; use org.allbinary.graphics.form.ItemPaintable_Package;
 with org.allbinary.graphics.form.ItemPaintable_Package_References;
 with org.allbinary.graphics.form.FormTypeFactory_Package; use org.allbinary.graphics.form.FormTypeFactory_Package;
@@ -1518,10 +1523,10 @@ with org.allbinary.graphics.form.FormType_Package; use org.allbinary.graphics.fo
 with org.allbinary.graphics.form.FormType_Package_References;
 with org.allbinary.graphics.form.FormType_Package;
 with org.allbinary.graphics.form.FormTypeFactory_Package;
-with org.allbinary.graphics.form.ItemIndexDx_Package;
 with org.allbinary.graphics.form.ItemIndexPaintable_Package;
 with org.allbinary.graphics.form.ItemPaintable_Package;
 with org.allbinary.graphics.form.ItemPaintableFactory_Package;
+with org.allbinary.graphics.form.PaintableForm_Package;
 with org.allbinary.graphics.form.ScrollSelectionForm_Package;
 
 package body org.allbinary.graphics.form.ScrollSelectionFormVericalDx_Package is
@@ -1705,11 +1710,12 @@ with org.allbinary.math.RectangleCollisionUtil_Package_References;
 with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.graphics.form.PaintableForm_Package; use org.allbinary.graphics.form.PaintableForm_Package;
+with org.allbinary.graphics.form.PaintableForm_Package_References;
 with org.allbinary.graphics.form.ItemPaintableFactory_Package; use org.allbinary.graphics.form.ItemPaintableFactory_Package;
 with org.allbinary.graphics.form.ItemPaintableFactory_Package_References;
 with org.allbinary.graphics.form.ItemIndexPaintable_Package; use org.allbinary.graphics.form.ItemIndexPaintable_Package;
 with org.allbinary.graphics.form.ItemIndexPaintable_Package_References;
-with org.allbinary.graphics.form.ItemIndexDx_Package; use org.allbinary.graphics.form.ItemIndexDx_Package;
 with org.allbinary.graphics.form.ItemPaintable_Package; use org.allbinary.graphics.form.ItemPaintable_Package;
 with org.allbinary.graphics.form.ItemPaintable_Package_References;
 with org.allbinary.graphics.form.FormTypeFactory_Package; use org.allbinary.graphics.form.FormTypeFactory_Package;
@@ -1722,10 +1728,10 @@ with org.allbinary.graphics.form.FormType_Package; use org.allbinary.graphics.fo
 with org.allbinary.graphics.form.FormType_Package_References;
 with org.allbinary.graphics.form.FormType_Package;
 with org.allbinary.graphics.form.FormTypeFactory_Package;
-with org.allbinary.graphics.form.ItemIndexDx_Package;
 with org.allbinary.graphics.form.ItemIndexPaintable_Package;
 with org.allbinary.graphics.form.ItemPaintable_Package;
 with org.allbinary.graphics.form.ItemPaintableFactory_Package;
+with org.allbinary.graphics.form.PaintableForm_Package;
 with org.allbinary.graphics.form.ScrollSelectionForm_Package;
 
 package body org.allbinary.graphics.form.ScrollSelectionFormTempHorizontalDx_Package is

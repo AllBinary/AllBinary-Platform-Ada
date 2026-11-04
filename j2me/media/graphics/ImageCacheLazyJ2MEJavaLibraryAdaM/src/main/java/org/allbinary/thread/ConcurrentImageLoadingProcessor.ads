@@ -121,8 +121,9 @@ limited with org.allbinary.image.ImageCache_Package;
 with org.allbinary.image.ImageCache_Package_References;
 limited with org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package_References;
-with org.allbinary.thread.BaseImageLoadingProcessor_Package; use org.allbinary.thread.BaseImageLoadingProcessor_Package;
 with org.allbinary.thread.ABRunnable_Package; use org.allbinary.thread.ABRunnable_Package;
+limited with org.allbinary.thread.BaseImageLoadingProcessor_Package;
+with org.allbinary.thread.BaseImageLoadingProcessor_Package_References;
 
 package org.allbinary.thread.ImageCacheRunnable_Package is
 

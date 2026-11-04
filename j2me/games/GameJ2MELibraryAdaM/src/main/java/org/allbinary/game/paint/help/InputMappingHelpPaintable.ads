@@ -274,7 +274,8 @@ limited with org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.string_Id.CommonStrings_Package_References;
 limited with org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayList_Package_References;
-with org.allbinary.game.paint.help.HelpPaintable_Package; use org.allbinary.game.paint.help.HelpPaintable_Package;
+limited with org.allbinary.game.paint.help.HelpPaintable_Package;
+with org.allbinary.game.paint.help.HelpPaintable_Package_References;
 
 package org.allbinary.game.paint.help.UpdateMyFontProperties_Package is
 

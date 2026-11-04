@@ -158,21 +158,25 @@ with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Gra
 with javax.microedition.lcdui.Graphics_Package_References;
 with org.allbinary.media.ScaleProperties_Package; use org.allbinary.media.ScaleProperties_Package;
 with org.allbinary.media.ScaleProperties_Package_References;
+with org.allbinary.animation.AnimationInterfaceFactoryInterface_Package; use org.allbinary.animation.AnimationInterfaceFactoryInterface_Package;
+with org.allbinary.animation.AnimationInterfaceFactoryInterface_Package_References;
+with org.allbinary.animation.ProceduralAnimationInterfaceFactoryInterface_Package; use org.allbinary.animation.ProceduralAnimationInterfaceFactoryInterface_Package;
+with org.allbinary.animation.ProceduralAnimationInterfaceFactoryInterface_Package_References;
 with org.allbinary.animation.IndexedAnimation_Package; use org.allbinary.animation.IndexedAnimation_Package;
 with org.allbinary.animation.IndexedAnimation_Package_References;
-with org.allbinary.animation.NullIndexedAnimation_Package; use org.allbinary.animation.NullIndexedAnimation_Package;
 with org.allbinary.animation.IndexedAnimationBehavior_Package; use org.allbinary.animation.IndexedAnimationBehavior_Package;
 with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Animation_Package;
 with org.allbinary.animation.Animation_Package_References;
 with org.allbinary.animation.Animation_Package;
 with org.allbinary.animation.AnimationBehavior_Package;
 with org.allbinary.animation.AnimationInterface_Package;
+with org.allbinary.animation.AnimationInterfaceFactoryInterface_Package;
 with org.allbinary.animation.BasicAnimationInterfaceFactoryInterface_Package;
 with org.allbinary.animation.IndexedAnimation_Package;
 with org.allbinary.animation.IndexedAnimationBehavior_Package;
 with org.allbinary.animation.IndexedAnimationInterface_Package;
-with org.allbinary.animation.NullIndexedAnimation_Package;
 with org.allbinary.animation.NullIndexedAnimationFactory_Package;
+with org.allbinary.animation.ProceduralAnimationInterfaceFactoryInterface_Package;
 with org.allbinary.animation.SequenceInterface_Package;
 with org.allbinary.animation.SequentialAnimationInterface_Package;
 

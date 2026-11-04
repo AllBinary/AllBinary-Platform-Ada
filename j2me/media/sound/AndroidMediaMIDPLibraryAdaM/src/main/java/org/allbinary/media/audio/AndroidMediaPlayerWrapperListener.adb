@@ -679,7 +679,6 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 with org.allbinary.string_Id.CommonStrings_Package_References;
 with org.allbinary.media.audio.AndroidMediaPlayerWrapper_Package; use org.allbinary.media.audio.AndroidMediaPlayerWrapper_Package;
 with org.allbinary.media.audio.AndroidMediaPlayerWrapper_Package_References;
-with org.allbinary.media.audio.MediaPlayerOnBufferingUpdateListener_Package; use org.allbinary.media.audio.MediaPlayerOnBufferingUpdateListener_Package;
 with org.allbinary.media.audio.MediaPlayerOnPreparedListener_Package; use org.allbinary.media.audio.MediaPlayerOnPreparedListener_Package;
 with org.allbinary.media.audio.MediaPlayerOnPreparedListener_Package_References;
 with org.allbinary.media.audio.AndroidMediaPlayerOnPreparedListener_Package; use org.allbinary.media.audio.AndroidMediaPlayerOnPreparedListener_Package;
@@ -816,7 +815,6 @@ with org.allbinary.media.audio.AndroidMediaPlayerWrapper_Package_References;
 with org.allbinary.media.audio.MediaPlayerOnBufferingUpdateListener_Package; use org.allbinary.media.audio.MediaPlayerOnBufferingUpdateListener_Package;
 with org.allbinary.media.audio.MediaPlayerOnBufferingUpdateListener_Package_References;
 with org.allbinary.media.audio.AndroidMediaPlayerOnBufferingUpdateListener_Package; use org.allbinary.media.audio.AndroidMediaPlayerOnBufferingUpdateListener_Package;
-with org.allbinary.media.audio.MediaPlayerOnPreparedListener_Package; use org.allbinary.media.audio.MediaPlayerOnPreparedListener_Package;
 with org.allbinary.media.audio.MediaPlayerOnErrorListener_Package; use org.allbinary.media.audio.MediaPlayerOnErrorListener_Package;
 with org.allbinary.media.audio.MediaPlayerOnErrorListener_Package_References;
 with org.allbinary.media.audio.AndroidMediaPlayerOnErrorListener_Package; use org.allbinary.media.audio.AndroidMediaPlayerOnErrorListener_Package;
@@ -955,7 +953,6 @@ with org.allbinary.media.audio.AndroidMediaPlayerOnBufferingUpdateListener_Packa
 with org.allbinary.media.audio.MediaPlayerOnPreparedListener_Package; use org.allbinary.media.audio.MediaPlayerOnPreparedListener_Package;
 with org.allbinary.media.audio.MediaPlayerOnPreparedListener_Package_References;
 with org.allbinary.media.audio.AndroidMediaPlayerOnPreparedListener_Package; use org.allbinary.media.audio.AndroidMediaPlayerOnPreparedListener_Package;
-with org.allbinary.media.audio.MediaPlayerOnErrorListener_Package; use org.allbinary.media.audio.MediaPlayerOnErrorListener_Package;
 with org.allbinary.media.audio.MediaPlayerOnCompletionListener_Package; use org.allbinary.media.audio.MediaPlayerOnCompletionListener_Package;
 with org.allbinary.media.audio.MediaPlayerOnCompletionListener_Package_References;
 with org.allbinary.media.audio.AndroidMediaPlayerOnCompletionListener_Package; use org.allbinary.media.audio.AndroidMediaPlayerOnCompletionListener_Package;
@@ -1100,7 +1097,6 @@ with org.allbinary.media.audio.AndroidMediaPlayerOnPreparedListener_Package; use
 with org.allbinary.media.audio.MediaPlayerOnErrorListener_Package; use org.allbinary.media.audio.MediaPlayerOnErrorListener_Package;
 with org.allbinary.media.audio.MediaPlayerOnErrorListener_Package_References;
 with org.allbinary.media.audio.AndroidMediaPlayerOnErrorListener_Package; use org.allbinary.media.audio.AndroidMediaPlayerOnErrorListener_Package;
-with org.allbinary.media.audio.MediaPlayerOnCompletionListener_Package; use org.allbinary.media.audio.MediaPlayerOnCompletionListener_Package;
 with org.allbinary.media.audio.AndroidMediaPlayerWrapper_Package;
 with org.allbinary.media.audio.AndroidMediaPlayerWrapperListener_Package;
 

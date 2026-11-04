@@ -286,6 +286,8 @@ with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArra
 with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.util.BasicArrayListUtil_Package; use org.allbinary.util.BasicArrayListUtil_Package;
 with org.allbinary.util.BasicArrayListUtil_Package_References;
+with org.allbinary.game.layer.WaypointPathRunnableBase_Package; use org.allbinary.game.layer.WaypointPathRunnableBase_Package;
+with org.allbinary.game.layer.WaypointPathRunnableBase_Package_References;
 with org.allbinary.game.layer.SecondRunnable_Package; use org.allbinary.game.layer.SecondRunnable_Package;
 with org.allbinary.game.layer.EndRunnable_Package; use org.allbinary.game.layer.EndRunnable_Package;
 with org.allbinary.game.layer.WaypointBehaviorBase_Package; use org.allbinary.game.layer.WaypointBehaviorBase_Package;
@@ -300,6 +302,7 @@ with org.allbinary.game.layer.waypoint.WaypointBase_Package;
 with org.allbinary.game.layer.WaypointBehaviorBase_Package;
 with org.allbinary.game.layer.waypoint.WaypointLayerInterface_Package;
 with org.allbinary.game.layer.waypoint.WaypointLogHelper_Package;
+with org.allbinary.game.layer.WaypointPathRunnableBase_Package;
 with org.allbinary.game.layer.waypoint.WaypointRunnableLogHelper_Package;
 
 package body org.allbinary.game.layer.FirstRunnable_Package is
@@ -401,6 +404,8 @@ with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArra
 with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.util.BasicArrayListUtil_Package; use org.allbinary.util.BasicArrayListUtil_Package;
 with org.allbinary.util.BasicArrayListUtil_Package_References;
+with org.allbinary.game.layer.WaypointPathRunnableBase_Package; use org.allbinary.game.layer.WaypointPathRunnableBase_Package;
+with org.allbinary.game.layer.WaypointPathRunnableBase_Package_References;
 with org.allbinary.game.layer.FirstRunnable_Package; use org.allbinary.game.layer.FirstRunnable_Package;
 with org.allbinary.game.layer.EndRunnable_Package; use org.allbinary.game.layer.EndRunnable_Package;
 with org.allbinary.game.layer.WaypointBehaviorBase_Package; use org.allbinary.game.layer.WaypointBehaviorBase_Package;
@@ -415,6 +420,7 @@ with org.allbinary.game.layer.waypoint.WaypointBase_Package;
 with org.allbinary.game.layer.WaypointBehaviorBase_Package;
 with org.allbinary.game.layer.waypoint.WaypointLayerInterface_Package;
 with org.allbinary.game.layer.waypoint.WaypointLogHelper_Package;
+with org.allbinary.game.layer.WaypointPathRunnableBase_Package;
 with org.allbinary.game.layer.waypoint.WaypointRunnableLogHelper_Package;
 
 package body org.allbinary.game.layer.SecondRunnable_Package is
@@ -516,6 +522,8 @@ with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArra
 with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.util.BasicArrayListUtil_Package; use org.allbinary.util.BasicArrayListUtil_Package;
 with org.allbinary.util.BasicArrayListUtil_Package_References;
+with org.allbinary.game.layer.WaypointPathRunnableBase_Package; use org.allbinary.game.layer.WaypointPathRunnableBase_Package;
+with org.allbinary.game.layer.WaypointPathRunnableBase_Package_References;
 with org.allbinary.game.layer.FirstRunnable_Package; use org.allbinary.game.layer.FirstRunnable_Package;
 with org.allbinary.game.layer.SecondRunnable_Package; use org.allbinary.game.layer.SecondRunnable_Package;
 with org.allbinary.game.layer.WaypointBehaviorBase_Package; use org.allbinary.game.layer.WaypointBehaviorBase_Package;
@@ -530,6 +538,7 @@ with org.allbinary.game.layer.waypoint.WaypointBase_Package;
 with org.allbinary.game.layer.WaypointBehaviorBase_Package;
 with org.allbinary.game.layer.waypoint.WaypointLayerInterface_Package;
 with org.allbinary.game.layer.waypoint.WaypointLogHelper_Package;
+with org.allbinary.game.layer.WaypointPathRunnableBase_Package;
 with org.allbinary.game.layer.waypoint.WaypointRunnableLogHelper_Package;
 
 package body org.allbinary.game.layer.EndRunnable_Package is

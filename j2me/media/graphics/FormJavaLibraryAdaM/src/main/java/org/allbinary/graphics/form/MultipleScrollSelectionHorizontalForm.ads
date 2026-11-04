@@ -211,12 +211,13 @@ limited with org.allbinary.graphics.form.item.ABCustomItem_Package;
 with org.allbinary.graphics.form.item.ABCustomItem_Package_References;
 limited with org.allbinary.graphics.paint.Paintable_Package;
 with org.allbinary.graphics.paint.Paintable_Package_References;
-with org.allbinary.graphics.form.ScrollSelectionForm_Package; use org.allbinary.graphics.form.ScrollSelectionForm_Package;
+with org.allbinary.graphics.form.ItemIndexPaintable_Package; use org.allbinary.graphics.form.ItemIndexPaintable_Package;
+limited with org.allbinary.graphics.form.ScrollSelectionForm_Package;
+with org.allbinary.graphics.form.ScrollSelectionForm_Package_References;
 limited with org.allbinary.graphics.form.ItemPaintableFactory_Package;
 with org.allbinary.graphics.form.ItemPaintableFactory_Package_References;
 limited with org.allbinary.graphics.form.FormType_Package;
 with org.allbinary.graphics.form.FormType_Package_References;
-with org.allbinary.graphics.form.ItemIndexPaintable_Package; use org.allbinary.graphics.form.ItemIndexPaintable_Package;
 
 package org.allbinary.graphics.form.MultipleScrollSelectionFormHorizontalPaintable_Package is
 
@@ -386,12 +387,13 @@ limited with org.allbinary.graphics.form.item.ABCustomItem_Package;
 with org.allbinary.graphics.form.item.ABCustomItem_Package_References;
 limited with org.allbinary.graphics.paint.Paintable_Package;
 with org.allbinary.graphics.paint.Paintable_Package_References;
-with org.allbinary.graphics.form.ScrollSelectionForm_Package; use org.allbinary.graphics.form.ScrollSelectionForm_Package;
+with org.allbinary.graphics.form.ItemIndexPaintable_Package; use org.allbinary.graphics.form.ItemIndexPaintable_Package;
+limited with org.allbinary.graphics.form.ScrollSelectionForm_Package;
+with org.allbinary.graphics.form.ScrollSelectionForm_Package_References;
 limited with org.allbinary.graphics.form.ItemPaintableFactory_Package;
 with org.allbinary.graphics.form.ItemPaintableFactory_Package_References;
 limited with org.allbinary.graphics.form.FormType_Package;
 with org.allbinary.graphics.form.FormType_Package_References;
-with org.allbinary.graphics.form.ItemIndexPaintable_Package; use org.allbinary.graphics.form.ItemIndexPaintable_Package;
 
 package org.allbinary.graphics.form.MultipleScrollSelectionFormVerticalPaintable_Package is
 

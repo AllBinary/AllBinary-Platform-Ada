@@ -316,7 +316,8 @@ limited with org.allbinary.thread.SynchObject_Package;
 with org.allbinary.thread.SynchObject_Package_References;
 limited with org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayList_Package_References;
-with org.allbinary.image.ImageCacheBase_Package; use org.allbinary.image.ImageCacheBase_Package;
+limited with org.allbinary.image.ImageCacheBase_Package;
+with org.allbinary.image.ImageCacheBase_Package_References;
 
 package org.allbinary.image.NotHTMLProcessor_Package is
 
@@ -519,7 +520,8 @@ limited with org.allbinary.thread.SynchObject_Package;
 with org.allbinary.thread.SynchObject_Package_References;
 limited with org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayList_Package_References;
-with org.allbinary.image.ImageCacheBase_Package; use org.allbinary.image.ImageCacheBase_Package;
+limited with org.allbinary.image.ImageCacheBase_Package;
+with org.allbinary.image.ImageCacheBase_Package_References;
 
 package org.allbinary.image.NotHTMLEndProcessor_Package is
 
@@ -722,7 +724,8 @@ limited with org.allbinary.thread.SynchObject_Package;
 with org.allbinary.thread.SynchObject_Package_References;
 limited with org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayList_Package_References;
-with org.allbinary.image.ImageCacheBase_Package; use org.allbinary.image.ImageCacheBase_Package;
+limited with org.allbinary.image.ImageCacheBase_Package;
+with org.allbinary.image.ImageCacheBase_Package_References;
 
 package org.allbinary.image.HTMLEndProcessor_Package is
 
@@ -925,7 +928,8 @@ limited with org.allbinary.thread.SynchObject_Package;
 with org.allbinary.thread.SynchObject_Package_References;
 limited with org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayList_Package_References;
-with org.allbinary.image.ImageCacheBase_Package; use org.allbinary.image.ImageCacheBase_Package;
+limited with org.allbinary.image.ImageCacheBase_Package;
+with org.allbinary.image.ImageCacheBase_Package_References;
 
 package org.allbinary.image.FirstProcessor_Package is
 

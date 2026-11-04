@@ -778,6 +778,8 @@ with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArra
 with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.logic.ABSystemWrapper_Package; use org.allbinary.logic.ABSystemWrapper_Package;
+with org.allbinary.image.ImageCacheBase_Package; use org.allbinary.image.ImageCacheBase_Package;
+with org.allbinary.image.ImageCacheBase_Package_References;
 with org.allbinary.image.NotHTMLEndProcessor_Package; use org.allbinary.image.NotHTMLEndProcessor_Package;
 with org.allbinary.image.FirstProcessor_Package; use org.allbinary.image.FirstProcessor_Package;
 with org.allbinary.image.HTMLEndProcessor_Package; use org.allbinary.image.HTMLEndProcessor_Package;
@@ -986,6 +988,8 @@ with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArra
 with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.logic.ABSystemWrapper_Package; use org.allbinary.logic.ABSystemWrapper_Package;
+with org.allbinary.image.ImageCacheBase_Package; use org.allbinary.image.ImageCacheBase_Package;
+with org.allbinary.image.ImageCacheBase_Package_References;
 with org.allbinary.image.FirstProcessor_Package; use org.allbinary.image.FirstProcessor_Package;
 with org.allbinary.image.NotHTMLProcessor_Package; use org.allbinary.image.NotHTMLProcessor_Package;
 with org.allbinary.image.HTMLEndProcessor_Package; use org.allbinary.image.HTMLEndProcessor_Package;
@@ -1196,6 +1200,8 @@ with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArra
 with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.logic.ABSystemWrapper_Package; use org.allbinary.logic.ABSystemWrapper_Package;
+with org.allbinary.image.ImageCacheBase_Package; use org.allbinary.image.ImageCacheBase_Package;
+with org.allbinary.image.ImageCacheBase_Package_References;
 with org.allbinary.image.NotHTMLEndProcessor_Package; use org.allbinary.image.NotHTMLEndProcessor_Package;
 with org.allbinary.image.FirstProcessor_Package; use org.allbinary.image.FirstProcessor_Package;
 with org.allbinary.image.NotHTMLProcessor_Package; use org.allbinary.image.NotHTMLProcessor_Package;
@@ -1414,6 +1420,8 @@ with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArra
 with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.logic.ABSystemWrapper_Package; use org.allbinary.logic.ABSystemWrapper_Package;
+with org.allbinary.image.ImageCacheBase_Package; use org.allbinary.image.ImageCacheBase_Package;
+with org.allbinary.image.ImageCacheBase_Package_References;
 with org.allbinary.image.NotHTMLEndProcessor_Package; use org.allbinary.image.NotHTMLEndProcessor_Package;
 with org.allbinary.image.NotHTMLProcessor_Package; use org.allbinary.image.NotHTMLProcessor_Package;
 with org.allbinary.image.HTMLEndProcessor_Package; use org.allbinary.image.HTMLEndProcessor_Package;

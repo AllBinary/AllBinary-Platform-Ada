@@ -848,6 +848,8 @@ with org.allbinary.thread.ThreadPool_Package; use org.allbinary.thread.ThreadPoo
 with org.allbinary.thread.ThreadPool_Package_References;
 with org.allbinary.time.TimeDelayHelper_Package; use org.allbinary.time.TimeDelayHelper_Package;
 with org.allbinary.time.TimeDelayHelper_Package_References;
+with org.allbinary.game.layer.unit.UnitWaypointBehavior_Package; use org.allbinary.game.layer.unit.UnitWaypointBehavior_Package;
+with org.allbinary.game.layer.unit.UnitWaypointBehavior_Package_References;
 with org.allbinary.game.layer.unit.UnitWaypointStrings_Package; use org.allbinary.game.layer.unit.UnitWaypointStrings_Package;
 with org.allbinary.game.layer.unit.UnitWaypointStrings_Package_References;
 with org.allbinary.game.layer.unit.UnitLayer_Package; use org.allbinary.game.layer.unit.UnitLayer_Package;
@@ -859,6 +861,7 @@ with org.allbinary.game.layer.building.BuildingPropertiesFactory_Package;
 with org.allbinary.game.layer.RTSLayerEvent_Package;
 with org.allbinary.game.layer.SensorAction_Package;
 with org.allbinary.game.layer.unit.UnitLayer_Package;
+with org.allbinary.game.layer.unit.UnitWaypointBehavior_Package;
 with org.allbinary.game.layer.unit.UnitWaypointBehavior2_Package;
 with org.allbinary.game.layer.unit.UnitWaypointStrings_Package;
 with org.allbinary.game.layer.waypoint.event.WaypointEventListenerInterface_Package;

@@ -226,8 +226,10 @@ with org.allbinary.media.graphics.geography.map.racetrack.MultiLevelRaceTrackGeo
 with org.allbinary.thread.ABRunnable_Package; use org.allbinary.thread.ABRunnable_Package;
 limited with org.allbinary.time.TimeDelayHelper_Package;
 with org.allbinary.time.TimeDelayHelper_Package_References;
-with org.allbinary.game.input.GameInputProcessorInterface_Package; use org.allbinary.game.input.GameInputProcessorInterface_Package;
-with org.allbinary.game.input.PlayerGameInputCompositeInterface_Package; use org.allbinary.game.input.PlayerGameInputCompositeInterface_Package;
+limited with org.allbinary.game.input.GameInputProcessorInterface_Package;
+with org.allbinary.game.input.GameInputProcessorInterface_Package_References;
+limited with org.allbinary.game.input.PlayerGameInputCompositeInterface_Package;
+with org.allbinary.game.input.PlayerGameInputCompositeInterface_Package_References;
 limited with org.allbinary.game.input.PlayerGameInput_Package;
 with org.allbinary.game.input.PlayerGameInput_Package_References;
 

@@ -172,7 +172,8 @@ limited with org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayList_Package_References;
 limited with org.allbinary.util.BasicArrayListUtil_Package;
 with org.allbinary.util.BasicArrayListUtil_Package_References;
-with org.allbinary.game.layer.WaypointPathRunnableBase_Package; use org.allbinary.game.layer.WaypointPathRunnableBase_Package;
+limited with org.allbinary.game.layer.WaypointPathRunnableBase_Package;
+with org.allbinary.game.layer.WaypointPathRunnableBase_Package_References;
 with java.lang.Runnable_Package; use java.lang.Runnable_Package;
 
 package org.allbinary.game.layer.FirstRunnable_Package is
@@ -286,7 +287,8 @@ limited with org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayList_Package_References;
 limited with org.allbinary.util.BasicArrayListUtil_Package;
 with org.allbinary.util.BasicArrayListUtil_Package_References;
-with org.allbinary.game.layer.WaypointPathRunnableBase_Package; use org.allbinary.game.layer.WaypointPathRunnableBase_Package;
+limited with org.allbinary.game.layer.WaypointPathRunnableBase_Package;
+with org.allbinary.game.layer.WaypointPathRunnableBase_Package_References;
 with java.lang.Runnable_Package; use java.lang.Runnable_Package;
 
 package org.allbinary.game.layer.SecondRunnable_Package is
@@ -400,7 +402,8 @@ limited with org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayList_Package_References;
 limited with org.allbinary.util.BasicArrayListUtil_Package;
 with org.allbinary.util.BasicArrayListUtil_Package_References;
-with org.allbinary.game.layer.WaypointPathRunnableBase_Package; use org.allbinary.game.layer.WaypointPathRunnableBase_Package;
+limited with org.allbinary.game.layer.WaypointPathRunnableBase_Package;
+with org.allbinary.game.layer.WaypointPathRunnableBase_Package_References;
 with java.lang.Runnable_Package; use java.lang.Runnable_Package;
 
 package org.allbinary.game.layer.EndRunnable_Package is

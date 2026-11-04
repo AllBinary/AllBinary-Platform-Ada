@@ -474,6 +474,9 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 with org.allbinary.string_Id.CommonStrings_Package_References;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayList_Package_References;
+with org.allbinary.game.paint.help.HelpPaintable_Package; use org.allbinary.game.paint.help.HelpPaintable_Package;
+with org.allbinary.game.paint.help.HelpPaintable_Package_References;
+with org.allbinary.game.paint.help.HelpPaintable_Package;
 with org.allbinary.game.paint.help.InputMappingHelpPaintable_Package;
 
 package body org.allbinary.game.paint.help.UpdateMyFontProperties_Package is
