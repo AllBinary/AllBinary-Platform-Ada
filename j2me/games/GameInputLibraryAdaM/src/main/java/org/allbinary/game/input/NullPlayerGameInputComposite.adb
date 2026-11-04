@@ -14,9 +14,11 @@
 
 
 with org.allbinary.layer.AllBinaryLayerManager_Package; use org.allbinary.layer.AllBinaryLayerManager_Package;
+with org.allbinary.layer.AllBinaryLayerManager_Package_References;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.game.input.NoPlayerGameInput_Package; use org.allbinary.game.input.NoPlayerGameInput_Package;
 with org.allbinary.game.input.PlayerGameInput_Package; use org.allbinary.game.input.PlayerGameInput_Package;
+with org.allbinary.game.input.PlayerGameInput_Package_References;
 with org.allbinary.game.input.event.DownGameKeyEventListenerInterface_Package;
 with org.allbinary.game.input.GameInput_Package;
 with org.allbinary.game.input.GameInputInterface_Package;
@@ -25,7 +27,6 @@ with org.allbinary.game.input.event.GameKeyEvent_Package;
 with org.allbinary.game.input.event.GameKeyEventListenerInterface_Package;
 with org.allbinary.game.input.NoPlayerGameInput_Package;
 with org.allbinary.game.input.PlayerGameInput_Package;
-with org.allbinary.game.input.PlayerGameInputCompositeInterface_Package;
 with org.allbinary.game.input.event.PressGameKeyEventListenerInterface_Package;
 with org.allbinary.game.input.event.UpGameKeyEventListenerInterface_Package;
 

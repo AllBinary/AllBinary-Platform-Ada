@@ -14,13 +14,17 @@
 
 
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
 with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
+with javax.microedition.lcdui.Image_Package_References;
 with org.allbinary.DisposalUtil_Package; use org.allbinary.DisposalUtil_Package;
 with org.allbinary.animation.AnimationBehavior_Package; use org.allbinary.animation.AnimationBehavior_Package;
+with org.allbinary.animation.AnimationBehavior_Package_References;
 with org.allbinary.animation.RotationAnimation_Package; use org.allbinary.animation.RotationAnimation_Package;
 with org.allbinary.graphics.Anchor_Package; use org.allbinary.graphics.Anchor_Package;
 with org.allbinary.logic.math.PrimitiveIntUtil_Package; use org.allbinary.logic.math.PrimitiveIntUtil_Package;
 with org.allbinary.math.AngleInfo_Package; use org.allbinary.math.AngleInfo_Package;
+with org.allbinary.math.AngleInfo_Package_References;
 with org.allbinary.util.CircularIndexUtil_Package; use org.allbinary.util.CircularIndexUtil_Package;
 
 package body org.allbinary.animation.image.ImageBaseRotationAnimation_Package is

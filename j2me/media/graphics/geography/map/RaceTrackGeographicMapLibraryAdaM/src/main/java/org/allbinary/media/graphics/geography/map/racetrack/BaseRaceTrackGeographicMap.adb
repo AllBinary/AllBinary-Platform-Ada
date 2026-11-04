@@ -15,17 +15,23 @@
 
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.game.layer.AllBinaryTiledLayer_Package; use org.allbinary.game.layer.AllBinaryTiledLayer_Package;
+with org.allbinary.game.layer.AllBinaryTiledLayer_Package_References;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package; use org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellPositionBaseFactory_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellPositionBaseFactory_Package;
+with org.allbinary.media.graphics.geography.map.GeographicMapCellPositionBaseFactory_Package_References;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellPositionFactoryInterface_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellPositionFactoryInterface_Package;
+with org.allbinary.media.graphics.geography.map.GeographicMapCellPositionFactoryInterface_Package_References;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellTypeFactory_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellTypeFactory_Package;
+with org.allbinary.media.graphics.geography.map.GeographicMapCellTypeFactory_Package_References;
 with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackInfo_Package; use org.allbinary.media.graphics.geography.map.racetrack.RaceTrackInfo_Package;
+with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackInfo_Package_References;
 with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackData_Package; use org.allbinary.media.graphics.geography.map.racetrack.RaceTrackData_Package;
+with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackData_Package_References;
 with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackData_Package;
 with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackFrictionProperties_Package;
-with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapInterface_Package;
 with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackInfo_Package;
 
 package body org.allbinary.media.graphics.geography.map.racetrack.BaseRaceTrackGeographicMap_Package is

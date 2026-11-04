@@ -14,13 +14,18 @@
 
 
 with org.allbinary.game.input.GameInput_Package; use org.allbinary.game.input.GameInput_Package;
+with org.allbinary.game.input.GameInput_Package_References;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
+with org.allbinary.layer.AllBinaryLayer_Package_References;
 with org.allbinary.layer.AllBinaryLayerManager_Package; use org.allbinary.layer.AllBinaryLayerManager_Package;
+with org.allbinary.layer.AllBinaryLayerManager_Package_References;
 with org.allbinary.time.GameTickTimeDelayHelper_Package; use org.allbinary.time.GameTickTimeDelayHelper_Package;
+with org.allbinary.time.GameTickTimeDelayHelper_Package_References;
 with org.allbinary.time.GameTickTimeDelayHelperFactory_Package; use org.allbinary.time.GameTickTimeDelayHelperFactory_Package;
 with org.allbinary.time.TimeDelayHelper_Package; use org.allbinary.time.TimeDelayHelper_Package;
+with org.allbinary.time.TimeDelayHelper_Package_References;
 with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
-with org.allbinary.game.ag.ai.KeyPressesAI_Package;
+with org.allbinary.util.ABHashtable_Package_References;
 
 package body org.allbinary.game.ag.ai.MultiKeyPressesAI_Package is
 
@@ -149,7 +154,7 @@ package body org.allbinary.game.ag.ai.MultiKeyPressesAI_Package is
    procedure toggle (This : in out MultiKeyPressesAI) is
    begin
         if This.toggleTimeHelper.isTime (This.gameTickTimeDelayHelper.startTime) then
-            KeyPressesAI (This).toggle;
+            KeyPressesAI_Package.KeyPressesAI (This).toggle;
             MultiKeyPressesAI'Class (This).update;
         end if;
    end toggle;
@@ -158,7 +163,7 @@ package body org.allbinary.game.ag.ai.MultiKeyPressesAI_Package is
    procedure disable (This : in out MultiKeyPressesAI) is
    begin
         if This.toggleTimeHelper.isTime (This.gameTickTimeDelayHelper.startTime) then
-            KeyPressesAI (This).disable;
+            KeyPressesAI_Package.KeyPressesAI (This).disable;
             MultiKeyPressesAI'Class (This).update;
         end if;
    end disable;
@@ -167,7 +172,7 @@ package body org.allbinary.game.ag.ai.MultiKeyPressesAI_Package is
    procedure enable (This : in out MultiKeyPressesAI) is
    begin
         if This.toggleTimeHelper.isTime (This.gameTickTimeDelayHelper.startTime) then
-            KeyPressesAI (This).enable;
+            KeyPressesAI_Package.KeyPressesAI (This).enable;
             MultiKeyPressesAI'Class (This).update;
         end if;
    end enable;

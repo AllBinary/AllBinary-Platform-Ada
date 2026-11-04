@@ -15,15 +15,20 @@
 
 with javax.microedition.khronos.opengles.GL10_Package; use javax.microedition.khronos.opengles.GL10_Package;
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
 with min3d.core.ColorBufferList_Package; use min3d.core.ColorBufferList_Package;
 with min3d.core.Number3dBufferList_Package; use min3d.core.Number3dBufferList_Package;
 with min3d.objectPrimitives.Rectangle_Package; use min3d.objectPrimitives.Rectangle_Package;
+with min3d.objectPrimitives.Rectangle_Package_References;
 with min3d.vos.Number3d_Package; use min3d.vos.Number3d_Package;
 with org.allbinary.device.OpenGLESGraphics_Package; use org.allbinary.device.OpenGLESGraphics_Package;
 with org.allbinary.graphics.threed.min3d.renderer.Object3dProcessor_Package; use org.allbinary.graphics.threed.min3d.renderer.Object3dProcessor_Package;
+with org.allbinary.graphics.threed.min3d.renderer.Object3dProcessor_Package_References;
 with org.allbinary.graphics.threed.min3d.renderer.Object3dProcessorUtil_Package; use org.allbinary.graphics.threed.min3d.renderer.Object3dProcessorUtil_Package;
 with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
+with org.allbinary.graphics.color.BasicColorFactory_Package_References;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
+with org.allbinary.layer.AllBinaryLayer_Package_References;
 with org.allbinary.view.ViewPositionBase_Package; use org.allbinary.view.ViewPositionBase_Package;
 
 package body org.allbinary.game.health.HealthBarThreedAnimation_Package is
@@ -162,7 +167,7 @@ package body org.allbinary.game.health.HealthBarThreedAnimation_Package is
 
    procedure onHealthChange (This : in out HealthBarThreedAnimation; newX2 : Integer) is
    begin
-        HealthBarAnimation (This).onHealthChange (newX2);
+        HealthBarAnimation_Package.HealthBarAnimation (This).onHealthChange (newX2);
         HealthBarThreedAnimation'Class (This).updateColor;
         HealthBarThreedAnimation'Class (This).updateSize;
    end onHealthChange;

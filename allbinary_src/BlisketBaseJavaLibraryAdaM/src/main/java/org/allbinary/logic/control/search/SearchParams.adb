@@ -18,7 +18,9 @@ with org.allbinary.data.tree.dom.ModDomHelper_Package; use org.allbinary.data.tr
 with org.allbinary.data.tree.dom.ToDomHelper_Package; use org.allbinary.data.tree.dom.ToDomHelper_Package;
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
+with org.w3c.dom.Document_Package_References;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
+with org.w3c.dom.Node_Package_References;
 with org.allbinary.logic.control.search.SearchData_Package; use org.allbinary.logic.control.search.SearchData_Package;
 
 package body org.allbinary.logic.control.search.SearchParams_Package is

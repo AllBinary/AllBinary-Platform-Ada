@@ -15,11 +15,14 @@
 
 with javax.microedition.lcdui.NullCanvas_Package; use javax.microedition.lcdui.NullCanvas_Package;
 with org.allbinary.canvas.Processor_Package; use org.allbinary.canvas.Processor_Package;
+with org.allbinary.canvas.Processor_Package_References;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.string_Id.CommonStrings_Package_References;
 with org.allbinary.midlet.AllBinaryMidlet_Package; use org.allbinary.midlet.AllBinaryMidlet_Package;
+with org.allbinary.midlet.AllBinaryMidlet_Package_References;
 with org.allbinary.midlet.AllBinaryMidlet_Package;
-with org.allbinary.canvas.Processor_Package;
 
 package body org.allbinary.midlet.ExitRunnable_Package is
 

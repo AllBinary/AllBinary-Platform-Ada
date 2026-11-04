@@ -17,6 +17,7 @@ with org.allbinary.android.AndroidInfoFactory_Package; use org.allbinary.android
 with org.allbinary.android.input.motion.api1.GameInputMotionEventProcessorAPI1_Package; use org.allbinary.android.input.motion.api1.GameInputMotionEventProcessorAPI1_Package;
 with org.allbinary.android.input.motion.api5.GameInputMotionEventProcessorAPI5_Package; use org.allbinary.android.input.motion.api5.GameInputMotionEventProcessorAPI5_Package;
 with org.allbinary.android.input.motion.BaseGameInputMotionEventProcessor_Package; use org.allbinary.android.input.motion.BaseGameInputMotionEventProcessor_Package;
+with org.allbinary.android.input.motion.BaseGameInputMotionEventProcessor_Package_References;
 
 package body org.allbinary.android.input.motion.GameInputMotionEventProcessorFactory_Package is
 

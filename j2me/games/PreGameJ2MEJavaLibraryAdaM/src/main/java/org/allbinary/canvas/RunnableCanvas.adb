@@ -14,24 +14,32 @@
 
 
 with javax.microedition.lcdui.CommandListener_Package; use javax.microedition.lcdui.CommandListener_Package;
+with javax.microedition.lcdui.CommandListener_Package_References;
 with org.allbinary.game.displayable.canvas.NullWaitGameRunnable_Package; use org.allbinary.game.displayable.canvas.NullWaitGameRunnable_Package;
 with org.allbinary.graphics.displayable.MyCanvas_Package; use org.allbinary.graphics.displayable.MyCanvas_Package;
 with org.allbinary.logic.ABSystemWrapper_Package; use org.allbinary.logic.ABSystemWrapper_Package;
+with org.allbinary.logic.ABSystemWrapper_Package_References;
 with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.NullUtil_Package_References;
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.logic.StdUtil_Package_References;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
+with org.allbinary.string_Id.CommonLabels_Package_References;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.thread.NullThread_Package; use org.allbinary.thread.NullThread_Package;
 with org.allbinary.thread.RunnableInterface_Package; use org.allbinary.thread.RunnableInterface_Package;
 with org.allbinary.thread.ThreadObjectUtil_Package; use org.allbinary.thread.ThreadObjectUtil_Package;
+with org.allbinary.thread.ThreadObjectUtil_Package_References;
 with org.allbinary.time.TimeDelayHelper_Package; use org.allbinary.time.TimeDelayHelper_Package;
+with org.allbinary.time.TimeDelayHelper_Package_References;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.canvas.Processor_Package; use org.allbinary.canvas.Processor_Package;
+with org.allbinary.canvas.Processor_Package_References;
 with org.allbinary.canvas.RunnableCanvasRefreshHelper_Package; use org.allbinary.canvas.RunnableCanvasRefreshHelper_Package;
 with org.allbinary.game.displayable.canvas.GameRunnable_Package;
-with org.allbinary.game.displayable.canvas.NullWaitGameRunnable_Package;
 with org.allbinary.canvas.RunnableCanvasRefreshHelper_Package;
 
 package body org.allbinary.canvas.RunnableCanvas_Package is

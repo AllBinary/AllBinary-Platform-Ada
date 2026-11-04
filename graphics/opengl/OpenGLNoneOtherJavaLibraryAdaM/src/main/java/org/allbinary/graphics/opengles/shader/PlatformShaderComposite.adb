@@ -15,18 +15,20 @@
 
 with org.allbinary.graphics.opengles.NullOpenGLProcessorFactory_Package; use org.allbinary.graphics.opengles.NullOpenGLProcessorFactory_Package;
 with org.allbinary.graphics.opengles.OpenGLProcessor_Package; use org.allbinary.graphics.opengles.OpenGLProcessor_Package;
+with org.allbinary.graphics.opengles.OpenGLProcessor_Package_References;
 with org.allbinary.graphics.opengles.shader.Shader_Package; use org.allbinary.graphics.opengles.shader.Shader_Package;
+with org.allbinary.graphics.opengles.shader.Shader_Package_References;
 with org.allbinary.graphics.opengles.shader.CompositeShaderUpdater_Package; use org.allbinary.graphics.opengles.shader.CompositeShaderUpdater_Package;
+with org.allbinary.graphics.opengles.shader.CompositeShaderUpdater_Package_References;
 with org.allbinary.graphics.opengles.shader.ShaderInitializer_Package; use org.allbinary.graphics.opengles.shader.ShaderInitializer_Package;
+with org.allbinary.graphics.opengles.shader.ShaderInitializer_Package_References;
 with org.allbinary.graphics.opengles.shader.ModelViewProjection_Package; use org.allbinary.graphics.opengles.shader.ModelViewProjection_Package;
+with org.allbinary.graphics.opengles.shader.ModelViewProjection_Package_References;
 with org.allbinary.graphics.opengles.shader.CompositeShaderUpdater_Package;
 with org.allbinary.graphics.opengles.shader.ModelViewProjection_Package;
-with org.allbinary.graphics.opengles.NullOpenGLProcessorFactory_Package;
 with org.allbinary.graphics.opengles.shader.OpenGLObject3dProcessor_Package;
-with org.allbinary.graphics.opengles.OpenGLProcessor_Package;
 with org.allbinary.graphics.opengles.renderer.RendererStrings_Package;
 with org.allbinary.graphics.opengles.shader.Shader_Package;
-with org.allbinary.graphics.opengles.shader.ShaderComposite_Package;
 with org.allbinary.graphics.opengles.shader.ShaderInitializer_Package;
 with org.allbinary.graphics.opengles.shader.ShaderUpdater_Package;
 

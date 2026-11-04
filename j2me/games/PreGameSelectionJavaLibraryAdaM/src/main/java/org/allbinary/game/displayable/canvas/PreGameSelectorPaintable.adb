@@ -14,11 +14,14 @@
 
 
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
 with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
 with org.allbinary.graphics.displayable.DisplayInfoSingleton_Package; use org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
 with org.allbinary.graphics.draw.CanvasDrawLineString_Package; use org.allbinary.graphics.draw.CanvasDrawLineString_Package;
+with org.allbinary.graphics.draw.CanvasDrawLineString_Package_References;
 with org.allbinary.graphics.paint.InitUpdatePaintable_Package; use org.allbinary.graphics.paint.InitUpdatePaintable_Package;
 with org.allbinary.game.displayable.canvas.PreGameScrollSelectionForm_Package; use org.allbinary.game.displayable.canvas.PreGameScrollSelectionForm_Package;
+with org.allbinary.game.displayable.canvas.PreGameScrollSelectionForm_Package_References;
 with org.allbinary.game.displayable.canvas.PreGameScrollSelectionForm_Package;
 
 package body org.allbinary.game.displayable.canvas.PreGameSelectorPaintable_Package is

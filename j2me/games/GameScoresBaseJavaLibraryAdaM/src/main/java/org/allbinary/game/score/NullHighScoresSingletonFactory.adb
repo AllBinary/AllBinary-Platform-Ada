@@ -15,6 +15,7 @@
 
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.game.score.HighScores_Package; use org.allbinary.game.score.HighScores_Package;
+with org.allbinary.game.score.HighScores_Package_References;
 
 package body org.allbinary.game.score.NullHighScoresSingletonFactory_Package is
 

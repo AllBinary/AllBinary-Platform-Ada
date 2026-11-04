@@ -15,9 +15,13 @@
 
 with java.io.File_Package; use java.io.File_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.string_Id.CommonStrings_Package_References;
 with org.allbinary.logic.java.help.Point_Package; use org.allbinary.logic.java.help.Point_Package;
+with org.allbinary.logic.java.help.Point_Package_References;
 with org.allbinary.logic.java.help.Dimension_Package; use org.allbinary.logic.java.help.Dimension_Package;
+with org.allbinary.logic.java.help.Dimension_Package_References;
 with org.allbinary.logic.java.help.JLabel_Package; use org.allbinary.logic.java.help.JLabel_Package;
 
 package body org.allbinary.logic.java.help.JavaHelpUtil_Package is

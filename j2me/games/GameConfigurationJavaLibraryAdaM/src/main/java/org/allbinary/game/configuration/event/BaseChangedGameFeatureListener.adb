@@ -14,22 +14,24 @@
 
 
 with org.allbinary.game.configuration.feature.Feature_Package; use org.allbinary.game.configuration.feature.Feature_Package;
+with org.allbinary.game.configuration.feature.Feature_Package_References;
 with org.allbinary.game.configuration.feature.Features_Package; use org.allbinary.game.configuration.feature.Features_Package;
 with org.allbinary.game.configuration.feature.GameFeatureUtil_Package; use org.allbinary.game.configuration.feature.GameFeatureUtil_Package;
+with org.allbinary.game.configuration.feature.GameFeatureUtil_Package_References;
 with org.allbinary.logic.communication.log.ForcedLogUtil_Package; use org.allbinary.logic.communication.log.ForcedLogUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+with org.allbinary.logic.util.event.AllBinaryEventObject_Package_References;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.game.configuration.event.GameFeatureEvent_Package; use org.allbinary.game.configuration.event.GameFeatureEvent_Package;
-with org.allbinary.game.configuration.feature.Feature_Package;
-with org.allbinary.game.configuration.feature.Features_Package;
+with org.allbinary.game.configuration.event.GameFeatureEvent_Package_References;
 with org.allbinary.game.configuration.event.GameFeatureEvent_Package;
-with org.allbinary.game.configuration.event.GameFeatureListenerInterface_Package;
-with org.allbinary.game.configuration.feature.GameFeatureUtil_Package;
 
 package body org.allbinary.game.configuration.event.BaseChangedGameFeatureListener_Package is
 

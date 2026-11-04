@@ -15,6 +15,7 @@
 
 with javax.microedition.lcdui.Font_Package; use javax.microedition.lcdui.Font_Package;
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
 with org.allbinary.AndroidUtil_Package; use org.allbinary.AndroidUtil_Package;
 with org.allbinary.J2MEUtil_Package; use org.allbinary.J2MEUtil_Package;
 with org.allbinary.graphics.Anchor_Package; use org.allbinary.graphics.Anchor_Package;

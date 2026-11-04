@@ -15,17 +15,26 @@
 
 with javax.microedition.lcdui.Font_Package; use javax.microedition.lcdui.Font_Package;
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
 with org.allbinary.game.ag.layer.hud.basic.NumberStringHud_Package; use org.allbinary.game.ag.layer.hud.basic.NumberStringHud_Package;
+with org.allbinary.game.ag.layer.hud.basic.NumberStringHud_Package_References;
 with org.allbinary.game.ag.layer.hud.basic.NumberStringHudFactory_Package; use org.allbinary.game.ag.layer.hud.basic.NumberStringHudFactory_Package;
 with org.allbinary.game.layer.SelectionHudPaintable_Package; use org.allbinary.game.layer.SelectionHudPaintable_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.game.graphics.hud.BasicHudFactory_Package; use org.allbinary.game.graphics.hud.BasicHudFactory_Package;
 with org.allbinary.game.layer.NullPathFindingLayer_Package; use org.allbinary.game.layer.NullPathFindingLayer_Package;
 with org.allbinary.game.layer.PathFindingLayerInterface_Package; use org.allbinary.game.layer.PathFindingLayerInterface_Package;
+with org.allbinary.game.layer.PathFindingLayerInterface_Package_References;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.graphics.color.BasicColor_Package_References;
 with org.allbinary.graphics.font.MyFontProcessor_Package; use org.allbinary.graphics.font.MyFontProcessor_Package;
 with org.allbinary.logic.math.MathUtil_Package; use org.allbinary.logic.math.MathUtil_Package;
+with org.allbinary.game.layer.building.ProductivityNumberStringHud_Package; use org.allbinary.game.layer.building.ProductivityNumberStringHud_Package;
+with org.allbinary.game.layer.building.EfficiencyNumberStringHud_Package; use org.allbinary.game.layer.building.EfficiencyNumberStringHud_Package;
+with org.allbinary.game.layer.building.HealthNumberStringHud_Package; use org.allbinary.game.layer.building.HealthNumberStringHud_Package;
+with org.allbinary.game.layer.building.MaxHealthNumberStringHud_Package; use org.allbinary.game.layer.building.MaxHealthNumberStringHud_Package;
 with org.allbinary.game.layer.building.BuildingLayer_Package; use org.allbinary.game.layer.building.BuildingLayer_Package;
 with org.allbinary.game.layer.AdvancedRTSGameLayer_Package;
 with org.allbinary.game.layer.AdvancedRTSProperties_Package;
@@ -194,7 +203,7 @@ package body org.allbinary.game.layer.building.BuildingInfoHudPaintable_Package 
    procedure setBasicColorP (This : in out BuildingInfoHudPaintable; basicColor_Param : access BasicColor_Package.BasicColor'Class) is
       basicColor : constant BasicColor_Access := BasicColor_Access (basicColor_Param);
    begin
-        SelectionHudPaintable (This).setBasicColorP (basicColor);
+        SelectionHudPaintable_Package.SelectionHudPaintable (This).setBasicColorP (basicColor);
         This.productivityHud.setBasicColorP (basicColor);
         This.efficiencyHud.setBasicColorP (basicColor);
         This.healthHud.setBasicColorP (basicColor);
@@ -204,7 +213,7 @@ package body org.allbinary.game.layer.building.BuildingInfoHudPaintable_Package 
    procedure paint (This : in out BuildingInfoHudPaintable; graphics_Param : access Graphics_Package.Graphics'Class) is
       graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
-        SelectionHudPaintable (This).paint (graphics);
+        SelectionHudPaintable_Package.SelectionHudPaintable (This).paint (graphics);
         This.myFontProcessor.process (graphics);
         This.productivityHud.paint (graphics);
         This.efficiencyHud.paint (graphics);

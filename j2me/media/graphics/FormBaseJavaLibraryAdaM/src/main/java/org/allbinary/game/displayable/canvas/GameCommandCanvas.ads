@@ -323,7 +323,7 @@ package org.allbinary.game.displayable.canvas.GameCommandCanvas_Package is
       isSingleKeyRepeatableProcessing : Boolean;
       fontHeight : Integer;
    end record;
-   id : Integer;
+   id : constant Integer := 0;
 
    procedure Initialize (This : in out GameCommandCanvas'Class; cmdListener_Param : access CommandListener_Package.CommandListener'Class; name : Unbounded_String; backgroundBasicColor_Param : access BasicColor_Package.BasicColor'Class; foregroundBasicColor_Param : access BasicColor_Package.BasicColor'Class);
    function Create (cmdListener_Param : access CommandListener_Package.CommandListener'Class; name : Unbounded_String; backgroundBasicColor_Param : access BasicColor_Package.BasicColor'Class; foregroundBasicColor_Param : access BasicColor_Package.BasicColor'Class) return GameCommandCanvas_Access;

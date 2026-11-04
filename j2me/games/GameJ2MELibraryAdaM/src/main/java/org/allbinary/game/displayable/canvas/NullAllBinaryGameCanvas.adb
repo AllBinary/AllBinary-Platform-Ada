@@ -14,10 +14,11 @@
 
 
 with javax.microedition.lcdui.Command_Package; use javax.microedition.lcdui.Command_Package;
+with javax.microedition.lcdui.Command_Package_References;
 with javax.microedition.lcdui.CommandListener_Package; use javax.microedition.lcdui.CommandListener_Package;
+with javax.microedition.lcdui.CommandListener_Package_References;
 with org.allbinary.game.layer.AllBinaryGameLayerManager_Package; use org.allbinary.game.layer.AllBinaryGameLayerManager_Package;
-with org.allbinary.game.displayable.canvas.AllBinaryGameCanvasInterface_Package;
-with org.allbinary.game.layer.AllBinaryGameLayerManager_Package;
+with org.allbinary.game.layer.AllBinaryGameLayerManager_Package_References;
 
 package body org.allbinary.game.displayable.canvas.NullAllBinaryGameCanvas_Package is
 

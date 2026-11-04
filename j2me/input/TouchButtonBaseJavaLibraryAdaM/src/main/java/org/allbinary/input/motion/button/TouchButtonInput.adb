@@ -18,9 +18,13 @@ with org.allbinary.game.input.GameKeyEventSourceInterface_Package; use org.allbi
 with org.allbinary.game.input.Input_Package; use org.allbinary.game.input.Input_Package;
 with org.allbinary.game.input.InputFactory_Package; use org.allbinary.game.input.InputFactory_Package;
 with org.allbinary.game.input.event.GameKeyEvent_Package; use org.allbinary.game.input.event.GameKeyEvent_Package;
+with org.allbinary.game.input.event.GameKeyEvent_Package_References;
 with org.allbinary.game.input.event.GameKeyEventFactory_Package; use org.allbinary.game.input.event.GameKeyEventFactory_Package;
+with org.allbinary.game.input.event.GameKeyEventFactory_Package_References;
 with org.allbinary.game.input.mapping.InputToGameKeyMapping_Package; use org.allbinary.game.input.mapping.InputToGameKeyMapping_Package;
+with org.allbinary.game.input.mapping.InputToGameKeyMapping_Package_References;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 
 package body org.allbinary.input.motion.button.TouchButtonInput_Package is

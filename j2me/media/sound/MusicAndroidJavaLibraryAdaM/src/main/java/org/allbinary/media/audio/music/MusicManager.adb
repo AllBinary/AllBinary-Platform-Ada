@@ -2,23 +2,35 @@
 
 
 with android.app.Activity_Package; use android.app.Activity_Package;
+with android.app.Activity_Package_References;
 with android.content.Context_Package; use android.content.Context_Package;
 with android.content.Intent_Package; use android.content.Intent_Package;
+with android.content.Intent_Package_References;
 with org.allbinary.android.AndroidServicesUtil_Package; use org.allbinary.android.AndroidServicesUtil_Package;
+with org.allbinary.android.AndroidServicesUtil_Package_References;
 with org.allbinary.data.resource.ResourceUtil_Package; use org.allbinary.data.resource.ResourceUtil_Package;
+with org.allbinary.data.resource.ResourceUtil_Package_References;
 with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.media.audio.NoSound_Package; use org.allbinary.media.audio.NoSound_Package;
 with org.allbinary.media.audio.Sound_Package; use org.allbinary.media.audio.Sound_Package;
+with org.allbinary.media.audio.Sound_Package_References;
 with org.allbinary.string_Id.CommonStateStrings_Package; use org.allbinary.string_Id.CommonStateStrings_Package;
+with org.allbinary.string_Id.CommonStateStrings_Package_References;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.string_Id.CommonStrings_Package_References;
 with org.allbinary.time.GameTickTimeDelayHelper_Package; use org.allbinary.time.GameTickTimeDelayHelper_Package;
+with org.allbinary.time.GameTickTimeDelayHelper_Package_References;
 with org.allbinary.time.GameTickTimeDelayHelperFactory_Package; use org.allbinary.time.GameTickTimeDelayHelperFactory_Package;
 with org.allbinary.time.TimeDelayHelper_Package; use org.allbinary.time.TimeDelayHelper_Package;
+with org.allbinary.time.TimeDelayHelper_Package_References;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.util.BasicArrayListUtil_Package; use org.allbinary.util.BasicArrayListUtil_Package;
+with org.allbinary.util.BasicArrayListUtil_Package_References;
 with org.allbinary.media.audio.music.MusicStrings_Package; use org.allbinary.media.audio.music.MusicStrings_Package;
+with org.allbinary.media.audio.music.MusicStrings_Package_References;
 with org.allbinary.media.audio.music.MusicStrings_Package;
 
 package body org.allbinary.media.audio.music.MusicManager_Package is

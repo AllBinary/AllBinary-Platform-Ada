@@ -17,8 +17,11 @@ with org.allbinary.math.PositionStrings_Package; use org.allbinary.math.Position
 with org.allbinary.string_Id.CommonPhoneStrings_Package; use org.allbinary.string_Id.CommonPhoneStrings_Package;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.game.input.ABKeyEventWrapper_Package; use org.allbinary.game.input.ABKeyEventWrapper_Package;
+with org.allbinary.game.input.ABKeyEventWrapper_Package_References;
 with org.allbinary.game.input.PCGameKey_Package; use org.allbinary.game.input.PCGameKey_Package;
+with org.allbinary.game.input.PCGameKey_Package_References;
 with org.allbinary.game.input.Input_Package; use org.allbinary.game.input.Input_Package;
+with org.allbinary.game.input.Input_Package_References;
 with org.allbinary.game.input.PCGameKey_Package;
 
 package body org.allbinary.game.input.PCKeyFactory_Package is

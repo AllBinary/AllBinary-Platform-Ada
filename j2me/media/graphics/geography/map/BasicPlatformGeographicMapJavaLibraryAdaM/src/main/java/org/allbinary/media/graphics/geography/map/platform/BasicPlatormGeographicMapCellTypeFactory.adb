@@ -16,11 +16,15 @@
 with java.util.Enumeration_Package; use java.util.Enumeration_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package;
+with org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package_References;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellTypeFactory_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellTypeFactory_Package;
 with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
+with org.allbinary.util.ABHashtable_Package_References;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.EnumerationUtil_Package; use org.allbinary.util.EnumerationUtil_Package;
+with org.allbinary.util.EnumerationUtil_Package_References;
 with org.allbinary.media.graphics.geography.map.platform.BasicPlatormGeographicMapCellType_Package; use org.allbinary.media.graphics.geography.map.platform.BasicPlatormGeographicMapCellType_Package;
+with org.allbinary.media.graphics.geography.map.platform.BasicPlatormGeographicMapCellType_Package_References;
 with org.allbinary.media.graphics.geography.map.platform.BasicPlatormGeographicMapCellType_Package;
 
 package body org.allbinary.media.graphics.geography.map.platform.BasicPlatormGeographicMapCellTypeFactory_Package is

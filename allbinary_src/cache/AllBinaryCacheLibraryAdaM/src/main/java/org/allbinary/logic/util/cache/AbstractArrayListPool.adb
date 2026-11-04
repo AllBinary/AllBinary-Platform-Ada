@@ -14,11 +14,14 @@
 
 
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.string_Id.CommonStrings_Package_References;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.logic.util.cache.CacheableInterfaceFactoryInterface_Package; use org.allbinary.logic.util.cache.CacheableInterfaceFactoryInterface_Package;
+with org.allbinary.logic.util.cache.CacheableInterfaceFactoryInterface_Package_References;
 with org.allbinary.logic.util.cache.CacheableInterface_Package; use org.allbinary.logic.util.cache.CacheableInterface_Package;
-with org.allbinary.logic.util.cache.PoolInterface_Package;
+with org.allbinary.logic.util.cache.CacheableInterface_Package_References;
 
 package body org.allbinary.logic.util.cache.AbstractArrayListPool_Package is
 

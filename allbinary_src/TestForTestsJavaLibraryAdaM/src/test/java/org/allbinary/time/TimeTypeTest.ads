@@ -86,22 +86,11 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-limited with org.allbinary.time.TimeTypeUtil_Package;
-with org.allbinary.time.TimeTypeUtil_Package_References;
+with org.allbinary.time.TimeTypeUtil_Package; use org.allbinary.time.TimeTypeUtil_Package;
 
 package org.allbinary.time.TestableTimeTypeUtil_Package is
 
    package Reference_Types is
-   subtype TimeTypeUtil_Access is org.allbinary.time.TimeTypeUtil_Package_References.TimeTypeUtil_Access;
-   use type TimeTypeUtil_Access;
-   subtype TimeTypeUtil_Access_Array is org.allbinary.time.TimeTypeUtil_Package_References.TimeTypeUtil_Access_Array;
-   use type TimeTypeUtil_Access_Array;
-   subtype TimeTypeUtil_Access_Array_Access is org.allbinary.time.TimeTypeUtil_Package_References.TimeTypeUtil_Access_Array_Access;
-   use type TimeTypeUtil_Access_Array_Access;
-   subtype TimeTypeUtil_Access_Array_Access_Array is org.allbinary.time.TimeTypeUtil_Package_References.TimeTypeUtil_Access_Array_Access_Array;
-   use type TimeTypeUtil_Access_Array_Access_Array;
-   subtype TimeTypeUtil_Access_Array_Access_Array_Access is org.allbinary.time.TimeTypeUtil_Package_References.TimeTypeUtil_Access_Array_Access_Array_Access;
-   use type TimeTypeUtil_Access_Array_Access_Array_Access;
    end Reference_Types;
    use Reference_Types;
 

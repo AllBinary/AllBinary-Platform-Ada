@@ -19,18 +19,23 @@ with org.allbinary.game.layer.RTSGameStrings_Package; use org.allbinary.game.lay
 with org.allbinary.game.layer.item.LayerInterfaceFactoryImageItem_Package; use org.allbinary.game.layer.item.LayerInterfaceFactoryImageItem_Package;
 with org.allbinary.game.layer.item.RTSLayerTextAnimation_Package; use org.allbinary.game.layer.item.RTSLayerTextAnimation_Package;
 with org.allbinary.game.layer.resources.BasicGameResources_Package; use org.allbinary.game.layer.resources.BasicGameResources_Package;
+with org.allbinary.game.layer.resources.BasicGameResources_Package_References;
 with org.allbinary.game.layer.waypoint.FlagGameResources_Package; use org.allbinary.game.layer.waypoint.FlagGameResources_Package;
+with org.allbinary.game.layer.waypoint.FlagGameResources_Package_References;
 with org.allbinary.graphics.form.item.ABCustomItem_Package; use org.allbinary.graphics.form.item.ABCustomItem_Package;
+with org.allbinary.graphics.form.item.ABCustomItem_Package_References;
 with org.allbinary.image.GameFeatureImageCacheFactory_Package; use org.allbinary.image.GameFeatureImageCacheFactory_Package;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.string_Id.CommonSeps_Package_References;
 with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Animation_Package;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.graphics.color.BasicColor_Package_References;
 with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
 with org.allbinary.graphics.form.item.CustomItemUtil_Package; use org.allbinary.graphics.form.item.CustomItemUtil_Package;
 with org.allbinary.graphics.form.item.ItemArraySingletonFactoryInterface_Package; use org.allbinary.graphics.form.item.ItemArraySingletonFactoryInterface_Package;
 with org.allbinary.image.ImageCache_Package; use org.allbinary.image.ImageCache_Package;
 with org.allbinary.layer.LayerInterfaceFactoryInterface_Package; use org.allbinary.layer.LayerInterfaceFactoryInterface_Package;
-with org.allbinary.game.layer.waypoint.FlagGameResources_Package;
+with org.allbinary.layer.LayerInterfaceFactoryInterface_Package_References;
 
 package body org.allbinary.game.layer.unit.UnitItemArrayFactory_Package is
 

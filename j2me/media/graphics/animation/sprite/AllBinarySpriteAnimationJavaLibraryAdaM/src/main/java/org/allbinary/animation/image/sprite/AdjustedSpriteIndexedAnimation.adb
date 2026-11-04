@@ -14,11 +14,16 @@
 
 
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
 with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
+with javax.microedition.lcdui.Image_Package_References;
 with javax.microedition.lcdui.game.Sprite_Package; use javax.microedition.lcdui.game.Sprite_Package;
+with javax.microedition.lcdui.game.Sprite_Package_References;
 with org.allbinary.animation.AnimationBehavior_Package; use org.allbinary.animation.AnimationBehavior_Package;
+with org.allbinary.animation.AnimationBehavior_Package_References;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
-with org.allbinary.animation.image.sprite.SpriteIndexedAnimation_Package;
+with org.allbinary.graphics.color.BasicColor_Package_References;
+with org.allbinary.graphics.color.BasicColorUtil_Package; use org.allbinary.graphics.color.BasicColorUtil_Package;
 
 package body org.allbinary.animation.image.sprite.AdjustedSpriteIndexedAnimation_Package is
 
@@ -103,21 +108,21 @@ package body org.allbinary.animation.image.sprite.AdjustedSpriteIndexedAnimation
    begin
         AdjustedSpriteIndexedAnimation'Class (This).setFrame (frame);
         This.sprite.setPosition ((x) + (This.dx), (y) + (This.dy));
-        SpriteIndexedAnimation (This).paint (graphics);
+        SpriteIndexedAnimation_Package.SpriteIndexedAnimation (This).paint (graphics);
    end paintFrame;
 
    procedure paintXY (This : in out AdjustedSpriteIndexedAnimation; g_Param : access Graphics_Package.Graphics'Class; x : Integer; y : Integer) is
       g : constant Graphics_Access := Graphics_Access (g_Param);
    begin
         This.sprite.setPosition ((x) + (This.dx), (y) + (This.dy));
-        SpriteIndexedAnimation (This).paint (g);
+        SpriteIndexedAnimation_Package.SpriteIndexedAnimation (This).paint (g);
    end paintXY;
 
    procedure paint (This : in out AdjustedSpriteIndexedAnimation; g_Param : access Graphics_Package.Graphics'Class) is
       g : constant Graphics_Access := Graphics_Access (g_Param);
    begin
         This.sprite.setPosition (This.dx, This.dy);
-        SpriteIndexedAnimation (This).paint (g);
+        SpriteIndexedAnimation_Package.SpriteIndexedAnimation (This).paint (g);
    end paint;
 
 end org.allbinary.animation.image.sprite.AdjustedSpriteIndexedAnimation_Package;

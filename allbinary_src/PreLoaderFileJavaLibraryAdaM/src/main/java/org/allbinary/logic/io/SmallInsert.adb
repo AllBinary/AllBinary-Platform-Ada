@@ -15,8 +15,10 @@
 
 with java.io.DataOutputStream_Package; use java.io.DataOutputStream_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.io.file.AbFileSystem_Package; use org.allbinary.logic.io.file.AbFileSystem_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.string_Id.CommonStrings_Package_References;
 
 package body org.allbinary.logic.io.SmallInsert_Package is
 

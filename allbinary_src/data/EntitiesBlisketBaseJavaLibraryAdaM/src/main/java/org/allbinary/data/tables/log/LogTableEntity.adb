@@ -58,7 +58,7 @@ package body org.allbinary.data.tables.log.LogTableEntity_Package is
 
    function createTable (This : in out LogTableEntity) return Unbounded_String is
    begin
-        return AbSqlBean (This).createTable (LogTableEntity'Class (This).createTableStatement);
+        return AbSqlBean_Package.AbSqlBean (This).createTable (LogTableEntity'Class (This).createTableStatement);
    end createTable;
 
 end org.allbinary.data.tables.log.LogTableEntity_Package;

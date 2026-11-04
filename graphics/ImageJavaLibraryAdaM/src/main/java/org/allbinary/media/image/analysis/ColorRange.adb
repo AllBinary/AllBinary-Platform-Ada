@@ -16,7 +16,7 @@
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.media.image.analysis.Color_Package; use org.allbinary.media.image.analysis.Color_Package;
-with org.allbinary.media.image.analysis.ColorRangeInterface_Package;
+with org.allbinary.media.image.analysis.Color_Package_References;
 
 package body org.allbinary.media.image.analysis.ColorRange_Package is
 

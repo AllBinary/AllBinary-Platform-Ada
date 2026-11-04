@@ -16,9 +16,12 @@
 with org.allbinary.graphics.opengles.OpenGLFeatureUtil_Package; use org.allbinary.graphics.opengles.OpenGLFeatureUtil_Package;
 with org.allbinary.animation.FeaturedAnimationInterfaceFactoryInterfaceFactory_Package; use org.allbinary.animation.FeaturedAnimationInterfaceFactoryInterfaceFactory_Package;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
+with org.allbinary.layer.AllBinaryLayer_Package_References;
 with org.allbinary.game.health.HealthBar_Package; use org.allbinary.game.health.HealthBar_Package;
+with org.allbinary.game.health.HealthBar_Package_References;
 with org.allbinary.game.health.HealthBarTwodAnimation_Package; use org.allbinary.game.health.HealthBarTwodAnimation_Package;
 with org.allbinary.game.health.Health_Package; use org.allbinary.game.health.Health_Package;
+with org.allbinary.game.health.Health_Package_References;
 with org.allbinary.game.health.HealthBarAnimationInterfaceFactory_Package; use org.allbinary.game.health.HealthBarAnimationInterfaceFactory_Package;
 with org.allbinary.game.health.HealthBarAnimationInterfaceFactory_Package;
 

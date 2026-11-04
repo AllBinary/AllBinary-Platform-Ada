@@ -14,8 +14,8 @@
 
 
 with org.allbinary.graphics.form.PaintableForm_Package; use org.allbinary.graphics.form.PaintableForm_Package;
+with org.allbinary.graphics.form.PaintableForm_Package_References;
 with org.allbinary.graphics.form.FormType_Package;
-with org.allbinary.graphics.form.ItemPaintable_Package;
 with org.allbinary.graphics.form.PaintableForm_Package;
 
 package body org.allbinary.graphics.form.ItemPaintableFactory_Package is

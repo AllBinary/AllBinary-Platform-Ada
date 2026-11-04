@@ -16,13 +16,17 @@
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.logic.communication.smtp.info.BasicEmailInfo_Package; use org.allbinary.logic.communication.smtp.info.BasicEmailInfo_Package;
 with org.allbinary.logic.communication.smtp.info.EmailInfo_Package; use org.allbinary.logic.communication.smtp.info.EmailInfo_Package;
+with org.allbinary.logic.communication.smtp.info.EmailInfo_Package_References;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
+with org.w3c.dom.Document_Package_References;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
+with org.w3c.dom.Node_Package_References;
 with org.allbinary.logic.communication.smtp.AbEmail_Package; use org.allbinary.logic.communication.smtp.AbEmail_Package;
+with org.allbinary.logic.communication.smtp.AbEmail_Package_References;
 with org.allbinary.logic.communication.smtp.Email_Package; use org.allbinary.logic.communication.smtp.Email_Package;
+with org.allbinary.logic.communication.smtp.Email_Package_References;
 with org.allbinary.logic.communication.smtp.AbEmail_Package;
 with org.allbinary.logic.communication.smtp.Email_Package;
-with org.allbinary.logic.communication.smtp.EmailInterface_Package;
 
 package body org.allbinary.logic.communication.smtp.BasicEmail_Package is
 

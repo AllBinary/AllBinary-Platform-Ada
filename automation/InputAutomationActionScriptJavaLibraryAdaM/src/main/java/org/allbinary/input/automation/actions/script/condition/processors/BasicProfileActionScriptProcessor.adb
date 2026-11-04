@@ -17,17 +17,15 @@ with org.allbinary.input.automation.actions.script.JTreeInterfaceFactory_Package
 with org.allbinary.input.automation.actions.script.ProfileActionScriptItem_Package; use org.allbinary.input.automation.actions.script.ProfileActionScriptItem_Package;
 with org.allbinary.input.automation.actions.script.condition.ProfileActionScriptConditionInterface_Package; use org.allbinary.input.automation.actions.script.condition.ProfileActionScriptConditionInterface_Package;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
+with org.w3c.dom.Document_Package_References;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
+with org.w3c.dom.Node_Package_References;
 with org.allbinary.input.automation.actions.script.condition.processors.GenericProfileActionScriptProcessorData_Package; use org.allbinary.input.automation.actions.script.condition.processors.GenericProfileActionScriptProcessorData_Package;
 with org.allbinary.input.automation.actions.script.condition.CustomTreeNodeInterface_Package;
 with org.allbinary.input.automation.actions.script.condition.processors.GenericProfileActionScriptProcessorData_Package;
 with org.allbinary.input.automation.actions.script.JTreeInterface_Package;
-with org.allbinary.input.automation.actions.script.JTreeInterfaceFactory_Package;
-with org.allbinary.input.automation.actions.script.condition.ProfileActionScriptConditionInterface_Package;
-with org.allbinary.input.automation.actions.script.ProfileActionScriptItem_Package;
 with org.allbinary.input.automation.actions.script.ProfileActionScriptItemInterface_Package;
 with org.allbinary.input.automation.actions.script.ProfileActionScriptNodeInterface_Package;
-with org.allbinary.input.automation.actions.script.condition.processors.ProfileActionScriptProcessorInterface_Package;
 
 package body org.allbinary.input.automation.actions.script.condition.processors.BasicProfileActionScriptProcessor_Package is
 
@@ -88,7 +86,7 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
       actionEvent : constant ActionEvent_Access := ActionEvent_Access (actionEvent_Param);
       profileActionScriptConditionInterface : ProfileActionScriptConditionInterface_Access;
    begin
-        ProfileActionScriptItem (This).actionPerformed (actionEvent);
+        ProfileActionScriptItem_Package.ProfileActionScriptItem (This).actionPerformed (actionEvent);
         if (actionEvent.getActionCommand.compareTo (DELETE)) = (0) then
             if (BasicProfileActionScriptProcessor'Class (This).getParent.all in ProfileActionScriptConditionInterface_Package.ProfileActionScriptConditionInterface'Class) then
                 profileActionScriptConditionInterface := ProfileActionScriptConditionInterface_Access (BasicProfileActionScriptProcessor'Class (This).getParent);

@@ -14,10 +14,13 @@
 
 
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
 with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
+with javax.microedition.lcdui.Image_Package_References;
 with javax.microedition.lcdui.game.Sprite_Package; use javax.microedition.lcdui.game.Sprite_Package;
+with javax.microedition.lcdui.game.Sprite_Package_References;
 with org.allbinary.animation.AnimationBehavior_Package; use org.allbinary.animation.AnimationBehavior_Package;
-with org.allbinary.animation.image.sprite.AllBinarySpriteRotationAnimation_Package;
+with org.allbinary.animation.AnimationBehavior_Package_References;
 with org.allbinary.animation.image.sprite.HackRotationSpriteIndexedAnimation_Package;
 
 package body org.allbinary.animation.image.sprite.AllBinaryAdjustedSpriteRotationAnimation_Package is

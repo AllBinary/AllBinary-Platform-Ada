@@ -15,16 +15,22 @@
 
 with javax.microedition.lcdui.Font_Package; use javax.microedition.lcdui.Font_Package;
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
 with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
+with javax.microedition.lcdui.Image_Package_References;
 with javax.microedition.lcdui.NullImage_Package; use javax.microedition.lcdui.NullImage_Package;
 with org.allbinary.graphics.form.item.ABCustomImageItem_Package; use org.allbinary.graphics.form.item.ABCustomImageItem_Package;
 with org.allbinary.logic.java.character_Id.CharArrayFactory_Package; use org.allbinary.logic.java.character_Id.CharArrayFactory_Package;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.graphics.color.BasicColor_Package_References;
 with org.allbinary.graphics.font.MyFontProcessor_Package; use org.allbinary.graphics.font.MyFontProcessor_Package;
+with org.allbinary.graphics.font.MyFontProcessor_Package_References;
 with org.allbinary.graphics.font.UpdateMyFontInterface_Package; use org.allbinary.graphics.font.UpdateMyFontInterface_Package;
 with org.allbinary.graphics.font.UpdateMyFontProcessor_Package; use org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
 with org.allbinary.logic.math.PrimitiveLongUtil_Package; use org.allbinary.logic.math.PrimitiveLongUtil_Package;
+with org.allbinary.logic.math.PrimitiveLongUtil_Package_References;
 with org.allbinary.game.layer.RTSInterface_Package; use org.allbinary.game.layer.RTSInterface_Package;
+with org.allbinary.game.layer.RTSInterface_Package_References;
 
 package body org.allbinary.game.layer.TechnologyRTSInterfaceImageItem_Package is
 
@@ -169,7 +175,7 @@ package body org.allbinary.game.layer.TechnologyRTSInterfaceImageItem_Package is
       xa : Integer;
    begin
         This.myFontProcessor.process (graphics);
-        ABCustomImageItem (This).paintXY (graphics, x, y);
+        ABCustomImageItem_Package.ABCustomImageItem (This).paintXY (graphics, x, y);
         xa := (x) + (2);
         graphics.drawString (This.COST, xa, (y) + (This.adjustedCostLabelY), 0);
         graphics.drawString (This.DOLLAR, xa, (y) + (This.adjustedCostY), 0);

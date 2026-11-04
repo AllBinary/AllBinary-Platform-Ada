@@ -16,12 +16,15 @@
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.business.context.AbContext_Package; use org.allbinary.business.context.AbContext_Package;
 with org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package; use org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
+with org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package_References;
 with org.allbinary.data.tree.dom.ModDomHelper_Package; use org.allbinary.data.tree.dom.ModDomHelper_Package;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
+with org.w3c.dom.Document_Package_References;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
+with org.w3c.dom.Node_Package_References;
 with org.allbinary.logic.control.search.SearchParams_Package; use org.allbinary.logic.control.search.SearchParams_Package;
+with org.allbinary.logic.control.search.SearchParams_Package_References;
 with org.allbinary.logic.control.search.SearchData_Package; use org.allbinary.logic.control.search.SearchData_Package;
-with org.allbinary.business.context.AbContext_Package;
 with org.allbinary.logic.control.search.SearchParams_Package;
 
 package body org.allbinary.logic.control.search.SearchRequest_Package is

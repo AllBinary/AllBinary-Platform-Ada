@@ -16,8 +16,11 @@
 with org.allbinary.logic.io.file.AbFile_Package; use org.allbinary.logic.io.file.AbFile_Package;
 with org.allbinary.logic.io.file.FileUtil_Package; use org.allbinary.logic.io.file.FileUtil_Package;
 with org.allbinary.logic.io.file.directory.Directory_Package; use org.allbinary.logic.io.file.directory.Directory_Package;
+with org.allbinary.logic.io.file.directory.Directory_Package_References;
 with org.allbinary.logic.io.path.AbPath_Package; use org.allbinary.logic.io.path.AbPath_Package;
+with org.allbinary.logic.io.path.AbPath_Package_References;
 with org.apache.commons.fileupload.FileItem_Package; use org.apache.commons.fileupload.FileItem_Package;
+with org.apache.commons.fileupload.FileItem_Package_References;
 
 package body org.allbinary.logic.visual.transform.template.customizer.widgets.logo.LogoImageFileUtil_Package is
 

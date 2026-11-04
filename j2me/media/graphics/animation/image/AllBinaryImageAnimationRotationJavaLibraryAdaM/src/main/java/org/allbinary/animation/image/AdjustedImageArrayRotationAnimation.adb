@@ -14,11 +14,14 @@
 
 
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
 with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
+with javax.microedition.lcdui.Image_Package_References;
 with org.allbinary.animation.AnimationBehavior_Package; use org.allbinary.animation.AnimationBehavior_Package;
+with org.allbinary.animation.AnimationBehavior_Package_References;
 with org.allbinary.math.AngleInfo_Package; use org.allbinary.math.AngleInfo_Package;
+with org.allbinary.math.AngleInfo_Package_References;
 with org.allbinary.animation.image.ImageArrayRotationAnimationInfo_Package; use org.allbinary.animation.image.ImageArrayRotationAnimationInfo_Package;
-with org.allbinary.animation.image.ImageArrayRotationAnimation_Package;
 with org.allbinary.animation.image.ImageArrayRotationAnimationInfo_Package;
 
 package body org.allbinary.animation.image.AdjustedImageArrayRotationAnimation_Package is
@@ -115,7 +118,7 @@ package body org.allbinary.animation.image.AdjustedImageArrayRotationAnimation_P
    procedure paintXY (This : in out AdjustedImageArrayRotationAnimation; graphics_Param : access Graphics_Package.Graphics'Class; x : Integer; y : Integer) is
       graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
-        ImageArrayRotationAnimation (This).paintXY (graphics, (x) + (This.dx), (y) + (This.dy));
+        ImageArrayRotationAnimation_Package.ImageArrayRotationAnimation (This).paintXY (graphics, (x) + (This.dx), (y) + (This.dy));
    end paintXY;
 
    procedure setDx (This : in out AdjustedImageArrayRotationAnimation; dx : Integer) is

@@ -14,7 +14,9 @@
 
 
 with org.allbinary.layer.AllBinaryLayerManager_Package; use org.allbinary.layer.AllBinaryLayerManager_Package;
+with org.allbinary.layer.AllBinaryLayerManager_Package_References;
 with org.allbinary.android.input.motion.AnalogLocationInputProcessor_Package; use org.allbinary.android.input.motion.AnalogLocationInputProcessor_Package;
+with org.allbinary.android.input.motion.AnalogLocationInputProcessor_Package_References;
 with org.allbinary.game.input.analog.AnalogLocationInput_Package;
 with org.allbinary.android.input.motion.AnalogLocationInputProcessor_Package;
 

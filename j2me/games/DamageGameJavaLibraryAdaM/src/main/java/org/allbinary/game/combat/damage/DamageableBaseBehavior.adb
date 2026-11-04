@@ -13,7 +13,6 @@
 --  Generated Code Do Not Modify
 
 
-with org.allbinary.game.combat.damage.DamageableInterface_Package;
 
 package body org.allbinary.game.combat.damage.DamageableBaseBehavior_Package is
 

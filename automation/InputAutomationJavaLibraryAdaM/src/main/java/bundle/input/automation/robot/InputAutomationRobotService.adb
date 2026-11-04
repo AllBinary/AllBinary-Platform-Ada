@@ -14,8 +14,7 @@
 
 
 with org.allbinary.input.automation.robot.InputRobotInterface_Package; use org.allbinary.input.automation.robot.InputRobotInterface_Package;
-with bundle.input.automation.robot.InputAutomationRobotServiceInterface_Package;
-with org.allbinary.input.automation.robot.InputRobotInterface_Package;
+with org.allbinary.input.automation.robot.InputRobotInterface_Package_References;
 
 package body bundle.input.automation.robot.InputAutomationRobotService_Package is
 

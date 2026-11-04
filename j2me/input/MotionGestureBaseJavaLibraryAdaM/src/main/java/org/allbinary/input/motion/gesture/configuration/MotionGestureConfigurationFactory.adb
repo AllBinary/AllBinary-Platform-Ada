@@ -14,6 +14,7 @@
 
 
 with org.allbinary.input.motion.gesture.configuration.MotionGestureConfiguration_Package; use org.allbinary.input.motion.gesture.configuration.MotionGestureConfiguration_Package;
+with org.allbinary.input.motion.gesture.configuration.MotionGestureConfiguration_Package_References;
 with org.allbinary.game.input.CompleteMotionGestureInputEvent_Package;
 with org.allbinary.game.input.CompleteMotionGestureInputInterface_Package;
 with org.allbinary.input.motion.gesture.configuration.MotionGestureConfiguration_Package;

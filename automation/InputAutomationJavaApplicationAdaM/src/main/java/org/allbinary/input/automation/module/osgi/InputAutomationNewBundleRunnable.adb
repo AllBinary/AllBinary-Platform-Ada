@@ -16,21 +16,25 @@
 with java.io.File_Package; use java.io.File_Package;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.osgi.framework.Bundle_Package; use org.osgi.framework.Bundle_Package;
+with org.osgi.framework.Bundle_Package_References;
 with org.osgi.framework.BundleContext_Package; use org.osgi.framework.BundleContext_Package;
 with org.osgi.framework.Constants_Package; use org.osgi.framework.Constants_Package;
 with bundle.input.automation.InputAutomationBundleActivator_Package; use bundle.input.automation.InputAutomationBundleActivator_Package;
+with bundle.input.automation.InputAutomationBundleActivator_Package_References;
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.io.file.FileWrapperUtil_Package; use org.allbinary.logic.io.file.FileWrapperUtil_Package;
 with org.allbinary.logic.io.file.directory.SubDirectory_Package; use org.allbinary.logic.io.file.directory.SubDirectory_Package;
 with org.allbinary.logic.io.file.filter.BasicFileFilterUtil_Package; use org.allbinary.logic.io.file.filter.BasicFileFilterUtil_Package;
 with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.string_Id.CommonStrings_Package_References;
 with org.allbinary.thread.RunnableInterface_Package; use org.allbinary.thread.RunnableInterface_Package;
 with org.allbinary.time.TimeDelayHelper_Package; use org.allbinary.time.TimeDelayHelper_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
-with bundle.input.automation.InputAutomationBundleActivator_Package;
 with bundle.input.automation.InputAutomationBundleActivatorListenerInterface_Package;
 
 package body org.allbinary.input.automation.module.osgi.InputAutomationNewBundleRunnable_Package is
@@ -334,7 +338,7 @@ begin
    FILE := To_Unbounded_String ("file:");
    JAR_DIR_PROP := To_Unbounded_String ("org.knopflerfish.gosg.jars");
    INPUT_AUTMATION_MODULE_BUNDLE_JAR_PATH := To_Unbounded_String ("ia/auto");
-   MODULES_START_LEVEL := 8;
+   
 
 end org.allbinary.input.automation.module.osgi.InputAutomationNewBundleRunnable_Package;
 

@@ -14,11 +14,14 @@
 
 
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.game.layer.UpgradableRTSLayerHudPaintable_Package; use org.allbinary.game.layer.UpgradableRTSLayerHudPaintable_Package;
+with org.allbinary.game.layer.UpgradableRTSLayerHudPaintable_Package_References;
 with org.allbinary.game.layer.RTSLayer_Package; use org.allbinary.game.layer.RTSLayer_Package;
+with org.allbinary.game.layer.RTSLayer_Package_References;
 with org.allbinary.game.input.BuildMenuCompositeInterface_Package;
 with org.allbinary.game.layer.capital.Capital_Package;
 with org.allbinary.game.layer.GeographicMapCellPositionAreaBase_Package;
@@ -29,7 +32,6 @@ with org.allbinary.game.input.form.RTSFormInput_Package;
 with org.allbinary.game.layer.RTSInterface_Package;
 with org.allbinary.game.layer.RTSLayer_Package;
 with org.allbinary.game.layer.RTSLayer2LogHelper_Package;
-with org.allbinary.game.layer.RTSLayerCompositePaintable_Package;
 with org.allbinary.game.layer.RTSLayerUtil_Package;
 with org.allbinary.game.layer.RTSPlayerLayerInterface_Package;
 with org.allbinary.game.layer.SelectionHudPaintable_Package;
@@ -100,7 +102,7 @@ package body org.allbinary.game.layer.UpgradableWideRTSLayerPaintable_Package is
    procedure update (This : in out UpgradableWideRTSLayerPaintable; rtsLayer_Param : access RTSLayer_Package.RTSLayer'Class) is
       rtsLayer : constant RTSLayer_Access := RTSLayer_Access (rtsLayer_Param);
    begin
-        RTSLayerCompositePaintable (This).update (rtsLayer);
+        RTSLayerCompositePaintable_Package.RTSLayerCompositePaintable (This).update (rtsLayer);
         UpgradableWideRTSLayerPaintable'Class (This).setCost (StringMaker_Package.Create.append (UpgradableWideRTSLayerPaintable'Class (This).getUpgradeCost).append (CommonSeps_Package.getInstance.SPACE).append (UpgradableWideRTSLayerPaintable'Class (This).getDownGradeCost).toString);
    end update;
 

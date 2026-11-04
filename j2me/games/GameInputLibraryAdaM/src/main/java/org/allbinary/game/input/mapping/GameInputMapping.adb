@@ -14,8 +14,8 @@
 
 
 with org.allbinary.game.input.GameKey_Package; use org.allbinary.game.input.GameKey_Package;
+with org.allbinary.game.input.GameKey_Package_References;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
-with org.allbinary.game.input.GameKey_Package;
 with org.allbinary.game.input.Input_Package;
 
 package body org.allbinary.game.input.mapping.GameInputMapping_Package is

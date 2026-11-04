@@ -14,12 +14,17 @@
 
 
 with org.allbinary.game.GameType_Package; use org.allbinary.game.GameType_Package;
+with org.allbinary.game.GameType_Package_References;
 with org.allbinary.game.state.GameState_Package; use org.allbinary.game.state.GameState_Package;
+with org.allbinary.game.state.GameState_Package_References;
 with org.allbinary.logic.communication.log.ForcedLogUtil_Package; use org.allbinary.logic.communication.log.ForcedLogUtil_Package;
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+with org.allbinary.logic.util.event.AllBinaryEventObject_Package_References;
 with org.allbinary.logic.util.event.EventStrings_Package; use org.allbinary.logic.util.event.EventStrings_Package;
 with org.allbinary.business.advertisement.AdConfiguration_Package; use org.allbinary.business.advertisement.AdConfiguration_Package;
+with org.allbinary.business.advertisement.AdConfiguration_Package_References;
 with org.allbinary.business.advertisement.Advertisements_Package; use org.allbinary.business.advertisement.Advertisements_Package;
+with org.allbinary.business.advertisement.Advertisements_Package_References;
 with org.allbinary.business.advertisement.AdConfiguration_Package;
 with org.allbinary.business.advertisement.AdvertisementProcessorInterface_Package;
 with org.allbinary.business.advertisement.Advertisements_Package;

@@ -16,6 +16,7 @@ with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 with org.allbinary.game.layer.NullPathFindingLayer_Package; use org.allbinary.game.layer.NullPathFindingLayer_Package;
 with org.allbinary.game.layer.PathFindingLayerInterface_Package; use org.allbinary.game.layer.PathFindingLayerInterface_Package;
+with org.allbinary.game.layer.PathFindingLayerInterface_Package_References;
 
 package body org.allbinary.game.layer.RTSLayerEvent_Package is
 

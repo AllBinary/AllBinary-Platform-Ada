@@ -13,7 +13,6 @@
 --  Generated Code Do Not Modify
 
 
-with org.allbinary.image.opengles.OpenGLESImageProcessor_Package;
 
 package body org.allbinary.image.opengles.ModifierOpenGLESImageProcessor_Package is
 

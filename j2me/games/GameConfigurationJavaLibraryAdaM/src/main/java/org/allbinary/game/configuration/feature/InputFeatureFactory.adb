@@ -14,6 +14,7 @@
 
 
 with org.allbinary.game.configuration.feature.InputFeature_Package; use org.allbinary.game.configuration.feature.InputFeature_Package;
+with org.allbinary.game.configuration.feature.InputFeature_Package_References;
 with org.allbinary.game.configuration.feature.Features_Package; use org.allbinary.game.configuration.feature.Features_Package;
 with org.allbinary.game.configuration.feature.Feature_Package;
 with org.allbinary.game.configuration.feature.Features_Package;

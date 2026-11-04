@@ -14,6 +14,7 @@
 
 
 with org.allbinary.game.configuration.feature.Feature_Package; use org.allbinary.game.configuration.feature.Feature_Package;
+with org.allbinary.game.configuration.feature.Feature_Package_References;
 with org.allbinary.game.configuration.feature.Feature_Package;
 
 package body org.allbinary.game.configuration.feature.MainFeatureFactory_Package is

@@ -14,10 +14,15 @@
 
 
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.io.file.FilePathData_Package; use org.allbinary.logic.io.file.FilePathData_Package;
+with org.allbinary.logic.io.file.FilePathData_Package_References;
 with org.allbinary.logic.io.path.AbFilePath_Package; use org.allbinary.logic.io.path.AbFilePath_Package;
+with org.allbinary.logic.io.path.AbFilePath_Package_References;
 with org.allbinary.logic.io.path.AbPath_Package; use org.allbinary.logic.io.path.AbPath_Package;
+with org.allbinary.logic.io.path.AbPath_Package_References;
 with org.allbinary.logic.io.path.AbPathData_Package; use org.allbinary.logic.io.path.AbPathData_Package;
+with org.allbinary.logic.io.path.AbPathData_Package_References;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.logic.string_Id.StringValidationUtil_Package; use org.allbinary.logic.string_Id.StringValidationUtil_Package;
 
@@ -364,7 +369,7 @@ package body org.allbinary.logic.io.file.path.AbPathUtilOld_Package is
 begin
    null;
    instance := AbPathUtilOld_Package.Create;
-   MIN := 4;
+   
 
 end org.allbinary.logic.io.file.path.AbPathUtilOld_Package;
 

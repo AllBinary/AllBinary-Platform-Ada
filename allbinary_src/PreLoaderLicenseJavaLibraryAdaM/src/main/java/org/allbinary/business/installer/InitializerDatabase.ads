@@ -102,10 +102,10 @@ package org.allbinary.business.installer.InitializerDatabase_Package is
       adminPort : Unbounded_String;
       initDb : DynamicInitDb_Access;
    end record;
-   MAXDB : Integer;
-   MAX : Integer;
-   MIN : Integer;
-   MINPASSWORD : Integer;
+   MAXDB : constant Integer := 30;
+   MAX : constant Integer := 16;
+   MIN : constant Integer := 4;
+   MINPASSWORD : constant Integer := 0;
 
    procedure Initialize (This : in out InitializerDatabase'Class; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; map_Param : access Map_Package.Map'Class);
    function Create (abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; map_Param : access Map_Package.Map'Class) return InitializerDatabase_Access;

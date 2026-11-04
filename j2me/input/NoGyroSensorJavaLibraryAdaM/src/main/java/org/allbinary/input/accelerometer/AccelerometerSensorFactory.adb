@@ -16,8 +16,8 @@
 with org.allbinary.game.configuration.feature.Features_Package; use org.allbinary.game.configuration.feature.Features_Package;
 with org.allbinary.game.configuration.feature.SensorFeatureFactory_Package; use org.allbinary.game.configuration.feature.SensorFeatureFactory_Package;
 with org.allbinary.input.gyro.AllBinaryOrientationSensor_Package; use org.allbinary.input.gyro.AllBinaryOrientationSensor_Package;
+with org.allbinary.input.gyro.AllBinaryOrientationSensor_Package_References;
 with org.allbinary.input.accelerometer.NoAccelerometerSensor_Package; use org.allbinary.input.accelerometer.NoAccelerometerSensor_Package;
-with org.allbinary.input.gyro.AllBinaryOrientationSensor_Package;
 with org.allbinary.game.input.CompleteMotionGestureInputEvent_Package;
 with org.allbinary.game.input.CompleteMotionGestureInputEventListenerInterface_Package;
 with org.allbinary.game.input.CompleteMotionGestureInputInterface_Package;

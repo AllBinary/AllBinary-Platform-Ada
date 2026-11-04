@@ -17,12 +17,16 @@ with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.business.category.properties.CategoryPropertiesFactory_Package; use org.allbinary.business.category.properties.CategoryPropertiesFactory_Package;
 with org.allbinary.business.category.properties.CategoryPropertiesFactoryInterface_Package; use org.allbinary.business.category.properties.CategoryPropertiesFactoryInterface_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.io.path.AbPath_Package; use org.allbinary.logic.io.path.AbPath_Package;
+with org.allbinary.logic.io.path.AbPath_Package_References;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.string_Id.CommonStrings_Package_References;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
+with org.w3c.dom.Node_Package_References;
 with org.allbinary.business.category.CategoryInterface_Package; use org.allbinary.business.category.CategoryInterface_Package;
+with org.allbinary.business.category.CategoryInterface_Package_References;
 with org.allbinary.business.category.Category_Package; use org.allbinary.business.category.Category_Package;
-with org.allbinary.business.category.properties.CategoryPropertiesFactory_Package;
 
 package body org.allbinary.business.category.CategoryAbstractFactory_Package is
 

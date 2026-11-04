@@ -15,7 +15,7 @@
 
 with org.allbinary.game.paint.FullScreenPaintable_Package; use org.allbinary.game.paint.FullScreenPaintable_Package;
 with org.allbinary.graphics.paint.Paintable_Package; use org.allbinary.graphics.paint.Paintable_Package;
-with org.allbinary.game.paint.FullScreenPaintable_Package;
+with org.allbinary.graphics.paint.Paintable_Package_References;
 
 package body org.allbinary.graphics.displayable.screen.FullScreenPaintableFactory_Package is
 

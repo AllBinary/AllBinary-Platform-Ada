@@ -120,7 +120,7 @@ package org.allbinary.logic.io.file.path.AbPathUtilOld_Package is
       filePathData : FilePathData_Access;
    end record;
    instance : AbPathUtilOld_Access;
-   MIN : Integer;
+   MIN : constant Integer := 4;
 
    procedure Initialize (This : in out AbPathUtilOld'Class);
    function Create return AbPathUtilOld_Access;

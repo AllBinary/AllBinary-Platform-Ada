@@ -15,9 +15,13 @@
 
 with org.allbinary.graphics.CustomGPoint_Package; use org.allbinary.graphics.CustomGPoint_Package;
 with org.allbinary.graphics.GPointCircularPool_Package; use org.allbinary.graphics.GPointCircularPool_Package;
+with org.allbinary.graphics.GPointCircularPool_Package_References;
 with org.allbinary.input.motion.button.TouchButtonRecognizer_Package; use org.allbinary.input.motion.button.TouchButtonRecognizer_Package;
+with org.allbinary.input.motion.button.TouchButtonRecognizer_Package_References;
 with org.allbinary.input.motion.gesture.MotionGestureRecognizer_Package; use org.allbinary.input.motion.gesture.MotionGestureRecognizer_Package;
+with org.allbinary.input.motion.gesture.MotionGestureRecognizer_Package_References;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 
 package body org.allbinary.input.motion.AllMotionRecognizer_Package is
 

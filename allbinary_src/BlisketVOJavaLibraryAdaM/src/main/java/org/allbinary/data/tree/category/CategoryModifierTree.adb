@@ -14,14 +14,17 @@
 
 
 with org.allbinary.business.category.CategoryFactoryInterface_Package; use org.allbinary.business.category.CategoryFactoryInterface_Package;
+with org.allbinary.business.category.CategoryFactoryInterface_Package_References;
 with org.allbinary.business.category.CategoryInterface_Package; use org.allbinary.business.category.CategoryInterface_Package;
+with org.allbinary.business.category.CategoryInterface_Package_References;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.io.file.directory.Directory_Package; use org.allbinary.logic.io.file.directory.Directory_Package;
+with org.allbinary.logic.io.file.directory.Directory_Package_References;
 with org.allbinary.logic.io.path.AbPath_Package; use org.allbinary.logic.io.path.AbPath_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
-with org.allbinary.data.tree.category.CategoryModifierTreeInterface_Package;
-with org.allbinary.data.tree.category.CategoryPrivateTree_Package;
+with org.allbinary.string_Id.CommonStrings_Package_References;
 
 package body org.allbinary.data.tree.category.CategoryModifierTree_Package is
 

@@ -14,8 +14,8 @@
 
 
 with org.allbinary.game.input.mapping.InputToGameKeyMapping_Package; use org.allbinary.game.input.mapping.InputToGameKeyMapping_Package;
+with org.allbinary.game.input.mapping.InputToGameKeyMapping_Package_References;
 with org.allbinary.game.input.MotionJ2MEDefaultGameInputMapping_Package; use org.allbinary.game.input.MotionJ2MEDefaultGameInputMapping_Package;
-with org.allbinary.game.input.J2MEGameInputMapping_Package;
 with org.allbinary.game.input.MotionJ2MEDefaultGameInputMapping_Package;
 
 package body org.allbinary.game.input.MotionJ2MEGameInputMapping_Package is

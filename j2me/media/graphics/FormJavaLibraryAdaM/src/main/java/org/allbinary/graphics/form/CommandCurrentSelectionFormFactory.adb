@@ -16,12 +16,17 @@
 with org.allbinary.game.configuration.feature.Features_Package; use org.allbinary.game.configuration.feature.Features_Package;
 with org.allbinary.game.configuration.feature.TouchFeatureFactory_Package; use org.allbinary.game.configuration.feature.TouchFeatureFactory_Package;
 with org.allbinary.graphics.Rectangle_Package; use org.allbinary.graphics.Rectangle_Package;
+with org.allbinary.graphics.Rectangle_Package_References;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.graphics.color.BasicColor_Package_References;
 with org.allbinary.graphics.form.item.ABCustomItem_Package; use org.allbinary.graphics.form.item.ABCustomItem_Package;
+with org.allbinary.graphics.form.item.ABCustomItem_Package_References;
 with org.allbinary.graphics.form.ScrollSelectionFormNoneFactory_Package; use org.allbinary.graphics.form.ScrollSelectionFormNoneFactory_Package;
 with org.allbinary.graphics.form.CommandCurrentSelectionForm_Package; use org.allbinary.graphics.form.CommandCurrentSelectionForm_Package;
 with org.allbinary.graphics.form.ScrollSelectionForm_Package; use org.allbinary.graphics.form.ScrollSelectionForm_Package;
+with org.allbinary.graphics.form.ScrollSelectionForm_Package_References;
 with org.allbinary.graphics.form.FormType_Package; use org.allbinary.graphics.form.FormType_Package;
+with org.allbinary.graphics.form.FormType_Package_References;
 with org.allbinary.graphics.form.CommandCurrentSelectionForm_Package;
 with org.allbinary.graphics.form.FormType_Package;
 with org.allbinary.graphics.form.ItemIndexDx_Package;

@@ -14,8 +14,10 @@
 
 
 with org.allbinary.thread.ABRunnable_Package; use org.allbinary.thread.ABRunnable_Package;
+with org.allbinary.thread.ABRunnable_Package_References;
 with org.allbinary.thread.NullABRunnable_Package; use org.allbinary.thread.NullABRunnable_Package;
 with org.allbinary.game.midlet.SpecialDemoGameMidlet_Package; use org.allbinary.game.midlet.SpecialDemoGameMidlet_Package;
+with org.allbinary.game.midlet.SpecialDemoGameMidlet_Package_References;
 with org.allbinary.game.midlet.DemoSetup_Package;
 with org.allbinary.game.midlet.LicenseLoadingType_Package;
 with org.allbinary.game.midlet.LicensedDemoSetupFactory_Package;

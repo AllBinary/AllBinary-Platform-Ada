@@ -14,13 +14,13 @@
 
 
 with org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package; use org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package;
+with org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package_References;
 with org.allbinary.graphics.j2me.workarea.tools.SelectionTool_Package; use org.allbinary.graphics.j2me.workarea.tools.SelectionTool_Package;
 with org.allbinary.graphics.j2me.workarea.tools.GraphicItemInterface_Package; use org.allbinary.graphics.j2me.workarea.tools.GraphicItemInterface_Package;
+with org.allbinary.graphics.j2me.workarea.tools.GraphicItemInterface_Package_References;
 with org.allbinary.graphics.j2me.workarea.canvas.CanvasDom_Package;
-with org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package;
 with org.allbinary.graphics.j2me.workarea.canvas.CanvasTreeLabel_Package;
 with org.allbinary.graphics.j2me.workarea.tools.GraphicItemInterface_Package;
-with org.allbinary.graphics.j2me.workarea.tools.GraphicsItemInterfaceFactoryInterface_Package;
 with org.allbinary.graphics.j2me.workarea.canvas.Grid_Package;
 with org.allbinary.graphics.j2me.workarea.canvas.IntegerDimension_Package;
 with org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEvent_Package;

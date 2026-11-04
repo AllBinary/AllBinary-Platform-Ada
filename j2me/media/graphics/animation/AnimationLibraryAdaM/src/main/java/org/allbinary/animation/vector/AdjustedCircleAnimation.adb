@@ -14,11 +14,12 @@
 
 
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
 with org.allbinary.AndroidUtil_Package; use org.allbinary.AndroidUtil_Package;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.graphics.color.BasicColor_Package_References;
 with org.allbinary.animation.Animation_Package;
 with org.allbinary.animation.AnimationInterface_Package;
-with org.allbinary.animation.vector.CircleAnimation_Package;
 
 package body org.allbinary.animation.vector.AdjustedCircleAnimation_Package is
 

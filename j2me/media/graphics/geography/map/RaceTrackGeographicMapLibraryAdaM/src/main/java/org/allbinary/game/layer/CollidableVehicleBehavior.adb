@@ -16,12 +16,15 @@
 with org.allbinary.game.layer.pickup.PickedUpLayerInterface_Package; use org.allbinary.game.layer.pickup.PickedUpLayerInterface_Package;
 with org.allbinary.logic.communication.log.ForcedLogUtil_Package; use org.allbinary.logic.communication.log.ForcedLogUtil_Package;
 with org.allbinary.game.collision.CollidableInterfaceCompositeInterface_Package; use org.allbinary.game.collision.CollidableInterfaceCompositeInterface_Package;
+with org.allbinary.game.collision.CollidableInterfaceCompositeInterface_Package_References;
 with org.allbinary.game.collision.CollisionType_Package; use org.allbinary.game.collision.CollisionType_Package;
 with org.allbinary.game.collision.CollisionTypeFactory_Package; use org.allbinary.game.collision.CollisionTypeFactory_Package;
 with org.allbinary.game.layer.special.CollidableDestroyableDamageableBehavior_Package; use org.allbinary.game.layer.special.CollidableDestroyableDamageableBehavior_Package;
 with org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package; use org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package;
 with org.allbinary.game.layer.VehiclePropertiesCompositeInterface_Package; use org.allbinary.game.layer.VehiclePropertiesCompositeInterface_Package;
+with org.allbinary.game.layer.VehiclePropertiesCompositeInterface_Package_References;
 with org.allbinary.game.layer.CollidableCompositeLayer_Package; use org.allbinary.game.layer.CollidableCompositeLayer_Package;
+with org.allbinary.game.layer.CollidableCompositeLayer_Package_References;
 with org.allbinary.game.layer.VehicleProperties_Package; use org.allbinary.game.layer.VehicleProperties_Package;
 with org.allbinary.game.layer.VehicleFrictionProperties_Package; use org.allbinary.game.layer.VehicleFrictionProperties_Package;
 with org.allbinary.game.layer.VehicleFrictionProperties_Package;
@@ -101,7 +104,7 @@ package body org.allbinary.game.layer.CollidableVehicleBehavior_Package is
             collidableDestroyableDamageableLayer := (CollidableDestroyableDamageableLayer_Access (ownerLayer));
             collidableDestroyableDamageableLayer.getPickupBehavior.doPickupLayer (PickedUpLayerInterface_Access (collidableInterfaceCompositeInterface));
         elsif (collisionType) = (collisionTypeFactory.COLLISION) then
-            CollidableDestroyableDamageableBehavior (This).collide (ownerLayer, collidableInterfaceCompositeInterface);
+            CollidableDestroyableDamageableBehavior_Package.CollidableDestroyableDamageableBehavior (This).collide (ownerLayer, collidableInterfaceCompositeInterface);
         else
             CollidableVehicleBehavior'Class (This).collideVehicle (ownerLayer, VehiclePropertiesCompositeInterface_Access (collidableInterfaceCompositeInterface));
         end if;

@@ -14,6 +14,7 @@
 
 
 with org.allbinary.graphics.GPoint_Package; use org.allbinary.graphics.GPoint_Package;
+with org.allbinary.graphics.GPoint_Package_References;
 with org.allbinary.graphics.PointFactory_Package; use org.allbinary.graphics.PointFactory_Package;
 with org.allbinary.graphics.color.ColorCacheFactory_Package; use org.allbinary.graphics.color.ColorCacheFactory_Package;
 with org.allbinary.graphics.color.ColorCacheable_Package; use org.allbinary.graphics.color.ColorCacheable_Package;
@@ -21,13 +22,14 @@ with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.s
 with org.allbinary.logic.util.cache.AutomaticCacheInterface_Package; use org.allbinary.logic.util.cache.AutomaticCacheInterface_Package;
 with org.allbinary.media.image.comparison.pixel.PixelDeltaFactory_Package; use org.allbinary.media.image.comparison.pixel.PixelDeltaFactory_Package;
 with org.allbinary.media.image.comparison.ImageComparatorConstraintsInterface_Package; use org.allbinary.media.image.comparison.ImageComparatorConstraintsInterface_Package;
+with org.allbinary.media.image.comparison.ImageComparatorConstraintsInterface_Package_References;
 with org.allbinary.media.image.comparison.Color_Package; use org.allbinary.media.image.comparison.Color_Package;
 with org.allbinary.media.image.comparison.ImageComparisonResult_Package; use org.allbinary.media.image.comparison.ImageComparisonResult_Package;
+with org.allbinary.media.image.comparison.ImageComparisonResult_Package_References;
 with org.allbinary.media.image.comparison.color.ColorDelta_Package;
 with org.allbinary.media.image.comparison.ImageComparatorConstraintsInterface_Package;
 with org.allbinary.media.image.comparison.ImageComparisonResult_Package;
 with org.allbinary.media.image.comparison.pixel.PixelDelta_Package;
-with org.allbinary.media.image.comparison.pixel.PixelDeltaFactory_Package;
 
 package body org.allbinary.media.image.comparison.ImageComparator_Package is
 

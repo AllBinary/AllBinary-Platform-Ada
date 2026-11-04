@@ -17,6 +17,7 @@ with org.allbinary.AppletUtil_Package; use org.allbinary.AppletUtil_Package;
 with org.allbinary.J2MEUtil_Package; use org.allbinary.J2MEUtil_Package;
 with org.allbinary.game.commands.GameCommandsFactory_Package; use org.allbinary.game.commands.GameCommandsFactory_Package;
 with org.allbinary.graphics.displayable.MyCanvas_Package; use org.allbinary.graphics.displayable.MyCanvas_Package;
+with org.allbinary.graphics.displayable.MyCanvas_Package_References;
 
 package body org.allbinary.canvas.CustomGameMenuUtil_Package is
 

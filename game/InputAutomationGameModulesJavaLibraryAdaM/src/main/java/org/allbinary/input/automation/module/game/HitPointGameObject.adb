@@ -15,8 +15,6 @@
 
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
-with org.allbinary.input.automation.module.game.HitPointGameObjectInterface_Package;
-with org.allbinary.input.automation.module.game.MeteredGameObject_Package;
 with org.allbinary.input.automation.module.game.MeteredGameObjectInterface_Package;
 
 package body org.allbinary.input.automation.module.game.HitPointGameObject_Package is
@@ -93,7 +91,7 @@ package body org.allbinary.input.automation.module.game.HitPointGameObject_Packa
         commonSeps := CommonSeps_Package.getInstance;
         stringBuffer := StringMaker_Package.Create;
         stringBuffer.append (This.HP_LABEL);
-        stringBuffer.append (MeteredGameObject (This).toString);
+        stringBuffer.append (MeteredGameObject_Package.MeteredGameObject (This).toString);
         stringBuffer.append (commonSeps.NEW_LINE);
         stringBuffer.append (This.IS_DAMAGED_LABEL);
         stringBuffer.appendboolean (HitPointGameObject'Class (This).isDamaged);

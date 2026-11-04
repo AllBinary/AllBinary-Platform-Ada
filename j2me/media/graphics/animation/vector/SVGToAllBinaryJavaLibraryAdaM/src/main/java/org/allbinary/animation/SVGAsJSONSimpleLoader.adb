@@ -14,17 +14,22 @@
 
 
 with org.allbinary.graphics.GraphicsStrings_Package; use org.allbinary.graphics.GraphicsStrings_Package;
+with org.allbinary.graphics.GraphicsStrings_Package_References;
 with org.allbinary.logic.math.PrimitiveIntUtil_Package; use org.allbinary.logic.math.PrimitiveIntUtil_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.math.PositionStrings_Package; use org.allbinary.math.PositionStrings_Package;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.json.me.JSONArray_Package; use org.json.me.JSONArray_Package;
 with org.json.me.JSONException_Package; use org.json.me.JSONException_Package;
 with org.json.me.JSONObject_Package; use org.json.me.JSONObject_Package;
+with org.json.me.JSONObject_Package_References;
 with org.allbinary.animation.ShapeTypeFactory_Package; use org.allbinary.animation.ShapeTypeFactory_Package;
+with org.allbinary.animation.ShapeTypeFactory_Package_References;
 with org.allbinary.animation.ShapeType_Package; use org.allbinary.animation.ShapeType_Package;
+with org.allbinary.animation.ShapeType_Package_References;
 with org.allbinary.animation.ShapeType_Package;
 with org.allbinary.animation.ShapeTypeFactory_Package;
 

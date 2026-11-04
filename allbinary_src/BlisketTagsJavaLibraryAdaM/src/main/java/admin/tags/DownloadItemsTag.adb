@@ -18,6 +18,7 @@ with admin.taghelpers.DownloadItemsRequestHelperFactory_Package; use admin.taghe
 with org.allbinary.logic.communication.http.request.AbResponseHandler_Package; use org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
 with admin.tags.ParentInventoryTagHelper_Package; use admin.tags.ParentInventoryTagHelper_Package;
 with admin.tags.AbTagData_Package; use admin.tags.AbTagData_Package;
+with admin.tags.ParentInventoryTagHelper_Package;
 
 package body admin.tags.DownloadItemsTag_Package is
 
@@ -57,7 +58,7 @@ package body admin.tags.DownloadItemsTag_Package is
                         ParentInventoryTagHelper_Package.getInstance.isValid (DownloadItemsTag_Access'(This'Unchecked_Access), parentTag);
                         DownloadItemsTag'Class (This).getPropertiesHashMap.put (AbTagData_Package.PARENT, parentTag);
                     end if;
-                    return TableTag (This).doStartTag;
+                    return TableTag_Package.TableTag (This).doStartTag;
                 end if;
             end if;
             return SKIP_BODY;

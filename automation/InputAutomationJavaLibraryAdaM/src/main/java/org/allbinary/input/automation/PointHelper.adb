@@ -15,7 +15,9 @@
 
 with org.allbinary.input.automation.PointFactory_Package; use org.allbinary.input.automation.PointFactory_Package;
 with org.allbinary.input.automation.Point_Package; use org.allbinary.input.automation.Point_Package;
+with org.allbinary.input.automation.Point_Package_References;
 with org.allbinary.input.automation.Rectangle_Package; use org.allbinary.input.automation.Rectangle_Package;
+with org.allbinary.input.automation.Rectangle_Package_References;
 with org.allbinary.input.automation.PointFactory_Package;
 
 package body org.allbinary.input.automation.PointHelper_Package is
@@ -78,7 +80,7 @@ package body org.allbinary.input.automation.PointHelper_Package is
 
 begin
    null;
-   two := 2.0;
+   
 
 end org.allbinary.input.automation.PointHelper_Package;
 

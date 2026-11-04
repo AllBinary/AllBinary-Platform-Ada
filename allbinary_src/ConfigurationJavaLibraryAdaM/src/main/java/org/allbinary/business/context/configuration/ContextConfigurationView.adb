@@ -19,9 +19,12 @@ with org.allbinary.logic.communication.smtp.configuration.server.EmailServerConf
 with org.allbinary.logic.communication.smtp.configuration.server.EmailServerConfigurationInterface_Package; use org.allbinary.logic.communication.smtp.configuration.server.EmailServerConfigurationInterface_Package;
 with org.allbinary.logic.communication.smtp.configuration.server.EmailServerConfigurationView_Package; use org.allbinary.logic.communication.smtp.configuration.server.EmailServerConfigurationView_Package;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
+with org.w3c.dom.Document_Package_References;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
+with org.w3c.dom.Node_Package_References;
 with org.w3c.dom.NodeList_Package; use org.w3c.dom.NodeList_Package;
 with org.allbinary.business.context.configuration.ContextConfigurationInterface_Package; use org.allbinary.business.context.configuration.ContextConfigurationInterface_Package;
+with org.allbinary.business.context.configuration.ContextConfigurationInterface_Package_References;
 with org.allbinary.business.context.configuration.ContextConfiguration_Package; use org.allbinary.business.context.configuration.ContextConfiguration_Package;
 with org.allbinary.business.context.configuration.ContextConfigurationData_Package; use org.allbinary.business.context.configuration.ContextConfigurationData_Package;
 with org.allbinary.business.context.configuration.ContextConfiguration_Package;

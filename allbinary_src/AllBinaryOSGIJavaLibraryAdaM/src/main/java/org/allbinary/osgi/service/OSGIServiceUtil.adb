@@ -14,12 +14,16 @@
 
 
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.osgi.framework.BundleContext_Package; use org.osgi.framework.BundleContext_Package;
+with org.osgi.framework.BundleContext_Package_References;
 with org.osgi.framework.ServiceReference_Package; use org.osgi.framework.ServiceReference_Package;
+with org.osgi.framework.ServiceReference_Package_References;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.osgi.OSGIServiceInterface_Package; use org.allbinary.osgi.OSGIServiceInterface_Package;
-with org.allbinary.osgi.OSGIServiceInterface_Package;
 
 package body org.allbinary.osgi.service.OSGIServiceUtil_Package is
 

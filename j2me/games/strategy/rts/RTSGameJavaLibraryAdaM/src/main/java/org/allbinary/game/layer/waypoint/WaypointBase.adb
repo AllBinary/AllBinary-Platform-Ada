@@ -14,21 +14,28 @@
 
 
 with org.allbinary.game.layer.AllBinaryGameLayerManager_Package; use org.allbinary.game.layer.AllBinaryGameLayerManager_Package;
+with org.allbinary.game.layer.AllBinaryGameLayerManager_Package_References;
 with org.allbinary.game.layer.PathFindingLayerInterface_Package; use org.allbinary.game.layer.PathFindingLayerInterface_Package;
+with org.allbinary.game.layer.PathFindingLayerInterface_Package_References;
 with org.allbinary.logic.communication.log.ForcedLogUtil_Package; use org.allbinary.logic.communication.log.ForcedLogUtil_Package;
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+with org.allbinary.logic.util.event.AllBinaryEventObject_Package_References;
 with org.allbinary.logic.util.event.EventListenerInterface_Package; use org.allbinary.logic.util.event.EventListenerInterface_Package;
 with org.allbinary.logic.util.event.EventStrings_Package; use org.allbinary.logic.util.event.EventStrings_Package;
 with org.allbinary.media.audio.NoSound_Package; use org.allbinary.media.audio.NoSound_Package;
 with org.allbinary.media.audio.Sound_Package; use org.allbinary.media.audio.Sound_Package;
+with org.allbinary.media.audio.Sound_Package_References;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
+with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package_References;
 with org.allbinary.media.graphics.geography.pathfinding.MultipassState_Package; use org.allbinary.media.graphics.geography.pathfinding.MultipassState_Package;
+with org.allbinary.media.graphics.geography.pathfinding.MultipassState_Package_References;
 with org.allbinary.media.graphics.geography.pathfinding.PathFindingInfo_Package; use org.allbinary.media.graphics.geography.pathfinding.PathFindingInfo_Package;
+with org.allbinary.media.graphics.geography.pathfinding.PathFindingInfo_Package_References;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.game.layer.GeographicMapCellPositionAreaBase_Package;
 with org.allbinary.game.layer.GeographicMapCellPositionAreaInterface_Package;
-with org.allbinary.game.layer.PathFindingLayerInterface_Package;
 with org.allbinary.game.layer.RTSLayer2LogHelper_Package;
 with org.allbinary.game.layer.SelectionHudPaintable_Package;
 with org.allbinary.game.layer.waypoint.Waypoint2LogHelper_Package;

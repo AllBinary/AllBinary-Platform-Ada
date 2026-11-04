@@ -17,13 +17,14 @@ with org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayIn
 with org.allbinary.business.user.commerce.money.payment.types.BasicPaymentTypeUtil_Package; use org.allbinary.business.user.commerce.money.payment.types.BasicPaymentTypeUtil_Package;
 with org.allbinary.data.tables.user.commerce.money.payment.gateway.PaymentGatewayEntityFactory_Package; use org.allbinary.data.tables.user.commerce.money.payment.gateway.PaymentGatewayEntityFactory_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.string_Id.StringValidationUtil_Package; use org.allbinary.logic.string_Id.StringValidationUtil_Package;
 with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
+with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package_References;
 with views.admin.payment.gateway.PaymentGatewayComponent_Package; use views.admin.payment.gateway.PaymentGatewayComponent_Package;
 with views.HttpComponentView_Package;
 with views.business.context.modules.storefront.HttpStoreComponentView_Package;
 with views.admin.payment.gateway.PaymentGatewayComponent_Package;
-with views.admin.payment.gateway.PaymentGatewayViewAbstract_Package;
 
 package body views.admin.payment.gateway.GatewayView_Package is
 
@@ -75,7 +76,7 @@ package body views.admin.payment.gateway.GatewayView_Package is
    procedure getFormData (This : in out GatewayView; request_Param : access HttpServletRequest_Package.HttpServletRequest'Class) is
       request : constant HttpServletRequest_Access := HttpServletRequest_Access (request_Param);
    begin
-        PaymentGatewayViewAbstract (This).getFormData (request);
+        PaymentGatewayViewAbstract_Package.PaymentGatewayViewAbstract (This).getFormData (request);
         if StringValidationUtil_Package.getInstance.isEmpty (GatewayView'Class (This).getPaymentGatewayPrimaryKey.getName) then
             GatewayView'Class (This).getPaymentGatewayPrimaryKey.setName (GatewayView'Class (This).getWeblisketSession.getPaymentMethod);
         end if;

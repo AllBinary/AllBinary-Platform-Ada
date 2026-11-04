@@ -14,11 +14,12 @@
 
 
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.graphics.color.BasicColor_Package_References;
 with org.allbinary.animation.TimedVectorAnimation_Package; use org.allbinary.animation.TimedVectorAnimation_Package;
 with org.allbinary.animation.AnimationBehavior_Package; use org.allbinary.animation.AnimationBehavior_Package;
 with org.allbinary.animation.VectorAnimation_Package; use org.allbinary.animation.VectorAnimation_Package;
+with org.allbinary.animation.VectorAnimation_Package_References;
 with org.allbinary.animation.TimedVectorAnimation_Package;
-with org.allbinary.animation.VectorAnimationFactoryInterface_Package;
 
 package body org.allbinary.animation.TimedVectorAnimationFactory_Package is
 

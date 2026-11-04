@@ -14,10 +14,11 @@
 
 
 with org.allbinary.game.layer.AllBinaryTiledLayer_Package; use org.allbinary.game.layer.AllBinaryTiledLayer_Package;
+with org.allbinary.game.layer.AllBinaryTiledLayer_Package_References;
 with org.allbinary.layer.Layer_Package; use org.allbinary.layer.Layer_Package;
+with org.allbinary.layer.Layer_Package_References;
 with org.allbinary.layer.NullLayer_Package; use org.allbinary.layer.NullLayer_Package;
 with org.allbinary.view.ViewPosition_Package; use org.allbinary.view.ViewPosition_Package;
-with org.allbinary.game.layer.AllBinaryTiledLayer_Package;
 
 package body org.allbinary.game.view.TileLayerPositionIntoViewPosition_Package is
 
@@ -64,17 +65,17 @@ package body org.allbinary.game.view.TileLayerPositionIntoViewPosition_Package i
 
    function getX (This : in out TileLayerPositionIntoViewPosition) return Integer is
    begin
-        return (ViewPosition (This).getX) - (This.tiledLayer.getXP);
+        return (ViewPosition_Package.ViewPosition (This).getX) - (This.tiledLayer.getXP);
    end getX;
 
    function getY (This : in out TileLayerPositionIntoViewPosition) return Integer is
    begin
-        return (ViewPosition (This).getY) - (This.tiledLayer.getYP);
+        return (ViewPosition_Package.ViewPosition (This).getY) - (This.tiledLayer.getYP);
    end getY;
 
    function getZ (This : in out TileLayerPositionIntoViewPosition) return Integer is
    begin
-        return (ViewPosition (This).getZ) - (This.tiledLayer.getZP);
+        return (ViewPosition_Package.ViewPosition (This).getZ) - (This.tiledLayer.getZP);
    end getZ;
 
    procedure setTiledLayer (This : in out TileLayerPositionIntoViewPosition; tiledLayer_Param : access AllBinaryTiledLayer_Package.AllBinaryTiledLayer'Class) is

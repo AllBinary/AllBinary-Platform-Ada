@@ -14,16 +14,21 @@
 
 
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
 with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Animation_Package;
+with org.allbinary.animation.Animation_Package_References;
 with org.allbinary.game.graphics.hud.BasicHud_Package; use org.allbinary.game.graphics.hud.BasicHud_Package;
 with org.allbinary.game.health.Health_Package; use org.allbinary.game.health.Health_Package;
+with org.allbinary.game.health.Health_Package_References;
 with org.allbinary.game.health.HealthListenerInterface_Package; use org.allbinary.game.health.HealthListenerInterface_Package;
 with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
 with org.allbinary.graphics.paint.PaintableInterface_Package; use org.allbinary.graphics.paint.PaintableInterface_Package;
 with org.allbinary.time.GameTickTimeDelayHelper_Package; use org.allbinary.time.GameTickTimeDelayHelper_Package;
+with org.allbinary.time.GameTickTimeDelayHelper_Package_References;
 with org.allbinary.time.GameTickTimeDelayHelperFactory_Package; use org.allbinary.time.GameTickTimeDelayHelperFactory_Package;
 with org.allbinary.time.NoTimeDelayHelper_Package; use org.allbinary.time.NoTimeDelayHelper_Package;
 with org.allbinary.time.TimeDelayHelper_Package; use org.allbinary.time.TimeDelayHelper_Package;
+with org.allbinary.time.TimeDelayHelper_Package_References;
 
 package body org.allbinary.game.ag.layer.hud.basic.health.HealthHudWidget_Package is
 
@@ -132,7 +137,7 @@ package body org.allbinary.game.ag.layer.hud.basic.health.HealthHudWidget_Packag
 
    procedure setX (This : in out HealthHudWidget; x : Integer) is
    begin
-        BasicHud (This).setX (x);
+        BasicHud_Package.BasicHud (This).setX (x);
         HealthHudWidget'Class (This).update;
    end setX;
 

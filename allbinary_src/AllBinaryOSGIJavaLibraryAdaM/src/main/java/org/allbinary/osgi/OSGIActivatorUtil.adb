@@ -15,7 +15,9 @@
 
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
+with org.allbinary.util.ABHashtable_Package_References;
 with org.osgi.framework.BundleContext_Package; use org.osgi.framework.BundleContext_Package;
+with org.osgi.framework.BundleContext_Package_References;
 with org.osgi.framework.NullServiceReferenceFactory_Package; use org.osgi.framework.NullServiceReferenceFactory_Package;
 with org.osgi.framework.ServiceReference_Package; use org.osgi.framework.ServiceReference_Package;
 with org.osgi.framework.ServiceRegistration_Package; use org.osgi.framework.ServiceRegistration_Package;

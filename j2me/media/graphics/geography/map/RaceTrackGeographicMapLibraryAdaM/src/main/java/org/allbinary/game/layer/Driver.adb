@@ -15,6 +15,7 @@
 
 with org.allbinary.logic.math.SmallIntegerSingletonFactory_Package; use org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
 with org.allbinary.game.layer.Aggression_Package; use org.allbinary.game.layer.Aggression_Package;
+with org.allbinary.game.layer.Aggression_Package_References;
 with org.allbinary.game.layer.Aggression_Package;
 
 package body org.allbinary.game.layer.Driver_Package is

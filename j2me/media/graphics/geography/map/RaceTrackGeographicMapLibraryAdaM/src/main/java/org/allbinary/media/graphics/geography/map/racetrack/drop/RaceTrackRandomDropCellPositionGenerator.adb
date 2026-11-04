@@ -15,21 +15,23 @@
 
 with org.allbinary.game.layer.pickup.PickedUpLayerInterfaceFactoryInterface_Package; use org.allbinary.game.layer.pickup.PickedUpLayerInterfaceFactoryInterface_Package;
 with org.allbinary.game.layer.AllBinaryGameLayerManager_Package; use org.allbinary.game.layer.AllBinaryGameLayerManager_Package;
+with org.allbinary.game.layer.AllBinaryGameLayerManager_Package_References;
 with org.allbinary.game.layer.AllBinaryTiledLayer_Package; use org.allbinary.game.layer.AllBinaryTiledLayer_Package;
 with org.allbinary.game.layer.drop.DropLayerFactory_Package; use org.allbinary.game.layer.drop.DropLayerFactory_Package;
 with org.allbinary.game.layer.pickup.PickupLayerCircularStaticPool_Package; use org.allbinary.game.layer.pickup.PickupLayerCircularStaticPool_Package;
 with org.allbinary.game.layer.pickup.RaceTrackPickupLayer_Package; use org.allbinary.game.layer.pickup.RaceTrackPickupLayer_Package;
 with org.allbinary.game.rand.MyRandomFactory_Package; use org.allbinary.game.rand.MyRandomFactory_Package;
+with org.allbinary.game.rand.MyRandomFactory_Package_References;
 with org.allbinary.graphics.GPoint_Package; use org.allbinary.graphics.GPoint_Package;
 with org.allbinary.layer.AllBinaryLayerManager_Package; use org.allbinary.layer.AllBinaryLayerManager_Package;
+with org.allbinary.layer.AllBinaryLayerManager_Package_References;
 with org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package; use org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
+with org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package_References;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
 with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackData_Package;
-with org.allbinary.media.graphics.geography.map.racetrack.drop.RaceTrackDropCellPositionGenerator_Package;
 with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackFrictionProperties_Package;
 with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapInterface_Package;
 with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackInfo_Package;
-with org.allbinary.game.layer.pickup.RaceTrackPickupLayer_Package;
 
 package body org.allbinary.media.graphics.geography.map.racetrack.drop.RaceTrackRandomDropCellPositionGenerator_Package is
 
@@ -118,7 +120,7 @@ package body org.allbinary.media.graphics.geography.map.racetrack.drop.RaceTrack
       geographicMapInterface : constant BasicGeographicMap_Access := BasicGeographicMap_Access (geographicMapInterface_Param);
       tiledLayer : AllBinaryTiledLayer_Access;
    begin
-        RaceTrackDropCellPositionGenerator (This).update (allBinaryGameLayerManager, geographicMapInterface);
+        RaceTrackDropCellPositionGenerator_Package.RaceTrackDropCellPositionGenerator (This).update (allBinaryGameLayerManager, geographicMapInterface);
         tiledLayer := geographicMapInterface.getAllBinaryTiledLayer;
         This.cellWidth := (tiledLayer.getCellWidth) / (This.cellsPerRowOrColumn);
         This.cellHeight := (tiledLayer.getCellHeight) / (This.cellsPerRowOrColumn);

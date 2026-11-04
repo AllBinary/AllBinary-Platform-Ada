@@ -14,10 +14,14 @@
 
 
 with org.allbinary.game.combat.weapon.WeaponProperties_Package; use org.allbinary.game.combat.weapon.WeaponProperties_Package;
+with org.allbinary.game.combat.weapon.WeaponProperties_Package_References;
 with org.allbinary.game.score.ScoreableInterface_Package; use org.allbinary.game.score.ScoreableInterface_Package;
+with org.allbinary.game.score.ScoreableInterface_Package_References;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
+with org.allbinary.layer.AllBinaryLayer_Package_References;
 with org.allbinary.layer.AllBinaryLayerCircularPool_Package; use org.allbinary.layer.AllBinaryLayerCircularPool_Package;
 with org.allbinary.game.layer.weapon.WeaponLayer_Package; use org.allbinary.game.layer.weapon.WeaponLayer_Package;
+with org.allbinary.game.layer.weapon.WeaponLayer_Package_References;
 with org.allbinary.game.layer.weapon.CollidableWeaponBehavior_Package;
 with org.allbinary.game.layer.weapon.WeaponLayer_Package;
 
@@ -90,7 +94,7 @@ package body org.allbinary.game.layer.weapon.WeaponLayerCircularPool_Package is
       scoreable : constant ScoreableInterface_Access := ScoreableInterface_Access (scoreable_Param);
       weaponLayer : WeaponLayer_Access;
    begin
-        weaponLayer := WeaponLayer_Access (AllBinaryLayerCircularPool (This).getNextInstance);
+        weaponLayer := WeaponLayer_Access (AllBinaryLayerCircularPool_Package.AllBinaryLayerCircularPool (This).getNextInstance);
         weaponLayer.initXYZ (x, y, z);
         weaponLayer.init (sourceLayerInterface, angle, otherAngle, weaponProperties, scoreable);
         return weaponLayer;

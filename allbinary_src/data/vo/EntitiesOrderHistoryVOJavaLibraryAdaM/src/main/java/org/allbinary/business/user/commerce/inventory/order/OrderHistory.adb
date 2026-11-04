@@ -21,21 +21,25 @@ with org.allbinary.business.user.UserData_Package; use org.allbinary.business.us
 with org.allbinary.business.user.address.BillingAddressData_Package; use org.allbinary.business.user.address.BillingAddressData_Package;
 with org.allbinary.business.user.address.ShippingAddressData_Package; use org.allbinary.business.user.address.ShippingAddressData_Package;
 with org.allbinary.business.user.address.StreetAddress_Package; use org.allbinary.business.user.address.StreetAddress_Package;
+with org.allbinary.business.user.address.StreetAddress_Package_References;
 with org.allbinary.business.user.commerce.inventory.basket.BasketInterface_Package; use org.allbinary.business.user.commerce.inventory.basket.BasketInterface_Package;
+with org.allbinary.business.user.commerce.inventory.basket.BasketInterface_Package_References;
 with org.allbinary.business.user.commerce.money.Money_Package; use org.allbinary.business.user.commerce.money.Money_Package;
+with org.allbinary.business.user.commerce.money.Money_Package_References;
 with org.allbinary.business.user.commerce.money.MoneyException_Package; use org.allbinary.business.user.commerce.money.MoneyException_Package;
 with org.allbinary.business.user.commerce.money.payment.Payment_Package; use org.allbinary.business.user.commerce.money.payment.Payment_Package;
+with org.allbinary.business.user.commerce.money.payment.Payment_Package_References;
 with org.allbinary.business.user.commerce.money.payment.PaymentData_Package; use org.allbinary.business.user.commerce.money.payment.PaymentData_Package;
 with org.allbinary.business.user.commerce.shipping.ShippingMethodData_Package; use org.allbinary.business.user.commerce.shipping.ShippingMethodData_Package;
 with org.allbinary.data.tree.dom.ModDomHelper_Package; use org.allbinary.data.tree.dom.ModDomHelper_Package;
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
+with org.w3c.dom.Document_Package_References;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
+with org.w3c.dom.Node_Package_References;
 with org.allbinary.business.user.commerce.inventory.order.OrderData_Package; use org.allbinary.business.user.commerce.inventory.order.OrderData_Package;
 with org.allbinary.business.user.commerce.inventory.order.OrderHistoryData_Package; use org.allbinary.business.user.commerce.inventory.order.OrderHistoryData_Package;
-with org.allbinary.business.user.commerce.inventory.order.Order_Package;
-with org.allbinary.business.user.commerce.inventory.order.OrderHistoryInterface_Package;
 
 package body org.allbinary.business.user.commerce.inventory.order.OrderHistory_Package is
 
@@ -163,10 +167,10 @@ package body org.allbinary.business.user.commerce.inventory.order.OrderHistory_P
         This.shippingCost := orderHistory_Var.getShippingCost;
         This.taxes := orderHistory_Var.getTaxes;
         This.total := orderHistory_Var.getTotal;
-        Order (This).setUserComments (Java_Unbox (orderHistory_Var.getUserComments));
-        Order (This).setUserCancelComments (Java_Unbox (orderHistory_Var.getUserCancelComments));
-        Order (This).setStoreComments (Java_Unbox (orderHistory_Var.getStoreComments));
-        Order (This).setStoreCancelComments (Java_Unbox (orderHistory_Var.getStoreCancelComments));
+        Order_Package.Order (This).setUserComments (Java_Unbox (orderHistory_Var.getUserComments));
+        Order_Package.Order (This).setUserCancelComments (Java_Unbox (orderHistory_Var.getUserCancelComments));
+        Order_Package.Order (This).setStoreComments (Java_Unbox (orderHistory_Var.getStoreComments));
+        Order_Package.Order (This).setStoreCancelComments (Java_Unbox (orderHistory_Var.getStoreCancelComments));
    end Initialize;
 
    function Create (basketInterface_Param : access BasketInterface_Package.BasketInterface'Class; orderHistory_Var_Param : access OrderHistory_Package.OrderHistory'Class) return OrderHistory_Access is
@@ -195,10 +199,10 @@ package body org.allbinary.business.user.commerce.inventory.order.OrderHistory_P
         This.total := Money_Package.Create (Java_Unbox (orderHistoryHashMap.get (OrderHistoryData_Package.TOTAL)));
         This.shippingCost := Money_Package.Create (Java_Unbox (orderHistoryHashMap.get (OrderHistoryData_Package.SHIPPINGCOST)));
         This.taxes := Money_Package.Create (Java_Unbox (orderHistoryHashMap.get (OrderHistoryData_Package.TAX)));
-        Order (This).setUserComments (Java_Unbox (orderHistoryHashMap.get (OrderData_Package.CUSTOMERCOMMENT)));
-        Order (This).setUserCancelComments (Java_Unbox (orderHistoryHashMap.get (OrderData_Package.CUSTOMERCANCELCOMMENT)));
-        Order (This).setStoreComments (Java_Unbox (orderHistoryHashMap.get (OrderData_Package.STORECOMMENT)));
-        Order (This).setStoreCancelComments (Java_Unbox (orderHistoryHashMap.get (OrderData_Package.STORECANCELCOMMENT)));
+        Order_Package.Order (This).setUserComments (Java_Unbox (orderHistoryHashMap.get (OrderData_Package.CUSTOMERCOMMENT)));
+        Order_Package.Order (This).setUserCancelComments (Java_Unbox (orderHistoryHashMap.get (OrderData_Package.CUSTOMERCANCELCOMMENT)));
+        Order_Package.Order (This).setStoreComments (Java_Unbox (orderHistoryHashMap.get (OrderData_Package.STORECOMMENT)));
+        Order_Package.Order (This).setStoreCancelComments (Java_Unbox (orderHistoryHashMap.get (OrderData_Package.STORECANCELCOMMENT)));
    end Initialize;
 
    function Create (basketInterface_Param : access BasketInterface_Package.BasketInterface'Class; orderHistoryHashMap_Param : access HashMap_Package.HashMap'Class) return OrderHistory_Access is
@@ -385,7 +389,7 @@ package body org.allbinary.business.user.commerce.inventory.order.OrderHistory_P
         keyArray := keySet.toArray;
         size := keyArray'Length;
         node := document.createElement (OrderHistoryData_Package.ORDERHISTORY_Var);
-        node.appendChild (Order (This).toXmlNode (document));
+        node.appendChild (Order_Package.Order (This).toXmlNode (document));
         billingAddressNode := document.createElement (BillingAddressData_Package.BILLINGADDRESS);
         billingAddressNode.appendChild (This.billingAddress.toXmlNode (document));
         shippingAddressNode := document.createElement (ShippingAddressData_Package.SHIPPINGADDRESS);

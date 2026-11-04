@@ -14,7 +14,6 @@
 
 
 with org.allbinary.graphics.opengles.shader.Shader_Package;
-with org.allbinary.graphics.opengles.shader.ShaderInitializer_Package;
 
 package body org.allbinary.graphics.opengles.shader.SimpleShaderInitializer_Package is
 

@@ -14,9 +14,11 @@
 
 
 with org.allbinary.graphics.GPoint_Package; use org.allbinary.graphics.GPoint_Package;
+with org.allbinary.graphics.GPoint_Package_References;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
+with org.allbinary.layer.AllBinaryLayer_Package_References;
 with org.allbinary.logic.math.MathUtil_Package; use org.allbinary.logic.math.MathUtil_Package;
-with org.allbinary.layer.AllBinaryLayer_Package;
+with org.allbinary.logic.math.MathUtil_Package_References;
 with org.allbinary.layer.Layer_Package;
 with org.allbinary.layer.LayerInterface_Package;
 with org.allbinary.layer.NamedInterface_Package;

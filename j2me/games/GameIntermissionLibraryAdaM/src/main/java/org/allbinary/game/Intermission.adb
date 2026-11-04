@@ -14,10 +14,11 @@
 
 
 with org.allbinary.time.TimeDelayHelper_Package; use org.allbinary.time.TimeDelayHelper_Package;
+with org.allbinary.time.TimeDelayHelper_Package_References;
 with org.allbinary.game.NullIntermissionEnableListener_Package; use org.allbinary.game.NullIntermissionEnableListener_Package;
 with org.allbinary.game.IntermissionEnableListenerInterface_Package; use org.allbinary.game.IntermissionEnableListenerInterface_Package;
+with org.allbinary.game.IntermissionEnableListenerInterface_Package_References;
 with org.allbinary.game.IntermissionEnableListenerInterface_Package;
-with org.allbinary.game.IntermissionInterface_Package;
 with org.allbinary.game.NullIntermissionEnableListener_Package;
 
 package body org.allbinary.game.Intermission_Package is

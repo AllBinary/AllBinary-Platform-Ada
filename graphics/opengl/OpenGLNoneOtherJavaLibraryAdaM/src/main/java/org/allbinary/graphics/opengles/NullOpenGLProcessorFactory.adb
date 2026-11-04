@@ -2,6 +2,7 @@
 
 
 with org.allbinary.graphics.opengles.OpenGLProcessor_Package; use org.allbinary.graphics.opengles.OpenGLProcessor_Package;
+with org.allbinary.graphics.opengles.OpenGLProcessor_Package_References;
 with org.allbinary.graphics.opengles.OpenGLProcessor_Package;
 
 package body org.allbinary.graphics.opengles.NullOpenGLProcessorFactory_Package is

@@ -13,7 +13,6 @@
 --  Generated Code Do Not Modify
 
 
-with org.allbinary.animation.transition.shake.ShakeAnimationListener_Package;
 with org.allbinary.animation.transition.shake.ShakeEvent_Package;
 
 package body org.allbinary.animation.transition.shake.NoShakeAnimationListener_Package is

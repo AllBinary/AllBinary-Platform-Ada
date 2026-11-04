@@ -2,6 +2,7 @@
 
 
 with javax.microedition.khronos.opengles.GL10_Package; use javax.microedition.khronos.opengles.GL10_Package;
+with javax.microedition.khronos.opengles.GL10_Package_References;
 
 package body org.platform.opengl.OpenGLGLU_Package is
 

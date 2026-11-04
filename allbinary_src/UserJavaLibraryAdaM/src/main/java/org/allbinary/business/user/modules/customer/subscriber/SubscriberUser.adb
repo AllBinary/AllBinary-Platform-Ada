@@ -16,9 +16,9 @@
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.business.user.modules.User_Package; use org.allbinary.business.user.modules.User_Package;
 with org.allbinary.business.user.subscription.Subscription_Package; use org.allbinary.business.user.subscription.Subscription_Package;
+with org.allbinary.business.user.subscription.Subscription_Package_References;
 with org.allbinary.logic.communication.http.request.session.WeblisketSessionInterface_Package; use org.allbinary.logic.communication.http.request.session.WeblisketSessionInterface_Package;
-with org.allbinary.business.user.subscription.Subscription_Package;
-with org.allbinary.business.user.modules.User_Package;
+with org.allbinary.logic.communication.http.request.session.WeblisketSessionInterface_Package_References;
 
 package body org.allbinary.business.user.modules.customer.subscriber.SubscriberUser_Package is
 
@@ -81,7 +81,7 @@ package body org.allbinary.business.user.modules.customer.subscriber.SubscriberU
    procedure validateSession (This : in out SubscriberUser; weblisketSession_Param : access WeblisketSessionInterface_Package.WeblisketSessionInterface'Class) is
       weblisketSession : constant WeblisketSessionInterface_Access := WeblisketSessionInterface_Access (weblisketSession_Param);
    begin
-        User (This).validateSession (weblisketSession);
+        User_Package.User (This).validateSession (weblisketSession);
         SubscriberUser'Class (This).updateSession (weblisketSession);
    end validateSession;
 

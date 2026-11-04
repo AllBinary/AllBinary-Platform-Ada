@@ -15,6 +15,7 @@
 
 with org.allbinary.logic.visual.transform.data.TransformDocument_Package; use org.allbinary.logic.visual.transform.data.TransformDocument_Package;
 with org.allbinary.logic.visual.transform.data.TransformDocumentInterface_Package; use org.allbinary.logic.visual.transform.data.TransformDocumentInterface_Package;
+with org.allbinary.logic.visual.transform.data.TransformDocumentInterface_Package_References;
 with org.allbinary.logic.visual.transform.data.TransformDocument_Package;
 with org.allbinary.logic.visual.transform.data.TransformDocumentInterface_Package;
 

@@ -13,7 +13,6 @@
 --  Generated Code Do Not Modify
 
 
-with org.allbinary.game.ag.life.LifeInterface_Package;
 
 package body org.allbinary.game.ag.life.Life_Package is
 

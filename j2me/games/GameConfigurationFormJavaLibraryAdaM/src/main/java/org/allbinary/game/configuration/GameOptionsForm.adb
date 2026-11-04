@@ -16,6 +16,7 @@
 with javax.microedition.lcdui.Choice_Package; use javax.microedition.lcdui.Choice_Package;
 with javax.microedition.lcdui.Command_Package; use javax.microedition.lcdui.Command_Package;
 with javax.microedition.lcdui.CommandListener_Package; use javax.microedition.lcdui.CommandListener_Package;
+with javax.microedition.lcdui.CommandListener_Package_References;
 with javax.microedition.lcdui.Item_Package; use javax.microedition.lcdui.Item_Package;
 with javax.microedition.lcdui.TextField_Package; use javax.microedition.lcdui.TextField_Package;
 with org.allbinary.game.commands.GameCommandsFactory_Package; use org.allbinary.game.commands.GameCommandsFactory_Package;
@@ -27,12 +28,15 @@ with org.allbinary.game.configuration.feature.SensorFeatureFactory_Package; use 
 with org.allbinary.game.configuration.persistance.GameConfigurationPersistanceSingleton_Package; use org.allbinary.game.configuration.persistance.GameConfigurationPersistanceSingleton_Package;
 with org.allbinary.game.configuration.persistance.KeyValuePersistance_Package; use org.allbinary.game.configuration.persistance.KeyValuePersistance_Package;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.graphics.color.BasicColor_Package_References;
 with org.allbinary.graphics.displayable.command.MyCommandsFactory_Package; use org.allbinary.graphics.displayable.command.MyCommandsFactory_Package;
 with org.allbinary.graphics.displayable.screen.CommandForm_Package; use org.allbinary.graphics.displayable.screen.CommandForm_Package;
 with org.allbinary.input.gyro.OrientationData_Package; use org.allbinary.input.gyro.OrientationData_Package;
 with org.allbinary.logic.MEUtil_Package; use org.allbinary.logic.MEUtil_Package;
+with org.allbinary.logic.MEUtil_Package_References;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package; use org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.HashtableUtil_Package; use org.allbinary.util.HashtableUtil_Package;
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
@@ -44,10 +48,6 @@ with org.allbinary.game.configuration.GameConfigurationGauge_Package; use org.al
 with org.allbinary.game.configuration.GameConfigurationUtil_Package; use org.allbinary.game.configuration.GameConfigurationUtil_Package;
 with org.allbinary.game.configuration.GameConfigurationCentral_Package; use org.allbinary.game.configuration.GameConfigurationCentral_Package;
 with org.allbinary.game.configuration.GameConfigurationUtil_Package;
-with org.allbinary.game.configuration.feature.GameFeatureFormUtil_Package;
-with org.allbinary.game.configuration.feature.GameFeatureItemCommandListener_Package;
-with org.allbinary.game.configuration.feature.GameFeatureItemStateListener_Package;
-with org.allbinary.logic.MEUtil_Package;
 
 package body org.allbinary.game.configuration.GameOptionsForm_Package is
 
@@ -146,7 +146,7 @@ package body org.allbinary.game.configuration.GameOptionsForm_Package is
    procedure closeClientInformation (This : in out GameOptionsForm; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class) is
       abeClientInformation : constant AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
    begin
-        CommandForm (This).close;
+        CommandForm_Package.CommandForm (This).close;
         GameOptionsForm'Class (This).save (abeClientInformation);
    end closeClientInformation;
 

@@ -14,7 +14,7 @@
 
 
 with org.eclipse.swt.graphics.Resource_Package; use org.eclipse.swt.graphics.Resource_Package;
-with org.eclipse.swt.graphics.Resource_Package;
+with org.eclipse.swt.graphics.Resource_Package_References;
 
 package body org.allbinary.DisposalUtil_Package is
 

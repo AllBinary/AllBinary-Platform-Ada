@@ -15,16 +15,22 @@
 
 with java.io.InputStream_Package; use java.io.InputStream_Package;
 with javax.microedition.khronos.opengles.GL10_Package; use javax.microedition.khronos.opengles.GL10_Package;
+with javax.microedition.khronos.opengles.GL10_Package_References;
 with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
+with javax.microedition.lcdui.Image_Package_References;
 with javax.microedition.lcdui.NullImage_Package; use javax.microedition.lcdui.NullImage_Package;
 with org.allbinary.device.NullGL10_Package; use org.allbinary.device.NullGL10_Package;
 with org.allbinary.graphics.opengles.renderer.AllBinaryRendererBase3_Package; use org.allbinary.graphics.opengles.renderer.AllBinaryRendererBase3_Package;
+with org.allbinary.graphics.opengles.renderer.AllBinaryRendererBase3_Package_References;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.image.ImageCache_Package; use org.allbinary.image.ImageCache_Package;
 with org.allbinary.image.ImageCacheFactory_Package; use org.allbinary.image.ImageCacheFactory_Package;
 with org.allbinary.image.PreResourceImageUtil_Package; use org.allbinary.image.PreResourceImageUtil_Package;
+with org.allbinary.image.PreResourceImageUtil_Package_References;
 with org.allbinary.thread.SynchObject_Package; use org.allbinary.thread.SynchObject_Package;
+with org.allbinary.thread.SynchObject_Package_References;
 with org.allbinary.image.opengles.OpenGLESImage_Package; use org.allbinary.image.opengles.OpenGLESImage_Package;
 
 package body org.allbinary.image.opengles.OpenGLImageCache_Package is

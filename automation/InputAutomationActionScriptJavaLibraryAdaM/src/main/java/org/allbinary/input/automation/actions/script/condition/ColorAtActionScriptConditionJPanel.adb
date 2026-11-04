@@ -14,10 +14,13 @@
 
 
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.string_Id.StringValidationUtil_Package; use org.allbinary.logic.string_Id.StringValidationUtil_Package;
 with org.allbinary.media.image.analysis.ColorRangeInterface_Package; use org.allbinary.media.image.analysis.ColorRangeInterface_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.string_Id.CommonStrings_Package_References;
 with org.allbinary.input.automation.actions.script.condition.ColorAtActionScriptConditionInterface_Package; use org.allbinary.input.automation.actions.script.condition.ColorAtActionScriptConditionInterface_Package;
+with org.allbinary.input.automation.actions.script.condition.ColorAtActionScriptConditionInterface_Package_References;
 with org.allbinary.input.automation.actions.script.condition.ColorAtActionScriptConditionInterface_Package;
 
 package body org.allbinary.input.automation.actions.script.condition.ColorAtActionScriptConditionJPanel_Package is

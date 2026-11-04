@@ -15,12 +15,14 @@
 
 with org.allbinary.business.user.UserDomNode_Package; use org.allbinary.business.user.UserDomNode_Package;
 with org.allbinary.business.user.UserInterface_Package; use org.allbinary.business.user.UserInterface_Package;
+with org.allbinary.business.user.UserInterface_Package_References;
 with org.allbinary.data.tree.dom.DomNodeInterface_Package; use org.allbinary.data.tree.dom.DomNodeInterface_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
+with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package_References;
 with views.business.context.HttpContextView_Package; use views.business.context.HttpContextView_Package;
 with views.HttpComponentView_Package;
-with views.business.context.HttpContextView_Package;
 
 package body views.admin.user.UserView_Package is
 
@@ -88,7 +90,7 @@ package body views.admin.user.UserView_Package is
    begin
         begin
             UserView'Class (This).addDomNodeInterfaces;
-            return HttpContextView (This).view;
+            return HttpContextView_Package.HttpContextView (This).view;
         exception
             when Java_Occurrence : others =>
                 declare

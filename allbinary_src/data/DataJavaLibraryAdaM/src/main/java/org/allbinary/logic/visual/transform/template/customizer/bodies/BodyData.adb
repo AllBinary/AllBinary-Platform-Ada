@@ -40,7 +40,7 @@ package body org.allbinary.logic.visual.transform.template.customizer.bodies.Bod
 
    function getInstance return BodyData_Access is
    begin
-        return BodyData_Package.instance;
+        return BodyData_Access (BodyData_Package.instance);
    end getInstance;
 
 begin

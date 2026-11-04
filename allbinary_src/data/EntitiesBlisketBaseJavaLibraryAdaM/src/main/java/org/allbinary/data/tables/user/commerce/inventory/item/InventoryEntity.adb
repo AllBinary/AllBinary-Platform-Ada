@@ -15,16 +15,21 @@
 
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package; use org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
+with org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package_References;
 with org.allbinary.business.entry_Id.EntryData_Package; use org.allbinary.business.entry_Id.EntryData_Package;
 with org.allbinary.business.init.db.InventoryDbInitInfo_Package; use org.allbinary.business.init.db.InventoryDbInitInfo_Package;
 with org.allbinary.business.user.commerce.inventory.item.BasicItem_Package; use org.allbinary.business.user.commerce.inventory.item.BasicItem_Package;
 with org.allbinary.business.user.commerce.inventory.item.BasicItemData_Package; use org.allbinary.business.user.commerce.inventory.item.BasicItemData_Package;
+with org.allbinary.business.user.commerce.inventory.item.BasicItemData_Package_References;
 with org.allbinary.business.user.commerce.inventory.item.ItemInterface_Package; use org.allbinary.business.user.commerce.inventory.item.ItemInterface_Package;
+with org.allbinary.business.user.commerce.inventory.item.ItemInterface_Package_References;
 with org.allbinary.business.user.commerce.money.MoneyException_Package; use org.allbinary.business.user.commerce.money.MoneyException_Package;
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.communication.sql.AbSqlBean_Package; use org.allbinary.logic.communication.sql.AbSqlBean_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringValidationUtil_Package; use org.allbinary.logic.string_Id.StringValidationUtil_Package;
@@ -116,7 +121,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.item.InventoryEnt
       values : constant BasicArrayList_Access := BasicArrayList_Access (values_Param);
    begin
         begin
-            AbSqlBean (This).insert (values);
+            AbSqlBean_Package.AbSqlBean (This).insert (values);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
                 This.logUtil.putF (This.commonStrings.SUCCESS, InventoryEntity_Access'(This'Unchecked_Access), INSERT);
             end if;
@@ -135,7 +140,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.item.InventoryEnt
    procedure delete (This : in out InventoryEntity; value : Unbounded_String) is
    begin
         begin
-            AbSqlBean (This).deleteWhere (This.basicItemData.ID, value);
+            AbSqlBean_Package.AbSqlBean (This).deleteWhere (This.basicItemData.ID, value);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
                 This.logUtil.putF (This.commonStrings.SUCCESS, InventoryEntity_Access'(This'Unchecked_Access), This.commonStrings.delete);
             end if;
@@ -167,7 +172,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.item.InventoryEnt
         end if;
         itemVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
         keysAndValues := StdUtil_Package.getInstance.createHashMap;
-        itemHashMapVector := AbSqlBean (This).getRows (keysAndValues);
+        itemHashMapVector := AbSqlBean_Package.AbSqlBean (This).getRows (keysAndValues);
         size := itemHashMapVector.size;
         for i in 0 .. (size) - 1 loop
             itemHashMap := HashMap_Access (itemHashMapVector.get (i));
@@ -188,7 +193,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.item.InventoryEnt
    begin
         keysAndValues := StdUtil_Package.getInstance.createHashMap;
         keysAndValues.put (This.basicItemData.ID, Java_Box (id));
-        itemHashMap := AbSqlBean (This).getRow (keysAndValues);
+        itemHashMap := AbSqlBean_Package.AbSqlBean (This).getRow (keysAndValues);
         if (itemHashMap) /= (null) then
             return ItemInterface_Access (BasicItem_Package.Create (itemHashMap));
         else
@@ -198,7 +203,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.item.InventoryEnt
 
    function getWeight (This : in out InventoryEntity; id : Unbounded_String) return Unbounded_String is
    begin
-        return AbSqlBean (This).getField (This.basicItemData.ID, id, This.basicItemData.WEIGHT);
+        return AbSqlBean_Package.AbSqlBean (This).getField (This.basicItemData.ID, id, This.basicItemData.WEIGHT);
    end getWeight;
 
    function createTableStatement (This : in out InventoryEntity) return Unbounded_String is
@@ -274,18 +279,18 @@ package body org.allbinary.data.tables.user.commerce.inventory.item.InventoryEnt
 
    function createTable (This : in out InventoryEntity) return Unbounded_String is
    begin
-        return AbSqlBean (This).createTable (InventoryEntity'Class (This).createTableStatement);
+        return AbSqlBean_Package.AbSqlBean (This).createTable (InventoryEntity'Class (This).createTableStatement);
    end createTable;
 
    procedure update (This : in out InventoryEntity; updatedValues_Param : access HashMap_Package.HashMap'Class) is
       updatedValues : constant HashMap_Access := HashMap_Access (updatedValues_Param);
    begin
-        AbSqlBean (This).updateWhere (This.basicItemData.ID, Java_Unbox (updatedValues.get (This.basicItemData.ID)), updatedValues);
+        AbSqlBean_Package.AbSqlBean (This).updateWhere (This.basicItemData.ID, Java_Unbox (updatedValues.get (This.basicItemData.ID)), updatedValues);
    end update;
 
    function dropTable (This : in out InventoryEntity) return Unbounded_String is
    begin
-        return AbSqlBean (This).dropTable;
+        return AbSqlBean_Package.AbSqlBean (This).dropTable;
    end dropTable;
 
    procedure getItems (This : in out InventoryEntity; storeFrontInterface_Param : access StoreFrontInterface_Package.StoreFrontInterface'Class) is

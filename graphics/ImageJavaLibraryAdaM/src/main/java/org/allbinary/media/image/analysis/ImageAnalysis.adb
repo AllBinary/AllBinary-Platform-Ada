@@ -16,13 +16,18 @@
 with org.allbinary.graphics.color.ColorCacheFactory_Package; use org.allbinary.graphics.color.ColorCacheFactory_Package;
 with org.allbinary.graphics.color.ColorCacheable_Package; use org.allbinary.graphics.color.ColorCacheable_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.media.image.analysis.ImageAnalysisResults_Package; use org.allbinary.media.image.analysis.ImageAnalysisResults_Package;
+with org.allbinary.media.image.analysis.ImageAnalysisResults_Package_References;
 with org.allbinary.media.image.analysis.ColorRangeInterface_Package; use org.allbinary.media.image.analysis.ColorRangeInterface_Package;
+with org.allbinary.media.image.analysis.ColorRangeInterface_Package_References;
 with org.allbinary.media.image.analysis.Color_Package; use org.allbinary.media.image.analysis.Color_Package;
+with org.allbinary.media.image.analysis.Color_Package_References;
 with org.allbinary.media.image.analysis.ColorAverage_Package; use org.allbinary.media.image.analysis.ColorAverage_Package;
 with org.allbinary.media.image.analysis.ImageColorResults_Package; use org.allbinary.media.image.analysis.ImageColorResults_Package;
+with org.allbinary.media.image.analysis.ImageColorResults_Package_References;
 with org.allbinary.media.image.analysis.ColorAverage_Package;
 with org.allbinary.media.image.analysis.ColorRange_Package;
 with org.allbinary.media.image.analysis.ColorRangeInterface_Package;

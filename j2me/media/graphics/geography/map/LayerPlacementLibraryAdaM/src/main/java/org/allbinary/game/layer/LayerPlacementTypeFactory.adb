@@ -15,6 +15,7 @@
 
 with org.allbinary.direction.DirectionFactory_Package; use org.allbinary.direction.DirectionFactory_Package;
 with org.allbinary.game.layer.LayerPlacementType_Package; use org.allbinary.game.layer.LayerPlacementType_Package;
+with org.allbinary.game.layer.LayerPlacementType_Package_References;
 with org.allbinary.game.layer.LayerPlacementType_Package;
 
 package body org.allbinary.game.layer.LayerPlacementTypeFactory_Package is

@@ -14,8 +14,9 @@
 
 
 with org.allbinary.game.layer.AllBinaryGameLayer_Package; use org.allbinary.game.layer.AllBinaryGameLayer_Package;
+with org.allbinary.game.layer.AllBinaryGameLayer_Package_References;
 with org.allbinary.logic.math.BasicDecimal_Package; use org.allbinary.logic.math.BasicDecimal_Package;
-with org.allbinary.physics.movement.MovementInterface_Package;
+with org.allbinary.logic.math.BasicDecimal_Package_References;
 
 package body org.allbinary.physics.movement.Movement_Package is
 

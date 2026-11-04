@@ -16,9 +16,9 @@
 with org.allbinary.graphics.GPoint_Package; use org.allbinary.graphics.GPoint_Package;
 with org.allbinary.graphics.PointFactory_Package; use org.allbinary.graphics.PointFactory_Package;
 with org.allbinary.input.motion.gesture.observer.MotionEventCircularPool_Package; use org.allbinary.input.motion.gesture.observer.MotionEventCircularPool_Package;
+with org.allbinary.input.motion.gesture.observer.MotionEventCircularPool_Package_References;
 with org.allbinary.input.motion.gesture.observer.MotionGestureEvent_Package; use org.allbinary.input.motion.gesture.observer.MotionGestureEvent_Package;
-with org.allbinary.input.motion.gesture.observer.MotionEventCircularPool_Package;
-with org.allbinary.input.motion.gesture.observer.MotionGestureEvent_Package;
+with org.allbinary.input.motion.gesture.observer.MotionGestureEvent_Package_References;
 with org.allbinary.input.motion.gesture.MotionGestureInput_Package;
 
 package body org.allbinary.input.motion.gesture.MirrorMotionGestureEventUtil_Package is

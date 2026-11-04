@@ -15,20 +15,28 @@
 
 with javax.microedition.lcdui.Canvas_Package; use javax.microedition.lcdui.Canvas_Package;
 with org.allbinary.direction.Direction_Package; use org.allbinary.direction.Direction_Package;
+with org.allbinary.direction.Direction_Package_References;
 with org.allbinary.direction.DirectionCompositeInterface_Package; use org.allbinary.direction.DirectionCompositeInterface_Package;
 with org.allbinary.direction.DirectionFactory_Package; use org.allbinary.direction.DirectionFactory_Package;
 with org.allbinary.game.input.GameInput_Package; use org.allbinary.game.input.GameInput_Package;
+with org.allbinary.game.input.GameInput_Package_References;
 with org.allbinary.game.tracking.TrackingEvent_Package; use org.allbinary.game.tracking.TrackingEvent_Package;
+with org.allbinary.game.tracking.TrackingEvent_Package_References;
 with org.allbinary.game.tracking.TrackingEventHandler_Package; use org.allbinary.game.tracking.TrackingEventHandler_Package;
 with org.allbinary.game.tracking.TrackingEventListenerInterface_Package; use org.allbinary.game.tracking.TrackingEventListenerInterface_Package;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
+with org.allbinary.layer.AllBinaryLayer_Package_References;
 with org.allbinary.layer.AllBinaryLayerManager_Package; use org.allbinary.layer.AllBinaryLayerManager_Package;
+with org.allbinary.layer.AllBinaryLayerManager_Package_References;
 with org.allbinary.layer.LayerInterface_Package; use org.allbinary.layer.LayerInterface_Package;
 with org.allbinary.logic.communication.log.ForcedLogUtil_Package; use org.allbinary.logic.communication.log.ForcedLogUtil_Package;
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+with org.allbinary.logic.util.event.AllBinaryEventObject_Package_References;
 with org.allbinary.logic.util.event.EventStrings_Package; use org.allbinary.logic.util.event.EventStrings_Package;
 with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
+with org.allbinary.util.ABHashtable_Package_References;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 
 package body org.allbinary.game.ag.ai.scroller.PacePatrolAI_Package is
@@ -159,22 +167,22 @@ package body org.allbinary.game.ag.ai.scroller.PacePatrolAI_Package is
         directionFactory := DirectionFactory_Package.getInstance;
         if (direction) = (directionFactory.LEFT) then
             if ((This.lastKeyDirection) /= (This.keyDirection)) or else (not (This.isFollowLimitedByTerrain)) then
-                BasePatrolAI (This).processKeyAI (Canvas_Package.LEFT);
+                BasePatrolAI_Package.BasePatrolAI (This).processKeyAI (Canvas_Package.LEFT);
             end if;
             This.keyDirection := Canvas_Package.LEFT;
             This.lastKeyDirection := This.keyDirection;
             This.xTotalDistance := 0;
-            BasePatrolAI (This).processKeyAI (Canvas_Package.KEY_NUM1);
+            BasePatrolAI_Package.BasePatrolAI (This).processKeyAI (Canvas_Package.KEY_NUM1);
         elsif (direction) = (directionFactory.RIGHT) then
             if ((This.lastKeyDirection) /= (This.keyDirection)) or else (not (This.isFollowLimitedByTerrain)) then
-                BasePatrolAI (This).processKeyAI (Canvas_Package.RIGHT);
+                BasePatrolAI_Package.BasePatrolAI (This).processKeyAI (Canvas_Package.RIGHT);
             end if;
             This.keyDirection := Canvas_Package.RIGHT;
             This.lastKeyDirection := This.keyDirection;
             This.xTotalDistance := 0;
-            BasePatrolAI (This).processKeyAI (Canvas_Package.KEY_NUM1);
+            BasePatrolAI_Package.BasePatrolAI (This).processKeyAI (Canvas_Package.KEY_NUM1);
         else
-            BasePatrolAI (This).processKeyAI (This.keyDirection);
+            BasePatrolAI_Package.BasePatrolAI (This).processKeyAI (This.keyDirection);
         end if;
    end processAI;
 

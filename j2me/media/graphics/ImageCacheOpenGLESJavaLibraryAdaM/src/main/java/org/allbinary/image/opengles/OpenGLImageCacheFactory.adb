@@ -14,6 +14,7 @@
 
 
 with org.allbinary.image.ImageCache_Package; use org.allbinary.image.ImageCache_Package;
+with org.allbinary.image.ImageCache_Package_References;
 with org.allbinary.image.opengles.OpenGLImageCache_Package; use org.allbinary.image.opengles.OpenGLImageCache_Package;
 with org.allbinary.image.opengles.OpenGLImageCache_Package;
 

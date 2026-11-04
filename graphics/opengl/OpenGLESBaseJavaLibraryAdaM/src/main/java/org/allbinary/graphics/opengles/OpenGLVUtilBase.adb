@@ -14,6 +14,7 @@
 
 
 with javax.microedition.khronos.opengles.GL10_Package; use javax.microedition.khronos.opengles.GL10_Package;
+with javax.microedition.khronos.opengles.GL10_Package_References;
 
 package body org.allbinary.graphics.opengles.OpenGLVUtilBase_Package is
 

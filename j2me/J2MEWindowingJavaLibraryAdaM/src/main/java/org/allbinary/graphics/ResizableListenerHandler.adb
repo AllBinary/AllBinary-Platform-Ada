@@ -14,6 +14,7 @@
 
 
 with org.allbinary.graphics.ResizableListenerInterface_Package; use org.allbinary.graphics.ResizableListenerInterface_Package;
+with org.allbinary.graphics.ResizableListenerInterface_Package_References;
 with org.allbinary.graphics.ResizableListenerInterface_Package;
 
 package body org.allbinary.graphics.ResizableListenerHandler_Package is

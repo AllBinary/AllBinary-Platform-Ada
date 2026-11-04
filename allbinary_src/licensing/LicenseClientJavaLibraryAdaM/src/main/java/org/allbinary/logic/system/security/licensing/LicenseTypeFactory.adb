@@ -15,6 +15,7 @@
 
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.logic.system.security.licensing.LicenseType_Package; use org.allbinary.logic.system.security.licensing.LicenseType_Package;
+with org.allbinary.logic.system.security.licensing.LicenseType_Package_References;
 with org.allbinary.logic.system.security.licensing.LicenseType_Package;
 
 package body org.allbinary.logic.system.security.licensing.LicenseTypeFactory_Package is

@@ -14,8 +14,10 @@
 
 
 with org.allbinary.game.layer.CollidableCompositeLayer_Package; use org.allbinary.game.layer.CollidableCompositeLayer_Package;
+with org.allbinary.game.layer.CollidableCompositeLayer_Package_References;
 with org.allbinary.game.layer.CollidableRTSBehavior_Package; use org.allbinary.game.layer.CollidableRTSBehavior_Package;
 with org.allbinary.game.collision.CollidableInterfaceCompositeInterface_Package; use org.allbinary.game.collision.CollidableInterfaceCompositeInterface_Package;
+with org.allbinary.game.collision.CollidableInterfaceCompositeInterface_Package_References;
 
 package body org.allbinary.game.layer.waypoint.CollidableWaypointBehavior_Package is
 

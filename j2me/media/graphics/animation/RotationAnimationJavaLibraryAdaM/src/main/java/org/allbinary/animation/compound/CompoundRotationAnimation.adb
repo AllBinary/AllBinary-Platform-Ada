@@ -14,17 +14,23 @@
 
 
 with javax.microedition.khronos.opengles.GL_Package; use javax.microedition.khronos.opengles.GL_Package;
+with javax.microedition.khronos.opengles.GL_Package_References;
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
 with org.allbinary.animation.AnimationBehavior_Package; use org.allbinary.animation.AnimationBehavior_Package;
+with org.allbinary.animation.AnimationBehavior_Package_References;
 with org.allbinary.animation.IndexedAnimation_Package; use org.allbinary.animation.IndexedAnimation_Package;
+with org.allbinary.animation.IndexedAnimation_Package_References;
 with org.allbinary.animation.RotationAnimation_Package; use org.allbinary.animation.RotationAnimation_Package;
 with org.allbinary.direction.Direction_Package; use org.allbinary.direction.Direction_Package;
+with org.allbinary.direction.Direction_Package_References;
 with org.allbinary.logic.math.PrimitiveIntUtil_Package; use org.allbinary.logic.math.PrimitiveIntUtil_Package;
 with org.allbinary.math.Angle_Package; use org.allbinary.math.Angle_Package;
+with org.allbinary.math.Angle_Package_References;
 with org.allbinary.math.AngleFactory_Package; use org.allbinary.math.AngleFactory_Package;
 with org.allbinary.math.AngleInfo_Package; use org.allbinary.math.AngleInfo_Package;
+with org.allbinary.math.AngleInfo_Package_References;
 with org.allbinary.util.CircularIndexUtil_Package; use org.allbinary.util.CircularIndexUtil_Package;
-with org.allbinary.animation.RotationAnimation_Package;
 with org.allbinary.animation.RotationAnimationInterface_Package;
 
 package body org.allbinary.animation.compound.CompoundRotationAnimation_Package is

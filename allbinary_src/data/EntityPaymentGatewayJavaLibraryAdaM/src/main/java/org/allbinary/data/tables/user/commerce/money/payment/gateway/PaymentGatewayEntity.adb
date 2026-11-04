@@ -16,6 +16,7 @@
 with java.util.Calendar_Package; use java.util.Calendar_Package;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.business.context.modules.storefront.StoreFrontData_Package; use org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
 with org.allbinary.business.entry_Id.EntryData_Package; use org.allbinary.business.entry_Id.EntryData_Package;
@@ -25,17 +26,18 @@ with org.allbinary.business.user.commerce.money.payment.PaymentData_Package; use
 with org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayData_Package; use org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayData_Package;
 with org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayEncryptedMapping_Package; use org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayEncryptedMapping_Package;
 with org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayInterface_Package; use org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayInterface_Package;
+with org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayInterface_Package_References;
 with org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayInterfaceFactory_Package; use org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayInterfaceFactory_Package;
 with org.allbinary.business.user.commerce.money.payment.types.BasicPaymentType_Package; use org.allbinary.business.user.commerce.money.payment.types.BasicPaymentType_Package;
+with org.allbinary.business.user.commerce.money.payment.types.BasicPaymentType_Package_References;
 with org.allbinary.business.user.commerce.money.payment.types.BasicPaymentTypeUtil_Package; use org.allbinary.business.user.commerce.money.payment.types.BasicPaymentTypeUtil_Package;
 with org.allbinary.data.generator.PaymentGatewayIdGenerator_Package; use org.allbinary.data.generator.PaymentGatewayIdGenerator_Package;
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.communication.sql.AbSqlBean_Package; use org.allbinary.logic.communication.sql.AbSqlBean_Package;
 with org.allbinary.logic.control.crypt.SuperCrypt_Package; use org.allbinary.logic.control.crypt.SuperCrypt_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
-with org.allbinary.data.tables.user.commerce.money.payment.gateway.PaymentGatewayEntityInterface_Package;
-with org.allbinary.data.generator.PaymentGatewayIdGenerator_Package;
 
 package body org.allbinary.data.tables.user.commerce.money.payment.gateway.PaymentGatewayEntity_Package is
 
@@ -137,7 +139,7 @@ package body org.allbinary.data.tables.user.commerce.money.payment.gateway.Payme
             time := Java_New_String (calendar.getTimeInMillis.toString);
             vector.add (time);
             vector.add (time);
-            AbSqlBean (This).insert (vector);
+            AbSqlBean_Package.AbSqlBean (This).insert (vector);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
                 This.logUtil.putF (This.commonStrings.END_Id, PaymentGatewayEntity_Access'(This'Unchecked_Access), To_Unbounded_String ("add"));
             end if;
@@ -171,7 +173,7 @@ package body org.allbinary.data.tables.user.commerce.money.payment.gateway.Payme
                 Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Don't update TimeCreated for update")));
             end if;
             updateHashMap := PaymentGatewayEncryptedMapping_Package.Create (paymentGatewayInterface).toHashMap;
-            AbSqlBean (This).updateWhere (whereKeyValuePairs, updateHashMap);
+            AbSqlBean_Package.AbSqlBean (This).updateWhere (whereKeyValuePairs, updateHashMap);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
                 This.logUtil.putF (This.commonStrings.SUCCESS, PaymentGatewayEntity_Access'(This'Unchecked_Access), To_Unbounded_String ("update"));
             end if;
@@ -210,7 +212,7 @@ package body org.allbinary.data.tables.user.commerce.money.payment.gateway.Payme
             whereKeyAndValue := StdUtil_Package.getInstance.createHashMap;
             whereKeyAndValue.put (Java_Box (StoreFrontData_Package.getInstance.NAME.toString), Java_Box (storeName));
             whereKeyAndValue.put (Java_Box (PaymentGatewayData_Package.NAME.toString), Java_Box (paymentType.getName));
-            paymentGatewayHashMap := AbSqlBean (This).getRow (whereKeyAndValue);
+            paymentGatewayHashMap := AbSqlBean_Package.AbSqlBean (This).getRow (whereKeyAndValue);
             if (paymentGatewayHashMap) /= (null) then
                 userName := Java_Unbox (paymentGatewayHashMap.get (Java_Box (UserData_Package.USERNAME.toString)));
                 password := Java_Unbox (paymentGatewayHashMap.get (Java_Box (UserData_Package.PASSWORD.toString)));
@@ -266,7 +268,7 @@ package body org.allbinary.data.tables.user.commerce.money.payment.gateway.Payme
    begin
         begin
             paymentGatewayNameVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
-            paymentGatewayNameVector := AbSqlBean (This).getColumnWhere (PaymentGatewayData_Package.NAME.toString, StoreFrontData_Package.getInstance.NAME.toString, storeName);
+            paymentGatewayNameVector := AbSqlBean_Package.AbSqlBean (This).getColumnWhere (PaymentGatewayData_Package.NAME.toString, StoreFrontData_Package.getInstance.NAME.toString, storeName);
             if (paymentGatewayNameVector) /= (null) then
                 paymentGatewayVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
                 size := paymentGatewayNameVector.size;
@@ -303,7 +305,7 @@ package body org.allbinary.data.tables.user.commerce.money.payment.gateway.Payme
             whereHashMap := StdUtil_Package.getInstance.createHashMap;
             whereHashMap.put (Java_Box (StoreFrontData_Package.getInstance.NAME.toString), Java_Box (storeName));
             whereHashMap.put (Java_Box (PaymentGatewayData_Package.NAME.toString), Java_Box (paymentType.getName));
-            AbSqlBean (This).deleteWhere (whereHashMap);
+            AbSqlBean_Package.AbSqlBean (This).deleteWhere (whereHashMap);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
                 This.logUtil.putF (This.commonStrings.SUCCESS, PaymentGatewayEntity_Access'(This'Unchecked_Access), To_Unbounded_String ("remove"));
             end if;
@@ -404,12 +406,12 @@ package body org.allbinary.data.tables.user.commerce.money.payment.gateway.Payme
 
    function createTable (This : in out PaymentGatewayEntity) return Unbounded_String is
    begin
-        return AbSqlBean (This).createTable (PaymentGatewayEntity'Class (This).createTableStatement);
+        return AbSqlBean_Package.AbSqlBean (This).createTable (PaymentGatewayEntity'Class (This).createTableStatement);
    end createTable;
 
    function dropTable (This : in out PaymentGatewayEntity) return Unbounded_String is
    begin
-        return AbSqlBean (This).dropTable;
+        return AbSqlBean_Package.AbSqlBean (This).dropTable;
    end dropTable;
 
    procedure getPaymentGatewayInterface (This : in out PaymentGatewayEntity; storeName : Unbounded_String; paymentType_Param : access BasicPaymentType_Package.BasicPaymentType'Class) is

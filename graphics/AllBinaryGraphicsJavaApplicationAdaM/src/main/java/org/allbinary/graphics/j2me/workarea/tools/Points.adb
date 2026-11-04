@@ -14,8 +14,8 @@
 
 
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
-with org.allbinary.graphics.j2me.workarea.tools.PointsInterface_Package;
 
 package body org.allbinary.graphics.j2me.workarea.tools.Points_Package is
 

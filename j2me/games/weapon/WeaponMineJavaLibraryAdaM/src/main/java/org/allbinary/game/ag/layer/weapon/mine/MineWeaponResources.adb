@@ -54,7 +54,7 @@ package body org.allbinary.game.ag.layer.weapon.mine.MineWeaponResources_Package
         SIZE_FIVE := SMALL;
         SIZE_SIX := SMALL;
         SIZE := new Unbounded_String_Array'(SMALL, MEDIUM, SIZE_FOUR, SIZE_FIVE, SIZE_SIX);
-        BasicGameResources (This).init (ROOT, SIZE);
+        BasicGameResources_Package.BasicGameResources (This).init (ROOT, SIZE);
    end Initialize;
 
    function Create return MineWeaponResources_Access is

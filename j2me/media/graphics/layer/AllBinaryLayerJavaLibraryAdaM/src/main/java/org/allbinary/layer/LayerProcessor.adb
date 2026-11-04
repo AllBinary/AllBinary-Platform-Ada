@@ -14,9 +14,13 @@
 
 
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.string_Id.CommonStrings_Package_References;
 with org.allbinary.layer.LayerManager_Package; use org.allbinary.layer.LayerManager_Package;
+with org.allbinary.layer.LayerManager_Package_References;
 with org.allbinary.layer.AllBinaryLayerManager_Package; use org.allbinary.layer.AllBinaryLayerManager_Package;
+with org.allbinary.layer.AllBinaryLayerManager_Package_References;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
+with org.allbinary.layer.AllBinaryLayer_Package_References;
 with org.allbinary.layer.AllBinaryLayer_Package;
 with org.allbinary.layer.AllBinaryLayerManager_Package;
 with org.allbinary.layer.BasicLayerProcessorInterface_Package;
@@ -28,7 +32,6 @@ with org.allbinary.layer.event.LayerManagerEventHandler_Package;
 with org.allbinary.layer.event.LayerManagerEventListener_Package;
 with org.allbinary.layer.event.LayerManagerEventListenerInterface_Package;
 with org.allbinary.layer.LayerManagerLoggingBase_Package;
-with org.allbinary.layer.LayerProcessorInterface_Package;
 with org.allbinary.layer.NamedInterface_Package;
 with org.allbinary.view.ViewPositionBase_Package;
 with org.allbinary.view.event.ViewPositionEvent_Package;

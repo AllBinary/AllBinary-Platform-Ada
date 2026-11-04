@@ -224,6 +224,8 @@ package org.allbinary.graphics.displayable.MyCanvas_Package is
 
    procedure Initialize (This : in out MyCanvas'Class; name : Unbounded_String; childNameList_Param : access BasicArrayList_Package.BasicArrayList'Class);
    function Create (name : Unbounded_String; childNameList_Param : access BasicArrayList_Package.BasicArrayList'Class) return MyCanvas_Access;
+   function getWidth (This : in out MyCanvas) return Integer;
+   function getHeight (This : in out MyCanvas) return Integer;
    procedure setFullScreenMode (This : in out MyCanvas; mode : Boolean);
    procedure sizeChanged (This : in out MyCanvas; w : Integer; h : Integer);
    function getCommandStack (This : in out MyCanvas) return ABStack_Access;

@@ -20,9 +20,9 @@ with org.allbinary.business.entry_Id.EntryData_Package; use org.allbinary.busine
 with org.allbinary.business.init.db.UserDbInitInfo_Package; use org.allbinary.business.init.db.UserDbInitInfo_Package;
 with org.allbinary.business.user.group.GroupData_Package; use org.allbinary.business.user.group.GroupData_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.communication.sql.AbSqlBean_Package; use org.allbinary.logic.communication.sql.AbSqlBean_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
-with org.allbinary.data.tables.advertisement.sales.AffiliateSalesEntityInterface_Package;
 
 package body org.allbinary.data.tables.advertisement.sales.AffiliateSalesEntity_Package is
 
@@ -67,7 +67,7 @@ package body org.allbinary.data.tables.advertisement.sales.AffiliateSalesEntity_
    procedure delete (This : in out AffiliateSalesEntity; value : Unbounded_String) is
    begin
         begin
-            AbSqlBean (This).deleteWhere (StoreFrontData_Package.getInstance.NAME, value);
+            AbSqlBean_Package.AbSqlBean (This).deleteWhere (StoreFrontData_Package.getInstance.NAME, value);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
                 This.logUtil.putF (This.commonStrings.SUCCESS, AffiliateSalesEntity_Access'(This'Unchecked_Access), This.commonStrings.delete);
             end if;
@@ -99,19 +99,19 @@ package body org.allbinary.data.tables.advertisement.sales.AffiliateSalesEntity_
    function createTable (This : in out AffiliateSalesEntity) return Unbounded_String is
       returnStr : Unbounded_String;
    begin
-        returnStr := AbSqlBean (This).createTable (AffiliateSalesEntity'Class (This).createTableStatement);
+        returnStr := AbSqlBean_Package.AbSqlBean (This).createTable (AffiliateSalesEntity'Class (This).createTableStatement);
         return returnStr;
    end createTable;
 
    procedure update (This : in out AffiliateSalesEntity; updatedValues_Param : access HashMap_Package.HashMap'Class) is
       updatedValues : constant HashMap_Access := HashMap_Access (updatedValues_Param);
    begin
-        AbSqlBean (This).updateWhere (EntryData_Package.getInstance.ID, Java_Unbox (updatedValues.get (EntryData_Package.getInstance.ID)), updatedValues);
+        AbSqlBean_Package.AbSqlBean (This).updateWhere (EntryData_Package.getInstance.ID, Java_Unbox (updatedValues.get (EntryData_Package.getInstance.ID)), updatedValues);
    end update;
 
    function dropTable (This : in out AffiliateSalesEntity) return Unbounded_String is
    begin
-        return AbSqlBean (This).dropTable;
+        return AbSqlBean_Package.AbSqlBean (This).dropTable;
    end dropTable;
 
 end org.allbinary.data.tables.advertisement.sales.AffiliateSalesEntity_Package;

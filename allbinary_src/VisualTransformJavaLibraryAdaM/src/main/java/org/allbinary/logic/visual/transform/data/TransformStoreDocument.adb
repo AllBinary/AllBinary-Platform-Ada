@@ -16,9 +16,11 @@
 with org.allbinary.business.context.modules.storefront.StoreFrontViewFactory_Package; use org.allbinary.business.context.modules.storefront.StoreFrontViewFactory_Package;
 with org.allbinary.logic.communication.http.request.RequestParams_Package; use org.allbinary.logic.communication.http.request.RequestParams_Package;
 with org.allbinary.logic.communication.http.request.session.WeblisketSession_Package; use org.allbinary.logic.communication.http.request.session.WeblisketSession_Package;
+with org.allbinary.logic.communication.http.request.session.WeblisketSession_Package_References;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.control.search.SearchRequest_Package; use org.allbinary.logic.control.search.SearchRequest_Package;
-with org.allbinary.logic.visual.transform.data.TransformHttpRequestDocument_Package;
+with org.allbinary.logic.control.search.SearchRequest_Package_References;
 
 package body org.allbinary.logic.visual.transform.data.TransformStoreDocument_Package is
 

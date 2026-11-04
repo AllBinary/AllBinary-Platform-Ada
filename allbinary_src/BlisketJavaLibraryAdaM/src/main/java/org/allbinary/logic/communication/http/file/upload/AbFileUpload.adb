@@ -14,7 +14,9 @@
 
 
 with org.apache.commons.fileupload.FileItemFactory_Package; use org.apache.commons.fileupload.FileItemFactory_Package;
+with org.apache.commons.fileupload.FileItemFactory_Package_References;
 with org.apache.commons.fileupload.FileItemIterator_Package; use org.apache.commons.fileupload.FileItemIterator_Package;
+with org.apache.commons.fileupload.FileItemIterator_Package_References;
 with org.apache.commons.fileupload.FileUpload_Package; use org.apache.commons.fileupload.FileUpload_Package;
 with org.apache.commons.fileupload.FileUploadException_Package; use org.apache.commons.fileupload.FileUploadException_Package;
 with org.apache.commons.fileupload.servlet.ServletRequestContext_Package; use org.apache.commons.fileupload.servlet.ServletRequestContext_Package;
@@ -66,7 +68,7 @@ package body org.allbinary.logic.communication.http.file.upload.AbFileUpload_Pac
    function getItemIterator (This : in out AbFileUpload; request_Param : access HttpServletRequest_Package.HttpServletRequest'Class) return FileItemIterator_Access is
       request : constant HttpServletRequest_Access := HttpServletRequest_Access (request_Param);
    begin
-        return FileUpload (This).getItemIterator (ServletRequestContext_Package.Create (request));
+        return FileUpload_Package.FileUpload (This).getItemIterator (ServletRequestContext_Package.Create (request));
    end getItemIterator;
 
    procedure getItemIterator (This : in out AbFileUpload; request_Param : access HttpServletRequest_Package.HttpServletRequest'Class) is

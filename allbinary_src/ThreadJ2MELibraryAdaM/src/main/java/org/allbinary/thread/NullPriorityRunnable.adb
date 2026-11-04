@@ -13,7 +13,6 @@
 --  Generated Code Do Not Modify
 
 
-with org.allbinary.thread.PriorityRunnable_Package;
 
 package body org.allbinary.thread.NullPriorityRunnable_Package is
 

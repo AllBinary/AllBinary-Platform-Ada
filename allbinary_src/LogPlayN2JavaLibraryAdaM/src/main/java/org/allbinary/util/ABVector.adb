@@ -40,154 +40,154 @@ package body org.allbinary.util.ABVector_Package is
 
    procedure ensureCapacity (This : in out ABVector; minCapacity : Integer) is
    begin
-        Vector (This).ensureCapacity (minCapacity);
+        Vector_Package.Vector (This).ensureCapacity (minCapacity);
    end ensureCapacity;
 
    function capacity (This : in out ABVector) return Integer is
    begin
-        return Vector (This).capacity;
+        return Vector_Package.Vector (This).capacity;
    end capacity;
 
    function size (This : in out ABVector) return Integer is
    begin
-        return Vector (This).size;
+        return Vector_Package.Vector (This).size;
    end size;
 
    function isEmpty (This : in out ABVector) return Boolean is
    begin
-        return Vector (This).isEmpty;
+        return Vector_Package.Vector (This).isEmpty;
    end isEmpty;
 
    function contains (This : in out ABVector; obj_Param : access Java_Object'Class) return Boolean is
       obj : constant Java_Object_Access := Java_Object_Access (obj_Param);
    begin
-        return Vector (This).contains (obj);
+        return Vector_Package.Vector (This).contains (obj);
    end contains;
 
    function indexOf (This : in out ABVector; obj_Param : access Java_Object'Class) return Integer is
       obj : constant Java_Object_Access := Java_Object_Access (obj_Param);
    begin
-        return Vector (This).indexOf (obj);
+        return Vector_Package.Vector (This).indexOf (obj);
    end indexOf;
 
    function lastIndexOf (This : in out ABVector; obj_Param : access Java_Object'Class) return Integer is
       obj : constant Java_Object_Access := Java_Object_Access (obj_Param);
    begin
-        return Vector (This).lastIndexOf (obj);
+        return Vector_Package.Vector (This).lastIndexOf (obj);
    end lastIndexOf;
 
    function elementAt (This : in out ABVector; index : Integer) return Java_Object_Access is
    begin
-        return Vector (This).elementAt (index);
+        return Vector_Package.Vector (This).elementAt (index);
    end elementAt;
 
    function firstElement (This : in out ABVector) return Java_Object_Access is
    begin
-        return Vector (This).firstElement;
+        return Vector_Package.Vector (This).firstElement;
    end firstElement;
 
    function lastElement (This : in out ABVector) return Java_Object_Access is
    begin
-        return Vector (This).lastElement;
+        return Vector_Package.Vector (This).lastElement;
    end lastElement;
 
    procedure setElementAt (This : in out ABVector; obj_Param : access Java_Object'Class; index : Integer) is
       obj : constant Java_Object_Access := Java_Object_Access (obj_Param);
    begin
-        Vector (This).setElementAt (obj, index);
+        Vector_Package.Vector (This).setElementAt (obj, index);
    end setElementAt;
 
    procedure removeElementAt (This : in out ABVector; index : Integer) is
    begin
-        Vector (This).removeElementAt (index);
+        Vector_Package.Vector (This).removeElementAt (index);
    end removeElementAt;
 
    procedure addElement (This : in out ABVector; obj_Param : access Java_Object'Class) is
       obj : constant Java_Object_Access := Java_Object_Access (obj_Param);
    begin
-        Vector (This).addElement (obj);
+        Vector_Package.Vector (This).addElement (obj);
    end addElement;
 
    procedure insertElementAt (This : in out ABVector; obj_Param : access Java_Object'Class; index : Integer) is
       obj : constant Java_Object_Access := Java_Object_Access (obj_Param);
    begin
-        Vector (This).insertElementAt (obj, index);
+        Vector_Package.Vector (This).insertElementAt (obj, index);
    end insertElementAt;
 
    function removeElement (This : in out ABVector; obj_Param : access Java_Object'Class) return Boolean is
       obj : constant Java_Object_Access := Java_Object_Access (obj_Param);
    begin
-        return Vector (This).removeElement (obj);
+        return Vector_Package.Vector (This).removeElement (obj);
    end removeElement;
 
    procedure removeAllElements (This : in out ABVector) is
    begin
-        Vector (This).removeAllElements;
+        Vector_Package.Vector (This).removeAllElements;
    end removeAllElements;
 
    function clone (This : in out ABVector) return Java_Object_Access is
    begin
-        return Vector (This).clone;
+        return Vector_Package.Vector (This).clone;
    end clone;
 
    function toArray (This : in out ABVector) return Java_Object_Access_Array_Access is
    begin
-        return Vector (This).toArray;
+        return Vector_Package.Vector (This).toArray;
    end toArray;
 
    function set (This : in out ABVector; index : Integer; element_Param : access Java_Object'Class) return Java_Object_Access is
       element : constant Java_Object_Access := Java_Object_Access (element_Param);
    begin
-        return Vector (This).set (index, element);
+        return Vector_Package.Vector (This).set (index, element);
    end set;
 
    function add (This : in out ABVector; element_Param : access Java_Object'Class) return Boolean is
       element : constant Java_Object_Access := Java_Object_Access (element_Param);
    begin
-        return Vector (This).add (element);
+        return Vector_Package.Vector (This).add (element);
    end add;
 
    function remove (This : in out ABVector; obj_Param : access Java_Object'Class) return Boolean is
       obj : constant Java_Object_Access := Java_Object_Access (obj_Param);
    begin
-        return Vector (This).remove (obj);
+        return Vector_Package.Vector (This).remove (obj);
    end remove;
 
    procedure add (This : in out ABVector; index : Integer; element_Param : access Java_Object'Class) is
       element : constant Java_Object_Access := Java_Object_Access (element_Param);
    begin
-        Vector (This).add (index, element);
+        Vector_Package.Vector (This).add (index, element);
    end add;
 
    function remove (This : in out ABVector; index : Integer) return Java_Object_Access is
    begin
-        return Vector (This).remove (index);
+        return Vector_Package.Vector (This).remove (index);
    end remove;
 
    procedure clear (This : in out ABVector) is
    begin
-        Vector (This).clear;
+        Vector_Package.Vector (This).clear;
    end clear;
 
    function equals (This : in out ABVector; obj_Param : access Java_Object'Class) return Boolean is
       obj : constant Java_Object_Access := Java_Object_Access (obj_Param);
    begin
-        return Vector (This).equals (obj);
+        return Vector_Package.Vector (This).equals (obj);
    end equals;
 
    function hashCode (This : in out ABVector) return Integer is
    begin
-        return Vector (This).hashCode;
+        return Vector_Package.Vector (This).hashCode;
    end hashCode;
 
    function toString (This : in out ABVector) return Unbounded_String is
    begin
-        return Vector (This).toString;
+        return Vector_Package.Vector (This).toString;
    end toString;
 
    procedure removeRange (This : in out ABVector; fromIndex : Integer; toIndex : Integer) is
    begin
-        Vector (This).removeRange (fromIndex, toIndex);
+        Vector_Package.Vector (This).removeRange (fromIndex, toIndex);
    end removeRange;
 
    procedure contains (This : in out ABVector; obj_Param : access Java_Object'Class) is

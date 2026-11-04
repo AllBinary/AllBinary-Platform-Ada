@@ -14,17 +14,23 @@
 
 
 with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
+with javax.microedition.lcdui.Image_Package_References;
 with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Animation_Package;
+with org.allbinary.animation.Animation_Package_References;
 with org.allbinary.animation.AnimationBehaviorFactory_Package; use org.allbinary.animation.AnimationBehaviorFactory_Package;
+with org.allbinary.animation.AnimationBehaviorFactory_Package_References;
 with org.allbinary.animation.AnimationInterfaceFactoryInterface_Package; use org.allbinary.animation.AnimationInterfaceFactoryInterface_Package;
 with org.allbinary.animation.NullAnimationFactory_Package; use org.allbinary.animation.NullAnimationFactory_Package;
 with org.allbinary.image.AnimationFactoryImageScaleUtil_Package; use org.allbinary.image.AnimationFactoryImageScaleUtil_Package;
+with org.allbinary.image.AnimationFactoryImageScaleUtil_Package_References;
+with org.allbinary.logic.communication.log.ForcedLogUtil_Package; use org.allbinary.logic.communication.log.ForcedLogUtil_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.media.ScaleProperties_Package; use org.allbinary.media.ScaleProperties_Package;
+with org.allbinary.media.ScaleProperties_Package_References;
 with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.animation.image.AnimationFactoryInitializationVisitor_Package; use org.allbinary.animation.image.AnimationFactoryInitializationVisitor_Package;
-with org.allbinary.image.AnimationFactoryImageScaleUtil_Package;
+with org.allbinary.animation.image.AnimationFactoryInitializationVisitor_Package_References;
 with org.allbinary.animation.image.AnimationFactoryInitializationVisitor_Package;
 
 package body org.allbinary.animation.image.BaseImageAnimationFactory_Package is

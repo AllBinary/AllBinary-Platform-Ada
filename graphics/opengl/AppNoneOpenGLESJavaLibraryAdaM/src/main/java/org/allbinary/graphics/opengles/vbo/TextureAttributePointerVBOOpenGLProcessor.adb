@@ -14,6 +14,7 @@
 
 
 with javax.microedition.khronos.opengles.GL10_Package; use javax.microedition.khronos.opengles.GL10_Package;
+with javax.microedition.khronos.opengles.GL10_Package_References;
 with org.allbinary.graphics.threed.min3d.renderer.processor.ObjectThreedOpenGLProcessor_Package; use org.allbinary.graphics.threed.min3d.renderer.processor.ObjectThreedOpenGLProcessor_Package;
 
 package body org.allbinary.graphics.opengles.vbo.TextureAttributePointerVBOOpenGLProcessor_Package is

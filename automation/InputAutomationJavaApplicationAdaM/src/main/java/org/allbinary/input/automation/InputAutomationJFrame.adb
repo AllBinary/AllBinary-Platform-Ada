@@ -15,6 +15,7 @@
 
 with org.allbinary.thread.ARunnable_Package; use org.allbinary.thread.ARunnable_Package;
 with bundle.input.automation.InputAutomationBundleActivatorListenerInterface_Package; use bundle.input.automation.InputAutomationBundleActivatorListenerInterface_Package;
+with bundle.input.automation.InputAutomationBundleActivatorListenerInterface_Package_References;
 with bundle.input.automation.module.configuration.InputAutomationConfigurationModuleChangeListener_Package; use bundle.input.automation.module.configuration.InputAutomationConfigurationModuleChangeListener_Package;
 with bundle.input.automation.robot.InputAutomationRobotChangeListener_Package; use bundle.input.automation.robot.InputAutomationRobotChangeListener_Package;
 with org.allbinary.globals.AppUrlGlobals_Package; use org.allbinary.globals.AppUrlGlobals_Package;
@@ -24,24 +25,29 @@ with org.allbinary.gui.swing.workers.JListSwingWorker_Package; use org.allbinary
 with org.allbinary.input.automation.configuration.InputAutomationConfiguration_Package; use org.allbinary.input.automation.configuration.InputAutomationConfiguration_Package;
 with org.allbinary.input.automation.configuration.InputAutomationConfigurationFactory_Package; use org.allbinary.input.automation.configuration.InputAutomationConfigurationFactory_Package;
 with org.allbinary.input.automation.configuration.InputAutomationConfigurationModuleChangeEvent_Package; use org.allbinary.input.automation.configuration.InputAutomationConfigurationModuleChangeEvent_Package;
+with org.allbinary.input.automation.configuration.InputAutomationConfigurationModuleChangeEvent_Package_References;
 with org.allbinary.input.automation.module.InputAutomationModuleFactoryFactory_Package; use org.allbinary.input.automation.module.InputAutomationModuleFactoryFactory_Package;
+with org.allbinary.input.automation.module.InputAutomationModuleFactoryFactory_Package_References;
 with org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface_Package; use org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface_Package;
+with org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface_Package_References;
 with org.allbinary.input.automation.module.configuration.InputAutomationModuleConfiguration_Package; use org.allbinary.input.automation.module.configuration.InputAutomationModuleConfiguration_Package;
 with org.allbinary.input.automation.module.configuration.InputAutomationModuleConfigurations_Package; use org.allbinary.input.automation.module.configuration.InputAutomationModuleConfigurations_Package;
+with org.allbinary.input.automation.module.configuration.InputAutomationModuleConfigurations_Package_References;
 with org.allbinary.input.automation.osgi.DesktopBundle_Package; use org.allbinary.input.automation.osgi.DesktopBundle_Package;
 with org.allbinary.input.automation.robot.InputRobotFactory_Package; use org.allbinary.input.automation.robot.InputRobotFactory_Package;
 with org.allbinary.input.automation.robot.osgi.InputAutomationRobotChangeEvent_Package; use org.allbinary.input.automation.robot.osgi.InputAutomationRobotChangeEvent_Package;
+with org.allbinary.input.automation.robot.osgi.InputAutomationRobotChangeEvent_Package_References;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
 with org.allbinary.logic.java.help.JavaHelpUtil_Package; use org.allbinary.logic.java.help.JavaHelpUtil_Package;
 with org.allbinary.logic.system.loader.WebappClassLoaderInfo_Package; use org.allbinary.logic.system.loader.WebappClassLoaderInfo_Package;
 with org.allbinary.logic.system.security.licensing.InputAutomationClientInformationFactory_Package; use org.allbinary.logic.system.security.licensing.InputAutomationClientInformationFactory_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.string_Id.CommonStrings_Package_References;
 with org.allbinary.thread.RunnableInterface_Package; use org.allbinary.thread.RunnableInterface_Package;
-with org.allbinary.input.automation.osgi.DesktopBundle_Package;
-with bundle.input.automation.InputAutomationBundleActivatorListenerInterface_Package;
+with org.allbinary.thread.RunnableInterface_Package_References;
 with org.allbinary.logic.system.security.licensing.InputAutomationClientInformation_Package;
-with org.allbinary.logic.system.security.licensing.InputAutomationClientInformationFactory_Package;
 
 package body org.allbinary.input.automation.InputAutomationJFrame_Package is
 

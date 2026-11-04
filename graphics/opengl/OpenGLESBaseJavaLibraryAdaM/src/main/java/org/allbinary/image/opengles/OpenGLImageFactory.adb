@@ -14,11 +14,12 @@
 
 
 with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
+with javax.microedition.lcdui.Image_Package_References;
 with org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package; use org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package;
+with org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package_References;
 with org.allbinary.platform.opengles.PlatformTextureBaseFactory_Package; use org.allbinary.platform.opengles.PlatformTextureBaseFactory_Package;
+with org.allbinary.platform.opengles.PlatformTextureBaseFactory_Package_References;
 with org.allbinary.platform.graphics.PlatformBitmapBase_Package;
-with org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package;
-with org.allbinary.platform.opengles.PlatformTextureBaseFactory_Package;
 
 package body org.allbinary.image.opengles.OpenGLImageFactory_Package is
 

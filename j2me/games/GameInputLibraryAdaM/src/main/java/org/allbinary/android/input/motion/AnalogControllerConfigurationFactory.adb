@@ -14,10 +14,9 @@
 
 
 with org.allbinary.android.input.motion.event.AnalogControllerConfigurationEvent_Package; use org.allbinary.android.input.motion.event.AnalogControllerConfigurationEvent_Package;
+with org.allbinary.android.input.motion.event.AnalogControllerConfigurationEvent_Package_References;
 with org.allbinary.android.input.motion.event.AnalogControllerConfigurationEventHandler_Package; use org.allbinary.android.input.motion.event.AnalogControllerConfigurationEventHandler_Package;
 with org.allbinary.logic.math.ScaleFactorFactory_Package; use org.allbinary.logic.math.ScaleFactorFactory_Package;
-with org.allbinary.android.input.motion.event.AnalogControllerConfigurationEvent_Package;
-with org.allbinary.android.input.motion.event.AnalogControllerConfigurationEventHandler_Package;
 with org.allbinary.android.input.motion.event.AnalogControllerConfigurationEventListenerInterface_Package;
 
 package body org.allbinary.android.input.motion.AnalogControllerConfigurationFactory_Package is

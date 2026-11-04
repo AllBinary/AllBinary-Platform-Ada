@@ -21,19 +21,16 @@ with org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEvent_Package
 with org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEventService_Package; use org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEventService_Package;
 with org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEventSource_Package; use org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEventSource_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.string_Id.CommonStrings_Package_References;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.graphics.j2me.workarea.JTree_Package; use org.allbinary.graphics.j2me.workarea.JTree_Package;
-with org.allbinary.graphics.j2me.workarea.canvas.CanvasTreeLabel_Package;
-with org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEvent_Package;
+with org.allbinary.graphics.j2me.workarea.JTree_Package_References;
 with org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventListener_Package;
-with org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventService_Package;
-with org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventSource_Package;
-with org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEvent_Package;
 with org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEventListener_Package;
-with org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEventService_Package;
-with org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEventSource_Package;
 
 package body org.allbinary.graphics.j2me.workarea.WorkAreaJTreeJPanel_Package is
 

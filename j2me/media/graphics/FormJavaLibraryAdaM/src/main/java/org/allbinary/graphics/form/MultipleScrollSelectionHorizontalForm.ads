@@ -205,7 +205,8 @@ limited with org.allbinary.graphics.color.BasicColor_Package;
 with org.allbinary.graphics.color.BasicColor_Package_References;
 limited with org.allbinary.graphics.font.MyFontProcessor_Package;
 with org.allbinary.graphics.font.MyFontProcessor_Package_References;
-with org.allbinary.graphics.font.UpdateMyFontInterface_Package; use org.allbinary.graphics.font.UpdateMyFontInterface_Package;
+limited with org.allbinary.graphics.font.UpdateMyFontInterface_Package;
+with org.allbinary.graphics.font.UpdateMyFontInterface_Package_References;
 limited with org.allbinary.graphics.form.item.ABCustomItem_Package;
 with org.allbinary.graphics.form.item.ABCustomItem_Package_References;
 limited with org.allbinary.graphics.paint.Paintable_Package;
@@ -215,8 +216,7 @@ limited with org.allbinary.graphics.form.ItemPaintableFactory_Package;
 with org.allbinary.graphics.form.ItemPaintableFactory_Package_References;
 limited with org.allbinary.graphics.form.FormType_Package;
 with org.allbinary.graphics.form.FormType_Package_References;
-limited with org.allbinary.graphics.form.ItemIndexPaintable_Package;
-with org.allbinary.graphics.form.ItemIndexPaintable_Package_References;
+with org.allbinary.graphics.form.ItemIndexPaintable_Package; use org.allbinary.graphics.form.ItemIndexPaintable_Package;
 
 package org.allbinary.graphics.form.MultipleScrollSelectionFormHorizontalPaintable_Package is
 
@@ -268,6 +268,16 @@ package org.allbinary.graphics.form.MultipleScrollSelectionFormHorizontalPaintab
    use type MyFontProcessor_Access_Array_Access_Array;
    subtype MyFontProcessor_Access_Array_Access_Array_Access is org.allbinary.graphics.font.MyFontProcessor_Package_References.MyFontProcessor_Access_Array_Access_Array_Access;
    use type MyFontProcessor_Access_Array_Access_Array_Access;
+   subtype UpdateMyFontInterface_Access is org.allbinary.graphics.font.UpdateMyFontInterface_Package_References.UpdateMyFontInterface_Access;
+   use type UpdateMyFontInterface_Access;
+   subtype UpdateMyFontInterface_Access_Array is org.allbinary.graphics.font.UpdateMyFontInterface_Package_References.UpdateMyFontInterface_Access_Array;
+   use type UpdateMyFontInterface_Access_Array;
+   subtype UpdateMyFontInterface_Access_Array_Access is org.allbinary.graphics.font.UpdateMyFontInterface_Package_References.UpdateMyFontInterface_Access_Array_Access;
+   use type UpdateMyFontInterface_Access_Array_Access;
+   subtype UpdateMyFontInterface_Access_Array_Access_Array is org.allbinary.graphics.font.UpdateMyFontInterface_Package_References.UpdateMyFontInterface_Access_Array_Access_Array;
+   use type UpdateMyFontInterface_Access_Array_Access_Array;
+   subtype UpdateMyFontInterface_Access_Array_Access_Array_Access is org.allbinary.graphics.font.UpdateMyFontInterface_Package_References.UpdateMyFontInterface_Access_Array_Access_Array_Access;
+   use type UpdateMyFontInterface_Access_Array_Access_Array_Access;
    subtype ABCustomItem_Access is org.allbinary.graphics.form.item.ABCustomItem_Package_References.ABCustomItem_Access;
    use type ABCustomItem_Access;
    subtype ABCustomItem_Access_Array is org.allbinary.graphics.form.item.ABCustomItem_Package_References.ABCustomItem_Access_Array;
@@ -288,6 +298,16 @@ package org.allbinary.graphics.form.MultipleScrollSelectionFormHorizontalPaintab
    use type Paintable_Access_Array_Access_Array;
    subtype Paintable_Access_Array_Access_Array_Access is org.allbinary.graphics.paint.Paintable_Package_References.Paintable_Access_Array_Access_Array_Access;
    use type Paintable_Access_Array_Access_Array_Access;
+   subtype ScrollSelectionForm_Access is org.allbinary.graphics.form.ScrollSelectionForm_Package_References.ScrollSelectionForm_Access;
+   use type ScrollSelectionForm_Access;
+   subtype ScrollSelectionForm_Access_Array is org.allbinary.graphics.form.ScrollSelectionForm_Package_References.ScrollSelectionForm_Access_Array;
+   use type ScrollSelectionForm_Access_Array;
+   subtype ScrollSelectionForm_Access_Array_Access is org.allbinary.graphics.form.ScrollSelectionForm_Package_References.ScrollSelectionForm_Access_Array_Access;
+   use type ScrollSelectionForm_Access_Array_Access;
+   subtype ScrollSelectionForm_Access_Array_Access_Array is org.allbinary.graphics.form.ScrollSelectionForm_Package_References.ScrollSelectionForm_Access_Array_Access_Array;
+   use type ScrollSelectionForm_Access_Array_Access_Array;
+   subtype ScrollSelectionForm_Access_Array_Access_Array_Access is org.allbinary.graphics.form.ScrollSelectionForm_Package_References.ScrollSelectionForm_Access_Array_Access_Array_Access;
+   use type ScrollSelectionForm_Access_Array_Access_Array_Access;
    subtype ItemPaintableFactory_Access is org.allbinary.graphics.form.ItemPaintableFactory_Package_References.ItemPaintableFactory_Access;
    use type ItemPaintableFactory_Access;
    subtype ItemPaintableFactory_Access_Array is org.allbinary.graphics.form.ItemPaintableFactory_Package_References.ItemPaintableFactory_Access_Array;
@@ -308,16 +328,6 @@ package org.allbinary.graphics.form.MultipleScrollSelectionFormHorizontalPaintab
    use type FormType_Access_Array_Access_Array;
    subtype FormType_Access_Array_Access_Array_Access is org.allbinary.graphics.form.FormType_Package_References.FormType_Access_Array_Access_Array_Access;
    use type FormType_Access_Array_Access_Array_Access;
-   subtype ItemIndexPaintable_Access is org.allbinary.graphics.form.ItemIndexPaintable_Package_References.ItemIndexPaintable_Access;
-   use type ItemIndexPaintable_Access;
-   subtype ItemIndexPaintable_Access_Array is org.allbinary.graphics.form.ItemIndexPaintable_Package_References.ItemIndexPaintable_Access_Array;
-   use type ItemIndexPaintable_Access_Array;
-   subtype ItemIndexPaintable_Access_Array_Access is org.allbinary.graphics.form.ItemIndexPaintable_Package_References.ItemIndexPaintable_Access_Array_Access;
-   use type ItemIndexPaintable_Access_Array_Access;
-   subtype ItemIndexPaintable_Access_Array_Access_Array is org.allbinary.graphics.form.ItemIndexPaintable_Package_References.ItemIndexPaintable_Access_Array_Access_Array;
-   use type ItemIndexPaintable_Access_Array_Access_Array;
-   subtype ItemIndexPaintable_Access_Array_Access_Array_Access is org.allbinary.graphics.form.ItemIndexPaintable_Package_References.ItemIndexPaintable_Access_Array_Access_Array_Access;
-   use type ItemIndexPaintable_Access_Array_Access_Array_Access;
    end Reference_Types;
    use Reference_Types;
 
@@ -370,7 +380,8 @@ limited with org.allbinary.graphics.color.BasicColor_Package;
 with org.allbinary.graphics.color.BasicColor_Package_References;
 limited with org.allbinary.graphics.font.MyFontProcessor_Package;
 with org.allbinary.graphics.font.MyFontProcessor_Package_References;
-with org.allbinary.graphics.font.UpdateMyFontInterface_Package; use org.allbinary.graphics.font.UpdateMyFontInterface_Package;
+limited with org.allbinary.graphics.font.UpdateMyFontInterface_Package;
+with org.allbinary.graphics.font.UpdateMyFontInterface_Package_References;
 limited with org.allbinary.graphics.form.item.ABCustomItem_Package;
 with org.allbinary.graphics.form.item.ABCustomItem_Package_References;
 limited with org.allbinary.graphics.paint.Paintable_Package;
@@ -380,8 +391,7 @@ limited with org.allbinary.graphics.form.ItemPaintableFactory_Package;
 with org.allbinary.graphics.form.ItemPaintableFactory_Package_References;
 limited with org.allbinary.graphics.form.FormType_Package;
 with org.allbinary.graphics.form.FormType_Package_References;
-limited with org.allbinary.graphics.form.ItemIndexPaintable_Package;
-with org.allbinary.graphics.form.ItemIndexPaintable_Package_References;
+with org.allbinary.graphics.form.ItemIndexPaintable_Package; use org.allbinary.graphics.form.ItemIndexPaintable_Package;
 
 package org.allbinary.graphics.form.MultipleScrollSelectionFormVerticalPaintable_Package is
 
@@ -433,6 +443,16 @@ package org.allbinary.graphics.form.MultipleScrollSelectionFormVerticalPaintable
    use type MyFontProcessor_Access_Array_Access_Array;
    subtype MyFontProcessor_Access_Array_Access_Array_Access is org.allbinary.graphics.font.MyFontProcessor_Package_References.MyFontProcessor_Access_Array_Access_Array_Access;
    use type MyFontProcessor_Access_Array_Access_Array_Access;
+   subtype UpdateMyFontInterface_Access is org.allbinary.graphics.font.UpdateMyFontInterface_Package_References.UpdateMyFontInterface_Access;
+   use type UpdateMyFontInterface_Access;
+   subtype UpdateMyFontInterface_Access_Array is org.allbinary.graphics.font.UpdateMyFontInterface_Package_References.UpdateMyFontInterface_Access_Array;
+   use type UpdateMyFontInterface_Access_Array;
+   subtype UpdateMyFontInterface_Access_Array_Access is org.allbinary.graphics.font.UpdateMyFontInterface_Package_References.UpdateMyFontInterface_Access_Array_Access;
+   use type UpdateMyFontInterface_Access_Array_Access;
+   subtype UpdateMyFontInterface_Access_Array_Access_Array is org.allbinary.graphics.font.UpdateMyFontInterface_Package_References.UpdateMyFontInterface_Access_Array_Access_Array;
+   use type UpdateMyFontInterface_Access_Array_Access_Array;
+   subtype UpdateMyFontInterface_Access_Array_Access_Array_Access is org.allbinary.graphics.font.UpdateMyFontInterface_Package_References.UpdateMyFontInterface_Access_Array_Access_Array_Access;
+   use type UpdateMyFontInterface_Access_Array_Access_Array_Access;
    subtype ABCustomItem_Access is org.allbinary.graphics.form.item.ABCustomItem_Package_References.ABCustomItem_Access;
    use type ABCustomItem_Access;
    subtype ABCustomItem_Access_Array is org.allbinary.graphics.form.item.ABCustomItem_Package_References.ABCustomItem_Access_Array;
@@ -453,6 +473,16 @@ package org.allbinary.graphics.form.MultipleScrollSelectionFormVerticalPaintable
    use type Paintable_Access_Array_Access_Array;
    subtype Paintable_Access_Array_Access_Array_Access is org.allbinary.graphics.paint.Paintable_Package_References.Paintable_Access_Array_Access_Array_Access;
    use type Paintable_Access_Array_Access_Array_Access;
+   subtype ScrollSelectionForm_Access is org.allbinary.graphics.form.ScrollSelectionForm_Package_References.ScrollSelectionForm_Access;
+   use type ScrollSelectionForm_Access;
+   subtype ScrollSelectionForm_Access_Array is org.allbinary.graphics.form.ScrollSelectionForm_Package_References.ScrollSelectionForm_Access_Array;
+   use type ScrollSelectionForm_Access_Array;
+   subtype ScrollSelectionForm_Access_Array_Access is org.allbinary.graphics.form.ScrollSelectionForm_Package_References.ScrollSelectionForm_Access_Array_Access;
+   use type ScrollSelectionForm_Access_Array_Access;
+   subtype ScrollSelectionForm_Access_Array_Access_Array is org.allbinary.graphics.form.ScrollSelectionForm_Package_References.ScrollSelectionForm_Access_Array_Access_Array;
+   use type ScrollSelectionForm_Access_Array_Access_Array;
+   subtype ScrollSelectionForm_Access_Array_Access_Array_Access is org.allbinary.graphics.form.ScrollSelectionForm_Package_References.ScrollSelectionForm_Access_Array_Access_Array_Access;
+   use type ScrollSelectionForm_Access_Array_Access_Array_Access;
    subtype ItemPaintableFactory_Access is org.allbinary.graphics.form.ItemPaintableFactory_Package_References.ItemPaintableFactory_Access;
    use type ItemPaintableFactory_Access;
    subtype ItemPaintableFactory_Access_Array is org.allbinary.graphics.form.ItemPaintableFactory_Package_References.ItemPaintableFactory_Access_Array;
@@ -473,16 +503,6 @@ package org.allbinary.graphics.form.MultipleScrollSelectionFormVerticalPaintable
    use type FormType_Access_Array_Access_Array;
    subtype FormType_Access_Array_Access_Array_Access is org.allbinary.graphics.form.FormType_Package_References.FormType_Access_Array_Access_Array_Access;
    use type FormType_Access_Array_Access_Array_Access;
-   subtype ItemIndexPaintable_Access is org.allbinary.graphics.form.ItemIndexPaintable_Package_References.ItemIndexPaintable_Access;
-   use type ItemIndexPaintable_Access;
-   subtype ItemIndexPaintable_Access_Array is org.allbinary.graphics.form.ItemIndexPaintable_Package_References.ItemIndexPaintable_Access_Array;
-   use type ItemIndexPaintable_Access_Array;
-   subtype ItemIndexPaintable_Access_Array_Access is org.allbinary.graphics.form.ItemIndexPaintable_Package_References.ItemIndexPaintable_Access_Array_Access;
-   use type ItemIndexPaintable_Access_Array_Access;
-   subtype ItemIndexPaintable_Access_Array_Access_Array is org.allbinary.graphics.form.ItemIndexPaintable_Package_References.ItemIndexPaintable_Access_Array_Access_Array;
-   use type ItemIndexPaintable_Access_Array_Access_Array;
-   subtype ItemIndexPaintable_Access_Array_Access_Array_Access is org.allbinary.graphics.form.ItemIndexPaintable_Package_References.ItemIndexPaintable_Access_Array_Access_Array_Access;
-   use type ItemIndexPaintable_Access_Array_Access_Array_Access;
    end Reference_Types;
    use Reference_Types;
 

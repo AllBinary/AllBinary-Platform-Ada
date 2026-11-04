@@ -13,7 +13,6 @@
 --  Generated Code Do Not Modify
 
 
-with org.allbinary.business.advertisement.search.website.AdvertisementWebsiteInterface_Package;
 
 package body org.allbinary.business.advertisement.search.website.BasicAdvertisementWebsite_Package is
 

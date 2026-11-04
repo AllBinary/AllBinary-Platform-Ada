@@ -15,19 +15,21 @@
 
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.business.advertisement.area.AdvertisementArea_Package; use org.allbinary.business.advertisement.area.AdvertisementArea_Package;
 with org.allbinary.business.advertisement.area.AdvertisementAreaData_Package; use org.allbinary.business.advertisement.area.AdvertisementAreaData_Package;
 with org.allbinary.business.advertisement.area.AdvertisementAreaInterface_Package; use org.allbinary.business.advertisement.area.AdvertisementAreaInterface_Package;
+with org.allbinary.business.advertisement.area.AdvertisementAreaInterface_Package_References;
 with org.allbinary.business.advertisement.campaign.AdvertisementCampaignData_Package; use org.allbinary.business.advertisement.campaign.AdvertisementCampaignData_Package;
 with org.allbinary.business.context.modules.storefront.StoreFrontData_Package; use org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
 with org.allbinary.business.entry_Id.EntryData_Package; use org.allbinary.business.entry_Id.EntryData_Package;
 with org.allbinary.business.init.db.UserDbInitInfo_Package; use org.allbinary.business.init.db.UserDbInitInfo_Package;
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.communication.sql.AbSqlBean_Package; use org.allbinary.logic.communication.sql.AbSqlBean_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
-with org.allbinary.data.tables.advertisement.areas.AdvertisementAreasEntityInterface_Package;
 
 package body org.allbinary.data.tables.advertisement.areas.AdvertisementAreasEntity_Package is
 
@@ -95,7 +97,7 @@ package body org.allbinary.data.tables.advertisement.areas.AdvertisementAreasEnt
    procedure delete (This : in out AdvertisementAreasEntity; value : Unbounded_String) is
    begin
         begin
-            AbSqlBean (This).deleteWhere (EntryData_Package.getInstance.ID, value);
+            AbSqlBean_Package.AbSqlBean (This).deleteWhere (EntryData_Package.getInstance.ID, value);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
                 This.logUtil.putF (This.commonStrings.SUCCESS, AdvertisementAreasEntity_Access'(This'Unchecked_Access), This.commonStrings.delete);
             end if;
@@ -122,7 +124,7 @@ package body org.allbinary.data.tables.advertisement.areas.AdvertisementAreasEnt
    begin
         keysAndValues := StdUtil_Package.getInstance.createHashMap;
         keysAndValues.put (StoreFrontData_Package.getInstance.NAME, Java_Box (storeName));
-        hashMapVector := AbSqlBean (This).getRows (keysAndValues);
+        hashMapVector := AbSqlBean_Package.AbSqlBean (This).getRows (keysAndValues);
         vector := BasicArrayList_Access (BasicArrayListD_Package.Create);
         size := hashMapVector.size;
         for index in 0 .. (size) - 1 loop
@@ -142,7 +144,7 @@ package body org.allbinary.data.tables.advertisement.areas.AdvertisementAreasEnt
         keysAndValues := StdUtil_Package.getInstance.createHashMap;
         keysAndValues.put (StoreFrontData_Package.getInstance.NAME, Java_Box (storeName));
         keysAndValues.put (AdvertisementAreaData_Package.getInstance.NAME, Java_Box (advertisementAreaName));
-        hashMap := AbSqlBean (This).getRow (keysAndValues);
+        hashMap := AbSqlBean_Package.AbSqlBean (This).getRow (keysAndValues);
         if (hashMap) /= (null) then
             return AdvertisementAreaInterface_Access (AdvertisementArea_Package.Create (hashMap));
         else
@@ -166,19 +168,19 @@ package body org.allbinary.data.tables.advertisement.areas.AdvertisementAreasEnt
    function createTable (This : in out AdvertisementAreasEntity) return Unbounded_String is
       returnStr : Unbounded_String;
    begin
-        returnStr := AbSqlBean (This).createTable (AdvertisementAreasEntity'Class (This).createTableStatement);
+        returnStr := AbSqlBean_Package.AbSqlBean (This).createTable (AdvertisementAreasEntity'Class (This).createTableStatement);
         return returnStr;
    end createTable;
 
    procedure update (This : in out AdvertisementAreasEntity; updatedValues_Param : access HashMap_Package.HashMap'Class) is
       updatedValues : constant HashMap_Access := HashMap_Access (updatedValues_Param);
    begin
-        AbSqlBean (This).updateWhere (AdvertisementAreaData_Package.getInstance.NAME, Java_Unbox (updatedValues.get (AdvertisementAreaData_Package.getInstance.NAME)), updatedValues);
+        AbSqlBean_Package.AbSqlBean (This).updateWhere (AdvertisementAreaData_Package.getInstance.NAME, Java_Unbox (updatedValues.get (AdvertisementAreaData_Package.getInstance.NAME)), updatedValues);
    end update;
 
    function dropTable (This : in out AdvertisementAreasEntity) return Unbounded_String is
    begin
-        return AbSqlBean (This).dropTable;
+        return AbSqlBean_Package.AbSqlBean (This).dropTable;
    end dropTable;
 
    procedure get (This : in out AdvertisementAreasEntity; storeName : Unbounded_String) is

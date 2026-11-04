@@ -14,8 +14,9 @@
 
 
 with javax.microedition.lcdui.Displayable_Package; use javax.microedition.lcdui.Displayable_Package;
+with javax.microedition.lcdui.Displayable_Package_References;
 with javax.microedition.midlet.MIDlet_Package; use javax.microedition.midlet.MIDlet_Package;
-with org.allbinary.view.EmulatorViewInterface_Package;
+with javax.microedition.midlet.MIDlet_Package_References;
 
 package body org.allbinary.view.NullEmulatorView_Package is
 

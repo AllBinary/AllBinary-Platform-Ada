@@ -14,20 +14,26 @@
 
 
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
 with org.allbinary.game.layer.CollidableCompositeLayer_Package; use org.allbinary.game.layer.CollidableCompositeLayer_Package;
+with org.allbinary.game.layer.CollidableCompositeLayer_Package_References;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
+with org.allbinary.layer.AllBinaryLayer_Package_References;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.string_Id.CommonStrings_Package_References;
 with org.allbinary.game.collision.LayerCollisionUtil_Package; use org.allbinary.game.collision.LayerCollisionUtil_Package;
+with org.allbinary.game.collision.LayerCollisionUtil_Package_References;
 with org.allbinary.game.collision.CollidableInterfaceCompositeInterface_Package; use org.allbinary.game.collision.CollidableInterfaceCompositeInterface_Package;
+with org.allbinary.game.collision.CollidableInterfaceCompositeInterface_Package_References;
 with org.allbinary.game.collision.CollisionTypeFactory_Package; use org.allbinary.game.collision.CollisionTypeFactory_Package;
 with org.allbinary.game.collision.CollisionType_Package; use org.allbinary.game.collision.CollisionType_Package;
+with org.allbinary.game.collision.CollisionType_Package_References;
 with org.allbinary.game.collision.CollidableBaseBehaviorFactory_Package;
 with org.allbinary.game.collision.CollidableBaseBehaviorFactoryInterface_Package;
-with org.allbinary.game.layer.CollidableCompositeLayer_Package;
-with org.allbinary.game.collision.CollidableInterface_Package;
 with org.allbinary.game.collision.CollidableInterfaceCompositeInterface_Package;
 with org.allbinary.game.collision.CollisionProcessor_Package;
 with org.allbinary.game.collision.CollisionType_Package;

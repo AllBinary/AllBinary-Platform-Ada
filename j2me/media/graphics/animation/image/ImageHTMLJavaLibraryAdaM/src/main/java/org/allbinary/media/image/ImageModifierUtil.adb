@@ -14,7 +14,12 @@
 
 
 with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
+with javax.microedition.lcdui.Image_Package_References;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.graphics.color.BasicColor_Package_References;
+with org.microemu.device.playn.PlaynMutableImage_Package; use org.microemu.device.playn.PlaynMutableImage_Package;
+with playn.core.CanvasImage_Package; use playn.core.CanvasImage_Package;
+with playn.core.CanvasSurface_Package; use playn.core.CanvasSurface_Package;
 
 package body org.allbinary.media.image.ImageModifierUtil_Package is
 

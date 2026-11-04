@@ -14,10 +14,12 @@
 
 
 with android.content.Context_Package; use android.content.Context_Package;
+with android.content.Context_Package_References;
 with android.os.Build_Package; use android.os.Build_Package;
 with org.allbinary.data.resource.ResourceUtil_Package; use org.allbinary.data.resource.ResourceUtil_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.string_Id.CommonStrings_Package_References;
 
 package body org.allbinary.logic.system.os.android.AndroidSystemProperties_Package is
 

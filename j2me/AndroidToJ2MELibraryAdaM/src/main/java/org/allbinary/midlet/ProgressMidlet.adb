@@ -18,14 +18,15 @@ with org.allbinary.canvas.Processor_Package; use org.allbinary.canvas.Processor_
 with org.allbinary.globals.Globals_Package; use org.allbinary.globals.Globals_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package; use org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References;
 with org.allbinary.logic.system.security.licensing.ClientInformationFactory_Package; use org.allbinary.logic.system.security.licensing.ClientInformationFactory_Package;
+with org.allbinary.logic.system.security.licensing.ClientInformationFactory_Package_References;
 with org.allbinary.thread.PrimaryThreadPool_Package; use org.allbinary.thread.PrimaryThreadPool_Package;
 with org.allbinary.thread.ThreadPool_Package; use org.allbinary.thread.ThreadPool_Package;
 with org.allbinary.midlet.MidletExitProcessorFactory_Package; use org.allbinary.midlet.MidletExitProcessorFactory_Package;
 with org.allbinary.midlet.ExitRunnable_Package; use org.allbinary.midlet.ExitRunnable_Package;
 with java.lang.Runnable_Package; use java.lang.Runnable_Package;
 with org.allbinary.midlet.MidletExitProcessorFactory_Package;
-with org.allbinary.TsUtil_Package;
 
 package body org.allbinary.midlet.ProgressMidlet_Package is
 

@@ -14,16 +14,18 @@
 
 
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.logic.util.cache.PoolInterface_Package; use org.allbinary.logic.util.cache.PoolInterface_Package;
 with org.allbinary.media.image.cache.BufferedImageCacheable_Package; use org.allbinary.media.image.cache.BufferedImageCacheable_Package;
+with org.allbinary.media.image.cache.BufferedImageCacheable_Package_References;
 with org.allbinary.media.image.cache.BufferedImageInfo_Package; use org.allbinary.media.image.cache.BufferedImageInfo_Package;
 with org.allbinary.media.image.cache.BufferedImageInfoFactory_Package; use org.allbinary.media.image.cache.BufferedImageInfoFactory_Package;
 with org.allbinary.media.image.cache.BufferedImagePoolSingleton_Package; use org.allbinary.media.image.cache.BufferedImagePoolSingleton_Package;
 with org.allbinary.media.image.comparison.pixel.PixelDelta_Package; use org.allbinary.media.image.comparison.pixel.PixelDelta_Package;
 with org.allbinary.media.image.comparison.ImageComparisonResult_Package; use org.allbinary.media.image.comparison.ImageComparisonResult_Package;
+with org.allbinary.media.image.comparison.ImageComparisonResult_Package_References;
 with org.allbinary.media.image.comparison.color.ColorDelta_Package;
 with org.allbinary.media.image.comparison.ImageComparisonResult_Package;
-with org.allbinary.media.image.comparison.pixel.PixelDelta_Package;
 
 package body org.allbinary.media.image.comparison.ChangedPixelsUtil_Package is
 
@@ -118,10 +120,10 @@ package body org.allbinary.media.image.comparison.ChangedPixelsUtil_Package is
 
 begin
    null;
-   START_X := 0;
-   START_Y := 0;
-   OFFSET := 0;
-   SCAN_SIZE := 0;
+   
+   
+   
+   
    CLEAR_INT_ARRAY := new Integer_Array'(0 .. ((1800) * (1600)) - 1 => 0);
 
 end org.allbinary.media.image.comparison.ChangedPixelsUtil_Package;

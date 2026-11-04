@@ -14,8 +14,9 @@
 
 
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
-with org.allbinary.graphics.paint.PaintableInterface_Package;
+with org.allbinary.graphics.color.BasicColor_Package_References;
 
 package body org.allbinary.graphics.paint.Paintable_Package is
 

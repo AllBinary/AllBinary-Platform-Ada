@@ -16,6 +16,7 @@
 with org.allbinary.android.input.VirtualKeyboard_Package; use org.allbinary.android.input.VirtualKeyboard_Package;
 with org.allbinary.input.event.VirtualKeyboardEventListenerInterface_Package; use org.allbinary.input.event.VirtualKeyboardEventListenerInterface_Package;
 with android.app.Activity_Package; use android.app.Activity_Package;
+with android.app.Activity_Package_References;
 
 package body org.allbinary.android.input.api1.VirtualKeyboardAPI1_Package is
 

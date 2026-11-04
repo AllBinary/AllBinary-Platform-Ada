@@ -14,9 +14,13 @@
 
 
 with javax.microedition.lcdui.Font_Package; use javax.microedition.lcdui.Font_Package;
+with javax.microedition.lcdui.Font_Package_References;
 with javax.microedition.midlet.MIDlet_Package; use javax.microedition.midlet.MIDlet_Package;
+with javax.microedition.midlet.MIDlet_Package_References;
 with org.allbinary.graphics.threed.GLHolder_Package; use org.allbinary.graphics.threed.GLHolder_Package;
+with org.allbinary.graphics.threed.GLHolder_Package_References;
 with org.allbinary.graphics.threed.RatioProcessor_Package; use org.allbinary.graphics.threed.RatioProcessor_Package;
+with org.allbinary.graphics.threed.RatioProcessor_Package_References;
 with org.allbinary.graphics.threed.GLHolder_Package;
 with org.allbinary.graphics.threed.RatioProcessor_Package;
 

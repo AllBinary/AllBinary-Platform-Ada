@@ -16,7 +16,9 @@
 with org.allbinary.thread.ARunnable_Package; use org.allbinary.thread.ARunnable_Package;
 with java.io.File_Package; use java.io.File_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.gui.dialog.FileJDialogListenerInterface_Package; use org.allbinary.gui.dialog.FileJDialogListenerInterface_Package;
+with org.allbinary.gui.dialog.FileJDialogListenerInterface_Package_References;
 with org.allbinary.gui.dialog.FileJDialogListenerInterface_Package;
 
 package body org.allbinary.gui.dialog.FileJDialog_Package is

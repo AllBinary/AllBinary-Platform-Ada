@@ -18,7 +18,9 @@ with android.app.ActivityManager.RunningServiceInfo_Package; use android.app.Act
 with android.content.ComponentName_Package; use android.content.ComponentName_Package;
 with android.content.Context_Package; use android.content.Context_Package;
 with org.allbinary.data.resource.ResourceUtil_Package; use org.allbinary.data.resource.ResourceUtil_Package;
+with org.allbinary.data.resource.ResourceUtil_Package_References;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 
 package body org.allbinary.android.AndroidServicesUtil_Package is
 

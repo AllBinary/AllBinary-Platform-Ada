@@ -14,26 +14,26 @@
 
 
 with org.allbinary.game.layer.AdvancedRTSGameLayer_Package; use org.allbinary.game.layer.AdvancedRTSGameLayer_Package;
+with org.allbinary.game.layer.AdvancedRTSGameLayer_Package_References;
 with org.allbinary.game.layer.NullPathFindingLayer_Package; use org.allbinary.game.layer.NullPathFindingLayer_Package;
 with org.allbinary.game.layer.PathFindingLayerInterface_Package; use org.allbinary.game.layer.PathFindingLayerInterface_Package;
 with org.allbinary.game.layer.RTSLayer_Package; use org.allbinary.game.layer.RTSLayer_Package;
 with org.allbinary.game.layer.RTSLayerEvent_Package; use org.allbinary.game.layer.RTSLayerEvent_Package;
+with org.allbinary.game.layer.RTSLayerEvent_Package_References;
 with org.allbinary.game.layer.unit.UnitLayer_Package; use org.allbinary.game.layer.unit.UnitLayer_Package;
+with org.allbinary.game.layer.unit.UnitLayer_Package_References;
 with org.allbinary.game.layer.unit.UnitWaypointBehavior_Package; use org.allbinary.game.layer.unit.UnitWaypointBehavior_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.game.input.form.PrimaryWaypointHelper_Package; use org.allbinary.game.input.form.PrimaryWaypointHelper_Package;
-with org.allbinary.game.layer.AdvancedRTSGameLayer_Package;
 with org.allbinary.game.layer.AdvancedRTSProperties_Package;
 with org.allbinary.game.layer.building.event.BuildingEventListenerInterface_Package;
 with org.allbinary.game.layer.building.BuildingLayer_Package;
 with org.allbinary.game.layer.building.BuildingPropertiesFactory_Package;
 with org.allbinary.game.input.form.PrimaryWaypointHelper_Package;
-with org.allbinary.game.layer.RTSLayerEvent_Package;
 with org.allbinary.game.layer.SensorAction_Package;
-with org.allbinary.game.layer.unit.UnitLayer_Package;
-with org.allbinary.game.layer.unit.UnitWaypointBehavior_Package;
 with org.allbinary.game.layer.unit.UnitWaypointStrings_Package;
 with org.allbinary.game.layer.waypoint.event.WaypointEventListenerInterface_Package;
 with org.allbinary.game.layer.waypoint.WaypointLayer_Package;

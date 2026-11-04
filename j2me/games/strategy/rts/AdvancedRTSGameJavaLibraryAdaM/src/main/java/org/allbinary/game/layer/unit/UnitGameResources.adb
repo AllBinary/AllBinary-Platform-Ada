@@ -54,7 +54,7 @@ package body org.allbinary.game.layer.unit.UnitGameResources_Package is
    procedure append (This : in out UnitGameResources; ROOT : Unbounded_String; sizeString : Unbounded_String) is
       string_Id : Unbounded_String;
    begin
-        BasicGameResources (This).append (ROOT, sizeString);
+        BasicGameResources_Package.BasicGameResources (This).append (ROOT, sizeString);
         string_Id := GameGraphicsResourceUtil_Package.getInstance.getName;
         BasicGameResources_Package.stringBuffer.delete (0, BasicGameResources_Package.stringBuffer.length);
         BasicGameResources_Package.stringBuffer.append (ROOT);
@@ -86,7 +86,7 @@ package body org.allbinary.game.layer.unit.UnitGameResources_Package is
         if AndroidUtil_Package.isAndroid then
             return GameGraphicsResourceUtil_Package.getInstance.getStringForFeature (GraphicsFeatureFactory_Package.getInstance.SPRITE_QUARTER_ROTATION_GRAPHICS);
         else
-            return BasicGameResources (This).getString;
+            return BasicGameResources_Package.BasicGameResources (This).getString;
         end if;
    end getString;
 

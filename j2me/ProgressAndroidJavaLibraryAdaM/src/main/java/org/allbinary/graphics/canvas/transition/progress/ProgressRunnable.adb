@@ -14,11 +14,13 @@
 
 
 with android.app.Activity_Package; use android.app.Activity_Package;
+with android.app.Activity_Package_References;
 with org.allbinary.android.activity.MidletActivityBase_Package; use org.allbinary.android.activity.MidletActivityBase_Package;
 with org.allbinary.android.activity.SimpleProgressActivityInterface_Package; use org.allbinary.android.activity.SimpleProgressActivityInterface_Package;
+with org.allbinary.android.activity.SimpleProgressActivityInterface_Package_References;
 with org.allbinary.thread.ARunnable_Package; use org.allbinary.thread.ARunnable_Package;
 with org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package; use org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package;
-with org.allbinary.android.activity.MidletActivityBase_Package;
+with org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package_References;
 
 package body org.allbinary.graphics.canvas.transition.progress.ProgressRunnable_Package is
 

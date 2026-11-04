@@ -13,7 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 
 package body org.allbinary.thread.ImageThreadPool_Package is
 
@@ -55,7 +59,7 @@ package body org.allbinary.thread.ImageThreadPool_Package is
    procedure runTask (This : in out ImageThreadPool; task_Id_Param : access Runnable_Package.Runnable'Class) is
       task_Id : constant Runnable_Access := Runnable_Access (task_Id_Param);
    begin
-        ThreadPool (This).runTask (task_Id);
+        ThreadPool_Package.ThreadPool (This).runTask (task_Id);
    end runTask;
 
    procedure startTask (This : in out ImageThreadPool; task_Id_Param : access Runnable_Package.Runnable'Class) is

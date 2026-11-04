@@ -16,6 +16,7 @@
 with org.allbinary.globals.FREEBLISKET_PATH_GLOBALS_Package; use org.allbinary.globals.FREEBLISKET_PATH_GLOBALS_Package;
 with org.allbinary.globals.URLGLOBALS_Package; use org.allbinary.globals.URLGLOBALS_Package;
 with org.allbinary.logic.communication.http.HttpData_Package; use org.allbinary.logic.communication.http.HttpData_Package;
+with org.allbinary.logic.communication.http.HttpData_Package_References;
 with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
 with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
 with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
@@ -26,11 +27,13 @@ with org.allbinary.logic.io.DataOutputStreamFactory_Package; use org.allbinary.l
 with org.allbinary.logic.io.StreamUtil_Package; use org.allbinary.logic.io.StreamUtil_Package;
 with org.allbinary.logic.io.file.AbFile_Package; use org.allbinary.logic.io.file.AbFile_Package;
 with org.allbinary.logic.io.file.directory.Directory_Package; use org.allbinary.logic.io.file.directory.Directory_Package;
+with org.allbinary.logic.io.file.directory.Directory_Package_References;
 with org.allbinary.logic.io.path.AbPath_Package; use org.allbinary.logic.io.path.AbPath_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.logic.system.security.crypt.DatabaseEncoder_Package; use org.allbinary.logic.system.security.crypt.DatabaseEncoder_Package;
 with org.allbinary.logic.system.security.crypt.WeakCrypt_Package; use org.allbinary.logic.system.security.crypt.WeakCrypt_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.string_Id.CommonStrings_Package_References;
 
 package body org.allbinary.business.init.db.DbInitInfo_Package is
 
@@ -114,7 +117,7 @@ package body org.allbinary.business.init.db.DbInitInfo_Package is
    function getUrl (This : in out DbInitInfo) return Unbounded_String is
       url : Unbounded_String;
    begin
-        url := DbConnectionInfo (This).getUrl;
+        url := DbConnectionInfo_Package.DbConnectionInfo (This).getUrl;
         if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.PRELOADER) then
             PreLogUtil_Package.put (Java_Image (This.httpData.URL_LABEL) & url, DbInitInfo_Access'(This'Unchecked_Access), This.GET_URL);
         end if;
@@ -263,42 +266,42 @@ package body org.allbinary.business.init.db.DbInitInfo_Package is
    begin
         DbInitInfo'Class (This).updateIfNeeded;
         if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.PRELOADER) then
-            PreLogUtil_Package.put (To_Unbounded_String ("Name: ") & DbConnectionInfo (This).getName, DbInitInfo_Access'(This'Unchecked_Access), To_Unbounded_String ("getName"));
+            PreLogUtil_Package.put (To_Unbounded_String ("Name: ") & DbConnectionInfo_Package.DbConnectionInfo (This).getName, DbInitInfo_Access'(This'Unchecked_Access), To_Unbounded_String ("getName"));
         end if;
-        return DbConnectionInfo (This).getName;
+        return DbConnectionInfo_Package.DbConnectionInfo (This).getName;
    end getName;
 
    function getUserName (This : in out DbInitInfo) return Unbounded_String is
    begin
         DbInitInfo'Class (This).updateIfNeeded;
         if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.PRELOADER) then
-            PreLogUtil_Package.put (To_Unbounded_String ("Name: ") & Java_Image (DbConnectionInfo (This).getUserName), DbInitInfo_Access'(This'Unchecked_Access), To_Unbounded_String ("getUserName"));
+            PreLogUtil_Package.put (To_Unbounded_String ("Name: ") & Java_Image (DbConnectionInfo_Package.DbConnectionInfo (This).getUserName), DbInitInfo_Access'(This'Unchecked_Access), To_Unbounded_String ("getUserName"));
         end if;
-        return DbConnectionInfo (This).getUserName;
+        return DbConnectionInfo_Package.DbConnectionInfo (This).getUserName;
    end getUserName;
 
    function getPassword (This : in out DbInitInfo) return Unbounded_String is
    begin
         DbInitInfo'Class (This).updateIfNeeded;
-        return DbConnectionInfo (This).getPassword;
+        return DbConnectionInfo_Package.DbConnectionInfo (This).getPassword;
    end getPassword;
 
    function getSchema (This : in out DbInitInfo) return Unbounded_String is
    begin
         DbInitInfo'Class (This).updateIfNeeded;
-        return DbConnectionInfo (This).getSchema;
+        return DbConnectionInfo_Package.DbConnectionInfo (This).getSchema;
    end getSchema;
 
    function getServer (This : in out DbInitInfo) return Unbounded_String is
    begin
         DbInitInfo'Class (This).updateIfNeeded;
-        return DbConnectionInfo (This).getServer;
+        return DbConnectionInfo_Package.DbConnectionInfo (This).getServer;
    end getServer;
 
    function getPort (This : in out DbInitInfo) return Unbounded_String is
    begin
         DbInitInfo'Class (This).updateIfNeeded;
-        return DbConnectionInfo (This).getPort;
+        return DbConnectionInfo_Package.DbConnectionInfo (This).getPort;
    end getPort;
 
 end org.allbinary.business.init.db.DbInitInfo_Package;

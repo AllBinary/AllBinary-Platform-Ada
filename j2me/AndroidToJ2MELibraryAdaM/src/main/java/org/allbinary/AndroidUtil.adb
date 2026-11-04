@@ -14,6 +14,7 @@
 
 
 with android.app.Activity_Package; use android.app.Activity_Package;
+with android.app.Activity_Package_References;
 with android.os.Build_Package; use android.os.Build_Package;
 
 package body org.allbinary.AndroidUtil_Package is

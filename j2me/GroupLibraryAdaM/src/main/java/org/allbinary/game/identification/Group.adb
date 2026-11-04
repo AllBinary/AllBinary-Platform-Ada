@@ -17,7 +17,6 @@ with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.game.identification.GroupCommonFactory_Package; use org.allbinary.game.identification.GroupCommonFactory_Package;
 with org.allbinary.game.identification.GroupCommonFactory_Package;
-with org.allbinary.game.identification.GroupInterface_Package;
 
 package body org.allbinary.game.identification.Group_Package is
 

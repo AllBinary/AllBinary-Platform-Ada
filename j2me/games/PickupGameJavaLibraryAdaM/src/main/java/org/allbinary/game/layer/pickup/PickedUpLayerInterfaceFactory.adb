@@ -14,11 +14,14 @@
 
 
 with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Animation_Package;
+with org.allbinary.animation.Animation_Package_References;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
+with org.allbinary.layer.AllBinaryLayer_Package_References;
 with org.allbinary.game.layer.pickup.PickedUpLayerType_Package; use org.allbinary.game.layer.pickup.PickedUpLayerType_Package;
+with org.allbinary.game.layer.pickup.PickedUpLayerType_Package_References;
 with org.allbinary.game.layer.pickup.IconLayer_Package; use org.allbinary.game.layer.pickup.IconLayer_Package;
+with org.allbinary.game.layer.pickup.IconLayer_Package_References;
 with org.allbinary.game.layer.pickup.IconLayer_Package;
-with org.allbinary.game.layer.pickup.PickedUpLayerInterfaceFactoryBase_Package;
 with org.allbinary.game.layer.pickup.PickedUpLayerInterfaceFactoryInterface_Package;
 with org.allbinary.game.layer.pickup.PickedUpLayerType_Package;
 

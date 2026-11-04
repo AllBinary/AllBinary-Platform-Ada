@@ -43,7 +43,7 @@ package body org.allbinary.business.user.commerce.money.payment.gateway.PaymentG
 
 begin
    null;
-   CRYPTNUM := 5;
+   
    ID := PaymentGatewayData_Package.Create (To_Unbounded_String ("PAYMENTGATEWAY_ID"));
    NAME := PaymentGatewayData_Package.Create (To_Unbounded_String ("PAYMENTGATEWAY_NAME"));
    VALUE := PaymentGatewayData_Package.Create (To_Unbounded_String ("PAYMENTGATEWAY_VALUE"));

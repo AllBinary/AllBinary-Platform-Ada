@@ -16,7 +16,9 @@
 with org.allbinary.layer.AllBinaryLayerCircularPool_Package; use org.allbinary.layer.AllBinaryLayerCircularPool_Package;
 with org.allbinary.game.layer.pickup.PickupLayer_Package; use org.allbinary.game.layer.pickup.PickupLayer_Package;
 with org.allbinary.game.layer.pickup.PickedUpLayerInterface_Package; use org.allbinary.game.layer.pickup.PickedUpLayerInterface_Package;
+with org.allbinary.game.layer.pickup.PickedUpLayerInterface_Package_References;
 with org.allbinary.game.layer.pickup.PickedUpLayerInterfaceFactoryInterface_Package; use org.allbinary.game.layer.pickup.PickedUpLayerInterfaceFactoryInterface_Package;
+with org.allbinary.game.layer.pickup.PickedUpLayerInterfaceFactoryInterface_Package_References;
 with org.allbinary.game.layer.pickup.PickupLayer_Package;
 
 package body org.allbinary.game.layer.pickup.PickupLayerCircularStaticPool_Package is

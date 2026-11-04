@@ -14,6 +14,7 @@
 
 
 with org.allbinary.data.tree.dom.document.DomDocumentQueueInterface_Package; use org.allbinary.data.tree.dom.document.DomDocumentQueueInterface_Package;
+with org.allbinary.data.tree.dom.document.DomDocumentQueueInterface_Package_References;
 
 package body org.allbinary.logic.communication.smtp.queue.FileEmailQueue_Package is
 

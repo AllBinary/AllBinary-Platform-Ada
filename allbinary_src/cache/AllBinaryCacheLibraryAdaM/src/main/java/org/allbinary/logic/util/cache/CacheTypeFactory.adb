@@ -3,6 +3,7 @@
 
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.logic.util.cache.CacheType_Package; use org.allbinary.logic.util.cache.CacheType_Package;
+with org.allbinary.logic.util.cache.CacheType_Package_References;
 with org.allbinary.logic.util.cache.CacheType_Package;
 
 package body org.allbinary.logic.util.cache.CacheTypeFactory_Package is

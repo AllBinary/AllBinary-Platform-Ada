@@ -15,10 +15,12 @@
 
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
 with org.allbinary.math.LayerDistanceUtil_Package; use org.allbinary.math.LayerDistanceUtil_Package;
+with org.allbinary.math.LayerDistanceUtil_Package_References;
 with org.allbinary.thread.PriorityRunnable_Package; use org.allbinary.thread.PriorityRunnable_Package;
 with org.allbinary.thread.RunnableInterface_Package; use org.allbinary.thread.RunnableInterface_Package;
 with org.allbinary.game.layer.NullPathFindingLayer_Package; use org.allbinary.game.layer.NullPathFindingLayer_Package;
 with org.allbinary.game.layer.PathFindingLayerInterface_Package; use org.allbinary.game.layer.PathFindingLayerInterface_Package;
+with org.allbinary.game.layer.PathFindingLayerInterface_Package_References;
 with org.allbinary.game.layer.GeographicMapCellPositionAreaBase_Package;
 with org.allbinary.game.layer.GeographicMapCellPositionAreaInterface_Package;
 with org.allbinary.game.layer.NullPathFindingLayer_Package;

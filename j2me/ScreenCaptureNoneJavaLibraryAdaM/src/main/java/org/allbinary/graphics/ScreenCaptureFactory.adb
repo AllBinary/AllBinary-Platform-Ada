@@ -15,6 +15,7 @@
 
 with org.allbinary.graphics.ScreenCaptureNoneFactory_Package; use org.allbinary.graphics.ScreenCaptureNoneFactory_Package;
 with org.allbinary.graphics.ScreenCapture_Package; use org.allbinary.graphics.ScreenCapture_Package;
+with org.allbinary.graphics.ScreenCapture_Package_References;
 
 package body org.allbinary.graphics.ScreenCaptureFactory_Package is
 

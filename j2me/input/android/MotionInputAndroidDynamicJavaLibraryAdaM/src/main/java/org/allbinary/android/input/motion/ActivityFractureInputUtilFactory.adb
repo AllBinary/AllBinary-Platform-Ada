@@ -14,6 +14,7 @@
 
 
 with org.allbinary.android.ActivityFractureUtil_Package; use org.allbinary.android.ActivityFractureUtil_Package;
+with org.allbinary.android.ActivityFractureUtil_Package_References;
 with org.allbinary.android.AndroidInfoFactory_Package; use org.allbinary.android.AndroidInfoFactory_Package;
 with org.allbinary.android.api1.ActivityFractureUtilAPI1_Package; use org.allbinary.android.api1.ActivityFractureUtilAPI1_Package;
 with org.allbinary.android.api16.ActivityFractureUtilAPI16_Package; use org.allbinary.android.api16.ActivityFractureUtilAPI16_Package;

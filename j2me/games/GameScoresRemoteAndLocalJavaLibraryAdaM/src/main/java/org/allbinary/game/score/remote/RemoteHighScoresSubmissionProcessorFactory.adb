@@ -15,6 +15,7 @@
 
 with org.allbinary.game.score.remote.RemoteHighScoresSubmissionProcessor_Package; use org.allbinary.game.score.remote.RemoteHighScoresSubmissionProcessor_Package;
 with org.allbinary.game.score.remote.RemoteHighScoresSubmissionProcessorInterface_Package; use org.allbinary.game.score.remote.RemoteHighScoresSubmissionProcessorInterface_Package;
+with org.allbinary.game.score.remote.RemoteHighScoresSubmissionProcessorInterface_Package_References;
 with org.allbinary.game.score.remote.RemoteHighScores_Package;
 with org.allbinary.game.score.remote.RemoteHighScoresSubmissionProcessor_Package;
 with org.allbinary.game.score.remote.RemoteHighScoresSubmissionProcessorInterface_Package;

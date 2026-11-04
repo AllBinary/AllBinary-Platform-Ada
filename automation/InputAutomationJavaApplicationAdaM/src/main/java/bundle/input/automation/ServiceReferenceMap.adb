@@ -15,6 +15,7 @@
 
 with java.util.Map_Package; use java.util.Map_Package;
 with org.osgi.framework.ServiceReference_Package; use org.osgi.framework.ServiceReference_Package;
+with org.osgi.framework.ServiceReference_Package_References;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 
 package body bundle.input.automation.ServiceReferenceMap_Package is

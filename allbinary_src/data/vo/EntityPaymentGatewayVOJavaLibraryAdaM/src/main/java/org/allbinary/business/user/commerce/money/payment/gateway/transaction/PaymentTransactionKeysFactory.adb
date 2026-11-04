@@ -14,6 +14,7 @@
 
 
 with org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionKeys_Package; use org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionKeys_Package;
+with org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionKeys_Package_References;
 with org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionKeys_Package;
 
 package body org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionKeysFactory_Package is

@@ -15,7 +15,7 @@
 
 with org.allbinary.logic.java.help.JavaHelpUtil_Package; use org.allbinary.logic.java.help.JavaHelpUtil_Package;
 with org.allbinary.input.automation.module.JPanel_Package; use org.allbinary.input.automation.module.JPanel_Package;
-with org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface_Package;
+with org.allbinary.input.automation.module.JPanel_Package_References;
 
 package body org.allbinary.input.automation.module.AbstractInputAutomationFactory_Package is
 

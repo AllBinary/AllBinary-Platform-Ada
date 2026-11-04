@@ -15,33 +15,49 @@
 
 with javax.microedition.lcdui.Canvas_Package; use javax.microedition.lcdui.Canvas_Package;
 with org.allbinary.ai.ArtificialIntelligenceInterface_Package; use org.allbinary.ai.ArtificialIntelligenceInterface_Package;
+with org.allbinary.ai.ArtificialIntelligenceInterface_Package_References;
 with org.allbinary.direction.Direction_Package; use org.allbinary.direction.Direction_Package;
+with org.allbinary.direction.Direction_Package_References;
 with org.allbinary.direction.DirectionFactory_Package; use org.allbinary.direction.DirectionFactory_Package;
+with org.allbinary.direction.DirectionFactory_Package_References;
 with org.allbinary.direction.DirectionalCompositeInterface_Package; use org.allbinary.direction.DirectionalCompositeInterface_Package;
 with org.allbinary.direction.DirectionalInterface_Package; use org.allbinary.direction.DirectionalInterface_Package;
+with org.allbinary.direction.DirectionalInterface_Package_References;
 with org.allbinary.game.ai.BasicAI_Package; use org.allbinary.game.ai.BasicAI_Package;
 with org.allbinary.game.combat.destroy.event.DestroyedEvent_Package; use org.allbinary.game.combat.destroy.event.DestroyedEvent_Package;
+with org.allbinary.game.combat.destroy.event.DestroyedEvent_Package_References;
 with org.allbinary.game.combat.destroy.event.DestroyedEventHandler_Package; use org.allbinary.game.combat.destroy.event.DestroyedEventHandler_Package;
 with org.allbinary.game.combat.destroy.event.DestroyedEventListenerInterface_Package; use org.allbinary.game.combat.destroy.event.DestroyedEventListenerInterface_Package;
 with org.allbinary.game.input.GameInput_Package; use org.allbinary.game.input.GameInput_Package;
+with org.allbinary.game.input.GameInput_Package_References;
 with org.allbinary.game.physics.velocity.BasicVelocityProperties_Package; use org.allbinary.game.physics.velocity.BasicVelocityProperties_Package;
+with org.allbinary.game.physics.velocity.BasicVelocityProperties_Package_References;
 with org.allbinary.game.physics.velocity.VelocityInterfaceCompositeInterface_Package; use org.allbinary.game.physics.velocity.VelocityInterfaceCompositeInterface_Package;
 with org.allbinary.game.tracking.TrackingEvent_Package; use org.allbinary.game.tracking.TrackingEvent_Package;
+with org.allbinary.game.tracking.TrackingEvent_Package_References;
 with org.allbinary.game.tracking.TrackingEventHandler_Package; use org.allbinary.game.tracking.TrackingEventHandler_Package;
 with org.allbinary.game.tracking.TrackingEventListenerInterface_Package; use org.allbinary.game.tracking.TrackingEventListenerInterface_Package;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
+with org.allbinary.layer.AllBinaryLayer_Package_References;
 with org.allbinary.layer.AllBinaryLayerManager_Package; use org.allbinary.layer.AllBinaryLayerManager_Package;
+with org.allbinary.layer.AllBinaryLayerManager_Package_References;
 with org.allbinary.logic.communication.log.ForcedLogUtil_Package; use org.allbinary.logic.communication.log.ForcedLogUtil_Package;
 with org.allbinary.logic.math.MathUtil_Package; use org.allbinary.logic.math.MathUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package_References;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+with org.allbinary.logic.util.event.AllBinaryEventObject_Package_References;
 with org.allbinary.logic.util.event.EventStrings_Package; use org.allbinary.logic.util.event.EventStrings_Package;
 with org.allbinary.logic.util.visitor.Visitor_Package; use org.allbinary.logic.util.visitor.Visitor_Package;
+with org.allbinary.logic.util.visitor.Visitor_Package_References;
 with org.allbinary.time.GameTickTimeDelayHelper_Package; use org.allbinary.time.GameTickTimeDelayHelper_Package;
+with org.allbinary.time.GameTickTimeDelayHelper_Package_References;
 with org.allbinary.time.GameTickTimeDelayHelperFactory_Package; use org.allbinary.time.GameTickTimeDelayHelperFactory_Package;
 with org.allbinary.time.TimeDelayHelper_Package; use org.allbinary.time.TimeDelayHelper_Package;
+with org.allbinary.time.TimeDelayHelper_Package_References;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 
 package body org.allbinary.game.ag.ai.DiveAndDirectionalTrackingAI_Package is
@@ -425,7 +441,7 @@ package body org.allbinary.game.ag.ai.DiveAndDirectionalTrackingAI_Package is
    --  throws Exception
    procedure attack (This : in out DiveAndDirectionalTrackingAI) is
    begin
-        BasicAI (This).processKeyAI (Canvas_Package.KEY_NUM1);
+        BasicAI_Package.BasicAI (This).processKeyAI (Canvas_Package.KEY_NUM1);
    end attack;
 
    --  throws Exception
@@ -496,13 +512,13 @@ package body org.allbinary.game.ag.ai.DiveAndDirectionalTrackingAI_Package is
         This.lastDirection := lastDirection;
         value := DiveAndDirectionalTrackingAI'Class (This).getLastDirection.getValue;
         if (value) < (4) then
-            BasicAI (This).setLastKey (This.directionToKeyMap (value));
+            BasicAI_Package.BasicAI (This).setLastKey (This.directionToKeyMap (value));
         end if;
    end setLastDirection;
 
    procedure setLastKey (This : in out DiveAndDirectionalTrackingAI; lastKey : Integer) is
    begin
-        BasicAI (This).setLastKey (lastKey);
+        BasicAI_Package.BasicAI (This).setLastKey (lastKey);
         if (DiveAndDirectionalTrackingAI'Class (This).getLastKey) = (Canvas_Package.LEFT) then
             This.lastDirection := Direction_Access (DirectionFactory_Package.getInstance.LEFT);
         elsif (DiveAndDirectionalTrackingAI'Class (This).getLastKey) = (Canvas_Package.DOWN) then
@@ -523,7 +539,7 @@ package body org.allbinary.game.ag.ai.DiveAndDirectionalTrackingAI_Package is
       stringBuffer : StringMaker_Access;
    begin
         stringBuffer := StringMaker_Package.Create;
-        stringBuffer.append (BasicAI (This).toString);
+        stringBuffer.append (BasicAI_Package.BasicAI (This).toString);
         stringBuffer.append (To_Unbounded_String (" LastDirection: "));
         stringBuffer.append (StringUtil_Package.getInstance.toString (DiveAndDirectionalTrackingAI'Class (This).getLastDirection));
         return stringBuffer.toString;

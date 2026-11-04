@@ -2,9 +2,12 @@
 
 
 with javax.microedition.khronos.opengles.GL10_Package; use javax.microedition.khronos.opengles.GL10_Package;
+with javax.microedition.khronos.opengles.GL10_Package_References;
 with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
+with javax.microedition.lcdui.Image_Package_References;
 with org.allbinary.platform.opengles.PlatformTextureBaseFactory_Package; use org.allbinary.platform.opengles.PlatformTextureBaseFactory_Package;
 with org.platform.opengl.OpenGLGLUUtils_Package; use org.platform.opengl.OpenGLGLUUtils_Package;
+with org.platform.opengl.OpenGLGLUUtils_Package_References;
 with org.platform.opengl.OpenGLGLUUtils_Package;
 
 package body org.platform.opengl.OpenGLTextureFactory_Package is

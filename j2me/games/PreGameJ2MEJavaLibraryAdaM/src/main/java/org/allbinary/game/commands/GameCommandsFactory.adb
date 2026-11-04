@@ -14,6 +14,7 @@
 
 
 with javax.microedition.lcdui.Command_Package; use javax.microedition.lcdui.Command_Package;
+with javax.microedition.lcdui.Command_Package_References;
 with org.allbinary.graphics.displayable.CanvasStrings_Package; use org.allbinary.graphics.displayable.CanvasStrings_Package;
 with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;

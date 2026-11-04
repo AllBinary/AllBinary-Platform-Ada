@@ -14,13 +14,19 @@
 
 
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+with org.allbinary.logic.util.event.AllBinaryEventObject_Package_References;
 with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.string_Id.CommonStrings_Package_References;
 with org.allbinary.time.TimeDelayHelper_Package; use org.allbinary.time.TimeDelayHelper_Package;
 with org.allbinary.media.image.comparison.motion.MotionRectanglesResultsEvent_Package; use org.allbinary.media.image.comparison.motion.MotionRectanglesResultsEvent_Package;
+with org.allbinary.media.image.comparison.motion.MotionRectanglesResultsEvent_Package_References;
 with org.allbinary.media.image.comparison.motion.MotionRectangles_Package; use org.allbinary.media.image.comparison.motion.MotionRectangles_Package;
 with org.allbinary.media.image.comparison.motion.MotionRectanglesImageInputOutput_Package; use org.allbinary.media.image.comparison.motion.MotionRectanglesImageInputOutput_Package;
 with org.allbinary.media.image.comparison.color.ColorDelta_Package;
@@ -28,7 +34,6 @@ with org.allbinary.media.image.comparison.ImageComparisonResult_Package;
 with org.allbinary.media.image.comparison.motion.MotionRectangles_Package;
 with org.allbinary.media.image.comparison.motion.MotionRectanglesImageInputOutput_Package;
 with org.allbinary.media.image.comparison.motion.MotionRectanglesResultsEvent_Package;
-with org.allbinary.media.image.comparison.motion.MotionRectanglesResultsListener_Package;
 with org.allbinary.media.image.comparison.pixel.PixelDelta_Package;
 
 package body org.allbinary.media.image.comparison.motion.SaveMotionRectanglesResultsWorker_Package is

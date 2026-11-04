@@ -2,6 +2,7 @@
 
 
 with org.allbinary.graphics.CustomGPoint_Package; use org.allbinary.graphics.CustomGPoint_Package;
+with org.allbinary.graphics.CustomGPoint_Package_References;
 
 package body org.allbinary.game.input.analog.AnalogLocationInput_Package is
 

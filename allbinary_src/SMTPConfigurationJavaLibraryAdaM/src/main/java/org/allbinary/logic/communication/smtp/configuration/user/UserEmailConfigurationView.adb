@@ -18,14 +18,19 @@ with org.allbinary.data.tree.dom.DomNodeInterface_Package; use org.allbinary.dat
 with org.allbinary.data.tree.dom.DomSearchHelper_Package; use org.allbinary.data.tree.dom.DomSearchHelper_Package;
 with org.allbinary.data.tree.dom.ModDomHelper_Package; use org.allbinary.data.tree.dom.ModDomHelper_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventsConfigurationData_Package; use org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventsConfigurationData_Package;
 with org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventsConfigurationInterface_Package; use org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventsConfigurationInterface_Package;
 with org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventsConfigurationView_Package; use org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventsConfigurationView_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.string_Id.CommonStrings_Package_References;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
+with org.w3c.dom.Document_Package_References;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
+with org.w3c.dom.Node_Package_References;
 with org.w3c.dom.NodeList_Package; use org.w3c.dom.NodeList_Package;
 with org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfigurationInterface_Package; use org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfigurationInterface_Package;
+with org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfigurationInterface_Package_References;
 with org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfiguration_Package; use org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfiguration_Package;
 with org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfigurationMapping_Package; use org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfigurationMapping_Package;
 with org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfigurationData_Package; use org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfigurationData_Package;
@@ -42,8 +47,6 @@ with org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfigur
 with org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfigurationMapping_Package;
 with org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventConfigurationInterface_Package;
 with org.allbinary.logic.communication.smtp.event.UserEmailEventListenerInterface_Package;
-with org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventsConfigurationInterface_Package;
-with org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventsConfigurationView_Package;
 with org.allbinary.business.user.UserFactoryInterface_Package;
 with org.allbinary.business.user.UserInterface_Package;
 with org.allbinary.business.user.role.UserRole_Package;

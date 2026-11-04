@@ -14,6 +14,7 @@
 
 
 with javax.microedition.lcdui.Font_Package; use javax.microedition.lcdui.Font_Package;
+with javax.microedition.lcdui.Font_Package_References;
 with org.allbinary.AvianUtil_Package; use org.allbinary.AvianUtil_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 

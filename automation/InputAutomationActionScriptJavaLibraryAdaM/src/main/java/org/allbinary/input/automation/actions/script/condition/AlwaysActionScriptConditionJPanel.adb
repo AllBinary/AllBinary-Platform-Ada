@@ -14,8 +14,11 @@
 
 
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.string_Id.CommonStrings_Package_References;
 with org.allbinary.input.automation.actions.script.condition.AlwaysActionScriptConditionInterface_Package; use org.allbinary.input.automation.actions.script.condition.AlwaysActionScriptConditionInterface_Package;
+with org.allbinary.input.automation.actions.script.condition.AlwaysActionScriptConditionInterface_Package_References;
 with org.allbinary.input.automation.actions.script.condition.AlwaysActionScriptConditionInterface_Package;
 
 package body org.allbinary.input.automation.actions.script.condition.AlwaysActionScriptConditionJPanel_Package is

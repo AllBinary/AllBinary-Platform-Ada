@@ -28,7 +28,7 @@ package body org.allbinary.business.advertisement.search.AdvertisementSearchData
 
    function getInstance return AdvertisementSearchData_Access is
    begin
-        return AdvertisementSearchData_Package.instance;
+        return AdvertisementSearchData_Access (AdvertisementSearchData_Package.instance);
    end getInstance;
 
    procedure Initialize (This : in out AdvertisementSearchData'Class) is

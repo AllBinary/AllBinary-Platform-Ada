@@ -14,10 +14,14 @@
 
 
 with org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package; use org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package;
+with org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package_References;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
+with org.allbinary.layer.AllBinaryLayer_Package_References;
 with org.allbinary.logic.util.event.AllBinaryEventCircularPool_Package; use org.allbinary.logic.util.event.AllBinaryEventCircularPool_Package;
+with org.allbinary.logic.util.event.AllBinaryEventCircularPool_Package_References;
 with org.allbinary.game.combat.destroy.event.DestroyEventFactory_Package; use org.allbinary.game.combat.destroy.event.DestroyEventFactory_Package;
 with org.allbinary.game.combat.destroy.event.DestroyedEvent_Package; use org.allbinary.game.combat.destroy.event.DestroyedEvent_Package;
+with org.allbinary.game.combat.destroy.event.DestroyedEvent_Package_References;
 with org.allbinary.game.combat.destroy.event.DestroyEventFactory_Package;
 with org.allbinary.game.combat.destroy.event.DestroyedEvent_Package;
 

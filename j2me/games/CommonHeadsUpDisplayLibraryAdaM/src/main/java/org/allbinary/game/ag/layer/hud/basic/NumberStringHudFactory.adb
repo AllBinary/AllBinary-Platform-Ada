@@ -20,6 +20,7 @@ with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.lo
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.game.ag.layer.hud.basic.NumberStringHud_Package; use org.allbinary.game.ag.layer.hud.basic.NumberStringHud_Package;
+with org.allbinary.game.ag.layer.hud.basic.NumberStringHud_Package_References;
 with org.allbinary.game.ag.layer.hud.basic.NumberStringHud_Package;
 
 package body org.allbinary.game.ag.layer.hud.basic.NumberStringHudFactory_Package is

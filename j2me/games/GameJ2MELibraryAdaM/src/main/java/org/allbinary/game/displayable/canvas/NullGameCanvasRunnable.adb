@@ -14,14 +14,19 @@
 
 
 with javax.microedition.lcdui.CommandListener_Package; use javax.microedition.lcdui.CommandListener_Package;
+with javax.microedition.lcdui.CommandListener_Package_References;
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
 with javax.microedition.lcdui.Item_Package; use javax.microedition.lcdui.Item_Package;
+with javax.microedition.lcdui.Item_Package_References;
 with org.allbinary.game.state.GameState_Package; use org.allbinary.game.state.GameState_Package;
+with org.allbinary.game.state.GameState_Package_References;
 with org.allbinary.game.state.GameStateFactory_Package; use org.allbinary.game.state.GameStateFactory_Package;
+with org.allbinary.game.state.GameStateFactory_Package_References;
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
-with org.allbinary.game.displayable.canvas.GameCanvasRunnableInterface_Package;
+with org.allbinary.util.ABHashtable_Package_References;
 
 package body org.allbinary.game.displayable.canvas.NullGameCanvasRunnable_Package is
 

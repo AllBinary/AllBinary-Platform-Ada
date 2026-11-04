@@ -14,8 +14,10 @@
 
 
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.data.tables.user.quoterequest.QuoteRequestEntity_Package; use org.allbinary.data.tables.user.quoterequest.QuoteRequestEntity_Package;
+with org.allbinary.data.tables.user.quoterequest.QuoteRequestEntity_Package_References;
 with org.allbinary.data.tables.user.quoterequest.QuoteRequestEntity_Package;
 
 package body org.allbinary.data.tables.user.quoterequest.QuoteRequestEntityFactory_Package is

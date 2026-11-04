@@ -16,7 +16,7 @@
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with tags.CommandTag_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with tags.CustomTagSupport_Package;
 with tags.TagStrings_Package;
 

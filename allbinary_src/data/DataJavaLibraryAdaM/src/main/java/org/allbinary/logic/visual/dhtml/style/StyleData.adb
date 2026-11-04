@@ -26,7 +26,7 @@ package body org.allbinary.logic.visual.dhtml.style.StyleData_Package is
 
    function getInstance return StyleData_Access is
    begin
-        return StyleData_Package.instance;
+        return StyleData_Access (StyleData_Package.instance);
    end getInstance;
 
    procedure Initialize (This : in out StyleData'Class) is

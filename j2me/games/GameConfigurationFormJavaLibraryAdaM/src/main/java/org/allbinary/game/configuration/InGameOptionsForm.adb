@@ -15,14 +15,16 @@
 
 with javax.microedition.lcdui.Choice_Package; use javax.microedition.lcdui.Choice_Package;
 with javax.microedition.lcdui.Command_Package; use javax.microedition.lcdui.Command_Package;
+with javax.microedition.lcdui.Command_Package_References;
 with javax.microedition.lcdui.CommandListener_Package; use javax.microedition.lcdui.CommandListener_Package;
+with javax.microedition.lcdui.CommandListener_Package_References;
 with org.allbinary.game.commands.GameCommandsFactory_Package; use org.allbinary.game.commands.GameCommandsFactory_Package;
 with org.allbinary.game.configuration.feature.GameFeatureFormUtil_Package; use org.allbinary.game.configuration.feature.GameFeatureFormUtil_Package;
 with org.allbinary.game.configuration.feature.InGameFeatureChoiceGroups_Package; use org.allbinary.game.configuration.feature.InGameFeatureChoiceGroups_Package;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.graphics.color.BasicColor_Package_References;
 with org.allbinary.graphics.displayable.screen.CommandForm_Package; use org.allbinary.graphics.displayable.screen.CommandForm_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
-with org.allbinary.game.configuration.feature.GameFeatureFormUtil_Package;
 with org.allbinary.logic.MEUtil_Package;
 
 package body org.allbinary.game.configuration.InGameOptionsForm_Package is

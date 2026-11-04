@@ -14,21 +14,26 @@
 
 
 with javax.microedition.khronos.opengles.GL10_Package; use javax.microedition.khronos.opengles.GL10_Package;
+with javax.microedition.khronos.opengles.GL10_Package_References;
 with org.allbinary.graphics.opengles.NullOpenGLProcessorFactory_Package; use org.allbinary.graphics.opengles.NullOpenGLProcessorFactory_Package;
 with org.allbinary.graphics.opengles.OpenGLProcessor_Package; use org.allbinary.graphics.opengles.OpenGLProcessor_Package;
+with org.allbinary.graphics.opengles.OpenGLProcessor_Package_References;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.graphics.opengles.shader.Shader_Package; use org.allbinary.graphics.opengles.shader.Shader_Package;
+with org.allbinary.graphics.opengles.shader.Shader_Package_References;
 with org.allbinary.graphics.opengles.shader.ShaderInitializer_Package; use org.allbinary.graphics.opengles.shader.ShaderInitializer_Package;
+with org.allbinary.graphics.opengles.shader.ShaderInitializer_Package_References;
 with org.allbinary.graphics.opengles.shader.CompositeShaderUpdater_Package; use org.allbinary.graphics.opengles.shader.CompositeShaderUpdater_Package;
+with org.allbinary.graphics.opengles.shader.CompositeShaderUpdater_Package_References;
 with org.allbinary.graphics.opengles.shader.ModelViewProjection_Package; use org.allbinary.graphics.opengles.shader.ModelViewProjection_Package;
+with org.allbinary.graphics.opengles.shader.ModelViewProjection_Package_References;
 with org.allbinary.graphics.opengles.shader.NullOpenGLTextureProcessor_Package; use org.allbinary.graphics.opengles.shader.NullOpenGLTextureProcessor_Package;
 with org.allbinary.graphics.opengles.shader.OpenGLObject3dProcessor_Package; use org.allbinary.graphics.opengles.shader.OpenGLObject3dProcessor_Package;
+with org.allbinary.graphics.opengles.shader.OpenGLObject3dProcessor_Package_References;
 with org.allbinary.graphics.opengles.shader.CompositeShaderUpdater_Package;
 with org.allbinary.graphics.opengles.shader.ModelViewProjection_Package;
-with org.allbinary.graphics.opengles.NullOpenGLProcessorFactory_Package;
 with org.allbinary.graphics.opengles.shader.NullOpenGLTextureProcessor_Package;
 with org.allbinary.graphics.opengles.shader.OpenGLObject3dProcessor_Package;
-with org.allbinary.graphics.opengles.OpenGLProcessor_Package;
 with org.allbinary.graphics.opengles.renderer.RendererStrings_Package;
 with org.allbinary.graphics.opengles.shader.Shader_Package;
 with org.allbinary.graphics.opengles.shader.ShaderInitializer_Package;

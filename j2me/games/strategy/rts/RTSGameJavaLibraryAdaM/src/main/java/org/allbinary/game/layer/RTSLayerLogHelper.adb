@@ -14,11 +14,17 @@
 
 
 with org.allbinary.math.AngleInfo_Package; use org.allbinary.math.AngleInfo_Package;
+with org.allbinary.math.AngleInfo_Package_References;
 with org.allbinary.math.NamedAngle_Package; use org.allbinary.math.NamedAngle_Package;
+with org.allbinary.math.NamedAngle_Package_References;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellHistory_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellHistory_Package;
+with org.allbinary.media.graphics.geography.map.GeographicMapCellHistory_Package_References;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
+with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package_References;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.game.layer.PathFindingLayerInterface_Package; use org.allbinary.game.layer.PathFindingLayerInterface_Package;
+with org.allbinary.game.layer.PathFindingLayerInterface_Package_References;
 with org.allbinary.game.layer.GeographicMapCellPositionAreaBase_Package;
 with org.allbinary.game.layer.GeographicMapCellPositionAreaInterface_Package;
 with org.allbinary.game.layer.PathFindingLayerInterface_Package;

@@ -14,6 +14,7 @@
 
 
 with android.view.MotionEvent_Package; use android.view.MotionEvent_Package;
+with android.view.MotionEvent_Package_References;
 
 package body org.allbinary.android.input.motion.MotionEventProcessor_Package is
 

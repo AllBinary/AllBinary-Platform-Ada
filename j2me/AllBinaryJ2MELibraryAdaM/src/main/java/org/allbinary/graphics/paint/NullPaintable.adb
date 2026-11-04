@@ -13,7 +13,6 @@
 --  Generated Code Do Not Modify
 
 
-with org.allbinary.graphics.paint.Paintable_Package;
 with org.allbinary.graphics.paint.PaintableInterface_Package;
 
 package body org.allbinary.graphics.paint.NullPaintable_Package is

@@ -14,8 +14,10 @@
 
 
 with org.allbinary.graphics.GPoint_Package; use org.allbinary.graphics.GPoint_Package;
+with org.allbinary.graphics.GPoint_Package_References;
 with org.allbinary.input.automation.module.ImageComparatorConstraints_Package; use org.allbinary.input.automation.module.ImageComparatorConstraints_Package;
 with org.allbinary.input.automation.module.generic_Id.constraints.Color_Package; use org.allbinary.input.automation.module.generic_Id.constraints.Color_Package;
+with org.allbinary.input.automation.module.generic_Id.constraints.Color_Package_References;
 
 package body org.allbinary.input.automation.module.generic_Id.constraints.NoImageComparatorConstraints_Package is
 

@@ -7,8 +7,11 @@ with org.allbinary.string_Id.CommonPhoneStrings_Package; use org.allbinary.strin
 with org.allbinary.logic.io.path.AbPathData_Package; use org.allbinary.logic.io.path.AbPathData_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.game.input.AndroidGameKey_Package; use org.allbinary.game.input.AndroidGameKey_Package;
+with org.allbinary.game.input.AndroidGameKey_Package_References;
 with org.allbinary.game.input.Input_Package; use org.allbinary.game.input.Input_Package;
+with org.allbinary.game.input.Input_Package_References;
 with org.allbinary.game.input.AndroidGameKey_Package;
 
 package body org.allbinary.game.input.AndroidKeyFactory_Package is

@@ -15,16 +15,24 @@
 
 with javax.microedition.lcdui.Command_Package; use javax.microedition.lcdui.Command_Package;
 with javax.microedition.lcdui.CommandListener_Package; use javax.microedition.lcdui.CommandListener_Package;
+with javax.microedition.lcdui.CommandListener_Package_References;
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
 with javax.microedition.lcdui.Item_Package; use javax.microedition.lcdui.Item_Package;
+with javax.microedition.lcdui.Item_Package_References;
 with org.allbinary.J2MEUtil_Package; use org.allbinary.J2MEUtil_Package;
 with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Animation_Package;
+with org.allbinary.animation.Animation_Package_References;
 with org.allbinary.animation.IndexedAnimationBehavior_Package; use org.allbinary.animation.IndexedAnimationBehavior_Package;
 with org.allbinary.animation.special.SpecialAnimation_Package; use org.allbinary.animation.special.SpecialAnimation_Package;
+with org.allbinary.animation.special.SpecialAnimation_Package_References;
 with org.allbinary.business.advertisement.GameAdStateFactory_Package; use org.allbinary.business.advertisement.GameAdStateFactory_Package;
+with org.allbinary.business.advertisement.GameAdStateFactory_Package_References;
 with org.allbinary.canvas.BaseGameStatistics_Package; use org.allbinary.canvas.BaseGameStatistics_Package;
+with org.allbinary.canvas.BaseGameStatistics_Package_References;
 with org.allbinary.canvas.CustomGameMenuUtil_Package; use org.allbinary.canvas.CustomGameMenuUtil_Package;
 with org.allbinary.canvas.FullScreenUtil_Package; use org.allbinary.canvas.FullScreenUtil_Package;
+with org.allbinary.canvas.FullScreenUtil_Package_References;
 with org.allbinary.canvas.GameStatisticsFactory_Package; use org.allbinary.canvas.GameStatisticsFactory_Package;
 with org.allbinary.canvas.RunnableCanvas_Package; use org.allbinary.canvas.RunnableCanvas_Package;
 with org.allbinary.game.GameAdState_Package; use org.allbinary.game.GameAdState_Package;
@@ -36,37 +44,52 @@ with org.allbinary.game.configuration.feature.GameFeatureFactory_Package; use or
 with org.allbinary.game.configuration.feature.InputFeatureFactory_Package; use org.allbinary.game.configuration.feature.InputFeatureFactory_Package;
 with org.allbinary.game.configuration.feature.MainFeatureFactory_Package; use org.allbinary.game.configuration.feature.MainFeatureFactory_Package;
 with org.allbinary.game.init.BasicBuildGameInitializerFactory_Package; use org.allbinary.game.init.BasicBuildGameInitializerFactory_Package;
+with org.allbinary.game.init.BasicBuildGameInitializerFactory_Package_References;
 with org.allbinary.game.init.GameInitializationUtil_Package; use org.allbinary.game.init.GameInitializationUtil_Package;
 with org.allbinary.game.input.GameInputStrings_Package; use org.allbinary.game.input.GameInputStrings_Package;
+with org.allbinary.game.input.GameInputStrings_Package_References;
 with org.allbinary.game.input.GameKey_Package; use org.allbinary.game.input.GameKey_Package;
+with org.allbinary.game.input.GameKey_Package_References;
 with org.allbinary.game.input.GameKeyFactory_Package; use org.allbinary.game.input.GameKeyFactory_Package;
 with org.allbinary.game.input.PlatformInputMappingFactory_Package; use org.allbinary.game.input.PlatformInputMappingFactory_Package;
 with org.allbinary.game.input.event.DownGameKeyEventHandler_Package; use org.allbinary.game.input.event.DownGameKeyEventHandler_Package;
 with org.allbinary.game.input.event.GameKeyEvent_Package; use org.allbinary.game.input.event.GameKeyEvent_Package;
 with org.allbinary.game.input.event.GameKeyEventFactory_Package; use org.allbinary.game.input.event.GameKeyEventFactory_Package;
+with org.allbinary.game.input.event.GameKeyEventFactory_Package_References;
 with org.allbinary.game.input.event.GameKeyEventHandler_Package; use org.allbinary.game.input.event.GameKeyEventHandler_Package;
 with org.allbinary.game.input.event.UpGameKeyEventHandler_Package; use org.allbinary.game.input.event.UpGameKeyEventHandler_Package;
 with org.allbinary.game.input.mapping.InputToGameKeyMapping_Package; use org.allbinary.game.input.mapping.InputToGameKeyMapping_Package;
+with org.allbinary.game.input.mapping.InputToGameKeyMapping_Package_References;
 with org.allbinary.game.layer.AllBinaryGameLayerManager_Package; use org.allbinary.game.layer.AllBinaryGameLayerManager_Package;
+with org.allbinary.game.layer.AllBinaryGameLayerManager_Package_References;
 with org.allbinary.game.layer.SWTUtil_Package; use org.allbinary.game.layer.SWTUtil_Package;
 with org.allbinary.game.midlet.DemoGameMidlet_Package; use org.allbinary.game.midlet.DemoGameMidlet_Package;
 with org.allbinary.game.score.HighScoreCommands_Package; use org.allbinary.game.score.HighScoreCommands_Package;
 with org.allbinary.game.score.HighScores_Package; use org.allbinary.game.score.HighScores_Package;
 with org.allbinary.game.score.HighScoresFactoryInterface_Package; use org.allbinary.game.score.HighScoresFactoryInterface_Package;
+with org.allbinary.game.score.HighScoresFactoryInterface_Package_References;
 with org.allbinary.game.score.HighScoresHelper_Package; use org.allbinary.game.score.HighScoresHelper_Package;
 with org.allbinary.game.score.HighScoresHelperBase_Package; use org.allbinary.game.score.HighScoresHelperBase_Package;
+with org.allbinary.game.score.HighScoresHelperBase_Package_References;
 with org.allbinary.game.score.HighScoresPaintable_Package; use org.allbinary.game.score.HighScoresPaintable_Package;
+with org.allbinary.game.score.HighScoresPaintable_Package_References;
 with org.allbinary.game.score.NullHighScoresSingletonFactory_Package; use org.allbinary.game.score.NullHighScoresSingletonFactory_Package;
 with org.allbinary.game.state.GameState_Package; use org.allbinary.game.state.GameState_Package;
+with org.allbinary.game.state.GameState_Package_References;
 with org.allbinary.game.state.GameStateFactory_Package; use org.allbinary.game.state.GameStateFactory_Package;
+with org.allbinary.game.state.GameStateFactory_Package_References;
 with org.allbinary.graphics.Rectangle_Package; use org.allbinary.graphics.Rectangle_Package;
 with org.allbinary.graphics.ResizableListenerHandler_Package; use org.allbinary.graphics.ResizableListenerHandler_Package;
 with org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package; use org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package;
 with org.allbinary.graphics.canvas.transition.progress.ProgressCanvasFactory_Package; use org.allbinary.graphics.canvas.transition.progress.ProgressCanvasFactory_Package;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.graphics.color.BasicColor_Package_References;
 with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
+with org.allbinary.graphics.color.BasicColorFactory_Package_References;
 with org.allbinary.graphics.displayable.command.MyCommandsFactory_Package; use org.allbinary.graphics.displayable.command.MyCommandsFactory_Package;
+with org.allbinary.graphics.displayable.command.MyCommandsFactory_Package_References;
 with org.allbinary.graphics.displayable.event.DisplayChangeEvent_Package; use org.allbinary.graphics.displayable.event.DisplayChangeEvent_Package;
+with org.allbinary.graphics.displayable.event.DisplayChangeEvent_Package_References;
 with org.allbinary.graphics.displayable.event.DisplayChangeEventHandler_Package; use org.allbinary.graphics.displayable.event.DisplayChangeEventHandler_Package;
 with org.allbinary.graphics.displayable.event.DisplayChangeEventListener_Package; use org.allbinary.graphics.displayable.event.DisplayChangeEventListener_Package;
 with org.allbinary.graphics.displayable.screen.FullScreenPaintableFactory_Package; use org.allbinary.graphics.displayable.screen.FullScreenPaintableFactory_Package;
@@ -74,6 +97,7 @@ with org.allbinary.graphics.form.CommandCurrentSelectionFormFactory_Package; use
 with org.allbinary.graphics.form.FormType_Package; use org.allbinary.graphics.form.FormType_Package;
 with org.allbinary.graphics.form.FormTypeFactory_Package; use org.allbinary.graphics.form.FormTypeFactory_Package;
 with org.allbinary.graphics.form.ScrollSelectionForm_Package; use org.allbinary.graphics.form.ScrollSelectionForm_Package;
+with org.allbinary.graphics.form.ScrollSelectionForm_Package_References;
 with org.allbinary.graphics.form.ScrollSelectionFormNoneFactory_Package; use org.allbinary.graphics.form.ScrollSelectionFormNoneFactory_Package;
 with org.allbinary.graphics.form.item.CommandTextItemArrayFactory_Package; use org.allbinary.graphics.form.item.CommandTextItemArrayFactory_Package;
 with org.allbinary.graphics.form.item.ABCustomItem_Package; use org.allbinary.graphics.form.item.ABCustomItem_Package;
@@ -82,10 +106,14 @@ with org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package; use org.allbi
 with org.allbinary.graphics.opengles.OpenGLFeatureUtil_Package; use org.allbinary.graphics.opengles.OpenGLFeatureUtil_Package;
 with org.allbinary.graphics.opengles.OpenGLThreadUtil_Package; use org.allbinary.graphics.opengles.OpenGLThreadUtil_Package;
 with org.allbinary.graphics.paint.InitUpdatePaintable_Package; use org.allbinary.graphics.paint.InitUpdatePaintable_Package;
+with org.allbinary.graphics.paint.InitUpdatePaintable_Package_References;
 with org.allbinary.graphics.paint.NullPaintable_Package; use org.allbinary.graphics.paint.NullPaintable_Package;
 with org.allbinary.graphics.paint.Paintable_Package; use org.allbinary.graphics.paint.Paintable_Package;
+with org.allbinary.graphics.paint.Paintable_Package_References;
 with org.allbinary.graphics.paint.PaintableInterface_Package; use org.allbinary.graphics.paint.PaintableInterface_Package;
+with org.allbinary.graphics.paint.PaintableInterface_Package_References;
 with org.allbinary.graphics.paint.StatePaintable_Package; use org.allbinary.graphics.paint.StatePaintable_Package;
+with org.allbinary.graphics.paint.StatePaintable_Package_References;
 with org.allbinary.graphics.paint.StatePaintableFactory_Package; use org.allbinary.graphics.paint.StatePaintableFactory_Package;
 with org.allbinary.input.motion.gesture.observer.BasicMotionGesturesHandler_Package; use org.allbinary.input.motion.gesture.observer.BasicMotionGesturesHandler_Package;
 with org.allbinary.logic.communication.log.ForcedLogUtil_Package; use org.allbinary.logic.communication.log.ForcedLogUtil_Package;
@@ -95,10 +123,12 @@ with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.logic.system.os.OperatingSystemFactory_Package; use org.allbinary.logic.system.os.OperatingSystemFactory_Package;
 with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package; use org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References;
 with org.allbinary.logic.system.security.licensing.InApplicationPurchaseFactory_Package; use org.allbinary.logic.system.security.licensing.InApplicationPurchaseFactory_Package;
 with org.allbinary.logic.system.security.licensing.LockableFeature_Package; use org.allbinary.logic.system.security.licensing.LockableFeature_Package;
 with org.allbinary.logic.system.security.licensing.LockableFeatureFactory_Package; use org.allbinary.logic.system.security.licensing.LockableFeatureFactory_Package;
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+with org.allbinary.logic.util.event.AllBinaryEventObject_Package_References;
 with org.allbinary.logic.util.event.EventStrings_Package; use org.allbinary.logic.util.event.EventStrings_Package;
 with org.allbinary.media.audio.AllBinaryMediaManager_Package; use org.allbinary.media.audio.AllBinaryMediaManager_Package;
 with org.allbinary.media.audio.EarlySoundsFactory_Package; use org.allbinary.media.audio.EarlySoundsFactory_Package;
@@ -107,19 +137,27 @@ with org.allbinary.media.audio.SecondaryPlayerQueueFactory_Package; use org.allb
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.thread.NullThread_Package; use org.allbinary.thread.NullThread_Package;
 with org.allbinary.thread.ThreadFactoryUtil_Package; use org.allbinary.thread.ThreadFactoryUtil_Package;
+with org.allbinary.thread.ThreadFactoryUtil_Package_References;
 with org.allbinary.thread.ThreadUtil_Package; use org.allbinary.thread.ThreadUtil_Package;
 with org.allbinary.time.TimeDelayHelper_Package; use org.allbinary.time.TimeDelayHelper_Package;
+with org.allbinary.time.TimeDelayHelper_Package_References;
 with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
+with org.allbinary.util.ABHashtable_Package_References;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.game.displayable.canvas.FormUtil_Package; use org.allbinary.game.displayable.canvas.FormUtil_Package;
+with org.allbinary.game.displayable.canvas.FormUtil_Package_References;
 with org.allbinary.game.displayable.canvas.NullGameCanvas_Package; use org.allbinary.game.displayable.canvas.NullGameCanvas_Package;
 with org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package; use org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package;
+with org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package_References;
 with org.allbinary.game.displayable.canvas.NoMenuInputProcessor_Package; use org.allbinary.game.displayable.canvas.NoMenuInputProcessor_Package;
 with org.allbinary.game.displayable.canvas.BasicMenuInputProcessor_Package; use org.allbinary.game.displayable.canvas.BasicMenuInputProcessor_Package;
+with org.allbinary.game.displayable.canvas.BasicMenuInputProcessor_Package_References;
 with org.allbinary.game.displayable.canvas.DemoGameStartupRunnable_Package; use org.allbinary.game.displayable.canvas.DemoGameStartupRunnable_Package;
+with org.allbinary.game.displayable.canvas.DemoGameStartupRunnable_Package_References;
 with org.allbinary.game.displayable.canvas.NullWaitGameRunnable_Package; use org.allbinary.game.displayable.canvas.NullWaitGameRunnable_Package;
 with org.allbinary.game.displayable.canvas.GameRunnable_Package; use org.allbinary.game.displayable.canvas.GameRunnable_Package;
+with org.allbinary.game.displayable.canvas.GameRunnable_Package_References;
 with org.allbinary.game.displayable.canvas.GameInputMappingCanvas_Package; use org.allbinary.game.displayable.canvas.GameInputMappingCanvas_Package;
 with org.allbinary.game.displayable.canvas.DemoLimitedCommandTextItemArrayFactory_Package; use org.allbinary.game.displayable.canvas.DemoLimitedCommandTextItemArrayFactory_Package;
 with org.allbinary.game.displayable.canvas.CommandFormInputProcessor_Package; use org.allbinary.game.displayable.canvas.CommandFormInputProcessor_Package;
@@ -127,30 +165,21 @@ with org.allbinary.game.displayable.canvas.DemoCanvasProgressUtil_Package; use o
 with org.allbinary.game.displayable.canvas.DemoGameRunnable_Package; use org.allbinary.game.displayable.canvas.DemoGameRunnable_Package;
 with org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package;
 with org.allbinary.game.displayable.canvas.AllBinaryGameCanvasInterface_Package;
-with org.allbinary.game.layer.AllBinaryGameLayerManager_Package;
 with org.allbinary.game.displayable.canvas.BaseMenuBehavior_Package;
-with org.allbinary.game.init.BasicBuildGameInitializerFactory_Package;
-with org.allbinary.graphics.opengles.CurrentDisplayableFactory_Package;
-with org.allbinary.canvas.CustomGameMenuUtil_Package;
 with org.allbinary.game.displayable.canvas.DemoCanvasProgressUtil_Package;
 with org.allbinary.game.displayable.canvas.DemoGameBehavior_Package;
-with org.allbinary.game.midlet.DemoGameMidlet_Package;
 with org.allbinary.game.displayable.canvas.DemoGameRunnable_Package;
 with org.allbinary.game.displayable.canvas.DemoGameStartupRunnable_Package;
 with org.allbinary.game.displayable.canvas.DemoLimitedCommandTextItemArrayFactory_Package;
-with org.allbinary.game.displayable.canvas.DemoPaintableInterface_Package;
 with org.allbinary.game.displayable.canvas.GameCanvasPauseRunnable_Package;
 with org.allbinary.game.displayable.canvas.GameCanvasRunnable_Package;
-with org.allbinary.game.displayable.canvas.GameCanvasRunnableInterface_Package;
 with org.allbinary.game.init.GameInitializationInterface_Package;
 with org.allbinary.game.init.GameInitializationInterfaceFactoryInterface_Package;
-with org.allbinary.game.init.GameInitializationUtil_Package;
 with org.allbinary.game.displayable.canvas.GameInputMappingCanvas_Package;
 with org.allbinary.game.midlet.GameMidlet_Package;
 with org.allbinary.game.midlet.GameMidletStateFactory_Package;
 with org.allbinary.game.GameStrings_Package;
 with org.allbinary.game.paint.help.HelpPaintable_Package;
-with org.allbinary.game.score.HighScoreCommands_Package;
 with org.allbinary.game.score.HighScoreCommandsBaseFactory_Package;
 with org.allbinary.game.score.HighScoreCommandsFactory_Package;
 with org.allbinary.game.score.displayable.HighScoresCanvas_Package;
@@ -158,7 +187,6 @@ with org.allbinary.game.score.HighScoresCanvasInputProcessor_Package;
 with org.allbinary.game.score.HighScoresCanvasInputProcessorFactoryInterface_Package;
 with org.allbinary.game.paint.help.InputMappingHelpPaintable_Package;
 with org.allbinary.game.displayable.canvas.NullGameCanvas_Package;
-with org.allbinary.thread.ThreadFactoryUtil_Package;
 
 package body org.allbinary.game.displayable.canvas.DemoCanvas_Package is
 
@@ -1117,7 +1145,7 @@ package body org.allbinary.game.displayable.canvas.DemoCanvas_Package is
       randomLevel : Integer;
       gameInfo : GameInfo_Access;
    begin
-        RunnableCanvas (This).process;
+        RunnableCanvas_Package.RunnableCanvas (This).process;
         DemoCanvas'Class (This).getMenuInputProcessor.processInputList;
         DemoCanvas'Class (This).preDemoProcess;
         if (This.state) = (0) then
@@ -1269,7 +1297,7 @@ package body org.allbinary.game.displayable.canvas.DemoCanvas_Package is
       openGLFeatureFactory : OpenGLFeatureFactory_Access;
       currentDisplayableFactory : CurrentDisplayableFactory_Access;
    begin
-        RunnableCanvas (This).setRunning (running);
+        RunnableCanvas_Package.RunnableCanvas (This).setRunning (running);
         begin
             features := Features_Package.getInstance;
             openGLFeatureFactory := OpenGLFeatureFactory_Package.getInstance;
@@ -1495,9 +1523,9 @@ package body org.allbinary.game.displayable.canvas.DemoCanvas_Package is
 
 begin
    null;
-   id := 0;
+   
    BOT_GAME_STATS := To_Unbounded_String ("Bot Game Statistics: ");
-   TYPE_Id := 3;
+   
 
 end org.allbinary.game.displayable.canvas.DemoCanvas_Package;
 

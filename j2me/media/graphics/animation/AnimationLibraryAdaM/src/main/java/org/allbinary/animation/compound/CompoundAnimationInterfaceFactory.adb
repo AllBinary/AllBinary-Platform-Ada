@@ -14,17 +14,17 @@
 
 
 with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Animation_Package;
+with org.allbinary.animation.Animation_Package_References;
 with org.allbinary.animation.AnimationBehaviorFactory_Package; use org.allbinary.animation.AnimationBehaviorFactory_Package;
+with org.allbinary.animation.AnimationBehaviorFactory_Package_References;
 with org.allbinary.animation.AnimationInterfaceFactoryInterface_Package; use org.allbinary.animation.AnimationInterfaceFactoryInterface_Package;
 with org.allbinary.animation.NullAnimationFactory_Package; use org.allbinary.animation.NullAnimationFactory_Package;
+with org.allbinary.logic.communication.log.ForcedLogUtil_Package; use org.allbinary.logic.communication.log.ForcedLogUtil_Package;
 with org.allbinary.media.ScaleProperties_Package; use org.allbinary.media.ScaleProperties_Package;
-with org.allbinary.animation.Animation_Package;
+with org.allbinary.media.ScaleProperties_Package_References;
 with org.allbinary.animation.AnimationBehavior_Package;
-with org.allbinary.animation.AnimationBehaviorFactory_Package;
 with org.allbinary.animation.AnimationInterface_Package;
-with org.allbinary.animation.AnimationInterfaceFactoryInterface_Package;
 with org.allbinary.animation.BasicAnimationInterfaceFactoryInterface_Package;
-with org.allbinary.animation.NullAnimationFactory_Package;
 with org.allbinary.animation.ProceduralAnimationInterfaceFactoryInterface_Package;
 
 package body org.allbinary.animation.compound.CompoundAnimationInterfaceFactory_Package is

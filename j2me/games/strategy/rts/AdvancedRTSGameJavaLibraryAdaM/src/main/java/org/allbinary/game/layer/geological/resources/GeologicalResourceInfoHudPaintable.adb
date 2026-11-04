@@ -15,14 +15,15 @@
 
 with javax.microedition.lcdui.Font_Package; use javax.microedition.lcdui.Font_Package;
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
 with org.allbinary.game.layer.RTSLayer_Package; use org.allbinary.game.layer.RTSLayer_Package;
 with org.allbinary.game.layer.waypoint.WaypointInfoHudPaintable_Package; use org.allbinary.game.layer.waypoint.WaypointInfoHudPaintable_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.graphics.draw.KeyValueDrawCharArray_Package; use org.allbinary.graphics.draw.KeyValueDrawCharArray_Package;
+with org.allbinary.graphics.draw.KeyValueDrawCharArray_Package_References;
 with org.allbinary.game.layer.geological.resources.GeologicalGeographicMapCellPosition_Package; use org.allbinary.game.layer.geological.resources.GeologicalGeographicMapCellPosition_Package;
 with org.allbinary.game.layer.geological.resources.GeologicalGeographicMapCellPosition_Package;
 with org.allbinary.game.layer.geological.resources.GeologicalResource_Package;
-with org.allbinary.game.layer.waypoint.WaypointInfoHudPaintable_Package;
 
 package body org.allbinary.game.layer.geological.resources.GeologicalResourceInfoHudPaintable_Package is
 
@@ -75,7 +76,7 @@ package body org.allbinary.game.layer.geological.resources.GeologicalResourceInf
       graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
       font : Font_Access;
    begin
-        WaypointInfoHudPaintable (This).updateMeasurement (graphics);
+        WaypointInfoHudPaintable_Package.WaypointInfoHudPaintable (This).updateMeasurement (graphics);
         font := graphics.getFont;
         This.fontHeight := ((2) * (font.getHeight));
    end updateMeasurement;
@@ -87,7 +88,7 @@ package body org.allbinary.game.layer.geological.resources.GeologicalResourceInf
       geographicMapCellPosition : GeologicalGeographicMapCellPosition_Access;
       index : Integer;
    begin
-        WaypointInfoHudPaintable (This).updateSelectionInfo;
+        WaypointInfoHudPaintable_Package.WaypointInfoHudPaintable (This).updateSelectionInfo;
         rtsLayer := RTSLayer_Access (This.rtsLayerP);
         list := rtsLayer.geographicMapCellPositionAreaBase.getOccupyingGeographicMapCellPositionList;
         total := 0;
@@ -102,7 +103,7 @@ package body org.allbinary.game.layer.geological.resources.GeologicalResourceInf
    procedure paint (This : in out GeologicalResourceInfoHudPaintable; graphics_Param : access Graphics_Package.Graphics'Class) is
       graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
-        WaypointInfoHudPaintable (This).paint (graphics);
+        WaypointInfoHudPaintable_Package.WaypointInfoHudPaintable (This).paint (graphics);
         This.keyvalueDrawString.paint (graphics, ((This.y) + (This.fontHeight)));
    end paint;
 

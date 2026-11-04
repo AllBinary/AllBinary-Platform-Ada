@@ -14,8 +14,8 @@
 
 
 with org.allbinary.logic.system.security.licensing.LockableFeature_Package; use org.allbinary.logic.system.security.licensing.LockableFeature_Package;
+with org.allbinary.logic.system.security.licensing.LockableFeature_Package_References;
 with org.allbinary.logic.system.security.licensing.LockableFeature_Package;
-with org.allbinary.logic.system.security.licensing.LockedUtilInterface_Package;
 
 package body org.allbinary.logic.system.security.licensing.LockedUtil_Package is
 

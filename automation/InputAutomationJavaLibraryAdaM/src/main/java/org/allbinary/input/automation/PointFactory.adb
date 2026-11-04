@@ -14,6 +14,7 @@
 
 
 with org.allbinary.input.automation.Point_Package; use org.allbinary.input.automation.Point_Package;
+with org.allbinary.input.automation.Point_Package_References;
 
 package body org.allbinary.input.automation.PointFactory_Package is
 

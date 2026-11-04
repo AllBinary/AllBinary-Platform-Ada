@@ -14,7 +14,7 @@
 
 
 with org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface_Package; use org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface_Package;
-with bundle.input.automation.module.InputAutomationModuleServiceInterface_Package;
+with org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface_Package_References;
 
 package body bundle.input.automation.module.InputAutomationModuleService_Package is
 

@@ -14,9 +14,9 @@
 
 
 with org.allbinary.game.layer.PathFindingLayerInterface_Package; use org.allbinary.game.layer.PathFindingLayerInterface_Package;
+with org.allbinary.game.layer.PathFindingLayerInterface_Package_References;
 with org.allbinary.game.layer.GeographicMapCellPositionAreaBase_Package;
 with org.allbinary.game.layer.GeographicMapCellPositionAreaInterface_Package;
-with org.allbinary.game.layer.PathFindingLayerInterface_Package;
 with org.allbinary.game.layer.RTSLayer2LogHelper_Package;
 with org.allbinary.game.layer.SelectionHudPaintable_Package;
 with org.allbinary.game.layer.waypoint.Waypoint2LogHelper_Package;

@@ -15,7 +15,9 @@
 
 with org.allbinary.logic.math.PrimitiveLongSingleton_Package; use org.allbinary.logic.math.PrimitiveLongSingleton_Package;
 with org.allbinary.logic.math.PrimitiveLongUtil_Package; use org.allbinary.logic.math.PrimitiveLongUtil_Package;
+with org.allbinary.logic.math.PrimitiveLongUtil_Package_References;
 with org.allbinary.time.GameTickTimeDelayHelper_Package; use org.allbinary.time.GameTickTimeDelayHelper_Package;
+with org.allbinary.time.GameTickTimeDelayHelper_Package_References;
 with org.allbinary.time.GameTickTimeDelayHelperFactory_Package; use org.allbinary.time.GameTickTimeDelayHelperFactory_Package;
 
 package body org.allbinary.game.ag.layer.hud.basic.time.Timer_Package is

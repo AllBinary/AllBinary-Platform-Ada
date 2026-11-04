@@ -14,7 +14,9 @@
 
 
 with javax.microedition.lcdui.Canvas_Package; use javax.microedition.lcdui.Canvas_Package;
+with javax.microedition.lcdui.Canvas_Package_References;
 with javax.microedition.lcdui.CommandListener_Package; use javax.microedition.lcdui.CommandListener_Package;
+with javax.microedition.lcdui.CommandListener_Package_References;
 
 package body org.allbinary.canvas.FullScreenUtil_Package is
 

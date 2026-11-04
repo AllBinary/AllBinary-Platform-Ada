@@ -14,6 +14,7 @@
 
 
 with org.osgi.framework.BundleContext_Package; use org.osgi.framework.BundleContext_Package;
+with org.osgi.framework.BundleContext_Package_References;
 with bundle.input.automation.module.InputAutomationModuleServiceInterface_Package; use bundle.input.automation.module.InputAutomationModuleServiceInterface_Package;
 with org.allbinary.osgi.service.InputAutomationServiceConsumer_Package; use org.allbinary.osgi.service.InputAutomationServiceConsumer_Package;
 with org.allbinary.input.automation.module.osgi.InputAutomationModuleOSGIServiceVisitor_Package; use org.allbinary.input.automation.module.osgi.InputAutomationModuleOSGIServiceVisitor_Package;

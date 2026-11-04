@@ -15,7 +15,7 @@
 
 with org.allbinary.input.AllBinarySensorListener_Package; use org.allbinary.input.AllBinarySensorListener_Package;
 with org.allbinary.logic.math.Orientation_Package; use org.allbinary.logic.math.Orientation_Package;
-with org.allbinary.input.magnetic.field.AllBinaryMagneticFieldSensor_Package;
+with org.allbinary.logic.math.Orientation_Package_References;
 
 package body org.allbinary.input.magnetic.field.NoMagneticFieldSensor_Package is
 

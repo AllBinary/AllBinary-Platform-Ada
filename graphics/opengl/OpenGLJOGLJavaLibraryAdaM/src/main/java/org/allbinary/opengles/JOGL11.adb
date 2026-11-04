@@ -14,8 +14,9 @@
 
 
 with com.jogamp.opengl.GL_Package; use com.jogamp.opengl.GL_Package;
+with com.jogamp.opengl.GL_Package_References;
 with com.jogamp.opengl.GL2_Package; use com.jogamp.opengl.GL2_Package;
-with org.allbinary.opengles.JOGL10_Package;
+with com.jogamp.opengl.GL2_Package_References;
 
 package body org.allbinary.opengles.JOGL11_Package is
 

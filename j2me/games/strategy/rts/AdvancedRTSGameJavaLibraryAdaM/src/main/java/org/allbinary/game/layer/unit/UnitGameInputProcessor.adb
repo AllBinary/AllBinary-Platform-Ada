@@ -15,6 +15,7 @@
 
 with org.allbinary.game.input.GameInputProcessor_Package; use org.allbinary.game.input.GameInputProcessor_Package;
 with org.allbinary.game.layer.unit.UnitLayer_Package; use org.allbinary.game.layer.unit.UnitLayer_Package;
+with org.allbinary.game.layer.unit.UnitLayer_Package_References;
 with org.allbinary.game.layer.AdvancedRTSGameLayer_Package;
 with org.allbinary.game.layer.AdvancedRTSProperties_Package;
 with org.allbinary.game.layer.building.event.BuildingEventListenerInterface_Package;

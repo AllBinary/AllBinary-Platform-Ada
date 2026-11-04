@@ -17,10 +17,14 @@ with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.business.category.Category_Package; use org.allbinary.business.category.Category_Package;
+with org.allbinary.business.category.Category_Package_References;
 with org.allbinary.business.category.CategoryData_Package; use org.allbinary.business.category.CategoryData_Package;
 with org.allbinary.business.category.CategoryFactoryInterface_Package; use org.allbinary.business.category.CategoryFactoryInterface_Package;
+with org.allbinary.business.category.CategoryFactoryInterface_Package_References;
 with org.allbinary.business.init.db.InventoryDbInitInfo_Package; use org.allbinary.business.init.db.InventoryDbInitInfo_Package;
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.communication.sql.AbSqlBean_Package; use org.allbinary.logic.communication.sql.AbSqlBean_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 
@@ -108,7 +112,7 @@ package body org.allbinary.data.tables.category.CategoryEntity_Package is
             values := BasicArrayList_Access (BasicArrayListD_Package.Create);
             values.add (categoryVector.get (0));
             values.add (categoryVector.get (1));
-            AbSqlBean (This).insert (values);
+            AbSqlBean_Package.AbSqlBean (This).insert (values);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
                 This.logUtil.putF (This.commonStrings.SUCCESS, CategoryEntity_Access'(This'Unchecked_Access), INSERT);
             end if;
@@ -127,7 +131,7 @@ package body org.allbinary.data.tables.category.CategoryEntity_Package is
    procedure delete (This : in out CategoryEntity; value : Unbounded_String) is
    begin
         begin
-            AbSqlBean (This).deleteWhere (CategoryData_Package.getInstance.NAME, value);
+            AbSqlBean_Package.AbSqlBean (This).deleteWhere (CategoryData_Package.getInstance.NAME, value);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
                 This.logUtil.putF (This.commonStrings.SUCCESS, CategoryEntity_Access'(This'Unchecked_Access), This.commonStrings.delete);
             end if;
@@ -162,18 +166,18 @@ package body org.allbinary.data.tables.category.CategoryEntity_Package is
 
    function createTable (This : in out CategoryEntity) return Unbounded_String is
    begin
-        return AbSqlBean (This).createTable (CategoryEntity'Class (This).createTableStatement);
+        return AbSqlBean_Package.AbSqlBean (This).createTable (CategoryEntity'Class (This).createTableStatement);
    end createTable;
 
    procedure update (This : in out CategoryEntity; updatedValues_Param : access HashMap_Package.HashMap'Class) is
       updatedValues : constant HashMap_Access := HashMap_Access (updatedValues_Param);
    begin
-        AbSqlBean (This).updateWhere (CategoryData_Package.getInstance.NAME, Java_Unbox (updatedValues.get (CategoryData_Package.getInstance.NAME)), updatedValues);
+        AbSqlBean_Package.AbSqlBean (This).updateWhere (CategoryData_Package.getInstance.NAME, Java_Unbox (updatedValues.get (CategoryData_Package.getInstance.NAME)), updatedValues);
    end update;
 
    function dropTable (This : in out CategoryEntity) return Unbounded_String is
    begin
-        return AbSqlBean (This).dropTable;
+        return AbSqlBean_Package.AbSqlBean (This).dropTable;
    end dropTable;
 
 end org.allbinary.data.tables.category.CategoryEntity_Package;

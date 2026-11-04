@@ -57,7 +57,7 @@ package body org.allbinary.game.layer.unit.Unit3DecalGameResources_Package is
         SIZE_FIVE := SMALL;
         SIZE_SIX := SMALL;
         SIZE := new Unbounded_String_Array'(SMALL, MEDIUM, SIZE_FOUR, SIZE_FIVE, SIZE_SIX);
-        BasicGameResources (This).init (ROOT, SIZE);
+        BasicGameResources_Package.BasicGameResources (This).init (ROOT, SIZE);
    end Initialize;
 
    function Create return Unit3DecalGameResources_Access is
@@ -70,7 +70,7 @@ package body org.allbinary.game.layer.unit.Unit3DecalGameResources_Package is
    --  throws Exception
    procedure append (This : in out Unit3DecalGameResources; ROOT : Unbounded_String; sizeString : Unbounded_String) is
    begin
-        BasicGameResources (This).append (ROOT, sizeString);
+        BasicGameResources_Package.BasicGameResources (This).append (ROOT, sizeString);
    end append;
 
    --  throws Exception
@@ -79,7 +79,7 @@ package body org.allbinary.game.layer.unit.Unit3DecalGameResources_Package is
         if AndroidUtil_Package.isAndroid then
             return GameGraphicsResourceUtil_Package.getInstance.getStringForFeature (GraphicsFeatureFactory_Package.getInstance.SPRITE_QUARTER_ROTATION_GRAPHICS);
         else
-            return BasicGameResources (This).getString;
+            return BasicGameResources_Package.BasicGameResources (This).getString;
         end if;
    end getString;
 

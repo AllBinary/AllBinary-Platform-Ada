@@ -14,12 +14,16 @@
 
 
 with javax.microedition.lcdui.CommandListener_Package; use javax.microedition.lcdui.CommandListener_Package;
+with javax.microedition.lcdui.CommandListener_Package_References;
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
 with org.allbinary.game.layer.AllBinaryGameLayerManager_Package; use org.allbinary.game.layer.AllBinaryGameLayerManager_Package;
+with org.allbinary.game.layer.AllBinaryGameLayerManager_Package_References;
 with org.allbinary.game.paint.ColorFillBasePaintable_Package; use org.allbinary.game.paint.ColorFillBasePaintable_Package;
+with org.allbinary.game.paint.ColorFillBasePaintable_Package_References;
 with org.allbinary.game.paint.ColorFillPaintableFactory_Package; use org.allbinary.game.paint.ColorFillPaintableFactory_Package;
 with org.allbinary.graphics.paint.Paintable_Package; use org.allbinary.graphics.paint.Paintable_Package;
-with org.allbinary.game.layer.AllBinaryGameLayerManager_Package;
+with org.allbinary.graphics.paint.Paintable_Package_References;
 
 package body org.allbinary.game.displayable.canvas.BasicPaintablesCanvas_Package is
 
@@ -108,7 +112,7 @@ package body org.allbinary.game.displayable.canvas.BasicPaintablesCanvas_Package
         for index in reverse 0 .. (This.paintableArray'Length) - (1) loop
             This.paintableArray (index).paint (graphics);
         end loop;
-        GameCommandCanvas (This).paint (graphics);
+        GameCommandCanvas_Package.GameCommandCanvas (This).paint (graphics);
    end paint;
 
 end org.allbinary.game.displayable.canvas.BasicPaintablesCanvas_Package;

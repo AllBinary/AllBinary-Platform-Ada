@@ -14,8 +14,11 @@
 
 
 with javax.microedition.khronos.opengles.GL10_Package; use javax.microedition.khronos.opengles.GL10_Package;
+with javax.microedition.khronos.opengles.GL10_Package_References;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.string_Id.CommonStrings_Package_References;
 with org.allbinary.graphics.opengles.shader.Shader_Package; use org.allbinary.graphics.opengles.shader.Shader_Package;
+with org.allbinary.graphics.opengles.shader.Shader_Package_References;
 with org.allbinary.graphics.opengles.shader.Shader_Package;
 
 package body org.allbinary.graphics.opengles.shader.ShaderInitializer_Package is

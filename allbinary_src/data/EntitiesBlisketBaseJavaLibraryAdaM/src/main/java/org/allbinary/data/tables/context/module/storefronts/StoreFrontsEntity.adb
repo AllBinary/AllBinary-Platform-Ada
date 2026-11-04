@@ -15,12 +15,16 @@
 
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.business.context.modules.storefront.StoreFront_Package; use org.allbinary.business.context.modules.storefront.StoreFront_Package;
+with org.allbinary.business.context.modules.storefront.StoreFront_Package_References;
 with org.allbinary.business.context.modules.storefront.StoreFrontData_Package; use org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
 with org.allbinary.business.entry_Id.EntryData_Package; use org.allbinary.business.entry_Id.EntryData_Package;
 with org.allbinary.business.init.db.UserDbInitInfo_Package; use org.allbinary.business.init.db.UserDbInitInfo_Package;
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.communication.sql.AbSqlBean_Package; use org.allbinary.logic.communication.sql.AbSqlBean_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 
@@ -87,7 +91,7 @@ package body org.allbinary.data.tables.context.module.storefronts.StoreFrontsEnt
       values : constant BasicArrayList_Access := BasicArrayList_Access (values_Param);
    begin
         begin
-            AbSqlBean (This).insert (values);
+            AbSqlBean_Package.AbSqlBean (This).insert (values);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
                 This.logUtil.putF (This.commonStrings.SUCCESS, StoreFrontsEntity_Access'(This'Unchecked_Access), INSERT);
             end if;
@@ -106,7 +110,7 @@ package body org.allbinary.data.tables.context.module.storefronts.StoreFrontsEnt
    procedure delete (This : in out StoreFrontsEntity; value : Unbounded_String) is
    begin
         begin
-            AbSqlBean (This).deleteWhere (StoreFrontData_Package.getInstance.NAME, value);
+            AbSqlBean_Package.AbSqlBean (This).deleteWhere (StoreFrontData_Package.getInstance.NAME, value);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
                 This.logUtil.putF (This.commonStrings.SUCCESS, StoreFrontsEntity_Access'(This'Unchecked_Access), This.commonStrings.delete);
             end if;
@@ -129,7 +133,7 @@ package body org.allbinary.data.tables.context.module.storefronts.StoreFrontsEnt
    begin
         keysAndValues := StdUtil_Package.getInstance.createHashMap;
         keysAndValues.put (StoreFrontData_Package.getInstance.NAME, Java_Box (name));
-        storeHashMap := AbSqlBean (This).getRow (keysAndValues);
+        storeHashMap := AbSqlBean_Package.AbSqlBean (This).getRow (keysAndValues);
         if (storeHashMap) /= (null) then
             return StoreFront_Package.Create (storeHashMap);
         else
@@ -140,14 +144,14 @@ package body org.allbinary.data.tables.context.module.storefronts.StoreFrontsEnt
    function getStoreFrontNames (This : in out StoreFrontsEntity) return BasicArrayList_Access is
       storeFrontNames : BasicArrayList_Access;
    begin
-        storeFrontNames := AbSqlBean (This).getColumn (StoreFrontData_Package.getInstance.NAME);
+        storeFrontNames := AbSqlBean_Package.AbSqlBean (This).getColumn (StoreFrontData_Package.getInstance.NAME);
         return storeFrontNames;
    end getStoreFrontNames;
 
    procedure update (This : in out StoreFrontsEntity; updatedValues_Param : access HashMap_Package.HashMap'Class) is
       updatedValues : constant HashMap_Access := HashMap_Access (updatedValues_Param);
    begin
-        AbSqlBean (This).updateWhere (StoreFrontData_Package.getInstance.NAME, Java_Unbox (updatedValues.get (StoreFrontData_Package.getInstance.NAME)), updatedValues);
+        AbSqlBean_Package.AbSqlBean (This).updateWhere (StoreFrontData_Package.getInstance.NAME, Java_Unbox (updatedValues.get (StoreFrontData_Package.getInstance.NAME)), updatedValues);
    end update;
 
    function createTableStatement (This : in out StoreFrontsEntity) return Unbounded_String is
@@ -221,12 +225,12 @@ package body org.allbinary.data.tables.context.module.storefronts.StoreFrontsEnt
 
    function createTable (This : in out StoreFrontsEntity) return Unbounded_String is
    begin
-        return AbSqlBean (This).createTable (StoreFrontsEntity'Class (This).createTableStatement);
+        return AbSqlBean_Package.AbSqlBean (This).createTable (StoreFrontsEntity'Class (This).createTableStatement);
    end createTable;
 
    function dropTable (This : in out StoreFrontsEntity) return Unbounded_String is
    begin
-        return AbSqlBean (This).dropTable;
+        return AbSqlBean_Package.AbSqlBean (This).dropTable;
    end dropTable;
 
    procedure getStoreFrontInterface (This : in out StoreFrontsEntity; name : Unbounded_String) is

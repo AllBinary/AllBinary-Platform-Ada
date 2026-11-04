@@ -14,7 +14,9 @@
 
 
 with org.allbinary.game.physics.velocity.VelocityProperties_Package; use org.allbinary.game.physics.velocity.VelocityProperties_Package;
+with org.allbinary.game.physics.velocity.VelocityProperties_Package_References;
 with org.allbinary.game.layer.VehicleFrictionProperties_Package; use org.allbinary.game.layer.VehicleFrictionProperties_Package;
+with org.allbinary.game.layer.VehicleFrictionProperties_Package_References;
 with org.allbinary.game.layer.VehicleFrictionProperties_Package;
 
 package body org.allbinary.game.layer.VehicleProperties_Package is

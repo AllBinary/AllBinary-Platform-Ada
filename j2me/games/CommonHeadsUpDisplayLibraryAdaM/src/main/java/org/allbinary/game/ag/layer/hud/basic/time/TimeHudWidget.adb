@@ -15,11 +15,14 @@
 
 with javax.microedition.lcdui.Font_Package; use javax.microedition.lcdui.Font_Package;
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
 with org.allbinary.game.graphics.hud.BasicHud_Package; use org.allbinary.game.graphics.hud.BasicHud_Package;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.graphics.color.BasicColor_Package_References;
 with org.allbinary.graphics.font.MyFontProcessor_Package; use org.allbinary.graphics.font.MyFontProcessor_Package;
 with org.allbinary.logic.math.PrimitiveLongSingleton_Package; use org.allbinary.logic.math.PrimitiveLongSingleton_Package;
 with org.allbinary.game.ag.layer.hud.basic.time.Timer_Package; use org.allbinary.game.ag.layer.hud.basic.time.Timer_Package;
+with org.allbinary.game.ag.layer.hud.basic.time.Timer_Package_References;
 with org.allbinary.game.ag.layer.hud.basic.time.Timer_Package;
 
 package body org.allbinary.game.ag.layer.hud.basic.time.TimeHudWidget_Package is
@@ -102,7 +105,7 @@ package body org.allbinary.game.ag.layer.hud.basic.time.TimeHudWidget_Package is
         font := graphics.getFont;
         This.updateMaxWidth := (font.getSize) * (5);
         This.offset := (font.stringWidth (This.TIME_STRING)) + (MyFontProcessor_Package.defaultStringWidth (font, 3));
-        BasicHud (This).updateMeasurement (graphics);
+        BasicHud_Package.BasicHud (This).updateMeasurement (graphics);
    end updateMeasurement;
 
    procedure update (This : in out TimeHudWidget) is
@@ -125,7 +128,7 @@ package body org.allbinary.game.ag.layer.hud.basic.time.TimeHudWidget_Package is
    procedure paint (This : in out TimeHudWidget; graphics_Param : access Graphics_Package.Graphics'Class) is
       graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
-        BasicHud (This).paintDX (graphics, This.TIME_CHAR_ARRAY, 0, This.TIME_CHAR_ARRAY'Length, This.string_Id, 0, This.totalDigits, This.offset);
+        BasicHud_Package.BasicHud (This).paintDX (graphics, This.TIME_CHAR_ARRAY, 0, This.TIME_CHAR_ARRAY'Length, This.string_Id, 0, This.totalDigits, This.offset);
    end paint;
 
    procedure getInstance (location : Integer; direction : Integer; basicColor_Param : access BasicColor_Package.BasicColor'Class; timer_Param : access Timer_Package.Timer'Class) is

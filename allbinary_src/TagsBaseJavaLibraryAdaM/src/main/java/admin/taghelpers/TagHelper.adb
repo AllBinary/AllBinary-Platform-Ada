@@ -14,7 +14,7 @@
 
 
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
-with admin.taghelpers.TagHelperInterface_Package;
+with org.allbinary.string_Id.CommonStrings_Package_References;
 
 package body admin.taghelpers.TagHelper_Package is
 

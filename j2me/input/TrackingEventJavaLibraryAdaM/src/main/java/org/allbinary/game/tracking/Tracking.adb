@@ -14,6 +14,7 @@
 
 
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
 
 package body org.allbinary.game.tracking.Tracking_Package is
 

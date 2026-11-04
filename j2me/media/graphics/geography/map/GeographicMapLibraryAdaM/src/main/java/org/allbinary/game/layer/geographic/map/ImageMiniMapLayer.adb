@@ -14,13 +14,16 @@
 
 
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
 with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
+with javax.microedition.lcdui.Image_Package_References;
 with javax.microedition.lcdui.NullImage_Package; use javax.microedition.lcdui.NullImage_Package;
 with org.allbinary.graphics.Anchor_Package; use org.allbinary.graphics.Anchor_Package;
 with org.allbinary.image.PaintableToImageUtil_Package; use org.allbinary.image.PaintableToImageUtil_Package;
 with org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package; use org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
+with org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package_References;
 with org.allbinary.view.ViewPositionBase_Package; use org.allbinary.view.ViewPositionBase_Package;
-with org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
+with org.allbinary.view.ViewPositionBase_Package_References;
 with org.allbinary.media.graphics.geography.map.BasicGeographicMapCellPositionFactory_Package;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellPositionBaseFactory_Package;
@@ -31,7 +34,6 @@ with org.allbinary.media.graphics.geography.map.GeographicMapCellPositionFactory
 with org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellTypeFactory_Package;
 with org.allbinary.media.graphics.geography.map.GeographicMapInterface_Package;
-with org.allbinary.game.layer.geographic.map.MiniMapLayer_Package;
 with org.allbinary.media.graphics.geography.map.SimpleGeographicMap_Package;
 
 package body org.allbinary.game.layer.geographic.map.ImageMiniMapLayer_Package is

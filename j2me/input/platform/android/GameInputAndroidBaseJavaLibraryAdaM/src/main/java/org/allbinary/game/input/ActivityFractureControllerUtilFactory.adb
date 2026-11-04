@@ -6,6 +6,7 @@ with org.allbinary.game.input.AndroidAPI12KeyFactory_Package; use org.allbinary.
 with org.allbinary.game.input.AndroidAPI9KeyFactory_Package; use org.allbinary.game.input.AndroidAPI9KeyFactory_Package;
 with org.allbinary.game.input.AndroidAPI1KeyFactory_Package; use org.allbinary.game.input.AndroidAPI1KeyFactory_Package;
 with org.allbinary.game.input.AndroidKeyFactory_Package; use org.allbinary.game.input.AndroidKeyFactory_Package;
+with org.allbinary.game.input.AndroidKeyFactory_Package_References;
 with org.allbinary.game.input.AndroidAPI12KeyFactory_Package;
 with org.allbinary.game.input.AndroidAPI1KeyFactory_Package;
 with org.allbinary.game.input.AndroidAPI9KeyFactory_Package;

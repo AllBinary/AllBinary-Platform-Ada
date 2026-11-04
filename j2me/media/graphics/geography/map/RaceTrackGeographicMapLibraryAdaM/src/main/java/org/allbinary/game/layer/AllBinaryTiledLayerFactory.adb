@@ -18,15 +18,14 @@ with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.g
 with org.allbinary.logic.math.SmallIntegerSingletonFactory_Package; use org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
 with org.allbinary.media.graphics.geography.map.racetrack.AllBinaryTiledLayerFactoryInterface_Package; use org.allbinary.media.graphics.geography.map.racetrack.AllBinaryTiledLayerFactoryInterface_Package;
 with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackData_Package; use org.allbinary.media.graphics.geography.map.racetrack.RaceTrackData_Package;
+with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackData_Package_References;
 with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackInfo_Package; use org.allbinary.media.graphics.geography.map.racetrack.RaceTrackInfo_Package;
+with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackInfo_Package_References;
 with org.allbinary.media.graphics.geography.map.racetrack.TiledLayerFactory_Package; use org.allbinary.media.graphics.geography.map.racetrack.TiledLayerFactory_Package;
 with org.allbinary.game.layer.AllBinaryTiledLayer_Package; use org.allbinary.game.layer.AllBinaryTiledLayer_Package;
+with org.allbinary.game.layer.AllBinaryTiledLayer_Package_References;
 with org.allbinary.game.layer.AllBinaryJ2METiledLayer_Package; use org.allbinary.game.layer.AllBinaryJ2METiledLayer_Package;
-with org.allbinary.media.graphics.geography.map.racetrack.AllBinaryTiledLayerFactoryInterface_Package;
-with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackData_Package;
 with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackFrictionProperties_Package;
-with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackInfo_Package;
-with org.allbinary.media.graphics.geography.map.racetrack.TiledLayerFactory_Package;
 
 package body org.allbinary.game.layer.AllBinaryTiledLayerFactory_Package is
 

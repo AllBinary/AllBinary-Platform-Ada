@@ -15,26 +15,30 @@
 
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.business.context.modules.storefront.StoreFrontData_Package; use org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
 with org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package; use org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
+with org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package_References;
 with org.allbinary.business.entry_Id.EntryData_Package; use org.allbinary.business.entry_Id.EntryData_Package;
 with org.allbinary.business.init.db.UserDbInitInfo_Package; use org.allbinary.business.init.db.UserDbInitInfo_Package;
 with org.allbinary.business.user.CreateUserFactory_Package; use org.allbinary.business.user.CreateUserFactory_Package;
 with org.allbinary.business.user.UserData_Package; use org.allbinary.business.user.UserData_Package;
 with org.allbinary.business.user.UserInterface_Package; use org.allbinary.business.user.UserInterface_Package;
+with org.allbinary.business.user.UserInterface_Package_References;
 with org.allbinary.business.user.modules.User_Package; use org.allbinary.business.user.modules.User_Package;
 with org.allbinary.business.user.role.UserRole_Package; use org.allbinary.business.user.role.UserRole_Package;
+with org.allbinary.business.user.role.UserRole_Package_References;
 with org.allbinary.business.user.role.UserRoleData_Package; use org.allbinary.business.user.role.UserRoleData_Package;
 with org.allbinary.business.user.role.UserRoleFactory_Package; use org.allbinary.business.user.role.UserRoleFactory_Package;
 with org.allbinary.globals.GLOBALS2_Package; use org.allbinary.globals.GLOBALS2_Package;
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.communication.sql.AbSqlBean_Package; use org.allbinary.logic.communication.sql.AbSqlBean_Package;
 with org.allbinary.logic.control.crypt.SuperCrypt_Package; use org.allbinary.logic.control.crypt.SuperCrypt_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
-with org.allbinary.data.tables.user.UserEntityInterface_Package;
 
 package body org.allbinary.data.tables.user.UserEntity_Package is
 
@@ -135,7 +139,7 @@ package body org.allbinary.data.tables.user.UserEntity_Package is
       values : constant BasicArrayList_Access := BasicArrayList_Access (values_Param);
    begin
         begin
-            AbSqlBean (This).insert (values);
+            AbSqlBean_Package.AbSqlBean (This).insert (values);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
                 This.logUtil.putF (This.commonStrings.SUCCESS, UserEntity_Access'(This'Unchecked_Access), INSERT);
             end if;
@@ -171,7 +175,7 @@ package body org.allbinary.data.tables.user.UserEntity_Package is
         usersVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
         keysAndValues.put (Java_Box (UserRoleData_Package.NAME.toString), Java_Box (UserRoleFactory_Package.getInstance.STOREMANAGER.toString));
         keysAndValues.put (UserData_Package.PERMISSIONS, Java_Box (storeFrontInterface.getName));
-        usersHashMapVector := AbSqlBean (This).getRows (keysAndValues);
+        usersHashMapVector := AbSqlBean_Package.AbSqlBean (This).getRows (keysAndValues);
         size := usersHashMapVector.size;
         for i in 0 .. (size) - 1 loop
             userHashMap := HashMap_Access (usersHashMapVector.get (i));
@@ -201,7 +205,7 @@ package body org.allbinary.data.tables.user.UserEntity_Package is
         keysAndValues := StdUtil_Package.getInstance.createHashMap;
         usersVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
         keysAndValues.put (Java_Box (UserRoleData_Package.NAME.toString), Java_Box (userRole.toString));
-        usersHashMapVector := AbSqlBean (This).getRows (keysAndValues);
+        usersHashMapVector := AbSqlBean_Package.AbSqlBean (This).getRows (keysAndValues);
         size := usersHashMapVector.size;
         for index in 0 .. (size) - 1 loop
             userHashMap := HashMap_Access (usersHashMapVector.get (index));
@@ -225,7 +229,7 @@ package body org.allbinary.data.tables.user.UserEntity_Package is
         keysAndValues := StdUtil_Package.getInstance.createHashMap;
         usersVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
         keysAndValues.put (StoreFrontData_Package.getInstance.NAME, Java_Box (storeFrontInterface.getName));
-        usersHashMapVector := AbSqlBean (This).getRows (keysAndValues);
+        usersHashMapVector := AbSqlBean_Package.AbSqlBean (This).getRows (keysAndValues);
         size := usersHashMapVector.size;
         for index in 0 .. (size) - 1 loop
             userHashMap := HashMap_Access (usersHashMapVector.get (index));
@@ -243,7 +247,7 @@ package body org.allbinary.data.tables.user.UserEntity_Package is
    begin
         row := StdUtil_Package.getInstance.createHashMap;
         row.put (UserData_Package.USERNAME, Java_Box (userName));
-        userHashMap := AbSqlBean (This).getRow (row);
+        userHashMap := AbSqlBean_Package.AbSqlBean (This).getRow (row);
         if (userHashMap) /= (null) then
             return UserInterface_Access (CreateUserFactory_Package.getInstance (userHashMap));
         else
@@ -254,7 +258,7 @@ package body org.allbinary.data.tables.user.UserEntity_Package is
    procedure deleteWhere (This : in out UserEntity; key : Unbounded_String; value : Unbounded_String) is
    begin
         begin
-            AbSqlBean (This).deleteWhere (key, value);
+            AbSqlBean_Package.AbSqlBean (This).deleteWhere (key, value);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
                 This.logUtil.putF (This.commonStrings.SUCCESS, UserEntity_Access'(This'Unchecked_Access), To_Unbounded_String ("deleteWhere"));
             end if;
@@ -278,8 +282,8 @@ package body org.allbinary.data.tables.user.UserEntity_Package is
    begin
         begin
             isUserNameAndPasswordCorrect := 0;
-            result := AbSqlBean (This).getField (UserData_Package.USERNAME, userName, UserData_Package.PASSWORD);
-            encryption := AbSqlBean (This).getField (UserData_Package.USERNAME, userName, EntryData_Package.getInstance.ENCRYPTION);
+            result := AbSqlBean_Package.AbSqlBean (This).getField (UserData_Package.USERNAME, userName, UserData_Package.PASSWORD);
+            encryption := AbSqlBean_Package.AbSqlBean (This).getField (UserData_Package.USERNAME, userName, EntryData_Package.getInstance.ENCRYPTION);
             if ((encryption) /= (Null_Unbounded_String)) and then ((Java_Compare_To (encryption, This.stringUtil.EMPTY_STRING)) /= (0)) then
                 isUserNameAndPasswordCorrect := Java_Compare_To (result, SuperCrypt_Package.Create (encryption.intValue).encrypt (password));
             else
@@ -330,12 +334,12 @@ package body org.allbinary.data.tables.user.UserEntity_Package is
    procedure update (This : in out UserEntity; userName : Unbounded_String; updatedValues_Param : access HashMap_Package.HashMap'Class) is
       updatedValues : constant HashMap_Access := HashMap_Access (updatedValues_Param);
    begin
-        AbSqlBean (This).updateWhere (UserData_Package.USERNAME, userName, updatedValues);
+        AbSqlBean_Package.AbSqlBean (This).updateWhere (UserData_Package.USERNAME, userName, updatedValues);
    end update;
 
    function dropTables (This : in out UserEntity) return Unbounded_String is
    begin
-        return AbSqlBean (This).dropTable;
+        return AbSqlBean_Package.AbSqlBean (This).dropTable;
    end dropTables;
 
    function createTableStatement (This : in out UserEntity) return Unbounded_String is
@@ -350,7 +354,7 @@ package body org.allbinary.data.tables.user.UserEntity_Package is
 
    function createTable (This : in out UserEntity) return Unbounded_String is
    begin
-        return AbSqlBean (This).createTable (UserEntity'Class (This).createTableStatement);
+        return AbSqlBean_Package.AbSqlBean (This).createTable (UserEntity'Class (This).createTableStatement);
    end createTable;
 
    procedure getStoreManagers (This : in out UserEntity; storeFrontInterface_Param : access StoreFrontInterface_Package.StoreFrontInterface'Class) is

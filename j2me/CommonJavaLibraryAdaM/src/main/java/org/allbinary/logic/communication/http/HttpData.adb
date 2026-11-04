@@ -14,7 +14,6 @@
 
 
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
-with org.allbinary.string_Id.CommonSeps_Package;
 
 package body org.allbinary.logic.communication.http.HttpData_Package is
 

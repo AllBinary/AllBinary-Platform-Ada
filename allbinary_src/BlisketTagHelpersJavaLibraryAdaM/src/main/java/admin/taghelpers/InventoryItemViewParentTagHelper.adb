@@ -13,15 +13,64 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.communication.http.request.RequestMapInterface_Package; use org.allbinary.logic.communication.http.request.RequestMapInterface_Package;
+with org.allbinary.logic.communication.http.request.RequestMapInterface_Package_References;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.visual.transform.TransformInterface_Package; use org.allbinary.logic.visual.transform.TransformInterface_Package;
 with taghelpers.ValidationViewHelper_Package; use taghelpers.ValidationViewHelper_Package;
+with tags.HelperTag_Package; use tags.HelperTag_Package;
+with tags.HelperTag_Package_References;
+with views.admin.inventory.InventoryItemView_Package; use views.admin.inventory.InventoryItemView_Package;
+with views.admin.inventory.InventoryItemView_Package_References;
+with views.admin.inventory.download.DownloadableInventoryItemView_Package; use views.admin.inventory.download.DownloadableInventoryItemView_Package;
+with views.admin.inventory.download.DownloadableInventoryItemView_Package_References;
+with taghelpers.ViewHelper_Package;
 
 package body admin.taghelpers.InventoryItemViewParentTagHelper_Package is
 
    package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    package TransformInterface_Package renames Standard.org.allbinary.logic.visual.transform.TransformInterface_Package;
    package ValidationViewHelper_Package renames Standard.taghelpers.ValidationViewHelper_Package;
+   subtype RequestMapInterface_Access is org.allbinary.logic.communication.http.request.RequestMapInterface_Package_References.RequestMapInterface_Access;
+   function "=" (Left, Right : RequestMapInterface_Access) return Boolean renames org.allbinary.logic.communication.http.request.RequestMapInterface_Package_References."=";
+   subtype RequestMapInterface_Access_Array is org.allbinary.logic.communication.http.request.RequestMapInterface_Package_References.RequestMapInterface_Access_Array;
+   function "=" (Left, Right : RequestMapInterface_Access_Array) return Boolean renames org.allbinary.logic.communication.http.request.RequestMapInterface_Package_References."=";
+   subtype RequestMapInterface_Access_Array_Access is org.allbinary.logic.communication.http.request.RequestMapInterface_Package_References.RequestMapInterface_Access_Array_Access;
+   function "=" (Left, Right : RequestMapInterface_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.http.request.RequestMapInterface_Package_References."=";
+   subtype RequestMapInterface_Access_Array_Access_Array is org.allbinary.logic.communication.http.request.RequestMapInterface_Package_References.RequestMapInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : RequestMapInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.communication.http.request.RequestMapInterface_Package_References."=";
+   subtype RequestMapInterface_Access_Array_Access_Array_Access is org.allbinary.logic.communication.http.request.RequestMapInterface_Package_References.RequestMapInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : RequestMapInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.http.request.RequestMapInterface_Package_References."=";
+   subtype HelperTag_Access is tags.HelperTag_Package_References.HelperTag_Access;
+   function "=" (Left, Right : HelperTag_Access) return Boolean renames tags.HelperTag_Package_References."=";
+   subtype HelperTag_Access_Array is tags.HelperTag_Package_References.HelperTag_Access_Array;
+   function "=" (Left, Right : HelperTag_Access_Array) return Boolean renames tags.HelperTag_Package_References."=";
+   subtype HelperTag_Access_Array_Access is tags.HelperTag_Package_References.HelperTag_Access_Array_Access;
+   function "=" (Left, Right : HelperTag_Access_Array_Access) return Boolean renames tags.HelperTag_Package_References."=";
+   subtype HelperTag_Access_Array_Access_Array is tags.HelperTag_Package_References.HelperTag_Access_Array_Access_Array;
+   function "=" (Left, Right : HelperTag_Access_Array_Access_Array) return Boolean renames tags.HelperTag_Package_References."=";
+   subtype HelperTag_Access_Array_Access_Array_Access is tags.HelperTag_Package_References.HelperTag_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : HelperTag_Access_Array_Access_Array_Access) return Boolean renames tags.HelperTag_Package_References."=";
+   subtype InventoryItemView_Access is views.admin.inventory.InventoryItemView_Package_References.InventoryItemView_Access;
+   function "=" (Left, Right : InventoryItemView_Access) return Boolean renames views.admin.inventory.InventoryItemView_Package_References."=";
+   subtype InventoryItemView_Access_Array is views.admin.inventory.InventoryItemView_Package_References.InventoryItemView_Access_Array;
+   function "=" (Left, Right : InventoryItemView_Access_Array) return Boolean renames views.admin.inventory.InventoryItemView_Package_References."=";
+   subtype InventoryItemView_Access_Array_Access is views.admin.inventory.InventoryItemView_Package_References.InventoryItemView_Access_Array_Access;
+   function "=" (Left, Right : InventoryItemView_Access_Array_Access) return Boolean renames views.admin.inventory.InventoryItemView_Package_References."=";
+   subtype InventoryItemView_Access_Array_Access_Array is views.admin.inventory.InventoryItemView_Package_References.InventoryItemView_Access_Array_Access_Array;
+   function "=" (Left, Right : InventoryItemView_Access_Array_Access_Array) return Boolean renames views.admin.inventory.InventoryItemView_Package_References."=";
+   subtype InventoryItemView_Access_Array_Access_Array_Access is views.admin.inventory.InventoryItemView_Package_References.InventoryItemView_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : InventoryItemView_Access_Array_Access_Array_Access) return Boolean renames views.admin.inventory.InventoryItemView_Package_References."=";
+   subtype DownloadableInventoryItemView_Access is views.admin.inventory.download.DownloadableInventoryItemView_Package_References.DownloadableInventoryItemView_Access;
+   function "=" (Left, Right : DownloadableInventoryItemView_Access) return Boolean renames views.admin.inventory.download.DownloadableInventoryItemView_Package_References."=";
+   subtype DownloadableInventoryItemView_Access_Array is views.admin.inventory.download.DownloadableInventoryItemView_Package_References.DownloadableInventoryItemView_Access_Array;
+   function "=" (Left, Right : DownloadableInventoryItemView_Access_Array) return Boolean renames views.admin.inventory.download.DownloadableInventoryItemView_Package_References."=";
+   subtype DownloadableInventoryItemView_Access_Array_Access is views.admin.inventory.download.DownloadableInventoryItemView_Package_References.DownloadableInventoryItemView_Access_Array_Access;
+   function "=" (Left, Right : DownloadableInventoryItemView_Access_Array_Access) return Boolean renames views.admin.inventory.download.DownloadableInventoryItemView_Package_References."=";
+   subtype DownloadableInventoryItemView_Access_Array_Access_Array is views.admin.inventory.download.DownloadableInventoryItemView_Package_References.DownloadableInventoryItemView_Access_Array_Access_Array;
+   function "=" (Left, Right : DownloadableInventoryItemView_Access_Array_Access_Array) return Boolean renames views.admin.inventory.download.DownloadableInventoryItemView_Package_References."=";
+   subtype DownloadableInventoryItemView_Access_Array_Access_Array_Access is views.admin.inventory.download.DownloadableInventoryItemView_Package_References.DownloadableInventoryItemView_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : DownloadableInventoryItemView_Access_Array_Access_Array_Access) return Boolean renames views.admin.inventory.download.DownloadableInventoryItemView_Package_References."=";
    procedure Initialize_Fields (This : in out InventoryItemViewParentTagHelper'Class) is
    begin
       null;
@@ -42,7 +91,7 @@ package body admin.taghelpers.InventoryItemViewParentTagHelper_Package is
 
    function getInstance return InventoryItemViewParentTagHelper_Access is
    begin
-        return InventoryItemViewParentTagHelper_Package.instance;
+        return InventoryItemViewParentTagHelper_Access (InventoryItemViewParentTagHelper_Package.instance);
    end getInstance;
 
    --  throws Exception

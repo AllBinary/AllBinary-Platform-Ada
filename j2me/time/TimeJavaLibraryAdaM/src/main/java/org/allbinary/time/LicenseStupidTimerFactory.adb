@@ -14,6 +14,7 @@
 
 
 with org.allbinary.time.StupidTimer_Package; use org.allbinary.time.StupidTimer_Package;
+with org.allbinary.time.StupidTimer_Package_References;
 with org.allbinary.time.StupidTimer_Package;
 with org.allbinary.time.TimeDelayHelper_Package;
 

@@ -14,6 +14,7 @@
 
 
 with javax.microedition.lcdui.CommandListener_Package; use javax.microedition.lcdui.CommandListener_Package;
+with javax.microedition.lcdui.CommandListener_Package_References;
 
 package body org.allbinary.logic.system.security.licensing.LicenseUtil_Package is
 

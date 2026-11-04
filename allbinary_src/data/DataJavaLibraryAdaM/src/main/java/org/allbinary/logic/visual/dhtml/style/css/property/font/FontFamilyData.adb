@@ -26,7 +26,7 @@ package body org.allbinary.logic.visual.dhtml.style.css.property.font.FontFamily
 
    function getInstance return FontFamilyData_Access is
    begin
-        return FontFamilyData_Package.instance;
+        return FontFamilyData_Access (FontFamilyData_Package.instance);
    end getInstance;
 
    procedure Initialize (This : in out FontFamilyData'Class) is

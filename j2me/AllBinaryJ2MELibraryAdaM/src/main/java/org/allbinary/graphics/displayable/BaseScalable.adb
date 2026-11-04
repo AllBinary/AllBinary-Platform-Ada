@@ -13,7 +13,6 @@
 --  Generated Code Do Not Modify
 
 
-with org.allbinary.graphics.displayable.ScalableListener_Package;
 
 package body org.allbinary.graphics.displayable.BaseScalable_Package is
 

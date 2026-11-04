@@ -14,7 +14,6 @@
 
 
 with org.allbinary.data.tables.user.address.StreetAddressesEntity_Package; use org.allbinary.data.tables.user.address.StreetAddressesEntity_Package;
-with org.allbinary.data.tables.user.address.StreetAddressesEntity_Package;
 
 package body org.allbinary.data.tables.user.address.billing.BillingAddressesEntity_Package is
 

@@ -14,11 +14,14 @@
 
 
 with org.allbinary.game.layer.AllBinaryGameLayer_Package; use org.allbinary.game.layer.AllBinaryGameLayer_Package;
+with org.allbinary.game.layer.AllBinaryGameLayer_Package_References;
 with org.allbinary.game.physics.velocity.BasicVelocityProperties_Package; use org.allbinary.game.physics.velocity.BasicVelocityProperties_Package;
+with org.allbinary.game.physics.velocity.BasicVelocityProperties_Package_References;
 with org.allbinary.logic.math.BasicDecimal_Package; use org.allbinary.logic.math.BasicDecimal_Package;
+with org.allbinary.logic.math.BasicDecimal_Package_References;
 with org.allbinary.time.GameTickTimeDelayHelperFactory_Package; use org.allbinary.time.GameTickTimeDelayHelperFactory_Package;
 with org.allbinary.time.TimeDelayHelper_Package; use org.allbinary.time.TimeDelayHelper_Package;
-with org.allbinary.physics.movement.BasicConstantVelocityMovement_Package;
+with org.allbinary.time.TimeDelayHelper_Package_References;
 with org.allbinary.physics.movement.Movement_Package;
 with org.allbinary.physics.movement.MovementInterface_Package;
 
@@ -98,7 +101,7 @@ package body org.allbinary.physics.movement.DelayedConstantVelocityMovement_Pack
       layer : constant AllBinaryGameLayer_Access := AllBinaryGameLayer_Access (layer_Param);
    begin
         if This.timeDelayHelper.isTime (GameTickTimeDelayHelperFactory_Package.getInstance.startTime) then
-            BasicConstantVelocityMovement (This).process (layer);
+            BasicConstantVelocityMovement_Package.BasicConstantVelocityMovement (This).process (layer);
         end if;
    end process;
 

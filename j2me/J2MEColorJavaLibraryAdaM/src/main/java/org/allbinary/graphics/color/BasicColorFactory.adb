@@ -18,6 +18,7 @@ with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.s
 with jsinterop.annotations.JsMethod_Package; use jsinterop.annotations.JsMethod_Package;
 with jsinterop.annotations.JsProperty_Package; use jsinterop.annotations.JsProperty_Package;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.graphics.color.BasicColor_Package_References;
 with org.allbinary.graphics.color.BasicColorUtil_Package; use org.allbinary.graphics.color.BasicColorUtil_Package;
 with org.allbinary.graphics.color.BasicColor_Package;
 with org.allbinary.graphics.color.BasicColorUtil_Package;

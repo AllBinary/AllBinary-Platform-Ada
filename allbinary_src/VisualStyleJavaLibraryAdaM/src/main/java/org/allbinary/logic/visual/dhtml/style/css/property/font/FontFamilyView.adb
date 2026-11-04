@@ -15,10 +15,10 @@
 
 with org.allbinary.logic.visual.dhtml.style.css.property.CssPropertyView_Package; use org.allbinary.logic.visual.dhtml.style.css.property.CssPropertyView_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
+with org.w3c.dom.Node_Package_References;
 with org.allbinary.logic.visual.dhtml.style.css.property.font.FontFamilyData_Package; use org.allbinary.logic.visual.dhtml.style.css.property.font.FontFamilyData_Package;
 with org.allbinary.logic.visual.dhtml.style.css.property.CssProperty_Package;
 with org.allbinary.logic.visual.dhtml.style.css.property.CssPropertyValues_Package;
-with org.allbinary.logic.visual.dhtml.style.css.property.CssPropertyView_Package;
 
 package body org.allbinary.logic.visual.dhtml.style.css.property.font.FontFamilyView_Package is
 

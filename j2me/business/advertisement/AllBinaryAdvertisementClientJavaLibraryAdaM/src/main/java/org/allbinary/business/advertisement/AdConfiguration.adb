@@ -14,7 +14,9 @@
 
 
 with org.allbinary.direction.Direction_Package; use org.allbinary.direction.Direction_Package;
+with org.allbinary.direction.Direction_Package_References;
 with org.allbinary.game.state.GameState_Package; use org.allbinary.game.state.GameState_Package;
+with org.allbinary.game.state.GameState_Package_References;
 
 package body org.allbinary.business.advertisement.AdConfiguration_Package is
 

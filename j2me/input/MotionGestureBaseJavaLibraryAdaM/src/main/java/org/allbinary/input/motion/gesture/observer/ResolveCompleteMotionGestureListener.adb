@@ -20,20 +20,15 @@ with org.allbinary.input.motion.gesture.MotionGestureToMotionGestureActionAssoci
 with org.allbinary.input.motion.gesture.configuration.MotionGestureConfiguration_Package; use org.allbinary.input.motion.gesture.configuration.MotionGestureConfiguration_Package;
 with org.allbinary.input.motion.gesture.configuration.MotionGestureConfigurationFactory_Package; use org.allbinary.input.motion.gesture.configuration.MotionGestureConfigurationFactory_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.game.input.CompleteMotionGestureInputEvent_Package;
-with org.allbinary.game.input.CompleteMotionGestureInputEventHandler_Package;
 with org.allbinary.game.input.CompleteMotionGestureInputEventListener_Package;
 with org.allbinary.game.input.CompleteMotionGestureInputEventListenerInterface_Package;
 with org.allbinary.game.input.CompleteMotionGestureInputInterface_Package;
-with org.allbinary.input.motion.gesture.observer.CompleteMotionGestureListenerInterface_Package;
-with org.allbinary.game.input.motion.action.GameKeyCompleteMotionGestureInputEvent_Package;
-with org.allbinary.game.input.motion.action.GameKeyFromMotionGestureEventListener_Package;
-with org.allbinary.input.motion.gesture.configuration.MotionGestureConfiguration_Package;
-with org.allbinary.input.motion.gesture.configuration.MotionGestureConfigurationFactory_Package;
 with org.allbinary.input.motion.gesture.MotionGestureInput_Package;
-with org.allbinary.input.motion.gesture.MotionGestureToMotionGestureActionAssociation_Package;
 
 package body org.allbinary.input.motion.gesture.observer.ResolveCompleteMotionGestureListener_Package is
 

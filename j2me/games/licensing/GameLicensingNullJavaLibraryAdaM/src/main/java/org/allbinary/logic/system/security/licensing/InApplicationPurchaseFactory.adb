@@ -15,6 +15,7 @@
 
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.logic.system.security.licensing.LockableFeature_Package; use org.allbinary.logic.system.security.licensing.LockableFeature_Package;
+with org.allbinary.logic.system.security.licensing.LockableFeature_Package_References;
 with org.allbinary.logic.system.security.licensing.LockableFeature_Package;
 
 package body org.allbinary.logic.system.security.licensing.InApplicationPurchaseFactory_Package is

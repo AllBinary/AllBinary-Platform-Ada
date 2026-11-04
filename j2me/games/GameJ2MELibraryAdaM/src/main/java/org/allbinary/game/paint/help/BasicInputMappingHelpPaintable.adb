@@ -14,17 +14,21 @@
 
 
 with org.allbinary.game.input.GameKey_Package; use org.allbinary.game.input.GameKey_Package;
+with org.allbinary.game.input.GameKey_Package_References;
 with org.allbinary.game.input.GameKeyFactory_Package; use org.allbinary.game.input.GameKeyFactory_Package;
 with org.allbinary.game.input.Input_Package; use org.allbinary.game.input.Input_Package;
+with org.allbinary.game.input.Input_Package_References;
 with org.allbinary.game.input.PlatformInputMappingFactory_Package; use org.allbinary.game.input.PlatformInputMappingFactory_Package;
 with org.allbinary.game.input.mapping.GameInputMapping_Package; use org.allbinary.game.input.mapping.GameInputMapping_Package;
+with org.allbinary.game.input.mapping.GameInputMapping_Package_References;
 with org.allbinary.game.input.mapping.PersistentInputMapping_Package; use org.allbinary.game.input.mapping.PersistentInputMapping_Package;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.graphics.color.BasicColor_Package_References;
 with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.game.paint.help.HelpPaintable_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
 
 package body org.allbinary.game.paint.help.BasicInputMappingHelpPaintable_Package is
 
@@ -136,7 +140,7 @@ package body org.allbinary.game.paint.help.BasicInputMappingHelpPaintable_Packag
             stringMaker.delete (0, stringMaker.length);
             keyInfo (index) := stringMaker.append (gameInputMapping.getName).append (EQUAL).append (BasicInputMappingHelpPaintable'Class (This).get (list)).toString;
         end loop;
-        HelpPaintable (This).setInputInfoP (keyInfo);
+        HelpPaintable_Package.HelpPaintable (This).setInputInfoP (keyInfo);
    end update;
 
    function get (This : in out BasicInputMappingHelpPaintable; keyList_Param : access BasicArrayList_Package.BasicArrayList'Class) return Unbounded_String is

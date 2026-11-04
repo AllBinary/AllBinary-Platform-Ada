@@ -16,6 +16,7 @@
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.business.user.UserFactoryInterface_Package; use org.allbinary.business.user.UserFactoryInterface_Package;
 with org.allbinary.business.user.UserInterface_Package; use org.allbinary.business.user.UserInterface_Package;
+with org.allbinary.business.user.UserInterface_Package_References;
 with org.allbinary.business.user.modules.customer.subscriber.SubscriberUser_Package; use org.allbinary.business.user.modules.customer.subscriber.SubscriberUser_Package;
 with org.allbinary.business.user.modules.customer.subscriber.SubscriberUser_Package;
 with org.allbinary.business.user.subscription.Subscription_Package;

@@ -14,10 +14,11 @@
 
 
 with javax.microedition.khronos.opengles.GL10_Package; use javax.microedition.khronos.opengles.GL10_Package;
+with javax.microedition.khronos.opengles.GL10_Package_References;
 with org.allbinary.graphics.opengles.shader.ShaderComposite_Package; use org.allbinary.graphics.opengles.shader.ShaderComposite_Package;
+with org.allbinary.graphics.opengles.shader.ShaderComposite_Package_References;
 with org.allbinary.graphics.opengles.shader.CompositeShaderUpdater_Package;
 with org.allbinary.graphics.opengles.shader.ModelViewProjection_Package;
-with org.allbinary.graphics.opengles.shader.OpenGLObject3dProcessor_Package;
 with org.allbinary.graphics.opengles.OpenGLProcessor_Package;
 with org.allbinary.graphics.opengles.renderer.RendererStrings_Package;
 with org.allbinary.graphics.opengles.shader.Shader_Package;

@@ -17,10 +17,12 @@ with java.util.Calendar_Package; use java.util.Calendar_Package;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 with java.util.Random_Package; use java.util.Random_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.business.context.modules.storefront.StoreFrontData_Package; use org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
 with org.allbinary.business.context.modules.storefront.StoreFrontFactory_Package; use org.allbinary.business.context.modules.storefront.StoreFrontFactory_Package;
 with org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package; use org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
+with org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package_References;
 with org.allbinary.business.entry_Id.EntryData_Package; use org.allbinary.business.entry_Id.EntryData_Package;
 with org.allbinary.business.init.db.HistoryDbInitInfo_Package; use org.allbinary.business.init.db.HistoryDbInitInfo_Package;
 with org.allbinary.business.user.UserData_Package; use org.allbinary.business.user.UserData_Package;
@@ -30,8 +32,10 @@ with org.allbinary.business.user.address.StreetAddress_Package; use org.allbinar
 with org.allbinary.business.user.commerce.inventory.basket.Basket_Package; use org.allbinary.business.user.commerce.inventory.basket.Basket_Package;
 with org.allbinary.business.user.commerce.inventory.basket.BasketInterface_Package; use org.allbinary.business.user.commerce.inventory.basket.BasketInterface_Package;
 with org.allbinary.business.user.commerce.inventory.order.Order_Package; use org.allbinary.business.user.commerce.inventory.order.Order_Package;
+with org.allbinary.business.user.commerce.inventory.order.Order_Package_References;
 with org.allbinary.business.user.commerce.inventory.order.OrderData_Package; use org.allbinary.business.user.commerce.inventory.order.OrderData_Package;
 with org.allbinary.business.user.commerce.inventory.order.OrderHistory_Package; use org.allbinary.business.user.commerce.inventory.order.OrderHistory_Package;
+with org.allbinary.business.user.commerce.inventory.order.OrderHistory_Package_References;
 with org.allbinary.business.user.commerce.inventory.order.OrderHistoryData_Package; use org.allbinary.business.user.commerce.inventory.order.OrderHistoryData_Package;
 with org.allbinary.business.user.commerce.money.Money_Package; use org.allbinary.business.user.commerce.money.Money_Package;
 with org.allbinary.business.user.commerce.money.payment.PaymentData_Package; use org.allbinary.business.user.commerce.money.payment.PaymentData_Package;
@@ -47,14 +51,13 @@ with org.allbinary.data.tables.user.address.shipping.ShippingAddressesEntity_Pac
 with org.allbinary.data.tables.user.commerce.money.payment.PaymentEntity_Package; use org.allbinary.data.tables.user.commerce.money.payment.PaymentEntity_Package;
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.communication.sql.AbSqlBean_Package; use org.allbinary.logic.communication.sql.AbSqlBean_Package;
 with org.allbinary.logic.control.crypt.SuperCrypt_Package; use org.allbinary.logic.control.crypt.SuperCrypt_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package; use org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
 with org.allbinary.logic.system.security.licensing.ServiceClientInformationInterfaceFactory_Package; use org.allbinary.logic.system.security.licensing.ServiceClientInformationInterfaceFactory_Package;
-with org.allbinary.data.tables.user.commerce.inventory.order.OrderHistoryEntityInterface_Package;
-with org.allbinary.data.generator.OrderHistoryIdGenerator_Package;
 
 package body org.allbinary.data.tables.user.commerce.inventory.order.OrderHistoryEntity_Package is
 
@@ -291,7 +294,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.order.OrderHistor
       values : constant BasicArrayList_Access := BasicArrayList_Access (values_Param);
    begin
         begin
-            AbSqlBean (This).insert (values);
+            AbSqlBean_Package.AbSqlBean (This).insert (values);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
                 This.logUtil.putF (This.commonStrings.SUCCESS, OrderHistoryEntity_Access'(This'Unchecked_Access), INSERT);
             end if;
@@ -322,7 +325,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.order.OrderHistor
             elsif (Java_Compare_To (status, OrderHistoryData_Package.SHIPPED)) = (0) then
                 updateHashMap.put (OrderHistoryData_Package.SHIPPEDDATE, Java_Box (time));
             end if;
-            AbSqlBean (This).updateWhere (OrderData_Package.ID, orderId, updateHashMap);
+            AbSqlBean_Package.AbSqlBean (This).updateWhere (OrderData_Package.ID, orderId, updateHashMap);
         exception
             when Java_Occurrence : others =>
                 declare
@@ -346,7 +349,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.order.OrderHistor
             updateHashMap := StdUtil_Package.getInstance.createHashMap;
             updateHashMap.put (PaymentData_Package.METHOD, Java_Box (paymentMethod));
             updateHashMap.put (OrderHistoryData_Package.TRANSDATE, Java_Box (time));
-            AbSqlBean (This).updateWhere (OrderData_Package.ID, orderId, updateHashMap);
+            AbSqlBean_Package.AbSqlBean (This).updateWhere (OrderData_Package.ID, orderId, updateHashMap);
         exception
             when Java_Occurrence : others =>
                 declare
@@ -373,7 +376,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.order.OrderHistor
         orderReviewVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
         whereHashMap := StdUtil_Package.getInstance.createHashMap;
         whereHashMap.put (StoreFrontData_Package.getInstance.NAME, Java_Box (storeFrontInterface.getName));
-        orderHashMapVector := AbSqlBean (This).getRows (whereHashMap);
+        orderHashMapVector := AbSqlBean_Package.AbSqlBean (This).getRows (whereHashMap);
         size := orderHashMapVector.size;
         for i in 0 .. (size) - 1 loop
             orderReviewHashMap := HashMap_Access (orderHashMapVector.get (i));
@@ -396,7 +399,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.order.OrderHistor
         orderReviewVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
         whereHashMap := StdUtil_Package.getInstance.createHashMap;
         whereHashMap.put (UserData_Package.USERNAME, Java_Box (userName));
-        orderHashMapVector := AbSqlBean (This).getRows (whereHashMap);
+        orderHashMapVector := AbSqlBean_Package.AbSqlBean (This).getRows (whereHashMap);
         size := orderHashMapVector.size;
         for index in 0 .. (size) - 1 loop
             orderReviewHashMap := HashMap_Access (orderHashMapVector.get (index));
@@ -419,7 +422,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.order.OrderHistor
         orderReviewVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
         whereHashMap := StdUtil_Package.getInstance.createHashMap;
         whereHashMap.put (OrderHistoryData_Package.STATUS, Java_Box (status));
-        orderHashMapVector := AbSqlBean (This).getRowsWhereBetween (whereHashMap, OrderHistoryData_Package.ORDERDATE, fromDate, toDate);
+        orderHashMapVector := AbSqlBean_Package.AbSqlBean (This).getRowsWhereBetween (whereHashMap, OrderHistoryData_Package.ORDERDATE, fromDate, toDate);
         size := orderHashMapVector.size;
         for index in 0 .. (size) - 1 loop
             orderReviewHashMap := HashMap_Access (orderHashMapVector.get (index));
@@ -439,7 +442,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.order.OrderHistor
       index : Integer;
    begin
         orderReviewVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
-        orderHashMapVector := AbSqlBean (This).getRowsWhereBetween (OrderHistoryData_Package.ORDERDATE, fromDate, toDate);
+        orderHashMapVector := AbSqlBean_Package.AbSqlBean (This).getRowsWhereBetween (OrderHistoryData_Package.ORDERDATE, fromDate, toDate);
         size := orderHashMapVector.size;
         for index in 0 .. (size) - 1 loop
             orderReviewHashMap := HashMap_Access (orderHashMapVector.get (index));
@@ -457,7 +460,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.order.OrderHistor
    begin
         whereHashMap := StdUtil_Package.getInstance.createHashMap;
         whereHashMap.put (OrderData_Package.ID, Java_Box (id));
-        orderReviewHashMap := AbSqlBean (This).getRow (whereHashMap);
+        orderReviewHashMap := AbSqlBean_Package.AbSqlBean (This).getRow (whereHashMap);
         if (orderReviewHashMap) /= (null) then
             orderHistory := OrderHistory_Package.Create (Basket_Package.Create, orderReviewHashMap);
             return orderHistory;
@@ -557,12 +560,12 @@ package body org.allbinary.data.tables.user.commerce.inventory.order.OrderHistor
 
    function createTable (This : in out OrderHistoryEntity) return Unbounded_String is
    begin
-        return AbSqlBean (This).createTable (OrderHistoryEntity'Class (This).createTableStatement);
+        return AbSqlBean_Package.AbSqlBean (This).createTable (OrderHistoryEntity'Class (This).createTableStatement);
    end createTable;
 
    function dropTable (This : in out OrderHistoryEntity) return Unbounded_String is
    begin
-        return AbSqlBean (This).dropTable;
+        return AbSqlBean_Package.AbSqlBean (This).dropTable;
    end dropTable;
 
    --  throws Exception

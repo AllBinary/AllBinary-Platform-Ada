@@ -14,6 +14,7 @@
 
 
 with org.allbinary.logic.math.BasicDecimal_Package; use org.allbinary.logic.math.BasicDecimal_Package;
+with org.allbinary.logic.math.BasicDecimal_Package_References;
 with org.allbinary.logic.math.vector.YAxisMathVectorUtil_Package; use org.allbinary.logic.math.vector.YAxisMathVectorUtil_Package;
 
 package body org.allbinary.logic.math.vector.XAxisMathVector_Package is

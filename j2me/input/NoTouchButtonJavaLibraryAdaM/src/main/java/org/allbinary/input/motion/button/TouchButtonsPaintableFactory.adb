@@ -14,7 +14,9 @@
 
 
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.graphics.color.BasicColor_Package_References;
 with org.allbinary.graphics.paint.Paintable_Package; use org.allbinary.graphics.paint.Paintable_Package;
+with org.allbinary.graphics.paint.Paintable_Package_References;
 
 package body org.allbinary.input.motion.button.TouchButtonsPaintableFactory_Package is
 

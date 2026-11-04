@@ -14,11 +14,13 @@
 
 
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
 with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
+with javax.microedition.lcdui.Image_Package_References;
 with org.allbinary.animation.AnimationBehavior_Package; use org.allbinary.animation.AnimationBehavior_Package;
+with org.allbinary.animation.AnimationBehavior_Package_References;
 with org.allbinary.animation.image.ImageAnimation_Package;
 with org.allbinary.animation.image.ImageSegmentAnimation_Package;
-with org.allbinary.animation.image.LeftToRightImageAnimation_Package;
 
 package body org.allbinary.animation.image.AdjustedLeftToRightImageAnimation_Package is
 
@@ -86,7 +88,7 @@ package body org.allbinary.animation.image.AdjustedLeftToRightImageAnimation_Pac
    procedure paintXY (This : in out AdjustedLeftToRightImageAnimation; graphics_Param : access Graphics_Package.Graphics'Class; x : Integer; y : Integer) is
       graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
-        LeftToRightImageAnimation (This).paintXY (graphics, (x) + (This.dx), (y) + (This.dy));
+        LeftToRightImageAnimation_Package.LeftToRightImageAnimation (This).paintXY (graphics, (x) + (This.dx), (y) + (This.dy));
    end paintXY;
 
 end org.allbinary.animation.image.AdjustedLeftToRightImageAnimation_Package;

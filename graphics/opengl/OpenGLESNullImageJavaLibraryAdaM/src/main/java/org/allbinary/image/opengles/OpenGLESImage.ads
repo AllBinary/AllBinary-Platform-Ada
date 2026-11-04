@@ -189,7 +189,7 @@ package org.allbinary.image.opengles.OpenGLESImage_Package is
    end record;
    NULL_OPENGL_IMAGE : OpenGLESImage_Access;
    texture2dList : BasicArrayList_Access;
-   TYPE_Id : Integer;
+   TYPE_Id : constant Integer := 4;
 
    procedure Initialize (This : in out OpenGLESImage'Class; image_Param : access Image_Package.Image'Class; bitmapFactory_Param : access PlatformBitmapBaseFactory_Package.PlatformBitmapBaseFactory'Class; textureFactory_Param : access PlatformTextureBaseFactory_Package.PlatformTextureBaseFactory'Class);
    function Create (image_Param : access Image_Package.Image'Class; bitmapFactory_Param : access PlatformBitmapBaseFactory_Package.PlatformBitmapBaseFactory'Class; textureFactory_Param : access PlatformTextureBaseFactory_Package.PlatformTextureBaseFactory'Class) return OpenGLESImage_Access;

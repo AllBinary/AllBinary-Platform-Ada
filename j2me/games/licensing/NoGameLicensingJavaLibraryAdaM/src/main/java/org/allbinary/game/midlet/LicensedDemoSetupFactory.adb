@@ -14,6 +14,7 @@
 
 
 with org.allbinary.game.midlet.DemoSetup_Package; use org.allbinary.game.midlet.DemoSetup_Package;
+with org.allbinary.game.midlet.DemoSetup_Package_References;
 with org.allbinary.game.midlet.DemoSetup_Package;
 
 package body org.allbinary.game.midlet.LicensedDemoSetupFactory_Package is

@@ -18,8 +18,11 @@ with org.allbinary.data.tree.dom.DomNodeHelper_Package; use org.allbinary.data.t
 with org.allbinary.data.tree.dom.DomNodeInterface_Package; use org.allbinary.data.tree.dom.DomNodeInterface_Package;
 with org.allbinary.data.tree.dom.ModDomHelper_Package; use org.allbinary.data.tree.dom.ModDomHelper_Package;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
+with org.w3c.dom.Document_Package_References;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
+with org.w3c.dom.Node_Package_References;
 with org.allbinary.business.time.created.TimeCreated_Package; use org.allbinary.business.time.created.TimeCreated_Package;
+with org.allbinary.business.time.created.TimeCreated_Package_References;
 with org.allbinary.business.time.Time_Package;
 with org.allbinary.business.time.created.TimeCreated_Package;
 

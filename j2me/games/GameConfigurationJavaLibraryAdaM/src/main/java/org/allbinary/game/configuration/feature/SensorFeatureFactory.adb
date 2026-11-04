@@ -14,6 +14,7 @@
 
 
 with org.allbinary.game.configuration.feature.SensorFeature_Package; use org.allbinary.game.configuration.feature.SensorFeature_Package;
+with org.allbinary.game.configuration.feature.SensorFeature_Package_References;
 with org.allbinary.game.configuration.feature.Feature_Package;
 with org.allbinary.game.configuration.feature.SensorFeature_Package;
 

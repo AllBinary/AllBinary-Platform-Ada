@@ -13,11 +13,16 @@
 --  Generated Code Do Not Modify
 
 
+with admin.taghelpers.TagHelperFactoryInterface_Package; use admin.taghelpers.TagHelperFactoryInterface_Package;
+with admin.taghelpers.TagHelperFactoryInterface_Package_References;
 with org.allbinary.business.context.modules.storefront.StoreFrontData_Package; use org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
 with org.allbinary.logic.communication.http.request.AbResponseHandler_Package; use org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.io.OutputTypeData_Package; use org.allbinary.logic.io.OutputTypeData_Package;
 with org.allbinary.logic.visual.transform.info.TransformInfoData_Package; use org.allbinary.logic.visual.transform.info.TransformInfoData_Package;
 with taghelpers.transform.info.TransformInfoRequestHelperFactory_Package; use taghelpers.transform.info.TransformInfoRequestHelperFactory_Package;
+with tags.ModifyTag_Package; use tags.ModifyTag_Package;
 
 package body tags.transform.info.TransformInfoTag_Package is
 
@@ -26,6 +31,26 @@ package body tags.transform.info.TransformInfoTag_Package is
    package OutputTypeData_Package renames Standard.org.allbinary.logic.io.OutputTypeData_Package;
    package TransformInfoData_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoData_Package;
    package TransformInfoRequestHelperFactory_Package renames Standard.taghelpers.transform.info.TransformInfoRequestHelperFactory_Package;
+   subtype TagHelperFactoryInterface_Access is admin.taghelpers.TagHelperFactoryInterface_Package_References.TagHelperFactoryInterface_Access;
+   function "=" (Left, Right : TagHelperFactoryInterface_Access) return Boolean renames admin.taghelpers.TagHelperFactoryInterface_Package_References."=";
+   subtype TagHelperFactoryInterface_Access_Array is admin.taghelpers.TagHelperFactoryInterface_Package_References.TagHelperFactoryInterface_Access_Array;
+   function "=" (Left, Right : TagHelperFactoryInterface_Access_Array) return Boolean renames admin.taghelpers.TagHelperFactoryInterface_Package_References."=";
+   subtype TagHelperFactoryInterface_Access_Array_Access is admin.taghelpers.TagHelperFactoryInterface_Package_References.TagHelperFactoryInterface_Access_Array_Access;
+   function "=" (Left, Right : TagHelperFactoryInterface_Access_Array_Access) return Boolean renames admin.taghelpers.TagHelperFactoryInterface_Package_References."=";
+   subtype TagHelperFactoryInterface_Access_Array_Access_Array is admin.taghelpers.TagHelperFactoryInterface_Package_References.TagHelperFactoryInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : TagHelperFactoryInterface_Access_Array_Access_Array) return Boolean renames admin.taghelpers.TagHelperFactoryInterface_Package_References."=";
+   subtype TagHelperFactoryInterface_Access_Array_Access_Array_Access is admin.taghelpers.TagHelperFactoryInterface_Package_References.TagHelperFactoryInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : TagHelperFactoryInterface_Access_Array_Access_Array_Access) return Boolean renames admin.taghelpers.TagHelperFactoryInterface_Package_References."=";
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   function "=" (Left, Right : LogUtil_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
    procedure Initialize_Fields (This : in out TransformInfoTag'Class) is
    begin
       null;
@@ -154,7 +179,7 @@ package body tags.transform.info.TransformInfoTag_Package is
    function doStartTag (This : in out TransformInfoTag) return Integer is
    begin
         begin
-            return ModifyTag (This).doStartTag;
+            return ModifyTag_Package.ModifyTag (This).doStartTag;
         exception
             when Java_Occurrence : others =>
                 declare

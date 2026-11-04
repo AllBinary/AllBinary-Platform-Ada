@@ -14,6 +14,7 @@
 
 
 with org.allbinary.input.gyro.AllBinaryOrientationSensor_Package; use org.allbinary.input.gyro.AllBinaryOrientationSensor_Package;
+with org.allbinary.input.gyro.AllBinaryOrientationSensor_Package_References;
 with org.allbinary.input.gyro.NoGyroSensor_Package; use org.allbinary.input.gyro.NoGyroSensor_Package;
 with org.allbinary.input.gyro.AllBinaryOrientationSensor_Package;
 with org.allbinary.game.input.CompleteMotionGestureInputEvent_Package;

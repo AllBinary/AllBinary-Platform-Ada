@@ -14,19 +14,19 @@
 
 
 with javax.microedition.lcdui.CommandListener_Package; use javax.microedition.lcdui.CommandListener_Package;
+with javax.microedition.lcdui.CommandListener_Package_References;
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
 with javax.microedition.lcdui.NullCommandListener_Package; use javax.microedition.lcdui.NullCommandListener_Package;
 with org.allbinary.game.init.BasicBuildGameInitializerFactory_Package; use org.allbinary.game.init.BasicBuildGameInitializerFactory_Package;
 with org.allbinary.game.layer.AllBinaryGameLayerManager_Package; use org.allbinary.game.layer.AllBinaryGameLayerManager_Package;
+with org.allbinary.game.layer.AllBinaryGameLayerManager_Package_References;
 with org.allbinary.game.score.NoHighScoresFactory_Package; use org.allbinary.game.score.NoHighScoresFactory_Package;
 with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
-with org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package;
 with org.allbinary.game.displayable.canvas.AllBinaryGameCanvasInterface_Package;
-with org.allbinary.game.layer.AllBinaryGameLayerManager_Package;
 with org.allbinary.game.displayable.canvas.BaseMenuBehavior_Package;
-with org.allbinary.game.init.BasicBuildGameInitializerFactory_Package;
 with org.allbinary.game.displayable.canvas.DemoGameBehavior_Package;
 with org.allbinary.game.displayable.canvas.DemoPaintableInterface_Package;
 with org.allbinary.game.displayable.canvas.GameCanvasPauseRunnable_Package;
@@ -120,7 +120,7 @@ package body org.allbinary.game.displayable.canvas.NullGameCanvas_Package is
    begin
         AllBinaryGameCanvas_Package.Initialize (This, NullCommandListener_Package.NULL_COMMAND_LISTENER, gameLayerManager, NoHighScoresFactory_Package.getInstance, BasicBuildGameInitializerFactory_Package.NULL_BASE_BUILD_GMAE_INITIALIZER_FACTORY, False);
         Initialize_Fields (This);
-        AllBinaryGameCanvas (This).setWait (1200);
+        AllBinaryGameCanvas_Package.AllBinaryGameCanvas (This).setWait (1200);
    end Initialize;
 
    function Create (gameLayerManager_Param : access AllBinaryGameLayerManager_Package.AllBinaryGameLayerManager'Class) return NullGameCanvas_Access is
@@ -205,7 +205,7 @@ begin
    null;
    instance := NullUtil_Package.getInstance.NULL_OBJECT;
    NO_GAME := To_Unbounded_String ("No Background Game");
-   TYPE_Id := 1;
+   
 
 end org.allbinary.game.displayable.canvas.NullGameCanvas_Package;
 

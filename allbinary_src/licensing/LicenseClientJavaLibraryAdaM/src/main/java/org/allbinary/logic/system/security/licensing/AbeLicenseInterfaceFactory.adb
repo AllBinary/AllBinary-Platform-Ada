@@ -15,13 +15,16 @@
 
 with java.util.Calendar_Package; use java.util.Calendar_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.system.security.licensing.client.AbeLicenseClient_Package; use org.allbinary.logic.system.security.licensing.client.AbeLicenseClient_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.string_Id.CommonStrings_Package_References;
 with org.allbinary.logic.system.security.licensing.AbeLicenseInterface_Package; use org.allbinary.logic.system.security.licensing.AbeLicenseInterface_Package;
+with org.allbinary.logic.system.security.licensing.AbeLicenseInterface_Package_References;
 with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package; use org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References;
 with org.allbinary.logic.system.security.licensing.AbeNoLicense_Package; use org.allbinary.logic.system.security.licensing.AbeNoLicense_Package;
 with org.allbinary.logic.system.security.licensing.AbeClientInformationData_Package; use org.allbinary.logic.system.security.licensing.AbeClientInformationData_Package;
-with org.allbinary.logic.system.security.licensing.client.AbeLicenseClient_Package;
 with org.allbinary.logic.system.security.licensing.AbeLicenseInterface_Package;
 with org.allbinary.logic.system.security.licensing.AbeNoLicense_Package;
 with org.allbinary.logic.system.security.licensing.LicenseType_Package;

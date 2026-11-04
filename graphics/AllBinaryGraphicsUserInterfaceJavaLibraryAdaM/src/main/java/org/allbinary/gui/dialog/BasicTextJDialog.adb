@@ -15,6 +15,7 @@
 
 with org.allbinary.thread.ARunnable_Package; use org.allbinary.thread.ARunnable_Package;
 with org.allbinary.gui.dialog.CloseJDialogListenerInterface_Package; use org.allbinary.gui.dialog.CloseJDialogListenerInterface_Package;
+with org.allbinary.gui.dialog.CloseJDialogListenerInterface_Package_References;
 with org.allbinary.gui.dialog.CloseJDialogListenerInterface_Package;
 
 package body org.allbinary.gui.dialog.BasicTextJDialog_Package is

@@ -14,6 +14,7 @@
 
 
 with org.allbinary.game.layer.SensorAction_Package; use org.allbinary.game.layer.SensorAction_Package;
+with org.allbinary.game.layer.SensorAction_Package_References;
 with org.allbinary.game.layer.SensorAction_Package;
 
 package body org.allbinary.game.layer.SensorActionFactory_Package is

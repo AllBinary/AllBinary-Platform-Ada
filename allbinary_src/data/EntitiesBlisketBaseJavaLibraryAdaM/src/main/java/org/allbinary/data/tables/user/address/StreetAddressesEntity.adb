@@ -16,15 +16,18 @@
 with java.util.Calendar_Package; use java.util.Calendar_Package;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.business.entry_Id.EntryData_Package; use org.allbinary.business.entry_Id.EntryData_Package;
 with org.allbinary.business.init.db.UserDbInitInfo_Package; use org.allbinary.business.init.db.UserDbInitInfo_Package;
 with org.allbinary.business.user.UserData_Package; use org.allbinary.business.user.UserData_Package;
 with org.allbinary.business.user.address.StreetAddress_Package; use org.allbinary.business.user.address.StreetAddress_Package;
+with org.allbinary.business.user.address.StreetAddress_Package_References;
 with org.allbinary.business.user.address.StreetAddressData_Package; use org.allbinary.business.user.address.StreetAddressData_Package;
 with org.allbinary.data.tables.TableDataFactory_Package; use org.allbinary.data.tables.TableDataFactory_Package;
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.communication.sql.AbSqlBean_Package; use org.allbinary.logic.communication.sql.AbSqlBean_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
@@ -114,7 +117,7 @@ package body org.allbinary.data.tables.user.address.StreetAddressesEntity_Packag
             whereHashMap := StdUtil_Package.getInstance.createHashMap;
             whereHashMap.put (UserData_Package.USERNAME, Java_Box (This.userName));
             whereHashMap.put (StreetAddressData_Package.ID, To_Unbounded_String (Java_Image (index)));
-            AbSqlBean (This).deleteWhere (whereHashMap);
+            AbSqlBean_Package.AbSqlBean (This).deleteWhere (whereHashMap);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
                 This.logUtil.putF (This.commonStrings.SUCCESS, StreetAddressesEntity_Access'(This'Unchecked_Access), To_Unbounded_String ("remove"));
             end if;
@@ -156,7 +159,7 @@ package body org.allbinary.data.tables.user.address.StreetAddressesEntity_Packag
             calendar := Calendar_Package.getInstance;
             time := Java_New_String (calendar.getTimeInMillis.toString);
             values.add (time);
-            AbSqlBean (This).insert (values);
+            AbSqlBean_Package.AbSqlBean (This).insert (values);
             StreetAddressesEntity'Class (This).setDefault (StreetAddressesEntity'Class (This).getLastId);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
                 This.logUtil.putF (This.commonStrings.SUCCESS, StreetAddressesEntity_Access'(This'Unchecked_Access), To_Unbounded_String ("add"));
@@ -183,7 +186,7 @@ package body org.allbinary.data.tables.user.address.StreetAddressesEntity_Packag
             whereKeyValuePairs := StdUtil_Package.getInstance.createHashMap;
             whereKeyValuePairs.put (StreetAddressData_Package.ID, address.getId);
             whereKeyValuePairs.put (UserData_Package.USERNAME, Java_Box (This.userName));
-            AbSqlBean (This).updateWhere (whereKeyValuePairs, addressHashMap);
+            AbSqlBean_Package.AbSqlBean (This).updateWhere (whereKeyValuePairs, addressHashMap);
             StreetAddressesEntity'Class (This).setDefault (address.getId);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
                 This.logUtil.putF (This.commonStrings.SUCCESS, StreetAddressesEntity_Access'(This'Unchecked_Access), To_Unbounded_String ("update"));
@@ -202,7 +205,7 @@ package body org.allbinary.data.tables.user.address.StreetAddressesEntity_Packag
 
    function getLastId (This : in out StreetAddressesEntity) return Unbounded_String is
    begin
-        return AbSqlBean (This).getLargestIntegerInColumnWhere (StreetAddressData_Package.ID, UserData_Package.USERNAME, This.userName);
+        return AbSqlBean_Package.AbSqlBean (This).getLargestIntegerInColumnWhere (StreetAddressData_Package.ID, UserData_Package.USERNAME, This.userName);
    end getLastId;
 
    function get (This : in out StreetAddressesEntity) return BasicArrayList_Access is
@@ -218,7 +221,7 @@ package body org.allbinary.data.tables.user.address.StreetAddressesEntity_Packag
             streetAddressVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
             keyAndValue := StdUtil_Package.getInstance.createHashMap;
             keyAndValue.put (UserData_Package.USERNAME, Java_Box (This.userName));
-            addressList := AbSqlBean (This).getRows (keyAndValue);
+            addressList := AbSqlBean_Package.AbSqlBean (This).getRows (keyAndValue);
             size := addressList.size;
             for index in 0 .. (size) - 1 loop
                 addressHashMap := HashMap_Access (addressList.get (index));
@@ -249,7 +252,7 @@ package body org.allbinary.data.tables.user.address.StreetAddressesEntity_Packag
             keyAndValue := StdUtil_Package.getInstance.createHashMap;
             keyAndValue.put (UserData_Package.USERNAME, Java_Box (This.userName));
             keyAndValue.put (StreetAddressData_Package.ID, Java_Box (To_Unbounded_String (Java_Image (index))));
-            addressHashMap := AbSqlBean (This).getRow (keyAndValue);
+            addressHashMap := AbSqlBean_Package.AbSqlBean (This).getRow (keyAndValue);
             if (addressHashMap) /= (null) then
                 return StreetAddress_Package.Create (addressHashMap);
             else
@@ -278,7 +281,7 @@ package body org.allbinary.data.tables.user.address.StreetAddressesEntity_Packag
             updateKeyAndValue := StdUtil_Package.getInstance.createHashMap;
             updateKeyAndValue.put (StreetAddressData_Package.DEFAULT, StreetAddressData_Package.DEFAULT);
             updateKeyAndValue.put (UserData_Package.USERNAME, Java_Box (This.userName));
-            addressHashMap := AbSqlBean (This).getRow (updateKeyAndValue);
+            addressHashMap := AbSqlBean_Package.AbSqlBean (This).getRow (updateKeyAndValue);
             if (addressHashMap) /= (null) then
                 streetAddress := StreetAddress_Package.Create (addressHashMap);
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
@@ -317,11 +320,11 @@ package body org.allbinary.data.tables.user.address.StreetAddressesEntity_Packag
             if (streetAddress) /= (null) then
                 updateKeyAndValue.put (StreetAddressData_Package.DEFAULT, Java_Box (StringUtil_Package.getInstance.EMPTY_STRING));
                 whereKeyAndValue.put (StreetAddressData_Package.ID, streetAddress.getId);
-                AbSqlBean (This).updateWhere (whereKeyAndValue, updateKeyAndValue);
+                AbSqlBean_Package.AbSqlBean (This).updateWhere (whereKeyAndValue, updateKeyAndValue);
             end if;
             whereKeyAndValue.put (StreetAddressData_Package.ID, Java_Box (value));
             updateKeyAndValue.put (StreetAddressData_Package.DEFAULT, StreetAddressData_Package.DEFAULT);
-            AbSqlBean (This).updateWhere (whereKeyAndValue, updateKeyAndValue);
+            AbSqlBean_Package.AbSqlBean (This).updateWhere (whereKeyAndValue, updateKeyAndValue);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
                 This.logUtil.putF (This.commonStrings.SUCCESS, StreetAddressesEntity_Access'(This'Unchecked_Access), To_Unbounded_String ("setDefault"));
             end if;
@@ -352,12 +355,12 @@ package body org.allbinary.data.tables.user.address.StreetAddressesEntity_Packag
 
    function createTable (This : in out StreetAddressesEntity) return Unbounded_String is
    begin
-        return AbSqlBean (This).createTable (StreetAddressesEntity'Class (This).createTableStatement);
+        return AbSqlBean_Package.AbSqlBean (This).createTable (StreetAddressesEntity'Class (This).createTableStatement);
    end createTable;
 
    function drop (This : in out StreetAddressesEntity) return Unbounded_String is
    begin
-        return AbSqlBean (This).dropTable;
+        return AbSqlBean_Package.AbSqlBean (This).dropTable;
    end drop;
 
    procedure get (This : in out StreetAddressesEntity; index : Integer) is

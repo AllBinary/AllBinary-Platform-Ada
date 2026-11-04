@@ -14,9 +14,8 @@
 
 
 with org.allbinary.game.configuration.GameConfiguration_Package; use org.allbinary.game.configuration.GameConfiguration_Package;
-with org.allbinary.game.configuration.event.BaseChangedGameFeatureListener_Package;
+with org.allbinary.game.configuration.GameConfiguration_Package_References;
 with org.allbinary.game.configuration.feature.Feature_Package;
-with org.allbinary.game.configuration.GameConfiguration_Package;
 with org.allbinary.game.configuration.event.GameFeatureEvent_Package;
 with org.allbinary.game.configuration.event.GameFeatureListenerInterface_Package;
 with org.allbinary.game.configuration.feature.GameFeatureUtil_Package;

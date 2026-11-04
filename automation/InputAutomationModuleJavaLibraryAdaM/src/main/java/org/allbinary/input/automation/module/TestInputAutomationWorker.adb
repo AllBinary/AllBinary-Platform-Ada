@@ -14,11 +14,17 @@
 
 
 with org.allbinary.input.media.image.capture.ScreenCaptureImagesWorker_Package; use org.allbinary.input.media.image.capture.ScreenCaptureImagesWorker_Package;
+with org.allbinary.input.media.image.capture.ScreenCaptureImagesWorker_Package_References;
 with org.allbinary.media.image.comparison.ImageComparisonWorker_Package; use org.allbinary.media.image.comparison.ImageComparisonWorker_Package;
+with org.allbinary.media.image.comparison.ImageComparisonWorker_Package_References;
 with org.allbinary.media.image.comparison.SaveImageComparisonWorker_Package; use org.allbinary.media.image.comparison.SaveImageComparisonWorker_Package;
+with org.allbinary.media.image.comparison.SaveImageComparisonWorker_Package_References;
 with org.allbinary.media.image.comparison.motion.MotionRectanglesWorker_Package; use org.allbinary.media.image.comparison.motion.MotionRectanglesWorker_Package;
+with org.allbinary.media.image.comparison.motion.MotionRectanglesWorker_Package_References;
 with org.allbinary.media.image.comparison.motion.SaveMotionRectanglesResultsWorker_Package; use org.allbinary.media.image.comparison.motion.SaveMotionRectanglesResultsWorker_Package;
+with org.allbinary.media.image.comparison.motion.SaveMotionRectanglesResultsWorker_Package_References;
 with org.allbinary.media.image.comparison.motion.TestInputForMotionRectanglesResultsWorker_Package; use org.allbinary.media.image.comparison.motion.TestInputForMotionRectanglesResultsWorker_Package;
+with org.allbinary.media.image.comparison.motion.TestInputForMotionRectanglesResultsWorker_Package_References;
 
 package body org.allbinary.input.automation.module.TestInputAutomationWorker_Package is
 

@@ -14,15 +14,16 @@
 
 
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.media.image.comparison.ImageComparisonResult_Package; use org.allbinary.media.image.comparison.ImageComparisonResult_Package;
+with org.allbinary.media.image.comparison.ImageComparisonResult_Package_References;
 with org.allbinary.media.image.comparison.pixel.PixelDelta_Package; use org.allbinary.media.image.comparison.pixel.PixelDelta_Package;
+with org.allbinary.media.image.comparison.pixel.PixelDelta_Package_References;
 with org.allbinary.media.image.comparison.motion.MotionRectangle_Package; use org.allbinary.media.image.comparison.motion.MotionRectangle_Package;
+with org.allbinary.media.image.comparison.motion.MotionRectangle_Package_References;
 with org.allbinary.media.image.comparison.motion.Rectangle_Package; use org.allbinary.media.image.comparison.motion.Rectangle_Package;
 with org.allbinary.media.image.comparison.color.ColorDelta_Package;
-with org.allbinary.media.image.comparison.ImageComparisonResult_Package;
 with org.allbinary.media.image.comparison.motion.MotionRectangle_Package;
-with org.allbinary.media.image.comparison.motion.MotionRectangles_Package;
-with org.allbinary.media.image.comparison.pixel.PixelDelta_Package;
 
 package body org.allbinary.media.image.comparison.motion.AllMotionRectangles_Package is
 

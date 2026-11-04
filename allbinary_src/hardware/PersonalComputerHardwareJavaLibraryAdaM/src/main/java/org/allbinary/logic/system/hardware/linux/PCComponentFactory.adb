@@ -14,10 +14,13 @@
 
 
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
 with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
 with org.allbinary.logic.system.hardware.components.ComponentFactory_Package; use org.allbinary.logic.system.hardware.components.ComponentFactory_Package;
+with org.allbinary.logic.system.hardware.components.ComponentFactory_Package_References;
 with org.allbinary.logic.system.hardware.components.interfaces.HardwareComponentInterface_Package; use org.allbinary.logic.system.hardware.components.interfaces.HardwareComponentInterface_Package;
+with org.allbinary.logic.system.hardware.components.interfaces.HardwareComponentInterface_Package_References;
 with org.allbinary.logic.system.hardware.components.linux.Bridge_Package; use org.allbinary.logic.system.hardware.components.linux.Bridge_Package;
 with org.allbinary.logic.system.hardware.components.linux.Ethernet_Package; use org.allbinary.logic.system.hardware.components.linux.Ethernet_Package;
 with org.allbinary.logic.system.hardware.components.linux.HardDriveController_Package; use org.allbinary.logic.system.hardware.components.linux.HardDriveController_Package;
@@ -27,14 +30,6 @@ with org.allbinary.logic.system.hardware.components.linux.Unknown_Package; use o
 with org.allbinary.logic.system.hardware.components.linux.Usb_Package; use org.allbinary.logic.system.hardware.components.linux.Usb_Package;
 with org.allbinary.logic.system.hardware.components.linux.Video_Package; use org.allbinary.logic.system.hardware.components.linux.Video_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
-with org.allbinary.logic.system.hardware.components.linux.Bridge_Package;
-with org.allbinary.logic.system.hardware.components.linux.Ethernet_Package;
-with org.allbinary.logic.system.hardware.components.linux.HardDriveController_Package;
-with org.allbinary.logic.system.hardware.components.linux.Media_Package;
-with org.allbinary.logic.system.hardware.components.linux.PCI_Package;
-with org.allbinary.logic.system.hardware.components.linux.Unknown_Package;
-with org.allbinary.logic.system.hardware.components.linux.Usb_Package;
-with org.allbinary.logic.system.hardware.components.linux.Video_Package;
 
 package body org.allbinary.logic.system.hardware.linux.PCComponentFactory_Package is
 

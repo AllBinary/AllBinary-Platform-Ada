@@ -3,16 +3,23 @@
 
 with android.app.Service_Package; use android.app.Service_Package;
 with android.content.Intent_Package; use android.content.Intent_Package;
+with android.content.Intent_Package_References;
 with android.media.MediaPlayer_Package; use android.media.MediaPlayer_Package;
+with android.media.MediaPlayer_Package_References;
 with android.os.IBinder_Package; use android.os.IBinder_Package;
+with android.os.IBinder_Package_References;
 with org.allbinary.android.NullAndroidCanvas_Package; use org.allbinary.android.NullAndroidCanvas_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
 with org.allbinary.string_Id.CommonStateStrings_Package; use org.allbinary.string_Id.CommonStateStrings_Package;
+with org.allbinary.string_Id.CommonStateStrings_Package_References;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.string_Id.CommonStrings_Package_References;
 with org.allbinary.thread.ARunnable_Package; use org.allbinary.thread.ARunnable_Package;
 with org.allbinary.media.audio.music.MusicStrings_Package; use org.allbinary.media.audio.music.MusicStrings_Package;
 with java.lang.Thread_Package; use java.lang.Thread_Package;
+with org.allbinary.media.audio.music.MusicRunnable_Package; use org.allbinary.media.audio.music.MusicRunnable_Package;
 with java.lang.Runnable_Package; use java.lang.Runnable_Package;
 with org.allbinary.media.audio.music.MusicStrings_Package;
 

@@ -15,7 +15,6 @@
 
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.logic.communication.ftp.configuration.FtpConfigurationData_Package; use org.allbinary.logic.communication.ftp.configuration.FtpConfigurationData_Package;
-with org.allbinary.logic.communication.ftp.configuration.FtpConfigurationInterface_Package;
 
 package body org.allbinary.logic.communication.ftp.configuration.FtpConfiguration_Package is
 

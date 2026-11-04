@@ -15,14 +15,19 @@
 
 with java.util.Enumeration_Package; use java.util.Enumeration_Package;
 with org.allbinary.graphics.GPoint_Package; use org.allbinary.graphics.GPoint_Package;
+with org.allbinary.graphics.GPoint_Package_References;
 with org.allbinary.graphics.PointFactory_Package; use org.allbinary.graphics.PointFactory_Package;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
 with org.allbinary.layer.LayerInterfaceFactory_Package; use org.allbinary.layer.LayerInterfaceFactory_Package;
 with org.allbinary.layer.LayerInterfaceVisitor_Package; use org.allbinary.layer.LayerInterfaceVisitor_Package;
+with org.allbinary.layer.LayerInterfaceVisitor_Package_References;
 with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.util.EnumerationUtil_Package; use org.allbinary.util.EnumerationUtil_Package;
+with org.allbinary.util.EnumerationUtil_Package_References;
 with org.allbinary.game.layer.LayerPlacementInterface_Package; use org.allbinary.game.layer.LayerPlacementInterface_Package;
+with org.allbinary.game.layer.LayerPlacementInterface_Package_References;
 with org.allbinary.game.layer.LayerPlacementType_Package; use org.allbinary.game.layer.LayerPlacementType_Package;
 with org.allbinary.game.layer.LayerPlacementTypeFactory_Package; use org.allbinary.game.layer.LayerPlacementTypeFactory_Package;
 with org.allbinary.game.layer.LayerPlacementInterface_Package;

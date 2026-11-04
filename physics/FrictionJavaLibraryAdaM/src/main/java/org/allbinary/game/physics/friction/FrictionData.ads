@@ -50,7 +50,7 @@ package org.allbinary.game.physics.friction.FrictionData_Package is
    function "=" (Left, Right : FrictionData_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.physics.friction.FrictionData_Package_References."=";
 
    type FrictionData is new Java_Object with null record;
-   FRICTION_DENOMINATOR : Integer;
+   FRICTION_DENOMINATOR : constant Integer := 100;
 
    procedure Initialize (This : in out FrictionData'Class);
    function Create return FrictionData_Access;

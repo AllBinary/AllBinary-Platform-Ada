@@ -14,12 +14,14 @@
 
 
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
 with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
+with javax.microedition.lcdui.Image_Package_References;
 with javax.microedition.lcdui.game.Sprite_Package; use javax.microedition.lcdui.game.Sprite_Package;
 with org.allbinary.animation.AnimationBehavior_Package; use org.allbinary.animation.AnimationBehavior_Package;
+with org.allbinary.animation.AnimationBehavior_Package_References;
 with org.allbinary.graphics.Anchor_Package; use org.allbinary.graphics.Anchor_Package;
 with org.allbinary.animation.image.ImageAnimation_Package;
-with org.allbinary.animation.image.ImageSegmentAnimation_Package;
 
 package body org.allbinary.animation.image.LeftToRightImageAnimation_Package is
 
@@ -85,9 +87,9 @@ package body org.allbinary.animation.image.LeftToRightImageAnimation_Package is
    procedure nextFrame (This : in out LeftToRightImageAnimation) is
    begin
         if (LeftToRightImageAnimation'Class (This).getSequence (0)) = (-(1)) then
-            ImageSegmentAnimation (This).previousFrame;
+            ImageSegmentAnimation_Package.ImageSegmentAnimation (This).previousFrame;
         else
-            ImageSegmentAnimation (This).nextFrame;
+            ImageSegmentAnimation_Package.ImageSegmentAnimation (This).nextFrame;
         end if;
         LeftToRightImageAnimation'Class (This).update;
    end nextFrame;
@@ -95,16 +97,16 @@ package body org.allbinary.animation.image.LeftToRightImageAnimation_Package is
    procedure previousFrame (This : in out LeftToRightImageAnimation) is
    begin
         if (LeftToRightImageAnimation'Class (This).getSequence (0)) = (-(1)) then
-            ImageSegmentAnimation (This).nextFrame;
+            ImageSegmentAnimation_Package.ImageSegmentAnimation (This).nextFrame;
         else
-            ImageSegmentAnimation (This).previousFrame;
+            ImageSegmentAnimation_Package.ImageSegmentAnimation (This).previousFrame;
         end if;
         LeftToRightImageAnimation'Class (This).update;
    end previousFrame;
 
    procedure setFrame (This : in out LeftToRightImageAnimation; index : Integer) is
    begin
-        ImageSegmentAnimation (This).setFrame (index);
+        ImageSegmentAnimation_Package.ImageSegmentAnimation (This).setFrame (index);
         LeftToRightImageAnimation'Class (This).update;
    end setFrame;
 

@@ -14,11 +14,15 @@
 
 
 with org.allbinary.direction.Direction_Package; use org.allbinary.direction.Direction_Package;
+with org.allbinary.direction.Direction_Package_References;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.graphics.color.BasicColor_Package_References;
 with org.allbinary.math.Angle_Package; use org.allbinary.math.Angle_Package;
+with org.allbinary.math.Angle_Package_References;
 with org.allbinary.math.AngleFactory_Package; use org.allbinary.math.AngleFactory_Package;
 with org.allbinary.math.AngleInfo_Package; use org.allbinary.math.AngleInfo_Package;
 with org.allbinary.animation.AnimationBehavior_Package; use org.allbinary.animation.AnimationBehavior_Package;
+with org.allbinary.animation.AnimationBehavior_Package_References;
 
 package body org.allbinary.animation.VectorRotationAnimation_Package is
 
@@ -101,7 +105,7 @@ package body org.allbinary.animation.VectorRotationAnimation_Package is
 
    procedure setFrame (This : in out VectorRotationAnimation; index : Integer) is
    begin
-        VectorBaseRotationAnimation (This).setFrame (index);
+        VectorBaseRotationAnimation_Package.VectorBaseRotationAnimation (This).setFrame (index);
         This.angleInfo.adjustAngle (VectorRotationAnimation'Class (This).getFrame);
    end setFrame;
 

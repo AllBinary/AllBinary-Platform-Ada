@@ -14,43 +14,52 @@
 
 
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.dom.DomHelper_Package; use org.allbinary.dom.DomHelper_Package;
 with org.allbinary.game.input.GameInputStrings_Package; use org.allbinary.game.input.GameInputStrings_Package;
+with org.allbinary.game.input.GameInputStrings_Package_References;
 with org.allbinary.graphics.GPoint_Package; use org.allbinary.graphics.GPoint_Package;
+with org.allbinary.graphics.GPoint_Package_References;
 with org.allbinary.graphics.PointFactory_Package; use org.allbinary.graphics.PointFactory_Package;
 with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
 with org.allbinary.graphics.j2me.StatusFactory_Package; use org.allbinary.graphics.j2me.StatusFactory_Package;
 with org.allbinary.graphics.j2me.workarea.canvas.CanvasDom_Package; use org.allbinary.graphics.j2me.workarea.canvas.CanvasDom_Package;
+with org.allbinary.graphics.j2me.workarea.canvas.CanvasDom_Package_References;
 with org.allbinary.graphics.j2me.workarea.canvas.IntegerDimension_Package; use org.allbinary.graphics.j2me.workarea.canvas.IntegerDimension_Package;
+with org.allbinary.graphics.j2me.workarea.canvas.IntegerDimension_Package_References;
 with org.allbinary.graphics.pipeline.BasicGraphicsPipeline_Package; use org.allbinary.graphics.pipeline.BasicGraphicsPipeline_Package;
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.math.PositionStrings_Package; use org.allbinary.math.PositionStrings_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.string_Id.CommonStrings_Package_References;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
+with org.w3c.dom.Node_Package_References;
 with org.w3c.dom.NodeList_Package; use org.w3c.dom.NodeList_Package;
+with org.w3c.dom.NodeList_Package_References;
 with org.allbinary.graphics.j2me.workarea.tools.Color_Package; use org.allbinary.graphics.j2me.workarea.tools.Color_Package;
+with org.allbinary.graphics.j2me.workarea.tools.Color_Package_References;
 with org.allbinary.graphics.j2me.workarea.tools.Points_Package; use org.allbinary.graphics.j2me.workarea.tools.Points_Package;
+with org.allbinary.graphics.j2me.workarea.tools.Points_Package_References;
 with org.allbinary.graphics.j2me.workarea.tools.PointsDomUtil_Package; use org.allbinary.graphics.j2me.workarea.tools.PointsDomUtil_Package;
 with org.allbinary.graphics.j2me.workarea.tools.Graphics2D_Package; use org.allbinary.graphics.j2me.workarea.tools.Graphics2D_Package;
 with org.allbinary.graphics.j2me.workarea.tools.BasicStroke_Package; use org.allbinary.graphics.j2me.workarea.tools.BasicStroke_Package;
 with org.allbinary.graphics.j2me.workarea.tools.PointsUtil_Package; use org.allbinary.graphics.j2me.workarea.tools.PointsUtil_Package;
 with org.allbinary.graphics.j2me.workarea.tools.Graphics_Package; use org.allbinary.graphics.j2me.workarea.tools.Graphics_Package;
-with org.allbinary.graphics.j2me.workarea.canvas.CanvasDom_Package;
+with org.allbinary.graphics.j2me.workarea.tools.Graphics_Package_References;
 with org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package;
 with org.allbinary.graphics.j2me.workarea.canvas.CanvasTreeLabel_Package;
-with org.allbinary.dom.DomHelper_Package;
-with org.allbinary.graphics.j2me.workarea.tools.GraphicItemInterface_Package;
 with org.allbinary.graphics.j2me.workarea.canvas.Grid_Package;
-with org.allbinary.graphics.j2me.workarea.canvas.IntegerDimension_Package;
 with org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEvent_Package;
 with org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEventListener_Package;
 with org.allbinary.graphics.j2me.workarea.tools.Points_Package;
 with org.allbinary.graphics.j2me.workarea.tools.PointsDomUtil_Package;
 with org.allbinary.graphics.j2me.workarea.tools.PointsInterface_Package;
 with org.allbinary.graphics.j2me.workarea.tools.PointsUtil_Package;
-with org.allbinary.graphics.j2me.StatusFactory_Package;
 with org.allbinary.graphics.j2me.workarea.WorkAreaJTreeJPanel_Package;
 
 package body org.allbinary.graphics.j2me.workarea.tools.LinesGraphicItem_Package is

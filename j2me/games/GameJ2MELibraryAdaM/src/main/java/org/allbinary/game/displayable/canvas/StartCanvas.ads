@@ -556,7 +556,7 @@ package org.allbinary.game.displayable.canvas.StartCanvas_Package is
       SET_STATE : Unbounded_String;
       baseGameStatistics : BaseGameStatistics_Access;
    end record;
-   id : Integer;
+   id : constant Integer := 0;
    BOT_GAME_STATS : Unbounded_String;
 
    procedure Initialize (This : in out StartCanvas'Class; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; commandListener_Param : access CommandListener_Package.CommandListener'Class; highScoresFactoryInterface_Param : access HighScoresFactoryInterface_Package.HighScoresFactoryInterface'Class; paintable_Param : access Paintable_Package.Paintable'Class; overlayPaintable_Param : access InitUpdatePaintable_Package.InitUpdatePaintable'Class; gameInitializationInterfaceFactoryInterface_Param : access BasicBuildGameInitializerFactory_Package.BasicBuildGameInitializerFactory'Class; isContinue : Boolean);

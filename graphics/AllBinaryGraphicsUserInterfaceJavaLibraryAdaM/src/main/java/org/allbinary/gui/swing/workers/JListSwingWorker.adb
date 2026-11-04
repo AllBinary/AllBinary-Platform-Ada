@@ -14,7 +14,9 @@
 
 
 with org.allbinary.gui.swing.workers.JList_Package; use org.allbinary.gui.swing.workers.JList_Package;
+with org.allbinary.gui.swing.workers.JList_Package_References;
 with org.allbinary.gui.swing.workers.ListModel_Package; use org.allbinary.gui.swing.workers.ListModel_Package;
+with org.allbinary.gui.swing.workers.ListModel_Package_References;
 
 package body org.allbinary.gui.swing.workers.JListSwingWorker_Package is
 

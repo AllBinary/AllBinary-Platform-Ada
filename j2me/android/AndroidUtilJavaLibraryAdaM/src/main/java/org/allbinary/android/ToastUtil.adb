@@ -2,11 +2,15 @@
 
 
 with android.content.Context_Package; use android.content.Context_Package;
+with android.content.Context_Package_References;
 with android.view.View_Package; use android.view.View_Package;
+with android.view.View_Package_References;
 with android.widget.Toast_Package; use android.widget.Toast_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with java.lang.Runnable_Package; use java.lang.Runnable_Package;
+with org.allbinary.android.MakeToast_Package; use org.allbinary.android.MakeToast_Package;
 
 package body org.allbinary.android.ToastUtil_Package is
 

@@ -14,6 +14,7 @@
 
 
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
 with org.allbinary.game.layer.WaypointBehaviorBase_Package; use org.allbinary.game.layer.WaypointBehaviorBase_Package;
@@ -28,7 +29,6 @@ with org.allbinary.game.layer.waypoint.WaypointBase_Package;
 with org.allbinary.game.layer.WaypointBehaviorBase_Package;
 with org.allbinary.game.layer.waypoint.WaypointLayerInterface_Package;
 with org.allbinary.game.layer.waypoint.WaypointLogHelper_Package;
-with org.allbinary.game.layer.WaypointPathRunnableBase_Package;
 with org.allbinary.game.layer.waypoint.WaypointRunnableLogHelper_Package;
 
 package body org.allbinary.game.layer.WaypointPathRunnable_Package is

@@ -13,9 +13,12 @@
 --  Generated Code Do Not Modify
 
 
+with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.logic.visual.media.MediaTypeData_Package; use org.allbinary.logic.visual.media.MediaTypeData_Package;
 with org.allbinary.logic.visual.media.MediaDataFactory_Package; use org.allbinary.logic.visual.media.MediaDataFactory_Package;
+with org.allbinary.logic.visual.media.MediaDataFactory_Package;
+with org.allbinary.logic.visual.media.MediaTypeData_Package;
 
 package body org.allbinary.logic.visual.media.MediaData_Package is
 
@@ -88,12 +91,12 @@ package body org.allbinary.logic.visual.media.MediaData_Package is
 
    function getDefault return MediaData_Access is
    begin
-        return MediaDataFactory_Package.getInstance.JPG;
+        return MediaData_Access (MediaDataFactory_Package.getInstance.JPG);
    end getDefault;
 
    function toHashMap return HashMap_Access is
    begin
-        return MediaData_Package.hashMap;
+        return HashMap_Access (MediaData_Package.hashMap);
    end toHashMap;
 
    procedure isConvertableTo (This : in out MediaData; mediaData_Var_Param : access MediaData_Package.MediaData'Class) is

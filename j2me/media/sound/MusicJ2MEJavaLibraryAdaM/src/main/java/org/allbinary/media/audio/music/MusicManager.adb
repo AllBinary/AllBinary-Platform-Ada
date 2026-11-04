@@ -1,23 +1,35 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.thread.ARunnable_Package; use org.allbinary.thread.ARunnable_Package;
 with javax.microedition.media.Player_Package; use javax.microedition.media.Player_Package;
+with javax.microedition.media.Player_Package_References;
 with javax.microedition.media.PlayerListener_Package; use javax.microedition.media.PlayerListener_Package;
+with javax.microedition.media.PlayerListener_Package_References;
 with org.allbinary.AvianUtil_Package; use org.allbinary.AvianUtil_Package;
 with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.media.audio.NoSound_Package; use org.allbinary.media.audio.NoSound_Package;
 with org.allbinary.media.audio.PlayerStateUtil_Package; use org.allbinary.media.audio.PlayerStateUtil_Package;
+with org.allbinary.media.audio.PlayerStateUtil_Package_References;
 with org.allbinary.media.audio.Sound_Package; use org.allbinary.media.audio.Sound_Package;
+with org.allbinary.media.audio.Sound_Package_References;
 with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.string_Id.CommonSeps_Package_References;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.string_Id.CommonStrings_Package_References;
 with org.allbinary.time.GameTickTimeDelayHelper_Package; use org.allbinary.time.GameTickTimeDelayHelper_Package;
+with org.allbinary.time.GameTickTimeDelayHelper_Package_References;
 with org.allbinary.time.GameTickTimeDelayHelperFactory_Package; use org.allbinary.time.GameTickTimeDelayHelperFactory_Package;
 with org.allbinary.time.TimeDelayHelper_Package; use org.allbinary.time.TimeDelayHelper_Package;
+with org.allbinary.time.TimeDelayHelper_Package_References;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.util.BasicArrayListUtil_Package; use org.allbinary.util.BasicArrayListUtil_Package;
+with org.allbinary.util.BasicArrayListUtil_Package_References;
+with org.allbinary.media.audio.music.MusicManagerPlayerListener_Package; use org.allbinary.media.audio.music.MusicManagerPlayerListener_Package;
 with java.lang.Thread_Package; use java.lang.Thread_Package;
 
 package body org.allbinary.media.audio.music.MusicManager_Package is
@@ -313,7 +325,9 @@ package body org.allbinary.media.audio.music.MusicManager_Package is
 end org.allbinary.media.audio.music.MusicManager_Package;
 
 
+with org.allbinary.thread.ARunnable_Package; use org.allbinary.thread.ARunnable_Package;
 with javax.microedition.media.Player_Package; use javax.microedition.media.Player_Package;
+with javax.microedition.media.Player_Package_References;
 with javax.microedition.media.PlayerListener_Package; use javax.microedition.media.PlayerListener_Package;
 with org.allbinary.AvianUtil_Package; use org.allbinary.AvianUtil_Package;
 with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
@@ -321,15 +335,23 @@ with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.media.audio.NoSound_Package; use org.allbinary.media.audio.NoSound_Package;
 with org.allbinary.media.audio.PlayerStateUtil_Package; use org.allbinary.media.audio.PlayerStateUtil_Package;
+with org.allbinary.media.audio.PlayerStateUtil_Package_References;
 with org.allbinary.media.audio.Sound_Package; use org.allbinary.media.audio.Sound_Package;
+with org.allbinary.media.audio.Sound_Package_References;
 with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.string_Id.CommonSeps_Package_References;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.string_Id.CommonStrings_Package_References;
 with org.allbinary.time.GameTickTimeDelayHelper_Package; use org.allbinary.time.GameTickTimeDelayHelper_Package;
+with org.allbinary.time.GameTickTimeDelayHelper_Package_References;
 with org.allbinary.time.GameTickTimeDelayHelperFactory_Package; use org.allbinary.time.GameTickTimeDelayHelperFactory_Package;
 with org.allbinary.time.TimeDelayHelper_Package; use org.allbinary.time.TimeDelayHelper_Package;
+with org.allbinary.time.TimeDelayHelper_Package_References;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.util.BasicArrayListUtil_Package; use org.allbinary.util.BasicArrayListUtil_Package;
+with org.allbinary.util.BasicArrayListUtil_Package_References;
 with java.lang.Thread_Package; use java.lang.Thread_Package;
 with org.allbinary.media.audio.music.MusicManager_Package;
 
@@ -353,16 +375,6 @@ package body org.allbinary.media.audio.music.MusicManagerPlayerListener_Package 
    function "=" (Left, Right : Player_Access_Array_Access_Array) return Boolean renames javax.microedition.media.Player_Package_References."=";
    subtype Player_Access_Array_Access_Array_Access is javax.microedition.media.Player_Package_References.Player_Access_Array_Access_Array_Access;
    function "=" (Left, Right : Player_Access_Array_Access_Array_Access) return Boolean renames javax.microedition.media.Player_Package_References."=";
-   subtype PlayerListener_Access is javax.microedition.media.PlayerListener_Package_References.PlayerListener_Access;
-   function "=" (Left, Right : PlayerListener_Access) return Boolean renames javax.microedition.media.PlayerListener_Package_References."=";
-   subtype PlayerListener_Access_Array is javax.microedition.media.PlayerListener_Package_References.PlayerListener_Access_Array;
-   function "=" (Left, Right : PlayerListener_Access_Array) return Boolean renames javax.microedition.media.PlayerListener_Package_References."=";
-   subtype PlayerListener_Access_Array_Access is javax.microedition.media.PlayerListener_Package_References.PlayerListener_Access_Array_Access;
-   function "=" (Left, Right : PlayerListener_Access_Array_Access) return Boolean renames javax.microedition.media.PlayerListener_Package_References."=";
-   subtype PlayerListener_Access_Array_Access_Array is javax.microedition.media.PlayerListener_Package_References.PlayerListener_Access_Array_Access_Array;
-   function "=" (Left, Right : PlayerListener_Access_Array_Access_Array) return Boolean renames javax.microedition.media.PlayerListener_Package_References."=";
-   subtype PlayerListener_Access_Array_Access_Array_Access is javax.microedition.media.PlayerListener_Package_References.PlayerListener_Access_Array_Access_Array_Access;
-   function "=" (Left, Right : PlayerListener_Access_Array_Access_Array_Access) return Boolean renames javax.microedition.media.PlayerListener_Package_References."=";
    subtype PlayerStateUtil_Access is org.allbinary.media.audio.PlayerStateUtil_Package_References.PlayerStateUtil_Access;
    function "=" (Left, Right : PlayerStateUtil_Access) return Boolean renames org.allbinary.media.audio.PlayerStateUtil_Package_References."=";
    subtype PlayerStateUtil_Access_Array is org.allbinary.media.audio.PlayerStateUtil_Package_References.PlayerStateUtil_Access_Array;

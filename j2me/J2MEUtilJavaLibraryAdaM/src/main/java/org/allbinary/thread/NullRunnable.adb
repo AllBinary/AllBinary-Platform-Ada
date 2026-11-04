@@ -16,7 +16,6 @@
 with jsinterop.annotations.JsType_Package; use jsinterop.annotations.JsType_Package;
 with jsinterop.annotations.JsMethod_Package; use jsinterop.annotations.JsMethod_Package;
 with jsinterop.annotations.JsConstructor_Package; use jsinterop.annotations.JsConstructor_Package;
-with org.allbinary.thread.ARunnable_Package;
 
 package body org.allbinary.thread.NullRunnable_Package is
 

@@ -19,15 +19,17 @@ with org.allbinary.data.tree.dom.document.DomDocumentHelper_Package; use org.all
 with org.allbinary.input.automation.module.InputAutomationModuleData_Package; use org.allbinary.input.automation.module.InputAutomationModuleData_Package;
 with org.allbinary.input.automation.module.NewInputAutomationModulesData_Package; use org.allbinary.input.automation.module.NewInputAutomationModulesData_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package; use org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
+with org.w3c.dom.Document_Package_References;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.w3c.dom.NodeList_Package; use org.w3c.dom.NodeList_Package;
 with org.allbinary.input.automation.module.configuration.InputAutomationModuleConfiguration_Package; use org.allbinary.input.automation.module.configuration.InputAutomationModuleConfiguration_Package;
+with org.allbinary.input.automation.module.configuration.InputAutomationModuleConfiguration_Package_References;
 with org.allbinary.input.automation.module.configuration.InputAutomationModuleConfiguration_Package;
-with org.allbinary.input.automation.module.InputAutomationModuleData_Package;
 with org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface_Package;
-with org.allbinary.input.automation.module.NewInputAutomationModulesData_Package;
 
 package body org.allbinary.input.automation.module.configuration.InputAutomationModuleConfigurations_Package is
 

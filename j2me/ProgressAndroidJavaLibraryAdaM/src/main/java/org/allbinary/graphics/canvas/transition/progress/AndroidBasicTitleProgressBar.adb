@@ -14,31 +14,39 @@
 
 
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
 with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
+with javax.microedition.lcdui.Image_Package_References;
 with javax.microedition.lcdui.NullImage_Package; use javax.microedition.lcdui.NullImage_Package;
 with android.app.Activity_Package; use android.app.Activity_Package;
+with android.app.Activity_Package_References;
 with org.allbinary.AndroidUtil_Package; use org.allbinary.AndroidUtil_Package;
 with org.allbinary.image.GameFeatureImageCacheFactory_Package; use org.allbinary.image.GameFeatureImageCacheFactory_Package;
 with org.allbinary.image.PreResourceImageUtil_Package; use org.allbinary.image.PreResourceImageUtil_Package;
 with org.allbinary.logic.communication.log.ForcedLogUtil_Package; use org.allbinary.logic.communication.log.ForcedLogUtil_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package; use org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Animation_Package;
+with org.allbinary.animation.Animation_Package_References;
 with org.allbinary.animation.NullAnimationFactory_Package; use org.allbinary.animation.NullAnimationFactory_Package;
 with org.allbinary.game.configuration.feature.Features_Package; use org.allbinary.game.configuration.feature.Features_Package;
 with org.allbinary.game.configuration.feature.MainFeatureFactory_Package; use org.allbinary.game.configuration.feature.MainFeatureFactory_Package;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.graphics.color.BasicColor_Package_References;
 with org.allbinary.graphics.displayable.DisplayInfoSingleton_Package; use org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
 with org.allbinary.graphics.displayable.event.DisplayChangeEvent_Package; use org.allbinary.graphics.displayable.event.DisplayChangeEvent_Package;
+with org.allbinary.graphics.displayable.event.DisplayChangeEvent_Package_References;
 with org.allbinary.graphics.displayable.event.DisplayChangeEventHandler_Package; use org.allbinary.graphics.displayable.event.DisplayChangeEventHandler_Package;
 with org.allbinary.graphics.displayable.event.DisplayChangeEventListener_Package; use org.allbinary.graphics.displayable.event.DisplayChangeEventListener_Package;
 with org.allbinary.image.ImageCacheFactory_Package; use org.allbinary.image.ImageCacheFactory_Package;
 with org.allbinary.media.image.ImageScaleUtil_Package; use org.allbinary.media.image.ImageScaleUtil_Package;
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+with org.allbinary.logic.util.event.AllBinaryEventObject_Package_References;
 with org.allbinary.animation.AnimationBehavior_Package; use org.allbinary.animation.AnimationBehavior_Package;
 with org.allbinary.animation.image.ImageAnimation_Package; use org.allbinary.animation.image.ImageAnimation_Package;
 with org.allbinary.data.resource.ResourceUtil_Package; use org.allbinary.data.resource.ResourceUtil_Package;
 with org.allbinary.logic.util.event.EventStrings_Package; use org.allbinary.logic.util.event.EventStrings_Package;
 with org.allbinary.thread.ARunnable_Package; use org.allbinary.thread.ARunnable_Package;
+with org.allbinary.thread.ARunnable_Package_References;
 with org.allbinary.thread.NullRunnable_Package; use org.allbinary.thread.NullRunnable_Package;
 with org.allbinary.graphics.canvas.transition.progress.ShowTitleProgressBarRunnable_Package; use org.allbinary.graphics.canvas.transition.progress.ShowTitleProgressBarRunnable_Package;
 with org.allbinary.graphics.canvas.transition.progress.DismissTitleProgressBarRunnable_Package; use org.allbinary.graphics.canvas.transition.progress.DismissTitleProgressBarRunnable_Package;
@@ -321,7 +329,7 @@ package body org.allbinary.graphics.canvas.transition.progress.AndroidBasicTitle
    begin
         begin
             This.logUtil.putF (This.commonStrings.START, AndroidBasicTitleProgressBar_Access'(This'Unchecked_Access), This.commonStrings.START_METHOD_NAME);
-            ProgressCanvas (This).start;
+            ProgressCanvas_Package.ProgressCanvas (This).start;
             This.midletActivity.runOnUiThread (This.showTitleProgressBarRunnable);
         exception
             when Java_Occurrence : others =>
@@ -338,7 +346,7 @@ package body org.allbinary.graphics.canvas.transition.progress.AndroidBasicTitle
         begin
             This.logUtil.putF (This.commonStrings.START, AndroidBasicTitleProgressBar_Access'(This'Unchecked_Access), This.commonStrings.END_METHOD_NAME);
             This.midletActivity.runOnUiThread (This.dismissTitleProgressBarRunnable);
-            ProgressCanvas (This).end_Id;
+            ProgressCanvas_Package.ProgressCanvas (This).end_Id;
         exception
             when Java_Occurrence : others =>
                 declare
@@ -353,7 +361,7 @@ package body org.allbinary.graphics.canvas.transition.progress.AndroidBasicTitle
    begin
         begin
             This.portion := value;
-            ProgressCanvas (This).addEarlyPortion (value, text, index);
+            ProgressCanvas_Package.ProgressCanvas (This).addEarlyPortion (value, text, index);
             if (This.midletActivity) /= (AndroidUtil_Package.NULL_ACTIVITY) then
                 This.midletActivity.runOnUiThread (This.titleProgressDialogPortionSetProgressRunnable);
             end if;
@@ -371,7 +379,7 @@ package body org.allbinary.graphics.canvas.transition.progress.AndroidBasicTitle
    begin
         begin
             This.portion := value;
-            ProgressCanvas (This).addPortion (value, text, index);
+            ProgressCanvas_Package.ProgressCanvas (This).addPortion (value, text, index);
             This.midletActivity.runOnUiThread (This.titleProgressDialogPortionSetProgressRunnable);
         exception
             when Java_Occurrence : others =>
@@ -387,7 +395,7 @@ package body org.allbinary.graphics.canvas.transition.progress.AndroidBasicTitle
    begin
         begin
             This.portion := value;
-            ProgressCanvas (This).addNormalPortion (value, text);
+            ProgressCanvas_Package.ProgressCanvas (This).addNormalPortion (value, text);
             This.midletActivity.runOnUiThread (This.titleProgressDialogPortionSetProgressRunnable);
         exception
             when Java_Occurrence : others =>
@@ -402,7 +410,7 @@ package body org.allbinary.graphics.canvas.transition.progress.AndroidBasicTitle
    procedure setValue (This : in out AndroidBasicTitleProgressBar; value : Integer) is
    begin
         begin
-            ProgressCanvas (This).setValue (value);
+            ProgressCanvas_Package.ProgressCanvas (This).setValue (value);
             This.midletActivity.runOnUiThread (This.titleProgressDialogSetProgressRunnable);
         exception
             when Java_Occurrence : others =>
@@ -495,7 +503,7 @@ package body org.allbinary.graphics.canvas.transition.progress.AndroidBasicTitle
    begin
         begin
             This.animation.paintXY (graphics, 0, 20);
-            ProgressCanvas (This).paint2 (graphics);
+            ProgressCanvas_Package.ProgressCanvas (This).paint2 (graphics);
         exception
             when Java_Occurrence : others =>
                 declare
@@ -513,7 +521,7 @@ package body org.allbinary.graphics.canvas.transition.progress.AndroidBasicTitle
 
    procedure setBackground (This : in out AndroidBasicTitleProgressBar; background : Boolean) is
    begin
-        ProgressCanvas (This).setBackground (background);
+        ProgressCanvas_Package.ProgressCanvas (This).setBackground (background);
         AndroidBasicTitleProgressBar'Class (This).updateCurrent;
    end setBackground;
 

@@ -14,9 +14,11 @@
 
 
 with org.allbinary.logic.control.search.SearchRequest_Package; use org.allbinary.logic.control.search.SearchRequest_Package;
+with org.allbinary.logic.control.search.SearchRequest_Package_References;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
+with org.w3c.dom.Document_Package_References;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
-with views.generic_Id.inventory.InventorySearch_Package;
+with org.w3c.dom.Node_Package_References;
 with views.admin.inventory.listings.InventoryViewSearchInterface_Package;
 
 package body views.generic_Id.inventory.AutoSearchValidationInventoryView_Package is

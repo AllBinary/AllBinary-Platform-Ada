@@ -15,6 +15,7 @@
 
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.business.DynamicObjectData_Package; use org.allbinary.business.DynamicObjectData_Package;
 with org.allbinary.business.context.modules.storefront.StoreFrontData_Package; use org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
@@ -22,15 +23,17 @@ with org.allbinary.business.entry_Id.EntryData_Package; use org.allbinary.busine
 with org.allbinary.business.init.db.UserDbInitInfo_Package; use org.allbinary.business.init.db.UserDbInitInfo_Package;
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.communication.sql.AbSqlBean_Package; use org.allbinary.logic.communication.sql.AbSqlBean_Package;
 with org.allbinary.logic.control.workflow.DbWorkFlowFactory_Package; use org.allbinary.logic.control.workflow.DbWorkFlowFactory_Package;
 with org.allbinary.logic.control.workflow.WorkFlowData_Package; use org.allbinary.logic.control.workflow.WorkFlowData_Package;
 with org.allbinary.logic.control.workflow.WorkFlowInterface_Package; use org.allbinary.logic.control.workflow.WorkFlowInterface_Package;
+with org.allbinary.logic.control.workflow.WorkFlowInterface_Package_References;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package; use org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References;
 with org.allbinary.logic.system.security.licensing.LicensingException_Package; use org.allbinary.logic.system.security.licensing.LicensingException_Package;
 with org.allbinary.logic.system.security.licensing.ServiceClientInformationInterfaceFactory_Package; use org.allbinary.logic.system.security.licensing.ServiceClientInformationInterfaceFactory_Package;
-with org.allbinary.data.tables.workflow.WorkFlowEntityInterface_Package;
 
 package body org.allbinary.data.tables.workflow.WorkFlowEntity_Package is
 
@@ -114,7 +117,7 @@ package body org.allbinary.data.tables.workflow.WorkFlowEntity_Package is
       values : constant BasicArrayList_Access := BasicArrayList_Access (values_Param);
    begin
         begin
-            AbSqlBean (This).insert (values);
+            AbSqlBean_Package.AbSqlBean (This).insert (values);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
                 This.logUtil.putF (This.commonStrings.SUCCESS, WorkFlowEntity_Access'(This'Unchecked_Access), INSERT);
             end if;
@@ -137,7 +140,7 @@ package body org.allbinary.data.tables.workflow.WorkFlowEntity_Package is
             keysAndValues := StdUtil_Package.getInstance.createHashMap;
             keysAndValues.put (WorkFlowData_Package.getInstance.NAME, Java_Box (name));
             keysAndValues.put (StoreFrontData_Package.getInstance.NAME, Java_Box (storeName));
-            AbSqlBean (This).deleteWhere (keysAndValues);
+            AbSqlBean_Package.AbSqlBean (This).deleteWhere (keysAndValues);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
                 This.logUtil.putF (This.commonStrings.SUCCESS, WorkFlowEntity_Access'(This'Unchecked_Access), This.commonStrings.delete);
             end if;
@@ -162,7 +165,7 @@ package body org.allbinary.data.tables.workflow.WorkFlowEntity_Package is
             keysAndValues := StdUtil_Package.getInstance.createHashMap;
             keysAndValues.put (WorkFlowData_Package.getInstance.NAME, Java_Box (name));
             keysAndValues.put (StoreFrontData_Package.getInstance.NAME, Java_Box (storeName));
-            hashMap := AbSqlBean (This).getRow (keysAndValues);
+            hashMap := AbSqlBean_Package.AbSqlBean (This).getRow (keysAndValues);
             return WorkFlowInterface_Access (DbWorkFlowFactory_Package.getInstance.getInstance (This.abeClientInformation, hashMap));
         exception
             when Java_Occurrence : others =>
@@ -189,7 +192,7 @@ package body org.allbinary.data.tables.workflow.WorkFlowEntity_Package is
             workFlowsVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
             keysAndValues := StdUtil_Package.getInstance.createHashMap;
             keysAndValues.put (StoreFrontData_Package.getInstance.NAME, Java_Box (storeName));
-            hashMapVector := AbSqlBean (This).getRows (keysAndValues);
+            hashMapVector := AbSqlBean_Package.AbSqlBean (This).getRows (keysAndValues);
             size := hashMapVector.size;
             for i in 0 .. (size) - 1 loop
                 workFlowHashMap := HashMap_Access (hashMapVector.get (i));
@@ -219,7 +222,7 @@ package body org.allbinary.data.tables.workflow.WorkFlowEntity_Package is
             wherekeysAndValues := StdUtil_Package.getInstance.createHashMap;
             wherekeysAndValues.put (WorkFlowData_Package.getInstance.NAME, Java_Unbox (updatedValues.get (WorkFlowData_Package.getInstance.NAME)));
             wherekeysAndValues.put (StoreFrontData_Package.getInstance.NAME, Java_Unbox (updatedValues.get (StoreFrontData_Package.getInstance.NAME)));
-            AbSqlBean (This).updateWhere (wherekeysAndValues, updatedValues);
+            AbSqlBean_Package.AbSqlBean (This).updateWhere (wherekeysAndValues, updatedValues);
         exception
             when Java_Occurrence : others =>
                 declare
@@ -244,12 +247,12 @@ package body org.allbinary.data.tables.workflow.WorkFlowEntity_Package is
 
    function createTable (This : in out WorkFlowEntity) return Unbounded_String is
    begin
-        return AbSqlBean (This).createTable (WorkFlowEntity'Class (This).createTableStatement);
+        return AbSqlBean_Package.AbSqlBean (This).createTable (WorkFlowEntity'Class (This).createTableStatement);
    end createTable;
 
    function dropTable (This : in out WorkFlowEntity) return Unbounded_String is
    begin
-        return AbSqlBean (This).dropTable;
+        return AbSqlBean_Package.AbSqlBean (This).dropTable;
    end dropTable;
 
    procedure get (This : in out WorkFlowEntity; name : Unbounded_String; storeName : Unbounded_String) is

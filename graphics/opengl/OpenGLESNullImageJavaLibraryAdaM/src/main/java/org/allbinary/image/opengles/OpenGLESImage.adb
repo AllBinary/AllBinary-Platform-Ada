@@ -14,18 +14,28 @@
 
 
 with javax.microedition.khronos.opengles.GL_Package; use javax.microedition.khronos.opengles.GL_Package;
+with javax.microedition.khronos.opengles.GL_Package_References;
 with javax.microedition.khronos.opengles.GL10_Package; use javax.microedition.khronos.opengles.GL10_Package;
+with javax.microedition.khronos.opengles.GL10_Package_References;
 with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
 with javax.microedition.lcdui.NullImage_Package; use javax.microedition.lcdui.NullImage_Package;
 with org.allbinary.platform.graphics.PlatformBitmapBase_Package; use org.allbinary.platform.graphics.PlatformBitmapBase_Package;
+with org.allbinary.platform.graphics.PlatformBitmapBase_Package_References;
 with org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package; use org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package;
+with org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package_References;
 with org.allbinary.platform.opengles.PlatformTextureBaseFactory_Package; use org.allbinary.platform.opengles.PlatformTextureBaseFactory_Package;
+with org.allbinary.platform.opengles.PlatformTextureBaseFactory_Package_References;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.string_Id.CommonStrings_Package_References;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.image.opengles.OpenGLESImageProperties_Package; use org.allbinary.image.opengles.OpenGLESImageProperties_Package;
+with org.allbinary.image.opengles.OpenGLESImageProperties_Package_References;
 with org.allbinary.image.opengles.OpenGLESImageProcessor_Package; use org.allbinary.image.opengles.OpenGLESImageProcessor_Package;
+with org.allbinary.image.opengles.OpenGLESImageProcessor_Package_References;
 with org.allbinary.image.opengles.OpenGLESImageTranslate_Package; use org.allbinary.image.opengles.OpenGLESImageTranslate_Package;
+with org.allbinary.image.opengles.OpenGLESImageTranslate_Package_References;
 with org.allbinary.image.opengles.OpenGLESImageProcessor_Package;
 with org.allbinary.image.opengles.OpenGLESImageTranslate_Package;
 
@@ -204,7 +214,7 @@ begin
    null;
    NULL_OPENGL_IMAGE := OpenGLESImage_Package.Create (NullImage_Package.NULL_IMAGE, PlatformBitmapBaseFactory_Package.NULL_PLATFORM_BITMAP_BASE_FACTORY, PlatformTextureBaseFactory_Package.NULL_PLATFORM_TEXTURE_BASE_FACTORY);
    texture2dList := BasicArrayList_Access (BasicArrayListD_Package.Create);
-   TYPE_Id := 4;
+   
 
 end org.allbinary.image.opengles.OpenGLESImage_Package;
 

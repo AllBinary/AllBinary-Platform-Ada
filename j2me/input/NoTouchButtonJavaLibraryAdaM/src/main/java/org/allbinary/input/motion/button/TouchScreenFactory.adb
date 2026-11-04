@@ -15,6 +15,7 @@
 
 with org.allbinary.input.motion.button.TouchScreenTypesFactory_Package; use org.allbinary.input.motion.button.TouchScreenTypesFactory_Package;
 with org.allbinary.input.motion.button.TouchScreenType_Package; use org.allbinary.input.motion.button.TouchScreenType_Package;
+with org.allbinary.input.motion.button.TouchScreenType_Package_References;
 with org.allbinary.input.motion.button.TouchScreenType_Package;
 with org.allbinary.input.motion.button.TouchScreenTypesFactory_Package;
 

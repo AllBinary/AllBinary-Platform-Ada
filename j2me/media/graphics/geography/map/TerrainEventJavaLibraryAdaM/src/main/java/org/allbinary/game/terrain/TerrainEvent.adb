@@ -13,9 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 with org.allbinary.game.terrain.BasicTerrainInfo_Package; use org.allbinary.game.terrain.BasicTerrainInfo_Package;
+with org.allbinary.game.terrain.BasicTerrainInfo_Package_References;
 with org.allbinary.game.terrain.BasicTerrainInfo_Package;
 
 package body org.allbinary.game.terrain.TerrainEvent_Package is

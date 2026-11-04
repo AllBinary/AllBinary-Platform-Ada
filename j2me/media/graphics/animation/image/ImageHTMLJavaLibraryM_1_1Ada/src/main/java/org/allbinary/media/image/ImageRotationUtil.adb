@@ -14,10 +14,12 @@
 
 
 with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
+with javax.microedition.lcdui.Image_Package_References;
 with org.microemu.device.playn.PlaynImmutableImage_Package; use org.microemu.device.playn.PlaynImmutableImage_Package;
 with org.microemu.device.playn.PlaynMutableImage_Package; use org.microemu.device.playn.PlaynMutableImage_Package;
 with playn.core.CanvasImage_Package; use playn.core.CanvasImage_Package;
 with playn.core.CanvasSurface_Package; use playn.core.CanvasSurface_Package;
+with playn.core.CanvasSurface_Package_References;
 with org.allbinary.media.image.ImageCreationUtil_Package; use org.allbinary.media.image.ImageCreationUtil_Package;
 with org.allbinary.media.image.ImageCreationUtil_Package;
 

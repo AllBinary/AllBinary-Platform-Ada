@@ -19,8 +19,10 @@ with org.allbinary.business.init.InitSql_Package; use org.allbinary.business.ini
 with org.allbinary.business.init.db.UserDbInitInfo_Package; use org.allbinary.business.init.db.UserDbInitInfo_Package;
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.business.context.modules.storefronts.BasicStoreFront_Package; use org.allbinary.business.context.modules.storefronts.BasicStoreFront_Package;
 with org.allbinary.business.context.modules.storefronts.BasicStoreFrontInterface_Package; use org.allbinary.business.context.modules.storefronts.BasicStoreFrontInterface_Package;
+with org.allbinary.business.context.modules.storefronts.BasicStoreFrontInterface_Package_References;
 with org.allbinary.business.context.modules.storefronts.BasicStoreFront_Package;
 with org.allbinary.business.context.modules.storefronts.BasicStoreFrontInterface_Package;
 
@@ -79,7 +81,7 @@ package body org.allbinary.business.context.modules.storefronts.BasicStoreFronts
    begin
         keysAndValues := StdUtil_Package.getInstance.createHashMap;
         keysAndValues.put (StoreFrontData_Package.getInstance.NAME, Java_Box (name));
-        storeHashMap := InitSql (This).getRow (keysAndValues);
+        storeHashMap := InitSql_Package.InitSql (This).getRow (keysAndValues);
         if (storeHashMap) = (null) then
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("No Such Store: ") & name));
         end if;

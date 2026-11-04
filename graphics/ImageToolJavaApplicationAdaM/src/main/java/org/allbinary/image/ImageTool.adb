@@ -14,8 +14,10 @@
 
 
 with org.allbinary.thread.ARunnable_Package; use org.allbinary.thread.ARunnable_Package;
+with org.allbinary.image.gui.ImageToolJFrame_Package; use org.allbinary.image.gui.ImageToolJFrame_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.image.gui.ImageToolJFrame_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 
 package body org.allbinary.image.ImageTool_Package is
 

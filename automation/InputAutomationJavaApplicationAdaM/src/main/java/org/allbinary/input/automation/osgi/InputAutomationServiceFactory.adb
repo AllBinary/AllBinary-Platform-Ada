@@ -14,13 +14,16 @@
 
 
 with org.osgi.framework.Bundle_Package; use org.osgi.framework.Bundle_Package;
+with org.osgi.framework.Bundle_Package_References;
 with org.osgi.framework.ServiceFactory_Package; use org.osgi.framework.ServiceFactory_Package;
 with org.osgi.framework.ServiceRegistration_Package; use org.osgi.framework.ServiceRegistration_Package;
+with org.osgi.framework.ServiceRegistration_Package_References;
 with org.allbinary.input.automation.InputAutomationJFrame_Package; use org.allbinary.input.automation.InputAutomationJFrame_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.string_Id.CommonStrings_Package_References;
 with bundle.input.automation.InputAutomationBundleActivatorListenerInterface_Package;
-with org.allbinary.input.automation.InputAutomationJFrame_Package;
 
 package body org.allbinary.input.automation.osgi.InputAutomationServiceFactory_Package is
 

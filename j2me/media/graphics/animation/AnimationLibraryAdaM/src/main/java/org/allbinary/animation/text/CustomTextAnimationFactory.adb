@@ -14,21 +14,24 @@
 
 
 with javax.microedition.lcdui.Font_Package; use javax.microedition.lcdui.Font_Package;
+with javax.microedition.lcdui.Font_Package_References;
 with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Animation_Package;
+with org.allbinary.animation.Animation_Package_References;
 with org.allbinary.animation.AnimationBehaviorFactory_Package; use org.allbinary.animation.AnimationBehaviorFactory_Package;
+with org.allbinary.animation.AnimationBehaviorFactory_Package_References;
 with org.allbinary.animation.AnimationInterfaceFactoryInterface_Package; use org.allbinary.animation.AnimationInterfaceFactoryInterface_Package;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.graphics.color.BasicColor_Package_References;
 with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.media.ScaleProperties_Package; use org.allbinary.media.ScaleProperties_Package;
+with org.allbinary.media.ScaleProperties_Package_References;
 with org.allbinary.animation.text.CustomTextAnimation_Package; use org.allbinary.animation.text.CustomTextAnimation_Package;
 with org.allbinary.animation.text.AdjustCustomTextAnimation_Package; use org.allbinary.animation.text.AdjustCustomTextAnimation_Package;
 with org.allbinary.animation.text.AdjustCustomTextAnimation_Package;
-with org.allbinary.animation.Animation_Package;
 with org.allbinary.animation.AnimationBehavior_Package;
-with org.allbinary.animation.AnimationBehaviorFactory_Package;
 with org.allbinary.animation.AnimationInterface_Package;
-with org.allbinary.animation.AnimationInterfaceFactoryInterface_Package;
 with org.allbinary.animation.BasicAnimationInterfaceFactoryInterface_Package;
 with org.allbinary.animation.text.CustomTextAnimation_Package;
 with org.allbinary.animation.IndexedAnimation_Package;

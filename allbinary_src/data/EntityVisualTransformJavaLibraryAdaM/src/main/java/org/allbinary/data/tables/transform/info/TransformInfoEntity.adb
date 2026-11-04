@@ -15,6 +15,7 @@
 
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.business.context.modules.storefront.StoreFrontData_Package; use org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
 with org.allbinary.business.entry_Id.EntryData_Package; use org.allbinary.business.entry_Id.EntryData_Package;
@@ -22,17 +23,22 @@ with org.allbinary.business.init.db.UserDbInitInfo_Package; use org.allbinary.bu
 with org.allbinary.data.tree.dom.document.DomDocumentHelper_Package; use org.allbinary.data.tree.dom.document.DomDocumentHelper_Package;
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.communication.sql.AbSqlBean_Package; use org.allbinary.logic.communication.sql.AbSqlBean_Package;
 with org.allbinary.logic.control.crypt.Encoder_Package; use org.allbinary.logic.control.crypt.Encoder_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package; use org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References;
 with org.allbinary.logic.system.security.licensing.ServiceClientInformationInterfaceFactory_Package; use org.allbinary.logic.system.security.licensing.ServiceClientInformationInterfaceFactory_Package;
 with org.allbinary.logic.visual.transform.info.TransformInfoData_Package; use org.allbinary.logic.visual.transform.info.TransformInfoData_Package;
 with org.allbinary.logic.visual.transform.info.TransformInfoFactoryInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoFactoryInterface_Package;
+with org.allbinary.logic.visual.transform.info.TransformInfoFactoryInterface_Package_References;
 with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
+with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package_References;
 with org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfigAndManipulatorFactoryBase_Package; use org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfigAndManipulatorFactoryBase_Package;
+with org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfigAndManipulatorFactoryBase_Package_References;
 with org.allbinary.logic.visual.transform.info.objectConfig.generator.TransformInfoObjectConfigGeneratorFactoryInterface_Package; use org.allbinary.logic.visual.transform.info.objectConfig.generator.TransformInfoObjectConfigGeneratorFactoryInterface_Package;
-with org.allbinary.data.tables.transform.info.TransformInfoEntityInterface_Package;
+with org.allbinary.logic.visual.transform.info.objectConfig.generator.TransformInfoObjectConfigGeneratorFactoryInterface_Package_References;
 
 package body org.allbinary.data.tables.transform.info.TransformInfoEntity_Package is
 
@@ -152,7 +158,7 @@ package body org.allbinary.data.tables.transform.info.TransformInfoEntity_Packag
       values : constant BasicArrayList_Access := BasicArrayList_Access (values_Param);
    begin
         begin
-            AbSqlBean (This).insert (values);
+            AbSqlBean_Package.AbSqlBean (This).insert (values);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
                 This.logUtil.putF (This.commonStrings.SUCCESS, TransformInfoEntity_Access'(This'Unchecked_Access), INSERT);
             end if;
@@ -171,7 +177,7 @@ package body org.allbinary.data.tables.transform.info.TransformInfoEntity_Packag
    procedure delete (This : in out TransformInfoEntity; value : Unbounded_String) is
    begin
         begin
-            AbSqlBean (This).deleteWhere (TransformInfoData_Package.getInstance.NAME, value);
+            AbSqlBean_Package.AbSqlBean (This).deleteWhere (TransformInfoData_Package.getInstance.NAME, value);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
                 This.logUtil.putF (This.commonStrings.SUCCESS, TransformInfoEntity_Access'(This'Unchecked_Access), This.commonStrings.delete);
             end if;
@@ -201,7 +207,7 @@ package body org.allbinary.data.tables.transform.info.TransformInfoEntity_Packag
         transformInfoData := TransformInfoData_Package.getInstance;
         keysAndValues := StdUtil_Package.getInstance.createHashMap;
         keysAndValues.put (transformInfoData.NAME, Java_Box (name));
-        hashMap := AbSqlBean (This).getRow (keysAndValues);
+        hashMap := AbSqlBean_Package.AbSqlBean (This).getRow (keysAndValues);
         if (hashMap) /= (null) then
             anyType := hashMap.get (transformInfoData.OBJECTCONFIG);
             if (anyType) /= (null) then
@@ -296,18 +302,18 @@ package body org.allbinary.data.tables.transform.info.TransformInfoEntity_Packag
 
    function createTable (This : in out TransformInfoEntity) return Unbounded_String is
    begin
-        return AbSqlBean (This).createTable (TransformInfoEntity'Class (This).createTableStatement);
+        return AbSqlBean_Package.AbSqlBean (This).createTable (TransformInfoEntity'Class (This).createTableStatement);
    end createTable;
 
    procedure update (This : in out TransformInfoEntity; updatedValues_Param : access HashMap_Package.HashMap'Class) is
       updatedValues : constant HashMap_Access := HashMap_Access (updatedValues_Param);
    begin
-        AbSqlBean (This).updateWhere (TransformInfoData_Package.getInstance.NAME, Java_Unbox (updatedValues.get (TransformInfoData_Package.getInstance.NAME)), updatedValues);
+        AbSqlBean_Package.AbSqlBean (This).updateWhere (TransformInfoData_Package.getInstance.NAME, Java_Unbox (updatedValues.get (TransformInfoData_Package.getInstance.NAME)), updatedValues);
    end update;
 
    function dropTable (This : in out TransformInfoEntity) return Unbounded_String is
    begin
-        return AbSqlBean (This).dropTable;
+        return AbSqlBean_Package.AbSqlBean (This).dropTable;
    end dropTable;
 
    procedure get (This : in out TransformInfoEntity; name : Unbounded_String; propertiesHashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) is

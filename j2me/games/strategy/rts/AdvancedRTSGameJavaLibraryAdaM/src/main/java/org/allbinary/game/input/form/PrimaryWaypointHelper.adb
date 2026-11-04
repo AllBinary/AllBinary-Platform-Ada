@@ -15,10 +15,11 @@
 
 with org.allbinary.game.layer.NullPathFindingLayer_Package; use org.allbinary.game.layer.NullPathFindingLayer_Package;
 with org.allbinary.game.layer.PathFindingLayerInterface_Package; use org.allbinary.game.layer.PathFindingLayerInterface_Package;
+with org.allbinary.game.layer.PathFindingLayerInterface_Package_References;
 with org.allbinary.game.layer.waypoint.WaypointLayer_Package; use org.allbinary.game.layer.waypoint.WaypointLayer_Package;
+with org.allbinary.game.layer.waypoint.WaypointLayer_Package_References;
 with org.allbinary.game.layer.AdvancedRTSGameLayer_Package;
 with org.allbinary.game.layer.AdvancedRTSProperties_Package;
-with org.allbinary.game.layer.waypoint.WaypointLayer_Package;
 
 package body org.allbinary.game.input.form.PrimaryWaypointHelper_Package is
 

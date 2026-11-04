@@ -51,7 +51,7 @@ package org.allbinary.input.automation.module.game.GraphicsAnalysisUtil_Package 
    function "=" (Left, Right : GraphicsAnalysisUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.automation.module.game.GraphicsAnalysisUtil_Package_References."=";
 
    type GraphicsAnalysisUtil is new Java_Object with null record;
-   MAX : Integer;
+   MAX : constant Integer := 122;
 
    procedure Initialize (This : in out GraphicsAnalysisUtil'Class);
    function Create return GraphicsAnalysisUtil_Access;

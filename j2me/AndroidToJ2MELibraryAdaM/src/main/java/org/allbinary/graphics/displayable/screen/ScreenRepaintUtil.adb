@@ -15,6 +15,7 @@
 
 with javax.microedition.lcdui.Canvas_Package; use javax.microedition.lcdui.Canvas_Package;
 with javax.microedition.lcdui.Displayable_Package; use javax.microedition.lcdui.Displayable_Package;
+with javax.microedition.lcdui.Displayable_Package_References;
 
 package body org.allbinary.graphics.displayable.screen.ScreenRepaintUtil_Package is
 

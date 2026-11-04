@@ -14,11 +14,17 @@
 
 
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.util.event.EventListenerInterface_Package; use org.allbinary.logic.util.event.EventListenerInterface_Package;
+with org.allbinary.logic.util.event.EventListenerInterface_Package_References;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.string_Id.CommonStrings_Package_References;
 with org.allbinary.game.input.event.PressGameKeyEventHandler_Package; use org.allbinary.game.input.event.PressGameKeyEventHandler_Package;
+with org.allbinary.game.input.event.PressGameKeyEventHandler_Package_References;
 with org.allbinary.game.input.event.UpGameKeyEventHandler_Package; use org.allbinary.game.input.event.UpGameKeyEventHandler_Package;
+with org.allbinary.game.input.event.UpGameKeyEventHandler_Package_References;
 with org.allbinary.game.input.event.DownGameKeyEventHandler_Package; use org.allbinary.game.input.event.DownGameKeyEventHandler_Package;
+with org.allbinary.game.input.event.DownGameKeyEventHandler_Package_References;
 with org.allbinary.game.input.event.DownGameKeyEventHandler_Package;
 with org.allbinary.game.input.event.DownGameKeyEventHandlerBase_Package;
 with org.allbinary.game.input.event.DownGameKeyEventListenerInterface_Package;

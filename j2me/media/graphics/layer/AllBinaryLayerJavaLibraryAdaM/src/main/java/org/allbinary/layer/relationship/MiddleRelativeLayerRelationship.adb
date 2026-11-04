@@ -15,12 +15,11 @@
 
 with org.allbinary.graphics.PointFactory_Package; use org.allbinary.graphics.PointFactory_Package;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
+with org.allbinary.layer.AllBinaryLayer_Package_References;
 with org.allbinary.util.BasicArrayListUtil_Package; use org.allbinary.util.BasicArrayListUtil_Package;
-with org.allbinary.layer.AllBinaryLayer_Package;
 with org.allbinary.layer.Layer_Package;
 with org.allbinary.layer.LayerInterface_Package;
 with org.allbinary.layer.NamedInterface_Package;
-with org.allbinary.layer.relationship.RelativeLayerRelationship_Package;
 with org.allbinary.view.ViewPositionBase_Package;
 with org.allbinary.view.event.ViewPositionEvent_Package;
 

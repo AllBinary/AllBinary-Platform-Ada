@@ -14,14 +14,16 @@
 
 
 with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
+with javax.microedition.lcdui.Image_Package_References;
 with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Animation_Package;
+with org.allbinary.animation.Animation_Package_References;
 with org.allbinary.animation.AnimationBehaviorFactory_Package; use org.allbinary.animation.AnimationBehaviorFactory_Package;
+with org.allbinary.animation.AnimationBehaviorFactory_Package_References;
 with org.allbinary.animation.image.LeftToRightImageAnimation_Package; use org.allbinary.animation.image.LeftToRightImageAnimation_Package;
 with org.allbinary.animation.image.AdjustedLeftToRightImageAnimation_Package; use org.allbinary.animation.image.AdjustedLeftToRightImageAnimation_Package;
 with org.allbinary.animation.image.AdjustedLeftToRightImageAnimation_Package;
 with org.allbinary.image.AnimationFactoryImageScaleUtil_Package;
 with org.allbinary.animation.image.AnimationFactoryInitializationVisitor_Package;
-with org.allbinary.animation.image.BaseImageAnimationFactory_Package;
 with org.allbinary.animation.image.ImageAnimation_Package;
 with org.allbinary.animation.image.ImageSegmentAnimation_Package;
 with org.allbinary.animation.image.LeftToRightImageAnimation_Package;

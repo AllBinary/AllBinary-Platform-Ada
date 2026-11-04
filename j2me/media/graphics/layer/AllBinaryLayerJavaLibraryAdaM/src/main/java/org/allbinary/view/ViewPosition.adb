@@ -14,11 +14,10 @@
 
 
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
-with org.allbinary.layer.AllBinaryLayer_Package;
+with org.allbinary.layer.AllBinaryLayer_Package_References;
 with org.allbinary.layer.Layer_Package;
 with org.allbinary.layer.LayerInterface_Package;
 with org.allbinary.layer.NamedInterface_Package;
-with org.allbinary.view.ViewPositionBase_Package;
 with org.allbinary.view.event.ViewPositionEvent_Package;
 
 package body org.allbinary.view.ViewPosition_Package is

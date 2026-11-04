@@ -15,10 +15,10 @@
 
 with org.allbinary.logic.math.BasicDecimal_Package; use org.allbinary.logic.math.BasicDecimal_Package;
 with org.allbinary.game.physics.velocity.BasicVelocityProperties_Package; use org.allbinary.game.physics.velocity.BasicVelocityProperties_Package;
+with org.allbinary.game.physics.velocity.BasicVelocityProperties_Package_References;
 with org.allbinary.logic.math.vector.AxisMathVectorUtil_Package;
 with org.allbinary.game.physics.velocity.BasicVelocityInterface_Package;
 with org.allbinary.game.physics.velocity.BasicVelocityProperties_Package;
-with org.allbinary.game.physics.velocity.VelocityBehaviorBase_Package;
 
 package body org.allbinary.game.physics.velocity.DragVelocityBehavior_Package is
 

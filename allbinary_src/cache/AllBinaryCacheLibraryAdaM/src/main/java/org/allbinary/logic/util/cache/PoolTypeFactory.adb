@@ -2,6 +2,7 @@
 
 
 with org.allbinary.logic.util.cache.PoolType_Package; use org.allbinary.logic.util.cache.PoolType_Package;
+with org.allbinary.logic.util.cache.PoolType_Package_References;
 with org.allbinary.logic.util.cache.CacheTypeFactory_Package; use org.allbinary.logic.util.cache.CacheTypeFactory_Package;
 with org.allbinary.logic.util.cache.CacheType_Package;
 with org.allbinary.logic.util.cache.CacheTypeFactory_Package;

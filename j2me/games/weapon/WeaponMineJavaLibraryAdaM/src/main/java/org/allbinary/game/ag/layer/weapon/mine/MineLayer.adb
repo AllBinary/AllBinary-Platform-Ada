@@ -23,7 +23,9 @@ with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBina
 with org.allbinary.media.audio.SecondaryPlayerQueueFactory_Package; use org.allbinary.media.audio.SecondaryPlayerQueueFactory_Package;
 with org.allbinary.physics.movement.NoMovementFactory_Package; use org.allbinary.physics.movement.NoMovementFactory_Package;
 with org.allbinary.view.ViewPositionBase_Package; use org.allbinary.view.ViewPositionBase_Package;
+with org.allbinary.view.ViewPositionBase_Package_References;
 with org.allbinary.view.event.ViewPositionEventHandler_Package; use org.allbinary.view.event.ViewPositionEventHandler_Package;
+with org.allbinary.view.event.ViewPositionEventHandler_Package_References;
 with org.allbinary.game.ag.layer.weapon.mine.MineWeaponResources_Package; use org.allbinary.game.ag.layer.weapon.mine.MineWeaponResources_Package;
 with org.allbinary.game.ag.layer.weapon.mine.MineWeaponResources_Package;
 
@@ -92,13 +94,13 @@ package body org.allbinary.game.ag.layer.weapon.mine.MineLayer_Package is
 
    function getDamage (This : in out MineLayer; damageType : Integer) return Integer is
    begin
-        SimpleWeaponLayer (This).getDamage (damageType);
+        SimpleWeaponLayer_Package.SimpleWeaponLayer (This).getDamage (damageType);
         return MineLayer'Class (This).getInitDamage;
    end getDamage;
 
    procedure setDestroyed (This : in out MineLayer; destroyed : Boolean) is
    begin
-        SimpleWeaponLayer (This).setDestroyed (destroyed);
+        SimpleWeaponLayer_Package.SimpleWeaponLayer (This).setDestroyed (destroyed);
         if MineLayer'Class (This).isDestroyed then
             This.viewPositionEventHandler.removeListener (MineLayer_Access'(This'Unchecked_Access));
         end if;

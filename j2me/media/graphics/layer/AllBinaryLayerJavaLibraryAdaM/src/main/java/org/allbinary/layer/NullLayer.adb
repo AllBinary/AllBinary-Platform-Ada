@@ -14,7 +14,7 @@
 
 
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
-with org.allbinary.layer.Layer_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
 
 package body org.allbinary.layer.NullLayer_Package is
 

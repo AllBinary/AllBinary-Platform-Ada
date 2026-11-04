@@ -18,6 +18,7 @@ with org.allbinary.game.configuration.feature.Features_Package; use org.allbinar
 with org.allbinary.game.resource.ResourceLoadingLevelFactory_Package; use org.allbinary.game.resource.ResourceLoadingLevelFactory_Package;
 with org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package; use org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package;
 with org.allbinary.image.ImageCache_Package; use org.allbinary.image.ImageCache_Package;
+with org.allbinary.image.ImageCache_Package_References;
 with org.allbinary.image.ImageCacheFactory_Package; use org.allbinary.image.ImageCacheFactory_Package;
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 
@@ -74,7 +75,7 @@ package body org.allbinary.input.motion.button.TouchButtonResourceAnimationInter
         if TouchButtonResourceAnimationInterfaceFactoryInterfaceFactory'Class (This).isInitialized then
             return;
         end if;
-        BaseResourceAnimationInterfaceFactoryInterfaceFactory (This).init (level);
+        BaseResourceAnimationInterfaceFactoryInterfaceFactory_Package.BaseResourceAnimationInterfaceFactoryInterfaceFactory (This).init (level);
    end initImageCache;
 
    function isLoadingLevel (This : in out TouchButtonResourceAnimationInterfaceFactoryInterfaceFactory; level : Integer) return Boolean is
@@ -84,7 +85,7 @@ package body org.allbinary.input.motion.button.TouchButtonResourceAnimationInter
         if (level) = (resourceLoadingLevelFactory.LOAD_TOUCH.getLevel) then
             return True;
         else
-            return BaseResourceAnimationInterfaceFactoryInterfaceFactory (This).isLoadingLevel (level);
+            return BaseResourceAnimationInterfaceFactoryInterfaceFactory_Package.BaseResourceAnimationInterfaceFactoryInterfaceFactory (This).isLoadingLevel (level);
         end if;
    end isLoadingLevel;
 

@@ -14,8 +14,11 @@
 
 
 with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
+with javax.microedition.lcdui.Image_Package_References;
 with org.allbinary.animation.AnimationBehavior_Package; use org.allbinary.animation.AnimationBehavior_Package;
+with org.allbinary.animation.AnimationBehavior_Package_References;
 with org.allbinary.math.AngleInfo_Package; use org.allbinary.math.AngleInfo_Package;
+with org.allbinary.math.AngleInfo_Package_References;
 with org.allbinary.animation.image.ImageArrayRotationAnimationInfo_Package; use org.allbinary.animation.image.ImageArrayRotationAnimationInfo_Package;
 with org.allbinary.animation.image.ImageArrayRotationAnimationInfo_Package;
 
@@ -97,7 +100,7 @@ package body org.allbinary.animation.image.ImageArrayRotationAnimation_Package i
 
    procedure setImageArray (This : in out ImageArrayRotationAnimation; imageArray : Image_Access_Array_Access) is
    begin
-        ImageArrayBaseRotationAnimation (This).setImageArray (imageArray);
+        ImageArrayBaseRotationAnimation_Package.ImageArrayBaseRotationAnimation (This).setImageArray (imageArray);
         This.angleInfo.adjustAngle (0);
    end setImageArray;
 

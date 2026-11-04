@@ -15,10 +15,10 @@
 
 with org.allbinary.game.input.motion.action.NoCompleteMotionGestureInputEventListener_Package; use org.allbinary.game.input.motion.action.NoCompleteMotionGestureInputEventListener_Package;
 with org.allbinary.input.AllBinarySensor_Package; use org.allbinary.input.AllBinarySensor_Package;
+with org.allbinary.input.AllBinarySensor_Package_References;
 with org.allbinary.input.NoAllBinarySensor_Package; use org.allbinary.input.NoAllBinarySensor_Package;
 with org.allbinary.input.accelerometer.AccelerometerSensorFactory_Package; use org.allbinary.input.accelerometer.AccelerometerSensorFactory_Package;
 with org.allbinary.input.gyro.GyroSensorFactory_Package; use org.allbinary.input.gyro.GyroSensorFactory_Package;
-with org.allbinary.input.accelerometer.AccelerometerSensorFactory_Package;
 with org.allbinary.input.gyro.GyroSensorFactory_Package;
 
 package body org.allbinary.input.gyro.SensorGameUpdateProcessor_Package is

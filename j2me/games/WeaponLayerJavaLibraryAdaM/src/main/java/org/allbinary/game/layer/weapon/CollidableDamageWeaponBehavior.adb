@@ -15,14 +15,18 @@
 
 with org.allbinary.game.collision.CollidableHelperFactory_Package; use org.allbinary.game.collision.CollidableHelperFactory_Package;
 with org.allbinary.game.collision.CollidableInterfaceCompositeInterface_Package; use org.allbinary.game.collision.CollidableInterfaceCompositeInterface_Package;
+with org.allbinary.game.collision.CollidableInterfaceCompositeInterface_Package_References;
 with org.allbinary.game.collision.CollisionHelper_Package; use org.allbinary.game.collision.CollisionHelper_Package;
+with org.allbinary.game.collision.CollisionHelper_Package_References;
 with org.allbinary.game.collision.CollisionType_Package; use org.allbinary.game.collision.CollisionType_Package;
+with org.allbinary.game.collision.CollisionType_Package_References;
 with org.allbinary.game.collision.CollisionTypeFactory_Package; use org.allbinary.game.collision.CollisionTypeFactory_Package;
 with org.allbinary.game.combat.damage.DamageableInterface_Package; use org.allbinary.game.combat.damage.DamageableInterface_Package;
 with org.allbinary.game.layer.CollidableCompositeLayer_Package; use org.allbinary.game.layer.CollidableCompositeLayer_Package;
+with org.allbinary.game.layer.CollidableCompositeLayer_Package_References;
 with org.allbinary.game.layer.special.CollidableDestroyableDamageableBehavior_Package; use org.allbinary.game.layer.special.CollidableDestroyableDamageableBehavior_Package;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
-with org.allbinary.game.collision.CollidableHelperFactory_Package;
+with org.allbinary.layer.AllBinaryLayer_Package_References;
 
 package body org.allbinary.game.layer.weapon.CollidableDamageWeaponBehavior_Package is
 
@@ -116,7 +120,7 @@ package body org.allbinary.game.layer.weapon.CollidableDamageWeaponBehavior_Pack
    begin
         if This.collisionHelper.isCollidable (collisionLayer) then
             if (ownerLayer.getGroupInterface (0)) /= (collisionLayer.getGroupInterface (0)) then
-                return CollidableDestroyableDamageableBehavior (This).isCollision (ownerLayer, collisionLayer);
+                return CollidableDestroyableDamageableBehavior_Package.CollidableDestroyableDamageableBehavior (This).isCollision (ownerLayer, collisionLayer);
             end if;
         end if;
         return False;
@@ -127,7 +131,7 @@ package body org.allbinary.game.layer.weapon.CollidableDamageWeaponBehavior_Pack
       ownerLayer : constant CollidableCompositeLayer_Access := CollidableCompositeLayer_Access (ownerLayer_Param);
       collisionLayer : constant CollidableCompositeLayer_Access := CollidableCompositeLayer_Access (collisionLayer_Param);
    begin
-        CollidableDestroyableDamageableBehavior (This).collide (ownerLayer, collisionLayer);
+        CollidableDestroyableDamageableBehavior_Package.CollidableDestroyableDamageableBehavior (This).collide (ownerLayer, collisionLayer);
         This.collided := True;
    end collide;
 

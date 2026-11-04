@@ -14,7 +14,9 @@
 
 
 with org.allbinary.thirdparty.store.NoThirdPartyStore_Package; use org.allbinary.thirdparty.store.NoThirdPartyStore_Package;
+with org.allbinary.thirdparty.store.NoThirdPartyStore_Package_References;
 with org.allbinary.thirdparty.store.ThirdPartyStore_Package; use org.allbinary.thirdparty.store.ThirdPartyStore_Package;
+with org.allbinary.thirdparty.store.ThirdPartyStore_Package_References;
 with org.allbinary.thirdparty.store.NoThirdPartyStore_Package;
 
 package body org.allbinary.thirdparty.store.ThirdPartyStoreFactory_Package is

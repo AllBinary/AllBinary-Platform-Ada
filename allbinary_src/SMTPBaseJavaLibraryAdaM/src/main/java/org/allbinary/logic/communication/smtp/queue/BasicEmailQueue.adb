@@ -14,10 +14,10 @@
 
 
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.communication.smtp.EmailInterface_Package; use org.allbinary.logic.communication.smtp.EmailInterface_Package;
+with org.allbinary.logic.communication.smtp.EmailInterface_Package_References;
 with org.allbinary.logic.util.queue.BasicQueue_Package; use org.allbinary.logic.util.queue.BasicQueue_Package;
-with org.allbinary.logic.communication.smtp.EmailInterface_Package;
-with org.allbinary.logic.communication.smtp.queue.EmailQueueInterface_Package;
 
 package body org.allbinary.logic.communication.smtp.queue.BasicEmailQueue_Package is
 

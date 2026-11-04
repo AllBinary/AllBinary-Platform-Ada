@@ -14,6 +14,7 @@
 
 
 with org.allbinary.game.midlet.LicenseLoadingType_Package; use org.allbinary.game.midlet.LicenseLoadingType_Package;
+with org.allbinary.game.midlet.LicenseLoadingType_Package_References;
 with org.allbinary.game.midlet.LicenseLoadingType_Package;
 
 package body org.allbinary.game.midlet.LicenseLoadingTypeFactory_Package is

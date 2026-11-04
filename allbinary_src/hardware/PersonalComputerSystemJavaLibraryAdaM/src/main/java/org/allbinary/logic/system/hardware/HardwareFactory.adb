@@ -14,10 +14,12 @@
 
 
 with org.allbinary.logic.system.os.GenericOperatingSystem_Package; use org.allbinary.logic.system.os.GenericOperatingSystem_Package;
+with org.allbinary.logic.system.os.GenericOperatingSystem_Package_References;
 with org.allbinary.logic.system.os.OperatingSystems_Package; use org.allbinary.logic.system.os.OperatingSystems_Package;
 with org.allbinary.logic.system.hardware.linux.LinuxHardware_Package; use org.allbinary.logic.system.hardware.linux.LinuxHardware_Package;
 with org.allbinary.logic.system.hardware.windows.WindowsHardware_Package; use org.allbinary.logic.system.hardware.windows.WindowsHardware_Package;
 with org.allbinary.logic.system.hardware.HardwareInterface_Package; use org.allbinary.logic.system.hardware.HardwareInterface_Package;
+with org.allbinary.logic.system.hardware.HardwareInterface_Package_References;
 
 package body org.allbinary.logic.system.hardware.HardwareFactory_Package is
 

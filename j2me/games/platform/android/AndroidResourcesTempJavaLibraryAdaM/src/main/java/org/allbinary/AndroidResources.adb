@@ -2,7 +2,7 @@
 
 
 with org.allbinary.game.testgamedemo.R_Package; use org.allbinary.game.testgamedemo.R_Package;
-with org.allbinary.game.testgamedemo.R_Package;
+with org.allbinary.game.testgamedemo.R_Package_References;
 
 package body org.allbinary.AndroidResources_Package is
 

@@ -16,7 +16,6 @@
 with jsinterop.annotations.JsType_Package; use jsinterop.annotations.JsType_Package;
 with jsinterop.annotations.JsProperty_Package; use jsinterop.annotations.JsProperty_Package;
 with jsinterop.annotations.JsConstructor_Package; use jsinterop.annotations.JsConstructor_Package;
-with org.allbinary.math.Angle_Package;
 
 package body org.allbinary.math.NamedAngle_Package is
 

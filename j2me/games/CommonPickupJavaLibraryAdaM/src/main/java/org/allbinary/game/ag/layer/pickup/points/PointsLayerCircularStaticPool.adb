@@ -15,8 +15,10 @@
 
 with org.allbinary.game.score.ScoreableInterface_Package; use org.allbinary.game.score.ScoreableInterface_Package;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
+with org.allbinary.layer.AllBinaryLayer_Package_References;
 with org.allbinary.layer.AllBinaryLayerCircularPool_Package; use org.allbinary.layer.AllBinaryLayerCircularPool_Package;
 with org.allbinary.layer.AllBinaryLayerFactoryInterface_Package; use org.allbinary.layer.AllBinaryLayerFactoryInterface_Package;
+with org.allbinary.layer.AllBinaryLayerFactoryInterface_Package_References;
 with org.allbinary.game.ag.layer.pickup.points.PointsLayer_Package; use org.allbinary.game.ag.layer.pickup.points.PointsLayer_Package;
 with org.allbinary.game.ag.layer.pickup.points.PointsLayer_Package;
 
@@ -54,7 +56,7 @@ package body org.allbinary.game.ag.layer.pickup.points.PointsLayerCircularStatic
    begin
       AllBinaryLayerCircularPool_Package.Initialize (This);
       Initialize_Fields (This);
-        AllBinaryLayerCircularPool (This).initAllBinaryLayerCircularPool (allbinaryLayerFactoryInterface, total);
+        AllBinaryLayerCircularPool_Package.AllBinaryLayerCircularPool (This).initAllBinaryLayerCircularPool (allbinaryLayerFactoryInterface, total);
    end Initialize;
 
    function Create (allbinaryLayerFactoryInterface_Param : access AllBinaryLayerFactoryInterface_Package.AllBinaryLayerFactoryInterface'Class; total : Integer) return PointsLayerCircularStaticPool_Access is

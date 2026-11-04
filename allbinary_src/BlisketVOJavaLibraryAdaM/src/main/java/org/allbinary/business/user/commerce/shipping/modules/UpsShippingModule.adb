@@ -14,8 +14,9 @@
 
 
 with org.allbinary.business.user.commerce.inventory.order.OrderInterface_Package; use org.allbinary.business.user.commerce.inventory.order.OrderInterface_Package;
+with org.allbinary.business.user.commerce.inventory.order.OrderInterface_Package_References;
 with org.allbinary.business.user.commerce.money.Money_Package; use org.allbinary.business.user.commerce.money.Money_Package;
-with org.allbinary.business.user.commerce.shipping.modules.ShippingInterface_Package;
+with org.allbinary.business.user.commerce.money.Money_Package_References;
 
 package body org.allbinary.business.user.commerce.shipping.modules.UpsShippingModule_Package is
 

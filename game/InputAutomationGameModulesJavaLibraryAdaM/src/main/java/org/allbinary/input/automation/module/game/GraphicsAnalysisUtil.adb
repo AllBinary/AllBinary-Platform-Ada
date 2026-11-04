@@ -74,7 +74,7 @@ package body org.allbinary.input.automation.module.game.GraphicsAnalysisUtil_Pac
 
 begin
    null;
-   MAX := 122;
+   
 
 end org.allbinary.input.automation.module.game.GraphicsAnalysisUtil_Package;
 

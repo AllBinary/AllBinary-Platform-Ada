@@ -13,7 +13,6 @@
 --  Generated Code Do Not Modify
 
 
-with org.allbinary.animation.transition.AnimationListenerInterface_Package;
 
 package body org.allbinary.animation.transition.RunAtEndAnimationListener_Package is
 

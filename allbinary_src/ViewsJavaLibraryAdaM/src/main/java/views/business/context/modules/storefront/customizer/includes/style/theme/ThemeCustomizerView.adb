@@ -15,11 +15,13 @@
 
 with org.allbinary.data.tree.dom.DomNodeInterface_Package; use org.allbinary.data.tree.dom.DomNodeInterface_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.control.validate.ValidationInterface_Package; use org.allbinary.logic.control.validate.ValidationInterface_Package;
+with org.allbinary.logic.control.validate.ValidationInterface_Package_References;
 with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
+with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package_References;
 with views.business.context.modules.storefront.HttpStoreComponentView_Package; use views.business.context.modules.storefront.HttpStoreComponentView_Package;
 with views.HttpComponentView_Package;
-with views.business.context.modules.storefront.HttpStoreComponentView_Package;
 
 package body views.business.context.modules.storefront.customizer.includes.style.theme.ThemeCustomizerView_Package is
 
@@ -87,7 +89,7 @@ package body views.business.context.modules.storefront.customizer.includes.style
    begin
         begin
             ThemeCustomizerView'Class (This).addDomNodeInterfaces;
-            return HttpStoreComponentView (This).view;
+            return HttpStoreComponentView_Package.HttpStoreComponentView (This).view;
         exception
             when Java_Occurrence : others =>
                 declare

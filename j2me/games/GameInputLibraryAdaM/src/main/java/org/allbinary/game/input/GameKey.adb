@@ -15,7 +15,6 @@
 
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
-with org.allbinary.game.input.Input_Package;
 
 package body org.allbinary.game.input.GameKey_Package is
 
@@ -41,7 +40,7 @@ package body org.allbinary.game.input.GameKey_Package is
 
    function toString (This : in out GameKey) return Unbounded_String is
    begin
-        return StringMaker_Package.Create.append (To_Unbounded_String ("GameKey ")).append (Input (This).toString).toString;
+        return StringMaker_Package.Create.append (To_Unbounded_String ("GameKey ")).append (Input_Package.Input (This).toString).toString;
    end toString;
 
 begin

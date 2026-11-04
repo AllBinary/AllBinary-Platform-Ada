@@ -17,14 +17,13 @@ with org.allbinary.input.media.image.capture.CapturedImageInputOutput_Package; u
 with org.allbinary.media.image.comparison.ComparisonImageInputOutput_Package; use org.allbinary.media.image.comparison.ComparisonImageInputOutput_Package;
 with org.allbinary.media.image.comparison.motion.MotionRectanglesImageInputOutput_Package; use org.allbinary.media.image.comparison.motion.MotionRectanglesImageInputOutput_Package;
 with org.allbinary.media.image.io.ImageIOInterface_Package; use org.allbinary.media.image.io.ImageIOInterface_Package;
+with org.allbinary.media.image.io.ImageIOInterface_Package_References;
 with org.allbinary.input.media.image.InputImageType_Package; use org.allbinary.input.media.image.InputImageType_Package;
-with org.allbinary.input.media.image.capture.CapturedImageInputOutput_Package;
+with org.allbinary.input.media.image.InputImageType_Package_References;
 with org.allbinary.media.image.comparison.color.ColorDelta_Package;
-with org.allbinary.media.image.comparison.ComparisonImageInputOutput_Package;
 with org.allbinary.media.image.comparison.ImageComparisonResult_Package;
 with org.allbinary.input.media.image.InputImageType_Package;
 with org.allbinary.media.image.comparison.motion.MotionRectangles_Package;
-with org.allbinary.media.image.comparison.motion.MotionRectanglesImageInputOutput_Package;
 with org.allbinary.media.image.comparison.pixel.PixelDelta_Package;
 
 package body org.allbinary.input.media.image.InputImageIOInterfaceFactory_Package is

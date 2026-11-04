@@ -14,7 +14,9 @@
 
 
 with org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEventListener_Package; use org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEventListener_Package;
+with org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEventListener_Package_References;
 with org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEvent_Package; use org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEvent_Package;
+with org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEvent_Package_References;
 with org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEvent_Package;
 with org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEventListener_Package;
 

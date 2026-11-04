@@ -14,14 +14,20 @@
 
 
 with javax.microedition.media.Control_Package; use javax.microedition.media.Control_Package;
+with javax.microedition.media.Control_Package_References;
 with javax.microedition.media.Controllable_Package; use javax.microedition.media.Controllable_Package;
 with javax.microedition.media.Player_Package; use javax.microedition.media.Player_Package;
 with javax.microedition.media.PlayerListener_Package; use javax.microedition.media.PlayerListener_Package;
+with javax.microedition.media.PlayerListener_Package_References;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.string_Id.CommonStrings_Package_References;
 with org.allbinary.time.GameTickTimeDelayHelper_Package; use org.allbinary.time.GameTickTimeDelayHelper_Package;
+with org.allbinary.time.GameTickTimeDelayHelper_Package_References;
 with org.allbinary.time.GameTickTimeDelayHelperFactory_Package; use org.allbinary.time.GameTickTimeDelayHelperFactory_Package;
 with org.allbinary.time.TimeDelayHelper_Package; use org.allbinary.time.TimeDelayHelper_Package;
+with org.allbinary.time.TimeDelayHelper_Package_References;
 with org.allbinary.media.audio.Controllable2_Package; use org.allbinary.media.audio.Controllable2_Package;
 with org.allbinary.media.audio.Controllable2_Package;
 

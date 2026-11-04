@@ -15,6 +15,7 @@
 
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.logic.system.hardware.components.Component_Package; use org.allbinary.logic.system.hardware.components.Component_Package;
+with org.allbinary.logic.system.hardware.components.Component_Package_References;
 with org.allbinary.logic.system.hardware.components.Component_Package;
 
 package body org.allbinary.logic.system.hardware.components.ComponentFactory_Package is

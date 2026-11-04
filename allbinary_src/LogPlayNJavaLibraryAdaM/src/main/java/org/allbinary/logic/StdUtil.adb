@@ -17,10 +17,6 @@ with org.allbinary.util.ABHashMap_Package; use org.allbinary.util.ABHashMap_Pack
 with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
 with org.allbinary.util.ABStack_Package; use org.allbinary.util.ABStack_Package;
 with org.allbinary.util.ABVector_Package; use org.allbinary.util.ABVector_Package;
-with org.allbinary.util.ABHashMap_Package;
-with org.allbinary.util.ABHashtable_Package;
-with org.allbinary.util.ABStack_Package;
-with org.allbinary.util.ABVector_Package;
 
 package body org.allbinary.logic.StdUtil_Package is
 

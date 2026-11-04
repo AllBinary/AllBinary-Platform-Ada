@@ -14,9 +14,9 @@
 
 
 with org.allbinary.game.input.mapping.InputToGameKeyMapping_Package; use org.allbinary.game.input.mapping.InputToGameKeyMapping_Package;
+with org.allbinary.game.input.mapping.InputToGameKeyMapping_Package_References;
 with org.allbinary.game.input.DesktopDefaultGameInputMapping_Package; use org.allbinary.game.input.DesktopDefaultGameInputMapping_Package;
 with org.allbinary.game.input.DesktopDefaultGameInputMapping_Package;
-with org.allbinary.game.input.PCGameInputMapping_Package;
 
 package body org.allbinary.game.input.DesktopGameInputMapping_Package is
 

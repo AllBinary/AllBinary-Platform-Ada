@@ -39,7 +39,7 @@ package body org.allbinary.data.generator.OrderHistoryIdGenerator_Package is
         stringBuffer.append (PATH_GLOBALS_Package.getInstance.INIT_PATH);
         stringBuffer.append (This.IDFILE);
         stringBuffer.append (UniqueIdGenerator_Package.EXT);
-        UniqueIdGenerator (This).setFile (stringBuffer.toString, This.IDFILE);
+        UniqueIdGenerator_Package.UniqueIdGenerator (This).setFile (stringBuffer.toString, This.IDFILE);
    end Initialize;
 
    function Create return OrderHistoryIdGenerator_Access is

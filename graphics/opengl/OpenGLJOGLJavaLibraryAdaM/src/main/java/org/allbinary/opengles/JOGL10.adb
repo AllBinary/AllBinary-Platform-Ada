@@ -14,6 +14,7 @@
 
 
 with com.jogamp.opengl.glu.GLU_Package; use com.jogamp.opengl.glu.GLU_Package;
+with com.jogamp.opengl.glu.GLU_Package_References;
 
 package body org.allbinary.opengles.JOGL10_Package is
 

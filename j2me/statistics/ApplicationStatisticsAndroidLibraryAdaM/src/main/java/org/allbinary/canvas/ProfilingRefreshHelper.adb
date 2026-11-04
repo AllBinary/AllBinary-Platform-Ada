@@ -14,8 +14,8 @@
 
 
 with android.view.View_Package; use android.view.View_Package;
+with android.view.View_Package_References;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
-with org.allbinary.canvas.AndroidGameStatistics_Package;
 with org.allbinary.android.view.BaseViewWrapper_Package;
 
 package body org.allbinary.canvas.ProfilingRefreshHelper_Package is
@@ -63,7 +63,7 @@ package body org.allbinary.canvas.ProfilingRefreshHelper_Package is
    procedure initView (This : in out ProfilingRefreshHelper; view_Param : access View_Package.View'Class) is
       view : constant View_Access := View_Access (view_Param);
    begin
-        AndroidGameStatistics (This).initView (view);
+        AndroidGameStatistics_Package.AndroidGameStatistics (This).initView (view);
         This.frameProcessingTimeElapsed := ProfilingRefreshHelper'Class (This).getTimeDelayHelper.getStartTime;
         This.bestFrameProcessingTime := Integer'Last;
         This.worstFrameProcessingTime := 0;
@@ -82,12 +82,12 @@ package body org.allbinary.canvas.ProfilingRefreshHelper_Package is
         else
             This.firstTime := False;
         end if;
-        AndroidGameStatistics (This).nextFrame;
+        AndroidGameStatistics_Package.AndroidGameStatistics (This).nextFrame;
    end nextFrame;
 
    function toString (This : in out ProfilingRefreshHelper) return Unbounded_String is
    begin
-        return StringMaker_Package.Create.append (AndroidGameStatistics (This).toString).append (To_Unbounded_String (" Worst: ")).appendint (This.worstFrameProcessingTime).append (To_Unbounded_String (" Best: ")).appendint (This.bestFrameProcessingTime).toString;
+        return StringMaker_Package.Create.append (AndroidGameStatistics_Package.AndroidGameStatistics (This).toString).append (To_Unbounded_String (" Worst: ")).appendint (This.worstFrameProcessingTime).append (To_Unbounded_String (" Best: ")).appendint (This.bestFrameProcessingTime).toString;
    end toString;
 
 begin

@@ -15,10 +15,10 @@
 
 with org.allbinary.android.AndroidInfoFactory_Package; use org.allbinary.android.AndroidInfoFactory_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package_References;
 with org.allbinary.logic.system.os.GenericOperatingSystem_Package; use org.allbinary.logic.system.os.GenericOperatingSystem_Package;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.logic.system.os.android.AndroidSystemProperties_Package; use org.allbinary.logic.system.os.android.AndroidSystemProperties_Package;
-with org.allbinary.android.AndroidInfoFactory_Package;
 with org.allbinary.logic.system.os.android.AndroidSystemProperties_Package;
 
 package body org.allbinary.logic.system.os.android.AndroidOS_Package is
@@ -152,7 +152,7 @@ package body org.allbinary.logic.system.os.android.AndroidOS_Package is
       osBuffer : StringMaker_Access;
    begin
         osBuffer := StringMaker_Package.Create;
-        osBuffer.append (GenericOperatingSystem (This).toString);
+        osBuffer.append (GenericOperatingSystem_Package.GenericOperatingSystem (This).toString);
         osBuffer.append (CommonSeps_Package.getInstance.SPACE);
         osBuffer.append (To_Unbounded_String ("Other System Info: " & ASCII.LF & ""));
         osBuffer.append (This.stringBuffer.toString);

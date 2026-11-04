@@ -14,11 +14,11 @@
 
 
 with org.allbinary.canvas.Processor_Package; use org.allbinary.canvas.Processor_Package;
+with org.allbinary.canvas.Processor_Package_References;
 with org.allbinary.input.gyro.AccelerometerSensorUpdateProcessor_Package; use org.allbinary.input.gyro.AccelerometerSensorUpdateProcessor_Package;
 with org.allbinary.input.gyro.GyroSensorUpdateProcessor_Package; use org.allbinary.input.gyro.GyroSensorUpdateProcessor_Package;
 with org.allbinary.input.gyro.AccelerometerSensorUpdateProcessor_Package;
 with org.allbinary.input.gyro.GyroSensorUpdateProcessor_Package;
-with org.allbinary.input.gyro.SensorGameUpdateProcessor_Package;
 
 package body org.allbinary.input.gyro.SingleSensorGameUpdateProcessor_Package is
 

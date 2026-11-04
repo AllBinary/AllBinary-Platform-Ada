@@ -2,11 +2,13 @@
 
 
 with org.allbinary.game.layer.AllBinaryGameLayer_Package; use org.allbinary.game.layer.AllBinaryGameLayer_Package;
+with org.allbinary.game.layer.AllBinaryGameLayer_Package_References;
 with org.allbinary.game.physics.velocity.BasicVelocityProperties_Package; use org.allbinary.game.physics.velocity.BasicVelocityProperties_Package;
+with org.allbinary.game.physics.velocity.BasicVelocityProperties_Package_References;
 with org.allbinary.logic.math.BasicDecimal_Package; use org.allbinary.logic.math.BasicDecimal_Package;
+with org.allbinary.logic.math.BasicDecimal_Package_References;
 with org.allbinary.logic.math.MathUtil_Package; use org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.logic.math.ScaleFactorFactory_Package; use org.allbinary.logic.math.ScaleFactorFactory_Package;
-with org.allbinary.physics.movement.BasicConstantVelocityMovement_Package;
 with org.allbinary.physics.movement.Movement_Package;
 with org.allbinary.physics.movement.MovementInterface_Package;
 

@@ -16,11 +16,14 @@
 with javax.microedition.media.MediaException_Package; use javax.microedition.media.MediaException_Package;
 with javax.microedition.media.Player_Package; use javax.microedition.media.Player_Package;
 with javax.microedition.media.PlayerListener_Package; use javax.microedition.media.PlayerListener_Package;
+with javax.microedition.media.PlayerListener_Package_References;
 with android.media.MediaPlayer_Package; use android.media.MediaPlayer_Package;
+with android.media.MediaPlayer_Package_References;
 with org.allbinary.android.NullAndroidCanvas_Package; use org.allbinary.android.NullAndroidCanvas_Package;
 with org.allbinary.data.resource.ResourceUtil_Package; use org.allbinary.data.resource.ResourceUtil_Package;
 with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 
@@ -123,7 +126,7 @@ package body org.allbinary.media.audio.AndroidMediaPlayerWrapper_Package is
 
    procedure setLoopCount (This : in out AndroidMediaPlayerWrapper; count : Integer) is
    begin
-        BasicPlayer (This).setLoopCount (count);
+        BasicPlayer_Package.BasicPlayer (This).setLoopCount (count);
         if ((This.mediaPlayer) /= (NullAndroidCanvas_Package.NULL_MEDIA_PLAYER)) and then ((This.mediaPlayer) /= (null)) then
             if (count) = (0) then
                 This.mediaPlayer.setLooping (False);
@@ -136,13 +139,13 @@ package body org.allbinary.media.audio.AndroidMediaPlayerWrapper_Package is
    procedure addPlayerListener (This : in out AndroidMediaPlayerWrapper; playerListener_Param : access PlayerListener_Package.PlayerListener'Class) is
       playerListener : constant PlayerListener_Access := PlayerListener_Access (playerListener_Param);
    begin
-        BasicPlayer (This).addPlayerListener (playerListener);
+        BasicPlayer_Package.BasicPlayer (This).addPlayerListener (playerListener);
    end addPlayerListener;
 
    procedure removePlayerListener (This : in out AndroidMediaPlayerWrapper; playerListener_Param : access PlayerListener_Package.PlayerListener'Class) is
       playerListener : constant PlayerListener_Access := PlayerListener_Access (playerListener_Param);
    begin
-        BasicPlayer (This).removePlayerListener (playerListener);
+        BasicPlayer_Package.BasicPlayer (This).removePlayerListener (playerListener);
    end removePlayerListener;
 
    function getState (This : in out AndroidMediaPlayerWrapper) return Integer is
@@ -178,7 +181,7 @@ package body org.allbinary.media.audio.AndroidMediaPlayerWrapper_Package is
                 This.mediaPlayer.seekTo (0);
             end if;
             This.mediaPlayer.start;
-            BasicPlayer (This).start;
+            BasicPlayer_Package.BasicPlayer (This).start;
         exception
             when Java_Occurrence : others =>
                 declare
@@ -195,7 +198,7 @@ package body org.allbinary.media.audio.AndroidMediaPlayerWrapper_Package is
         begin
             This.mediaPlayer.stop;
             This.mediaPlayer.prepare;
-            BasicPlayer (This).stop;
+            BasicPlayer_Package.BasicPlayer (This).stop;
         exception
             when Java_Occurrence : others =>
                 declare

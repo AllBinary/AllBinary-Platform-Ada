@@ -15,18 +15,20 @@
 
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.business.DynamicObjectData_Package; use org.allbinary.business.DynamicObjectData_Package;
 with org.allbinary.business.advertisement.AdvertisementData_Package; use org.allbinary.business.advertisement.AdvertisementData_Package;
 with org.allbinary.business.advertisement.AdvertisementInterface_Package; use org.allbinary.business.advertisement.AdvertisementInterface_Package;
+with org.allbinary.business.advertisement.AdvertisementInterface_Package_References;
 with org.allbinary.business.context.modules.storefront.StoreFrontData_Package; use org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
 with org.allbinary.business.entry_Id.EntryData_Package; use org.allbinary.business.entry_Id.EntryData_Package;
 with org.allbinary.business.init.db.UserDbInitInfo_Package; use org.allbinary.business.init.db.UserDbInitInfo_Package;
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.communication.sql.AbSqlBean_Package; use org.allbinary.logic.communication.sql.AbSqlBean_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
-with org.allbinary.data.tables.advertisement.AdvertisementsEntityInterface_Package;
 
 package body org.allbinary.data.tables.advertisement.AdvertisementsEntity_Package is
 
@@ -94,7 +96,7 @@ package body org.allbinary.data.tables.advertisement.AdvertisementsEntity_Packag
    procedure delete (This : in out AdvertisementsEntity; value : Unbounded_String) is
    begin
         begin
-            AbSqlBean (This).deleteWhere (EntryData_Package.getInstance.ID, value);
+            AbSqlBean_Package.AbSqlBean (This).deleteWhere (EntryData_Package.getInstance.ID, value);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
                 This.logUtil.putF (This.commonStrings.SUCCESS, AdvertisementsEntity_Access'(This'Unchecked_Access), This.commonStrings.delete);
             end if;
@@ -120,7 +122,7 @@ package body org.allbinary.data.tables.advertisement.AdvertisementsEntity_Packag
    begin
         keysAndValues := StdUtil_Package.getInstance.createHashMap;
         keysAndValues.put (StoreFrontData_Package.getInstance.NAME, Java_Box (storeName));
-        hashMapVector := AbSqlBean (This).getRows (keysAndValues);
+        hashMapVector := AbSqlBean_Package.AbSqlBean (This).getRows (keysAndValues);
         vector := BasicArrayList_Access (BasicArrayListD_Package.Create);
         size := hashMapVector.size;
         for index in 0 .. (size) - 1 loop
@@ -136,7 +138,7 @@ package body org.allbinary.data.tables.advertisement.AdvertisementsEntity_Packag
         keysAndValues := StdUtil_Package.getInstance.createHashMap;
         keysAndValues.put (StoreFrontData_Package.getInstance.NAME, Java_Box (storeName));
         keysAndValues.put (AdvertisementData_Package.getInstance.NAME, Java_Box (advertismentName));
-        hashMap := AbSqlBean (This).getRow (keysAndValues);
+        hashMap := AbSqlBean_Package.AbSqlBean (This).getRow (keysAndValues);
         return null;
    end get;
 
@@ -155,19 +157,19 @@ package body org.allbinary.data.tables.advertisement.AdvertisementsEntity_Packag
    function createTable (This : in out AdvertisementsEntity) return Unbounded_String is
       returnStr : Unbounded_String;
    begin
-        returnStr := AbSqlBean (This).createTable (AdvertisementsEntity'Class (This).createTableStatement);
+        returnStr := AbSqlBean_Package.AbSqlBean (This).createTable (AdvertisementsEntity'Class (This).createTableStatement);
         return returnStr;
    end createTable;
 
    procedure update (This : in out AdvertisementsEntity; updatedValues_Param : access HashMap_Package.HashMap'Class) is
       updatedValues : constant HashMap_Access := HashMap_Access (updatedValues_Param);
    begin
-        AbSqlBean (This).updateWhere (EntryData_Package.getInstance.ID, Java_Unbox (updatedValues.get (EntryData_Package.getInstance.ID)), updatedValues);
+        AbSqlBean_Package.AbSqlBean (This).updateWhere (EntryData_Package.getInstance.ID, Java_Unbox (updatedValues.get (EntryData_Package.getInstance.ID)), updatedValues);
    end update;
 
    function dropTable (This : in out AdvertisementsEntity) return Unbounded_String is
    begin
-        return AbSqlBean (This).dropTable;
+        return AbSqlBean_Package.AbSqlBean (This).dropTable;
    end dropTable;
 
    procedure get (This : in out AdvertisementsEntity; storeName : Unbounded_String) is

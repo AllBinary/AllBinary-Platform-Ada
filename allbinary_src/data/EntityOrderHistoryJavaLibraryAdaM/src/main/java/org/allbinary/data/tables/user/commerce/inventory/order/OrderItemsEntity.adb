@@ -24,23 +24,25 @@ with org.allbinary.business.user.UserData_Package; use org.allbinary.business.us
 with org.allbinary.business.user.address.ShippingAddressData_Package; use org.allbinary.business.user.address.ShippingAddressData_Package;
 with org.allbinary.business.user.commerce.inventory.basket.BasketInterface_Package; use org.allbinary.business.user.commerce.inventory.basket.BasketInterface_Package;
 with org.allbinary.business.user.commerce.inventory.basket.BasketReview_Package; use org.allbinary.business.user.commerce.inventory.basket.BasketReview_Package;
+with org.allbinary.business.user.commerce.inventory.basket.BasketReview_Package_References;
 with org.allbinary.business.user.commerce.inventory.item.BasicItemData_Package; use org.allbinary.business.user.commerce.inventory.item.BasicItemData_Package;
+with org.allbinary.business.user.commerce.inventory.item.BasicItemData_Package_References;
 with org.allbinary.business.user.commerce.inventory.item.Item_Package; use org.allbinary.business.user.commerce.inventory.item.Item_Package;
 with org.allbinary.business.user.commerce.inventory.item.ItemInterface_Package; use org.allbinary.business.user.commerce.inventory.item.ItemInterface_Package;
 with org.allbinary.business.user.commerce.inventory.order.OrderData_Package; use org.allbinary.business.user.commerce.inventory.order.OrderData_Package;
 with org.allbinary.business.user.commerce.inventory.order.OrderHistoryData_Package; use org.allbinary.business.user.commerce.inventory.order.OrderHistoryData_Package;
 with org.allbinary.business.user.commerce.inventory.order.OrderInterface_Package; use org.allbinary.business.user.commerce.inventory.order.OrderInterface_Package;
+with org.allbinary.business.user.commerce.inventory.order.OrderInterface_Package_References;
 with org.allbinary.business.user.commerce.shipping.ShippingMethodData_Package; use org.allbinary.business.user.commerce.shipping.ShippingMethodData_Package;
 with org.allbinary.data.generator.OrderItemIdGenerator_Package; use org.allbinary.data.generator.OrderItemIdGenerator_Package;
 with org.allbinary.data.tables.TableDataFactory_Package; use org.allbinary.data.tables.TableDataFactory_Package;
 with org.allbinary.data.tables.user.commerce.inventory.item.InventoryEntity_Package; use org.allbinary.data.tables.user.commerce.inventory.item.InventoryEntity_Package;
 with org.allbinary.data.tables.user.commerce.inventory.item.InventoryEntityFactory_Package; use org.allbinary.data.tables.user.commerce.inventory.item.InventoryEntityFactory_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.communication.sql.AbSqlBean_Package; use org.allbinary.logic.communication.sql.AbSqlBean_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
-with org.allbinary.data.generator.OrderItemIdGenerator_Package;
-with org.allbinary.data.tables.user.commerce.inventory.order.OrderItemsEntityInterface_Package;
 
 package body org.allbinary.data.tables.user.commerce.inventory.order.OrderItemsEntity_Package is
 
@@ -225,7 +227,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.order.OrderItemsE
             whereHashMap.put (OrderData_Package.ID, Java_Box (orderId));
             whereHashMap.put (ShippingMethodData_Package.GROUP, Java_Box (groupId));
             updateHashMap.put (OrderHistoryData_Package.STATUS, Java_Box (status));
-            AbSqlBean (This).updateWhere (whereHashMap, updateHashMap);
+            AbSqlBean_Package.AbSqlBean (This).updateWhere (whereHashMap, updateHashMap);
         exception
             when Java_Occurrence : others =>
                 declare
@@ -245,7 +247,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.order.OrderItemsE
       index : Integer;
    begin
         begin
-            itemStatusVector := AbSqlBean (This).getColumnWhere (OrderHistoryData_Package.STATUS, OrderData_Package.ID, orderId);
+            itemStatusVector := AbSqlBean_Package.AbSqlBean (This).getColumnWhere (OrderHistoryData_Package.STATUS, OrderData_Package.ID, orderId);
             size := itemStatusVector.size;
             for index in 0 .. (size) - 1 loop
                 status := Java_Unbox (itemStatusVector.get (index));
@@ -283,7 +285,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.order.OrderItemsE
             basketReview := BasketReview_Package.Create;
             keyValues := StdUtil_Package.getInstance.createHashMap;
             keyValues.put (OrderData_Package.ID, Java_Box (orderId));
-            items := AbSqlBean (This).getRows (keyValues);
+            items := AbSqlBean_Package.AbSqlBean (This).getRows (keyValues);
             entryData := EntryData_Package.getInstance;
             if ((items) /= (null)) and then ((items.size) > (0)) then
                 EMPTY_STRING := StringUtil_Package.getInstance.EMPTY_STRING;
@@ -422,12 +424,12 @@ package body org.allbinary.data.tables.user.commerce.inventory.order.OrderItemsE
 
    function createTable (This : in out OrderItemsEntity) return Unbounded_String is
    begin
-        return AbSqlBean (This).createTable (OrderItemsEntity'Class (This).createTableStatement);
+        return AbSqlBean_Package.AbSqlBean (This).createTable (OrderItemsEntity'Class (This).createTableStatement);
    end createTable;
 
    function dropTable (This : in out OrderItemsEntity) return Unbounded_String is
    begin
-        return AbSqlBean (This).dropTable;
+        return AbSqlBean_Package.AbSqlBean (This).dropTable;
    end dropTable;
 
    procedure isEverythingShipped (This : in out OrderItemsEntity; orderId : Unbounded_String) is

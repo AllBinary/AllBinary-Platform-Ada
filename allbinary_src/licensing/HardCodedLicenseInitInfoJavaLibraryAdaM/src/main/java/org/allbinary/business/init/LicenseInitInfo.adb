@@ -17,6 +17,7 @@ with org.allbinary.debug.DebugFactory_Package; use org.allbinary.debug.DebugFact
 with org.allbinary.debug.NoDebug_Package; use org.allbinary.debug.NoDebug_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 
 package body org.allbinary.business.init.LicenseInitInfo_Package is

@@ -42,7 +42,7 @@ package org.allbinary.game.multiplayer.layer.RemoteInfo_Package is
    function "=" (Left, Right : RemoteInfo_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.multiplayer.layer.RemoteInfo_Package_References."=";
 
    type RemoteInfo is new Java_Object with null record;
-   NEW_PLAYER_ID : Integer;
+   NEW_PLAYER_ID : constant Integer := 0;
    REMOTE_INFO : RemoteInfo_Access;
 
    procedure Initialize (This : in out RemoteInfo'Class; username : Unbounded_String; actorSessionId : Integer; playerInputId : Integer; id : Integer);

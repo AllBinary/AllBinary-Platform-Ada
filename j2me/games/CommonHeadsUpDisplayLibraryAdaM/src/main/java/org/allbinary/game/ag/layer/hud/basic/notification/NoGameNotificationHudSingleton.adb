@@ -16,8 +16,11 @@
 with org.allbinary.game.graphics.hud.BasicHudFactory_Package; use org.allbinary.game.graphics.hud.BasicHudFactory_Package;
 with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.game.ag.layer.hud.basic.notification.GameNotificationHud_Package; use org.allbinary.game.ag.layer.hud.basic.notification.GameNotificationHud_Package;
+with org.allbinary.game.ag.layer.hud.basic.notification.GameNotificationHud_Package_References;
+with org.allbinary.game.ag.layer.hud.basic.notification.NoGameGameNotificationHud_Package; use org.allbinary.game.ag.layer.hud.basic.notification.NoGameGameNotificationHud_Package;
 with org.allbinary.game.ag.layer.hud.basic.notification.GameNotificationHud_Package;
 
 package body org.allbinary.game.ag.layer.hud.basic.notification.NoGameNotificationHudSingleton_Package is

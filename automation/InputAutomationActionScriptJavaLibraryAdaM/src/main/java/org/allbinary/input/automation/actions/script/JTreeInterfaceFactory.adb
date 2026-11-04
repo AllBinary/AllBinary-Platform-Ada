@@ -6,6 +6,7 @@
 
 
 with org.allbinary.input.automation.actions.script.JTreeInterface_Package; use org.allbinary.input.automation.actions.script.JTreeInterface_Package;
+with org.allbinary.input.automation.actions.script.JTreeInterface_Package_References;
 with org.allbinary.input.automation.actions.script.JTreeInterface_Package;
 
 package body org.allbinary.input.automation.actions.script.JTreeInterfaceFactory_Package is

@@ -18,8 +18,10 @@ with org.allbinary.game.score.HighScores_Package; use org.allbinary.game.score.H
 with org.allbinary.game.score.HighScoresHelperBase_Package; use org.allbinary.game.score.HighScoresHelperBase_Package;
 with org.allbinary.game.score.NullHighScoresSingletonFactory_Package; use org.allbinary.game.score.NullHighScoresSingletonFactory_Package;
 with org.allbinary.game.state.GameStateFactory_Package; use org.allbinary.game.state.GameStateFactory_Package;
+with org.allbinary.game.state.GameStateFactory_Package_References;
 with org.allbinary.graphics.paint.NullPaintable_Package; use org.allbinary.graphics.paint.NullPaintable_Package;
 with org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package; use org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package;
+with org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package_References;
 with org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package;
 with org.allbinary.game.displayable.canvas.AllBinaryGameCanvasInterface_Package;
 with org.allbinary.game.layer.AllBinaryGameLayerManager_Package;

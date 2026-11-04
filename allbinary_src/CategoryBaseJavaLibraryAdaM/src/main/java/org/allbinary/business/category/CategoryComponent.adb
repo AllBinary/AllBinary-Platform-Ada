@@ -16,13 +16,16 @@
 with org.allbinary.data.tree.dom.document.DomDocumentHelper_Package; use org.allbinary.data.tree.dom.document.DomDocumentHelper_Package;
 with org.allbinary.logic.visual.transform.TransformInterface_Package; use org.allbinary.logic.visual.transform.TransformInterface_Package;
 with org.allbinary.logic.visual.transform.data.TransformDocumentInterface_Package; use org.allbinary.logic.visual.transform.data.TransformDocumentInterface_Package;
+with org.allbinary.logic.visual.transform.data.TransformDocumentInterface_Package_References;
 with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
+with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package_References;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
+with org.w3c.dom.Document_Package_References;
 with org.allbinary.business.category.CategoryInterface_Package; use org.allbinary.business.category.CategoryInterface_Package;
+with org.allbinary.business.category.CategoryInterface_Package_References;
 with org.allbinary.business.category.hierarchy.CategoryHierarchyInterface_Package;
 with org.allbinary.business.category.CategoryInterface_Package;
 with org.allbinary.business.category.properties.CategoryPropertiesInterface_Package;
-with org.allbinary.business.category.CategoryView_Package;
 with org.allbinary.logic.control.validate.ValidationInterface_Package;
 
 package body org.allbinary.business.category.CategoryComponent_Package is

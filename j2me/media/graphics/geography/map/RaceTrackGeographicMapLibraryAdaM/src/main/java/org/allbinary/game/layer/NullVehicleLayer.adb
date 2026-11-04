@@ -14,15 +14,22 @@
 
 
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
 with org.allbinary.animation.RotationAnimation_Package; use org.allbinary.animation.RotationAnimation_Package;
+with org.allbinary.animation.RotationAnimation_Package_References;
 with org.allbinary.game.identification.Group_Package; use org.allbinary.game.identification.Group_Package;
+with org.allbinary.game.identification.Group_Package_References;
 with org.allbinary.logic.math.BasicDecimal_Package; use org.allbinary.logic.math.BasicDecimal_Package;
+with org.allbinary.logic.math.BasicDecimal_Package_References;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellHistory_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellHistory_Package;
+with org.allbinary.media.graphics.geography.map.GeographicMapCellHistory_Package_References;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellPositionTracking_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellPositionTracking_Package;
+with org.allbinary.media.graphics.geography.map.GeographicMapCellPositionTracking_Package_References;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.game.layer.VehicleProperties_Package; use org.allbinary.game.layer.VehicleProperties_Package;
+with org.allbinary.game.layer.VehicleProperties_Package_References;
 with org.allbinary.game.layer.VehicleFrictionProperties_Package;
-with org.allbinary.game.layer.VehicleLayerInterface_Package;
 with org.allbinary.game.layer.VehicleProperties_Package;
 with org.allbinary.game.layer.VehiclePropertiesCompositeInterface_Package;
 

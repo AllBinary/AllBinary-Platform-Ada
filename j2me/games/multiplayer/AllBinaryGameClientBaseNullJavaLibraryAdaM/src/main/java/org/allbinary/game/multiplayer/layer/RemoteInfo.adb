@@ -31,7 +31,7 @@ package body org.allbinary.game.multiplayer.layer.RemoteInfo_Package is
 
 begin
    null;
-   NEW_PLAYER_ID := 0;
+   
    REMOTE_INFO := RemoteInfo_Package.Create (StringUtil_Package.getInstance.EMPTY_STRING, -(1), -(1), RemoteInfo_Package.NEW_PLAYER_ID);
 
 end org.allbinary.game.multiplayer.layer.RemoteInfo_Package;

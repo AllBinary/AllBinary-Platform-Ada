@@ -20,8 +20,8 @@ with org.allbinary.business.user.UserData_Package; use org.allbinary.business.us
 with org.allbinary.logic.string_Id.tokens.Tokenizer_Package; use org.allbinary.logic.string_Id.tokens.Tokenizer_Package;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
-with org.allbinary.business.context.modules.storefronts.BasicStoreFrontInterface_Package;
 
 package body org.allbinary.business.context.modules.storefronts.BasicStoreFront_Package is
 

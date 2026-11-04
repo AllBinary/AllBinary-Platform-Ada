@@ -13,9 +13,22 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.graphics.opengles.shader.OpenGLObject3dProcessor_Package; use org.allbinary.graphics.opengles.shader.OpenGLObject3dProcessor_Package;
+with org.allbinary.graphics.opengles.shader.OpenGLObject3dProcessor_Package_References;
+with org.allbinary.graphics.opengles.shader.OpenGLObject3dProcessor_Package;
 
 package body org.allbinary.graphics.opengles.shader.NullOpenGLTextureProcessor_Package is
 
+   subtype OpenGLObject3dProcessor_Access is org.allbinary.graphics.opengles.shader.OpenGLObject3dProcessor_Package_References.OpenGLObject3dProcessor_Access;
+   function "=" (Left, Right : OpenGLObject3dProcessor_Access) return Boolean renames org.allbinary.graphics.opengles.shader.OpenGLObject3dProcessor_Package_References."=";
+   subtype OpenGLObject3dProcessor_Access_Array is org.allbinary.graphics.opengles.shader.OpenGLObject3dProcessor_Package_References.OpenGLObject3dProcessor_Access_Array;
+   function "=" (Left, Right : OpenGLObject3dProcessor_Access_Array) return Boolean renames org.allbinary.graphics.opengles.shader.OpenGLObject3dProcessor_Package_References."=";
+   subtype OpenGLObject3dProcessor_Access_Array_Access is org.allbinary.graphics.opengles.shader.OpenGLObject3dProcessor_Package_References.OpenGLObject3dProcessor_Access_Array_Access;
+   function "=" (Left, Right : OpenGLObject3dProcessor_Access_Array_Access) return Boolean renames org.allbinary.graphics.opengles.shader.OpenGLObject3dProcessor_Package_References."=";
+   subtype OpenGLObject3dProcessor_Access_Array_Access_Array is org.allbinary.graphics.opengles.shader.OpenGLObject3dProcessor_Package_References.OpenGLObject3dProcessor_Access_Array_Access_Array;
+   function "=" (Left, Right : OpenGLObject3dProcessor_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.opengles.shader.OpenGLObject3dProcessor_Package_References."=";
+   subtype OpenGLObject3dProcessor_Access_Array_Access_Array_Access is org.allbinary.graphics.opengles.shader.OpenGLObject3dProcessor_Package_References.OpenGLObject3dProcessor_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : OpenGLObject3dProcessor_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.opengles.shader.OpenGLObject3dProcessor_Package_References."=";
    procedure Initialize_Fields (This : in out NullOpenGLTextureProcessor'Class) is
    begin
       null;
@@ -36,7 +49,7 @@ package body org.allbinary.graphics.opengles.shader.NullOpenGLTextureProcessor_P
 
    function getInstance return OpenGLObject3dProcessor_Access is
    begin
-        return NullOpenGLTextureProcessor_Package.instance;
+        return OpenGLObject3dProcessor_Access (NullOpenGLTextureProcessor_Package.instance);
    end getInstance;
 
 begin

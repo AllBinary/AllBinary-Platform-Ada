@@ -3,6 +3,7 @@
 
 with java.io.InputStream_Package; use java.io.InputStream_Package;
 with org.allbinary.logic.io.path.AbPath_Package; use org.allbinary.logic.io.path.AbPath_Package;
+with org.allbinary.logic.io.path.AbPath_Package_References;
 
 package body org.allbinary.logic.control.crypt.file.CryptFileReader_Package is
 

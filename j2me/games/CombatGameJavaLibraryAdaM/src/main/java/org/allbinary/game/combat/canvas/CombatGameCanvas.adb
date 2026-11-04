@@ -14,6 +14,7 @@
 
 
 with javax.microedition.lcdui.CommandListener_Package; use javax.microedition.lcdui.CommandListener_Package;
+with javax.microedition.lcdui.CommandListener_Package_References;
 with org.allbinary.game.combat.destroy.DestroyedLayerProcessor_Package; use org.allbinary.game.combat.destroy.DestroyedLayerProcessor_Package;
 with org.allbinary.game.combat.destroy.event.DestroyEventCircularStaticPool_Package; use org.allbinary.game.combat.destroy.event.DestroyEventCircularStaticPool_Package;
 with org.allbinary.game.combat.destroy.event.DestroyedEventHandler_Package; use org.allbinary.game.combat.destroy.event.DestroyedEventHandler_Package;
@@ -21,13 +22,18 @@ with org.allbinary.game.configuration.feature.Features_Package; use org.allbinar
 with org.allbinary.game.configuration.feature.GameFeatureFactory_Package; use org.allbinary.game.configuration.feature.GameFeatureFactory_Package;
 with org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package; use org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package;
 with org.allbinary.game.init.BasicBuildGameInitializerFactory_Package; use org.allbinary.game.init.BasicBuildGameInitializerFactory_Package;
+with org.allbinary.game.init.BasicBuildGameInitializerFactory_Package_References;
 with org.allbinary.game.layer.AllBinaryGameLayerManager_Package; use org.allbinary.game.layer.AllBinaryGameLayerManager_Package;
+with org.allbinary.game.layer.AllBinaryGameLayerManager_Package_References;
 with org.allbinary.game.layer.drop.DropLayerProcessor_Package; use org.allbinary.game.layer.drop.DropLayerProcessor_Package;
 with org.allbinary.game.layer.identification.GroupLayerManagerListener_Package; use org.allbinary.game.layer.identification.GroupLayerManagerListener_Package;
 with org.allbinary.game.score.HighScoresFactoryInterface_Package; use org.allbinary.game.score.HighScoresFactoryInterface_Package;
+with org.allbinary.game.score.HighScoresFactoryInterface_Package_References;
 with org.allbinary.graphics.canvas.transition.progress.ProgressCanvasFactory_Package; use org.allbinary.graphics.canvas.transition.progress.ProgressCanvasFactory_Package;
 with org.allbinary.layer.BasicLayerProcessor_Package; use org.allbinary.layer.BasicLayerProcessor_Package;
+with org.allbinary.layer.BasicLayerProcessor_Package_References;
 with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package; use org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References;
 
 package body org.allbinary.game.combat.canvas.CombatGameCanvas_Package is
 
@@ -132,7 +138,7 @@ package body org.allbinary.game.combat.canvas.CombatGameCanvas_Package is
       abeClientInformation : constant AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
    begin
         CombatGameCanvas'Class (This).CombatGameCanvas_init;
-        AllBinaryGameCanvas (This).initApp (abeClientInformation);
+        AllBinaryGameCanvas_Package.AllBinaryGameCanvas (This).initApp (abeClientInformation);
    end initApp;
 
    procedure initConfigurablePortion (This : in out CombatGameCanvas; portion : Integer) is
@@ -157,7 +163,7 @@ package body org.allbinary.game.combat.canvas.CombatGameCanvas_Package is
    procedure processPlayingGame (This : in out CombatGameCanvas) is
       index : Integer;
    begin
-        AllBinaryGameCanvas (This).processPlayingGame;
+        AllBinaryGameCanvas_Package.AllBinaryGameCanvas (This).processPlayingGame;
         index := CombatGameCanvas_Package.basicLayerProcessor'Length;
         while (Java_Pre_Decrement (index)) >= (0) loop
             CombatGameCanvas_Package.basicLayerProcessor (index).process (This.gameLayerManager);
@@ -168,7 +174,7 @@ package body org.allbinary.game.combat.canvas.CombatGameCanvas_Package is
    procedure cleanupGame (This : in out CombatGameCanvas) is
       index : Integer;
    begin
-        AllBinaryGameCanvas (This).cleanupGame;
+        AllBinaryGameCanvas_Package.AllBinaryGameCanvas (This).cleanupGame;
         index := CombatGameCanvas_Package.basicLayerProcessor'Length;
         while (Java_Pre_Decrement (index)) >= (0) loop
             CombatGameCanvas_Package.basicLayerProcessor (index).getList.clear;

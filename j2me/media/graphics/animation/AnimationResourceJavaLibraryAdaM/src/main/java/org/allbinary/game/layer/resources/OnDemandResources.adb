@@ -14,9 +14,11 @@
 
 
 with org.allbinary.animation.resource.BaseResourceAnimationInterfaceFactoryInterfaceFactory_Package; use org.allbinary.animation.resource.BaseResourceAnimationInterfaceFactoryInterfaceFactory_Package;
+with org.allbinary.animation.resource.BaseResourceAnimationInterfaceFactoryInterfaceFactory_Package_References;
 with org.allbinary.image.ImageCache_Package; use org.allbinary.image.ImageCache_Package;
+with org.allbinary.image.ImageCache_Package_References;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.animation.resource.BaseResourceAnimationInterfaceFactoryInterfaceFactory_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.animation.resource.FeatureResourceAnimationInterfaceFactoryInterface_Package;
 with org.allbinary.game.resource.RectangleResourceFactoryInterface_Package;
 with org.allbinary.animation.resource.ResourceAnimationInterfaceFactoryInterface_Package;

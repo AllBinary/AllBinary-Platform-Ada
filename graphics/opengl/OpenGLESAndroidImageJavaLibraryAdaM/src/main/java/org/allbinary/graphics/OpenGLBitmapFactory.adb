@@ -3,12 +3,18 @@
 
 with java.io.InputStream_Package; use java.io.InputStream_Package;
 with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
+with javax.microedition.lcdui.Image_Package_References;
 with android.graphics.Bitmap_Package; use android.graphics.Bitmap_Package;
+with android.graphics.Bitmap_Package_References;
 with android.graphics.BitmapFactory_Package; use android.graphics.BitmapFactory_Package;
 with org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package; use org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package;
 with org.allbinary.platform.graphics.PlatformBitmapBase_Package; use org.allbinary.platform.graphics.PlatformBitmapBase_Package;
+with org.allbinary.platform.graphics.PlatformBitmapBase_Package_References;
 with org.microemu.android.device.AndroidImageInterface_Package; use org.microemu.android.device.AndroidImageInterface_Package;
+with org.allbinary.graphics.Config_Package; use org.allbinary.graphics.Config_Package;
+with org.allbinary.graphics.Config_Package_References;
 with org.allbinary.graphics.OpenGLBitmap_Package; use org.allbinary.graphics.OpenGLBitmap_Package;
+with org.allbinary.graphics.OpenGLBitmap_Package_References;
 with org.allbinary.graphics.OpenGLBitmap_Package;
 
 package body org.allbinary.graphics.OpenGLBitmapFactory_Package is
@@ -45,6 +51,16 @@ package body org.allbinary.graphics.OpenGLBitmapFactory_Package is
    function "=" (Left, Right : PlatformBitmapBase_Access_Array_Access_Array) return Boolean renames org.allbinary.platform.graphics.PlatformBitmapBase_Package_References."=";
    subtype PlatformBitmapBase_Access_Array_Access_Array_Access is org.allbinary.platform.graphics.PlatformBitmapBase_Package_References.PlatformBitmapBase_Access_Array_Access_Array_Access;
    function "=" (Left, Right : PlatformBitmapBase_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.platform.graphics.PlatformBitmapBase_Package_References."=";
+   subtype Config_Access is org.allbinary.graphics.Config_Package_References.Config_Access;
+   function "=" (Left, Right : Config_Access) return Boolean renames org.allbinary.graphics.Config_Package_References."=";
+   subtype Config_Access_Array is org.allbinary.graphics.Config_Package_References.Config_Access_Array;
+   function "=" (Left, Right : Config_Access_Array) return Boolean renames org.allbinary.graphics.Config_Package_References."=";
+   subtype Config_Access_Array_Access is org.allbinary.graphics.Config_Package_References.Config_Access_Array_Access;
+   function "=" (Left, Right : Config_Access_Array_Access) return Boolean renames org.allbinary.graphics.Config_Package_References."=";
+   subtype Config_Access_Array_Access_Array is org.allbinary.graphics.Config_Package_References.Config_Access_Array_Access_Array;
+   function "=" (Left, Right : Config_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.Config_Package_References."=";
+   subtype Config_Access_Array_Access_Array_Access is org.allbinary.graphics.Config_Package_References.Config_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Config_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.Config_Package_References."=";
    subtype OpenGLBitmap_Access is org.allbinary.graphics.OpenGLBitmap_Package_References.OpenGLBitmap_Access;
    function "=" (Left, Right : OpenGLBitmap_Access) return Boolean renames org.allbinary.graphics.OpenGLBitmap_Package_References."=";
    subtype OpenGLBitmap_Access_Array is org.allbinary.graphics.OpenGLBitmap_Package_References.OpenGLBitmap_Access_Array;
@@ -129,12 +145,17 @@ end org.allbinary.graphics.OpenGLBitmapFactory_Package;
 
 with java.io.InputStream_Package; use java.io.InputStream_Package;
 with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
+with javax.microedition.lcdui.Image_Package_References;
 with android.graphics.Bitmap_Package; use android.graphics.Bitmap_Package;
+with android.graphics.Bitmap_Package_References;
 with android.graphics.BitmapFactory_Package; use android.graphics.BitmapFactory_Package;
 with org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package; use org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package;
+with org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package_References;
 with org.allbinary.platform.graphics.PlatformBitmapBase_Package; use org.allbinary.platform.graphics.PlatformBitmapBase_Package;
+with org.allbinary.platform.graphics.PlatformBitmapBase_Package_References;
 with org.microemu.android.device.AndroidImageInterface_Package; use org.microemu.android.device.AndroidImageInterface_Package;
 with org.allbinary.graphics.OpenGLBitmap_Package; use org.allbinary.graphics.OpenGLBitmap_Package;
+with org.allbinary.graphics.OpenGLBitmap_Package_References;
 with org.allbinary.graphics.OpenGLBitmap_Package;
 with org.allbinary.graphics.OpenGLBitmapFactory_Package;
 
@@ -162,6 +183,16 @@ package body org.allbinary.graphics.Config_Package is
    function "=" (Left, Right : Bitmap_Access_Array_Access_Array) return Boolean renames android.graphics.Bitmap_Package_References."=";
    subtype Bitmap_Access_Array_Access_Array_Access is android.graphics.Bitmap_Package_References.Bitmap_Access_Array_Access_Array_Access;
    function "=" (Left, Right : Bitmap_Access_Array_Access_Array_Access) return Boolean renames android.graphics.Bitmap_Package_References."=";
+   subtype PlatformBitmapBaseFactory_Access is org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package_References.PlatformBitmapBaseFactory_Access;
+   function "=" (Left, Right : PlatformBitmapBaseFactory_Access) return Boolean renames org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package_References."=";
+   subtype PlatformBitmapBaseFactory_Access_Array is org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package_References.PlatformBitmapBaseFactory_Access_Array;
+   function "=" (Left, Right : PlatformBitmapBaseFactory_Access_Array) return Boolean renames org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package_References."=";
+   subtype PlatformBitmapBaseFactory_Access_Array_Access is org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package_References.PlatformBitmapBaseFactory_Access_Array_Access;
+   function "=" (Left, Right : PlatformBitmapBaseFactory_Access_Array_Access) return Boolean renames org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package_References."=";
+   subtype PlatformBitmapBaseFactory_Access_Array_Access_Array is org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package_References.PlatformBitmapBaseFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : PlatformBitmapBaseFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package_References."=";
+   subtype PlatformBitmapBaseFactory_Access_Array_Access_Array_Access is org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package_References.PlatformBitmapBaseFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : PlatformBitmapBaseFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package_References."=";
    subtype PlatformBitmapBase_Access is org.allbinary.platform.graphics.PlatformBitmapBase_Package_References.PlatformBitmapBase_Access;
    function "=" (Left, Right : PlatformBitmapBase_Access) return Boolean renames org.allbinary.platform.graphics.PlatformBitmapBase_Package_References."=";
    subtype PlatformBitmapBase_Access_Array is org.allbinary.platform.graphics.PlatformBitmapBase_Package_References.PlatformBitmapBase_Access_Array;

@@ -14,11 +14,14 @@
 
 
 with android.view.MotionEvent_Package; use android.view.MotionEvent_Package;
+with android.view.MotionEvent_Package_References;
 with org.allbinary.android.input.motion.BaseGameInputMotionEventProcessor_Package; use org.allbinary.android.input.motion.BaseGameInputMotionEventProcessor_Package;
 with org.allbinary.input.motion.AllMotionRecognizer_Package; use org.allbinary.input.motion.AllMotionRecognizer_Package;
 with org.allbinary.input.motion.MotionRecognizer_Package; use org.allbinary.input.motion.MotionRecognizer_Package;
+with org.allbinary.input.motion.MotionRecognizer_Package_References;
 with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 
 package body org.allbinary.android.input.motion.api1.GameInputMotionEventProcessorAPI1_Package is
 

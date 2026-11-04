@@ -14,22 +14,28 @@
 
 
 with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
+with javax.microedition.lcdui.Image_Package_References;
 with javax.microedition.lcdui.game.Sprite_Package; use javax.microedition.lcdui.game.Sprite_Package;
 with javax.microedition.media.Player_Package; use javax.microedition.media.Player_Package;
 with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Animation_Package;
+with org.allbinary.animation.Animation_Package_References;
 with org.allbinary.animation.AnimationBehaviorFactory_Package; use org.allbinary.animation.AnimationBehaviorFactory_Package;
+with org.allbinary.animation.AnimationBehaviorFactory_Package_References;
 with org.allbinary.animation.AnimationInterfaceFactoryInterface_Package; use org.allbinary.animation.AnimationInterfaceFactoryInterface_Package;
 with org.allbinary.animation.IndexedAnimation_Package; use org.allbinary.animation.IndexedAnimation_Package;
 with org.allbinary.animation.caption.CaptionIndexedAnimation_Package; use org.allbinary.animation.caption.CaptionIndexedAnimation_Package;
 with org.allbinary.animation.image.ImageAnimation_Package; use org.allbinary.animation.image.ImageAnimation_Package;
 with org.allbinary.graphics.color.BasicColorUtil_Package; use org.allbinary.graphics.color.BasicColorUtil_Package;
 with org.allbinary.image.AnimationFactoryImageScaleUtil_Package; use org.allbinary.image.AnimationFactoryImageScaleUtil_Package;
+with org.allbinary.image.AnimationFactoryImageScaleUtil_Package_References;
 with org.allbinary.image.sprite.AnimationFactorySpriteScaleUtil_Package; use org.allbinary.image.sprite.AnimationFactorySpriteScaleUtil_Package;
+with org.allbinary.image.sprite.AnimationFactorySpriteScaleUtil_Package_References;
 with org.allbinary.logic.communication.log.ForcedLogUtil_Package; use org.allbinary.logic.communication.log.ForcedLogUtil_Package;
 with org.allbinary.media.ScaleProperties_Package; use org.allbinary.media.ScaleProperties_Package;
+with org.allbinary.media.ScaleProperties_Package_References;
 with org.allbinary.media.audio.Sound_Package; use org.allbinary.media.audio.Sound_Package;
+with org.allbinary.media.audio.Sound_Package_References;
 with org.allbinary.animation.image.sprite.SpriteIndexedAnimation_Package; use org.allbinary.animation.image.sprite.SpriteIndexedAnimation_Package;
-with org.allbinary.image.sprite.AnimationFactorySpriteScaleUtil_Package;
 with org.allbinary.animation.image.sprite.SpriteIndexedAnimation_Package;
 
 package body org.allbinary.animation.image.sprite.ImageCaptionIndexedAnimationFactory_Package is

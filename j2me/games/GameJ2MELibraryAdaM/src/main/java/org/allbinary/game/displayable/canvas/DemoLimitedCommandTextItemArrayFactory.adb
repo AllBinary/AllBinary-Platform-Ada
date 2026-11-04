@@ -14,6 +14,7 @@
 
 
 with org.allbinary.graphics.form.item.CommandTextItemArrayFactory_Package; use org.allbinary.graphics.form.item.CommandTextItemArrayFactory_Package;
+with org.allbinary.graphics.form.item.CommandTextItemArrayFactory_Package_References;
 with org.allbinary.graphics.form.item.LimitCommandsVisitor_Package; use org.allbinary.graphics.form.item.LimitCommandsVisitor_Package;
 
 package body org.allbinary.game.displayable.canvas.DemoLimitedCommandTextItemArrayFactory_Package is

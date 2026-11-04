@@ -14,8 +14,9 @@
 
 
 with org.allbinary.logic.io.file.AbFile_Package; use org.allbinary.logic.io.file.AbFile_Package;
+with org.allbinary.logic.io.file.AbFile_Package_References;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.logic.io.file.visitor.BooleanFileVisitor_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
 
 package body org.allbinary.logic.io.file.visitor.IncludeFileExtensionsBooleanFileVisitor_Package is
 
@@ -64,7 +65,7 @@ package body org.allbinary.logic.io.file.visitor.IncludeFileExtensionsBooleanFil
         if (IncludeFileExtensionsBooleanFileVisitor'Class (This).getFilterStringBasicArrayList.size) = (0) then
             return False;
         end if;
-        return BooleanFileVisitor (This).visit (file);
+        return BooleanFileVisitor_Package.BooleanFileVisitor (This).visit (file);
    end visit;
 
    function visit (This : in out IncludeFileExtensionsBooleanFileVisitor; file_Param : access AbFile_Package.AbFile'Class; fileNameString : Unbounded_String) return Boolean is

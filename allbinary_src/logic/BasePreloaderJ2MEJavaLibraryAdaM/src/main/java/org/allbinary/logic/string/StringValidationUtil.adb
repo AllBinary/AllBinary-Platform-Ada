@@ -14,6 +14,7 @@
 
 
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package_References;
 
 package body org.allbinary.logic.string_Id.StringValidationUtil_Package is
 

@@ -14,15 +14,21 @@
 
 
 with org.allbinary.game.input.GameInput_Package; use org.allbinary.game.input.GameInput_Package;
+with org.allbinary.game.input.GameInput_Package_References;
 with org.allbinary.game.terrain.BasicTerrainInfo_Package; use org.allbinary.game.terrain.BasicTerrainInfo_Package;
+with org.allbinary.game.terrain.BasicTerrainInfo_Package_References;
 with org.allbinary.game.terrain.TerrainEvent_Package; use org.allbinary.game.terrain.TerrainEvent_Package;
 with org.allbinary.game.terrain.TerrainEventCircularStaticPool_Package; use org.allbinary.game.terrain.TerrainEventCircularStaticPool_Package;
 with org.allbinary.game.terrain.TerrainEventHandler_Package; use org.allbinary.game.terrain.TerrainEventHandler_Package;
 with org.allbinary.game.terrain.TerrainEventListener_Package; use org.allbinary.game.terrain.TerrainEventListener_Package;
+with org.allbinary.game.terrain.TerrainEventListener_Package_References;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
+with org.allbinary.layer.AllBinaryLayer_Package_References;
 with org.allbinary.math.Angle_Package; use org.allbinary.math.Angle_Package;
+with org.allbinary.math.Angle_Package_References;
 with org.allbinary.math.AngleFactory_Package; use org.allbinary.math.AngleFactory_Package;
 with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
+with org.allbinary.util.ABHashtable_Package_References;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 
 package body org.allbinary.game.ag.ai.scroller.TerrainPatrolAI_Package is
@@ -121,7 +127,7 @@ package body org.allbinary.game.ag.ai.scroller.TerrainPatrolAI_Package is
 
    procedure update (This : in out TerrainPatrolAI) is
    begin
-        PacePatrolAI (This).update;
+        PacePatrolAI_Package.PacePatrolAI (This).update;
         TerrainPatrolAI'Class (This).changeDirectionIfCliffReached;
    end update;
 

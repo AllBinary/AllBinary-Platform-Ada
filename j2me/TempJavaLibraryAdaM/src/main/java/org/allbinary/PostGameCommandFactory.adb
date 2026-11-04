@@ -14,6 +14,7 @@
 
 
 with javax.microedition.lcdui.Canvas_Package; use javax.microedition.lcdui.Canvas_Package;
+with javax.microedition.lcdui.Canvas_Package_References;
 
 package body org.allbinary.PostGameCommandFactory_Package is
 

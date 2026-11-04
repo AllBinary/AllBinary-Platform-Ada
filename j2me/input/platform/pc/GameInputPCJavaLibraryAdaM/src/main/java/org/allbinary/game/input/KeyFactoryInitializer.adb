@@ -15,6 +15,7 @@
 
 with org.allbinary.init.Init_Package; use org.allbinary.init.Init_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.math.SmallIntegerSingletonFactory_Package; use org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
 
 package body org.allbinary.game.input.KeyFactoryInitializer_Package is

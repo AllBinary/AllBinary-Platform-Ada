@@ -16,6 +16,7 @@
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
 with org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfoData_Package; use org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfoData_Package;
+with org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfoData_Package_References;
 
 package body org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfo_Package is
 

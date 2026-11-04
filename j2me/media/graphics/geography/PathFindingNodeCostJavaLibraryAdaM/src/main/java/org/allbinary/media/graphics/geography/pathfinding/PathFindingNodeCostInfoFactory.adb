@@ -14,8 +14,11 @@
 
 
 with org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package; use org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
+with org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package_References;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
+with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package_References;
 with org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfo_Package; use org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfo_Package;
+with org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfo_Package_References;
 with org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfo_Package;
 
 package body org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfoFactory_Package is

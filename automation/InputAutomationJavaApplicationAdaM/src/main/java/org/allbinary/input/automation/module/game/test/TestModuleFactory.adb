@@ -16,9 +16,11 @@
 with org.allbinary.input.automation.module.AbstractInputAutomationFactory_Package; use org.allbinary.input.automation.module.AbstractInputAutomationFactory_Package;
 with org.allbinary.input.automation.module.InputAutomationModuleData_Package; use org.allbinary.input.automation.module.InputAutomationModuleData_Package;
 with org.allbinary.input.automation.module.configuration.BlankModuleConfigurationJPanel_Package; use org.allbinary.input.automation.module.configuration.BlankModuleConfigurationJPanel_Package;
+with org.allbinary.input.automation.module.configuration.BlankModuleConfigurationJPanel_Package_References;
 with org.allbinary.thread.RunnableInterface_Package; use org.allbinary.thread.RunnableInterface_Package;
+with org.allbinary.thread.RunnableInterface_Package_References;
 with org.allbinary.input.automation.module.game.test.JPanel_Package; use org.allbinary.input.automation.module.game.test.JPanel_Package;
-with org.allbinary.input.automation.module.configuration.BlankModuleConfigurationJPanel_Package;
+with org.allbinary.input.automation.module.game.test.JPanel_Package_References;
 
 package body org.allbinary.input.automation.module.game.test.TestModuleFactory_Package is
 

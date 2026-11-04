@@ -2,7 +2,9 @@
 
 
 with javax.microedition.lcdui.Command_Package; use javax.microedition.lcdui.Command_Package;
+with javax.microedition.lcdui.Command_Package_References;
 with javax.microedition.lcdui.Displayable_Package; use javax.microedition.lcdui.Displayable_Package;
+with javax.microedition.lcdui.Displayable_Package_References;
 
 package body javax.microedition.lcdui.NullCommandListener_Package is
 

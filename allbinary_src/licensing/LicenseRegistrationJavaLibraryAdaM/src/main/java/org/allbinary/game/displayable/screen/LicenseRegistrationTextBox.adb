@@ -14,18 +14,25 @@
 
 
 with javax.microedition.lcdui.Command_Package; use javax.microedition.lcdui.Command_Package;
+with javax.microedition.lcdui.Command_Package_References;
 with javax.microedition.lcdui.CommandListener_Package; use javax.microedition.lcdui.CommandListener_Package;
+with javax.microedition.lcdui.CommandListener_Package_References;
 with javax.microedition.lcdui.Font_Package; use javax.microedition.lcdui.Font_Package;
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
 with javax.microedition.lcdui.TextField_Package; use javax.microedition.lcdui.TextField_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.game.commands.GameCommandsFactory_Package; use org.allbinary.game.commands.GameCommandsFactory_Package;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.graphics.color.BasicColor_Package_References;
 with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
 with org.allbinary.graphics.form.item.CustomTextBox_Package; use org.allbinary.graphics.form.item.CustomTextBox_Package;
 with org.allbinary.graphics.paint.NullPaintable_Package; use org.allbinary.graphics.paint.NullPaintable_Package;
 with org.allbinary.graphics.paint.Paintable_Package; use org.allbinary.graphics.paint.Paintable_Package;
+with org.allbinary.graphics.paint.Paintable_Package_References;
 with org.allbinary.graphics.paint.SimpleTextPaintable_Package; use org.allbinary.graphics.paint.SimpleTextPaintable_Package;
 with org.allbinary.input.event.VirtualKeyboardEventHandler_Package; use org.allbinary.input.event.VirtualKeyboardEventHandler_Package;
 
@@ -148,7 +155,7 @@ package body org.allbinary.game.displayable.screen.LicenseRegistrationTextBox_Pa
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, LicenseRegistrationTextBox_Access'(This'Unchecked_Access), To_Unbounded_String ("open"), e);
                 end;
         end;
-        CustomTextBox (This).open;
+        CustomTextBox_Package.CustomTextBox (This).open;
         This.paintable := NullPaintable_Package.getInstance;
         LicenseRegistrationTextBox'Class (This).repaint;
    end open;
@@ -170,13 +177,13 @@ package body org.allbinary.game.displayable.screen.LicenseRegistrationTextBox_Pa
         end;
         This.paintable := This.pleaseWaitPaintable;
         LicenseRegistrationTextBox'Class (This).repaint;
-        CustomTextBox (This).close;
+        CustomTextBox_Package.CustomTextBox (This).close;
    end close;
 
    procedure paint (This : in out LicenseRegistrationTextBox; graphics_Param : access Graphics_Package.Graphics'Class) is
       graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
-        CustomTextBox (This).paint (graphics);
+        CustomTextBox_Package.CustomTextBox (This).paint (graphics);
         This.paintable.paint (graphics);
    end paint;
 

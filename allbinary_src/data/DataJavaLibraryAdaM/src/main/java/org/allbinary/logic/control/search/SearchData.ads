@@ -53,7 +53,7 @@ package org.allbinary.logic.control.search.SearchData_Package is
    TOTAL_NUMBER_PAGES : Unbounded_String;
    TOTAL_NUMBER_ITEMS_ON_THIS_PAGE : Unbounded_String;
    TOTAL_NUMBER_ITEMS : Unbounded_String;
-   DEFAULT_PAGE_LENGTH : Integer;
+   DEFAULT_PAGE_LENGTH : constant Integer := 10;
    GENERATESTATICPAGES : Unbounded_String;
    SEARCHBYSUMMARY : Unbounded_String;
    SEARCHBYDESCRIPTION : Unbounded_String;

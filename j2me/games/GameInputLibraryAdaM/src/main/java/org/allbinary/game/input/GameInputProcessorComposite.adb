@@ -13,17 +13,18 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.game.input.GameInputProcessorInterface_Package; use org.allbinary.game.input.GameInputProcessorInterface_Package;
+with org.allbinary.game.input.GameInputProcessorInterface_Package_References;
 with org.allbinary.game.input.event.DownGameKeyEventListenerInterface_Package;
 with org.allbinary.game.input.GameInput_Package;
 with org.allbinary.game.input.GameInputProcessorInterface_Package;
 with org.allbinary.game.input.GameInputStrings_Package;
 with org.allbinary.game.input.event.GameKeyEvent_Package;
 with org.allbinary.game.input.event.GameKeyEventListenerInterface_Package;
-with org.allbinary.game.input.PlayerGameInput_Package;
 with org.allbinary.game.input.event.PressGameKeyEventListenerInterface_Package;
 with org.allbinary.game.input.event.UpGameKeyEventListenerInterface_Package;
 
@@ -85,7 +86,7 @@ package body org.allbinary.game.input.GameInputProcessorComposite_Package is
 
    function toString (This : in out GameInputProcessorComposite) return Unbounded_String is
    begin
-        return StringMaker_Package.Create.append (PlayerGameInput (This).toString).append (This.NAME_LABEL).append (This.name).toString;
+        return StringMaker_Package.Create.append (PlayerGameInput_Package.PlayerGameInput (This).toString).append (This.NAME_LABEL).append (This.name).toString;
    end toString;
 
 end org.allbinary.game.input.GameInputProcessorComposite_Package;

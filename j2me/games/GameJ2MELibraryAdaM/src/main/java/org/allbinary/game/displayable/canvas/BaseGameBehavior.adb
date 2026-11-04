@@ -19,14 +19,14 @@ with org.allbinary.game.configuration.feature.Features_Package; use org.allbinar
 with org.allbinary.graphics.opengles.CurrentDisplayableFactory_Package; use org.allbinary.graphics.opengles.CurrentDisplayableFactory_Package;
 with org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package; use org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package;
 with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package; use org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References;
 with org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package; use org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package;
+with org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package_References;
 with org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package;
 with org.allbinary.game.displayable.canvas.AllBinaryGameCanvasInterface_Package;
 with org.allbinary.game.layer.AllBinaryGameLayerManager_Package;
 with org.allbinary.game.displayable.canvas.BaseMenuBehavior_Package;
 with org.allbinary.game.init.BasicBuildGameInitializerFactory_Package;
-with org.allbinary.graphics.opengles.CurrentDisplayableFactory_Package;
-with org.allbinary.game.displayable.canvas.DemoGameBehavior_Package;
 with org.allbinary.game.displayable.canvas.DemoPaintableInterface_Package;
 with org.allbinary.game.displayable.canvas.GameCanvasPauseRunnable_Package;
 with org.allbinary.game.displayable.canvas.GameCanvasRunnable_Package;

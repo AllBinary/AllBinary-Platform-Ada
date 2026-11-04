@@ -14,6 +14,7 @@
 
 
 with javax.microedition.midlet.MIDlet_Package; use javax.microedition.midlet.MIDlet_Package;
+with javax.microedition.midlet.MIDlet_Package_References;
 with org.allbinary.midlet.AllBinaryMidlet_Package; use org.allbinary.midlet.AllBinaryMidlet_Package;
 with org.allbinary.midlet.AllBinaryMidlet_Package;
 

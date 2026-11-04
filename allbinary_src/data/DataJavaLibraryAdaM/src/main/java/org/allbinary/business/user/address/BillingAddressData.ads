@@ -50,8 +50,8 @@ package org.allbinary.business.user.address.BillingAddressData_Package is
    function "=" (Left, Right : BillingAddressData_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.user.address.BillingAddressData_Package_References."=";
 
    type BillingAddressData is new Java_Object with null record;
-   MAX : Integer;
-   MIN : Integer;
+   MAX : constant Integer := 255;
+   MIN : constant Integer := 0;
    MULTIPLE : Unbounded_String;
    STATES : Unbounded_String;
    SETTOSHIPPINGADDRESS : Unbounded_String;

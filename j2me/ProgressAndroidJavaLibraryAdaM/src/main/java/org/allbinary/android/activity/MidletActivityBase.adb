@@ -15,13 +15,18 @@
 
 with android.app.Activity_Package; use android.app.Activity_Package;
 with android.view.MotionEvent_Package; use android.view.MotionEvent_Package;
+with android.view.MotionEvent_Package_References;
 with android.view.View_Package; use android.view.View_Package;
+with android.view.View_Package_References;
 with org.allbinary.android.GenericMotionEventVerifyInterface_Package; use org.allbinary.android.GenericMotionEventVerifyInterface_Package;
 with org.allbinary.game.configuration.event.GameFeatureEvent_Package; use org.allbinary.game.configuration.event.GameFeatureEvent_Package;
+with org.allbinary.game.configuration.event.GameFeatureEvent_Package_References;
 with org.allbinary.game.configuration.event.GameFeatureListenerInterface_Package; use org.allbinary.game.configuration.event.GameFeatureListenerInterface_Package;
 with org.allbinary.game.configuration.event.GameInitializedEvent_Package; use org.allbinary.game.configuration.event.GameInitializedEvent_Package;
+with org.allbinary.game.configuration.event.GameInitializedEvent_Package_References;
 with org.allbinary.game.configuration.event.GameInitializedListenerInterface_Package; use org.allbinary.game.configuration.event.GameInitializedListenerInterface_Package;
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+with org.allbinary.logic.util.event.AllBinaryEventObject_Package_References;
 
 package body org.allbinary.android.activity.MidletActivityBase_Package is
 

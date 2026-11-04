@@ -14,9 +14,11 @@
 
 
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
 with org.allbinary.graphics.GPoint_Package; use org.allbinary.graphics.GPoint_Package;
+with org.allbinary.graphics.GPoint_Package_References;
 with org.allbinary.layer.Layer_Package; use org.allbinary.layer.Layer_Package;
-with org.allbinary.game.layer.LinePathAnimation_Package;
+with org.allbinary.layer.Layer_Package_References;
 
 package body org.allbinary.game.layer.LinePathRelativeAnimation_Package is
 

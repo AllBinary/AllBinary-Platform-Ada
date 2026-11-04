@@ -14,7 +14,9 @@
 
 
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
+with org.allbinary.layer.AllBinaryLayer_Package_References;
 with org.allbinary.layer.LayerManager_Package; use org.allbinary.layer.LayerManager_Package;
+with org.allbinary.layer.LayerManager_Package_References;
 with org.allbinary.layer.AllBinaryLayer_Package;
 with org.allbinary.layer.Layer_Package;
 with org.allbinary.layer.LayerInterface_Package;

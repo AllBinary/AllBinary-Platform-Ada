@@ -14,10 +14,14 @@
 
 
 with org.allbinary.ai.ArtificialIntelligenceInterface_Package; use org.allbinary.ai.ArtificialIntelligenceInterface_Package;
+with org.allbinary.ai.ArtificialIntelligenceInterface_Package_References;
 with org.allbinary.game.ai.ArtificialIntelligenceInterfaceFactoryInterface_Package; use org.allbinary.game.ai.ArtificialIntelligenceInterfaceFactoryInterface_Package;
 with org.allbinary.game.input.GameInput_Package; use org.allbinary.game.input.GameInput_Package;
+with org.allbinary.game.input.GameInput_Package_References;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
+with org.allbinary.layer.AllBinaryLayer_Package_References;
 with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
+with org.allbinary.util.ABHashtable_Package_References;
 with org.allbinary.game.ag.ai.tactical.HorizontalManeuverAI_Package; use org.allbinary.game.ag.ai.tactical.HorizontalManeuverAI_Package;
 with org.allbinary.game.ag.ai.tactical.HorizontalManeuverAI_Package;
 

@@ -14,9 +14,13 @@
 
 
 with org.allbinary.logic.communication.http.request.AbResponseHandler_Package; use org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.system.security.licensing.LicensingException_Package; use org.allbinary.logic.system.security.licensing.LicensingException_Package;
 with taghelpers.ValidatedViewHelperFactory_Package; use taghelpers.ValidatedViewHelperFactory_Package;
+with tags.ModifyTag_Package;
+with tags.transform.info.TransformInfoTag_Package;
 
 package body tags.ValidationTransformTag_Package is
 
@@ -24,6 +28,16 @@ package body tags.ValidationTransformTag_Package is
    package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    package LicensingException_Package renames Standard.org.allbinary.logic.system.security.licensing.LicensingException_Package;
    package ValidatedViewHelperFactory_Package renames Standard.taghelpers.ValidatedViewHelperFactory_Package;
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   function "=" (Left, Right : LogUtil_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
    procedure Initialize_Fields (This : in out ValidationTransformTag'Class) is
    begin
       null;
@@ -125,7 +139,7 @@ package body tags.ValidationTransformTag_Package is
             end if;
             ValidationTransformTag'Class (This).setHelper;
             if ValidationTransformTag'Class (This).isValid then
-                TransformTag (This).doStartTag;
+                TransformTag_Package.TransformTag (This).doStartTag;
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAG) then
                     stringBuffer := StringMaker_Package.Create;
                     stringBuffer.append (To_Unbounded_String ("View File: "));
@@ -173,7 +187,7 @@ package body tags.ValidationTransformTag_Package is
             This.logUtil.putF (To_Unbounded_String ("Tag Ended"), ValidationTransformTag_Access'(This'Unchecked_Access), To_Unbounded_String ("doEndTag"));
         end if;
         This.logic := True;
-        return TransformTag (This).doEndTag;
+        return TransformTag_Package.TransformTag (This).doEndTag;
    end doEndTag;
 
 end tags.ValidationTransformTag_Package;

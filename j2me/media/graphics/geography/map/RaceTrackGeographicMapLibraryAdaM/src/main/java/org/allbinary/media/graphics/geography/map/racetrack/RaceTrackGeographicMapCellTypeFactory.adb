@@ -14,8 +14,10 @@
 
 
 with org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package;
+with org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package_References;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellTypeFactory_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellTypeFactory_Package;
 with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellType_Package; use org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellType_Package;
+with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellType_Package_References;
 with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellTypes_Package; use org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellTypes_Package;
 with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellType_Package;
 with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellTypes_Package;

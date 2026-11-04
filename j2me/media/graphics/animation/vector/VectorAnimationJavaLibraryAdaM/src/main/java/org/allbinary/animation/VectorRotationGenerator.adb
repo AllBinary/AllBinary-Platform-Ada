@@ -17,13 +17,19 @@ with org.allbinary.graphics.PointFactory_Package; use org.allbinary.graphics.Poi
 with org.allbinary.graphics.pipeline.BasicGraphicsPipeline_Package; use org.allbinary.graphics.pipeline.BasicGraphicsPipeline_Package;
 with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.math.Angle_Package; use org.allbinary.math.Angle_Package;
+with org.allbinary.math.Angle_Package_References;
 with org.allbinary.math.AngleFactory_Package; use org.allbinary.math.AngleFactory_Package;
+with org.allbinary.math.AngleFactory_Package_References;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.util.BasicArrayListS_Package; use org.allbinary.util.BasicArrayListS_Package;
 with org.allbinary.vector.VectorInfo_Package; use org.allbinary.vector.VectorInfo_Package;
+with org.allbinary.vector.VectorInfo_Package_References;
 with org.allbinary.animation.VectorAnimationUtil_Package; use org.allbinary.animation.VectorAnimationUtil_Package;
+with org.allbinary.animation.VectorAnimationUtil_Package_References;
 with org.allbinary.animation.VectorAnimationUtil_Package;
 
 package body org.allbinary.animation.VectorRotationGenerator_Package is

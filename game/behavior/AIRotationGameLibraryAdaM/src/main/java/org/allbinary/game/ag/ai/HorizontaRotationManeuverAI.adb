@@ -17,18 +17,25 @@ with javax.microedition.lcdui.Canvas_Package; use javax.microedition.lcdui.Canva
 with org.allbinary.ai.ArtificialIntelligence_Package; use org.allbinary.ai.ArtificialIntelligence_Package;
 with org.allbinary.ai.ArtificialIntelligenceTransitionInterface_Package; use org.allbinary.ai.ArtificialIntelligenceTransitionInterface_Package;
 with org.allbinary.animation.IndexedAnimation_Package; use org.allbinary.animation.IndexedAnimation_Package;
+with org.allbinary.animation.IndexedAnimation_Package_References;
 with org.allbinary.animation.RotationAnimationInterface_Package; use org.allbinary.animation.RotationAnimationInterface_Package;
 with org.allbinary.animation.RotationAnimationInterfaceCompositeInterface_Package; use org.allbinary.animation.RotationAnimationInterfaceCompositeInterface_Package;
 with org.allbinary.game.ai.BasicAI_Package; use org.allbinary.game.ai.BasicAI_Package;
 with org.allbinary.game.input.GameInput_Package; use org.allbinary.game.input.GameInput_Package;
+with org.allbinary.game.input.GameInput_Package_References;
 with org.allbinary.game.physics.velocity.BasicVelocityProperties_Package; use org.allbinary.game.physics.velocity.BasicVelocityProperties_Package;
+with org.allbinary.game.physics.velocity.BasicVelocityProperties_Package_References;
 with org.allbinary.game.physics.velocity.VelocityInterface_Package; use org.allbinary.game.physics.velocity.VelocityInterface_Package;
+with org.allbinary.game.physics.velocity.VelocityInterface_Package_References;
 with org.allbinary.game.physics.velocity.VelocityInterfaceCompositeInterface_Package; use org.allbinary.game.physics.velocity.VelocityInterfaceCompositeInterface_Package;
 with org.allbinary.graphics.displayable.DisplayInfoSingleton_Package; use org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
+with org.allbinary.layer.AllBinaryLayer_Package_References;
 with org.allbinary.layer.AllBinaryLayerManager_Package; use org.allbinary.layer.AllBinaryLayerManager_Package;
+with org.allbinary.layer.AllBinaryLayerManager_Package_References;
 with org.allbinary.math.AngleIncrementInfo_Package; use org.allbinary.math.AngleIncrementInfo_Package;
 with org.allbinary.util.CircularIndexUtil_Package; use org.allbinary.util.CircularIndexUtil_Package;
+with org.allbinary.util.CircularIndexUtil_Package_References;
 
 package body org.allbinary.game.ag.ai.HorizontaRotationManeuverAI_Package is
 
@@ -187,14 +194,14 @@ package body org.allbinary.game.ag.ai.HorizontaRotationManeuverAI_Package is
         end if;
         index := This.circularIndexUtil.getIndex;
         if (((index) rem (This.currentSpeedDivisor)) = (0)) and then (((index) rem (2)) = (0)) then
-            BasicAI (This).processKeyAI (Canvas_Package.UP);
+            BasicAI_Package.BasicAI (This).processKeyAI (Canvas_Package.UP);
             This.velocityInterface.limitMaxXYVelocity ((This.velocityInterface.getMaxForwardVelocity) / (This.currentSpeedDivisor));
         end if;
         declare Java_Result renames This.circularIndexUtil.next; pragma Unreferenced (Java_Result); begin null; end;
         if (frame) = (angleIncrementInfo.LEFT_FRAME.intValue) then
-            BasicAI (This).processKeyAI (Canvas_Package.KEY_NUM0);
+            BasicAI_Package.BasicAI (This).processKeyAI (Canvas_Package.KEY_NUM0);
         elsif (frame) = (angleIncrementInfo.RIGHT_FRAME.intValue) then
-            BasicAI (This).processKeyAI (Canvas_Package.KEY_POUND);
+            BasicAI_Package.BasicAI (This).processKeyAI (Canvas_Package.KEY_POUND);
         end if;
    end processAI;
 

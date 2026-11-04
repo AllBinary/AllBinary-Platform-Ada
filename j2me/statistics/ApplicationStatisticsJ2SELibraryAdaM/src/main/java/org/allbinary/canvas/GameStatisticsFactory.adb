@@ -14,6 +14,7 @@
 
 
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package_References;
 
 package body org.allbinary.canvas.GameStatisticsFactory_Package is
 
@@ -63,7 +64,7 @@ package body org.allbinary.canvas.GameStatisticsFactory_Package is
 
    function toString (This : in out GameStatisticsFactory) return Unbounded_String is
    begin
-        return StringMaker_Package.Create.append (BaseGameStatistics (This).toString).append (This.stringBuffer.toString).toString;
+        return StringMaker_Package.Create.append (BaseGameStatistics_Package.BaseGameStatistics (This).toString).append (This.stringBuffer.toString).toString;
    end toString;
 
 begin

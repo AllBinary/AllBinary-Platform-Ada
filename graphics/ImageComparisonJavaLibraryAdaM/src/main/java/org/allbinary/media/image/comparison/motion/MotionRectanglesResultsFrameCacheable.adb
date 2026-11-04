@@ -16,6 +16,7 @@
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.util.cache.CacheableInterface_Package; use org.allbinary.logic.util.cache.CacheableInterface_Package;
 with org.allbinary.media.image.comparison.motion.MotionRectangles_Package; use org.allbinary.media.image.comparison.motion.MotionRectangles_Package;
+with org.allbinary.media.image.comparison.motion.MotionRectangles_Package_References;
 with org.allbinary.media.image.comparison.color.ColorDelta_Package;
 with org.allbinary.media.image.comparison.ImageComparisonResult_Package;
 with org.allbinary.media.image.comparison.motion.MotionRectangles_Package;

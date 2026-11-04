@@ -14,7 +14,7 @@
 
 
 with android.view.View_Package; use android.view.View_Package;
-with org.allbinary.android.view.BaseViewWrapper_Package;
+with android.view.View_Package_References;
 
 package body org.allbinary.android.view.ViewWrapper_Package is
 

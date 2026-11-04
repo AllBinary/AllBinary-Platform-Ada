@@ -14,27 +14,37 @@
 
 
 with javax.microedition.lcdui.CommandListener_Package; use javax.microedition.lcdui.CommandListener_Package;
+with javax.microedition.lcdui.CommandListener_Package_References;
 with javax.microedition.lcdui.Font_Package; use javax.microedition.lcdui.Font_Package;
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
 with javax.microedition.lcdui.TextField_Package; use javax.microedition.lcdui.TextField_Package;
 with org.allbinary.PostGameCommandFactory_Package; use org.allbinary.PostGameCommandFactory_Package;
 with org.allbinary.game.GameInfo_Package; use org.allbinary.game.GameInfo_Package;
+with org.allbinary.game.GameInfo_Package_References;
 with org.allbinary.game.score.HighScore_Package; use org.allbinary.game.score.HighScore_Package;
+with org.allbinary.game.score.HighScore_Package_References;
 with org.allbinary.game.score.HighScoresHelperBaseInterface_Package; use org.allbinary.game.score.HighScoresHelperBaseInterface_Package;
+with org.allbinary.game.score.HighScoresHelperBaseInterface_Package_References;
 with org.allbinary.game.score.HighScoresFactoryInterface_Package; use org.allbinary.game.score.HighScoresFactoryInterface_Package;
+with org.allbinary.game.score.HighScoresFactoryInterface_Package_References;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.graphics.color.BasicColor_Package_References;
 with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
 with org.allbinary.graphics.form.item.CustomTextBox_Package; use org.allbinary.graphics.form.item.CustomTextBox_Package;
 with org.allbinary.graphics.paint.NullPaintable_Package; use org.allbinary.graphics.paint.NullPaintable_Package;
 with org.allbinary.graphics.paint.Paintable_Package; use org.allbinary.graphics.paint.Paintable_Package;
+with org.allbinary.graphics.paint.Paintable_Package_References;
 with org.allbinary.graphics.paint.SimpleTextPaintable_Package; use org.allbinary.graphics.paint.SimpleTextPaintable_Package;
 with org.allbinary.input.event.VirtualKeyboardEventHandler_Package; use org.allbinary.input.event.VirtualKeyboardEventHandler_Package;
+with org.allbinary.input.event.VirtualKeyboardEventHandler_Package_References;
 with org.allbinary.logic.system.os.GenericOperatingSystem_Package; use org.allbinary.logic.system.os.GenericOperatingSystem_Package;
 with org.allbinary.logic.system.os.OperatingSystemFactory_Package; use org.allbinary.logic.system.os.OperatingSystemFactory_Package;
 with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package; use org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References;
 with org.allbinary.logic.system.security.licensing.InApplicationPurchaseFactory_Package; use org.allbinary.logic.system.security.licensing.InApplicationPurchaseFactory_Package;
 with org.allbinary.game.score.displayable.HighScoreUtil_Package; use org.allbinary.game.score.displayable.HighScoreUtil_Package;
-with org.allbinary.graphics.form.item.CustomTextBox_Package;
+with org.allbinary.game.score.displayable.HighScoreUtil_Package_References;
 with org.allbinary.game.score.displayable.HighScoreUtil_Package;
 
 package body org.allbinary.game.score.displayable.HighScoreTextBox_Package is
@@ -215,7 +225,7 @@ package body org.allbinary.game.score.displayable.HighScoreTextBox_Package is
    begin
         This.virtualKeyboardEventHandler.open;
         This.paintable := NullPaintable_Package.getInstance;
-        CustomTextBox (This).open;
+        CustomTextBox_Package.CustomTextBox (This).open;
    end open;
 
    --  throws Exception
@@ -224,7 +234,7 @@ package body org.allbinary.game.score.displayable.HighScoreTextBox_Package is
         This.virtualKeyboardEventHandler.close;
         This.paintable := This.pleaseWait;
         This.repaintBehavior.onChangeRepaint (HighScoreTextBox_Access'(This'Unchecked_Access));
-        CustomTextBox (This).close;
+        CustomTextBox_Package.CustomTextBox (This).close;
         HighScoreTextBox'Class (This).removeCommand (HighScoreUtil_Package.SUBMIT_TEXTBOX_COMMAND);
         HighScoreTextBox'Class (This).update;
         if This.submitted then
@@ -242,13 +252,13 @@ package body org.allbinary.game.score.displayable.HighScoreTextBox_Package is
    begin
         name := HighScoreTextBox'Class (This).getTextFieldItem.getString;
         This.highScoreUtil.update (name);
-        CustomTextBox (This).update;
+        CustomTextBox_Package.CustomTextBox (This).update;
    end update;
 
    procedure paint (This : in out HighScoreTextBox; graphics_Param : access Graphics_Package.Graphics'Class) is
       graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
-        CustomTextBox (This).paint (graphics);
+        CustomTextBox_Package.CustomTextBox (This).paint (graphics);
         This.paintable.paint (graphics);
    end paint;
 

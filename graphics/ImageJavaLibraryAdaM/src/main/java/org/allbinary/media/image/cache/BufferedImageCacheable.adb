@@ -16,6 +16,7 @@
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.util.cache.CacheableInterface_Package; use org.allbinary.logic.util.cache.CacheableInterface_Package;
 with org.allbinary.media.image.cache.BufferedImageInfo_Package; use org.allbinary.media.image.cache.BufferedImageInfo_Package;
+with org.allbinary.media.image.cache.BufferedImageInfo_Package_References;
 with org.allbinary.media.image.cache.BufferedImageInfo_Package;
 
 package body org.allbinary.media.image.cache.BufferedImageCacheable_Package is

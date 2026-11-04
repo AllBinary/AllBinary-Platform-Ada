@@ -30,7 +30,7 @@ package body org.allbinary.game.input.AndroidGameKey_Package is
 
    function toString (This : in out AndroidGameKey) return Unbounded_String is
    begin
-        return To_Unbounded_String ("AndroidGameKey: ") & Input (This).toString;
+        return To_Unbounded_String ("AndroidGameKey: ") & Input_Package.Input (This).toString;
    end toString;
 
    function getString (keyCode : Integer) return Unbounded_String is

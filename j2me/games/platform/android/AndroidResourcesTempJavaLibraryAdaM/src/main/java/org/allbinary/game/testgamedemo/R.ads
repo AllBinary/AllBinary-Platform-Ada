@@ -175,11 +175,11 @@ package org.allbinary.game.testgamedemo.id_Package is
    function "=" (Left, Right : id_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.testgamedemo.id_Package_References."=";
 
    type id is new Java_Object with null record;
-   custom_web_view : Integer;
-   ad_area_bottom : Integer;
-   ad_area_left : Integer;
-   ad_area_right : Integer;
-   ad_area_top : Integer;
+   custom_web_view : constant Integer := 16#7f050000#;
+   ad_area_bottom : constant Integer := 16#7f060002#;
+   ad_area_left : constant Integer := 16#7f060003#;
+   ad_area_right : constant Integer := 16#7f060004#;
+   ad_area_top : constant Integer := 16#7f060001#;
 
    procedure Initialize (This : in out id'Class);
    function Create return id_Access;
@@ -224,7 +224,7 @@ package org.allbinary.game.testgamedemo.layout_Package is
    function "=" (Left, Right : layout_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.testgamedemo.layout_Package_References."=";
 
    type layout is new Java_Object with null record;
-   webview_layout : Integer;
+   webview_layout : constant Integer := 16#7f020000#;
 
    procedure Initialize (This : in out layout'Class);
    function Create return layout_Access;
@@ -269,38 +269,38 @@ package org.allbinary.game.testgamedemo.raw_Package is
    function "=" (Left, Right : raw_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.testgamedemo.raw_Package_References."=";
 
    type raw is new Java_Object with null record;
-   about : Integer;
-   privacy_policy : Integer;
-   error : Integer;
-   licenseinitdata : Integer;
-   partner : Integer;
-   select_Id : Integer;
-   test : Integer;
-   testgamedemo_wait_256_by_256 : Integer;
-   touch_button_128_by_128 : Integer;
-   touch_button_64_by_64 : Integer;
-   touch_button_down_arrow_128_by_128 : Integer;
-   touch_button_down_arrow_64_by_64 : Integer;
-   touch_button_generic_action_128_by_128 : Integer;
-   touch_button_generic_action_64_by_64 : Integer;
-   touch_button_start_128_by_128 : Integer;
-   touch_button_start_64_by_64 : Integer;
-   touch_button_strafe_left_arrow_128_by_128 : Integer;
-   touch_button_strafe_left_arrow_64_by_64 : Integer;
-   touch_button_strafe_right_arrow_128_by_128 : Integer;
-   touch_button_strafe_right_arrow_64_by_64 : Integer;
-   touch_button_turn_left_arrow_128_by_128 : Integer;
-   touch_button_turn_left_arrow_64_by_64 : Integer;
-   touch_button_turn_right_arrow_128_by_128 : Integer;
-   touch_button_turn_right_arrow_64_by_64 : Integer;
-   touch_button_up_arrow_128_by_128 : Integer;
-   touch_button_up_arrow_64_by_64 : Integer;
-   ouya_a : Integer;
-   ouya_o : Integer;
-   ouya_u : Integer;
-   ouya_y : Integer;
-   ouya_key : Integer;
-   google_key : Integer;
+   about : constant Integer := 16#7f030000#;
+   privacy_policy : constant Integer := 16#7f030001#;
+   error : constant Integer := 16#7f040000#;
+   licenseinitdata : constant Integer := 16#7f040001#;
+   partner : constant Integer := 16#7f040002#;
+   select_Id : constant Integer := 16#7f040003#;
+   test : constant Integer := 16#7f040004#;
+   testgamedemo_wait_256_by_256 : constant Integer := 16#7f040005#;
+   touch_button_128_by_128 : constant Integer := 16#7f040026#;
+   touch_button_64_by_64 : constant Integer := 16#7f040027#;
+   touch_button_down_arrow_128_by_128 : constant Integer := 16#7f04002a#;
+   touch_button_down_arrow_64_by_64 : constant Integer := 16#7f04002b#;
+   touch_button_generic_action_128_by_128 : constant Integer := 16#7f04002c#;
+   touch_button_generic_action_64_by_64 : constant Integer := 16#7f04002d#;
+   touch_button_start_128_by_128 : constant Integer := 16#7f040038#;
+   touch_button_start_64_by_64 : constant Integer := 16#7f040039#;
+   touch_button_strafe_left_arrow_128_by_128 : constant Integer := 16#7f04003a#;
+   touch_button_strafe_left_arrow_64_by_64 : constant Integer := 16#7f04003b#;
+   touch_button_strafe_right_arrow_128_by_128 : constant Integer := 16#7f04003c#;
+   touch_button_strafe_right_arrow_64_by_64 : constant Integer := 16#7f04003d#;
+   touch_button_turn_left_arrow_128_by_128 : constant Integer := 16#7f04003e#;
+   touch_button_turn_left_arrow_64_by_64 : constant Integer := 16#7f04003f#;
+   touch_button_turn_right_arrow_128_by_128 : constant Integer := 16#7f040040#;
+   touch_button_turn_right_arrow_64_by_64 : constant Integer := 16#7f040041#;
+   touch_button_up_arrow_128_by_128 : constant Integer := 16#7f040042#;
+   touch_button_up_arrow_64_by_64 : constant Integer := 16#7f040043#;
+   ouya_a : constant Integer := 16#7f040012#;
+   ouya_o : constant Integer := 16#7f040014#;
+   ouya_u : constant Integer := 16#7f040015#;
+   ouya_y : constant Integer := 16#7f040016#;
+   ouya_key : constant Integer := 16#7f040013#;
+   google_key : constant Integer := 16#7f040013#;
 
    procedure Initialize (This : in out raw'Class);
    function Create return raw_Access;
@@ -345,7 +345,7 @@ package org.allbinary.game.testgamedemo.string_Package is
    function "=" (Left, Right : string_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.testgamedemo.string_Package_References."=";
 
    type string is new Java_Object with null record;
-   progressbar_in_title_string : Integer;
+   progressbar_in_title_string : constant Integer := 16#7f050001#;
 
    procedure Initialize (This : in out string'Class);
    function Create return string_Access;

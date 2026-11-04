@@ -14,15 +14,15 @@
 
 
 with org.allbinary.business.advertisement.image.AdvertisementImageInterface_Package; use org.allbinary.business.advertisement.image.AdvertisementImageInterface_Package;
+with org.allbinary.business.advertisement.image.AdvertisementImageInterface_Package_References;
 with org.allbinary.business.advertisement.product.AdvertisementProductInterface_Package; use org.allbinary.business.advertisement.product.AdvertisementProductInterface_Package;
+with org.allbinary.business.advertisement.product.AdvertisementProductInterface_Package_References;
 with org.allbinary.business.advertisement.thumbnail.AdvertisementThumbnailInterface_Package; use org.allbinary.business.advertisement.thumbnail.AdvertisementThumbnailInterface_Package;
+with org.allbinary.business.advertisement.thumbnail.AdvertisementThumbnailInterface_Package_References;
 with org.allbinary.business.user.commerce.money.Money_Package; use org.allbinary.business.user.commerce.money.Money_Package;
+with org.allbinary.business.user.commerce.money.Money_Package_References;
 with org.allbinary.logic.control.contraints.display.browser.DisplayInBrowserContraintsInterface_Package; use org.allbinary.logic.control.contraints.display.browser.DisplayInBrowserContraintsInterface_Package;
-with org.allbinary.business.advertisement.image.AdvertisementImageInterface_Package;
-with org.allbinary.business.advertisement.AdvertisementInterface_Package;
-with org.allbinary.business.advertisement.product.AdvertisementProductInterface_Package;
-with org.allbinary.business.advertisement.thumbnail.AdvertisementThumbnailInterface_Package;
-with org.allbinary.logic.control.contraints.display.browser.DisplayInBrowserContraintsInterface_Package;
+with org.allbinary.logic.control.contraints.display.browser.DisplayInBrowserContraintsInterface_Package_References;
 with org.allbinary.logic.control.contraints.MinMaxIntConstraintInterface_Package;
 with org.allbinary.logic.control.contraints.size.SizeConstraintInterface_Package;
 with org.allbinary.logic.control.contraints.size.TwoDimensionalConstraintInterface_Package;

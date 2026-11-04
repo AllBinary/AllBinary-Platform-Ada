@@ -18,11 +18,13 @@ with org.allbinary.input.automation.InputAutomationJFrame_Package; use org.allbi
 with org.allbinary.input.automation.configuration.InputAutomationConfigurationUtil_Package; use org.allbinary.input.automation.configuration.InputAutomationConfigurationUtil_Package;
 with org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface_Package; use org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.osgi.OSGIServiceInterface_Package; use org.allbinary.osgi.OSGIServiceInterface_Package;
+with org.allbinary.osgi.OSGIServiceInterface_Package_References;
 with org.allbinary.osgi.OSGIServiceVisitorInterface_Package; use org.allbinary.osgi.OSGIServiceVisitorInterface_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.string_Id.CommonStrings_Package_References;
 with bundle.input.automation.InputAutomationBundleActivatorListenerInterface_Package;
-with org.allbinary.input.automation.InputAutomationJFrame_Package;
 
 package body org.allbinary.input.automation.module.osgi.InputAutomationModuleOSGIServiceVisitor_Package is
 

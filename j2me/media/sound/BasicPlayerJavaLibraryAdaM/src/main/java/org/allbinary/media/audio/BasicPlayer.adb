@@ -14,15 +14,18 @@
 
 
 with javax.microedition.media.Control_Package; use javax.microedition.media.Control_Package;
+with javax.microedition.media.Control_Package_References;
 with javax.microedition.media.MediaException_Package; use javax.microedition.media.MediaException_Package;
 with javax.microedition.media.Player_Package; use javax.microedition.media.Player_Package;
 with javax.microedition.media.PlayerListener_Package; use javax.microedition.media.PlayerListener_Package;
+with javax.microedition.media.PlayerListener_Package_References;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.string_Id.CommonStrings_Package_References;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.media.audio.NullControl_Package; use org.allbinary.media.audio.NullControl_Package;
-with org.allbinary.media.audio.Controllable2_Package;
 with org.allbinary.media.audio.NullControl_Package;
 
 package body org.allbinary.media.audio.BasicPlayer_Package is

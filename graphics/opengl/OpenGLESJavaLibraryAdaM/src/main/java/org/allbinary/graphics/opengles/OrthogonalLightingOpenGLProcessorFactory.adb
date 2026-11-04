@@ -14,9 +14,23 @@
 
 
 with org.allbinary.graphics.opengles.NullOpenGLProcessorFactory_Package; use org.allbinary.graphics.opengles.NullOpenGLProcessorFactory_Package;
+with org.allbinary.graphics.opengles.OpenGLProcessor_Package; use org.allbinary.graphics.opengles.OpenGLProcessor_Package;
+with org.allbinary.graphics.opengles.OpenGLProcessor_Package_References;
+with org.allbinary.graphics.opengles.NullOpenGLProcessorFactory_Package;
+with org.allbinary.graphics.opengles.OpenGLProcessor_Package;
 
 package body org.allbinary.graphics.opengles.OrthogonalLightingOpenGLProcessorFactory_Package is
 
+   subtype OpenGLProcessor_Access is org.allbinary.graphics.opengles.OpenGLProcessor_Package_References.OpenGLProcessor_Access;
+   function "=" (Left, Right : OpenGLProcessor_Access) return Boolean renames org.allbinary.graphics.opengles.OpenGLProcessor_Package_References."=";
+   subtype OpenGLProcessor_Access_Array is org.allbinary.graphics.opengles.OpenGLProcessor_Package_References.OpenGLProcessor_Access_Array;
+   function "=" (Left, Right : OpenGLProcessor_Access_Array) return Boolean renames org.allbinary.graphics.opengles.OpenGLProcessor_Package_References."=";
+   subtype OpenGLProcessor_Access_Array_Access is org.allbinary.graphics.opengles.OpenGLProcessor_Package_References.OpenGLProcessor_Access_Array_Access;
+   function "=" (Left, Right : OpenGLProcessor_Access_Array_Access) return Boolean renames org.allbinary.graphics.opengles.OpenGLProcessor_Package_References."=";
+   subtype OpenGLProcessor_Access_Array_Access_Array is org.allbinary.graphics.opengles.OpenGLProcessor_Package_References.OpenGLProcessor_Access_Array_Access_Array;
+   function "=" (Left, Right : OpenGLProcessor_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.opengles.OpenGLProcessor_Package_References."=";
+   subtype OpenGLProcessor_Access_Array_Access_Array_Access is org.allbinary.graphics.opengles.OpenGLProcessor_Package_References.OpenGLProcessor_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : OpenGLProcessor_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.opengles.OpenGLProcessor_Package_References."=";
    procedure Initialize_Fields (This : in out OrthogonalLightingOpenGLProcessorFactory'Class) is
    begin
       null;
@@ -39,7 +53,7 @@ package body org.allbinary.graphics.opengles.OrthogonalLightingOpenGLProcessorFa
 
    function getInstance return OrthogonalLightingOpenGLProcessorFactory_Access is
    begin
-        return OrthogonalLightingOpenGLProcessorFactory_Package.instance;
+        return OrthogonalLightingOpenGLProcessorFactory_Access (OrthogonalLightingOpenGLProcessorFactory_Package.instance);
    end getInstance;
 
 begin

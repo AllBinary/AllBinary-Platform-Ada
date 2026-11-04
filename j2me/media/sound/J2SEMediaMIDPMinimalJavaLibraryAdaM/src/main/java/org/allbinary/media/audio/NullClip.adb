@@ -14,6 +14,7 @@
 
 
 with org.allbinary.media.audio.NullJ2SEControl_Package; use org.allbinary.media.audio.NullJ2SEControl_Package;
+with org.allbinary.media.audio.NullJ2SEControl_Package_References;
 with org.allbinary.media.audio.NullAudioFormat_Package; use org.allbinary.media.audio.NullAudioFormat_Package;
 with org.allbinary.media.audio.NullAudioFormat_Package;
 with org.allbinary.media.audio.NullJ2SEControl_Package;

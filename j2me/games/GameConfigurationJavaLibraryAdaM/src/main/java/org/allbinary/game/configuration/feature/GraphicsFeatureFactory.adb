@@ -15,6 +15,7 @@
 
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.game.configuration.feature.GraphicsFeature_Package; use org.allbinary.game.configuration.feature.GraphicsFeature_Package;
+with org.allbinary.game.configuration.feature.GraphicsFeature_Package_References;
 with org.allbinary.game.configuration.feature.Feature_Package;
 with org.allbinary.game.configuration.feature.GraphicsFeature_Package;
 

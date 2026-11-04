@@ -15,11 +15,13 @@
 
 with org.allbinary.logic.control.validate.ValidationInterface_Package; use org.allbinary.logic.control.validate.ValidationInterface_Package;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
+with org.w3c.dom.Document_Package_References;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
+with org.w3c.dom.Node_Package_References;
 with org.allbinary.business.category.store.theme.StoreThemeCategoryInterface_Package; use org.allbinary.business.category.store.theme.StoreThemeCategoryInterface_Package;
+with org.allbinary.business.category.store.theme.StoreThemeCategoryInterface_Package_References;
 with org.allbinary.logic.visual.transform.template.customizer.includes.style.css.template.retail.CssStyleValidation_Package;
 with org.allbinary.business.category.store.theme.StoreThemeCategoryInterface_Package;
-with org.allbinary.business.category.store.theme.StoreThemeCategoryView_Package;
 with org.allbinary.logic.visual.theme.ThemeInterface_Package;
 with org.allbinary.logic.visual.theme.ThemeValidation_Package;
 

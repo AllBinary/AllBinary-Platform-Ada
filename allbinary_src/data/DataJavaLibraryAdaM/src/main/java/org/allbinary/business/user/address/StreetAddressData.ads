@@ -50,8 +50,8 @@ package org.allbinary.business.user.address.StreetAddressData_Package is
    function "=" (Left, Right : StreetAddressData_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.user.address.StreetAddressData_Package_References."=";
 
    type StreetAddressData is new Java_Object with null record;
-   MAX : Integer;
-   MIN : Integer;
+   MAX : constant Integer := 255;
+   MIN : constant Integer := 0;
    FORM : Unbounded_String;
    STATES : Unbounded_String;
    NUMBEROFADDRESSES : Unbounded_String;

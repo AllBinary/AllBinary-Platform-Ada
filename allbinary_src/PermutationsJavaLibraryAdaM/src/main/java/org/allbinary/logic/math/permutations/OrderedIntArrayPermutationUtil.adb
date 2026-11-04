@@ -14,6 +14,7 @@
 
 
 with org.allbinary.logic.util.visitor.Visitor_Package; use org.allbinary.logic.util.visitor.Visitor_Package;
+with org.allbinary.logic.util.visitor.Visitor_Package_References;
 with org.allbinary.logic.math.permutations.IntPermutationVisitor_Package; use org.allbinary.logic.math.permutations.IntPermutationVisitor_Package;
 with org.allbinary.logic.math.permutations.IntPermutationVisitor_Package;
 

@@ -15,6 +15,7 @@
 
 with javax.microedition.lcdui.Canvas_Package; use javax.microedition.lcdui.Canvas_Package;
 with org.allbinary.game.input.GameInputProcessor_Package; use org.allbinary.game.input.GameInputProcessor_Package;
+with org.allbinary.game.input.GameInputProcessor_Package_References;
 with org.allbinary.game.layer.special.SpecialUpGameInputProcessor_Package; use org.allbinary.game.layer.special.SpecialUpGameInputProcessor_Package;
 with org.allbinary.game.layer.special.SpecialDownGameInputProcessor_Package; use org.allbinary.game.layer.special.SpecialDownGameInputProcessor_Package;
 with org.allbinary.game.layer.special.SpecialRightGameInputProcessor_Package; use org.allbinary.game.layer.special.SpecialRightGameInputProcessor_Package;
@@ -22,6 +23,7 @@ with org.allbinary.game.layer.special.SpecialLeftGameInputProcessor_Package; use
 with org.allbinary.game.layer.special.Special1GameInputProcessor_Package; use org.allbinary.game.layer.special.Special1GameInputProcessor_Package;
 with org.allbinary.game.layer.special.Special3GameInputProcessor_Package; use org.allbinary.game.layer.special.Special3GameInputProcessor_Package;
 with org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package; use org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package;
+with org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package_References;
 with org.allbinary.game.layer.special.SpecialAnalogUpGameInputProcessor_Package; use org.allbinary.game.layer.special.SpecialAnalogUpGameInputProcessor_Package;
 with org.allbinary.game.layer.special.SpecialAnalogDownGameInputProcessor_Package; use org.allbinary.game.layer.special.SpecialAnalogDownGameInputProcessor_Package;
 with org.allbinary.game.layer.special.SpecialAnalogRightGameInputProcessor_Package; use org.allbinary.game.layer.special.SpecialAnalogRightGameInputProcessor_Package;

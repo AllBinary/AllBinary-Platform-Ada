@@ -14,9 +14,12 @@
 
 
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.graphics.color.BasicColor_Package_References;
 with org.allbinary.time.GameTickTimeDelayHelperFactory_Package; use org.allbinary.time.GameTickTimeDelayHelperFactory_Package;
 with org.allbinary.time.TimeDelayHelper_Package; use org.allbinary.time.TimeDelayHelper_Package;
+with org.allbinary.time.TimeDelayHelper_Package_References;
 with org.allbinary.animation.AnimationBehavior_Package; use org.allbinary.animation.AnimationBehavior_Package;
+with org.allbinary.animation.AnimationBehavior_Package_References;
 
 package body org.allbinary.animation.TimedVectorAnimation_Package is
 
@@ -76,7 +79,7 @@ package body org.allbinary.animation.TimedVectorAnimation_Package is
    procedure nextFrame (This : in out TimedVectorAnimation) is
    begin
         if This.timeElapsedHelper.isTime (GameTickTimeDelayHelperFactory_Package.getInstance.startTime) then
-            VectorAnimation (This).nextFrame;
+            VectorAnimation_Package.VectorAnimation (This).nextFrame;
         end if;
    end nextFrame;
 

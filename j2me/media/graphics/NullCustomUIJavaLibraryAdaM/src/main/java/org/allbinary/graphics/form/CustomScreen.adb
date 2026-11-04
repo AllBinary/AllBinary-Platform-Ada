@@ -1,7 +1,6 @@
 --  Generated Code Do Not Modify
 
 
-with org.allbinary.graphics.form.CustomDisplayable_Package;
 
 package body org.allbinary.graphics.form.CustomScreen_Package is
 

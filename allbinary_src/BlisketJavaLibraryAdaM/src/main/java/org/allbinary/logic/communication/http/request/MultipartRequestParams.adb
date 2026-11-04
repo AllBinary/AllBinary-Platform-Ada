@@ -17,10 +17,10 @@ with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.logic.communication.http.file.upload.AbFileUploadFactory_Package; use org.allbinary.logic.communication.http.file.upload.AbFileUploadFactory_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.string_Id.StringValidationUtil_Package; use org.allbinary.logic.string_Id.StringValidationUtil_Package;
 with org.apache.commons.fileupload.FileItem_Package; use org.apache.commons.fileupload.FileItem_Package;
 with org.apache.commons.fileupload.FileUploadBase.InvalidContentTypeException_Package; use org.apache.commons.fileupload.FileUploadBase.InvalidContentTypeException_Package;
-with org.allbinary.logic.communication.http.file.upload.AbFileUploadFactory_Package;
 
 package body org.allbinary.logic.communication.http.request.MultipartRequestParams_Package is
 
@@ -124,7 +124,7 @@ package body org.allbinary.logic.communication.http.request.MultipartRequestPara
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.HTTPREQUEST) then
                 This.logUtil.putF (To_Unbounded_String ("Using Normal RequestParams"), MultipartRequestParams_Access'(This'Unchecked_Access), To_Unbounded_String ("processMultipartRequest()"));
             end if;
-            RequestParams (This).setMap (request.getParameterMap);
+            RequestParams_Package.RequestParams (This).setMap (request.getParameterMap);
                 end;
         end;
    end processMultipartRequest;
@@ -135,7 +135,7 @@ package body org.allbinary.logic.communication.http.request.MultipartRequestPara
         if This.special then
             return HashMap_Access (MultipartRequestParams'Class (This).getMap);
         else
-            return RequestParams (This).toHashMap;
+            return RequestParams_Package.RequestParams (This).toHashMap;
         end if;
    end toHashMap;
 

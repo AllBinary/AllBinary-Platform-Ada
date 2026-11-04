@@ -18,11 +18,10 @@ with org.allbinary.input.motion.gesture.configuration.MotionGestureConfiguration
 with org.allbinary.input.motion.gesture.observer.ResolveCompleteMotionGestureListener_Package; use org.allbinary.input.motion.gesture.observer.ResolveCompleteMotionGestureListener_Package;
 with org.allbinary.input.motion.gesture.observer.NullCompleteMotionGestureReceiver_Package; use org.allbinary.input.motion.gesture.observer.NullCompleteMotionGestureReceiver_Package;
 with org.allbinary.input.motion.gesture.observer.CompleteMotionGestureListenerInterface_Package; use org.allbinary.input.motion.gesture.observer.CompleteMotionGestureListenerInterface_Package;
+with org.allbinary.input.motion.gesture.observer.CompleteMotionGestureListenerInterface_Package_References;
 with org.allbinary.game.input.CompleteMotionGestureInputEvent_Package;
 with org.allbinary.game.input.CompleteMotionGestureInputInterface_Package;
 with org.allbinary.input.motion.gesture.observer.CompleteMotionGestureListenerInterface_Package;
-with org.allbinary.input.motion.gesture.configuration.MotionGestureConfiguration_Package;
-with org.allbinary.input.motion.gesture.configuration.MotionGestureConfigurationFactory_Package;
 with org.allbinary.input.motion.gesture.MotionGestureInput_Package;
 with org.allbinary.input.motion.gesture.observer.NullCompleteMotionGestureReceiver_Package;
 with org.allbinary.input.motion.gesture.observer.ResolveCompleteMotionGestureListener_Package;

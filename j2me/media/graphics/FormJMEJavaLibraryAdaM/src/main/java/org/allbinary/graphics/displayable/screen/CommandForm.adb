@@ -14,20 +14,27 @@
 
 
 with javax.microedition.lcdui.Command_Package; use javax.microedition.lcdui.Command_Package;
+with javax.microedition.lcdui.Command_Package_References;
 with javax.microedition.lcdui.CommandListener_Package; use javax.microedition.lcdui.CommandListener_Package;
+with javax.microedition.lcdui.CommandListener_Package_References;
 with javax.microedition.lcdui.Form_Package; use javax.microedition.lcdui.Form_Package;
 with javax.microedition.lcdui.NullCommandListener_Package; use javax.microedition.lcdui.NullCommandListener_Package;
 with org.allbinary.canvas.Processor_Package; use org.allbinary.canvas.Processor_Package;
+with org.allbinary.canvas.Processor_Package_References;
 with org.allbinary.game.displayable.canvas.MenuListener_Package; use org.allbinary.game.displayable.canvas.MenuListener_Package;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.graphics.color.BasicColor_Package_References;
 with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
 with org.allbinary.graphics.displayable.command.MyCommandInterface_Package; use org.allbinary.graphics.displayable.command.MyCommandInterface_Package;
 with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.string_Id.CommonStrings_Package_References;
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.util.ABStack_Package; use org.allbinary.util.ABStack_Package;
+with org.allbinary.util.ABStack_Package_References;
 with org.allbinary.graphics.displayable.screen.ScreenRepaintProcessorFactory_Package; use org.allbinary.graphics.displayable.screen.ScreenRepaintProcessorFactory_Package;
 
 package body org.allbinary.graphics.displayable.screen.CommandForm_Package is
@@ -184,7 +191,7 @@ package body org.allbinary.graphics.displayable.screen.CommandForm_Package is
       command : constant Command_Access := Command_Access (command_Param);
    begin
         This.commandStack.push (command);
-        Form (This).addCommand (command);
+        Form_Package.Form (This).addCommand (command);
    end addCommand;
 
    procedure removeAllCommands (This : in out CommandForm) is
@@ -193,7 +200,7 @@ package body org.allbinary.graphics.displayable.screen.CommandForm_Package is
    begin
         size := This.commandStack.size;
         for index in 0 .. (size) - 1 loop
-            Form (This).removeCommand (Command_Access (This.commandStack.pop));
+            Form_Package.Form (This).removeCommand (Command_Access (This.commandStack.pop));
         end loop;
    end removeAllCommands;
 

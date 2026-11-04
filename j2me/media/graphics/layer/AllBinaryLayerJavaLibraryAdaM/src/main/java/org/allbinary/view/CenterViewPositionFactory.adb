@@ -13,7 +13,6 @@
 --  Generated Code Do Not Modify
 
 
-with org.allbinary.view.CenterStaticViewPositionFactory_Package;
 with org.allbinary.view.ViewPositionBase_Package;
 
 package body org.allbinary.view.CenterViewPositionFactory_Package is

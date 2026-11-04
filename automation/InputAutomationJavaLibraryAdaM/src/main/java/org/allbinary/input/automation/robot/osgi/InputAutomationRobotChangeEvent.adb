@@ -14,6 +14,7 @@
 
 
 with org.allbinary.input.automation.robot.osgi.InputAutomationRobotInterfaceWrapper_Package; use org.allbinary.input.automation.robot.osgi.InputAutomationRobotInterfaceWrapper_Package;
+with org.allbinary.input.automation.robot.osgi.InputAutomationRobotInterfaceWrapper_Package_References;
 with org.allbinary.input.automation.robot.osgi.InputAutomationRobotInterfaceWrapper_Package;
 with org.allbinary.input.automation.robot.InputRobotInterface_Package;
 

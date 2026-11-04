@@ -13,13 +13,14 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
 with org.allbinary.media.ScaleProperties_Package; use org.allbinary.media.ScaleProperties_Package;
+with org.allbinary.media.ScaleProperties_Package_References;
 with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Animation_Package;
+with org.allbinary.animation.Animation_Package_References;
 with org.allbinary.animation.Animation_Package;
 with org.allbinary.animation.AnimationInterface_Package;
-with org.allbinary.animation.AnimationInterfaceFactoryInterface_Package;
 with org.allbinary.animation.BasicAnimationInterfaceFactoryInterface_Package;
-with org.allbinary.animation.ProceduralAnimationInterfaceFactoryInterface_Package;
 
 package body org.allbinary.animation.NullAnimationFactory_Package is
 

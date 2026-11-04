@@ -16,7 +16,9 @@
 with org.allbinary.game.configuration.feature.Features_Package; use org.allbinary.game.configuration.feature.Features_Package;
 with org.allbinary.game.configuration.feature.SensorFeatureFactory_Package; use org.allbinary.game.configuration.feature.SensorFeatureFactory_Package;
 with org.allbinary.logic.math.Orientation_Package; use org.allbinary.logic.math.Orientation_Package;
+with org.allbinary.logic.math.Orientation_Package_References;
 with org.allbinary.input.gyro.AllBinaryOrientationSensor_Package; use org.allbinary.input.gyro.AllBinaryOrientationSensor_Package;
+with org.allbinary.input.gyro.AllBinaryOrientationSensor_Package_References;
 with org.allbinary.input.gyro.NoGyroSensor_Package; use org.allbinary.input.gyro.NoGyroSensor_Package;
 
 package body org.allbinary.input.gyro.OrientationToGameKeyEvent_Package is

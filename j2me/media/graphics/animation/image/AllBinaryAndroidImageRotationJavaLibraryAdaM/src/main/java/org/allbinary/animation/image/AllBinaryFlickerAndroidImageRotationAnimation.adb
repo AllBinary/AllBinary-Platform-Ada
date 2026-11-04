@@ -14,12 +14,19 @@
 
 
 with android.graphics.Matrix_Package; use android.graphics.Matrix_Package;
+with android.graphics.Matrix_Package_References;
 with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
+with javax.microedition.lcdui.Image_Package_References;
 with org.allbinary.animation.AnimationBehavior_Package; use org.allbinary.animation.AnimationBehavior_Package;
+with org.allbinary.animation.AnimationBehavior_Package_References;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.graphics.color.BasicColor_Package_References;
 with org.allbinary.math.AngleInfo_Package; use org.allbinary.math.AngleInfo_Package;
+with org.allbinary.math.AngleInfo_Package_References;
 with org.allbinary.media.image.AndroidImageUtil_Package; use org.allbinary.media.image.AndroidImageUtil_Package;
+with org.allbinary.media.image.AndroidImageUtil_Package_References;
 with org.allbinary.media.image.ImageModifierUtil_Package; use org.allbinary.media.image.ImageModifierUtil_Package;
+with org.allbinary.media.image.ImageModifierUtil_Package_References;
 
 package body org.allbinary.animation.image.AllBinaryFlickerAndroidImageRotationAnimation_Package is
 
@@ -136,7 +143,7 @@ package body org.allbinary.animation.image.AllBinaryFlickerAndroidImageRotationA
             This.imageModifierUtil.setColor (This.originalImage, AllBinaryFlickerAndroidImageRotationAnimation'Class (This).getImage, 0, basicColor);
             changed := True;
         end if;
-        ImageBaseRotationAnimation (This).setBasicColorP (basicColor);
+        ImageBaseRotationAnimation_Package.ImageBaseRotationAnimation (This).setBasicColorP (basicColor);
         if changed then
             This.matrix.setRotate (0.0, Float (This.halfWidth), Float (This.halfHeight));
             AllBinaryFlickerAndroidImageRotationAnimation'Class (This).updateImage;
@@ -156,7 +163,7 @@ package body org.allbinary.animation.image.AllBinaryFlickerAndroidImageRotationA
         if (This.alphaP) /= (alpha) then
             changed := True;
         end if;
-        ImageBaseRotationAnimation (This).setAlpha (alpha);
+        ImageBaseRotationAnimation_Package.ImageBaseRotationAnimation (This).setAlpha (alpha);
         This.imageModifierUtil.setAlpha (This.originalImage, AllBinaryFlickerAndroidImageRotationAnimation'Class (This).getImage, 0, This.alphaP);
         if changed then
             This.matrix.setRotate (0.0, Float (This.halfWidth), Float (This.halfHeight));
@@ -166,14 +173,14 @@ package body org.allbinary.animation.image.AllBinaryFlickerAndroidImageRotationA
 
    procedure nextRotation (This : in out AllBinaryFlickerAndroidImageRotationAnimation) is
    begin
-        ImageBaseRotationAnimation (This).nextRotation;
+        ImageBaseRotationAnimation_Package.ImageBaseRotationAnimation (This).nextRotation;
         This.matrix.setRotate (Float (This.increment), Float (This.halfWidth), Float (This.halfHeight));
         AllBinaryFlickerAndroidImageRotationAnimation'Class (This).updateImage;
    end nextRotation;
 
    procedure previousRotation (This : in out AllBinaryFlickerAndroidImageRotationAnimation) is
    begin
-        ImageBaseRotationAnimation (This).previousRotation;
+        ImageBaseRotationAnimation_Package.ImageBaseRotationAnimation (This).previousRotation;
         This.matrix.setRotate (Float (-(This.increment)), Float (This.halfWidth), Float (This.halfHeight));
         AllBinaryFlickerAndroidImageRotationAnimation'Class (This).updateImage;
    end previousRotation;

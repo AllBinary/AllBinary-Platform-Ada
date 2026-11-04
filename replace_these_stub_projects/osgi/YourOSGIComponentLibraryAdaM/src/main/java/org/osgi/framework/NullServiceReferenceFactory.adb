@@ -14,6 +14,7 @@
 
 
 with org.osgi.framework.NullServiceReference_Package; use org.osgi.framework.NullServiceReference_Package;
+with org.osgi.framework.NullServiceReference_Package_References;
 with org.osgi.framework.NullServiceReference_Package;
 
 package body org.osgi.framework.NullServiceReferenceFactory_Package is

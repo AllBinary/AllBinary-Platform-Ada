@@ -71,7 +71,7 @@ package org.allbinary.log.FileLog_Package is
 
    type FileLog is new Java_Object with null record;
    stringUtil : StringUtil_Access;
-   logLength : Long_Long_Integer;
+   logLength : constant Long_Long_Integer := 33000000;
    logPath : Unbounded_String;
    extension : Unbounded_String;
    fileName : Unbounded_String;

@@ -39,10 +39,10 @@ begin
    null;
    ANYSINGLECHARACTERMATCH := To_Unbounded_String ("_");
    ANYMULTICHARACTERMATCH := To_Unbounded_String ("%");
-   MAXNUM := 19;
-   MINSTRING := 1;
-   MAXSTRING := 255;
-   MAXBLOB := 32000;
+   
+   
+   
+   
 
 end org.allbinary.logic.communication.sql.AbSqlData_Package;
 

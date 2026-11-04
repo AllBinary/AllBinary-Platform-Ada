@@ -15,16 +15,22 @@
 
 with java.io.File_Package; use java.io.File_Package;
 with org.allbinary.gui.dialog.FileJDialog_Package; use org.allbinary.gui.dialog.FileJDialog_Package;
+with org.allbinary.gui.dialog.FileJDialog_Package_References;
 with org.allbinary.gui.dialog.FileJDialogListenerInterface_Package; use org.allbinary.gui.dialog.FileJDialogListenerInterface_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.media.image.ImageProcessorInput_Package; use org.allbinary.media.image.ImageProcessorInput_Package;
+with org.allbinary.media.image.ImageProcessorInput_Package_References;
 with org.allbinary.media.image.ImageProcessorInputCompositeInterface_Package; use org.allbinary.media.image.ImageProcessorInputCompositeInterface_Package;
+with org.allbinary.media.image.ImageProcessorInputCompositeInterface_Package_References;
 with org.allbinary.media.image.analysis.ColorRange_Package; use org.allbinary.media.image.analysis.ColorRange_Package;
 with org.allbinary.media.image.analysis.ColorRangeInterface_Package; use org.allbinary.media.image.analysis.ColorRangeInterface_Package;
+with org.allbinary.media.image.analysis.ColorRangeInterface_Package_References;
 with org.allbinary.media.image.analysis.ImageAnalysis_Package; use org.allbinary.media.image.analysis.ImageAnalysis_Package;
 with org.allbinary.media.image.analysis.ImageAnalysisResults_Package; use org.allbinary.media.image.analysis.ImageAnalysisResults_Package;
 with org.allbinary.string_Id.CommonPhoneStrings_Package; use org.allbinary.string_Id.CommonPhoneStrings_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.string_Id.CommonStrings_Package_References;
 with org.allbinary.image.gui.ImageUnifierJPanel_Package; use org.allbinary.image.gui.ImageUnifierJPanel_Package;
 with org.allbinary.image.gui.ImageAnalysisResultsJPanel_Package; use org.allbinary.image.gui.ImageAnalysisResultsJPanel_Package;
 with org.allbinary.image.gui.RotationSpriteImageJPanel_Package; use org.allbinary.image.gui.RotationSpriteImageJPanel_Package;

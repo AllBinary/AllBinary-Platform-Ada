@@ -14,11 +14,22 @@
 
 
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
 with org.allbinary.android.activity.NullProgressActivity_Package; use org.allbinary.android.activity.NullProgressActivity_Package;
 with org.allbinary.android.activity.ProgressActivityInterface_Package; use org.allbinary.android.activity.ProgressActivityInterface_Package;
+with org.allbinary.android.activity.ProgressActivityInterface_Package_References;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.graphics.color.BasicColor_Package_References;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.graphics.canvas.transition.progress.ShowTitleProgressBarRunnable_Package; use org.allbinary.graphics.canvas.transition.progress.ShowTitleProgressBarRunnable_Package;
+with org.allbinary.graphics.canvas.transition.progress.ShowTitleProgressBarRunnable_Package_References;
+with org.allbinary.graphics.canvas.transition.progress.DismissTitleProgressBarRunnable_Package; use org.allbinary.graphics.canvas.transition.progress.DismissTitleProgressBarRunnable_Package;
+with org.allbinary.graphics.canvas.transition.progress.DismissTitleProgressBarRunnable_Package_References;
+with org.allbinary.graphics.canvas.transition.progress.TitleProgressBarPortionSetProgressRunnable_Package; use org.allbinary.graphics.canvas.transition.progress.TitleProgressBarPortionSetProgressRunnable_Package;
+with org.allbinary.graphics.canvas.transition.progress.TitleProgressBarPortionSetProgressRunnable_Package_References;
+with org.allbinary.graphics.canvas.transition.progress.TitleProgressBarSetProgressRunnable_Package; use org.allbinary.graphics.canvas.transition.progress.TitleProgressBarSetProgressRunnable_Package;
+with org.allbinary.graphics.canvas.transition.progress.TitleProgressBarSetProgressRunnable_Package_References;
 with org.allbinary.graphics.canvas.transition.progress.DismissTitleProgressBarRunnable_Package;
 with org.allbinary.graphics.canvas.transition.progress.ProgressRunnable_Package;
 with org.allbinary.graphics.canvas.transition.progress.ShowTitleProgressBarRunnable_Package;
@@ -60,6 +71,46 @@ package body org.allbinary.graphics.canvas.transition.progress.AndroidTitleProgr
    function "=" (Left, Right : BasicColor_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.color.BasicColor_Package_References."=";
    subtype BasicColor_Access_Array_Access_Array_Access is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access_Array_Access_Array_Access;
    function "=" (Left, Right : BasicColor_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.color.BasicColor_Package_References."=";
+   subtype ShowTitleProgressBarRunnable_Access is org.allbinary.graphics.canvas.transition.progress.ShowTitleProgressBarRunnable_Package_References.ShowTitleProgressBarRunnable_Access;
+   function "=" (Left, Right : ShowTitleProgressBarRunnable_Access) return Boolean renames org.allbinary.graphics.canvas.transition.progress.ShowTitleProgressBarRunnable_Package_References."=";
+   subtype ShowTitleProgressBarRunnable_Access_Array is org.allbinary.graphics.canvas.transition.progress.ShowTitleProgressBarRunnable_Package_References.ShowTitleProgressBarRunnable_Access_Array;
+   function "=" (Left, Right : ShowTitleProgressBarRunnable_Access_Array) return Boolean renames org.allbinary.graphics.canvas.transition.progress.ShowTitleProgressBarRunnable_Package_References."=";
+   subtype ShowTitleProgressBarRunnable_Access_Array_Access is org.allbinary.graphics.canvas.transition.progress.ShowTitleProgressBarRunnable_Package_References.ShowTitleProgressBarRunnable_Access_Array_Access;
+   function "=" (Left, Right : ShowTitleProgressBarRunnable_Access_Array_Access) return Boolean renames org.allbinary.graphics.canvas.transition.progress.ShowTitleProgressBarRunnable_Package_References."=";
+   subtype ShowTitleProgressBarRunnable_Access_Array_Access_Array is org.allbinary.graphics.canvas.transition.progress.ShowTitleProgressBarRunnable_Package_References.ShowTitleProgressBarRunnable_Access_Array_Access_Array;
+   function "=" (Left, Right : ShowTitleProgressBarRunnable_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.canvas.transition.progress.ShowTitleProgressBarRunnable_Package_References."=";
+   subtype ShowTitleProgressBarRunnable_Access_Array_Access_Array_Access is org.allbinary.graphics.canvas.transition.progress.ShowTitleProgressBarRunnable_Package_References.ShowTitleProgressBarRunnable_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ShowTitleProgressBarRunnable_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.canvas.transition.progress.ShowTitleProgressBarRunnable_Package_References."=";
+   subtype DismissTitleProgressBarRunnable_Access is org.allbinary.graphics.canvas.transition.progress.DismissTitleProgressBarRunnable_Package_References.DismissTitleProgressBarRunnable_Access;
+   function "=" (Left, Right : DismissTitleProgressBarRunnable_Access) return Boolean renames org.allbinary.graphics.canvas.transition.progress.DismissTitleProgressBarRunnable_Package_References."=";
+   subtype DismissTitleProgressBarRunnable_Access_Array is org.allbinary.graphics.canvas.transition.progress.DismissTitleProgressBarRunnable_Package_References.DismissTitleProgressBarRunnable_Access_Array;
+   function "=" (Left, Right : DismissTitleProgressBarRunnable_Access_Array) return Boolean renames org.allbinary.graphics.canvas.transition.progress.DismissTitleProgressBarRunnable_Package_References."=";
+   subtype DismissTitleProgressBarRunnable_Access_Array_Access is org.allbinary.graphics.canvas.transition.progress.DismissTitleProgressBarRunnable_Package_References.DismissTitleProgressBarRunnable_Access_Array_Access;
+   function "=" (Left, Right : DismissTitleProgressBarRunnable_Access_Array_Access) return Boolean renames org.allbinary.graphics.canvas.transition.progress.DismissTitleProgressBarRunnable_Package_References."=";
+   subtype DismissTitleProgressBarRunnable_Access_Array_Access_Array is org.allbinary.graphics.canvas.transition.progress.DismissTitleProgressBarRunnable_Package_References.DismissTitleProgressBarRunnable_Access_Array_Access_Array;
+   function "=" (Left, Right : DismissTitleProgressBarRunnable_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.canvas.transition.progress.DismissTitleProgressBarRunnable_Package_References."=";
+   subtype DismissTitleProgressBarRunnable_Access_Array_Access_Array_Access is org.allbinary.graphics.canvas.transition.progress.DismissTitleProgressBarRunnable_Package_References.DismissTitleProgressBarRunnable_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : DismissTitleProgressBarRunnable_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.canvas.transition.progress.DismissTitleProgressBarRunnable_Package_References."=";
+   subtype TitleProgressBarPortionSetProgressRunnable_Access is org.allbinary.graphics.canvas.transition.progress.TitleProgressBarPortionSetProgressRunnable_Package_References.TitleProgressBarPortionSetProgressRunnable_Access;
+   function "=" (Left, Right : TitleProgressBarPortionSetProgressRunnable_Access) return Boolean renames org.allbinary.graphics.canvas.transition.progress.TitleProgressBarPortionSetProgressRunnable_Package_References."=";
+   subtype TitleProgressBarPortionSetProgressRunnable_Access_Array is org.allbinary.graphics.canvas.transition.progress.TitleProgressBarPortionSetProgressRunnable_Package_References.TitleProgressBarPortionSetProgressRunnable_Access_Array;
+   function "=" (Left, Right : TitleProgressBarPortionSetProgressRunnable_Access_Array) return Boolean renames org.allbinary.graphics.canvas.transition.progress.TitleProgressBarPortionSetProgressRunnable_Package_References."=";
+   subtype TitleProgressBarPortionSetProgressRunnable_Access_Array_Access is org.allbinary.graphics.canvas.transition.progress.TitleProgressBarPortionSetProgressRunnable_Package_References.TitleProgressBarPortionSetProgressRunnable_Access_Array_Access;
+   function "=" (Left, Right : TitleProgressBarPortionSetProgressRunnable_Access_Array_Access) return Boolean renames org.allbinary.graphics.canvas.transition.progress.TitleProgressBarPortionSetProgressRunnable_Package_References."=";
+   subtype TitleProgressBarPortionSetProgressRunnable_Access_Array_Access_Array is org.allbinary.graphics.canvas.transition.progress.TitleProgressBarPortionSetProgressRunnable_Package_References.TitleProgressBarPortionSetProgressRunnable_Access_Array_Access_Array;
+   function "=" (Left, Right : TitleProgressBarPortionSetProgressRunnable_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.canvas.transition.progress.TitleProgressBarPortionSetProgressRunnable_Package_References."=";
+   subtype TitleProgressBarPortionSetProgressRunnable_Access_Array_Access_Array_Access is org.allbinary.graphics.canvas.transition.progress.TitleProgressBarPortionSetProgressRunnable_Package_References.TitleProgressBarPortionSetProgressRunnable_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : TitleProgressBarPortionSetProgressRunnable_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.canvas.transition.progress.TitleProgressBarPortionSetProgressRunnable_Package_References."=";
+   subtype TitleProgressBarSetProgressRunnable_Access is org.allbinary.graphics.canvas.transition.progress.TitleProgressBarSetProgressRunnable_Package_References.TitleProgressBarSetProgressRunnable_Access;
+   function "=" (Left, Right : TitleProgressBarSetProgressRunnable_Access) return Boolean renames org.allbinary.graphics.canvas.transition.progress.TitleProgressBarSetProgressRunnable_Package_References."=";
+   subtype TitleProgressBarSetProgressRunnable_Access_Array is org.allbinary.graphics.canvas.transition.progress.TitleProgressBarSetProgressRunnable_Package_References.TitleProgressBarSetProgressRunnable_Access_Array;
+   function "=" (Left, Right : TitleProgressBarSetProgressRunnable_Access_Array) return Boolean renames org.allbinary.graphics.canvas.transition.progress.TitleProgressBarSetProgressRunnable_Package_References."=";
+   subtype TitleProgressBarSetProgressRunnable_Access_Array_Access is org.allbinary.graphics.canvas.transition.progress.TitleProgressBarSetProgressRunnable_Package_References.TitleProgressBarSetProgressRunnable_Access_Array_Access;
+   function "=" (Left, Right : TitleProgressBarSetProgressRunnable_Access_Array_Access) return Boolean renames org.allbinary.graphics.canvas.transition.progress.TitleProgressBarSetProgressRunnable_Package_References."=";
+   subtype TitleProgressBarSetProgressRunnable_Access_Array_Access_Array is org.allbinary.graphics.canvas.transition.progress.TitleProgressBarSetProgressRunnable_Package_References.TitleProgressBarSetProgressRunnable_Access_Array_Access_Array;
+   function "=" (Left, Right : TitleProgressBarSetProgressRunnable_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.canvas.transition.progress.TitleProgressBarSetProgressRunnable_Package_References."=";
+   subtype TitleProgressBarSetProgressRunnable_Access_Array_Access_Array_Access is org.allbinary.graphics.canvas.transition.progress.TitleProgressBarSetProgressRunnable_Package_References.TitleProgressBarSetProgressRunnable_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : TitleProgressBarSetProgressRunnable_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.canvas.transition.progress.TitleProgressBarSetProgressRunnable_Package_References."=";
    procedure Initialize_Fields (This : in out AndroidTitleProgressBar'Class) is
    begin
       null;
@@ -106,7 +157,7 @@ package body org.allbinary.graphics.canvas.transition.progress.AndroidTitleProgr
    begin
         begin
             This.logUtil.putF (This.commonStrings.START, AndroidTitleProgressBar_Access'(This'Unchecked_Access), This.commonStrings.START_METHOD_NAME);
-            ProgressCanvas (This).start;
+            ProgressCanvas_Package.ProgressCanvas (This).start;
             This.progressActivity.runOnUiThread (This.showTitleProgressBarRunnable_Var);
         exception
             when Java_Occurrence : others =>
@@ -123,7 +174,7 @@ package body org.allbinary.graphics.canvas.transition.progress.AndroidTitleProgr
         begin
             This.logUtil.putF (This.commonStrings.START, AndroidTitleProgressBar_Access'(This'Unchecked_Access), This.commonStrings.END_METHOD_NAME);
             This.progressActivity.runOnUiThread (This.dismissTitleProgressBarRunnable_Var);
-            ProgressCanvas (This).end_Id;
+            ProgressCanvas_Package.ProgressCanvas (This).end_Id;
         exception
             when Java_Occurrence : others =>
                 declare
@@ -137,7 +188,7 @@ package body org.allbinary.graphics.canvas.transition.progress.AndroidTitleProgr
    procedure addPortion (This : in out AndroidTitleProgressBar; value : Integer; text : Unbounded_String; index : Integer) is
    begin
         begin
-            ProgressCanvas (This).addPortion (value, text, index);
+            ProgressCanvas_Package.ProgressCanvas (This).addPortion (value, text, index);
             This.portion := value;
             This.progressActivity.runOnUiThread (This.progressDialogPortionSetProgressRunnable);
         exception
@@ -153,7 +204,7 @@ package body org.allbinary.graphics.canvas.transition.progress.AndroidTitleProgr
    procedure addNormalPortion (This : in out AndroidTitleProgressBar; value : Integer; text : Unbounded_String) is
    begin
         begin
-            ProgressCanvas (This).addNormalPortion (value, text);
+            ProgressCanvas_Package.ProgressCanvas (This).addNormalPortion (value, text);
             This.portion := value;
             This.progressActivity.runOnUiThread (This.progressDialogPortionSetProgressRunnable);
         exception
@@ -169,7 +220,7 @@ package body org.allbinary.graphics.canvas.transition.progress.AndroidTitleProgr
    procedure setValue (This : in out AndroidTitleProgressBar; value : Integer) is
    begin
         begin
-            ProgressCanvas (This).setValue (value);
+            ProgressCanvas_Package.ProgressCanvas (This).setValue (value);
             This.progressActivity.runOnUiThread (This.progressDialogSetProgressRunnable);
         exception
             when Java_Occurrence : others =>
@@ -196,11 +247,20 @@ end org.allbinary.graphics.canvas.transition.progress.AndroidTitleProgressBar_Pa
 
 
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
 with org.allbinary.android.activity.NullProgressActivity_Package; use org.allbinary.android.activity.NullProgressActivity_Package;
 with org.allbinary.android.activity.ProgressActivityInterface_Package; use org.allbinary.android.activity.ProgressActivityInterface_Package;
+with org.allbinary.android.activity.ProgressActivityInterface_Package_References;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.graphics.color.BasicColor_Package_References;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.graphics.canvas.transition.progress.ShowTitleProgressBarRunnable_Package; use org.allbinary.graphics.canvas.transition.progress.ShowTitleProgressBarRunnable_Package;
+with org.allbinary.graphics.canvas.transition.progress.ShowTitleProgressBarRunnable_Package_References;
+with org.allbinary.graphics.canvas.transition.progress.DismissTitleProgressBarRunnable_Package; use org.allbinary.graphics.canvas.transition.progress.DismissTitleProgressBarRunnable_Package;
+with org.allbinary.graphics.canvas.transition.progress.DismissTitleProgressBarRunnable_Package_References;
+with org.allbinary.graphics.canvas.transition.progress.TitleProgressBarPortionSetProgressRunnable_Package; use org.allbinary.graphics.canvas.transition.progress.TitleProgressBarPortionSetProgressRunnable_Package;
+with org.allbinary.graphics.canvas.transition.progress.TitleProgressBarPortionSetProgressRunnable_Package_References;
 with org.allbinary.graphics.canvas.transition.progress.AndroidTitleProgressBar_Package;
 with org.allbinary.graphics.canvas.transition.progress.DismissTitleProgressBarRunnable_Package;
 with org.allbinary.graphics.canvas.transition.progress.ProgressRunnable_Package;
@@ -242,6 +302,46 @@ package body org.allbinary.graphics.canvas.transition.progress.TitleProgressBarS
    function "=" (Left, Right : BasicColor_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.color.BasicColor_Package_References."=";
    subtype BasicColor_Access_Array_Access_Array_Access is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access_Array_Access_Array_Access;
    function "=" (Left, Right : BasicColor_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.color.BasicColor_Package_References."=";
+   subtype ProgressCanvas_Access is org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package_References.ProgressCanvas_Access;
+   function "=" (Left, Right : ProgressCanvas_Access) return Boolean renames org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package_References."=";
+   subtype ProgressCanvas_Access_Array is org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package_References.ProgressCanvas_Access_Array;
+   function "=" (Left, Right : ProgressCanvas_Access_Array) return Boolean renames org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package_References."=";
+   subtype ProgressCanvas_Access_Array_Access is org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package_References.ProgressCanvas_Access_Array_Access;
+   function "=" (Left, Right : ProgressCanvas_Access_Array_Access) return Boolean renames org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package_References."=";
+   subtype ProgressCanvas_Access_Array_Access_Array is org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package_References.ProgressCanvas_Access_Array_Access_Array;
+   function "=" (Left, Right : ProgressCanvas_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package_References."=";
+   subtype ProgressCanvas_Access_Array_Access_Array_Access is org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package_References.ProgressCanvas_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ProgressCanvas_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package_References."=";
+   subtype ShowTitleProgressBarRunnable_Access is org.allbinary.graphics.canvas.transition.progress.ShowTitleProgressBarRunnable_Package_References.ShowTitleProgressBarRunnable_Access;
+   function "=" (Left, Right : ShowTitleProgressBarRunnable_Access) return Boolean renames org.allbinary.graphics.canvas.transition.progress.ShowTitleProgressBarRunnable_Package_References."=";
+   subtype ShowTitleProgressBarRunnable_Access_Array is org.allbinary.graphics.canvas.transition.progress.ShowTitleProgressBarRunnable_Package_References.ShowTitleProgressBarRunnable_Access_Array;
+   function "=" (Left, Right : ShowTitleProgressBarRunnable_Access_Array) return Boolean renames org.allbinary.graphics.canvas.transition.progress.ShowTitleProgressBarRunnable_Package_References."=";
+   subtype ShowTitleProgressBarRunnable_Access_Array_Access is org.allbinary.graphics.canvas.transition.progress.ShowTitleProgressBarRunnable_Package_References.ShowTitleProgressBarRunnable_Access_Array_Access;
+   function "=" (Left, Right : ShowTitleProgressBarRunnable_Access_Array_Access) return Boolean renames org.allbinary.graphics.canvas.transition.progress.ShowTitleProgressBarRunnable_Package_References."=";
+   subtype ShowTitleProgressBarRunnable_Access_Array_Access_Array is org.allbinary.graphics.canvas.transition.progress.ShowTitleProgressBarRunnable_Package_References.ShowTitleProgressBarRunnable_Access_Array_Access_Array;
+   function "=" (Left, Right : ShowTitleProgressBarRunnable_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.canvas.transition.progress.ShowTitleProgressBarRunnable_Package_References."=";
+   subtype ShowTitleProgressBarRunnable_Access_Array_Access_Array_Access is org.allbinary.graphics.canvas.transition.progress.ShowTitleProgressBarRunnable_Package_References.ShowTitleProgressBarRunnable_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ShowTitleProgressBarRunnable_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.canvas.transition.progress.ShowTitleProgressBarRunnable_Package_References."=";
+   subtype DismissTitleProgressBarRunnable_Access is org.allbinary.graphics.canvas.transition.progress.DismissTitleProgressBarRunnable_Package_References.DismissTitleProgressBarRunnable_Access;
+   function "=" (Left, Right : DismissTitleProgressBarRunnable_Access) return Boolean renames org.allbinary.graphics.canvas.transition.progress.DismissTitleProgressBarRunnable_Package_References."=";
+   subtype DismissTitleProgressBarRunnable_Access_Array is org.allbinary.graphics.canvas.transition.progress.DismissTitleProgressBarRunnable_Package_References.DismissTitleProgressBarRunnable_Access_Array;
+   function "=" (Left, Right : DismissTitleProgressBarRunnable_Access_Array) return Boolean renames org.allbinary.graphics.canvas.transition.progress.DismissTitleProgressBarRunnable_Package_References."=";
+   subtype DismissTitleProgressBarRunnable_Access_Array_Access is org.allbinary.graphics.canvas.transition.progress.DismissTitleProgressBarRunnable_Package_References.DismissTitleProgressBarRunnable_Access_Array_Access;
+   function "=" (Left, Right : DismissTitleProgressBarRunnable_Access_Array_Access) return Boolean renames org.allbinary.graphics.canvas.transition.progress.DismissTitleProgressBarRunnable_Package_References."=";
+   subtype DismissTitleProgressBarRunnable_Access_Array_Access_Array is org.allbinary.graphics.canvas.transition.progress.DismissTitleProgressBarRunnable_Package_References.DismissTitleProgressBarRunnable_Access_Array_Access_Array;
+   function "=" (Left, Right : DismissTitleProgressBarRunnable_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.canvas.transition.progress.DismissTitleProgressBarRunnable_Package_References."=";
+   subtype DismissTitleProgressBarRunnable_Access_Array_Access_Array_Access is org.allbinary.graphics.canvas.transition.progress.DismissTitleProgressBarRunnable_Package_References.DismissTitleProgressBarRunnable_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : DismissTitleProgressBarRunnable_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.canvas.transition.progress.DismissTitleProgressBarRunnable_Package_References."=";
+   subtype TitleProgressBarPortionSetProgressRunnable_Access is org.allbinary.graphics.canvas.transition.progress.TitleProgressBarPortionSetProgressRunnable_Package_References.TitleProgressBarPortionSetProgressRunnable_Access;
+   function "=" (Left, Right : TitleProgressBarPortionSetProgressRunnable_Access) return Boolean renames org.allbinary.graphics.canvas.transition.progress.TitleProgressBarPortionSetProgressRunnable_Package_References."=";
+   subtype TitleProgressBarPortionSetProgressRunnable_Access_Array is org.allbinary.graphics.canvas.transition.progress.TitleProgressBarPortionSetProgressRunnable_Package_References.TitleProgressBarPortionSetProgressRunnable_Access_Array;
+   function "=" (Left, Right : TitleProgressBarPortionSetProgressRunnable_Access_Array) return Boolean renames org.allbinary.graphics.canvas.transition.progress.TitleProgressBarPortionSetProgressRunnable_Package_References."=";
+   subtype TitleProgressBarPortionSetProgressRunnable_Access_Array_Access is org.allbinary.graphics.canvas.transition.progress.TitleProgressBarPortionSetProgressRunnable_Package_References.TitleProgressBarPortionSetProgressRunnable_Access_Array_Access;
+   function "=" (Left, Right : TitleProgressBarPortionSetProgressRunnable_Access_Array_Access) return Boolean renames org.allbinary.graphics.canvas.transition.progress.TitleProgressBarPortionSetProgressRunnable_Package_References."=";
+   subtype TitleProgressBarPortionSetProgressRunnable_Access_Array_Access_Array is org.allbinary.graphics.canvas.transition.progress.TitleProgressBarPortionSetProgressRunnable_Package_References.TitleProgressBarPortionSetProgressRunnable_Access_Array_Access_Array;
+   function "=" (Left, Right : TitleProgressBarPortionSetProgressRunnable_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.canvas.transition.progress.TitleProgressBarPortionSetProgressRunnable_Package_References."=";
+   subtype TitleProgressBarPortionSetProgressRunnable_Access_Array_Access_Array_Access is org.allbinary.graphics.canvas.transition.progress.TitleProgressBarPortionSetProgressRunnable_Package_References.TitleProgressBarPortionSetProgressRunnable_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : TitleProgressBarPortionSetProgressRunnable_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.canvas.transition.progress.TitleProgressBarPortionSetProgressRunnable_Package_References."=";
    procedure Initialize_Fields (This : in out TitleProgressBarSetProgressRunnable'Class) is
    begin
       null;
@@ -287,11 +387,20 @@ end org.allbinary.graphics.canvas.transition.progress.TitleProgressBarSetProgres
 
 
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
 with org.allbinary.android.activity.NullProgressActivity_Package; use org.allbinary.android.activity.NullProgressActivity_Package;
 with org.allbinary.android.activity.ProgressActivityInterface_Package; use org.allbinary.android.activity.ProgressActivityInterface_Package;
+with org.allbinary.android.activity.ProgressActivityInterface_Package_References;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.graphics.color.BasicColor_Package_References;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.graphics.canvas.transition.progress.ShowTitleProgressBarRunnable_Package; use org.allbinary.graphics.canvas.transition.progress.ShowTitleProgressBarRunnable_Package;
+with org.allbinary.graphics.canvas.transition.progress.ShowTitleProgressBarRunnable_Package_References;
+with org.allbinary.graphics.canvas.transition.progress.DismissTitleProgressBarRunnable_Package; use org.allbinary.graphics.canvas.transition.progress.DismissTitleProgressBarRunnable_Package;
+with org.allbinary.graphics.canvas.transition.progress.DismissTitleProgressBarRunnable_Package_References;
+with org.allbinary.graphics.canvas.transition.progress.TitleProgressBarSetProgressRunnable_Package; use org.allbinary.graphics.canvas.transition.progress.TitleProgressBarSetProgressRunnable_Package;
+with org.allbinary.graphics.canvas.transition.progress.TitleProgressBarSetProgressRunnable_Package_References;
 with org.allbinary.graphics.canvas.transition.progress.AndroidTitleProgressBar_Package;
 with org.allbinary.graphics.canvas.transition.progress.DismissTitleProgressBarRunnable_Package;
 with org.allbinary.graphics.canvas.transition.progress.ProgressRunnable_Package;
@@ -333,6 +442,46 @@ package body org.allbinary.graphics.canvas.transition.progress.TitleProgressBarP
    function "=" (Left, Right : BasicColor_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.color.BasicColor_Package_References."=";
    subtype BasicColor_Access_Array_Access_Array_Access is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access_Array_Access_Array_Access;
    function "=" (Left, Right : BasicColor_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.color.BasicColor_Package_References."=";
+   subtype ProgressCanvas_Access is org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package_References.ProgressCanvas_Access;
+   function "=" (Left, Right : ProgressCanvas_Access) return Boolean renames org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package_References."=";
+   subtype ProgressCanvas_Access_Array is org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package_References.ProgressCanvas_Access_Array;
+   function "=" (Left, Right : ProgressCanvas_Access_Array) return Boolean renames org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package_References."=";
+   subtype ProgressCanvas_Access_Array_Access is org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package_References.ProgressCanvas_Access_Array_Access;
+   function "=" (Left, Right : ProgressCanvas_Access_Array_Access) return Boolean renames org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package_References."=";
+   subtype ProgressCanvas_Access_Array_Access_Array is org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package_References.ProgressCanvas_Access_Array_Access_Array;
+   function "=" (Left, Right : ProgressCanvas_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package_References."=";
+   subtype ProgressCanvas_Access_Array_Access_Array_Access is org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package_References.ProgressCanvas_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ProgressCanvas_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package_References."=";
+   subtype ShowTitleProgressBarRunnable_Access is org.allbinary.graphics.canvas.transition.progress.ShowTitleProgressBarRunnable_Package_References.ShowTitleProgressBarRunnable_Access;
+   function "=" (Left, Right : ShowTitleProgressBarRunnable_Access) return Boolean renames org.allbinary.graphics.canvas.transition.progress.ShowTitleProgressBarRunnable_Package_References."=";
+   subtype ShowTitleProgressBarRunnable_Access_Array is org.allbinary.graphics.canvas.transition.progress.ShowTitleProgressBarRunnable_Package_References.ShowTitleProgressBarRunnable_Access_Array;
+   function "=" (Left, Right : ShowTitleProgressBarRunnable_Access_Array) return Boolean renames org.allbinary.graphics.canvas.transition.progress.ShowTitleProgressBarRunnable_Package_References."=";
+   subtype ShowTitleProgressBarRunnable_Access_Array_Access is org.allbinary.graphics.canvas.transition.progress.ShowTitleProgressBarRunnable_Package_References.ShowTitleProgressBarRunnable_Access_Array_Access;
+   function "=" (Left, Right : ShowTitleProgressBarRunnable_Access_Array_Access) return Boolean renames org.allbinary.graphics.canvas.transition.progress.ShowTitleProgressBarRunnable_Package_References."=";
+   subtype ShowTitleProgressBarRunnable_Access_Array_Access_Array is org.allbinary.graphics.canvas.transition.progress.ShowTitleProgressBarRunnable_Package_References.ShowTitleProgressBarRunnable_Access_Array_Access_Array;
+   function "=" (Left, Right : ShowTitleProgressBarRunnable_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.canvas.transition.progress.ShowTitleProgressBarRunnable_Package_References."=";
+   subtype ShowTitleProgressBarRunnable_Access_Array_Access_Array_Access is org.allbinary.graphics.canvas.transition.progress.ShowTitleProgressBarRunnable_Package_References.ShowTitleProgressBarRunnable_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ShowTitleProgressBarRunnable_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.canvas.transition.progress.ShowTitleProgressBarRunnable_Package_References."=";
+   subtype DismissTitleProgressBarRunnable_Access is org.allbinary.graphics.canvas.transition.progress.DismissTitleProgressBarRunnable_Package_References.DismissTitleProgressBarRunnable_Access;
+   function "=" (Left, Right : DismissTitleProgressBarRunnable_Access) return Boolean renames org.allbinary.graphics.canvas.transition.progress.DismissTitleProgressBarRunnable_Package_References."=";
+   subtype DismissTitleProgressBarRunnable_Access_Array is org.allbinary.graphics.canvas.transition.progress.DismissTitleProgressBarRunnable_Package_References.DismissTitleProgressBarRunnable_Access_Array;
+   function "=" (Left, Right : DismissTitleProgressBarRunnable_Access_Array) return Boolean renames org.allbinary.graphics.canvas.transition.progress.DismissTitleProgressBarRunnable_Package_References."=";
+   subtype DismissTitleProgressBarRunnable_Access_Array_Access is org.allbinary.graphics.canvas.transition.progress.DismissTitleProgressBarRunnable_Package_References.DismissTitleProgressBarRunnable_Access_Array_Access;
+   function "=" (Left, Right : DismissTitleProgressBarRunnable_Access_Array_Access) return Boolean renames org.allbinary.graphics.canvas.transition.progress.DismissTitleProgressBarRunnable_Package_References."=";
+   subtype DismissTitleProgressBarRunnable_Access_Array_Access_Array is org.allbinary.graphics.canvas.transition.progress.DismissTitleProgressBarRunnable_Package_References.DismissTitleProgressBarRunnable_Access_Array_Access_Array;
+   function "=" (Left, Right : DismissTitleProgressBarRunnable_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.canvas.transition.progress.DismissTitleProgressBarRunnable_Package_References."=";
+   subtype DismissTitleProgressBarRunnable_Access_Array_Access_Array_Access is org.allbinary.graphics.canvas.transition.progress.DismissTitleProgressBarRunnable_Package_References.DismissTitleProgressBarRunnable_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : DismissTitleProgressBarRunnable_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.canvas.transition.progress.DismissTitleProgressBarRunnable_Package_References."=";
+   subtype TitleProgressBarSetProgressRunnable_Access is org.allbinary.graphics.canvas.transition.progress.TitleProgressBarSetProgressRunnable_Package_References.TitleProgressBarSetProgressRunnable_Access;
+   function "=" (Left, Right : TitleProgressBarSetProgressRunnable_Access) return Boolean renames org.allbinary.graphics.canvas.transition.progress.TitleProgressBarSetProgressRunnable_Package_References."=";
+   subtype TitleProgressBarSetProgressRunnable_Access_Array is org.allbinary.graphics.canvas.transition.progress.TitleProgressBarSetProgressRunnable_Package_References.TitleProgressBarSetProgressRunnable_Access_Array;
+   function "=" (Left, Right : TitleProgressBarSetProgressRunnable_Access_Array) return Boolean renames org.allbinary.graphics.canvas.transition.progress.TitleProgressBarSetProgressRunnable_Package_References."=";
+   subtype TitleProgressBarSetProgressRunnable_Access_Array_Access is org.allbinary.graphics.canvas.transition.progress.TitleProgressBarSetProgressRunnable_Package_References.TitleProgressBarSetProgressRunnable_Access_Array_Access;
+   function "=" (Left, Right : TitleProgressBarSetProgressRunnable_Access_Array_Access) return Boolean renames org.allbinary.graphics.canvas.transition.progress.TitleProgressBarSetProgressRunnable_Package_References."=";
+   subtype TitleProgressBarSetProgressRunnable_Access_Array_Access_Array is org.allbinary.graphics.canvas.transition.progress.TitleProgressBarSetProgressRunnable_Package_References.TitleProgressBarSetProgressRunnable_Access_Array_Access_Array;
+   function "=" (Left, Right : TitleProgressBarSetProgressRunnable_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.canvas.transition.progress.TitleProgressBarSetProgressRunnable_Package_References."=";
+   subtype TitleProgressBarSetProgressRunnable_Access_Array_Access_Array_Access is org.allbinary.graphics.canvas.transition.progress.TitleProgressBarSetProgressRunnable_Package_References.TitleProgressBarSetProgressRunnable_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : TitleProgressBarSetProgressRunnable_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.canvas.transition.progress.TitleProgressBarSetProgressRunnable_Package_References."=";
    procedure Initialize_Fields (This : in out TitleProgressBarPortionSetProgressRunnable'Class) is
    begin
       null;
@@ -378,11 +527,20 @@ end org.allbinary.graphics.canvas.transition.progress.TitleProgressBarPortionSet
 
 
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
 with org.allbinary.android.activity.NullProgressActivity_Package; use org.allbinary.android.activity.NullProgressActivity_Package;
 with org.allbinary.android.activity.ProgressActivityInterface_Package; use org.allbinary.android.activity.ProgressActivityInterface_Package;
+with org.allbinary.android.activity.ProgressActivityInterface_Package_References;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.graphics.color.BasicColor_Package_References;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.graphics.canvas.transition.progress.DismissTitleProgressBarRunnable_Package; use org.allbinary.graphics.canvas.transition.progress.DismissTitleProgressBarRunnable_Package;
+with org.allbinary.graphics.canvas.transition.progress.DismissTitleProgressBarRunnable_Package_References;
+with org.allbinary.graphics.canvas.transition.progress.TitleProgressBarPortionSetProgressRunnable_Package; use org.allbinary.graphics.canvas.transition.progress.TitleProgressBarPortionSetProgressRunnable_Package;
+with org.allbinary.graphics.canvas.transition.progress.TitleProgressBarPortionSetProgressRunnable_Package_References;
+with org.allbinary.graphics.canvas.transition.progress.TitleProgressBarSetProgressRunnable_Package; use org.allbinary.graphics.canvas.transition.progress.TitleProgressBarSetProgressRunnable_Package;
+with org.allbinary.graphics.canvas.transition.progress.TitleProgressBarSetProgressRunnable_Package_References;
 with org.allbinary.graphics.canvas.transition.progress.AndroidTitleProgressBar_Package;
 with org.allbinary.graphics.canvas.transition.progress.DismissTitleProgressBarRunnable_Package;
 with org.allbinary.graphics.canvas.transition.progress.ProgressRunnable_Package;
@@ -424,6 +582,46 @@ package body org.allbinary.graphics.canvas.transition.progress.ShowTitleProgress
    function "=" (Left, Right : BasicColor_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.color.BasicColor_Package_References."=";
    subtype BasicColor_Access_Array_Access_Array_Access is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access_Array_Access_Array_Access;
    function "=" (Left, Right : BasicColor_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.color.BasicColor_Package_References."=";
+   subtype ProgressCanvas_Access is org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package_References.ProgressCanvas_Access;
+   function "=" (Left, Right : ProgressCanvas_Access) return Boolean renames org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package_References."=";
+   subtype ProgressCanvas_Access_Array is org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package_References.ProgressCanvas_Access_Array;
+   function "=" (Left, Right : ProgressCanvas_Access_Array) return Boolean renames org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package_References."=";
+   subtype ProgressCanvas_Access_Array_Access is org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package_References.ProgressCanvas_Access_Array_Access;
+   function "=" (Left, Right : ProgressCanvas_Access_Array_Access) return Boolean renames org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package_References."=";
+   subtype ProgressCanvas_Access_Array_Access_Array is org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package_References.ProgressCanvas_Access_Array_Access_Array;
+   function "=" (Left, Right : ProgressCanvas_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package_References."=";
+   subtype ProgressCanvas_Access_Array_Access_Array_Access is org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package_References.ProgressCanvas_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ProgressCanvas_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package_References."=";
+   subtype DismissTitleProgressBarRunnable_Access is org.allbinary.graphics.canvas.transition.progress.DismissTitleProgressBarRunnable_Package_References.DismissTitleProgressBarRunnable_Access;
+   function "=" (Left, Right : DismissTitleProgressBarRunnable_Access) return Boolean renames org.allbinary.graphics.canvas.transition.progress.DismissTitleProgressBarRunnable_Package_References."=";
+   subtype DismissTitleProgressBarRunnable_Access_Array is org.allbinary.graphics.canvas.transition.progress.DismissTitleProgressBarRunnable_Package_References.DismissTitleProgressBarRunnable_Access_Array;
+   function "=" (Left, Right : DismissTitleProgressBarRunnable_Access_Array) return Boolean renames org.allbinary.graphics.canvas.transition.progress.DismissTitleProgressBarRunnable_Package_References."=";
+   subtype DismissTitleProgressBarRunnable_Access_Array_Access is org.allbinary.graphics.canvas.transition.progress.DismissTitleProgressBarRunnable_Package_References.DismissTitleProgressBarRunnable_Access_Array_Access;
+   function "=" (Left, Right : DismissTitleProgressBarRunnable_Access_Array_Access) return Boolean renames org.allbinary.graphics.canvas.transition.progress.DismissTitleProgressBarRunnable_Package_References."=";
+   subtype DismissTitleProgressBarRunnable_Access_Array_Access_Array is org.allbinary.graphics.canvas.transition.progress.DismissTitleProgressBarRunnable_Package_References.DismissTitleProgressBarRunnable_Access_Array_Access_Array;
+   function "=" (Left, Right : DismissTitleProgressBarRunnable_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.canvas.transition.progress.DismissTitleProgressBarRunnable_Package_References."=";
+   subtype DismissTitleProgressBarRunnable_Access_Array_Access_Array_Access is org.allbinary.graphics.canvas.transition.progress.DismissTitleProgressBarRunnable_Package_References.DismissTitleProgressBarRunnable_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : DismissTitleProgressBarRunnable_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.canvas.transition.progress.DismissTitleProgressBarRunnable_Package_References."=";
+   subtype TitleProgressBarPortionSetProgressRunnable_Access is org.allbinary.graphics.canvas.transition.progress.TitleProgressBarPortionSetProgressRunnable_Package_References.TitleProgressBarPortionSetProgressRunnable_Access;
+   function "=" (Left, Right : TitleProgressBarPortionSetProgressRunnable_Access) return Boolean renames org.allbinary.graphics.canvas.transition.progress.TitleProgressBarPortionSetProgressRunnable_Package_References."=";
+   subtype TitleProgressBarPortionSetProgressRunnable_Access_Array is org.allbinary.graphics.canvas.transition.progress.TitleProgressBarPortionSetProgressRunnable_Package_References.TitleProgressBarPortionSetProgressRunnable_Access_Array;
+   function "=" (Left, Right : TitleProgressBarPortionSetProgressRunnable_Access_Array) return Boolean renames org.allbinary.graphics.canvas.transition.progress.TitleProgressBarPortionSetProgressRunnable_Package_References."=";
+   subtype TitleProgressBarPortionSetProgressRunnable_Access_Array_Access is org.allbinary.graphics.canvas.transition.progress.TitleProgressBarPortionSetProgressRunnable_Package_References.TitleProgressBarPortionSetProgressRunnable_Access_Array_Access;
+   function "=" (Left, Right : TitleProgressBarPortionSetProgressRunnable_Access_Array_Access) return Boolean renames org.allbinary.graphics.canvas.transition.progress.TitleProgressBarPortionSetProgressRunnable_Package_References."=";
+   subtype TitleProgressBarPortionSetProgressRunnable_Access_Array_Access_Array is org.allbinary.graphics.canvas.transition.progress.TitleProgressBarPortionSetProgressRunnable_Package_References.TitleProgressBarPortionSetProgressRunnable_Access_Array_Access_Array;
+   function "=" (Left, Right : TitleProgressBarPortionSetProgressRunnable_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.canvas.transition.progress.TitleProgressBarPortionSetProgressRunnable_Package_References."=";
+   subtype TitleProgressBarPortionSetProgressRunnable_Access_Array_Access_Array_Access is org.allbinary.graphics.canvas.transition.progress.TitleProgressBarPortionSetProgressRunnable_Package_References.TitleProgressBarPortionSetProgressRunnable_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : TitleProgressBarPortionSetProgressRunnable_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.canvas.transition.progress.TitleProgressBarPortionSetProgressRunnable_Package_References."=";
+   subtype TitleProgressBarSetProgressRunnable_Access is org.allbinary.graphics.canvas.transition.progress.TitleProgressBarSetProgressRunnable_Package_References.TitleProgressBarSetProgressRunnable_Access;
+   function "=" (Left, Right : TitleProgressBarSetProgressRunnable_Access) return Boolean renames org.allbinary.graphics.canvas.transition.progress.TitleProgressBarSetProgressRunnable_Package_References."=";
+   subtype TitleProgressBarSetProgressRunnable_Access_Array is org.allbinary.graphics.canvas.transition.progress.TitleProgressBarSetProgressRunnable_Package_References.TitleProgressBarSetProgressRunnable_Access_Array;
+   function "=" (Left, Right : TitleProgressBarSetProgressRunnable_Access_Array) return Boolean renames org.allbinary.graphics.canvas.transition.progress.TitleProgressBarSetProgressRunnable_Package_References."=";
+   subtype TitleProgressBarSetProgressRunnable_Access_Array_Access is org.allbinary.graphics.canvas.transition.progress.TitleProgressBarSetProgressRunnable_Package_References.TitleProgressBarSetProgressRunnable_Access_Array_Access;
+   function "=" (Left, Right : TitleProgressBarSetProgressRunnable_Access_Array_Access) return Boolean renames org.allbinary.graphics.canvas.transition.progress.TitleProgressBarSetProgressRunnable_Package_References."=";
+   subtype TitleProgressBarSetProgressRunnable_Access_Array_Access_Array is org.allbinary.graphics.canvas.transition.progress.TitleProgressBarSetProgressRunnable_Package_References.TitleProgressBarSetProgressRunnable_Access_Array_Access_Array;
+   function "=" (Left, Right : TitleProgressBarSetProgressRunnable_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.canvas.transition.progress.TitleProgressBarSetProgressRunnable_Package_References."=";
+   subtype TitleProgressBarSetProgressRunnable_Access_Array_Access_Array_Access is org.allbinary.graphics.canvas.transition.progress.TitleProgressBarSetProgressRunnable_Package_References.TitleProgressBarSetProgressRunnable_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : TitleProgressBarSetProgressRunnable_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.canvas.transition.progress.TitleProgressBarSetProgressRunnable_Package_References."=";
    procedure Initialize_Fields (This : in out ShowTitleProgressBarRunnable'Class) is
    begin
       null;
@@ -469,11 +667,20 @@ end org.allbinary.graphics.canvas.transition.progress.ShowTitleProgressBarRunnab
 
 
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
 with org.allbinary.android.activity.NullProgressActivity_Package; use org.allbinary.android.activity.NullProgressActivity_Package;
 with org.allbinary.android.activity.ProgressActivityInterface_Package; use org.allbinary.android.activity.ProgressActivityInterface_Package;
+with org.allbinary.android.activity.ProgressActivityInterface_Package_References;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.graphics.color.BasicColor_Package_References;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.graphics.canvas.transition.progress.ShowTitleProgressBarRunnable_Package; use org.allbinary.graphics.canvas.transition.progress.ShowTitleProgressBarRunnable_Package;
+with org.allbinary.graphics.canvas.transition.progress.ShowTitleProgressBarRunnable_Package_References;
+with org.allbinary.graphics.canvas.transition.progress.TitleProgressBarPortionSetProgressRunnable_Package; use org.allbinary.graphics.canvas.transition.progress.TitleProgressBarPortionSetProgressRunnable_Package;
+with org.allbinary.graphics.canvas.transition.progress.TitleProgressBarPortionSetProgressRunnable_Package_References;
+with org.allbinary.graphics.canvas.transition.progress.TitleProgressBarSetProgressRunnable_Package; use org.allbinary.graphics.canvas.transition.progress.TitleProgressBarSetProgressRunnable_Package;
+with org.allbinary.graphics.canvas.transition.progress.TitleProgressBarSetProgressRunnable_Package_References;
 with org.allbinary.graphics.canvas.transition.progress.AndroidTitleProgressBar_Package;
 with org.allbinary.graphics.canvas.transition.progress.ProgressRunnable_Package;
 with org.allbinary.graphics.canvas.transition.progress.ShowTitleProgressBarRunnable_Package;
@@ -515,6 +722,46 @@ package body org.allbinary.graphics.canvas.transition.progress.DismissTitleProgr
    function "=" (Left, Right : BasicColor_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.color.BasicColor_Package_References."=";
    subtype BasicColor_Access_Array_Access_Array_Access is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access_Array_Access_Array_Access;
    function "=" (Left, Right : BasicColor_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.color.BasicColor_Package_References."=";
+   subtype ProgressCanvas_Access is org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package_References.ProgressCanvas_Access;
+   function "=" (Left, Right : ProgressCanvas_Access) return Boolean renames org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package_References."=";
+   subtype ProgressCanvas_Access_Array is org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package_References.ProgressCanvas_Access_Array;
+   function "=" (Left, Right : ProgressCanvas_Access_Array) return Boolean renames org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package_References."=";
+   subtype ProgressCanvas_Access_Array_Access is org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package_References.ProgressCanvas_Access_Array_Access;
+   function "=" (Left, Right : ProgressCanvas_Access_Array_Access) return Boolean renames org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package_References."=";
+   subtype ProgressCanvas_Access_Array_Access_Array is org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package_References.ProgressCanvas_Access_Array_Access_Array;
+   function "=" (Left, Right : ProgressCanvas_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package_References."=";
+   subtype ProgressCanvas_Access_Array_Access_Array_Access is org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package_References.ProgressCanvas_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ProgressCanvas_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package_References."=";
+   subtype ShowTitleProgressBarRunnable_Access is org.allbinary.graphics.canvas.transition.progress.ShowTitleProgressBarRunnable_Package_References.ShowTitleProgressBarRunnable_Access;
+   function "=" (Left, Right : ShowTitleProgressBarRunnable_Access) return Boolean renames org.allbinary.graphics.canvas.transition.progress.ShowTitleProgressBarRunnable_Package_References."=";
+   subtype ShowTitleProgressBarRunnable_Access_Array is org.allbinary.graphics.canvas.transition.progress.ShowTitleProgressBarRunnable_Package_References.ShowTitleProgressBarRunnable_Access_Array;
+   function "=" (Left, Right : ShowTitleProgressBarRunnable_Access_Array) return Boolean renames org.allbinary.graphics.canvas.transition.progress.ShowTitleProgressBarRunnable_Package_References."=";
+   subtype ShowTitleProgressBarRunnable_Access_Array_Access is org.allbinary.graphics.canvas.transition.progress.ShowTitleProgressBarRunnable_Package_References.ShowTitleProgressBarRunnable_Access_Array_Access;
+   function "=" (Left, Right : ShowTitleProgressBarRunnable_Access_Array_Access) return Boolean renames org.allbinary.graphics.canvas.transition.progress.ShowTitleProgressBarRunnable_Package_References."=";
+   subtype ShowTitleProgressBarRunnable_Access_Array_Access_Array is org.allbinary.graphics.canvas.transition.progress.ShowTitleProgressBarRunnable_Package_References.ShowTitleProgressBarRunnable_Access_Array_Access_Array;
+   function "=" (Left, Right : ShowTitleProgressBarRunnable_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.canvas.transition.progress.ShowTitleProgressBarRunnable_Package_References."=";
+   subtype ShowTitleProgressBarRunnable_Access_Array_Access_Array_Access is org.allbinary.graphics.canvas.transition.progress.ShowTitleProgressBarRunnable_Package_References.ShowTitleProgressBarRunnable_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ShowTitleProgressBarRunnable_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.canvas.transition.progress.ShowTitleProgressBarRunnable_Package_References."=";
+   subtype TitleProgressBarPortionSetProgressRunnable_Access is org.allbinary.graphics.canvas.transition.progress.TitleProgressBarPortionSetProgressRunnable_Package_References.TitleProgressBarPortionSetProgressRunnable_Access;
+   function "=" (Left, Right : TitleProgressBarPortionSetProgressRunnable_Access) return Boolean renames org.allbinary.graphics.canvas.transition.progress.TitleProgressBarPortionSetProgressRunnable_Package_References."=";
+   subtype TitleProgressBarPortionSetProgressRunnable_Access_Array is org.allbinary.graphics.canvas.transition.progress.TitleProgressBarPortionSetProgressRunnable_Package_References.TitleProgressBarPortionSetProgressRunnable_Access_Array;
+   function "=" (Left, Right : TitleProgressBarPortionSetProgressRunnable_Access_Array) return Boolean renames org.allbinary.graphics.canvas.transition.progress.TitleProgressBarPortionSetProgressRunnable_Package_References."=";
+   subtype TitleProgressBarPortionSetProgressRunnable_Access_Array_Access is org.allbinary.graphics.canvas.transition.progress.TitleProgressBarPortionSetProgressRunnable_Package_References.TitleProgressBarPortionSetProgressRunnable_Access_Array_Access;
+   function "=" (Left, Right : TitleProgressBarPortionSetProgressRunnable_Access_Array_Access) return Boolean renames org.allbinary.graphics.canvas.transition.progress.TitleProgressBarPortionSetProgressRunnable_Package_References."=";
+   subtype TitleProgressBarPortionSetProgressRunnable_Access_Array_Access_Array is org.allbinary.graphics.canvas.transition.progress.TitleProgressBarPortionSetProgressRunnable_Package_References.TitleProgressBarPortionSetProgressRunnable_Access_Array_Access_Array;
+   function "=" (Left, Right : TitleProgressBarPortionSetProgressRunnable_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.canvas.transition.progress.TitleProgressBarPortionSetProgressRunnable_Package_References."=";
+   subtype TitleProgressBarPortionSetProgressRunnable_Access_Array_Access_Array_Access is org.allbinary.graphics.canvas.transition.progress.TitleProgressBarPortionSetProgressRunnable_Package_References.TitleProgressBarPortionSetProgressRunnable_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : TitleProgressBarPortionSetProgressRunnable_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.canvas.transition.progress.TitleProgressBarPortionSetProgressRunnable_Package_References."=";
+   subtype TitleProgressBarSetProgressRunnable_Access is org.allbinary.graphics.canvas.transition.progress.TitleProgressBarSetProgressRunnable_Package_References.TitleProgressBarSetProgressRunnable_Access;
+   function "=" (Left, Right : TitleProgressBarSetProgressRunnable_Access) return Boolean renames org.allbinary.graphics.canvas.transition.progress.TitleProgressBarSetProgressRunnable_Package_References."=";
+   subtype TitleProgressBarSetProgressRunnable_Access_Array is org.allbinary.graphics.canvas.transition.progress.TitleProgressBarSetProgressRunnable_Package_References.TitleProgressBarSetProgressRunnable_Access_Array;
+   function "=" (Left, Right : TitleProgressBarSetProgressRunnable_Access_Array) return Boolean renames org.allbinary.graphics.canvas.transition.progress.TitleProgressBarSetProgressRunnable_Package_References."=";
+   subtype TitleProgressBarSetProgressRunnable_Access_Array_Access is org.allbinary.graphics.canvas.transition.progress.TitleProgressBarSetProgressRunnable_Package_References.TitleProgressBarSetProgressRunnable_Access_Array_Access;
+   function "=" (Left, Right : TitleProgressBarSetProgressRunnable_Access_Array_Access) return Boolean renames org.allbinary.graphics.canvas.transition.progress.TitleProgressBarSetProgressRunnable_Package_References."=";
+   subtype TitleProgressBarSetProgressRunnable_Access_Array_Access_Array is org.allbinary.graphics.canvas.transition.progress.TitleProgressBarSetProgressRunnable_Package_References.TitleProgressBarSetProgressRunnable_Access_Array_Access_Array;
+   function "=" (Left, Right : TitleProgressBarSetProgressRunnable_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.canvas.transition.progress.TitleProgressBarSetProgressRunnable_Package_References."=";
+   subtype TitleProgressBarSetProgressRunnable_Access_Array_Access_Array_Access is org.allbinary.graphics.canvas.transition.progress.TitleProgressBarSetProgressRunnable_Package_References.TitleProgressBarSetProgressRunnable_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : TitleProgressBarSetProgressRunnable_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.canvas.transition.progress.TitleProgressBarSetProgressRunnable_Package_References."=";
    procedure Initialize_Fields (This : in out DismissTitleProgressBarRunnable'Class) is
    begin
       null;

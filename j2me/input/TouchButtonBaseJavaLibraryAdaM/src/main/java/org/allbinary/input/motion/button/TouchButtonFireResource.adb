@@ -13,7 +13,6 @@
 --  Generated Code Do Not Modify
 
 
-with org.allbinary.input.motion.button.TouchButtonResource_Package;
 
 package body org.allbinary.input.motion.button.TouchButtonFireResource_Package is
 

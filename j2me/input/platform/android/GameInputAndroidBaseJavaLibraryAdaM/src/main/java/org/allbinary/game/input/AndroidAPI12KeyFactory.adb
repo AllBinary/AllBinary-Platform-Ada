@@ -4,7 +4,6 @@
 with android.view.KeyEvent_Package; use android.view.KeyEvent_Package;
 with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
 with org.allbinary.game.input.AndroidGameKey_Package; use org.allbinary.game.input.AndroidGameKey_Package;
-with org.allbinary.game.input.AndroidAPI9KeyFactory_Package;
 with org.allbinary.game.input.AndroidGameKey_Package;
 with org.allbinary.game.input.AndroidKeyFactory_Package;
 

@@ -14,6 +14,7 @@
 
 
 with org.allbinary.media.audio.PlayerQueue_Package; use org.allbinary.media.audio.PlayerQueue_Package;
+with org.allbinary.media.audio.PlayerQueue_Package_References;
 with org.allbinary.media.audio.PlayerQueue_Package;
 
 package body org.allbinary.media.audio.PrimaryPlayerQueueFactory_Package is

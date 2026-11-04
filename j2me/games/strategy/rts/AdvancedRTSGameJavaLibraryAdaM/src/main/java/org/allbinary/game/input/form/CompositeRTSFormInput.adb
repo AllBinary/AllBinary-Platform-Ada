@@ -14,14 +14,21 @@
 
 
 with org.allbinary.game.layer.RTSPlayerLayerInterface_Package; use org.allbinary.game.layer.RTSPlayerLayerInterface_Package;
+with org.allbinary.game.layer.RTSPlayerLayerInterface_Package_References;
 with org.allbinary.graphics.form.item.ABCustomItem_Package; use org.allbinary.graphics.form.item.ABCustomItem_Package;
+with org.allbinary.graphics.form.item.ABCustomItem_Package_References;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.game.identification.Group_Package; use org.allbinary.game.identification.Group_Package;
+with org.allbinary.game.identification.Group_Package_References;
 with org.allbinary.game.layer.AllBinaryGameLayerManager_Package; use org.allbinary.game.layer.AllBinaryGameLayerManager_Package;
+with org.allbinary.game.layer.AllBinaryGameLayerManager_Package_References;
 with org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package; use org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package;
+with org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package_References;
 with org.allbinary.graphics.GPoint_Package; use org.allbinary.graphics.GPoint_Package;
+with org.allbinary.graphics.GPoint_Package_References;
 with org.allbinary.graphics.form.ScrollSelectionForm_Package; use org.allbinary.graphics.form.ScrollSelectionForm_Package;
 with org.allbinary.layer.AllBinaryLayerManager_Package; use org.allbinary.layer.AllBinaryLayerManager_Package;
+with org.allbinary.layer.AllBinaryLayerManager_Package_References;
 with org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package; use org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
 with org.allbinary.media.graphics.geography.map.GeographicMapCompositeInterface_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCompositeInterface_Package;
 with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
@@ -146,7 +153,7 @@ package body org.allbinary.game.input.form.CompositeRTSFormInput_Package is
       size : Integer;
       index : Integer;
    begin
-        RTSFormInput (This).setAllBinaryGameLayerManager (allBinaryGameLayerManager);
+        RTSFormInput_Package.RTSFormInput (This).setAllBinaryGameLayerManager (allBinaryGameLayerManager);
         geographicMapCompositeInterface := GeographicMapCompositeInterface_Access (allBinaryGameLayerManager);
         geographicMapInterface := geographicMapCompositeInterface.getGeographicMapInterface (0);
         size := This.rtsFormInputArray'Length;

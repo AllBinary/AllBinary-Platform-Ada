@@ -15,6 +15,7 @@
 
 with org.allbinary.graphics.ScreenEmptyListener_Package; use org.allbinary.graphics.ScreenEmptyListener_Package;
 with org.allbinary.graphics.ScreenListenerInterface_Package; use org.allbinary.graphics.ScreenListenerInterface_Package;
+with org.allbinary.graphics.ScreenListenerInterface_Package_References;
 with org.allbinary.graphics.ScreenEmptyListener_Package;
 with org.allbinary.graphics.ScreenListenerInterface_Package;
 

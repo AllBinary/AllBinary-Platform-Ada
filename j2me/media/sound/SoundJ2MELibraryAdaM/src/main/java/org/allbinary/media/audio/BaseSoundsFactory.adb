@@ -14,9 +14,9 @@
 
 
 with org.allbinary.media.audio.Sound_Package; use org.allbinary.media.audio.Sound_Package;
+with org.allbinary.media.audio.Sound_Package_References;
 with org.allbinary.media.audio.Sound_Package;
 with org.allbinary.media.audio.SoundInterface_Package;
-with org.allbinary.media.audio.SoundsFactoryInterface_Package;
 
 package body org.allbinary.media.audio.BaseSoundsFactory_Package is
 

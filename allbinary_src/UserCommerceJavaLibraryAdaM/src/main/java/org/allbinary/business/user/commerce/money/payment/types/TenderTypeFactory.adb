@@ -14,6 +14,7 @@
 
 
 with org.allbinary.business.user.commerce.money.payment.types.TenderType_Package; use org.allbinary.business.user.commerce.money.payment.types.TenderType_Package;
+with org.allbinary.business.user.commerce.money.payment.types.TenderType_Package_References;
 with org.allbinary.business.user.commerce.money.payment.types.TenderType_Package;
 
 package body org.allbinary.business.user.commerce.money.payment.types.TenderTypeFactory_Package is

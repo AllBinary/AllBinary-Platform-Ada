@@ -14,6 +14,7 @@
 
 
 with javax.microedition.midlet.MIDlet_Package; use javax.microedition.midlet.MIDlet_Package;
+with javax.microedition.midlet.MIDlet_Package_References;
 with org.allbinary.canvas.Processor_Package; use org.allbinary.canvas.Processor_Package;
 
 package body org.allbinary.midlet.MidletExitProcessor_Package is

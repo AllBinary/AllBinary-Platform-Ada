@@ -15,6 +15,7 @@
 
 with org.allbinary.input.gyro.AllBinaryOrientationSensor_Package; use org.allbinary.input.gyro.AllBinaryOrientationSensor_Package;
 with org.allbinary.logic.math.Orientation_Package; use org.allbinary.logic.math.Orientation_Package;
+with org.allbinary.logic.math.Orientation_Package_References;
 
 package body org.allbinary.input.accelerometer.NoAccelerometerSensor_Package is
 

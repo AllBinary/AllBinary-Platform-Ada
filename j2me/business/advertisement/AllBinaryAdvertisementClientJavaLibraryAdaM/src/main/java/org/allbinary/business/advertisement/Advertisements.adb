@@ -14,10 +14,13 @@
 
 
 with org.allbinary.game.rand.MyRandomFactory_Package; use org.allbinary.game.rand.MyRandomFactory_Package;
+with org.allbinary.game.rand.MyRandomFactory_Package_References;
 with org.allbinary.logic.system.security.licensing.LockedUtil_Package; use org.allbinary.logic.system.security.licensing.LockedUtil_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.business.advertisement.AdvertisementProcessorInterface_Package; use org.allbinary.business.advertisement.AdvertisementProcessorInterface_Package;
+with org.allbinary.business.advertisement.AdvertisementProcessorInterface_Package_References;
 with org.allbinary.business.advertisement.AdvertisementProcessorInterface_Package;
 
 package body org.allbinary.business.advertisement.Advertisements_Package is

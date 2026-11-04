@@ -16,17 +16,25 @@
 with javax.microedition.lcdui.Canvas_Package; use javax.microedition.lcdui.Canvas_Package;
 with org.allbinary.game.ai.BasicAI_Package; use org.allbinary.game.ai.BasicAI_Package;
 with org.allbinary.game.input.GameInput_Package; use org.allbinary.game.input.GameInput_Package;
+with org.allbinary.game.input.GameInput_Package_References;
 with org.allbinary.game.layer.AllBinaryGameLayerManager_Package; use org.allbinary.game.layer.AllBinaryGameLayerManager_Package;
 with org.allbinary.game.rand.MyRandomFactory_Package; use org.allbinary.game.rand.MyRandomFactory_Package;
 with org.allbinary.graphics.displayable.DisplayInfoSingleton_Package; use org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
+with org.allbinary.graphics.displayable.DisplayInfoSingleton_Package_References;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
+with org.allbinary.layer.AllBinaryLayer_Package_References;
 with org.allbinary.layer.AllBinaryLayerManager_Package; use org.allbinary.layer.AllBinaryLayerManager_Package;
+with org.allbinary.layer.AllBinaryLayerManager_Package_References;
 with org.allbinary.logic.math.SmallIntegerSingletonFactory_Package; use org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
 with org.allbinary.media.audio.PlayerQueue_Package; use org.allbinary.media.audio.PlayerQueue_Package;
+with org.allbinary.media.audio.PlayerQueue_Package_References;
 with org.allbinary.media.audio.SecondaryPlayerQueueFactory_Package; use org.allbinary.media.audio.SecondaryPlayerQueueFactory_Package;
 with org.allbinary.media.audio.Sound_Package; use org.allbinary.media.audio.Sound_Package;
+with org.allbinary.media.audio.Sound_Package_References;
 with org.allbinary.time.TimeDelayHelper_Package; use org.allbinary.time.TimeDelayHelper_Package;
+with org.allbinary.time.TimeDelayHelper_Package_References;
 with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
+with org.allbinary.util.ABHashtable_Package_References;
 
 package body org.allbinary.game.ag.ai.scroller.HorizontalScreenPatrolAI_Package is
 
@@ -158,7 +166,7 @@ package body org.allbinary.game.ag.ai.scroller.HorizontalScreenPatrolAI_Package 
       gameLayerManager : AllBinaryGameLayerManager_Access;
       FIRE : Integer;
    begin
-        BasicAI (This).processKeyAI (This.keyDirection);
+        BasicAI_Package.BasicAI (This).processKeyAI (This.keyDirection);
         if This.timeDelayHelper.isTimeTNT then
             layerInterface := HorizontalScreenPatrolAI'Class (This).getOwnerLayerInterface;
             currentOwnerLayerX := layerInterface.getXP;
@@ -170,7 +178,7 @@ package body org.allbinary.game.ag.ai.scroller.HorizontalScreenPatrolAI_Package 
                 This.secondaryPlayerQueue.add (This.sound_Case);
             end if;
             if ((currentOwnerLayerX) < (This.firingX)) and then ((currentOwnerLayerX) > (-(layerInterface.getWidth))) then
-                BasicAI (This).processKeyAI (Canvas_Package.KEY_NUM1);
+                BasicAI_Package.BasicAI (This).processKeyAI (Canvas_Package.KEY_NUM1);
                 gameLayerManager := AllBinaryGameLayerManager_Access (allBinaryLayerManager);
                 FIRE := Java_Shift_Right_Arithmetic (((gameLayerManager.getGameInfo.getCurrentLevel) + (12)), 2);
                 if (FIRE) > (This.MAX_FIRE) then

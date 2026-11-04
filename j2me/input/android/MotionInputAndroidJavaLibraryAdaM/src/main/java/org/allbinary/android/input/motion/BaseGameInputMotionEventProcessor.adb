@@ -14,11 +14,13 @@
 
 
 with android.view.MotionEvent_Package; use android.view.MotionEvent_Package;
+with android.view.MotionEvent_Package_References;
 with org.allbinary.input.motion.gesture.observer.BasicMotionGesturesHandler_Package; use org.allbinary.input.motion.gesture.observer.BasicMotionGesturesHandler_Package;
 with org.allbinary.input.motion.gesture.observer.GameMotionGestureListener_Package; use org.allbinary.input.motion.gesture.observer.GameMotionGestureListener_Package;
+with org.allbinary.input.motion.gesture.observer.GameMotionGestureListener_Package_References;
 with org.allbinary.input.motion.gesture.observer.MotionGestureReceiveInterfaceFactory_Package; use org.allbinary.input.motion.gesture.observer.MotionGestureReceiveInterfaceFactory_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
-with org.allbinary.android.input.motion.MotionEventProcessor_Package;
+with org.allbinary.string_Id.CommonStrings_Package_References;
 
 package body org.allbinary.android.input.motion.BaseGameInputMotionEventProcessor_Package is
 

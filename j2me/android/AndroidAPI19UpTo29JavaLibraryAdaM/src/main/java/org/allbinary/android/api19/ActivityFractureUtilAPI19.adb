@@ -14,6 +14,7 @@
 
 
 with android.app.Activity_Package; use android.app.Activity_Package;
+with android.app.Activity_Package_References;
 with android.view.View_Package; use android.view.View_Package;
 with org.allbinary.android.api5.ActivityFractureUtilAPI5_Package; use org.allbinary.android.api5.ActivityFractureUtilAPI5_Package;
 

@@ -14,6 +14,7 @@
 
 
 with org.allbinary.graphics.opengles.shader.ShaderComposite_Package; use org.allbinary.graphics.opengles.shader.ShaderComposite_Package;
+with org.allbinary.graphics.opengles.shader.ShaderComposite_Package_References;
 
 package body org.allbinary.graphics.opengles.OpenGLVersionValidator_Package is
 

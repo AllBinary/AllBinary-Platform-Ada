@@ -14,6 +14,7 @@
 
 
 with org.allbinary.graphics.form.item.ABCustomItem_Package; use org.allbinary.graphics.form.item.ABCustomItem_Package;
+with org.allbinary.graphics.form.item.ABCustomItem_Package_References;
 
 package body org.allbinary.graphics.form.ItemIndexDx_Package is
 

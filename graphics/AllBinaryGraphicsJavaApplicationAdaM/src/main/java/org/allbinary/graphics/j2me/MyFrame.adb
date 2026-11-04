@@ -16,53 +16,51 @@
 with java.io.File_Package; use java.io.File_Package;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.data.tree.dom.XslHelper_Package; use org.allbinary.data.tree.dom.XslHelper_Package;
+with org.allbinary.data.tree.dom.XslHelper_Package_References;
 with org.allbinary.dom.DomHelper_Package; use org.allbinary.dom.DomHelper_Package;
 with org.allbinary.graphics.j2me.dialog.NewWorkAreaJDialog_Package; use org.allbinary.graphics.j2me.dialog.NewWorkAreaJDialog_Package;
 with org.allbinary.graphics.j2me.dialog.RotateJDialog_Package; use org.allbinary.graphics.j2me.dialog.RotateJDialog_Package;
+with org.allbinary.graphics.j2me.dialog.RotateJDialog_Package_References;
 with org.allbinary.graphics.j2me.workarea.WorkAreaDom_Package; use org.allbinary.graphics.j2me.workarea.WorkAreaDom_Package;
 with org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package; use org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package;
 with org.allbinary.graphics.j2me.workarea.WorkAreaJPanelInterface_Package; use org.allbinary.graphics.j2me.workarea.WorkAreaJPanelInterface_Package;
+with org.allbinary.graphics.j2me.workarea.WorkAreaJPanelInterface_Package_References;
 with org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEvent_Package; use org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEvent_Package;
 with org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventService_Package; use org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventService_Package;
 with org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventSource_Package; use org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventSource_Package;
 with org.allbinary.gui.dialog.FileJDialog_Package; use org.allbinary.gui.dialog.FileJDialog_Package;
+with org.allbinary.gui.dialog.FileJDialog_Package_References;
 with org.allbinary.gui.dialog.FileJDialogListenerInterface_Package; use org.allbinary.gui.dialog.FileJDialogListenerInterface_Package;
 with org.allbinary.gui.dialog.HashMapJDialogListenerInterface_Package; use org.allbinary.gui.dialog.HashMapJDialogListenerInterface_Package;
 with org.allbinary.log.LOGGING_Package; use org.allbinary.log.LOGGING_Package;
 with org.allbinary.logic.communication.log.GuiLog_Package; use org.allbinary.logic.communication.log.GuiLog_Package;
+with org.allbinary.logic.communication.log.GuiLog_Package_References;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.math.SmallIntegerSingletonFactory_Package; use org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
 with org.allbinary.math.AngleFactory_Package; use org.allbinary.math.AngleFactory_Package;
 with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.string_Id.CommonStrings_Package_References;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.allbinary.graphics.j2me.Dimension_Package; use org.allbinary.graphics.j2me.Dimension_Package;
 with org.allbinary.graphics.j2me.GridLayout_Package; use org.allbinary.graphics.j2me.GridLayout_Package;
 with org.allbinary.graphics.j2me.JPanel_Package; use org.allbinary.graphics.j2me.JPanel_Package;
+with org.allbinary.graphics.j2me.JPanel_Package_References;
 with java.lang.Thread_Package; use java.lang.Thread_Package;
 with java.lang.Runnable_Package; use java.lang.Runnable_Package;
 with org.allbinary.graphics.j2me.workarea.canvas.CanvasDom_Package;
 with org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package;
 with org.allbinary.graphics.j2me.workarea.canvas.CanvasTreeLabel_Package;
-with org.allbinary.dom.DomHelper_Package;
 with org.allbinary.graphics.j2me.workarea.tools.GraphicItemInterface_Package;
 with org.allbinary.graphics.j2me.workarea.canvas.Grid_Package;
 with org.allbinary.graphics.j2me.workarea.canvas.IntegerDimension_Package;
-with org.allbinary.log.LOGGING_Package;
-with org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEvent_Package;
 with org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventListener_Package;
-with org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventService_Package;
-with org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventSource_Package;
 with org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEvent_Package;
 with org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEventListener_Package;
-with org.allbinary.graphics.j2me.dialog.NewWorkAreaJDialog_Package;
 with org.allbinary.graphics.j2me.workarea.tools.Points_Package;
 with org.allbinary.graphics.j2me.workarea.tools.PointsInterface_Package;
 with org.allbinary.graphics.j2me.workarea.properties.PropertiesJPanel_Package;
-with org.allbinary.graphics.j2me.dialog.RotateJDialog_Package;
-with org.allbinary.graphics.j2me.workarea.WorkAreaDom_Package;
-with org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package;
-with org.allbinary.graphics.j2me.workarea.WorkAreaJPanelInterface_Package;
 with org.allbinary.graphics.j2me.workarea.WorkAreaJTreeJPanel_Package;
 
 package body org.allbinary.graphics.j2me.MyFrame_Package is
@@ -930,7 +928,7 @@ package body org.allbinary.graphics.j2me.MyFrame_Package is
 
 begin
    null;
-   MAXWORKAREAS := 10;
+   
    numberOfWorkAreas := 0;
    PATH := To_Unbounded_String ("G:/mnt/bc/mydev/work/graphics/AllBinaryGraphicsJavaApplication");
    SAVE_PATH := Java_Image (MyFrame_Package.PATH) & To_Unbounded_String ("/save");

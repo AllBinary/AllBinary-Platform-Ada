@@ -14,6 +14,7 @@
 
 
 with org.allbinary.logic.io.path.AbPath_Package; use org.allbinary.logic.io.path.AbPath_Package;
+with org.allbinary.logic.io.path.AbPath_Package_References;
 with org.allbinary.logic.io.path.AbFilePath_Package;
 with org.allbinary.logic.io.path.AbPath_Package;
 with org.allbinary.logic.io.path.PathUtil_Package;

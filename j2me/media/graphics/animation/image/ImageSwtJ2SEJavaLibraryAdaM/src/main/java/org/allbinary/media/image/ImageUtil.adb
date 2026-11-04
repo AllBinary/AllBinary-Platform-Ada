@@ -15,14 +15,20 @@
 
 with org.eclipse.swt.SWT_Package; use org.eclipse.swt.SWT_Package;
 with org.eclipse.swt.widgets.Canvas_Package; use org.eclipse.swt.widgets.Canvas_Package;
+with org.eclipse.swt.widgets.Canvas_Package_References;
 with org.eclipse.swt.widgets.Composite_Package; use org.eclipse.swt.widgets.Composite_Package;
+with org.eclipse.swt.widgets.Composite_Package_References;
 with org.eclipse.swt.graphics.GC_Package; use org.eclipse.swt.graphics.GC_Package;
 with org.eclipse.swt.graphics.ImageData_Package; use org.eclipse.swt.graphics.ImageData_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.string_Id.CommonSeps_Package_References;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.string_Id.CommonStrings_Package_References;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
+with org.eclipse.swt.events.PaintEvent_Package; use org.eclipse.swt.events.PaintEvent_Package;
 with org.eclipse.swt.events.PaintListener_Package; use org.eclipse.swt.events.PaintListener_Package;
 with org.eclipse.swt.graphics.Transform_Package; use org.eclipse.swt.graphics.Transform_Package;
 with org.eclipse.swt.widgets.Display_Package; use org.eclipse.swt.widgets.Display_Package;

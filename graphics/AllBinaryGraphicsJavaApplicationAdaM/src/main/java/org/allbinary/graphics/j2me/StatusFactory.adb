@@ -14,6 +14,7 @@
 
 
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.graphics.j2me.MyFrame_Package; use org.allbinary.graphics.j2me.MyFrame_Package;
 with org.allbinary.graphics.j2me.MyFrame_Package;
 with org.allbinary.graphics.j2me.dialog.RotateJDialog_Package;

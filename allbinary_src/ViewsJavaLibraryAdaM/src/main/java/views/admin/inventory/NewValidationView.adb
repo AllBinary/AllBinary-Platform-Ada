@@ -18,11 +18,13 @@ with org.allbinary.business.user.commerce.inventory.item.ItemInterface_Package; 
 with org.allbinary.logic.control.validate.ValidationComponentInterface_Package; use org.allbinary.logic.control.validate.ValidationComponentInterface_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
+with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package_References;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
+with org.w3c.dom.Document_Package_References;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
+with org.w3c.dom.Node_Package_References;
 with views.HttpComponentView_Package;
 with views.business.context.modules.storefront.HttpStoreComponentView_Package;
-with views.admin.inventory.InventoryItemView_Package;
 
 package body views.admin.inventory.NewValidationView_Package is
 

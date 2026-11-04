@@ -14,6 +14,7 @@
 
 
 with org.allbinary.game.ag.ai.LastKeyAIVisitor_Package; use org.allbinary.game.ag.ai.LastKeyAIVisitor_Package;
+with org.allbinary.game.ag.ai.LastKeyAIVisitor_Package_References;
 with org.allbinary.game.ag.ai.LastKeyAIVisitor_Package;
 
 package body org.allbinary.game.ag.ai.LastKeyAIVisitorFactory_Package is

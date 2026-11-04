@@ -3,6 +3,7 @@
 
 with org.allbinary.device.OpenGLESNullGraphicsFactory_Package; use org.allbinary.device.OpenGLESNullGraphicsFactory_Package;
 with org.allbinary.device.OpenGLESGraphics_Package; use org.allbinary.device.OpenGLESGraphics_Package;
+with org.allbinary.device.OpenGLESGraphics_Package_References;
 
 package body org.allbinary.device.OpenGLESGraphicsFactory_Package is
 

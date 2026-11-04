@@ -15,6 +15,7 @@
 
 with org.allbinary.input.automation.ImageOutputData_Package; use org.allbinary.input.automation.ImageOutputData_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.java.number.LongUtil_Package; use org.allbinary.logic.java.number.LongUtil_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.util.cache.AutomaticCacheInterface_Package; use org.allbinary.logic.util.cache.AutomaticCacheInterface_Package;
@@ -26,6 +27,7 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 with org.allbinary.media.image.comparison.ImageComparisonResultCacheSingleton_Package; use org.allbinary.media.image.comparison.ImageComparisonResultCacheSingleton_Package;
 with org.allbinary.media.image.comparison.ImageComparisonResultFrameCacheable_Package; use org.allbinary.media.image.comparison.ImageComparisonResultFrameCacheable_Package;
 with org.allbinary.media.image.comparison.ImageComparisonResult_Package; use org.allbinary.media.image.comparison.ImageComparisonResult_Package;
+with org.allbinary.media.image.comparison.ImageComparisonResult_Package_References;
 with org.allbinary.media.image.comparison.ChangedPixelsUtil_Package; use org.allbinary.media.image.comparison.ChangedPixelsUtil_Package;
 with org.allbinary.media.image.comparison.ChangedPixelsUtil_Package;
 with org.allbinary.media.image.comparison.color.ColorDelta_Package;

@@ -15,29 +15,33 @@
 
 with org.allbinary.game.health.HealthInterfaceCompositeInterface_Package; use org.allbinary.game.health.HealthInterfaceCompositeInterface_Package;
 with org.allbinary.game.layer.CollidableCompositeLayer_Package; use org.allbinary.game.layer.CollidableCompositeLayer_Package;
+with org.allbinary.game.layer.CollidableCompositeLayer_Package_References;
 with org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package; use org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package;
 with org.allbinary.game.part.CountedLayerInterfaceFactoryPart_Package; use org.allbinary.game.part.CountedLayerInterfaceFactoryPart_Package;
+with org.allbinary.game.part.CountedLayerInterfaceFactoryPart_Package_References;
 with org.allbinary.game.part.PartInterface_Package; use org.allbinary.game.part.PartInterface_Package;
 with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.game.layer.pickup.PickupProcessorInterface_Package; use org.allbinary.game.layer.pickup.PickupProcessorInterface_Package;
+with org.allbinary.game.layer.pickup.PickupProcessorInterface_Package_References;
 with org.allbinary.game.layer.pickup.PickedUpLayerInterfaceFactoryInterface_Package; use org.allbinary.game.layer.pickup.PickedUpLayerInterfaceFactoryInterface_Package;
 with org.allbinary.game.layer.pickup.PickedUpLayerType_Package; use org.allbinary.game.layer.pickup.PickedUpLayerType_Package;
+with org.allbinary.game.layer.pickup.PickedUpLayerType_Package_References;
 with org.allbinary.game.layer.pickup.PickedUpLayerTypeFactory_Package; use org.allbinary.game.layer.pickup.PickedUpLayerTypeFactory_Package;
 with org.allbinary.game.layer.pickup.CountedPickedUpLayerInterfaceFactoryInterface_Package; use org.allbinary.game.layer.pickup.CountedPickedUpLayerInterfaceFactoryInterface_Package;
+with org.allbinary.game.layer.pickup.CountedPickedUpLayerInterfaceFactoryInterface_Package_References;
 with org.allbinary.game.layer.pickup.PickedUpLayerInterface_Package; use org.allbinary.game.layer.pickup.PickedUpLayerInterface_Package;
+with org.allbinary.game.layer.pickup.PickedUpLayerInterface_Package_References;
 with org.allbinary.game.layer.pickup.CountedPickedUpLayerInterfaceFactory_Package; use org.allbinary.game.layer.pickup.CountedPickedUpLayerInterfaceFactory_Package;
-with org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package;
 with org.allbinary.game.combat.damage.DamageableInterface_Package;
 with org.allbinary.game.combat.destroy.DestroyableInterface_Package;
 with org.allbinary.game.combat.destroy.event.DestroyedEvent_Package;
 with org.allbinary.game.health.Health_Package;
 with org.allbinary.game.health.HealthInterface_Package;
-with org.allbinary.game.health.HealthInterfaceCompositeInterface_Package;
 with org.allbinary.game.health.HealthListenerInterface_Package;
-with org.allbinary.game.layer.pickup.PickupBehaviorInterface_Package;
 with org.allbinary.game.layer.pickup.PickupCompositeInterface_Package;
 
 package body org.allbinary.game.layer.pickup.PickupBehavior_Package is

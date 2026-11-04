@@ -14,6 +14,7 @@
 
 
 with org.allbinary.audio.AudioContentTypeData_Package; use org.allbinary.audio.AudioContentTypeData_Package;
+with org.allbinary.audio.AudioContentTypeData_Package_References;
 with org.allbinary.audio.AudioContentTypeData_Package;
 
 package body org.allbinary.audio.AudioContentTypeDataFactory_Package is

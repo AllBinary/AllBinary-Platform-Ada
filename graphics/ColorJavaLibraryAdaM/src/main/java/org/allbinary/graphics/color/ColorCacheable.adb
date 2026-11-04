@@ -15,6 +15,7 @@
 
 with org.allbinary.logic.util.cache.CacheableInterface_Package; use org.allbinary.logic.util.cache.CacheableInterface_Package;
 with org.allbinary.graphics.color.Color_Package; use org.allbinary.graphics.color.Color_Package;
+with org.allbinary.graphics.color.Color_Package_References;
 
 package body org.allbinary.graphics.color.ColorCacheable_Package is
 

@@ -13,7 +13,6 @@
 --  Generated Code Do Not Modify
 
 
-with org.allbinary.game.displayable.canvas.GameRunnable_Package;
 
 package body org.allbinary.game.displayable.canvas.NullWaitGameRunnable_Package is
 

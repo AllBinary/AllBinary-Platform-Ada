@@ -14,6 +14,11 @@
 
 
 with org.allbinary.logic.communication.http.request.AbResponseHandler_Package; use org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
+with tags.StoreValidationTransformTag_Package; use tags.StoreValidationTransformTag_Package;
+with tags.ModifyTag_Package;
+with tags.transform.info.TransformInfoTag_Package;
+with tags.TransformTag_Package;
+with tags.ValidationTransformTag_Package;
 
 package body tags.admin.customizers.ViewCustomizersTag_Package is
 
@@ -44,7 +49,7 @@ package body tags.admin.customizers.ViewCustomizersTag_Package is
         begin
             ViewCustomizersTag'Class (This).setName (To_Unbounded_String ("Add Validation Customizers View"));
             ViewCustomizersTag'Class (This).setObjectFile (To_Unbounded_String ("views.admin.customizers.CustomizersValidationView"));
-            return StoreValidationTransformTag (This).doStartTag;
+            return StoreValidationTransformTag_Package.StoreValidationTransformTag (This).doStartTag;
         exception
             when Java_Occurrence : others =>
                 declare

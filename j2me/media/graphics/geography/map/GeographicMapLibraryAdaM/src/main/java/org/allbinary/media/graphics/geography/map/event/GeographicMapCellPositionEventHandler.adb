@@ -14,10 +14,14 @@
 
 
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.game.layer.geographic.map.MiniMapLayer_Package; use org.allbinary.game.layer.geographic.map.MiniMapLayer_Package;
+with org.allbinary.game.layer.geographic.map.MiniMapLayer_Package_References;
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+with org.allbinary.logic.util.event.AllBinaryEventObject_Package_References;
 with org.allbinary.logic.util.event.EventListenerInterface_Package; use org.allbinary.logic.util.event.EventListenerInterface_Package;
+with org.allbinary.logic.util.event.EventListenerInterface_Package_References;
 with org.allbinary.logic.util.event.EventStrings_Package; use org.allbinary.logic.util.event.EventStrings_Package;
 with org.allbinary.logic.util.event.handler.BasicEventHandler_Package; use org.allbinary.logic.util.event.handler.BasicEventHandler_Package;
 with org.allbinary.media.graphics.geography.map.event.GeographicMapCellPositionEvent_Package; use org.allbinary.media.graphics.geography.map.event.GeographicMapCellPositionEvent_Package;
@@ -33,7 +37,6 @@ with org.allbinary.media.graphics.geography.map.GeographicMapCellPositionFactory
 with org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellTypeFactory_Package;
 with org.allbinary.media.graphics.geography.map.GeographicMapInterface_Package;
-with org.allbinary.game.layer.geographic.map.MiniMapLayer_Package;
 with org.allbinary.media.graphics.geography.map.SimpleGeographicMap_Package;
 
 package body org.allbinary.media.graphics.geography.map.event.GeographicMapCellPositionEventHandler_Package is
@@ -117,14 +120,14 @@ package body org.allbinary.media.graphics.geography.map.event.GeographicMapCellP
    procedure removeAllListeners (This : in out GeographicMapCellPositionEventHandler) is
    begin
         This.list.clear;
-        BasicEventHandler (This).removeAllListeners;
+        BasicEventHandler_Package.BasicEventHandler (This).removeAllListeners;
    end removeAllListeners;
 
    procedure removeListener (This : in out GeographicMapCellPositionEventHandler; eventListenerInterface_Param : access EventListenerInterface_Package.EventListenerInterface'Class) is
       eventListenerInterface : constant EventListenerInterface_Access := EventListenerInterface_Access (eventListenerInterface_Param);
    begin
         This.list.remove (EventListenerInterface_Package.Java_Object_Access_From_EventListenerInterface (eventListenerInterface));
-        BasicEventHandler (This).removeListener (eventListenerInterface);
+        BasicEventHandler_Package.BasicEventHandler (This).removeListener (eventListenerInterface);
    end removeListener;
 
    --  throws Exception
@@ -147,7 +150,7 @@ package body org.allbinary.media.graphics.geography.map.event.GeographicMapCellP
                     end;
             end;
         end loop;
-        BasicEventHandler (This).fireEvent (eventObject);
+        BasicEventHandler_Package.BasicEventHandler (This).fireEvent (eventObject);
    end fireEvent;
 
    --  throws Exception

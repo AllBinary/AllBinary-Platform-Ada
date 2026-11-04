@@ -2,8 +2,11 @@
 
 
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.graphics.color.BasicColor_Package_References;
 with org.allbinary.animation.AnimationBehavior_Package; use org.allbinary.animation.AnimationBehavior_Package;
+with org.allbinary.animation.AnimationBehavior_Package_References;
 
 package body org.allbinary.animation.FillAnimation_Package is
 
@@ -71,7 +74,7 @@ package body org.allbinary.animation.FillAnimation_Package is
         if ((FillAnimation'Class (This).getBasicColorP) = (null)) or else ((FillAnimation'Class (This).getBasicColorP.intValue) /= (basicColor.intValue)) then
             changed := True;
         end if;
-        IndexedAnimation (This).setBasicColorP (basicColor);
+        IndexedAnimation_Package.IndexedAnimation (This).setBasicColorP (basicColor);
         if changed then
             FillAnimation'Class (This).updateModifiers;
         end if;
@@ -85,7 +88,7 @@ package body org.allbinary.animation.FillAnimation_Package is
         if ((FillAnimation'Class (This).getChangeBasicColor) = (null)) or else ((FillAnimation'Class (This).getChangeBasicColor.intValue) /= (basicColor.intValue)) then
             changed := True;
         end if;
-        IndexedAnimation (This).changeBasicColor (basicColor);
+        IndexedAnimation_Package.IndexedAnimation (This).changeBasicColor (basicColor);
         if changed then
             FillAnimation'Class (This).updateModifiers;
         end if;
@@ -98,7 +101,7 @@ package body org.allbinary.animation.FillAnimation_Package is
         if (This.alphaP) /= (alpha) then
             changed := True;
         end if;
-        IndexedAnimation (This).setAlpha (alpha);
+        IndexedAnimation_Package.IndexedAnimation (This).setAlpha (alpha);
         if changed then
             FillAnimation'Class (This).updateModifiers;
         end if;

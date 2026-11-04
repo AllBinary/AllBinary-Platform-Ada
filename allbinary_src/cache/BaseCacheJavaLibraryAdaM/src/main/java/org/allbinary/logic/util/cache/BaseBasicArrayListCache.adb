@@ -16,6 +16,7 @@
 with jsinterop.annotations.JsType_Package; use jsinterop.annotations.JsType_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with jsinterop.annotations.JsMethod_Package; use jsinterop.annotations.JsMethod_Package;
 with jsinterop.annotations.JsProperty_Package; use jsinterop.annotations.JsProperty_Package;

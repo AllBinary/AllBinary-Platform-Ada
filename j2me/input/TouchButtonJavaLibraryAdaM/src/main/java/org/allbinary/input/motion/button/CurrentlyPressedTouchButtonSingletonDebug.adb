@@ -18,7 +18,7 @@ with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.input.motion.button.TouchButtonInput_Package; use org.allbinary.input.motion.button.TouchButtonInput_Package;
-with org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingleton_Package;
+with org.allbinary.input.motion.button.TouchButtonInput_Package_References;
 
 package body org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingletonDebug_Package is
 
@@ -131,7 +131,7 @@ package body org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingle
    function removeAt (This : in out CurrentlyPressedTouchButtonSingletonDebug; index : Integer) return TouchButtonInput_Access is
       touchButtonInput : TouchButtonInput_Access;
    begin
-        touchButtonInput := CurrentlyPressedTouchButtonSingleton (This).removeAt (index);
+        touchButtonInput := CurrentlyPressedTouchButtonSingleton_Package.CurrentlyPressedTouchButtonSingleton (This).removeAt (index);
         This.listString := This.list.toString;
         This.string_Id := StringMaker_Package.Create.append (This.listString).append (This.append_Field).toString;
         return touchButtonInput;
@@ -141,7 +141,7 @@ package body org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingle
       touchButtonInput : constant TouchButtonInput_Access := TouchButtonInput_Access (touchButtonInput_Param);
       isRemoved : Boolean;
    begin
-        isRemoved := CurrentlyPressedTouchButtonSingleton (This).remove (touchButtonInput);
+        isRemoved := CurrentlyPressedTouchButtonSingleton_Package.CurrentlyPressedTouchButtonSingleton (This).remove (touchButtonInput);
         This.listString := This.list.toString;
         This.string_Id := StringMaker_Package.Create.append (This.listString).append (This.append_Field).toString;
         return isRemoved;
@@ -150,7 +150,7 @@ package body org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingle
    procedure add (This : in out CurrentlyPressedTouchButtonSingletonDebug; touchButtonInput_Param : access TouchButtonInput_Package.TouchButtonInput'Class) is
       touchButtonInput : constant TouchButtonInput_Access := TouchButtonInput_Access (touchButtonInput_Param);
    begin
-        CurrentlyPressedTouchButtonSingleton (This).add (touchButtonInput);
+        CurrentlyPressedTouchButtonSingleton_Package.CurrentlyPressedTouchButtonSingleton (This).add (touchButtonInput);
         This.listString := This.list.toString;
         This.string_Id := StringMaker_Package.Create.append (This.listString).append (This.append_Field).toString;
    end add;

@@ -48,7 +48,7 @@ package body org.allbinary.game.input.J2MEGameKey_Package is
 
    function toString (This : in out J2MEGameKey) return Unbounded_String is
    begin
-        return StringMaker_Package.Create.append (To_Unbounded_String ("J2MEGameKey: ")).append (Input (This).toString).toString;
+        return StringMaker_Package.Create.append (To_Unbounded_String ("J2MEGameKey: ")).append (Input_Package.Input (This).toString).toString;
    end toString;
 
    function getString (keyCode : Integer) return Unbounded_String is

@@ -14,6 +14,7 @@
 
 
 with android.app.Activity_Package; use android.app.Activity_Package;
+with android.app.Activity_Package_References;
 
 package body org.allbinary.android.ActivityFractureUtil_Package is
 

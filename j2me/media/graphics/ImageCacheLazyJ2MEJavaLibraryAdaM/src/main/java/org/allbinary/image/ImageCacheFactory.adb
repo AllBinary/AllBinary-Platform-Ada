@@ -14,6 +14,7 @@
 
 
 with org.allbinary.image.ImageCache_Package; use org.allbinary.image.ImageCache_Package;
+with org.allbinary.image.ImageCache_Package_References;
 with org.allbinary.thread.BaseImageLoadingProcessor_Package;
 with org.allbinary.image.ImageCache_Package;
 with org.allbinary.animation.image.LazyImageRotationAnimation_Package;

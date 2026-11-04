@@ -15,26 +15,34 @@
 
 with java.io.File_Package; use java.io.File_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.io.file.FileWrapperUtil_Package; use org.allbinary.logic.io.file.FileWrapperUtil_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.media.image.ImagePersistanceUtil_Package; use org.allbinary.media.image.ImagePersistanceUtil_Package;
 with org.allbinary.media.image.ImageProcessorInput_Package; use org.allbinary.media.image.ImageProcessorInput_Package;
+with org.allbinary.media.image.ImageProcessorInput_Package_References;
 with org.allbinary.media.image.ImageProcessorInputCompositeInterface_Package; use org.allbinary.media.image.ImageProcessorInputCompositeInterface_Package;
 with org.allbinary.media.image.ImageStrings_Package; use org.allbinary.media.image.ImageStrings_Package;
+with org.allbinary.media.image.ImageStrings_Package_References;
 with org.allbinary.media.image.ImageUnifierCell_Package; use org.allbinary.media.image.ImageUnifierCell_Package;
 with org.allbinary.media.image.ImageUnifierProperties_Package; use org.allbinary.media.image.ImageUnifierProperties_Package;
+with org.allbinary.media.image.ImageUnifierProperties_Package_References;
 with org.allbinary.media.image.ImageUnifierUtil_Package; use org.allbinary.media.image.ImageUnifierUtil_Package;
 with org.allbinary.media.image.ImageUtil_Package; use org.allbinary.media.image.ImageUtil_Package;
 with org.allbinary.media.image.ImagesRatioUtil_Package; use org.allbinary.media.image.ImagesRatioUtil_Package;
+with org.allbinary.media.image.ImagesRatioUtil_Package_References;
 with org.allbinary.string_Id.CommonPhoneStrings_Package; use org.allbinary.string_Id.CommonPhoneStrings_Package;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.string_Id.CommonStrings_Package_References;
 with org.allbinary.image.gui.ImageIconUnique_Package; use org.allbinary.image.gui.ImageIconUnique_Package;
+with org.allbinary.image.gui.ImageIconUnique_Package_References;
 with org.allbinary.image.gui.DefaultListModel_Package; use org.allbinary.image.gui.DefaultListModel_Package;
 with org.allbinary.image.gui.ImageIcon_Package; use org.allbinary.image.gui.ImageIcon_Package;
 with org.allbinary.image.gui.Icon_Package; use org.allbinary.image.gui.Icon_Package;
 with org.allbinary.image.gui.JLabel_Package; use org.allbinary.image.gui.JLabel_Package;
+with org.allbinary.image.gui.JLabel_Package_References;
 with org.allbinary.image.gui.ImageIconUnique_Package;
 
 package body org.allbinary.image.gui.ImageUnifierJPanel_Package is

@@ -47,7 +47,7 @@ package body org.allbinary.media.graphics.geography.map.racetrack.FinalPositionR
 
 begin
    null;
-   FIRST_POSITION := 1;
+   
    index := FinalPositionRaceTrackFactory_Package.FIRST_POSITION;
 
 end org.allbinary.media.graphics.geography.map.racetrack.FinalPositionRaceTrackFactory_Package;

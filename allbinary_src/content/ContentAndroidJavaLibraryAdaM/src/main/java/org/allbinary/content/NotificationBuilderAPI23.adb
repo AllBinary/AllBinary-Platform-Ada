@@ -14,12 +14,15 @@
 
 
 with javax.microedition.lcdui.Command_Package; use javax.microedition.lcdui.Command_Package;
+with javax.microedition.lcdui.Command_Package_References;
 with android.app.Notification_Package; use android.app.Notification_Package;
 with android.app.Notification.Builder_Package; use android.app.Notification.Builder_Package;
 with android.app.PendingIntent_Package; use android.app.PendingIntent_Package;
+with android.app.PendingIntent_Package_References;
 with android.content.Context_Package; use android.content.Context_Package;
+with android.content.Context_Package_References;
 with android.os.Parcelable_Package; use android.os.Parcelable_Package;
-with org.allbinary.content.NotificationBuilder_Package;
+with android.os.Parcelable_Package_References;
 
 package body org.allbinary.content.NotificationBuilderAPI23_Package is
 

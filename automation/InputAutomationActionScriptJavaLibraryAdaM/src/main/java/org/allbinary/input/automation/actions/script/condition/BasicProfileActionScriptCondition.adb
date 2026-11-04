@@ -14,11 +14,14 @@
 
 
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.input.automation.actions.script.JTreeInterfaceFactory_Package; use org.allbinary.input.automation.actions.script.JTreeInterfaceFactory_Package;
 with org.allbinary.input.automation.actions.script.ProfileActionScriptItem_Package; use org.allbinary.input.automation.actions.script.ProfileActionScriptItem_Package;
 with org.allbinary.input.automation.actions.script.ProfileActionScriptNodeInterface_Package; use org.allbinary.input.automation.actions.script.ProfileActionScriptNodeInterface_Package;
+with org.allbinary.input.automation.actions.script.ProfileActionScriptNodeInterface_Package_References;
 with org.allbinary.input.automation.actions.script.condition.processors.ProfileActionScriptProcessorInterface_Package; use org.allbinary.input.automation.actions.script.condition.processors.ProfileActionScriptProcessorInterface_Package;
+with org.allbinary.input.automation.actions.script.condition.processors.ProfileActionScriptProcessorInterface_Package_References;
 with org.allbinary.input.automation.actions.script.condition.processors.input.GenericProfileActionScriptInputData_Package; use org.allbinary.input.automation.actions.script.condition.processors.input.GenericProfileActionScriptInputData_Package;
 with org.allbinary.input.automation.actions.script.condition.processors.input.KeyboardActionScriptInput_Package; use org.allbinary.input.automation.actions.script.condition.processors.input.KeyboardActionScriptInput_Package;
 with org.allbinary.input.automation.actions.script.condition.processors.input.MouseActionScriptInput_Package; use org.allbinary.input.automation.actions.script.condition.processors.input.MouseActionScriptInput_Package;
@@ -27,13 +30,17 @@ with org.allbinary.input.automation.module.actions.script.condition.processors.o
 with org.allbinary.input.automation.module.actions.script.condition.processors.output.ImageActionScriptOutput_Package; use org.allbinary.input.automation.module.actions.script.condition.processors.output.ImageActionScriptOutput_Package;
 with org.allbinary.input.automation.module.actions.script.condition.processors.output.ProfileActionScriptOutputFactory_Package; use org.allbinary.input.automation.module.actions.script.condition.processors.output.ProfileActionScriptOutputFactory_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
+with org.w3c.dom.Document_Package_References;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
+with org.w3c.dom.Node_Package_References;
 with org.w3c.dom.NodeList_Package; use org.w3c.dom.NodeList_Package;
 with org.allbinary.input.automation.actions.script.condition.GenericProfileActionScriptConditionData_Package; use org.allbinary.input.automation.actions.script.condition.GenericProfileActionScriptConditionData_Package;
 with org.allbinary.input.automation.actions.script.condition.ProfileActionScriptConditionFactory_Package; use org.allbinary.input.automation.actions.script.condition.ProfileActionScriptConditionFactory_Package;
 with org.allbinary.input.automation.actions.script.condition.JMenu_Package; use org.allbinary.input.automation.actions.script.condition.JMenu_Package;
+with org.allbinary.input.automation.actions.script.condition.JMenu_Package_References;
 with org.allbinary.input.automation.actions.script.condition.JMenuItem_Package; use org.allbinary.input.automation.actions.script.condition.JMenuItem_Package;
 with org.allbinary.input.automation.actions.script.condition.TimeIntervalActionScriptCondition_Package; use org.allbinary.input.automation.actions.script.condition.TimeIntervalActionScriptCondition_Package;
 with org.allbinary.input.automation.actions.script.condition.AlwaysActionScriptCondition_Package; use org.allbinary.input.automation.actions.script.condition.AlwaysActionScriptCondition_Package;
@@ -49,30 +56,18 @@ with org.allbinary.input.automation.actions.script.condition.ColorAtActionScript
 with org.allbinary.input.automation.actions.script.condition.ColorAtActionScriptConditionJPanel_Package;
 with org.allbinary.input.automation.actions.script.condition.CustomTreeNodeInterface_Package;
 with org.allbinary.input.automation.actions.script.condition.GenericProfileActionScriptConditionData_Package;
-with org.allbinary.input.automation.actions.script.condition.processors.input.GenericProfileActionScriptInputData_Package;
-with org.allbinary.input.automation.module.actions.script.condition.processors.output.GenericProfileActionScriptOutputData_Package;
-with org.allbinary.input.automation.module.actions.script.condition.processors.output.ImageActionScriptOutput_Package;
 with org.allbinary.input.automation.module.actions.script.condition.processors.output.ImageActionScriptOutputInterface_Package;
 with org.allbinary.input.automation.module.actions.script.condition.processors.output.ImageActionScriptOutputJPanel_Package;
 with org.allbinary.input.automation.module.actions.script.condition.processors.output.ImageTypes_Package;
 with org.allbinary.input.automation.actions.script.JTreeInterface_Package;
-with org.allbinary.input.automation.actions.script.JTreeInterfaceFactory_Package;
-with org.allbinary.input.automation.actions.script.condition.processors.input.KeyboardActionScriptInput_Package;
 with org.allbinary.input.automation.actions.script.condition.processors.input.KeyboardActionScriptInputInterface_Package;
 with org.allbinary.input.automation.actions.script.condition.processors.input.KeyboardActionScriptInputJPanel_Package;
-with org.allbinary.input.automation.actions.script.condition.processors.input.MouseActionScriptInput_Package;
 with org.allbinary.input.automation.actions.script.condition.processors.input.MouseActionScriptInputInterface_Package;
 with org.allbinary.input.automation.actions.script.condition.processors.input.MouseActionScriptInputJPanel_Package;
 with org.allbinary.input.automation.actions.script.condition.ProfileActionScriptConditionFactory_Package;
-with org.allbinary.input.automation.actions.script.condition.ProfileActionScriptConditionInterface_Package;
-with org.allbinary.input.automation.actions.script.condition.processors.input.ProfileActionScriptInputFactory_Package;
 with org.allbinary.input.automation.actions.script.condition.processors.input.ProfileActionScriptInputInterface_Package;
-with org.allbinary.input.automation.actions.script.ProfileActionScriptItem_Package;
 with org.allbinary.input.automation.actions.script.ProfileActionScriptItemInterface_Package;
-with org.allbinary.input.automation.actions.script.ProfileActionScriptNodeInterface_Package;
-with org.allbinary.input.automation.module.actions.script.condition.processors.output.ProfileActionScriptOutputFactory_Package;
 with org.allbinary.input.automation.module.actions.script.condition.processors.output.ProfileActionScriptOutputInterface_Package;
-with org.allbinary.input.automation.actions.script.condition.processors.ProfileActionScriptProcessorInterface_Package;
 with org.allbinary.input.automation.actions.script.condition.TimeIntervalActionScriptCondition_Package;
 with org.allbinary.input.automation.actions.script.condition.TimeIntervalActionScriptConditionInterface_Package;
 with org.allbinary.input.automation.actions.script.condition.TimeIntervalActionScriptConditionJPanel_Package;
@@ -366,7 +361,7 @@ package body org.allbinary.input.automation.actions.script.condition.BasicProfil
       profileActionScriptNodeInterface : ProfileActionScriptNodeInterface_Access;
    begin
         begin
-            ProfileActionScriptItem (This).actionPerformed (actionEvent);
+            ProfileActionScriptItem_Package.ProfileActionScriptItem (This).actionPerformed (actionEvent);
             if (actionEvent.getActionCommand.compareTo (DELETE)) = (0) then
                 if (BasicProfileActionScriptCondition'Class (This).getParent.all in ProfileActionScriptNodeInterface_Package.ProfileActionScriptNodeInterface'Class) then
                     profileActionScriptNodeInterface := ProfileActionScriptNodeInterface_Access (BasicProfileActionScriptCondition'Class (This).getParent);

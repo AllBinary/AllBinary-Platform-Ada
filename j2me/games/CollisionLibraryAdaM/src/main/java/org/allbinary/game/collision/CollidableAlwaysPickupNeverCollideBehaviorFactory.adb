@@ -14,10 +14,11 @@
 
 
 with org.allbinary.game.collision.CollidableAlwaysPickupNeverCollideBehavior_Package; use org.allbinary.game.collision.CollidableAlwaysPickupNeverCollideBehavior_Package;
+with org.allbinary.game.collision.CollidableAlwaysPickupNeverCollideBehavior_Package_References;
 with org.allbinary.game.collision.CollidableBaseBehavior_Package; use org.allbinary.game.collision.CollidableBaseBehavior_Package;
+with org.allbinary.game.collision.CollidableBaseBehavior_Package_References;
 with org.allbinary.game.collision.CollidableAlwaysPickupNeverCollideBehavior_Package;
 with org.allbinary.game.collision.CollidableBaseBehavior_Package;
-with org.allbinary.game.collision.CollidableBaseBehaviorFactory_Package;
 with org.allbinary.game.collision.CollidableBaseBehaviorFactoryInterface_Package;
 with org.allbinary.game.layer.CollidableCompositeLayer_Package;
 with org.allbinary.game.collision.CollidableInterface_Package;

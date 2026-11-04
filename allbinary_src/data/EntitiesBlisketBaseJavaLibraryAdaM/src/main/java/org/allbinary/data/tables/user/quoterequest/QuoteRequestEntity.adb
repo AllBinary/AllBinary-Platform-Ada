@@ -15,13 +15,17 @@
 
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.business.entry_Id.EntryData_Package; use org.allbinary.business.entry_Id.EntryData_Package;
 with org.allbinary.business.init.db.UserDbInitInfo_Package; use org.allbinary.business.init.db.UserDbInitInfo_Package;
 with org.allbinary.business.quoterequest.QuoteRequestData_Package; use org.allbinary.business.quoterequest.QuoteRequestData_Package;
 with org.allbinary.business.user.UserData_Package; use org.allbinary.business.user.UserData_Package;
 with org.allbinary.business.user.quoterequest.QuoteRequest_Package; use org.allbinary.business.user.quoterequest.QuoteRequest_Package;
+with org.allbinary.business.user.quoterequest.QuoteRequest_Package_References;
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.communication.sql.AbSqlBean_Package; use org.allbinary.logic.communication.sql.AbSqlBean_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 
@@ -89,7 +93,7 @@ package body org.allbinary.data.tables.user.quoterequest.QuoteRequestEntity_Pack
       values : constant BasicArrayList_Access := BasicArrayList_Access (values_Param);
    begin
         begin
-            AbSqlBean (This).insert (values);
+            AbSqlBean_Package.AbSqlBean (This).insert (values);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
                 This.logUtil.putF (This.commonStrings.SUCCESS, QuoteRequestEntity_Access'(This'Unchecked_Access), INSERT);
             end if;
@@ -113,7 +117,7 @@ package body org.allbinary.data.tables.user.quoterequest.QuoteRequestEntity_Pack
         row := StdUtil_Package.getInstance.createHashMap;
         row.put (UserData_Package.USERNAME, Java_Box (userName));
         row.put (QuoteRequestData_Package.getInstance.ID, Java_Box (To_Unbounded_String (Java_Image (id))));
-        quoteRequestHashMap := AbSqlBean (This).getRow (row);
+        quoteRequestHashMap := AbSqlBean_Package.AbSqlBean (This).getRow (row);
         if (quoteRequestHashMap) /= (null) then
             return QuoteRequest_Package.Create (quoteRequestHashMap);
         else
@@ -123,13 +127,13 @@ package body org.allbinary.data.tables.user.quoterequest.QuoteRequestEntity_Pack
 
    function getIds (This : in out QuoteRequestEntity; userName : Unbounded_String) return BasicArrayList_Access is
    begin
-        return AbSqlBean (This).getColumnWhere (QuoteRequestData_Package.getInstance.ID, UserData_Package.USERNAME, userName);
+        return AbSqlBean_Package.AbSqlBean (This).getColumnWhere (QuoteRequestData_Package.getInstance.ID, UserData_Package.USERNAME, userName);
    end getIds;
 
    procedure deleteWhere (This : in out QuoteRequestEntity; key : Unbounded_String; value : Unbounded_String) is
    begin
         begin
-            AbSqlBean (This).deleteWhere (key, value);
+            AbSqlBean_Package.AbSqlBean (This).deleteWhere (key, value);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
                 This.logUtil.putF (This.commonStrings.SUCCESS, QuoteRequestEntity_Access'(This'Unchecked_Access), To_Unbounded_String ("deleteWhere"));
             end if;
@@ -177,20 +181,20 @@ package body org.allbinary.data.tables.user.quoterequest.QuoteRequestEntity_Pack
 
    function createTable (This : in out QuoteRequestEntity) return Unbounded_String is
    begin
-        return AbSqlBean (This).createTable (QuoteRequestEntity'Class (This).createTableStatement);
+        return AbSqlBean_Package.AbSqlBean (This).createTable (QuoteRequestEntity'Class (This).createTableStatement);
    end createTable;
 
    function dropTable (This : in out QuoteRequestEntity) return Unbounded_String is
       result : Unbounded_String;
    begin
-        result := Java_New_String (AbSqlBean (This).dropTable);
+        result := Java_New_String (AbSqlBean_Package.AbSqlBean (This).dropTable);
         return result;
    end dropTable;
 
    procedure update (This : in out QuoteRequestEntity; userName : Unbounded_String; updatedValues_Param : access HashMap_Package.HashMap'Class) is
       updatedValues : constant HashMap_Access := HashMap_Access (updatedValues_Param);
    begin
-        AbSqlBean (This).updateWhere (UserData_Package.USERNAME, userName, updatedValues);
+        AbSqlBean_Package.AbSqlBean (This).updateWhere (UserData_Package.USERNAME, userName, updatedValues);
    end update;
 
    procedure get (This : in out QuoteRequestEntity; userName : Unbounded_String; id : Integer) is

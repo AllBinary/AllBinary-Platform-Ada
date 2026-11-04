@@ -14,11 +14,13 @@
 
 
 with org.allbinary.game.layer.AllBinaryTiledLayer_Package; use org.allbinary.game.layer.AllBinaryTiledLayer_Package;
+with org.allbinary.game.layer.AllBinaryTiledLayer_Package_References;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
+with org.allbinary.layer.AllBinaryLayer_Package_References;
 with org.allbinary.layer.Layer_Package; use org.allbinary.layer.Layer_Package;
+with org.allbinary.layer.Layer_Package_References;
 with org.allbinary.layer.NullLayer_Package; use org.allbinary.layer.NullLayer_Package;
 with org.allbinary.view.ViewPosition_Package; use org.allbinary.view.ViewPosition_Package;
-with org.allbinary.game.layer.AllBinaryTiledLayer_Package;
 
 package body org.allbinary.game.view.StaticTileLayerIntoPositionViewPosition_Package is
 
@@ -73,17 +75,17 @@ package body org.allbinary.game.view.StaticTileLayerIntoPositionViewPosition_Pac
 
    function getX (This : in out StaticTileLayerIntoPositionViewPosition) return Integer is
    begin
-        return (ViewPosition (This).getX) - (StaticTileLayerIntoPositionViewPosition_Package.tiledLayer.getXP);
+        return (ViewPosition_Package.ViewPosition (This).getX) - (StaticTileLayerIntoPositionViewPosition_Package.tiledLayer.getXP);
    end getX;
 
    function getY (This : in out StaticTileLayerIntoPositionViewPosition) return Integer is
    begin
-        return (ViewPosition (This).getY) - (StaticTileLayerIntoPositionViewPosition_Package.tiledLayer.getYP);
+        return (ViewPosition_Package.ViewPosition (This).getY) - (StaticTileLayerIntoPositionViewPosition_Package.tiledLayer.getYP);
    end getY;
 
    function getZ (This : in out StaticTileLayerIntoPositionViewPosition) return Integer is
    begin
-        return (ViewPosition (This).getZ) - (StaticTileLayerIntoPositionViewPosition_Package.tiledLayer.getZP);
+        return (ViewPosition_Package.ViewPosition (This).getZ) - (StaticTileLayerIntoPositionViewPosition_Package.tiledLayer.getZP);
    end getZ;
 
    procedure setTiledLayer (tiledLayer_Param : access AllBinaryTiledLayer_Package.AllBinaryTiledLayer'Class) is

@@ -14,7 +14,9 @@
 
 
 with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
+with javax.microedition.lcdui.Image_Package_References;
 with org.allbinary.media.image.ImageModifierUtil_Package; use org.allbinary.media.image.ImageModifierUtil_Package;
+with org.allbinary.media.image.ImageModifierUtil_Package_References;
 
 package body org.allbinary.animation.image.AlphaBaseProcessor_Package is
 

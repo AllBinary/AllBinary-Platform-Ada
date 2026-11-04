@@ -15,15 +15,18 @@
 
 with org.allbinary.game.layer.AllBinaryTiledLayer_Package; use org.allbinary.game.layer.AllBinaryTiledLayer_Package;
 with org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package; use org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
+with org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package_References;
 with org.allbinary.media.graphics.geography.map.BasicGeographicMapCellPositionFactory_Package; use org.allbinary.media.graphics.geography.map.BasicGeographicMapCellPositionFactory_Package;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
+with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package_References;
 with org.allbinary.media.graphics.geography.map.racetrack.BasePathFindingInfoFactory_Package; use org.allbinary.media.graphics.geography.map.racetrack.BasePathFindingInfoFactory_Package;
 with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackRoadsGeographicMapCellHistoryFactory_Package; use org.allbinary.media.graphics.geography.map.racetrack.RaceTrackRoadsGeographicMapCellHistoryFactory_Package;
 with org.allbinary.media.graphics.geography.pathfinding.PathFinder_Package; use org.allbinary.media.graphics.geography.pathfinding.PathFinder_Package;
+with org.allbinary.media.graphics.geography.pathfinding.PathFinder_Package_References;
 with org.allbinary.media.graphics.geography.pathfinding.PathFindingInfo_Package; use org.allbinary.media.graphics.geography.pathfinding.PathFindingInfo_Package;
+with org.allbinary.media.graphics.geography.pathfinding.PathFindingInfo_Package_References;
 with org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfoFactory_Package; use org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfoFactory_Package;
 with org.allbinary.util.BasicArrayListS_Package; use org.allbinary.util.BasicArrayListS_Package;
-with org.allbinary.media.graphics.geography.pathfinding.PathFinder_Package;
 
 package body org.allbinary.game.media.graphics.geography.map.racetrack.PathFindingInfoFactory_Package is
 
@@ -123,7 +126,7 @@ package body org.allbinary.game.media.graphics.geography.map.racetrack.PathFindi
       geographicMapInterface : constant BasicGeographicMap_Access := BasicGeographicMap_Access (geographicMapInterface_Param);
       pathFindingInfo : constant PathFindingInfo_Access := PathFindingInfo_Access (pathFindingInfo_Param);
    begin
-        BasePathFindingInfoFactory (This).init (geographicMapInterface, pathFindingInfo, mapArray);
+        BasePathFindingInfoFactory_Package.BasePathFindingInfoFactory (This).init (geographicMapInterface, pathFindingInfo, mapArray);
         PathFindingInfoFactory'Class (This).buildPathFindingNodes (geographicMapInterface, pathFindingInfo, mapArray);
    end init;
 

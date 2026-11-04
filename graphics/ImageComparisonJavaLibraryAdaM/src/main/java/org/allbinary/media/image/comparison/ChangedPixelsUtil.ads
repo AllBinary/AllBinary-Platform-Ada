@@ -76,10 +76,10 @@ package org.allbinary.media.image.comparison.ChangedPixelsUtil_Package is
    function "=" (Left, Right : ChangedPixelsUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.image.comparison.ChangedPixelsUtil_Package_References."=";
 
    type ChangedPixelsUtil is new Java_Object with null record;
-   START_X : Integer;
-   START_Y : Integer;
-   OFFSET : Integer;
-   SCAN_SIZE : Integer;
+   START_X : constant Integer := 0;
+   START_Y : constant Integer := 0;
+   OFFSET : constant Integer := 0;
+   SCAN_SIZE : constant Integer := 0;
    CLEAR_INT_ARRAY : Integer_Array_Access;
 
    procedure Initialize (This : in out ChangedPixelsUtil'Class);

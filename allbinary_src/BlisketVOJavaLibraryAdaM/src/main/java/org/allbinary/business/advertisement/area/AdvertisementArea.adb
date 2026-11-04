@@ -19,11 +19,11 @@ with org.allbinary.business.context.modules.storefront.StoreFrontData_Package; u
 with org.allbinary.data.tree.dom.document.DomDocumentHelper_Package; use org.allbinary.data.tree.dom.document.DomDocumentHelper_Package;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.allbinary.business.advertisement.area.AdvertisementAreaConstraintsInterface_Package; use org.allbinary.business.advertisement.area.AdvertisementAreaConstraintsInterface_Package;
+with org.allbinary.business.advertisement.area.AdvertisementAreaConstraintsInterface_Package_References;
 with org.allbinary.business.advertisement.area.AdvertisementAreaData_Package; use org.allbinary.business.advertisement.area.AdvertisementAreaData_Package;
 with org.allbinary.business.advertisement.area.AdvertisementAreaConstraints_Package; use org.allbinary.business.advertisement.area.AdvertisementAreaConstraints_Package;
 with org.allbinary.business.advertisement.area.AdvertisementAreaConstraints_Package;
 with org.allbinary.business.advertisement.area.AdvertisementAreaConstraintsInterface_Package;
-with org.allbinary.business.advertisement.area.AdvertisementAreaInterface_Package;
 with org.allbinary.logic.control.contraints.display.browser.DisplayInBrowserContraintsInterface_Package;
 with org.allbinary.logic.control.contraints.MinMaxIntConstraintInterface_Package;
 with org.allbinary.logic.control.contraints.size.SizeConstraintInterface_Package;

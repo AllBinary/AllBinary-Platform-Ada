@@ -15,6 +15,7 @@
 
 with org.allbinary.game.input.GameInputProcessor_Package; use org.allbinary.game.input.GameInputProcessor_Package;
 with org.allbinary.game.layer.special.SpecialGameInputInterface_Package; use org.allbinary.game.layer.special.SpecialGameInputInterface_Package;
+with org.allbinary.game.layer.special.SpecialGameInputInterface_Package_References;
 
 package body org.allbinary.game.layer.special.SpecialGameInputInterfaceProcessor_Package is
 

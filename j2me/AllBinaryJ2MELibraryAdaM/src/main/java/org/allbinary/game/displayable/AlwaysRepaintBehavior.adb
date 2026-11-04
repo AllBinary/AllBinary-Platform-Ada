@@ -15,14 +15,16 @@
 
 with org.allbinary.thread.ARunnable_Package; use org.allbinary.thread.ARunnable_Package;
 with javax.microedition.lcdui.Canvas_Package; use javax.microedition.lcdui.Canvas_Package;
+with javax.microedition.lcdui.Canvas_Package_References;
 with org.allbinary.game.configuration.feature.Features_Package; use org.allbinary.game.configuration.feature.Features_Package;
 with org.allbinary.graphics.displayable.DisplayInfoSingleton_Package; use org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
 with org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package; use org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.thread.NullRunnable_Package; use org.allbinary.thread.NullRunnable_Package;
 with java.lang.Thread_Package; use java.lang.Thread_Package;
 with org.allbinary.graphics.displayable.BaseScalable_Package;
 with org.allbinary.graphics.displayable.event.DisplayChangeEvent_Package;
-with org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
-with org.allbinary.game.displayable.RepaintBehavior_Package;
 with org.allbinary.graphics.displayable.ScalableListener_Package;
 
 package body org.allbinary.game.displayable.AlwaysRepaintBehavior_Package is

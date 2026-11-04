@@ -74,7 +74,7 @@ package org.allbinary.input.automation.PointHelper_Package is
    function "=" (Left, Right : PointHelper_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.automation.PointHelper_Package_References."=";
 
    type PointHelper is new Java_Object with null record;
-   two : Long_Float;
+   two : constant Long_Float := 2.0;
 
    procedure Initialize (This : in out PointHelper'Class);
    function Create return PointHelper_Access;

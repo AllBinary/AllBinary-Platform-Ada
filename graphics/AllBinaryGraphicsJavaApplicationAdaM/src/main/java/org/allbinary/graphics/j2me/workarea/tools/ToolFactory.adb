@@ -15,8 +15,11 @@
 
 with org.allbinary.graphics.j2me.StatusFactory_Package; use org.allbinary.graphics.j2me.StatusFactory_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.string_Id.CommonStrings_Package_References;
 with org.allbinary.graphics.j2me.workarea.tools.GraphicsItemInterfaceFactoryInterface_Package; use org.allbinary.graphics.j2me.workarea.tools.GraphicsItemInterfaceFactoryInterface_Package;
+with org.allbinary.graphics.j2me.workarea.tools.GraphicsItemInterfaceFactoryInterface_Package_References;
 with org.allbinary.graphics.j2me.workarea.tools.GraphicItemFactory_Package; use org.allbinary.graphics.j2me.workarea.tools.GraphicItemFactory_Package;
 with org.allbinary.graphics.j2me.workarea.canvas.CanvasDom_Package;
 with org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package;
@@ -30,7 +33,6 @@ with org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEvent_Package
 with org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEventListener_Package;
 with org.allbinary.graphics.j2me.workarea.tools.Points_Package;
 with org.allbinary.graphics.j2me.workarea.tools.PointsInterface_Package;
-with org.allbinary.graphics.j2me.StatusFactory_Package;
 with org.allbinary.graphics.j2me.workarea.WorkAreaJTreeJPanel_Package;
 
 package body org.allbinary.graphics.j2me.workarea.tools.ToolFactory_Package is

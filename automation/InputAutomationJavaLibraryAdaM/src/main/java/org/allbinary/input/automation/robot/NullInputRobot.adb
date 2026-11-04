@@ -16,12 +16,13 @@
 with org.allbinary.input.automation.AbstractInputRobot_Package; use org.allbinary.input.automation.AbstractInputRobot_Package;
 with org.allbinary.input.automation.PointFactory_Package; use org.allbinary.input.automation.PointFactory_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.input.automation.robot.Point_Package; use org.allbinary.input.automation.robot.Point_Package;
+with org.allbinary.input.automation.robot.Point_Package_References;
 with org.allbinary.input.automation.robot.Rectangle_Package; use org.allbinary.input.automation.robot.Rectangle_Package;
+with org.allbinary.input.automation.robot.Rectangle_Package_References;
 with org.allbinary.input.automation.robot.Color_Package; use org.allbinary.input.automation.robot.Color_Package;
-with org.allbinary.input.automation.AbstractInputRobot_Package;
-with org.allbinary.input.automation.robot.InputRobotInterface_Package;
-with org.allbinary.input.automation.PointFactory_Package;
+with org.allbinary.input.automation.robot.Color_Package_References;
 
 package body org.allbinary.input.automation.robot.NullInputRobot_Package is
 

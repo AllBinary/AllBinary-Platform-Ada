@@ -14,6 +14,7 @@
 
 
 with org.allbinary.graphics.displayable.MyCanvas_Package; use org.allbinary.graphics.displayable.MyCanvas_Package;
+with org.allbinary.graphics.displayable.MyCanvas_Package_References;
 
 package body org.allbinary.canvas.RunnableCanvasRefreshHelper_Package is
 

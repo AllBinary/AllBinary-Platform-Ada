@@ -15,6 +15,7 @@
 
 with org.allbinary.image.ImageCacheFactory_Package; use org.allbinary.image.ImageCacheFactory_Package;
 with org.allbinary.image.ImageCache_Package; use org.allbinary.image.ImageCache_Package;
+with org.allbinary.image.ImageCache_Package_References;
 
 package body org.allbinary.image.GameFeatureImageCacheFactory_Package is
 

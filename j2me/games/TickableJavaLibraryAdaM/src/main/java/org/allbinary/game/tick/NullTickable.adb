@@ -14,7 +14,7 @@
 
 
 with org.allbinary.layer.AllBinaryLayerManager_Package; use org.allbinary.layer.AllBinaryLayerManager_Package;
-with org.allbinary.game.tick.TickableInterface_Package;
+with org.allbinary.layer.AllBinaryLayerManager_Package_References;
 
 package body org.allbinary.game.tick.NullTickable_Package is
 

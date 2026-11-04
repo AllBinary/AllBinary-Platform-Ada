@@ -2,16 +2,22 @@
 
 
 with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Animation_Package;
+with org.allbinary.animation.Animation_Package_References;
 with org.allbinary.game.combat.weapon.WeaponProperties_Package; use org.allbinary.game.combat.weapon.WeaponProperties_Package;
+with org.allbinary.game.combat.weapon.WeaponProperties_Package_References;
 with org.allbinary.game.multiplayer.layer.RemoteInfo_Package; use org.allbinary.game.multiplayer.layer.RemoteInfo_Package;
 with org.allbinary.graphics.Rectangle_Package; use org.allbinary.graphics.Rectangle_Package;
+with org.allbinary.graphics.Rectangle_Package_References;
 with org.allbinary.layer.AllBinaryLayerManager_Package; use org.allbinary.layer.AllBinaryLayerManager_Package;
+with org.allbinary.layer.AllBinaryLayerManager_Package_References;
 with org.allbinary.physics.movement.Movement_Package; use org.allbinary.physics.movement.Movement_Package;
+with org.allbinary.physics.movement.Movement_Package_References;
 with org.allbinary.time.GameTickTimeDelayHelperFactory_Package; use org.allbinary.time.GameTickTimeDelayHelperFactory_Package;
 with org.allbinary.time.TimeDelayHelper_Package; use org.allbinary.time.TimeDelayHelper_Package;
+with org.allbinary.time.TimeDelayHelper_Package_References;
 with org.allbinary.view.ViewPositionBase_Package; use org.allbinary.view.ViewPositionBase_Package;
+with org.allbinary.view.ViewPositionBase_Package_References;
 with org.allbinary.game.layer.weapon.CollidableWeaponBehavior_Package;
-with org.allbinary.game.layer.weapon.SimpleWeaponLayer_Package;
 with org.allbinary.game.layer.weapon.WeaponLayer_Package;
 
 package body org.allbinary.game.layer.weapon.TempExplosionWeaponLayer_Package is
@@ -122,7 +128,7 @@ package body org.allbinary.game.layer.weapon.TempExplosionWeaponLayer_Package is
             TempExplosionWeaponLayer'Class (This).getCollidableInferface.collide (TempExplosionWeaponLayer_Access'(This'Unchecked_Access), TempExplosionWeaponLayer_Access'(This'Unchecked_Access));
             This.totalDamage := (TempExplosionWeaponLayer'Class (This).getInitDamage) + (1);
         end if;
-        SimpleWeaponLayer (This).processTick (allBinaryLayerManager);
+        SimpleWeaponLayer_Package.SimpleWeaponLayer (This).processTick (allBinaryLayerManager);
    end processTick;
 
 end org.allbinary.game.layer.weapon.TempExplosionWeaponLayer_Package;

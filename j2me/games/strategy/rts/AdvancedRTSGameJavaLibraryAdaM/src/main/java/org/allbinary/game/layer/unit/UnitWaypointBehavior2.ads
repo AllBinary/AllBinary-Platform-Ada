@@ -63,6 +63,8 @@ limited with org.allbinary.game.layer.unit.UnitWaypointStrings_Package;
 with org.allbinary.game.layer.unit.UnitWaypointStrings_Package_References;
 limited with org.allbinary.game.layer.unit.UnitLayer_Package;
 with org.allbinary.game.layer.unit.UnitLayer_Package_References;
+limited with org.allbinary.game.layer.unit.BuildingSteeringVisitor_Package;
+with org.allbinary.game.layer.unit.BuildingSteeringVisitor_Package_References;
 
 package org.allbinary.game.layer.unit.UnitWaypointBehavior2_Package is
 
@@ -241,6 +243,16 @@ package org.allbinary.game.layer.unit.UnitWaypointBehavior2_Package is
    use type UnitLayer_Access_Array_Access_Array;
    subtype UnitLayer_Access_Array_Access_Array_Access is org.allbinary.game.layer.unit.UnitLayer_Package_References.UnitLayer_Access_Array_Access_Array_Access;
    use type UnitLayer_Access_Array_Access_Array_Access;
+   subtype BuildingSteeringVisitor_Access is org.allbinary.game.layer.unit.BuildingSteeringVisitor_Package_References.BuildingSteeringVisitor_Access;
+   use type BuildingSteeringVisitor_Access;
+   subtype BuildingSteeringVisitor_Access_Array is org.allbinary.game.layer.unit.BuildingSteeringVisitor_Package_References.BuildingSteeringVisitor_Access_Array;
+   use type BuildingSteeringVisitor_Access_Array;
+   subtype BuildingSteeringVisitor_Access_Array_Access is org.allbinary.game.layer.unit.BuildingSteeringVisitor_Package_References.BuildingSteeringVisitor_Access_Array_Access;
+   use type BuildingSteeringVisitor_Access_Array_Access;
+   subtype BuildingSteeringVisitor_Access_Array_Access_Array is org.allbinary.game.layer.unit.BuildingSteeringVisitor_Package_References.BuildingSteeringVisitor_Access_Array_Access_Array;
+   use type BuildingSteeringVisitor_Access_Array_Access_Array;
+   subtype BuildingSteeringVisitor_Access_Array_Access_Array_Access is org.allbinary.game.layer.unit.BuildingSteeringVisitor_Package_References.BuildingSteeringVisitor_Access_Array_Access_Array_Access;
+   use type BuildingSteeringVisitor_Access_Array_Access_Array_Access;
    end Reference_Types;
    use Reference_Types;
 
@@ -332,8 +344,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-limited with org.allbinary.game.layer.SteeringVisitor_Package;
-with org.allbinary.game.layer.SteeringVisitor_Package_References;
+with org.allbinary.game.layer.SteeringVisitor_Package; use org.allbinary.game.layer.SteeringVisitor_Package;
 limited with org.allbinary.game.layer.AdvancedRTSGameLayer_Package;
 with org.allbinary.game.layer.AdvancedRTSGameLayer_Package_References;
 limited with org.allbinary.game.layer.RTSLayer_Package;
@@ -383,16 +394,6 @@ package org.allbinary.game.layer.unit.BuildingSteeringVisitor_Package is
    package ThreadPool_Package renames Standard.org.allbinary.thread.ThreadPool_Package;
    package TimeDelayHelper_Package renames Standard.org.allbinary.time.TimeDelayHelper_Package;
    package Reference_Types is
-   subtype SteeringVisitor_Access is org.allbinary.game.layer.SteeringVisitor_Package_References.SteeringVisitor_Access;
-   use type SteeringVisitor_Access;
-   subtype SteeringVisitor_Access_Array is org.allbinary.game.layer.SteeringVisitor_Package_References.SteeringVisitor_Access_Array;
-   use type SteeringVisitor_Access_Array;
-   subtype SteeringVisitor_Access_Array_Access is org.allbinary.game.layer.SteeringVisitor_Package_References.SteeringVisitor_Access_Array_Access;
-   use type SteeringVisitor_Access_Array_Access;
-   subtype SteeringVisitor_Access_Array_Access_Array is org.allbinary.game.layer.SteeringVisitor_Package_References.SteeringVisitor_Access_Array_Access_Array;
-   use type SteeringVisitor_Access_Array_Access_Array;
-   subtype SteeringVisitor_Access_Array_Access_Array_Access is org.allbinary.game.layer.SteeringVisitor_Package_References.SteeringVisitor_Access_Array_Access_Array_Access;
-   use type SteeringVisitor_Access_Array_Access_Array_Access;
    subtype AdvancedRTSGameLayer_Access is org.allbinary.game.layer.AdvancedRTSGameLayer_Package_References.AdvancedRTSGameLayer_Access;
    use type AdvancedRTSGameLayer_Access;
    subtype AdvancedRTSGameLayer_Access_Array is org.allbinary.game.layer.AdvancedRTSGameLayer_Package_References.AdvancedRTSGameLayer_Access_Array;
@@ -523,6 +524,16 @@ package org.allbinary.game.layer.unit.BuildingSteeringVisitor_Package is
    use type TimeDelayHelper_Access_Array_Access_Array;
    subtype TimeDelayHelper_Access_Array_Access_Array_Access is org.allbinary.time.TimeDelayHelper_Package_References.TimeDelayHelper_Access_Array_Access_Array_Access;
    use type TimeDelayHelper_Access_Array_Access_Array_Access;
+   subtype UnitWaypointBehavior_Access is org.allbinary.game.layer.unit.UnitWaypointBehavior_Package_References.UnitWaypointBehavior_Access;
+   use type UnitWaypointBehavior_Access;
+   subtype UnitWaypointBehavior_Access_Array is org.allbinary.game.layer.unit.UnitWaypointBehavior_Package_References.UnitWaypointBehavior_Access_Array;
+   use type UnitWaypointBehavior_Access_Array;
+   subtype UnitWaypointBehavior_Access_Array_Access is org.allbinary.game.layer.unit.UnitWaypointBehavior_Package_References.UnitWaypointBehavior_Access_Array_Access;
+   use type UnitWaypointBehavior_Access_Array_Access;
+   subtype UnitWaypointBehavior_Access_Array_Access_Array is org.allbinary.game.layer.unit.UnitWaypointBehavior_Package_References.UnitWaypointBehavior_Access_Array_Access_Array;
+   use type UnitWaypointBehavior_Access_Array_Access_Array;
+   subtype UnitWaypointBehavior_Access_Array_Access_Array_Access is org.allbinary.game.layer.unit.UnitWaypointBehavior_Package_References.UnitWaypointBehavior_Access_Array_Access_Array_Access;
+   use type UnitWaypointBehavior_Access_Array_Access_Array_Access;
    subtype UnitWaypointStrings_Access is org.allbinary.game.layer.unit.UnitWaypointStrings_Package_References.UnitWaypointStrings_Access;
    use type UnitWaypointStrings_Access;
    subtype UnitWaypointStrings_Access_Array is org.allbinary.game.layer.unit.UnitWaypointStrings_Package_References.UnitWaypointStrings_Access_Array;

@@ -14,9 +14,9 @@
 
 
 with org.allbinary.game.physics.velocity.BasicVelocityProperties_Package; use org.allbinary.game.physics.velocity.BasicVelocityProperties_Package;
+with org.allbinary.game.physics.velocity.BasicVelocityProperties_Package_References;
 with org.allbinary.logic.math.vector.AxisMathVectorUtil_Package;
 with org.allbinary.game.physics.velocity.BasicVelocityInterface_Package;
-with org.allbinary.game.physics.velocity.BasicVelocityProperties_Package;
 
 package body org.allbinary.game.physics.acceleration.GravityUtil_Package is
 

@@ -24,6 +24,7 @@ with org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package; u
 with org.allbinary.graphics.canvas.transition.progress.ProgressCanvasFactory_Package; use org.allbinary.graphics.canvas.transition.progress.ProgressCanvasFactory_Package;
 with org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package; use org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package;
 with org.allbinary.image.ImageCache_Package; use org.allbinary.image.ImageCache_Package;
+with org.allbinary.image.ImageCache_Package_References;
 with org.allbinary.image.ImageCacheFactory_Package; use org.allbinary.image.ImageCacheFactory_Package;
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
@@ -197,7 +198,7 @@ package body org.allbinary.input.motion.button.TouchButtonResourceAnimationInter
         else
             TouchButtonResourceAnimationInterfaceFactoryInterfaceFactory'Class (This).add (touchButtonStartResource.HINT, nullAnimationFactory);
         end if;
-        BaseResourceAnimationInterfaceFactoryInterfaceFactory (This).init (level);
+        BaseResourceAnimationInterfaceFactoryInterfaceFactory_Package.BaseResourceAnimationInterfaceFactoryInterfaceFactory (This).init (level);
    end initImageCache;
 
    function isLoadingLevel (This : in out TouchButtonResourceAnimationInterfaceFactoryInterfaceFactory; level : Integer) return Boolean is
@@ -207,7 +208,7 @@ package body org.allbinary.input.motion.button.TouchButtonResourceAnimationInter
         if (level) = (resourceLoadingLevelFactory.LOAD_TOUCH.getLevel) then
             return True;
         else
-            return BaseResourceAnimationInterfaceFactoryInterfaceFactory (This).isLoadingLevel (level);
+            return BaseResourceAnimationInterfaceFactoryInterfaceFactory_Package.BaseResourceAnimationInterfaceFactoryInterfaceFactory (This).isLoadingLevel (level);
         end if;
    end isLoadingLevel;
 

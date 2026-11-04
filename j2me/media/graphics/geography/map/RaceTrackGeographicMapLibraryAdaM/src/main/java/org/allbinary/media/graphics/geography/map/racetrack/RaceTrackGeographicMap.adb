@@ -15,17 +15,25 @@
 
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
+with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package_References;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellPositionBaseFactory_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellPositionBaseFactory_Package;
+with org.allbinary.media.graphics.geography.map.GeographicMapCellPositionBaseFactory_Package_References;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellPositionFactoryInterface_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellPositionFactoryInterface_Package;
+with org.allbinary.media.graphics.geography.map.GeographicMapCellPositionFactoryInterface_Package_References;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellTypeFactory_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellTypeFactory_Package;
+with org.allbinary.media.graphics.geography.map.GeographicMapCellTypeFactory_Package_References;
 with org.allbinary.media.graphics.geography.map.racetrack.CustomMapGeneratorBase_Package; use org.allbinary.media.graphics.geography.map.racetrack.CustomMapGeneratorBase_Package;
+with org.allbinary.media.graphics.geography.map.racetrack.CustomMapGeneratorBase_Package_References;
 with org.allbinary.media.graphics.geography.map.racetrack.BasicGeographicMapFactory_Package; use org.allbinary.media.graphics.geography.map.racetrack.BasicGeographicMapFactory_Package;
 with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackInfo_Package; use org.allbinary.media.graphics.geography.map.racetrack.RaceTrackInfo_Package;
+with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackInfo_Package_References;
 with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackData_Package; use org.allbinary.media.graphics.geography.map.racetrack.RaceTrackData_Package;
+with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackData_Package_References;
 with org.allbinary.media.graphics.geography.map.racetrack.AllBinaryTiledLayerFactoryInterface_Package; use org.allbinary.media.graphics.geography.map.racetrack.AllBinaryTiledLayerFactoryInterface_Package;
+with org.allbinary.media.graphics.geography.map.racetrack.AllBinaryTiledLayerFactoryInterface_Package_References;
 with org.allbinary.media.graphics.geography.map.racetrack.CustomMapGeneratorBaseFactory_Package; use org.allbinary.media.graphics.geography.map.racetrack.CustomMapGeneratorBaseFactory_Package;
+with org.allbinary.media.graphics.geography.map.racetrack.CustomMapGeneratorBaseFactory_Package_References;
 with org.allbinary.media.graphics.geography.map.racetrack.AllBinaryTiledLayerFactoryInterface_Package;
-with org.allbinary.media.graphics.geography.map.racetrack.BaseRaceTrackGeographicMap_Package;
 with org.allbinary.media.graphics.geography.map.racetrack.BasicGeographicMapFactory_Package;
 with org.allbinary.media.graphics.geography.map.racetrack.CustomMapGeneratorBase_Package;
 with org.allbinary.media.graphics.geography.map.racetrack.CustomMapGeneratorBaseFactory_Package;

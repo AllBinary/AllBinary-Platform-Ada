@@ -15,6 +15,7 @@
 
 with org.allbinary.android.ActivityFractureUtil_Package; use org.allbinary.android.ActivityFractureUtil_Package;
 with android.app.Activity_Package; use android.app.Activity_Package;
+with android.app.Activity_Package_References;
 with android.view.WindowManager_Package; use android.view.WindowManager_Package;
 
 package body org.allbinary.android.api1.ActivityFractureUtilAPI1_Package is

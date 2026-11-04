@@ -18,45 +18,42 @@ with org.allbinary.dom.DomHelper_Package; use org.allbinary.dom.DomHelper_Packag
 with org.allbinary.graphics.j2me.StatusFactory_Package; use org.allbinary.graphics.j2me.StatusFactory_Package;
 with org.allbinary.graphics.j2me.workarea.canvas.CanvasDom_Package; use org.allbinary.graphics.j2me.workarea.canvas.CanvasDom_Package;
 with org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package; use org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package;
+with org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package_References;
 with org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEvent_Package; use org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEvent_Package;
+with org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEvent_Package_References;
 with org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventListener_Package; use org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventListener_Package;
 with org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventService_Package; use org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventService_Package;
 with org.allbinary.graphics.j2me.workarea.properties.PropertiesJPanel_Package; use org.allbinary.graphics.j2me.workarea.properties.PropertiesJPanel_Package;
+with org.allbinary.graphics.j2me.workarea.properties.PropertiesJPanel_Package_References;
 with org.allbinary.graphics.j2me.workarea.tools.ToolJPanel_Package; use org.allbinary.graphics.j2me.workarea.tools.ToolJPanel_Package;
 with org.allbinary.log.LOGGING_Package; use org.allbinary.log.LOGGING_Package;
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
+with org.w3c.dom.Document_Package_References;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.allbinary.graphics.j2me.workarea.WorkAreaJTreeJPanel_Package; use org.allbinary.graphics.j2me.workarea.WorkAreaJTreeJPanel_Package;
+with org.allbinary.graphics.j2me.workarea.WorkAreaJTreeJPanel_Package_References;
 with org.allbinary.graphics.j2me.workarea.Component_Package; use org.allbinary.graphics.j2me.workarea.Component_Package;
 with org.allbinary.graphics.j2me.workarea.Dimension_Package; use org.allbinary.graphics.j2me.workarea.Dimension_Package;
+with org.allbinary.graphics.j2me.workarea.Dimension_Package_References;
 with org.allbinary.graphics.j2me.workarea.WorkAreaDom_Package; use org.allbinary.graphics.j2me.workarea.WorkAreaDom_Package;
+with org.allbinary.graphics.j2me.workarea.WorkAreaDom_Package_References;
 with org.allbinary.graphics.j2me.workarea.GridLayout_Package; use org.allbinary.graphics.j2me.workarea.GridLayout_Package;
 with org.allbinary.graphics.j2me.workarea.GridBagLayout_Package; use org.allbinary.graphics.j2me.workarea.GridBagLayout_Package;
 with org.allbinary.graphics.j2me.workarea.GridBagConstraints_Package; use org.allbinary.graphics.j2me.workarea.GridBagConstraints_Package;
 with java.lang.Thread_Package; use java.lang.Thread_Package;
-with org.allbinary.graphics.j2me.workarea.canvas.CanvasDom_Package;
-with org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package;
 with org.allbinary.graphics.j2me.workarea.canvas.CanvasTreeLabel_Package;
-with org.allbinary.dom.DomHelper_Package;
 with org.allbinary.graphics.j2me.workarea.tools.GraphicItemInterface_Package;
 with org.allbinary.graphics.j2me.workarea.canvas.Grid_Package;
 with org.allbinary.graphics.j2me.workarea.canvas.IntegerDimension_Package;
-with org.allbinary.log.LOGGING_Package;
-with org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEvent_Package;
-with org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventListener_Package;
-with org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventService_Package;
 with org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEvent_Package;
 with org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEventListener_Package;
 with org.allbinary.graphics.j2me.workarea.tools.Points_Package;
 with org.allbinary.graphics.j2me.workarea.tools.PointsInterface_Package;
-with org.allbinary.graphics.j2me.workarea.properties.PropertiesJPanel_Package;
-with org.allbinary.graphics.j2me.StatusFactory_Package;
-with org.allbinary.graphics.j2me.workarea.tools.ToolJPanel_Package;
 with org.allbinary.graphics.j2me.workarea.WorkAreaDom_Package;
-with org.allbinary.graphics.j2me.workarea.WorkAreaJPanelInterface_Package;
 with org.allbinary.graphics.j2me.workarea.WorkAreaJTreeJPanel_Package;
 
 package body org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package is
@@ -342,13 +339,13 @@ package body org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package is
 
    procedure deselect (This : in out WorkAreaJPanel) is
    begin
-        JPanel (This).setVisible (False);
+        JPanel_Package.JPanel (This).setVisible (False);
    end deselect;
 
    procedure select_Id (This : in out WorkAreaJPanel) is
       component : Component_Access;
    begin
-        JPanel (This).setVisible (True);
+        JPanel_Package.JPanel (This).setVisible (True);
         if (This.canvasHolderJPanel.getComponentCount) = (1) then
             component := This.canvasHolderJPanel.getComponent (0);
             if (component) /= (null) then

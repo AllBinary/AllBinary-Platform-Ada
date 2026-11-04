@@ -41,34 +41,34 @@ package body org.allbinary.util.ABStack_Package is
    function push (This : in out ABStack; item_Param : access Java_Object'Class) return Java_Object_Access is
       item : constant Java_Object_Access := Java_Object_Access (item_Param);
    begin
-        return Stack (This).push (item);
+        return Stack_Package.Stack (This).push (item);
    end push;
 
    function pop (This : in out ABStack) return Java_Object_Access is
    begin
-        return Stack (This).pop;
+        return Stack_Package.Stack (This).pop;
    end pop;
 
    function peek (This : in out ABStack) return Java_Object_Access is
    begin
-        return Stack (This).peek;
+        return Stack_Package.Stack (This).peek;
    end peek;
 
    function empty (This : in out ABStack) return Boolean is
    begin
-        return Stack (This).empty;
+        return Stack_Package.Stack (This).empty;
    end empty;
 
    function search (This : in out ABStack; obj_Param : access Java_Object'Class) return Integer is
       obj : constant Java_Object_Access := Java_Object_Access (obj_Param);
    begin
-        return Stack (This).search (obj);
+        return Stack_Package.Stack (This).search (obj);
    end search;
 
    function removeElement (This : in out ABStack; obj_Param : access Java_Object'Class) return Boolean is
       obj : constant Java_Object_Access := Java_Object_Access (obj_Param);
    begin
-        return Stack (This).removeElement (obj);
+        return Stack_Package.Stack (This).removeElement (obj);
    end removeElement;
 
    procedure push (This : in out ABStack; item_Param : access Java_Object'Class) is

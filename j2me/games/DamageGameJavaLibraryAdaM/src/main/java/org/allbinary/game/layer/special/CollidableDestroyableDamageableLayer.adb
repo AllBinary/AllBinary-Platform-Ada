@@ -14,35 +14,42 @@
 
 
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
 with org.allbinary.game.collision.CollidableNeverCollideBehaviorFactory_Package; use org.allbinary.game.collision.CollidableNeverCollideBehaviorFactory_Package;
 with org.allbinary.game.combat.damage.DamageableInterface_Package; use org.allbinary.game.combat.damage.DamageableInterface_Package;
 with org.allbinary.game.combat.destroy.DestroyableInterface_Package; use org.allbinary.game.combat.destroy.DestroyableInterface_Package;
 with org.allbinary.game.combat.destroy.event.DestroyedEvent_Package; use org.allbinary.game.combat.destroy.event.DestroyedEvent_Package;
+with org.allbinary.game.combat.destroy.event.DestroyedEvent_Package_References;
 with org.allbinary.game.identification.BasicGroupFactory_Package; use org.allbinary.game.identification.BasicGroupFactory_Package;
 with org.allbinary.game.identification.Group_Package; use org.allbinary.game.identification.Group_Package;
+with org.allbinary.game.identification.Group_Package_References;
 with org.allbinary.game.input.event.GameKeyEvent_Package; use org.allbinary.game.input.event.GameKeyEvent_Package;
+with org.allbinary.game.input.event.GameKeyEvent_Package_References;
 with org.allbinary.game.layer.AllBinaryGameLayerManager_Package; use org.allbinary.game.layer.AllBinaryGameLayerManager_Package;
+with org.allbinary.game.layer.AllBinaryGameLayerManager_Package_References;
 with org.allbinary.game.layer.CollidableCompositeLayer_Package; use org.allbinary.game.layer.CollidableCompositeLayer_Package;
 with org.allbinary.game.layer.pickup.PickedUpLayerInterfaceFactoryInterface_Package; use org.allbinary.game.layer.pickup.PickedUpLayerInterfaceFactoryInterface_Package;
+with org.allbinary.game.layer.pickup.PickedUpLayerInterfaceFactoryInterface_Package_References;
 with org.allbinary.game.layer.pickup.PickupBehavior_Package; use org.allbinary.game.layer.pickup.PickupBehavior_Package;
+with org.allbinary.game.layer.pickup.PickupBehavior_Package_References;
 with org.allbinary.game.layer.pickup.PickupCompositeInterface_Package; use org.allbinary.game.layer.pickup.PickupCompositeInterface_Package;
 with org.allbinary.game.part.PartInterface_Package; use org.allbinary.game.part.PartInterface_Package;
+with org.allbinary.game.part.PartInterface_Package_References;
 with org.allbinary.game.part.PartInterfaceUtil_Package; use org.allbinary.game.part.PartInterfaceUtil_Package;
 with org.allbinary.graphics.Rectangle_Package; use org.allbinary.graphics.Rectangle_Package;
+with org.allbinary.graphics.Rectangle_Package_References;
 with org.allbinary.graphics.RectangleFactory_Package; use org.allbinary.graphics.RectangleFactory_Package;
 with org.allbinary.layer.AllBinaryLayerManager_Package; use org.allbinary.layer.AllBinaryLayerManager_Package;
+with org.allbinary.layer.AllBinaryLayerManager_Package_References;
 with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package_References;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.math.PositionStrings_Package; use org.allbinary.math.PositionStrings_Package;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.view.ViewPositionBase_Package; use org.allbinary.view.ViewPositionBase_Package;
-with org.allbinary.game.combat.damage.DamageableInterface_Package;
-with org.allbinary.game.combat.destroy.DestroyableInterface_Package;
-with org.allbinary.game.combat.destroy.event.DestroyedEvent_Package;
-with org.allbinary.game.layer.pickup.PickupBehavior_Package;
+with org.allbinary.view.ViewPositionBase_Package_References;
 with org.allbinary.game.layer.pickup.PickupBehaviorInterface_Package;
-with org.allbinary.game.layer.pickup.PickupCompositeInterface_Package;
 
 package body org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package is
 
@@ -237,7 +244,7 @@ package body org.allbinary.game.layer.special.CollidableDestroyableDamageableLay
    procedure paint (This : in out CollidableDestroyableDamageableLayer; graphics_Param : access Graphics_Package.Graphics'Class) is
       graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
-        CollidableCompositeLayer (This).paint (graphics);
+        CollidableCompositeLayer_Package.CollidableCompositeLayer (This).paint (graphics);
    end paint;
 
    --  throws Exception
@@ -479,7 +486,7 @@ package body org.allbinary.game.layer.special.CollidableDestroyableDamageableLay
    begin
         commonSeps := CommonSeps_Package.getInstance;
         positionStrings := PositionStrings_Package.getInstance;
-        CollidableCompositeLayer (This).toStringAppend (stringBuffer);
+        CollidableCompositeLayer_Package.CollidableCompositeLayer (This).toStringAppend (stringBuffer);
         stringBuffer.append (commonSeps.NEW_LINE);
         groupInterfaceArray := CollidableDestroyableDamageableLayer'Class (This).getGroupInterface;
         size := groupInterfaceArray'Length;

@@ -15,12 +15,14 @@
 
 with jsinterop.annotations.JsType_Package; use jsinterop.annotations.JsType_Package;
 with org.allbinary.game.rand.MyRandomFactory_Package; use org.allbinary.game.rand.MyRandomFactory_Package;
+with org.allbinary.game.rand.MyRandomFactory_Package_References;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
 with org.allbinary.string_Id.CommonPhoneStrings_Package; use org.allbinary.string_Id.CommonPhoneStrings_Package;
 with jsinterop.annotations.JsMethod_Package; use jsinterop.annotations.JsMethod_Package;
 with jsinterop.annotations.JsProperty_Package; use jsinterop.annotations.JsProperty_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.util.ImmutableBasicArrayList_Package; use org.allbinary.util.ImmutableBasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.util.ArrayUtil_Package;
@@ -28,6 +30,7 @@ with org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.util.BasicArrayListS_Package;
 with org.allbinary.util.ImmutableBasicArrayList_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 
 package body org.allbinary.util.BasicArrayListUtil_Package is
 

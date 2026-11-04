@@ -14,12 +14,12 @@
 
 
 with javax.microedition.midlet.MIDlet_Package; use javax.microedition.midlet.MIDlet_Package;
+with javax.microedition.midlet.MIDlet_Package_References;
 with org.allbinary.AppletUtil_Package; use org.allbinary.AppletUtil_Package;
 with org.allbinary.J2MEUtil_Package; use org.allbinary.J2MEUtil_Package;
 with org.allbinary.canvas.Processor_Package; use org.allbinary.canvas.Processor_Package;
+with org.allbinary.canvas.Processor_Package_References;
 with org.allbinary.midlet.MidletExitProcessor_Package; use org.allbinary.midlet.MidletExitProcessor_Package;
-with org.allbinary.AppletUtil_Package;
-with org.allbinary.J2MEUtil_Package;
 with org.allbinary.midlet.MidletExitProcessor_Package;
 
 package body org.allbinary.midlet.MidletExitProcessorFactory_Package is

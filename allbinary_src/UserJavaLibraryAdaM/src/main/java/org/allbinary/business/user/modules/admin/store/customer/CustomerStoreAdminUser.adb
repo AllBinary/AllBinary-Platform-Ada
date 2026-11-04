@@ -16,7 +16,7 @@
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.business.user.modules.User_Package; use org.allbinary.business.user.modules.User_Package;
 with org.allbinary.logic.communication.http.request.session.WeblisketSessionInterface_Package; use org.allbinary.logic.communication.http.request.session.WeblisketSessionInterface_Package;
-with org.allbinary.business.user.modules.User_Package;
+with org.allbinary.logic.communication.http.request.session.WeblisketSessionInterface_Package_References;
 
 package body org.allbinary.business.user.modules.admin.store.customer.CustomerStoreAdminUser_Package is
 
@@ -64,7 +64,7 @@ package body org.allbinary.business.user.modules.admin.store.customer.CustomerSt
    procedure validateSession (This : in out CustomerStoreAdminUser; weblisketSession_Param : access WeblisketSessionInterface_Package.WeblisketSessionInterface'Class) is
       weblisketSession : constant WeblisketSessionInterface_Access := WeblisketSessionInterface_Access (weblisketSession_Param);
    begin
-        User (This).validateSession (weblisketSession);
+        User_Package.User (This).validateSession (weblisketSession);
         CustomerStoreAdminUser'Class (This).updateSession (weblisketSession);
    end validateSession;
 

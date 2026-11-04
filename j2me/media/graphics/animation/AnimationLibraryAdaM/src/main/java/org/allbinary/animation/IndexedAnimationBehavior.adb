@@ -13,7 +13,6 @@
 --  Generated Code Do Not Modify
 
 
-with org.allbinary.animation.AnimationBehavior_Package;
 
 package body org.allbinary.animation.IndexedAnimationBehavior_Package is
 

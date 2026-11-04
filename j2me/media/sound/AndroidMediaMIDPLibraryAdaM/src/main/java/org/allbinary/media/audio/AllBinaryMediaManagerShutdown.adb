@@ -15,6 +15,7 @@
 
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.media.audio.SoundsFactoryInterface_Package; use org.allbinary.media.audio.SoundsFactoryInterface_Package;
+with org.allbinary.media.audio.SoundsFactoryInterface_Package_References;
 
 package body org.allbinary.media.audio.AllBinaryMediaManagerShutdown_Package is
 

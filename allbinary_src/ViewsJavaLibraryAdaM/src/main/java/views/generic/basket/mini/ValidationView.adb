@@ -16,9 +16,9 @@
 with org.allbinary.globals.MESSAGES_Package; use org.allbinary.globals.MESSAGES_Package;
 with org.allbinary.logic.control.validate.ValidationComponentInterface_Package; use org.allbinary.logic.control.validate.ValidationComponentInterface_Package;
 with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
+with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package_References;
 with views.HttpComponentView_Package;
 with views.business.context.modules.storefront.HttpStoreComponentView_Package;
-with views.generic_Id.basket.mini.MiniBasketView_Package;
 
 package body views.generic_Id.basket.mini.ValidationView_Package is
 

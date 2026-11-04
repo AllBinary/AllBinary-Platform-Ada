@@ -20,8 +20,9 @@ with org.allbinary.logic.visual.dhtml.style.StyleData_Package; use org.allbinary
 with org.allbinary.logic.visual.dhtml.style.StylesData_Package; use org.allbinary.logic.visual.dhtml.style.StylesData_Package;
 with org.allbinary.logic.visual.dhtml.style.color.ColorsView_Package; use org.allbinary.logic.visual.dhtml.style.color.ColorsView_Package;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
+with org.w3c.dom.Document_Package_References;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
-with org.allbinary.logic.visual.transform.template.customizer.includes.style.css.template.retail.CssStyleValidation_Package;
+with org.w3c.dom.Node_Package_References;
 
 package body org.allbinary.logic.visual.transform.template.customizer.includes.style.css.template.retail.EditCssStyleValidation_Package is
 
@@ -96,12 +97,12 @@ package body org.allbinary.logic.visual.transform.template.customizer.includes.s
 
    function isValid (This : in out EditCssStyleValidation) return Boolean is
    begin
-        return CssStyleValidation (This).isValid;
+        return CssStyleValidation_Package.CssStyleValidation (This).isValid;
    end isValid;
 
    function validationInfo (This : in out EditCssStyleValidation) return Unbounded_String is
    begin
-        return CssStyleValidation (This).validationInfo;
+        return CssStyleValidation_Package.CssStyleValidation (This).validationInfo;
    end validationInfo;
 
    function toValidationInfoDoc (This : in out EditCssStyleValidation) return Document_Access is

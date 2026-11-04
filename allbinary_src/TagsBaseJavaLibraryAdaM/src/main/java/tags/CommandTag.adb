@@ -14,7 +14,7 @@
 
 
 with tags.TagStrings_Package; use tags.TagStrings_Package;
-with tags.CustomTagSupport_Package;
+with tags.TagStrings_Package_References;
 with tags.TagStrings_Package;
 
 package body tags.CommandTag_Package is

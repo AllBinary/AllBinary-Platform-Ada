@@ -14,14 +14,17 @@
 
 
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
 with org.allbinary.game.input.PlayerGameInput_Package; use org.allbinary.game.input.PlayerGameInput_Package;
 with org.allbinary.game.input.event.GameKeyEvent_Package; use org.allbinary.game.input.event.GameKeyEvent_Package;
+with org.allbinary.game.input.event.GameKeyEvent_Package_References;
 with org.allbinary.game.score.displayable.HighScoresCanvas_Package; use org.allbinary.game.score.displayable.HighScoresCanvas_Package;
+with org.allbinary.game.score.displayable.HighScoresCanvas_Package_References;
+with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.game.layer.AllBinaryGameLayerManager_Package;
 with org.allbinary.game.score.HighScoreCommandsBaseFactory_Package;
 with org.allbinary.game.score.HighScoreCommandsFactory_Package;
-with org.allbinary.game.score.displayable.HighScoresCanvas_Package;
 with org.allbinary.game.score.HighScoresCanvasInputProcessorFactoryInterface_Package;
 
 package body org.allbinary.game.score.HighScoresCanvasInputProcessor_Package is
@@ -92,21 +95,21 @@ package body org.allbinary.game.score.HighScoresCanvasInputProcessor_Package is
    procedure onPressGameKeyEvent (This : in out HighScoresCanvasInputProcessor; gameKeyEvent_Param : access GameKeyEvent_Package.GameKeyEvent'Class) is
       gameKeyEvent : constant GameKeyEvent_Access := GameKeyEvent_Access (gameKeyEvent_Param);
    begin
-        PlayerGameInput (This).onPressGameKeyEvent (gameKeyEvent);
+        PlayerGameInput_Package.PlayerGameInput (This).onPressGameKeyEvent (gameKeyEvent);
         HighScoresCanvasInputProcessor'Class (This).update;
    end onPressGameKeyEvent;
 
    procedure onDownGameKeyEvent (This : in out HighScoresCanvasInputProcessor; gameKeyEvent_Param : access GameKeyEvent_Package.GameKeyEvent'Class) is
       gameKeyEvent : constant GameKeyEvent_Access := GameKeyEvent_Access (gameKeyEvent_Param);
    begin
-        PlayerGameInput (This).onDownGameKeyEvent (gameKeyEvent);
+        PlayerGameInput_Package.PlayerGameInput (This).onDownGameKeyEvent (gameKeyEvent);
         HighScoresCanvasInputProcessor'Class (This).update;
    end onDownGameKeyEvent;
 
    procedure onUpGameKeyEvent (This : in out HighScoresCanvasInputProcessor; gameKeyEvent_Param : access GameKeyEvent_Package.GameKeyEvent'Class) is
       gameKeyEvent : constant GameKeyEvent_Access := GameKeyEvent_Access (gameKeyEvent_Param);
    begin
-        PlayerGameInput (This).onUpGameKeyEvent (gameKeyEvent);
+        PlayerGameInput_Package.PlayerGameInput (This).onUpGameKeyEvent (gameKeyEvent);
         HighScoresCanvasInputProcessor'Class (This).update;
    end onUpGameKeyEvent;
 

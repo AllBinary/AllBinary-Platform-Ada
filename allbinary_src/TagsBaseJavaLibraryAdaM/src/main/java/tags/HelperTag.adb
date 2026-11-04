@@ -14,11 +14,11 @@
 
 
 with admin.taghelpers.TagHelperFactoryInterface_Package; use admin.taghelpers.TagHelperFactoryInterface_Package;
+with admin.taghelpers.TagHelperFactoryInterface_Package_References;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with tags.CommandTag_Package;
 with tags.CustomTagSupport_Package;
-with tags.PropertiesTag_Package;
-with admin.taghelpers.TagHelperFactoryInterface_Package;
 with tags.TagStrings_Package;
 
 package body tags.HelperTag_Package is
@@ -92,7 +92,7 @@ package body tags.HelperTag_Package is
             This.logUtil.putF (To_Unbounded_String ("Tag Ended"), HelperTag_Access'(This'Unchecked_Access), To_Unbounded_String ("doEndTag"));
         end if;
         This.anyType := null;
-        return PropertiesTag (This).doEndTag;
+        return PropertiesTag_Package.PropertiesTag (This).doEndTag;
    end doEndTag;
 
 end tags.HelperTag_Package;

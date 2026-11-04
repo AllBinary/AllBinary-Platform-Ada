@@ -18,6 +18,7 @@ with org.allbinary.graphics.canvas.transition.progress.ProgressCanvasFactory_Pac
 with org.allbinary.graphics.paint.PaintableComposite_Package; use org.allbinary.graphics.paint.PaintableComposite_Package;
 with org.allbinary.graphics.paint.PaintableInterface_Package; use org.allbinary.graphics.paint.PaintableInterface_Package;
 with org.allbinary.game.displayable.canvas.DemoCanvas_Package; use org.allbinary.game.displayable.canvas.DemoCanvas_Package;
+with org.allbinary.game.displayable.canvas.DemoCanvas_Package_References;
 with org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package;
 with org.allbinary.game.displayable.canvas.AllBinaryGameCanvasInterface_Package;
 with org.allbinary.game.layer.AllBinaryGameLayerManager_Package;

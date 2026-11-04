@@ -14,30 +14,40 @@
 
 
 with org.allbinary.animation.caption.CaptionAnimationHelperBase_Package; use org.allbinary.animation.caption.CaptionAnimationHelperBase_Package;
+with org.allbinary.animation.caption.CaptionAnimationHelperBase_Package_References;
 with org.allbinary.game.identification.Group_Package; use org.allbinary.game.identification.Group_Package;
+with org.allbinary.game.identification.Group_Package_References;
 with org.allbinary.game.layer.waypoint.Waypoint2LogHelper_Package; use org.allbinary.game.layer.waypoint.Waypoint2LogHelper_Package;
+with org.allbinary.game.layer.waypoint.Waypoint2LogHelper_Package_References;
 with org.allbinary.game.layer.waypoint.WaypointLogHelper_Package; use org.allbinary.game.layer.waypoint.WaypointLogHelper_Package;
+with org.allbinary.game.layer.waypoint.WaypointLogHelper_Package_References;
 with org.allbinary.game.layer.waypoint.WaypointRunnableLogHelper_Package; use org.allbinary.game.layer.waypoint.WaypointRunnableLogHelper_Package;
+with org.allbinary.game.layer.waypoint.WaypointRunnableLogHelper_Package_References;
 with org.allbinary.game.tracking.TrackingEvent_Package; use org.allbinary.game.tracking.TrackingEvent_Package;
+with org.allbinary.game.tracking.TrackingEvent_Package_References;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
+with org.allbinary.layer.AllBinaryLayer_Package_References;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellHistory_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellHistory_Package;
+with org.allbinary.media.graphics.geography.map.GeographicMapCellHistory_Package_References;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
+with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package_References;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.game.layer.GeographicMapCellPositionAreaBase_Package; use org.allbinary.game.layer.GeographicMapCellPositionAreaBase_Package;
+with org.allbinary.game.layer.GeographicMapCellPositionAreaBase_Package_References;
 with org.allbinary.game.layer.SelectionHudPaintable_Package; use org.allbinary.game.layer.SelectionHudPaintable_Package;
+with org.allbinary.game.layer.SelectionHudPaintable_Package_References;
 with org.allbinary.game.layer.RTSLayer2LogHelper_Package; use org.allbinary.game.layer.RTSLayer2LogHelper_Package;
+with org.allbinary.game.layer.RTSLayer2LogHelper_Package_References;
 with org.allbinary.game.layer.WaypointBehaviorBase_Package; use org.allbinary.game.layer.WaypointBehaviorBase_Package;
+with org.allbinary.game.layer.WaypointBehaviorBase_Package_References;
 with org.allbinary.game.layer.GeographicMapCellPositionAreaBase_Package;
 with org.allbinary.game.layer.GeographicMapCellPositionAreaInterface_Package;
-with org.allbinary.game.layer.PathFindingLayerInterface_Package;
 with org.allbinary.game.layer.RTSLayer2LogHelper_Package;
 with org.allbinary.game.layer.SelectionHudPaintable_Package;
-with org.allbinary.game.layer.waypoint.Waypoint2LogHelper_Package;
 with org.allbinary.game.layer.waypoint.WaypointBase_Package;
 with org.allbinary.game.layer.WaypointBehaviorBase_Package;
 with org.allbinary.game.layer.waypoint.WaypointLayerInterface_Package;
-with org.allbinary.game.layer.waypoint.WaypointLogHelper_Package;
-with org.allbinary.game.layer.waypoint.WaypointRunnableLogHelper_Package;
 
 package body org.allbinary.game.layer.NullPathFindingLayer_Package is
 

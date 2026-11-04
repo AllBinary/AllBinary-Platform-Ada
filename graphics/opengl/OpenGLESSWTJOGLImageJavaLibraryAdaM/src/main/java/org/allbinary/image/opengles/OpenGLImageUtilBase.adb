@@ -15,8 +15,9 @@
 
 with java.io.InputStream_Package; use java.io.InputStream_Package;
 with org.allbinary.graphics.OpenGLBitmap_Package; use org.allbinary.graphics.OpenGLBitmap_Package;
+with org.allbinary.graphics.OpenGLBitmap_Package_References;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
-with org.allbinary.graphics.OpenGLBitmap_Package;
+with org.allbinary.graphics.color.BasicColor_Package_References;
 
 package body org.allbinary.image.opengles.OpenGLImageUtilBase_Package is
 

@@ -15,11 +15,13 @@
 
 with javax.microedition.lcdui.Font_Package; use javax.microedition.lcdui.Font_Package;
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
 with org.allbinary.game.graphics.hud.BasicHud_Package; use org.allbinary.game.graphics.hud.BasicHud_Package;
 with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
 with org.allbinary.graphics.paint.PaintableInterface_Package; use org.allbinary.graphics.paint.PaintableInterface_Package;
 with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
 with org.allbinary.logic.math.PrimitiveLongUtil_Package; use org.allbinary.logic.math.PrimitiveLongUtil_Package;
+with org.allbinary.logic.math.PrimitiveLongUtil_Package_References;
 
 package body org.allbinary.game.ag.layer.hud.basic.level.LevelHudWidget_Package is
 
@@ -93,7 +95,7 @@ package body org.allbinary.game.ag.layer.hud.basic.level.LevelHudWidget_Package 
         font := graphics.getFont;
         This.updateMaxWidth := (font.getSize) * (4);
         This.offset := (font.charsWidth (This.levelString, 0, This.levelString'Length)) + (font.getSize);
-        BasicHud (This).updateMeasurement (graphics);
+        BasicHud_Package.BasicHud (This).updateMeasurement (graphics);
    end updateMeasurement;
 
    procedure update (This : in out LevelHudWidget) is
@@ -135,7 +137,7 @@ package body org.allbinary.game.ag.layer.hud.basic.level.LevelHudWidget_Package 
    procedure paint (This : in out LevelHudWidget; graphics_Param : access Graphics_Package.Graphics'Class) is
       graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
-        BasicHud (This).paintDX (graphics, This.levelString, 0, This.levelString'Length, This.levelNumberCharArray, 0, This.levelNumberTotalDigits, This.offset);
+        BasicHud_Package.BasicHud (This).paintDX (graphics, This.levelString, 0, This.levelString'Length, This.levelNumberCharArray, 0, This.levelNumberTotalDigits, This.offset);
    end paint;
 
    procedure paintThreed (This : in out LevelHudWidget; graphics_Param : access Graphics_Package.Graphics'Class) is

@@ -15,6 +15,7 @@
 
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.game.GameType_Package; use org.allbinary.game.GameType_Package;
+with org.allbinary.game.GameType_Package_References;
 with org.allbinary.game.GameType_Package;
 
 package body org.allbinary.game.GameTypeFactory_Package is

@@ -13,7 +13,6 @@
 --  Generated Code Do Not Modify
 
 
-with org.allbinary.graphics.ScreenListenerInterface_Package;
 
 package body org.allbinary.graphics.ScreenEmptyListener_Package is
 

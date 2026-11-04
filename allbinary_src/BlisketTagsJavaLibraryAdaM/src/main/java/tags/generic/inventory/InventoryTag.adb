@@ -14,14 +14,31 @@
 
 
 with org.allbinary.logic.communication.http.request.AbResponseHandler_Package; use org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.system.security.licensing.LicensingException_Package; use org.allbinary.logic.system.security.licensing.LicensingException_Package;
 with taghelpers.InventoryHelperFactory_Package; use taghelpers.InventoryHelperFactory_Package;
+with tags.StoreValidationTransformTag_Package; use tags.StoreValidationTransformTag_Package;
+with tags.ModifyTag_Package;
+with tags.transform.info.TransformInfoTag_Package;
+with tags.TransformTag_Package;
+with tags.ValidationTransformTag_Package;
 
 package body tags.generic_Id.inventory.InventoryTag_Package is
 
    package AbResponseHandler_Package renames Standard.org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
    package LicensingException_Package renames Standard.org.allbinary.logic.system.security.licensing.LicensingException_Package;
    package InventoryHelperFactory_Package renames Standard.taghelpers.InventoryHelperFactory_Package;
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   function "=" (Left, Right : LogUtil_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
    procedure Initialize_Fields (This : in out InventoryTag'Class) is
    begin
       null;
@@ -108,7 +125,7 @@ package body tags.generic_Id.inventory.InventoryTag_Package is
                 elsif (InventoryTag'Class (This).getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.VIEW)) = (0) then
                     InventoryTag'Class (This).setName (To_Unbounded_String ("Basic Inventory View"));
                     InventoryTag'Class (This).setObjectFile (To_Unbounded_String ("views.generic.inventory.AutoValidationInventoryView"));
-                    return StoreValidationTransformTag (This).doStartTag;
+                    return StoreValidationTransformTag_Package.StoreValidationTransformTag (This).doStartTag;
                 else
                     Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("No Such View Command: ") & Java_Image (InventoryTag'Class (This).getCommand)));
                 end if;

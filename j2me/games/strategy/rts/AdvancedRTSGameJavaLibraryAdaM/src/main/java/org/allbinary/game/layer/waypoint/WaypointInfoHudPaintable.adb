@@ -15,11 +15,15 @@
 
 with javax.microedition.lcdui.Font_Package; use javax.microedition.lcdui.Font_Package;
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
 with org.allbinary.game.layer.NullPathFindingLayer_Package; use org.allbinary.game.layer.NullPathFindingLayer_Package;
 with org.allbinary.game.layer.PathFindingLayerInterface_Package; use org.allbinary.game.layer.PathFindingLayerInterface_Package;
+with org.allbinary.game.layer.PathFindingLayerInterface_Package_References;
 with org.allbinary.game.layer.RTSLayer_Package; use org.allbinary.game.layer.RTSLayer_Package;
+with org.allbinary.game.layer.RTSLayer_Package_References;
 with org.allbinary.game.layer.SelectionHudPaintable_Package; use org.allbinary.game.layer.SelectionHudPaintable_Package;
 with org.allbinary.graphics.draw.KeyValueDrawString_Package; use org.allbinary.graphics.draw.KeyValueDrawString_Package;
+with org.allbinary.graphics.draw.KeyValueDrawString_Package_References;
 
 package body org.allbinary.game.layer.waypoint.WaypointInfoHudPaintable_Package is
 
@@ -92,7 +96,7 @@ package body org.allbinary.game.layer.waypoint.WaypointInfoHudPaintable_Package 
       graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
       font : Font_Access;
    begin
-        SelectionHudPaintable (This).updateMeasurement (graphics);
+        SelectionHudPaintable_Package.SelectionHudPaintable (This).updateMeasurement (graphics);
         font := graphics.getFont;
         This.textLine2Y := ((This.y) + (font.getHeight));
    end updateMeasurement;
@@ -120,7 +124,7 @@ package body org.allbinary.game.layer.waypoint.WaypointInfoHudPaintable_Package 
    procedure paint (This : in out WaypointInfoHudPaintable; graphics_Param : access Graphics_Package.Graphics'Class) is
       graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
-        SelectionHudPaintable (This).paint (graphics);
+        SelectionHudPaintable_Package.SelectionHudPaintable (This).paint (graphics);
         This.keyvalueDrawString.paint (graphics, This.textLine2Y);
         WaypointInfoHudPaintable'Class (This).getAnimationInterface.paintXY (graphics, This.imageX, This.y);
    end paint;

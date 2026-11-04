@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+with admin.tags.TableTag_Package; use admin.tags.TableTag_Package;
 with taghelpers.transform.info.TransformInfoHelperFactory_Package; use taghelpers.transform.info.TransformInfoHelperFactory_Package;
 
 package body tags.transform.info.TransformInfoTableTag_Package is

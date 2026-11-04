@@ -14,8 +14,10 @@
 
 
 with org.allbinary.logic.system.os.OperatingSystemInterface_Package; use org.allbinary.logic.system.os.OperatingSystemInterface_Package;
+with org.allbinary.logic.system.os.OperatingSystemInterface_Package_References;
 with org.allbinary.logic.system.hardware.NoHardware_Package; use org.allbinary.logic.system.hardware.NoHardware_Package;
 with org.allbinary.logic.system.hardware.HardwareInterface_Package; use org.allbinary.logic.system.hardware.HardwareInterface_Package;
+with org.allbinary.logic.system.hardware.HardwareInterface_Package_References;
 
 package body org.allbinary.logic.system.hardware.HardwareFactory_Package is
 

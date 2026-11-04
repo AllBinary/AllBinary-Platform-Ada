@@ -14,6 +14,7 @@
 
 
 with javax.microedition.media.Control_Package; use javax.microedition.media.Control_Package;
+with javax.microedition.media.Control_Package_References;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.media.audio.NullControl_Package; use org.allbinary.media.audio.NullControl_Package;
 

@@ -18,10 +18,12 @@ with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Packag
 with org.allbinary.logic.communication.log.LogBuffer_Package; use org.allbinary.logic.communication.log.LogBuffer_Package;
 with org.allbinary.logic.communication.log.LogFactory_Package; use org.allbinary.logic.communication.log.LogFactory_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.io.StreamUtil_Package; use org.allbinary.logic.io.StreamUtil_Package;
 with org.allbinary.logic.io.path.AbPathData_Package; use org.allbinary.logic.io.path.AbPathData_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.logic.system.security.AbCryptUtil_Package; use org.allbinary.logic.system.security.AbCryptUtil_Package;
+with org.allbinary.logic.system.security.AbCryptUtil_Package_References;
 with org.allbinary.logic.system.loader.NoClassDefFoundError_Package; use org.allbinary.logic.system.loader.NoClassDefFoundError_Package;
 
 package body org.allbinary.logic.system.loader.AbeClassLoader_Package is
@@ -105,7 +107,7 @@ package body org.allbinary.logic.system.loader.AbeClassLoader_Package is
             if (myClass) = (null) then
                 begin
                     loadedWith := To_Unbounded_String ("super.loadClass");
-                    normalClass := ClassLoader (This).loadClass (name, resolve);
+                    normalClass := ClassLoader_Package.ClassLoader (This).loadClass (name, resolve);
                     if (normalClass) /= (null) then
                         return normalClass;
                     end if;
@@ -185,7 +187,7 @@ package body org.allbinary.logic.system.loader.AbeClassLoader_Package is
             if (myClass) = (null) then
                 begin
                     loadedWith := To_Unbounded_String ("super.loadClass");
-                    normalClass := ClassLoader (This).loadClass (name, resolve);
+                    normalClass := ClassLoader_Package.ClassLoader (This).loadClass (name, resolve);
                     if (normalClass) /= (null) then
                         return normalClass;
                     end if;

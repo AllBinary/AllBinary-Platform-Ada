@@ -14,18 +14,27 @@
 
 
 with org.allbinary.game.input.event.DownGameKeyEventHandler_Package; use org.allbinary.game.input.event.DownGameKeyEventHandler_Package;
+with org.allbinary.game.input.event.DownGameKeyEventHandler_Package_References;
 with org.allbinary.game.input.event.GameKeyEvent_Package; use org.allbinary.game.input.event.GameKeyEvent_Package;
 with org.allbinary.game.input.event.UpGameKeyEventHandler_Package; use org.allbinary.game.input.event.UpGameKeyEventHandler_Package;
+with org.allbinary.game.input.event.UpGameKeyEventHandler_Package_References;
 with org.allbinary.graphics.GPoint_Package; use org.allbinary.graphics.GPoint_Package;
 with org.allbinary.graphics.Rectangle_Package; use org.allbinary.graphics.Rectangle_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.math.RectangleCollisionUtil_Package; use org.allbinary.math.RectangleCollisionUtil_Package;
+with org.allbinary.math.RectangleCollisionUtil_Package_References;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.input.motion.button.BasicTouchInputFactory_Package; use org.allbinary.input.motion.button.BasicTouchInputFactory_Package;
 with org.allbinary.input.motion.button.TouchButtonInput_Package; use org.allbinary.input.motion.button.TouchButtonInput_Package;
+with org.allbinary.input.motion.button.TouchButtonInput_Package_References;
 with org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingleton_Package; use org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingleton_Package;
+with org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingleton_Package_References;
+with org.allbinary.input.motion.button.ReleaseHelper_Package; use org.allbinary.input.motion.button.ReleaseHelper_Package;
+with org.allbinary.input.motion.button.ReleaseHelper_Package_References;
 with org.allbinary.input.motion.button.CancelTouchButtonInputFactory_Package; use org.allbinary.input.motion.button.CancelTouchButtonInputFactory_Package;
 with org.allbinary.input.motion.button.TouchScreenFactory_Package; use org.allbinary.input.motion.button.TouchScreenFactory_Package;
+with org.allbinary.input.motion.button.MultitouchReleaseHelper_Package; use org.allbinary.input.motion.button.MultitouchReleaseHelper_Package;
 with org.allbinary.input.motion.button.TouchButtonFactory_Package; use org.allbinary.input.motion.button.TouchButtonFactory_Package;
 with org.allbinary.input.motion.button.TouchButton_Package; use org.allbinary.input.motion.button.TouchButton_Package;
 with org.allbinary.input.motion.button.BasicTouchInputFactory_Package;
@@ -99,6 +108,16 @@ package body org.allbinary.input.motion.button.TouchButtonRecognizer_Package is
    function "=" (Left, Right : CurrentlyPressedTouchButtonSingleton_Access_Array_Access_Array) return Boolean renames org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingleton_Package_References."=";
    subtype CurrentlyPressedTouchButtonSingleton_Access_Array_Access_Array_Access is org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingleton_Package_References.CurrentlyPressedTouchButtonSingleton_Access_Array_Access_Array_Access;
    function "=" (Left, Right : CurrentlyPressedTouchButtonSingleton_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingleton_Package_References."=";
+   subtype ReleaseHelper_Access is org.allbinary.input.motion.button.ReleaseHelper_Package_References.ReleaseHelper_Access;
+   function "=" (Left, Right : ReleaseHelper_Access) return Boolean renames org.allbinary.input.motion.button.ReleaseHelper_Package_References."=";
+   subtype ReleaseHelper_Access_Array is org.allbinary.input.motion.button.ReleaseHelper_Package_References.ReleaseHelper_Access_Array;
+   function "=" (Left, Right : ReleaseHelper_Access_Array) return Boolean renames org.allbinary.input.motion.button.ReleaseHelper_Package_References."=";
+   subtype ReleaseHelper_Access_Array_Access is org.allbinary.input.motion.button.ReleaseHelper_Package_References.ReleaseHelper_Access_Array_Access;
+   function "=" (Left, Right : ReleaseHelper_Access_Array_Access) return Boolean renames org.allbinary.input.motion.button.ReleaseHelper_Package_References."=";
+   subtype ReleaseHelper_Access_Array_Access_Array is org.allbinary.input.motion.button.ReleaseHelper_Package_References.ReleaseHelper_Access_Array_Access_Array;
+   function "=" (Left, Right : ReleaseHelper_Access_Array_Access_Array) return Boolean renames org.allbinary.input.motion.button.ReleaseHelper_Package_References."=";
+   subtype ReleaseHelper_Access_Array_Access_Array_Access is org.allbinary.input.motion.button.ReleaseHelper_Package_References.ReleaseHelper_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ReleaseHelper_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.motion.button.ReleaseHelper_Package_References."=";
    procedure Initialize_Fields (This : in out TouchButtonRecognizer'Class) is
    begin
       null;
@@ -228,18 +247,25 @@ end org.allbinary.input.motion.button.TouchButtonRecognizer_Package;
 
 
 with org.allbinary.game.input.event.DownGameKeyEventHandler_Package; use org.allbinary.game.input.event.DownGameKeyEventHandler_Package;
+with org.allbinary.game.input.event.DownGameKeyEventHandler_Package_References;
 with org.allbinary.game.input.event.GameKeyEvent_Package; use org.allbinary.game.input.event.GameKeyEvent_Package;
 with org.allbinary.game.input.event.UpGameKeyEventHandler_Package; use org.allbinary.game.input.event.UpGameKeyEventHandler_Package;
+with org.allbinary.game.input.event.UpGameKeyEventHandler_Package_References;
 with org.allbinary.graphics.GPoint_Package; use org.allbinary.graphics.GPoint_Package;
 with org.allbinary.graphics.Rectangle_Package; use org.allbinary.graphics.Rectangle_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.math.RectangleCollisionUtil_Package; use org.allbinary.math.RectangleCollisionUtil_Package;
+with org.allbinary.math.RectangleCollisionUtil_Package_References;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.input.motion.button.BasicTouchInputFactory_Package; use org.allbinary.input.motion.button.BasicTouchInputFactory_Package;
 with org.allbinary.input.motion.button.TouchButtonInput_Package; use org.allbinary.input.motion.button.TouchButtonInput_Package;
+with org.allbinary.input.motion.button.TouchButtonInput_Package_References;
 with org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingleton_Package; use org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingleton_Package;
+with org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingleton_Package_References;
 with org.allbinary.input.motion.button.CancelTouchButtonInputFactory_Package; use org.allbinary.input.motion.button.CancelTouchButtonInputFactory_Package;
 with org.allbinary.input.motion.button.TouchScreenFactory_Package; use org.allbinary.input.motion.button.TouchScreenFactory_Package;
+with org.allbinary.input.motion.button.MultitouchReleaseHelper_Package; use org.allbinary.input.motion.button.MultitouchReleaseHelper_Package;
 with org.allbinary.input.motion.button.TouchButtonFactory_Package; use org.allbinary.input.motion.button.TouchButtonFactory_Package;
 with org.allbinary.input.motion.button.TouchButton_Package; use org.allbinary.input.motion.button.TouchButton_Package;
 with org.allbinary.input.motion.button.BasicTouchInputFactory_Package;
@@ -357,16 +383,23 @@ end org.allbinary.input.motion.button.ReleaseHelper_Package;
 
 
 with org.allbinary.game.input.event.DownGameKeyEventHandler_Package; use org.allbinary.game.input.event.DownGameKeyEventHandler_Package;
+with org.allbinary.game.input.event.DownGameKeyEventHandler_Package_References;
 with org.allbinary.game.input.event.GameKeyEvent_Package; use org.allbinary.game.input.event.GameKeyEvent_Package;
 with org.allbinary.game.input.event.UpGameKeyEventHandler_Package; use org.allbinary.game.input.event.UpGameKeyEventHandler_Package;
+with org.allbinary.game.input.event.UpGameKeyEventHandler_Package_References;
 with org.allbinary.graphics.GPoint_Package; use org.allbinary.graphics.GPoint_Package;
 with org.allbinary.graphics.Rectangle_Package; use org.allbinary.graphics.Rectangle_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.math.RectangleCollisionUtil_Package; use org.allbinary.math.RectangleCollisionUtil_Package;
+with org.allbinary.math.RectangleCollisionUtil_Package_References;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.input.motion.button.BasicTouchInputFactory_Package; use org.allbinary.input.motion.button.BasicTouchInputFactory_Package;
 with org.allbinary.input.motion.button.TouchButtonInput_Package; use org.allbinary.input.motion.button.TouchButtonInput_Package;
+with org.allbinary.input.motion.button.TouchButtonInput_Package_References;
 with org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingleton_Package; use org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingleton_Package;
+with org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingleton_Package_References;
+with org.allbinary.input.motion.button.ReleaseHelper_Package; use org.allbinary.input.motion.button.ReleaseHelper_Package;
 with org.allbinary.input.motion.button.CancelTouchButtonInputFactory_Package; use org.allbinary.input.motion.button.CancelTouchButtonInputFactory_Package;
 with org.allbinary.input.motion.button.TouchScreenFactory_Package; use org.allbinary.input.motion.button.TouchScreenFactory_Package;
 with org.allbinary.input.motion.button.TouchButtonFactory_Package; use org.allbinary.input.motion.button.TouchButtonFactory_Package;

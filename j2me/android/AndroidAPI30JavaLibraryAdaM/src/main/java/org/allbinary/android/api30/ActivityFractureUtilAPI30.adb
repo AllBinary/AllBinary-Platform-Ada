@@ -14,6 +14,7 @@
 
 
 with android.app.Activity_Package; use android.app.Activity_Package;
+with android.app.Activity_Package_References;
 with android.view.Window_Package; use android.view.Window_Package;
 with androidx.core.view.WindowCompat_Package; use androidx.core.view.WindowCompat_Package;
 with androidx.core.view.WindowInsetsCompat_Package; use androidx.core.view.WindowInsetsCompat_Package;

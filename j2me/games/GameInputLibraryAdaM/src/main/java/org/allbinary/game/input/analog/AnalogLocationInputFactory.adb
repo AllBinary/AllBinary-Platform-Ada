@@ -2,8 +2,10 @@
 
 
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.game.input.analog.AnalogLocationInput_Package; use org.allbinary.game.input.analog.AnalogLocationInput_Package;
+with org.allbinary.game.input.analog.AnalogLocationInput_Package_References;
 with org.allbinary.game.input.analog.AnalogLocationInput_Package;
 
 package body org.allbinary.game.input.analog.AnalogLocationInputFactory_Package is

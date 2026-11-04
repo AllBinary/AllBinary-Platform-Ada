@@ -19,8 +19,6 @@ with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArra
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package; use org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package;
 with org.allbinary.game.configuration.feature.Feature_Package;
-with org.allbinary.game.configuration.feature.Features_Package;
-with org.allbinary.game.configuration.feature.GameFeatureChoiceGroups_Package;
 with org.allbinary.graphics.opengles.OpenGLFeature_Package;
 with org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package;
 

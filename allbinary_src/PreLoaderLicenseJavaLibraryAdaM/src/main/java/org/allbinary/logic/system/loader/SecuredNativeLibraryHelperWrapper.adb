@@ -15,9 +15,10 @@
 
 with org.allbinary.logic.system.security.AbKeys_Package; use org.allbinary.logic.system.security.AbKeys_Package;
 with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package; use org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References;
 with org.allbinary.logic.system.security.licensing.LicensingException_Package; use org.allbinary.logic.system.security.licensing.LicensingException_Package;
 with org.allbinary.logic.system.loader.SecuredNativeLibraryInterface_Package; use org.allbinary.logic.system.loader.SecuredNativeLibraryInterface_Package;
-with org.allbinary.logic.system.loader.NativeLibraryHelperWrapper_Package;
+with org.allbinary.logic.system.loader.SecuredNativeLibraryInterface_Package_References;
 with org.allbinary.logic.system.loader.SecuredNativeLibraryInterface_Package;
 
 package body org.allbinary.logic.system.loader.SecuredNativeLibraryHelperWrapper_Package is

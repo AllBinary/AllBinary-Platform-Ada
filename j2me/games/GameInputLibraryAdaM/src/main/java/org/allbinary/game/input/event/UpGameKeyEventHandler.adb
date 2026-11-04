@@ -14,16 +14,16 @@
 
 
 with org.allbinary.game.input.LocalPlayerInputIdFactory_Package; use org.allbinary.game.input.LocalPlayerInputIdFactory_Package;
+with org.allbinary.game.input.LocalPlayerInputIdFactory_Package_References;
 with org.allbinary.logic.util.event.EventListenerInterface_Package; use org.allbinary.logic.util.event.EventListenerInterface_Package;
+with org.allbinary.logic.util.event.EventListenerInterface_Package_References;
 with org.allbinary.game.input.event.DownGameKeyEventListenerInterface_Package;
 with org.allbinary.game.input.GameInput_Package;
 with org.allbinary.game.input.GameInputStrings_Package;
 with org.allbinary.game.input.event.GameKeyEvent_Package;
 with org.allbinary.game.input.event.GameKeyEventListenerInterface_Package;
-with org.allbinary.game.input.LocalPlayerInputIdFactory_Package;
 with org.allbinary.game.input.PlayerGameInput_Package;
 with org.allbinary.game.input.event.PressGameKeyEventListenerInterface_Package;
-with org.allbinary.game.input.event.UpGameKeyEventHandlerBase_Package;
 with org.allbinary.game.input.event.UpGameKeyEventListenerInterface_Package;
 
 package body org.allbinary.game.input.event.UpGameKeyEventHandler_Package is
@@ -89,7 +89,7 @@ package body org.allbinary.game.input.event.UpGameKeyEventHandler_Package is
    procedure removeAllListeners (This : in out UpGameKeyEventHandler) is
       index : Integer;
    begin
-        UpGameKeyEventHandlerBase (This).removeAllListeners;
+        UpGameKeyEventHandlerBase_Package.UpGameKeyEventHandlerBase (This).removeAllListeners;
         for index in reverse 0 .. (UpGameKeyEventHandler_Package.instanceArray'Length) - (1) loop
             UpGameKeyEventHandler_Package.instanceArray (index).removeAllListeners;
         end loop;
@@ -99,7 +99,7 @@ package body org.allbinary.game.input.event.UpGameKeyEventHandler_Package is
       eventListenerInterface : constant EventListenerInterface_Access := EventListenerInterface_Access (eventListenerInterface_Param);
       index : Integer;
    begin
-        UpGameKeyEventHandlerBase (This).removeListenerSingleThreaded (eventListenerInterface);
+        UpGameKeyEventHandlerBase_Package.UpGameKeyEventHandlerBase (This).removeListenerSingleThreaded (eventListenerInterface);
         for index in reverse 0 .. (UpGameKeyEventHandler_Package.instanceArray'Length) - (1) loop
             UpGameKeyEventHandler_Package.instanceArray (index).removeListenerSingleThreaded (eventListenerInterface);
         end loop;
@@ -109,7 +109,7 @@ package body org.allbinary.game.input.event.UpGameKeyEventHandler_Package is
       eventListenerInterface : constant EventListenerInterface_Access := EventListenerInterface_Access (eventListenerInterface_Param);
       index : Integer;
    begin
-        UpGameKeyEventHandlerBase (This).removeListener (eventListenerInterface);
+        UpGameKeyEventHandlerBase_Package.UpGameKeyEventHandlerBase (This).removeListener (eventListenerInterface);
         for index in reverse 0 .. (UpGameKeyEventHandler_Package.instanceArray'Length) - (1) loop
             UpGameKeyEventHandler_Package.instanceArray (index).removeListener (eventListenerInterface);
         end loop;

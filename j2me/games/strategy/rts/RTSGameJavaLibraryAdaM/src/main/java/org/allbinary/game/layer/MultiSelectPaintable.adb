@@ -15,7 +15,9 @@
 
 with javax.microedition.lcdui.Font_Package; use javax.microedition.lcdui.Font_Package;
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
@@ -35,7 +37,6 @@ with org.allbinary.game.layer.RTSLayer_Package;
 with org.allbinary.game.layer.RTSLayer2LogHelper_Package;
 with org.allbinary.game.layer.RTSLayerUtil_Package;
 with org.allbinary.game.layer.RTSPlayerLayerInterface_Package;
-with org.allbinary.game.layer.SelectionHudPaintable_Package;
 with org.allbinary.game.layer.waypoint.Waypoint2LogHelper_Package;
 with org.allbinary.game.layer.waypoint.WaypointBase_Package;
 with org.allbinary.game.layer.WaypointBehaviorBase_Package;
@@ -103,7 +104,7 @@ package body org.allbinary.game.layer.MultiSelectPaintable_Package is
       graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
       font : Font_Access;
    begin
-        SelectionHudPaintable (This).updateMeasurement (graphics);
+        SelectionHudPaintable_Package.SelectionHudPaintable (This).updateMeasurement (graphics);
         font := graphics.getFont;
         This.totalWidth := font.stringWidth (This.TOTAL);
         This.textLine2Y := ((This.y) + (font.getHeight));

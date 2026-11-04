@@ -13,7 +13,6 @@
 --  Generated Code Do Not Modify
 
 
-with org.allbinary.media.AllBinaryVibrationME_Package;
 
 package body org.allbinary.media.AllBinaryNoVibration_Package is
 

@@ -13,8 +13,15 @@
 --  Generated Code Do Not Modify
 
 
+with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with admin.taghelpers.ModifyTable_Package; use admin.taghelpers.ModifyTable_Package;
 with org.allbinary.data.tables.transform.info.TransformInfoEntityBuilder_Package; use org.allbinary.data.tables.transform.info.TransformInfoEntityBuilder_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
+with org.allbinary.logic.visual.transform.info.TransformInfoHttpInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoHttpInterface_Package;
+with org.allbinary.logic.visual.transform.info.TransformInfoHttpInterface_Package_References;
 with org.allbinary.logic.visual.transform.info.TransformInfoHttpStoreNoManipulation_Package; use org.allbinary.logic.visual.transform.info.TransformInfoHttpStoreNoManipulation_Package;
 
 package body taghelpers.transform.info.TransformInfoRequestHelper_Package is
@@ -22,6 +29,26 @@ package body taghelpers.transform.info.TransformInfoRequestHelper_Package is
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
    package TransformInfoEntityBuilder_Package renames Standard.org.allbinary.data.tables.transform.info.TransformInfoEntityBuilder_Package;
    package TransformInfoHttpStoreNoManipulation_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoHttpStoreNoManipulation_Package;
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   function "=" (Left, Right : LogUtil_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype TransformInfoHttpInterface_Access is org.allbinary.logic.visual.transform.info.TransformInfoHttpInterface_Package_References.TransformInfoHttpInterface_Access;
+   function "=" (Left, Right : TransformInfoHttpInterface_Access) return Boolean renames org.allbinary.logic.visual.transform.info.TransformInfoHttpInterface_Package_References."=";
+   subtype TransformInfoHttpInterface_Access_Array is org.allbinary.logic.visual.transform.info.TransformInfoHttpInterface_Package_References.TransformInfoHttpInterface_Access_Array;
+   function "=" (Left, Right : TransformInfoHttpInterface_Access_Array) return Boolean renames org.allbinary.logic.visual.transform.info.TransformInfoHttpInterface_Package_References."=";
+   subtype TransformInfoHttpInterface_Access_Array_Access is org.allbinary.logic.visual.transform.info.TransformInfoHttpInterface_Package_References.TransformInfoHttpInterface_Access_Array_Access;
+   function "=" (Left, Right : TransformInfoHttpInterface_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.transform.info.TransformInfoHttpInterface_Package_References."=";
+   subtype TransformInfoHttpInterface_Access_Array_Access_Array is org.allbinary.logic.visual.transform.info.TransformInfoHttpInterface_Package_References.TransformInfoHttpInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : TransformInfoHttpInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.visual.transform.info.TransformInfoHttpInterface_Package_References."=";
+   subtype TransformInfoHttpInterface_Access_Array_Access_Array_Access is org.allbinary.logic.visual.transform.info.TransformInfoHttpInterface_Package_References.TransformInfoHttpInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : TransformInfoHttpInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.transform.info.TransformInfoHttpInterface_Package_References."=";
    procedure Initialize_Fields (This : in out TransformInfoRequestHelper'Class) is
    begin
       null;

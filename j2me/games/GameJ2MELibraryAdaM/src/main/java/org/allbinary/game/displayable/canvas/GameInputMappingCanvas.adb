@@ -14,31 +14,41 @@
 
 
 with javax.microedition.lcdui.Command_Package; use javax.microedition.lcdui.Command_Package;
+with javax.microedition.lcdui.Command_Package_References;
 with javax.microedition.lcdui.CommandListener_Package; use javax.microedition.lcdui.CommandListener_Package;
+with javax.microedition.lcdui.CommandListener_Package_References;
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
 with org.allbinary.game.commands.GameCommandsFactory_Package; use org.allbinary.game.commands.GameCommandsFactory_Package;
 with org.allbinary.game.input.GameKey_Package; use org.allbinary.game.input.GameKey_Package;
+with org.allbinary.game.input.GameKey_Package_References;
 with org.allbinary.game.input.GameKeyFactory_Package; use org.allbinary.game.input.GameKeyFactory_Package;
 with org.allbinary.game.input.Input_Package; use org.allbinary.game.input.Input_Package;
+with org.allbinary.game.input.Input_Package_References;
 with org.allbinary.game.input.InputFactory_Package; use org.allbinary.game.input.InputFactory_Package;
+with org.allbinary.game.input.InputFactory_Package_References;
 with org.allbinary.game.input.PlatformInputMappingFactory_Package; use org.allbinary.game.input.PlatformInputMappingFactory_Package;
 with org.allbinary.game.input.mapping.InputMappingInterface_Package; use org.allbinary.game.input.mapping.InputMappingInterface_Package;
 with org.allbinary.game.input.mapping.PersistentInputMapping_Package; use org.allbinary.game.input.mapping.PersistentInputMapping_Package;
+with org.allbinary.game.input.mapping.PersistentInputMapping_Package_References;
 with org.allbinary.game.layer.AllBinaryGameLayerManager_Package; use org.allbinary.game.layer.AllBinaryGameLayerManager_Package;
+with org.allbinary.game.layer.AllBinaryGameLayerManager_Package_References;
 with org.allbinary.game.paint.ColorFillBasePaintable_Package; use org.allbinary.game.paint.ColorFillBasePaintable_Package;
+with org.allbinary.game.paint.ColorFillBasePaintable_Package_References;
 with org.allbinary.game.paint.ColorFillPaintableFactory_Package; use org.allbinary.game.paint.ColorFillPaintableFactory_Package;
 with org.allbinary.game.paint.help.HelpPaintable_Package; use org.allbinary.game.paint.help.HelpPaintable_Package;
+with org.allbinary.game.paint.help.HelpPaintable_Package_References;
 with org.allbinary.game.paint.help.InputMappingHelpPaintable_Package; use org.allbinary.game.paint.help.InputMappingHelpPaintable_Package;
+with org.allbinary.game.paint.help.InputMappingHelpPaintable_Package_References;
 with org.allbinary.graphics.paint.ProcessPaintable_Package; use org.allbinary.graphics.paint.ProcessPaintable_Package;
+with org.allbinary.graphics.paint.ProcessPaintable_Package_References;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package; use org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.game.displayable.canvas.GameInputMappingInstructionsCanvas_Package; use org.allbinary.game.displayable.canvas.GameInputMappingInstructionsCanvas_Package;
-with org.allbinary.game.layer.AllBinaryGameLayerManager_Package;
 with org.allbinary.game.displayable.canvas.GameInputMappingInstructionsCanvas_Package;
-with org.allbinary.game.paint.help.HelpPaintable_Package;
-with org.allbinary.game.paint.help.InputMappingHelpPaintable_Package;
 
 package body org.allbinary.game.displayable.canvas.GameInputMappingCanvas_Package is
 
@@ -223,7 +233,7 @@ package body org.allbinary.game.displayable.canvas.GameInputMappingCanvas_Packag
    --  throws Exception
    procedure close (This : in out GameInputMappingCanvas) is
    begin
-        GameCommandCanvas (This).close;
+        GameCommandCanvas_Package.GameCommandCanvas (This).close;
         This.paintable.process;
         This.selectedGameKey := This.NONE;
         This.selectedInput := Input_Access (This.NONE);
@@ -258,7 +268,7 @@ package body org.allbinary.game.displayable.canvas.GameInputMappingCanvas_Packag
    procedure keyPressedByDevice (This : in out GameInputMappingCanvas; keyCode : Integer; deviceId : Integer) is
    begin
         GameInputMappingCanvas'Class (This).addGameKey (keyCode, False);
-        GameCommandCanvas (This).keyPressedByDevice (keyCode, 0);
+        GameCommandCanvas_Package.GameCommandCanvas (This).keyPressedByDevice (keyCode, 0);
    end keyPressedByDevice;
 
    procedure addGameKey (This : in out GameInputMappingCanvas; keyCode : Integer; repeated : Boolean) is
@@ -414,7 +424,7 @@ package body org.allbinary.game.displayable.canvas.GameInputMappingCanvas_Packag
         This.colorFillPaintable.paint (graphics);
         This.helpPaintable.paint (graphics);
         This.paintable.paint (graphics);
-        GameCommandCanvas (This).paint (graphics);
+        GameCommandCanvas_Package.GameCommandCanvas (This).paint (graphics);
    end paint;
 
 begin

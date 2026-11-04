@@ -14,13 +14,18 @@
 
 
 with org.allbinary.game.input.event.GameKeyEvent_Package; use org.allbinary.game.input.event.GameKeyEvent_Package;
+with org.allbinary.game.input.event.GameKeyEvent_Package_References;
 with org.allbinary.graphics.form.ScrollSelectionForm_Package; use org.allbinary.graphics.form.ScrollSelectionForm_Package;
+with org.allbinary.graphics.form.ScrollSelectionForm_Package_References;
 with org.allbinary.input.motion.gesture.observer.MotionGestureEvent_Package; use org.allbinary.input.motion.gesture.observer.MotionGestureEvent_Package;
+with org.allbinary.input.motion.gesture.observer.MotionGestureEvent_Package_References;
 with org.allbinary.time.TimeDelayHelper_Package; use org.allbinary.time.TimeDelayHelper_Package;
+with org.allbinary.time.TimeDelayHelper_Package_References;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.game.displayable.canvas.GameCommandCanvas_Package; use org.allbinary.game.displayable.canvas.GameCommandCanvas_Package;
+with org.allbinary.game.displayable.canvas.GameCommandCanvas_Package_References;
 with org.allbinary.game.displayable.canvas.BasicMenuInputProcessor_Package;
-with org.allbinary.game.displayable.canvas.CommandFormInputProcessor_Package;
 with org.allbinary.game.displayable.canvas.GameCommandCanvas_Package;
 with org.allbinary.game.displayable.canvas.MenuListener_Package;
 
@@ -115,7 +120,7 @@ package body org.allbinary.game.displayable.canvas.ImmediateCommandFormInputProc
       gameKeyEvent : constant GameKeyEvent_Access := GameKeyEvent_Access (gameKeyEvent_Param);
    begin
         begin
-            CommandFormInputProcessor (This).onPressGameKeyEvent (gameKeyEvent);
+            CommandFormInputProcessor_Package.CommandFormInputProcessor (This).onPressGameKeyEvent (gameKeyEvent);
             if This.timeHelper.isTimeTNT then
                 ImmediateCommandFormInputProcessor'Class (This).processInputList;
                 This.gameCommandCanvas.repaintBehavior.onChangeRepaint (ImmediateCommandFormInputProcessor'Class (This).getCanvas);
@@ -134,7 +139,7 @@ package body org.allbinary.game.displayable.canvas.ImmediateCommandFormInputProc
       gameKeyEvent : constant GameKeyEvent_Access := GameKeyEvent_Access (gameKeyEvent_Param);
    begin
         begin
-            CommandFormInputProcessor (This).onDownGameKeyEvent (gameKeyEvent);
+            CommandFormInputProcessor_Package.CommandFormInputProcessor (This).onDownGameKeyEvent (gameKeyEvent);
             if This.timeHelper.isTimeTNT then
                 ImmediateCommandFormInputProcessor'Class (This).processInputList;
                 This.gameCommandCanvas.repaintBehavior.onChangeRepaint (ImmediateCommandFormInputProcessor'Class (This).getCanvas);
@@ -153,7 +158,7 @@ package body org.allbinary.game.displayable.canvas.ImmediateCommandFormInputProc
       gameKeyEvent : constant GameKeyEvent_Access := GameKeyEvent_Access (gameKeyEvent_Param);
    begin
         begin
-            CommandFormInputProcessor (This).onUpGameKeyEvent (gameKeyEvent);
+            CommandFormInputProcessor_Package.CommandFormInputProcessor (This).onUpGameKeyEvent (gameKeyEvent);
             if This.timeHelper.isTimeTNT then
                 ImmediateCommandFormInputProcessor'Class (This).processInputList;
                 This.gameCommandCanvas.repaintBehavior.onChangeRepaint (ImmediateCommandFormInputProcessor'Class (This).getCanvas);
@@ -172,7 +177,7 @@ package body org.allbinary.game.displayable.canvas.ImmediateCommandFormInputProc
       motionGestureEvent : constant MotionGestureEvent_Access := MotionGestureEvent_Access (motionGestureEvent_Param);
    begin
         begin
-            CommandFormInputProcessor (This).onMotionGestureEvent (motionGestureEvent);
+            CommandFormInputProcessor_Package.CommandFormInputProcessor (This).onMotionGestureEvent (motionGestureEvent);
             if This.timeHelper.isTimeTNT then
                 ImmediateCommandFormInputProcessor'Class (This).processInputList;
                 This.gameCommandCanvas.repaintBehavior.onChangeRepaint (ImmediateCommandFormInputProcessor'Class (This).getCanvas);

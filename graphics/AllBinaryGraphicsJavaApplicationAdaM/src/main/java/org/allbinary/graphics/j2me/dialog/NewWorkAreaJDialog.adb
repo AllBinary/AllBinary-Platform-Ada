@@ -15,10 +15,13 @@
 
 with org.allbinary.graphics.j2me.GraphicsException_Package; use org.allbinary.graphics.j2me.GraphicsException_Package;
 with org.allbinary.graphics.j2me.MyFrame_Package; use org.allbinary.graphics.j2me.MyFrame_Package;
+with org.allbinary.graphics.j2me.MyFrame_Package_References;
 with org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package; use org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package;
 with org.allbinary.graphics.j2me.workarea.WorkAreaJPanelInterface_Package; use org.allbinary.graphics.j2me.workarea.WorkAreaJPanelInterface_Package;
 with org.allbinary.graphics.j2me.dialog.Dimension_Package; use org.allbinary.graphics.j2me.dialog.Dimension_Package;
+with org.allbinary.graphics.j2me.dialog.Dimension_Package_References;
 with org.allbinary.graphics.j2me.dialog.JTextField_Package; use org.allbinary.graphics.j2me.dialog.JTextField_Package;
+with org.allbinary.graphics.j2me.dialog.JTextField_Package_References;
 with org.allbinary.graphics.j2me.dialog.JButton_Package; use org.allbinary.graphics.j2me.dialog.JButton_Package;
 with org.allbinary.graphics.j2me.dialog.GridLayout_Package; use org.allbinary.graphics.j2me.dialog.GridLayout_Package;
 with org.allbinary.graphics.j2me.dialog.JLabel_Package; use org.allbinary.graphics.j2me.dialog.JLabel_Package;
@@ -26,12 +29,10 @@ with org.allbinary.graphics.j2me.workarea.canvas.CanvasDom_Package;
 with org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package;
 with org.allbinary.graphics.j2me.workarea.canvas.CanvasTreeLabel_Package;
 with org.allbinary.graphics.j2me.workarea.tools.GraphicItemInterface_Package;
-with org.allbinary.graphics.j2me.GraphicsException_Package;
 with org.allbinary.graphics.j2me.workarea.canvas.Grid_Package;
 with org.allbinary.graphics.j2me.workarea.canvas.IntegerDimension_Package;
 with org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEvent_Package;
 with org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventListener_Package;
-with org.allbinary.graphics.j2me.MyFrame_Package;
 with org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEvent_Package;
 with org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEventListener_Package;
 with org.allbinary.graphics.j2me.workarea.tools.Points_Package;
@@ -39,8 +40,6 @@ with org.allbinary.graphics.j2me.workarea.tools.PointsInterface_Package;
 with org.allbinary.graphics.j2me.workarea.properties.PropertiesJPanel_Package;
 with org.allbinary.graphics.j2me.dialog.RotateJDialog_Package;
 with org.allbinary.graphics.j2me.workarea.WorkAreaDom_Package;
-with org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package;
-with org.allbinary.graphics.j2me.workarea.WorkAreaJPanelInterface_Package;
 with org.allbinary.graphics.j2me.workarea.WorkAreaJTreeJPanel_Package;
 
 package body org.allbinary.graphics.j2me.dialog.NewWorkAreaJDialog_Package is

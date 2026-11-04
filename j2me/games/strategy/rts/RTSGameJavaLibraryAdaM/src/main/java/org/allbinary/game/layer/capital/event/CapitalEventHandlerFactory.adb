@@ -14,7 +14,9 @@
 
 
 with org.allbinary.game.identification.Group_Package; use org.allbinary.game.identification.Group_Package;
+with org.allbinary.game.identification.Group_Package_References;
 with org.allbinary.game.layer.capital.event.CapitalEventHandler_Package; use org.allbinary.game.layer.capital.event.CapitalEventHandler_Package;
+with org.allbinary.game.layer.capital.event.CapitalEventHandler_Package_References;
 with org.allbinary.game.layer.capital.event.CapitalEventHandler_Package;
 
 package body org.allbinary.game.layer.capital.event.CapitalEventHandlerFactory_Package is

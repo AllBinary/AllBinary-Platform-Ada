@@ -15,14 +15,17 @@
 
 with org.allbinary.ai.ArtificialIntelligence_Package; use org.allbinary.ai.ArtificialIntelligence_Package;
 with org.allbinary.ai.ArtificialIntelligenceInterface_Package; use org.allbinary.ai.ArtificialIntelligenceInterface_Package;
+with org.allbinary.ai.ArtificialIntelligenceInterface_Package_References;
 with org.allbinary.ai.ArtificialIntelligenceTransitionInterface_Package; use org.allbinary.ai.ArtificialIntelligenceTransitionInterface_Package;
 with org.allbinary.game.ag.ai.ArrayAI_Package; use org.allbinary.game.ag.ai.ArrayAI_Package;
 with org.allbinary.game.input.GameInput_Package; use org.allbinary.game.input.GameInput_Package;
+with org.allbinary.game.input.GameInput_Package_References;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
+with org.allbinary.layer.AllBinaryLayer_Package_References;
 with org.allbinary.layer.AllBinaryLayerManager_Package; use org.allbinary.layer.AllBinaryLayerManager_Package;
+with org.allbinary.layer.AllBinaryLayerManager_Package_References;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
-with org.allbinary.game.ag.ai.ArrayAI_Package;
 
 package body org.allbinary.game.ag.ai.sequence.SequenceAI_Package is
 
@@ -135,7 +138,7 @@ package body org.allbinary.game.ag.ai.sequence.SequenceAI_Package is
       stringBuffer : StringMaker_Access;
    begin
         stringBuffer := StringMaker_Package.Create;
-        stringBuffer.append (ArrayAI (This).toString);
+        stringBuffer.append (ArrayAI_Package.ArrayAI (This).toString);
         stringBuffer.append (To_Unbounded_String (" Selected AI: "));
         stringBuffer.append (StringUtil_Package.getInstance.toString (SequenceAI'Class (This).getSelectedArtificialIntelligenceInterface));
         return stringBuffer.toString;

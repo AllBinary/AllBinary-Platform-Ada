@@ -15,6 +15,7 @@
 
 with org.allbinary.media.audio.CompositeSound_Package; use org.allbinary.media.audio.CompositeSound_Package;
 with org.allbinary.media.audio.Sound_Package; use org.allbinary.media.audio.Sound_Package;
+with org.allbinary.media.audio.Sound_Package_References;
 
 package body org.allbinary.ag.weapon.media.audio.DropWeaponSound_Package is
 

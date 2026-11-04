@@ -15,8 +15,9 @@
 
 with org.allbinary.logic.communication.log.ForcedLogUtil_Package; use org.allbinary.logic.communication.log.ForcedLogUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
-with org.allbinary.input.AllBinarySensorListener_Package;
+with org.allbinary.string_Id.CommonStrings_Package_References;
 
 package body org.allbinary.input.AllBinarySensor_Package is
 

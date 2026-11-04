@@ -39,7 +39,7 @@ package body org.allbinary.logic.communication.http.file.upload.FileUploadData_P
 
    function getInstance return FileUploadData_Access is
    begin
-        return FileUploadData_Package.instance;
+        return FileUploadData_Access (FileUploadData_Package.instance);
    end getInstance;
 
 begin

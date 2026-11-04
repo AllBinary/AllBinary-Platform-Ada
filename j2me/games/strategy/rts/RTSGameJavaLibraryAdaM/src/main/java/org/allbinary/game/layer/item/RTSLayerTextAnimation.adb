@@ -15,9 +15,12 @@
 
 with javax.microedition.lcdui.Font_Package; use javax.microedition.lcdui.Font_Package;
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
 with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
+with javax.microedition.lcdui.Image_Package_References;
 with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Animation_Package;
 with org.allbinary.graphics.font.MyFontProcessor_Package; use org.allbinary.graphics.font.MyFontProcessor_Package;
+with org.allbinary.graphics.font.MyFontProcessor_Package_References;
 with org.allbinary.graphics.font.UpdateMyFontInterface_Package; use org.allbinary.graphics.font.UpdateMyFontInterface_Package;
 with org.allbinary.graphics.font.UpdateMyFontProcessor_Package; use org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
 
@@ -95,7 +98,7 @@ package body org.allbinary.game.layer.item.RTSLayerTextAnimation_Package is
       adjustedCostY : Integer;
    begin
         This.myFontProcessor.process (graphics);
-        Animation (This).paintXY (graphics, x, y);
+        Animation_Package.Animation (This).paintXY (graphics, x, y);
         adjustedCostY := (This.image.getHeight) - (This.fontHeight);
         graphics.drawString (This.text, x, (y) + (adjustedCostY), 0);
    end paintXY;

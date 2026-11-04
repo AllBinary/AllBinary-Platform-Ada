@@ -16,6 +16,7 @@
 with java.io.InputStream_Package; use java.io.InputStream_Package;
 with org.allbinary.string_Id.CommonPhoneStrings_Package; use org.allbinary.string_Id.CommonPhoneStrings_Package;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
+with org.w3c.dom.Document_Package_References;
 
 package body org.allbinary.data.tree.dom.document.DomDocumentHelper_Package is
 

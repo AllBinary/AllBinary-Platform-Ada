@@ -16,10 +16,12 @@
 with java.io.ByteArrayOutputStream_Package; use java.io.ByteArrayOutputStream_Package;
 with java.io.InputStream_Package; use java.io.InputStream_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.io.StreamUtil_Package; use org.allbinary.logic.io.StreamUtil_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.data.resource.ClassLoader_Package; use org.allbinary.data.resource.ClassLoader_Package;
+with org.allbinary.data.resource.ClassLoader_Package_References;
 
 package body org.allbinary.data.resource.ResourceUtil_Package is
 

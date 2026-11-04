@@ -50,7 +50,7 @@ package org.allbinary.media.graphics.geography.map.racetrack.FinalPositionRaceTr
    function "=" (Left, Right : FinalPositionRaceTrackFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.graphics.geography.map.racetrack.FinalPositionRaceTrackFactory_Package_References."=";
 
    type FinalPositionRaceTrackFactory is new Java_Object with null record;
-   FIRST_POSITION : Integer;
+   FIRST_POSITION : constant Integer := 1;
    index : Integer;
 
    procedure Initialize (This : in out FinalPositionRaceTrackFactory'Class);

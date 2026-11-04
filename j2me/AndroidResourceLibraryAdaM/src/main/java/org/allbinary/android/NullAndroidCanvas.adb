@@ -14,7 +14,9 @@
 
 
 with android.graphics.Canvas_Package; use android.graphics.Canvas_Package;
+with android.graphics.Canvas_Package_References;
 with android.media.MediaPlayer_Package; use android.media.MediaPlayer_Package;
+with android.media.MediaPlayer_Package_References;
 
 package body org.allbinary.android.NullAndroidCanvas_Package is
 

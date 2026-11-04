@@ -14,7 +14,9 @@
 
 
 with javax.microedition.lcdui.game.TiledLayer_Package; use javax.microedition.lcdui.game.TiledLayer_Package;
+with javax.microedition.lcdui.game.TiledLayer_Package_References;
 with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackData_Package; use org.allbinary.media.graphics.geography.map.racetrack.RaceTrackData_Package;
+with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackData_Package_References;
 with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackData_Package;
 
 package body org.allbinary.media.graphics.geography.map.racetrack.TiledLayerFactory_Package is

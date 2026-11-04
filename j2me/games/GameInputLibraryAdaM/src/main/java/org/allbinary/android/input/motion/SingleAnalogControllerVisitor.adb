@@ -16,10 +16,9 @@
 with org.allbinary.game.input.analog.AnalogLocationInput_Package; use org.allbinary.game.input.analog.AnalogLocationInput_Package;
 with org.allbinary.game.input.analog.AnalogLocationInputFactory_Package; use org.allbinary.game.input.analog.AnalogLocationInputFactory_Package;
 with org.allbinary.layer.AllBinaryLayerManager_Package; use org.allbinary.layer.AllBinaryLayerManager_Package;
+with org.allbinary.layer.AllBinaryLayerManager_Package_References;
 with org.allbinary.android.input.motion.AnalogLocationInputProcessor_Package; use org.allbinary.android.input.motion.AnalogLocationInputProcessor_Package;
-with org.allbinary.android.input.motion.AnalogControllerVisitor_Package;
-with org.allbinary.game.input.analog.AnalogLocationInput_Package;
-with org.allbinary.game.input.analog.AnalogLocationInputFactory_Package;
+with org.allbinary.android.input.motion.AnalogLocationInputProcessor_Package_References;
 with org.allbinary.android.input.motion.AnalogLocationInputProcessor_Package;
 
 package body org.allbinary.android.input.motion.SingleAnalogControllerVisitor_Package is

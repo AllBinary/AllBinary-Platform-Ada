@@ -15,14 +15,18 @@
 
 with javax.microedition.lcdui.Font_Package; use javax.microedition.lcdui.Font_Package;
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
 with org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package; use org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package;
+with org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package_References;
 with org.allbinary.logic.java.character_Id.CharArrayFactory_Package; use org.allbinary.logic.java.character_Id.CharArrayFactory_Package;
 with org.allbinary.graphics.displayable.DisplayInfoSingleton_Package; use org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
 with org.allbinary.graphics.font.MyFontProcessor_Package; use org.allbinary.graphics.font.MyFontProcessor_Package;
 with org.allbinary.input.motion.button.CommonButtons_Package; use org.allbinary.input.motion.button.CommonButtons_Package;
 with org.allbinary.game.layer.RTSLayerCompositePaintable_Package; use org.allbinary.game.layer.RTSLayerCompositePaintable_Package;
+with org.allbinary.game.layer.RTSLayerCompositePaintable_Package_References;
 with org.allbinary.game.layer.UpgradableWideRTSLayerPaintable_Package; use org.allbinary.game.layer.UpgradableWideRTSLayerPaintable_Package;
 with org.allbinary.game.layer.RTSLayer_Package; use org.allbinary.game.layer.RTSLayer_Package;
+with org.allbinary.game.layer.RTSLayer_Package_References;
 with org.allbinary.game.input.BuildMenuCompositeInterface_Package;
 with org.allbinary.game.layer.capital.Capital_Package;
 with org.allbinary.game.layer.GeographicMapCellPositionAreaBase_Package;
@@ -36,7 +40,6 @@ with org.allbinary.game.layer.RTSLayer2LogHelper_Package;
 with org.allbinary.game.layer.RTSLayerCompositePaintable_Package;
 with org.allbinary.game.layer.RTSLayerUtil_Package;
 with org.allbinary.game.layer.RTSPlayerLayerInterface_Package;
-with org.allbinary.game.layer.SelectionHudPaintable_Package;
 with org.allbinary.game.layer.UpgradableWideRTSLayerPaintable_Package;
 with org.allbinary.game.layer.waypoint.Waypoint2LogHelper_Package;
 with org.allbinary.game.layer.waypoint.WaypointBase_Package;
@@ -133,7 +136,7 @@ package body org.allbinary.game.layer.UpgradableRTSLayerHudPaintable_Package is
       graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
       font : Font_Access;
    begin
-        SelectionHudPaintable (This).updateMeasurement (graphics);
+        SelectionHudPaintable_Package.SelectionHudPaintable (This).updateMeasurement (graphics);
         font := graphics.getFont;
         This.charHeight := font.getHeight;
         This.charWidth := MyFontProcessor_Package.defaultCharWidth (font);
@@ -143,7 +146,7 @@ package body org.allbinary.game.layer.UpgradableRTSLayerHudPaintable_Package is
       commonButtons : CommonButtons_Access;
       displayInfoSingleton : DisplayInfoSingleton_Access;
    begin
-        SelectionHudPaintable (This).update;
+        SelectionHudPaintable_Package.SelectionHudPaintable (This).update;
         commonButtons := CommonButtons_Package.getInstance;
         This.costY := ((This.y) + (commonButtons.STANDARD_BUTTON_SIZE));
         This.costY1 := (((This.y) + (commonButtons.STANDARD_BUTTON_SIZE)) - (This.charHeight));
@@ -184,7 +187,7 @@ package body org.allbinary.game.layer.UpgradableRTSLayerHudPaintable_Package is
    procedure paint (This : in out UpgradableRTSLayerHudPaintable; graphics_Param : access Graphics_Package.Graphics'Class) is
       graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
-        SelectionHudPaintable (This).paint (graphics);
+        SelectionHudPaintable_Package.SelectionHudPaintable (This).paint (graphics);
         This.rtsLayerCompositePaintableLateInit.paint (graphics);
         graphics.drawChars (This.percentCompleteArray, 0, This.currentTotalDigits, (This.imageX) + (This.percentCompleteX), This.costY, 0);
         graphics.drawString (This.PERCENT, This.percentCompleteX2, This.costY, 0);

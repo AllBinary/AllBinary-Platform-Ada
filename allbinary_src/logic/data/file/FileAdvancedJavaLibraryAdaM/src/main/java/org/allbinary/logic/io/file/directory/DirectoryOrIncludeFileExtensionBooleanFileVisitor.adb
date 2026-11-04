@@ -14,10 +14,11 @@
 
 
 with org.allbinary.logic.io.file.AbFile_Package; use org.allbinary.logic.io.file.AbFile_Package;
+with org.allbinary.logic.io.file.AbFile_Package_References;
 with org.allbinary.logic.io.file.visitor.IncludeFileExtensionsBooleanFileVisitor_Package; use org.allbinary.logic.io.file.visitor.IncludeFileExtensionsBooleanFileVisitor_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.logic.io.file.visitor.BooleanFileVisitor_Package;
-with org.allbinary.logic.io.file.visitor.IncludeFileExtensionsBooleanFileVisitor_Package;
 
 package body org.allbinary.logic.io.file.directory.DirectoryOrIncludeFileExtensionBooleanFileVisitor_Package is
 
@@ -85,7 +86,7 @@ package body org.allbinary.logic.io.file.directory.DirectoryOrIncludeFileExtensi
             return True;
         end if;
         if ((This.includesString) = (Null_Unbounded_String)) or else ((file.getAbsolutePath.indexOf (This.includesString)) >= (0)) then
-            return IncludeFileExtensionsBooleanFileVisitor (This).visit (file);
+            return IncludeFileExtensionsBooleanFileVisitor_Package.IncludeFileExtensionsBooleanFileVisitor (This).visit (file);
         else
             return False;
         end if;

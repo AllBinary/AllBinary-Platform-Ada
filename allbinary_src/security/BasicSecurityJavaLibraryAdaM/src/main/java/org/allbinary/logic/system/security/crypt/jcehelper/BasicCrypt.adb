@@ -18,6 +18,7 @@ with org.allbinary.init.crypt.jcehelper.CryptInterface_Package; use org.allbinar
 with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
 with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
 with org.allbinary.logic.java.byteutil.ByteUtil_Package; use org.allbinary.logic.java.byteutil.ByteUtil_Package;
+with org.allbinary.logic.java.byteutil.ByteUtil_Package_References;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 
 package body org.allbinary.logic.system.security.crypt.jcehelper.BasicCrypt_Package is

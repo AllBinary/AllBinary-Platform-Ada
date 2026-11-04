@@ -15,8 +15,11 @@
 
 with org.allbinary.graphics.CellPositionFactory_Package; use org.allbinary.graphics.CellPositionFactory_Package;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellPositionTracking_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellPositionTracking_Package;
+with org.allbinary.media.graphics.geography.map.GeographicMapCellPositionTracking_Package_References;
 with org.allbinary.media.graphics.geography.map.event.GeographicMapCellPositionEvent_Package; use org.allbinary.media.graphics.geography.map.event.GeographicMapCellPositionEvent_Package;
+with org.allbinary.media.graphics.geography.map.event.GeographicMapCellPositionEvent_Package_References;
 with org.allbinary.media.graphics.geography.map.event.GeographicMapCellPositionEventHandler_Package; use org.allbinary.media.graphics.geography.map.event.GeographicMapCellPositionEventHandler_Package;
+with org.allbinary.media.graphics.geography.map.event.GeographicMapCellPositionEventHandler_Package_References;
 with org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
 with org.allbinary.media.graphics.geography.map.BasicGeographicMapCellPositionFactory_Package;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
@@ -26,7 +29,6 @@ with org.allbinary.media.graphics.geography.map.event.GeographicMapCellPositionE
 with org.allbinary.media.graphics.geography.map.event.GeographicMapCellPositionEventListenerInterface_Package;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellPositionFactoryInitVisitorInterface_Package;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellPositionFactoryInterface_Package;
-with org.allbinary.media.graphics.geography.map.GeographicMapCellPositionTracking_Package;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellTypeFactory_Package;
 with org.allbinary.media.graphics.geography.map.GeographicMapInterface_Package;

@@ -15,13 +15,15 @@
 
 with org.allbinary.game.input.CompleteMotionGestureInputEvent_Package; use org.allbinary.game.input.CompleteMotionGestureInputEvent_Package;
 with org.allbinary.game.input.GameKey_Package; use org.allbinary.game.input.GameKey_Package;
+with org.allbinary.game.input.GameKey_Package_References;
 with org.allbinary.game.input.GameKeyEventSourceInterface_Package; use org.allbinary.game.input.GameKeyEventSourceInterface_Package;
 with org.allbinary.game.input.event.GameKeyEvent_Package; use org.allbinary.game.input.event.GameKeyEvent_Package;
+with org.allbinary.game.input.event.GameKeyEvent_Package_References;
 with org.allbinary.game.input.mapping.InputToGameKeyMapping_Package; use org.allbinary.game.input.mapping.InputToGameKeyMapping_Package;
+with org.allbinary.game.input.mapping.InputToGameKeyMapping_Package_References;
 with org.allbinary.input.motion.gesture.MotionGestureInput_Package; use org.allbinary.input.motion.gesture.MotionGestureInput_Package;
-with org.allbinary.game.input.CompleteMotionGestureInputEvent_Package;
+with org.allbinary.input.motion.gesture.MotionGestureInput_Package_References;
 with org.allbinary.game.input.CompleteMotionGestureInputInterface_Package;
-with org.allbinary.input.motion.gesture.MotionGestureInput_Package;
 
 package body org.allbinary.game.input.motion.action.GameKeyCompleteMotionGestureInputEvent_Package is
 

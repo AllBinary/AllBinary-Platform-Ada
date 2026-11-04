@@ -3,8 +3,11 @@
 
 with java.nio.ByteBuffer_Package; use java.nio.ByteBuffer_Package;
 with javax.microedition.khronos.opengles.GL10_Package; use javax.microedition.khronos.opengles.GL10_Package;
+with javax.microedition.khronos.opengles.GL10_Package_References;
 with org.allbinary.graphics.OpenGLBitmap_Package; use org.allbinary.graphics.OpenGLBitmap_Package;
+with org.allbinary.graphics.OpenGLBitmap_Package_References;
 with org.allbinary.image.opengles.OpenGLESImage_Package; use org.allbinary.image.opengles.OpenGLESImage_Package;
+with org.allbinary.image.opengles.OpenGLESImage_Package_References;
 
 package body org.platform.opengl.OpenGLGLUUtils_Package is
 

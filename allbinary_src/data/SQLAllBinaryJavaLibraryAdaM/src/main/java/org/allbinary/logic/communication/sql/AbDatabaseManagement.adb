@@ -6,12 +6,16 @@
 
 
 with org.allbinary.business.init.db.DatabaseConnectionInfoInterface_Package; use org.allbinary.business.init.db.DatabaseConnectionInfoInterface_Package;
+with org.allbinary.business.init.db.DatabaseConnectionInfoInterface_Package_References;
 with org.allbinary.business.init.db.DbConnectionInfo_Package; use org.allbinary.business.init.db.DbConnectionInfo_Package;
+with org.allbinary.business.init.db.DbConnectionInfo_Package_References;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package_References;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.string_Id.CommonStrings_Package_References;
 with org.allbinary.logic.communication.sql.AbSqlBasic_Package;
-with org.allbinary.logic.communication.sql.AbSqlBean_Package;
 with org.allbinary.logic.communication.sql.AbSqlColumn_Package;
 with org.allbinary.logic.communication.sql.AbSqlRow_Package;
 with org.allbinary.logic.communication.sql.AbSqlTable_Package;
@@ -158,7 +162,7 @@ package body org.allbinary.logic.communication.sql.AbDatabaseManagement_Package 
         sqlStatement := stringBuffer.toString;
         This.sqlCommandLog.append (sqlStatement);
         This.sqlCommandLog.append (This.commonSeps.NEW_LINE);
-        AbSqlBean (This).executeSQLStatement (sqlStatement);
+        AbSqlBean_Package.AbSqlBean (This).executeSQLStatement (sqlStatement);
         return True;
    end addDbUser;
 
@@ -190,7 +194,7 @@ package body org.allbinary.logic.communication.sql.AbDatabaseManagement_Package 
             sqlStatement := Java_Image (This.sqlStrings.CREATE_DATABASE) & db;
             This.sqlCommandLog.append (sqlStatement);
             This.sqlCommandLog.append (This.commonSeps.NEW_LINE);
-            AbSqlBean (This).executeSQLStatement (sqlStatement);
+            AbSqlBean_Package.AbSqlBean (This).executeSQLStatement (sqlStatement);
             return True;
         exception
             when Java_Occurrence : others =>

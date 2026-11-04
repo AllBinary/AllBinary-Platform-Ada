@@ -18,13 +18,16 @@ with org.allbinary.business.page.PageData_Package; use org.allbinary.business.pa
 with org.allbinary.data.tree.dom.DomNodeInterface_Package; use org.allbinary.data.tree.dom.DomNodeInterface_Package;
 with org.allbinary.data.tree.dom.DomSearchHelper_Package; use org.allbinary.data.tree.dom.DomSearchHelper_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.control.validate.Validation_Package; use org.allbinary.logic.control.validate.Validation_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.visual.transform.template.customizer.widgets.title.TitleData_Package; use org.allbinary.logic.visual.transform.template.customizer.widgets.title.TitleData_Package;
 with org.allbinary.logic.visual.transform.template.customizer.widgets.title.TitleValidation_Package; use org.allbinary.logic.visual.transform.template.customizer.widgets.title.TitleValidation_Package;
+with org.allbinary.logic.visual.transform.template.customizer.widgets.title.TitleValidation_Package_References;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
+with org.w3c.dom.Document_Package_References;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
-with org.allbinary.logic.visual.transform.template.customizer.widgets.title.TitleValidation_Package;
+with org.w3c.dom.Node_Package_References;
 with org.allbinary.logic.visual.transform.template.customizer.widgets.title.TitleView_Package;
 
 package body org.allbinary.logic.visual.transform.template.customizer.page.PageValidation_Package is

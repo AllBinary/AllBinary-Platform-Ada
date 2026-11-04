@@ -19,15 +19,17 @@ with org.allbinary.data.tree.dom.DomSearchHelper_Package; use org.allbinary.data
 with org.allbinary.data.tree.dom.ModDomHelper_Package; use org.allbinary.data.tree.dom.ModDomHelper_Package;
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
+with org.w3c.dom.Document_Package_References;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
+with org.w3c.dom.Node_Package_References;
 with org.w3c.dom.NodeList_Package; use org.w3c.dom.NodeList_Package;
 with org.allbinary.input.automation.actions.script.condition.AlwaysActionScriptConditionJPanel_Package; use org.allbinary.input.automation.actions.script.condition.AlwaysActionScriptConditionJPanel_Package;
+with org.allbinary.input.automation.actions.script.condition.AlwaysActionScriptConditionJPanel_Package_References;
 with org.allbinary.input.automation.actions.script.condition.AlwaysActionScriptConditionData_Package; use org.allbinary.input.automation.actions.script.condition.AlwaysActionScriptConditionData_Package;
 with org.allbinary.input.automation.actions.script.condition.AlwaysActionScriptConditionData_Package;
-with org.allbinary.input.automation.actions.script.condition.AlwaysActionScriptConditionInterface_Package;
 with org.allbinary.input.automation.actions.script.condition.AlwaysActionScriptConditionJPanel_Package;
-with org.allbinary.input.automation.actions.script.condition.BasicProfileActionScriptCondition_Package;
 with org.allbinary.input.automation.actions.script.condition.CustomTreeNodeInterface_Package;
 with org.allbinary.input.automation.actions.script.condition.ProfileActionScriptConditionInterface_Package;
 with org.allbinary.input.automation.actions.script.ProfileActionScriptItem_Package;
@@ -174,7 +176,7 @@ package body org.allbinary.input.automation.actions.script.condition.AlwaysActio
       document : constant Document_Access := Document_Access (document_Param);
       node : Node_Access;
    begin
-        node := BasicProfileActionScriptCondition (This).toXmlNode (document);
+        node := BasicProfileActionScriptCondition_Package.BasicProfileActionScriptCondition (This).toXmlNode (document);
         node.appendChild (ModDomHelper_Package.createNodeWithValueNodes (document, AlwaysActionScriptConditionData_Package.NAME, AlwaysActionScriptCondition'Class (This).toHashMap));
         return node;
    end toXmlNode;
@@ -183,7 +185,7 @@ package body org.allbinary.input.automation.actions.script.condition.AlwaysActio
    function shouldProcess (This : in out AlwaysActionScriptCondition; frame : Long_Long_Integer) return Boolean is
    begin
         if AlwaysActionScriptCondition'Class (This).isIsOn then
-            return BasicProfileActionScriptCondition (This).shouldProcess (frame);
+            return BasicProfileActionScriptCondition_Package.BasicProfileActionScriptCondition (This).shouldProcess (frame);
         end if;
         return False;
    end shouldProcess;

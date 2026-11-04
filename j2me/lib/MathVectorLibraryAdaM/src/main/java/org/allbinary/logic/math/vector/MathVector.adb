@@ -14,7 +14,7 @@
 
 
 with org.allbinary.logic.math.BasicDecimal_Package; use org.allbinary.logic.math.BasicDecimal_Package;
-with org.allbinary.logic.math.vector.MathVectorInterface_Package;
+with org.allbinary.logic.math.BasicDecimal_Package_References;
 
 package body org.allbinary.logic.math.vector.MathVector_Package is
 

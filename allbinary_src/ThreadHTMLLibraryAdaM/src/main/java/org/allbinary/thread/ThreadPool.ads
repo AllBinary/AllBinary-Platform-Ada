@@ -150,7 +150,7 @@ package org.allbinary.thread.ThreadPool_Package is
       runningTask : Boolean;
       currentPriorityRunnable : PriorityRunnable_Access;
    end record;
-   NORMAL_PRIORITY : Integer;
+   NORMAL_PRIORITY : constant Integer := 5;
 
    procedure Initialize (This : in out ThreadPool'Class; poolName : Unbounded_String; numThreads : Integer; priority : Integer);
    function Create (poolName : Unbounded_String; numThreads : Integer; priority : Integer) return ThreadPool_Access;

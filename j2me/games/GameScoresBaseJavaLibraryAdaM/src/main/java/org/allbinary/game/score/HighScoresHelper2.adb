@@ -14,9 +14,10 @@
 
 
 with org.allbinary.util.CircularIndexUtil_Package; use org.allbinary.util.CircularIndexUtil_Package;
+with org.allbinary.util.CircularIndexUtil_Package_References;
 with org.allbinary.game.score.NullHighScoresSingletonFactory_Package; use org.allbinary.game.score.NullHighScoresSingletonFactory_Package;
 with org.allbinary.game.score.HighScores_Package; use org.allbinary.game.score.HighScores_Package;
-with org.allbinary.game.score.HighScoresHelperBase_Package;
+with org.allbinary.game.score.HighScores_Package_References;
 with org.allbinary.game.score.HighScoresHelperBaseInterface_Package;
 with org.allbinary.game.score.HighScoresResultsListener_Package;
 with org.allbinary.game.score.NullHighScoresSingletonFactory_Package;
@@ -77,7 +78,7 @@ package body org.allbinary.game.score.HighScoresHelper2_Package is
 
    procedure setHighScoresArray (This : in out HighScoresHelper2; highScoresArrayP : HighScores_Access_Array_Access) is
    begin
-        HighScoresHelperBase (This).setHighScoresArray (highScoresArrayP);
+        HighScoresHelperBase_Package.HighScoresHelperBase (This).setHighScoresArray (highScoresArrayP);
         This.circularIndexUtil.setSize (This.highScoresArrayP'Length);
         HighScoresHelper2'Class (This).selectHighScores;
    end setHighScoresArray;

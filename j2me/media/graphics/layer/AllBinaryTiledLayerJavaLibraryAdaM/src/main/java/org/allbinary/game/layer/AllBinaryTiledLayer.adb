@@ -14,10 +14,13 @@
 
 
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.graphics.paint.PaintableInterface_Package; use org.allbinary.graphics.paint.PaintableInterface_Package;
 with org.allbinary.layer.Layer_Package; use org.allbinary.layer.Layer_Package;
 with org.allbinary.layer.NamedInterface_Package; use org.allbinary.layer.NamedInterface_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 
 package body org.allbinary.game.layer.AllBinaryTiledLayer_Package is
 
@@ -52,7 +55,7 @@ package body org.allbinary.game.layer.AllBinaryTiledLayer_Package is
         This.dataId := dataId;
         AllBinaryTiledLayer'Class (This).setLayerWidth (width);
         AllBinaryTiledLayer'Class (This).setLayerHeight (height);
-        Layer (This).setPosition (0, 0, 0);
+        Layer_Package.Layer (This).setPosition (0, 0, 0);
         This.cellWidth := cellWidth;
         This.cellHeight := cellHeight;
         This.halfWidth := (Java_Shift_Right_Arithmetic (AllBinaryTiledLayer'Class (This).getWidth, 1));

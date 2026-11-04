@@ -15,21 +15,26 @@
 
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.business.category.Category_Package; use org.allbinary.business.category.Category_Package;
 with org.allbinary.business.category.CategoryInterface_Package; use org.allbinary.business.category.CategoryInterface_Package;
+with org.allbinary.business.category.CategoryInterface_Package_References;
 with org.allbinary.business.category.properties.CategoryPropertiesFactoryInterface_Package; use org.allbinary.business.category.properties.CategoryPropertiesFactoryInterface_Package;
+with org.allbinary.business.category.properties.CategoryPropertiesFactoryInterface_Package_References;
 with org.allbinary.data.tree.dom.DomSearchHelper_Package; use org.allbinary.data.tree.dom.DomSearchHelper_Package;
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.logic.visual.theme.ThemeData_Package; use org.allbinary.logic.visual.theme.ThemeData_Package;
 with org.allbinary.logic.visual.theme.ThemeValidation_Package; use org.allbinary.logic.visual.theme.ThemeValidation_Package;
+with org.allbinary.logic.visual.theme.ThemeValidation_Package_References;
 with org.allbinary.logic.visual.theme.ThemesData_Package; use org.allbinary.logic.visual.theme.ThemesData_Package;
 with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
+with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package_References;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
+with org.w3c.dom.Node_Package_References;
 with org.w3c.dom.NodeList_Package; use org.w3c.dom.NodeList_Package;
 with org.allbinary.logic.visual.transform.template.customizer.includes.style.css.template.retail.CssStyleValidation_Package;
-with org.allbinary.business.category.store.theme.StoreThemeCategoryInterface_Package;
 with org.allbinary.logic.visual.theme.ThemeInterface_Package;
-with org.allbinary.logic.visual.theme.ThemeValidation_Package;
 
 package body org.allbinary.business.category.store.theme.StoreThemeCategory_Package is
 
@@ -219,7 +224,7 @@ package body org.allbinary.business.category.store.theme.StoreThemeCategory_Pack
    --  throws Exception
    function isValid (This : in out StoreThemeCategory) return Boolean is
    begin
-        if not (Category (This).isValid.booleanValue) then
+        if not (Category_Package.Category (This).isValid.booleanValue) then
             return False;
         end if;
         return True;
@@ -229,7 +234,7 @@ package body org.allbinary.business.category.store.theme.StoreThemeCategory_Pack
    function toHashMap (This : in out StoreThemeCategory) return HashMap_Access is
       categoryHashMap : HashMap_Access;
    begin
-        categoryHashMap := Category (This).toHashMap;
+        categoryHashMap := Category_Package.Category (This).toHashMap;
         categoryHashMap.put (ThemesData_Package.getInstance.NAME, This.themeVector);
         return categoryHashMap;
    end toHashMap;
@@ -238,7 +243,7 @@ package body org.allbinary.business.category.store.theme.StoreThemeCategory_Pack
    function toVector (This : in out StoreThemeCategory) return BasicArrayList_Access is
       categoryVector : BasicArrayList_Access;
    begin
-        categoryVector := Category (This).toVector;
+        categoryVector := Category_Package.Category (This).toVector;
         return categoryVector;
    end toVector;
 

@@ -16,6 +16,7 @@
 with java.io.ByteArrayOutputStream_Package; use java.io.ByteArrayOutputStream_Package;
 with java.io.DataOutputStream_Package; use java.io.DataOutputStream_Package;
 with org.allbinary.game.GameInfo_Package; use org.allbinary.game.GameInfo_Package;
+with org.allbinary.game.GameInfo_Package_References;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 

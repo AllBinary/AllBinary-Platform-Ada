@@ -43,7 +43,7 @@ package body org.allbinary.input.motion.button.TouchButtonResourceOpenGLESAnimat
    --  throws Exception
    procedure init (This : in out TouchButtonResourceOpenGLESAnimationInterfaceFactoryInterfaceFactory; level : Integer) is
    begin
-        TouchButtonResourceAnimationInterfaceFactoryInterfaceFactory (This).initImageCache (OpenGLImageCacheFactory_Package.getInstance, level);
+        TouchButtonResourceAnimationInterfaceFactoryInterfaceFactory_Package.TouchButtonResourceAnimationInterfaceFactoryInterfaceFactory (This).initImageCache (OpenGLImageCacheFactory_Package.getInstance, level);
    end init;
 
    function isFeature (This : in out TouchButtonResourceOpenGLESAnimationInterfaceFactoryInterfaceFactory) return Boolean is

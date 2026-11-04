@@ -17,6 +17,7 @@ with org.allbinary.data.generator.OrderIdGenerator_Package; use org.allbinary.da
 with org.allbinary.data.tables.user.commerce.inventory.order.OrderHistoryEntity_Package; use org.allbinary.data.tables.user.commerce.inventory.order.OrderHistoryEntity_Package;
 with org.allbinary.data.tables.user.commerce.inventory.order.OrderItemsEntity_Package; use org.allbinary.data.tables.user.commerce.inventory.order.OrderItemsEntity_Package;
 with org.allbinary.business.user.commerce.inventory.order.Order_Package; use org.allbinary.business.user.commerce.inventory.order.Order_Package;
+with org.allbinary.business.user.commerce.inventory.order.Order_Package_References;
 
 package body org.allbinary.business.user.commerce.inventory.order.OrderProcessorUtil_Package is
 

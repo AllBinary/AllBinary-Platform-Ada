@@ -2,12 +2,15 @@
 
 
 with javax.microedition.lcdui.Canvas_Package; use javax.microedition.lcdui.Canvas_Package;
+with javax.microedition.lcdui.Canvas_Package_References;
 with javax.microedition.lcdui.Font_Package; use javax.microedition.lcdui.Font_Package;
+with javax.microedition.lcdui.Font_Package_References;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.graphics.color.BasicColor_Package_References;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.logic.util.visitor.Visitor_Package; use org.allbinary.logic.util.visitor.Visitor_Package;
+with org.allbinary.logic.util.visitor.Visitor_Package_References;
 with org.allbinary.graphics.form.item.ABCustomItemInterface_Package;
-with org.allbinary.graphics.form.item.ABTextItem_Package;
 with org.allbinary.graphics.form.item.CustomCustomItem_Package;
 
 package body org.allbinary.graphics.form.item.ABTextFieldItem_Package is

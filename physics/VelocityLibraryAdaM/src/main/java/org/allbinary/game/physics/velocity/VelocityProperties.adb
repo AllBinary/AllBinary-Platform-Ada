@@ -15,8 +15,6 @@
 
 with org.allbinary.logic.math.vector.AxisMathVectorUtil_Package;
 with org.allbinary.game.physics.velocity.BasicVelocityInterface_Package;
-with org.allbinary.game.physics.velocity.BasicVelocityProperties_Package;
-with org.allbinary.game.physics.velocity.VelocityInterface_Package;
 
 package body org.allbinary.game.physics.velocity.VelocityProperties_Package is
 
@@ -164,13 +162,13 @@ package body org.allbinary.game.physics.velocity.VelocityProperties_Package is
 
    procedure setVelocityi (This : in out VelocityProperties; magnitude : Long_Long_Integer; angle : Integer; otherAngle : Integer) is
    begin
-        BasicVelocityProperties (This).setVelocityi (magnitude, angle, otherAngle);
+        BasicVelocityProperties_Package.BasicVelocityProperties (This).setVelocityi (magnitude, angle, otherAngle);
         VelocityProperties'Class (This).limitXYToForwardAndReverseMaxVelocity;
    end setVelocityi;
 
    procedure addVelocityi (This : in out VelocityProperties; magnitude : Long_Long_Integer; angle : Integer; otherAngle : Integer) is
    begin
-        BasicVelocityProperties (This).addVelocityi (magnitude, angle, otherAngle);
+        BasicVelocityProperties_Package.BasicVelocityProperties (This).addVelocityi (magnitude, angle, otherAngle);
         VelocityProperties'Class (This).limitXYToForwardAndReverseMaxVelocity;
    end addVelocityi;
 

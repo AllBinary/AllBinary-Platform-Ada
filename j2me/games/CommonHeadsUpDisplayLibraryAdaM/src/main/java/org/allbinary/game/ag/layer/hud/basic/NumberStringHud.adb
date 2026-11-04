@@ -15,13 +15,16 @@
 
 with javax.microedition.lcdui.Font_Package; use javax.microedition.lcdui.Font_Package;
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
 with org.allbinary.game.graphics.hud.BasicHud_Package; use org.allbinary.game.graphics.hud.BasicHud_Package;
 with org.allbinary.game.graphics.hud.BasicHudFactory_Package; use org.allbinary.game.graphics.hud.BasicHudFactory_Package;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.graphics.color.BasicColor_Package_References;
 with org.allbinary.graphics.font.MyFontProcessor_Package; use org.allbinary.graphics.font.MyFontProcessor_Package;
 with org.allbinary.graphics.paint.PaintableInterface_Package; use org.allbinary.graphics.paint.PaintableInterface_Package;
 with org.allbinary.logic.math.PrimitiveLongSingleton_Package; use org.allbinary.logic.math.PrimitiveLongSingleton_Package;
 with org.allbinary.logic.math.PrimitiveLongUtil_Package; use org.allbinary.logic.math.PrimitiveLongUtil_Package;
+with org.allbinary.logic.math.PrimitiveLongUtil_Package_References;
 
 package body org.allbinary.game.ag.layer.hud.basic.NumberStringHud_Package is
 
@@ -102,7 +105,7 @@ package body org.allbinary.game.ag.layer.hud.basic.NumberStringHud_Package is
    begin
         font := graphics.getFont;
         This.offset := (font.stringWidth (This.prependString)) + (MyFontProcessor_Package.defaultCharWidth (font));
-        BasicHud (This).updateMeasurement (graphics);
+        BasicHud_Package.BasicHud (This).updateMeasurement (graphics);
    end updateMeasurement;
 
    function get (This : in out NumberStringHud) return Integer is
@@ -133,7 +136,7 @@ package body org.allbinary.game.ag.layer.hud.basic.NumberStringHud_Package is
    procedure paint (This : in out NumberStringHud; graphics_Param : access Graphics_Package.Graphics'Class) is
       graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
-        BasicHud (This).paintDX (graphics, This.PREPEND_STRING, 0, This.PREPEND_STRING'Length, This.valueString, 0, This.valueTotalDigits, This.offset);
+        BasicHud_Package.BasicHud (This).paintDX (graphics, This.PREPEND_STRING, 0, This.PREPEND_STRING'Length, This.valueString, 0, This.valueTotalDigits, This.offset);
    end paint;
 
    procedure paintXY (This : in out NumberStringHud; graphics_Param : access Graphics_Package.Graphics'Class; x : Integer; y : Integer) is

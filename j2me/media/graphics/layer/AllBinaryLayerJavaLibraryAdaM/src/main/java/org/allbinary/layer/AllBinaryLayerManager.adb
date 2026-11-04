@@ -14,17 +14,18 @@
 
 
 with org.allbinary.layer.event.LayerManagerEvent_Package; use org.allbinary.layer.event.LayerManagerEvent_Package;
+with org.allbinary.layer.event.LayerManagerEvent_Package_References;
 with org.allbinary.layer.event.LayerManagerEventHandler_Package; use org.allbinary.layer.event.LayerManagerEventHandler_Package;
+with org.allbinary.layer.event.LayerManagerEventHandler_Package_References;
 with org.allbinary.layer.LayerProcessor_Package; use org.allbinary.layer.LayerProcessor_Package;
+with org.allbinary.layer.LayerProcessor_Package_References;
 with org.allbinary.layer.LayerManagerNoDebug_Package; use org.allbinary.layer.LayerManagerNoDebug_Package;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
+with org.allbinary.layer.AllBinaryLayer_Package_References;
 with org.allbinary.layer.AllBinaryLayer_Package;
 with org.allbinary.layer.BasicLayerProcessorInterface_Package;
 with org.allbinary.layer.Layer_Package;
 with org.allbinary.layer.LayerInterface_Package;
-with org.allbinary.layer.LayerManager_Package;
-with org.allbinary.layer.event.LayerManagerEvent_Package;
-with org.allbinary.layer.event.LayerManagerEventHandler_Package;
 with org.allbinary.layer.event.LayerManagerEventListener_Package;
 with org.allbinary.layer.event.LayerManagerEventListenerInterface_Package;
 with org.allbinary.layer.LayerManagerLoggingBase_Package;
@@ -127,7 +128,7 @@ package body org.allbinary.layer.AllBinaryLayerManager_Package is
    begin
         if not (AllBinaryLayerManager'Class (This).contains (layerInterface)) then
             AllBinaryLayerManager'Class (This).appendProcessors (layerInterface);
-            LayerManager (This).append (layerInterface);
+            LayerManager_Package.LayerManager (This).append (layerInterface);
         end if;
    end append;
 
@@ -137,7 +138,7 @@ package body org.allbinary.layer.AllBinaryLayerManager_Package is
    begin
         if not (AllBinaryLayerManager'Class (This).contains (layerInterface)) then
             AllBinaryLayerManager'Class (This).appendProcessors (layerInterface);
-            LayerManager (This).appendAt (layerInterface, index);
+            LayerManager_Package.LayerManager (This).appendAt (layerInterface, index);
         end if;
    end appendAt;
 
@@ -173,7 +174,7 @@ package body org.allbinary.layer.AllBinaryLayerManager_Package is
             layerProcessorInterface := This.basicLayerProcessorArray (index);
             layerProcessorInterface.getLayerManager.remove (layerInterface);
         end loop;
-        LayerManager (This).remove (layerInterface);
+        LayerManager_Package.LayerManager (This).remove (layerInterface);
    end remove;
 
    --  throws Exception
@@ -202,7 +203,7 @@ package body org.allbinary.layer.AllBinaryLayerManager_Package is
             layerProcessorInterface := This.basicLayerProcessorArray (index);
             layerProcessorInterface.getLayerManager.cleanup;
         end loop;
-        LayerManager (This).cleanup;
+        LayerManager_Package.LayerManager (This).cleanup;
    end cleanup;
 
 end org.allbinary.layer.AllBinaryLayerManager_Package;

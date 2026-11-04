@@ -2,10 +2,10 @@
 
 
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
 with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
 with org.allbinary.animation.Animation_Package;
 with org.allbinary.animation.AnimationInterface_Package;
-with org.allbinary.animation.vector.RectangleFilledAnimation_Package;
 
 package body org.allbinary.animation.vector.ARectangleFilledAnimation_Package is
 
@@ -49,7 +49,7 @@ package body org.allbinary.animation.vector.ARectangleFilledAnimation_Package is
    procedure paintXY (This : in out ARectangleFilledAnimation; graphics_Param : access Graphics_Package.Graphics'Class; unusedX : Integer; unusedY : Integer) is
       graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
-        RectangleFilledAnimation (This).paintXY (graphics, This.x, This.y);
+        RectangleFilledAnimation_Package.RectangleFilledAnimation (This).paintXY (graphics, This.x, This.y);
    end paintXY;
 
 end org.allbinary.animation.vector.ARectangleFilledAnimation_Package;

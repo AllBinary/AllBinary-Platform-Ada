@@ -15,7 +15,6 @@
 
 with javax.microedition.khronos.opengles.GL10_Package; use javax.microedition.khronos.opengles.GL10_Package;
 with javax.microedition.khronos.opengles.GL_Package;
-with javax.microedition.khronos.opengles.GL10_Package;
 
 package body org.allbinary.device.NullGL10_Package is
 

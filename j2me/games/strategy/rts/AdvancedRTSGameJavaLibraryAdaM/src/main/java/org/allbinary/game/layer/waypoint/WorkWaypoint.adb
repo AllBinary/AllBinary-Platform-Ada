@@ -14,10 +14,12 @@
 
 
 with org.allbinary.game.layer.PathFindingLayerInterface_Package; use org.allbinary.game.layer.PathFindingLayerInterface_Package;
+with org.allbinary.game.layer.PathFindingLayerInterface_Package_References;
 with org.allbinary.game.layer.RTSLayer_Package; use org.allbinary.game.layer.RTSLayer_Package;
 with org.allbinary.game.layer.geological.resources.GeologicalGeographicMapCellPosition_Package; use org.allbinary.game.layer.geological.resources.GeologicalGeographicMapCellPosition_Package;
 with org.allbinary.game.layer.geological.resources.GeologicalResource_Package; use org.allbinary.game.layer.geological.resources.GeologicalResource_Package;
 with org.allbinary.game.layer.unit.UnitLayer_Package; use org.allbinary.game.layer.unit.UnitLayer_Package;
+with org.allbinary.game.layer.unit.UnitLayer_Package_References;
 with org.allbinary.game.layer.unit.UnitWaypointBehavior_Package; use org.allbinary.game.layer.unit.UnitWaypointBehavior_Package;
 with org.allbinary.media.audio.WorkSound_Package; use org.allbinary.media.audio.WorkSound_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
@@ -28,14 +30,9 @@ with org.allbinary.game.layer.AdvancedRTSProperties_Package;
 with org.allbinary.game.layer.building.event.BuildingEventListenerInterface_Package;
 with org.allbinary.game.layer.building.BuildingLayer_Package;
 with org.allbinary.game.layer.building.BuildingPropertiesFactory_Package;
-with org.allbinary.game.layer.geological.resources.GeologicalGeographicMapCellPosition_Package;
-with org.allbinary.game.layer.geological.resources.GeologicalResource_Package;
 with org.allbinary.game.layer.RTSLayerEvent_Package;
 with org.allbinary.game.layer.SensorAction_Package;
-with org.allbinary.game.layer.unit.UnitLayer_Package;
-with org.allbinary.game.layer.unit.UnitWaypointBehavior_Package;
 with org.allbinary.game.layer.unit.UnitWaypointStrings_Package;
-with org.allbinary.game.layer.waypoint.Waypoint_Package;
 with org.allbinary.game.layer.waypoint.event.WaypointEventListenerInterface_Package;
 with org.allbinary.game.layer.waypoint.WaypointInfoHudPaintable_Package;
 

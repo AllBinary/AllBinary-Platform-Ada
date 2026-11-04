@@ -15,6 +15,7 @@
 
 with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
 with org.allbinary.game.identification.Group_Package; use org.allbinary.game.identification.Group_Package;
+with org.allbinary.game.identification.Group_Package_References;
 with org.allbinary.game.identification.Group_Package;
 with org.allbinary.game.identification.GroupInterface_Package;
 

@@ -104,11 +104,11 @@ package body org.allbinary.game.testgamedemo.id_Package is
 
 begin
    null;
-   custom_web_view := 16#7f050000#;
-   ad_area_bottom := 16#7f060002#;
-   ad_area_left := 16#7f060003#;
-   ad_area_right := 16#7f060004#;
-   ad_area_top := 16#7f060001#;
+   
+   
+   
+   
+   
 
 end org.allbinary.game.testgamedemo.id_Package;
 
@@ -137,7 +137,7 @@ package body org.allbinary.game.testgamedemo.layout_Package is
 
 begin
    null;
-   webview_layout := 16#7f020000#;
+   
 
 end org.allbinary.game.testgamedemo.layout_Package;
 
@@ -166,38 +166,38 @@ package body org.allbinary.game.testgamedemo.raw_Package is
 
 begin
    null;
-   about := 16#7f030000#;
-   privacy_policy := 16#7f030001#;
-   error := 16#7f040000#;
-   licenseinitdata := 16#7f040001#;
-   partner := 16#7f040002#;
-   select_Id := 16#7f040003#;
-   test := 16#7f040004#;
-   testgamedemo_wait_256_by_256 := 16#7f040005#;
-   touch_button_128_by_128 := 16#7f040026#;
-   touch_button_64_by_64 := 16#7f040027#;
-   touch_button_down_arrow_128_by_128 := 16#7f04002a#;
-   touch_button_down_arrow_64_by_64 := 16#7f04002b#;
-   touch_button_generic_action_128_by_128 := 16#7f04002c#;
-   touch_button_generic_action_64_by_64 := 16#7f04002d#;
-   touch_button_start_128_by_128 := 16#7f040038#;
-   touch_button_start_64_by_64 := 16#7f040039#;
-   touch_button_strafe_left_arrow_128_by_128 := 16#7f04003a#;
-   touch_button_strafe_left_arrow_64_by_64 := 16#7f04003b#;
-   touch_button_strafe_right_arrow_128_by_128 := 16#7f04003c#;
-   touch_button_strafe_right_arrow_64_by_64 := 16#7f04003d#;
-   touch_button_turn_left_arrow_128_by_128 := 16#7f04003e#;
-   touch_button_turn_left_arrow_64_by_64 := 16#7f04003f#;
-   touch_button_turn_right_arrow_128_by_128 := 16#7f040040#;
-   touch_button_turn_right_arrow_64_by_64 := 16#7f040041#;
-   touch_button_up_arrow_128_by_128 := 16#7f040042#;
-   touch_button_up_arrow_64_by_64 := 16#7f040043#;
-   ouya_a := 16#7f040012#;
-   ouya_o := 16#7f040014#;
-   ouya_u := 16#7f040015#;
-   ouya_y := 16#7f040016#;
-   ouya_key := 16#7f040013#;
-   google_key := 16#7f040013#;
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
 
 end org.allbinary.game.testgamedemo.raw_Package;
 
@@ -226,7 +226,7 @@ package body org.allbinary.game.testgamedemo.string_Package is
 
 begin
    null;
-   progressbar_in_title_string := 16#7f050001#;
+   
 
 end org.allbinary.game.testgamedemo.string_Package;
 

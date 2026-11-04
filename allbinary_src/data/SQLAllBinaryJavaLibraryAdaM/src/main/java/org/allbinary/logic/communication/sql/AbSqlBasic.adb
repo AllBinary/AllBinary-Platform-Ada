@@ -14,18 +14,27 @@
 
 
 with org.allbinary.business.init.db.DatabaseConnectionInfoInterface_Package; use org.allbinary.business.init.db.DatabaseConnectionInfoInterface_Package;
+with org.allbinary.business.init.db.DatabaseConnectionInfoInterface_Package_References;
 with org.allbinary.business.init.db.DbConnectionInfo_Package; use org.allbinary.business.init.db.DbConnectionInfo_Package;
+with org.allbinary.business.init.db.DbConnectionInfo_Package_References;
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.logic.StdUtil_Package_References;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.communication.sql.connection.pool.SqlConnectionPool_Package; use org.allbinary.logic.communication.sql.connection.pool.SqlConnectionPool_Package;
+with org.allbinary.logic.communication.sql.connection.pool.SqlConnectionPool_Package_References;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package_References;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.string_Id.CommonSeps_Package_References;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.string_Id.CommonStrings_Package_References;
 with org.allbinary.logic.communication.sql.SqlTypeStrings_Package; use org.allbinary.logic.communication.sql.SqlTypeStrings_Package;
+with org.allbinary.logic.communication.sql.SqlTypeStrings_Package_References;
 with org.allbinary.logic.communication.sql.SqlStrings_Package; use org.allbinary.logic.communication.sql.SqlStrings_Package;
+with org.allbinary.logic.communication.sql.SqlStrings_Package_References;
 with java.lang.Thread_Package; use java.lang.Thread_Package;
 with org.allbinary.logic.communication.sql.ClassLoader_Package; use org.allbinary.logic.communication.sql.ClassLoader_Package;
-with org.allbinary.logic.communication.sql.connection.pool.SqlConnectionPool_Package;
 
 package body org.allbinary.logic.communication.sql.AbSqlBasic_Package is
 

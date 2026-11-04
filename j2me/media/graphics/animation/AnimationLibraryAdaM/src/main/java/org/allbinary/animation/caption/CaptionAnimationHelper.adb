@@ -14,29 +14,29 @@
 
 
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
 with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Animation_Package;
+with org.allbinary.animation.Animation_Package_References;
 with org.allbinary.animation.AnimationBehavior_Package; use org.allbinary.animation.AnimationBehavior_Package;
 with org.allbinary.animation.NullAnimationFactory_Package; use org.allbinary.animation.NullAnimationFactory_Package;
 with org.allbinary.animation.text.TextAnimation_Package; use org.allbinary.animation.text.TextAnimation_Package;
+with org.allbinary.animation.text.TextAnimation_Package_References;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.graphics.color.BasicColor_Package_References;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.time.GameTickTimeDelayHelperFactory_Package; use org.allbinary.time.GameTickTimeDelayHelperFactory_Package;
 with org.allbinary.time.TimeDelayHelper_Package; use org.allbinary.time.TimeDelayHelper_Package;
+with org.allbinary.time.TimeDelayHelper_Package_References;
 with org.allbinary.animation.caption.CaptionAnimation_Package; use org.allbinary.animation.caption.CaptionAnimation_Package;
-with org.allbinary.animation.Animation_Package;
-with org.allbinary.animation.AnimationBehavior_Package;
 with org.allbinary.animation.AnimationInterface_Package;
 with org.allbinary.animation.AnimationInterfaceFactoryInterface_Package;
 with org.allbinary.animation.BasicAnimationInterfaceFactoryInterface_Package;
 with org.allbinary.animation.caption.CaptionAnimation_Package;
-with org.allbinary.animation.caption.CaptionAnimationHelperBase_Package;
 with org.allbinary.animation.IndexedAnimation_Package;
 with org.allbinary.animation.IndexedAnimationInterface_Package;
-with org.allbinary.animation.NullAnimationFactory_Package;
 with org.allbinary.animation.ProceduralAnimationInterfaceFactoryInterface_Package;
 with org.allbinary.animation.SequenceInterface_Package;
 with org.allbinary.animation.SequentialAnimationInterface_Package;
-with org.allbinary.animation.text.TextAnimation_Package;
 with org.allbinary.animation.text.TextChangeListener_Package;
 
 package body org.allbinary.animation.caption.CaptionAnimationHelper_Package is

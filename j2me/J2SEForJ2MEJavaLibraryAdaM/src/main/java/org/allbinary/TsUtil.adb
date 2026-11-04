@@ -14,6 +14,7 @@
 
 
 with javax.microedition.lcdui.Displayable_Package; use javax.microedition.lcdui.Displayable_Package;
+with javax.microedition.lcdui.Displayable_Package_References;
 with javax.microedition.lcdui.Form_Package; use javax.microedition.lcdui.Form_Package;
 with javax.microedition.rms.InvalidRecordIDException_Package; use javax.microedition.rms.InvalidRecordIDException_Package;
 with javax.microedition.rms.RecordStore_Package; use javax.microedition.rms.RecordStore_Package;
@@ -21,6 +22,7 @@ with javax.microedition.rms.RecordStoreException_Package; use javax.microedition
 with javax.microedition.rms.RecordStoreNotOpenException_Package; use javax.microedition.rms.RecordStoreNotOpenException_Package;
 with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
 with org.allbinary.ClassLoader_Package; use org.allbinary.ClassLoader_Package;
+with org.allbinary.ClassLoader_Package_References;
 
 package body org.allbinary.TsUtil_Package is
 

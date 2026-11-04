@@ -14,11 +14,14 @@
 
 
 with org.allbinary.ai.ArtificialIntelligenceInterface_Package; use org.allbinary.ai.ArtificialIntelligenceInterface_Package;
+with org.allbinary.ai.ArtificialIntelligenceInterface_Package_References;
 with org.allbinary.game.input.GameInput_Package; use org.allbinary.game.input.GameInput_Package;
+with org.allbinary.game.input.GameInput_Package_References;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
+with org.allbinary.layer.AllBinaryLayer_Package_References;
 with org.allbinary.layer.AllBinaryLayerManager_Package; use org.allbinary.layer.AllBinaryLayerManager_Package;
+with org.allbinary.layer.AllBinaryLayerManager_Package_References;
 with org.allbinary.game.ag.ai.ArrayAI_Package;
-with org.allbinary.game.ag.ai.sequence.SequenceAI_Package;
 
 package body org.allbinary.game.ag.ai.sequence.ComboSequenceAI_Package is
 
@@ -93,7 +96,7 @@ package body org.allbinary.game.ag.ai.sequence.ComboSequenceAI_Package is
         size := artificialIntelligenceInterfaceArray'Length;
         for index in 0 .. (size) - 1 loop
             ComboSequenceAI'Class (This).setIndex (index);
-            SequenceAI (This).processAI (allBinaryLayerManager);
+            SequenceAI_Package.SequenceAI (This).processAI (allBinaryLayerManager);
         end loop;
    end processAI;
 

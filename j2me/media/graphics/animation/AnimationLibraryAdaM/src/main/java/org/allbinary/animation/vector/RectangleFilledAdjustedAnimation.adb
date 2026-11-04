@@ -14,11 +14,12 @@
 
 
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.graphics.color.BasicColor_Package_References;
 with org.allbinary.graphics.color.ColorCompositeInterface_Package; use org.allbinary.graphics.color.ColorCompositeInterface_Package;
 with org.allbinary.animation.Animation_Package;
 with org.allbinary.animation.AnimationInterface_Package;
-with org.allbinary.animation.vector.RectangleFilledAnimation_Package;
 
 package body org.allbinary.animation.vector.RectangleFilledAdjustedAnimation_Package is
 
@@ -76,7 +77,7 @@ package body org.allbinary.animation.vector.RectangleFilledAdjustedAnimation_Pac
       graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
         This.basicSetColorUtil.setBasicColorP3 (graphics, RectangleFilledAdjustedAnimation'Class (This).getBasicColorP, RectangleFilledAdjustedAnimation'Class (This).getColor);
-        RectangleFilledAnimation (This).paintXY (graphics, (x) + (This.offsetX), (y) + (This.offsetY));
+        RectangleFilledAnimation_Package.RectangleFilledAnimation (This).paintXY (graphics, (x) + (This.offsetX), (y) + (This.offsetY));
    end paintXY;
 
    procedure setOffsetX (This : in out RectangleFilledAdjustedAnimation; offsetX : Integer) is

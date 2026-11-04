@@ -15,11 +15,12 @@
 
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.control.search.SearchRequest_Package; use org.allbinary.logic.control.search.SearchRequest_Package;
+with org.allbinary.logic.control.search.SearchRequest_Package_References;
 with org.allbinary.logic.system.security.licensing.LicensingException_Package; use org.allbinary.logic.system.security.licensing.LicensingException_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with views.generic_Id.inventory.InventorySearch_Package; use views.generic_Id.inventory.InventorySearch_Package;
 with views.admin.inventory.listings.InventoryViewSearchInterface_Package; use views.admin.inventory.listings.InventoryViewSearchInterface_Package;
-with views.generic_Id.inventory.InventorySearch_Package;
+with views.admin.inventory.listings.InventoryViewSearchInterface_Package_References;
 with views.admin.inventory.listings.InventoryViewSearchInterface_Package;
 
 package body views.admin.inventory.listings.InventoryViewFactory_Package is

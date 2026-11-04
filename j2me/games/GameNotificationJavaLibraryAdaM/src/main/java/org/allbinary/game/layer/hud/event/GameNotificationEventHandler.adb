@@ -14,7 +14,9 @@
 
 
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+with org.allbinary.logic.util.event.AllBinaryEventObject_Package_References;
 with org.allbinary.logic.util.event.EventListenerInterface_Package; use org.allbinary.logic.util.event.EventListenerInterface_Package;
+with org.allbinary.logic.util.event.EventListenerInterface_Package_References;
 with org.allbinary.logic.util.event.NullEventListener_Package; use org.allbinary.logic.util.event.NullEventListener_Package;
 with org.allbinary.logic.util.event.handler.BasicEventHandler_Package; use org.allbinary.logic.util.event.handler.BasicEventHandler_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
@@ -77,7 +79,7 @@ package body org.allbinary.game.layer.hud.event.GameNotificationEventHandler_Pac
         if (list.size) > (0) then
             eventListenerInterface := EventListenerInterface_Access (list.objectArray (0));
         end if;
-        BasicEventHandler (This).removeAllListeners;
+        BasicEventHandler_Package.BasicEventHandler (This).removeAllListeners;
         if (Java_Object_Access (eventListenerInterface)) /= (Java_Object_Access (NullEventListener_Package.NULL_EVENT_LISTENER)) then
             GameNotificationEventHandler'Class (This).addListenerInterface (eventListenerInterface);
         end if;

@@ -14,11 +14,14 @@
 
 
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.string_Id.CommonStrings_Package_References;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
+with org.w3c.dom.Node_Package_References;
 with org.allbinary.input.automation.actions.script.JPopupMenu_Package; use org.allbinary.input.automation.actions.script.JPopupMenu_Package;
+with org.allbinary.input.automation.actions.script.JPopupMenu_Package_References;
 with org.allbinary.input.automation.actions.script.JMenuItem_Package; use org.allbinary.input.automation.actions.script.JMenuItem_Package;
-with org.allbinary.input.automation.actions.script.ProfileActionScriptItemInterface_Package;
 
 package body org.allbinary.input.automation.actions.script.ProfileActionScriptItem_Package is
 

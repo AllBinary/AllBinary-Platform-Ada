@@ -14,7 +14,7 @@
 
 
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
-with org.allbinary.init.InitInterface_Package;
+with org.allbinary.string_Id.CommonStrings_Package_References;
 
 package body org.allbinary.init.Init_Package is
 

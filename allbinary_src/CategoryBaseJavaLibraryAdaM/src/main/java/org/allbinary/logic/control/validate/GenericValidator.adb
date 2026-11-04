@@ -14,7 +14,9 @@
 
 
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
+with org.w3c.dom.Document_Package_References;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
+with org.w3c.dom.Node_Package_References;
 
 package body org.allbinary.logic.control.validate.GenericValidator_Package is
 

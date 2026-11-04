@@ -14,9 +14,11 @@
 
 
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.business.context.modules.storefronts.BasicStoreFrontsEntity_Package; use org.allbinary.business.context.modules.storefronts.BasicStoreFrontsEntity_Package;
 with org.allbinary.business.context.modules.storefronts.BasicStoreFrontInterface_Package; use org.allbinary.business.context.modules.storefronts.BasicStoreFrontInterface_Package;
+with org.allbinary.business.context.modules.storefronts.BasicStoreFrontInterface_Package_References;
 with org.allbinary.business.context.modules.storefronts.BasicStoreFrontInterface_Package;
 with org.allbinary.business.context.modules.storefronts.BasicStoreFrontsEntity_Package;
 

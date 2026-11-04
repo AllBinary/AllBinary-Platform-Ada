@@ -14,9 +14,12 @@
 
 
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.input.automation.Point_Package; use org.allbinary.input.automation.Point_Package;
+with org.allbinary.input.automation.Point_Package_References;
 with org.allbinary.input.automation.PointHelper_Package; use org.allbinary.input.automation.PointHelper_Package;
 with org.allbinary.input.automation.Rectangle_Package; use org.allbinary.input.automation.Rectangle_Package;
+with org.allbinary.input.automation.Rectangle_Package_References;
 with org.allbinary.input.automation.PointHelper_Package;
 
 package body org.allbinary.input.automation.AbstractInputRobot_Package is

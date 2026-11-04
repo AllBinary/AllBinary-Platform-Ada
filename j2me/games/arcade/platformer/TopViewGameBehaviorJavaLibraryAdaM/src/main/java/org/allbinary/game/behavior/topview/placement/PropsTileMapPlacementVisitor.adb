@@ -14,11 +14,13 @@
 
 
 with org.allbinary.game.rand.MyRandomFactory_Package; use org.allbinary.game.rand.MyRandomFactory_Package;
+with org.allbinary.game.rand.MyRandomFactory_Package_References;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.mapeditor.core.TileLayer_Package; use org.mapeditor.core.TileLayer_Package;
 with org.mapeditor.core.TiledMap_Package; use org.mapeditor.core.TiledMap_Package;
-with org.allbinary.game.behavior.topview.placement.TileMapPlacementVisitor_Package;
+with org.mapeditor.core.TiledMap_Package_References;
 
 package body org.allbinary.game.behavior.topview.placement.PropsTileMapPlacementVisitor_Package is
 

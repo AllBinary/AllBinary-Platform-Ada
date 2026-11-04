@@ -14,6 +14,7 @@
 
 
 with org.allbinary.game.collision.CollisionType_Package; use org.allbinary.game.collision.CollisionType_Package;
+with org.allbinary.game.collision.CollisionType_Package_References;
 with org.allbinary.game.collision.CollisionType_Package;
 
 package body org.allbinary.game.collision.CollisionTypeFactory_Package is

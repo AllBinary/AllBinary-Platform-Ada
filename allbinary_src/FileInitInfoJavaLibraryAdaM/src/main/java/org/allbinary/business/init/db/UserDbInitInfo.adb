@@ -13,7 +13,6 @@
 --  Generated Code Do Not Modify
 
 
-with org.allbinary.business.init.db.DbInitInfo_Package;
 
 package body org.allbinary.business.init.db.UserDbInitInfo_Package is
 

@@ -15,9 +15,12 @@
 
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.game.layer.RTSLayer_Package; use org.allbinary.game.layer.RTSLayer_Package;
+with org.allbinary.game.layer.RTSLayer_Package_References;
 with org.allbinary.game.layer.AllBinaryGameLayer_Package; use org.allbinary.game.layer.AllBinaryGameLayer_Package;
+with org.allbinary.game.layer.AllBinaryGameLayer_Package_References;
 
 package body org.allbinary.game.layer.AdvancedPlayerOwnedRTSLayers_Package is
 
@@ -209,7 +212,7 @@ package body org.allbinary.game.layer.AdvancedPlayerOwnedRTSLayers_Package is
       stringBuffer : StringMaker_Access;
    begin
         stringBuffer := StringMaker_Package.Create;
-        stringBuffer.append (PlayerOwnedRTSLayers (This).toString);
+        stringBuffer.append (PlayerOwnedRTSLayers_Package.PlayerOwnedRTSLayers (This).toString);
         stringBuffer.append (To_Unbounded_String (" Bases: "));
         stringBuffer.appendint (AdvancedPlayerOwnedRTSLayers'Class (This).getBaseList.size);
         stringBuffer.append (To_Unbounded_String (" Factory: "));

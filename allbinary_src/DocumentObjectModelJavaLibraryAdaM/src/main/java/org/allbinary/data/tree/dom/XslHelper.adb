@@ -18,7 +18,7 @@ with java.io.File_Package; use java.io.File_Package;
 with java.io.OutputStream_Package; use java.io.OutputStream_Package;
 with org.allbinary.data.tree.dom.document.XmlDocumentHelper_Package; use org.allbinary.data.tree.dom.document.XmlDocumentHelper_Package;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
-with org.allbinary.data.tree.dom.document.XmlDocumentHelper_Package;
+with org.w3c.dom.Document_Package_References;
 
 package body org.allbinary.data.tree.dom.XslHelper_Package is
 

@@ -14,11 +14,17 @@
 
 
 with org.allbinary.game.combat.weapon.WeaponProperties_Package; use org.allbinary.game.combat.weapon.WeaponProperties_Package;
+with org.allbinary.game.combat.weapon.WeaponProperties_Package_References;
 with org.allbinary.game.score.ScoreableInterface_Package; use org.allbinary.game.score.ScoreableInterface_Package;
+with org.allbinary.game.score.ScoreableInterface_Package_References;
 with org.allbinary.graphics.RelativeRelationship_Package; use org.allbinary.graphics.RelativeRelationship_Package;
+with org.allbinary.graphics.RelativeRelationship_Package_References;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
+with org.allbinary.layer.AllBinaryLayer_Package_References;
 with org.allbinary.game.part.weapon.BasicWeaponPart_Package; use org.allbinary.game.part.weapon.BasicWeaponPart_Package;
+with org.allbinary.game.part.weapon.BasicWeaponPart_Package_References;
 with org.allbinary.game.part.weapon.BasicWeaponPartFactoryInterface_Package; use org.allbinary.game.part.weapon.BasicWeaponPartFactoryInterface_Package;
+with org.allbinary.game.part.weapon.BasicWeaponPartFactoryInterface_Package_References;
 with org.allbinary.game.part.weapon.BasicWeaponPart_Package;
 with org.allbinary.game.part.weapon.BasicWeaponPartFactoryInterface_Package;
 with org.allbinary.game.part.weapon.SalvoInterface_Package;

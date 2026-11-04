@@ -15,22 +15,25 @@
 
 with org.osgi.framework.BundleActivator_Package; use org.osgi.framework.BundleActivator_Package;
 with org.osgi.framework.BundleContext_Package; use org.osgi.framework.BundleContext_Package;
+with org.osgi.framework.BundleContext_Package_References;
 with org.osgi.framework.ServiceFactory_Package; use org.osgi.framework.ServiceFactory_Package;
+with org.osgi.framework.ServiceFactory_Package_References;
 with org.osgi.framework.ServiceReference_Package; use org.osgi.framework.ServiceReference_Package;
 with bundle.input.automation.robot.InputAutomationRobotChangeListener_Package; use bundle.input.automation.robot.InputAutomationRobotChangeListener_Package;
+with bundle.input.automation.robot.InputAutomationRobotChangeListener_Package_References;
 with bundle.input.automation.robot.InputAutomationRobotServiceInterface_Package; use bundle.input.automation.robot.InputAutomationRobotServiceInterface_Package;
 with org.allbinary.input.automation.robot.InputRobotInterface_Package; use org.allbinary.input.automation.robot.InputRobotInterface_Package;
+with org.allbinary.input.automation.robot.InputRobotInterface_Package_References;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.osgi.OSGIActivatorUtil_Package; use org.allbinary.osgi.OSGIActivatorUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.string_Id.CommonStrings_Package_References;
 with org.allbinary.input.automation.robot.osgi.InputAutomationRobotUtil_Package; use org.allbinary.input.automation.robot.osgi.InputAutomationRobotUtil_Package;
 with org.allbinary.input.automation.robot.osgi.InputAutomationRobotChangeEvent_Package; use org.allbinary.input.automation.robot.osgi.InputAutomationRobotChangeEvent_Package;
 with org.allbinary.input.automation.robot.osgi.InputAutomationRobotChangeEvent_Package;
-with bundle.input.automation.robot.InputAutomationRobotChangeListener_Package;
 with org.allbinary.input.automation.robot.osgi.InputAutomationRobotInterfaceWrapper_Package;
-with bundle.input.automation.robot.InputAutomationRobotServiceInterface_Package;
 with org.allbinary.input.automation.robot.osgi.InputAutomationRobotUtil_Package;
-with org.allbinary.input.automation.robot.InputRobotInterface_Package;
 
 package body org.allbinary.input.automation.robot.osgi.InputAutomationRobotBundleActivator_Package is
 

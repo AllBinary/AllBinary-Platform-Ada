@@ -16,8 +16,6 @@
 with org.allbinary.input.automation.module.generic_Id.InputAutomationGenericModuleServiceFactory_Package; use org.allbinary.input.automation.module.generic_Id.InputAutomationGenericModuleServiceFactory_Package;
 with org.allbinary.input.automation.module.osgi.InputAutomationModuleBundleActivator_Package; use org.allbinary.input.automation.module.osgi.InputAutomationModuleBundleActivator_Package;
 with bundle.input.automation.module.configuration.InputAutomationConfigurationModuleChangeListener_Package;
-with org.allbinary.input.automation.module.generic_Id.InputAutomationGenericModuleServiceFactory_Package;
-with org.allbinary.input.automation.module.osgi.InputAutomationModuleBundleActivator_Package;
 with org.allbinary.input.automation.module.osgi.InputAutomationModuleServiceFactory_Package;
 
 package body bundle.input.automation.module.generic_Id.InputAutomationGenericModuleBundleActivator_Package is

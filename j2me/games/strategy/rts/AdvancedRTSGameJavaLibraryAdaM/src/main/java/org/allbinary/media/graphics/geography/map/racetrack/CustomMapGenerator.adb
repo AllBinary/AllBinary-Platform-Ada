@@ -19,11 +19,12 @@ with org.allbinary.graphics.CellPosition_Package; use org.allbinary.graphics.Cel
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
 with org.allbinary.media.graphics.geography.map.BasicGeographicMapCellPositionFactory_Package; use org.allbinary.media.graphics.geography.map.BasicGeographicMapCellPositionFactory_Package;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellTypeFactory_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellTypeFactory_Package;
+with org.allbinary.media.graphics.geography.map.GeographicMapCellTypeFactory_Package_References;
 with org.allbinary.media.graphics.geography.map.drop.DropCellPositionHistory_Package; use org.allbinary.media.graphics.geography.map.drop.DropCellPositionHistory_Package;
+with org.allbinary.media.graphics.geography.map.drop.DropCellPositionHistory_Package_References;
 with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMap_Package; use org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMap_Package;
-with org.allbinary.game.layer.AdvancedRTSGameLayer_Package;
+with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMap_Package_References;
 with org.allbinary.game.layer.AdvancedRTSProperties_Package;
-with org.allbinary.game.layer.waypoint.WaypointLayer_Package;
 
 package body org.allbinary.media.graphics.geography.map.racetrack.CustomMapGenerator_Package is
 

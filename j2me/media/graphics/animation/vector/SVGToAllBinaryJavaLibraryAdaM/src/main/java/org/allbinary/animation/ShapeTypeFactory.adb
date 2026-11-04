@@ -14,6 +14,7 @@
 
 
 with org.allbinary.animation.ShapeType_Package; use org.allbinary.animation.ShapeType_Package;
+with org.allbinary.animation.ShapeType_Package_References;
 with org.allbinary.animation.ShapeType_Package;
 
 package body org.allbinary.animation.ShapeTypeFactory_Package is

@@ -14,11 +14,15 @@
 
 
 with org.allbinary.game.input.GameInput_Package; use org.allbinary.game.input.GameInput_Package;
+with org.allbinary.game.input.GameInput_Package_References;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
+with org.allbinary.layer.AllBinaryLayer_Package_References;
 with org.allbinary.layer.AllBinaryLayerManager_Package; use org.allbinary.layer.AllBinaryLayerManager_Package;
+with org.allbinary.layer.AllBinaryLayerManager_Package_References;
 with org.allbinary.util.HashtableUtil_Package; use org.allbinary.util.HashtableUtil_Package;
 with org.allbinary.game.ai.BasicAI_Package; use org.allbinary.game.ai.BasicAI_Package;
 with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
+with org.allbinary.util.ABHashtable_Package_References;
 
 package body org.allbinary.game.ag.ai.KeyPressesAI_Package is
 
@@ -103,7 +107,7 @@ package body org.allbinary.game.ag.ai.KeyPressesAI_Package is
    begin
         if This.on then
             for index in 0 .. (This.keys'Length) - 1 loop
-                BasicAI (This).processKeyAI (Integer (This.keys (index)));
+                BasicAI_Package.BasicAI (This).processKeyAI (Integer (This.keys (index)));
             end loop;
         end if;
    end processAI;

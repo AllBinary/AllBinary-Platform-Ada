@@ -22,15 +22,12 @@ with org.allbinary.business.init.db.StaticPagesDbInitInfo_Package; use org.allbi
 with org.allbinary.business.init.db.UserDbInitInfo_Package; use org.allbinary.business.init.db.UserDbInitInfo_Package;
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringValidationUtil_Package; use org.allbinary.logic.string_Id.StringValidationUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.business.installer.InitializerData_Package; use org.allbinary.business.installer.InitializerData_Package;
-with org.allbinary.business.init.db.HistoryDbInitInfo_Package;
 with org.allbinary.business.installer.InitializerData_Package;
-with org.allbinary.business.init.db.InventoryDbInitInfo_Package;
-with org.allbinary.business.init.db.LogDbInitInfo_Package;
-with org.allbinary.business.init.db.StaticPagesDbInitInfo_Package;
 
 package body org.allbinary.business.installer.Initializer_Package is
 
@@ -470,10 +467,10 @@ package body org.allbinary.business.installer.Initializer_Package is
 
 begin
    null;
-   MAXDB := 30;
-   MAX := 16;
-   MIN := 4;
-   MINPASSWORD := 0;
+   
+   
+   
+   
 
 end org.allbinary.business.installer.Initializer_Package;
 

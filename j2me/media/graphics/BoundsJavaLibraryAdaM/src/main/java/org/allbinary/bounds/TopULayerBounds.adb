@@ -14,11 +14,12 @@
 
 
 with org.allbinary.graphics.Rectangle_Package; use org.allbinary.graphics.Rectangle_Package;
+with org.allbinary.graphics.Rectangle_Package_References;
 with org.allbinary.bounds.BoundsVisitorInterface_Package; use org.allbinary.bounds.BoundsVisitorInterface_Package;
+with org.allbinary.bounds.BoundsVisitorInterface_Package_References;
 with org.allbinary.bounds.event.BoundsChangeEvent_Package;
 with org.allbinary.bounds.event.BoundsChangeEventListener_Package;
 with org.allbinary.bounds.BoundsVisitorInterface_Package;
-with org.allbinary.bounds.LayerBounds_Package;
 
 package body org.allbinary.bounds.TopULayerBounds_Package is
 

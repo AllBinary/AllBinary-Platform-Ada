@@ -14,11 +14,13 @@
 
 
 with javax.microedition.lcdui.Font_Package; use javax.microedition.lcdui.Font_Package;
+with javax.microedition.lcdui.Font_Package_References;
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
 with javax.microedition.lcdui.game.TiledLayer_Package; use javax.microedition.lcdui.game.TiledLayer_Package;
+with javax.microedition.lcdui.game.TiledLayer_Package_References;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
-with org.allbinary.game.layer.AllBinaryTiledLayer_Package;
 
 package body org.allbinary.game.layer.AllBinaryJ2METiledLayer_Package is
 
@@ -147,13 +149,13 @@ package body org.allbinary.game.layer.AllBinaryJ2METiledLayer_Package is
    procedure moveDXY (This : in out AllBinaryJ2METiledLayer; dx : Integer; dy : Integer) is
    begin
         This.tiledLayerP.move (dx, dy);
-        AllBinaryTiledLayer (This).moveDXY (-(dx), -(dy));
+        AllBinaryTiledLayer_Package.AllBinaryTiledLayer (This).moveDXY (-(dx), -(dy));
    end moveDXY;
 
    procedure setPosition (This : in out AllBinaryJ2METiledLayer; x : Integer; y : Integer; z : Integer) is
    begin
         This.tiledLayerP.setPosition (x, y);
-        AllBinaryTiledLayer (This).setPosition (-(x), -(y), z);
+        AllBinaryTiledLayer_Package.AllBinaryTiledLayer (This).setPosition (-(x), -(y), z);
    end setPosition;
 
    function getTiledLayer (This : in out AllBinaryJ2METiledLayer) return TiledLayer_Access is

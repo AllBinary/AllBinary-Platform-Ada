@@ -19,12 +19,15 @@ with org.allbinary.business.init.db.DatabaseConnectionInfoInterface_Package; use
 with org.allbinary.business.init.db.DbConnectionInfo_Package; use org.allbinary.business.init.db.DbConnectionInfo_Package;
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.logic.string_Id.StringValidationUtil_Package; use org.allbinary.logic.string_Id.StringValidationUtil_Package;
 with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package; use org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.business.installer.DynamicInitDb_Package; use org.allbinary.business.installer.DynamicInitDb_Package;
+with org.allbinary.business.installer.DynamicInitDb_Package_References;
 with org.allbinary.business.installer.InitializerData_Package; use org.allbinary.business.installer.InitializerData_Package;
 with org.allbinary.business.installer.DynamicInitDb_Package;
 with org.allbinary.business.installer.InitDb_Package;
@@ -370,10 +373,10 @@ package body org.allbinary.business.installer.InitializerDatabase_Package is
 
 begin
    null;
-   MAXDB := 30;
-   MAX := 16;
-   MIN := 4;
-   MINPASSWORD := 0;
+   
+   
+   
+   
 
 end org.allbinary.business.installer.InitializerDatabase_Package;
 

@@ -38,7 +38,7 @@ package body admin.tags.ParentInventoryTagHelper_Package is
 
    function getInstance return ParentInventoryTagHelper_Access is
    begin
-        return ParentInventoryTagHelper_Package.instance;
+        return ParentInventoryTagHelper_Access (ParentInventoryTagHelper_Package.instance);
    end getInstance;
 
    --  throws Exception

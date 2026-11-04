@@ -14,11 +14,16 @@
 
 
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
 with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
+with javax.microedition.lcdui.Image_Package_References;
 with org.allbinary.graphics.form.item.ABCustomImageItem_Package; use org.allbinary.graphics.form.item.ABCustomImageItem_Package;
 with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Animation_Package;
+with org.allbinary.animation.Animation_Package_References;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.graphics.color.BasicColor_Package_References;
 with org.allbinary.layer.LayerInterfaceFactoryInterface_Package; use org.allbinary.layer.LayerInterfaceFactoryInterface_Package;
+with org.allbinary.layer.LayerInterfaceFactoryInterface_Package_References;
 
 package body org.allbinary.game.layer.item.LayerInterfaceFactoryImageItem_Package is
 
@@ -107,7 +112,7 @@ package body org.allbinary.game.layer.item.LayerInterfaceFactoryImageItem_Packag
       graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
       index : Integer;
    begin
-        ABCustomImageItem (This).paintXY (graphics, x, y);
+        ABCustomImageItem_Package.ABCustomImageItem (This).paintXY (graphics, x, y);
         index := This.animationArray'Length;
         while (Java_Pre_Decrement (index)) >= (0) loop
             This.animationArray (index).paintXY (graphics, x, y);

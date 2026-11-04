@@ -14,6 +14,7 @@
 
 
 with javax.microedition.lcdui.Command_Package; use javax.microedition.lcdui.Command_Package;
+with javax.microedition.lcdui.Command_Package_References;
 
 package body org.allbinary.content.NotificationUtil_Package is
 

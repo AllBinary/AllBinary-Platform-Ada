@@ -15,19 +15,23 @@
 
 with javax.microedition.lcdui.Choice_Package; use javax.microedition.lcdui.Choice_Package;
 with javax.microedition.lcdui.ChoiceGroup_Package; use javax.microedition.lcdui.ChoiceGroup_Package;
+with javax.microedition.lcdui.ChoiceGroup_Package_References;
 with javax.microedition.lcdui.CommandListener_Package; use javax.microedition.lcdui.CommandListener_Package;
+with javax.microedition.lcdui.CommandListener_Package_References;
 with javax.microedition.lcdui.Item_Package; use javax.microedition.lcdui.Item_Package;
 with javax.microedition.lcdui.NullImage_Package; use javax.microedition.lcdui.NullImage_Package;
 with javax.microedition.lcdui.StringItem_Package; use javax.microedition.lcdui.StringItem_Package;
 with org.allbinary.game.commands.GameCommandsFactory_Package; use org.allbinary.game.commands.GameCommandsFactory_Package;
 with org.allbinary.game.configuration.persistance.GamePersistanceSingleton_Package; use org.allbinary.game.configuration.persistance.GamePersistanceSingleton_Package;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.graphics.color.BasicColor_Package_References;
 with org.allbinary.graphics.displayable.screen.CommandForm_Package; use org.allbinary.graphics.displayable.screen.CommandForm_Package;
 with org.allbinary.logic.MEUtil_Package; use org.allbinary.logic.MEUtil_Package;
+with org.allbinary.logic.MEUtil_Package_References;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.logic.MEUtil_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
 
 package body org.allbinary.game.configuration.LoadGameForm_Package is
 
@@ -141,7 +145,7 @@ package body org.allbinary.game.configuration.LoadGameForm_Package is
             This.meUtil.appendItem (LoadGameForm_Access'(This'Unchecked_Access), StringItem_Package.Create (To_Unbounded_String ("No Saved Games"), StringUtil_Package.getInstance.EMPTY_STRING, Item_Package.PLAIN));
             This.areChoices := False;
         end if;
-        CommandForm (This).update;
+        CommandForm_Package.CommandForm (This).update;
    end update;
 
    procedure add (This : in out LoadGameForm; list_Param : access BasicArrayList_Package.BasicArrayList'Class; name : Unbounded_String; option : Integer) is

@@ -79,8 +79,8 @@ package body org.allbinary.game.testgamedemo.drawable_Package is
 
 begin
    null;
-   testgamedemo_icon := 16#7f020000#;
-   testgamedemo_wait_256_by_256 := 16#7f020001#;
+   
+   
 
 end org.allbinary.game.testgamedemo.drawable_Package;
 
@@ -109,12 +109,12 @@ package body org.allbinary.game.testgamedemo.id_Package is
 
 begin
    null;
-   ad_area_bottom := 16#7f060002#;
-   ad_area_left := 16#7f060003#;
-   ad_area_right := 16#7f060004#;
-   ad_area_top := 16#7f060001#;
-   testgamedemo := 16#7f060000#;
-   testgamedemo_gl := 16#7f060005#;
+   
+   
+   
+   
+   
+   
 
 end org.allbinary.game.testgamedemo.id_Package;
 
@@ -143,9 +143,9 @@ package body org.allbinary.game.testgamedemo.layout_Package is
 
 begin
    null;
-   testgamedemo_ad_overlay_layout := 16#7f030000#;
-   testgamedemo_gl_layout := 16#7f030001#;
-   testgamedemo_layout := 16#7f030002#;
+   
+   
+   
 
 end org.allbinary.game.testgamedemo.layout_Package;
 
@@ -174,50 +174,50 @@ package body org.allbinary.game.testgamedemo.raw_Package is
 
 begin
    null;
-   error := 16#7f040000#;
-   licenseinitdata := 16#7f040001#;
-   partner := 16#7f040002#;
-   select_Id := 16#7f040003#;
-   test := 16#7f040004#;
-   testgamedemo_wait_256_by_256 := 16#7f040005#;
-   ouya_a := 16#7f040012#;
-   ouya_key := 16#7f040013#;
-   ouya_o := 16#7f040014#;
-   ouya_u := 16#7f040015#;
-   ouya_y := 16#7f040016#;
-   touch_button_128_by_128 := 16#7f040026#;
-   touch_button_64_by_64 := 16#7f040027#;
-   touch_button_create_128_by_128 := 16#7f040028#;
-   touch_button_create_64_by_64 := 16#7f040029#;
-   touch_button_down_arrow_128_by_128 := 16#7f04002a#;
-   touch_button_down_arrow_64_by_64 := 16#7f04002b#;
-   touch_button_generic_action_128_by_128 := 16#7f04002c#;
-   touch_button_generic_action_64_by_64 := 16#7f04002d#;
-   touch_button_join_128_by_128 := 16#7f04002e#;
-   touch_button_join_64_by_64 := 16#7f04002f#;
-   touch_button_leave_128_by_128 := 16#7f040030#;
-   touch_button_leave_64_by_64 := 16#7f040031#;
-   touch_button_login_128_by_128 := 16#7f040032#;
-   touch_button_login_64_by_64 := 16#7f040033#;
-   touch_button_next_128_by_128 := 16#7f040034#;
-   touch_button_next_64_by_64 := 16#7f040035#;
-   touch_button_refresh_128_by_128 := 16#7f040036#;
-   touch_button_refresh_64_by_64 := 16#7f040037#;
-   touch_button_start_128_by_128 := 16#7f040038#;
-   touch_button_start_64_by_64 := 16#7f040039#;
-   touch_button_add_local_player_128_by_128 := 16#7f040038#;
-   touch_button_add_local_player_64_by_64 := 16#7f040039#;
-   touch_button_strafe_left_arrow_128_by_128 := 16#7f04003a#;
-   touch_button_strafe_left_arrow_64_by_64 := 16#7f04003b#;
-   touch_button_strafe_right_arrow_128_by_128 := 16#7f04003c#;
-   touch_button_strafe_right_arrow_64_by_64 := 16#7f04003d#;
-   touch_button_turn_left_arrow_128_by_128 := 16#7f04003e#;
-   touch_button_turn_left_arrow_64_by_64 := 16#7f04003f#;
-   touch_button_turn_right_arrow_128_by_128 := 16#7f040040#;
-   touch_button_turn_right_arrow_64_by_64 := 16#7f040041#;
-   touch_button_up_arrow_128_by_128 := 16#7f040042#;
-   touch_button_up_arrow_64_by_64 := 16#7f040043#;
-   touch_button_generic_action_arrow_64_by_64 := 16#7f040009#;
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
 
 end org.allbinary.game.testgamedemo.raw_Package;
 
@@ -246,8 +246,8 @@ package body org.allbinary.game.testgamedemo.string_Package is
 
 begin
    null;
-   progressbar_in_title_string := 16#7f050001#;
-   testgamedemo_app_name := 16#7f050000#;
+   
+   
 
 end org.allbinary.game.testgamedemo.string_Package;
 

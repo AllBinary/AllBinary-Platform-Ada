@@ -15,13 +15,20 @@
 
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.business.user.UserInterface_Package; use org.allbinary.business.user.UserInterface_Package;
+with org.allbinary.business.user.UserInterface_Package_References;
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.communication.smtp.event.UserEmailEventListenerInterface_Package; use org.allbinary.logic.communication.smtp.event.UserEmailEventListenerInterface_Package;
+with org.allbinary.logic.communication.smtp.event.UserEmailEventListenerInterface_Package_References;
 with org.allbinary.logic.communication.smtp.event.UserEmailEventNameData_Package; use org.allbinary.logic.communication.smtp.event.UserEmailEventNameData_Package;
+with org.allbinary.logic.communication.smtp.event.UserEmailEventNameData_Package_References;
 with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package; use org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.string_Id.CommonStrings_Package_References;
 with org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventConfigurationInterface_Package; use org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventConfigurationInterface_Package;
+with org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventConfigurationInterface_Package_References;
 with org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventListenerFactory_Package; use org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventListenerFactory_Package;
 with org.allbinary.logic.communication.smtp.info.BasicEmailInfo_Package;
 with org.allbinary.logic.communication.smtp.event.EmailEvent_Package;
@@ -34,10 +41,7 @@ with org.allbinary.business.user.modules.configuration.UserConfigurationInterfac
 with org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfigurationInterface_Package;
 with org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventConfigurationInterface_Package;
 with org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventListenerFactory_Package;
-with org.allbinary.logic.communication.smtp.event.UserEmailEventListenerInterface_Package;
-with org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventsConfigurationInterface_Package;
 with org.allbinary.business.user.UserFactoryInterface_Package;
-with org.allbinary.business.user.UserInterface_Package;
 with org.allbinary.business.user.role.UserRole_Package;
 with org.allbinary.logic.communication.http.request.session.WeblisketSessionInterface_Package;
 

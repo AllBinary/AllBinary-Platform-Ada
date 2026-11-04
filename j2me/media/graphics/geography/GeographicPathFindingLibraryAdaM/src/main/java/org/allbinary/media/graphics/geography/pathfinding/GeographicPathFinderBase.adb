@@ -14,8 +14,11 @@
 
 
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.string_Id.CommonStrings_Package_References;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.media.graphics.geography.pathfinding.MultipassState_Package; use org.allbinary.media.graphics.geography.pathfinding.MultipassState_Package;
+with org.allbinary.media.graphics.geography.pathfinding.MultipassState_Package_References;
 
 package body org.allbinary.media.graphics.geography.pathfinding.GeographicPathFinderBase_Package is
 

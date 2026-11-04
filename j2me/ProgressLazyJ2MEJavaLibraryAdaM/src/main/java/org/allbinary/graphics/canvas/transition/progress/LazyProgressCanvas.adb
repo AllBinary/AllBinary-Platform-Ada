@@ -15,6 +15,7 @@
 
 with org.allbinary.canvas.Processor_Package; use org.allbinary.canvas.Processor_Package;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.graphics.color.BasicColor_Package_References;
 with org.allbinary.graphics.paint.NullPaintable_Package; use org.allbinary.graphics.paint.NullPaintable_Package;
 with org.allbinary.image.ImageCacheFactory_Package; use org.allbinary.image.ImageCacheFactory_Package;
 
@@ -55,7 +56,7 @@ package body org.allbinary.graphics.canvas.transition.progress.LazyProgressCanva
 
    procedure start (This : in out LazyProgressCanvas) is
    begin
-        ProgressCanvas (This).start;
+        ProgressCanvas_Package.ProgressCanvas (This).start;
         This.hasPainted := False;
    end start;
 
@@ -84,7 +85,7 @@ package body org.allbinary.graphics.canvas.transition.progress.LazyProgressCanva
 
    procedure endFromInitialLazyLoadingComplete (This : in out LazyProgressCanvas) is
    begin
-        ProgressCanvas (This).endFromInitialLazyLoadingComplete;
+        ProgressCanvas_Package.ProgressCanvas (This).endFromInitialLazyLoadingComplete;
         This.paintable := NullPaintable_Package.getInstance;
    end endFromInitialLazyLoadingComplete;
 

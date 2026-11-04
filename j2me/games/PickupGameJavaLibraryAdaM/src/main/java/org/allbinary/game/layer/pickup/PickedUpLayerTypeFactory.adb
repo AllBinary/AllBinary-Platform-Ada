@@ -15,6 +15,7 @@
 
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.game.layer.pickup.PickedUpLayerType_Package; use org.allbinary.game.layer.pickup.PickedUpLayerType_Package;
+with org.allbinary.game.layer.pickup.PickedUpLayerType_Package_References;
 with org.allbinary.game.layer.pickup.PickedUpLayerType_Package;
 
 package body org.allbinary.game.layer.pickup.PickedUpLayerTypeFactory_Package is

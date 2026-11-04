@@ -14,13 +14,20 @@
 
 
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.string_Id.CommonStrings_Package_References;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.thread.NullRunnable_Package; use org.allbinary.thread.NullRunnable_Package;
+with org.allbinary.thread.NullRunnable_Package_References;
 with org.allbinary.thread.ThreadPoolStrings_Package; use org.allbinary.thread.ThreadPoolStrings_Package;
+with org.allbinary.thread.ThreadPoolStrings_Package_References;
 with org.allbinary.thread.ThreadObjectUtil_Package; use org.allbinary.thread.ThreadObjectUtil_Package;
+with org.allbinary.thread.ThreadObjectUtil_Package_References;
 with org.allbinary.thread.PriorityRunnable_Package; use org.allbinary.thread.PriorityRunnable_Package;
+with org.allbinary.thread.PriorityRunnable_Package_References;
 with org.allbinary.thread.PriorityRunnable_Package;
 with org.allbinary.thread.ThreadObjectUtil_Package;
 with org.allbinary.thread.ThreadPoolStrings_Package;
@@ -277,7 +284,7 @@ package body org.allbinary.thread.ThreadPool_Package is
 
 begin
    null;
-   NORMAL_PRIORITY := 5;
+   
 
 end org.allbinary.thread.ThreadPool_Package;
 

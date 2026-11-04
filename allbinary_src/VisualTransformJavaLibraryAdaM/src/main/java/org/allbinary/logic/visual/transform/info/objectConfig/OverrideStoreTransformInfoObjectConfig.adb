@@ -14,9 +14,11 @@
 
 
 with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package; use org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References;
 with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
+with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package_References;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
-with org.allbinary.logic.visual.transform.info.objectConfig.GenericStoreTransformInfoObjectConfig_Package;
+with org.w3c.dom.Document_Package_References;
 with org.allbinary.logic.visual.transform.info.TransformInfo_Package;
 with org.allbinary.logic.visual.transform.info.TransformInfoHttp_Package;
 with org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfig_Package;
@@ -109,7 +111,7 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.OverrideStor
       objectConfigDocument : constant Document_Access := Document_Access (objectConfigDocument_Param);
       newObjectConfigDocument : Document_Access;
    begin
-        newObjectConfigDocument := GenericStoreTransformInfoObjectConfig (This).generate (objectConfigDocument);
+        newObjectConfigDocument := GenericStoreTransformInfoObjectConfig_Package.GenericStoreTransformInfoObjectConfig (This).generate (objectConfigDocument);
         return newObjectConfigDocument;
    end generate;
 

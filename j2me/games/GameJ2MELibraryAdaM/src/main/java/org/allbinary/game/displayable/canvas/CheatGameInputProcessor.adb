@@ -14,18 +14,21 @@
 
 
 with org.allbinary.game.input.GameKeyFactory_Package; use org.allbinary.game.input.GameKeyFactory_Package;
+with org.allbinary.game.input.GameKeyFactory_Package_References;
 with org.allbinary.game.input.PlayerGameInput_Package; use org.allbinary.game.input.PlayerGameInput_Package;
 with org.allbinary.game.input.event.GameKeyEvent_Package; use org.allbinary.game.input.event.GameKeyEvent_Package;
 with org.allbinary.game.input.event.GameKeyEventUtil_Package; use org.allbinary.game.input.event.GameKeyEventUtil_Package;
 with org.allbinary.game.layer.AllBinaryGameLayerManager_Package; use org.allbinary.game.layer.AllBinaryGameLayerManager_Package;
 with org.allbinary.game.layer.special.SpecialGameInputFactory_Package; use org.allbinary.game.layer.special.SpecialGameInputFactory_Package;
 with org.allbinary.game.layer.special.SpecialGameInputInterface_Package; use org.allbinary.game.layer.special.SpecialGameInputInterface_Package;
+with org.allbinary.game.layer.special.SpecialGameInputInterface_Package_References;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package; use org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package;
+with org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package_References;
 with org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package;
 with org.allbinary.game.displayable.canvas.AllBinaryGameCanvasInterface_Package;
-with org.allbinary.game.layer.AllBinaryGameLayerManager_Package;
 with org.allbinary.game.displayable.canvas.BaseMenuBehavior_Package;
 with org.allbinary.game.init.BasicBuildGameInitializerFactory_Package;
 with org.allbinary.game.displayable.canvas.DemoGameBehavior_Package;
@@ -37,8 +40,6 @@ with org.allbinary.game.init.GameInitializationInterface_Package;
 with org.allbinary.game.init.GameInitializationInterfaceFactoryInterface_Package;
 with org.allbinary.game.GameStrings_Package;
 with org.allbinary.game.layer.special.SpecialGameInput_Package;
-with org.allbinary.game.layer.special.SpecialGameInputFactory_Package;
-with org.allbinary.game.layer.special.SpecialGameInputInterface_Package;
 
 package body org.allbinary.game.displayable.canvas.CheatGameInputProcessor_Package is
 

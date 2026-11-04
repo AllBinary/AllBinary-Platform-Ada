@@ -14,6 +14,7 @@
 
 
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
+with org.w3c.dom.Document_Package_References;
 
 package body org.allbinary.business.init.InitInfoDocument_Package is
 

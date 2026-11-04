@@ -25,7 +25,7 @@ package body org.allbinary.logic.visual.dhtml.style.css.property.CssPropertyValu
 
    function getInstance return CssPropertyValueData_Access is
    begin
-        return CssPropertyValueData_Package.instance;
+        return CssPropertyValueData_Access (CssPropertyValueData_Package.instance);
    end getInstance;
 
    procedure Initialize (This : in out CssPropertyValueData'Class) is

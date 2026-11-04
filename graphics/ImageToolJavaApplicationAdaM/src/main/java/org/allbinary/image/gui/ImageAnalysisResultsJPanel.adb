@@ -14,6 +14,7 @@
 
 
 with org.allbinary.media.image.analysis.ImageAnalysisResults_Package; use org.allbinary.media.image.analysis.ImageAnalysisResults_Package;
+with org.allbinary.media.image.analysis.ImageAnalysisResults_Package_References;
 with org.allbinary.media.image.analysis.ImageColorRangeResults_Package; use org.allbinary.media.image.analysis.ImageColorRangeResults_Package;
 with org.allbinary.media.image.analysis.ImageColorResults_Package; use org.allbinary.media.image.analysis.ImageColorResults_Package;
 with org.allbinary.string_Id.CommonPhoneStrings_Package; use org.allbinary.string_Id.CommonPhoneStrings_Package;

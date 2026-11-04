@@ -15,12 +15,14 @@
 
 with org.allbinary.game.collision.CollidableBaseBehavior_Package; use org.allbinary.game.collision.CollidableBaseBehavior_Package;
 with org.allbinary.game.collision.CollidableInterfaceCompositeInterface_Package; use org.allbinary.game.collision.CollidableInterfaceCompositeInterface_Package;
+with org.allbinary.game.collision.CollidableInterfaceCompositeInterface_Package_References;
 with org.allbinary.game.combat.damage.DamageUtil_Package; use org.allbinary.game.combat.damage.DamageUtil_Package;
+with org.allbinary.game.combat.damage.DamageUtil_Package_References;
 with org.allbinary.game.layer.CollidableCompositeLayer_Package; use org.allbinary.game.layer.CollidableCompositeLayer_Package;
+with org.allbinary.game.layer.CollidableCompositeLayer_Package_References;
 with org.allbinary.logic.communication.log.ForcedLogUtil_Package; use org.allbinary.logic.communication.log.ForcedLogUtil_Package;
 with org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package; use org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package;
 with org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package;
-with org.allbinary.game.combat.damage.DamageUtil_Package;
 with org.allbinary.game.combat.damage.DamageableInterface_Package;
 with org.allbinary.game.combat.destroy.DestroyableInterface_Package;
 with org.allbinary.game.combat.destroy.event.DestroyedEvent_Package;
@@ -86,7 +88,7 @@ package body org.allbinary.game.layer.special.CollidableDestroyableDamageableBeh
       collisionLayer : constant CollidableCompositeLayer_Access := CollidableCompositeLayer_Access (collisionLayer_Param);
    begin
         if (ownerLayer.getGroupInterface (0)) /= (collisionLayer.getGroupInterface (0)) then
-            return CollidableBaseBehavior (This).isCollision (ownerLayer, collisionLayer);
+            return CollidableBaseBehavior_Package.CollidableBaseBehavior (This).isCollision (ownerLayer, collisionLayer);
         end if;
         return False;
    end isCollision;

@@ -14,10 +14,14 @@
 
 
 with org.allbinary.graphics.form.item.ABCustomItem_Package; use org.allbinary.graphics.form.item.ABCustomItem_Package;
+with org.allbinary.graphics.form.item.ABCustomItem_Package_References;
 with org.allbinary.graphics.Rectangle_Package; use org.allbinary.graphics.Rectangle_Package;
+with org.allbinary.graphics.Rectangle_Package_References;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.graphics.color.BasicColor_Package_References;
 with org.allbinary.graphics.form.FormTypeFactory_Package; use org.allbinary.graphics.form.FormTypeFactory_Package;
 with org.allbinary.graphics.form.ItemPaintableFactory_Package; use org.allbinary.graphics.form.ItemPaintableFactory_Package;
+with org.allbinary.graphics.form.ItemPaintableFactory_Package_References;
 with org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package; use org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package;
 
 package body org.allbinary.game.displayable.canvas.PreGameScrollSelectionForm_Package is
@@ -88,7 +92,7 @@ package body org.allbinary.game.displayable.canvas.PreGameScrollSelectionForm_Pa
    procedure init (This : in out PreGameScrollSelectionForm; rectangle_Param : access Rectangle_Package.Rectangle'Class) is
       rectangle : constant Rectangle_Access := Rectangle_Access (rectangle_Param);
    begin
-        ScrollCurrentSelectionForm (This).init (rectangle, FormTypeFactory_Package.getInstance.TEMP_HORIZONTAL_FORM);
+        ScrollCurrentSelectionForm_Package.ScrollCurrentSelectionForm (This).init (rectangle, FormTypeFactory_Package.getInstance.TEMP_HORIZONTAL_FORM);
    end init;
 
 end org.allbinary.game.displayable.canvas.PreGameScrollSelectionForm_Package;

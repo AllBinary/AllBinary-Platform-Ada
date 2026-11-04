@@ -14,15 +14,20 @@
 
 
 with javax.microedition.lcdui.Command_Package; use javax.microedition.lcdui.Command_Package;
+with javax.microedition.lcdui.Command_Package_References;
+with android.app.Notification_Package; use android.app.Notification_Package;
 with android.app.NotificationManager_Package; use android.app.NotificationManager_Package;
+with android.app.NotificationManager_Package_References;
 with android.app.PendingIntent_Package; use android.app.PendingIntent_Package;
 with android.content.Context_Package; use android.content.Context_Package;
 with android.content.Intent_Package; use android.content.Intent_Package;
 with org.allbinary.android.AndroidInfoFactory_Package; use org.allbinary.android.AndroidInfoFactory_Package;
 with org.allbinary.data.resource.ResourceUtil_Package; use org.allbinary.data.resource.ResourceUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.content.NotificationBuilder_Package; use org.allbinary.content.NotificationBuilder_Package;
+with org.allbinary.content.NotificationBuilder_Package_References;
 with org.allbinary.content.NotificationBuilderAPI23_Package; use org.allbinary.content.NotificationBuilderAPI23_Package;
 with org.allbinary.content.CommandUriAction_Package; use org.allbinary.content.CommandUriAction_Package;
 with org.allbinary.content.CommandUriAction_Package;

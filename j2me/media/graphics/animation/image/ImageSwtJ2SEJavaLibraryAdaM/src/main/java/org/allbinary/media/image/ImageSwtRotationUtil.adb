@@ -14,13 +14,19 @@
 
 
 with org.allbinary.game.configuration.feature.Features_Package; use org.allbinary.game.configuration.feature.Features_Package;
+with org.allbinary.game.configuration.feature.Features_Package_References;
 with org.allbinary.game.configuration.feature.GameFeatureFactory_Package; use org.allbinary.game.configuration.feature.GameFeatureFactory_Package;
+with org.allbinary.game.configuration.feature.GameFeatureFactory_Package_References;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.string_Id.CommonStrings_Package_References;
 with org.eclipse.swt.SWT_Package; use org.eclipse.swt.SWT_Package;
 with org.eclipse.swt.graphics.GC_Package; use org.eclipse.swt.graphics.GC_Package;
+with org.eclipse.swt.graphics.GC_Package_References;
 with org.eclipse.swt.graphics.ImageData_Package; use org.eclipse.swt.graphics.ImageData_Package;
 with org.allbinary.media.image.ImageUtil_Package; use org.allbinary.media.image.ImageUtil_Package;
+with org.allbinary.media.image.ImageUtil_Package_References;
 with org.allbinary.media.image.ImageUtil_Package;
 
 package body org.allbinary.media.image.ImageSwtRotationUtil_Package is

@@ -18,6 +18,7 @@ with org.allbinary.logic.system.security.licensing.registration.RegistrationConf
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
+with org.allbinary.util.ABHashtable_Package_References;
 with org.allbinary.logic.system.security.licensing.PartnerIdentifierFileUtil_Package; use org.allbinary.logic.system.security.licensing.PartnerIdentifierFileUtil_Package;
 
 package body org.allbinary.logic.system.security.licensing.MobileClientInformation_Package is
@@ -72,7 +73,7 @@ package body org.allbinary.logic.system.security.licensing.MobileClientInformati
       hashtable : ABHashtable_Access;
       registrationConfiguration : RegistrationConfiguration_Access;
    begin
-        hashtable := AbeClientInformation (This).toHashtable;
+        hashtable := AbeClientInformation_Package.AbeClientInformation (This).toHashtable;
         registrationConfiguration := RegistrationConfiguration_Package.getInstance;
         hashtable.put (registrationConfiguration.NAME, registrationConfiguration.getRegistrationCode);
         return hashtable;

@@ -136,7 +136,7 @@ package org.allbinary.input.automation.module.osgi.InputAutomationNewBundleRunna
    FILE : Unbounded_String;
    JAR_DIR_PROP : Unbounded_String;
    INPUT_AUTMATION_MODULE_BUNDLE_JAR_PATH : Unbounded_String;
-   MODULES_START_LEVEL : Integer;
+   MODULES_START_LEVEL : constant Integer := 8;
 
    procedure Initialize (This : in out InputAutomationNewBundleRunnable'Class; inputAutomationBundleActivator_Param : access InputAutomationBundleActivator_Package.InputAutomationBundleActivator'Class);
    function Create (inputAutomationBundleActivator_Param : access InputAutomationBundleActivator_Package.InputAutomationBundleActivator'Class) return InputAutomationNewBundleRunnable_Access;

@@ -14,7 +14,9 @@
 
 
 with org.allbinary.game.layer.RTSLayer_Package; use org.allbinary.game.layer.RTSLayer_Package;
+with org.allbinary.game.layer.RTSLayer_Package_References;
 with org.allbinary.graphics.form.ScrollSelectionForm_Package; use org.allbinary.graphics.form.ScrollSelectionForm_Package;
+with org.allbinary.graphics.form.ScrollSelectionForm_Package_References;
 with org.allbinary.game.input.BuildMenuCompositeInterface_Package;
 with org.allbinary.game.layer.capital.Capital_Package;
 with org.allbinary.game.layer.GeographicMapCellPositionAreaBase_Package;
@@ -23,9 +25,7 @@ with org.allbinary.game.layer.PathFindingLayerInterface_Package;
 with org.allbinary.game.layer.PlayerOwnedRTSLayers_Package;
 with org.allbinary.game.input.form.RTSFormInput_Package;
 with org.allbinary.game.layer.RTSInterface_Package;
-with org.allbinary.game.layer.RTSLayer_Package;
 with org.allbinary.game.layer.RTSLayer2LogHelper_Package;
-with org.allbinary.game.input.RTSLayerFormFactoryInterface_Package;
 with org.allbinary.game.layer.RTSLayerUtil_Package;
 with org.allbinary.game.layer.RTSPlayerLayerInterface_Package;
 with org.allbinary.game.layer.SelectionHudPaintable_Package;

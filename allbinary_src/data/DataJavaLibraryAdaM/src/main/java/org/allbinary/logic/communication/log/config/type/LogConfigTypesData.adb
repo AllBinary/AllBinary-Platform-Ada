@@ -38,7 +38,7 @@ package body org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes
 
    function getInstance return LogConfigTypesData_Access is
    begin
-        return LogConfigTypesData_Package.instance;
+        return LogConfigTypesData_Access (LogConfigTypesData_Package.instance);
    end getInstance;
 
 begin

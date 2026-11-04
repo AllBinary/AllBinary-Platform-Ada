@@ -14,7 +14,9 @@
 
 
 with org.allbinary.game.identification.Group_Package; use org.allbinary.game.identification.Group_Package;
+with org.allbinary.game.identification.Group_Package_References;
 with org.allbinary.game.layer.waypoint.event.WaypointEventHandler_Package; use org.allbinary.game.layer.waypoint.event.WaypointEventHandler_Package;
+with org.allbinary.game.layer.waypoint.event.WaypointEventHandler_Package_References;
 with org.allbinary.game.layer.waypoint.event.WaypointEventHandler_Package;
 
 package body org.allbinary.game.layer.waypoint.event.WaypointEventHandlerFactory_Package is

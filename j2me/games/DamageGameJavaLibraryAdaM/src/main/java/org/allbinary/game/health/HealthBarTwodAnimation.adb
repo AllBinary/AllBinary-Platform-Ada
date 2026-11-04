@@ -14,8 +14,9 @@
 
 
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
-with org.allbinary.game.health.HealthBarAnimation_Package;
+with org.allbinary.layer.AllBinaryLayer_Package_References;
 
 package body org.allbinary.game.health.HealthBarTwodAnimation_Package is
 

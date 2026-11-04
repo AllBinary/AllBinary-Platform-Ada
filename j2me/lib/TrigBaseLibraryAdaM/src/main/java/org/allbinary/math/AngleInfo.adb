@@ -20,8 +20,10 @@ with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.Com
 with jsinterop.annotations.JsMethod_Package; use jsinterop.annotations.JsMethod_Package;
 with jsinterop.annotations.JsConstructor_Package; use jsinterop.annotations.JsConstructor_Package;
 with org.allbinary.math.AngleIncrementInfo_Package; use org.allbinary.math.AngleIncrementInfo_Package;
+with org.allbinary.math.AngleIncrementInfo_Package_References;
 with org.allbinary.math.AngleIncrementInfoFactory_Package; use org.allbinary.math.AngleIncrementInfoFactory_Package;
 with org.allbinary.math.FrameUtil_Package; use org.allbinary.math.FrameUtil_Package;
+with org.allbinary.math.FrameUtil_Package_References;
 with org.allbinary.math.AngleIncrementInfo_Package;
 with org.allbinary.math.AngleIncrementInfoFactory_Package;
 with org.allbinary.math.FrameUtil_Package;

@@ -23,15 +23,12 @@ with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Pack
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.logic.util.visitor.Visitor_Package; use org.allbinary.logic.util.visitor.Visitor_Package;
 with org.allbinary.game.input.SelectedRTSLayersPlayerGameInput_Package; use org.allbinary.game.input.SelectedRTSLayersPlayerGameInput_Package;
-with org.allbinary.game.layer.AdvancedRTSGameLayer_Package;
+with org.allbinary.game.input.SelectedRTSLayersPlayerGameInput_Package_References;
 with org.allbinary.game.layer.AdvancedRTSProperties_Package;
-with org.allbinary.game.input.form.AssignWaypointsUtil_Package;
 with org.allbinary.game.layer.building.event.BuildingEventListenerInterface_Package;
-with org.allbinary.game.layer.building.BuildingLayer_Package;
 with org.allbinary.game.layer.building.BuildingPropertiesFactory_Package;
 with org.allbinary.game.layer.RTSLayerEvent_Package;
 with org.allbinary.game.layer.SensorAction_Package;
-with org.allbinary.game.layer.unit.UnitLayer_Package;
 with org.allbinary.game.layer.unit.UnitWaypointBehavior_Package;
 with org.allbinary.game.layer.unit.UnitWaypointStrings_Package;
 with org.allbinary.game.layer.waypoint.event.WaypointEventListenerInterface_Package;

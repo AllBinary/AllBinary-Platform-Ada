@@ -37,8 +37,8 @@ package body org.allbinary.business.user.address.StreetAddressData_Package is
 
 begin
    null;
-   MAX := 255;
-   MIN := 0;
+   
+   
    FORM := To_Unbounded_String ("FORM");
    STATES := To_Unbounded_String ("STATES");
    NUMBEROFADDRESSES := To_Unbounded_String ("STREETADDRESS_NUMBEROFADDRESSES");

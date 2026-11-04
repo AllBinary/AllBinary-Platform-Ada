@@ -21,10 +21,9 @@ with org.allbinary.input.automation.module.generic_Id.configuration.profile.Gene
 with org.allbinary.input.automation.module.generic_Id.constraints.NoImageComparatorConstraints_Package; use org.allbinary.input.automation.module.generic_Id.constraints.NoImageComparatorConstraints_Package;
 with org.allbinary.input.automation.module.generic_Id.constraints.NoMotionRectangleConstraints_Package; use org.allbinary.input.automation.module.generic_Id.constraints.NoMotionRectangleConstraints_Package;
 with org.allbinary.thread.RunnableInterface_Package; use org.allbinary.thread.RunnableInterface_Package;
+with org.allbinary.thread.RunnableInterface_Package_References;
 with org.allbinary.input.automation.module.generic_Id.GenericInputAutomationAction_Package; use org.allbinary.input.automation.module.generic_Id.GenericInputAutomationAction_Package;
 with org.allbinary.input.automation.module.generic_Id.GenericInputAutomationWorker_Package; use org.allbinary.input.automation.module.generic_Id.GenericInputAutomationWorker_Package;
-with org.allbinary.input.automation.module.generic_Id.constraints.NoImageComparatorConstraints_Package;
-with org.allbinary.input.automation.module.generic_Id.constraints.NoMotionRectangleConstraints_Package;
 
 package body org.allbinary.input.automation.module.generic_Id.GenericModuleFactory_Package is
 

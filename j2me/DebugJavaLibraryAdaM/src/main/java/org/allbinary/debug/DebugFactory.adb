@@ -15,6 +15,7 @@
 
 with org.allbinary.debug.NoDebug_Package; use org.allbinary.debug.NoDebug_Package;
 with org.allbinary.debug.DebugInterface_Package; use org.allbinary.debug.DebugInterface_Package;
+with org.allbinary.debug.DebugInterface_Package_References;
 with org.allbinary.debug.DebugInterface_Package;
 with org.allbinary.debug.NoDebug_Package;
 

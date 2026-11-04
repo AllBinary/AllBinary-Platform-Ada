@@ -3,6 +3,7 @@
 
 with org.allbinary.thread.NullPriorityRunnable_Package; use org.allbinary.thread.NullPriorityRunnable_Package;
 with org.allbinary.thread.PriorityRunnable_Package; use org.allbinary.thread.PriorityRunnable_Package;
+with org.allbinary.thread.PriorityRunnable_Package_References;
 with org.allbinary.thread.NullPriorityRunnable_Package;
 with org.allbinary.thread.PriorityRunnable_Package;
 

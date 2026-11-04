@@ -14,8 +14,11 @@
 
 
 with org.allbinary.game.input.event.GameKeyEvent_Package; use org.allbinary.game.input.event.GameKeyEvent_Package;
+with org.allbinary.game.input.event.GameKeyEvent_Package_References;
 with org.allbinary.layer.AllBinaryLayerManager_Package; use org.allbinary.layer.AllBinaryLayerManager_Package;
+with org.allbinary.layer.AllBinaryLayerManager_Package_References;
 with org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package; use org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package;
+with org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package_References;
 with org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package;
 with org.allbinary.game.combat.damage.DamageableInterface_Package;
 with org.allbinary.game.combat.destroy.DestroyableInterface_Package;
@@ -23,7 +26,6 @@ with org.allbinary.game.combat.destroy.event.DestroyedEvent_Package;
 with org.allbinary.game.layer.pickup.PickupBehavior_Package;
 with org.allbinary.game.layer.pickup.PickupBehaviorInterface_Package;
 with org.allbinary.game.layer.pickup.PickupCompositeInterface_Package;
-with org.allbinary.game.layer.special.SpecialGameInputProcessor_Package;
 
 package body org.allbinary.game.layer.special.Special1GameInputProcessor_Package is
 

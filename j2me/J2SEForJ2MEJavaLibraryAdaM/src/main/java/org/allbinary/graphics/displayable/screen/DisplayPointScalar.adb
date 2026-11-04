@@ -14,6 +14,7 @@
 
 
 with org.allbinary.graphics.GPoint_Package; use org.allbinary.graphics.GPoint_Package;
+with org.allbinary.graphics.GPoint_Package_References;
 
 package body org.allbinary.graphics.displayable.screen.DisplayPointScalar_Package is
 

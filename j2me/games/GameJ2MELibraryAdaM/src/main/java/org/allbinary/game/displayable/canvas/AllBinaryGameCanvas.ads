@@ -850,8 +850,8 @@ package org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package is
       inputProcessor : InputProcessor_Access;
       YIELD_SLEEP : Long_Long_Integer;
    end record;
-   id : Integer;
-   TYPE_Id : Integer;
+   id : constant Integer := 0;
+   TYPE_Id : constant Integer := 2;
 
    procedure Initialize (This : in out AllBinaryGameCanvas'Class; commandListener_Param : access CommandListener_Package.CommandListener'Class; gameLayerManager_Param : access AllBinaryGameLayerManager_Package.AllBinaryGameLayerManager'Class; highScoresFactoryInterface_Param : access HighScoresFactoryInterface_Package.HighScoresFactoryInterface'Class; gameInitializationInterfaceFactoryInterface_Param : access BasicBuildGameInitializerFactory_Package.BasicBuildGameInitializerFactory'Class; buffered : Boolean);
    function Create (commandListener_Param : access CommandListener_Package.CommandListener'Class; gameLayerManager_Param : access AllBinaryGameLayerManager_Package.AllBinaryGameLayerManager'Class; highScoresFactoryInterface_Param : access HighScoresFactoryInterface_Package.HighScoresFactoryInterface'Class; gameInitializationInterfaceFactoryInterface_Param : access BasicBuildGameInitializerFactory_Package.BasicBuildGameInitializerFactory'Class; buffered : Boolean) return AllBinaryGameCanvas_Access;

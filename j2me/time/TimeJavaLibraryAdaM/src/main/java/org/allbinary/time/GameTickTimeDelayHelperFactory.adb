@@ -14,6 +14,7 @@
 
 
 with org.allbinary.time.GameTickTimeDelayHelper_Package; use org.allbinary.time.GameTickTimeDelayHelper_Package;
+with org.allbinary.time.GameTickTimeDelayHelper_Package_References;
 with org.allbinary.time.GameTickTimeDelayHelper_Package;
 
 package body org.allbinary.time.GameTickTimeDelayHelperFactory_Package is

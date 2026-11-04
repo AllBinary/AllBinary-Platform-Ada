@@ -16,6 +16,7 @@
 with org.allbinary.input.automation.module.MotionRectangleConstraints_Package; use org.allbinary.input.automation.module.MotionRectangleConstraints_Package;
 with org.allbinary.input.automation.module.generic_Id.constraints.Dimension_Package; use org.allbinary.input.automation.module.generic_Id.constraints.Dimension_Package;
 with org.allbinary.input.automation.module.generic_Id.constraints.Rectangle_Package; use org.allbinary.input.automation.module.generic_Id.constraints.Rectangle_Package;
+with org.allbinary.input.automation.module.generic_Id.constraints.Rectangle_Package_References;
 
 package body org.allbinary.input.automation.module.generic_Id.constraints.NoMotionRectangleConstraints_Package is
 

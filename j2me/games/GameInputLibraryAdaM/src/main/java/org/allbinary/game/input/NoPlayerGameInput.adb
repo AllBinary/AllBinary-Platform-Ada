@@ -14,13 +14,12 @@
 
 
 with org.allbinary.game.input.event.GameKeyEvent_Package; use org.allbinary.game.input.event.GameKeyEvent_Package;
+with org.allbinary.game.input.event.GameKeyEvent_Package_References;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.game.input.event.DownGameKeyEventListenerInterface_Package;
 with org.allbinary.game.input.GameInput_Package;
 with org.allbinary.game.input.GameInputStrings_Package;
-with org.allbinary.game.input.event.GameKeyEvent_Package;
 with org.allbinary.game.input.event.GameKeyEventListenerInterface_Package;
-with org.allbinary.game.input.PlayerGameInput_Package;
 with org.allbinary.game.input.event.PressGameKeyEventListenerInterface_Package;
 with org.allbinary.game.input.event.UpGameKeyEventListenerInterface_Package;
 

@@ -19,20 +19,23 @@ with org.allbinary.data.tree.dom.DomSearchHelper_Package; use org.allbinary.data
 with org.allbinary.data.tree.dom.ModDomHelper_Package; use org.allbinary.data.tree.dom.ModDomHelper_Package;
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.java.bool.BooleanFactory_Package; use org.allbinary.logic.java.bool.BooleanFactory_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
+with org.w3c.dom.Document_Package_References;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
+with org.w3c.dom.Node_Package_References;
 with org.w3c.dom.NodeList_Package; use org.w3c.dom.NodeList_Package;
 with org.allbinary.input.automation.actions.script.condition.processors.input.Point_Package; use org.allbinary.input.automation.actions.script.condition.processors.input.Point_Package;
+with org.allbinary.input.automation.actions.script.condition.processors.input.Point_Package_References;
 with org.allbinary.input.automation.actions.script.condition.processors.input.MouseActionScriptInputJPanel_Package; use org.allbinary.input.automation.actions.script.condition.processors.input.MouseActionScriptInputJPanel_Package;
+with org.allbinary.input.automation.actions.script.condition.processors.input.MouseActionScriptInputJPanel_Package_References;
 with org.allbinary.input.automation.actions.script.condition.processors.input.MouseActionScriptInputData_Package; use org.allbinary.input.automation.actions.script.condition.processors.input.MouseActionScriptInputData_Package;
 with org.allbinary.input.automation.actions.script.condition.processors.input.MouseInputAutomationProcessor_Package; use org.allbinary.input.automation.actions.script.condition.processors.input.MouseInputAutomationProcessor_Package;
-with org.allbinary.input.automation.actions.script.condition.processors.input.BasicProfileActionScriptInput_Package;
 with org.allbinary.input.automation.actions.script.condition.processors.BasicProfileActionScriptProcessor_Package;
 with org.allbinary.input.automation.actions.script.condition.CustomTreeNodeInterface_Package;
 with org.allbinary.input.automation.actions.script.condition.processors.input.MouseActionScriptInputData_Package;
-with org.allbinary.input.automation.actions.script.condition.processors.input.MouseActionScriptInputInterface_Package;
 with org.allbinary.input.automation.actions.script.condition.processors.input.MouseActionScriptInputJPanel_Package;
 with org.allbinary.input.automation.actions.script.condition.processors.input.MouseInputAutomationProcessor_Package;
 with org.allbinary.input.automation.actions.script.condition.processors.input.ProfileActionScriptInputInterface_Package;
@@ -221,7 +224,7 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
       mouseNode : Node_Access;
       hashMap : HashMap_Access;
    begin
-        node := BasicProfileActionScriptInput (This).toXmlNode (document);
+        node := BasicProfileActionScriptInput_Package.BasicProfileActionScriptInput (This).toXmlNode (document);
         mouseNode := ModDomHelper_Package.createNodeWithValueNodes (document, MouseActionScriptInputData_Package.NAME, MouseActionScriptInput'Class (This).toHashMap);
         node.appendChild (mouseNode);
         hashMap := StdUtil_Package.getInstance.createHashMap;

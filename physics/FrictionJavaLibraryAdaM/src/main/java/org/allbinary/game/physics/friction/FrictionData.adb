@@ -42,7 +42,7 @@ package body org.allbinary.game.physics.friction.FrictionData_Package is
 
 begin
    null;
-   FRICTION_DENOMINATOR := 100;
+   
 
 end org.allbinary.game.physics.friction.FrictionData_Package;
 

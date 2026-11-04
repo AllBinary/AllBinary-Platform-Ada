@@ -14,7 +14,9 @@
 
 
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.string_Id.CommonStrings_Package_References;
 with tags.TagStrings_Package; use tags.TagStrings_Package;
+with tags.TagStrings_Package_References;
 with tags.TagStrings_Package;
 
 package body tags.CustomTagSupport_Package is

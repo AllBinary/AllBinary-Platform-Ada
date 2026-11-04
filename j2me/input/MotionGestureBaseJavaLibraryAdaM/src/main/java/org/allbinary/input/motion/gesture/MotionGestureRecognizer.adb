@@ -14,32 +14,31 @@
 
 
 with org.allbinary.graphics.GPoint_Package; use org.allbinary.graphics.GPoint_Package;
+with org.allbinary.graphics.GPoint_Package_References;
 with org.allbinary.graphics.Line_Package; use org.allbinary.graphics.Line_Package;
+with org.allbinary.graphics.Line_Package_References;
 with org.allbinary.graphics.PointFactory_Package; use org.allbinary.graphics.PointFactory_Package;
 with org.allbinary.input.motion.gesture.configuration.MotionGestureConfiguration_Package; use org.allbinary.input.motion.gesture.configuration.MotionGestureConfiguration_Package;
 with org.allbinary.input.motion.gesture.configuration.MotionGestureConfigurationFactory_Package; use org.allbinary.input.motion.gesture.configuration.MotionGestureConfigurationFactory_Package;
 with org.allbinary.input.motion.gesture.observer.BasicMotionGesturesHandler_Package; use org.allbinary.input.motion.gesture.observer.BasicMotionGesturesHandler_Package;
+with org.allbinary.input.motion.gesture.observer.BasicMotionGesturesHandler_Package_References;
 with org.allbinary.input.motion.gesture.observer.MotionEventCircularPool_Package; use org.allbinary.input.motion.gesture.observer.MotionEventCircularPool_Package;
+with org.allbinary.input.motion.gesture.observer.MotionEventCircularPool_Package_References;
 with org.allbinary.input.motion.gesture.observer.MotionGestureEvent_Package; use org.allbinary.input.motion.gesture.observer.MotionGestureEvent_Package;
 with org.allbinary.input.motion.gesture.observer.MovedMotionGesturesHandler_Package; use org.allbinary.input.motion.gesture.observer.MovedMotionGesturesHandler_Package;
 with org.allbinary.input.motion.gesture.observer.ScrolledMotionGesturesHandler_Package; use org.allbinary.input.motion.gesture.observer.ScrolledMotionGesturesHandler_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.math.J2SEMath_Package; use org.allbinary.logic.math.J2SEMath_Package;
+with org.allbinary.logic.math.J2SEMath_Package_References;
 with org.allbinary.logic.util.event.handler.BasicEventHandler_Package; use org.allbinary.logic.util.event.handler.BasicEventHandler_Package;
+with org.allbinary.logic.util.event.handler.BasicEventHandler_Package_References;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Package; use org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Package;
 with org.allbinary.input.motion.gesture.MotionGestureInput_Package; use org.allbinary.input.motion.gesture.MotionGestureInput_Package;
-with org.allbinary.input.motion.gesture.observer.BasicMotionGesturesHandler_Package;
 with org.allbinary.game.input.CompleteMotionGestureInputEvent_Package;
 with org.allbinary.game.input.CompleteMotionGestureInputInterface_Package;
-with org.allbinary.graphics.Line_Package;
-with org.allbinary.input.motion.gesture.observer.MotionEventCircularPool_Package;
-with org.allbinary.input.motion.gesture.configuration.MotionGestureConfiguration_Package;
-with org.allbinary.input.motion.gesture.configuration.MotionGestureConfigurationFactory_Package;
-with org.allbinary.input.motion.gesture.observer.MotionGestureEvent_Package;
 with org.allbinary.input.motion.gesture.MotionGestureInput_Package;
-with org.allbinary.input.motion.gesture.observer.MovedMotionGesturesHandler_Package;
-with org.allbinary.input.motion.gesture.observer.ScrolledMotionGesturesHandler_Package;
 with org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Package;
 
 package body org.allbinary.input.motion.gesture.MotionGestureRecognizer_Package is

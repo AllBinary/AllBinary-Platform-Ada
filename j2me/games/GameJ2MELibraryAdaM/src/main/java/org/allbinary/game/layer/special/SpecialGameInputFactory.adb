@@ -14,6 +14,7 @@
 
 
 with org.allbinary.game.layer.special.SpecialGameInput_Package; use org.allbinary.game.layer.special.SpecialGameInput_Package;
+with org.allbinary.game.layer.special.SpecialGameInput_Package_References;
 with org.allbinary.game.layer.special.SpecialGameInput_Package;
 with org.allbinary.game.layer.special.SpecialGameInputInterface_Package;
 

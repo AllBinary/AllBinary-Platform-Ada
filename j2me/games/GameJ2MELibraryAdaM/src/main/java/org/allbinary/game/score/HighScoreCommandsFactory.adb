@@ -16,7 +16,6 @@
 with javax.microedition.lcdui.Command_Package; use javax.microedition.lcdui.Command_Package;
 with org.allbinary.game.score.HighScoreCommands_Package; use org.allbinary.game.score.HighScoreCommands_Package;
 with org.allbinary.game.score.HighScoreCommands_Package;
-with org.allbinary.game.score.HighScoreCommandsBaseFactory_Package;
 
 package body org.allbinary.game.score.HighScoreCommandsFactory_Package is
 

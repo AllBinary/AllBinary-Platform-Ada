@@ -36,7 +36,7 @@ package body org.allbinary.business.category.CategoryData_Package is
 
    function getInstance return CategoryData_Access is
    begin
-        return CategoryData_Package.instance;
+        return CategoryData_Access (CategoryData_Package.instance);
    end getInstance;
 
    procedure Initialize (This : in out CategoryData'Class) is

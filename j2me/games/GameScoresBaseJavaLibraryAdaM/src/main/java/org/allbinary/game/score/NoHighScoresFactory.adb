@@ -14,12 +14,16 @@
 
 
 with org.allbinary.game.GameInfo_Package; use org.allbinary.game.GameInfo_Package;
+with org.allbinary.game.GameInfo_Package_References;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.game.score.HighScores_Package; use org.allbinary.game.score.HighScores_Package;
+with org.allbinary.game.score.HighScores_Package_References;
 with org.allbinary.game.score.HighScoresResultsListener_Package; use org.allbinary.game.score.HighScoresResultsListener_Package;
+with org.allbinary.game.score.HighScoresResultsListener_Package_References;
 with org.allbinary.game.score.HighScoresHelperBase_Package; use org.allbinary.game.score.HighScoresHelperBase_Package;
 with org.allbinary.game.score.HighScoresHelperBaseInterface_Package; use org.allbinary.game.score.HighScoresHelperBaseInterface_Package;
-with org.allbinary.game.score.HighScoresBase_Package;
+with org.allbinary.game.score.HighScoresHelperBaseInterface_Package_References;
 with org.allbinary.game.score.HighScoresFactoryInterface_Package;
 with org.allbinary.game.score.HighScoresHelperBase_Package;
 with org.allbinary.game.score.HighScoresHelperBaseInterface_Package;

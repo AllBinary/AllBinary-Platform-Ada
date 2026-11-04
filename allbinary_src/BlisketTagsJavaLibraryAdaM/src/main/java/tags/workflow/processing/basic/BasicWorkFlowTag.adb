@@ -15,11 +15,24 @@
 
 with org.allbinary.business.DynamicObjectData_Package; use org.allbinary.business.DynamicObjectData_Package;
 with org.allbinary.logic.communication.http.request.AbResponseHandler_Package; use org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
+with tags.StoreWorkFlowTag_Package; use tags.StoreWorkFlowTag_Package;
 
 package body tags.workflow.processing.basic.BasicWorkFlowTag_Package is
 
    package DynamicObjectData_Package renames Standard.org.allbinary.business.DynamicObjectData_Package;
    package AbResponseHandler_Package renames Standard.org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   function "=" (Left, Right : LogUtil_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
    procedure Initialize_Fields (This : in out BasicWorkFlowTag'Class) is
    begin
       null;
@@ -51,7 +64,7 @@ package body tags.workflow.processing.basic.BasicWorkFlowTag_Package is
                 This.logUtil.putF (This.commonStrings.START, BasicWorkFlowTag_Access'(This'Unchecked_Access), This.tagStrings.DO_START_TAG);
             end if;
             BasicWorkFlowTag'Class (This).getPropertiesHashMap.put (DynamicObjectData_Package.NAME, To_Unbounded_String ("workflows.template.data.BasicStoreWorkFlow"));
-            return StoreWorkFlowTag (This).doStartTag;
+            return StoreWorkFlowTag_Package.StoreWorkFlowTag (This).doStartTag;
         exception
             when Java_Occurrence : others =>
                 declare

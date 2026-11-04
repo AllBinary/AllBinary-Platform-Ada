@@ -16,6 +16,7 @@
 with abbot.tester.KeyStrokeMap_Package; use abbot.tester.KeyStrokeMap_Package;
 with org.allbinary.input.KeySingletonFactory_Package; use org.allbinary.input.KeySingletonFactory_Package;
 with org.allbinary.input.automation.actions.script.condition.processors.input.DefaultComboBoxModel_Package; use org.allbinary.input.automation.actions.script.condition.processors.input.DefaultComboBoxModel_Package;
+with org.allbinary.input.automation.actions.script.condition.processors.input.DefaultComboBoxModel_Package_References;
 with org.allbinary.input.automation.actions.script.condition.processors.input.KeyStroke_Package; use org.allbinary.input.automation.actions.script.condition.processors.input.KeyStroke_Package;
 
 package body org.allbinary.input.automation.actions.script.condition.processors.input.KeyCharDefaultComboBoxModelFactory_Package is

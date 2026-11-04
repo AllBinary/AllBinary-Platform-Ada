@@ -14,9 +14,13 @@
 
 
 with org.allbinary.logic.util.cache.PoolInterface_Package; use org.allbinary.logic.util.cache.PoolInterface_Package;
+with org.allbinary.logic.util.cache.PoolInterface_Package_References;
 with org.allbinary.logic.util.cache.CacheableInterfaceFactoryInterface_Package; use org.allbinary.logic.util.cache.CacheableInterfaceFactoryInterface_Package;
+with org.allbinary.logic.util.cache.CacheableInterfaceFactoryInterface_Package_References;
 with org.allbinary.logic.util.cache.PoolType_Package; use org.allbinary.logic.util.cache.PoolType_Package;
+with org.allbinary.logic.util.cache.PoolType_Package_References;
 with org.allbinary.logic.util.cache.CachePolicy_Package; use org.allbinary.logic.util.cache.CachePolicy_Package;
+with org.allbinary.logic.util.cache.CachePolicy_Package_References;
 with org.allbinary.logic.util.cache.CachePolicy_Package;
 with org.allbinary.logic.util.cache.CacheType_Package;
 with org.allbinary.logic.util.cache.PoolInterface_Package;

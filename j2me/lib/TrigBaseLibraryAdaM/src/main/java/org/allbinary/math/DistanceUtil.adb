@@ -14,6 +14,7 @@
 
 
 with org.allbinary.logic.math.MathUtil_Package; use org.allbinary.logic.math.MathUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package_References;
 
 package body org.allbinary.math.DistanceUtil_Package is
 

@@ -17,6 +17,7 @@ with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.lo
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.data.tables.advertisement.areas.AdvertisementAreasEntity_Package; use org.allbinary.data.tables.advertisement.areas.AdvertisementAreasEntity_Package;
 with org.allbinary.data.tables.advertisement.areas.AdvertisementAreasEntityInterface_Package; use org.allbinary.data.tables.advertisement.areas.AdvertisementAreasEntityInterface_Package;
+with org.allbinary.data.tables.advertisement.areas.AdvertisementAreasEntityInterface_Package_References;
 with org.allbinary.data.tables.advertisement.areas.AdvertisementAreasEntity_Package;
 with org.allbinary.data.tables.advertisement.areas.AdvertisementAreasEntityInterface_Package;
 

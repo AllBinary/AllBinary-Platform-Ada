@@ -13,9 +13,22 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.visual.dhtml.html.head.meta.HtmlMetaAttributeData_Package; use org.allbinary.logic.visual.dhtml.html.head.meta.HtmlMetaAttributeData_Package;
+with org.allbinary.logic.visual.dhtml.html.head.meta.HtmlMetaAttributeData_Package_References;
+with org.allbinary.logic.visual.dhtml.html.head.meta.HtmlMetaAttributeData_Package;
 
 package body org.allbinary.logic.visual.dhtml.html.head.meta.HtmlMetaAttributeDataFactory_Package is
 
+   subtype HtmlMetaAttributeData_Access is org.allbinary.logic.visual.dhtml.html.head.meta.HtmlMetaAttributeData_Package_References.HtmlMetaAttributeData_Access;
+   function "=" (Left, Right : HtmlMetaAttributeData_Access) return Boolean renames org.allbinary.logic.visual.dhtml.html.head.meta.HtmlMetaAttributeData_Package_References."=";
+   subtype HtmlMetaAttributeData_Access_Array is org.allbinary.logic.visual.dhtml.html.head.meta.HtmlMetaAttributeData_Package_References.HtmlMetaAttributeData_Access_Array;
+   function "=" (Left, Right : HtmlMetaAttributeData_Access_Array) return Boolean renames org.allbinary.logic.visual.dhtml.html.head.meta.HtmlMetaAttributeData_Package_References."=";
+   subtype HtmlMetaAttributeData_Access_Array_Access is org.allbinary.logic.visual.dhtml.html.head.meta.HtmlMetaAttributeData_Package_References.HtmlMetaAttributeData_Access_Array_Access;
+   function "=" (Left, Right : HtmlMetaAttributeData_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.dhtml.html.head.meta.HtmlMetaAttributeData_Package_References."=";
+   subtype HtmlMetaAttributeData_Access_Array_Access_Array is org.allbinary.logic.visual.dhtml.html.head.meta.HtmlMetaAttributeData_Package_References.HtmlMetaAttributeData_Access_Array_Access_Array;
+   function "=" (Left, Right : HtmlMetaAttributeData_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.visual.dhtml.html.head.meta.HtmlMetaAttributeData_Package_References."=";
+   subtype HtmlMetaAttributeData_Access_Array_Access_Array_Access is org.allbinary.logic.visual.dhtml.html.head.meta.HtmlMetaAttributeData_Package_References.HtmlMetaAttributeData_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : HtmlMetaAttributeData_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.dhtml.html.head.meta.HtmlMetaAttributeData_Package_References."=";
    procedure Initialize_Fields (This : in out HtmlMetaAttributeDataFactory'Class) is
    begin
       null;
@@ -27,7 +40,7 @@ package body org.allbinary.logic.visual.dhtml.html.head.meta.HtmlMetaAttributeDa
 
    function getInstance return HtmlMetaAttributeDataFactory_Access is
    begin
-        return HtmlMetaAttributeDataFactory_Package.instance;
+        return HtmlMetaAttributeDataFactory_Access (HtmlMetaAttributeDataFactory_Package.instance);
    end getInstance;
 
    procedure Initialize (This : in out HtmlMetaAttributeDataFactory'Class) is

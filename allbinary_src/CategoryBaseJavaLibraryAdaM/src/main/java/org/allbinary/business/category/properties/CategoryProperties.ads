@@ -134,7 +134,7 @@ package org.allbinary.business.category.properties.CategoryProperties_Package is
       logUtil : LogUtil_Access;
       category : Unbounded_String;
    end record;
-   MAXDEPTH : Integer;
+   MAXDEPTH : constant Integer := 100;
 
    procedure Initialize (This : in out CategoryProperties'Class; name : Unbounded_String);
    function Create (name : Unbounded_String) return CategoryProperties_Access;

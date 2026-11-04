@@ -17,10 +17,14 @@ with org.allbinary.game.input.RTSLayerFormFactory_Package; use org.allbinary.gam
 with org.allbinary.graphics.form.item.ABCustomItem_Package; use org.allbinary.graphics.form.item.ABCustomItem_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.graphics.form.ScrollSelectionForm_Package; use org.allbinary.graphics.form.ScrollSelectionForm_Package;
+with org.allbinary.graphics.form.ScrollSelectionForm_Package_References;
 with org.allbinary.graphics.form.item.ItemArraySingletonFactoryInterface_Package; use org.allbinary.graphics.form.item.ItemArraySingletonFactoryInterface_Package;
+with org.allbinary.graphics.form.item.ItemArraySingletonFactoryInterface_Package_References;
 with org.allbinary.game.layer.RTSScrollSelectionFormFactory_Package; use org.allbinary.game.layer.RTSScrollSelectionFormFactory_Package;
 with org.allbinary.game.layer.RTSLayer_Package; use org.allbinary.game.layer.RTSLayer_Package;
+with org.allbinary.game.layer.RTSLayer_Package_References;
 with org.allbinary.game.layer.RTSScrollSelectionFormFactory_Package;
 
 package body org.allbinary.game.layer.AdvancedRTSLayerFormFactory_Package is

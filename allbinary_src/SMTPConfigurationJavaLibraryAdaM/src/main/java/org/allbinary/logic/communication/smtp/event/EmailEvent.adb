@@ -14,10 +14,11 @@
 
 
 with org.allbinary.logic.communication.smtp.info.EmailInfo_Package; use org.allbinary.logic.communication.smtp.info.EmailInfo_Package;
+with org.allbinary.logic.communication.smtp.info.EmailInfo_Package_References;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.communication.smtp.event.UserEmailEventNameData_Package; use org.allbinary.logic.communication.smtp.event.UserEmailEventNameData_Package;
+with org.allbinary.logic.communication.smtp.event.UserEmailEventNameData_Package_References;
 with org.allbinary.logic.communication.smtp.info.BasicEmailInfo_Package;
-with org.allbinary.logic.communication.smtp.info.EmailInfo_Package;
 with org.allbinary.logic.communication.smtp.configuration.server.EmailServerConfigurationInterface_Package;
 
 package body org.allbinary.logic.communication.smtp.event.EmailEvent_Package is

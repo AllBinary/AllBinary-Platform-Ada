@@ -16,6 +16,7 @@
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.data.tables.user.commerce.inventory.order.OrderHistoryEntity_Package; use org.allbinary.data.tables.user.commerce.inventory.order.OrderHistoryEntity_Package;
+with org.allbinary.data.tables.user.commerce.inventory.order.OrderHistoryEntity_Package_References;
 with org.allbinary.data.tables.user.commerce.inventory.order.OrderHistoryEntity_Package;
 with org.allbinary.data.tables.user.commerce.inventory.order.OrderHistoryEntityInterface_Package;
 

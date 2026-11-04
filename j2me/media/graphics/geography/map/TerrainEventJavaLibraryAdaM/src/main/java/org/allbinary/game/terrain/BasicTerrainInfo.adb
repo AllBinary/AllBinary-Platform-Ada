@@ -14,6 +14,7 @@
 
 
 with org.allbinary.math.Angle_Package; use org.allbinary.math.Angle_Package;
+with org.allbinary.math.Angle_Package_References;
 with org.allbinary.math.AngleFactory_Package; use org.allbinary.math.AngleFactory_Package;
 
 package body org.allbinary.game.terrain.BasicTerrainInfo_Package is

@@ -15,30 +15,38 @@
 
 with java.io.DataInputStream_Package; use java.io.DataInputStream_Package;
 with javax.microedition.rms.RecordComparator_Package; use javax.microedition.rms.RecordComparator_Package;
+with javax.microedition.rms.RecordComparator_Package_References;
 with javax.microedition.rms.RecordEnumeration_Package; use javax.microedition.rms.RecordEnumeration_Package;
 with javax.microedition.rms.RecordStore_Package; use javax.microedition.rms.RecordStore_Package;
 with javax.microedition.rms.RecordStoreException_Package; use javax.microedition.rms.RecordStoreException_Package;
 with javax.microedition.rms.RecordStoreNotFoundException_Package; use javax.microedition.rms.RecordStoreNotFoundException_Package;
 with org.allbinary.TsUtil_Package; use org.allbinary.TsUtil_Package;
+with org.allbinary.TsUtil_Package_References;
 with org.allbinary.game.GameInfo_Package; use org.allbinary.game.GameInfo_Package;
+with org.allbinary.game.GameInfo_Package_References;
 with org.allbinary.game.configuration.persistance.NullRecordComparator_Package; use org.allbinary.game.configuration.persistance.NullRecordComparator_Package;
 with org.allbinary.game.configuration.persistance.NullRecordFilter_Package; use org.allbinary.game.configuration.persistance.NullRecordFilter_Package;
 with org.allbinary.game.configuration.persistance.NullRecordStore_Package; use org.allbinary.game.configuration.persistance.NullRecordStore_Package;
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package; use org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References;
 with org.allbinary.persistance.PlatformRecordIdUtil_Package; use org.allbinary.persistance.PlatformRecordIdUtil_Package;
+with org.allbinary.persistance.PlatformRecordIdUtil_Package_References;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.string_Id.CommonStrings_Package_References;
 with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
+with org.allbinary.util.ABHashtable_Package_References;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.game.score.HighScore_Package; use org.allbinary.game.score.HighScore_Package;
+with org.allbinary.game.score.HighScore_Package_References;
 with org.allbinary.game.score.ScoreComparator_Package; use org.allbinary.game.score.ScoreComparator_Package;
 with org.allbinary.game.score.HighScore_Package;
-with org.allbinary.game.score.HighScores_Package;
 with org.allbinary.game.score.HighScoresInterface_Package;
 with org.allbinary.game.score.ScoreComparator_Package;
 
@@ -450,7 +458,7 @@ package body org.allbinary.game.score.RecordStoreHighScores_Package is
       index : Integer;
    begin
         stringBuffer := StringMaker_Package.Create;
-        stringBuffer.append (HighScores (This).toString);
+        stringBuffer.append (HighScores_Package.HighScores (This).toString);
         list := RecordStoreHighScores'Class (This).getList;
         size := list.size;
         for index in 0 .. (size) - 1 loop

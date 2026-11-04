@@ -13,6 +13,9 @@
 --  Generated Code Do Not Modify
 
 
+with java.nio.Buffer_Package; use java.nio.Buffer_Package;
+with java.nio.ByteBuffer_Package; use java.nio.ByteBuffer_Package;
+with java.nio.FloatBuffer_Package; use java.nio.FloatBuffer_Package;
 
 package body org.allbinary.opengles.GLUtil_Package is
 
@@ -38,7 +41,7 @@ package body org.allbinary.opengles.GLUtil_Package is
 
    function getInstance return GLUtil_Access is
    begin
-        return GLUtil_Package.instance;
+        return GLUtil_Access (GLUtil_Package.instance);
    end getInstance;
 
    function makeFloatBuffer3 (This : in out GLUtil; p_a : Float; p_b : Float; p_c : Float) return FloatBuffer_Access is

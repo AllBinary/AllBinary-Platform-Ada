@@ -13,7 +13,6 @@
 --  Generated Code Do Not Modify
 
 
-with org.allbinary.android.input.motion.MotionEventProcessor_Package;
 
 package body org.allbinary.android.input.motion.NoMotionEventProcessor_Package is
 

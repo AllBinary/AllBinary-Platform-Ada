@@ -18,7 +18,6 @@ with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Pack
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with jsinterop.annotations.JsConstructor_Package; use jsinterop.annotations.JsConstructor_Package;
 with org.allbinary.util.ArrayUtil_Package;
-with org.allbinary.util.BasicArrayList_Package;
 
 package body org.allbinary.util.BasicArrayListS_Package is
 

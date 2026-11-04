@@ -14,6 +14,7 @@
 
 
 with org.allbinary.input.motion.button.TouchButtonInput_Package; use org.allbinary.input.motion.button.TouchButtonInput_Package;
+with org.allbinary.input.motion.button.TouchButtonInput_Package_References;
 
 package body org.allbinary.input.motion.button.TouchButtonVisitor_Package is
 

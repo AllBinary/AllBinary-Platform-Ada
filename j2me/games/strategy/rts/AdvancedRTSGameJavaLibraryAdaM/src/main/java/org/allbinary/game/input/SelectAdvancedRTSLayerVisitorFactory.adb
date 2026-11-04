@@ -14,8 +14,10 @@
 
 
 with org.allbinary.logic.util.visitor.Visitor_Package; use org.allbinary.logic.util.visitor.Visitor_Package;
+with org.allbinary.logic.util.visitor.Visitor_Package_References;
 with org.allbinary.game.input.SelectAdvancedRTSLayerVisitor_Package; use org.allbinary.game.input.SelectAdvancedRTSLayerVisitor_Package;
 with org.allbinary.game.input.SelectedRTSLayersPlayerGameInput_Package; use org.allbinary.game.input.SelectedRTSLayersPlayerGameInput_Package;
+with org.allbinary.game.input.SelectedRTSLayersPlayerGameInput_Package_References;
 with org.allbinary.game.input.SelectAdvancedRTSLayerVisitor_Package;
 
 package body org.allbinary.game.input.SelectAdvancedRTSLayerVisitorFactory_Package is

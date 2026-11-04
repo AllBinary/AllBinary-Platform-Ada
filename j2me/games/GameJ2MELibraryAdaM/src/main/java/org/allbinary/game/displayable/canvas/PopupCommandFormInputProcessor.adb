@@ -14,10 +14,15 @@
 
 
 with org.allbinary.graphics.displayable.MyCanvas_Package; use org.allbinary.graphics.displayable.MyCanvas_Package;
+with org.allbinary.graphics.displayable.MyCanvas_Package_References;
 with org.allbinary.graphics.form.ScrollSelectionForm_Package; use org.allbinary.graphics.form.ScrollSelectionForm_Package;
+with org.allbinary.graphics.form.ScrollSelectionForm_Package_References;
 with org.allbinary.input.motion.gesture.observer.MotionGestureEvent_Package; use org.allbinary.input.motion.gesture.observer.MotionGestureEvent_Package;
+with org.allbinary.input.motion.gesture.observer.MotionGestureEvent_Package_References;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.game.displayable.canvas.PopupMenuInputProcessor_Package; use org.allbinary.game.displayable.canvas.PopupMenuInputProcessor_Package;
+with org.allbinary.game.displayable.canvas.PopupMenuInputProcessor_Package_References;
 with org.allbinary.game.displayable.canvas.PopupMenuInputProcessor_Package;
 
 package body org.allbinary.game.displayable.canvas.PopupCommandFormInputProcessor_Package is
@@ -97,14 +102,14 @@ package body org.allbinary.game.displayable.canvas.PopupCommandFormInputProcesso
    --  throws Exception
    function processInput (This : in out PopupCommandFormInputProcessor; key : Integer) return Integer is
    begin
-        return CommandFormInputProcessor (This).processInput (key);
+        return CommandFormInputProcessor_Package.CommandFormInputProcessor (This).processInput (key);
    end processInput;
 
    --  throws Exception
    procedure processMotionInput (This : in out PopupCommandFormInputProcessor; motionGestureEvent_Param : access MotionGestureEvent_Package.MotionGestureEvent'Class) is
       motionGestureEvent : constant MotionGestureEvent_Access := MotionGestureEvent_Access (motionGestureEvent_Param);
    begin
-        CommandFormInputProcessor (This).processMotionInput (motionGestureEvent);
+        CommandFormInputProcessor_Package.CommandFormInputProcessor (This).processMotionInput (motionGestureEvent);
    end processMotionInput;
 
    procedure processInput (This : in out PopupCommandFormInputProcessor; key : Integer) is

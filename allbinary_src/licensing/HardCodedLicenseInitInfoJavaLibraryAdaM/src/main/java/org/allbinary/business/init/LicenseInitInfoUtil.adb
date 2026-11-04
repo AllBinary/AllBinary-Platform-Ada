@@ -14,6 +14,7 @@
 
 
 with org.allbinary.business.init.LicenseInitInfo_Package; use org.allbinary.business.init.LicenseInitInfo_Package;
+with org.allbinary.business.init.LicenseInitInfo_Package_References;
 with org.allbinary.business.init.LicenseInitInfo_Package;
 
 package body org.allbinary.business.init.LicenseInitInfoUtil_Package is

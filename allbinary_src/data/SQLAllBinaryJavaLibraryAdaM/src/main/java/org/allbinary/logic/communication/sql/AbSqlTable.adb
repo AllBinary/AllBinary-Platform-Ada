@@ -14,8 +14,9 @@
 
 
 with org.allbinary.business.init.db.DbConnectionInfo_Package; use org.allbinary.business.init.db.DbConnectionInfo_Package;
+with org.allbinary.business.init.db.DbConnectionInfo_Package_References;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.communication.sql.AbSqlBasic_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.communication.sql.connection.pool.SqlConnectionPool_Package;
 
 package body org.allbinary.logic.communication.sql.AbSqlTable_Package is

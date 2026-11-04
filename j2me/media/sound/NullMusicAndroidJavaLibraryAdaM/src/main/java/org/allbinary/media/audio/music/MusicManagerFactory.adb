@@ -14,7 +14,9 @@
 
 
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.media.audio.music.MusicManager_Package; use org.allbinary.media.audio.music.MusicManager_Package;
+with org.allbinary.media.audio.music.MusicManager_Package_References;
 with org.allbinary.media.audio.music.MusicService_Package; use org.allbinary.media.audio.music.MusicService_Package;
 with org.allbinary.media.audio.music.MusicService_Package;
 

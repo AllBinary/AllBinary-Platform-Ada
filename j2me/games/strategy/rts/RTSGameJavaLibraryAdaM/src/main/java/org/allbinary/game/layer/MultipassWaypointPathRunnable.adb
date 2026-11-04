@@ -15,13 +15,21 @@
 
 with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
 with org.allbinary.thread.ARunnable_Package; use org.allbinary.thread.ARunnable_Package;
+with org.allbinary.thread.ARunnable_Package_References;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
 with org.allbinary.media.graphics.geography.pathfinding.MultipassState_Package; use org.allbinary.media.graphics.geography.pathfinding.MultipassState_Package;
+with org.allbinary.media.graphics.geography.pathfinding.MultipassState_Package_References;
 with org.allbinary.media.graphics.geography.pathfinding.PathFindingInfo_Package; use org.allbinary.media.graphics.geography.pathfinding.PathFindingInfo_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.util.BasicArrayListUtil_Package; use org.allbinary.util.BasicArrayListUtil_Package;
+with org.allbinary.util.BasicArrayListUtil_Package_References;
+with org.allbinary.game.layer.FirstRunnable_Package; use org.allbinary.game.layer.FirstRunnable_Package;
+with org.allbinary.game.layer.SecondRunnable_Package; use org.allbinary.game.layer.SecondRunnable_Package;
+with org.allbinary.game.layer.EndRunnable_Package; use org.allbinary.game.layer.EndRunnable_Package;
 with org.allbinary.game.layer.WaypointBehaviorBase_Package; use org.allbinary.game.layer.WaypointBehaviorBase_Package;
 with org.allbinary.game.layer.GeographicMapCellPositionAreaBase_Package;
 with org.allbinary.game.layer.GeographicMapCellPositionAreaInterface_Package;
@@ -33,7 +41,6 @@ with org.allbinary.game.layer.waypoint.WaypointBase_Package;
 with org.allbinary.game.layer.WaypointBehaviorBase_Package;
 with org.allbinary.game.layer.waypoint.WaypointLayerInterface_Package;
 with org.allbinary.game.layer.waypoint.WaypointLogHelper_Package;
-with org.allbinary.game.layer.WaypointPathRunnableBase_Package;
 with org.allbinary.game.layer.waypoint.WaypointRunnableLogHelper_Package;
 
 package body org.allbinary.game.layer.MultipassWaypointPathRunnable_Package is
@@ -269,12 +276,18 @@ end org.allbinary.game.layer.MultipassWaypointPathRunnable_Package;
 with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
 with org.allbinary.thread.ARunnable_Package; use org.allbinary.thread.ARunnable_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
 with org.allbinary.media.graphics.geography.pathfinding.MultipassState_Package; use org.allbinary.media.graphics.geography.pathfinding.MultipassState_Package;
+with org.allbinary.media.graphics.geography.pathfinding.MultipassState_Package_References;
 with org.allbinary.media.graphics.geography.pathfinding.PathFindingInfo_Package; use org.allbinary.media.graphics.geography.pathfinding.PathFindingInfo_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.util.BasicArrayListUtil_Package; use org.allbinary.util.BasicArrayListUtil_Package;
+with org.allbinary.util.BasicArrayListUtil_Package_References;
+with org.allbinary.game.layer.SecondRunnable_Package; use org.allbinary.game.layer.SecondRunnable_Package;
+with org.allbinary.game.layer.EndRunnable_Package; use org.allbinary.game.layer.EndRunnable_Package;
 with org.allbinary.game.layer.WaypointBehaviorBase_Package; use org.allbinary.game.layer.WaypointBehaviorBase_Package;
 with org.allbinary.game.layer.GeographicMapCellPositionAreaBase_Package;
 with org.allbinary.game.layer.GeographicMapCellPositionAreaInterface_Package;
@@ -287,7 +300,6 @@ with org.allbinary.game.layer.waypoint.WaypointBase_Package;
 with org.allbinary.game.layer.WaypointBehaviorBase_Package;
 with org.allbinary.game.layer.waypoint.WaypointLayerInterface_Package;
 with org.allbinary.game.layer.waypoint.WaypointLogHelper_Package;
-with org.allbinary.game.layer.WaypointPathRunnableBase_Package;
 with org.allbinary.game.layer.waypoint.WaypointRunnableLogHelper_Package;
 
 package body org.allbinary.game.layer.FirstRunnable_Package is
@@ -296,16 +308,6 @@ package body org.allbinary.game.layer.FirstRunnable_Package is
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    package GeographicMapCellPosition_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
    package PathFindingInfo_Package renames Standard.org.allbinary.media.graphics.geography.pathfinding.PathFindingInfo_Package;
-   subtype ARunnable_Access is org.allbinary.thread.ARunnable_Package_References.ARunnable_Access;
-   function "=" (Left, Right : ARunnable_Access) return Boolean renames org.allbinary.thread.ARunnable_Package_References."=";
-   subtype ARunnable_Access_Array is org.allbinary.thread.ARunnable_Package_References.ARunnable_Access_Array;
-   function "=" (Left, Right : ARunnable_Access_Array) return Boolean renames org.allbinary.thread.ARunnable_Package_References."=";
-   subtype ARunnable_Access_Array_Access is org.allbinary.thread.ARunnable_Package_References.ARunnable_Access_Array_Access;
-   function "=" (Left, Right : ARunnable_Access_Array_Access) return Boolean renames org.allbinary.thread.ARunnable_Package_References."=";
-   subtype ARunnable_Access_Array_Access_Array is org.allbinary.thread.ARunnable_Package_References.ARunnable_Access_Array_Access_Array;
-   function "=" (Left, Right : ARunnable_Access_Array_Access_Array) return Boolean renames org.allbinary.thread.ARunnable_Package_References."=";
-   subtype ARunnable_Access_Array_Access_Array_Access is org.allbinary.thread.ARunnable_Package_References.ARunnable_Access_Array_Access_Array_Access;
-   function "=" (Left, Right : ARunnable_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.thread.ARunnable_Package_References."=";
    subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
    function "=" (Left, Right : LogUtil_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
    subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
@@ -346,6 +348,16 @@ package body org.allbinary.game.layer.FirstRunnable_Package is
    function "=" (Left, Right : BasicArrayListUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.util.BasicArrayListUtil_Package_References."=";
    subtype BasicArrayListUtil_Access_Array_Access_Array_Access is org.allbinary.util.BasicArrayListUtil_Package_References.BasicArrayListUtil_Access_Array_Access_Array_Access;
    function "=" (Left, Right : BasicArrayListUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.util.BasicArrayListUtil_Package_References."=";
+   subtype WaypointPathRunnableBase_Access is org.allbinary.game.layer.WaypointPathRunnableBase_Package_References.WaypointPathRunnableBase_Access;
+   function "=" (Left, Right : WaypointPathRunnableBase_Access) return Boolean renames org.allbinary.game.layer.WaypointPathRunnableBase_Package_References."=";
+   subtype WaypointPathRunnableBase_Access_Array is org.allbinary.game.layer.WaypointPathRunnableBase_Package_References.WaypointPathRunnableBase_Access_Array;
+   function "=" (Left, Right : WaypointPathRunnableBase_Access_Array) return Boolean renames org.allbinary.game.layer.WaypointPathRunnableBase_Package_References."=";
+   subtype WaypointPathRunnableBase_Access_Array_Access is org.allbinary.game.layer.WaypointPathRunnableBase_Package_References.WaypointPathRunnableBase_Access_Array_Access;
+   function "=" (Left, Right : WaypointPathRunnableBase_Access_Array_Access) return Boolean renames org.allbinary.game.layer.WaypointPathRunnableBase_Package_References."=";
+   subtype WaypointPathRunnableBase_Access_Array_Access_Array is org.allbinary.game.layer.WaypointPathRunnableBase_Package_References.WaypointPathRunnableBase_Access_Array_Access_Array;
+   function "=" (Left, Right : WaypointPathRunnableBase_Access_Array_Access_Array) return Boolean renames org.allbinary.game.layer.WaypointPathRunnableBase_Package_References."=";
+   subtype WaypointPathRunnableBase_Access_Array_Access_Array_Access is org.allbinary.game.layer.WaypointPathRunnableBase_Package_References.WaypointPathRunnableBase_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : WaypointPathRunnableBase_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.layer.WaypointPathRunnableBase_Package_References."=";
    procedure Initialize_Fields (This : in out FirstRunnable'Class) is
    begin
       null;
@@ -379,12 +391,18 @@ end org.allbinary.game.layer.FirstRunnable_Package;
 with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
 with org.allbinary.thread.ARunnable_Package; use org.allbinary.thread.ARunnable_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
 with org.allbinary.media.graphics.geography.pathfinding.MultipassState_Package; use org.allbinary.media.graphics.geography.pathfinding.MultipassState_Package;
+with org.allbinary.media.graphics.geography.pathfinding.MultipassState_Package_References;
 with org.allbinary.media.graphics.geography.pathfinding.PathFindingInfo_Package; use org.allbinary.media.graphics.geography.pathfinding.PathFindingInfo_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.util.BasicArrayListUtil_Package; use org.allbinary.util.BasicArrayListUtil_Package;
+with org.allbinary.util.BasicArrayListUtil_Package_References;
+with org.allbinary.game.layer.FirstRunnable_Package; use org.allbinary.game.layer.FirstRunnable_Package;
+with org.allbinary.game.layer.EndRunnable_Package; use org.allbinary.game.layer.EndRunnable_Package;
 with org.allbinary.game.layer.WaypointBehaviorBase_Package; use org.allbinary.game.layer.WaypointBehaviorBase_Package;
 with org.allbinary.game.layer.GeographicMapCellPositionAreaBase_Package;
 with org.allbinary.game.layer.GeographicMapCellPositionAreaInterface_Package;
@@ -397,7 +415,6 @@ with org.allbinary.game.layer.waypoint.WaypointBase_Package;
 with org.allbinary.game.layer.WaypointBehaviorBase_Package;
 with org.allbinary.game.layer.waypoint.WaypointLayerInterface_Package;
 with org.allbinary.game.layer.waypoint.WaypointLogHelper_Package;
-with org.allbinary.game.layer.WaypointPathRunnableBase_Package;
 with org.allbinary.game.layer.waypoint.WaypointRunnableLogHelper_Package;
 
 package body org.allbinary.game.layer.SecondRunnable_Package is
@@ -406,16 +423,6 @@ package body org.allbinary.game.layer.SecondRunnable_Package is
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    package GeographicMapCellPosition_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
    package PathFindingInfo_Package renames Standard.org.allbinary.media.graphics.geography.pathfinding.PathFindingInfo_Package;
-   subtype ARunnable_Access is org.allbinary.thread.ARunnable_Package_References.ARunnable_Access;
-   function "=" (Left, Right : ARunnable_Access) return Boolean renames org.allbinary.thread.ARunnable_Package_References."=";
-   subtype ARunnable_Access_Array is org.allbinary.thread.ARunnable_Package_References.ARunnable_Access_Array;
-   function "=" (Left, Right : ARunnable_Access_Array) return Boolean renames org.allbinary.thread.ARunnable_Package_References."=";
-   subtype ARunnable_Access_Array_Access is org.allbinary.thread.ARunnable_Package_References.ARunnable_Access_Array_Access;
-   function "=" (Left, Right : ARunnable_Access_Array_Access) return Boolean renames org.allbinary.thread.ARunnable_Package_References."=";
-   subtype ARunnable_Access_Array_Access_Array is org.allbinary.thread.ARunnable_Package_References.ARunnable_Access_Array_Access_Array;
-   function "=" (Left, Right : ARunnable_Access_Array_Access_Array) return Boolean renames org.allbinary.thread.ARunnable_Package_References."=";
-   subtype ARunnable_Access_Array_Access_Array_Access is org.allbinary.thread.ARunnable_Package_References.ARunnable_Access_Array_Access_Array_Access;
-   function "=" (Left, Right : ARunnable_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.thread.ARunnable_Package_References."=";
    subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
    function "=" (Left, Right : LogUtil_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
    subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
@@ -456,6 +463,16 @@ package body org.allbinary.game.layer.SecondRunnable_Package is
    function "=" (Left, Right : BasicArrayListUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.util.BasicArrayListUtil_Package_References."=";
    subtype BasicArrayListUtil_Access_Array_Access_Array_Access is org.allbinary.util.BasicArrayListUtil_Package_References.BasicArrayListUtil_Access_Array_Access_Array_Access;
    function "=" (Left, Right : BasicArrayListUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.util.BasicArrayListUtil_Package_References."=";
+   subtype WaypointPathRunnableBase_Access is org.allbinary.game.layer.WaypointPathRunnableBase_Package_References.WaypointPathRunnableBase_Access;
+   function "=" (Left, Right : WaypointPathRunnableBase_Access) return Boolean renames org.allbinary.game.layer.WaypointPathRunnableBase_Package_References."=";
+   subtype WaypointPathRunnableBase_Access_Array is org.allbinary.game.layer.WaypointPathRunnableBase_Package_References.WaypointPathRunnableBase_Access_Array;
+   function "=" (Left, Right : WaypointPathRunnableBase_Access_Array) return Boolean renames org.allbinary.game.layer.WaypointPathRunnableBase_Package_References."=";
+   subtype WaypointPathRunnableBase_Access_Array_Access is org.allbinary.game.layer.WaypointPathRunnableBase_Package_References.WaypointPathRunnableBase_Access_Array_Access;
+   function "=" (Left, Right : WaypointPathRunnableBase_Access_Array_Access) return Boolean renames org.allbinary.game.layer.WaypointPathRunnableBase_Package_References."=";
+   subtype WaypointPathRunnableBase_Access_Array_Access_Array is org.allbinary.game.layer.WaypointPathRunnableBase_Package_References.WaypointPathRunnableBase_Access_Array_Access_Array;
+   function "=" (Left, Right : WaypointPathRunnableBase_Access_Array_Access_Array) return Boolean renames org.allbinary.game.layer.WaypointPathRunnableBase_Package_References."=";
+   subtype WaypointPathRunnableBase_Access_Array_Access_Array_Access is org.allbinary.game.layer.WaypointPathRunnableBase_Package_References.WaypointPathRunnableBase_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : WaypointPathRunnableBase_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.layer.WaypointPathRunnableBase_Package_References."=";
    procedure Initialize_Fields (This : in out SecondRunnable'Class) is
    begin
       null;
@@ -489,12 +506,18 @@ end org.allbinary.game.layer.SecondRunnable_Package;
 with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
 with org.allbinary.thread.ARunnable_Package; use org.allbinary.thread.ARunnable_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
 with org.allbinary.media.graphics.geography.pathfinding.MultipassState_Package; use org.allbinary.media.graphics.geography.pathfinding.MultipassState_Package;
+with org.allbinary.media.graphics.geography.pathfinding.MultipassState_Package_References;
 with org.allbinary.media.graphics.geography.pathfinding.PathFindingInfo_Package; use org.allbinary.media.graphics.geography.pathfinding.PathFindingInfo_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.util.BasicArrayListUtil_Package; use org.allbinary.util.BasicArrayListUtil_Package;
+with org.allbinary.util.BasicArrayListUtil_Package_References;
+with org.allbinary.game.layer.FirstRunnable_Package; use org.allbinary.game.layer.FirstRunnable_Package;
+with org.allbinary.game.layer.SecondRunnable_Package; use org.allbinary.game.layer.SecondRunnable_Package;
 with org.allbinary.game.layer.WaypointBehaviorBase_Package; use org.allbinary.game.layer.WaypointBehaviorBase_Package;
 with org.allbinary.game.layer.GeographicMapCellPositionAreaBase_Package;
 with org.allbinary.game.layer.GeographicMapCellPositionAreaInterface_Package;
@@ -507,7 +530,6 @@ with org.allbinary.game.layer.waypoint.WaypointBase_Package;
 with org.allbinary.game.layer.WaypointBehaviorBase_Package;
 with org.allbinary.game.layer.waypoint.WaypointLayerInterface_Package;
 with org.allbinary.game.layer.waypoint.WaypointLogHelper_Package;
-with org.allbinary.game.layer.WaypointPathRunnableBase_Package;
 with org.allbinary.game.layer.waypoint.WaypointRunnableLogHelper_Package;
 
 package body org.allbinary.game.layer.EndRunnable_Package is
@@ -516,16 +538,6 @@ package body org.allbinary.game.layer.EndRunnable_Package is
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    package GeographicMapCellPosition_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
    package PathFindingInfo_Package renames Standard.org.allbinary.media.graphics.geography.pathfinding.PathFindingInfo_Package;
-   subtype ARunnable_Access is org.allbinary.thread.ARunnable_Package_References.ARunnable_Access;
-   function "=" (Left, Right : ARunnable_Access) return Boolean renames org.allbinary.thread.ARunnable_Package_References."=";
-   subtype ARunnable_Access_Array is org.allbinary.thread.ARunnable_Package_References.ARunnable_Access_Array;
-   function "=" (Left, Right : ARunnable_Access_Array) return Boolean renames org.allbinary.thread.ARunnable_Package_References."=";
-   subtype ARunnable_Access_Array_Access is org.allbinary.thread.ARunnable_Package_References.ARunnable_Access_Array_Access;
-   function "=" (Left, Right : ARunnable_Access_Array_Access) return Boolean renames org.allbinary.thread.ARunnable_Package_References."=";
-   subtype ARunnable_Access_Array_Access_Array is org.allbinary.thread.ARunnable_Package_References.ARunnable_Access_Array_Access_Array;
-   function "=" (Left, Right : ARunnable_Access_Array_Access_Array) return Boolean renames org.allbinary.thread.ARunnable_Package_References."=";
-   subtype ARunnable_Access_Array_Access_Array_Access is org.allbinary.thread.ARunnable_Package_References.ARunnable_Access_Array_Access_Array_Access;
-   function "=" (Left, Right : ARunnable_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.thread.ARunnable_Package_References."=";
    subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
    function "=" (Left, Right : LogUtil_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
    subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
@@ -566,6 +578,16 @@ package body org.allbinary.game.layer.EndRunnable_Package is
    function "=" (Left, Right : BasicArrayListUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.util.BasicArrayListUtil_Package_References."=";
    subtype BasicArrayListUtil_Access_Array_Access_Array_Access is org.allbinary.util.BasicArrayListUtil_Package_References.BasicArrayListUtil_Access_Array_Access_Array_Access;
    function "=" (Left, Right : BasicArrayListUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.util.BasicArrayListUtil_Package_References."=";
+   subtype WaypointPathRunnableBase_Access is org.allbinary.game.layer.WaypointPathRunnableBase_Package_References.WaypointPathRunnableBase_Access;
+   function "=" (Left, Right : WaypointPathRunnableBase_Access) return Boolean renames org.allbinary.game.layer.WaypointPathRunnableBase_Package_References."=";
+   subtype WaypointPathRunnableBase_Access_Array is org.allbinary.game.layer.WaypointPathRunnableBase_Package_References.WaypointPathRunnableBase_Access_Array;
+   function "=" (Left, Right : WaypointPathRunnableBase_Access_Array) return Boolean renames org.allbinary.game.layer.WaypointPathRunnableBase_Package_References."=";
+   subtype WaypointPathRunnableBase_Access_Array_Access is org.allbinary.game.layer.WaypointPathRunnableBase_Package_References.WaypointPathRunnableBase_Access_Array_Access;
+   function "=" (Left, Right : WaypointPathRunnableBase_Access_Array_Access) return Boolean renames org.allbinary.game.layer.WaypointPathRunnableBase_Package_References."=";
+   subtype WaypointPathRunnableBase_Access_Array_Access_Array is org.allbinary.game.layer.WaypointPathRunnableBase_Package_References.WaypointPathRunnableBase_Access_Array_Access_Array;
+   function "=" (Left, Right : WaypointPathRunnableBase_Access_Array_Access_Array) return Boolean renames org.allbinary.game.layer.WaypointPathRunnableBase_Package_References."=";
+   subtype WaypointPathRunnableBase_Access_Array_Access_Array_Access is org.allbinary.game.layer.WaypointPathRunnableBase_Package_References.WaypointPathRunnableBase_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : WaypointPathRunnableBase_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.layer.WaypointPathRunnableBase_Package_References."=";
    procedure Initialize_Fields (This : in out EndRunnable'Class) is
    begin
       null;

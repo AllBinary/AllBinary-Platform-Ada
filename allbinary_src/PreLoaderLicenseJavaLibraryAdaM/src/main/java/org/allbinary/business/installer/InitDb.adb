@@ -14,6 +14,7 @@
 
 
 with org.allbinary.business.init.db.DbConnectionInfo_Package; use org.allbinary.business.init.db.DbConnectionInfo_Package;
+with org.allbinary.business.init.db.DbConnectionInfo_Package_References;
 with org.allbinary.logic.system.security.licensing.LicensingException_Package; use org.allbinary.logic.system.security.licensing.LicensingException_Package;
 
 package body org.allbinary.business.installer.InitDb_Package is

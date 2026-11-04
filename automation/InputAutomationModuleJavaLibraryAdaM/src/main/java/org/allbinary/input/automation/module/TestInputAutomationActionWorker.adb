@@ -16,12 +16,15 @@
 with org.allbinary.input.automation.robot.InputRobotFactory_Package; use org.allbinary.input.automation.robot.InputRobotFactory_Package;
 with org.allbinary.input.automation.robot.InputRobotInterface_Package; use org.allbinary.input.automation.robot.InputRobotInterface_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.media.image.comparison.ImageComparatorConstraintsInterface_Package; use org.allbinary.media.image.comparison.ImageComparatorConstraintsInterface_Package;
+with org.allbinary.media.image.comparison.ImageComparatorConstraintsInterface_Package_References;
 with org.allbinary.media.image.comparison.motion.MotionRectangleConstraintsInterface_Package; use org.allbinary.media.image.comparison.motion.MotionRectangleConstraintsInterface_Package;
+with org.allbinary.media.image.comparison.motion.MotionRectangleConstraintsInterface_Package_References;
 with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
 with org.allbinary.input.automation.module.InputAutomationActionInterface_Package; use org.allbinary.input.automation.module.InputAutomationActionInterface_Package;
+with org.allbinary.input.automation.module.InputAutomationActionInterface_Package_References;
 with java.lang.Thread_Package; use java.lang.Thread_Package;
-with org.allbinary.input.automation.module.AbstractInputAutomationWorker_Package;
 
 package body org.allbinary.input.automation.module.TestInputAutomationActionWorker_Package is
 

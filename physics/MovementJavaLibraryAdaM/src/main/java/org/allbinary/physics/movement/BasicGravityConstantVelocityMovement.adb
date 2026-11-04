@@ -14,10 +14,12 @@
 
 
 with org.allbinary.game.layer.AllBinaryGameLayer_Package; use org.allbinary.game.layer.AllBinaryGameLayer_Package;
+with org.allbinary.game.layer.AllBinaryGameLayer_Package_References;
 with org.allbinary.game.physics.acceleration.GravityUtil_Package; use org.allbinary.game.physics.acceleration.GravityUtil_Package;
+with org.allbinary.game.physics.acceleration.GravityUtil_Package_References;
 with org.allbinary.game.physics.velocity.VelocityProperties_Package; use org.allbinary.game.physics.velocity.VelocityProperties_Package;
 with org.allbinary.logic.math.BasicDecimal_Package; use org.allbinary.logic.math.BasicDecimal_Package;
-with org.allbinary.physics.movement.BasicConstantVelocityMovement_Package;
+with org.allbinary.logic.math.BasicDecimal_Package_References;
 with org.allbinary.physics.movement.Movement_Package;
 with org.allbinary.physics.movement.MovementInterface_Package;
 
@@ -79,7 +81,7 @@ package body org.allbinary.physics.movement.BasicGravityConstantVelocityMovement
    procedure process (This : in out BasicGravityConstantVelocityMovement; layer_Param : access AllBinaryGameLayer_Package.AllBinaryGameLayer'Class) is
       layer : constant AllBinaryGameLayer_Access := AllBinaryGameLayer_Access (layer_Param);
    begin
-        BasicConstantVelocityMovement (This).process (layer);
+        BasicConstantVelocityMovement_Package.BasicConstantVelocityMovement (This).process (layer);
         This.gravityUtil.process (BasicGravityConstantVelocityMovement'Class (This).getVelocityProperties, This.gravityUtil.GAME_GRAVITY_VELOCITY);
    end process;
 

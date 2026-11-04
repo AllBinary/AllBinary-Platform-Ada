@@ -14,18 +14,19 @@
 
 
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.business.advertisement.AdvertisementInterface_Package; use org.allbinary.business.advertisement.AdvertisementInterface_Package;
+with org.allbinary.business.advertisement.AdvertisementInterface_Package_References;
 with org.allbinary.business.advertisement.AdvertisementsInterface_Package; use org.allbinary.business.advertisement.AdvertisementsInterface_Package;
+with org.allbinary.business.advertisement.AdvertisementsInterface_Package_References;
 with org.allbinary.business.advertisement.search.AdvertisementSearchInterface_Package; use org.allbinary.business.advertisement.search.AdvertisementSearchInterface_Package;
-with org.allbinary.business.advertisement.campaign.AdvertisementCampaignsInterface_Package;
+with org.allbinary.business.advertisement.search.AdvertisementSearchInterface_Package_References;
 with org.allbinary.business.advertisement.search.category.AdvertisementCategoryInterface_Package;
 with org.allbinary.business.advertisement.image.AdvertisementImageInterface_Package;
-with org.allbinary.business.advertisement.AdvertisementInterface_Package;
 with org.allbinary.business.advertisement.product.AdvertisementProductInterface_Package;
-with org.allbinary.business.advertisement.search.AdvertisementSearchInterface_Package;
 with org.allbinary.business.advertisement.thumbnail.AdvertisementThumbnailInterface_Package;
 with org.allbinary.business.advertisement.search.website.AdvertisementWebsiteInterface_Package;
-with org.allbinary.business.advertisement.AdvertisementsInterface_Package;
 with org.allbinary.logic.control.contraints.display.browser.DisplayInBrowserContraintsInterface_Package;
 with org.allbinary.logic.control.contraints.MinMaxDoubleConstraintInterface_Package;
 with org.allbinary.logic.control.contraints.MinMaxIntConstraintInterface_Package;

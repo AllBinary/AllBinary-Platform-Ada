@@ -19,8 +19,10 @@ with org.allbinary.input.motion.button.BasicTouchInputFactory_Package; use org.a
 with org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Package; use org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Package;
 with org.allbinary.input.motion.gesture.TrackballMotionGestureFactory_Package; use org.allbinary.input.motion.gesture.TrackballMotionGestureFactory_Package;
 with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package; use org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References;
 with org.allbinary.game.input.PCKeyFactory_Package; use org.allbinary.game.input.PCKeyFactory_Package;
 with org.allbinary.game.input.Input_Package; use org.allbinary.game.input.Input_Package;
+with org.allbinary.game.input.Input_Package_References;
 
 package body org.allbinary.game.input.PCGameInputMapping_Package is
 
@@ -75,7 +77,7 @@ package body org.allbinary.game.input.PCGameInputMapping_Package is
         TouchMotionGestureFactory_Package.getInstance;
         TrackballMotionGestureFactory_Package.getInstance;
         BasicTouchInputFactory_Package.getInstance;
-        PersistentInputMapping (This).init (abeClientInformation);
+        PersistentInputMapping_Package.PersistentInputMapping (This).init (abeClientInformation);
         if ((PCGameInputMapping'Class (This).getTotalMapped) = (0)) or else (PCGameInputMapping'Class (This).isDefaultNew) then
             PCGameInputMapping'Class (This).getInputMapping.addMapping (PCGameInputMapping'Class (This).getDefault);
             PCGameInputMapping'Class (This).save (abeClientInformation);

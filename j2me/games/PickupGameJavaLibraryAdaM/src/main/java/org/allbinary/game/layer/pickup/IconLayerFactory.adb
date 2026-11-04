@@ -14,7 +14,9 @@
 
 
 with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Animation_Package;
+with org.allbinary.animation.Animation_Package_References;
 with org.allbinary.game.layer.pickup.IconLayer_Package; use org.allbinary.game.layer.pickup.IconLayer_Package;
+with org.allbinary.game.layer.pickup.IconLayer_Package_References;
 with org.allbinary.game.layer.pickup.IconLayer_Package;
 
 package body org.allbinary.game.layer.pickup.IconLayerFactory_Package is

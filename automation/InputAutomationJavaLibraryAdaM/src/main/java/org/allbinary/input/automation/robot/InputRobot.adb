@@ -15,16 +15,20 @@
 
 with org.allbinary.input.automation.PointHelper_Package; use org.allbinary.input.automation.PointHelper_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.input.automation.robot.Robot_Package; use org.allbinary.input.automation.robot.Robot_Package;
+with org.allbinary.input.automation.robot.Robot_Package_References;
 with org.allbinary.input.automation.robot.GraphicsDevice_Package; use org.allbinary.input.automation.robot.GraphicsDevice_Package;
+with org.allbinary.input.automation.robot.GraphicsDevice_Package_References;
 with org.allbinary.input.automation.robot.MouseInfo_Package; use org.allbinary.input.automation.robot.MouseInfo_Package;
 with org.allbinary.input.automation.robot.Point_Package; use org.allbinary.input.automation.robot.Point_Package;
+with org.allbinary.input.automation.robot.Point_Package_References;
 with org.allbinary.input.automation.robot.Rectangle_Package; use org.allbinary.input.automation.robot.Rectangle_Package;
+with org.allbinary.input.automation.robot.Rectangle_Package_References;
 with org.allbinary.input.automation.robot.Color_Package; use org.allbinary.input.automation.robot.Color_Package;
-with org.allbinary.input.automation.robot.InputRobotInterface_Package;
-with org.allbinary.input.automation.PointHelper_Package;
+with org.allbinary.input.automation.robot.Color_Package_References;
 
 package body org.allbinary.input.automation.robot.InputRobot_Package is
 

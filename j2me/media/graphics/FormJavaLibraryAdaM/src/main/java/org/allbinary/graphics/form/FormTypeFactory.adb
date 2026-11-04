@@ -16,6 +16,7 @@
 with org.allbinary.graphics.displayable.DisplayInfoSingleton_Package; use org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.graphics.form.FormType_Package; use org.allbinary.graphics.form.FormType_Package;
+with org.allbinary.graphics.form.FormType_Package_References;
 with org.allbinary.graphics.form.FormType_Package;
 
 package body org.allbinary.graphics.form.FormTypeFactory_Package is

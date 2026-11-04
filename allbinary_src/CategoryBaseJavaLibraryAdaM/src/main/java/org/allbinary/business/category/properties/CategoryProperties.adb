@@ -18,22 +18,24 @@ with org.allbinary.business.category.CategoryData_Package; use org.allbinary.bus
 with org.allbinary.business.category.CategoryInterface_Package; use org.allbinary.business.category.CategoryInterface_Package;
 with org.allbinary.business.category.CategoryUtil_Package; use org.allbinary.business.category.CategoryUtil_Package;
 with org.allbinary.business.category.hierarchy.CategoryHierarchyInterface_Package; use org.allbinary.business.category.hierarchy.CategoryHierarchyInterface_Package;
+with org.allbinary.business.category.hierarchy.CategoryHierarchyInterface_Package_References;
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.communication.sql.AbSqlData_Package; use org.allbinary.logic.communication.sql.AbSqlData_Package;
 with org.allbinary.logic.io.path.AbPath_Package; use org.allbinary.logic.io.path.AbPath_Package;
+with org.allbinary.logic.io.path.AbPath_Package_References;
 with org.allbinary.logic.io.path.AbPathData_Package; use org.allbinary.logic.io.path.AbPathData_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.logic.string_Id.StringValidationUtil_Package; use org.allbinary.logic.string_Id.StringValidationUtil_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
+with org.w3c.dom.Document_Package_References;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
-with org.allbinary.business.category.hierarchy.CategoryHierarchyInterface_Package;
-with org.allbinary.business.category.CategoryInterface_Package;
-with org.allbinary.business.category.properties.CategoryPropertiesInterface_Package;
-with org.allbinary.business.category.CategoryUtil_Package;
+with org.w3c.dom.Node_Package_References;
 with org.allbinary.logic.control.validate.ValidationInterface_Package;
 
 package body org.allbinary.business.category.properties.CategoryProperties_Package is
@@ -305,7 +307,7 @@ package body org.allbinary.business.category.properties.CategoryProperties_Packa
 
 begin
    null;
-   MAXDEPTH := 100;
+   
 
 end org.allbinary.business.category.properties.CategoryProperties_Package;
 

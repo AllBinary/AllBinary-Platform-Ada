@@ -14,6 +14,7 @@
 
 
 with org.allbinary.business.user.commerce.money.payment.types.CreditCardType_Package; use org.allbinary.business.user.commerce.money.payment.types.CreditCardType_Package;
+with org.allbinary.business.user.commerce.money.payment.types.CreditCardType_Package_References;
 with org.allbinary.business.user.commerce.money.payment.types.CreditCardType_Package;
 
 package body org.allbinary.business.user.commerce.money.payment.types.CreditCardTypeFactory_Package is

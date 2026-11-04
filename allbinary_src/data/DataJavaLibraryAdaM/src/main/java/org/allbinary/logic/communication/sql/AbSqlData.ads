@@ -52,10 +52,10 @@ package org.allbinary.logic.communication.sql.AbSqlData_Package is
    type AbSqlData is new Java_Object with null record;
    ANYSINGLECHARACTERMATCH : Unbounded_String;
    ANYMULTICHARACTERMATCH : Unbounded_String;
-   MAXNUM : Integer;
-   MINSTRING : Integer;
-   MAXSTRING : Integer;
-   MAXBLOB : Integer;
+   MAXNUM : constant Integer := 19;
+   MINSTRING : constant Integer := 1;
+   MAXSTRING : constant Integer := 255;
+   MAXBLOB : constant Integer := 32000;
 
    procedure Initialize (This : in out AbSqlData'Class);
    function Create return AbSqlData_Access;

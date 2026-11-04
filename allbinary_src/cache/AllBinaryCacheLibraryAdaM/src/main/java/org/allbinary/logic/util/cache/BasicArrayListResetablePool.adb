@@ -14,8 +14,9 @@
 
 
 with org.allbinary.logic.util.cache.CacheableInterfaceFactoryInterface_Package; use org.allbinary.logic.util.cache.CacheableInterfaceFactoryInterface_Package;
+with org.allbinary.logic.util.cache.CacheableInterfaceFactoryInterface_Package_References;
 with org.allbinary.logic.util.cache.CacheableInterface_Package; use org.allbinary.logic.util.cache.CacheableInterface_Package;
-with org.allbinary.logic.util.cache.AbstractArrayListPool_Package;
+with org.allbinary.logic.util.cache.CacheableInterface_Package_References;
 with org.allbinary.logic.util.cache.PoolInterface_Package;
 
 package body org.allbinary.logic.util.cache.BasicArrayListResetablePool_Package is

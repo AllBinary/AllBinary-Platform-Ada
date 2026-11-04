@@ -16,8 +16,10 @@
 with org.allbinary.game.ag.life.Life_Package; use org.allbinary.game.ag.life.Life_Package;
 with org.allbinary.game.ag.life.LifeInterfaceCompositeInterface_Package; use org.allbinary.game.ag.life.LifeInterfaceCompositeInterface_Package;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
+with org.allbinary.layer.AllBinaryLayer_Package_References;
 with org.allbinary.layer.AllBinaryLayerCircularPool_Package; use org.allbinary.layer.AllBinaryLayerCircularPool_Package;
 with org.allbinary.layer.AllBinaryLayerFactoryInterface_Package; use org.allbinary.layer.AllBinaryLayerFactoryInterface_Package;
+with org.allbinary.layer.AllBinaryLayerFactoryInterface_Package_References;
 with org.allbinary.game.ag.layer.pickup.life.LifeLayer_Package; use org.allbinary.game.ag.layer.pickup.life.LifeLayer_Package;
 with org.allbinary.game.ag.layer.pickup.life.LifeLayer_Package;
 
@@ -56,7 +58,7 @@ package body org.allbinary.game.ag.layer.pickup.life.LifeLayerCircularStaticPool
    begin
       AllBinaryLayerCircularPool_Package.Initialize (This);
       Initialize_Fields (This);
-        AllBinaryLayerCircularPool (This).initAllBinaryLayerCircularPool (allbinaryLayerFactoryInterface, total);
+        AllBinaryLayerCircularPool_Package.AllBinaryLayerCircularPool (This).initAllBinaryLayerCircularPool (allbinaryLayerFactoryInterface, total);
    end Initialize;
 
    function Create (allbinaryLayerFactoryInterface_Param : access AllBinaryLayerFactoryInterface_Package.AllBinaryLayerFactoryInterface'Class; total : Integer) return LifeLayerCircularStaticPool_Access is

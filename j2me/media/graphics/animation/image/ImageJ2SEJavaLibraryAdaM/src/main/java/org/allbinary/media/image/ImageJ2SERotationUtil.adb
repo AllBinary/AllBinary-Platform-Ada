@@ -14,7 +14,9 @@
 
 
 with org.allbinary.media.image.ImageUtil_Package; use org.allbinary.media.image.ImageUtil_Package;
+with org.allbinary.media.image.ImageUtil_Package_References;
 with org.allbinary.media.image.ImageJ2SEUtil_Package; use org.allbinary.media.image.ImageJ2SEUtil_Package;
+with org.allbinary.media.image.ImageJ2SEUtil_Package_References;
 with org.allbinary.media.image.ImageJ2SEUtil_Package;
 with org.allbinary.media.image.ImageUtil_Package;
 

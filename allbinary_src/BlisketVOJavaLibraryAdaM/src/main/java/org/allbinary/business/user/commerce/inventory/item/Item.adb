@@ -17,6 +17,7 @@ with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.business.entry_Id.EntryData_Package; use org.allbinary.business.entry_Id.EntryData_Package;
 with org.allbinary.business.user.address.ShippingAddressData_Package; use org.allbinary.business.user.address.ShippingAddressData_Package;
 with org.allbinary.business.user.address.StreetAddress_Package; use org.allbinary.business.user.address.StreetAddress_Package;
+with org.allbinary.business.user.address.StreetAddress_Package_References;
 with org.allbinary.business.user.address.StreetAddressData_Package; use org.allbinary.business.user.address.StreetAddressData_Package;
 with org.allbinary.business.user.commerce.inventory.order.OrderHistoryData_Package; use org.allbinary.business.user.commerce.inventory.order.OrderHistoryData_Package;
 with org.allbinary.business.user.commerce.money.MoneyException_Package; use org.allbinary.business.user.commerce.money.MoneyException_Package;
@@ -171,7 +172,7 @@ package body org.allbinary.business.user.commerce.inventory.item.Item_Package is
    function toHashMap (This : in out Item) return HashMap_Access is
       hashMap : HashMap_Access;
    begin
-        hashMap := BasicItem (This).toHashMap;
+        hashMap := BasicItem_Package.BasicItem (This).toHashMap;
         hashMap.put (ShippingMethodData_Package.GROUP, Java_Box (This.group));
         hashMap.put (OrderHistoryData_Package.TAX, Java_Box (This.tax));
         hashMap.put (ShippingMethodData_Package.NAME, Java_Box (This.shippingType));

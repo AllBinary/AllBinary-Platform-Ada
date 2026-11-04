@@ -23,20 +23,24 @@ with org.allbinary.game.input.event.GameKeyEventFactory_Package; use org.allbina
 with org.allbinary.game.layer.SWTUtil_Package; use org.allbinary.game.layer.SWTUtil_Package;
 with org.allbinary.graphics.GPoint_Package; use org.allbinary.graphics.GPoint_Package;
 with org.allbinary.graphics.displayable.MyCanvas_Package; use org.allbinary.graphics.displayable.MyCanvas_Package;
+with org.allbinary.graphics.displayable.MyCanvas_Package_References;
 with org.allbinary.graphics.form.CommandCurrentSelectionForm_Package; use org.allbinary.graphics.form.CommandCurrentSelectionForm_Package;
 with org.allbinary.graphics.form.ScrollSelectionForm_Package; use org.allbinary.graphics.form.ScrollSelectionForm_Package;
+with org.allbinary.graphics.form.ScrollSelectionForm_Package_References;
 with org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package; use org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package;
 with org.allbinary.input.motion.gesture.MotionGestureInput_Package; use org.allbinary.input.motion.gesture.MotionGestureInput_Package;
 with org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Package; use org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Package;
 with org.allbinary.input.motion.gesture.observer.MotionGestureEvent_Package; use org.allbinary.input.motion.gesture.observer.MotionGestureEvent_Package;
+with org.allbinary.input.motion.gesture.observer.MotionGestureEvent_Package_References;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.media.audio.PrimaryPlayerQueueFactory_Package; use org.allbinary.media.audio.PrimaryPlayerQueueFactory_Package;
 with org.allbinary.media.audio.SelectSound_Package; use org.allbinary.media.audio.SelectSound_Package;
 with org.allbinary.thread.PrimaryThreadPool_Package; use org.allbinary.thread.PrimaryThreadPool_Package;
 with org.allbinary.time.TimeDelayHelper_Package; use org.allbinary.time.TimeDelayHelper_Package;
+with org.allbinary.time.TimeDelayHelper_Package_References;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.game.displayable.canvas.CommandRunnable_Package; use org.allbinary.game.displayable.canvas.CommandRunnable_Package;
-with org.allbinary.game.displayable.canvas.BasicMenuInputProcessor_Package;
 with org.allbinary.game.displayable.canvas.CommandRunnable_Package;
 
 package body org.allbinary.game.displayable.canvas.CommandFormInputProcessor_Package is
@@ -277,7 +281,7 @@ package body org.allbinary.game.displayable.canvas.CommandFormInputProcessor_Pac
 
    function toString (This : in out CommandFormInputProcessor) return Unbounded_String is
    begin
-        return StringMaker_Package.Create.append (BasicMenuInputProcessor (This).toString).append (This.NAME_LABEL).append (This.form.toString).toString;
+        return StringMaker_Package.Create.append (BasicMenuInputProcessor_Package.BasicMenuInputProcessor (This).toString).append (This.NAME_LABEL).append (This.form.toString).toString;
    end toString;
 
    procedure processInput (This : in out CommandFormInputProcessor; key : Integer) is

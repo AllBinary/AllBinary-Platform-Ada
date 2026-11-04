@@ -15,6 +15,7 @@
 
 with org.allbinary.logic.communication.smtp.queue.BasicEmailQueue_Package; use org.allbinary.logic.communication.smtp.queue.BasicEmailQueue_Package;
 with org.allbinary.logic.communication.smtp.queue.EmailQueueInterface_Package; use org.allbinary.logic.communication.smtp.queue.EmailQueueInterface_Package;
+with org.allbinary.logic.communication.smtp.queue.EmailQueueInterface_Package_References;
 with org.allbinary.logic.communication.smtp.queue.BasicEmailQueue_Package;
 with org.allbinary.logic.communication.smtp.EmailInterface_Package;
 with org.allbinary.logic.communication.smtp.queue.EmailQueueInterface_Package;

@@ -44,7 +44,7 @@ package body org.allbinary.servlet.BlisketServletUtil_Package is
 
    function getInstance return BlisketServletUtil_Access is
    begin
-        return BlisketServletUtil_Package.instance;
+        return BlisketServletUtil_Access (BlisketServletUtil_Package.instance);
    end getInstance;
 
    procedure init (This : in out BlisketServletUtil; request_Param : access HttpServletRequest_Package.HttpServletRequest'Class) is

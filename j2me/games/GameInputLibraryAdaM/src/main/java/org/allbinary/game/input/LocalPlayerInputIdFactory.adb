@@ -15,9 +15,9 @@
 
 with org.allbinary.game.input.analog.AnalogLocationInputFactory_Package; use org.allbinary.game.input.analog.AnalogLocationInputFactory_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.game.input.analog.AnalogLocationInput_Package;
-with org.allbinary.game.input.analog.AnalogLocationInputFactory_Package;
 
 package body org.allbinary.game.input.LocalPlayerInputIdFactory_Package is
 

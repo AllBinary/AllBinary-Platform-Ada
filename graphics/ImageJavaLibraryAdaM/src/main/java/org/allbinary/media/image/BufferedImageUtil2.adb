@@ -2,6 +2,7 @@
 
 
 with org.allbinary.media.image.ImageUtil_Package; use org.allbinary.media.image.ImageUtil_Package;
+with org.allbinary.media.image.ImageUtil_Package_References;
 with org.allbinary.media.image.Graphics2D_Package; use org.allbinary.media.image.Graphics2D_Package;
 
 package body org.allbinary.media.image.BufferedImageUtil2_Package is

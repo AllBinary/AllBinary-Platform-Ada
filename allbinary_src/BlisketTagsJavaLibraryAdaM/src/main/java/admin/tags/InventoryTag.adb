@@ -19,6 +19,7 @@ with org.allbinary.business.context.modules.storefront.StoreFrontData_Package; u
 with org.allbinary.logic.communication.http.request.AbResponseHandler_Package; use org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
 with admin.tags.ParentInventoryTagHelper_Package; use admin.tags.ParentInventoryTagHelper_Package;
 with admin.tags.AbTagData_Package; use admin.tags.AbTagData_Package;
+with admin.tags.ParentInventoryTagHelper_Package;
 
 package body admin.tags.InventoryTag_Package is
 
@@ -66,7 +67,7 @@ package body admin.tags.InventoryTag_Package is
                         InventoryTag'Class (This).getPropertiesHashMap.put (AbTagData_Package.PARENT, parentTag);
                         InventoryTag'Class (This).getPropertiesHashMap.put (StoreFrontData_Package.getInstance.NAME, This.storeName);
                     end if;
-                    return TableTag (This).doStartTag;
+                    return TableTag_Package.TableTag (This).doStartTag;
                 end if;
             end if;
             return SKIP_BODY;

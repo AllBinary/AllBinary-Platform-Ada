@@ -16,9 +16,11 @@
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
 with org.allbinary.graphics.paint.PaintableInterface_Package; use org.allbinary.graphics.paint.PaintableInterface_Package;
+with org.allbinary.graphics.paint.PaintableInterface_Package_References;
 with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
 with org.allbinary.graphics.canvas.transition.progress.LazyProgressCanvas_Package; use org.allbinary.graphics.canvas.transition.progress.LazyProgressCanvas_Package;
 with org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package; use org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package;
+with org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package_References;
 with org.allbinary.graphics.canvas.transition.progress.LazyProgressCanvas_Package;
 
 package body org.allbinary.graphics.canvas.transition.progress.ProgressCanvasFactory_Package is

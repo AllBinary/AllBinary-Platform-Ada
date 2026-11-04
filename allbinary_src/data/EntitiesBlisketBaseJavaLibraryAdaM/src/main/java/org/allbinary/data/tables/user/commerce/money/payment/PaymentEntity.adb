@@ -17,6 +17,7 @@ with java.util.Calendar_Package; use java.util.Calendar_Package;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 with java.util.Random_Package; use java.util.Random_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.business.entry_Id.EntryData_Package; use org.allbinary.business.entry_Id.EntryData_Package;
 with org.allbinary.business.init.db.UserDbInitInfo_Package; use org.allbinary.business.init.db.UserDbInitInfo_Package;
@@ -24,14 +25,15 @@ with org.allbinary.business.user.UserData_Package; use org.allbinary.business.us
 with org.allbinary.business.user.commerce.money.payment.Payment_Package; use org.allbinary.business.user.commerce.money.payment.Payment_Package;
 with org.allbinary.business.user.commerce.money.payment.PaymentData_Package; use org.allbinary.business.user.commerce.money.payment.PaymentData_Package;
 with org.allbinary.business.user.commerce.money.payment.PaymentInterface_Package; use org.allbinary.business.user.commerce.money.payment.PaymentInterface_Package;
+with org.allbinary.business.user.commerce.money.payment.PaymentInterface_Package_References;
 with org.allbinary.data.generator.PaymentIdGenerator_Package; use org.allbinary.data.generator.PaymentIdGenerator_Package;
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.communication.sql.AbSqlBean_Package; use org.allbinary.logic.communication.sql.AbSqlBean_Package;
 with org.allbinary.logic.control.crypt.SuperCrypt_Package; use org.allbinary.logic.control.crypt.SuperCrypt_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
-with org.allbinary.data.generator.PaymentIdGenerator_Package;
 
 package body org.allbinary.data.tables.user.commerce.money.payment.PaymentEntity_Package is
 
@@ -103,7 +105,7 @@ package body org.allbinary.data.tables.user.commerce.money.payment.PaymentEntity
 
    function getLastId (This : in out PaymentEntity; userName : Unbounded_String) return Unbounded_String is
    begin
-        return AbSqlBean (This).getLargestIntegerInColumnWhere (PaymentData_Package.ID, UserData_Package.USERNAME, userName);
+        return AbSqlBean_Package.AbSqlBean (This).getLargestIntegerInColumnWhere (PaymentData_Package.ID, UserData_Package.USERNAME, userName);
    end getLastId;
 
    procedure setDefault (This : in out PaymentEntity; userName : Unbounded_String; index : Integer) is
@@ -119,11 +121,11 @@ package body org.allbinary.data.tables.user.commerce.money.payment.PaymentEntity
             if (paymentInterface) /= (null) then
                 updateKeyAndValue.put (EntryData_Package.getInstance.DEFAULT, Java_Box (StringUtil_Package.getInstance.EMPTY_STRING));
                 whereKeyAndValue.put (PaymentData_Package.ID, paymentInterface.getId);
-                AbSqlBean (This).updateWhere (whereKeyAndValue, updateKeyAndValue);
+                AbSqlBean_Package.AbSqlBean (This).updateWhere (whereKeyAndValue, updateKeyAndValue);
             end if;
             updateKeyAndValue.put (EntryData_Package.getInstance.DEFAULT, EntryData_Package.getInstance.DEFAULT);
             whereKeyAndValue.put (PaymentData_Package.ID, Java_Box (To_Unbounded_String (Java_Image (index))));
-            AbSqlBean (This).updateWhere (whereKeyAndValue, updateKeyAndValue);
+            AbSqlBean_Package.AbSqlBean (This).updateWhere (whereKeyAndValue, updateKeyAndValue);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
                 This.logUtil.putF (This.commonStrings.SUCCESS, PaymentEntity_Access'(This'Unchecked_Access), To_Unbounded_String ("setDefault"));
             end if;
@@ -152,7 +154,7 @@ package body org.allbinary.data.tables.user.commerce.money.payment.PaymentEntity
             paymentVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
             keyAndValue := StdUtil_Package.getInstance.createHashMap;
             keyAndValue.put (UserData_Package.USERNAME, Java_Box (userName));
-            paymentList := AbSqlBean (This).getRows (keyAndValue);
+            paymentList := AbSqlBean_Package.AbSqlBean (This).getRows (keyAndValue);
             size := paymentList.size;
             for index in 0 .. (size) - 1 loop
                 paymentHashMap := HashMap_Access (paymentList.get (index));
@@ -185,7 +187,7 @@ package body org.allbinary.data.tables.user.commerce.money.payment.PaymentEntity
             updateKeyAndValue := StdUtil_Package.getInstance.createHashMap;
             updateKeyAndValue.put (EntryData_Package.getInstance.DEFAULT, EntryData_Package.getInstance.DEFAULT);
             updateKeyAndValue.put (UserData_Package.USERNAME, Java_Box (userName));
-            paymentHashMap := AbSqlBean (This).getRow (updateKeyAndValue);
+            paymentHashMap := AbSqlBean_Package.AbSqlBean (This).getRow (updateKeyAndValue);
             if (paymentHashMap) /= (null) then
                 payment := Payment_Package.Create (paymentHashMap);
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
@@ -215,7 +217,7 @@ package body org.allbinary.data.tables.user.commerce.money.payment.PaymentEntity
             whereHashMap := StdUtil_Package.getInstance.createHashMap;
             whereHashMap.put (UserData_Package.USERNAME, Java_Box (userName));
             whereHashMap.put (PaymentData_Package.ID, To_Unbounded_String (Java_Image (index)));
-            AbSqlBean (This).deleteWhere (whereHashMap);
+            AbSqlBean_Package.AbSqlBean (This).deleteWhere (whereHashMap);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
                 This.logUtil.putF (This.commonStrings.SUCCESS, PaymentEntity_Access'(This'Unchecked_Access), To_Unbounded_String ("remove"));
             end if;
@@ -252,7 +254,7 @@ package body org.allbinary.data.tables.user.commerce.money.payment.PaymentEntity
             calendar := Calendar_Package.getInstance;
             time := Java_New_String (calendar.getTimeInMillis.toString);
             vector.add (time);
-            AbSqlBean (This).insert (vector);
+            AbSqlBean_Package.AbSqlBean (This).insert (vector);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
                 This.logUtil.putF (This.commonStrings.SUCCESS, PaymentEntity_Access'(This'Unchecked_Access), To_Unbounded_String ("add"));
             end if;
@@ -280,12 +282,12 @@ package body org.allbinary.data.tables.user.commerce.money.payment.PaymentEntity
 
    function createTable (This : in out PaymentEntity) return Unbounded_String is
    begin
-        return AbSqlBean (This).createTable (PaymentEntity'Class (This).createTableStatement);
+        return AbSqlBean_Package.AbSqlBean (This).createTable (PaymentEntity'Class (This).createTableStatement);
    end createTable;
 
    function drop (This : in out PaymentEntity) return Unbounded_String is
    begin
-        return AbSqlBean (This).dropTable;
+        return AbSqlBean_Package.AbSqlBean (This).dropTable;
    end drop;
 
    procedure getLastId (This : in out PaymentEntity; userName : Unbounded_String) is

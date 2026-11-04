@@ -37,11 +37,11 @@ package body org.allbinary.graphics.color.ColorLevel_Package is
 
 begin
    null;
-   COLOR_MASK := 16#00FFFFFF#;
-   MIN := 16#44#;
-   AVG := 16#77#;
-   LIGHT := 16#AA#;
-   HIGH := 16#EE#;
+   
+   
+   
+   
+   
 
 end org.allbinary.graphics.color.ColorLevel_Package;
 

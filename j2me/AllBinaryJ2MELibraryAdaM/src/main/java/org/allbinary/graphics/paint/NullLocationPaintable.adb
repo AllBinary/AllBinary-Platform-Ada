@@ -13,7 +13,6 @@
 --  Generated Code Do Not Modify
 
 
-with org.allbinary.graphics.paint.LocationPaintable_Package;
 with org.allbinary.graphics.paint.LocationPaintableInterface_Package;
 
 package body org.allbinary.graphics.paint.NullLocationPaintable_Package is

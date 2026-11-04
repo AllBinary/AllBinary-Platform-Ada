@@ -14,6 +14,7 @@
 
 
 with org.allbinary.animation.transition.shake.ShakeEvent_Package; use org.allbinary.animation.transition.shake.ShakeEvent_Package;
+with org.allbinary.animation.transition.shake.ShakeEvent_Package_References;
 with org.allbinary.animation.transition.shake.ShakeEvent_Package;
 
 package body org.allbinary.animation.transition.shake.ShakeEventFactory_Package is

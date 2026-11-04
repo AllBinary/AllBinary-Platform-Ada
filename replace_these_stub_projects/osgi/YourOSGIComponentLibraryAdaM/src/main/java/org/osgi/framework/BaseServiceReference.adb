@@ -13,7 +13,6 @@
 --  Generated Code Do Not Modify
 
 
-with org.osgi.framework.ServiceReference_Package;
 
 package body org.osgi.framework.BaseServiceReference_Package is
 

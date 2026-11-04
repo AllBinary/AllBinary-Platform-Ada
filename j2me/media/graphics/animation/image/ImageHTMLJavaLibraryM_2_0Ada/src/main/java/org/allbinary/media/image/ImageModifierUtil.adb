@@ -15,18 +15,27 @@
 
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
 with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
+with javax.microedition.lcdui.Image_Package_References;
 with org.allbinary.graphics.Anchor_Package; use org.allbinary.graphics.Anchor_Package;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.graphics.color.BasicColor_Package_References;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.string_Id.CommonStrings_Package_References;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.microemu.device.playn.PlaynImage_Package; use org.microemu.device.playn.PlaynImage_Package;
 with org.microemu.device.ResourceCallbackStrings_Package; use org.microemu.device.ResourceCallbackStrings_Package;
+with org.microemu.device.ResourceCallbackStrings_Package_References;
 with playn.core.Callback_Package; use playn.core.Callback_Package;
+with playn.core.Callback_Package_References;
 with playn.core.Canvas_Package; use playn.core.Canvas_Package;
 with playn.core.CoreImage_Package; use playn.core.CoreImage_Package;
+with playn.core.CoreImage_Package_References;
 with playn.core.ImageImpl_Package; use playn.core.ImageImpl_Package;
 with playn.html.HTMLPlaynUtil_Package; use playn.html.HTMLPlaynUtil_Package;
+with playn.html.HTMLPlaynUtil_Package_References;
+with org.allbinary.media.image.ImageCopyCallback_Package; use org.allbinary.media.image.ImageCopyCallback_Package;
 
 package body org.allbinary.media.image.ImageModifierUtil_Package is
 
@@ -290,18 +299,25 @@ end org.allbinary.media.image.ImageModifierUtil_Package;
 
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
 with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
+with javax.microedition.lcdui.Image_Package_References;
 with org.allbinary.graphics.Anchor_Package; use org.allbinary.graphics.Anchor_Package;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.graphics.color.BasicColor_Package_References;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.string_Id.CommonStrings_Package_References;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.microemu.device.playn.PlaynImage_Package; use org.microemu.device.playn.PlaynImage_Package;
 with org.microemu.device.ResourceCallbackStrings_Package; use org.microemu.device.ResourceCallbackStrings_Package;
+with org.microemu.device.ResourceCallbackStrings_Package_References;
 with playn.core.Callback_Package; use playn.core.Callback_Package;
 with playn.core.Canvas_Package; use playn.core.Canvas_Package;
 with playn.core.CoreImage_Package; use playn.core.CoreImage_Package;
+with playn.core.CoreImage_Package_References;
 with playn.core.ImageImpl_Package; use playn.core.ImageImpl_Package;
 with playn.html.HTMLPlaynUtil_Package; use playn.html.HTMLPlaynUtil_Package;
+with playn.html.HTMLPlaynUtil_Package_References;
 with org.allbinary.media.image.ImageModifierUtil_Package;
 
 package body org.allbinary.media.image.ImageCopyCallback_Package is
@@ -362,16 +378,6 @@ package body org.allbinary.media.image.ImageCopyCallback_Package is
    function "=" (Left, Right : ResourceCallbackStrings_Access_Array_Access_Array) return Boolean renames org.microemu.device.ResourceCallbackStrings_Package_References."=";
    subtype ResourceCallbackStrings_Access_Array_Access_Array_Access is org.microemu.device.ResourceCallbackStrings_Package_References.ResourceCallbackStrings_Access_Array_Access_Array_Access;
    function "=" (Left, Right : ResourceCallbackStrings_Access_Array_Access_Array_Access) return Boolean renames org.microemu.device.ResourceCallbackStrings_Package_References."=";
-   subtype Callback_Access is playn.core.Callback_Package_References.Callback_Access;
-   function "=" (Left, Right : Callback_Access) return Boolean renames playn.core.Callback_Package_References."=";
-   subtype Callback_Access_Array is playn.core.Callback_Package_References.Callback_Access_Array;
-   function "=" (Left, Right : Callback_Access_Array) return Boolean renames playn.core.Callback_Package_References."=";
-   subtype Callback_Access_Array_Access is playn.core.Callback_Package_References.Callback_Access_Array_Access;
-   function "=" (Left, Right : Callback_Access_Array_Access) return Boolean renames playn.core.Callback_Package_References."=";
-   subtype Callback_Access_Array_Access_Array is playn.core.Callback_Package_References.Callback_Access_Array_Access_Array;
-   function "=" (Left, Right : Callback_Access_Array_Access_Array) return Boolean renames playn.core.Callback_Package_References."=";
-   subtype Callback_Access_Array_Access_Array_Access is playn.core.Callback_Package_References.Callback_Access_Array_Access_Array_Access;
-   function "=" (Left, Right : Callback_Access_Array_Access_Array_Access) return Boolean renames playn.core.Callback_Package_References."=";
    subtype CoreImage_Access is playn.core.CoreImage_Package_References.CoreImage_Access;
    function "=" (Left, Right : CoreImage_Access) return Boolean renames playn.core.CoreImage_Package_References."=";
    subtype CoreImage_Access_Array is playn.core.CoreImage_Package_References.CoreImage_Access_Array;

@@ -14,8 +14,9 @@
 
 
 with org.allbinary.game.input.event.GameKeyEvent_Package; use org.allbinary.game.input.event.GameKeyEvent_Package;
+with org.allbinary.game.input.event.GameKeyEvent_Package_References;
 with org.allbinary.layer.AllBinaryLayerManager_Package; use org.allbinary.layer.AllBinaryLayerManager_Package;
-with org.allbinary.game.input.event.GameKeyEvent_Package;
+with org.allbinary.layer.AllBinaryLayerManager_Package_References;
 
 package body org.allbinary.game.input.GameInputProcessor_Package is
 

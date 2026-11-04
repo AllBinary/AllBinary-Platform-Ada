@@ -14,6 +14,7 @@
 
 
 with org.allbinary.game.part.PartInterface_Package; use org.allbinary.game.part.PartInterface_Package;
+with org.allbinary.game.part.PartInterface_Package_References;
 with org.allbinary.game.part.PartInterface_Package;
 
 package body org.allbinary.game.part.PartInterfaceUtil_Package is

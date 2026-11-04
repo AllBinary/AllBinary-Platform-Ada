@@ -14,8 +14,10 @@
 
 
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.business.user.role.BasicUserRole_Package; use org.allbinary.business.user.role.BasicUserRole_Package;
+with org.allbinary.business.user.role.BasicUserRole_Package_References;
 with org.allbinary.business.user.role.BasicUserRole_Package;
 
 package body org.allbinary.business.user.role.BasicUserRoles_Package is

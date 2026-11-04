@@ -17,14 +17,16 @@ with org.allbinary.business.category.CategoryView_Package; use org.allbinary.bus
 with org.allbinary.data.tree.dom.DomNodeInterface_Package; use org.allbinary.data.tree.dom.DomNodeInterface_Package;
 with org.allbinary.logic.visual.theme.ThemeValidation_Package; use org.allbinary.logic.visual.theme.ThemeValidation_Package;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
+with org.w3c.dom.Document_Package_References;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
+with org.w3c.dom.Node_Package_References;
 with org.allbinary.business.category.store.theme.StoreThemeCategoryInterface_Package; use org.allbinary.business.category.store.theme.StoreThemeCategoryInterface_Package;
+with org.allbinary.business.category.store.theme.StoreThemeCategoryInterface_Package_References;
 with org.allbinary.business.category.store.theme.ThemeComparator_Package; use org.allbinary.business.category.store.theme.ThemeComparator_Package;
 with org.allbinary.logic.visual.transform.template.customizer.includes.style.css.template.retail.CssStyleValidation_Package;
 with org.allbinary.business.category.store.theme.StoreThemeCategoryInterface_Package;
 with org.allbinary.business.category.store.theme.ThemeComparator_Package;
 with org.allbinary.logic.visual.theme.ThemeInterface_Package;
-with org.allbinary.logic.visual.theme.ThemeValidation_Package;
 
 package body org.allbinary.business.category.store.theme.StoreThemeCategoryView_Package is
 
@@ -88,7 +90,7 @@ package body org.allbinary.business.category.store.theme.StoreThemeCategoryView_
       themeValidation : ThemeValidation_Access;
       index : Integer;
    begin
-        node := CategoryView (This).toXmlNode (document);
+        node := CategoryView_Package.CategoryView (This).toXmlNode (document);
         storeThemeCategoryInterface := StoreThemeCategoryInterface_Access (StoreThemeCategoryView'Class (This).getCategoryInterface);
         themeValidationArray := ThemeValidation_Access_Array_Access (storeThemeCategoryInterface.getThemes.toArray);
         Arrays_Package.sort (themeValidationArray, ThemeComparator_Package.Create);

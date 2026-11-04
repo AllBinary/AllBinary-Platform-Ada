@@ -16,9 +16,12 @@
 with org.allbinary.business.category.CategoryData_Package; use org.allbinary.business.category.CategoryData_Package;
 with org.allbinary.data.tree.dom.DomNodeInterface_Package; use org.allbinary.data.tree.dom.DomNodeInterface_Package;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
+with org.w3c.dom.Document_Package_References;
 with org.w3c.dom.Element_Package; use org.w3c.dom.Element_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
+with org.w3c.dom.Node_Package_References;
 with org.allbinary.business.category.properties.CategoryPropertiesInterface_Package; use org.allbinary.business.category.properties.CategoryPropertiesInterface_Package;
+with org.allbinary.business.category.properties.CategoryPropertiesInterface_Package_References;
 with org.allbinary.business.category.hierarchy.CategoryHierarchyInterface_Package;
 with org.allbinary.business.category.CategoryInterface_Package;
 with org.allbinary.business.category.properties.CategoryPropertiesInterface_Package;

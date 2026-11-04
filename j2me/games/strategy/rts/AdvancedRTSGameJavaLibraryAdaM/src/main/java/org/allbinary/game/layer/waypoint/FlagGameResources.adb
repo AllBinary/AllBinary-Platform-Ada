@@ -50,7 +50,7 @@ package body org.allbinary.game.layer.waypoint.FlagGameResources_Package is
    procedure append (This : in out FlagGameResources; ROOT : Unbounded_String; sizeString : Unbounded_String) is
       string_Id : Unbounded_String;
    begin
-        BasicGameResources (This).append (ROOT, sizeString);
+        BasicGameResources_Package.BasicGameResources (This).append (ROOT, sizeString);
         string_Id := GameGraphicsResourceUtil_Package.getInstance.getName;
         BasicGameResources_Package.stringBuffer.delete (0, BasicGameResources_Package.stringBuffer.length);
         BasicGameResources_Package.stringBuffer.append (ROOT);

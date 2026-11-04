@@ -40,7 +40,7 @@ begin
    TOTAL_NUMBER_PAGES := To_Unbounded_String ("SEARCHDATA_TOTALNUMBEROFPAGES");
    TOTAL_NUMBER_ITEMS_ON_THIS_PAGE := To_Unbounded_String ("SEARCHDATA_TOTALNUMBEROFITEMSONTHISPAGE");
    TOTAL_NUMBER_ITEMS := To_Unbounded_String ("SEARCHDATA_TOTALNUMBEROFITEMS");
-   DEFAULT_PAGE_LENGTH := 10;
+   
    GENERATESTATICPAGES := To_Unbounded_String ("Generate Static Pages");
    SEARCHBYSUMMARY := To_Unbounded_String ("Search By Summary");
    SEARCHBYDESCRIPTION := To_Unbounded_String ("Search By Description");

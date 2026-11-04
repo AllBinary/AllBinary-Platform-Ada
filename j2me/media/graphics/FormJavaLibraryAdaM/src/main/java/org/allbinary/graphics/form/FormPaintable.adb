@@ -14,8 +14,10 @@
 
 
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
 with org.allbinary.graphics.paint.Paintable_Package; use org.allbinary.graphics.paint.Paintable_Package;
 with org.allbinary.graphics.form.PaintableForm_Package; use org.allbinary.graphics.form.PaintableForm_Package;
+with org.allbinary.graphics.form.PaintableForm_Package_References;
 with org.allbinary.graphics.form.FormType_Package;
 with org.allbinary.graphics.form.PaintableForm_Package;
 

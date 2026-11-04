@@ -14,25 +14,40 @@
 
 
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.system.hardware.HardwareInterface_Package; use org.allbinary.logic.system.hardware.HardwareInterface_Package;
 with org.allbinary.logic.system.hardware.components.ComponentFactory_Package; use org.allbinary.logic.system.hardware.components.ComponentFactory_Package;
+with org.allbinary.logic.system.hardware.components.ComponentFactory_Package_References;
 with org.allbinary.logic.system.hardware.components.interfaces.BridgeInterface_Package; use org.allbinary.logic.system.hardware.components.interfaces.BridgeInterface_Package;
+with org.allbinary.logic.system.hardware.components.interfaces.BridgeInterface_Package_References;
 with org.allbinary.logic.system.hardware.components.interfaces.CpuInterface_Package; use org.allbinary.logic.system.hardware.components.interfaces.CpuInterface_Package;
+with org.allbinary.logic.system.hardware.components.interfaces.CpuInterface_Package_References;
 with org.allbinary.logic.system.hardware.components.interfaces.EthernetInterface_Package; use org.allbinary.logic.system.hardware.components.interfaces.EthernetInterface_Package;
+with org.allbinary.logic.system.hardware.components.interfaces.EthernetInterface_Package_References;
 with org.allbinary.logic.system.hardware.components.interfaces.FireWireInterface_Package; use org.allbinary.logic.system.hardware.components.interfaces.FireWireInterface_Package;
+with org.allbinary.logic.system.hardware.components.interfaces.FireWireInterface_Package_References;
 with org.allbinary.logic.system.hardware.components.interfaces.HardDriveControllerInterface_Package; use org.allbinary.logic.system.hardware.components.interfaces.HardDriveControllerInterface_Package;
+with org.allbinary.logic.system.hardware.components.interfaces.HardDriveControllerInterface_Package_References;
 with org.allbinary.logic.system.hardware.components.interfaces.HardDriveInterface_Package; use org.allbinary.logic.system.hardware.components.interfaces.HardDriveInterface_Package;
+with org.allbinary.logic.system.hardware.components.interfaces.HardDriveInterface_Package_References;
 with org.allbinary.logic.system.hardware.components.interfaces.HardwareComponentInterface_Package; use org.allbinary.logic.system.hardware.components.interfaces.HardwareComponentInterface_Package;
+with org.allbinary.logic.system.hardware.components.interfaces.HardwareComponentInterface_Package_References;
 with org.allbinary.logic.system.hardware.components.interfaces.MachineAccessControlAddressInterface_Package; use org.allbinary.logic.system.hardware.components.interfaces.MachineAccessControlAddressInterface_Package;
+with org.allbinary.logic.system.hardware.components.interfaces.MachineAccessControlAddressInterface_Package_References;
 with org.allbinary.logic.system.hardware.components.interfaces.MediaInterface_Package; use org.allbinary.logic.system.hardware.components.interfaces.MediaInterface_Package;
+with org.allbinary.logic.system.hardware.components.interfaces.MediaInterface_Package_References;
 with org.allbinary.logic.system.hardware.components.interfaces.MonitorInterface_Package; use org.allbinary.logic.system.hardware.components.interfaces.MonitorInterface_Package;
+with org.allbinary.logic.system.hardware.components.interfaces.MonitorInterface_Package_References;
 with org.allbinary.logic.system.hardware.components.interfaces.UsbInterface_Package; use org.allbinary.logic.system.hardware.components.interfaces.UsbInterface_Package;
+with org.allbinary.logic.system.hardware.components.interfaces.UsbInterface_Package_References;
 with org.allbinary.logic.system.hardware.components.interfaces.VideoInterface_Package; use org.allbinary.logic.system.hardware.components.interfaces.VideoInterface_Package;
+with org.allbinary.logic.system.hardware.components.interfaces.VideoInterface_Package_References;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
+with org.allbinary.util.ABHashtable_Package_References;
 
 package body org.allbinary.logic.system.hardware.windows.WindowsHardware_Package is
 

@@ -13,13 +13,26 @@
 --  Generated Code Do Not Modify
 
 
+with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.logic.visual.transform.info.TransformInfoHttpFactory_Package; use org.allbinary.logic.visual.transform.info.TransformInfoHttpFactory_Package;
 with org.allbinary.logic.visual.transform.info.TransformInfoHttpInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoHttpInterface_Package;
+with views.admin.payment.PaymentProcessorComponent_Package; use views.admin.payment.PaymentProcessorComponent_Package;
+with views.admin.payment.PaymentProcessorComponent_Package_References;
 
 package body admin.taghelpers.PaymentProcessHelper_Package is
 
    package TransformInfoHttpFactory_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoHttpFactory_Package;
    package TransformInfoHttpInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoHttpInterface_Package;
+   subtype PaymentProcessorComponent_Access is views.admin.payment.PaymentProcessorComponent_Package_References.PaymentProcessorComponent_Access;
+   function "=" (Left, Right : PaymentProcessorComponent_Access) return Boolean renames views.admin.payment.PaymentProcessorComponent_Package_References."=";
+   subtype PaymentProcessorComponent_Access_Array is views.admin.payment.PaymentProcessorComponent_Package_References.PaymentProcessorComponent_Access_Array;
+   function "=" (Left, Right : PaymentProcessorComponent_Access_Array) return Boolean renames views.admin.payment.PaymentProcessorComponent_Package_References."=";
+   subtype PaymentProcessorComponent_Access_Array_Access is views.admin.payment.PaymentProcessorComponent_Package_References.PaymentProcessorComponent_Access_Array_Access;
+   function "=" (Left, Right : PaymentProcessorComponent_Access_Array_Access) return Boolean renames views.admin.payment.PaymentProcessorComponent_Package_References."=";
+   subtype PaymentProcessorComponent_Access_Array_Access_Array is views.admin.payment.PaymentProcessorComponent_Package_References.PaymentProcessorComponent_Access_Array_Access_Array;
+   function "=" (Left, Right : PaymentProcessorComponent_Access_Array_Access_Array) return Boolean renames views.admin.payment.PaymentProcessorComponent_Package_References."=";
+   subtype PaymentProcessorComponent_Access_Array_Access_Array_Access is views.admin.payment.PaymentProcessorComponent_Package_References.PaymentProcessorComponent_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : PaymentProcessorComponent_Access_Array_Access_Array_Access) return Boolean renames views.admin.payment.PaymentProcessorComponent_Package_References."=";
    procedure Initialize_Fields (This : in out PaymentProcessHelper'Class) is
    begin
       null;

@@ -14,6 +14,7 @@
 
 
 with org.allbinary.media.audio.Type_Package; use org.allbinary.media.audio.Type_Package;
+with org.allbinary.media.audio.Type_Package_References;
 
 package body org.allbinary.media.audio.NullJ2SEControl_Package is
 

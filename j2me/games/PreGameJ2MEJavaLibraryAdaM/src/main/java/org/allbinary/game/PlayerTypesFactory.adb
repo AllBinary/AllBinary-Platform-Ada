@@ -14,6 +14,7 @@
 
 
 with org.allbinary.game.PlayerType_Package; use org.allbinary.game.PlayerType_Package;
+with org.allbinary.game.PlayerType_Package_References;
 with org.allbinary.game.PlayerType_Package;
 
 package body org.allbinary.game.PlayerTypesFactory_Package is

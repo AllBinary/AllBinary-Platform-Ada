@@ -14,7 +14,7 @@
 
 
 with org.allbinary.logic.java.byteutil.ByteUtil_Package; use org.allbinary.logic.java.byteutil.ByteUtil_Package;
-with org.allbinary.logic.system.security.crypt.jcehelper.BaseSecretComposite_Package;
+with org.allbinary.logic.java.byteutil.ByteUtil_Package_References;
 
 package body org.allbinary.logic.system.security.crypt.jcehelper.SecretComposite_Package is
 

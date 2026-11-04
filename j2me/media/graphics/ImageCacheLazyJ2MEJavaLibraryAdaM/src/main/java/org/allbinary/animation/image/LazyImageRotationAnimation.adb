@@ -14,26 +14,33 @@
 
 
 with javax.microedition.khronos.opengles.GL_Package; use javax.microedition.khronos.opengles.GL_Package;
+with javax.microedition.khronos.opengles.GL_Package_References;
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
 with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
 with org.allbinary.animation.AnimationBehavior_Package; use org.allbinary.animation.AnimationBehavior_Package;
+with org.allbinary.animation.AnimationBehavior_Package_References;
 with org.allbinary.animation.IndexedAnimation_Package; use org.allbinary.animation.IndexedAnimation_Package;
+with org.allbinary.animation.IndexedAnimation_Package_References;
 with org.allbinary.animation.NullRotationAnimationFactory_Package; use org.allbinary.animation.NullRotationAnimationFactory_Package;
 with org.allbinary.animation.RotationAnimation_Package; use org.allbinary.animation.RotationAnimation_Package;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.graphics.color.BasicColor_Package_References;
 with org.allbinary.image.ImageCache_Package; use org.allbinary.image.ImageCache_Package;
 with org.allbinary.image.ImageCacheFactory_Package; use org.allbinary.image.ImageCacheFactory_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.math.AngleFactory_Package; use org.allbinary.math.AngleFactory_Package;
 with org.allbinary.math.AngleInfo_Package; use org.allbinary.math.AngleInfo_Package;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.media.ScaleProperties_Package; use org.allbinary.media.ScaleProperties_Package;
+with org.allbinary.media.ScaleProperties_Package_References;
 with org.allbinary.util.CircularIndexUtil_Package; use org.allbinary.util.CircularIndexUtil_Package;
 with org.allbinary.animation.image.BaseImageAnimationFactory_Package; use org.allbinary.animation.image.BaseImageAnimationFactory_Package;
+with org.allbinary.animation.image.BaseImageAnimationFactory_Package_References;
+with org.allbinary.animation.image.ActualRotationAnimation_Package; use org.allbinary.animation.image.ActualRotationAnimation_Package;
 with org.allbinary.thread.BaseImageLoadingProcessor_Package;
-with org.allbinary.image.ImageCache_Package;
-with org.allbinary.image.ImageCacheFactory_Package;
 
 package body org.allbinary.animation.image.LazyImageRotationAnimation_Package is
 
@@ -396,7 +403,7 @@ package body org.allbinary.animation.image.LazyImageRotationAnimation_Package is
    begin
         commonSeps := CommonSeps_Package.getInstance;
         image := This.animationInterfaceFactoryInterface.getImage;
-        return StringMaker_Package.Create.append (RotationAnimation (This).toString).append (commonSeps.SPACE).append (image.getName).append (commonSeps.SPACE).appendint (Integer (image.getWidth)).append (commonSeps.SPACE).appendint (Integer (image.getHeight)).toString;
+        return StringMaker_Package.Create.append (RotationAnimation_Package.RotationAnimation (This).toString).append (commonSeps.SPACE).append (image.getName).append (commonSeps.SPACE).appendint (Integer (image.getWidth)).append (commonSeps.SPACE).appendint (Integer (image.getHeight)).toString;
    end toString;
 
 begin

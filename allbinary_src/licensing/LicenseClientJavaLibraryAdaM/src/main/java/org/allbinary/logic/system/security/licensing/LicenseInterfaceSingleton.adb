@@ -15,6 +15,7 @@
 
 with org.allbinary.logic.system.security.licensing.AbeNoLicense_Package; use org.allbinary.logic.system.security.licensing.AbeNoLicense_Package;
 with org.allbinary.logic.system.security.licensing.AbeLicenseInterface_Package; use org.allbinary.logic.system.security.licensing.AbeLicenseInterface_Package;
+with org.allbinary.logic.system.security.licensing.AbeLicenseInterface_Package_References;
 with org.allbinary.logic.system.security.licensing.AbeLicenseInterface_Package;
 with org.allbinary.logic.system.security.licensing.AbeNoLicense_Package;
 with org.allbinary.logic.system.security.licensing.LicenseType_Package;

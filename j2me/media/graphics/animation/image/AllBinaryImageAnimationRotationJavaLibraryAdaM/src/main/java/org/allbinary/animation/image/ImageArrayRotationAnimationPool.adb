@@ -15,8 +15,11 @@
 
 with org.allbinary.logic.util.cache.BasicArrayListResetablePool_Package; use org.allbinary.logic.util.cache.BasicArrayListResetablePool_Package;
 with org.allbinary.logic.util.cache.CacheableInterface_Package; use org.allbinary.logic.util.cache.CacheableInterface_Package;
+with org.allbinary.logic.util.cache.CacheableInterface_Package_References;
 with org.allbinary.logic.util.cache.CacheableInterfaceFactoryInterface_Package; use org.allbinary.logic.util.cache.CacheableInterfaceFactoryInterface_Package;
+with org.allbinary.logic.util.cache.CacheableInterfaceFactoryInterface_Package_References;
 with org.allbinary.logic.util.cache.PoolInterface_Package; use org.allbinary.logic.util.cache.PoolInterface_Package;
+with org.allbinary.logic.util.cache.PoolInterface_Package_References;
 with org.allbinary.animation.image.ImageArrayRotationAnimationCacheableInterfaceFactory_Package; use org.allbinary.animation.image.ImageArrayRotationAnimationCacheableInterfaceFactory_Package;
 with org.allbinary.animation.image.ImageArrayRotationAnimationInfo_Package; use org.allbinary.animation.image.ImageArrayRotationAnimationInfo_Package;
 with org.allbinary.animation.image.ImageArrayRotationAnimationCacheable_Package; use org.allbinary.animation.image.ImageArrayRotationAnimationCacheable_Package;
@@ -89,7 +92,7 @@ package body org.allbinary.animation.image.ImageArrayRotationAnimationPool_Packa
       allBinaryImageRotationAnimationInfo : ImageArrayRotationAnimationInfo_Access;
       imageArrayRotationAnimationCacheable : ImageArrayRotationAnimationCacheable_Access;
    begin
-        cacheableInterface := CacheableInterface_Access (BasicArrayListResetablePool (This).remove (key));
+        cacheableInterface := CacheableInterface_Access (BasicArrayListResetablePool_Package.BasicArrayListResetablePool (This).remove (key));
         allBinaryImageRotationAnimationInfo := ImageArrayRotationAnimationInfo_Access (key);
         imageArrayRotationAnimationCacheable := (ImageArrayRotationAnimationCacheable_Access (cacheableInterface));
         imageArrayRotationAnimationCacheable.setImageArray (allBinaryImageRotationAnimationInfo.getImageArray);

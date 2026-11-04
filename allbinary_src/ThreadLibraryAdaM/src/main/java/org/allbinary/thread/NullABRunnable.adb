@@ -13,7 +13,6 @@
 --  Generated Code Do Not Modify
 
 
-with org.allbinary.thread.ABRunnable_Package;
 with org.allbinary.thread.RunnableInterface_Package;
 
 package body org.allbinary.thread.NullABRunnable_Package is

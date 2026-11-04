@@ -18,15 +18,15 @@ with org.allbinary.game.combat.destroy.event.DestroyedEvent_Package; use org.all
 with org.allbinary.game.combat.destroy.event.DestroyedEventHandler_Package; use org.allbinary.game.combat.destroy.event.DestroyedEventHandler_Package;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
 with org.allbinary.layer.AllBinaryLayerManager_Package; use org.allbinary.layer.AllBinaryLayerManager_Package;
+with org.allbinary.layer.AllBinaryLayerManager_Package_References;
 with org.allbinary.layer.BasicLayerProcessor_Package; use org.allbinary.layer.BasicLayerProcessor_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package;
 with org.allbinary.game.combat.damage.DamageableInterface_Package;
-with org.allbinary.game.combat.destroy.event.DestroyEventCircularStaticPool_Package;
 with org.allbinary.game.combat.destroy.DestroyableInterface_Package;
-with org.allbinary.game.combat.destroy.event.DestroyedEvent_Package;
-with org.allbinary.game.combat.destroy.event.DestroyedEventHandler_Package;
 with org.allbinary.game.layer.pickup.PickupBehavior_Package;
 with org.allbinary.game.layer.pickup.PickupBehaviorInterface_Package;
 with org.allbinary.game.layer.pickup.PickupCompositeInterface_Package;

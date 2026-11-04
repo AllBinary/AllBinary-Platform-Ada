@@ -17,7 +17,6 @@ with org.allbinary.layer.AllBinaryLayer_Package;
 with org.allbinary.layer.Layer_Package;
 with org.allbinary.layer.LayerInterface_Package;
 with org.allbinary.layer.LayerManager_Package;
-with org.allbinary.layer.LayerManagerLoggingBase_Package;
 with org.allbinary.layer.NamedInterface_Package;
 with org.allbinary.view.ViewPositionBase_Package;
 with org.allbinary.view.event.ViewPositionEvent_Package;

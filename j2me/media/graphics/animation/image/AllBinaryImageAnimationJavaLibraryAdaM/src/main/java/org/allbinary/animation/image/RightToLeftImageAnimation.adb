@@ -14,13 +14,15 @@
 
 
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
 with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
+with javax.microedition.lcdui.Image_Package_References;
 with javax.microedition.lcdui.game.Sprite_Package; use javax.microedition.lcdui.game.Sprite_Package;
 with org.allbinary.animation.AnimationBehavior_Package; use org.allbinary.animation.AnimationBehavior_Package;
+with org.allbinary.animation.AnimationBehavior_Package_References;
 with org.allbinary.graphics.Anchor_Package; use org.allbinary.graphics.Anchor_Package;
 with org.allbinary.logic.math.PrimitiveIntUtil_Package; use org.allbinary.logic.math.PrimitiveIntUtil_Package;
 with org.allbinary.animation.image.ImageAnimation_Package;
-with org.allbinary.animation.image.ImageSegmentAnimation_Package;
 
 package body org.allbinary.animation.image.RightToLeftImageAnimation_Package is
 
@@ -84,19 +86,19 @@ package body org.allbinary.animation.image.RightToLeftImageAnimation_Package is
 
    procedure nextFrame (This : in out RightToLeftImageAnimation) is
    begin
-        ImageSegmentAnimation (This).previousFrame;
+        ImageSegmentAnimation_Package.ImageSegmentAnimation (This).previousFrame;
         RightToLeftImageAnimation'Class (This).update;
    end nextFrame;
 
    procedure previousFrame (This : in out RightToLeftImageAnimation) is
    begin
-        ImageSegmentAnimation (This).nextFrame;
+        ImageSegmentAnimation_Package.ImageSegmentAnimation (This).nextFrame;
         RightToLeftImageAnimation'Class (This).update;
    end previousFrame;
 
    procedure setFrame (This : in out RightToLeftImageAnimation; index : Integer) is
    begin
-        ImageSegmentAnimation (This).setFrame (index);
+        ImageSegmentAnimation_Package.ImageSegmentAnimation (This).setFrame (index);
         RightToLeftImageAnimation'Class (This).update;
    end setFrame;
 

@@ -30,25 +30,11 @@ with org.allbinary.business.user.modules.admin.store.web.workflow.editor.Workflo
 with org.allbinary.business.user.modules.customer.subscriber.SubscriberUserFactory_Package; use org.allbinary.business.user.modules.customer.subscriber.SubscriberUserFactory_Package;
 with org.allbinary.business.user.modules.customer.wholesale.WholesaleUserFactory_Package; use org.allbinary.business.user.modules.customer.wholesale.WholesaleUserFactory_Package;
 with org.allbinary.business.user.role.BasicUserRoleFactory_Package; use org.allbinary.business.user.role.BasicUserRoleFactory_Package;
+with org.allbinary.business.user.role.BasicUserRoleFactory_Package_References;
 with org.allbinary.business.user.role.UserRoleB_Package; use org.allbinary.business.user.role.UserRoleB_Package;
 with org.allbinary.business.user.role.UserRole_Package; use org.allbinary.business.user.role.UserRole_Package;
-with org.allbinary.business.user.modules.admin.store.order.adjust.AdjustOrderStoreAdminUserFactory_Package;
-with org.allbinary.business.user.modules.admin.AdminUserFactory_Package;
-with org.allbinary.business.user.modules.admin.store.customer.CustomerStoreAdminUserFactory_Package;
-with org.allbinary.business.user.modules.admin.store.order.OrderStoreAdminUserFactory_Package;
-with org.allbinary.business.user.modules.admin.store.payment.PaymentStoreAdminUserFactory_Package;
-with org.allbinary.business.user.modules.admin.store.product.ProductStoreAdminUserFactory_Package;
-with org.allbinary.business.user.modules.admin.store.order.review.ReviewOrderStoreAdminUserFactory_Package;
-with org.allbinary.business.user.modules.admin.store.order.ship.ShipOrderStoreAdminUserFactory_Package;
-with org.allbinary.business.user.modules.admin.store.StoreAdminUserFactory_Package;
-with org.allbinary.business.user.modules.customer.subscriber.SubscriberUserFactory_Package;
-with org.allbinary.business.user.modules.UserFactory_Package;
+with org.allbinary.business.user.role.UserRole_Package_References;
 with org.allbinary.business.user.role.UserRoleB_Package;
-with org.allbinary.business.user.modules.admin.store.web.view.editor.ViewEditorWebStoreAdminUserFactory_Package;
-with org.allbinary.business.user.modules.admin.store.web.WebStoreAdminUserFactory_Package;
-with org.allbinary.business.user.modules.customer.wholesale.WholesaleUserFactory_Package;
-with org.allbinary.business.user.modules.admin.store.web.wizard.WizardWebStoreAdminUserFactory_Package;
-with org.allbinary.business.user.modules.admin.store.web.workflow.editor.WorkflowEditorWebStoreAdminUserFactory_Package;
 
 package body org.allbinary.business.user.role.UserRoleFactory_Package is
 

@@ -15,6 +15,7 @@
 
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 with org.allbinary.game.midlet.DemoGameMidletState_Package; use org.allbinary.game.midlet.DemoGameMidletState_Package;
+with org.allbinary.game.midlet.DemoGameMidletState_Package_References;
 with org.allbinary.game.midlet.DemoGameMidletState_Package;
 
 package body org.allbinary.game.midlet.DemoGameMidletEvent_Package is

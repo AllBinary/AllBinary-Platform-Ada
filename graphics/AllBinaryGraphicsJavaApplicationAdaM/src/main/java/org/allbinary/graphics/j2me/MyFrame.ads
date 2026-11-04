@@ -219,7 +219,7 @@ package org.allbinary.graphics.j2me.MyFrame_Package is
       zoomInJMenuItem : JMenuItem_Access;
       zoomOutJMenuItem : JMenuItem_Access;
    end record;
-   MAXWORKAREAS : Integer;
+   MAXWORKAREAS : constant Integer := 10;
    numberOfWorkAreas : Integer;
    PATH : Unbounded_String;
    SAVE_PATH : Unbounded_String;

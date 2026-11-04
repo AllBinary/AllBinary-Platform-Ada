@@ -14,8 +14,11 @@
 
 
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.graphics.color.BasicColor_Package_References;
 with org.allbinary.animation.AnimationBehavior_Package; use org.allbinary.animation.AnimationBehavior_Package;
+with org.allbinary.animation.AnimationBehavior_Package_References;
 
 package body org.allbinary.animation.AdjustedVectorAnimation_Package is
 
@@ -77,7 +80,7 @@ package body org.allbinary.animation.AdjustedVectorAnimation_Package is
    procedure paintXY (This : in out AdjustedVectorAnimation; graphics_Param : access Graphics_Package.Graphics'Class; x : Integer; y : Integer) is
       graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
-        VectorAnimation (This).paintXY (graphics, (x) + (This.dx), (y) + (This.dy));
+        VectorAnimation_Package.VectorAnimation (This).paintXY (graphics, (x) + (This.dx), (y) + (This.dy));
    end paintXY;
 
 end org.allbinary.animation.AdjustedVectorAnimation_Package;

@@ -15,30 +15,31 @@
 with org.allbinary.game.layer.AdvancedPlayerOwnedRTSLayers_Package; use org.allbinary.game.layer.AdvancedPlayerOwnedRTSLayers_Package;
 with org.allbinary.game.layer.AdvancedRTSPlayerLayerInterface_Package; use org.allbinary.game.layer.AdvancedRTSPlayerLayerInterface_Package;
 with org.allbinary.game.layer.RTSLayer_Package; use org.allbinary.game.layer.RTSLayer_Package;
+with org.allbinary.game.layer.RTSLayer_Package_References;
 with org.allbinary.game.layer.RTSLayerEvent_Package; use org.allbinary.game.layer.RTSLayerEvent_Package;
+with org.allbinary.game.layer.RTSLayerEvent_Package_References;
 with org.allbinary.game.layer.RTSPlayerLayerInterface_Package; use org.allbinary.game.layer.RTSPlayerLayerInterface_Package;
+with org.allbinary.game.layer.RTSPlayerLayerInterface_Package_References;
 with org.allbinary.game.layer.building.event.BuildingEventHandler_Package; use org.allbinary.game.layer.building.event.BuildingEventHandler_Package;
 with org.allbinary.game.layer.building.event.LocalPlayerBuildingEventHandler_Package; use org.allbinary.game.layer.building.event.LocalPlayerBuildingEventHandler_Package;
 with org.allbinary.game.layer.waypoint.WaypointCellPositionHistory_Package; use org.allbinary.game.layer.waypoint.WaypointCellPositionHistory_Package;
 with org.allbinary.logic.java.bool.BooleanFactory_Package; use org.allbinary.logic.java.bool.BooleanFactory_Package;
 with org.allbinary.game.identification.Group_Package; use org.allbinary.game.identification.Group_Package;
+with org.allbinary.game.identification.Group_Package_References;
 with org.allbinary.game.layer.AllBinaryGameLayerManager_Package; use org.allbinary.game.layer.AllBinaryGameLayerManager_Package;
+with org.allbinary.game.layer.AllBinaryGameLayerManager_Package_References;
 with org.allbinary.game.layer.NullPathFindingLayer_Package; use org.allbinary.game.layer.NullPathFindingLayer_Package;
 with org.allbinary.game.layer.hud.event.GameNotificationEvent_Package; use org.allbinary.game.layer.hud.event.GameNotificationEvent_Package;
+with org.allbinary.game.layer.hud.event.GameNotificationEvent_Package_References;
 with org.allbinary.game.layer.hud.event.GameNotificationEventHandler_Package; use org.allbinary.game.layer.hud.event.GameNotificationEventHandler_Package;
 with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
 with org.allbinary.layer.AllBinaryLayerManager_Package; use org.allbinary.layer.AllBinaryLayerManager_Package;
+with org.allbinary.layer.AllBinaryLayerManager_Package_References;
 with org.allbinary.logic.math.SmallIntegerSingletonFactory_Package; use org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
 with org.allbinary.media.audio.ErrorSound_Package; use org.allbinary.media.audio.ErrorSound_Package;
 with org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package; use org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
 with org.allbinary.media.graphics.geography.map.GeographicMapCompositeInterface_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCompositeInterface_Package;
 with org.allbinary.media.graphics.geography.map.drop.DropCellPositionHistory_Package; use org.allbinary.media.graphics.geography.map.drop.DropCellPositionHistory_Package;
-with org.allbinary.game.layer.AdvancedPlayerOwnedRTSLayers_Package;
-with org.allbinary.game.layer.AdvancedRTSPlayerLayerInterface_Package;
-with org.allbinary.game.layer.building.event.BuildingEventHandler_Package;
-with org.allbinary.game.layer.building.event.LocalPlayerBuildingEventHandler_Package;
-with org.allbinary.game.layer.RTSLayerEvent_Package;
-with org.allbinary.game.layer.waypoint.WaypointCellPositionHistory_Package;
 
 package body org.allbinary.game.input.form.BuildingAdvancedRTSFormInput_Package is
 
@@ -156,7 +157,7 @@ package body org.allbinary.game.input.form.BuildingAdvancedRTSFormInput_Package 
       geographicMapCompositeInterface : GeographicMapCompositeInterface_Access;
       geographicMapInterface : BasicGeographicMap_Access;
    begin
-        BuildingRTSFormInput (This).setAllBinaryGameLayerManager (allBinaryGameLayerManager);
+        BuildingRTSFormInput_Package.BuildingRTSFormInput (This).setAllBinaryGameLayerManager (allBinaryGameLayerManager);
         geographicMapCompositeInterface := GeographicMapCompositeInterface_Access (allBinaryGameLayerManager);
         geographicMapInterface := geographicMapCompositeInterface.getGeographicMapInterface (0);
         This.atLeastOneHouseGameNotificationEvent.setBasicColorP (geographicMapInterface.getForegroundBasicColor);
@@ -189,7 +190,7 @@ package body org.allbinary.game.input.form.BuildingAdvancedRTSFormInput_Package 
             end if;
             return False;
         end if;
-        return BuildingRTSFormInput (This).isBuildAttemptValid (rtsPlayerLayerInterface, layerInterface);
+        return BuildingRTSFormInput_Package.BuildingRTSFormInput (This).isBuildAttemptValid (rtsPlayerLayerInterface, layerInterface);
    end isBuildAttemptValid;
 
    --  throws Exception
@@ -203,7 +204,7 @@ package body org.allbinary.game.input.form.BuildingAdvancedRTSFormInput_Package 
         if AdvancedRTSPlayerLayerInterface_Access (rtsPlayerLayerInterface).isLocalPlayer then
             LocalPlayerBuildingEventHandler_Package.getInstance.fireEvent (This.BUILD_BUILDING_RTS_LAYER_EVENT);
         end if;
-        BuildingRTSFormInput (This).add (rtsPlayerLayerInterface, layerManager, layerInterface);
+        BuildingRTSFormInput_Package.BuildingRTSFormInput (This).add (rtsPlayerLayerInterface, layerManager, layerInterface);
    end add;
 
    procedure isBuildAttemptValid (This : in out BuildingAdvancedRTSFormInput; rtsPlayerLayerInterface_Param : access RTSPlayerLayerInterface_Package.RTSPlayerLayerInterface'Class; layerInterface_Param : access RTSLayer_Package.RTSLayer'Class) is

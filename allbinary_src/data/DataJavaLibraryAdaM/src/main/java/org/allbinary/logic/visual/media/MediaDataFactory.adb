@@ -13,9 +13,22 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.visual.media.MediaData_Package; use org.allbinary.logic.visual.media.MediaData_Package;
+with org.allbinary.logic.visual.media.MediaData_Package_References;
+with org.allbinary.logic.visual.media.MediaData_Package;
 
 package body org.allbinary.logic.visual.media.MediaDataFactory_Package is
 
+   subtype MediaData_Access is org.allbinary.logic.visual.media.MediaData_Package_References.MediaData_Access;
+   function "=" (Left, Right : MediaData_Access) return Boolean renames org.allbinary.logic.visual.media.MediaData_Package_References."=";
+   subtype MediaData_Access_Array is org.allbinary.logic.visual.media.MediaData_Package_References.MediaData_Access_Array;
+   function "=" (Left, Right : MediaData_Access_Array) return Boolean renames org.allbinary.logic.visual.media.MediaData_Package_References."=";
+   subtype MediaData_Access_Array_Access is org.allbinary.logic.visual.media.MediaData_Package_References.MediaData_Access_Array_Access;
+   function "=" (Left, Right : MediaData_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.media.MediaData_Package_References."=";
+   subtype MediaData_Access_Array_Access_Array is org.allbinary.logic.visual.media.MediaData_Package_References.MediaData_Access_Array_Access_Array;
+   function "=" (Left, Right : MediaData_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.visual.media.MediaData_Package_References."=";
+   subtype MediaData_Access_Array_Access_Array_Access is org.allbinary.logic.visual.media.MediaData_Package_References.MediaData_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : MediaData_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.media.MediaData_Package_References."=";
    procedure Initialize_Fields (This : in out MediaDataFactory'Class) is
    begin
       null;
@@ -56,7 +69,7 @@ package body org.allbinary.logic.visual.media.MediaDataFactory_Package is
 
    function getInstance return MediaDataFactory_Access is
    begin
-        return MediaDataFactory_Package.instance;
+        return MediaDataFactory_Access (MediaDataFactory_Package.instance);
    end getInstance;
 
 begin

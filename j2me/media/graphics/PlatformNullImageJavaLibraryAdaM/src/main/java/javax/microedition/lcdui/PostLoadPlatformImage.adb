@@ -13,7 +13,6 @@
 --  Generated Code Do Not Modify
 
 
-with javax.microedition.lcdui.PlatformImage_Package;
 
 package body javax.microedition.lcdui.PostLoadPlatformImage_Package is
 

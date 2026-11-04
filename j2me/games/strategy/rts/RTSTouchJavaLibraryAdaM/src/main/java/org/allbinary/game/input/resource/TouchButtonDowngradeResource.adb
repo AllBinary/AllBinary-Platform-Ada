@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.input.motion.button.TouchButtonBlankResource_Package; use org.allbinary.input.motion.button.TouchButtonBlankResource_Package;
 with org.allbinary.input.motion.button.TouchButtonResource_Package; use org.allbinary.input.motion.button.TouchButtonResource_Package;
 
 package body org.allbinary.game.input.resource.TouchButtonDowngradeResource_Package is

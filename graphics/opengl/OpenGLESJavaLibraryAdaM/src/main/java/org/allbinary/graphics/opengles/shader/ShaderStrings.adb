@@ -40,7 +40,7 @@ package body org.allbinary.graphics.opengles.shader.ShaderStrings_Package is
 
    function getInstance return ShaderStrings_Access is
    begin
-        return ShaderStrings_Package.instance;
+        return ShaderStrings_Access (ShaderStrings_Package.instance);
    end getInstance;
 
 begin

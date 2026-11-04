@@ -16,8 +16,8 @@
 with org.allbinary.game.configuration.event.ChangedGameFeatureListener_Package; use org.allbinary.game.configuration.event.ChangedGameFeatureListener_Package;
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
+with org.allbinary.util.ABHashtable_Package_References;
 with org.allbinary.game.configuration.event.BaseChangedGameFeatureListener_Package;
-with org.allbinary.game.configuration.event.ChangedGameFeatureListener_Package;
 with org.allbinary.game.configuration.GameConfiguration_Package;
 with org.allbinary.game.configuration.event.GameFeatureEvent_Package;
 with org.allbinary.game.configuration.event.GameFeatureListenerInterface_Package;

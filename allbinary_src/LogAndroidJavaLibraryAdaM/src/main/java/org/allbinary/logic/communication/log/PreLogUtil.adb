@@ -15,7 +15,6 @@
 
 with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
 with org.allbinary.logic.communication.log.LogFormatUtil_Package; use org.allbinary.logic.communication.log.LogFormatUtil_Package;
-with org.allbinary.logic.communication.log.LogFormatUtil_Package;
 with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.logic.communication.log.PreLogUtil_Package is

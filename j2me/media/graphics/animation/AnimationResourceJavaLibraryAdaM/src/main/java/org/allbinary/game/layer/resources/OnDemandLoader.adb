@@ -14,18 +14,22 @@
 
 
 with org.allbinary.animation.resource.BaseResourceAnimationInterfaceFactoryInterfaceFactory_Package; use org.allbinary.animation.resource.BaseResourceAnimationInterfaceFactoryInterfaceFactory_Package;
+with org.allbinary.animation.resource.BaseResourceAnimationInterfaceFactoryInterfaceFactory_Package_References;
 with org.allbinary.game.configuration.feature.Features_Package; use org.allbinary.game.configuration.feature.Features_Package;
 with org.allbinary.game.configuration.feature.MainFeatureFactory_Package; use org.allbinary.game.configuration.feature.MainFeatureFactory_Package;
 with org.allbinary.game.layer.GameLayerPlacementInterfaceBasicArrayListFactoryInterfaceFactory_Package; use org.allbinary.game.layer.GameLayerPlacementInterfaceBasicArrayListFactoryInterfaceFactory_Package;
+with org.allbinary.game.layer.GameLayerPlacementInterfaceBasicArrayListFactoryInterfaceFactory_Package_References;
 with org.allbinary.game.layer.LayerPlacementInterfaceBasicArrayListFactoryInterface_Package; use org.allbinary.game.layer.LayerPlacementInterfaceBasicArrayListFactoryInterface_Package;
+with org.allbinary.game.layer.LayerPlacementInterfaceBasicArrayListFactoryInterface_Package_References;
 with org.allbinary.game.resource.ResourceLoadingLevelFactory_Package; use org.allbinary.game.resource.ResourceLoadingLevelFactory_Package;
 with org.allbinary.image.ImageCache_Package; use org.allbinary.image.ImageCache_Package;
+with org.allbinary.image.ImageCache_Package_References;
 with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.game.layer.resources.OnDemandResourcesFactory_Package; use org.allbinary.game.layer.resources.OnDemandResourcesFactory_Package;
+with org.allbinary.game.layer.resources.OnDemandResourcesFactory_Package_References;
 with org.allbinary.game.layer.resources.OnDemandResources_Package; use org.allbinary.game.layer.resources.OnDemandResources_Package;
-with org.allbinary.animation.resource.BaseResourceAnimationInterfaceFactoryInterfaceFactory_Package;
 with org.allbinary.animation.resource.FeatureResourceAnimationInterfaceFactoryInterface_Package;
 with org.allbinary.game.layer.resources.OnDemandResources_Package;
 with org.allbinary.game.layer.resources.OnDemandResourcesFactory_Package;

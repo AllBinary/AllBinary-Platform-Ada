@@ -18,7 +18,6 @@ with org.allbinary.logic.visual.dhtml.html.input.HtmlInputData_Package; use org.
 with org.allbinary.logic.visual.dhtml.html.input.HtmlInput_Package;
 with org.allbinary.logic.visual.dhtml.html.input.HtmlInputData_Package;
 with org.allbinary.logic.visual.dhtml.html.HtmlTag_Package;
-with org.allbinary.logic.visual.dhtml.html.input.HtmlValueInput_Package;
 
 package body org.allbinary.logic.visual.dhtml.html.input.HtmlRadioInput_Package is
 
@@ -45,7 +44,7 @@ package body org.allbinary.logic.visual.dhtml.html.input.HtmlRadioInput_Package 
 
    procedure setSelected (This : in out HtmlRadioInput) is
    begin
-        HtmlValueInput (This).addAttribute (This.CHECKED, BooleanFactory_Package.getInstance.TRUE_STRING);
+        HtmlValueInput_Package.HtmlValueInput (This).addAttribute (This.CHECKED, BooleanFactory_Package.getInstance.TRUE_STRING);
    end setSelected;
 
 end org.allbinary.logic.visual.dhtml.html.input.HtmlRadioInput_Package;

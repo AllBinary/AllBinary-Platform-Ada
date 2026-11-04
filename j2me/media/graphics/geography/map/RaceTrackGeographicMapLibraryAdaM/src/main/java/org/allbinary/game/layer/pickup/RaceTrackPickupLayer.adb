@@ -14,13 +14,17 @@
 
 
 with org.allbinary.animation.NullAnimationFactory_Package; use org.allbinary.animation.NullAnimationFactory_Package;
+with org.allbinary.game.identification.BasicGroupFactory_Package; use org.allbinary.game.identification.BasicGroupFactory_Package;
 with org.allbinary.game.layer.AllBinaryTiledLayer_Package; use org.allbinary.game.layer.AllBinaryTiledLayer_Package;
+with org.allbinary.game.layer.AllBinaryTiledLayer_Package_References;
 with org.allbinary.game.multiplayer.layer.RemoteInfo_Package; use org.allbinary.game.multiplayer.layer.RemoteInfo_Package;
 with org.allbinary.game.view.TileLayerPositionIntoViewPosition_Package; use org.allbinary.game.view.TileLayerPositionIntoViewPosition_Package;
 with org.allbinary.graphics.PointFactory_Package; use org.allbinary.graphics.PointFactory_Package;
 with org.allbinary.graphics.Rectangle_Package; use org.allbinary.graphics.Rectangle_Package;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
+with org.allbinary.view.ViewPosition_Package; use org.allbinary.view.ViewPosition_Package;
 with org.allbinary.view.event.ViewPositionEventHandler_Package; use org.allbinary.view.event.ViewPositionEventHandler_Package;
+with org.allbinary.view.event.ViewPositionEventHandler_Package_References;
 with org.allbinary.game.layer.pickup.CountedPickedUpLayerInterfaceFactory_Package; use org.allbinary.game.layer.pickup.CountedPickedUpLayerInterfaceFactory_Package;
 
 package body org.allbinary.game.layer.pickup.RaceTrackPickupLayer_Package is
@@ -82,7 +86,7 @@ package body org.allbinary.game.layer.pickup.RaceTrackPickupLayer_Package is
 
    procedure setDestroyed (This : in out RaceTrackPickupLayer; destroyed : Boolean) is
    begin
-        PickupLayer (This).setDestroyed (destroyed);
+        PickupLayer_Package.PickupLayer (This).setDestroyed (destroyed);
         if RaceTrackPickupLayer'Class (This).isDestroyed then
             This.viewPositionEventHandler.removeListener (RaceTrackPickupLayer_Access'(This'Unchecked_Access));
         end if;

@@ -14,13 +14,17 @@
 
 
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
 with org.allbinary.media.image.ImageUtil_Package; use org.allbinary.media.image.ImageUtil_Package;
+with org.allbinary.media.image.ImageUtil_Package_References;
 with org.allbinary.media.image.GraphicsEnvironment_Package; use org.allbinary.media.image.GraphicsEnvironment_Package;
 with org.allbinary.media.image.GraphicsDevice_Package; use org.allbinary.media.image.GraphicsDevice_Package;
 with org.allbinary.media.image.GraphicsConfiguration_Package; use org.allbinary.media.image.GraphicsConfiguration_Package;
+with org.allbinary.media.image.GraphicsConfiguration_Package_References;
 with org.allbinary.media.image.Graphics2D_Package; use org.allbinary.media.image.Graphics2D_Package;
 with org.allbinary.media.image.ImageUnifierProperties_Package; use org.allbinary.media.image.ImageUnifierProperties_Package;
+with org.allbinary.media.image.ImageUnifierProperties_Package_References;
 with org.allbinary.media.image.ImageUnifierCell_Package;
 with org.allbinary.media.image.ImageUnifierProperties_Package;
 

@@ -14,11 +14,14 @@
 
 
 with org.allbinary.animation.IndexedAnimation_Package; use org.allbinary.animation.IndexedAnimation_Package;
+with org.allbinary.animation.IndexedAnimation_Package_References;
 with org.allbinary.animation.RotationAnimationInterface_Package; use org.allbinary.animation.RotationAnimationInterface_Package;
 with org.allbinary.animation.RotationAnimationInterfaceCompositeInterface_Package; use org.allbinary.animation.RotationAnimationInterfaceCompositeInterface_Package;
 with org.allbinary.game.ag.ai.tactical.LurchAI_Package; use org.allbinary.game.ag.ai.tactical.LurchAI_Package;
 with org.allbinary.game.input.GameInput_Package; use org.allbinary.game.input.GameInput_Package;
+with org.allbinary.game.input.GameInput_Package_References;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
+with org.allbinary.layer.AllBinaryLayer_Package_References;
 with org.allbinary.math.AngleIncrementInfo_Package; use org.allbinary.math.AngleIncrementInfo_Package;
 
 package body org.allbinary.game.ag.ai.LurchRotationAI_Package is
@@ -84,7 +87,7 @@ package body org.allbinary.game.ag.ai.LurchRotationAI_Package is
 
    procedure reverse_Id (This : in out LurchRotationAI) is
    begin
-        LurchAI (This).reverse_Id;
+        LurchAI_Package.LurchAI (This).reverse_Id;
         LurchRotationAI'Class (This).update;
    end reverse_Id;
 

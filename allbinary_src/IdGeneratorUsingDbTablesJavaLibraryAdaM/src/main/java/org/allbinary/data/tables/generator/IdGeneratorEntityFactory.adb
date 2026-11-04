@@ -16,6 +16,7 @@
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.data.tables.generator.IdGeneratorEntityInterface_Package; use org.allbinary.data.tables.generator.IdGeneratorEntityInterface_Package;
+with org.allbinary.data.tables.generator.IdGeneratorEntityInterface_Package_References;
 with org.allbinary.data.tables.generator.IdGeneratorEntity_Package;
 with org.allbinary.data.tables.generator.IdGeneratorEntityInterface_Package;
 

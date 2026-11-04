@@ -14,10 +14,11 @@
 
 
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
+with org.w3c.dom.Node_Package_References;
 with org.allbinary.logic.control.contraints.size.SizeConstraintInterface_Package; use org.allbinary.logic.control.contraints.size.SizeConstraintInterface_Package;
+with org.allbinary.logic.control.contraints.size.SizeConstraintInterface_Package_References;
 with org.allbinary.logic.control.contraints.MinMaxIntConstraintInterface_Package;
 with org.allbinary.logic.control.contraints.size.SizeConstraintInterface_Package;
-with org.allbinary.logic.control.contraints.size.TwoDimensionalConstraintInterface_Package;
 
 package body org.allbinary.logic.control.contraints.size.TwoDimensionalConstraint_Package is
 

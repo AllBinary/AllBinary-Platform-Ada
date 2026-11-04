@@ -14,9 +14,9 @@
 
 
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.string_Id.CommonStrings_Package_References;
 with tags.TagStrings_Package; use tags.TagStrings_Package;
-with admin.taghelpers.ModifyTableInterface_Package;
-with tags.TagStrings_Package;
+with tags.TagStrings_Package_References;
 
 package body admin.taghelpers.ModifyTable_Package is
 

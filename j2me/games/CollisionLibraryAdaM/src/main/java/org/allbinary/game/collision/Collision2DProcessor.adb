@@ -2,7 +2,7 @@
 
 
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
-with org.allbinary.game.collision.CollisionProcessor_Package;
+with org.allbinary.layer.AllBinaryLayer_Package_References;
 
 package body org.allbinary.game.collision.Collision2DProcessor_Package is
 

@@ -15,7 +15,9 @@
 
 with org.allbinary.media.image.comparison.motion.MotionRectangleConstraintsInterface_Package; use org.allbinary.media.image.comparison.motion.MotionRectangleConstraintsInterface_Package;
 with org.allbinary.input.automation.module.Dimension_Package; use org.allbinary.input.automation.module.Dimension_Package;
+with org.allbinary.input.automation.module.Dimension_Package_References;
 with org.allbinary.input.automation.module.Rectangle_Package; use org.allbinary.input.automation.module.Rectangle_Package;
+with org.allbinary.input.automation.module.Rectangle_Package_References;
 
 package body org.allbinary.input.automation.module.MotionRectangleConstraints_Package is
 

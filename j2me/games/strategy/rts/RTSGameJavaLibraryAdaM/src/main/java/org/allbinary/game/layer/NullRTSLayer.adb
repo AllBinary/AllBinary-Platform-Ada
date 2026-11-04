@@ -14,27 +14,32 @@
 
 
 with org.allbinary.game.ag.layer.hud.basic.notification.GameNotificationHud_Package; use org.allbinary.game.ag.layer.hud.basic.notification.GameNotificationHud_Package;
+with org.allbinary.game.ag.layer.hud.basic.notification.GameNotificationHud_Package_References;
 with org.allbinary.game.combat.destroy.event.DestroyedEvent_Package; use org.allbinary.game.combat.destroy.event.DestroyedEvent_Package;
+with org.allbinary.game.combat.destroy.event.DestroyedEvent_Package_References;
 with org.allbinary.game.input.PlayerGameInput_Package; use org.allbinary.game.input.PlayerGameInput_Package;
+with org.allbinary.game.input.PlayerGameInput_Package_References;
 with org.allbinary.game.input.form.NullRTSFormInputFactory_Package; use org.allbinary.game.input.form.NullRTSFormInputFactory_Package;
 with org.allbinary.game.input.form.RTSFormInput_Package; use org.allbinary.game.input.form.RTSFormInput_Package;
+with org.allbinary.game.input.form.RTSFormInput_Package_References;
 with org.allbinary.game.layer.capital.Capital_Package; use org.allbinary.game.layer.capital.Capital_Package;
+with org.allbinary.game.layer.capital.Capital_Package_References;
 with org.allbinary.graphics.form.ScrollSelectionForm_Package; use org.allbinary.graphics.form.ScrollSelectionForm_Package;
+with org.allbinary.graphics.form.ScrollSelectionForm_Package_References;
 with org.allbinary.layer.AllBinaryLayerManager_Package; use org.allbinary.layer.AllBinaryLayerManager_Package;
+with org.allbinary.layer.AllBinaryLayerManager_Package_References;
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+with org.allbinary.logic.util.event.AllBinaryEventObject_Package_References;
 with org.allbinary.media.audio.Sound_Package; use org.allbinary.media.audio.Sound_Package;
+with org.allbinary.media.audio.Sound_Package_References;
 with org.allbinary.game.layer.PlayerOwnedRTSLayers_Package; use org.allbinary.game.layer.PlayerOwnedRTSLayers_Package;
+with org.allbinary.game.layer.PlayerOwnedRTSLayers_Package_References;
 with org.allbinary.game.input.BuildMenuCompositeInterface_Package;
-with org.allbinary.game.layer.capital.Capital_Package;
 with org.allbinary.game.layer.GeographicMapCellPositionAreaBase_Package;
 with org.allbinary.game.layer.GeographicMapCellPositionAreaInterface_Package;
-with org.allbinary.game.layer.NullPathFindingLayer_Package;
-with org.allbinary.game.input.form.NullRTSFormInputFactory_Package;
 with org.allbinary.game.layer.PathFindingLayerInterface_Package;
 with org.allbinary.game.layer.PlayerOwnedRTSLayers_Package;
-with org.allbinary.game.input.form.RTSFormInput_Package;
 with org.allbinary.game.layer.RTSLayer2LogHelper_Package;
-with org.allbinary.game.layer.RTSPlayerLayerInterface_Package;
 with org.allbinary.game.layer.SelectionHudPaintable_Package;
 with org.allbinary.game.layer.waypoint.Waypoint2LogHelper_Package;
 with org.allbinary.game.layer.waypoint.WaypointBase_Package;

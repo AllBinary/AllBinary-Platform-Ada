@@ -15,6 +15,7 @@
 
 with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
 with org.allbinary.logic.system.loader.ClassLoader_Package; use org.allbinary.logic.system.loader.ClassLoader_Package;
+with org.allbinary.logic.system.loader.ClassLoader_Package_References;
 
 package body org.allbinary.logic.system.loader.WebappClassLoaderInfo_Package is
 

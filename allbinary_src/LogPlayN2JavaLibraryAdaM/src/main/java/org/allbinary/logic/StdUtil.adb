@@ -17,13 +17,13 @@ with jsinterop.annotations.JsType_Package; use jsinterop.annotations.JsType_Pack
 with jsinterop.annotations.JsProperty_Package; use jsinterop.annotations.JsProperty_Package;
 with jsinterop.annotations.JsMethod_Package; use jsinterop.annotations.JsMethod_Package;
 with org.allbinary.util.ABHashMap_Package; use org.allbinary.util.ABHashMap_Package;
+with org.allbinary.util.ABHashMap_Package_References;
 with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
+with org.allbinary.util.ABHashtable_Package_References;
 with org.allbinary.util.ABStack_Package; use org.allbinary.util.ABStack_Package;
+with org.allbinary.util.ABStack_Package_References;
 with org.allbinary.util.ABVector_Package; use org.allbinary.util.ABVector_Package;
-with org.allbinary.util.ABHashMap_Package;
-with org.allbinary.util.ABHashtable_Package;
-with org.allbinary.util.ABStack_Package;
-with org.allbinary.util.ABVector_Package;
+with org.allbinary.util.ABVector_Package_References;
 
 package body org.allbinary.logic.StdUtil_Package is
 

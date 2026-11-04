@@ -13,7 +13,6 @@
 --  Generated Code Do Not Modify
 
 
-with org.allbinary.input.AllBinarySensor_Package;
 with org.allbinary.input.AllBinarySensorListener_Package;
 
 package body org.allbinary.input.NoAllBinarySensor_Package is

@@ -27,7 +27,7 @@ package body org.allbinary.business.time.TimeData_Package is
 
    function getInstance return TimeData_Access is
    begin
-        return TimeData_Package.instance;
+        return TimeData_Access (TimeData_Package.instance);
    end getInstance;
 
    procedure Initialize (This : in out TimeData'Class) is

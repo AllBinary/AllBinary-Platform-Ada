@@ -17,8 +17,10 @@ with org.allbinary.data.tree.dom.document.DomDocumentHelper_Package; use org.all
 with org.allbinary.data.tree.dom.document.XmlDocumentHelper_Package; use org.allbinary.data.tree.dom.document.XmlDocumentHelper_Package;
 with org.allbinary.data.tree.dom.document.mapping.DomDocumentMappingInterface_Package; use org.allbinary.data.tree.dom.document.mapping.DomDocumentMappingInterface_Package;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
+with org.w3c.dom.Document_Package_References;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.allbinary.business.context.configuration.ContextConfigurationInterface_Package; use org.allbinary.business.context.configuration.ContextConfigurationInterface_Package;
+with org.allbinary.business.context.configuration.ContextConfigurationInterface_Package_References;
 with org.allbinary.business.context.configuration.ContextConfigurationView_Package; use org.allbinary.business.context.configuration.ContextConfigurationView_Package;
 with org.allbinary.business.context.configuration.ContextConfigurationInterface_Package;
 with org.allbinary.business.context.configuration.ContextConfigurationView_Package;

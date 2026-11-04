@@ -14,8 +14,9 @@
 
 
 with org.allbinary.input.AllBinarySensorListener_Package; use org.allbinary.input.AllBinarySensorListener_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.math.Orientation_Package; use org.allbinary.logic.math.Orientation_Package;
-with org.allbinary.input.gyro.AllBinaryOrientationSensor_Package;
+with org.allbinary.logic.math.Orientation_Package_References;
 with org.allbinary.game.input.CompleteMotionGestureInputEvent_Package;
 with org.allbinary.game.input.CompleteMotionGestureInputEventListenerInterface_Package;
 with org.allbinary.game.input.CompleteMotionGestureInputInterface_Package;

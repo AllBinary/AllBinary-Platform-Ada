@@ -14,11 +14,15 @@
 
 
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
 with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Animation_Package;
+with org.allbinary.animation.Animation_Package_References;
 with org.allbinary.game.ag.life.Life_Package; use org.allbinary.game.ag.life.Life_Package;
+with org.allbinary.game.ag.life.Life_Package_References;
 with org.allbinary.game.graphics.hud.BasicHud_Package; use org.allbinary.game.graphics.hud.BasicHud_Package;
 with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
 with org.allbinary.graphics.displayable.event.DisplayChangeEvent_Package; use org.allbinary.graphics.displayable.event.DisplayChangeEvent_Package;
+with org.allbinary.graphics.displayable.event.DisplayChangeEvent_Package_References;
 with org.allbinary.graphics.paint.PaintableInterface_Package; use org.allbinary.graphics.paint.PaintableInterface_Package;
 
 package body org.allbinary.game.ag.layer.hud.basic.life.LivesHudWidget_Package is
@@ -100,7 +104,7 @@ package body org.allbinary.game.ag.layer.hud.basic.life.LivesHudWidget_Package i
       maxLives : Integer;
       index : Integer;
    begin
-        BasicHud (This).updateMeasurement (graphics);
+        BasicHud_Package.BasicHud (This).updateMeasurement (graphics);
         maxLives := Integer (LivesHudWidget'Class (This).getLifeInterface.getMaxlives);
         for index in 0 .. (maxLives) - 1 loop
             This.xArray (index) := (LivesHudWidget'Class (This).getX) + (((index) * (16)));
@@ -110,13 +114,13 @@ package body org.allbinary.game.ag.layer.hud.basic.life.LivesHudWidget_Package i
    procedure onDisplayChangeEvent (This : in out LivesHudWidget; displayChangeEvent_Param : access DisplayChangeEvent_Package.DisplayChangeEvent'Class) is
       displayChangeEvent : constant DisplayChangeEvent_Access := DisplayChangeEvent_Access (displayChangeEvent_Param);
    begin
-        BasicHud (This).onDisplayChangeEvent (displayChangeEvent);
+        BasicHud_Package.BasicHud (This).onDisplayChangeEvent (displayChangeEvent);
         This.myFontProcessor := This.updateMyFontProcessor;
    end onDisplayChangeEvent;
 
    procedure setX (This : in out LivesHudWidget; x : Integer) is
    begin
-        BasicHud (This).setX (x);
+        BasicHud_Package.BasicHud (This).setX (x);
         This.myFontProcessor := This.updateMyFontProcessor;
    end setX;
 

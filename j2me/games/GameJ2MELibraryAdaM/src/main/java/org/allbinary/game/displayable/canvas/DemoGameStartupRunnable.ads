@@ -80,7 +80,7 @@ package org.allbinary.game.displayable.canvas.DemoGameStartupRunnable_Package is
       logUtil : LogUtil_Access;
       demoCanvas : DemoCanvas_Access;
    end record;
-   TYPE_Id : Integer;
+   TYPE_Id : constant Integer := 4;
 
    procedure Initialize (This : in out DemoGameStartupRunnable'Class; demoCanvas_Param : access DemoCanvas_Package.DemoCanvas'Class);
    function Create (demoCanvas_Param : access DemoCanvas_Package.DemoCanvas'Class) return DemoGameStartupRunnable_Access;

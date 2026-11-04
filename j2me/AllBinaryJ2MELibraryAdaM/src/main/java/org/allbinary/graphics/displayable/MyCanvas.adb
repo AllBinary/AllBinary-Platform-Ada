@@ -15,28 +15,37 @@
 
 with javax.microedition.lcdui.Canvas_Package; use javax.microedition.lcdui.Canvas_Package;
 with javax.microedition.lcdui.Command_Package; use javax.microedition.lcdui.Command_Package;
+with javax.microedition.lcdui.Command_Package_References;
 with javax.microedition.lcdui.CommandListener_Package; use javax.microedition.lcdui.CommandListener_Package;
+with javax.microedition.lcdui.CommandListener_Package_References;
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
 with javax.microedition.lcdui.NullCommandListener_Package; use javax.microedition.lcdui.NullCommandListener_Package;
 with org.allbinary.graphics.displayable.command.MyCommandInterface_Package; use org.allbinary.graphics.displayable.command.MyCommandInterface_Package;
 with org.allbinary.graphics.displayable.command.MyCommandsFactory_Package; use org.allbinary.graphics.displayable.command.MyCommandsFactory_Package;
 with org.allbinary.input.TouchJ2ME_Package; use org.allbinary.input.TouchJ2ME_Package;
+with org.allbinary.input.TouchJ2ME_Package_References;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package_References;
 with org.allbinary.media.audio.Sound_Package; use org.allbinary.media.audio.Sound_Package;
+with org.allbinary.media.audio.Sound_Package_References;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.string_Id.CommonStrings_Package_References;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.util.ABStack_Package; use org.allbinary.util.ABStack_Package;
+with org.allbinary.util.ABStack_Package_References;
 with org.allbinary.graphics.displayable.CanvasStrings_Package; use org.allbinary.graphics.displayable.CanvasStrings_Package;
+with org.allbinary.graphics.displayable.CanvasStrings_Package_References;
 with org.allbinary.graphics.displayable.DisplayInfoSingleton_Package; use org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
+with org.allbinary.graphics.displayable.DisplayInfoSingleton_Package_References;
 with org.allbinary.graphics.displayable.BaseScalable_Package;
 with org.allbinary.graphics.displayable.CanvasStrings_Package;
 with org.allbinary.graphics.displayable.event.DisplayChangeEvent_Package;
 with org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
-with org.allbinary.graphics.displayable.DisplayableInterface_Package;
-with org.allbinary.graphics.displayable.command.MyCommandInterface_Package;
-with org.allbinary.graphics.displayable.command.MyCommandsFactory_Package;
 with org.allbinary.graphics.displayable.ScalableListener_Package;
 
 package body org.allbinary.graphics.displayable.MyCanvas_Package is
@@ -200,9 +209,19 @@ package body org.allbinary.graphics.displayable.MyCanvas_Package is
       return This;
    end Create;
 
+   function getWidth (This : in out MyCanvas) return Integer is
+   begin
+        return Canvas_Package.Canvas (This).getWidth;
+   end getWidth;
+
+   function getHeight (This : in out MyCanvas) return Integer is
+   begin
+        return Canvas_Package.Canvas (This).getHeight;
+   end getHeight;
+
    procedure setFullScreenMode (This : in out MyCanvas; mode : Boolean) is
    begin
-        Canvas (This).setFullScreenMode (mode);
+        Canvas_Package.Canvas (This).setFullScreenMode (mode);
         This.displayInfo.update (MyCanvas_Access'(This'Unchecked_Access), This.canvasStrings.SET_FULL_SCREEN_MODE);
    end setFullScreenMode;
 
@@ -227,7 +246,7 @@ package body org.allbinary.graphics.displayable.MyCanvas_Package is
    begin
         if not (This.commandStack.contains (command)) then
             This.commandStack.push (command);
-            Canvas (This).addCommand (command);
+            Canvas_Package.Canvas (This).addCommand (command);
         end if;
    end addCommand;
 
@@ -235,7 +254,7 @@ package body org.allbinary.graphics.displayable.MyCanvas_Package is
       command : constant Command_Access := Command_Access (command_Param);
    begin
         This.commandStack.removeElement (command);
-        Canvas (This).removeCommand (command);
+        Canvas_Package.Canvas (This).removeCommand (command);
    end removeCommand;
 
    procedure removeAllCommands (This : in out MyCanvas) is
@@ -244,14 +263,14 @@ package body org.allbinary.graphics.displayable.MyCanvas_Package is
    begin
         size := This.commandStack.size;
         for index in 0 .. (size) - 1 loop
-            Canvas (This).removeCommand (Command_Access (This.commandStack.pop));
+            Canvas_Package.Canvas (This).removeCommand (Command_Access (This.commandStack.pop));
         end loop;
    end removeAllCommands;
 
    procedure setCommandListener (This : in out MyCanvas; l_Param : access CommandListener_Package.CommandListener'Class) is
       l : constant CommandListener_Access := CommandListener_Access (l_Param);
    begin
-        Canvas (This).setCommandListener (l);
+        Canvas_Package.Canvas (This).setCommandListener (l);
         This.commandListener := l;
    end setCommandListener;
 

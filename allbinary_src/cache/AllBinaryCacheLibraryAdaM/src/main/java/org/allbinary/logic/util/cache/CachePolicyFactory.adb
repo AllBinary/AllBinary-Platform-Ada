@@ -14,6 +14,7 @@
 
 
 with org.allbinary.logic.util.cache.CachePolicy_Package; use org.allbinary.logic.util.cache.CachePolicy_Package;
+with org.allbinary.logic.util.cache.CachePolicy_Package_References;
 with org.allbinary.logic.util.cache.CachePolicy_Package;
 
 package body org.allbinary.logic.util.cache.CachePolicyFactory_Package is

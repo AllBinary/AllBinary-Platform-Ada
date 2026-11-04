@@ -15,8 +15,8 @@
 
 with org.allbinary.animation.IndexedAnimationBehavior_Package; use org.allbinary.animation.IndexedAnimationBehavior_Package;
 with org.allbinary.animation.AnimationBehavior_Package; use org.allbinary.animation.AnimationBehavior_Package;
+with org.allbinary.animation.AnimationBehavior_Package_References;
 with org.allbinary.animation.AnimationBehavior_Package;
-with org.allbinary.animation.AnimationBehaviorFactory_Package;
 with org.allbinary.animation.IndexedAnimationBehavior_Package;
 
 package body org.allbinary.animation.IndexedAnimationBehaviorFactory_Package is

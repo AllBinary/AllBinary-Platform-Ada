@@ -18,9 +18,9 @@ with org.allbinary.logic.string_Id.regex.replace.Replace_Package; use org.allbin
 with org.allbinary.string_Id.CommonPhoneStrings_Package; use org.allbinary.string_Id.CommonPhoneStrings_Package;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.logic.string_Id.tokens.Tokenizer_Package; use org.allbinary.logic.string_Id.tokens.Tokenizer_Package;
-with org.allbinary.logic.string_Id.regex.replace.Replace_Package;
 
 package body org.allbinary.logic.string_Id.tokens.UniqueTokens_Package is
 

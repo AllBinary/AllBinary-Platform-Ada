@@ -16,7 +16,7 @@
 with org.allbinary.game.physics.friction.FrictionData_Package; use org.allbinary.game.physics.friction.FrictionData_Package;
 with org.allbinary.game.physics.velocity.DragVelocityBehavior_Package; use org.allbinary.game.physics.velocity.DragVelocityBehavior_Package;
 with org.allbinary.game.physics.velocity.VelocityProperties_Package; use org.allbinary.game.physics.velocity.VelocityProperties_Package;
-with org.allbinary.game.physics.friction.FrictionData_Package;
+with org.allbinary.game.physics.velocity.VelocityProperties_Package_References;
 
 package body org.allbinary.game.physics.FrictionProperties_Package is
 

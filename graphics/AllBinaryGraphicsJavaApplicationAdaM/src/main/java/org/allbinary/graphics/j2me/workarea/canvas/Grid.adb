@@ -14,6 +14,7 @@
 
 
 with org.allbinary.graphics.GPoint_Package; use org.allbinary.graphics.GPoint_Package;
+with org.allbinary.graphics.GPoint_Package_References;
 
 package body org.allbinary.graphics.j2me.workarea.canvas.Grid_Package is
 

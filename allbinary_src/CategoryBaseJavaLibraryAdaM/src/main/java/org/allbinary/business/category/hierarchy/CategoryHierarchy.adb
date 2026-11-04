@@ -16,9 +16,8 @@
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.business.category.CategoryData_Package; use org.allbinary.business.category.CategoryData_Package;
 with org.allbinary.business.category.CategoryInterface_Package; use org.allbinary.business.category.CategoryInterface_Package;
+with org.allbinary.business.category.CategoryInterface_Package_References;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
-with org.allbinary.business.category.hierarchy.CategoryHierarchyInterface_Package;
-with org.allbinary.business.category.CategoryInterface_Package;
 with org.allbinary.business.category.properties.CategoryPropertiesInterface_Package;
 with org.allbinary.logic.control.validate.ValidationInterface_Package;
 

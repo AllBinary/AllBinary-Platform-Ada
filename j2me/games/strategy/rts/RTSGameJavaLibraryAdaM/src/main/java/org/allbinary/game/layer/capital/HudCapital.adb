@@ -14,7 +14,7 @@
 
 
 with org.allbinary.game.ag.layer.hud.basic.NumberStringHud_Package; use org.allbinary.game.ag.layer.hud.basic.NumberStringHud_Package;
-with org.allbinary.game.layer.capital.Capital_Package;
+with org.allbinary.game.ag.layer.hud.basic.NumberStringHud_Package_References;
 
 package body org.allbinary.game.layer.capital.HudCapital_Package is
 
@@ -52,7 +52,7 @@ package body org.allbinary.game.layer.capital.HudCapital_Package is
 
    procedure removeMoney (This : in out HudCapital; points : Integer) is
    begin
-        Capital (This).removeMoney (points);
+        Capital_Package.Capital (This).removeMoney (points);
         This.capitalGraphic.reduce (points);
    end removeMoney;
 
@@ -63,7 +63,7 @@ package body org.allbinary.game.layer.capital.HudCapital_Package is
 
    procedure addMoney (This : in out HudCapital; points : Integer) is
    begin
-        Capital (This).addMoney (points);
+        Capital_Package.Capital (This).addMoney (points);
         This.capitalGraphic.add (points);
    end addMoney;
 

@@ -14,14 +14,20 @@
 
 
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.business.user.role.BasicUserRole_Package; use org.allbinary.business.user.role.BasicUserRole_Package;
 with org.allbinary.business.user.role.UserRole_Package; use org.allbinary.business.user.role.UserRole_Package;
 with org.allbinary.globals.URLGLOBALS_Package; use org.allbinary.globals.URLGLOBALS_Package;
 with org.allbinary.logic.communication.http.file.upload.HttpFilePermissions_Package; use org.allbinary.logic.communication.http.file.upload.HttpFilePermissions_Package;
 with org.allbinary.logic.communication.http.request.HttpRequestUtil_Package; use org.allbinary.logic.communication.http.request.HttpRequestUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.io.path.AbPath_Package; use org.allbinary.logic.io.path.AbPath_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
+with admin.taghelpers.AuthenticationHelper_Package; use admin.taghelpers.AuthenticationHelper_Package;
+with admin.taghelpers.AuthenticationHelper_Package_References;
+with admin.taghelpers.AuthenticationHelper_Package;
 
 package body admin.taghelpers.AuthenticationHelperUtil_Package is
 
@@ -34,6 +40,26 @@ package body admin.taghelpers.AuthenticationHelperUtil_Package is
    package AbPath_Package renames Standard.org.allbinary.logic.io.path.AbPath_Package;
    package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   function "=" (Left, Right : LogUtil_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype AuthenticationHelper_Access is admin.taghelpers.AuthenticationHelper_Package_References.AuthenticationHelper_Access;
+   function "=" (Left, Right : AuthenticationHelper_Access) return Boolean renames admin.taghelpers.AuthenticationHelper_Package_References."=";
+   subtype AuthenticationHelper_Access_Array is admin.taghelpers.AuthenticationHelper_Package_References.AuthenticationHelper_Access_Array;
+   function "=" (Left, Right : AuthenticationHelper_Access_Array) return Boolean renames admin.taghelpers.AuthenticationHelper_Package_References."=";
+   subtype AuthenticationHelper_Access_Array_Access is admin.taghelpers.AuthenticationHelper_Package_References.AuthenticationHelper_Access_Array_Access;
+   function "=" (Left, Right : AuthenticationHelper_Access_Array_Access) return Boolean renames admin.taghelpers.AuthenticationHelper_Package_References."=";
+   subtype AuthenticationHelper_Access_Array_Access_Array is admin.taghelpers.AuthenticationHelper_Package_References.AuthenticationHelper_Access_Array_Access_Array;
+   function "=" (Left, Right : AuthenticationHelper_Access_Array_Access_Array) return Boolean renames admin.taghelpers.AuthenticationHelper_Package_References."=";
+   subtype AuthenticationHelper_Access_Array_Access_Array_Access is admin.taghelpers.AuthenticationHelper_Package_References.AuthenticationHelper_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : AuthenticationHelper_Access_Array_Access_Array_Access) return Boolean renames admin.taghelpers.AuthenticationHelper_Package_References."=";
    procedure Initialize_Fields (This : in out AuthenticationHelperUtil'Class) is
    begin
       null;
@@ -55,7 +81,7 @@ package body admin.taghelpers.AuthenticationHelperUtil_Package is
 
    function getInstance return AuthenticationHelperUtil_Access is
    begin
-        return AuthenticationHelperUtil_Package.instance;
+        return AuthenticationHelperUtil_Access (AuthenticationHelperUtil_Package.instance);
    end getInstance;
 
    --  throws Exception

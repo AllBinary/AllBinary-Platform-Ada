@@ -15,6 +15,7 @@
 
 with org.allbinary.game.score.Scoreable_Package; use org.allbinary.game.score.Scoreable_Package;
 with org.allbinary.game.ag.layer.hud.basic.score.ScoreHudWidget_Package; use org.allbinary.game.ag.layer.hud.basic.score.ScoreHudWidget_Package;
+with org.allbinary.game.ag.layer.hud.basic.score.ScoreHudWidget_Package_References;
 with org.allbinary.game.ag.layer.hud.basic.NumberStringHud_Package;
 with org.allbinary.game.ag.layer.hud.basic.score.ScoreHudWidget_Package;
 
@@ -60,7 +61,7 @@ package body org.allbinary.game.ag.layer.hud.basic.score.ScoreableAddOnlyForHud_
 
    procedure addPoints (This : in out ScoreableAddOnlyForHud; points : Integer) is
    begin
-        Scoreable (This).addPoints (points);
+        Scoreable_Package.Scoreable (This).addPoints (points);
         ScoreableAddOnlyForHud'Class (This).getScoreHudWidget.add (points);
    end addPoints;
 

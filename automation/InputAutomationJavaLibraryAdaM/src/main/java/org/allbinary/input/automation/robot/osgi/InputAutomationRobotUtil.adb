@@ -14,11 +14,12 @@
 
 
 with org.allbinary.input.automation.robot.InputRobotInterface_Package; use org.allbinary.input.automation.robot.InputRobotInterface_Package;
+with org.allbinary.input.automation.robot.InputRobotInterface_Package_References;
 with org.allbinary.input.automation.robot.osgi.InputAutomationRobotInterfaceWrapper_Package; use org.allbinary.input.automation.robot.osgi.InputAutomationRobotInterfaceWrapper_Package;
 with org.allbinary.input.automation.robot.osgi.InputAutomationRobotChangeEvent_Package; use org.allbinary.input.automation.robot.osgi.InputAutomationRobotChangeEvent_Package;
+with org.allbinary.input.automation.robot.osgi.InputAutomationRobotChangeEvent_Package_References;
 with org.allbinary.input.automation.robot.osgi.InputAutomationRobotChangeEvent_Package;
 with org.allbinary.input.automation.robot.osgi.InputAutomationRobotInterfaceWrapper_Package;
-with org.allbinary.input.automation.robot.InputRobotInterface_Package;
 
 package body org.allbinary.input.automation.robot.osgi.InputAutomationRobotUtil_Package is
 

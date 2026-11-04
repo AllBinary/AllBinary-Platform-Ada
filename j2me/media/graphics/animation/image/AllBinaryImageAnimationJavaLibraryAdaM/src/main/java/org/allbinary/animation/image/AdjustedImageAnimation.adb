@@ -14,9 +14,11 @@
 
 
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
 with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
+with javax.microedition.lcdui.Image_Package_References;
 with org.allbinary.animation.AnimationBehavior_Package; use org.allbinary.animation.AnimationBehavior_Package;
-with org.allbinary.animation.image.ImageAnimation_Package;
+with org.allbinary.animation.AnimationBehavior_Package_References;
 
 package body org.allbinary.animation.image.AdjustedImageAnimation_Package is
 
@@ -84,7 +86,7 @@ package body org.allbinary.animation.image.AdjustedImageAnimation_Package is
    procedure paintXY (This : in out AdjustedImageAnimation; graphics_Param : access Graphics_Package.Graphics'Class; x : Integer; y : Integer) is
       graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
-        ImageAnimation (This).paintXY (graphics, (x) + (This.dx), (y) + (This.dy));
+        ImageAnimation_Package.ImageAnimation (This).paintXY (graphics, (x) + (This.dx), (y) + (This.dy));
    end paintXY;
 
    procedure setDx (This : in out AdjustedImageAnimation; dx : Integer) is

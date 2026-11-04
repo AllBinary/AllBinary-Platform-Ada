@@ -15,6 +15,7 @@
 
 with org.allbinary.canvas.Processor_Package; use org.allbinary.canvas.Processor_Package;
 with org.allbinary.game.input.PlayerGameInputCompositeInterface_Package; use org.allbinary.game.input.PlayerGameInputCompositeInterface_Package;
+with org.allbinary.game.input.PlayerGameInputCompositeInterface_Package_References;
 
 package body org.allbinary.graphics.form.InputProcessor_Package is
 

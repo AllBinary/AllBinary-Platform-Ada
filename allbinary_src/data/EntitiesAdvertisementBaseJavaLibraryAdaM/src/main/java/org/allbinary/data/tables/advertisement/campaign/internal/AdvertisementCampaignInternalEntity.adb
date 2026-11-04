@@ -19,17 +19,19 @@ with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArr
 with org.allbinary.business.advertisement.campaign.AdvertisementCampaign_Package; use org.allbinary.business.advertisement.campaign.AdvertisementCampaign_Package;
 with org.allbinary.business.advertisement.campaign.AdvertisementCampaignData_Package; use org.allbinary.business.advertisement.campaign.AdvertisementCampaignData_Package;
 with org.allbinary.business.advertisement.campaign.AdvertisementCampaignInterface_Package; use org.allbinary.business.advertisement.campaign.AdvertisementCampaignInterface_Package;
+with org.allbinary.business.advertisement.campaign.AdvertisementCampaignInterface_Package_References;
 with org.allbinary.business.advertisement.campaign.AdvertisementCampaigns_Package; use org.allbinary.business.advertisement.campaign.AdvertisementCampaigns_Package;
 with org.allbinary.business.advertisement.campaign.AdvertisementCampaignsInterface_Package; use org.allbinary.business.advertisement.campaign.AdvertisementCampaignsInterface_Package;
+with org.allbinary.business.advertisement.campaign.AdvertisementCampaignsInterface_Package_References;
 with org.allbinary.business.context.modules.storefront.StoreFrontData_Package; use org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
 with org.allbinary.business.entry_Id.EntryData_Package; use org.allbinary.business.entry_Id.EntryData_Package;
 with org.allbinary.business.init.db.UserDbInitInfo_Package; use org.allbinary.business.init.db.UserDbInitInfo_Package;
 with org.allbinary.business.time.TimeData_Package; use org.allbinary.business.time.TimeData_Package;
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.communication.sql.AbSqlBean_Package; use org.allbinary.logic.communication.sql.AbSqlBean_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
-with org.allbinary.data.tables.advertisement.campaign.internal.AdvertisementCampaignInternalEntityInterface_Package;
 
 package body org.allbinary.data.tables.advertisement.campaign.internal.AdvertisementCampaignInternalEntity_Package is
 
@@ -99,7 +101,7 @@ package body org.allbinary.data.tables.advertisement.campaign.internal.Advertise
    procedure delete (This : in out AdvertisementCampaignInternalEntity; value : Unbounded_String) is
    begin
         begin
-            AbSqlBean (This).deleteWhere (StoreFrontData_Package.getInstance.NAME, value);
+            AbSqlBean_Package.AbSqlBean (This).deleteWhere (StoreFrontData_Package.getInstance.NAME, value);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
                 This.logUtil.putF (This.commonStrings.SUCCESS, AdvertisementCampaignInternalEntity_Access'(This'Unchecked_Access), This.commonStrings.delete);
             end if;
@@ -125,7 +127,7 @@ package body org.allbinary.data.tables.advertisement.campaign.internal.Advertise
    begin
         keysAndValues := StdUtil_Package.getInstance.createHashMap;
         keysAndValues.put (StoreFrontData_Package.getInstance.NAME, Java_Box (storeName));
-        hashMapVector := AbSqlBean (This).getRows (keysAndValues);
+        hashMapVector := AbSqlBean_Package.AbSqlBean (This).getRows (keysAndValues);
         vector := BasicArrayList_Access (BasicArrayListD_Package.Create);
         size := hashMapVector.size;
         for index in 0 .. (size) - 1 loop
@@ -144,7 +146,7 @@ package body org.allbinary.data.tables.advertisement.campaign.internal.Advertise
         keysAndValues := StdUtil_Package.getInstance.createHashMap;
         keysAndValues.put (StoreFrontData_Package.getInstance.NAME, Java_Box (storeName));
         keysAndValues.put (AdvertisementCampaignData_Package.getInstance.NAME, Java_Box (name));
-        hashMap := AbSqlBean (This).getRow (keysAndValues);
+        hashMap := AbSqlBean_Package.AbSqlBean (This).getRow (keysAndValues);
         if (hashMap) /= (null) then
             return AdvertisementCampaignInterface_Access (AdvertisementCampaign_Package.Create (hashMap));
         else
@@ -155,7 +157,7 @@ package body org.allbinary.data.tables.advertisement.campaign.internal.Advertise
    procedure update (This : in out AdvertisementCampaignInternalEntity; updatedValues_Param : access HashMap_Package.HashMap'Class) is
       updatedValues : constant HashMap_Access := HashMap_Access (updatedValues_Param);
    begin
-        AbSqlBean (This).updateWhere (EntryData_Package.getInstance.getInstance.ID, Java_Unbox (updatedValues.get (EntryData_Package.getInstance.getInstance.ID)), updatedValues);
+        AbSqlBean_Package.AbSqlBean (This).updateWhere (EntryData_Package.getInstance.getInstance.ID, Java_Unbox (updatedValues.get (EntryData_Package.getInstance.getInstance.ID)), updatedValues);
    end update;
 
    function createTableStatement (This : in out AdvertisementCampaignInternalEntity) return Unbounded_String is
@@ -176,13 +178,13 @@ package body org.allbinary.data.tables.advertisement.campaign.internal.Advertise
    function createTable (This : in out AdvertisementCampaignInternalEntity) return Unbounded_String is
       returnStr : Unbounded_String;
    begin
-        returnStr := AbSqlBean (This).createTable (AdvertisementCampaignInternalEntity'Class (This).createTableStatement);
+        returnStr := AbSqlBean_Package.AbSqlBean (This).createTable (AdvertisementCampaignInternalEntity'Class (This).createTableStatement);
         return returnStr;
    end createTable;
 
    function dropTable (This : in out AdvertisementCampaignInternalEntity) return Unbounded_String is
    begin
-        return AbSqlBean (This).dropTable;
+        return AbSqlBean_Package.AbSqlBean (This).dropTable;
    end dropTable;
 
    procedure getCampaignsInStore (This : in out AdvertisementCampaignInternalEntity; storeName : Unbounded_String) is

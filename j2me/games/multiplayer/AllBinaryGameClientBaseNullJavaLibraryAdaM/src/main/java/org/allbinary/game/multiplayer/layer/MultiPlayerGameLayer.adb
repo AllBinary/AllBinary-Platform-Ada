@@ -14,12 +14,16 @@
 
 
 with org.allbinary.game.identification.Group_Package; use org.allbinary.game.identification.Group_Package;
+with org.allbinary.game.identification.Group_Package_References;
 with org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package; use org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package;
 with org.allbinary.graphics.Rectangle_Package; use org.allbinary.graphics.Rectangle_Package;
+with org.allbinary.graphics.Rectangle_Package_References;
 with org.allbinary.view.ViewPositionBase_Package; use org.allbinary.view.ViewPositionBase_Package;
+with org.allbinary.view.ViewPositionBase_Package_References;
 with org.allbinary.game.multiplayer.layer.RemoteInfo_Package; use org.allbinary.game.multiplayer.layer.RemoteInfo_Package;
+with org.allbinary.game.multiplayer.layer.RemoteInfo_Package_References;
 with org.allbinary.game.multiplayer.layer.MultiplayerBehavior_Package; use org.allbinary.game.multiplayer.layer.MultiplayerBehavior_Package;
-with org.allbinary.game.multiplayer.layer.MultiPlayerGameLayerInterface_Package;
+with org.allbinary.game.multiplayer.layer.MultiplayerBehavior_Package_References;
 with org.allbinary.game.multiplayer.layer.MultiplayerBehavior_Package;
 with org.allbinary.game.multiplayer.layer.RemoteInfo_Package;
 

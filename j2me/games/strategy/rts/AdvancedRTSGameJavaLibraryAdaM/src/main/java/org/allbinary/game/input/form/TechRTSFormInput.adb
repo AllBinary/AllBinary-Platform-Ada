@@ -16,27 +16,34 @@
 with org.allbinary.game.layer.RTSGameStrings_Package; use org.allbinary.game.layer.RTSGameStrings_Package;
 with org.allbinary.game.layer.RTSInterface_Package; use org.allbinary.game.layer.RTSInterface_Package;
 with org.allbinary.game.layer.RTSPlayerLayerInterface_Package; use org.allbinary.game.layer.RTSPlayerLayerInterface_Package;
+with org.allbinary.game.layer.RTSPlayerLayerInterface_Package_References;
 with org.allbinary.game.layer.TechnologyRTSInterfaceImageItem_Package; use org.allbinary.game.layer.TechnologyRTSInterfaceImageItem_Package;
 with org.allbinary.game.layer.capital.Capital_Package; use org.allbinary.game.layer.capital.Capital_Package;
 with org.allbinary.game.rts.technology.event.TechEventHandler_Package; use org.allbinary.game.rts.technology.event.TechEventHandler_Package;
 with org.allbinary.graphics.form.item.ABCustomItem_Package; use org.allbinary.graphics.form.item.ABCustomItem_Package;
+with org.allbinary.graphics.form.item.ABCustomItem_Package_References;
 with org.allbinary.media.audio.BuildingSound_Package; use org.allbinary.media.audio.BuildingSound_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.logic.java.bool.BooleanFactory_Package; use org.allbinary.logic.java.bool.BooleanFactory_Package;
 with org.allbinary.game.identification.Group_Package; use org.allbinary.game.identification.Group_Package;
+with org.allbinary.game.identification.Group_Package_References;
 with org.allbinary.game.layer.AllBinaryGameLayerManager_Package; use org.allbinary.game.layer.AllBinaryGameLayerManager_Package;
+with org.allbinary.game.layer.AllBinaryGameLayerManager_Package_References;
 with org.allbinary.game.layer.hud.event.GameNotificationEvent_Package; use org.allbinary.game.layer.hud.event.GameNotificationEvent_Package;
+with org.allbinary.game.layer.hud.event.GameNotificationEvent_Package_References;
 with org.allbinary.game.layer.hud.event.GameNotificationEventHandler_Package; use org.allbinary.game.layer.hud.event.GameNotificationEventHandler_Package;
 with org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package; use org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package;
+with org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package_References;
 with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
 with org.allbinary.layer.AllBinaryLayerManager_Package; use org.allbinary.layer.AllBinaryLayerManager_Package;
+with org.allbinary.layer.AllBinaryLayerManager_Package_References;
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+with org.allbinary.logic.util.event.AllBinaryEventObject_Package_References;
 with org.allbinary.logic.math.SmallIntegerSingletonFactory_Package; use org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.media.audio.ErrorSound_Package; use org.allbinary.media.audio.ErrorSound_Package;
 with org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package; use org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
 with org.allbinary.media.graphics.geography.map.GeographicMapCompositeInterface_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCompositeInterface_Package;
-with org.allbinary.game.layer.TechnologyRTSInterfaceImageItem_Package;
 
 package body org.allbinary.game.input.form.TechRTSFormInput_Package is
 
@@ -165,7 +172,7 @@ package body org.allbinary.game.input.form.TechRTSFormInput_Package is
       geographicMapCompositeInterface : GeographicMapCompositeInterface_Access;
       geographicMapInterface : BasicGeographicMap_Access;
    begin
-        RTSFormInput (This).setAllBinaryGameLayerManager (allBinaryGameLayerManager);
+        RTSFormInput_Package.RTSFormInput (This).setAllBinaryGameLayerManager (allBinaryGameLayerManager);
         geographicMapCompositeInterface := GeographicMapCompositeInterface_Access (allBinaryGameLayerManager);
         geographicMapInterface := geographicMapCompositeInterface.getGeographicMapInterface (0);
         This.noMoneyGameNotificationEvent.setBasicColorP (geographicMapInterface.getForegroundBasicColor);
@@ -184,7 +191,7 @@ package body org.allbinary.game.input.form.TechRTSFormInput_Package is
       cost : Integer;
       capital : Capital_Access;
    begin
-        RTSFormInput (This).process (layerManager);
+        RTSFormInput_Package.RTSFormInput (This).process (layerManager);
         commonStrings := CommonStrings_Package.getInstance;
         stringMaker := StringMaker_Package.Create;
         technologyRTSInterfaceImageItem := TechnologyRTSInterfaceImageItem_Access (item);

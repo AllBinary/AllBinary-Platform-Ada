@@ -13,8 +13,13 @@
 --  Generated Code Do Not Modify
 
 
+with java.util.HashMap_Package; use java.util.HashMap_Package;
+with org.allbinary.business.installer.Portion_Package; use org.allbinary.business.installer.Portion_Package;
+with org.allbinary.business.installer.Portion_Package_References;
 with org.allbinary.data.tables.log.LogTableEntity_Package; use org.allbinary.data.tables.log.LogTableEntity_Package;
 with org.allbinary.data.tables.log.LogTableEntityFactory_Package; use org.allbinary.data.tables.log.LogTableEntityFactory_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.communication.sql.AbSqlTableUtil_Package; use org.allbinary.logic.communication.sql.AbSqlTableUtil_Package;
 
 package body admin.taghelpers.LogHelper_Package is
@@ -22,6 +27,26 @@ package body admin.taghelpers.LogHelper_Package is
    package LogTableEntity_Package renames Standard.org.allbinary.data.tables.log.LogTableEntity_Package;
    package LogTableEntityFactory_Package renames Standard.org.allbinary.data.tables.log.LogTableEntityFactory_Package;
    package AbSqlTableUtil_Package renames Standard.org.allbinary.logic.communication.sql.AbSqlTableUtil_Package;
+   subtype Portion_Access is org.allbinary.business.installer.Portion_Package_References.Portion_Access;
+   function "=" (Left, Right : Portion_Access) return Boolean renames org.allbinary.business.installer.Portion_Package_References."=";
+   subtype Portion_Access_Array is org.allbinary.business.installer.Portion_Package_References.Portion_Access_Array;
+   function "=" (Left, Right : Portion_Access_Array) return Boolean renames org.allbinary.business.installer.Portion_Package_References."=";
+   subtype Portion_Access_Array_Access is org.allbinary.business.installer.Portion_Package_References.Portion_Access_Array_Access;
+   function "=" (Left, Right : Portion_Access_Array_Access) return Boolean renames org.allbinary.business.installer.Portion_Package_References."=";
+   subtype Portion_Access_Array_Access_Array is org.allbinary.business.installer.Portion_Package_References.Portion_Access_Array_Access_Array;
+   function "=" (Left, Right : Portion_Access_Array_Access_Array) return Boolean renames org.allbinary.business.installer.Portion_Package_References."=";
+   subtype Portion_Access_Array_Access_Array_Access is org.allbinary.business.installer.Portion_Package_References.Portion_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Portion_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.installer.Portion_Package_References."=";
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   function "=" (Left, Right : LogUtil_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
    procedure Initialize_Fields (This : in out LogHelper'Class) is
    begin
       null;

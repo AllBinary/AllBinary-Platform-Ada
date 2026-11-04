@@ -14,8 +14,8 @@
 
 
 with org.allbinary.game.layer.CollidableCompositeLayer_Package; use org.allbinary.game.layer.CollidableCompositeLayer_Package;
+with org.allbinary.game.layer.CollidableCompositeLayer_Package_References;
 with org.allbinary.game.combat.destroy.DestroyedLayerProcessor_Package; use org.allbinary.game.combat.destroy.DestroyedLayerProcessor_Package;
-with org.allbinary.game.combat.destroy.DestroyableBaseBehavior_Package;
 with org.allbinary.game.combat.destroy.DestroyableInterface_Package;
 with org.allbinary.game.combat.destroy.DestroyedLayerProcessor_Package;
 

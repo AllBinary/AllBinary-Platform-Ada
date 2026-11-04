@@ -14,6 +14,7 @@
 
 
 with javax.microedition.lcdui.Displayable_Package; use javax.microedition.lcdui.Displayable_Package;
+with javax.microedition.lcdui.Displayable_Package_References;
 with javax.microedition.lcdui.Form_Package; use javax.microedition.lcdui.Form_Package;
 with javax.microedition.rms.InvalidRecordIDException_Package; use javax.microedition.rms.InvalidRecordIDException_Package;
 with javax.microedition.rms.RecordStore_Package; use javax.microedition.rms.RecordStore_Package;

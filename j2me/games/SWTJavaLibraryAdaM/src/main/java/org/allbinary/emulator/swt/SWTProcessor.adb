@@ -15,6 +15,7 @@
 
 with org.allbinary.thread.NullRunnable_Package; use org.allbinary.thread.NullRunnable_Package;
 with org.eclipse.swt.widgets.Display_Package; use org.eclipse.swt.widgets.Display_Package;
+with org.eclipse.swt.widgets.Display_Package_References;
 
 package body org.allbinary.emulator.swt.SWTProcessor_Package is
 

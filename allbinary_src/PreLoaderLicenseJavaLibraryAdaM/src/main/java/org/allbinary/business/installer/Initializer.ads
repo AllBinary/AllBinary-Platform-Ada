@@ -105,10 +105,10 @@ package org.allbinary.business.installer.Initializer_Package is
       staticPagesServer : Unbounded_String;
       staticPagesPort : Unbounded_String;
    end record;
-   MAXDB : Integer;
-   MAX : Integer;
-   MIN : Integer;
-   MINPASSWORD : Integer;
+   MAXDB : constant Integer := 30;
+   MAX : constant Integer := 16;
+   MIN : constant Integer := 4;
+   MINPASSWORD : constant Integer := 0;
 
    procedure Initialize (This : in out Initializer'Class; map_Param : access Map_Package.Map'Class);
    function Create (map_Param : access Map_Package.Map'Class) return Initializer_Access;

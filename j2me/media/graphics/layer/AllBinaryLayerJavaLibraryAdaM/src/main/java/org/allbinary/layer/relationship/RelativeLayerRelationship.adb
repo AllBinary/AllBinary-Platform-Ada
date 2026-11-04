@@ -14,10 +14,12 @@
 
 
 with org.allbinary.graphics.GPoint_Package; use org.allbinary.graphics.GPoint_Package;
+with org.allbinary.graphics.GPoint_Package_References;
 with org.allbinary.graphics.RelativeRelationship_Package; use org.allbinary.graphics.RelativeRelationship_Package;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
+with org.allbinary.layer.AllBinaryLayer_Package_References;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.layer.AllBinaryLayer_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.layer.Layer_Package;
 with org.allbinary.layer.LayerInterface_Package;
 with org.allbinary.layer.NamedInterface_Package;
@@ -82,17 +84,17 @@ package body org.allbinary.layer.relationship.RelativeLayerRelationship_Package 
 
    function getX (This : in out RelativeLayerRelationship) return Integer is
    begin
-        return (This.layer.getXP) + (RelativeRelationship (This).getX);
+        return (This.layer.getXP) + (RelativeRelationship_Package.RelativeRelationship (This).getX);
    end getX;
 
    function getY (This : in out RelativeLayerRelationship) return Integer is
    begin
-        return (This.layer.getYP) + (RelativeRelationship (This).getY);
+        return (This.layer.getYP) + (RelativeRelationship_Package.RelativeRelationship (This).getY);
    end getY;
 
    function getZ (This : in out RelativeLayerRelationship) return Integer is
    begin
-        return (This.layer.getZP) + (RelativeRelationship (This).getZ);
+        return (This.layer.getZP) + (RelativeRelationship_Package.RelativeRelationship (This).getZ);
    end getZ;
 
 end org.allbinary.layer.relationship.RelativeLayerRelationship_Package;

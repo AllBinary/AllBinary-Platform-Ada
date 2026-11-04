@@ -16,12 +16,15 @@
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package;
+with org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package_References;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellTypeFactory_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellTypeFactory_Package;
 with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellType_Package; use org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellType_Package;
 with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
+with org.allbinary.util.ABHashtable_Package_References;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.HashtableUtil_Package; use org.allbinary.util.HashtableUtil_Package;
 with org.allbinary.media.graphics.geography.map.topview.BasicTopViewGeographicMapCellType_Package; use org.allbinary.media.graphics.geography.map.topview.BasicTopViewGeographicMapCellType_Package;
+with org.allbinary.media.graphics.geography.map.topview.BasicTopViewGeographicMapCellType_Package_References;
 with org.allbinary.media.graphics.geography.map.topview.BasicTopViewGeographicMapStrings_Package; use org.allbinary.media.graphics.geography.map.topview.BasicTopViewGeographicMapStrings_Package;
 with org.allbinary.media.graphics.geography.map.topview.BasicTopViewGeographicMapCellType_Package;
 with org.allbinary.media.graphics.geography.map.topview.BasicTopViewGeographicMapStrings_Package;

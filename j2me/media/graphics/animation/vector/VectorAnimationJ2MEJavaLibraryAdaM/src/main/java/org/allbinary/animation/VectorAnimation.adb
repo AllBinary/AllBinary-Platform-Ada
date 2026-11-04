@@ -14,11 +14,16 @@
 
 
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
+with javax.microedition.lcdui.NullImage_Package; use javax.microedition.lcdui.NullImage_Package;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.graphics.color.BasicColor_Package_References;
 with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
 with org.allbinary.logic.math.PrimitiveIntUtil_Package; use org.allbinary.logic.math.PrimitiveIntUtil_Package;
 with org.allbinary.util.CircularIndexUtil_Package; use org.allbinary.util.CircularIndexUtil_Package;
+with org.allbinary.util.CircularIndexUtil_Package_References;
 with org.allbinary.animation.AnimationBehavior_Package; use org.allbinary.animation.AnimationBehavior_Package;
+with org.allbinary.animation.AnimationBehavior_Package_References;
 
 package body org.allbinary.animation.VectorAnimation_Package is
 
@@ -113,7 +118,7 @@ package body org.allbinary.animation.VectorAnimation_Package is
         if ((VectorAnimation'Class (This).getBasicColorP) = (null)) or else ((VectorAnimation'Class (This).getBasicColorP.intValue) /= (basicColor.intValue)) then
             changed := True;
         end if;
-        IndexedAnimation (This).setBasicColorP (basicColor);
+        IndexedAnimation_Package.IndexedAnimation (This).setBasicColorP (basicColor);
         if changed then
             VectorAnimation'Class (This).updateModifiers;
         end if;
@@ -127,7 +132,7 @@ package body org.allbinary.animation.VectorAnimation_Package is
         if ((VectorAnimation'Class (This).getChangeBasicColor) = (null)) or else ((VectorAnimation'Class (This).getChangeBasicColor.intValue) /= (basicColor.intValue)) then
             changed := True;
         end if;
-        IndexedAnimation (This).changeBasicColor (basicColor);
+        IndexedAnimation_Package.IndexedAnimation (This).changeBasicColor (basicColor);
         if changed then
             VectorAnimation'Class (This).updateModifiers;
         end if;
@@ -140,7 +145,7 @@ package body org.allbinary.animation.VectorAnimation_Package is
         if (This.alphaP) /= (alpha) then
             changed := True;
         end if;
-        IndexedAnimation (This).setAlpha (alpha);
+        IndexedAnimation_Package.IndexedAnimation (This).setAlpha (alpha);
         if changed then
             VectorAnimation'Class (This).updateModifiers;
         end if;

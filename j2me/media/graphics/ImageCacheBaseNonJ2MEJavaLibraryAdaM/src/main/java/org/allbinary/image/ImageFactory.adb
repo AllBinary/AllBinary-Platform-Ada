@@ -15,6 +15,7 @@
 
 with java.io.InputStream_Package; use java.io.InputStream_Package;
 with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
+with javax.microedition.lcdui.Image_Package_References;
 
 package body org.allbinary.image.ImageFactory_Package is
 

@@ -14,10 +14,14 @@
 
 
 with org.allbinary.logic.system.security.licensing.ClientInformationFactory_Package; use org.allbinary.logic.system.security.licensing.ClientInformationFactory_Package;
+with org.allbinary.logic.system.security.licensing.ClientInformationFactory_Package_References;
 with org.allbinary.logic.system.security.licensing.LicenseServerInitFileUtil_Package; use org.allbinary.logic.system.security.licensing.LicenseServerInitFileUtil_Package;
 with org.allbinary.game.midlet.LicenseLoadingType_Package; use org.allbinary.game.midlet.LicenseLoadingType_Package;
+with org.allbinary.game.midlet.LicenseLoadingType_Package_References;
 with org.allbinary.game.midlet.LicensedDemoSetupFactory_Package; use org.allbinary.game.midlet.LicensedDemoSetupFactory_Package;
+with org.allbinary.game.midlet.LicensedDemoSetupFactory_Package_References;
 with org.allbinary.game.midlet.LicenseCheckRunnableFactory_Package; use org.allbinary.game.midlet.LicenseCheckRunnableFactory_Package;
+with org.allbinary.game.midlet.LicenseCheckRunnableFactory_Package_References;
 with org.allbinary.game.midlet.DemoSetup_Package;
 with org.allbinary.game.midlet.LicenseCheckRunnableFactory_Package;
 with org.allbinary.game.midlet.LicenseLoadingType_Package;

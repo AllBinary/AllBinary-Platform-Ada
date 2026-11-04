@@ -13,11 +13,18 @@
 --  Generated Code Do Not Modify
 
 
+with java.io.File_Package; use java.io.File_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
+with org.allbinary.media.image.BufferedImageUtil2_Package; use org.allbinary.media.image.BufferedImageUtil2_Package;
 with org.allbinary.media.image.ImageProcessorInput_Package; use org.allbinary.media.image.ImageProcessorInput_Package;
+with org.allbinary.media.image.ImageProcessorInput_Package_References;
 with org.allbinary.media.image.ImageProcessorInputCompositeInterface_Package; use org.allbinary.media.image.ImageProcessorInputCompositeInterface_Package;
 with org.allbinary.media.image.ImageStrings_Package; use org.allbinary.media.image.ImageStrings_Package;
+with org.allbinary.media.image.ImageStrings_Package_References;
+with org.allbinary.media.image.MirrorImageUtil_Package; use org.allbinary.media.image.MirrorImageUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.string_Id.CommonStrings_Package_References;
 with java.lang.Thread_Package; use java.lang.Thread_Package;
 with org.allbinary.image.gui.Graphics_Package; use org.allbinary.image.gui.Graphics_Package;
 

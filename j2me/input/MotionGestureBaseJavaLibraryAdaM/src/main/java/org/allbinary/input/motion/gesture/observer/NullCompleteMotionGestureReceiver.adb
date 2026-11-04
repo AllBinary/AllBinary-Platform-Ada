@@ -14,9 +14,10 @@
 
 
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.input.motion.gesture.observer.CompleteMotionGestureListenerInterface_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
 
 package body org.allbinary.input.motion.gesture.observer.NullCompleteMotionGestureReceiver_Package is
 

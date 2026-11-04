@@ -14,6 +14,7 @@
 
 
 with org.allbinary.game.midlet.DemoGameMidletState_Package; use org.allbinary.game.midlet.DemoGameMidletState_Package;
+with org.allbinary.game.midlet.DemoGameMidletState_Package_References;
 with org.allbinary.game.midlet.DemoGameMidletState_Package;
 
 package body org.allbinary.game.midlet.DemoGameMidletStateFactory_Package is

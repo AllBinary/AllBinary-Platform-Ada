@@ -14,9 +14,7 @@
 
 
 with org.allbinary.graphics.displayable.StateControlledInterface_Package; use org.allbinary.graphics.displayable.StateControlledInterface_Package;
-with org.allbinary.graphics.paint.Paintable_Package;
 with org.allbinary.graphics.paint.PaintableInterface_Package;
-with org.allbinary.graphics.displayable.StateControlledInterface_Package;
 
 package body org.allbinary.graphics.paint.StatePaintable_Package is
 

@@ -14,6 +14,7 @@
 
 
 with org.allbinary.graphics.opengles.shader.ShaderManager_Package; use org.allbinary.graphics.opengles.shader.ShaderManager_Package;
+with org.allbinary.graphics.opengles.shader.ShaderManager_Package_References;
 with org.allbinary.graphics.opengles.shader.ShaderManager_Package;
 
 package body org.allbinary.graphics.opengles.shader.ShaderManagerFactory_Package is

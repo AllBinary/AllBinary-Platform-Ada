@@ -17,6 +17,7 @@ with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.lo
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.data.tables.advertisement.sales.AffiliateSalesEntity_Package; use org.allbinary.data.tables.advertisement.sales.AffiliateSalesEntity_Package;
 with org.allbinary.data.tables.advertisement.sales.AffiliateSalesEntityInterface_Package; use org.allbinary.data.tables.advertisement.sales.AffiliateSalesEntityInterface_Package;
+with org.allbinary.data.tables.advertisement.sales.AffiliateSalesEntityInterface_Package_References;
 with org.allbinary.data.tables.advertisement.sales.AffiliateSalesEntity_Package;
 with org.allbinary.data.tables.advertisement.sales.AffiliateSalesEntityInterface_Package;
 

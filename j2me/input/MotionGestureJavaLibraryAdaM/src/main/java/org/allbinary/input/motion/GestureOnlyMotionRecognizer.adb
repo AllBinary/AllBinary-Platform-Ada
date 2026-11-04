@@ -15,7 +15,9 @@
 
 with org.allbinary.graphics.CustomGPoint_Package; use org.allbinary.graphics.CustomGPoint_Package;
 with org.allbinary.graphics.GPointCircularPool_Package; use org.allbinary.graphics.GPointCircularPool_Package;
+with org.allbinary.graphics.GPointCircularPool_Package_References;
 with org.allbinary.input.motion.gesture.MotionGestureRecognizer_Package; use org.allbinary.input.motion.gesture.MotionGestureRecognizer_Package;
+with org.allbinary.input.motion.gesture.MotionGestureRecognizer_Package_References;
 
 package body org.allbinary.input.motion.GestureOnlyMotionRecognizer_Package is
 

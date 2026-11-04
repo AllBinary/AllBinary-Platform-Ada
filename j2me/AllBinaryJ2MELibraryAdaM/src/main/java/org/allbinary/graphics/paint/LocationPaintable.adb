@@ -14,7 +14,7 @@
 
 
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
-with org.allbinary.graphics.paint.LocationPaintableInterface_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
 
 package body org.allbinary.graphics.paint.LocationPaintable_Package is
 

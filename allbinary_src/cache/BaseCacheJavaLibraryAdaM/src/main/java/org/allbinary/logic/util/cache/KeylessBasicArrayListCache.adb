@@ -14,13 +14,15 @@
 
 
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.util.BasicArrayListUtil_Package; use org.allbinary.util.BasicArrayListUtil_Package;
+with org.allbinary.util.BasicArrayListUtil_Package_References;
 with org.allbinary.logic.util.cache.BaseBasicArrayListCache_Package;
 with org.allbinary.logic.util.cache.CacheInterface_Package;
 with org.allbinary.logic.util.cache.CacheableInterface_Package;
-with org.allbinary.logic.util.cache.IndexedBasicArrayListCache_Package;
 
 package body org.allbinary.logic.util.cache.KeylessBasicArrayListCache_Package is
 
@@ -101,7 +103,7 @@ package body org.allbinary.logic.util.cache.KeylessBasicArrayListCache_Package i
       basicArrayList : BasicArrayList_Access;
       index : Integer;
    begin
-        IndexedBasicArrayListCache (This).clear;
+        IndexedBasicArrayListCache_Package.IndexedBasicArrayListCache (This).clear;
         basicArrayList := null;
         for index in reverse 0 .. (This.list.size) - (1) loop
             basicArrayList := (BasicArrayList_Access (This.list.objectArray (index)));

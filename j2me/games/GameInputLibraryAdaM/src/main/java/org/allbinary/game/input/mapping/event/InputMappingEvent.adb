@@ -14,12 +14,12 @@
 
 
 with org.allbinary.game.input.mapping.InputToGameKeyMapping_Package; use org.allbinary.game.input.mapping.InputToGameKeyMapping_Package;
+with org.allbinary.game.input.mapping.InputToGameKeyMapping_Package_References;
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 with org.allbinary.game.input.GameKey_Package;
 with org.allbinary.game.input.GameKeyFactory_Package;
 with org.allbinary.game.input.Input_Package;
 with org.allbinary.game.input.mapping.InputMapping_Package;
-with org.allbinary.game.input.mapping.InputToGameKeyMapping_Package;
 
 package body org.allbinary.game.input.mapping.event.InputMappingEvent_Package is
 

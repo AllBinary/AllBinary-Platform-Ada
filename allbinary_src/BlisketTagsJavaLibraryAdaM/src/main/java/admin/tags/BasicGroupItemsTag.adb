@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+with java.util.HashMap_Package; use java.util.HashMap_Package;
 with admin.taghelpers.BasicGroupItemsHelperFactory_Package; use admin.taghelpers.BasicGroupItemsHelperFactory_Package;
 with admin.taghelpers.BasicGroupItemsRequestHelperFactory_Package; use admin.taghelpers.BasicGroupItemsRequestHelperFactory_Package;
 

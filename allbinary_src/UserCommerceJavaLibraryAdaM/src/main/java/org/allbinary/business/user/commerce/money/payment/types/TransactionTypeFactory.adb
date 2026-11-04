@@ -14,6 +14,7 @@
 
 
 with org.allbinary.business.user.commerce.money.payment.types.TransactionType_Package; use org.allbinary.business.user.commerce.money.payment.types.TransactionType_Package;
+with org.allbinary.business.user.commerce.money.payment.types.TransactionType_Package_References;
 with org.allbinary.business.user.commerce.money.payment.types.TransactionType_Package;
 
 package body org.allbinary.business.user.commerce.money.payment.types.TransactionTypeFactory_Package is

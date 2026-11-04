@@ -14,15 +14,20 @@
 
 
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package; use org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
+with org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package_References;
 with org.allbinary.business.user.commerce.shipping.modules.ShippingInterface_Package; use org.allbinary.business.user.commerce.shipping.modules.ShippingInterface_Package;
+with org.allbinary.business.user.commerce.shipping.modules.ShippingInterface_Package_References;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package; use org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.string_Id.CommonStrings_Package_References;
 with org.allbinary.business.user.commerce.shipping.ShippingMethodsFactory_Package; use org.allbinary.business.user.commerce.shipping.ShippingMethodsFactory_Package;
-with org.allbinary.business.user.commerce.shipping.modules.ShippingInterface_Package;
 with org.allbinary.business.user.commerce.shipping.ShippingMethodsFactory_Package;
-with org.allbinary.business.user.commerce.shipping.ShippingMethodsInterface_Package;
 
 package body org.allbinary.business.user.commerce.shipping.ShippingMethods_Package is
 

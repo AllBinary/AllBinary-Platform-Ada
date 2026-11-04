@@ -14,6 +14,7 @@
 
 
 with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package; use org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References;
 
 package body org.allbinary.thirdparty.store.ThirdPartyStore_Package is
 

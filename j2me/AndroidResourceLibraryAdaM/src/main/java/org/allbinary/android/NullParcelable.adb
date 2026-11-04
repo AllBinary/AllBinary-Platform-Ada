@@ -15,6 +15,7 @@
 
 with android.os.Parcelable_Package; use android.os.Parcelable_Package;
 with android.os.Parcel_Package; use android.os.Parcel_Package;
+with android.os.Parcel_Package_References;
 
 package body org.allbinary.android.NullParcelable_Package is
 

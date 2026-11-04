@@ -18,7 +18,7 @@ with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.game.health.NullHealthListener_Package; use org.allbinary.game.health.NullHealthListener_Package;
 with org.allbinary.game.health.HealthListenerInterface_Package; use org.allbinary.game.health.HealthListenerInterface_Package;
-with org.allbinary.game.health.HealthInterface_Package;
+with org.allbinary.game.health.HealthListenerInterface_Package_References;
 with org.allbinary.game.health.HealthListenerInterface_Package;
 with org.allbinary.game.health.NullHealthListener_Package;
 

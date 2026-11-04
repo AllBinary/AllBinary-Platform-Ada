@@ -64,7 +64,7 @@ package org.allbinary.ai.ArtificialIntelligence_Package is
    function "=" (Left, Right : ArtificialIntelligence_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.ai.ArtificialIntelligence_Package_References."=";
 
    type ArtificialIntelligence is new Java_Object and ArtificialIntelligenceInterface with null record;
-   AI_ID : Integer;
+   AI_ID : constant Integer := 2;
    instance : ArtificialIntelligence_Access;
 
    procedure Initialize (This : in out ArtificialIntelligence'Class);

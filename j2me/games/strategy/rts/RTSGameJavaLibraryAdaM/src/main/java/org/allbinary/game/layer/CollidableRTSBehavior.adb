@@ -17,6 +17,7 @@ with org.allbinary.game.collision.CollisionType_Package; use org.allbinary.game.
 with org.allbinary.game.collision.CollisionTypeFactory_Package; use org.allbinary.game.collision.CollisionTypeFactory_Package;
 with org.allbinary.game.layer.special.CollidableDestroyableDamageableBehavior_Package; use org.allbinary.game.layer.special.CollidableDestroyableDamageableBehavior_Package;
 with org.allbinary.game.layer.CollidableCompositeLayer_Package; use org.allbinary.game.layer.CollidableCompositeLayer_Package;
+with org.allbinary.game.layer.CollidableCompositeLayer_Package_References;
 
 package body org.allbinary.game.layer.CollidableRTSBehavior_Package is
 
@@ -61,7 +62,7 @@ package body org.allbinary.game.layer.CollidableRTSBehavior_Package is
         if (collisionType) = (collisionTypeFactory.PICKUP) then
             null;
         elsif (collisionType) = (collisionTypeFactory.COLLISION) then
-            return CollidableDestroyableDamageableBehavior (This).isCollision (ownerLayer, collidableInterfaceCompositeInterface);
+            return CollidableDestroyableDamageableBehavior_Package.CollidableDestroyableDamageableBehavior (This).isCollision (ownerLayer, collidableInterfaceCompositeInterface);
         else
             if ((((collidableInterfaceCompositeInterface.getX2) <= (ownerLayer.getXP)) or else ((collidableInterfaceCompositeInterface.getY2) <= (ownerLayer.getYP))) or else ((collidableInterfaceCompositeInterface.getYP) >= (ownerLayer.getY2))) or else ((collidableInterfaceCompositeInterface.getXP) >= (ownerLayer.getX2)) then
                 return False;
@@ -84,7 +85,7 @@ package body org.allbinary.game.layer.CollidableRTSBehavior_Package is
         if (collisionType) = (collisionTypeFactory.PICKUP) then
             null;
         elsif (collisionType) = (collisionTypeFactory.COLLISION) then
-            CollidableDestroyableDamageableBehavior (This).collide (ownerLayer, collidableInterfaceCompositeInterface);
+            CollidableDestroyableDamageableBehavior_Package.CollidableDestroyableDamageableBehavior (This).collide (ownerLayer, collidableInterfaceCompositeInterface);
         else
             CollidableRTSBehavior'Class (This).collideNone (ownerLayer, collidableInterfaceCompositeInterface);
         end if;

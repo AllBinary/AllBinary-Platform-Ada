@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with java.util.Calendar_Package; use java.util.Calendar_Package;
+with java.util.Date_Package; use java.util.Date_Package;
 
 package body org.allbinary.time.TimeStampUtil_Package is
 

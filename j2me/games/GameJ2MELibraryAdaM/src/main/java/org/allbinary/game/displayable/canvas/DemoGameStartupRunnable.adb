@@ -14,9 +14,11 @@
 
 
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.thread.ABRunnable_Package; use org.allbinary.thread.ABRunnable_Package;
 with org.allbinary.game.displayable.canvas.DemoCanvas_Package; use org.allbinary.game.displayable.canvas.DemoCanvas_Package;
+with org.allbinary.game.displayable.canvas.DemoCanvas_Package_References;
 with org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package;
 with org.allbinary.game.displayable.canvas.AllBinaryGameCanvasInterface_Package;
 with org.allbinary.game.layer.AllBinaryGameLayerManager_Package;
@@ -107,7 +109,7 @@ package body org.allbinary.game.displayable.canvas.DemoGameStartupRunnable_Packa
 
 begin
    null;
-   TYPE_Id := 4;
+   
 
 end org.allbinary.game.displayable.canvas.DemoGameStartupRunnable_Package;
 

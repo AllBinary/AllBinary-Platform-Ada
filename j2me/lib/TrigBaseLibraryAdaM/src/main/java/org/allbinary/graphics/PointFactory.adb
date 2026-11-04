@@ -18,6 +18,7 @@ with jsinterop.annotations.JsMethod_Package; use jsinterop.annotations.JsMethod_
 with jsinterop.annotations.JsConstructor_Package; use jsinterop.annotations.JsConstructor_Package;
 with jsinterop.annotations.JsProperty_Package; use jsinterop.annotations.JsProperty_Package;
 with org.allbinary.graphics.GPoint_Package; use org.allbinary.graphics.GPoint_Package;
+with org.allbinary.graphics.GPoint_Package_References;
 with org.allbinary.graphics.GPoint_Package;
 
 package body org.allbinary.graphics.PointFactory_Package is

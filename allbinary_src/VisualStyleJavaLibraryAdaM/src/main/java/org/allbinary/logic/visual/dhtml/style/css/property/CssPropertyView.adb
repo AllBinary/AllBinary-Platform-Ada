@@ -15,9 +15,13 @@
 
 with org.allbinary.data.tree.dom.DomNodeInterface_Package; use org.allbinary.data.tree.dom.DomNodeInterface_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.string_Id.CommonStrings_Package_References;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
+with org.w3c.dom.Document_Package_References;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
+with org.w3c.dom.Node_Package_References;
 with org.allbinary.logic.visual.dhtml.style.css.property.CssProperty_Package; use org.allbinary.logic.visual.dhtml.style.css.property.CssProperty_Package;
+with org.allbinary.logic.visual.dhtml.style.css.property.CssProperty_Package_References;
 with org.allbinary.logic.visual.dhtml.style.css.property.CssProperty_Package;
 with org.allbinary.logic.visual.dhtml.style.css.property.CssPropertyValues_Package;
 

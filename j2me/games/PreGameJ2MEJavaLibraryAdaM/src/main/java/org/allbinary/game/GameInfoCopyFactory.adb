@@ -14,6 +14,7 @@
 
 
 with org.allbinary.game.GameInfo_Package; use org.allbinary.game.GameInfo_Package;
+with org.allbinary.game.GameInfo_Package_References;
 with org.allbinary.game.GameInfo_Package;
 with org.allbinary.game.GameInfoData_Package;
 with org.allbinary.game.GameMode_Package;

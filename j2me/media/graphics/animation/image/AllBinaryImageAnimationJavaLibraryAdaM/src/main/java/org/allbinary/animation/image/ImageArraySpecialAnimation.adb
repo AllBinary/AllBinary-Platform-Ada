@@ -14,13 +14,16 @@
 
 
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
 with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
+with javax.microedition.lcdui.Image_Package_References;
 with org.allbinary.animation.AnimationBehavior_Package; use org.allbinary.animation.AnimationBehavior_Package;
+with org.allbinary.animation.AnimationBehavior_Package_References;
 with org.allbinary.animation.special.SpecialAnimationInterface_Package; use org.allbinary.animation.special.SpecialAnimationInterface_Package;
 with org.allbinary.graphics.displayable.DisplayInfoSingleton_Package; use org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
 with org.allbinary.time.GameTickTimeDelayHelperFactory_Package; use org.allbinary.time.GameTickTimeDelayHelperFactory_Package;
 with org.allbinary.time.TimeDelayHelper_Package; use org.allbinary.time.TimeDelayHelper_Package;
-with org.allbinary.animation.image.ImageArrayAnimation_Package;
+with org.allbinary.time.TimeDelayHelper_Package_References;
 
 package body org.allbinary.animation.image.ImageArraySpecialAnimation_Package is
 
@@ -134,7 +137,7 @@ package body org.allbinary.animation.image.ImageArraySpecialAnimation_Package is
    begin
         x := (DisplayInfoSingleton_Package.getInstance.getLastHalfWidth) - ((Java_Shift_Right_Arithmetic (ImageArraySpecialAnimation'Class (This).getImage (This.circularIndexUtil.getIndex).getWidth, 1)));
         y := 5;
-        ImageArrayAnimation (This).paintXY (graphics, x, y);
+        ImageArrayAnimation_Package.ImageArrayAnimation (This).paintXY (graphics, x, y);
    end paintXY;
 
 end org.allbinary.animation.image.ImageArraySpecialAnimation_Package;

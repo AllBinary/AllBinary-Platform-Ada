@@ -15,6 +15,7 @@
 
 with org.osgi.framework.BundleActivator_Package; use org.osgi.framework.BundleActivator_Package;
 with org.osgi.framework.BundleContext_Package; use org.osgi.framework.BundleContext_Package;
+with org.osgi.framework.BundleContext_Package_References;
 with bundle.input.automation.module.configuration.InputAutomationConfigurationModuleChangeListener_Package; use bundle.input.automation.module.configuration.InputAutomationConfigurationModuleChangeListener_Package;
 with bundle.input.automation.robot.InputAutomationRobotChangeListener_Package; use bundle.input.automation.robot.InputAutomationRobotChangeListener_Package;
 with org.allbinary.input.automation.InputAutomationJFrame_Package; use org.allbinary.input.automation.InputAutomationJFrame_Package;
@@ -23,13 +24,10 @@ with org.allbinary.input.automation.module.osgi.InputAutomationNewBundleRunnable
 with org.allbinary.input.automation.osgi.InputAutomationServiceFactory_Package; use org.allbinary.input.automation.osgi.InputAutomationServiceFactory_Package;
 with org.allbinary.input.automation.robot.osgi.InputAutomationRobotServiceConsumer_Package; use org.allbinary.input.automation.robot.osgi.InputAutomationRobotServiceConsumer_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.osgi.OSGIActivatorUtil_Package; use org.allbinary.osgi.OSGIActivatorUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
-with bundle.input.automation.InputAutomationBundleActivatorListenerInterface_Package;
-with org.allbinary.input.automation.InputAutomationJFrame_Package;
-with org.allbinary.input.automation.module.osgi.InputAutomationModuleServiceConsumer_Package;
-with org.allbinary.input.automation.module.osgi.InputAutomationNewBundleRunnable_Package;
-with org.allbinary.input.automation.osgi.InputAutomationServiceFactory_Package;
+with org.allbinary.string_Id.CommonStrings_Package_References;
 
 package body bundle.input.automation.InputAutomationBundleActivator_Package is
 

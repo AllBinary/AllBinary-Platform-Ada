@@ -14,17 +14,17 @@
 
 
 with org.allbinary.business.user.UserInterface_Package; use org.allbinary.business.user.UserInterface_Package;
+with org.allbinary.business.user.UserInterface_Package_References;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.communication.smtp.BasicEmail_Package; use org.allbinary.logic.communication.smtp.BasicEmail_Package;
 with org.allbinary.logic.communication.smtp.EmailInterface_Package; use org.allbinary.logic.communication.smtp.EmailInterface_Package;
 with org.allbinary.logic.communication.smtp.event.EmailEvent_Package; use org.allbinary.logic.communication.smtp.event.EmailEvent_Package;
+with org.allbinary.logic.communication.smtp.event.EmailEvent_Package_References;
 with org.allbinary.logic.communication.smtp.event.UserEmailEventListenerInterface_Package; use org.allbinary.logic.communication.smtp.event.UserEmailEventListenerInterface_Package;
 with org.allbinary.logic.communication.smtp.queue.EmailQueueFactory_Package; use org.allbinary.logic.communication.smtp.queue.EmailQueueFactory_Package;
 with org.allbinary.logic.communication.smtp.AbEmail_Package;
-with org.allbinary.logic.communication.smtp.BasicEmail_Package;
 with org.allbinary.logic.communication.smtp.Email_Package;
-with org.allbinary.logic.communication.smtp.EmailInterface_Package;
-with org.allbinary.logic.communication.smtp.queue.EmailQueueFactory_Package;
 with org.allbinary.logic.communication.smtp.queue.EmailQueueInterface_Package;
 
 package body org.allbinary.logic.communication.smtp.event.modules.event.user.UserEmailEventListenerModule_Package is

@@ -14,25 +14,32 @@
 
 
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
 with org.allbinary.animation.AnimationInterfaceFactoryInterface_Package; use org.allbinary.animation.AnimationInterfaceFactoryInterface_Package;
+with org.allbinary.animation.AnimationInterfaceFactoryInterface_Package_References;
 with org.allbinary.animation.ProceduralAnimationInterfaceFactoryInterface_Package; use org.allbinary.animation.ProceduralAnimationInterfaceFactoryInterface_Package;
+with org.allbinary.animation.ProceduralAnimationInterfaceFactoryInterface_Package_References;
 with org.allbinary.game.health.Health_Package; use org.allbinary.game.health.Health_Package;
 with org.allbinary.game.identification.Group_Package; use org.allbinary.game.identification.Group_Package;
+with org.allbinary.game.identification.Group_Package_References;
 with org.allbinary.game.input.form.NullRTSFormInputFactory_Package; use org.allbinary.game.input.form.NullRTSFormInputFactory_Package;
 with org.allbinary.game.layer.AdvancedRTSGameLayer_Package; use org.allbinary.game.layer.AdvancedRTSGameLayer_Package;
 with org.allbinary.game.layer.AdvancedRTSProperties_Package; use org.allbinary.game.layer.AdvancedRTSProperties_Package;
 with org.allbinary.game.layer.PathFindingLayerInterface_Package; use org.allbinary.game.layer.PathFindingLayerInterface_Package;
+with org.allbinary.game.layer.PathFindingLayerInterface_Package_References;
 with org.allbinary.game.view.TileLayerPositionIntoViewPosition_Package; use org.allbinary.game.view.TileLayerPositionIntoViewPosition_Package;
 with org.allbinary.graphics.Rectangle_Package; use org.allbinary.graphics.Rectangle_Package;
+with org.allbinary.graphics.Rectangle_Package_References;
 with org.allbinary.layer.AllBinaryLayerManager_Package; use org.allbinary.layer.AllBinaryLayerManager_Package;
+with org.allbinary.layer.AllBinaryLayerManager_Package_References;
 with org.allbinary.game.layer.RTSPlayerLayerInterface_Package; use org.allbinary.game.layer.RTSPlayerLayerInterface_Package;
+with org.allbinary.game.layer.RTSPlayerLayerInterface_Package_References;
 with org.allbinary.game.multiplayer.layer.RemoteInfo_Package; use org.allbinary.game.multiplayer.layer.RemoteInfo_Package;
+with org.allbinary.game.multiplayer.layer.RemoteInfo_Package_References;
 with org.allbinary.media.audio.AttackSound_Package; use org.allbinary.media.audio.AttackSound_Package;
 with org.allbinary.game.layer.waypoint.CollidableWaypointBehavior_Package; use org.allbinary.game.layer.waypoint.CollidableWaypointBehavior_Package;
 with org.allbinary.game.layer.waypoint.Waypoint_Package; use org.allbinary.game.layer.waypoint.Waypoint_Package;
 with org.allbinary.game.layer.waypoint.WaypointCellPositionHistory_Package; use org.allbinary.game.layer.waypoint.WaypointCellPositionHistory_Package;
-with org.allbinary.game.layer.AdvancedRTSGameLayer_Package;
-with org.allbinary.game.layer.AdvancedRTSProperties_Package;
 with org.allbinary.game.layer.building.event.BuildingEventListenerInterface_Package;
 with org.allbinary.game.layer.waypoint.CollidableWaypointBehavior_Package;
 with org.allbinary.game.layer.RTSLayerEvent_Package;
@@ -173,7 +180,7 @@ package body org.allbinary.game.layer.waypoint.WaypointLayer_Package is
       graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
         if WaypointLayer'Class (This).isVisible then
-            AdvancedRTSGameLayer (This).paint (graphics);
+            AdvancedRTSGameLayer_Package.AdvancedRTSGameLayer (This).paint (graphics);
         end if;
    end paint;
 
@@ -206,7 +213,7 @@ package body org.allbinary.game.layer.waypoint.WaypointLayer_Package is
    --  throws Exception
    procedure setDestroyed (This : in out WaypointLayer; destroyed : Boolean) is
    begin
-        AdvancedRTSGameLayer (This).setDestroyed (destroyed);
+        AdvancedRTSGameLayer_Package.AdvancedRTSGameLayer (This).setDestroyed (destroyed);
         if WaypointLayer'Class (This).isDestroyed then
             WaypointCellPositionHistory_Package.getInstance.removeLayer (WaypointLayer_Access'(This'Unchecked_Access));
         end if;

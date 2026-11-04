@@ -14,9 +14,10 @@
 
 
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.graphics.color.BasicColor_Package_References;
 with org.allbinary.game.paint.ColorFillBasePaintable_Package;
-with org.allbinary.game.paint.ColorFillPaintable_Package;
 
 package body org.allbinary.game.paint.OverScanColorFillPaintable_Package is
 

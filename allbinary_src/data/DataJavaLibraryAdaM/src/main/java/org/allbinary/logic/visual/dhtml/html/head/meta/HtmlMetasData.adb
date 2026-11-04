@@ -38,7 +38,7 @@ package body org.allbinary.logic.visual.dhtml.html.head.meta.HtmlMetasData_Packa
 
    function getInstance return HtmlMetasData_Access is
    begin
-        return HtmlMetasData_Package.instance;
+        return HtmlMetasData_Access (HtmlMetasData_Package.instance);
    end getInstance;
 
 begin

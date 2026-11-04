@@ -14,14 +14,90 @@
 
 
 with java.nio.ByteBuffer_Package; use java.nio.ByteBuffer_Package;
+with java.nio.FloatBuffer_Package; use java.nio.FloatBuffer_Package;
+with javax.microedition.khronos.opengles.GL_Package; use javax.microedition.khronos.opengles.GL_Package;
+with javax.microedition.khronos.opengles.GL_Package_References;
+with javax.microedition.khronos.opengles.GL10_Package; use javax.microedition.khronos.opengles.GL10_Package;
+with javax.microedition.khronos.opengles.GL10_Package_References;
+with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
+with javax.microedition.lcdui.Image_Package_References;
+with org.allbinary.graphics.displayable.DisplayInfoSingleton_Package; use org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
 with org.allbinary.graphics.opengles.OpenGLLogUtil_Package; use org.allbinary.graphics.opengles.OpenGLLogUtil_Package;
+with org.allbinary.opengles.GLUtil_Package; use org.allbinary.opengles.GLUtil_Package;
+with org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package; use org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package;
+with org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package_References;
+with org.allbinary.platform.opengles.PlatformTextureBaseFactory_Package; use org.allbinary.platform.opengles.PlatformTextureBaseFactory_Package;
+with org.allbinary.platform.opengles.PlatformTextureBaseFactory_Package_References;
+with org.allbinary.image.opengles.OpenGLESImageDraw_Package; use org.allbinary.image.opengles.OpenGLESImageDraw_Package;
+with org.allbinary.image.opengles.OpenGLESImageDraw_Package_References;
 with org.allbinary.image.opengles.OpenGLESImageProperties_Package; use org.allbinary.image.opengles.OpenGLESImageProperties_Package;
 with org.allbinary.image.opengles.OpenGLESImageProcessor_Package; use org.allbinary.image.opengles.OpenGLESImageProcessor_Package;
+with org.allbinary.image.opengles.OpenGLESImageDraw_Package;
 
 package body org.allbinary.image.opengles.OpenGLESGL10Image_Package is
 
    package ByteBuffer_Package renames Standard.java.nio.ByteBuffer_Package;
    package OpenGLLogUtil_Package renames Standard.org.allbinary.graphics.opengles.OpenGLLogUtil_Package;
+   subtype GL_Access is javax.microedition.khronos.opengles.GL_Package_References.GL_Access;
+   function "=" (Left, Right : GL_Access) return Boolean renames javax.microedition.khronos.opengles.GL_Package_References."=";
+   subtype GL_Access_Array is javax.microedition.khronos.opengles.GL_Package_References.GL_Access_Array;
+   function "=" (Left, Right : GL_Access_Array) return Boolean renames javax.microedition.khronos.opengles.GL_Package_References."=";
+   subtype GL_Access_Array_Access is javax.microedition.khronos.opengles.GL_Package_References.GL_Access_Array_Access;
+   function "=" (Left, Right : GL_Access_Array_Access) return Boolean renames javax.microedition.khronos.opengles.GL_Package_References."=";
+   subtype GL_Access_Array_Access_Array is javax.microedition.khronos.opengles.GL_Package_References.GL_Access_Array_Access_Array;
+   function "=" (Left, Right : GL_Access_Array_Access_Array) return Boolean renames javax.microedition.khronos.opengles.GL_Package_References."=";
+   subtype GL_Access_Array_Access_Array_Access is javax.microedition.khronos.opengles.GL_Package_References.GL_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : GL_Access_Array_Access_Array_Access) return Boolean renames javax.microedition.khronos.opengles.GL_Package_References."=";
+   subtype GL10_Access is javax.microedition.khronos.opengles.GL10_Package_References.GL10_Access;
+   function "=" (Left, Right : GL10_Access) return Boolean renames javax.microedition.khronos.opengles.GL10_Package_References."=";
+   subtype GL10_Access_Array is javax.microedition.khronos.opengles.GL10_Package_References.GL10_Access_Array;
+   function "=" (Left, Right : GL10_Access_Array) return Boolean renames javax.microedition.khronos.opengles.GL10_Package_References."=";
+   subtype GL10_Access_Array_Access is javax.microedition.khronos.opengles.GL10_Package_References.GL10_Access_Array_Access;
+   function "=" (Left, Right : GL10_Access_Array_Access) return Boolean renames javax.microedition.khronos.opengles.GL10_Package_References."=";
+   subtype GL10_Access_Array_Access_Array is javax.microedition.khronos.opengles.GL10_Package_References.GL10_Access_Array_Access_Array;
+   function "=" (Left, Right : GL10_Access_Array_Access_Array) return Boolean renames javax.microedition.khronos.opengles.GL10_Package_References."=";
+   subtype GL10_Access_Array_Access_Array_Access is javax.microedition.khronos.opengles.GL10_Package_References.GL10_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : GL10_Access_Array_Access_Array_Access) return Boolean renames javax.microedition.khronos.opengles.GL10_Package_References."=";
+   subtype Image_Access is javax.microedition.lcdui.Image_Package_References.Image_Access;
+   function "=" (Left, Right : Image_Access) return Boolean renames javax.microedition.lcdui.Image_Package_References."=";
+   subtype Image_Access_Array is javax.microedition.lcdui.Image_Package_References.Image_Access_Array;
+   function "=" (Left, Right : Image_Access_Array) return Boolean renames javax.microedition.lcdui.Image_Package_References."=";
+   subtype Image_Access_Array_Access is javax.microedition.lcdui.Image_Package_References.Image_Access_Array_Access;
+   function "=" (Left, Right : Image_Access_Array_Access) return Boolean renames javax.microedition.lcdui.Image_Package_References."=";
+   subtype Image_Access_Array_Access_Array is javax.microedition.lcdui.Image_Package_References.Image_Access_Array_Access_Array;
+   function "=" (Left, Right : Image_Access_Array_Access_Array) return Boolean renames javax.microedition.lcdui.Image_Package_References."=";
+   subtype Image_Access_Array_Access_Array_Access is javax.microedition.lcdui.Image_Package_References.Image_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Image_Access_Array_Access_Array_Access) return Boolean renames javax.microedition.lcdui.Image_Package_References."=";
+   subtype PlatformBitmapBaseFactory_Access is org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package_References.PlatformBitmapBaseFactory_Access;
+   function "=" (Left, Right : PlatformBitmapBaseFactory_Access) return Boolean renames org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package_References."=";
+   subtype PlatformBitmapBaseFactory_Access_Array is org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package_References.PlatformBitmapBaseFactory_Access_Array;
+   function "=" (Left, Right : PlatformBitmapBaseFactory_Access_Array) return Boolean renames org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package_References."=";
+   subtype PlatformBitmapBaseFactory_Access_Array_Access is org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package_References.PlatformBitmapBaseFactory_Access_Array_Access;
+   function "=" (Left, Right : PlatformBitmapBaseFactory_Access_Array_Access) return Boolean renames org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package_References."=";
+   subtype PlatformBitmapBaseFactory_Access_Array_Access_Array is org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package_References.PlatformBitmapBaseFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : PlatformBitmapBaseFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package_References."=";
+   subtype PlatformBitmapBaseFactory_Access_Array_Access_Array_Access is org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package_References.PlatformBitmapBaseFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : PlatformBitmapBaseFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package_References."=";
+   subtype PlatformTextureBaseFactory_Access is org.allbinary.platform.opengles.PlatformTextureBaseFactory_Package_References.PlatformTextureBaseFactory_Access;
+   function "=" (Left, Right : PlatformTextureBaseFactory_Access) return Boolean renames org.allbinary.platform.opengles.PlatformTextureBaseFactory_Package_References."=";
+   subtype PlatformTextureBaseFactory_Access_Array is org.allbinary.platform.opengles.PlatformTextureBaseFactory_Package_References.PlatformTextureBaseFactory_Access_Array;
+   function "=" (Left, Right : PlatformTextureBaseFactory_Access_Array) return Boolean renames org.allbinary.platform.opengles.PlatformTextureBaseFactory_Package_References."=";
+   subtype PlatformTextureBaseFactory_Access_Array_Access is org.allbinary.platform.opengles.PlatformTextureBaseFactory_Package_References.PlatformTextureBaseFactory_Access_Array_Access;
+   function "=" (Left, Right : PlatformTextureBaseFactory_Access_Array_Access) return Boolean renames org.allbinary.platform.opengles.PlatformTextureBaseFactory_Package_References."=";
+   subtype PlatformTextureBaseFactory_Access_Array_Access_Array is org.allbinary.platform.opengles.PlatformTextureBaseFactory_Package_References.PlatformTextureBaseFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : PlatformTextureBaseFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.platform.opengles.PlatformTextureBaseFactory_Package_References."=";
+   subtype PlatformTextureBaseFactory_Access_Array_Access_Array_Access is org.allbinary.platform.opengles.PlatformTextureBaseFactory_Package_References.PlatformTextureBaseFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : PlatformTextureBaseFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.platform.opengles.PlatformTextureBaseFactory_Package_References."=";
+   subtype OpenGLESImageDraw_Access is org.allbinary.image.opengles.OpenGLESImageDraw_Package_References.OpenGLESImageDraw_Access;
+   function "=" (Left, Right : OpenGLESImageDraw_Access) return Boolean renames org.allbinary.image.opengles.OpenGLESImageDraw_Package_References."=";
+   subtype OpenGLESImageDraw_Access_Array is org.allbinary.image.opengles.OpenGLESImageDraw_Package_References.OpenGLESImageDraw_Access_Array;
+   function "=" (Left, Right : OpenGLESImageDraw_Access_Array) return Boolean renames org.allbinary.image.opengles.OpenGLESImageDraw_Package_References."=";
+   subtype OpenGLESImageDraw_Access_Array_Access is org.allbinary.image.opengles.OpenGLESImageDraw_Package_References.OpenGLESImageDraw_Access_Array_Access;
+   function "=" (Left, Right : OpenGLESImageDraw_Access_Array_Access) return Boolean renames org.allbinary.image.opengles.OpenGLESImageDraw_Package_References."=";
+   subtype OpenGLESImageDraw_Access_Array_Access_Array is org.allbinary.image.opengles.OpenGLESImageDraw_Package_References.OpenGLESImageDraw_Access_Array_Access_Array;
+   function "=" (Left, Right : OpenGLESImageDraw_Access_Array_Access_Array) return Boolean renames org.allbinary.image.opengles.OpenGLESImageDraw_Package_References."=";
+   subtype OpenGLESImageDraw_Access_Array_Access_Array_Access is org.allbinary.image.opengles.OpenGLESImageDraw_Package_References.OpenGLESImageDraw_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : OpenGLESImageDraw_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.image.opengles.OpenGLESImageDraw_Package_References."=";
    procedure Initialize_Fields (This : in out OpenGLESGL10Image'Class) is
    begin
       null;
@@ -46,15 +122,15 @@ package body org.allbinary.image.opengles.OpenGLESGL10Image_Package is
 --     begin
 --              imageWidth := OpenGLESGL10Image'Class (This).getWidth;
 --              imageHeight := OpenGLESGL10Image'Class (This).getHeight;
---              This.regionRectangleFloatArray (7) := viewHeight;
+--              This.regionRectangleFloatArray (7) := Float (viewHeight);
 --              This.regionRectangleFloatArray (1) := (This.regionRectangleFloatArray (7)) - (height);
 --              This.regionRectangleFloatArray (3) := width;
 --              This.regionRectangleFloatArray (4) := This.regionRectangleFloatArray (1);
 --              This.regionRectangleFloatArray (9) := This.regionRectangleFloatArray (3);
 --              This.regionRectangleFloatArray (10) := This.regionRectangleFloatArray (7);
 --              This.regionTextureRectangleFloatArray (0) := (x_src) / (imageWidth);
---              This.regionTextureRectangleFloatArray (1) := ((((y_src) + (height)))) / (imageHeight);
---              This.regionTextureRectangleFloatArray (2) := ((((x_src) + (width)))) / (imageWidth);
+--              This.regionTextureRectangleFloatArray (1) := (((y_src) + (height))) / (imageHeight);
+--              This.regionTextureRectangleFloatArray (2) := (((x_src) + (width))) / (imageWidth);
 --              This.regionTextureRectangleFloatArray (3) := This.regionTextureRectangleFloatArray (1);
 --              This.regionTextureRectangleFloatArray (4) := This.regionTextureRectangleFloatArray (0);
 --              This.regionTextureRectangleFloatArray (5) := (y_src) / (imageHeight);
@@ -62,10 +138,10 @@ package body org.allbinary.image.opengles.OpenGLESGL10Image_Package is
 --              This.regionTextureRectangleFloatArray (7) := This.regionTextureRectangleFloatArray (5);
 --              u_center := (((This.regionTextureRectangleFloatArray (0)) + (This.regionTextureRectangleFloatArray (2)))) / (2.0);
 --              v_center := (((This.regionTextureRectangleFloatArray (5)) + (This.regionTextureRectangleFloatArray (1)))) / (2.0);
---              This.glUtil.rotateUVs (This.regionTextureRectangleFloatArray, -(This.openGLESImageProperties.angle), u_center, v_center);
+--              This.glUtil.rotateUVs (This.regionTextureRectangleFloatArray, Float (-(This.openGLESImageProperties.angle)), u_center, v_center);
 --              gl.glPushMatrix;
 --              imageProcessor := This.imageProcessor;
---              This.openGLESImageTranslate.translate (gl, OpenGLESGL10Image_Access'(This'Unchecked_Access), x, -(y));
+--              This.openGLESImageTranslate.translate (gl, OpenGLESGL10Image_Access'(This'Unchecked_Access), Float (x), Float (-(y)));
 --              imageProcessor.scale (gl, This.openGLESImageProperties.scaleX, This.openGLESImageProperties.scaleY);
 --              imageProcessor.colorMask (gl, This.openGLESImageProperties.redf, This.openGLESImageProperties.greenf, This.openGLESImageProperties.bluef, This.openGLESImageProperties.alphaf);
 --              This.openGLESImageTranslate.translate2 (gl, OpenGLESGL10Image_Access'(This'Unchecked_Access));
@@ -94,22 +170,22 @@ package body org.allbinary.image.opengles.OpenGLESGL10Image_Package is
 --     begin
 --              width := OpenGLESGL10Image'Class (This).getWidth;
 --              height := OpenGLESGL10Image'Class (This).getHeight;
---              This.regionRectangleFloatArray (7) := This.displayInfoSingleton.getLastHeight;
+--              This.regionRectangleFloatArray (7) := Float (This.displayInfoSingleton.getLastHeight);
 --              This.regionRectangleFloatArray (1) := (This.regionRectangleFloatArray (7)) - (height);
---              This.regionRectangleFloatArray (3) := width;
+--              This.regionRectangleFloatArray (3) := Float (width);
 --              This.regionRectangleFloatArray (4) := This.regionRectangleFloatArray (1);
 --              This.regionRectangleFloatArray (9) := This.regionRectangleFloatArray (3);
 --              This.regionRectangleFloatArray (10) := This.regionRectangleFloatArray (7);
---              This.regionTextureRectangleFloatArray (0) := 0;
---              This.regionTextureRectangleFloatArray (1) := 1;
---              This.regionTextureRectangleFloatArray (2) := 1;
---              This.regionTextureRectangleFloatArray (3) := 1;
---              This.regionTextureRectangleFloatArray (4) := 0;
---              This.regionTextureRectangleFloatArray (5) := 0;
---              This.regionTextureRectangleFloatArray (6) := 1;
---              This.regionTextureRectangleFloatArray (7) := 0;
+--              This.regionTextureRectangleFloatArray (0) := 0.0;
+--              This.regionTextureRectangleFloatArray (1) := 1.0;
+--              This.regionTextureRectangleFloatArray (2) := 1.0;
+--              This.regionTextureRectangleFloatArray (3) := 1.0;
+--              This.regionTextureRectangleFloatArray (4) := 0.0;
+--              This.regionTextureRectangleFloatArray (5) := 0.0;
+--              This.regionTextureRectangleFloatArray (6) := 1.0;
+--              This.regionTextureRectangleFloatArray (7) := 0.0;
 --              gl.glPushMatrix;
---              This.openGLESImageTranslate.translate (gl, OpenGLESGL10Image_Access'(This'Unchecked_Access), x, -(y));
+--              This.openGLESImageTranslate.translate (gl, OpenGLESGL10Image_Access'(This'Unchecked_Access), Float (x), Float (-(y)));
 --              imageProcessor := This.imageProcessor;
 --              imageProcessor.scale (gl, This.openGLESImageProperties.scaleX, This.openGLESImageProperties.scaleY);
 --              imageProcessor.colorMask (gl, This.openGLESImageProperties.redf, This.openGLESImageProperties.greenf, This.openGLESImageProperties.bluef, This.openGLESImageProperties.alphaf);
@@ -121,7 +197,7 @@ package body org.allbinary.image.opengles.OpenGLESGL10Image_Package is
 --              gl.glEnable (GL10_Package.GL_TEXTURE_2D);
 --              gl.glBindTexture (GL10_Package.GL_TEXTURE_2D, This.openGLESImageProperties.textureID);
 --              gl.glEnableClientState (GL10_Package.GL_TEXTURE_COORD_ARRAY);
---              This.glUtil.rotateUVs (This.regionTextureRectangleFloatArray, -(This.openGLESImageProperties.angle), 0.5, 0.5);
+--              This.glUtil.rotateUVs (This.regionTextureRectangleFloatArray, Float (-(This.openGLESImageProperties.angle)), 0.5, 0.5);
 --              This.glUtil.position (This.textureVertexFloatBuffer, 0);
 --              This.textureVertexFloatBuffer.put (This.regionTextureRectangleFloatArray);
 --              This.glUtil.position (This.textureVertexFloatBuffer, 0);
@@ -156,14 +232,14 @@ package body org.allbinary.image.opengles.OpenGLESGL10Image_Package is
 
    procedure initVertices (This : in out OpenGLESGL10Image) is
    begin
-        This.textureVertexFloatBuffer.put (0);
-        This.textureVertexFloatBuffer.put (1);
-        This.textureVertexFloatBuffer.put (1);
-        This.textureVertexFloatBuffer.put (1);
-        This.textureVertexFloatBuffer.put (0);
-        This.textureVertexFloatBuffer.put (0);
-        This.textureVertexFloatBuffer.put (1);
-        This.textureVertexFloatBuffer.put (0);
+        This.textureVertexFloatBuffer.put (0.0);
+        This.textureVertexFloatBuffer.put (1.0);
+        This.textureVertexFloatBuffer.put (1.0);
+        This.textureVertexFloatBuffer.put (1.0);
+        This.textureVertexFloatBuffer.put (0.0);
+        This.textureVertexFloatBuffer.put (0.0);
+        This.textureVertexFloatBuffer.put (1.0);
+        This.textureVertexFloatBuffer.put (0.0);
         This.textureVertexFloatBuffer.rewind;
    end initVertices;
 
@@ -172,7 +248,7 @@ package body org.allbinary.image.opengles.OpenGLESGL10Image_Package is
       gl10 : GL10_Access;
    begin
         gl10 := GL10_Access (gl);
-        if OpenGLESImage (This).initTexture (gl10) then
+        if OpenGLESImage_Package.OpenGLESImage (This).initTexture (gl10) then
             This.textureFactory.load (gl10, GL10_Package.GL_TEXTURE_2D, 0, OpenGLESGL10Image_Access'(This'Unchecked_Access), 0, True);
             gl10.glDisable (GL10_Package.GL_TEXTURE_2D);
             This.openGLESImageDraw := This.realOpenGLESImageDraw;

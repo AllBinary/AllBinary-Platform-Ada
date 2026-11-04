@@ -46,7 +46,7 @@
         <module>../J2MEColorJavaLibraryAdaM</module>
         <module>../EventJ2MELibraryAdaM</module>
 
-        <!--<module>../../allbinary_src/LogNoPlatformJavaLibraryAdaM</module>-->
+        <module>../../allbinary_src/LogNoPlatformJavaLibraryAdaM</module>
         <module>../../allbinary_src/LogJ2MEJavaLibraryAdaM</module>
         <module>../../allbinary_src/LogJ2SEJavaLibraryAdaM</module>
         <module>../../allbinary_src/LogAndroidJavaLibraryAdaM</module>

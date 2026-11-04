@@ -15,7 +15,9 @@
 
 with org.allbinary.media.graphics.geography.map.racetrack.CustomMapGenerator_Package; use org.allbinary.media.graphics.geography.map.racetrack.CustomMapGenerator_Package;
 with org.allbinary.media.graphics.geography.map.racetrack.CustomMapGeneratorBase_Package; use org.allbinary.media.graphics.geography.map.racetrack.CustomMapGeneratorBase_Package;
+with org.allbinary.media.graphics.geography.map.racetrack.CustomMapGeneratorBase_Package_References;
 with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMap_Package; use org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMap_Package;
+with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMap_Package_References;
 with org.allbinary.media.graphics.geography.map.racetrack.CustomMapGenerator_Package;
 
 package body org.allbinary.media.graphics.geography.map.racetrack.CustomMapGeneratorFactory_Package is

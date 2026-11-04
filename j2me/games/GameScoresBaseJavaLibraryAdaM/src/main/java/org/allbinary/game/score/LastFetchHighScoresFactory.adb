@@ -16,6 +16,7 @@
 with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
 with org.allbinary.game.score.NoHighScoresFactory_Package; use org.allbinary.game.score.NoHighScoresFactory_Package;
 with org.allbinary.game.score.HighScores_Package; use org.allbinary.game.score.HighScores_Package;
+with org.allbinary.game.score.HighScores_Package_References;
 with org.allbinary.game.score.HighScoresBase_Package;
 with org.allbinary.game.score.HighScoresFactoryInterface_Package;
 with org.allbinary.game.score.HighScoresHelperBaseInterface_Package;

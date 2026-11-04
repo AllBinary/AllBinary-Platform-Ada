@@ -94,7 +94,7 @@ package org.allbinary.game.displayable.canvas.NullGameCanvas_Package is
    end record;
    instance : Java_Object_Access;
    NO_GAME : Unbounded_String;
-   TYPE_Id : Integer;
+   TYPE_Id : constant Integer := 1;
 
    procedure Initialize (This : in out NullGameCanvas'Class; gameLayerManager_Param : access AllBinaryGameLayerManager_Package.AllBinaryGameLayerManager'Class);
    function Create (gameLayerManager_Param : access AllBinaryGameLayerManager_Package.AllBinaryGameLayerManager'Class) return NullGameCanvas_Access;

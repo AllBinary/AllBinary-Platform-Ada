@@ -14,6 +14,7 @@
 
 
 with android.app.Activity_Package; use android.app.Activity_Package;
+with android.app.Activity_Package_References;
 with android.content.Context_Package; use android.content.Context_Package;
 with android.os.IBinder_Package; use android.os.IBinder_Package;
 with android.view.View_Package; use android.view.View_Package;
@@ -21,6 +22,7 @@ with android.view.inputmethod.InputMethodManager_Package; use android.view.input
 with org.allbinary.android.activity.ViewCompositeInterface_Package; use org.allbinary.android.activity.ViewCompositeInterface_Package;
 with org.allbinary.logic.communication.log.ForcedLogUtil_Package; use org.allbinary.logic.communication.log.ForcedLogUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 
 package body org.allbinary.android.input.api3.HideVirtualKeyboardRunnable_Package is

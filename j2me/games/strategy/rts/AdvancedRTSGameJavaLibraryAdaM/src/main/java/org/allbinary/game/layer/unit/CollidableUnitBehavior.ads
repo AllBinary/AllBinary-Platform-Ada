@@ -39,6 +39,8 @@ limited with org.allbinary.game.layer.geographic.map.LayerPartialCellPositionsUt
 with org.allbinary.game.layer.geographic.map.LayerPartialCellPositionsUtil_Package_References;
 limited with org.allbinary.game.layer.unit.UnitLayer_Package;
 with org.allbinary.game.layer.unit.UnitLayer_Package_References;
+limited with org.allbinary.game.layer.unit.SimpleSteeringVisitor_Package;
+with org.allbinary.game.layer.unit.SimpleSteeringVisitor_Package_References;
 
 package org.allbinary.game.layer.unit.CollidableUnitBehavior_Package is
 
@@ -87,6 +89,16 @@ package org.allbinary.game.layer.unit.CollidableUnitBehavior_Package is
    use type UnitLayer_Access_Array_Access_Array;
    subtype UnitLayer_Access_Array_Access_Array_Access is org.allbinary.game.layer.unit.UnitLayer_Package_References.UnitLayer_Access_Array_Access_Array_Access;
    use type UnitLayer_Access_Array_Access_Array_Access;
+   subtype SimpleSteeringVisitor_Access is org.allbinary.game.layer.unit.SimpleSteeringVisitor_Package_References.SimpleSteeringVisitor_Access;
+   use type SimpleSteeringVisitor_Access;
+   subtype SimpleSteeringVisitor_Access_Array is org.allbinary.game.layer.unit.SimpleSteeringVisitor_Package_References.SimpleSteeringVisitor_Access_Array;
+   use type SimpleSteeringVisitor_Access_Array;
+   subtype SimpleSteeringVisitor_Access_Array_Access is org.allbinary.game.layer.unit.SimpleSteeringVisitor_Package_References.SimpleSteeringVisitor_Access_Array_Access;
+   use type SimpleSteeringVisitor_Access_Array_Access;
+   subtype SimpleSteeringVisitor_Access_Array_Access_Array is org.allbinary.game.layer.unit.SimpleSteeringVisitor_Package_References.SimpleSteeringVisitor_Access_Array_Access_Array;
+   use type SimpleSteeringVisitor_Access_Array_Access_Array;
+   subtype SimpleSteeringVisitor_Access_Array_Access_Array_Access is org.allbinary.game.layer.unit.SimpleSteeringVisitor_Package_References.SimpleSteeringVisitor_Access_Array_Access_Array_Access;
+   use type SimpleSteeringVisitor_Access_Array_Access_Array_Access;
    end Reference_Types;
    use Reference_Types;
 
@@ -135,11 +147,11 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-limited with org.allbinary.game.layer.SteeringVisitor_Package;
-with org.allbinary.game.layer.SteeringVisitor_Package_References;
+with org.allbinary.game.layer.SteeringVisitor_Package; use org.allbinary.game.layer.SteeringVisitor_Package;
 limited with org.allbinary.game.layer.CollidableCompositeLayer_Package;
 with org.allbinary.game.layer.CollidableCompositeLayer_Package_References;
-with org.allbinary.game.layer.CollidableRTSBehavior_Package; use org.allbinary.game.layer.CollidableRTSBehavior_Package;
+limited with org.allbinary.game.layer.CollidableRTSBehavior_Package;
+with org.allbinary.game.layer.CollidableRTSBehavior_Package_References;
 limited with org.allbinary.game.layer.geographic.map.LayerPartialCellPositionsUtil_Package;
 with org.allbinary.game.layer.geographic.map.LayerPartialCellPositionsUtil_Package_References;
 limited with org.allbinary.game.layer.unit.UnitLayer_Package;
@@ -152,16 +164,6 @@ package org.allbinary.game.layer.unit.SimpleSteeringVisitor_Package is
    package CollidableRTSBehavior_Package renames Standard.org.allbinary.game.layer.CollidableRTSBehavior_Package;
    package LayerPartialCellPositionsUtil_Package renames Standard.org.allbinary.game.layer.geographic.map.LayerPartialCellPositionsUtil_Package;
    package Reference_Types is
-   subtype SteeringVisitor_Access is org.allbinary.game.layer.SteeringVisitor_Package_References.SteeringVisitor_Access;
-   use type SteeringVisitor_Access;
-   subtype SteeringVisitor_Access_Array is org.allbinary.game.layer.SteeringVisitor_Package_References.SteeringVisitor_Access_Array;
-   use type SteeringVisitor_Access_Array;
-   subtype SteeringVisitor_Access_Array_Access is org.allbinary.game.layer.SteeringVisitor_Package_References.SteeringVisitor_Access_Array_Access;
-   use type SteeringVisitor_Access_Array_Access;
-   subtype SteeringVisitor_Access_Array_Access_Array is org.allbinary.game.layer.SteeringVisitor_Package_References.SteeringVisitor_Access_Array_Access_Array;
-   use type SteeringVisitor_Access_Array_Access_Array;
-   subtype SteeringVisitor_Access_Array_Access_Array_Access is org.allbinary.game.layer.SteeringVisitor_Package_References.SteeringVisitor_Access_Array_Access_Array_Access;
-   use type SteeringVisitor_Access_Array_Access_Array_Access;
    subtype CollidableCompositeLayer_Access is org.allbinary.game.layer.CollidableCompositeLayer_Package_References.CollidableCompositeLayer_Access;
    use type CollidableCompositeLayer_Access;
    subtype CollidableCompositeLayer_Access_Array is org.allbinary.game.layer.CollidableCompositeLayer_Package_References.CollidableCompositeLayer_Access_Array;
@@ -172,6 +174,16 @@ package org.allbinary.game.layer.unit.SimpleSteeringVisitor_Package is
    use type CollidableCompositeLayer_Access_Array_Access_Array;
    subtype CollidableCompositeLayer_Access_Array_Access_Array_Access is org.allbinary.game.layer.CollidableCompositeLayer_Package_References.CollidableCompositeLayer_Access_Array_Access_Array_Access;
    use type CollidableCompositeLayer_Access_Array_Access_Array_Access;
+   subtype CollidableRTSBehavior_Access is org.allbinary.game.layer.CollidableRTSBehavior_Package_References.CollidableRTSBehavior_Access;
+   use type CollidableRTSBehavior_Access;
+   subtype CollidableRTSBehavior_Access_Array is org.allbinary.game.layer.CollidableRTSBehavior_Package_References.CollidableRTSBehavior_Access_Array;
+   use type CollidableRTSBehavior_Access_Array;
+   subtype CollidableRTSBehavior_Access_Array_Access is org.allbinary.game.layer.CollidableRTSBehavior_Package_References.CollidableRTSBehavior_Access_Array_Access;
+   use type CollidableRTSBehavior_Access_Array_Access;
+   subtype CollidableRTSBehavior_Access_Array_Access_Array is org.allbinary.game.layer.CollidableRTSBehavior_Package_References.CollidableRTSBehavior_Access_Array_Access_Array;
+   use type CollidableRTSBehavior_Access_Array_Access_Array;
+   subtype CollidableRTSBehavior_Access_Array_Access_Array_Access is org.allbinary.game.layer.CollidableRTSBehavior_Package_References.CollidableRTSBehavior_Access_Array_Access_Array_Access;
+   use type CollidableRTSBehavior_Access_Array_Access_Array_Access;
    subtype LayerPartialCellPositionsUtil_Access is org.allbinary.game.layer.geographic.map.LayerPartialCellPositionsUtil_Package_References.LayerPartialCellPositionsUtil_Access;
    use type LayerPartialCellPositionsUtil_Access;
    subtype LayerPartialCellPositionsUtil_Access_Array is org.allbinary.game.layer.geographic.map.LayerPartialCellPositionsUtil_Package_References.LayerPartialCellPositionsUtil_Access_Array;

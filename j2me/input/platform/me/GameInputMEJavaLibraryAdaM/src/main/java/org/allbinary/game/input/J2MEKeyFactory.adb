@@ -14,9 +14,11 @@
 
 
 with org.allbinary.game.input.GameKeyFactory_Package; use org.allbinary.game.input.GameKeyFactory_Package;
+with org.allbinary.game.input.GameKeyFactory_Package_References;
 with org.allbinary.game.input.GameKey_Package; use org.allbinary.game.input.GameKey_Package;
 with org.allbinary.game.input.InputFactory_Package; use org.allbinary.game.input.InputFactory_Package;
 with org.allbinary.game.input.Input_Package; use org.allbinary.game.input.Input_Package;
+with org.allbinary.game.input.Input_Package_References;
 
 package body org.allbinary.game.input.J2MEKeyFactory_Package is
 

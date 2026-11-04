@@ -29,7 +29,7 @@ package body org.allbinary.graphics.opengles.OpenGLFeatureUtil_Package is
 
    function getInstance return OpenGLFeatureUtil_Access is
    begin
-        return OpenGLFeatureUtil_Package.instance;
+        return OpenGLFeatureUtil_Access (OpenGLFeatureUtil_Package.instance);
    end getInstance;
 
    procedure Initialize (This : in out OpenGLFeatureUtil'Class) is

@@ -14,20 +14,29 @@
 
 
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
 with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
+with javax.microedition.lcdui.Image_Package_References;
 with org.allbinary.animation.AnimationBehavior_Package; use org.allbinary.animation.AnimationBehavior_Package;
+with org.allbinary.animation.AnimationBehavior_Package_References;
 with org.allbinary.math.AngleInfo_Package; use org.allbinary.math.AngleInfo_Package;
+with org.allbinary.math.AngleInfo_Package_References;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.graphics.color.BasicColor_Package_References;
 with org.allbinary.media.image.ImageCopyUtil_Package; use org.allbinary.media.image.ImageCopyUtil_Package;
 with org.allbinary.media.image.ImageModifierUtil_Package; use org.allbinary.media.image.ImageModifierUtil_Package;
+with org.allbinary.media.image.ImageModifierUtil_Package_References;
 with org.allbinary.media.image.ImageRotationUtil_Package; use org.allbinary.media.image.ImageRotationUtil_Package;
+with org.allbinary.media.image.ImageRotationUtil_Package_References;
 with org.microemu.device.playn.PlaynMutableImage_Package; use org.microemu.device.playn.PlaynMutableImage_Package;
 with playn.core.Canvas_Package; use playn.core.Canvas_Package;
+with playn.core.Canvas_Package_References;
 with playn.core.ImageImpl_Package; use playn.core.ImageImpl_Package;
 with playn.core.PlayN_Package; use playn.core.PlayN_Package;
 with playn.html.HtmlGraphics_Package; use playn.html.HtmlGraphics_Package;
 with playn.html.HtmlImage_Package; use playn.html.HtmlImage_Package;
 with org.allbinary.animation.image.AlphaBaseProcessor_Package; use org.allbinary.animation.image.AlphaBaseProcessor_Package;
+with org.allbinary.animation.image.AlphaBaseProcessor_Package_References;
 with org.allbinary.animation.image.AlphaProcessor_Package; use org.allbinary.animation.image.AlphaProcessor_Package;
 with org.allbinary.animation.image.AlphaBaseProcessor_Package;
 with org.allbinary.animation.image.AlphaProcessor_Package;
@@ -192,7 +201,7 @@ package body org.allbinary.animation.image.AllBinaryHTMLImageRotationAnimation_P
         if ((AllBinaryHTMLImageRotationAnimation'Class (This).getBasicColorP) = (null)) or else ((AllBinaryHTMLImageRotationAnimation'Class (This).getBasicColorP.intValue) /= (basicColor.intValue)) then
             changed := True;
         end if;
-        ImageBaseRotationAnimation (This).setBasicColorP (basicColor);
+        ImageBaseRotationAnimation_Package.ImageBaseRotationAnimation (This).setBasicColorP (basicColor);
         if changed then
             AllBinaryHTMLImageRotationAnimation'Class (This).updateImage;
         end if;
@@ -205,7 +214,7 @@ package body org.allbinary.animation.image.AllBinaryHTMLImageRotationAnimation_P
         if (This.alphaP) /= (alpha) then
             changed := True;
         end if;
-        ImageBaseRotationAnimation (This).setAlpha (alpha);
+        ImageBaseRotationAnimation_Package.ImageBaseRotationAnimation (This).setAlpha (alpha);
         if changed then
             This.alphaProcessor := AlphaProcessor_Package.getInstance;
             AllBinaryHTMLImageRotationAnimation'Class (This).updateImage;
@@ -214,13 +223,13 @@ package body org.allbinary.animation.image.AllBinaryHTMLImageRotationAnimation_P
 
    procedure nextRotation (This : in out AllBinaryHTMLImageRotationAnimation) is
    begin
-        ImageBaseRotationAnimation (This).nextRotation;
+        ImageBaseRotationAnimation_Package.ImageBaseRotationAnimation (This).nextRotation;
         AllBinaryHTMLImageRotationAnimation'Class (This).updateImage;
    end nextRotation;
 
    procedure previousRotation (This : in out AllBinaryHTMLImageRotationAnimation) is
    begin
-        ImageBaseRotationAnimation (This).previousRotation;
+        ImageBaseRotationAnimation_Package.ImageBaseRotationAnimation (This).previousRotation;
         AllBinaryHTMLImageRotationAnimation'Class (This).updateImage;
    end previousRotation;
 
@@ -238,7 +247,7 @@ package body org.allbinary.animation.image.AllBinaryHTMLImageRotationAnimation_P
 
    procedure setFrame (This : in out AllBinaryHTMLImageRotationAnimation; index : Integer) is
    begin
-        ImageBaseRotationAnimation (This).setFrame (index);
+        ImageBaseRotationAnimation_Package.ImageBaseRotationAnimation (This).setFrame (index);
         AllBinaryHTMLImageRotationAnimation'Class (This).updateImage;
    end setFrame;
 

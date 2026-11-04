@@ -14,8 +14,8 @@
 
 
 with org.allbinary.ai.ArtificialIntelligence_Package; use org.allbinary.ai.ArtificialIntelligence_Package;
+with org.allbinary.ai.ArtificialIntelligence_Package_References;
 with org.allbinary.ai.ArtificialIntelligence_Package;
-with org.allbinary.ai.ArtificialIntelligenceFactoryInterface_Package;
 with org.allbinary.ai.ArtificialIntelligenceInterface_Package;
 
 package body org.allbinary.ai.ArtificialIntelligenceFactory_Package is

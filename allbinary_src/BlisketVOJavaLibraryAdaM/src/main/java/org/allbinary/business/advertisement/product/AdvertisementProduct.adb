@@ -14,10 +14,9 @@
 
 
 with org.allbinary.logic.control.contraints.size.TwoDimensionalConstraintInterface_Package; use org.allbinary.logic.control.contraints.size.TwoDimensionalConstraintInterface_Package;
-with org.allbinary.business.advertisement.product.AdvertisementProductInterface_Package;
+with org.allbinary.logic.control.contraints.size.TwoDimensionalConstraintInterface_Package_References;
 with org.allbinary.logic.control.contraints.MinMaxIntConstraintInterface_Package;
 with org.allbinary.logic.control.contraints.size.SizeConstraintInterface_Package;
-with org.allbinary.logic.control.contraints.size.TwoDimensionalConstraintInterface_Package;
 
 package body org.allbinary.business.advertisement.product.AdvertisementProduct_Package is
 

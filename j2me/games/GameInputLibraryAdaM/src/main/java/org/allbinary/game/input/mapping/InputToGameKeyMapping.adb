@@ -14,9 +14,13 @@
 
 
 with javax.microedition.lcdui.Canvas_Package; use javax.microedition.lcdui.Canvas_Package;
+with javax.microedition.lcdui.Canvas_Package_References;
 with org.allbinary.game.input.GameKey_Package; use org.allbinary.game.input.GameKey_Package;
+with org.allbinary.game.input.GameKey_Package_References;
 with org.allbinary.game.input.GameKeyFactory_Package; use org.allbinary.game.input.GameKeyFactory_Package;
+with org.allbinary.game.input.GameKeyFactory_Package_References;
 with org.allbinary.game.input.Input_Package; use org.allbinary.game.input.Input_Package;
+with org.allbinary.game.input.Input_Package_References;
 with org.allbinary.game.input.InputFactory_Package; use org.allbinary.game.input.InputFactory_Package;
 with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
 with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
@@ -25,12 +29,8 @@ with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.s
 with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
-with org.allbinary.game.input.GameKey_Package;
-with org.allbinary.game.input.GameKeyFactory_Package;
-with org.allbinary.game.input.Input_Package;
-with org.allbinary.game.input.InputFactory_Package;
-with org.allbinary.game.input.mapping.InputMapping_Package;
 
 package body org.allbinary.game.input.mapping.InputToGameKeyMapping_Package is
 
@@ -135,7 +135,7 @@ package body org.allbinary.game.input.mapping.InputToGameKeyMapping_Package is
 
    procedure removeAll (This : in out InputToGameKeyMapping) is
    begin
-        InputMapping (This).removeAll;
+        InputMapping_Package.InputMapping (This).removeAll;
         InputToGameKeyMapping'Class (This).clear;
    end removeAll;
 
@@ -168,7 +168,7 @@ package body org.allbinary.game.input.mapping.InputToGameKeyMapping_Package is
       input : constant Input_Access := Input_Access (input_Param);
       mappedToInput : constant Input_Access := Input_Access (mappedToInput_Param);
    begin
-        InputMapping (This).add (input, mappedToInput);
+        InputMapping_Package.InputMapping (This).add (input, mappedToInput);
         InputToGameKeyMapping'Class (This).set (input, mappedToInput);
    end add;
 
@@ -177,7 +177,7 @@ package body org.allbinary.game.input.mapping.InputToGameKeyMapping_Package is
       mappedToInput : constant Input_Access := Input_Access (mappedToInput_Param);
    begin
         This.logUtil.putF (StringMaker_Package.Create.append (CommonLabels_Package.getInstance.START_LABEL).append (StringUtil_Package.getInstance.toString (input)).append (To_Unbounded_String (" == ")).append (StringUtil_Package.getInstance.toString (mappedToInput)).toString, InputToGameKeyMapping_Access'(This'Unchecked_Access), To_Unbounded_String ("InputToGameKeyMapping::remove"));
-        InputMapping (This).remove (input, mappedToInput);
+        InputMapping_Package.InputMapping (This).remove (input, mappedToInput);
         InputToGameKeyMapping'Class (This).set (input, This.gameKeyFactory.NONE);
    end remove;
 

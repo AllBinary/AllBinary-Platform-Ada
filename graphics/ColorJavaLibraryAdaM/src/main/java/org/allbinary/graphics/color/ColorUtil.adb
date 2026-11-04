@@ -14,6 +14,7 @@
 
 
 with org.allbinary.graphics.color.Color_Package; use org.allbinary.graphics.color.Color_Package;
+with org.allbinary.graphics.color.Color_Package_References;
 
 package body org.allbinary.graphics.color.ColorUtil_Package is
 

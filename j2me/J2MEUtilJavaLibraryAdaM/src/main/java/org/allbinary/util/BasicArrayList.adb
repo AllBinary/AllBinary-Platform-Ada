@@ -9,6 +9,7 @@ with jsinterop.annotations.JsMethod_Package; use jsinterop.annotations.JsMethod_
 with jsinterop.annotations.JsConstructor_Package; use jsinterop.annotations.JsConstructor_Package;
 with jsinterop.annotations.JsProperty_Package; use jsinterop.annotations.JsProperty_Package;
 with org.allbinary.util.ArrayUtil_Package; use org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.ArrayUtil_Package_References;
 with org.allbinary.util.BasicArrayListS_Package; use org.allbinary.util.BasicArrayListS_Package;
 with org.allbinary.util.ArrayUtil_Package;
 with org.allbinary.util.BasicArrayListS_Package;

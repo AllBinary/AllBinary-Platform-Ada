@@ -22,16 +22,17 @@ with org.allbinary.business.context.modules.storefront.statistics.orders.history
 with org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatisticsInterface_Package; use org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatisticsInterface_Package;
 with org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatisticsView_Package; use org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatisticsView_Package;
 with org.allbinary.business.user.role.UserRole_Package; use org.allbinary.business.user.role.UserRole_Package;
+with org.allbinary.business.user.role.UserRole_Package_References;
 with org.allbinary.business.user.role.UserRoleFactory_Package; use org.allbinary.business.user.role.UserRoleFactory_Package;
 with org.allbinary.data.tree.dom.DomNodeInterface_Package; use org.allbinary.data.tree.dom.DomNodeInterface_Package;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
+with org.w3c.dom.Document_Package_References;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
+with org.w3c.dom.Node_Package_References;
 with org.allbinary.business.context.modules.storefront.statistics.StoreFrontStatisticsInterface_Package; use org.allbinary.business.context.modules.storefront.statistics.StoreFrontStatisticsInterface_Package;
+with org.allbinary.business.context.modules.storefront.statistics.StoreFrontStatisticsInterface_Package_References;
 with org.allbinary.business.context.modules.storefront.statistics.StoreFrontStatisticsData_Package; use org.allbinary.business.context.modules.storefront.statistics.StoreFrontStatisticsData_Package;
-with org.allbinary.business.context.modules.storefront.statistics.inventory.StoreFrontInventoryStatisticsView_Package;
-with org.allbinary.business.context.modules.storefront.statistics.orders.history.StoreFrontOrdersHistoryStatisticsView_Package;
 with org.allbinary.business.context.modules.storefront.statistics.StoreFrontStatisticsInterface_Package;
-with org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatisticsView_Package;
 
 package body org.allbinary.business.context.modules.storefront.statistics.RealTimeStoreFrontStatisticsView_Package is
 

@@ -14,8 +14,11 @@
 
 
 with org.allbinary.game.input.event.GameKeyEvent_Package; use org.allbinary.game.input.event.GameKeyEvent_Package;
+with org.allbinary.game.input.event.GameKeyEvent_Package_References;
 with org.allbinary.layer.AllBinaryLayerManager_Package; use org.allbinary.layer.AllBinaryLayerManager_Package;
+with org.allbinary.layer.AllBinaryLayerManager_Package_References;
 with org.allbinary.game.input.RTSPlayerGameInput_Package; use org.allbinary.game.input.RTSPlayerGameInput_Package;
+with org.allbinary.game.input.RTSPlayerGameInput_Package_References;
 with org.allbinary.game.input.BuildMenuCompositeInterface_Package;
 with org.allbinary.game.layer.capital.Capital_Package;
 with org.allbinary.game.layer.GeographicMapCellPositionAreaBase_Package;
@@ -30,7 +33,6 @@ with org.allbinary.game.layer.RTSLayer2LogHelper_Package;
 with org.allbinary.game.layer.RTSLayerInfoPaintable_Package;
 with org.allbinary.game.layer.RTSLayerUtil_Package;
 with org.allbinary.game.input.RTSPlayerGameInput_Package;
-with org.allbinary.game.input.RTSPlayerGameInputProcessor_Package;
 with org.allbinary.game.layer.RTSPlayerLayerInterface_Package;
 with org.allbinary.game.input.SelectRTSLayerVisitorFactoryInterface_Package;
 with org.allbinary.game.input.SelectedRTSLayersPlayerGameInput_Package;

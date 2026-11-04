@@ -15,12 +15,14 @@
 
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.business.init.db.UserDbInitInfo_Package; use org.allbinary.business.init.db.UserDbInitInfo_Package;
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.communication.sql.AbSqlBean_Package; use org.allbinary.logic.communication.sql.AbSqlBean_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
-with org.allbinary.data.tables.generator.IdGeneratorEntityInterface_Package;
 
 package body org.allbinary.data.tables.generator.IdGeneratorEntity_Package is
 
@@ -63,7 +65,7 @@ package body org.allbinary.data.tables.generator.IdGeneratorEntity_Package is
         AbSqlBean_Package.Initialize (This, UserDbInitInfo_Package.Create);
         Initialize_Fields (This);
         This.tableData := StringMaker_Package.Create.append (This.sqlStrings.CREATE_TABLE).append (This.tableName).append (This.sqlStrings.START).append (This.NAME).append (This.sqlTypeStrings.MAX_CHAR_COLUMN_NOT_NULL).append (This.VALUE).append (This.sqlTypeStrings.MAX_BIG_INT_UNSIGNED_NOT_NULL).append (This.sqlStrings.PRIMARY_KEY).append (This.NAME).append (This.sqlStrings.END_Id).toString;
-        AbSqlBean (This).setTableName (This.tableName);
+        AbSqlBean_Package.AbSqlBean (This).setTableName (This.tableName);
    end Initialize;
 
    function Create return IdGeneratorEntity_Access is
@@ -81,7 +83,7 @@ package body org.allbinary.data.tables.generator.IdGeneratorEntity_Package is
    begin
         keysAndValues := StdUtil_Package.getInstance.createHashMap;
         keysAndValues.put (Java_Box (This.NAME), Java_Box (name));
-        hashMap := AbSqlBean (This).getRow (keysAndValues);
+        hashMap := AbSqlBean_Package.AbSqlBean (This).getRow (keysAndValues);
         if (Java_Unbox (hashMap.get (Java_Box (This.NAME))).compareTo (name)) /= (0) then
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("results do not match")));
         end if;
@@ -93,7 +95,7 @@ package body org.allbinary.data.tables.generator.IdGeneratorEntity_Package is
       values : constant BasicArrayList_Access := BasicArrayList_Access (values_Param);
    begin
         begin
-            AbSqlBean (This).insert (values);
+            AbSqlBean_Package.AbSqlBean (This).insert (values);
             This.logUtil.putF (This.commonStrings.SUCCESS, IdGeneratorEntity_Access'(This'Unchecked_Access), INSERT);
         exception
             when Java_Occurrence : others =>
@@ -108,7 +110,7 @@ package body org.allbinary.data.tables.generator.IdGeneratorEntity_Package is
    procedure delete (This : in out IdGeneratorEntity; value : Unbounded_String) is
    begin
         begin
-            AbSqlBean (This).deleteWhere (This.NAME, value);
+            AbSqlBean_Package.AbSqlBean (This).deleteWhere (This.NAME, value);
             This.logUtil.putF (This.commonStrings.SUCCESS, IdGeneratorEntity_Access'(This'Unchecked_Access), This.commonStrings.delete);
         exception
             when Java_Occurrence : others =>
@@ -132,19 +134,19 @@ package body org.allbinary.data.tables.generator.IdGeneratorEntity_Package is
    procedure update (This : in out IdGeneratorEntity; hashMap_Param : access HashMap_Package.HashMap'Class) is
       hashMap : constant HashMap_Access := HashMap_Access (hashMap_Param);
    begin
-        AbSqlBean (This).updateWhere (This.NAME, Java_Unbox (hashMap.get (Java_Box (This.NAME))), hashMap);
+        AbSqlBean_Package.AbSqlBean (This).updateWhere (This.NAME, Java_Unbox (hashMap.get (Java_Box (This.NAME))), hashMap);
    end update;
 
    function createTable (This : in out IdGeneratorEntity) return Unbounded_String is
       returnStr : Unbounded_String;
    begin
-        returnStr := AbSqlBean (This).createTable (This.tableData);
+        returnStr := AbSqlBean_Package.AbSqlBean (This).createTable (This.tableData);
         return returnStr;
    end createTable;
 
    function dropTable (This : in out IdGeneratorEntity) return Unbounded_String is
    begin
-        return AbSqlBean (This).dropTable;
+        return AbSqlBean_Package.AbSqlBean (This).dropTable;
    end dropTable;
 
    procedure get (This : in out IdGeneratorEntity; name : Unbounded_String) is

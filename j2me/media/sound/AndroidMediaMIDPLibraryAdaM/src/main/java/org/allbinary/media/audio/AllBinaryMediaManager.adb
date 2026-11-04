@@ -16,15 +16,18 @@
 with java.io.InputStream_Package; use java.io.InputStream_Package;
 with javax.microedition.media.MediaException_Package; use javax.microedition.media.MediaException_Package;
 with javax.microedition.media.Player_Package; use javax.microedition.media.Player_Package;
+with javax.microedition.media.Player_Package_References;
 with org.allbinary.TsUtil_Package; use org.allbinary.TsUtil_Package;
 with org.allbinary.game.configuration.feature.Features_Package; use org.allbinary.game.configuration.feature.Features_Package;
 with org.allbinary.game.configuration.feature.GameFeatureFactory_Package; use org.allbinary.game.configuration.feature.GameFeatureFactory_Package;
 with org.allbinary.graphics.canvas.transition.progress.ProgressCanvasFactory_Package; use org.allbinary.graphics.canvas.transition.progress.ProgressCanvasFactory_Package;
+with org.allbinary.logic.ABSystemWrapper_Package; use org.allbinary.logic.ABSystemWrapper_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.media.audio.Sounds_Package; use org.allbinary.media.audio.Sounds_Package;
 with org.allbinary.media.audio.SoundsFactoryInterface_Package; use org.allbinary.media.audio.SoundsFactoryInterface_Package;
+with org.allbinary.media.audio.SoundsFactoryInterface_Package_References;
 with org.allbinary.media.audio.Sound_Package; use org.allbinary.media.audio.Sound_Package;
 with org.allbinary.media.audio.AndroidMediaPlayerWrapper_Package; use org.allbinary.media.audio.AndroidMediaPlayerWrapper_Package;
 with org.allbinary.media.audio.PlayerComposite_Package; use org.allbinary.media.audio.PlayerComposite_Package;

@@ -16,18 +16,16 @@
 with org.allbinary.data.tree.dom.DomSearchHelper_Package; use org.allbinary.data.tree.dom.DomSearchHelper_Package;
 with org.allbinary.logic.control.contraints.display.browser.DisplayInBrowserContraints_Package; use org.allbinary.logic.control.contraints.display.browser.DisplayInBrowserContraints_Package;
 with org.allbinary.logic.control.contraints.display.browser.DisplayInBrowserContraintsInterface_Package; use org.allbinary.logic.control.contraints.display.browser.DisplayInBrowserContraintsInterface_Package;
+with org.allbinary.logic.control.contraints.display.browser.DisplayInBrowserContraintsInterface_Package_References;
 with org.allbinary.logic.control.contraints.size.TwoDimensionalConstraint_Package; use org.allbinary.logic.control.contraints.size.TwoDimensionalConstraint_Package;
 with org.allbinary.logic.control.contraints.size.TwoDimensionalConstraintInterface_Package; use org.allbinary.logic.control.contraints.size.TwoDimensionalConstraintInterface_Package;
+with org.allbinary.logic.control.contraints.size.TwoDimensionalConstraintInterface_Package_References;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
+with org.w3c.dom.Document_Package_References;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.allbinary.business.advertisement.area.AdvertisementAreaData_Package; use org.allbinary.business.advertisement.area.AdvertisementAreaData_Package;
-with org.allbinary.business.advertisement.area.AdvertisementAreaConstraintsInterface_Package;
-with org.allbinary.logic.control.contraints.display.browser.DisplayInBrowserContraints_Package;
-with org.allbinary.logic.control.contraints.display.browser.DisplayInBrowserContraintsInterface_Package;
 with org.allbinary.logic.control.contraints.MinMaxIntConstraintInterface_Package;
 with org.allbinary.logic.control.contraints.size.SizeConstraintInterface_Package;
-with org.allbinary.logic.control.contraints.size.TwoDimensionalConstraint_Package;
-with org.allbinary.logic.control.contraints.size.TwoDimensionalConstraintInterface_Package;
 
 package body org.allbinary.business.advertisement.area.AdvertisementAreaConstraints_Package is
 

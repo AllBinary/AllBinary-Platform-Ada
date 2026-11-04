@@ -42,7 +42,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfosData_Packag
 
    function getInstance return TransformInfosData_Access is
    begin
-        return TransformInfosData_Package.instance;
+        return TransformInfosData_Access (TransformInfosData_Package.instance);
    end getInstance;
 
 begin

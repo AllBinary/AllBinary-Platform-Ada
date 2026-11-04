@@ -14,7 +14,7 @@
 
 
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
-with admin.taghelpers.BasicTableInterface_Package;
+with org.allbinary.string_Id.CommonStrings_Package_References;
 
 package body admin.taghelpers.BasicTable_Package is
 

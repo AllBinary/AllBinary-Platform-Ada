@@ -14,8 +14,9 @@
 
 
 with org.allbinary.game.input.CompleteMotionGestureInputEvent_Package; use org.allbinary.game.input.CompleteMotionGestureInputEvent_Package;
+with org.allbinary.game.input.CompleteMotionGestureInputEvent_Package_References;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.game.input.CompleteMotionGestureInputEvent_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.game.input.CompleteMotionGestureInputInterface_Package;
 with org.allbinary.input.motion.gesture.MotionGestureInput_Package;
 

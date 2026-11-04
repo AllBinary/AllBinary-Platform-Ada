@@ -14,6 +14,7 @@
 
 
 with org.allbinary.game.layer.resources.OnDemandResources_Package; use org.allbinary.game.layer.resources.OnDemandResources_Package;
+with org.allbinary.game.layer.resources.OnDemandResources_Package_References;
 with org.allbinary.animation.resource.BaseResourceAnimationInterfaceFactoryInterfaceFactory_Package;
 with org.allbinary.animation.resource.FeatureResourceAnimationInterfaceFactoryInterface_Package;
 with org.allbinary.game.layer.resources.OnDemandResources_Package;

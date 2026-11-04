@@ -15,7 +15,9 @@
 
 with org.allbinary.business.error.ErrorData_Package; use org.allbinary.business.error.ErrorData_Package;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
+with org.w3c.dom.Document_Package_References;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
+with org.w3c.dom.Node_Package_References;
 with org.allbinary.data.tree.dom.ModDomHelper_Package; use org.allbinary.data.tree.dom.ModDomHelper_Package;
 with org.allbinary.data.tree.dom.ModDomHelper_Package;
 

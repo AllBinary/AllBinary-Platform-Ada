@@ -14,17 +14,18 @@
 
 
 with javax.microedition.khronos.opengles.GL_Package; use javax.microedition.khronos.opengles.GL_Package;
+with javax.microedition.khronos.opengles.GL_Package_References;
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
 with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Animation_Package;
+with org.allbinary.animation.Animation_Package_References;
 with org.allbinary.animation.AnimationBehavior_Package; use org.allbinary.animation.AnimationBehavior_Package;
+with org.allbinary.animation.AnimationBehavior_Package_References;
 with org.allbinary.animation.IndexedAnimation_Package; use org.allbinary.animation.IndexedAnimation_Package;
 with org.allbinary.logic.math.PrimitiveIntUtil_Package; use org.allbinary.logic.math.PrimitiveIntUtil_Package;
 with org.allbinary.util.CircularIndexUtil_Package; use org.allbinary.util.CircularIndexUtil_Package;
-with org.allbinary.animation.Animation_Package;
-with org.allbinary.animation.AnimationBehavior_Package;
+with org.allbinary.util.CircularIndexUtil_Package_References;
 with org.allbinary.animation.AnimationInterface_Package;
-with org.allbinary.animation.compound.CompoundAnimationInterface_Package;
-with org.allbinary.animation.IndexedAnimation_Package;
 with org.allbinary.animation.IndexedAnimationInterface_Package;
 with org.allbinary.animation.SequenceInterface_Package;
 with org.allbinary.animation.SequentialAnimationInterface_Package;

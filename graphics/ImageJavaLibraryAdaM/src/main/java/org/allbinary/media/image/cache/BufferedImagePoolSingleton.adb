@@ -16,6 +16,7 @@
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.util.cache.CachePolicyFactory_Package; use org.allbinary.logic.util.cache.CachePolicyFactory_Package;
 with org.allbinary.logic.util.cache.PoolInterface_Package; use org.allbinary.logic.util.cache.PoolInterface_Package;
+with org.allbinary.logic.util.cache.PoolInterface_Package_References;
 with org.allbinary.logic.util.cache.PoolInterfaceFactory_Package; use org.allbinary.logic.util.cache.PoolInterfaceFactory_Package;
 with org.allbinary.logic.util.cache.PoolTypeFactory_Package; use org.allbinary.logic.util.cache.PoolTypeFactory_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;

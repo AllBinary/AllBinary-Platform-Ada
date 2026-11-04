@@ -18,10 +18,13 @@ with org.allbinary.game.layer.DemoLockedWithCostLayerInterfaceFactoryInterface_P
 with org.allbinary.game.layer.GeographicMapCellPositionAreaBase_Package; use org.allbinary.game.layer.GeographicMapCellPositionAreaBase_Package;
 with org.allbinary.game.layer.RTSGameStrings_Package; use org.allbinary.game.layer.RTSGameStrings_Package;
 with org.allbinary.game.layer.RTSLayer_Package; use org.allbinary.game.layer.RTSLayer_Package;
+with org.allbinary.game.layer.RTSLayer_Package_References;
 with org.allbinary.game.layer.RTSPlayerLayerInterface_Package; use org.allbinary.game.layer.RTSPlayerLayerInterface_Package;
+with org.allbinary.game.layer.RTSPlayerLayerInterface_Package_References;
 with org.allbinary.game.layer.capital.Capital_Package; use org.allbinary.game.layer.capital.Capital_Package;
 with org.allbinary.game.layer.item.LayerInterfaceFactoryImageItem_Package; use org.allbinary.game.layer.item.LayerInterfaceFactoryImageItem_Package;
 with org.allbinary.graphics.form.item.ABCustomItem_Package; use org.allbinary.graphics.form.item.ABCustomItem_Package;
+with org.allbinary.graphics.form.item.ABCustomItem_Package_References;
 with org.allbinary.media.audio.BuildingSound_Package; use org.allbinary.media.audio.BuildingSound_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
@@ -30,13 +33,18 @@ with org.allbinary.logic.java.bool.BooleanFactory_Package; use org.allbinary.log
 with org.allbinary.logic.system.security.licensing.LockedFeatureNotificationUtil_Package; use org.allbinary.logic.system.security.licensing.LockedFeatureNotificationUtil_Package;
 with org.allbinary.logic.system.security.licensing.LockedUtil_Package; use org.allbinary.logic.system.security.licensing.LockedUtil_Package;
 with org.allbinary.game.identification.Group_Package; use org.allbinary.game.identification.Group_Package;
+with org.allbinary.game.identification.Group_Package_References;
 with org.allbinary.game.layer.AllBinaryGameLayerManager_Package; use org.allbinary.game.layer.AllBinaryGameLayerManager_Package;
+with org.allbinary.game.layer.AllBinaryGameLayerManager_Package_References;
 with org.allbinary.game.layer.hud.event.GameNotificationEvent_Package; use org.allbinary.game.layer.hud.event.GameNotificationEvent_Package;
+with org.allbinary.game.layer.hud.event.GameNotificationEvent_Package_References;
 with org.allbinary.game.layer.hud.event.GameNotificationEventHandler_Package; use org.allbinary.game.layer.hud.event.GameNotificationEventHandler_Package;
 with org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package; use org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package;
+with org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package_References;
 with org.allbinary.graphics.GPoint_Package; use org.allbinary.graphics.GPoint_Package;
 with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
 with org.allbinary.layer.AllBinaryLayerManager_Package; use org.allbinary.layer.AllBinaryLayerManager_Package;
+with org.allbinary.layer.AllBinaryLayerManager_Package_References;
 with org.allbinary.logic.math.SmallIntegerSingletonFactory_Package; use org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.media.audio.ErrorSound_Package; use org.allbinary.media.audio.ErrorSound_Package;
@@ -46,26 +54,18 @@ with org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package; u
 with org.allbinary.media.graphics.geography.map.GeographicMapCompositeInterface_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCompositeInterface_Package;
 with org.allbinary.media.graphics.geography.map.SimpleGeographicMapCellPositionFactory_Package; use org.allbinary.media.graphics.geography.map.SimpleGeographicMapCellPositionFactory_Package;
 with org.allbinary.media.graphics.geography.map.drop.DropCellPositionHistory_Package; use org.allbinary.media.graphics.geography.map.drop.DropCellPositionHistory_Package;
+with org.allbinary.media.graphics.geography.map.drop.DropCellPositionHistory_Package_References;
 with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellTypeFactory_Package; use org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellTypeFactory_Package;
 with org.allbinary.game.input.BuildMenuCompositeInterface_Package;
-with org.allbinary.game.layer.capital.Capital_Package;
 with org.allbinary.game.layer.CostLayerInterfaceFactoryInterface_Package;
-with org.allbinary.game.layer.DemoLockedWithCostLayerInterfaceFactoryInterface_Package;
-with org.allbinary.game.layer.GeographicMapCellPositionAreaBase_Package;
 with org.allbinary.game.layer.GeographicMapCellPositionAreaInterface_Package;
-with org.allbinary.game.layer.item.LayerInterfaceFactoryImageItem_Package;
 with org.allbinary.game.input.LayerPositionFinderInterface_Package;
 with org.allbinary.game.layer.PathFindingLayerInterface_Package;
 with org.allbinary.game.layer.PlayerOwnedRTSLayers_Package;
-with org.allbinary.game.input.form.RTSFormInput_Package;
-with org.allbinary.game.layer.RTSGameStrings_Package;
 with org.allbinary.game.layer.RTSInterface_Package;
-with org.allbinary.game.layer.RTSLayer_Package;
 with org.allbinary.game.layer.RTSLayer2LogHelper_Package;
 with org.allbinary.game.layer.RTSLayerInfoPaintable_Package;
 with org.allbinary.game.layer.RTSLayerUtil_Package;
-with org.allbinary.game.input.RTSPlayerGameInput_Package;
-with org.allbinary.game.layer.RTSPlayerLayerInterface_Package;
 with org.allbinary.game.input.SelectRTSLayerVisitorFactoryInterface_Package;
 with org.allbinary.game.input.SelectedRTSLayersPlayerGameInput_Package;
 with org.allbinary.game.layer.SelectionHudPaintable_Package;
@@ -243,7 +243,7 @@ package body org.allbinary.game.input.form.BuildingRTSFormInput_Package is
       geographicMapCompositeInterface : GeographicMapCompositeInterface_Access;
       geographicMapInterface : BasicGeographicMap_Access;
    begin
-        RTSFormInput (This).setAllBinaryGameLayerManager (allBinaryGameLayerManager);
+        RTSFormInput_Package.RTSFormInput (This).setAllBinaryGameLayerManager (allBinaryGameLayerManager);
         geographicMapCompositeInterface := GeographicMapCompositeInterface_Access (allBinaryGameLayerManager);
         geographicMapInterface := geographicMapCompositeInterface.getGeographicMapInterface (0);
         This.buildOnPathGameNotificationEvent.setBasicColorP (geographicMapInterface.getForegroundBasicColor);
@@ -264,7 +264,7 @@ package body org.allbinary.game.input.form.BuildingRTSFormInput_Package is
       layerManager : constant AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (layerManager_Param);
       item : constant ABCustomItem_Access := ABCustomItem_Access (item_Param);
    begin
-        RTSFormInput (This).process (layerManager);
+        RTSFormInput_Package.RTSFormInput (This).process (layerManager);
         BuildingRTSFormInput'Class (This).buildFromMotionInput (rtsPlayerLayerInterface, layerManager, item, itemIndex);
    end processGameSpecific;
 

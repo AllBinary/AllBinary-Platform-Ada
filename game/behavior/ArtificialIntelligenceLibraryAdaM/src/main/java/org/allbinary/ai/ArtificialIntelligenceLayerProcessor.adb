@@ -14,7 +14,9 @@
 
 
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
+with org.allbinary.layer.AllBinaryLayer_Package_References;
 with org.allbinary.layer.AllBinaryLayerManager_Package; use org.allbinary.layer.AllBinaryLayerManager_Package;
+with org.allbinary.layer.AllBinaryLayerManager_Package_References;
 with org.allbinary.layer.LayerProcessor_Package; use org.allbinary.layer.LayerProcessor_Package;
 with org.allbinary.ai.ArtificialIntelligenceLayerManager_Package; use org.allbinary.ai.ArtificialIntelligenceLayerManager_Package;
 with org.allbinary.ai.ArtificialIntelligenceCompositeInterface_Package; use org.allbinary.ai.ArtificialIntelligenceCompositeInterface_Package;

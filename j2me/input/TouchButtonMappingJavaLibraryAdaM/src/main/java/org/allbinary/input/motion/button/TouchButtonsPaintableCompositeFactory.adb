@@ -14,8 +14,11 @@
 
 
 with org.allbinary.game.input.mapping.InputMappingInterface_Package; use org.allbinary.game.input.mapping.InputMappingInterface_Package;
+with org.allbinary.game.input.mapping.InputMappingInterface_Package_References;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.graphics.color.BasicColor_Package_References;
 with org.allbinary.graphics.paint.ProcessPaintable_Package; use org.allbinary.graphics.paint.ProcessPaintable_Package;
+with org.allbinary.graphics.paint.ProcessPaintable_Package_References;
 with org.allbinary.input.motion.button.TouchButtonsPaintableComposite_Package; use org.allbinary.input.motion.button.TouchButtonsPaintableComposite_Package;
 with org.allbinary.input.motion.button.TouchButtonsMappingPaintable_Package;
 with org.allbinary.input.motion.button.TouchButtonsPaintableComposite_Package;

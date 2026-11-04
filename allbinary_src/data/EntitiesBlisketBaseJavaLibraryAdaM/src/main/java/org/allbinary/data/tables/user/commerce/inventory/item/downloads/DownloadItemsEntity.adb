@@ -15,14 +15,17 @@
 
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.business.entry_Id.EntryData_Package; use org.allbinary.business.entry_Id.EntryData_Package;
 with org.allbinary.business.init.db.InventoryDbInitInfo_Package; use org.allbinary.business.init.db.InventoryDbInitInfo_Package;
 with org.allbinary.business.user.commerce.inventory.item.BasicItemData_Package; use org.allbinary.business.user.commerce.inventory.item.BasicItemData_Package;
+with org.allbinary.business.user.commerce.inventory.item.BasicItemData_Package_References;
 with org.allbinary.business.user.commerce.inventory.item.download.DownloadItemData_Package; use org.allbinary.business.user.commerce.inventory.item.download.DownloadItemData_Package;
 with org.allbinary.business.user.commerce.inventory.item.download.DownloadableItem_Package; use org.allbinary.business.user.commerce.inventory.item.download.DownloadableItem_Package;
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.communication.sql.AbSqlBean_Package; use org.allbinary.logic.communication.sql.AbSqlBean_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 
@@ -92,7 +95,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.item.downloads.Do
       values : constant BasicArrayList_Access := BasicArrayList_Access (values_Param);
    begin
         begin
-            AbSqlBean (This).insert (values);
+            AbSqlBean_Package.AbSqlBean (This).insert (values);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
                 This.logUtil.putF (This.commonStrings.SUCCESS, DownloadItemsEntity_Access'(This'Unchecked_Access), INSERT);
             end if;
@@ -111,7 +114,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.item.downloads.Do
    procedure delete (This : in out DownloadItemsEntity; value : Unbounded_String) is
    begin
         begin
-            AbSqlBean (This).deleteWhere (DownloadItemData_Package.ID, value);
+            AbSqlBean_Package.AbSqlBean (This).deleteWhere (DownloadItemData_Package.ID, value);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
                 This.logUtil.putF (This.commonStrings.SUCCESS, DownloadItemsEntity_Access'(This'Unchecked_Access), This.commonStrings.delete);
             end if;
@@ -130,7 +133,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.item.downloads.Do
    procedure update (This : in out DownloadItemsEntity; updatedValues_Param : access HashMap_Package.HashMap'Class) is
       updatedValues : constant HashMap_Access := HashMap_Access (updatedValues_Param);
    begin
-        AbSqlBean (This).updateWhere (DownloadItemData_Package.ID, Java_Unbox (updatedValues.get (DownloadItemData_Package.ID)), updatedValues);
+        AbSqlBean_Package.AbSqlBean (This).updateWhere (DownloadItemData_Package.ID, Java_Unbox (updatedValues.get (DownloadItemData_Package.ID)), updatedValues);
    end update;
 
    function getForItem (This : in out DownloadItemsEntity; id : Unbounded_String) return BasicArrayList_Access is
@@ -144,7 +147,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.item.downloads.Do
         returnVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
         keysAndValues := StdUtil_Package.getInstance.createHashMap;
         keysAndValues.put (This.basicItemData.ID, Java_Box (id));
-        vector := AbSqlBean (This).getRows (keysAndValues);
+        vector := AbSqlBean_Package.AbSqlBean (This).getRows (keysAndValues);
         size := vector.size;
         for index in 0 .. (size) - 1 loop
             hashMap := HashMap_Access (vector.get (index));
@@ -168,7 +171,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.item.downloads.Do
         keysAndValues := StdUtil_Package.getInstance.createHashMap;
         keysAndValues.put (This.basicItemData.ID, Java_Box (id));
         keysAndValues.put (DownloadItemData_Package.ID, Java_Box (downloadItemId));
-        vector := AbSqlBean (This).getRows (keysAndValues);
+        vector := AbSqlBean_Package.AbSqlBean (This).getRows (keysAndValues);
         size := vector.size;
         for index in 0 .. (size) - 1 loop
             hashMap := HashMap_Access (vector.get (index));
@@ -191,12 +194,12 @@ package body org.allbinary.data.tables.user.commerce.inventory.item.downloads.Do
 
    function createTable (This : in out DownloadItemsEntity) return Unbounded_String is
    begin
-        return AbSqlBean (This).createTable (DownloadItemsEntity'Class (This).createTableStatement);
+        return AbSqlBean_Package.AbSqlBean (This).createTable (DownloadItemsEntity'Class (This).createTableStatement);
    end createTable;
 
    function dropTable (This : in out DownloadItemsEntity) return Unbounded_String is
    begin
-        return AbSqlBean (This).dropTable;
+        return AbSqlBean_Package.AbSqlBean (This).dropTable;
    end dropTable;
 
    procedure getForItem (This : in out DownloadItemsEntity; id : Unbounded_String) is

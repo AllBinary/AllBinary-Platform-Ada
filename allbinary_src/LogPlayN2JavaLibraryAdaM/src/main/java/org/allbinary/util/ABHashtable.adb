@@ -40,67 +40,67 @@ package body org.allbinary.util.ABHashtable_Package is
 
    function size (This : in out ABHashtable) return Integer is
    begin
-        return Hashtable (This).size;
+        return Hashtable_Package.Hashtable (This).size;
    end size;
 
    function isEmpty (This : in out ABHashtable) return Boolean is
    begin
-        return Hashtable (This).isEmpty;
+        return Hashtable_Package.Hashtable (This).isEmpty;
    end isEmpty;
 
    function elements (This : in out ABHashtable) return Enumeration_Access is
    begin
-        return Hashtable (This).elements;
+        return Hashtable_Package.Hashtable (This).elements;
    end elements;
 
    function contains (This : in out ABHashtable; value_Param : access Java_Object'Class) return Boolean is
       value : constant Java_Object_Access := Java_Object_Access (value_Param);
    begin
-        return Hashtable (This).contains (value);
+        return Hashtable_Package.Hashtable (This).contains (value);
    end contains;
 
    function containsValue (This : in out ABHashtable; value_Param : access Java_Object'Class) return Boolean is
       value : constant Java_Object_Access := Java_Object_Access (value_Param);
    begin
-        return Hashtable (This).containsValue (value);
+        return Hashtable_Package.Hashtable (This).containsValue (value);
    end containsValue;
 
    function containsKey (This : in out ABHashtable; key_Param : access Java_Object'Class) return Boolean is
       key : constant Java_Object_Access := Java_Object_Access (key_Param);
    begin
-        return Hashtable (This).containsKey (key);
+        return Hashtable_Package.Hashtable (This).containsKey (key);
    end containsKey;
 
    function get (This : in out ABHashtable; key_Param : access Java_Object'Class) return Java_Object_Access is
       key : constant Java_Object_Access := Java_Object_Access (key_Param);
    begin
-        return Hashtable (This).get (key);
+        return Hashtable_Package.Hashtable (This).get (key);
    end get;
 
    procedure clear (This : in out ABHashtable) is
    begin
-        Hashtable (This).clear;
+        Hashtable_Package.Hashtable (This).clear;
    end clear;
 
    function clone (This : in out ABHashtable) return Java_Object_Access is
    begin
-        return Hashtable (This).clone;
+        return Hashtable_Package.Hashtable (This).clone;
    end clone;
 
    function toString (This : in out ABHashtable) return Unbounded_String is
    begin
-        return Hashtable (This).toString;
+        return Hashtable_Package.Hashtable (This).toString;
    end toString;
 
    function equals (This : in out ABHashtable; obj_Param : access Java_Object'Class) return Boolean is
       obj : constant Java_Object_Access := Java_Object_Access (obj_Param);
    begin
-        return Hashtable (This).equals (obj);
+        return Hashtable_Package.Hashtable (This).equals (obj);
    end equals;
 
    function hashCode (This : in out ABHashtable) return Integer is
    begin
-        return Hashtable (This).hashCode;
+        return Hashtable_Package.Hashtable (This).hashCode;
    end hashCode;
 
    procedure contains (This : in out ABHashtable; value_Param : access Java_Object'Class) is

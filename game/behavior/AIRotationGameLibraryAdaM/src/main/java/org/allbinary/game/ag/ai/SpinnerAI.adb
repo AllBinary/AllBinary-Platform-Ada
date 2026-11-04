@@ -16,8 +16,11 @@
 with javax.microedition.lcdui.Canvas_Package; use javax.microedition.lcdui.Canvas_Package;
 with org.allbinary.game.ai.BasicAI_Package; use org.allbinary.game.ai.BasicAI_Package;
 with org.allbinary.game.input.GameInput_Package; use org.allbinary.game.input.GameInput_Package;
+with org.allbinary.game.input.GameInput_Package_References;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
+with org.allbinary.layer.AllBinaryLayer_Package_References;
 with org.allbinary.layer.AllBinaryLayerManager_Package; use org.allbinary.layer.AllBinaryLayerManager_Package;
+with org.allbinary.layer.AllBinaryLayerManager_Package_References;
 
 package body org.allbinary.game.ag.ai.SpinnerAI_Package is
 
@@ -81,10 +84,10 @@ package body org.allbinary.game.ag.ai.SpinnerAI_Package is
       allBinaryLayerManager : constant AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (allBinaryLayerManager_Param);
    begin
         if This.isEven then
-            BasicAI (This).processKeyAI (This.direction (0));
+            BasicAI_Package.BasicAI (This).processKeyAI (This.direction (0));
             This.isEven := False;
         else
-            BasicAI (This).processKeyAI (Canvas_Package.KEY_NUM1);
+            BasicAI_Package.BasicAI (This).processKeyAI (Canvas_Package.KEY_NUM1);
             This.isEven := True;
         end if;
    end processAI;

@@ -2,10 +2,11 @@
 
 
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.graphics.color.BasicColor_Package_References;
 with org.allbinary.graphics.form.item.ABStringComponent_Package; use org.allbinary.graphics.form.item.ABStringComponent_Package;
-with org.allbinary.graphics.form.item.ABCustomItemInterface_Package;
-with org.allbinary.graphics.form.item.CustomCustomItem_Package;
+with org.allbinary.graphics.form.item.ABStringComponent_Package_References;
 
 package body org.allbinary.graphics.form.item.ABTextItem_Package is
 

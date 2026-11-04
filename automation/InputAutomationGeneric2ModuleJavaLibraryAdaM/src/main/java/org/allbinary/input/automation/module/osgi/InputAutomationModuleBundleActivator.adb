@@ -15,18 +15,22 @@
 
 with org.osgi.framework.BundleActivator_Package; use org.osgi.framework.BundleActivator_Package;
 with org.osgi.framework.BundleContext_Package; use org.osgi.framework.BundleContext_Package;
+with org.osgi.framework.BundleContext_Package_References;
 with org.osgi.framework.ServiceFactory_Package; use org.osgi.framework.ServiceFactory_Package;
+with org.osgi.framework.ServiceFactory_Package_References;
 with org.osgi.framework.ServiceReference_Package; use org.osgi.framework.ServiceReference_Package;
 with bundle.input.automation.module.InputAutomationModuleServiceInterface_Package; use bundle.input.automation.module.InputAutomationModuleServiceInterface_Package;
 with bundle.input.automation.module.configuration.InputAutomationConfigurationModuleChangeListener_Package; use bundle.input.automation.module.configuration.InputAutomationConfigurationModuleChangeListener_Package;
+with bundle.input.automation.module.configuration.InputAutomationConfigurationModuleChangeListener_Package_References;
 with org.allbinary.input.automation.configuration.InputAutomationConfigurationModuleChangeEvent_Package; use org.allbinary.input.automation.configuration.InputAutomationConfigurationModuleChangeEvent_Package;
 with org.allbinary.input.automation.configuration.InputAutomationConfigurationUtil_Package; use org.allbinary.input.automation.configuration.InputAutomationConfigurationUtil_Package;
 with org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface_Package; use org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface_Package;
+with org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface_Package_References;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.osgi.OSGIActivatorUtil_Package; use org.allbinary.osgi.OSGIActivatorUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
-with bundle.input.automation.module.configuration.InputAutomationConfigurationModuleChangeListener_Package;
-with bundle.input.automation.module.InputAutomationModuleServiceInterface_Package;
+with org.allbinary.string_Id.CommonStrings_Package_References;
 
 package body org.allbinary.input.automation.module.osgi.InputAutomationModuleBundleActivator_Package is
 

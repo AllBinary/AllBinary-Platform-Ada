@@ -26,19 +26,11 @@ with org.allbinary.input.motion.touch.action.ReleaseTouchInputToGameKeyEventActi
 with org.allbinary.input.motion.touch.action.RightTouchInputToGameKeyEventAction_Package; use org.allbinary.input.motion.touch.action.RightTouchInputToGameKeyEventAction_Package;
 with org.allbinary.input.motion.touch.action.UpTouchInputToGameKeyEventAction_Package; use org.allbinary.input.motion.touch.action.UpTouchInputToGameKeyEventAction_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
-with org.allbinary.input.motion.touch.action.DiagonalDownLeftTouchInputToGameKeyEventAction_Package;
-with org.allbinary.input.motion.touch.action.DiagonalDownRightTouchInputToGameKeyEventAction_Package;
-with org.allbinary.input.motion.touch.action.DiagonalUpLeftTouchInputToGameKeyEventAction_Package;
-with org.allbinary.input.motion.touch.action.DiagonalUpRightTouchInputToGameKeyEventAction_Package;
-with org.allbinary.input.motion.touch.action.DownTouchInputToGameKeyEventAction_Package;
-with org.allbinary.input.motion.touch.action.LeftTouchInputToGameKeyEventAction_Package;
-with org.allbinary.input.motion.touch.action.ReleaseTouchInputToGameKeyEventAction_Package;
-with org.allbinary.input.motion.touch.action.RightTouchInputToGameKeyEventAction_Package;
-with org.allbinary.input.motion.touch.action.UpTouchInputToGameKeyEventAction_Package;
 
 package body org.allbinary.input.motion.CompleteMotionGestureInputToGameMotionGestureInput_Package is
 

@@ -14,11 +14,13 @@
 
 
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.graphics.color.BasicColor_Package_References;
 with org.allbinary.logic.system.os.GenericOperatingSystem_Package; use org.allbinary.logic.system.os.GenericOperatingSystem_Package;
 with org.allbinary.logic.system.os.OperatingSystemFactory_Package; use org.allbinary.logic.system.os.OperatingSystemFactory_Package;
 with org.allbinary.game.paint.ColorFillPaintable_Package; use org.allbinary.game.paint.ColorFillPaintable_Package;
 with org.allbinary.game.paint.OverScanColorFillPaintable_Package; use org.allbinary.game.paint.OverScanColorFillPaintable_Package;
 with org.allbinary.game.paint.ColorFillBasePaintable_Package; use org.allbinary.game.paint.ColorFillBasePaintable_Package;
+with org.allbinary.game.paint.ColorFillBasePaintable_Package_References;
 
 package body org.allbinary.game.paint.ColorFillPaintableFactory_Package is
 

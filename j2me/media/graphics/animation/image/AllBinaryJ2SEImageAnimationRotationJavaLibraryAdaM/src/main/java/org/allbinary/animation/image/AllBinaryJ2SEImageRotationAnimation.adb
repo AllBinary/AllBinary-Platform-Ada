@@ -14,18 +14,27 @@
 
 
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
 with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
+with javax.microedition.lcdui.Image_Package_References;
 with javax.microedition.lcdui.NullImage_Package; use javax.microedition.lcdui.NullImage_Package;
 with org.allbinary.DisposalUtil_Package; use org.allbinary.DisposalUtil_Package;
 with org.allbinary.animation.AnimationBehavior_Package; use org.allbinary.animation.AnimationBehavior_Package;
+with org.allbinary.animation.AnimationBehavior_Package_References;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.graphics.color.BasicColor_Package_References;
 with org.allbinary.math.AngleInfo_Package; use org.allbinary.math.AngleInfo_Package;
+with org.allbinary.math.AngleInfo_Package_References;
 with org.allbinary.media.image.ImageCopyUtil_Package; use org.allbinary.media.image.ImageCopyUtil_Package;
 with org.allbinary.media.image.ImageModifierUtil_Package; use org.allbinary.media.image.ImageModifierUtil_Package;
+with org.allbinary.media.image.ImageModifierUtil_Package_References;
 with org.allbinary.media.image.ImageRotationUtil_Package; use org.allbinary.media.image.ImageRotationUtil_Package;
+with org.allbinary.media.image.ImageRotationUtil_Package_References;
 with org.allbinary.animation.image.ModifierBaseProcessor_Package; use org.allbinary.animation.image.ModifierBaseProcessor_Package;
+with org.allbinary.animation.image.ModifierBaseProcessor_Package_References;
 with org.allbinary.animation.image.ScaleProcessor_Package; use org.allbinary.animation.image.ScaleProcessor_Package;
 with org.allbinary.animation.image.ScaleBaseProcessor_Package; use org.allbinary.animation.image.ScaleBaseProcessor_Package;
+with org.allbinary.animation.image.ScaleBaseProcessor_Package_References;
 with org.allbinary.animation.image.SetColorProcessor_Package; use org.allbinary.animation.image.SetColorProcessor_Package;
 with org.allbinary.animation.image.ChangeColorProcessor_Package; use org.allbinary.animation.image.ChangeColorProcessor_Package;
 with org.allbinary.animation.image.AlphaProcessor_Package; use org.allbinary.animation.image.AlphaProcessor_Package;
@@ -184,7 +193,7 @@ package body org.allbinary.animation.image.AllBinaryJ2SEImageRotationAnimation_P
         if ((AllBinaryJ2SEImageRotationAnimation'Class (This).getBasicColorP) = (null)) or else ((AllBinaryJ2SEImageRotationAnimation'Class (This).getBasicColorP.intValue) /= (basicColor.intValue)) then
             changed := True;
         end if;
-        ImageBaseRotationAnimation (This).setBasicColorP (basicColor);
+        ImageBaseRotationAnimation_Package.ImageBaseRotationAnimation (This).setBasicColorP (basicColor);
         if changed then
             This.setColorProcessor := SetColorProcessor_Package.getInstance;
             AllBinaryJ2SEImageRotationAnimation'Class (This).updateImage;
@@ -199,7 +208,7 @@ package body org.allbinary.animation.image.AllBinaryJ2SEImageRotationAnimation_P
         if ((AllBinaryJ2SEImageRotationAnimation'Class (This).getChangeBasicColor) = (null)) or else ((AllBinaryJ2SEImageRotationAnimation'Class (This).getChangeBasicColor.intValue) /= (basicColor.intValue)) then
             changed := True;
         end if;
-        ImageBaseRotationAnimation (This).changeBasicColor (basicColor);
+        ImageBaseRotationAnimation_Package.ImageBaseRotationAnimation (This).changeBasicColor (basicColor);
         if changed then
             This.changeColorProcessor := ChangeColorProcessor_Package.getInstance;
             AllBinaryJ2SEImageRotationAnimation'Class (This).updateImage;
@@ -213,7 +222,7 @@ package body org.allbinary.animation.image.AllBinaryJ2SEImageRotationAnimation_P
         if (This.alphaP) /= (alpha) then
             changed := True;
         end if;
-        ImageBaseRotationAnimation (This).setAlpha (alpha);
+        ImageBaseRotationAnimation_Package.ImageBaseRotationAnimation (This).setAlpha (alpha);
         if changed then
             This.alphaProcessor := AlphaProcessor_Package.getInstance;
             AllBinaryJ2SEImageRotationAnimation'Class (This).updateImage;
@@ -242,13 +251,13 @@ package body org.allbinary.animation.image.AllBinaryJ2SEImageRotationAnimation_P
 
    procedure nextRotation (This : in out AllBinaryJ2SEImageRotationAnimation) is
    begin
-        ImageBaseRotationAnimation (This).nextRotation;
+        ImageBaseRotationAnimation_Package.ImageBaseRotationAnimation (This).nextRotation;
         AllBinaryJ2SEImageRotationAnimation'Class (This).updateImage;
    end nextRotation;
 
    procedure previousRotation (This : in out AllBinaryJ2SEImageRotationAnimation) is
    begin
-        ImageBaseRotationAnimation (This).previousRotation;
+        ImageBaseRotationAnimation_Package.ImageBaseRotationAnimation (This).previousRotation;
         AllBinaryJ2SEImageRotationAnimation'Class (This).updateImage;
    end previousRotation;
 
@@ -263,7 +272,7 @@ package body org.allbinary.animation.image.AllBinaryJ2SEImageRotationAnimation_P
 
    procedure setFrame (This : in out AllBinaryJ2SEImageRotationAnimation; index : Integer) is
    begin
-        ImageBaseRotationAnimation (This).setFrame (index);
+        ImageBaseRotationAnimation_Package.ImageBaseRotationAnimation (This).setFrame (index);
         AllBinaryJ2SEImageRotationAnimation'Class (This).updateImage;
    end setFrame;
 
@@ -290,7 +299,7 @@ package body org.allbinary.animation.image.AllBinaryJ2SEImageRotationAnimation_P
       index : Integer;
       size : Integer;
    begin
-        ImageBaseRotationAnimation (This).close;
+        ImageBaseRotationAnimation_Package.ImageBaseRotationAnimation (This).close;
         disposalUtil := DisposalUtil_Package.getInstance;
         size2 := This.twoImages'Length;
         for index in 0 .. (size2) - 1 loop
@@ -311,7 +320,7 @@ package body org.allbinary.animation.image.AllBinaryJ2SEImageRotationAnimation_P
       index : Integer;
       size : Integer;
    begin
-        ImageBaseRotationAnimation (This).finalize;
+        ImageBaseRotationAnimation_Package.ImageBaseRotationAnimation (This).finalize;
         disposalUtil := DisposalUtil_Package.getInstance;
         size2 := This.twoImages'Length;
         for index in 0 .. (size2) - 1 loop

@@ -14,7 +14,9 @@
 
 
 with org.allbinary.media.image.analysis.ColorRange_Package; use org.allbinary.media.image.analysis.ColorRange_Package;
+with org.allbinary.media.image.analysis.ColorRange_Package_References;
 with org.allbinary.media.image.analysis.ColorAverage_Package; use org.allbinary.media.image.analysis.ColorAverage_Package;
+with org.allbinary.media.image.analysis.ColorAverage_Package_References;
 with org.allbinary.media.image.analysis.ColorAverage_Package;
 with org.allbinary.media.image.analysis.ColorRange_Package;
 with org.allbinary.media.image.analysis.ColorRangeInterface_Package;

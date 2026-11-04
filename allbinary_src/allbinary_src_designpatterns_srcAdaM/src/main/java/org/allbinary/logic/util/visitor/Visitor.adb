@@ -14,7 +14,7 @@
 
 
 with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
-with org.allbinary.logic.util.visitor.VisitorInterface_Package;
+with org.allbinary.logic.NullUtil_Package_References;
 
 package body org.allbinary.logic.util.visitor.Visitor_Package is
 

@@ -15,6 +15,7 @@
 
 with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
 with org.allbinary.game.state.GameState_Package; use org.allbinary.game.state.GameState_Package;
+with org.allbinary.game.state.GameState_Package_References;
 with org.allbinary.game.state.GameState_Package;
 
 package body org.allbinary.game.state.GameStateFactory_Package is

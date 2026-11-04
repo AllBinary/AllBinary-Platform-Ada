@@ -14,6 +14,7 @@
 
 
 with javax.microedition.lcdui.Displayable_Package; use javax.microedition.lcdui.Displayable_Package;
+with javax.microedition.lcdui.Displayable_Package_References;
 with org.allbinary.canvas.Processor_Package; use org.allbinary.canvas.Processor_Package;
 with org.allbinary.graphics.displayable.screen.ScreenRepaintUtil_Package; use org.allbinary.graphics.displayable.screen.ScreenRepaintUtil_Package;
 

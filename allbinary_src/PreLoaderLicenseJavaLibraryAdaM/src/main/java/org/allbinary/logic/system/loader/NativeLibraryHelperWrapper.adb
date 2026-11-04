@@ -15,6 +15,7 @@
 
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.logic.system.loader.ClassLoader_Package; use org.allbinary.logic.system.loader.ClassLoader_Package;
+with org.allbinary.logic.system.loader.ClassLoader_Package_References;
 with org.allbinary.logic.system.loader.NativeLibraryClassLoader_Package; use org.allbinary.logic.system.loader.NativeLibraryClassLoader_Package;
 with org.allbinary.logic.system.loader.NativeLibraryClassLoader_Package;
 

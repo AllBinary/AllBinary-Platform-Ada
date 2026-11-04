@@ -15,10 +15,11 @@
 
 with javax.microedition.lcdui.Font_Package; use javax.microedition.lcdui.Font_Package;
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
 with org.allbinary.game.ag.layer.hud.basic.NumberStringHud_Package; use org.allbinary.game.ag.layer.hud.basic.NumberStringHud_Package;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.graphics.color.BasicColor_Package_References;
 with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
-with org.allbinary.game.ag.layer.hud.basic.NumberStringHud_Package;
 
 package body org.allbinary.game.ag.layer.hud.basic.score.ScoreHudWidget_Package is
 
@@ -76,7 +77,7 @@ package body org.allbinary.game.ag.layer.hud.basic.score.ScoreHudWidget_Package 
    begin
         font := graphics.getFont;
         This.updateMaxWidth := (font.getSize) * (5);
-        NumberStringHud (This).updateMeasurement (graphics);
+        NumberStringHud_Package.NumberStringHud (This).updateMeasurement (graphics);
    end updateMeasurement;
 
    procedure getInstance (maxscore : Integer; location : Integer; direction : Integer) is

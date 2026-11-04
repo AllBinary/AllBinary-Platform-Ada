@@ -14,7 +14,9 @@
 
 
 with org.allbinary.globals.FREEBLISKET_PATH_GLOBALS_Package; use org.allbinary.globals.FREEBLISKET_PATH_GLOBALS_Package;
+with org.allbinary.globals.URLGLOBALS_Package; use org.allbinary.globals.URLGLOBALS_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.control.crypt.file.CryptFileReader_Package; use org.allbinary.logic.control.crypt.file.CryptFileReader_Package;
 with org.allbinary.logic.io.path.AbFilePath_Package; use org.allbinary.logic.io.path.AbFilePath_Package;
 with org.allbinary.logic.io.path.AbPath_Package; use org.allbinary.logic.io.path.AbPath_Package;
@@ -22,7 +24,9 @@ with org.allbinary.logic.io.path.AbPathData_Package; use org.allbinary.logic.io.
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.visual.transform.info.template.TransformInfoTemplateData_Package; use org.allbinary.logic.visual.transform.info.template.TransformInfoTemplateData_Package;
 with org.allbinary.data.tree.dom.URIResolverStrings_Package; use org.allbinary.data.tree.dom.URIResolverStrings_Package;
+with org.allbinary.data.tree.dom.URIResolverStrings_Package_References;
 with org.allbinary.data.tree.dom.BasicUriResolver_Package; use org.allbinary.data.tree.dom.BasicUriResolver_Package;
+with org.allbinary.data.tree.dom.BasicUriResolver_Package_References;
 with org.allbinary.data.tree.dom.BasicUriResolver_Package;
 with org.allbinary.data.tree.dom.URIResolverStrings_Package;
 

@@ -14,6 +14,7 @@
 
 
 with org.allbinary.business.user.commerce.money.payment.types.AuthorizationType_Package; use org.allbinary.business.user.commerce.money.payment.types.AuthorizationType_Package;
+with org.allbinary.business.user.commerce.money.payment.types.AuthorizationType_Package_References;
 with org.allbinary.business.user.commerce.money.payment.types.AuthorizationType_Package;
 
 package body org.allbinary.business.user.commerce.money.payment.types.AuthorizationTypeFactory_Package is

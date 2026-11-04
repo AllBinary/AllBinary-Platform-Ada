@@ -14,6 +14,7 @@
 
 
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
 
 package body org.allbinary.media.graphics.geography.pathfinding.PathFinderGraphVisitorBase_Package is
 

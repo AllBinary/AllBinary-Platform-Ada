@@ -14,6 +14,7 @@
 
 
 with org.allbinary.media.image.ImageUnifierCell_Package; use org.allbinary.media.image.ImageUnifierCell_Package;
+with org.allbinary.media.image.ImageUnifierCell_Package_References;
 with org.allbinary.media.image.ImageUnifierCell_Package;
 
 package body org.allbinary.media.image.ImageUnifierProperties_Package is

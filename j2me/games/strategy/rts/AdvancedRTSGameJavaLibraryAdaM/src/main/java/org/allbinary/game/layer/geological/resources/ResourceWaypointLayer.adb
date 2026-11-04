@@ -14,13 +14,20 @@
 
 
 with org.allbinary.game.layer.SelectionHudPaintable_Package; use org.allbinary.game.layer.SelectionHudPaintable_Package;
+with org.allbinary.game.layer.SelectionHudPaintable_Package_References;
 with org.allbinary.game.layer.waypoint.WaypointLayer_Package; use org.allbinary.game.layer.waypoint.WaypointLayer_Package;
 with org.allbinary.animation.AnimationInterfaceFactoryInterface_Package; use org.allbinary.animation.AnimationInterfaceFactoryInterface_Package;
+with org.allbinary.animation.AnimationInterfaceFactoryInterface_Package_References;
 with org.allbinary.animation.ProceduralAnimationInterfaceFactoryInterface_Package; use org.allbinary.animation.ProceduralAnimationInterfaceFactoryInterface_Package;
+with org.allbinary.animation.ProceduralAnimationInterfaceFactoryInterface_Package_References;
 with org.allbinary.game.identification.Group_Package; use org.allbinary.game.identification.Group_Package;
+with org.allbinary.game.identification.Group_Package_References;
 with org.allbinary.game.layer.PathFindingLayerInterface_Package; use org.allbinary.game.layer.PathFindingLayerInterface_Package;
+with org.allbinary.game.layer.PathFindingLayerInterface_Package_References;
 with org.allbinary.graphics.Rectangle_Package; use org.allbinary.graphics.Rectangle_Package;
+with org.allbinary.graphics.Rectangle_Package_References;
 with org.allbinary.game.multiplayer.layer.RemoteInfo_Package; use org.allbinary.game.multiplayer.layer.RemoteInfo_Package;
+with org.allbinary.game.multiplayer.layer.RemoteInfo_Package_References;
 with org.allbinary.game.layer.geological.resources.GeologicalResourceInfoHudPaintableSingleton_Package; use org.allbinary.game.layer.geological.resources.GeologicalResourceInfoHudPaintableSingleton_Package;
 with org.allbinary.game.layer.geological.resources.GeologicalResourceInfoHudPaintable_Package; use org.allbinary.game.layer.geological.resources.GeologicalResourceInfoHudPaintable_Package;
 with org.allbinary.game.layer.AdvancedRTSGameLayer_Package;
@@ -28,7 +35,6 @@ with org.allbinary.game.layer.AdvancedRTSProperties_Package;
 with org.allbinary.game.layer.geological.resources.GeologicalResourceInfoHudPaintable_Package;
 with org.allbinary.game.layer.geological.resources.GeologicalResourceInfoHudPaintableSingleton_Package;
 with org.allbinary.game.layer.waypoint.WaypointInfoHudPaintable_Package;
-with org.allbinary.game.layer.waypoint.WaypointLayer_Package;
 
 package body org.allbinary.game.layer.geological.resources.ResourceWaypointLayer_Package is
 

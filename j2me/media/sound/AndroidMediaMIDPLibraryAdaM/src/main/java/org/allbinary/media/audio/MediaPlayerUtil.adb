@@ -14,7 +14,9 @@
 
 
 with android.media.MediaPlayer_Package; use android.media.MediaPlayer_Package;
+with android.media.MediaPlayer_Package_References;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with java.lang.Thread_Package; use java.lang.Thread_Package;
 
 package body org.allbinary.media.audio.MediaPlayerUtil_Package is

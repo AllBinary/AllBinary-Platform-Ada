@@ -15,6 +15,7 @@
 
 with javax.microedition.media.Player_Package; use javax.microedition.media.Player_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.string_Id.CommonStrings_Package_References;
 
 package body org.allbinary.media.audio.PlayerStateUtil_Package is
 

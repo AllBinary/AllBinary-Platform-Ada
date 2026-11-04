@@ -14,6 +14,7 @@
 
 
 with org.allbinary.game.input.InputProcessor_Package; use org.allbinary.game.input.InputProcessor_Package;
+with org.allbinary.game.input.InputProcessor_Package_References;
 with org.allbinary.game.input.GameInputStrings_Package;
 with org.allbinary.game.input.InputProcessor_Package;
 

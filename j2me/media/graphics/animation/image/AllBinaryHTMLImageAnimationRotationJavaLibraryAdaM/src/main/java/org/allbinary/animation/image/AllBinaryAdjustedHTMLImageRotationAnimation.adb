@@ -14,10 +14,13 @@
 
 
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
 with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
+with javax.microedition.lcdui.Image_Package_References;
 with org.allbinary.animation.AnimationBehavior_Package; use org.allbinary.animation.AnimationBehavior_Package;
+with org.allbinary.animation.AnimationBehavior_Package_References;
 with org.allbinary.math.AngleInfo_Package; use org.allbinary.math.AngleInfo_Package;
-with org.allbinary.animation.image.AllBinaryHTMLImageRotationAnimation_Package;
+with org.allbinary.math.AngleInfo_Package_References;
 with org.allbinary.animation.image.AlphaBaseProcessor_Package;
 
 package body org.allbinary.animation.image.AllBinaryAdjustedHTMLImageRotationAnimation_Package is
@@ -118,7 +121,7 @@ package body org.allbinary.animation.image.AllBinaryAdjustedHTMLImageRotationAni
    procedure paintXY (This : in out AllBinaryAdjustedHTMLImageRotationAnimation; graphics_Param : access Graphics_Package.Graphics'Class; x : Integer; y : Integer) is
       graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
-        AllBinaryHTMLImageRotationAnimation (This).paintXY (graphics, (x) + (This.dx), (y) + (This.dy));
+        AllBinaryHTMLImageRotationAnimation_Package.AllBinaryHTMLImageRotationAnimation (This).paintXY (graphics, (x) + (This.dx), (y) + (This.dy));
    end paintXY;
 
 end org.allbinary.animation.image.AllBinaryAdjustedHTMLImageRotationAnimation_Package;

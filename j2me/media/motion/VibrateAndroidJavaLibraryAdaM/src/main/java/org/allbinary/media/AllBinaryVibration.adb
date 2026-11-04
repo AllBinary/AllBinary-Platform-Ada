@@ -15,6 +15,7 @@
 
 with android.content.Context_Package; use android.content.Context_Package;
 with android.os.Vibrator_Package; use android.os.Vibrator_Package;
+with android.os.Vibrator_Package_References;
 with org.allbinary.data.resource.ResourceUtil_Package; use org.allbinary.data.resource.ResourceUtil_Package;
 with org.allbinary.game.configuration.GameConfigurationCentral_Package; use org.allbinary.game.configuration.GameConfigurationCentral_Package;
 with org.allbinary.media.AllBinaryNoVibration_Package; use org.allbinary.media.AllBinaryNoVibration_Package;

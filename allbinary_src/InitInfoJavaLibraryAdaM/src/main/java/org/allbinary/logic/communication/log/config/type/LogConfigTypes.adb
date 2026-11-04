@@ -18,11 +18,14 @@ with org.allbinary.data.tree.dom.DomSearchHelper_Package; use org.allbinary.data
 with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
 with org.allbinary.logic.communication.log.config.LoggingInitInfo_Package; use org.allbinary.logic.communication.log.config.LoggingInitInfo_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
+with org.w3c.dom.Node_Package_References;
 with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
 with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeData_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeData_Package;
 with org.allbinary.logic.communication.log.config.type_Id.LogConfigType_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigType_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigType_Package_References;
 
 package body org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package is
 

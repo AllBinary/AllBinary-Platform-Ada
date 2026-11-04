@@ -14,6 +14,7 @@
 
 
 with org.allbinary.emulator.swt.SWTProcessor_Package; use org.allbinary.emulator.swt.SWTProcessor_Package;
+with org.allbinary.emulator.swt.SWTProcessor_Package_References;
 with org.allbinary.emulator.swt.SWTProcessor_Package;
 
 package body org.allbinary.emulator.swt.SWTProcessorUtil_Package is

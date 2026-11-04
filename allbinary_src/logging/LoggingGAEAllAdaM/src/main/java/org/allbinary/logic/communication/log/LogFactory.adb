@@ -15,6 +15,7 @@
 
 with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
 with org.allbinary.logic.communication.log.Log_Package; use org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.Log_Package_References;
 
 package body org.allbinary.logic.communication.log.LogFactory_Package is
 

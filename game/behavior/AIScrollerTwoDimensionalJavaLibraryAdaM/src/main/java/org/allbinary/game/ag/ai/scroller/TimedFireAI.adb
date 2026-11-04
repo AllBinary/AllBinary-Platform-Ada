@@ -16,11 +16,15 @@
 with javax.microedition.lcdui.Canvas_Package; use javax.microedition.lcdui.Canvas_Package;
 with org.allbinary.game.ai.BasicAI_Package; use org.allbinary.game.ai.BasicAI_Package;
 with org.allbinary.game.input.GameInput_Package; use org.allbinary.game.input.GameInput_Package;
+with org.allbinary.game.input.GameInput_Package_References;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
+with org.allbinary.layer.AllBinaryLayer_Package_References;
 with org.allbinary.layer.AllBinaryLayerManager_Package; use org.allbinary.layer.AllBinaryLayerManager_Package;
+with org.allbinary.layer.AllBinaryLayerManager_Package_References;
 with org.allbinary.logic.math.SmallIntegerSingletonFactory_Package; use org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
 with org.allbinary.time.GameTickTimeDelayHelperFactory_Package; use org.allbinary.time.GameTickTimeDelayHelperFactory_Package;
 with org.allbinary.time.TimeDelayHelper_Package; use org.allbinary.time.TimeDelayHelper_Package;
+with org.allbinary.time.TimeDelayHelper_Package_References;
 with org.allbinary.game.ag.ai.scroller.TimeFiredInterface_Package; use org.allbinary.game.ag.ai.scroller.TimeFiredInterface_Package;
 with org.allbinary.game.ag.ai.scroller.TimeFiredInterface_Package;
 
@@ -100,7 +104,7 @@ package body org.allbinary.game.ag.ai.scroller.TimedFireAI_Package is
    begin
         timeFiredInterface := TimeFiredInterface_Access (TimedFireAI'Class (This).getOwnerLayerInterface);
         if (This.maxFireDelayTimeHelper.isTime (GameTickTimeDelayHelperFactory_Package.getInstance.startTime)) and then (((timeFiredInterface.getLastFireTime) + (This.maxFireDelayTimeHelper.delay_Id)) < (This.maxFireDelayTimeHelper.getStartTime)) then
-            BasicAI (This).processKeyAI (Canvas_Package.KEY_NUM1);
+            BasicAI_Package.BasicAI (This).processKeyAI (Canvas_Package.KEY_NUM1);
             This.maxFireDelayTimeHelper.delay_Id := This.delay_Id;
         end if;
    end processAI;

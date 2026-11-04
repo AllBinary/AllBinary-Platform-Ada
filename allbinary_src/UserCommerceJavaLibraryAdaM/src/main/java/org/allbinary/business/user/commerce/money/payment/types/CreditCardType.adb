@@ -43,7 +43,7 @@ package body org.allbinary.business.user.commerce.money.payment.types.CreditCard
 
 begin
    null;
-   MAXLEN := 19;
+   
 
 end org.allbinary.business.user.commerce.money.payment.types.CreditCardType_Package;
 

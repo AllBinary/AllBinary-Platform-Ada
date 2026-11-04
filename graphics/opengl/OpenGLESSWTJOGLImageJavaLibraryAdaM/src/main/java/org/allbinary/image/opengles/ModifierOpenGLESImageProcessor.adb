@@ -14,7 +14,7 @@
 
 
 with javax.microedition.khronos.opengles.GL10_Package; use javax.microedition.khronos.opengles.GL10_Package;
-with org.allbinary.image.opengles.OpenGLESImageProcessor_Package;
+with javax.microedition.khronos.opengles.GL10_Package_References;
 
 package body org.allbinary.image.opengles.ModifierOpenGLESImageProcessor_Package is
 

@@ -19,6 +19,7 @@ with org.allbinary.business.user.role.UserRoleB_Package; use org.allbinary.busin
 with org.allbinary.business.user.role.UserRoleData_Package; use org.allbinary.business.user.role.UserRoleData_Package;
 with org.allbinary.logic.string_Id.StringValidationUtil_Package; use org.allbinary.logic.string_Id.StringValidationUtil_Package;
 with org.allbinary.business.user.UserInterface_Package; use org.allbinary.business.user.UserInterface_Package;
+with org.allbinary.business.user.UserInterface_Package_References;
 
 package body org.allbinary.business.user.CreateUserFactory_Package is
 

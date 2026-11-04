@@ -40,7 +40,7 @@ package body org.allbinary.logic.visual.dhtml.html.head.meta.HtmlMetaData_Packag
 
    function getInstance return HtmlMetaData_Access is
    begin
-        return HtmlMetaData_Package.instance;
+        return HtmlMetaData_Access (HtmlMetaData_Package.instance);
    end getInstance;
 
 begin

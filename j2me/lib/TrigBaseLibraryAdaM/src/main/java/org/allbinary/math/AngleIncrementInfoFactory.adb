@@ -14,6 +14,7 @@
 
 
 with org.allbinary.math.AngleIncrementInfo_Package; use org.allbinary.math.AngleIncrementInfo_Package;
+with org.allbinary.math.AngleIncrementInfo_Package_References;
 with org.allbinary.math.AngleFactory_Package; use org.allbinary.math.AngleFactory_Package;
 with org.allbinary.math.Angle_Package;
 with org.allbinary.math.AngleFactory_Package;

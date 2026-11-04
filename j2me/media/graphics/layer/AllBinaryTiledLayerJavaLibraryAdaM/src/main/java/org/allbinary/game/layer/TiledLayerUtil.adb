@@ -14,6 +14,7 @@
 
 
 with org.allbinary.game.layer.AllBinaryTiledLayer_Package; use org.allbinary.game.layer.AllBinaryTiledLayer_Package;
+with org.allbinary.game.layer.AllBinaryTiledLayer_Package_References;
 with org.allbinary.game.layer.AllBinaryTiledLayer_Package;
 
 package body org.allbinary.game.layer.TiledLayerUtil_Package is

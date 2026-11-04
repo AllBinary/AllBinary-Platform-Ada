@@ -15,9 +15,9 @@
 
 with org.allbinary.game.init.BaseGameInitialization_Package; use org.allbinary.game.init.BaseGameInitialization_Package;
 with org.allbinary.game.init.GameInitializationInterface_Package; use org.allbinary.game.init.GameInitializationInterface_Package;
+with org.allbinary.game.init.GameInitializationInterface_Package_References;
 with org.allbinary.game.init.BaseGameInitialization_Package;
 with org.allbinary.game.init.GameInitializationInterface_Package;
-with org.allbinary.game.init.GameInitializationInterfaceFactoryInterface_Package;
 
 package body org.allbinary.game.init.BasicBuildGameInitializerFactory_Package is
 

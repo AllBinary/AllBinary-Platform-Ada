@@ -16,6 +16,7 @@
 with java.io.ByteArrayOutputStream_Package; use java.io.ByteArrayOutputStream_Package;
 with java.io.InputStream_Package; use java.io.InputStream_Package;
 with org.allbinary.logic.io.StreamUtil_Package; use org.allbinary.logic.io.StreamUtil_Package;
+with org.allbinary.logic.io.StreamUtil_Package_References;
 with org.allbinary.logic.system.security.crypt.jcehelper.AbCrypt_Package; use org.allbinary.logic.system.security.crypt.jcehelper.AbCrypt_Package;
 with org.allbinary.logic.system.security.crypt.jcehelper.KeySpecFactory_Package; use org.allbinary.logic.system.security.crypt.jcehelper.KeySpecFactory_Package;
 

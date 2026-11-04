@@ -19,7 +19,6 @@ with org.allbinary.game.configuration.feature.SensorFeatureFactory_Package; use 
 with org.allbinary.game.input.motion.action.NoCompleteMotionGestureInputEventListener_Package; use org.allbinary.game.input.motion.action.NoCompleteMotionGestureInputEventListener_Package;
 with org.allbinary.game.input.motion.action.SingleKeyPressGameKeyFromMotionGestureEventListener_Package; use org.allbinary.game.input.motion.action.SingleKeyPressGameKeyFromMotionGestureEventListener_Package;
 with org.allbinary.input.accelerometer.AccelerometerSensorFactory_Package; use org.allbinary.input.accelerometer.AccelerometerSensorFactory_Package;
-with org.allbinary.input.accelerometer.AccelerometerSensorFactory_Package;
 
 package body org.allbinary.input.gyro.AccelerometerSensorUpdateProcessor_Package is
 

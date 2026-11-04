@@ -15,11 +15,15 @@
 
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.business.entry_Id.EntryData_Package; use org.allbinary.business.entry_Id.EntryData_Package;
 with org.allbinary.business.init.db.InventoryDbInitInfo_Package; use org.allbinary.business.init.db.InventoryDbInitInfo_Package;
 with org.allbinary.business.user.commerce.inventory.item.BasicItemData_Package; use org.allbinary.business.user.commerce.inventory.item.BasicItemData_Package;
+with org.allbinary.business.user.commerce.inventory.item.BasicItemData_Package_References;
 with org.allbinary.business.user.commerce.inventory.item.group.BasicGroupItemData_Package; use org.allbinary.business.user.commerce.inventory.item.group.BasicGroupItemData_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.communication.sql.AbSqlBean_Package; use org.allbinary.logic.communication.sql.AbSqlBean_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 
@@ -86,7 +90,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.item.groups.Basic
       values : constant BasicArrayList_Access := BasicArrayList_Access (values_Param);
    begin
         begin
-            AbSqlBean (This).insert (values);
+            AbSqlBean_Package.AbSqlBean (This).insert (values);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
                 This.logUtil.putF (This.commonStrings.SUCCESS, BasicGroupItemsEntity_Access'(This'Unchecked_Access), INSERT);
             end if;
@@ -105,7 +109,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.item.groups.Basic
    procedure delete (This : in out BasicGroupItemsEntity; value : Unbounded_String) is
    begin
         begin
-            AbSqlBean (This).deleteWhere (This.basicItemData.ID, value);
+            AbSqlBean_Package.AbSqlBean (This).deleteWhere (This.basicItemData.ID, value);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
                 This.logUtil.putF (This.commonStrings.SUCCESS, BasicGroupItemsEntity_Access'(This'Unchecked_Access), This.commonStrings.delete);
             end if;
@@ -131,18 +135,18 @@ package body org.allbinary.data.tables.user.commerce.inventory.item.groups.Basic
 
    function createTable (This : in out BasicGroupItemsEntity) return Unbounded_String is
    begin
-        return AbSqlBean (This).createTable (BasicGroupItemsEntity'Class (This).createTableStatement);
+        return AbSqlBean_Package.AbSqlBean (This).createTable (BasicGroupItemsEntity'Class (This).createTableStatement);
    end createTable;
 
    procedure update (This : in out BasicGroupItemsEntity; updatedValues_Param : access HashMap_Package.HashMap'Class) is
       updatedValues : constant HashMap_Access := HashMap_Access (updatedValues_Param);
    begin
-        AbSqlBean (This).updateWhere (This.basicItemData.ID, Java_Unbox (updatedValues.get (This.basicItemData.ID)), updatedValues);
+        AbSqlBean_Package.AbSqlBean (This).updateWhere (This.basicItemData.ID, Java_Unbox (updatedValues.get (This.basicItemData.ID)), updatedValues);
    end update;
 
    function dropTable (This : in out BasicGroupItemsEntity) return Unbounded_String is
    begin
-        return AbSqlBean (This).dropTable;
+        return AbSqlBean_Package.AbSqlBean (This).dropTable;
    end dropTable;
 
 end org.allbinary.data.tables.user.commerce.inventory.item.groups.BasicGroupItemsEntity_Package;

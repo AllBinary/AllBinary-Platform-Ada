@@ -14,7 +14,7 @@
 
 
 with org.allbinary.graphics.form.item.ABTextFieldItem_Package; use org.allbinary.graphics.form.item.ABTextFieldItem_Package;
-with org.allbinary.graphics.form.item.validation.TextFieldItemValidator_Package;
+with org.allbinary.graphics.form.item.ABTextFieldItem_Package_References;
 
 package body org.allbinary.graphics.form.item.validation.UsernameValidator_Package is
 

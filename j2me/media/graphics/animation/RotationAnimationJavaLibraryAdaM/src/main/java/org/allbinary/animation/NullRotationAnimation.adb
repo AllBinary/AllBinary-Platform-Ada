@@ -3,9 +3,11 @@
 
 with org.allbinary.math.AngleFactory_Package; use org.allbinary.math.AngleFactory_Package;
 with org.allbinary.math.AngleInfo_Package; use org.allbinary.math.AngleInfo_Package;
+with org.allbinary.math.AngleInfo_Package_References;
 with org.allbinary.util.CircularIndexUtil_Package; use org.allbinary.util.CircularIndexUtil_Package;
+with org.allbinary.util.CircularIndexUtil_Package_References;
 with org.allbinary.animation.AnimationBehavior_Package; use org.allbinary.animation.AnimationBehavior_Package;
-with org.allbinary.animation.RotationAnimation_Package;
+with org.allbinary.animation.AnimationBehavior_Package_References;
 with org.allbinary.animation.RotationAnimationInterface_Package;
 
 package body org.allbinary.animation.NullRotationAnimation_Package is

@@ -15,6 +15,7 @@
 
 with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
 with org.allbinary.game.layer.geological.resources.GeologicalResource_Package; use org.allbinary.game.layer.geological.resources.GeologicalResource_Package;
+with org.allbinary.game.layer.geological.resources.GeologicalResource_Package_References;
 with org.allbinary.game.layer.geological.resources.GeologicalResource_Package;
 
 package body org.allbinary.game.layer.geological.resources.GeologicalGeographicMapCellPosition_Package is

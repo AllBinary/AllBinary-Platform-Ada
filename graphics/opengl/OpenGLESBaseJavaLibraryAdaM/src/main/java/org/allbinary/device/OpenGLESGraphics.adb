@@ -2,16 +2,18 @@
 
 
 with javax.microedition.khronos.opengles.GL_Package; use javax.microedition.khronos.opengles.GL_Package;
+with javax.microedition.khronos.opengles.GL_Package_References;
 with javax.microedition.khronos.opengles.GL10_Package; use javax.microedition.khronos.opengles.GL10_Package;
+with javax.microedition.khronos.opengles.GL10_Package_References;
 with javax.microedition.lcdui.Font_Package; use javax.microedition.lcdui.Font_Package;
+with javax.microedition.lcdui.Font_Package_References;
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
 with org.allbinary.graphics.font.FontDebugBase_Package; use org.allbinary.graphics.font.FontDebugBase_Package;
+with org.allbinary.graphics.font.FontDebugBase_Package_References;
 with org.allbinary.image.opengles.OpenGLSurfaceChangedInterface_Package; use org.allbinary.image.opengles.OpenGLSurfaceChangedInterface_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.string_Id.CommonStrings_Package_References;
 with org.allbinary.device.NullGL10_Package; use org.allbinary.device.NullGL10_Package;
-with org.allbinary.graphics.font.FontDebugBase_Package;
-with org.allbinary.device.GraphicsInterface_Package;
-with org.allbinary.image.opengles.OpenGLSurfaceChangedInterface_Package;
 
 package body org.allbinary.device.OpenGLESGraphics_Package is
 

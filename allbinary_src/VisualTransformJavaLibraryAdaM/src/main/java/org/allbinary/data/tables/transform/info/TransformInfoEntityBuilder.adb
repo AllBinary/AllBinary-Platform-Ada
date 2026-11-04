@@ -18,9 +18,7 @@ with org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectC
 with org.allbinary.logic.visual.transform.info.objectConfig.generator.TransformInfoObjectConfigGeneratorFactory_Package; use org.allbinary.logic.visual.transform.info.objectConfig.generator.TransformInfoObjectConfigGeneratorFactory_Package;
 with org.allbinary.data.tables.transform.info.TransformInfoEntityFactory_Package; use org.allbinary.data.tables.transform.info.TransformInfoEntityFactory_Package;
 with org.allbinary.data.tables.transform.info.TransformInfoEntity_Package; use org.allbinary.data.tables.transform.info.TransformInfoEntity_Package;
-with org.allbinary.logic.visual.transform.info.TransformInfoHttpStoreFactory_Package;
-with org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfigAndManipulatorFactory_Package;
-with org.allbinary.logic.visual.transform.info.objectConfig.generator.TransformInfoObjectConfigGeneratorFactory_Package;
+with org.allbinary.data.tables.transform.info.TransformInfoEntity_Package_References;
 
 package body org.allbinary.data.tables.transform.info.TransformInfoEntityBuilder_Package is
 

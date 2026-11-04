@@ -123,7 +123,7 @@ package org.allbinary.game.displayable.canvas.BufferedGameCanvasPaintHelper_Pack
       drawCircularIndexUtil : CircularIndexUtil_Access;
       anchor : Integer;
    end record;
-   MAX_IMAGES : Integer;
+   MAX_IMAGES : constant Integer := 4;
 
    procedure Initialize (This : in out BufferedGameCanvasPaintHelper'Class; gameCanvas_Param : access AllBinaryGameCanvas_Package.AllBinaryGameCanvas'Class);
    function Create (gameCanvas_Param : access AllBinaryGameCanvas_Package.AllBinaryGameCanvas'Class) return BufferedGameCanvasPaintHelper_Access;

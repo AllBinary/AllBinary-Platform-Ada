@@ -28,7 +28,7 @@ package body org.allbinary.logic.visual.transform.template.customizer.widgets.lo
 
    function getInstance return LogoData_Access is
    begin
-        return LogoData_Package.instance;
+        return LogoData_Access (LogoData_Package.instance);
    end getInstance;
 
    procedure Initialize (This : in out LogoData'Class) is

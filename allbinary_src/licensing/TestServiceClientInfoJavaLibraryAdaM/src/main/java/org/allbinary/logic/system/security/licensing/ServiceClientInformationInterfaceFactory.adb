@@ -14,7 +14,9 @@
 
 
 with org.allbinary.logic.system.security.licensing.TestClientInformation_Package; use org.allbinary.logic.system.security.licensing.TestClientInformation_Package;
+with org.allbinary.logic.system.security.licensing.TestClientInformation_Package_References;
 with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package; use org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References;
 with org.allbinary.logic.system.security.licensing.TestClientInformation_Package;
 
 package body org.allbinary.logic.system.security.licensing.ServiceClientInformationInterfaceFactory_Package is

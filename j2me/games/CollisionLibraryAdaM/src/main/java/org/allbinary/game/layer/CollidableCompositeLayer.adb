@@ -15,25 +15,27 @@
 
 with org.allbinary.ai.ArtificialIntelligence_Package; use org.allbinary.ai.ArtificialIntelligence_Package;
 with org.allbinary.ai.ArtificialIntelligenceInterface_Package; use org.allbinary.ai.ArtificialIntelligenceInterface_Package;
+with org.allbinary.ai.ArtificialIntelligenceInterface_Package_References;
 with org.allbinary.game.collision.CollidableBaseBehavior_Package; use org.allbinary.game.collision.CollidableBaseBehavior_Package;
+with org.allbinary.game.collision.CollidableBaseBehavior_Package_References;
 with org.allbinary.game.collision.CollidableBaseBehaviorFactory_Package; use org.allbinary.game.collision.CollidableBaseBehaviorFactory_Package;
+with org.allbinary.game.collision.CollidableBaseBehaviorFactory_Package_References;
 with org.allbinary.game.collision.CollidableInterfaceCompositeInterface_Package; use org.allbinary.game.collision.CollidableInterfaceCompositeInterface_Package;
 with org.allbinary.game.collision.CollidableNeverCollideBehaviorFactory_Package; use org.allbinary.game.collision.CollidableNeverCollideBehaviorFactory_Package;
 with org.allbinary.graphics.Rectangle_Package; use org.allbinary.graphics.Rectangle_Package;
+with org.allbinary.graphics.Rectangle_Package_References;
 with org.allbinary.graphics.RectangleFactory_Package; use org.allbinary.graphics.RectangleFactory_Package;
 with org.allbinary.logic.communication.log.ForcedLogUtil_Package; use org.allbinary.logic.communication.log.ForcedLogUtil_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package_References;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.view.ViewPositionBase_Package; use org.allbinary.view.ViewPositionBase_Package;
+with org.allbinary.view.ViewPositionBase_Package_References;
 with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
-with org.allbinary.game.collision.CollidableBaseBehavior_Package;
-with org.allbinary.game.collision.CollidableBaseBehaviorFactory_Package;
 with org.allbinary.game.collision.CollidableBaseBehaviorFactoryInterface_Package;
 with org.allbinary.game.collision.CollidableInterface_Package;
-with org.allbinary.game.collision.CollidableInterfaceCompositeInterface_Package;
 with org.allbinary.game.collision.CollidableNeverCollideBehavior_Package;
-with org.allbinary.game.collision.CollidableNeverCollideBehaviorFactory_Package;
 with org.allbinary.game.collision.CollisionProcessor_Package;
 with org.allbinary.game.collision.CollisionType_Package;
 with org.allbinary.game.collision.LayerCollisionUtil_Package;
@@ -168,7 +170,7 @@ package body org.allbinary.game.layer.CollidableCompositeLayer_Package is
       commonSeps : CommonSeps_Access;
    begin
         commonSeps := CommonSeps_Package.getInstance;
-        AllBinaryGameLayer (This).toStringAppend (stringBuffer);
+        AllBinaryGameLayer_Package.AllBinaryGameLayer (This).toStringAppend (stringBuffer);
         stringBuffer.append (commonSeps.NEW_LINE);
         stringBuffer.append (CollidableCompositeLayer'Class (This).getCollidableInferface.toString);
    end toStringAppend;

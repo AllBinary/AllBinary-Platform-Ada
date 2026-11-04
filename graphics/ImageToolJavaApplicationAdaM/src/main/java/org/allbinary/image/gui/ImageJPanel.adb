@@ -14,9 +14,13 @@
 
 
 with org.allbinary.graphics.displayable.CanvasStrings_Package; use org.allbinary.graphics.displayable.CanvasStrings_Package;
+with org.allbinary.graphics.displayable.CanvasStrings_Package_References;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.string_Id.CommonStrings_Package_References;
 with org.allbinary.image.gui.Graphics_Package; use org.allbinary.image.gui.Graphics_Package;
+with org.allbinary.image.gui.Graphics_Package_References;
 
 package body org.allbinary.image.gui.ImageJPanel_Package is
 

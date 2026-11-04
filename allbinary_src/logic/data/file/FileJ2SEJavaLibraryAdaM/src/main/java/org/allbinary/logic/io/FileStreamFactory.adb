@@ -17,8 +17,9 @@ with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Pack
 with org.allbinary.logic.io.file.AbFile_Package; use org.allbinary.logic.io.file.AbFile_Package;
 with org.allbinary.logic.io.path.AbPath_Package; use org.allbinary.logic.io.path.AbPath_Package;
 with org.allbinary.logic.io.AbFileInputStream_Package; use org.allbinary.logic.io.AbFileInputStream_Package;
+with org.allbinary.logic.io.AbFileInputStream_Package_References;
 with org.allbinary.logic.io.AbFileOutputStream_Package; use org.allbinary.logic.io.AbFileOutputStream_Package;
-with org.allbinary.logic.io.file.AbFile_Package;
+with org.allbinary.logic.io.AbFileOutputStream_Package_References;
 with org.allbinary.logic.io.AbFileInputStream_Package;
 with org.allbinary.logic.io.AbFileOutputStream_Package;
 

@@ -14,6 +14,7 @@
 
 
 with org.allbinary.math.NoDecimalTrigTable_Package; use org.allbinary.math.NoDecimalTrigTable_Package;
+with org.allbinary.math.NoDecimalTrigTable_Package_References;
 
 package body org.allbinary.logic.math.vector.AxisMathVectorUtil_Package is
 

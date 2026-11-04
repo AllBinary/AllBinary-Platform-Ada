@@ -14,7 +14,7 @@
 
 
 with org.allbinary.media.audio.Sound_Package; use org.allbinary.media.audio.Sound_Package;
-with org.allbinary.media.audio.CompositeSound_Package;
+with org.allbinary.media.audio.Sound_Package_References;
 
 package body org.allbinary.media.audio.SelectSound_Package is
 

@@ -15,6 +15,7 @@
 
 with org.allbinary.graphics.paint.NullPaintable_Package; use org.allbinary.graphics.paint.NullPaintable_Package;
 with org.allbinary.graphics.paint.Paintable_Package; use org.allbinary.graphics.paint.Paintable_Package;
+with org.allbinary.graphics.paint.Paintable_Package_References;
 
 package body org.allbinary.graphics.displayable.screen.AboutPaintableFactory_Package is
 

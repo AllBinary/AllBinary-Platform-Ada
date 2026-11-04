@@ -15,6 +15,7 @@
 
 with org.allbinary.globals.Globals_Package; use org.allbinary.globals.Globals_Package;
 with org.allbinary.init.ClassLoader_Package; use org.allbinary.init.ClassLoader_Package;
+with org.allbinary.init.ClassLoader_Package_References;
 
 package body org.allbinary.init.NoLicense_Package is
 

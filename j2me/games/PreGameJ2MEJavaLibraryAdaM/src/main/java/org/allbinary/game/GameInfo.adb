@@ -14,18 +14,24 @@
 
 
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
 with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
+with org.allbinary.util.ABHashtable_Package_References;
 with org.allbinary.game.GameTypeFactory_Package; use org.allbinary.game.GameTypeFactory_Package;
 with org.allbinary.game.GameMode_Package; use org.allbinary.game.GameMode_Package;
+with org.allbinary.game.GameMode_Package_References;
 with org.allbinary.game.PlayerTypesFactory_Package; use org.allbinary.game.PlayerTypesFactory_Package;
 with org.allbinary.game.GameInfoData_Package; use org.allbinary.game.GameInfoData_Package;
+with org.allbinary.game.GameInfoData_Package_References;
 with org.allbinary.game.GameType_Package; use org.allbinary.game.GameType_Package;
+with org.allbinary.game.GameType_Package_References;
 with org.allbinary.game.PlayerType_Package; use org.allbinary.game.PlayerType_Package;
+with org.allbinary.game.PlayerType_Package_References;
 with org.allbinary.game.GameInfoData_Package;
 with org.allbinary.game.GameMode_Package;
 with org.allbinary.game.GameType_Package;

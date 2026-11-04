@@ -14,6 +14,7 @@
 
 
 with org.allbinary.logic.communication.http.AcceptableResponse_Package; use org.allbinary.logic.communication.http.AcceptableResponse_Package;
+with org.allbinary.logic.communication.http.AcceptableResponse_Package_References;
 with org.allbinary.logic.communication.http.AcceptableResponse_Package;
 
 package body org.allbinary.logic.communication.http.AcceptableResponseFactory_Package is

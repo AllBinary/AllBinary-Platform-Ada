@@ -65,7 +65,7 @@ package body org.allbinary.business.user.commerce.inventory.item.BasicItemData_P
 
    function getInstance return BasicItemData_Access is
    begin
-        return BasicItemData_Package.instance;
+        return BasicItemData_Access (BasicItemData_Package.instance);
    end getInstance;
 
 begin

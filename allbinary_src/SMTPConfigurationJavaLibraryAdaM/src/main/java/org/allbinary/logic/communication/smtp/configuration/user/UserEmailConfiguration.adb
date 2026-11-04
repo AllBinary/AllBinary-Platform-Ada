@@ -15,9 +15,12 @@
 
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventsConfiguration_Package; use org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventsConfiguration_Package;
 with org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventsConfigurationInterface_Package; use org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventsConfigurationInterface_Package;
+with org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventsConfigurationInterface_Package_References;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.string_Id.CommonStrings_Package_References;
 with org.allbinary.logic.communication.smtp.info.BasicEmailInfo_Package;
 with org.allbinary.logic.communication.smtp.event.EmailEvent_Package;
 with org.allbinary.logic.communication.smtp.info.EmailInfo_Package;
@@ -26,11 +29,8 @@ with org.allbinary.business.time.Time_Package;
 with org.allbinary.business.time.created.TimeCreated_Package;
 with org.allbinary.business.time.modified.TimeLastModified_Package;
 with org.allbinary.business.user.modules.configuration.UserConfigurationInterface_Package;
-with org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfigurationInterface_Package;
 with org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventConfigurationInterface_Package;
 with org.allbinary.logic.communication.smtp.event.UserEmailEventListenerInterface_Package;
-with org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventsConfiguration_Package;
-with org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventsConfigurationInterface_Package;
 with org.allbinary.business.user.UserFactoryInterface_Package;
 with org.allbinary.business.user.UserInterface_Package;
 with org.allbinary.business.user.role.UserRole_Package;

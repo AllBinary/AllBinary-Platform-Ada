@@ -14,6 +14,7 @@
 
 
 with org.allbinary.game.ag.ai.ThrustAIVisitor_Package; use org.allbinary.game.ag.ai.ThrustAIVisitor_Package;
+with org.allbinary.game.ag.ai.ThrustAIVisitor_Package_References;
 with org.allbinary.game.ag.ai.ThrustAIVisitor_Package;
 
 package body org.allbinary.game.ag.ai.ThrustAIVisitorFactory_Package is

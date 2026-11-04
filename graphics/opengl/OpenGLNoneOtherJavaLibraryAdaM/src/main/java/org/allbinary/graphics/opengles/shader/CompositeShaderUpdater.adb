@@ -14,12 +14,14 @@
 
 
 with javax.microedition.khronos.egl.EGLConfig_Package; use javax.microedition.khronos.egl.EGLConfig_Package;
+with javax.microedition.khronos.egl.EGLConfig_Package_References;
 with javax.microedition.khronos.opengles.GL10_Package; use javax.microedition.khronos.opengles.GL10_Package;
+with javax.microedition.khronos.opengles.GL10_Package_References;
 with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.string_Id.CommonSeps_Package_References;
 with org.allbinary.graphics.opengles.renderer.RendererStrings_Package;
-with org.allbinary.graphics.opengles.shader.ShaderUpdater_Package;
 
 package body org.allbinary.graphics.opengles.shader.CompositeShaderUpdater_Package is
 

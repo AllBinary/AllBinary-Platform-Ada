@@ -14,14 +14,14 @@
 
 
 with org.allbinary.game.score.displayable.HighScoresCanvas_Package; use org.allbinary.game.score.displayable.HighScoresCanvas_Package;
+with org.allbinary.game.score.displayable.HighScoresCanvas_Package_References;
 with org.allbinary.game.score.HighScoresCanvasLevelChangeInputProcessor_Package; use org.allbinary.game.score.HighScoresCanvasLevelChangeInputProcessor_Package;
 with org.allbinary.game.score.HighScoresCanvasInputProcessor_Package; use org.allbinary.game.score.HighScoresCanvasInputProcessor_Package;
+with org.allbinary.game.score.HighScoresCanvasInputProcessor_Package_References;
 with org.allbinary.game.layer.AllBinaryGameLayerManager_Package;
 with org.allbinary.game.score.HighScoreCommandsBaseFactory_Package;
 with org.allbinary.game.score.HighScoreCommandsFactory_Package;
-with org.allbinary.game.score.displayable.HighScoresCanvas_Package;
 with org.allbinary.game.score.HighScoresCanvasInputProcessor_Package;
-with org.allbinary.game.score.HighScoresCanvasInputProcessorFactoryInterface_Package;
 with org.allbinary.game.score.HighScoresCanvasLevelChangeInputProcessor_Package;
 
 package body org.allbinary.game.score.HighScoresCanvasChangeLevelInputProcessorFactory_Package is

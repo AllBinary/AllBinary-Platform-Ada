@@ -14,12 +14,18 @@
 
 
 with org.allbinary.business.installer.Portion_Package; use org.allbinary.business.installer.Portion_Package;
+with org.allbinary.business.installer.Portion_Package_References;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package_References;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.string_Id.CommonSeps_Package_References;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.string_Id.CommonStrings_Package_References;
 with org.allbinary.logic.communication.sql.SqlStrings_Package; use org.allbinary.logic.communication.sql.SqlStrings_Package;
+with org.allbinary.logic.communication.sql.SqlStrings_Package_References;
 with org.allbinary.logic.communication.sql.AbSqlTable_Package; use org.allbinary.logic.communication.sql.AbSqlTable_Package;
+with org.allbinary.logic.communication.sql.AbSqlTable_Package_References;
 
 package body org.allbinary.logic.communication.sql.AbSqlTableUtil_Package is
 

@@ -15,6 +15,7 @@
 
 with java.io.InputStream_Package; use java.io.InputStream_Package;
 with javax.microedition.media.Player_Package; use javax.microedition.media.Player_Package;
+with javax.microedition.media.Player_Package_References;
 with org.allbinary.TsUtil_Package; use org.allbinary.TsUtil_Package;
 with org.allbinary.graphics.canvas.transition.progress.ProgressCanvasFactory_Package; use org.allbinary.graphics.canvas.transition.progress.ProgressCanvasFactory_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
@@ -22,6 +23,7 @@ with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.s
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.media.audio.Sounds_Package; use org.allbinary.media.audio.Sounds_Package;
 with org.allbinary.media.audio.SoundsFactoryInterface_Package; use org.allbinary.media.audio.SoundsFactoryInterface_Package;
+with org.allbinary.media.audio.SoundsFactoryInterface_Package_References;
 with org.allbinary.media.audio.NoPlayer_Package; use org.allbinary.media.audio.NoPlayer_Package;
 
 package body org.allbinary.media.audio.AllBinaryMediaManager_Package is

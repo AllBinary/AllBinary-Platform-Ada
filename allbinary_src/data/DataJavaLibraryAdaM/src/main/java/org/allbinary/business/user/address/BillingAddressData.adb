@@ -37,8 +37,8 @@ package body org.allbinary.business.user.address.BillingAddressData_Package is
 
 begin
    null;
-   MAX := 255;
-   MIN := 0;
+   
+   
    MULTIPLE := To_Unbounded_String ("BILLINGADDRESSES");
    STATES := To_Unbounded_String ("BILLINGADDRESS_STATES");
    SETTOSHIPPINGADDRESS := To_Unbounded_String ("Set To Shipping Address");

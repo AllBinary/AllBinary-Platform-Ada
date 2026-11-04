@@ -14,15 +14,23 @@
 
 
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.direction.Direction_Package; use org.allbinary.direction.Direction_Package;
 with org.allbinary.direction.DirectionFactory_Package; use org.allbinary.direction.DirectionFactory_Package;
 with org.allbinary.layer.AllBinaryLayerManager_Package; use org.allbinary.layer.AllBinaryLayerManager_Package;
+with org.allbinary.layer.AllBinaryLayerManager_Package_References;
 with org.allbinary.math.AngleInfo_Package; use org.allbinary.math.AngleInfo_Package;
+with org.allbinary.math.AngleInfo_Package_References;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellHistory_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellHistory_Package;
+with org.allbinary.media.graphics.geography.map.GeographicMapCellHistory_Package_References;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
+with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package_References;
 with org.allbinary.media.graphics.geography.map.GeographicMapDirectionUtil_Package; use org.allbinary.media.graphics.geography.map.GeographicMapDirectionUtil_Package;
+with org.allbinary.media.graphics.geography.map.GeographicMapDirectionUtil_Package_References;
 with org.allbinary.media.graphics.geography.pathfinding.GeographicMapCellPathHistoryInfo_Package; use org.allbinary.media.graphics.geography.pathfinding.GeographicMapCellPathHistoryInfo_Package;
+with org.allbinary.media.graphics.geography.pathfinding.GeographicMapCellPathHistoryInfo_Package_References;
 with org.allbinary.game.ai.path.BasicDirectionAIHelper_Package; use org.allbinary.game.ai.path.BasicDirectionAIHelper_Package;
+with org.allbinary.game.ai.path.BasicDirectionAIHelper_Package_References;
 with org.allbinary.game.ai.path.BasicDirectionAIHelper_Package;
 
 package body org.allbinary.game.ai.path.BasicAIProcessor_Package is

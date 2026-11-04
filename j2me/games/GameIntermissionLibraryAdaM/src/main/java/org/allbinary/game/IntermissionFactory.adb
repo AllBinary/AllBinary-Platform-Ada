@@ -14,9 +14,8 @@
 
 
 with org.allbinary.game.state.GameState_Package; use org.allbinary.game.state.GameState_Package;
+with org.allbinary.game.state.GameState_Package_References;
 with org.allbinary.game.state.GameStateFactory_Package; use org.allbinary.game.state.GameStateFactory_Package;
-with org.allbinary.game.state.GameState_Package;
-with org.allbinary.game.state.GameStateFactory_Package;
 
 package body org.allbinary.game.IntermissionFactory_Package is
 

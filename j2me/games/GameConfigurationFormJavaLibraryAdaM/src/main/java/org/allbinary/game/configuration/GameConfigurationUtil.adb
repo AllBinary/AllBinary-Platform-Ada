@@ -15,13 +15,18 @@
 
 with javax.microedition.lcdui.Item_Package; use javax.microedition.lcdui.Item_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.math.SmallIntegerSingletonFactory_Package; use org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.string_Id.CommonStrings_Package_References;
 with org.allbinary.game.configuration.GameConfigurationSingleton_Package; use org.allbinary.game.configuration.GameConfigurationSingleton_Package;
 with org.allbinary.game.configuration.GameConfiguration_Package; use org.allbinary.game.configuration.GameConfiguration_Package;
+with org.allbinary.game.configuration.GameConfiguration_Package_References;
 with org.allbinary.game.configuration.GameOptionsForm_Package; use org.allbinary.game.configuration.GameOptionsForm_Package;
+with org.allbinary.game.configuration.GameOptionsForm_Package_References;
 with org.allbinary.game.configuration.GameConfigurationGauge_Package; use org.allbinary.game.configuration.GameConfigurationGauge_Package;
+with org.allbinary.game.configuration.GameConfigurationGauge_Package_References;
 with org.allbinary.game.configuration.GameConfigurationCentral_Package; use org.allbinary.game.configuration.GameConfigurationCentral_Package;
 with org.allbinary.game.configuration.GameOptionsForm_Package;
 with org.allbinary.logic.MEUtil_Package;

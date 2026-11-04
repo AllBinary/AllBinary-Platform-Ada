@@ -14,14 +14,17 @@
 
 
 with android.view.MotionEvent_Package; use android.view.MotionEvent_Package;
+with android.view.MotionEvent_Package_References;
 with org.allbinary.game.input.motion.action.SingleKeyPressGameKeyFromMotionGestureEventListener_Package; use org.allbinary.game.input.motion.action.SingleKeyPressGameKeyFromMotionGestureEventListener_Package;
+with org.allbinary.game.input.motion.action.SingleKeyPressGameKeyFromMotionGestureEventListener_Package_References;
 with org.allbinary.input.motion.trackball.action.DownTrackballInputToGameKeyEventAction_Package; use org.allbinary.input.motion.trackball.action.DownTrackballInputToGameKeyEventAction_Package;
 with org.allbinary.input.motion.trackball.action.LeftTrackballInputToGameKeyEventAction_Package; use org.allbinary.input.motion.trackball.action.LeftTrackballInputToGameKeyEventAction_Package;
 with org.allbinary.input.motion.trackball.action.RightTrackballInputToGameKeyEventAction_Package; use org.allbinary.input.motion.trackball.action.RightTrackballInputToGameKeyEventAction_Package;
 with org.allbinary.input.motion.trackball.action.UpTrackballInputToGameKeyEventAction_Package; use org.allbinary.input.motion.trackball.action.UpTrackballInputToGameKeyEventAction_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
-with org.allbinary.android.input.motion.MotionEventProcessor_Package;
+with org.allbinary.string_Id.CommonStrings_Package_References;
 
 package body org.allbinary.android.input.motion.TrackballGameInputMotionEventProcessor_Package is
 

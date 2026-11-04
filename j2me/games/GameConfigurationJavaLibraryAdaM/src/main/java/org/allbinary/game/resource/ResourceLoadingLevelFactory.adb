@@ -14,6 +14,7 @@
 
 
 with org.allbinary.game.resource.ResourceLoadingLevel_Package; use org.allbinary.game.resource.ResourceLoadingLevel_Package;
+with org.allbinary.game.resource.ResourceLoadingLevel_Package_References;
 with org.allbinary.game.resource.ResourceLoadingLevel_Package;
 
 package body org.allbinary.game.resource.ResourceLoadingLevelFactory_Package is

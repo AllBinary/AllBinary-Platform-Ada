@@ -4,6 +4,7 @@
 with org.allbinary.TsUtil_Package; use org.allbinary.TsUtil_Package;
 with org.allbinary.thread.NullPriorityRunnable_Package; use org.allbinary.thread.NullPriorityRunnable_Package;
 with org.allbinary.thread.PriorityRunnable_Package; use org.allbinary.thread.PriorityRunnable_Package;
+with org.allbinary.thread.PriorityRunnable_Package_References;
 with java.lang.Thread_Package; use java.lang.Thread_Package;
 with org.allbinary.thread.NullPriorityRunnable_Package;
 with org.allbinary.thread.PriorityRunnable_Package;

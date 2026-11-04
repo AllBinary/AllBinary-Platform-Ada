@@ -50,8 +50,8 @@ package org.allbinary.business.user.commerce.money.payment.PaymentData_Package i
    function "=" (Left, Right : PaymentData_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.user.commerce.money.payment.PaymentData_Package_References."=";
 
    type PaymentData is new Java_Object with null record;
-   MIN : Integer;
-   MAX : Integer;
+   MIN : constant Integer := 4;
+   MAX : constant Integer := 19;
    ADDNEW : Unbounded_String;
    VIEW : Unbounded_String;
    SELECT_Id : Unbounded_String;

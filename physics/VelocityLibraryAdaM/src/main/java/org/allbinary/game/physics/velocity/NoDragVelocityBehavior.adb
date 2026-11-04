@@ -16,7 +16,6 @@
 with org.allbinary.logic.math.vector.AxisMathVectorUtil_Package;
 with org.allbinary.game.physics.velocity.BasicVelocityInterface_Package;
 with org.allbinary.game.physics.velocity.BasicVelocityProperties_Package;
-with org.allbinary.game.physics.velocity.VelocityBehaviorBase_Package;
 
 package body org.allbinary.game.physics.velocity.NoDragVelocityBehavior_Package is
 

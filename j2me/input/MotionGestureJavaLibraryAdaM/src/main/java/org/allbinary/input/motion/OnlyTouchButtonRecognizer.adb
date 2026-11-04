@@ -14,6 +14,7 @@
 
 
 with org.allbinary.input.motion.button.TouchButtonRecognizer_Package; use org.allbinary.input.motion.button.TouchButtonRecognizer_Package;
+with org.allbinary.input.motion.button.TouchButtonRecognizer_Package_References;
 
 package body org.allbinary.input.motion.OnlyTouchButtonRecognizer_Package is
 

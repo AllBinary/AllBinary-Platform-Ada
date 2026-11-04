@@ -33,7 +33,7 @@ package body org.allbinary.business.entry_Id.EntryData_Package is
 
    function getInstance return EntryData_Access is
    begin
-        return EntryData_Package.instance;
+        return EntryData_Access (EntryData_Package.instance);
    end getInstance;
 
    procedure Initialize (This : in out EntryData'Class) is

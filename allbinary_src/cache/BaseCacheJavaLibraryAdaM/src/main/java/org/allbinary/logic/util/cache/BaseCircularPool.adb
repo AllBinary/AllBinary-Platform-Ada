@@ -16,9 +16,11 @@
 with jsinterop.annotations.JsType_Package; use jsinterop.annotations.JsType_Package;
 with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
 with org.allbinary.util.CircularIndexUtil_Package; use org.allbinary.util.CircularIndexUtil_Package;
+with org.allbinary.util.CircularIndexUtil_Package_References;
 with jsinterop.annotations.JsMethod_Package; use jsinterop.annotations.JsMethod_Package;
 with jsinterop.annotations.JsProperty_Package; use jsinterop.annotations.JsProperty_Package;
 with org.allbinary.logic.util.cache.AllBinaryObjectFactoryInterface_Package; use org.allbinary.logic.util.cache.AllBinaryObjectFactoryInterface_Package;
+with org.allbinary.logic.util.cache.AllBinaryObjectFactoryInterface_Package_References;
 with org.allbinary.logic.util.cache.AllBinaryObjectFactoryInterface_Package;
 
 package body org.allbinary.logic.util.cache.BaseCircularPool_Package is

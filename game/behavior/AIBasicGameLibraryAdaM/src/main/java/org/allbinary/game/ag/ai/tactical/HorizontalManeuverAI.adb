@@ -16,9 +16,12 @@
 with javax.microedition.lcdui.Canvas_Package; use javax.microedition.lcdui.Canvas_Package;
 with org.allbinary.game.ai.BasicAI_Package; use org.allbinary.game.ai.BasicAI_Package;
 with org.allbinary.game.input.GameInput_Package; use org.allbinary.game.input.GameInput_Package;
+with org.allbinary.game.input.GameInput_Package_References;
 with org.allbinary.graphics.displayable.DisplayInfoSingleton_Package; use org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
+with org.allbinary.layer.AllBinaryLayer_Package_References;
 with org.allbinary.layer.AllBinaryLayerManager_Package; use org.allbinary.layer.AllBinaryLayerManager_Package;
+with org.allbinary.layer.AllBinaryLayerManager_Package_References;
 
 package body org.allbinary.game.ag.ai.tactical.HorizontalManeuverAI_Package is
 
@@ -102,9 +105,9 @@ package body org.allbinary.game.ag.ai.tactical.HorizontalManeuverAI_Package is
         end if;
         ownerLayerInterface.setPosition (x, ownerLayerInterface.getYP, ownerLayerInterface.getZP);
         if (This.currentRelativeAngle) = (0) then
-            BasicAI (This).processKeyAI (Canvas_Package.KEY_NUM0);
+            BasicAI_Package.BasicAI (This).processKeyAI (Canvas_Package.KEY_NUM0);
         elsif (This.currentRelativeAngle) = (180) then
-            BasicAI (This).processKeyAI (Canvas_Package.KEY_POUND);
+            BasicAI_Package.BasicAI (This).processKeyAI (Canvas_Package.KEY_POUND);
         end if;
    end processAI;
 

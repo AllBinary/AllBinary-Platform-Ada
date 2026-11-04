@@ -14,7 +14,9 @@
 
 
 with org.allbinary.game.input.mapping.PersistentInputMapping_Package; use org.allbinary.game.input.mapping.PersistentInputMapping_Package;
+with org.allbinary.game.input.mapping.PersistentInputMapping_Package_References;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.game.input.MotionLaptopGameInputMapping_Package; use org.allbinary.game.input.MotionLaptopGameInputMapping_Package;
 with org.allbinary.game.input.MotionLaptopGameInputMapping_Package;

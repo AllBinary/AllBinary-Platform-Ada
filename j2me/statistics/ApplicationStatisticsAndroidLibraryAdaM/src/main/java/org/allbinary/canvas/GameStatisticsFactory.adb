@@ -14,7 +14,7 @@
 
 
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
-with org.allbinary.canvas.AndroidGameStatistics_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package_References;
 with org.allbinary.android.view.BaseViewWrapper_Package;
 
 package body org.allbinary.canvas.GameStatisticsFactory_Package is
@@ -65,7 +65,7 @@ package body org.allbinary.canvas.GameStatisticsFactory_Package is
 
    function toString (This : in out GameStatisticsFactory) return Unbounded_String is
    begin
-        return StringMaker_Package.Create.append (AndroidGameStatistics (This).toString).append (This.stringBuffer.toString).toString;
+        return StringMaker_Package.Create.append (AndroidGameStatistics_Package.AndroidGameStatistics (This).toString).append (This.stringBuffer.toString).toString;
    end toString;
 
 begin

@@ -14,6 +14,7 @@
 
 
 with org.allbinary.graphics.form.ScrollSelectionForm_Package; use org.allbinary.graphics.form.ScrollSelectionForm_Package;
+with org.allbinary.graphics.form.ScrollSelectionForm_Package_References;
 with org.allbinary.graphics.form.FormType_Package;
 with org.allbinary.graphics.form.ItemIndexDx_Package;
 with org.allbinary.graphics.form.ItemIndexPaintable_Package;

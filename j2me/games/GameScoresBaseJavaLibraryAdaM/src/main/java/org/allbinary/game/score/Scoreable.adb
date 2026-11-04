@@ -14,7 +14,6 @@
 
 
 with org.allbinary.logic.math.SmallIntegerSingletonFactory_Package; use org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
-with org.allbinary.game.score.ScoreableInterface_Package;
 
 package body org.allbinary.game.score.Scoreable_Package is
 

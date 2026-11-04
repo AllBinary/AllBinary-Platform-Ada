@@ -18,6 +18,7 @@ with org.allbinary.game.configuration.feature.GameFeatureFactory_Package; use or
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
 with org.allbinary.game.collision.SourceCollisionHelper_Package; use org.allbinary.game.collision.SourceCollisionHelper_Package;
 with org.allbinary.game.collision.CollisionHelper_Package; use org.allbinary.game.collision.CollisionHelper_Package;
+with org.allbinary.game.collision.CollisionHelper_Package_References;
 
 package body org.allbinary.game.collision.CollidableHelperFactory_Package is
 

@@ -14,15 +14,20 @@
 
 
 with javax.microedition.lcdui.Command_Package; use javax.microedition.lcdui.Command_Package;
+with javax.microedition.lcdui.Command_Package_References;
 with javax.microedition.lcdui.CommandListener_Package; use javax.microedition.lcdui.CommandListener_Package;
+with javax.microedition.lcdui.CommandListener_Package_References;
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
 with org.allbinary.game.layer.AllBinaryGameLayerManager_Package; use org.allbinary.game.layer.AllBinaryGameLayerManager_Package;
+with org.allbinary.game.layer.AllBinaryGameLayerManager_Package_References;
 with org.allbinary.game.paint.ColorFillBasePaintable_Package; use org.allbinary.game.paint.ColorFillBasePaintable_Package;
+with org.allbinary.game.paint.ColorFillBasePaintable_Package_References;
 with org.allbinary.game.paint.ColorFillPaintableFactory_Package; use org.allbinary.game.paint.ColorFillPaintableFactory_Package;
 with org.allbinary.graphics.Anchor_Package; use org.allbinary.graphics.Anchor_Package;
 with org.allbinary.graphics.draw.DrawStringUtil_Package; use org.allbinary.graphics.draw.DrawStringUtil_Package;
+with org.allbinary.graphics.draw.DrawStringUtil_Package_References;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
-with org.allbinary.game.layer.AllBinaryGameLayerManager_Package;
 
 package body org.allbinary.game.displayable.canvas.GameInputMappingInstructionsCanvas_Package is
 
@@ -137,7 +142,7 @@ package body org.allbinary.game.displayable.canvas.GameInputMappingInstructionsC
         graphics.setColor (This.foregroundColor);
         graphics.drawString (This.TITLE, (halfWidth) - (beginWidth), This.fontHeight, This.anchor);
         This.drawStringUtil.drawCenterStrings (graphics, This.instructions, This.displayInfo.getLastWidth, This.fontHeight, halfWidth, (3) * (This.fontHeight));
-        GameCommandCanvas (This).paint (graphics);
+        GameCommandCanvas_Package.GameCommandCanvas (This).paint (graphics);
    end paint;
 
 begin

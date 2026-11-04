@@ -18,26 +18,33 @@ with org.allbinary.animation.VectorExplosionGenerator_Package; use org.allbinary
 with org.allbinary.animation.VectorMirrorGenerator_Package; use org.allbinary.animation.VectorMirrorGenerator_Package;
 with org.allbinary.animation.vector.VectorCenterGenerator_Package; use org.allbinary.animation.vector.VectorCenterGenerator_Package;
 with org.allbinary.game.input.GameInputStrings_Package; use org.allbinary.game.input.GameInputStrings_Package;
+with org.allbinary.game.input.GameInputStrings_Package_References;
 with org.allbinary.graphics.GPoint_Package; use org.allbinary.graphics.GPoint_Package;
+with org.allbinary.graphics.GPoint_Package_References;
 with org.allbinary.graphics.PointFactory_Package; use org.allbinary.graphics.PointFactory_Package;
 with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
 with org.allbinary.graphics.j2me.GraphicsException_Package; use org.allbinary.graphics.j2me.GraphicsException_Package;
 with org.allbinary.graphics.j2me.StatusFactory_Package; use org.allbinary.graphics.j2me.StatusFactory_Package;
 with org.allbinary.graphics.j2me.workarea.WorkAreaJTreeJPanel_Package; use org.allbinary.graphics.j2me.workarea.WorkAreaJTreeJPanel_Package;
+with org.allbinary.graphics.j2me.workarea.WorkAreaJTreeJPanel_Package_References;
 with org.allbinary.graphics.j2me.workarea.tools.GraphicItemFactory_Package; use org.allbinary.graphics.j2me.workarea.tools.GraphicItemFactory_Package;
 with org.allbinary.graphics.j2me.workarea.tools.GraphicItemInterface_Package; use org.allbinary.graphics.j2me.workarea.tools.GraphicItemInterface_Package;
+with org.allbinary.graphics.j2me.workarea.tools.GraphicItemInterface_Package_References;
 with org.allbinary.graphics.j2me.workarea.tools.LinesGraphicItem_Package; use org.allbinary.graphics.j2me.workarea.tools.LinesGraphicItem_Package;
 with org.allbinary.graphics.j2me.workarea.tools.MouseStrings_Package; use org.allbinary.graphics.j2me.workarea.tools.MouseStrings_Package;
 with org.allbinary.graphics.j2me.workarea.tools.Points_Package; use org.allbinary.graphics.j2me.workarea.tools.Points_Package;
 with org.allbinary.graphics.j2me.workarea.tools.ToolFactory_Package; use org.allbinary.graphics.j2me.workarea.tools.ToolFactory_Package;
 with org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEvent_Package; use org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEvent_Package;
+with org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEvent_Package_References;
 with org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEventListener_Package; use org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEventListener_Package;
 with org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEventService_Package; use org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEventService_Package;
 with org.allbinary.graphics.pipeline.RandomRotationFactory_Package; use org.allbinary.graphics.pipeline.RandomRotationFactory_Package;
 with org.allbinary.log.LOGGING_Package; use org.allbinary.log.LOGGING_Package;
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.logic.communication.log.GuiLog_Package; use org.allbinary.logic.communication.log.GuiLog_Package;
+with org.allbinary.logic.communication.log.GuiLog_Package_References;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.math.PositionStrings_Package; use org.allbinary.math.PositionStrings_Package;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
@@ -45,33 +52,27 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
+with org.w3c.dom.Node_Package_References;
 with org.allbinary.graphics.j2me.workarea.canvas.IntegerDimension_Package; use org.allbinary.graphics.j2me.workarea.canvas.IntegerDimension_Package;
+with org.allbinary.graphics.j2me.workarea.canvas.IntegerDimension_Package_References;
 with org.allbinary.graphics.j2me.workarea.canvas.CanvasTreeLabel_Package; use org.allbinary.graphics.j2me.workarea.canvas.CanvasTreeLabel_Package;
+with org.allbinary.graphics.j2me.workarea.canvas.CanvasTreeLabel_Package_References;
 with org.allbinary.graphics.j2me.workarea.canvas.Color_Package; use org.allbinary.graphics.j2me.workarea.canvas.Color_Package;
+with org.allbinary.graphics.j2me.workarea.canvas.Color_Package_References;
 with org.allbinary.graphics.j2me.workarea.canvas.Grid_Package; use org.allbinary.graphics.j2me.workarea.canvas.Grid_Package;
+with org.allbinary.graphics.j2me.workarea.canvas.Grid_Package_References;
 with org.allbinary.graphics.j2me.workarea.canvas.Dimension_Package; use org.allbinary.graphics.j2me.workarea.canvas.Dimension_Package;
+with org.allbinary.graphics.j2me.workarea.canvas.Dimension_Package_References;
 with org.allbinary.graphics.j2me.workarea.canvas.CanvasDom_Package; use org.allbinary.graphics.j2me.workarea.canvas.CanvasDom_Package;
+with org.allbinary.graphics.j2me.workarea.canvas.CanvasDom_Package_References;
 with org.allbinary.graphics.j2me.workarea.canvas.Graphics_Package; use org.allbinary.graphics.j2me.workarea.canvas.Graphics_Package;
+with org.allbinary.graphics.j2me.workarea.canvas.Graphics_Package_References;
 with org.allbinary.graphics.j2me.workarea.canvas.CanvasDom_Package;
 with org.allbinary.graphics.j2me.workarea.canvas.CanvasTreeLabel_Package;
-with org.allbinary.graphics.j2me.workarea.tools.GraphicItemFactory_Package;
-with org.allbinary.graphics.j2me.workarea.tools.GraphicItemInterface_Package;
-with org.allbinary.graphics.j2me.GraphicsException_Package;
 with org.allbinary.graphics.j2me.workarea.tools.GraphicsItemInterfaceFactoryInterface_Package;
 with org.allbinary.graphics.j2me.workarea.canvas.Grid_Package;
 with org.allbinary.graphics.j2me.workarea.canvas.IntegerDimension_Package;
-with org.allbinary.log.LOGGING_Package;
-with org.allbinary.graphics.j2me.workarea.tools.LinesGraphicItem_Package;
-with org.allbinary.graphics.j2me.workarea.tools.MouseStrings_Package;
-with org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEvent_Package;
-with org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEventListener_Package;
-with org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEventService_Package;
-with org.allbinary.graphics.j2me.workarea.tools.Points_Package;
 with org.allbinary.graphics.j2me.workarea.tools.PointsInterface_Package;
-with org.allbinary.graphics.j2me.StatusFactory_Package;
-with org.allbinary.graphics.j2me.workarea.tools.ToolFactory_Package;
-with org.allbinary.animation.vector.VectorCenterGenerator_Package;
-with org.allbinary.graphics.j2me.workarea.WorkAreaJTreeJPanel_Package;
 
 package body org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package is
 
@@ -701,7 +702,7 @@ package body org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package is
         if (This.grid) /= (null) then
             This.grid.isChanged := True;
         end if;
-        JPanel (This).repaint;
+        JPanel_Package.JPanel (This).repaint;
    end repaint;
 
    --  throws Exception

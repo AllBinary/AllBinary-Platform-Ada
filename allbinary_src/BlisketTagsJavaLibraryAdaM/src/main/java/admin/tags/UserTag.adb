@@ -64,7 +64,7 @@ package body admin.tags.UserTag_Package is
    begin
         begin
             if UserTag'Class (This).isEnabled then
-                return TableTag (This).doStartTag;
+                return TableTag_Package.TableTag (This).doStartTag;
             end if;
             return SKIP_BODY;
         exception

@@ -14,7 +14,7 @@
 
 
 with org.allbinary.layer.AllBinaryLayerManager_Package; use org.allbinary.layer.AllBinaryLayerManager_Package;
-with org.allbinary.ai.ArtificialIntelligenceInterface_Package;
+with org.allbinary.layer.AllBinaryLayerManager_Package_References;
 
 package body org.allbinary.ai.ArtificialIntelligence_Package is
 
@@ -66,7 +66,7 @@ package body org.allbinary.ai.ArtificialIntelligence_Package is
 
 begin
    null;
-   AI_ID := 2;
+   
    instance := ArtificialIntelligence_Package.Create;
 
 end org.allbinary.ai.ArtificialIntelligence_Package;

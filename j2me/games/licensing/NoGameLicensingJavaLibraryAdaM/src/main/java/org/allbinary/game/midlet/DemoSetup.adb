@@ -14,6 +14,7 @@
 
 
 with org.allbinary.game.midlet.GameMidlet_Package; use org.allbinary.game.midlet.GameMidlet_Package;
+with org.allbinary.game.midlet.GameMidlet_Package_References;
 
 package body org.allbinary.game.midlet.DemoSetup_Package is
 

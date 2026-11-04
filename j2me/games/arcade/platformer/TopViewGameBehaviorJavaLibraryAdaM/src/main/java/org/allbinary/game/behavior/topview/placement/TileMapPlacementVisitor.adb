@@ -14,6 +14,7 @@
 
 
 with org.mapeditor.core.TiledMap_Package; use org.mapeditor.core.TiledMap_Package;
+with org.mapeditor.core.TiledMap_Package_References;
 
 package body org.allbinary.game.behavior.topview.placement.TileMapPlacementVisitor_Package is
 

@@ -14,7 +14,9 @@
 
 
 with org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventListener_Package; use org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventListener_Package;
+with org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventListener_Package_References;
 with org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEvent_Package; use org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEvent_Package;
+with org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEvent_Package_References;
 with org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEvent_Package;
 with org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventListener_Package;
 

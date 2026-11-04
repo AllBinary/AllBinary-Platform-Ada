@@ -2,6 +2,7 @@
 
 
 with org.allbinary.device.OpenGLESGraphics_Package; use org.allbinary.device.OpenGLESGraphics_Package;
+with org.allbinary.device.OpenGLESGraphics_Package_References;
 with org.allbinary.graphics.font.FontDebugBase_Package;
 with org.allbinary.device.GraphicsInterface_Package;
 with org.allbinary.device.OpenGLESGraphics_Package;

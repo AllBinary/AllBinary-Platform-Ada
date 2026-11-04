@@ -14,11 +14,11 @@
 
 
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
 with org.allbinary.animation.AnimationBehavior_Package; use org.allbinary.animation.AnimationBehavior_Package;
+with org.allbinary.animation.AnimationBehavior_Package_References;
 with org.allbinary.animation.Animation_Package;
-with org.allbinary.animation.AnimationBehavior_Package;
 with org.allbinary.animation.AnimationInterface_Package;
-with org.allbinary.animation.text.CustomTextAnimation_Package;
 with org.allbinary.animation.IndexedAnimation_Package;
 with org.allbinary.animation.IndexedAnimationInterface_Package;
 with org.allbinary.animation.SequenceInterface_Package;
@@ -96,7 +96,7 @@ package body org.allbinary.animation.text.AdjustCustomTextAnimation_Package is
    procedure paintXY (This : in out AdjustCustomTextAnimation; graphics_Param : access Graphics_Package.Graphics'Class; x : Integer; y : Integer) is
       graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
-        CustomTextAnimation (This).paintXY (graphics, (x) + (This.dx), (y) + (This.dy));
+        CustomTextAnimation_Package.CustomTextAnimation (This).paintXY (graphics, (x) + (This.dx), (y) + (This.dy));
    end paintXY;
 
 end org.allbinary.animation.text.AdjustCustomTextAnimation_Package;

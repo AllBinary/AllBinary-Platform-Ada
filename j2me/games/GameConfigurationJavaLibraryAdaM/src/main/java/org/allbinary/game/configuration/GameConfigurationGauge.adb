@@ -15,6 +15,7 @@
 
 with javax.microedition.lcdui.Gauge_Package; use javax.microedition.lcdui.Gauge_Package;
 with org.allbinary.game.configuration.GameConfiguration_Package; use org.allbinary.game.configuration.GameConfiguration_Package;
+with org.allbinary.game.configuration.GameConfiguration_Package_References;
 with org.allbinary.game.configuration.GameConfiguration_Package;
 
 package body org.allbinary.game.configuration.GameConfigurationGauge_Package is

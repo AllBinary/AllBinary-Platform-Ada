@@ -14,10 +14,12 @@
 
 
 with javax.microedition.lcdui.Command_Package; use javax.microedition.lcdui.Command_Package;
+with javax.microedition.lcdui.Command_Package_References;
 with org.allbinary.data.resource.ResourceUtil_Package; use org.allbinary.data.resource.ResourceUtil_Package;
 with org.allbinary.TsUtil_Package; use org.allbinary.TsUtil_Package;
 with org.allbinary.content.Context_Package; use org.allbinary.content.Context_Package;
 with org.allbinary.content.NotificationManager_Package; use org.allbinary.content.NotificationManager_Package;
+with org.allbinary.content.NotificationManager_Package_References;
 with org.allbinary.content.CommandUriAction_Package; use org.allbinary.content.CommandUriAction_Package;
 with org.allbinary.content.Intent_Package; use org.allbinary.content.Intent_Package;
 with org.allbinary.content.Notification_Package; use org.allbinary.content.Notification_Package;

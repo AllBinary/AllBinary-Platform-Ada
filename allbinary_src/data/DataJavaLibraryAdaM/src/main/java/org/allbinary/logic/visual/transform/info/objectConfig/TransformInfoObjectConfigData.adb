@@ -30,7 +30,7 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.TransformInf
 
    function getInstance return TransformInfoObjectConfigData_Access is
    begin
-        return TransformInfoObjectConfigData_Package.instance;
+        return TransformInfoObjectConfigData_Access (TransformInfoObjectConfigData_Package.instance);
    end getInstance;
 
    procedure Initialize (This : in out TransformInfoObjectConfigData'Class) is

@@ -14,10 +14,27 @@
 
 
 with org.allbinary.logic.communication.http.request.AbResponseHandler_Package; use org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
+with tags.StoreValidationTransformTag_Package; use tags.StoreValidationTransformTag_Package;
+with tags.ModifyTag_Package;
+with tags.transform.info.TransformInfoTag_Package;
+with tags.TransformTag_Package;
+with tags.ValidationTransformTag_Package;
 
 package body tags.admin.DateRangeOrderHistoryTag_Package is
 
    package AbResponseHandler_Package renames Standard.org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   function "=" (Left, Right : LogUtil_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
    procedure Initialize_Fields (This : in out DateRangeOrderHistoryTag'Class) is
    begin
       null;
@@ -59,7 +76,7 @@ package body tags.admin.DateRangeOrderHistoryTag_Package is
                 else
                     Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("No Such View Command: ") & Java_Image (DateRangeOrderHistoryTag'Class (This).getCommand)));
                 end if;
-                return StoreValidationTransformTag (This).doStartTag;
+                return StoreValidationTransformTag_Package.StoreValidationTransformTag (This).doStartTag;
             end if;
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Command Null")));
         exception

@@ -16,9 +16,11 @@
 with org.allbinary.game.configuration.persistance.GamePersistanceStrings_Package; use org.allbinary.game.configuration.persistance.GamePersistanceStrings_Package;
 with org.allbinary.game.input.mapping.PersistentInputMapping_Package; use org.allbinary.game.input.mapping.PersistentInputMapping_Package;
 with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package; use org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References;
 with org.allbinary.game.input.J2MEKeyFactory_Package; use org.allbinary.game.input.J2MEKeyFactory_Package;
 with org.allbinary.game.input.GameKeyFactory_Package; use org.allbinary.game.input.GameKeyFactory_Package;
 with org.allbinary.game.input.Input_Package; use org.allbinary.game.input.Input_Package;
+with org.allbinary.game.input.Input_Package_References;
 
 package body org.allbinary.game.input.J2MEGameInputMapping_Package is
 
@@ -67,7 +69,7 @@ package body org.allbinary.game.input.J2MEGameInputMapping_Package is
    begin
         This.logUtil.putF (This.commonStrings.START, J2MEGameInputMapping_Access'(This'Unchecked_Access), This.commonStrings.INIT);
         J2MEKeyFactory_Package.getInstance.init;
-        PersistentInputMapping (This).init (abeClientInformation);
+        PersistentInputMapping_Package.PersistentInputMapping (This).init (abeClientInformation);
         if ((J2MEGameInputMapping'Class (This).getTotalMapped) = (0)) or else (J2MEGameInputMapping'Class (This).isDefaultNew) then
             J2MEGameInputMapping'Class (This).getInputMapping.addMapping (J2MEGameInputMapping'Class (This).getDefault);
             J2MEGameInputMapping'Class (This).save (abeClientInformation);

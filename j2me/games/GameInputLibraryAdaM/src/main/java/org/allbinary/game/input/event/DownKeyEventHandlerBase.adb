@@ -14,13 +14,17 @@
 
 
 with org.allbinary.game.input.PlayerGameInput_Package; use org.allbinary.game.input.PlayerGameInput_Package;
+with org.allbinary.game.input.PlayerGameInput_Package_References;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.util.event.EventListenerInterface_Package; use org.allbinary.logic.util.event.EventListenerInterface_Package;
+with org.allbinary.logic.util.event.EventListenerInterface_Package_References;
 with org.allbinary.logic.util.event.EventStrings_Package; use org.allbinary.logic.util.event.EventStrings_Package;
 with org.allbinary.logic.util.event.handler.BasicEventHandler_Package; use org.allbinary.logic.util.event.handler.BasicEventHandler_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.game.input.event.GameKeyEvent_Package; use org.allbinary.game.input.event.GameKeyEvent_Package;
+with org.allbinary.game.input.event.GameKeyEvent_Package_References;
 with org.allbinary.game.input.event.DownKeyEventListenerInterface_Package; use org.allbinary.game.input.event.DownKeyEventListenerInterface_Package;
 with org.allbinary.game.input.event.DownGameKeyEventListenerInterface_Package;
 with org.allbinary.game.input.event.DownKeyEventListenerInterface_Package;
@@ -28,7 +32,6 @@ with org.allbinary.game.input.GameInput_Package;
 with org.allbinary.game.input.GameInputStrings_Package;
 with org.allbinary.game.input.event.GameKeyEvent_Package;
 with org.allbinary.game.input.event.GameKeyEventListenerInterface_Package;
-with org.allbinary.game.input.PlayerGameInput_Package;
 with org.allbinary.game.input.event.PressGameKeyEventListenerInterface_Package;
 with org.allbinary.game.input.event.UpGameKeyEventListenerInterface_Package;
 
@@ -109,21 +112,21 @@ package body org.allbinary.game.input.event.DownKeyEventHandlerBase_Package is
    procedure removeAllListeners (This : in out DownKeyEventHandlerBase) is
    begin
         This.list.clear;
-        BasicEventHandler (This).removeAllListeners;
+        BasicEventHandler_Package.BasicEventHandler (This).removeAllListeners;
    end removeAllListeners;
 
    procedure removeListenerSingleThreaded (This : in out DownKeyEventHandlerBase; eventListenerInterface_Param : access EventListenerInterface_Package.EventListenerInterface'Class) is
       eventListenerInterface : constant EventListenerInterface_Access := EventListenerInterface_Access (eventListenerInterface_Param);
    begin
         This.list.remove (EventListenerInterface_Package.Java_Object_Access_From_EventListenerInterface (eventListenerInterface));
-        BasicEventHandler (This).removeListenerSingleThreaded (eventListenerInterface);
+        BasicEventHandler_Package.BasicEventHandler (This).removeListenerSingleThreaded (eventListenerInterface);
    end removeListenerSingleThreaded;
 
    procedure removeListener (This : in out DownKeyEventHandlerBase; eventListenerInterface_Param : access EventListenerInterface_Package.EventListenerInterface'Class) is
       eventListenerInterface : constant EventListenerInterface_Access := EventListenerInterface_Access (eventListenerInterface_Param);
    begin
         This.list.remove (EventListenerInterface_Package.Java_Object_Access_From_EventListenerInterface (eventListenerInterface));
-        BasicEventHandler (This).removeListener (eventListenerInterface);
+        BasicEventHandler_Package.BasicEventHandler (This).removeListener (eventListenerInterface);
    end removeListener;
 
    --  throws Exception
@@ -230,7 +233,7 @@ package body org.allbinary.game.input.event.DownKeyEventHandlerBase_Package is
       index : Integer;
    begin
         stringBuffer := StringMaker_Package.Create;
-        stringBuffer.append (BasicEventHandler (This).toString);
+        stringBuffer.append (BasicEventHandler_Package.BasicEventHandler (This).toString);
         stringBuffer.append (DownKeyEventHandlerBase_Package.TOTAL_LISTENERS);
         stringBuffer.appendint (This.list.size);
         eventListenerInterface := null;

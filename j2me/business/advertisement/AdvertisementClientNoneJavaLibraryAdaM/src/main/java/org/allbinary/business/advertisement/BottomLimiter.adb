@@ -16,7 +16,6 @@
 with org.allbinary.game.GameAdState_Package; use org.allbinary.game.GameAdState_Package;
 with org.allbinary.graphics.displayable.DisplayInfoSingleton_Package; use org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
 with org.allbinary.business.advertisement.GameAdStateFactory_Package; use org.allbinary.business.advertisement.GameAdStateFactory_Package;
-with org.allbinary.game.GameAdState_Package;
 with org.allbinary.business.advertisement.GameAdStateFactory_Package;
 
 package body org.allbinary.business.advertisement.BottomLimiter_Package is

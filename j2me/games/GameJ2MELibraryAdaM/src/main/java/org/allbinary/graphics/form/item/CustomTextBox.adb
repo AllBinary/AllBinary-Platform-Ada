@@ -14,20 +14,26 @@
 
 
 with javax.microedition.lcdui.CommandListener_Package; use javax.microedition.lcdui.CommandListener_Package;
+with javax.microedition.lcdui.CommandListener_Package_References;
 with javax.microedition.lcdui.Font_Package; use javax.microedition.lcdui.Font_Package;
+with javax.microedition.lcdui.Font_Package_References;
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
 with org.allbinary.J2MEUtil_Package; use org.allbinary.J2MEUtil_Package;
 with org.allbinary.game.displayable.canvas.GameCommandCanvas_Package; use org.allbinary.game.displayable.canvas.GameCommandCanvas_Package;
 with org.allbinary.game.input.Input_Package; use org.allbinary.game.input.Input_Package;
 with org.allbinary.game.input.InputFactory_Package; use org.allbinary.game.input.InputFactory_Package;
+with org.allbinary.game.input.InputFactory_Package_References;
 with org.allbinary.game.input.PlatformKeyFactory_Package; use org.allbinary.game.input.PlatformKeyFactory_Package;
 with org.allbinary.game.input.event.RawKeyEventListener_Package; use org.allbinary.game.input.event.RawKeyEventListener_Package;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.graphics.color.BasicColor_Package_References;
 with org.allbinary.graphics.form.item.validation.TextItemVisitor_Package; use org.allbinary.graphics.form.item.validation.TextItemVisitor_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.graphics.form.item.ABTextFieldItem_Package; use org.allbinary.graphics.form.item.ABTextFieldItem_Package;
+with org.allbinary.graphics.form.item.ABTextFieldItem_Package_References;
 
 package body org.allbinary.graphics.form.item.CustomTextBox_Package is
 
@@ -194,7 +200,7 @@ package body org.allbinary.graphics.form.item.CustomTextBox_Package is
             graphics.drawString (CustomTextBox'Class (This).getTitle, 8, 1, 0);
         end if;
         CustomTextBox'Class (This).paintXY (graphics, 8, (graphics.getFont.getHeight) + (2));
-        GameCommandCanvas (This).paint (graphics);
+        GameCommandCanvas_Package.GameCommandCanvas (This).paint (graphics);
    end paint;
 
    procedure paintXY (This : in out CustomTextBox; graphics_Param : access Graphics_Package.Graphics'Class; x : Integer; y : Integer) is

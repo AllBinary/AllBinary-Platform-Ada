@@ -22,20 +22,23 @@ with org.allbinary.graphics.color.ColorCacheable_Package; use org.allbinary.grap
 with org.allbinary.input.media.image.capture.CapturedBufferedImagesCacheSingleton_Package; use org.allbinary.input.media.image.capture.CapturedBufferedImagesCacheSingleton_Package;
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.util.cache.AutomaticCacheInterface_Package; use org.allbinary.logic.util.cache.AutomaticCacheInterface_Package;
 with org.allbinary.media.image.analysis.ColorRange_Package; use org.allbinary.media.image.analysis.ColorRange_Package;
 with org.allbinary.media.image.analysis.ColorRangeInterface_Package; use org.allbinary.media.image.analysis.ColorRangeInterface_Package;
+with org.allbinary.media.image.analysis.ColorRangeInterface_Package_References;
 with org.allbinary.media.image.cache.BufferedImageFrameCacheable_Package; use org.allbinary.media.image.cache.BufferedImageFrameCacheable_Package;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
+with org.w3c.dom.Document_Package_References;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
+with org.w3c.dom.Node_Package_References;
 with org.w3c.dom.NodeList_Package; use org.w3c.dom.NodeList_Package;
 with org.allbinary.input.automation.actions.script.condition.ColorAtActionScriptConditionJPanel_Package; use org.allbinary.input.automation.actions.script.condition.ColorAtActionScriptConditionJPanel_Package;
+with org.allbinary.input.automation.actions.script.condition.ColorAtActionScriptConditionJPanel_Package_References;
 with org.allbinary.input.automation.actions.script.condition.ColorAtActionScriptConditionData_Package; use org.allbinary.input.automation.actions.script.condition.ColorAtActionScriptConditionData_Package;
-with org.allbinary.input.automation.actions.script.condition.BasicProfileActionScriptCondition_Package;
 with org.allbinary.input.automation.actions.script.condition.ColorAtActionScriptConditionData_Package;
-with org.allbinary.input.automation.actions.script.condition.ColorAtActionScriptConditionInterface_Package;
 with org.allbinary.input.automation.actions.script.condition.ColorAtActionScriptConditionJPanel_Package;
 with org.allbinary.input.automation.actions.script.condition.CustomTreeNodeInterface_Package;
 with org.allbinary.input.automation.actions.script.condition.ProfileActionScriptConditionInterface_Package;
@@ -233,7 +236,7 @@ package body org.allbinary.input.automation.actions.script.condition.ColorAtActi
       document : constant Document_Access := Document_Access (document_Param);
       node : Node_Access;
    begin
-        node := BasicProfileActionScriptCondition (This).toXmlNode (document);
+        node := BasicProfileActionScriptCondition_Package.BasicProfileActionScriptCondition (This).toXmlNode (document);
         node.appendChild (ModDomHelper_Package.createNodeWithValueNodes (document, ColorAtActionScriptConditionData_Package.NAME, ColorAtActionScriptCondition'Class (This).toHashMap));
         return node;
    end toXmlNode;
@@ -254,7 +257,7 @@ package body org.allbinary.input.automation.actions.script.condition.ColorAtActi
         colorCacheable := ColorCacheable_Access (automaticCacheInterface.get (colorInteger));
         color := colorCacheable.getColor;
         if This.colorRangeInterface.isInRange (color) then
-            return BasicProfileActionScriptCondition (This).shouldProcess (frame);
+            return BasicProfileActionScriptCondition_Package.BasicProfileActionScriptCondition (This).shouldProcess (frame);
         end if;
         return False;
    end shouldProcess;

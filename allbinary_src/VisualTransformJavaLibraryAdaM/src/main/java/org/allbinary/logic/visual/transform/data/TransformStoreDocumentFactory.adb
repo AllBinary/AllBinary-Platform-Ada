@@ -14,9 +14,12 @@
 
 
 with org.allbinary.logic.communication.http.request.session.WeblisketSession_Package; use org.allbinary.logic.communication.http.request.session.WeblisketSession_Package;
+with org.allbinary.logic.communication.http.request.session.WeblisketSession_Package_References;
 with org.allbinary.logic.control.search.SearchRequest_Package; use org.allbinary.logic.control.search.SearchRequest_Package;
+with org.allbinary.logic.control.search.SearchRequest_Package_References;
 with org.allbinary.logic.visual.transform.data.TransformStoreDocument_Package; use org.allbinary.logic.visual.transform.data.TransformStoreDocument_Package;
 with org.allbinary.logic.visual.transform.data.TransformDocumentInterface_Package; use org.allbinary.logic.visual.transform.data.TransformDocumentInterface_Package;
+with org.allbinary.logic.visual.transform.data.TransformDocumentInterface_Package_References;
 with org.allbinary.logic.visual.transform.data.TransformHttpRequestDocument_Package;
 with org.allbinary.logic.visual.transform.data.TransformStoreDocument_Package;
 

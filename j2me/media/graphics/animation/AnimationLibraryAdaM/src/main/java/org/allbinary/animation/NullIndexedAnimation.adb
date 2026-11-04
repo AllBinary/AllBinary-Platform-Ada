@@ -2,10 +2,10 @@
 
 
 with org.allbinary.animation.AnimationBehavior_Package; use org.allbinary.animation.AnimationBehavior_Package;
+with org.allbinary.animation.AnimationBehavior_Package_References;
 with org.allbinary.animation.Animation_Package;
 with org.allbinary.animation.AnimationBehavior_Package;
 with org.allbinary.animation.AnimationInterface_Package;
-with org.allbinary.animation.IndexedAnimation_Package;
 with org.allbinary.animation.IndexedAnimationInterface_Package;
 with org.allbinary.animation.SequenceInterface_Package;
 with org.allbinary.animation.SequentialAnimationInterface_Package;

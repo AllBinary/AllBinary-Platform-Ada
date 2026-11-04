@@ -52,7 +52,7 @@ package org.allbinary.business.user.commerce.money.payment.types.CreditCardType_
    type CreditCardType is new Java_Object with record
       name : Unbounded_String;
    end record;
-   MAXLEN : Integer;
+   MAXLEN : constant Integer := 19;
 
    procedure Initialize (This : in out CreditCardType'Class; cardType : Unbounded_String);
    function Create (cardType : Unbounded_String) return CreditCardType_Access;

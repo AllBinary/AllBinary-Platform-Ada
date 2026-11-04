@@ -14,6 +14,7 @@
 
 
 with org.allbinary.logic.system.security.licensing.InputAutomationClientInformation_Package; use org.allbinary.logic.system.security.licensing.InputAutomationClientInformation_Package;
+with org.allbinary.logic.system.security.licensing.InputAutomationClientInformation_Package_References;
 with org.allbinary.logic.system.security.licensing.InputAutomationClientInformation_Package;
 
 package body org.allbinary.logic.system.security.licensing.InputAutomationClientInformationFactory_Package is

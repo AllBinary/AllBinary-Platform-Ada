@@ -50,11 +50,11 @@ package org.allbinary.graphics.color.ColorLevel_Package is
    function "=" (Left, Right : ColorLevel_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.color.ColorLevel_Package_References."=";
 
    type ColorLevel is new Java_Object with null record;
-   COLOR_MASK : Integer;
-   MIN : Integer;
-   AVG : Integer;
-   LIGHT : Integer;
-   HIGH : Integer;
+   COLOR_MASK : constant Integer := 16#00FFFFFF#;
+   MIN : constant Integer := 16#44#;
+   AVG : constant Integer := 16#77#;
+   LIGHT : constant Integer := 16#AA#;
+   HIGH : constant Integer := 16#EE#;
 
    procedure Initialize (This : in out ColorLevel'Class);
    function Create return ColorLevel_Access;

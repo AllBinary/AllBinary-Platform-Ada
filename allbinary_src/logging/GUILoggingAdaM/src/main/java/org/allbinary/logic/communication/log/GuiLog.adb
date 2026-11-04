@@ -14,7 +14,9 @@
 
 
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.string_Id.CommonStrings_Package_References;
 with org.allbinary.logic.communication.log.LogFormatUtil_Package; use org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package_References;
 with org.allbinary.logic.communication.log.JDialog_Package; use org.allbinary.logic.communication.log.JDialog_Package;
 with org.allbinary.logic.communication.log.GridLayout_Package; use org.allbinary.logic.communication.log.GridLayout_Package;
 with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;

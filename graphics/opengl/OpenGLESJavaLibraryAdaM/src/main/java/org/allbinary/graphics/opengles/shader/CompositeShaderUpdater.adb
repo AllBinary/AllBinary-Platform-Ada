@@ -13,13 +13,62 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.khronos.egl.EGLConfig_Package; use javax.microedition.khronos.egl.EGLConfig_Package;
+with javax.microedition.khronos.egl.EGLConfig_Package_References;
+with javax.microedition.khronos.opengles.GL10_Package; use javax.microedition.khronos.opengles.GL10_Package;
+with javax.microedition.khronos.opengles.GL10_Package_References;
 with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.string_Id.CommonSeps_Package_References;
+with org.allbinary.graphics.opengles.shader.ShaderStrings_Package; use org.allbinary.graphics.opengles.shader.ShaderStrings_Package;
+with org.allbinary.graphics.opengles.shader.ShaderStrings_Package_References;
+with org.allbinary.graphics.opengles.shader.ShaderStrings_Package;
 
 package body org.allbinary.graphics.opengles.shader.CompositeShaderUpdater_Package is
 
    package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
    package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   subtype EGLConfig_Access is javax.microedition.khronos.egl.EGLConfig_Package_References.EGLConfig_Access;
+   function "=" (Left, Right : EGLConfig_Access) return Boolean renames javax.microedition.khronos.egl.EGLConfig_Package_References."=";
+   subtype EGLConfig_Access_Array is javax.microedition.khronos.egl.EGLConfig_Package_References.EGLConfig_Access_Array;
+   function "=" (Left, Right : EGLConfig_Access_Array) return Boolean renames javax.microedition.khronos.egl.EGLConfig_Package_References."=";
+   subtype EGLConfig_Access_Array_Access is javax.microedition.khronos.egl.EGLConfig_Package_References.EGLConfig_Access_Array_Access;
+   function "=" (Left, Right : EGLConfig_Access_Array_Access) return Boolean renames javax.microedition.khronos.egl.EGLConfig_Package_References."=";
+   subtype EGLConfig_Access_Array_Access_Array is javax.microedition.khronos.egl.EGLConfig_Package_References.EGLConfig_Access_Array_Access_Array;
+   function "=" (Left, Right : EGLConfig_Access_Array_Access_Array) return Boolean renames javax.microedition.khronos.egl.EGLConfig_Package_References."=";
+   subtype EGLConfig_Access_Array_Access_Array_Access is javax.microedition.khronos.egl.EGLConfig_Package_References.EGLConfig_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : EGLConfig_Access_Array_Access_Array_Access) return Boolean renames javax.microedition.khronos.egl.EGLConfig_Package_References."=";
+   subtype GL10_Access is javax.microedition.khronos.opengles.GL10_Package_References.GL10_Access;
+   function "=" (Left, Right : GL10_Access) return Boolean renames javax.microedition.khronos.opengles.GL10_Package_References."=";
+   subtype GL10_Access_Array is javax.microedition.khronos.opengles.GL10_Package_References.GL10_Access_Array;
+   function "=" (Left, Right : GL10_Access_Array) return Boolean renames javax.microedition.khronos.opengles.GL10_Package_References."=";
+   subtype GL10_Access_Array_Access is javax.microedition.khronos.opengles.GL10_Package_References.GL10_Access_Array_Access;
+   function "=" (Left, Right : GL10_Access_Array_Access) return Boolean renames javax.microedition.khronos.opengles.GL10_Package_References."=";
+   subtype GL10_Access_Array_Access_Array is javax.microedition.khronos.opengles.GL10_Package_References.GL10_Access_Array_Access_Array;
+   function "=" (Left, Right : GL10_Access_Array_Access_Array) return Boolean renames javax.microedition.khronos.opengles.GL10_Package_References."=";
+   subtype GL10_Access_Array_Access_Array_Access is javax.microedition.khronos.opengles.GL10_Package_References.GL10_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : GL10_Access_Array_Access_Array_Access) return Boolean renames javax.microedition.khronos.opengles.GL10_Package_References."=";
+   subtype CommonSeps_Access is org.allbinary.string_Id.CommonSeps_Package_References.CommonSeps_Access;
+   function "=" (Left, Right : CommonSeps_Access) return Boolean renames org.allbinary.string_Id.CommonSeps_Package_References."=";
+   subtype CommonSeps_Access_Array is org.allbinary.string_Id.CommonSeps_Package_References.CommonSeps_Access_Array;
+   function "=" (Left, Right : CommonSeps_Access_Array) return Boolean renames org.allbinary.string_Id.CommonSeps_Package_References."=";
+   subtype CommonSeps_Access_Array_Access is org.allbinary.string_Id.CommonSeps_Package_References.CommonSeps_Access_Array_Access;
+   function "=" (Left, Right : CommonSeps_Access_Array_Access) return Boolean renames org.allbinary.string_Id.CommonSeps_Package_References."=";
+   subtype CommonSeps_Access_Array_Access_Array is org.allbinary.string_Id.CommonSeps_Package_References.CommonSeps_Access_Array_Access_Array;
+   function "=" (Left, Right : CommonSeps_Access_Array_Access_Array) return Boolean renames org.allbinary.string_Id.CommonSeps_Package_References."=";
+   subtype CommonSeps_Access_Array_Access_Array_Access is org.allbinary.string_Id.CommonSeps_Package_References.CommonSeps_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : CommonSeps_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.string_Id.CommonSeps_Package_References."=";
+   subtype ShaderStrings_Access is org.allbinary.graphics.opengles.shader.ShaderStrings_Package_References.ShaderStrings_Access;
+   function "=" (Left, Right : ShaderStrings_Access) return Boolean renames org.allbinary.graphics.opengles.shader.ShaderStrings_Package_References."=";
+   subtype ShaderStrings_Access_Array is org.allbinary.graphics.opengles.shader.ShaderStrings_Package_References.ShaderStrings_Access_Array;
+   function "=" (Left, Right : ShaderStrings_Access_Array) return Boolean renames org.allbinary.graphics.opengles.shader.ShaderStrings_Package_References."=";
+   subtype ShaderStrings_Access_Array_Access is org.allbinary.graphics.opengles.shader.ShaderStrings_Package_References.ShaderStrings_Access_Array_Access;
+   function "=" (Left, Right : ShaderStrings_Access_Array_Access) return Boolean renames org.allbinary.graphics.opengles.shader.ShaderStrings_Package_References."=";
+   subtype ShaderStrings_Access_Array_Access_Array is org.allbinary.graphics.opengles.shader.ShaderStrings_Package_References.ShaderStrings_Access_Array_Access_Array;
+   function "=" (Left, Right : ShaderStrings_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.opengles.shader.ShaderStrings_Package_References."=";
+   subtype ShaderStrings_Access_Array_Access_Array_Access is org.allbinary.graphics.opengles.shader.ShaderStrings_Package_References.ShaderStrings_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ShaderStrings_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.opengles.shader.ShaderStrings_Package_References."=";
    procedure Initialize_Fields (This : in out CompositeShaderUpdater'Class) is
    begin
       null;
@@ -36,7 +85,7 @@ package body org.allbinary.graphics.opengles.shader.CompositeShaderUpdater_Packa
 
    function getInstance return CompositeShaderUpdater_Access is
    begin
-        return CompositeShaderUpdater_Package.instanceC;
+        return CompositeShaderUpdater_Access (CompositeShaderUpdater_Package.instanceC);
    end getInstance;
 
    procedure Initialize (This : in out CompositeShaderUpdater'Class; uniformBlockArray : Unbounded_String_Array_Access; uniformArray : Unbounded_String_Array_Access; attributeArray : Unbounded_String_Array_Access; attributeHandleArray : Integer_Array_Access) is

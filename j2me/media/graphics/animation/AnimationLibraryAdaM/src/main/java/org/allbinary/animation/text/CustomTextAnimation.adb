@@ -14,20 +14,21 @@
 
 
 with javax.microedition.lcdui.Font_Package; use javax.microedition.lcdui.Font_Package;
+with javax.microedition.lcdui.Font_Package_References;
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
 with org.allbinary.animation.AnimationBehavior_Package; use org.allbinary.animation.AnimationBehavior_Package;
+with org.allbinary.animation.AnimationBehavior_Package_References;
 with org.allbinary.graphics.font.FontDebugFactory_Package; use org.allbinary.graphics.font.FontDebugFactory_Package;
+with org.allbinary.graphics.font.FontDebugFactory_Package_References;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.animation.Animation_Package;
-with org.allbinary.animation.AnimationBehavior_Package;
 with org.allbinary.animation.AnimationInterface_Package;
 with org.allbinary.animation.IndexedAnimation_Package;
 with org.allbinary.animation.IndexedAnimationInterface_Package;
 with org.allbinary.animation.SequenceInterface_Package;
 with org.allbinary.animation.SequentialAnimationInterface_Package;
-with org.allbinary.animation.text.TextAnimation_Package;
 with org.allbinary.animation.text.TextChangeListener_Package;
-with org.allbinary.animation.text.TextInterface_Package;
 
 package body org.allbinary.animation.text.CustomTextAnimation_Package is
 
@@ -107,7 +108,7 @@ package body org.allbinary.animation.text.CustomTextAnimation_Package is
         This.myFontProcessor.process (graphics);
         existingFont := graphics.getFont;
         This.fontDebugFactory.setFont (This.font, graphics);
-        TextAnimation (This).paintXYNoUpdate (graphics, x, y);
+        TextAnimation_Package.TextAnimation (This).paintXYNoUpdate (graphics, x, y);
         This.fontDebugFactory.setFont (existingFont, graphics);
    end paintXY;
 
@@ -125,7 +126,7 @@ package body org.allbinary.animation.text.CustomTextAnimation_Package is
         if (This.lastText) /= (text) then
             This.hasChanged := True;
             This.lastText := text;
-            TextAnimation (This).setText (text);
+            TextAnimation_Package.TextAnimation (This).setText (text);
         end if;
    end setText;
 

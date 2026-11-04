@@ -17,7 +17,9 @@ with org.allbinary.game.configuration.feature.Features_Package; use org.allbinar
 with org.allbinary.game.configuration.feature.GameFeatureFactory_Package; use org.allbinary.game.configuration.feature.GameFeatureFactory_Package;
 with org.allbinary.graphics.opengles.OpenGLFeatureUtil_Package; use org.allbinary.graphics.opengles.OpenGLFeatureUtil_Package;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
+with org.allbinary.layer.AllBinaryLayer_Package_References;
 with org.allbinary.game.collision.CollisionProcessor_Package; use org.allbinary.game.collision.CollisionProcessor_Package;
+with org.allbinary.game.collision.CollisionProcessor_Package_References;
 with org.allbinary.game.collision.Collision2DProcessor_Package; use org.allbinary.game.collision.Collision2DProcessor_Package;
 with org.allbinary.game.collision.CollisionThreedProcessor_Package; use org.allbinary.game.collision.CollisionThreedProcessor_Package;
 with org.allbinary.game.collision.Collision2DProcessor_Package;

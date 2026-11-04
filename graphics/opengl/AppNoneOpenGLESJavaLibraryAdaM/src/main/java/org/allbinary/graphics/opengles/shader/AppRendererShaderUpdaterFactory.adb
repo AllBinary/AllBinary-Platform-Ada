@@ -14,7 +14,9 @@
 
 
 with org.allbinary.graphics.opengles.shader.ShaderComposite_Package; use org.allbinary.graphics.opengles.shader.ShaderComposite_Package;
+with org.allbinary.graphics.opengles.shader.ShaderComposite_Package_References;
 with org.allbinary.graphics.opengles.shader.ShaderOpenGLProcessor_Package; use org.allbinary.graphics.opengles.shader.ShaderOpenGLProcessor_Package;
+with org.allbinary.graphics.opengles.shader.ShaderOpenGLProcessor_Package_References;
 
 package body org.allbinary.graphics.opengles.shader.AppRendererShaderUpdaterFactory_Package is
 

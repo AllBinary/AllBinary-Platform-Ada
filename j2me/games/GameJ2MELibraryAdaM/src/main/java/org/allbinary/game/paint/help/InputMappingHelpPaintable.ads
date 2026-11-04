@@ -53,6 +53,8 @@ with org.allbinary.string_Id.CommonStrings_Package_References;
 limited with org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.game.paint.help.HelpPaintable_Package; use org.allbinary.game.paint.help.HelpPaintable_Package;
+limited with org.allbinary.game.paint.help.UpdateMyFontProperties_Package;
+with org.allbinary.game.paint.help.UpdateMyFontProperties_Package_References;
 
 package org.allbinary.game.paint.help.InputMappingHelpPaintable_Package is
 
@@ -178,6 +180,16 @@ package org.allbinary.game.paint.help.InputMappingHelpPaintable_Package is
    use type BasicArrayList_Access_Array_Access_Array;
    subtype BasicArrayList_Access_Array_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array_Access;
    use type BasicArrayList_Access_Array_Access_Array_Access;
+   subtype UpdateMyFontProperties_Access is org.allbinary.game.paint.help.UpdateMyFontProperties_Package_References.UpdateMyFontProperties_Access;
+   use type UpdateMyFontProperties_Access;
+   subtype UpdateMyFontProperties_Access_Array is org.allbinary.game.paint.help.UpdateMyFontProperties_Package_References.UpdateMyFontProperties_Access_Array;
+   use type UpdateMyFontProperties_Access_Array;
+   subtype UpdateMyFontProperties_Access_Array_Access is org.allbinary.game.paint.help.UpdateMyFontProperties_Package_References.UpdateMyFontProperties_Access_Array_Access;
+   use type UpdateMyFontProperties_Access_Array_Access;
+   subtype UpdateMyFontProperties_Access_Array_Access_Array is org.allbinary.game.paint.help.UpdateMyFontProperties_Package_References.UpdateMyFontProperties_Access_Array_Access_Array;
+   use type UpdateMyFontProperties_Access_Array_Access_Array;
+   subtype UpdateMyFontProperties_Access_Array_Access_Array_Access is org.allbinary.game.paint.help.UpdateMyFontProperties_Package_References.UpdateMyFontProperties_Access_Array_Access_Array_Access;
+   use type UpdateMyFontProperties_Access_Array_Access_Array_Access;
    end Reference_Types;
    use Reference_Types;
 
@@ -388,6 +400,16 @@ package org.allbinary.game.paint.help.UpdateMyFontProperties_Package is
    use type BasicArrayList_Access_Array_Access_Array;
    subtype BasicArrayList_Access_Array_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array_Access;
    use type BasicArrayList_Access_Array_Access_Array_Access;
+   subtype HelpPaintable_Access is org.allbinary.game.paint.help.HelpPaintable_Package_References.HelpPaintable_Access;
+   use type HelpPaintable_Access;
+   subtype HelpPaintable_Access_Array is org.allbinary.game.paint.help.HelpPaintable_Package_References.HelpPaintable_Access_Array;
+   use type HelpPaintable_Access_Array;
+   subtype HelpPaintable_Access_Array_Access is org.allbinary.game.paint.help.HelpPaintable_Package_References.HelpPaintable_Access_Array_Access;
+   use type HelpPaintable_Access_Array_Access;
+   subtype HelpPaintable_Access_Array_Access_Array is org.allbinary.game.paint.help.HelpPaintable_Package_References.HelpPaintable_Access_Array_Access_Array;
+   use type HelpPaintable_Access_Array_Access_Array;
+   subtype HelpPaintable_Access_Array_Access_Array_Access is org.allbinary.game.paint.help.HelpPaintable_Package_References.HelpPaintable_Access_Array_Access_Array_Access;
+   use type HelpPaintable_Access_Array_Access_Array_Access;
    end Reference_Types;
    use Reference_Types;
 

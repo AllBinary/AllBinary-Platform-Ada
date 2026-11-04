@@ -14,6 +14,7 @@
 
 
 with org.allbinary.input.AllBinarySensor_Package; use org.allbinary.input.AllBinarySensor_Package;
+with org.allbinary.input.AllBinarySensor_Package_References;
 with org.allbinary.input.NoAllBinarySensor_Package; use org.allbinary.input.NoAllBinarySensor_Package;
 
 package body org.allbinary.input.gyro.SensorGameUpdateProcessor_Package is

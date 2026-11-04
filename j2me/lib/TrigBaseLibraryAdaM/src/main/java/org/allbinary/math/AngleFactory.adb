@@ -15,6 +15,7 @@
 
 with jsinterop.annotations.JsType_Package; use jsinterop.annotations.JsType_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.string_Id.CommonPhoneStrings_Package; use org.allbinary.string_Id.CommonPhoneStrings_Package;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
@@ -23,8 +24,11 @@ with jsinterop.annotations.JsMethod_Package; use jsinterop.annotations.JsMethod_
 with jsinterop.annotations.JsConstructor_Package; use jsinterop.annotations.JsConstructor_Package;
 with jsinterop.annotations.JsProperty_Package; use jsinterop.annotations.JsProperty_Package;
 with org.allbinary.math.Angle_Package; use org.allbinary.math.Angle_Package;
+with org.allbinary.math.Angle_Package_References;
 with org.allbinary.math.NamedAngle_Package; use org.allbinary.math.NamedAngle_Package;
+with org.allbinary.math.NamedAngle_Package_References;
 with org.allbinary.math.FrameUtil_Package; use org.allbinary.math.FrameUtil_Package;
+with org.allbinary.math.FrameUtil_Package_References;
 with org.allbinary.math.Angle_Package;
 with org.allbinary.math.FrameUtil_Package;
 with org.allbinary.math.NamedAngle_Package;

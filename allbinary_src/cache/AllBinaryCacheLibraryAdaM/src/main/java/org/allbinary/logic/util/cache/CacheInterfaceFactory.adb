@@ -14,8 +14,11 @@
 
 
 with org.allbinary.logic.util.cache.CacheInterface_Package; use org.allbinary.logic.util.cache.CacheInterface_Package;
+with org.allbinary.logic.util.cache.CacheInterface_Package_References;
 with org.allbinary.logic.util.cache.CacheType_Package; use org.allbinary.logic.util.cache.CacheType_Package;
+with org.allbinary.logic.util.cache.CacheType_Package_References;
 with org.allbinary.logic.util.cache.CachePolicy_Package; use org.allbinary.logic.util.cache.CachePolicy_Package;
+with org.allbinary.logic.util.cache.CachePolicy_Package_References;
 with org.allbinary.logic.util.cache.CachePolicy_Package;
 with org.allbinary.logic.util.cache.CacheType_Package;
 

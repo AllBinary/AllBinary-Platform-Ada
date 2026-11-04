@@ -17,12 +17,12 @@ with bundle.input.automation.robot.InputAutomationRobotServiceInterface_Package;
 with org.allbinary.input.automation.robot.InputRobotFactory_Package; use org.allbinary.input.automation.robot.InputRobotFactory_Package;
 with org.allbinary.input.automation.robot.InputRobotInterface_Package; use org.allbinary.input.automation.robot.InputRobotInterface_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.osgi.OSGIServiceInterface_Package; use org.allbinary.osgi.OSGIServiceInterface_Package;
+with org.allbinary.osgi.OSGIServiceInterface_Package_References;
 with org.allbinary.osgi.OSGIServiceVisitorInterface_Package; use org.allbinary.osgi.OSGIServiceVisitorInterface_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
-with bundle.input.automation.robot.InputAutomationRobotServiceInterface_Package;
-with org.allbinary.input.automation.robot.InputRobotFactory_Package;
-with org.allbinary.input.automation.robot.InputRobotInterface_Package;
+with org.allbinary.string_Id.CommonStrings_Package_References;
 
 package body org.allbinary.input.automation.robot.osgi.InputAutomationRobotOSGIServiceVisitor_Package is
 

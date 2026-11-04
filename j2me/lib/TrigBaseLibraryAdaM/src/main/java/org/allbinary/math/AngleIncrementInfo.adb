@@ -21,6 +21,7 @@ with jsinterop.annotations.JsMethod_Package; use jsinterop.annotations.JsMethod_
 with jsinterop.annotations.JsConstructor_Package; use jsinterop.annotations.JsConstructor_Package;
 with org.allbinary.math.AngleFactory_Package; use org.allbinary.math.AngleFactory_Package;
 with org.allbinary.math.FrameUtil_Package; use org.allbinary.math.FrameUtil_Package;
+with org.allbinary.math.FrameUtil_Package_References;
 with org.allbinary.math.Angle_Package;
 with org.allbinary.math.AngleFactory_Package;
 with org.allbinary.math.FrameUtil_Package;

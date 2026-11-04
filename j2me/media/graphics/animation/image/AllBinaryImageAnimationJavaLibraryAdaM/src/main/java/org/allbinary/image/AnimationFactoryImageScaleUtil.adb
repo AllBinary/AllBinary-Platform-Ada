@@ -14,12 +14,17 @@
 
 
 with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
+with javax.microedition.lcdui.Image_Package_References;
 with org.allbinary.animation.image.AnimationFactoryInitializationVisitor_Package; use org.allbinary.animation.image.AnimationFactoryInitializationVisitor_Package;
 with org.allbinary.animation.image.BaseImageAnimationFactory_Package; use org.allbinary.animation.image.BaseImageAnimationFactory_Package;
+with org.allbinary.animation.image.BaseImageAnimationFactory_Package_References;
+with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.media.ScaleProperties_Package; use org.allbinary.media.ScaleProperties_Package;
 with org.allbinary.media.image.ImageJ2MEScaleUtil_Package; use org.allbinary.media.image.ImageJ2MEScaleUtil_Package;
-with org.allbinary.animation.image.AnimationFactoryInitializationVisitor_Package;
-with org.allbinary.animation.image.BaseImageAnimationFactory_Package;
+with org.allbinary.media.image.ImageJ2MEScaleUtil_Package_References;
+with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 
 package body org.allbinary.image.AnimationFactoryImageScaleUtil_Package is
 

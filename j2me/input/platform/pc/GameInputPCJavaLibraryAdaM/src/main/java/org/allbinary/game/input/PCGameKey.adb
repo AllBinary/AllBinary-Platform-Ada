@@ -44,7 +44,7 @@ package body org.allbinary.game.input.PCGameKey_Package is
 
    function toString (This : in out PCGameKey) return Unbounded_String is
    begin
-        return To_Unbounded_String ("PCGameKey: ") & Input (This).toString;
+        return To_Unbounded_String ("PCGameKey: ") & Input_Package.Input (This).toString;
    end toString;
 
    function getString (keyCode : Integer) return Unbounded_String is

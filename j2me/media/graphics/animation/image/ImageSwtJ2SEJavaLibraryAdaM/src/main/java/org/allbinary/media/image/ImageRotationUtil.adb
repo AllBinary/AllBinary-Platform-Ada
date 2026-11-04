@@ -14,13 +14,17 @@
 
 
 with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
+with javax.microedition.lcdui.Image_Package_References;
 with org.allbinary.game.configuration.feature.Features_Package; use org.allbinary.game.configuration.feature.Features_Package;
+with org.allbinary.game.configuration.feature.Features_Package_References;
 with org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package; use org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package;
 with org.allbinary.image.opengles.OpenGLESImage_Package; use org.allbinary.image.opengles.OpenGLESImage_Package;
 with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
 with org.eclipse.swt.graphics.GC_Package; use org.eclipse.swt.graphics.GC_Package;
+with org.microemu.device.swt.SwtImmutableImage_Package; use org.microemu.device.swt.SwtImmutableImage_Package;
 with org.microemu.device.swt.SwtMutableImage_Package; use org.microemu.device.swt.SwtMutableImage_Package;
 with org.allbinary.media.image.ImageSwtRotationUtil_Package; use org.allbinary.media.image.ImageSwtRotationUtil_Package;
+with org.allbinary.media.image.ImageSwtRotationUtil_Package_References;
 with org.allbinary.media.image.ImageSwtRotationUtil_Package;
 with org.allbinary.media.image.ImageUtil_Package;
 

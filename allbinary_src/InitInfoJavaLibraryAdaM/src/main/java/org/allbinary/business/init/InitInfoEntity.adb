@@ -26,8 +26,6 @@ with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.
 with org.allbinary.business.init.InitInfo_Package; use org.allbinary.business.init.InitInfo_Package;
 with org.allbinary.business.init.InitException_Package;
 with org.allbinary.business.init.InitInfo_Package;
-with org.allbinary.business.init.InitSql_Package;
-with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
 
 package body org.allbinary.business.init.InitInfoEntity_Package is
 
@@ -177,7 +175,7 @@ package body org.allbinary.business.init.InitInfoEntity_Package is
    function createTable (This : in out InitInfoEntity) return Unbounded_String is
       stringBuffer : StringMaker_Access;
    begin
-        if InitSql (This).createTable (This.tableData) then
+        if InitSql_Package.InitSql (This).createTable (This.tableData) then
             return This.tableName & This.CREATED_SUCCESS;
         else
             stringBuffer := StringMaker_Package.Create;

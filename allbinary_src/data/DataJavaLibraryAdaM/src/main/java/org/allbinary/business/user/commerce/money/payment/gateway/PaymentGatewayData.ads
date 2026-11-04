@@ -52,7 +52,7 @@ package org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewa
    type PaymentGatewayData is new Java_Object with record
       key : Unbounded_String;
    end record;
-   CRYPTNUM : Integer;
+   CRYPTNUM : constant Integer := 5;
    ID : PaymentGatewayData_Access;
    NAME : PaymentGatewayData_Access;
    VALUE : PaymentGatewayData_Access;

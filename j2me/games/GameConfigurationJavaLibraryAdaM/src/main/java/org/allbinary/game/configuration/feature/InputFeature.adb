@@ -13,7 +13,6 @@
 --  Generated Code Do Not Modify
 
 
-with org.allbinary.game.configuration.feature.Feature_Package;
 
 package body org.allbinary.game.configuration.feature.InputFeature_Package is
 

@@ -14,8 +14,9 @@
 
 
 with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
+with javax.microedition.lcdui.Image_Package_References;
 with org.allbinary.animation.AnimationBehaviorFactory_Package; use org.allbinary.animation.AnimationBehaviorFactory_Package;
-with org.allbinary.animation.image.AllBinaryJ2SEImageRotationAnimationFactory_Package;
+with org.allbinary.animation.AnimationBehaviorFactory_Package_References;
 
 package body org.allbinary.animation.image.AllBinaryPlatformImageRotationAnimationFactory_Package is
 

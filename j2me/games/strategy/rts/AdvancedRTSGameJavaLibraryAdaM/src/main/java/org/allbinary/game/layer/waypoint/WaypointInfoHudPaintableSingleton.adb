@@ -14,6 +14,7 @@
 
 
 with org.allbinary.game.layer.waypoint.WaypointInfoHudPaintable_Package; use org.allbinary.game.layer.waypoint.WaypointInfoHudPaintable_Package;
+with org.allbinary.game.layer.waypoint.WaypointInfoHudPaintable_Package_References;
 with org.allbinary.game.layer.waypoint.WaypointInfoHudPaintable_Package;
 
 package body org.allbinary.game.layer.waypoint.WaypointInfoHudPaintableSingleton_Package is

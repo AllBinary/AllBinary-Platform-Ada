@@ -14,6 +14,7 @@
 
 
 with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
+with javax.microedition.lcdui.Image_Package_References;
 
 package body javax.microedition.lcdui.NullImage_Package is
 

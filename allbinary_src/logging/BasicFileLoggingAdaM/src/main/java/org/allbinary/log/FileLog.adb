@@ -16,6 +16,7 @@
 with java.io.File_Package; use java.io.File_Package;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package_References;
 with org.allbinary.logic.communication.log.LogFormatUtil_Package; use org.allbinary.logic.communication.log.LogFormatUtil_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 
@@ -252,7 +253,7 @@ package body org.allbinary.log.FileLog_Package is
 begin
    null;
    stringUtil := StringUtil_Package.getInstance;
-   logLength := 33000000;
+   
    logPath := To_Unbounded_String ("g:\log\");
    extension := Java_New_String (To_Unbounded_String ("dat"));
    fileName := Java_New_String (To_Unbounded_String ("log.") & Java_Image (FileLog_Package.extension));

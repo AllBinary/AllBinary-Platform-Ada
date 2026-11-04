@@ -14,13 +14,14 @@
 
 
 with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Animation_Package;
+with org.allbinary.animation.Animation_Package_References;
 with org.allbinary.animation.AnimationInterfaceFactoryInterface_Package; use org.allbinary.animation.AnimationInterfaceFactoryInterface_Package;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.graphics.color.BasicColor_Package_References;
 with org.allbinary.media.ScaleProperties_Package; use org.allbinary.media.ScaleProperties_Package;
+with org.allbinary.media.ScaleProperties_Package_References;
 with org.allbinary.animation.vector.LineAnimation_Package; use org.allbinary.animation.vector.LineAnimation_Package;
-with org.allbinary.animation.Animation_Package;
 with org.allbinary.animation.AnimationInterface_Package;
-with org.allbinary.animation.AnimationInterfaceFactoryInterface_Package;
 with org.allbinary.animation.BasicAnimationInterfaceFactoryInterface_Package;
 with org.allbinary.animation.vector.LineAnimation_Package;
 

@@ -19,13 +19,13 @@ with org.allbinary.logic.visual.theme.ThemeInterface_Package; use org.allbinary.
 with org.allbinary.logic.visual.theme.ThemePropertiesView_Package; use org.allbinary.logic.visual.theme.ThemePropertiesView_Package;
 with org.allbinary.logic.visual.theme.ThemeValidation_Package; use org.allbinary.logic.visual.theme.ThemeValidation_Package;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
+with org.w3c.dom.Document_Package_References;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
+with org.w3c.dom.Node_Package_References;
 with org.allbinary.business.category.store.theme.StoreThemeCategoryInterface_Package; use org.allbinary.business.category.store.theme.StoreThemeCategoryInterface_Package;
+with org.allbinary.business.category.store.theme.StoreThemeCategoryInterface_Package_References;
 with org.allbinary.logic.visual.transform.template.customizer.includes.style.css.template.retail.CssStyleValidation_Package;
 with org.allbinary.business.category.store.theme.StoreThemeCategoryInterface_Package;
-with org.allbinary.logic.visual.theme.ThemeInterface_Package;
-with org.allbinary.logic.visual.theme.ThemePropertiesView_Package;
-with org.allbinary.logic.visual.theme.ThemeValidation_Package;
 
 package body org.allbinary.business.category.store.theme.StoreThemeCategoryPathView_Package is
 
@@ -92,7 +92,7 @@ package body org.allbinary.business.category.store.theme.StoreThemeCategoryPathV
       domNodeInterface : DomNodeInterface_Access;
       i : Integer;
    begin
-        node := CategoryView (This).toXmlNode (document);
+        node := CategoryView_Package.CategoryView (This).toXmlNode (document);
         storeThemeCategoryInterface := StoreThemeCategoryInterface_Access (StoreThemeCategoryPathView'Class (This).getCategoryInterface);
         themeArray := storeThemeCategoryInterface.getThemes.toArray;
         size := themeArray'Length;

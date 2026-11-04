@@ -14,7 +14,9 @@
 
 
 with javax.microedition.lcdui.Item_Package; use javax.microedition.lcdui.Item_Package;
+with javax.microedition.lcdui.Item_Package_References;
 with org.allbinary.graphics.displayable.screen.CommandForm_Package; use org.allbinary.graphics.displayable.screen.CommandForm_Package;
+with org.allbinary.graphics.displayable.screen.CommandForm_Package_References;
 
 package body org.allbinary.logic.MEUtil_Package is
 

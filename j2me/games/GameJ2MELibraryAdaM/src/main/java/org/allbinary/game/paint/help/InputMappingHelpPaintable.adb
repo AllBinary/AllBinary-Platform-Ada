@@ -15,24 +15,36 @@
 
 with javax.microedition.lcdui.Font_Package; use javax.microedition.lcdui.Font_Package;
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
 with org.allbinary.game.input.GameKey_Package; use org.allbinary.game.input.GameKey_Package;
+with org.allbinary.game.input.GameKey_Package_References;
 with org.allbinary.game.input.GameKeyFactory_Package; use org.allbinary.game.input.GameKeyFactory_Package;
 with org.allbinary.game.input.Input_Package; use org.allbinary.game.input.Input_Package;
+with org.allbinary.game.input.Input_Package_References;
 with org.allbinary.game.input.PlatformInputMappingFactory_Package; use org.allbinary.game.input.PlatformInputMappingFactory_Package;
 with org.allbinary.game.input.mapping.GameInputMapping_Package; use org.allbinary.game.input.mapping.GameInputMapping_Package;
+with org.allbinary.game.input.mapping.GameInputMapping_Package_References;
 with org.allbinary.game.input.mapping.PersistentInputMapping_Package; use org.allbinary.game.input.mapping.PersistentInputMapping_Package;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.graphics.color.BasicColor_Package_References;
 with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
+with org.allbinary.graphics.color.BasicColorFactory_Package_References;
 with org.allbinary.graphics.color.BasicColorUtil_Package; use org.allbinary.graphics.color.BasicColorUtil_Package;
 with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package_References;
 with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.string_Id.CommonSeps_Package_References;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.string_Id.CommonStrings_Package_References;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.game.paint.help.HelpPaintable_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
+with org.allbinary.game.paint.help.UpdateMyFontProperties_Package; use org.allbinary.game.paint.help.UpdateMyFontProperties_Package;
+with org.allbinary.game.paint.help.UpdateMyFontProperties_Package_References;
 
 package body org.allbinary.game.paint.help.InputMappingHelpPaintable_Package is
 
@@ -154,6 +166,16 @@ package body org.allbinary.game.paint.help.InputMappingHelpPaintable_Package is
    function "=" (Left, Right : BasicArrayList_Access_Array_Access_Array) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
    subtype BasicArrayList_Access_Array_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array_Access;
    function "=" (Left, Right : BasicArrayList_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype UpdateMyFontProperties_Access is org.allbinary.game.paint.help.UpdateMyFontProperties_Package_References.UpdateMyFontProperties_Access;
+   function "=" (Left, Right : UpdateMyFontProperties_Access) return Boolean renames org.allbinary.game.paint.help.UpdateMyFontProperties_Package_References."=";
+   subtype UpdateMyFontProperties_Access_Array is org.allbinary.game.paint.help.UpdateMyFontProperties_Package_References.UpdateMyFontProperties_Access_Array;
+   function "=" (Left, Right : UpdateMyFontProperties_Access_Array) return Boolean renames org.allbinary.game.paint.help.UpdateMyFontProperties_Package_References."=";
+   subtype UpdateMyFontProperties_Access_Array_Access is org.allbinary.game.paint.help.UpdateMyFontProperties_Package_References.UpdateMyFontProperties_Access_Array_Access;
+   function "=" (Left, Right : UpdateMyFontProperties_Access_Array_Access) return Boolean renames org.allbinary.game.paint.help.UpdateMyFontProperties_Package_References."=";
+   subtype UpdateMyFontProperties_Access_Array_Access_Array is org.allbinary.game.paint.help.UpdateMyFontProperties_Package_References.UpdateMyFontProperties_Access_Array_Access_Array;
+   function "=" (Left, Right : UpdateMyFontProperties_Access_Array_Access_Array) return Boolean renames org.allbinary.game.paint.help.UpdateMyFontProperties_Package_References."=";
+   subtype UpdateMyFontProperties_Access_Array_Access_Array_Access is org.allbinary.game.paint.help.UpdateMyFontProperties_Package_References.UpdateMyFontProperties_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : UpdateMyFontProperties_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.paint.help.UpdateMyFontProperties_Package_References."=";
    procedure Initialize_Fields (This : in out InputMappingHelpPaintable'Class) is
    begin
       null;
@@ -261,7 +283,7 @@ package body org.allbinary.game.paint.help.InputMappingHelpPaintable_Package is
             end loop;
         end loop;
         This.updateMyFontProperties_Var := updateMyFontProperties_Var;
-        HelpPaintable (This).updateMeasurement (graphics);
+        HelpPaintable_Package.HelpPaintable (This).updateMeasurement (graphics);
    end updateMeasurement;
 
    procedure update (This : in out InputMappingHelpPaintable; selectedGameKey_Param : access GameKey_Package.GameKey'Class; selectedInput_Param : access Input_Package.Input'Class) is
@@ -321,7 +343,7 @@ package body org.allbinary.game.paint.help.InputMappingHelpPaintable_Package is
         This.keyMappingArray := keyMappingArray;
         This.actionBasicColor := actionBasicColor;
         This.inputBasicColorArray := inputBasicColorArray;
-        HelpPaintable (This).setInputInfoP (keyInfo);
+        HelpPaintable_Package.HelpPaintable (This).setInputInfoP (keyInfo);
         This.myFontProcessor := This.updateMyFontProcessor;
    end update;
 
@@ -424,24 +446,34 @@ end org.allbinary.game.paint.help.InputMappingHelpPaintable_Package;
 
 with javax.microedition.lcdui.Font_Package; use javax.microedition.lcdui.Font_Package;
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
 with org.allbinary.game.input.GameKey_Package; use org.allbinary.game.input.GameKey_Package;
+with org.allbinary.game.input.GameKey_Package_References;
 with org.allbinary.game.input.GameKeyFactory_Package; use org.allbinary.game.input.GameKeyFactory_Package;
 with org.allbinary.game.input.Input_Package; use org.allbinary.game.input.Input_Package;
+with org.allbinary.game.input.Input_Package_References;
 with org.allbinary.game.input.PlatformInputMappingFactory_Package; use org.allbinary.game.input.PlatformInputMappingFactory_Package;
 with org.allbinary.game.input.mapping.GameInputMapping_Package; use org.allbinary.game.input.mapping.GameInputMapping_Package;
+with org.allbinary.game.input.mapping.GameInputMapping_Package_References;
 with org.allbinary.game.input.mapping.PersistentInputMapping_Package; use org.allbinary.game.input.mapping.PersistentInputMapping_Package;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.graphics.color.BasicColor_Package_References;
 with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
+with org.allbinary.graphics.color.BasicColorFactory_Package_References;
 with org.allbinary.graphics.color.BasicColorUtil_Package; use org.allbinary.graphics.color.BasicColorUtil_Package;
 with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package_References;
 with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.string_Id.CommonSeps_Package_References;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.string_Id.CommonStrings_Package_References;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.game.paint.help.HelpPaintable_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.game.paint.help.InputMappingHelpPaintable_Package;
 
 package body org.allbinary.game.paint.help.UpdateMyFontProperties_Package is
@@ -564,6 +596,16 @@ package body org.allbinary.game.paint.help.UpdateMyFontProperties_Package is
    function "=" (Left, Right : BasicArrayList_Access_Array_Access_Array) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
    subtype BasicArrayList_Access_Array_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array_Access;
    function "=" (Left, Right : BasicArrayList_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype HelpPaintable_Access is org.allbinary.game.paint.help.HelpPaintable_Package_References.HelpPaintable_Access;
+   function "=" (Left, Right : HelpPaintable_Access) return Boolean renames org.allbinary.game.paint.help.HelpPaintable_Package_References."=";
+   subtype HelpPaintable_Access_Array is org.allbinary.game.paint.help.HelpPaintable_Package_References.HelpPaintable_Access_Array;
+   function "=" (Left, Right : HelpPaintable_Access_Array) return Boolean renames org.allbinary.game.paint.help.HelpPaintable_Package_References."=";
+   subtype HelpPaintable_Access_Array_Access is org.allbinary.game.paint.help.HelpPaintable_Package_References.HelpPaintable_Access_Array_Access;
+   function "=" (Left, Right : HelpPaintable_Access_Array_Access) return Boolean renames org.allbinary.game.paint.help.HelpPaintable_Package_References."=";
+   subtype HelpPaintable_Access_Array_Access_Array is org.allbinary.game.paint.help.HelpPaintable_Package_References.HelpPaintable_Access_Array_Access_Array;
+   function "=" (Left, Right : HelpPaintable_Access_Array_Access_Array) return Boolean renames org.allbinary.game.paint.help.HelpPaintable_Package_References."=";
+   subtype HelpPaintable_Access_Array_Access_Array_Access is org.allbinary.game.paint.help.HelpPaintable_Package_References.HelpPaintable_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : HelpPaintable_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.paint.help.HelpPaintable_Package_References."=";
    procedure Initialize_Fields (This : in out UpdateMyFontProperties'Class) is
    begin
       null;

@@ -15,12 +15,15 @@
 
 with javax.microedition.lcdui.Font_Package; use javax.microedition.lcdui.Font_Package;
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.AndroidUtil_Package; use org.allbinary.AndroidUtil_Package;
 with org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package; use org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package;
+with org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package_References;
 with org.allbinary.game.part.weapon.BasicWeaponPart_Package; use org.allbinary.game.part.weapon.BasicWeaponPart_Package;
 with org.allbinary.graphics.font.UpdateMyFontInterface_Package; use org.allbinary.graphics.font.UpdateMyFontInterface_Package;
 with org.allbinary.game.layer.RTSLayer_Package; use org.allbinary.game.layer.RTSLayer_Package;
+with org.allbinary.game.layer.RTSLayer_Package_References;
 with org.allbinary.game.input.BuildMenuCompositeInterface_Package;
 with org.allbinary.game.layer.capital.Capital_Package;
 with org.allbinary.game.layer.GeographicMapCellPositionAreaBase_Package;
@@ -33,7 +36,6 @@ with org.allbinary.game.layer.RTSLayer_Package;
 with org.allbinary.game.layer.RTSLayer2LogHelper_Package;
 with org.allbinary.game.layer.RTSLayerUtil_Package;
 with org.allbinary.game.layer.RTSPlayerLayerInterface_Package;
-with org.allbinary.game.layer.SelectionHudPaintable_Package;
 with org.allbinary.game.layer.waypoint.Waypoint2LogHelper_Package;
 with org.allbinary.game.layer.waypoint.WaypointBase_Package;
 with org.allbinary.game.layer.WaypointBehaviorBase_Package;
@@ -111,7 +113,7 @@ package body org.allbinary.game.layer.RTSLayerHudPaintable_Package is
       graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
       font : Font_Access;
    begin
-        SelectionHudPaintable (This).updateMeasurement (graphics);
+        SelectionHudPaintable_Package.SelectionHudPaintable (This).updateMeasurement (graphics);
         font := graphics.getFont;
         This.fontHeight := font.getHeight;
         This.costY1 := ((This.y) + (((((This.weaponProperties'Length) + (1))) * (This.fontHeight))));
@@ -136,7 +138,7 @@ package body org.allbinary.game.layer.RTSLayerHudPaintable_Package is
       size : Integer;
       index : Integer;
    begin
-        SelectionHudPaintable (This).paint (graphics);
+        SelectionHudPaintable_Package.SelectionHudPaintable (This).paint (graphics);
         size := This.weaponProperties'Length;
         for index in 0 .. (size) - 1 loop
             graphics.drawString (This.weaponProperties (index), This.textX, (This.y) + (((((index) + (1))) * (This.fontHeight))), 0);

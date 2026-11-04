@@ -15,11 +15,14 @@
 
 with javax.microedition.lcdui.Canvas_Package; use javax.microedition.lcdui.Canvas_Package;
 with org.allbinary.game.input.GameInput_Package; use org.allbinary.game.input.GameInput_Package;
+with org.allbinary.game.input.GameInput_Package_References;
 with org.allbinary.game.rand.MyRandomFactory_Package; use org.allbinary.game.rand.MyRandomFactory_Package;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
+with org.allbinary.layer.AllBinaryLayer_Package_References;
 with org.allbinary.layer.AllBinaryLayerManager_Package; use org.allbinary.layer.AllBinaryLayerManager_Package;
+with org.allbinary.layer.AllBinaryLayerManager_Package_References;
 with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
-with org.allbinary.game.ag.ai.scroller.BasePatrolAI_Package;
+with org.allbinary.util.ABHashtable_Package_References;
 
 package body org.allbinary.game.ag.ai.scroller.RandomPatrolAI_Package is
 
@@ -98,10 +101,10 @@ package body org.allbinary.game.ag.ai.scroller.RandomPatrolAI_Package is
    procedure processAI (This : in out RandomPatrolAI; allBinaryLayerManager_Param : access AllBinaryLayerManager_Package.AllBinaryLayerManager'Class) is
       allBinaryLayerManager : constant AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (allBinaryLayerManager_Param);
    begin
-        BasePatrolAI (This).update;
-        BasePatrolAI (This).processKeyAI (This.keyDirection);
+        BasePatrolAI_Package.BasePatrolAI (This).update;
+        BasePatrolAI_Package.BasePatrolAI (This).processKeyAI (This.keyDirection);
         if This.changedDirection then
-            BasePatrolAI (This).processKeyAI (Canvas_Package.KEY_NUM1);
+            BasePatrolAI_Package.BasePatrolAI (This).processKeyAI (Canvas_Package.KEY_NUM1);
             RandomPatrolAI'Class (This).updateRandomDistance;
             This.changedDirection := False;
         end if;
@@ -109,7 +112,7 @@ package body org.allbinary.game.ag.ai.scroller.RandomPatrolAI_Package is
 
    procedure nextDirection (This : in out RandomPatrolAI) is
    begin
-        BasePatrolAI (This).nextDirection;
+        BasePatrolAI_Package.BasePatrolAI (This).nextDirection;
         This.changedDirection := True;
    end nextDirection;
 

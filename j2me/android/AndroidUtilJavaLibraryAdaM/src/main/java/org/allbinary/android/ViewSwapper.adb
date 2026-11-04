@@ -2,7 +2,9 @@
 
 
 with android.app.Activity_Package; use android.app.Activity_Package;
+with android.app.Activity_Package_References;
 with android.view.View_Package; use android.view.View_Package;
+with android.view.View_Package_References;
 with android.view.ViewGroup_Package; use android.view.ViewGroup_Package;
 
 package body org.allbinary.android.ViewSwapper_Package is

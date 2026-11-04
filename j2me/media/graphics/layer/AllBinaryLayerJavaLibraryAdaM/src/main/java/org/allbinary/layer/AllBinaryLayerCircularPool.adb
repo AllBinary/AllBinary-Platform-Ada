@@ -17,6 +17,7 @@ with org.allbinary.logic.util.cache.BaseCircularPool_Package; use org.allbinary.
 with org.allbinary.util.CircularIndexUtil_Package; use org.allbinary.util.CircularIndexUtil_Package;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
 with org.allbinary.layer.AllBinaryLayerFactoryInterface_Package; use org.allbinary.layer.AllBinaryLayerFactoryInterface_Package;
+with org.allbinary.layer.AllBinaryLayerFactoryInterface_Package_References;
 with org.allbinary.layer.AllBinaryLayer_Package;
 with org.allbinary.layer.AllBinaryLayerFactoryInterface_Package;
 with org.allbinary.layer.Layer_Package;

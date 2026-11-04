@@ -14,8 +14,10 @@
 
 
 with org.allbinary.logic.util.visitor.Visitor_Package; use org.allbinary.logic.util.visitor.Visitor_Package;
+with org.allbinary.logic.util.visitor.Visitor_Package_References;
 with org.allbinary.game.input.SelectRTSLayerVisitor_Package; use org.allbinary.game.input.SelectRTSLayerVisitor_Package;
 with org.allbinary.game.input.SelectedRTSLayersPlayerGameInput_Package; use org.allbinary.game.input.SelectedRTSLayersPlayerGameInput_Package;
+with org.allbinary.game.input.SelectedRTSLayersPlayerGameInput_Package_References;
 with org.allbinary.game.input.BuildMenuCompositeInterface_Package;
 with org.allbinary.game.layer.capital.Capital_Package;
 with org.allbinary.game.layer.GeographicMapCellPositionAreaBase_Package;
@@ -30,7 +32,6 @@ with org.allbinary.game.layer.RTSLayerInfoPaintable_Package;
 with org.allbinary.game.layer.RTSLayerUtil_Package;
 with org.allbinary.game.layer.RTSPlayerLayerInterface_Package;
 with org.allbinary.game.input.SelectRTSLayerVisitor_Package;
-with org.allbinary.game.input.SelectRTSLayerVisitorFactoryInterface_Package;
 with org.allbinary.game.input.SelectedRTSLayersPlayerGameInput_Package;
 with org.allbinary.game.layer.SelectionHudPaintable_Package;
 with org.allbinary.game.layer.waypoint.Waypoint2LogHelper_Package;

@@ -30,7 +30,7 @@ package body org.allbinary.business.context.modules.storefront.statistics.orders
 
    function getInstance return StoreFrontOrdersHistoryStatisticsData_Access is
    begin
-        return StoreFrontOrdersHistoryStatisticsData_Package.instance;
+        return StoreFrontOrdersHistoryStatisticsData_Access (StoreFrontOrdersHistoryStatisticsData_Package.instance);
    end getInstance;
 
    procedure Initialize (This : in out StoreFrontOrdersHistoryStatisticsData'Class) is

@@ -4,8 +4,10 @@
 with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
 with org.allbinary.game.input.ActivityFractureControllerUtilFactory_Package; use org.allbinary.game.input.ActivityFractureControllerUtilFactory_Package;
 with org.allbinary.game.input.AndroidKeyFactory_Package; use org.allbinary.game.input.AndroidKeyFactory_Package;
+with org.allbinary.game.input.AndroidKeyFactory_Package_References;
 with org.allbinary.game.input.AndroidGameKey_Package; use org.allbinary.game.input.AndroidGameKey_Package;
 with org.allbinary.game.input.Input_Package; use org.allbinary.game.input.Input_Package;
+with org.allbinary.game.input.Input_Package_References;
 with org.allbinary.game.input.ActivityFractureControllerUtilFactory_Package;
 with org.allbinary.game.input.AndroidGameKey_Package;
 with org.allbinary.game.input.AndroidKeyFactory_Package;

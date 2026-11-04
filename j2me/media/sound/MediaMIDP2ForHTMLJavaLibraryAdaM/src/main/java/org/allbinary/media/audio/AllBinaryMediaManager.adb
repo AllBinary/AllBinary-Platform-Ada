@@ -16,6 +16,7 @@
 with javax.microedition.media.Manager_Package; use javax.microedition.media.Manager_Package;
 with javax.microedition.media.MediaException_Package; use javax.microedition.media.MediaException_Package;
 with javax.microedition.media.Player_Package; use javax.microedition.media.Player_Package;
+with javax.microedition.media.Player_Package_References;
 with org.allbinary.TsUtil_Package; use org.allbinary.TsUtil_Package;
 with org.allbinary.game.configuration.feature.Features_Package; use org.allbinary.game.configuration.feature.Features_Package;
 with org.allbinary.game.configuration.feature.GameFeatureFactory_Package; use org.allbinary.game.configuration.feature.GameFeatureFactory_Package;
@@ -24,6 +25,7 @@ with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.lo
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.media.audio.Sounds_Package; use org.allbinary.media.audio.Sounds_Package;
 with org.allbinary.media.audio.SoundsFactoryInterface_Package; use org.allbinary.media.audio.SoundsFactoryInterface_Package;
+with org.allbinary.media.audio.SoundsFactoryInterface_Package_References;
 with org.allbinary.media.audio.NoPlayer_Package; use org.allbinary.media.audio.NoPlayer_Package;
 
 package body org.allbinary.media.audio.AllBinaryMediaManager_Package is

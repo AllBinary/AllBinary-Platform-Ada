@@ -15,11 +15,13 @@
 
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with android.app.Activity_Package; use android.app.Activity_Package;
+with android.app.Activity_Package_References;
 with org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package; use org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package;
+with org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package_References;
 with org.allbinary.graphics.canvas.transition.progress.AndroidBasicTitleProgressBar_Package; use org.allbinary.graphics.canvas.transition.progress.AndroidBasicTitleProgressBar_Package;
 with org.allbinary.graphics.canvas.transition.progress.AndroidBasicTitleProgressBar_Package;
-with org.allbinary.graphics.canvas.transition.progress.ProgressRunnable_Package;
 
 package body org.allbinary.graphics.canvas.transition.progress.TitleProgressBarPortionSetProgressRunnable_Package is
 

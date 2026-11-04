@@ -14,10 +14,13 @@
 
 
 with android.graphics.Paint_Package; use android.graphics.Paint_Package;
+with android.graphics.Paint_Package_References;
 with android.graphics.PorterDuff_Package; use android.graphics.PorterDuff_Package;
 with android.graphics.PorterDuffColorFilter_Package; use android.graphics.PorterDuffColorFilter_Package;
 with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
+with javax.microedition.lcdui.Image_Package_References;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.graphics.color.BasicColor_Package_References;
 
 package body org.allbinary.media.image.ImageModifierUtil_Package is
 

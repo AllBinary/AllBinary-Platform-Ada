@@ -36,8 +36,8 @@ package body org.allbinary.business.user.commerce.money.payment.PaymentData_Pack
 
 begin
    null;
-   MIN := 4;
-   MAX := 19;
+   
+   
    ADDNEW := To_Unbounded_String ("Add New Payment");
    VIEW := To_Unbounded_String ("View Payment");
    SELECT_Id := To_Unbounded_String ("Select Payment");

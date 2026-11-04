@@ -14,17 +14,25 @@
 
 
 with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
+with javax.microedition.lcdui.Image_Package_References;
 with org.allbinary.game.configuration.feature.Features_Package; use org.allbinary.game.configuration.feature.Features_Package;
+with org.allbinary.game.configuration.feature.Features_Package_References;
 with org.allbinary.game.configuration.feature.GameFeatureFactory_Package; use org.allbinary.game.configuration.feature.GameFeatureFactory_Package;
+with org.allbinary.game.configuration.feature.GameFeatureFactory_Package_References;
 with org.allbinary.graphics.displayable.DisplayInfoSingleton_Package; use org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
 with org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package; use org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package;
+with org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package_References;
 with org.allbinary.graphics.opengles.OpenGLUtil_Package; use org.allbinary.graphics.opengles.OpenGLUtil_Package;
+with org.allbinary.graphics.opengles.OpenGLUtil_Package_References;
 with org.allbinary.image.opengles.OpenGLESDeviceImageTranslate_Package; use org.allbinary.image.opengles.OpenGLESDeviceImageTranslate_Package;
 with org.allbinary.image.opengles.OpenGLESImage_Package; use org.allbinary.image.opengles.OpenGLESImage_Package;
 with org.allbinary.image.opengles.OpenGLESImageExclusionUtil_Package; use org.allbinary.image.opengles.OpenGLESImageExclusionUtil_Package;
+with org.allbinary.image.opengles.OpenGLESImageExclusionUtil_Package_References;
 with org.allbinary.image.opengles.OpenGLESImageProperties_Package; use org.allbinary.image.opengles.OpenGLESImageProperties_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.string_Id.CommonStrings_Package_References;
 with org.eclipse.swt.graphics.ImageData_Package; use org.eclipse.swt.graphics.ImageData_Package;
 with org.microemu.app.ui.swt.SwtDeviceComponent_Package; use org.microemu.app.ui.swt.SwtDeviceComponent_Package;
 with org.microemu.device.swt.PostLoadSwtImmutableImageProcessor_Package; use org.microemu.device.swt.PostLoadSwtImmutableImageProcessor_Package;

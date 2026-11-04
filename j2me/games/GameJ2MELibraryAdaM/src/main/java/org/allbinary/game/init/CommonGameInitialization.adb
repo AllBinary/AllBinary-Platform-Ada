@@ -14,16 +14,19 @@
 
 
 with javax.microedition.lcdui.CommandListener_Package; use javax.microedition.lcdui.CommandListener_Package;
+with javax.microedition.lcdui.CommandListener_Package_References;
 with org.allbinary.game.resource.ResourceInitialization_Package; use org.allbinary.game.resource.ResourceInitialization_Package;
+with org.allbinary.game.resource.ResourceInitialization_Package_References;
 with org.allbinary.game.resource.ResourceLoadingLevelFactory_Package; use org.allbinary.game.resource.ResourceLoadingLevelFactory_Package;
 with org.allbinary.graphics.PointFactory_Package; use org.allbinary.graphics.PointFactory_Package;
 with org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package; use org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package;
 with org.allbinary.graphics.canvas.transition.progress.ProgressCanvasFactory_Package; use org.allbinary.graphics.canvas.transition.progress.ProgressCanvasFactory_Package;
 with org.allbinary.logic.math.SmallIntegerSingletonFactory_Package; use org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
 with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package; use org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References;
 with org.allbinary.math.AngleFactory_Package; use org.allbinary.math.AngleFactory_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
-with org.allbinary.game.init.BaseGameInitialization_Package;
+with org.allbinary.string_Id.CommonStrings_Package_References;
 with org.allbinary.game.init.GameInitializationInterface_Package;
 
 package body org.allbinary.game.init.CommonGameInitialization_Package is
@@ -101,7 +104,7 @@ package body org.allbinary.game.init.CommonGameInitialization_Package is
       resourceLoadingLevelFactory : ResourceLoadingLevelFactory_Access;
       progressCanvas : ProgressCanvas_Access;
    begin
-        BaseGameInitialization (This).init (abeClientInformation, commandListener, level);
+        BaseGameInitialization_Package.BaseGameInitialization (This).init (abeClientInformation, commandListener, level);
         resourceLoadingLevelFactory := ResourceLoadingLevelFactory_Package.getInstance;
         if (not (CommonGameInitialization'Class (This).isGameInitialized)) and then ((level) = (resourceLoadingLevelFactory.LOAD_ALL.getLevel)) then
             CommonGameInitialization'Class (This).setGameInitialized (True);
@@ -115,7 +118,7 @@ package body org.allbinary.game.init.CommonGameInitialization_Package is
             CommonGameInitialization'Class (This).initGame;
             This.resourceInitializationArray (This.GAME_RESOURCES).init;
         end if;
-        BaseGameInitialization (This).resourceInitialization (level);
+        BaseGameInitialization_Package.BaseGameInitialization (This).resourceInitialization (level);
    end init;
 
    --  throws Exception

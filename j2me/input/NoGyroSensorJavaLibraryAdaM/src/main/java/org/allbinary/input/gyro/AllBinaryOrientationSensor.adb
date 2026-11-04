@@ -14,14 +14,14 @@
 
 
 with org.allbinary.game.input.CompleteMotionGestureInputEventListenerInterface_Package; use org.allbinary.game.input.CompleteMotionGestureInputEventListenerInterface_Package;
+with org.allbinary.game.input.CompleteMotionGestureInputEventListenerInterface_Package_References;
 with org.allbinary.game.input.motion.action.NoCompleteMotionGestureInputEventListener_Package; use org.allbinary.game.input.motion.action.NoCompleteMotionGestureInputEventListener_Package;
 with org.allbinary.input.AllBinarySensor_Package; use org.allbinary.input.AllBinarySensor_Package;
 with org.allbinary.logic.math.Orientation_Package; use org.allbinary.logic.math.Orientation_Package;
+with org.allbinary.logic.math.Orientation_Package_References;
 with org.allbinary.game.input.CompleteMotionGestureInputEvent_Package;
-with org.allbinary.game.input.CompleteMotionGestureInputEventListenerInterface_Package;
 with org.allbinary.game.input.CompleteMotionGestureInputInterface_Package;
 with org.allbinary.input.motion.gesture.MotionGestureInput_Package;
-with org.allbinary.game.input.motion.action.NoCompleteMotionGestureInputEventListener_Package;
 
 package body org.allbinary.input.gyro.AllBinaryOrientationSensor_Package is
 

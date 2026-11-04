@@ -15,6 +15,7 @@
 
 with org.allbinary.input.motion.button.NoButtonsTouchInputFactory_Package; use org.allbinary.input.motion.button.NoButtonsTouchInputFactory_Package;
 with org.allbinary.input.motion.button.BaseTouchInput_Package; use org.allbinary.input.motion.button.BaseTouchInput_Package;
+with org.allbinary.input.motion.button.BaseTouchInput_Package_References;
 with org.allbinary.input.motion.button.BaseTouchInput_Package;
 with org.allbinary.input.motion.button.NoButtonsTouchInputFactory_Package;
 

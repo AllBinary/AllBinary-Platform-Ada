@@ -14,8 +14,10 @@
 
 
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.data.tables.staticpages.StaticPagesEntity_Package; use org.allbinary.data.tables.staticpages.StaticPagesEntity_Package;
+with org.allbinary.data.tables.staticpages.StaticPagesEntity_Package_References;
 with org.allbinary.data.tables.staticpages.StaticPagesEntity_Package;
 
 package body org.allbinary.data.tables.staticpages.StaticPagesEntityFactory_Package is

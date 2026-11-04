@@ -14,14 +14,20 @@
 
 
 with org.allbinary.direction.Direction_Package; use org.allbinary.direction.Direction_Package;
+with org.allbinary.direction.Direction_Package_References;
 with org.allbinary.direction.DirectionUtil_Package; use org.allbinary.direction.DirectionUtil_Package;
+with org.allbinary.direction.DirectionUtil_Package_References;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.math.Angle_Package; use org.allbinary.math.Angle_Package;
+with org.allbinary.math.Angle_Package_References;
 with org.allbinary.math.AngleInfo_Package; use org.allbinary.math.AngleInfo_Package;
+with org.allbinary.math.AngleInfo_Package_References;
 with org.allbinary.math.FrameUtil_Package; use org.allbinary.math.FrameUtil_Package;
+with org.allbinary.math.FrameUtil_Package_References;
 with org.allbinary.util.CircularIndexUtil_Package; use org.allbinary.util.CircularIndexUtil_Package;
+with org.allbinary.util.CircularIndexUtil_Package_References;
 with org.allbinary.animation.AnimationBehavior_Package; use org.allbinary.animation.AnimationBehavior_Package;
-with org.allbinary.animation.RotationAnimationInterface_Package;
+with org.allbinary.animation.AnimationBehavior_Package_References;
 
 package body org.allbinary.animation.RotationAnimation_Package is
 
@@ -204,7 +210,7 @@ package body org.allbinary.animation.RotationAnimation_Package is
 
    function toString (This : in out RotationAnimation) return Unbounded_String is
    begin
-        return StringMaker_Package.Create.append (IndexedAnimation (This).toString).append (To_Unbounded_String ("circularIndexUtil: ")).append (This.circularIndexUtil.toString).append (To_Unbounded_String ("angleInfo: ")).append (This.angleInfo.toString).toString;
+        return StringMaker_Package.Create.append (IndexedAnimation_Package.IndexedAnimation (This).toString).append (To_Unbounded_String ("circularIndexUtil: ")).append (This.circularIndexUtil.toString).append (To_Unbounded_String ("angleInfo: ")).append (This.angleInfo.toString).toString;
    end toString;
 
 end org.allbinary.animation.RotationAnimation_Package;

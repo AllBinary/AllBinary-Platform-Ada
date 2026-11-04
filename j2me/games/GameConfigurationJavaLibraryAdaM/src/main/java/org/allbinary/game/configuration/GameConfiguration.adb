@@ -21,8 +21,6 @@ with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.game.configuration.GameConfigurationSingleton_Package; use org.allbinary.game.configuration.GameConfigurationSingleton_Package;
 with org.allbinary.game.configuration.GameConfigurationSingleton_Package;
-with org.allbinary.game.configuration.event.GameFeatureEvent_Package;
-with org.allbinary.game.configuration.event.GameFeatureEventHandler_Package;
 
 package body org.allbinary.game.configuration.GameConfiguration_Package is
 

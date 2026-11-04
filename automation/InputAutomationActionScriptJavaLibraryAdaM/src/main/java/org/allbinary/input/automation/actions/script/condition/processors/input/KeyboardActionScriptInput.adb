@@ -23,19 +23,21 @@ with org.allbinary.input.KeySingletonFactory_Package; use org.allbinary.input.Ke
 with org.allbinary.input.KeyUtil_Package; use org.allbinary.input.KeyUtil_Package;
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
+with org.w3c.dom.Document_Package_References;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
+with org.w3c.dom.Node_Package_References;
 with org.w3c.dom.NodeList_Package; use org.w3c.dom.NodeList_Package;
 with org.allbinary.input.automation.actions.script.condition.processors.input.KeyboardActionScriptInputJPanel_Package; use org.allbinary.input.automation.actions.script.condition.processors.input.KeyboardActionScriptInputJPanel_Package;
+with org.allbinary.input.automation.actions.script.condition.processors.input.KeyboardActionScriptInputJPanel_Package_References;
 with org.allbinary.input.automation.actions.script.condition.processors.input.KeyboardActionScriptInputData_Package; use org.allbinary.input.automation.actions.script.condition.processors.input.KeyboardActionScriptInputData_Package;
 with org.allbinary.input.automation.actions.script.condition.processors.input.KeyboardInputAutomationProcessor_Package; use org.allbinary.input.automation.actions.script.condition.processors.input.KeyboardInputAutomationProcessor_Package;
-with org.allbinary.input.automation.actions.script.condition.processors.input.BasicProfileActionScriptInput_Package;
 with org.allbinary.input.automation.actions.script.condition.processors.BasicProfileActionScriptProcessor_Package;
 with org.allbinary.input.automation.actions.script.condition.CustomTreeNodeInterface_Package;
 with org.allbinary.input.automation.actions.script.condition.processors.input.KeyboardActionScriptInputData_Package;
-with org.allbinary.input.automation.actions.script.condition.processors.input.KeyboardActionScriptInputInterface_Package;
 with org.allbinary.input.automation.actions.script.condition.processors.input.KeyboardActionScriptInputJPanel_Package;
 with org.allbinary.input.automation.actions.script.condition.processors.input.KeyboardInputAutomationProcessor_Package;
 with org.allbinary.input.automation.actions.script.condition.processors.input.ProfileActionScriptInputInterface_Package;
@@ -325,7 +327,7 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
       document : constant Document_Access := Document_Access (document_Param);
       node : Node_Access;
    begin
-        node := BasicProfileActionScriptInput (This).toXmlNode (document);
+        node := BasicProfileActionScriptInput_Package.BasicProfileActionScriptInput (This).toXmlNode (document);
         node.appendChild (ModDomHelper_Package.createNodeWithValueNodes (document, KeyboardActionScriptInputData_Package.NAME, KeyboardActionScriptInput'Class (This).toHashMap));
         return node;
    end toXmlNode;
@@ -345,7 +347,7 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
       stringBuffer : StringMaker_Access;
    begin
         stringBuffer := StringMaker_Package.Create;
-        stringBuffer.append (BasicProfileActionScriptInput (This).toString);
+        stringBuffer.append (BasicProfileActionScriptInput_Package.BasicProfileActionScriptInput (This).toString);
         stringBuffer.append (To_Unbounded_String (" Text: "));
         stringBuffer.append (KeyboardActionScriptInput'Class (This).getText);
         stringBuffer.append (To_Unbounded_String (" isPress: "));

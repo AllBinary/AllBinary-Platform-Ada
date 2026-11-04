@@ -15,9 +15,12 @@
 
 with org.allbinary.bounds.BoundsVisitorInterface_Package; use org.allbinary.bounds.BoundsVisitorInterface_Package;
 with org.allbinary.game.physics.velocity.VelocityInterface_Package; use org.allbinary.game.physics.velocity.VelocityInterface_Package;
+with org.allbinary.game.physics.velocity.VelocityInterface_Package_References;
 with org.allbinary.game.physics.velocity.VelocityInterfaceCompositeInterface_Package; use org.allbinary.game.physics.velocity.VelocityInterfaceCompositeInterface_Package;
 with org.allbinary.layer.LayerInterface_Package; use org.allbinary.layer.LayerInterface_Package;
+with org.allbinary.layer.LayerInterface_Package_References;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 
 package body org.allbinary.game.ag.ai.ReverseVelocityBoundsVisitor_Package is
 

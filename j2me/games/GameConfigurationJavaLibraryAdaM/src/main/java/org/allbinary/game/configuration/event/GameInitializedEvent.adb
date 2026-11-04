@@ -14,10 +14,9 @@
 
 
 with org.allbinary.game.resource.ResourceLoadingLevel_Package; use org.allbinary.game.resource.ResourceLoadingLevel_Package;
+with org.allbinary.game.resource.ResourceLoadingLevel_Package_References;
 with org.allbinary.game.resource.ResourceLoadingLevelFactory_Package; use org.allbinary.game.resource.ResourceLoadingLevelFactory_Package;
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbinary.logic.util.event.AllBinaryEventObject_Package;
-with org.allbinary.game.resource.ResourceLoadingLevel_Package;
-with org.allbinary.game.resource.ResourceLoadingLevelFactory_Package;
 
 package body org.allbinary.game.configuration.event.GameInitializedEvent_Package is
 

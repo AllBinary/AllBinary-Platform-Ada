@@ -14,9 +14,10 @@
 
 
 with org.allbinary.game.layer.AllBinaryGameLayer_Package; use org.allbinary.game.layer.AllBinaryGameLayer_Package;
+with org.allbinary.game.layer.AllBinaryGameLayer_Package_References;
 with org.allbinary.game.physics.velocity.VelocityProperties_Package; use org.allbinary.game.physics.velocity.VelocityProperties_Package;
 with org.allbinary.logic.math.BasicDecimal_Package; use org.allbinary.logic.math.BasicDecimal_Package;
-with org.allbinary.physics.movement.BasicConstantVelocityMovement_Package;
+with org.allbinary.logic.math.BasicDecimal_Package_References;
 with org.allbinary.physics.movement.Movement_Package;
 with org.allbinary.physics.movement.MovementInterface_Package;
 
@@ -73,7 +74,7 @@ package body org.allbinary.physics.movement.XYOscillateVelocityMovement_Package 
    procedure process (This : in out XYOscillateVelocityMovement; layer_Param : access AllBinaryGameLayer_Package.AllBinaryGameLayer'Class) is
       layer : constant AllBinaryGameLayer_Access := AllBinaryGameLayer_Access (layer_Param);
    begin
-        BasicConstantVelocityMovement (This).process (layer);
+        BasicConstantVelocityMovement_Package.BasicConstantVelocityMovement (This).process (layer);
         if (This.oscillate) < (This.oscillateMin) then
             This.oscillatePositive := True;
             XYOscillateVelocityMovement'Class (This).getVelocityProperties.getVelocityYBasicDecimalP.addint (3000);

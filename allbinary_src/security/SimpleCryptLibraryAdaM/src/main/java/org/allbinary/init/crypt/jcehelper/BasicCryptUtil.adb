@@ -16,8 +16,11 @@
 with java.io.ByteArrayOutputStream_Package; use java.io.ByteArrayOutputStream_Package;
 with java.io.InputStream_Package; use java.io.InputStream_Package;
 with org.allbinary.TsUtil_Package; use org.allbinary.TsUtil_Package;
+with org.allbinary.TsUtil_Package_References;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.init.crypt.jcehelper.CryptInterface_Package; use org.allbinary.init.crypt.jcehelper.CryptInterface_Package;
+with org.allbinary.init.crypt.jcehelper.CryptInterface_Package_References;
 with org.allbinary.init.crypt.jcehelper.CryptInterface_Package;
 
 package body org.allbinary.init.crypt.jcehelper.BasicCryptUtil_Package is

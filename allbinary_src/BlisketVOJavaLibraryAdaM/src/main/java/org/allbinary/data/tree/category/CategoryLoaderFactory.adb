@@ -14,10 +14,12 @@
 
 
 with org.allbinary.business.category.CategoryFactoryInterface_Package; use org.allbinary.business.category.CategoryFactoryInterface_Package;
+with org.allbinary.business.category.CategoryFactoryInterface_Package_References;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.data.tree.category.CategoryLoader_Package; use org.allbinary.data.tree.category.CategoryLoader_Package;
 with org.allbinary.data.tree.category.CategoryLoaderInterface_Package; use org.allbinary.data.tree.category.CategoryLoaderInterface_Package;
+with org.allbinary.data.tree.category.CategoryLoaderInterface_Package_References;
 with org.allbinary.data.tree.category.CategoryLoader_Package;
 with org.allbinary.data.tree.category.CategoryLoaderInterface_Package;
 with org.allbinary.data.tree.category.CategoryModifierTree_Package;

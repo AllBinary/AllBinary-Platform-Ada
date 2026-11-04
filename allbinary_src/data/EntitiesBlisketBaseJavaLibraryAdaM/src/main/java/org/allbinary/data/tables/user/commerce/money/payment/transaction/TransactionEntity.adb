@@ -22,9 +22,11 @@ with org.allbinary.business.init.db.UserDbInitInfo_Package; use org.allbinary.bu
 with org.allbinary.business.user.UserData_Package; use org.allbinary.business.user.UserData_Package;
 with org.allbinary.business.user.commerce.inventory.order.OrderData_Package; use org.allbinary.business.user.commerce.inventory.order.OrderData_Package;
 with org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionInterface_Package; use org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionInterface_Package;
+with org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionInterface_Package_References;
 with org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionKeysFactory_Package; use org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionKeysFactory_Package;
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.communication.sql.AbSqlBean_Package; use org.allbinary.logic.communication.sql.AbSqlBean_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 
@@ -90,7 +92,7 @@ package body org.allbinary.data.tables.user.commerce.money.payment.transaction.T
             whereHashMap := StdUtil_Package.getInstance.createHashMap;
             whereHashMap.put (OrderData_Package.ID, orderNumber);
             whereHashMap.put (UserData_Package.USERNAME, Java_Box (userName));
-            AbSqlBean (This).deleteWhere (whereHashMap);
+            AbSqlBean_Package.AbSqlBean (This).deleteWhere (whereHashMap);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
                 This.logUtil.putF (This.commonStrings.SUCCESS, TransactionEntity_Access'(This'Unchecked_Access), To_Unbounded_String ("remove"));
             end if;
@@ -121,7 +123,7 @@ package body org.allbinary.data.tables.user.commerce.money.payment.transaction.T
             time := Java_New_String (calendar.getTimeInMillis.toString);
             values.add (time);
             values.add (time);
-            AbSqlBean (This).insert (values);
+            AbSqlBean_Package.AbSqlBean (This).insert (values);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
                 This.logUtil.putF (This.commonStrings.SUCCESS, TransactionEntity_Access'(This'Unchecked_Access), To_Unbounded_String ("add"));
             end if;
@@ -152,12 +154,12 @@ package body org.allbinary.data.tables.user.commerce.money.payment.transaction.T
 
    function createTable (This : in out TransactionEntity) return Unbounded_String is
    begin
-        return AbSqlBean (This).createTable (TransactionEntity'Class (This).createTableStatement);
+        return AbSqlBean_Package.AbSqlBean (This).createTable (TransactionEntity'Class (This).createTableStatement);
    end createTable;
 
    function dropTable (This : in out TransactionEntity) return Unbounded_String is
    begin
-        return AbSqlBean (This).dropTable;
+        return AbSqlBean_Package.AbSqlBean (This).dropTable;
    end dropTable;
 
 end org.allbinary.data.tables.user.commerce.money.payment.transaction.TransactionEntity_Package;

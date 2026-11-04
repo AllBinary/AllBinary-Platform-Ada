@@ -15,16 +15,19 @@
 
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.input.automation.module.configuration.InputAutomationModuleConfiguration_Package; use org.allbinary.input.automation.module.configuration.InputAutomationModuleConfiguration_Package;
+with org.allbinary.input.automation.module.configuration.InputAutomationModuleConfiguration_Package_References;
 with org.allbinary.input.automation.module.configuration.InputAutomationModuleConfigurations_Package; use org.allbinary.input.automation.module.configuration.InputAutomationModuleConfigurations_Package;
+with org.allbinary.input.automation.module.configuration.InputAutomationModuleConfigurations_Package_References;
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.java.help.JavaHelpSetNotifier_Package; use org.allbinary.logic.java.help.JavaHelpSetNotifier_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.input.automation.module.DefaultListModelHelper_Package; use org.allbinary.input.automation.module.DefaultListModelHelper_Package;
+with org.allbinary.input.automation.module.DefaultListModelHelper_Package_References;
 with org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface_Package; use org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface_Package;
+with org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface_Package_References;
 with org.allbinary.input.automation.module.DefaultListModelHelper_Package;
-with org.allbinary.input.automation.module.configuration.InputAutomationModuleConfiguration_Package;
-with org.allbinary.input.automation.module.configuration.InputAutomationModuleConfigurations_Package;
 with org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface_Package;
 
 package body org.allbinary.input.automation.module.InputAutomationModuleFactoryFactory_Package is

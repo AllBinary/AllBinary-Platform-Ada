@@ -14,6 +14,7 @@
 
 
 with org.allbinary.graphics.opengles.OpenGLFeature_Package; use org.allbinary.graphics.opengles.OpenGLFeature_Package;
+with org.allbinary.graphics.opengles.OpenGLFeature_Package_References;
 with org.allbinary.game.configuration.feature.Feature_Package;
 with org.allbinary.graphics.opengles.OpenGLFeature_Package;
 

@@ -14,10 +14,12 @@
 
 
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.game.graphics.hud.BasicHud_Package; use org.allbinary.game.graphics.hud.BasicHud_Package;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.graphics.color.BasicColor_Package_References;
 
 package body org.allbinary.game.layer.hud.basic.PositionWidget_Package is
 
@@ -81,7 +83,7 @@ package body org.allbinary.game.layer.hud.basic.PositionWidget_Package is
    procedure paint (This : in out PositionWidget; graphics_Param : access Graphics_Package.Graphics'Class) is
       graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
-        BasicHud (This).paintString (graphics, This.positionString);
+        BasicHud_Package.BasicHud (This).paintString (graphics, This.positionString);
    end paint;
 
    function toString (position : Integer) return Unbounded_String is

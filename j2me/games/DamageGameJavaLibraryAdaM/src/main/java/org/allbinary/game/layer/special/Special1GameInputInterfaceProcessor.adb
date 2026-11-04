@@ -14,9 +14,11 @@
 
 
 with org.allbinary.game.input.event.GameKeyEvent_Package; use org.allbinary.game.input.event.GameKeyEvent_Package;
+with org.allbinary.game.input.event.GameKeyEvent_Package_References;
 with org.allbinary.layer.AllBinaryLayerManager_Package; use org.allbinary.layer.AllBinaryLayerManager_Package;
+with org.allbinary.layer.AllBinaryLayerManager_Package_References;
 with org.allbinary.game.layer.special.SpecialGameInputInterface_Package; use org.allbinary.game.layer.special.SpecialGameInputInterface_Package;
-with org.allbinary.game.layer.special.SpecialGameInputInterfaceProcessor_Package;
+with org.allbinary.game.layer.special.SpecialGameInputInterface_Package_References;
 
 package body org.allbinary.game.layer.special.Special1GameInputInterfaceProcessor_Package is
 

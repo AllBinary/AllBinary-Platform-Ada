@@ -16,10 +16,13 @@
 with org.allbinary.thread.ARunnable_Package; use org.allbinary.thread.ARunnable_Package;
 with java.io.InputStream_Package; use java.io.InputStream_Package;
 with javax.microedition.media.Control_Package; use javax.microedition.media.Control_Package;
+with javax.microedition.media.Control_Package_References;
 with javax.microedition.media.MediaException_Package; use javax.microedition.media.MediaException_Package;
 with javax.microedition.media.PlayerListener_Package; use javax.microedition.media.PlayerListener_Package;
 with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
+with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.thread.MusicThreadPool_Package; use org.allbinary.thread.MusicThreadPool_Package;
 with org.allbinary.media.audio.NullAudioFormat_Package; use org.allbinary.media.audio.NullAudioFormat_Package;
@@ -161,7 +164,7 @@ package body org.allbinary.media.audio.PCClipWavPlayer_Package is
         This.clip.setFramePosition (0);
         This.clip.loop_Id (PCClipWavPlayer'Class (This).getLoopCount);
         This.clip.start;
-        BasicPlayer (This).start;
+        BasicPlayer_Package.BasicPlayer (This).start;
    end start2;
 
    --  throws Exception
@@ -200,7 +203,7 @@ package body org.allbinary.media.audio.PCClipWavPlayer_Package is
    procedure stop2 (This : in out PCClipWavPlayer) is
    begin
         This.clip.stop;
-        BasicPlayer (This).stop;
+        BasicPlayer_Package.BasicPlayer (This).stop;
    end stop2;
 
    function getControl (This : in out PCClipWavPlayer; controlType : Unbounded_String) return Control_Access is

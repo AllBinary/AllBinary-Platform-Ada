@@ -14,12 +14,13 @@
 
 
 with org.allbinary.graphics.displayable.event.DisplayChangeEvent_Package; use org.allbinary.graphics.displayable.event.DisplayChangeEvent_Package;
+with org.allbinary.graphics.displayable.event.DisplayChangeEvent_Package_References;
 with org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package; use org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package;
+with org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package_References;
 with org.allbinary.game.displayable.canvas.GameCanvasNonBotPaintable_Package; use org.allbinary.game.displayable.canvas.GameCanvasNonBotPaintable_Package;
 with org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package;
 with org.allbinary.game.displayable.canvas.AllBinaryGameCanvasInterface_Package;
 with org.allbinary.game.layer.AllBinaryGameLayerManager_Package;
-with org.allbinary.game.displayable.canvas.BaseMenuBehavior_Package;
 with org.allbinary.game.init.BasicBuildGameInitializerFactory_Package;
 with org.allbinary.game.displayable.canvas.DemoGameBehavior_Package;
 with org.allbinary.game.displayable.canvas.DemoPaintableInterface_Package;

@@ -14,26 +14,29 @@
 
 
 with javax.microedition.lcdui.Command_Package; use javax.microedition.lcdui.Command_Package;
+with javax.microedition.lcdui.Command_Package_References;
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
 with org.allbinary.J2MEUtil_Package; use org.allbinary.J2MEUtil_Package;
 with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Animation_Package;
+with org.allbinary.animation.Animation_Package_References;
 with org.allbinary.animation.NullAnimationFactory_Package; use org.allbinary.animation.NullAnimationFactory_Package;
 with org.allbinary.animation.vector.RectangleAdjustedAnimation_Package; use org.allbinary.animation.vector.RectangleAdjustedAnimation_Package;
 with org.allbinary.animation.vector.RectangleFilledAdjustedAnimation_Package; use org.allbinary.animation.vector.RectangleFilledAdjustedAnimation_Package;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.graphics.color.BasicColor_Package_References;
 with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
 with org.allbinary.graphics.font.UpdateMyFontInterface_Package; use org.allbinary.graphics.font.UpdateMyFontInterface_Package;
 with org.allbinary.graphics.form.item.CommandTextItem_Package; use org.allbinary.graphics.form.item.CommandTextItem_Package;
 with org.allbinary.graphics.form.item.ABCustomItem_Package; use org.allbinary.graphics.form.item.ABCustomItem_Package;
+with org.allbinary.graphics.form.item.ABCustomItem_Package_References;
 with org.allbinary.graphics.form.ItemPaintableFactory_Package; use org.allbinary.graphics.form.ItemPaintableFactory_Package;
-with org.allbinary.graphics.form.item.CommandTextItem_Package;
 with org.allbinary.graphics.form.FormType_Package;
 with org.allbinary.graphics.form.ItemIndexDx_Package;
 with org.allbinary.graphics.form.ItemIndexPaintable_Package;
 with org.allbinary.graphics.form.ItemPaintable_Package;
 with org.allbinary.graphics.form.ItemPaintableFactory_Package;
 with org.allbinary.graphics.form.PaintableForm_Package;
-with org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package;
 with org.allbinary.graphics.form.ScrollSelectionForm_Package;
 
 package body org.allbinary.graphics.form.CommandCurrentSelectionForm_Package is
@@ -123,7 +126,7 @@ package body org.allbinary.graphics.form.CommandCurrentSelectionForm_Package is
       graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
         CommandCurrentSelectionForm'Class (This).updateAll (graphics, CommandCurrentSelectionForm'Class (This).getAllitems);
-        ScrollCurrentSelectionForm (This).updateMeasurement (graphics);
+        ScrollCurrentSelectionForm_Package.ScrollCurrentSelectionForm (This).updateMeasurement (graphics);
    end updateMeasurement;
 
    procedure initAnimations (This : in out CommandCurrentSelectionForm) is
@@ -254,7 +257,7 @@ package body org.allbinary.graphics.form.CommandCurrentSelectionForm_Package is
       index : Integer;
       commandTextItem : CommandTextItem_Access;
    begin
-        index := ScrollCurrentSelectionForm (This).getSelectedIndex;
+        index := ScrollCurrentSelectionForm_Package.ScrollCurrentSelectionForm (This).getSelectedIndex;
         commandTextItem := CommandTextItem_Access (CommandCurrentSelectionForm'Class (This).get (index));
         return commandTextItem.getCommand;
    end getSelectedCommand;
@@ -263,39 +266,39 @@ package body org.allbinary.graphics.form.CommandCurrentSelectionForm_Package is
       item : constant ABCustomItem_Access := ABCustomItem_Access (item_Param);
       result : Integer;
    begin
-        result := ScrollCurrentSelectionForm (This).append (item);
+        result := ScrollCurrentSelectionForm_Package.ScrollCurrentSelectionForm (This).append (item);
         CommandCurrentSelectionForm'Class (This).addAt (result, item);
         return result;
    end append;
 
    procedure delete (This : in out CommandCurrentSelectionForm; itemNum : Integer) is
    begin
-        ScrollCurrentSelectionForm (This).delete (itemNum);
+        ScrollCurrentSelectionForm_Package.ScrollCurrentSelectionForm (This).delete (itemNum);
    end delete;
 
    procedure deleteAll (This : in out CommandCurrentSelectionForm) is
    begin
         CommandCurrentSelectionForm'Class (This).initAnimations;
-        ScrollCurrentSelectionForm (This).deleteAll;
+        ScrollCurrentSelectionForm_Package.ScrollCurrentSelectionForm (This).deleteAll;
    end deleteAll;
 
    procedure insert (This : in out CommandCurrentSelectionForm; itemNum : Integer; item_Param : access ABCustomItem_Package.ABCustomItem'Class) is
       item : constant ABCustomItem_Access := ABCustomItem_Access (item_Param);
    begin
-        ScrollCurrentSelectionForm (This).insert (itemNum, item);
+        ScrollCurrentSelectionForm_Package.ScrollCurrentSelectionForm (This).insert (itemNum, item);
    end insert;
 
    procedure set (This : in out CommandCurrentSelectionForm; itemNum : Integer; item_Param : access ABCustomItem_Package.ABCustomItem'Class) is
       item : constant ABCustomItem_Access := ABCustomItem_Access (item_Param);
    begin
-        ScrollCurrentSelectionForm (This).set (itemNum, item);
+        ScrollCurrentSelectionForm_Package.ScrollCurrentSelectionForm (This).set (itemNum, item);
    end set;
 
    procedure paint (This : in out CommandCurrentSelectionForm; graphics_Param : access Graphics_Package.Graphics'Class) is
       graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
         This.myFontProcessor.process (graphics);
-        ScrollCurrentSelectionForm (This).paint (graphics);
+        ScrollCurrentSelectionForm_Package.ScrollCurrentSelectionForm (This).paint (graphics);
    end paint;
 
    --  throws Exception
@@ -304,7 +307,7 @@ package body org.allbinary.graphics.form.CommandCurrentSelectionForm_Package is
       item : constant ABCustomItem_Access := ABCustomItem_Access (item_Param);
    begin
         This.selectedAnimationArray (index).paintXY (graphics, x, y);
-        return ScrollCurrentSelectionForm (This).paintItem (graphics, index, item, x, y);
+        return ScrollCurrentSelectionForm_Package.ScrollCurrentSelectionForm (This).paintItem (graphics, index, item, x, y);
    end paintItem;
 
    --  throws Exception
@@ -313,7 +316,7 @@ package body org.allbinary.graphics.form.CommandCurrentSelectionForm_Package is
       item : constant ABCustomItem_Access := ABCustomItem_Access (item_Param);
    begin
         This.unSelectedAnimationArray (index).paintXY (graphics, x, y);
-        return ScrollCurrentSelectionForm (This).paintUnselectedItem (graphics, index, item, x, y);
+        return ScrollCurrentSelectionForm_Package.ScrollCurrentSelectionForm (This).paintUnselectedItem (graphics, index, item, x, y);
    end paintUnselectedItem;
 
    procedure append (This : in out CommandCurrentSelectionForm; item_Param : access ABCustomItem_Package.ABCustomItem'Class) is

@@ -14,7 +14,9 @@
 
 
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.graphics.color.BasicColor_Package_References;
 with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackFrictionProperties_Package; use org.allbinary.media.graphics.geography.map.racetrack.RaceTrackFrictionProperties_Package;
+with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackFrictionProperties_Package_References;
 with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackFrictionProperties_Package;
 
 package body org.allbinary.media.graphics.geography.map.racetrack.RaceTrackInfo_Package is

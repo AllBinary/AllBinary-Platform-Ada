@@ -15,6 +15,7 @@
 
 with org.allbinary.globals.AppUrlGlobals_Package; use org.allbinary.globals.AppUrlGlobals_Package;
 with org.allbinary.globals.UrlGlobalsInterface_Package; use org.allbinary.globals.UrlGlobalsInterface_Package;
+with org.allbinary.globals.UrlGlobalsInterface_Package_References;
 with org.allbinary.globals.AppUrlGlobals_Package;
 with org.allbinary.globals.UrlGlobalsInterface_Package;
 

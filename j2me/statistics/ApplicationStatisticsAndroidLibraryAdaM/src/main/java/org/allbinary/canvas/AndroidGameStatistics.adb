@@ -14,12 +14,12 @@
 
 
 with android.view.View_Package; use android.view.View_Package;
+with android.view.View_Package_References;
 with org.allbinary.android.view.BaseViewWrapper_Package; use org.allbinary.android.view.BaseViewWrapper_Package;
+with org.allbinary.android.view.BaseViewWrapper_Package_References;
 with org.allbinary.android.view.ViewWrapper_Package; use org.allbinary.android.view.ViewWrapper_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
-with org.allbinary.android.view.BaseViewWrapper_Package;
-with org.allbinary.android.view.ViewWrapper_Package;
 
 package body org.allbinary.canvas.AndroidGameStatistics_Package is
 
@@ -79,7 +79,7 @@ package body org.allbinary.canvas.AndroidGameStatistics_Package is
    procedure initView (This : in out AndroidGameStatistics; view_Param : access View_Package.View'Class) is
       view : constant View_Access := View_Access (view_Param);
    begin
-        BaseGameStatistics (This).init;
+        BaseGameStatistics_Package.BaseGameStatistics (This).init;
         This.view := BaseViewWrapper_Access (ViewWrapper_Package.Create (view));
         This.totalOnDraws := 0;
    end initView;
@@ -99,7 +99,7 @@ package body org.allbinary.canvas.AndroidGameStatistics_Package is
       index : Integer;
       totalTime : Long_Long_Integer;
    begin
-        stringArray := BaseGameStatistics (This).toStringArray;
+        stringArray := BaseGameStatistics_Package.BaseGameStatistics (This).toStringArray;
         for index in 0 .. (stringArray'Length) - 1 loop
             This.ANDROID_STRING_ARRAY (index) := stringArray (index);
         end loop;
@@ -121,7 +121,7 @@ package body org.allbinary.canvas.AndroidGameStatistics_Package is
         totalTime := ((totalTime) / (1000));
         if (totalTime) > (0) then
             stringBuffer := StringMaker_Package.Create;
-            stringBuffer.append (BaseGameStatistics (This).toStringAt (totalTime));
+            stringBuffer.append (BaseGameStatistics_Package.BaseGameStatistics (This).toStringAt (totalTime));
             if (This.totalOnDraws) > (0) then
                 stringBuffer.append (This.TOTAL_ONDRAWS);
                 stringBuffer.append (To_Unbounded_String (Java_Image (This.totalOnDraws)));
